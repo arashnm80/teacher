@@ -15,6 +15,7 @@ A static companion to the grade-11 textbook «طراح سایت» (رشته شب
 5. **Bilingual interface, Persian lesson text.** Chrome (menus, buttons, home page, search) is Persian and English, switched in the page and remembered in `localStorage`. The lesson body stays the official Persian textbook, and it stays right-to-left even when the chrome is English. Do not machine-translate the book unless a later version explicitly asks for that.
 6. **Works with JavaScript off for reading.** Persian navigation and lesson pages must still open. JavaScript is only for the language switch and search.
 7. **Rebuild after markdown edits.** Source lessons are `converted-markdown-book/`. Run `python3 build_site.py` (needs the `markdown` package) and commit the new `site/`.
+8. **Public copy.** `https://teacher.arashnm80.ir` is this same `site/` folder, served by nginx on this machine. Cloudflare proxies the name (the A record is already orange-clouded). TLS on the origin is the existing wildcard certificate `/etc/nginx/ssl/arashnm80.ir/`. Nginx cannot read `/root`, so the published files live at `/var/www/teacher.arashnm80.ir`. After a rebuild, run `bash deploy.sh` from `11th-grade/`. Do not point the site at a CDN.
 
 ## Check before calling it done
 
@@ -38,3 +39,4 @@ A static companion to the grade-11 textbook «طراح سایت» (رشته شب
 4. **ظاهر سایت دوزبانه است، متن درس فارسی کتاب است.** با دکمه زبان، منو و صفحه اول فارسی یا انگلیسی می‌شود. متن درس همان کتاب رسمی است و حتی در حالت انگلیسی هم راست‌به‌چپ می‌ماند. ترجمه ماشینی کتاب جزو این نسخه نیست.
 5. **بدون جاوااسکریپت هم بتوان درس را خواند.** زبان و جستجو با جاوااسکریپت کار می‌کنند.
 6. **بعد از ویرایش مارک‌داون** دستور `python3 build_site.py` را اجرا کنید و پوشه `site/` را دوباره وارد مخزن کنید.
+7. **نسخه عمومی** روی `https://teacher.arashnm80.ir` است. بعد از ساختن دوباره سایت، از پوشه `11th-grade` دستور `bash deploy.sh` را اجرا کنید. nginx فایل‌ها را از `/var/www/teacher.arashnm80.ir` می‌خواند، چون به پوشه `/root` دسترسی ندارد.
