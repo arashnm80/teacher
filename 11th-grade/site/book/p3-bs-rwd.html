@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title data-fa="کلاس‌های واکنش‌گرا" data-en="Responsive classes">کلاس‌های واکنش‌گرا</title>
+  <link rel="icon" href="../assets/favicon.svg">
+  <link rel="stylesheet" href="../assets/style.css?v=4">
+</head>
+<body data-root="../">
+  <header class="top">
+    <a class="brand" href="../index.html">
+      <span data-fa="طراح سایت" data-en="Site Design">طراح سایت</span>
+      <small data-fa="پایه یازدهم" data-en="Grade 11">پایه یازدهم</small>
+    </a>
+    <div class="search-wrap">
+      <input id="q" type="search" autocomplete="off"
+        data-fa-placeholder="جستجو در درس‌ها" data-en-placeholder="Search lessons"
+        placeholder="جستجو در درس‌ها">
+      <div id="results" class="results" hidden></div>
+    </div>
+    <a class="download" href="../grade11-offline.zip?v=2" data-fa="دانلود کل سایت" data-en="Download the whole site">دانلود کل سایت</a>
+    <button type="button" id="lang-toggle" class="lang-toggle" dir="ltr" data-lang="fa"
+      aria-label="تغییر زبان">
+      <span data-opt="fa">فا</span>
+      <span data-opt="en">EN</span>
+    </button>
+  </header>
+  <div class="layout">
+    <details class="toc" open><summary><span data-fa="فهرست درس‌ها" data-en="Lesson list">فهرست درس‌ها</span></summary><nav class="side" aria-label="lessons"><p class="mod" data-fa="شروع کتاب" data-en="Opening">شروع کتاب</p><p class="unit" data-fa="فهرست" data-en="Contents">فهرست</p><a class="" href="toc.html" data-fa="فهرست" data-en="Contents">فهرست</a><p class="mod" data-fa="پودمان ۱: برنامه‌نویسی پایتون" data-en="Module 1: Python programming">پودمان ۱: برنامه‌نویسی پایتون</p><p class="unit" data-fa="معرفی پودمان" data-en="Module introduction">معرفی پودمان</p><a class="" href="p1-intro.html" data-fa="معرفی پودمان پایتون" data-en="Introducing the Python module">معرفی پودمان پایتون</a><p class="unit" data-fa="مدل‌سازی داده" data-en="Data modeling">مدل‌سازی داده</p><a class="" href="p1-python.html" data-fa="پایتون و محیط برنامه‌نویسی" data-en="Python and the programming environment">پایتون و محیط برنامه‌نویسی</a><a class="" href="p1-vars.html" data-fa="متغیرها، نوع داده و عملگرها" data-en="Variables, types, and operators">متغیرها، نوع داده و عملگرها</a><a class="" href="p1-cast.html" data-fa="ورودی و تبدیل نوع" data-en="Input and type casting">ورودی و تبدیل نوع</a><a class="" href="p1-lists.html" data-fa="لیست‌ها" data-en="Lists">لیست‌ها</a><a class="" href="p1-if.html" data-fa="شرط‌های ساده" data-en="Simple conditions">شرط‌های ساده</a><a class="" href="p1-elif.html" data-fa="if، elif و else" data-en="if, elif, and else">if، elif و else</a><a class="" href="p1-for.html" data-fa="حلقه for و range" data-en="The for loop and range">حلقه for و range</a><a class="" href="p1-while.html" data-fa="حلقه while و کنترل حلقه" data-en="The while loop and loop control">حلقه while و کنترل حلقه</a><a class="" href="p1-assess-data.html" data-fa="ارزشیابی مدل‌سازی داده" data-en="Data-modeling assessment">ارزشیابی مدل‌سازی داده</a><p class="unit" data-fa="توابع و ماژول‌ها" data-en="Functions and modules">توابع و ماژول‌ها</p><a class="" href="p1-sets.html" data-fa="مجموعه (set)" data-en="Sets">مجموعه (set)</a><a class="" href="p1-dict.html" data-fa="دیکشنری" data-en="Dictionaries">دیکشنری</a><a class="" href="p1-quiz.html" data-fa="پروژه بازی Quiz" data-en="Quiz game project">پروژه بازی Quiz</a><a class="" href="p1-tuple.html" data-fa="تاپل" data-en="Tuples">تاپل</a><a class="" href="p1-func.html" data-fa="تعریف تابع، پارامتر و return" data-en="Defining functions, parameters, and return">تعریف تابع، پارامتر و return</a><a class="" href="p1-func-more.html" data-fa="تمرین تابع و مرتب‌سازی" data-en="Function practice and sorting">تمرین تابع و مرتب‌سازی</a><a class="" href="p1-modules.html" data-fa="ماژول‌ها و تفاوت تابع و متد" data-en="Modules, and functions versus methods">ماژول‌ها و تفاوت تابع و متد</a><a class="" href="p1-assess-func.html" data-fa="ارزشیابی توابع و ماژول‌ها" data-en="Functions and modules assessment">ارزشیابی توابع و ماژول‌ها</a><p class="mod" data-fa="پودمان ۲: صفحات وب ایستا" data-en="Module 2: Static web pages">پودمان ۲: صفحات وب ایستا</p><p class="unit" data-fa="معرفی پودمان" data-en="Module introduction">معرفی پودمان</p><a class="" href="p2-intro.html" data-fa="معرفی پودمان صفحات ایستا" data-en="Introducing static web pages">معرفی پودمان صفحات ایستا</a><p class="unit" data-fa="ساختار با HTML" data-en="Structure with HTML">ساختار با HTML</p><a class="" href="p2-web.html" data-fa="وب چگونه کار می‌کند" data-en="How the web works">وب چگونه کار می‌کند</a><a class="" href="p2-concepts.html" data-fa="مفاهیم طراحی وب و نقشه سایت" data-en="Web-design concepts and the site map">مفاهیم طراحی وب و نقشه سایت</a><a class="" href="p2-tags.html" data-fa="اولین صفحه HTML" data-en="A first HTML page">اولین صفحه HTML</a><a class="" href="p2-text.html" data-fa="متن، لیست و پیوند" data-en="Text, lists, and links">متن، لیست و پیوند</a><a class="" href="p2-img.html" data-fa="تصویر در صفحه" data-en="Images on the page">تصویر در صفحه</a><a class="" href="p2-forms.html" data-fa="فرم‌ها" data-en="Forms">فرم‌ها</a><a class="" href="p2-semantic.html" data-fa="عناصر معنایی" data-en="Semantic elements">عناصر معنایی</a><a class="" href="p2-assess-html.html" data-fa="ارزشیابی HTML" data-en="HTML assessment">ارزشیابی HTML</a><p class="unit" data-fa="ظاهر با CSS" data-en="Appearance with CSS">ظاهر با CSS</p><a class="" href="p2-css-start.html" data-fa="نوشتن CSS" data-en="Writing CSS">نوشتن CSS</a><a class="" href="p2-css-look.html" data-fa="رنگ، پس‌زمینه و انتخاب‌گر" data-en="Color, background, and selectors">رنگ، پس‌زمینه و انتخاب‌گر</a><a class="" href="p2-box.html" data-fa="مدل جعبه‌ای و display" data-en="The box model and display">مدل جعبه‌ای و display</a><a class="" href="p2-flex.html" data-fa="چیدمان با Flexbox" data-en="Layout with Flexbox">چیدمان با Flexbox</a><a class="" href="p2-flex-work.html" data-fa="کارگاه چیدمان صفحه" data-en="Page-layout workshop">کارگاه چیدمان صفحه</a><a class="" href="p2-media.html" data-fa="مدیا کوئری و ارزشیابی CSS" data-en="Media queries and the CSS assessment">مدیا کوئری و ارزشیابی CSS</a><p class="mod" data-fa="پودمان ۳: صفحات وب تعاملی" data-en="Module 3: Interactive web pages">پودمان ۳: صفحات وب تعاملی</p><p class="unit" data-fa="معرفی پودمان" data-en="Module introduction">معرفی پودمان</p><a class="" href="p3-intro.html" data-fa="معرفی پودمان تعاملی" data-en="Introducing the interactive module">معرفی پودمان تعاملی</a><p class="unit" data-fa="بوت‌استرپ" data-en="Bootstrap">بوت‌استرپ</p><a class="" href="p3-bs-start.html" data-fa="فریم‌ورک و شروع بوت‌استرپ" data-en="Frameworks and starting Bootstrap">فریم‌ورک و شروع بوت‌استرپ</a><a class="" href="p3-bs-util.html" data-fa="فاصله، گردی و لیست" data-en="Spacing, rounding, and lists">فاصله، گردی و لیست</a><a class="" href="p3-bs-header.html" data-fa="سرصفحه فروشگاه" data-en="The shop header">سرصفحه فروشگاه</a><a class="" href="p3-bs-grid.html" data-fa="شبکه Grid" data-en="The grid">شبکه Grid</a><a class="current" href="p3-bs-rwd.html" data-fa="کلاس‌های واکنش‌گرا" data-en="Responsive classes">کلاس‌های واکنش‌گرا</a><a class="" href="p3-bs-nav.html" data-fa="نوار ناوبری و جزئیات محصول" data-en="Navbar and product details">نوار ناوبری و جزئیات محصول</a><a class="" href="p3-bs-form.html" data-fa="فرم و پنجره Modal" data-en="Forms and modals">فرم و پنجره Modal</a><a class="" href="p3-bs-show.html" data-fa="کاروسل و آکاردئون" data-en="Carousel and accordion">کاروسل و آکاردئون</a><a class="" href="p3-bs-assess.html" data-fa="ارزشیابی بوت‌استرپ" data-en="Bootstrap assessment">ارزشیابی بوت‌استرپ</a><p class="unit" data-fa="جاوااسکریپت" data-en="JavaScript">جاوااسکریپت</p><a class="" href="p3-js-start.html" data-fa="جاوااسکریپت در صفحه وب" data-en="JavaScript on the page">جاوااسکریپت در صفحه وب</a><a class="" href="p3-js-vars.html" data-fa="متغیر و نوع داده" data-en="Variables and data types">متغیر و نوع داده</a><a class="" href="p3-js-ops.html" data-fa="عملگرها" data-en="Operators">عملگرها</a><a class="" href="p3-js-data.html" data-fa="آرایه و شیء" data-en="Arrays and objects">آرایه و شیء</a><a class="" href="p3-js-if.html" data-fa="شرط در جاوااسکریپت" data-en="Conditions in JavaScript">شرط در جاوااسکریپت</a><a class="" href="p3-js-loops.html" data-fa="حلقه‌ها" data-en="Loops">حلقه‌ها</a><a class="" href="p3-js-func.html" data-fa="تابع‌ها" data-en="Functions">تابع‌ها</a><a class="" href="p3-js-dom.html" data-fa="صفحه، رویداد و اعتبار فرم" data-en="The page, events, and form validation">صفحه، رویداد و اعتبار فرم</a><a class="" href="p3-js-assess.html" data-fa="ارزشیابی جاوااسکریپت" data-en="JavaScript assessment">ارزشیابی جاوااسکریپت</a><p class="mod" data-fa="پودمان ۴: توسعه وب پایتون" data-en="Module 4: Python for the web">پودمان ۴: توسعه وب پایتون</p><p class="unit" data-fa="معرفی پودمان" data-en="Module introduction">معرفی پودمان</p><a class="" href="p4-intro.html" data-fa="معرفی پودمان شیءگرایی" data-en="Introducing the object-oriented module">معرفی پودمان شیءگرایی</a><p class="unit" data-fa="شیءگرایی" data-en="Object-oriented programming">شیءگرایی</p><a class="" href="p4-idea.html" data-fa="ایده شیء و کلاس" data-en="The idea of objects and classes">ایده شیء و کلاس</a><a class="" href="p4-class.html" data-fa="ساخت کلاس و متد" data-en="Writing a class and methods">ساخت کلاس و متد</a><a class="" href="p4-inherit.html" data-fa="وراثت" data-en="Inheritance">وراثت</a><a class="" href="p4-protect.html" data-fa="داده معتبر و استفاده داخلی" data-en="Valid data and internal use">داده معتبر و استفاده داخلی</a><a class="" href="p4-assess-oop.html" data-fa="ارزشیابی برنامه شیءگرا" data-en="Object-oriented assessment">ارزشیابی برنامه شیءگرا</a><p class="unit" data-fa="فایل و توسعه" data-en="Files and development">فایل و توسعه</p><a class="" href="p4-files.html" data-fa="خواندن و نوشتن فایل متنی" data-en="Reading and writing text files">خواندن و نوشتن فایل متنی</a><a class="" href="p4-errors.html" data-fa="پیمایش فایل و مدیریت خطا" data-en="Walking a file and handling errors">پیمایش فایل و مدیریت خطا</a><a class="" href="p4-json.html" data-fa="چند فایل و JSON" data-en="Several files and JSON">چند فایل و JSON</a><a class="" href="p4-assess-files.html" data-fa="ارزشیابی کار با فایل" data-en="Files assessment">ارزشیابی کار با فایل</a><p class="mod" data-fa="پودمان ۵: برنامه‌نویسی جنگو" data-en="Module 5: Django">پودمان ۵: برنامه‌نویسی جنگو</p><p class="unit" data-fa="معرفی پودمان" data-en="Module introduction">معرفی پودمان</p><a class="" href="p5-intro.html" data-fa="معرفی پودمان جنگو" data-en="Introducing the Django module">معرفی پودمان جنگو</a><p class="unit" data-fa="ایجاد وب‌اپلیکیشن" data-en="Creating the web app">ایجاد وب‌اپلیکیشن</p><a class="" href="p5-what.html" data-fa="جنگو چیست و نصب" data-en="What Django is, and installing it">جنگو چیست و نصب</a><a class="" href="p5-project.html" data-fa="پروژه، اپ و اولین view" data-en="Project, app, and the first view">پروژه، اپ و اولین view</a><a class="" href="p5-template.html" data-fa="قالب و دمای واقعی" data-en="Templates and a real temperature">قالب و دمای واقعی</a><a class="" href="p5-assess-create.html" data-fa="ارزشیابی ایجاد وب‌اپلیکیشن" data-en="Creating-the-app assessment">ارزشیابی ایجاد وب‌اپلیکیشن</a><p class="unit" data-fa="توسعه وب‌اپلیکیشن" data-en="Developing the web app">توسعه وب‌اپلیکیشن</p><a class="" href="p5-model.html" data-fa="مدل شهر و پنل ادمین" data-en="The city model and the admin">مدل شهر و پنل ادمین</a><a class="" href="p5-list.html" data-fa="خواندن شهرها و نمایش فهرست" data-en="Reading cities and showing the list">خواندن شهرها و نمایش فهرست</a><a class="" href="p5-auth.html" data-fa="ورود و خروج" data-en="Sign-in and sign-out">ورود و خروج</a><a class="" href="p5-crud.html" data-fa="افزودن و حذف شهر" data-en="Adding and deleting a city">افزودن و حذف شهر</a><a class="" href="p5-bugs.html" data-fa="باگ و امنیت" data-en="Bugs and security">باگ و امنیت</a><p class="mod" data-fa="پایان کتاب" data-en="Back of the book">پایان کتاب</p><p class="unit" data-fa="منابع" data-en="References">منابع</p><a class="" href="refs.html" data-fa="منابع کتاب" data-en="Book references">منابع کتاب</a></nav></details>
+    <div class="main">
+      <h1 class="section-title" data-fa="کلاس‌های واکنش‌گرا" data-en="Responsive classes">کلاس‌های واکنش‌گرا</h1><article class="lesson" lang="fa" dir="rtl" data-lang-block="fa"><p class="page-mark">صفحه ۱۶۶</p>
+<p>کار با کلاس‌های واکنش‌گرای <code>Bootstrap</code></p>
+<h3 id="_1">کار کارگاهی</h3>
+<p>در این کارگاه با به‌کارگیری کلاس‌های بوت‌استرپ تغییراتی را در صفحه <code>index.html</code> ایجاد خواهید کرد.</p>
+<p>بخش اول استفاده از کلاس‌های <code>row-cols:</code> در کارگاه قبل اندازه ستون‌ها توسط کلاس <code>col-sm-3</code> مشخص شد. این کلاس باعث می‌شود که در دستگاه‌های بزرگ‌تر از 576 پیکسل، ستون‌ها در کنار هم نمایش داده شوند و در دستگاه‌های کوچک‌تر، به‌صورت پشته (<code>stack</code>) روی هم قرار گیرند.</p>
+<p>بوت استرپ دارای کلاس واکنش‌گرای دیگری با نام <code>row-cols</code> است که امکان تعیین تعداد ستون‌ها (در هر ردیف) را در دستگاه‌های مختلف فراهم می‌کند؛ به‌گونه‌ای که اندازه ستون‌ها در عنصر <code>row</code> مشخص می‌شود، نه در عناصر <code>.col</code> جدول زیر نحوۀ استفاده از این دو روش را نمایش می‌دهد.</p>
+<p>روش تعیین اندازه ستون</p>
+<h3 id="_2">توضیحات</h3>
+<p><img alt="تصویر کتاب" src="../images/p172-01.png" /></p>
+<p>تعیین اندازۀ ستون در</p>
+<p>این کد یک سطر (<code>row</code>) با دو ستون (<code>col-6</code>) ایجاد می‌کند. هر ستون نیمی از</p>
+<p>عناصر <code>col</code></p>
+<p>٦ ) را اشغال می‌نماید.</p>
+<p>__</p>
+<p>پهنای سطر (٢١</p>
+<p><code>B</code></p>
+<p><code>A</code></p>
+<p><img alt="تصویر کتاب" src="../images/p172-02.png" /></p>
+<p><code>B</code></p>
+<p><code>A</code></p>
+<p><code>D</code></p>
+<p><code>C</code></p>
+<p>تعیین اندازه ستون در عناصر <code>row</code></p>
+<p>کلاس <code>row-cols-2</code> باعث ایجاد 2 ستون در هر سطر می‌گردد. در کد فوق 4 عنصر <code>col</code> وجود دارد؛ بنابراین دو سطر، هر یک حاوی دو ستون تولید می‌شود.</p>
+<p>در صورت افزودن تعداد بیشتری از <code>col</code>، ستون‌ها به ردیف بعدی منتقل می‌شوند.</p>
+<p><code>Bootstrap</code> به‌طور خودکار عرض ستون‌ها را تنظیم می‌کند؛ بنابراین نیازی به تعیین اندازه دستی برای هر ستون ندارید.</p>
+<hr />
+<p class="page-mark">صفحه ۱۶۷</p>
+<p>1 در فایل <code>index.html</code> کدهای زیر را بعد از جدیدترین محصولات اضافه کنید:</p>
+<p><img alt="تصویر کتاب" src="../images/p173-01.png" /></p>
+<p>فایل را ذخیره کنید و نتیجه را در مرورگر بررسی کنید. سپس مراحل زیر را انجام دهید و بعد از هر مرحله، نتیجه را مشاهده کنید.</p>
+<p>2 برای تمام تصاویر از کلاس‌های <code>border</code>، <code>border-4</code> و <code>rounded-circle</code> استفاده کنید تا تصاویر به شکل گرد و دارای خط دور باشند.</p>
+<p>3 برای هر کلاس <code>col</code> کلاس <code>mb-3</code> را اضافه کنید تا تصاویر در نمای موبایل از تصویر زیرین خود فاصله بگیرند.</p>
+<p>4 برای تنظیم اندازه تصویر، استایل شکل زیر را به فایل <code>styles.css</code> اضافه کنید.</p>
+<p><img alt="تصویر کتاب" src="../images/p173-02.png" /></p>
+<p>عنوان هر محصول را داخل برچسب<code>&lt;h3&gt;</code> قرار دهید:</p>
+<p><img alt="تصویر کتاب" src="../images/p173-03.png" /></p>
+<p>5 برای تنظیم اندازه متن <code>h3</code> و فاصله آن از تصویر بالا، استایل شکل زیر را بنویسید:</p>
+<p><img alt="تصویر کتاب" src="../images/p173-04.png" /></p>
+<hr />
+<p class="page-mark">صفحه ۱۶۸</p>
+<p>انتظار می‌رود که بعد از سرانجام مراحل قبل خروجی زیر در نمای دسکتاپ حاصل شود.</p>
+<p><img alt="تصویر کتاب" src="../images/p174-01.png" /></p>
+<p>6 برای مشاهده وضعیت تصاویر در دستگاه‌های مختلف، کلید <code>f12</code> را بفشارید. در پاسخ به پنجره پیغام، دکمه <code>Open</code> <code>Dev</code> <code>tools</code> را انتخاب کنید. مطابق تصویر زیر از نوار ابزار بالای صفحه دکمه <code>Toggle</code> <code>Device</code> را انتخاب کنید:</p>
+<p><img alt="تصویر کتاب" src="../images/p174-02.png" /></p>
+<p>7 از کشوی <code>Dimension</code> نوع دستگاه را انتخاب کنید و سپس وضعیت تصاویر را مشاهده کنید.</p>
+<p><img alt="تصویر کتاب" src="../images/p174-03.png" /></p>
+<p>8 در صورت تمایل گزینه <code>Responsive</code> را از درون کشو انتخاب کنید و سپس با درگ کردن لبه سمت راست دستگاه، پهنای آن را به دلخواه تغییر دهید.</p>
+<p>عملکرد کلاس‌های <code>row-cols</code> در کارگاه فوق به شرح زیر است:</p>
+<p><code>row-cols-sm-1:</code> در دستگاه‌هایی با پهنای 576 پیکسل و بیشتر، تصاویر محصولات در 2 ستون نمایش داده می‌شود.</p>
+<p><code>row-cols-lg-2:</code> در دستگاه‌هایی با پهنای 992 پیکسل و بیشتر، تصاویر محصولات در 4 ستون نمایش داده می‌شود.</p>
+<p>بخش دوم استفاده از کلاس‌های <code>container</code> کلاس‌های <code>container</code> واکنش‌گرا هستند و پهنای متفاوتی را در دستگاه‌های مختلف برای عنصر نگهدارنده ایجاد می‌کنند.</p>
+<hr />
+<p class="page-mark">صفحه ۱۶۹</p>
+<p>کلاس‌های <code>container</code> و پهنای آنها در دستگاه‌های مختلف</p>
+<div class="code-wrap" dir="ltr"><pre><code>XX-Large
+X-large
+</code></pre></div>
+<p><code>Large</code></p>
+<div class="code-wrap" dir="ltr"><pre><code>Medium
+</code></pre></div>
+<p><code>Small</code></p>
+<div class="code-wrap" dir="ltr"><pre><code>Extra small
+</code></pre></div>
+<p><code>1400px</code>≤</p>
+<p><code>1200px</code>≤</p>
+<p><code>992px</code>≤</p>
+<p><code>768px</code>≤</p>
+<p><code>576px</code>≤</p>
+<p><code>576px&lt;</code></p>
+<p><code>1320px</code></p>
+<p><code>1140px</code></p>
+<p><code>960px</code></p>
+<p><code>720px</code></p>
+<p><code>540px</code></p>
+<p>%100</p>
+<div class="code-wrap" dir="ltr"><pre><code>.Container
+</code></pre></div>
+<p><code>1320px</code></p>
+<p><code>1140px</code></p>
+<p><code>960px</code></p>
+<p><code>720px</code></p>
+<p><code>540px</code></p>
+<p>%100</p>
+<div class="code-wrap" dir="ltr"><pre><code>.Container-sm
+</code></pre></div>
+<p><code>1320px</code></p>
+<p><code>1140px</code></p>
+<p><code>960px</code></p>
+<p><code>720px</code></p>
+<p>%100</p>
+<p>%100</p>
+<div class="code-wrap" dir="ltr"><pre><code>.Container-md
+</code></pre></div>
+<p><code>1320px</code></p>
+<p><code>1140px</code></p>
+<p><code>960px</code></p>
+<p>%100</p>
+<p>%100</p>
+<p>%100</p>
+<div class="code-wrap" dir="ltr"><pre><code>.Container-lg
+</code></pre></div>
+<p><code>1320px</code></p>
+<p><code>1140px</code></p>
+<p>%100</p>
+<p>%100</p>
+<p>%100</p>
+<p>%100</p>
+<div class="code-wrap" dir="ltr"><pre><code>.Container-xl
+</code></pre></div>
+<p><code>1320px</code></p>
+<p>%100</p>
+<p>%100</p>
+<p>%100</p>
+<p>%100</p>
+<p>%100</p>
+<div class="code-wrap" dir="ltr"><pre><code>.Container-xxl
+</code></pre></div>
+<p>%100</p>
+<p>%100</p>
+<p>%100</p>
+<p>%100</p>
+<p>%100</p>
+<p>%100</p>
+<div class="code-wrap" dir="ltr"><pre><code>.Container-fluid
+</code></pre></div>
+<p>در کارگاه «طراحی بخش معرفی فروشگاه» پهنای عنصر <code>article</code> در دستگاه دسکتاپ و موبایل به ترتیب 75% و 90% تعیین شد. در اینجا قصد داریم به‌جای استفاده از کدهای <code>CSS</code> از کلاس‌های واکنش‌گرای <code>container</code> استفاده کنیم. بدین منظور مراحل زیر را دنبال کنید:</p>
+<p>در عنصر <code>article</code> از کلاس <code>container-sm</code> استفاده کنید:</p>
+<p><img alt="تصویر کتاب" src="../images/p175-01.png" /></p>
+<p>هر دو استایل عنصر <code>article</code> را از فایل <code>styles.css</code> حذف کنید.</p>
+<p>فایل‌های <code>HTML</code> و <code>CSS</code> را ذخیره کنید و نتیجه را در مرورگر بررسی کنید. با این تغییر، پهنای عنصر <code>article</code> برای دستگاه‌هایی با پهنای صفحه 576 پیکسل و بزرگ‌تر، توسط کلاس <code>container</code> تعیین می‌شود و برای دستگاه‌های کوچک‌تر، پهنای عنصر برابر 100% خواهد بود.</p>
+<p>بخش سوم کار با کلاس‌های <code>display</code> در کارگاه «طراحی <code>Toolbar</code>» یک نوار ابزار در بالای صفحه، طراحی شد. گزینه‌های «ثبت نام|ورود» و لوگوی آن در نمای موبایل مخفی شد و در پایین صفحه درون یک لایه جدید با نام <code>bottom-toolbar</code> قرار گرفت. هدف این کارگاه این است که کنترل نمایش/عدم نمایش عناصر لایه‌های <code>toolbar</code> و <code>bottom-toolbar</code> به کلاس‌های <code>*-d</code> سپرده شود و کدهای <code>CSS</code> مربوط به آنها حذف گردد.</p>
+<hr />
+<p class="page-mark">صفحه ۱۷۰</p>
+<p>ابتدا کلاس <code>d-flex</code> و <code>d-lg-none</code> را به مجموعه کلاس‌های عنصر <code>bottom-toolbar</code> اضافه کنید:</p>
+<p><img alt="تصویر کتاب" src="../images/p176-01.png" /></p>
+<p>ویژگی <code>display:none</code> را از مجموعه ویژگی‌های عنصر <code>.bottom-toolbar</code> در فایل <code>styles.css</code> حذف کنید.</p>
+<p>در قانون <code>media</code>، انتخاب‌گر <code>.bottom-toolbar</code> را حذف کنید. فایل را ذخیره و نتیجه را در مرورگر بررسی کنید.</p>
+<p>برای مخفی کردن دو عنصر «ثبت نام|ورود» و لوگو در پهنای کمتر از 992 پیکسل، کلاس‌های <code>d-none</code> و <code>d-lg-block</code> را به عناصر <code>signin-signup</code> و <code>logo</code> در عنصر <code>toolbar</code> اضافه کنید:</p>
+<p><img alt="تصویر کتاب" src="../images/p176-02.png" /></p>
+<p>بعد از اضافه کردن کلاس‌های <code>*-d</code>، استایل زیر را از قانون <code>media</code> حذف کنید.</p>
+<p><img alt="تصویر کتاب" src="../images/p176-03.png" /></p>
+<p>فایل را ذخیره و نتیجه را در مرورگر بررسی کنید. انتظار می‌رود که در دستگاه‌های 992 پیکسل و بزرگ‌تر، چهار عنصر لوگو، کادر جست‌وجو، گزینه «ورود|ثبت نام» و سبد خرید حضور داشته باشند، اما در دستگاه‌های کوچک‌تر، دو عنصر لوگو و «ورود|ثبت نام» مخفی شوند.</p>
+<p>برای کنترل مقدار فضای اضافی در اطراف عنصر <code>Toolbar</code>، کلاس <code>p-3</code> را به عنصر <code>toolbar</code> اختصاص دهید و سپس ویژگی <code>padding</code> را در کلاس <code>toolbar</code> حذف کنید. از کشوی <code>Dimension</code> در مرورگر، گزینۀ <code>Responsive</code> را انتخاب کنید و سپس نتیجۀ کار را بررسی کنید.</p>
+<p><img alt="تصویر کتاب" src="../images/p176-04.png" /></p>
+<p>بخش چهارم ایجاد تصویر واکنش گرا هدف این بخش اضافه کردن یک بنر به بالای عنصر <code>toolbar</code> است، به‌طوری‌که تصویر بنر نسبت به پهنای صفحه واکنش‌گرا باشد. برای این کار تصویر <code>top-banner.jpg</code> را در ابتدای برچسب <code>&lt;header&gt;</code> درج کنید و کلاس <code>img-fluid</code> را برای آن استفاده کنید:</p>
+<div class="code-wrap" dir="ltr"><pre><code>&gt;&quot;class=&quot;img-fluid w-100 &quot;img src=&quot;./images/top-banner.gif&lt;
+</code></pre></div>
+<p>کلاس <code>img-fluid</code> یکی از کلاس‌های مهم <code>Bootstrap</code> برای واکنش‌گرا کردن تصاویر است و باعث می‌شود که تصویر متناسب با اندازۀ والدش تغییر اندازه دهد؛ از عرض <code>container</code> بزرگ‌تر نشود و همچنین در موبایل، تبلت و دسکتاپ درست نمایش داده شود.</p>
+<hr />
+<p class="page-mark">صفحه ۱۷۱</p>
+<p>البته ایجاد تصویر واکنش‌گرا به استفاده از کلاس <code>img-fluid</code> خلاصه نمی‌شود. بهتر است در خصوص تصاویری که تمام پهنا را اشغال می‌کنند، نسخۀ دیگری از تصویر برای دستگاه‌های کوچک‌تر طراحی شود. در مثال زیر سه نسخه از تصویر بنر برای موبایل، تبلت و دسکتاپ استفاده شده است. مرورگر با توجه به پهنای صفحه، تصویر مناسب را برای نمایش انتخاب می‌کند:</p>
+<p><img alt="تصویر کتاب" src="../images/p177-01.png" /></p>
+<p>اکثر مرور‌گرهای مدرن امروزی از برچسب <code>picture</code> پشتیبانی می‌کنند؛ بنابراین در مرورگرهای مدرن، تصاویری که در برچسب‌های <code>&lt;source&gt;</code> تعیین شده است، نمایش داده می‌شوند. در مرورگرهای قدیمی مانند اینترنت اکسپلورر 11 و قدیمی‌تر، تصویر پیش‌فرض ظاهر می‌شود. در کد شکل بالا، تصویر پیش‌فرض در برچسب <code>&lt;img&gt;</code> مشخص شده است.</p>
+<h3 id="_3">فعالیت</h3>
+<p>سه تصویر بنر در سه اندازه مختلف، برای نمایش در موبایل، تبلت و دسکتاپ طراحی‌کنید و کدنویسی نمایش آنها را مطابق با کد فوق انجام دهید. انتظار می‌رود خروجی به صورت شکل زیر حاصل گردد.</p>
+<p><img alt="تصویر کتاب" src="../images/p177-02.png" /></p>
+<p>توجه</p>
+<p>چنانچه لبه‌های بنر مماس با لبه‌های مرورگر نیست، مقدار <code>padding</code> و <code>margin</code> را برای عنصر <code>header</code> برابر صفر قرار دهید.</p>
+<div class="code-wrap" dir="ltr"><pre><code>اجزای رابط کاربری (User Interface Components)
+</code></pre></div>
+<p>کاربران صفحات وب توسط اجزای مختلفی با صفحه وب تعامل و ارتباط دارند. این اجزا شامل دکمه‌ها، منوها، نوار جست‌وجو، آیکن‌ها، فرم‌ها، تصاویر، رنگ‌ها، فونت‌ها و سایر عناصر بصری هستند که تجربه کاربری را شکل می‌دهند. بوت‌استرپ دارای مجموعه‌ای از کلاس‌های آماده برای اجزای رابط کاربری مختلف مانند نوارناوبری، فرم، دکمه، منوی آکاردئون و... است که در این بخش به آنها پرداخته می‌شود.</p>
+<hr />
+<p class="page-mark">صفحه ۱۷۲</p>
+<div class="code-wrap" dir="ltr"><pre><code>Navbar
+</code></pre></div>
+<p>کلاس <code>navbar</code> برای ایجاد نوار ناوبری (<code>Navigation</code> <code>Bar</code>) یا منوی بالای صفحه استفاده می‌شود. این کلاس ب‌ههمراه کلاس‌های دیگری همچون <code>*-navbar-expand</code> برای تعیین رفتار و ظاهر نوار ناوبری در اندازه‌های مختلف صفحه نمایش به کار می‌رود. مجموعۀ کلاس‌های <code>Navbar</code> به شرح زیر است:</p>
+<p><code>navbar:</code> کلاس اصلی برای ایجاد نوار ناوبری است.</p>
+<p><code>*-navbar-expand:</code> این کلاس‌ها تعیین می‌کنند که نوار ناوبری در چه پهنایی به صورت افقی ظاهر شود و در چه پهنایی جمع شود. کاراکتر * می‌تواند جایگزین عبارات <code>sm</code>، <code>md</code>، <code>lg</code> یا <code>xl</code> شود. به‌طور مثال استفاده از <code>navbar-expand-sm</code> باعث می‌شود که نوار ناوبری در دستگاه‌هایی با عرض 576 پیکسل و بیشتر، به‌صورت افقی ظاهر شود و در دستگاه‌های کوچک‌تر جمع شده و به شکل دکمه همبرگری (☰) نمایش داده شود.</p>
+<p><code>navbar-brand:</code> برای نمایش لوگو یا نام برند در نوار ناوبری استفاده می‌شود.</p>
+<p><code>navbar-nav:</code> برای ایجاد لیست ناوبری (<code>Navigation</code> <code>list</code>) در نوار ناوبری استفاده می‌شود.</p>
+<p><code>nav-link:</code> برای لینک‌های موجود در لیست ناوبری استفاده می‌شود.</p>
+<p><code>navbar-toggler:</code> برای دکمۀ کوچک منو استفاده می‌شود. این دکمه در نمای موبایل ظاهر می‌شود تا کاربر با کلیک روی آن، محتوای منو را مشاهده نماید و با کلیک مجدد منو را ببندد. (دکمه‌ای برای کنترل باز و بسته شدن منو ایجاد می‌کند) <code>navbar-toggler-icon:</code> به منظور نمایش آیکن همبرگر (☰) برای دکمه منو در حالت جمع‌شده به‌کار می‌رود.</p>
+<p><code>navbar-collapse:</code> برای گروه‌بندی و مخفی کردن گزینه‌های منو در دستگاه‌های کوچک استفاده می‌شود.</p>
+<p><code>dropdown:</code> برای ایجاد منوهای کشویی (پایین افتادنی) در نوار ناوبری به‌کار می‌رود.</p>
+<p><code>navbar-light</code> و <code>navbar-dark:</code> برای تعیین رنگ محتوای نوار ناوبری استفاده می‌شود تا خوانایی عناصر درون آن حفظ شود. کلاس <code>navbar-light</code> موجب ایجاد یک نوار ناوبری با پس زمینه روشن و رنگ متن تیره می‌گردد و کلاس<code>navbar-dark</code> یک نوار ناوبری با پس‌زمینۀ تیره و متن‌های روشن ایجاد می‌کند.</p>
+<p>انتخاب صحیح این کلاس‌ها باعث افزایش خوانایی و بهبود تجربه کاربری می‌شود.</p>
+<hr /></article><article class="lesson" lang="en" dir="ltr" data-lang-block="en" hidden><p class="page-mark">Page 166</p>
+<p>Working with Bootstrap responsive classes</p>
+<h3 id="workshop">Workshop</h3>
+<p>In this workshop you will use Bootstrap classes to make changes to the <code>index.html</code> page.</p>
+<p>Part one: using the <code>row-cols</code> classes: In the previous workshop the column sizes were set with the <code>col-sm-3</code> class. That class makes the columns appear side by side on devices wider than 576 pixels, and stack on top of each other on smaller devices.</p>
+<p>Bootstrap has another responsive class named <code>row-cols</code> that lets you set how many columns appear (in each row) on different devices; the column size is set on the <code>row</code> element, not on the <code>.col</code> elements. The table below shows how to use these two methods.</p>
+<p>Method of setting column size</p>
+<h3 id="explanation">Explanation</h3>
+<p><img alt="Book image" src="../images/p172-01.png" /></p>
+<p>Setting column size on</p>
+<p>This code creates a row (<code>row</code>) with two columns (<code>col-6</code>). Each column occupies half of</p>
+<p>the <code>col</code> elements</p>
+<p>6).</p>
+<p>__</p>
+<p>the row width (12</p>
+<p><code>B</code></p>
+<p><code>A</code></p>
+<p><img alt="Book image" src="../images/p172-02.png" /></p>
+<p><code>B</code></p>
+<p><code>A</code></p>
+<p><code>D</code></p>
+<p><code>C</code></p>
+<p>Setting column size on <code>row</code> elements</p>
+<p>The <code>row-cols-2</code> class creates 2 columns in each row. In the code above there are 4 <code>col</code> elements; therefore two rows are produced, each containing two columns.</p>
+<p>If you add more <code>col</code> elements, the columns move to the next row.</p>
+<p><code>Bootstrap</code> automatically adjusts the column widths; therefore you do not need to set the size of each column by hand.</p>
+<hr />
+<p class="page-mark">Page 167</p>
+<p>1 In the <code>index.html</code> file, add the following code after the newest products:</p>
+<p><img alt="Book image" src="../images/p173-01.png" /></p>
+<p>Save the file and check the result in the browser. Then follow the steps below and view the result after each step.</p>
+<p>2 For all images use the <code>border</code>, <code>border-4</code>, and <code>rounded-circle</code> classes so the images are round and have a border.</p>
+<p>3 For each <code>col</code> class add the <code>mb-3</code> class so that in the mobile view the images have space from the image below them.</p>
+<p>4 To set the image size, add the style shown below to the <code>styles.css</code> file.</p>
+<p><img alt="Book image" src="../images/p173-02.png" /></p>
+<p>Place each product title inside an <code>&lt;h3&gt;</code> tag:</p>
+<p><img alt="Book image" src="../images/p173-03.png" /></p>
+<p>5 To set the size of the <code>h3</code> text and its distance from the image above, write the style shown below:</p>
+<p><img alt="Book image" src="../images/p173-04.png" /></p>
+<hr />
+<p class="page-mark">Page 168</p>
+<p>After you finish the previous steps, you are expected to get the output below in the desktop view.</p>
+<p><img alt="Book image" src="../images/p174-01.png" /></p>
+<p>6 To see how the images look on different devices, press the <code>f12</code> key. In response to the message window, choose the Open DevTools button. As in the image below, from the toolbar at the top of the page choose the Toggle Device button:</p>
+<p><img alt="Book image" src="../images/p174-02.png" /></p>
+<p>7 From the <code>Dimension</code> drop-down, choose the device type and then observe the images.</p>
+<p><img alt="Book image" src="../images/p174-03.png" /></p>
+<p>8 If you wish, choose the <code>Responsive</code> option from the drop-down and then drag the right edge of the device to change its width as you like.</p>
+<p>How the <code>row-cols</code> classes work in the workshop above is as follows:</p>
+<p><code>row-cols-sm-1:</code> On devices with a width of 576 pixels and more, the product images are shown in 2 columns.</p>
+<p><code>row-cols-lg-2:</code> On devices with a width of 992 pixels and more, the product images are shown in 4 columns.</p>
+<p>Part two: using the <code>container</code> classes. The <code>container</code> classes are responsive and create different widths for the container element on different devices.</p>
+<hr />
+<p class="page-mark">Page 169</p>
+<p><code>container</code> classes and their widths on different devices</p>
+<div class="code-wrap" dir="ltr"><pre><code>XX-Large
+X-large
+</code></pre></div>
+<p><code>Large</code></p>
+<div class="code-wrap" dir="ltr"><pre><code>Medium
+</code></pre></div>
+<p><code>Small</code></p>
+<div class="code-wrap" dir="ltr"><pre><code>Extra small
+</code></pre></div>
+<p><code>1400px</code>≤</p>
+<p><code>1200px</code>≤</p>
+<p><code>992px</code>≤</p>
+<p><code>768px</code>≤</p>
+<p><code>576px</code>≤</p>
+<p><code>576px&lt;</code></p>
+<p><code>1320px</code></p>
+<p><code>1140px</code></p>
+<p><code>960px</code></p>
+<p><code>720px</code></p>
+<p><code>540px</code></p>
+<p>100%</p>
+<div class="code-wrap" dir="ltr"><pre><code>.Container
+</code></pre></div>
+<p><code>1320px</code></p>
+<p><code>1140px</code></p>
+<p><code>960px</code></p>
+<p><code>720px</code></p>
+<p><code>540px</code></p>
+<p>100%</p>
+<div class="code-wrap" dir="ltr"><pre><code>.Container-sm
+</code></pre></div>
+<p><code>1320px</code></p>
+<p><code>1140px</code></p>
+<p><code>960px</code></p>
+<p><code>720px</code></p>
+<p>100%</p>
+<p>100%</p>
+<div class="code-wrap" dir="ltr"><pre><code>.Container-md
+</code></pre></div>
+<p><code>1320px</code></p>
+<p><code>1140px</code></p>
+<p><code>960px</code></p>
+<p>100%</p>
+<p>100%</p>
+<p>100%</p>
+<div class="code-wrap" dir="ltr"><pre><code>.Container-lg
+</code></pre></div>
+<p><code>1320px</code></p>
+<p><code>1140px</code></p>
+<p>100%</p>
+<p>100%</p>
+<p>100%</p>
+<p>100%</p>
+<div class="code-wrap" dir="ltr"><pre><code>.Container-xl
+</code></pre></div>
+<p><code>1320px</code></p>
+<p>100%</p>
+<p>100%</p>
+<p>100%</p>
+<p>100%</p>
+<p>100%</p>
+<div class="code-wrap" dir="ltr"><pre><code>.Container-xxl
+</code></pre></div>
+<p>100%</p>
+<p>100%</p>
+<p>100%</p>
+<p>100%</p>
+<p>100%</p>
+<p>100%</p>
+<div class="code-wrap" dir="ltr"><pre><code>.Container-fluid
+</code></pre></div>
+<p>In the “Designing the store introduction section” workshop, the width of the <code>article</code> element was set to 75% and 90% on desktop and mobile devices, respectively. Here you will use responsive <code>container</code> classes instead of <code>CSS</code> code. Follow the steps below:</p>
+<p>On the <code>article</code> element use the <code>container-sm</code> class:</p>
+<p><img alt="Book image" src="../images/p175-01.png" /></p>
+<p>Remove both styles for the <code>article</code> element from the <code>styles.css</code> file.</p>
+<p>Save the <code>HTML</code> and <code>CSS</code> files and check the result in the browser. With this change, the width of the <code>article</code> element for devices with a page width of 576 pixels and larger is set by the <code>container</code> class, and for smaller devices the element width will be 100%.</p>
+<p>Part three: working with the <code>display</code> classes. In the “Designing the <code>Toolbar</code>” workshop, a toolbar was designed at the top of the page. The “Sign up|Sign in” options and its logo were hidden in the mobile view and placed at the bottom of the page inside a new layer named <code>bottom-toolbar</code>. The goal of this workshop is to hand control of showing/hiding the elements of the <code>toolbar</code> and <code>bottom-toolbar</code> layers over to the <code>d-*</code> classes and remove the related <code>CSS</code> code.</p>
+<hr />
+<p class="page-mark">Page 170</p>
+<p>First add the <code>d-flex</code> and <code>d-lg-none</code> classes to the set of classes on the <code>bottom-toolbar</code> element:</p>
+<p><img alt="Book image" src="../images/p176-01.png" /></p>
+<p>Remove the <code>display:none</code> property from the set of properties of the <code>.bottom-toolbar</code> element in the <code>styles.css</code> file.</p>
+<p>In the <code>media</code> rule, remove the <code>.bottom-toolbar</code> selector. Save the file and check the result in the browser.</p>
+<p>To hide the two “Sign up|Sign in” and logo elements at widths less than 992 pixels, add the <code>d-none</code> and <code>d-lg-block</code> classes to the <code>signin-signup</code> and <code>logo</code> elements inside the <code>toolbar</code> element:</p>
+<p><img alt="Book image" src="../images/p176-02.png" /></p>
+<p>After adding the <code>d-*</code> classes, remove the style below from the <code>media</code> rule.</p>
+<p><img alt="Book image" src="../images/p176-03.png" /></p>
+<p>Save the file and check the result in the browser. You are expected that on devices 992 pixels and larger, the four elements logo, search box, “Sign in|Sign up” option, and shopping cart are present, but on smaller devices the logo and “Sign in|Sign up” elements are hidden.</p>
+<p>To control the amount of extra space around the <code>Toolbar</code> element, assign the <code>p-3</code> class to the <code>toolbar</code> element and then remove the <code>padding</code> property from the <code>toolbar</code> class. From the <code>Dimension</code> drop-down in the browser, choose the <code>Responsive</code> option and then check the result.</p>
+<p><img alt="Book image" src="../images/p176-04.png" /></p>
+<p>Part four: creating a responsive image. The goal of this part is to add a banner above the <code>toolbar</code> element so that the banner image is responsive to the page width. To do this, insert the <code>top-banner.jpg</code> image at the beginning of the <code>&lt;header&gt;</code> tag and use the <code>img-fluid</code> class for it:</p>
+<div class="code-wrap" dir="ltr"><pre><code>&gt;&quot;class=&quot;img-fluid w-100 &quot;img src=&quot;./images/top-banner.gif&lt;
+</code></pre></div>
+<p>The <code>img-fluid</code> class is one of the important <code>Bootstrap</code> classes for making images responsive; it makes the image resize to match its parent, not become wider than the <code>container</code>, and display correctly on mobile, tablet, and desktop.</p>
+<hr />
+<p class="page-mark">Page 171</p>
+<p>Of course, creating a responsive image is not limited to using the <code>img-fluid</code> class. For images that fill the full width, it is better to design another version of the image for smaller devices. In the example below, three versions of the banner image are used for mobile, tablet, and desktop. Based on the page width, the browser chooses the appropriate image to display:</p>
+<p><img alt="Book image" src="../images/p177-01.png" /></p>
+<p>Most modern browsers today support the <code>picture</code> tag; therefore in modern browsers, the images set in the <code>&lt;source&gt;</code> tags are displayed. In older browsers such as Internet Explorer 11 and earlier, the default image appears. In the code in the figure above, the default image is specified in the <code>&lt;img&gt;</code> tag.</p>
+<h3 id="activity">Activity</h3>
+<p>Design three banner images in three different sizes for display on mobile, tablet, and desktop, and write the display code for them according to the code above. You are expected to get an output like the figure below.</p>
+<p><img alt="Book image" src="../images/p177-02.png" /></p>
+<p>Attention</p>
+<p>If the edges of the banner are not flush with the edges of the browser, set the <code>padding</code> and <code>margin</code> values for the <code>header</code> element to zero.</p>
+<div class="code-wrap" dir="ltr"><pre><code>اجزای رابط کاربری (User Interface Components)
+</code></pre></div>
+<p>Users of web pages interact with the page through various components. These components include buttons, menus, search bars, icons, forms, images, colors, fonts, and other visual elements that shape the user experience. Bootstrap has a set of ready-made classes for various user interface components such as the navbar, form, button, accordion menu, and so on, which are covered in this section.</p>
+<hr />
+<p class="page-mark">Page 172</p>
+<div class="code-wrap" dir="ltr"><pre><code>Navbar
+</code></pre></div>
+<p>The <code>navbar</code> class is used to create a navigation bar (<code>Navigation</code> <code>Bar</code>) or the menu at the top of the page. This class is used together with other classes such as <code>navbar-expand-*</code> to set the behavior and appearance of the navigation bar at different screen sizes. The set of <code>Navbar</code> classes is as follows:</p>
+<p><code>navbar:</code> The main class for creating a navigation bar.</p>
+<p><code>navbar-expand-*:</code> These classes determine at what width the navigation bar appears horizontally and at what width it collapses. The * character can be replaced with <code>sm</code>, <code>md</code>, <code>lg</code>, or <code>xl</code>. For example, using <code>navbar-expand-sm</code> makes the navigation bar appear horizontally on devices with a width of 576 pixels and more, and on smaller devices it collapses and is shown as a hamburger button (☰).</p>
+<p><code>navbar-brand:</code> Used to display a logo or brand name in the navigation bar.</p>
+<p><code>navbar-nav:</code> Used to create a navigation list (<code>Navigation</code> <code>list</code>) in the navigation bar.</p>
+<p><code>nav-link:</code> Used for the links in the navigation list.</p>
+<p><code>navbar-toggler:</code> Used for the small menu button. This button appears in the mobile view so the user can click it to see the menu content and click again to close the menu. (It creates a button to control opening and closing the menu.) <code>navbar-toggler-icon:</code> Used to show the hamburger icon (☰) for the menu button in the collapsed state.</p>
+<p><code>navbar-collapse:</code> Used to group and hide the menu options on small devices.</p>
+<p><code>dropdown:</code> Used to create drop-down menus in the navigation bar.</p>
+<p><code>navbar-light</code> and <code>navbar-dark:</code> Used to set the color of the navigation bar content so that the readability of the elements inside it is preserved. The <code>navbar-light</code> class creates a navigation bar with a light background and dark text color, and the <code>navbar-dark</code> class creates a navigation bar with a dark background and light text.</p>
+<p>Choosing these classes correctly increases readability and improves the user experience.</p>
+<hr /></article>
+      <aside class="extra">
+        <h2 data-fa="تمرین این بخش" data-en="Exercises for this section">تمرین این بخش</h2>
+        <p class="extra-note" data-fa="این تمرین‌ها و پیوندها اضافه بر متن کتاب‌اند." data-en="These exercises and links are in addition to the book.">این تمرین‌ها و پیوندها اضافه بر متن کتاب‌اند.</p>
+        <ol><li data-fa="بلوک تازه‌ترین محصول‌ها را در یک container بساز و تصویر هر محصول را با عرض صفحه جمع و باز کن." data-en="Build a newest-products block inside a container, and make each product image shrink and grow with the page width.">بلوک تازه‌ترین محصول‌ها را در یک container بساز و تصویر هر محصول را با عرض صفحه جمع و باز کن.</li><li data-fa="یک نوار پایین مخصوص موبایل بساز که از عرض بزرگ به بالا دیده نشود." data-en="Build a bottom bar for phones that disappears from the large breakpoint upward.">یک نوار پایین مخصوص موبایل بساز که از عرض بزرگ به بالا دیده نشود.</li></ol>
+        <h2 data-fa="پیوند مفید" data-en="Useful link">پیوند مفید</h2><ul><li><a href="https://getbootstrap.com/docs/5.3/layout/containers/" data-fa="کانتینرها" data-en="Containers">کانتینرها</a></li></ul>
+      </aside>
+    <nav class="pager"><a rel="prev" class="prev" href="p3-bs-grid.html"><span class="pager-word" data-fa="قبلی" data-en="Previous">قبلی</span><span class="pager-name" data-fa="شبکه Grid" data-en="The grid">شبکه Grid</span></a><a rel="next" class="next" href="p3-bs-nav.html"><span class="pager-word" data-fa="بعدی" data-en="Next">بعدی</span><span class="pager-name" data-fa="نوار ناوبری و جزئیات محصول" data-en="Navbar and product details">نوار ناوبری و جزئیات محصول</span></a></nav>
+    </div>
+  </div>
+  <script src="../assets/search-index.js?v=4"></script>
+  <script src="../assets/app.js?v=4"></script>
+</body>
+</html>

@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title data-fa="جاوااسکریپت در صفحه وب" data-en="JavaScript on the page">جاوااسکریپت در صفحه وب</title>
+  <link rel="icon" href="../assets/favicon.svg">
+  <link rel="stylesheet" href="../assets/style.css?v=4">
+</head>
+<body data-root="../">
+  <header class="top">
+    <a class="brand" href="../index.html">
+      <span data-fa="طراح سایت" data-en="Site Design">طراح سایت</span>
+      <small data-fa="پایه یازدهم" data-en="Grade 11">پایه یازدهم</small>
+    </a>
+    <div class="search-wrap">
+      <input id="q" type="search" autocomplete="off"
+        data-fa-placeholder="جستجو در درس‌ها" data-en-placeholder="Search lessons"
+        placeholder="جستجو در درس‌ها">
+      <div id="results" class="results" hidden></div>
+    </div>
+    <a class="download" href="../grade11-offline.zip?v=2" data-fa="دانلود کل سایت" data-en="Download the whole site">دانلود کل سایت</a>
+    <button type="button" id="lang-toggle" class="lang-toggle" dir="ltr" data-lang="fa"
+      aria-label="تغییر زبان">
+      <span data-opt="fa">فا</span>
+      <span data-opt="en">EN</span>
+    </button>
+  </header>
+  <div class="layout">
+    <details class="toc" open><summary><span data-fa="فهرست درس‌ها" data-en="Lesson list">فهرست درس‌ها</span></summary><nav class="side" aria-label="lessons"><p class="mod" data-fa="شروع کتاب" data-en="Opening">شروع کتاب</p><p class="unit" data-fa="فهرست" data-en="Contents">فهرست</p><a class="" href="toc.html" data-fa="فهرست" data-en="Contents">فهرست</a><p class="mod" data-fa="پودمان ۱: برنامه‌نویسی پایتون" data-en="Module 1: Python programming">پودمان ۱: برنامه‌نویسی پایتون</p><p class="unit" data-fa="معرفی پودمان" data-en="Module introduction">معرفی پودمان</p><a class="" href="p1-intro.html" data-fa="معرفی پودمان پایتون" data-en="Introducing the Python module">معرفی پودمان پایتون</a><p class="unit" data-fa="مدل‌سازی داده" data-en="Data modeling">مدل‌سازی داده</p><a class="" href="p1-python.html" data-fa="پایتون و محیط برنامه‌نویسی" data-en="Python and the programming environment">پایتون و محیط برنامه‌نویسی</a><a class="" href="p1-vars.html" data-fa="متغیرها، نوع داده و عملگرها" data-en="Variables, types, and operators">متغیرها، نوع داده و عملگرها</a><a class="" href="p1-cast.html" data-fa="ورودی و تبدیل نوع" data-en="Input and type casting">ورودی و تبدیل نوع</a><a class="" href="p1-lists.html" data-fa="لیست‌ها" data-en="Lists">لیست‌ها</a><a class="" href="p1-if.html" data-fa="شرط‌های ساده" data-en="Simple conditions">شرط‌های ساده</a><a class="" href="p1-elif.html" data-fa="if، elif و else" data-en="if, elif, and else">if، elif و else</a><a class="" href="p1-for.html" data-fa="حلقه for و range" data-en="The for loop and range">حلقه for و range</a><a class="" href="p1-while.html" data-fa="حلقه while و کنترل حلقه" data-en="The while loop and loop control">حلقه while و کنترل حلقه</a><a class="" href="p1-assess-data.html" data-fa="ارزشیابی مدل‌سازی داده" data-en="Data-modeling assessment">ارزشیابی مدل‌سازی داده</a><p class="unit" data-fa="توابع و ماژول‌ها" data-en="Functions and modules">توابع و ماژول‌ها</p><a class="" href="p1-sets.html" data-fa="مجموعه (set)" data-en="Sets">مجموعه (set)</a><a class="" href="p1-dict.html" data-fa="دیکشنری" data-en="Dictionaries">دیکشنری</a><a class="" href="p1-quiz.html" data-fa="پروژه بازی Quiz" data-en="Quiz game project">پروژه بازی Quiz</a><a class="" href="p1-tuple.html" data-fa="تاپل" data-en="Tuples">تاپل</a><a class="" href="p1-func.html" data-fa="تعریف تابع، پارامتر و return" data-en="Defining functions, parameters, and return">تعریف تابع، پارامتر و return</a><a class="" href="p1-func-more.html" data-fa="تمرین تابع و مرتب‌سازی" data-en="Function practice and sorting">تمرین تابع و مرتب‌سازی</a><a class="" href="p1-modules.html" data-fa="ماژول‌ها و تفاوت تابع و متد" data-en="Modules, and functions versus methods">ماژول‌ها و تفاوت تابع و متد</a><a class="" href="p1-assess-func.html" data-fa="ارزشیابی توابع و ماژول‌ها" data-en="Functions and modules assessment">ارزشیابی توابع و ماژول‌ها</a><p class="mod" data-fa="پودمان ۲: صفحات وب ایستا" data-en="Module 2: Static web pages">پودمان ۲: صفحات وب ایستا</p><p class="unit" data-fa="معرفی پودمان" data-en="Module introduction">معرفی پودمان</p><a class="" href="p2-intro.html" data-fa="معرفی پودمان صفحات ایستا" data-en="Introducing static web pages">معرفی پودمان صفحات ایستا</a><p class="unit" data-fa="ساختار با HTML" data-en="Structure with HTML">ساختار با HTML</p><a class="" href="p2-web.html" data-fa="وب چگونه کار می‌کند" data-en="How the web works">وب چگونه کار می‌کند</a><a class="" href="p2-concepts.html" data-fa="مفاهیم طراحی وب و نقشه سایت" data-en="Web-design concepts and the site map">مفاهیم طراحی وب و نقشه سایت</a><a class="" href="p2-tags.html" data-fa="اولین صفحه HTML" data-en="A first HTML page">اولین صفحه HTML</a><a class="" href="p2-text.html" data-fa="متن، لیست و پیوند" data-en="Text, lists, and links">متن، لیست و پیوند</a><a class="" href="p2-img.html" data-fa="تصویر در صفحه" data-en="Images on the page">تصویر در صفحه</a><a class="" href="p2-forms.html" data-fa="فرم‌ها" data-en="Forms">فرم‌ها</a><a class="" href="p2-semantic.html" data-fa="عناصر معنایی" data-en="Semantic elements">عناصر معنایی</a><a class="" href="p2-assess-html.html" data-fa="ارزشیابی HTML" data-en="HTML assessment">ارزشیابی HTML</a><p class="unit" data-fa="ظاهر با CSS" data-en="Appearance with CSS">ظاهر با CSS</p><a class="" href="p2-css-start.html" data-fa="نوشتن CSS" data-en="Writing CSS">نوشتن CSS</a><a class="" href="p2-css-look.html" data-fa="رنگ، پس‌زمینه و انتخاب‌گر" data-en="Color, background, and selectors">رنگ، پس‌زمینه و انتخاب‌گر</a><a class="" href="p2-box.html" data-fa="مدل جعبه‌ای و display" data-en="The box model and display">مدل جعبه‌ای و display</a><a class="" href="p2-flex.html" data-fa="چیدمان با Flexbox" data-en="Layout with Flexbox">چیدمان با Flexbox</a><a class="" href="p2-flex-work.html" data-fa="کارگاه چیدمان صفحه" data-en="Page-layout workshop">کارگاه چیدمان صفحه</a><a class="" href="p2-media.html" data-fa="مدیا کوئری و ارزشیابی CSS" data-en="Media queries and the CSS assessment">مدیا کوئری و ارزشیابی CSS</a><p class="mod" data-fa="پودمان ۳: صفحات وب تعاملی" data-en="Module 3: Interactive web pages">پودمان ۳: صفحات وب تعاملی</p><p class="unit" data-fa="معرفی پودمان" data-en="Module introduction">معرفی پودمان</p><a class="" href="p3-intro.html" data-fa="معرفی پودمان تعاملی" data-en="Introducing the interactive module">معرفی پودمان تعاملی</a><p class="unit" data-fa="بوت‌استرپ" data-en="Bootstrap">بوت‌استرپ</p><a class="" href="p3-bs-start.html" data-fa="فریم‌ورک و شروع بوت‌استرپ" data-en="Frameworks and starting Bootstrap">فریم‌ورک و شروع بوت‌استرپ</a><a class="" href="p3-bs-util.html" data-fa="فاصله، گردی و لیست" data-en="Spacing, rounding, and lists">فاصله، گردی و لیست</a><a class="" href="p3-bs-header.html" data-fa="سرصفحه فروشگاه" data-en="The shop header">سرصفحه فروشگاه</a><a class="" href="p3-bs-grid.html" data-fa="شبکه Grid" data-en="The grid">شبکه Grid</a><a class="" href="p3-bs-rwd.html" data-fa="کلاس‌های واکنش‌گرا" data-en="Responsive classes">کلاس‌های واکنش‌گرا</a><a class="" href="p3-bs-nav.html" data-fa="نوار ناوبری و جزئیات محصول" data-en="Navbar and product details">نوار ناوبری و جزئیات محصول</a><a class="" href="p3-bs-form.html" data-fa="فرم و پنجره Modal" data-en="Forms and modals">فرم و پنجره Modal</a><a class="" href="p3-bs-show.html" data-fa="کاروسل و آکاردئون" data-en="Carousel and accordion">کاروسل و آکاردئون</a><a class="" href="p3-bs-assess.html" data-fa="ارزشیابی بوت‌استرپ" data-en="Bootstrap assessment">ارزشیابی بوت‌استرپ</a><p class="unit" data-fa="جاوااسکریپت" data-en="JavaScript">جاوااسکریپت</p><a class="current" href="p3-js-start.html" data-fa="جاوااسکریپت در صفحه وب" data-en="JavaScript on the page">جاوااسکریپت در صفحه وب</a><a class="" href="p3-js-vars.html" data-fa="متغیر و نوع داده" data-en="Variables and data types">متغیر و نوع داده</a><a class="" href="p3-js-ops.html" data-fa="عملگرها" data-en="Operators">عملگرها</a><a class="" href="p3-js-data.html" data-fa="آرایه و شیء" data-en="Arrays and objects">آرایه و شیء</a><a class="" href="p3-js-if.html" data-fa="شرط در جاوااسکریپت" data-en="Conditions in JavaScript">شرط در جاوااسکریپت</a><a class="" href="p3-js-loops.html" data-fa="حلقه‌ها" data-en="Loops">حلقه‌ها</a><a class="" href="p3-js-func.html" data-fa="تابع‌ها" data-en="Functions">تابع‌ها</a><a class="" href="p3-js-dom.html" data-fa="صفحه، رویداد و اعتبار فرم" data-en="The page, events, and form validation">صفحه، رویداد و اعتبار فرم</a><a class="" href="p3-js-assess.html" data-fa="ارزشیابی جاوااسکریپت" data-en="JavaScript assessment">ارزشیابی جاوااسکریپت</a><p class="mod" data-fa="پودمان ۴: توسعه وب پایتون" data-en="Module 4: Python for the web">پودمان ۴: توسعه وب پایتون</p><p class="unit" data-fa="معرفی پودمان" data-en="Module introduction">معرفی پودمان</p><a class="" href="p4-intro.html" data-fa="معرفی پودمان شیءگرایی" data-en="Introducing the object-oriented module">معرفی پودمان شیءگرایی</a><p class="unit" data-fa="شیءگرایی" data-en="Object-oriented programming">شیءگرایی</p><a class="" href="p4-idea.html" data-fa="ایده شیء و کلاس" data-en="The idea of objects and classes">ایده شیء و کلاس</a><a class="" href="p4-class.html" data-fa="ساخت کلاس و متد" data-en="Writing a class and methods">ساخت کلاس و متد</a><a class="" href="p4-inherit.html" data-fa="وراثت" data-en="Inheritance">وراثت</a><a class="" href="p4-protect.html" data-fa="داده معتبر و استفاده داخلی" data-en="Valid data and internal use">داده معتبر و استفاده داخلی</a><a class="" href="p4-assess-oop.html" data-fa="ارزشیابی برنامه شیءگرا" data-en="Object-oriented assessment">ارزشیابی برنامه شیءگرا</a><p class="unit" data-fa="فایل و توسعه" data-en="Files and development">فایل و توسعه</p><a class="" href="p4-files.html" data-fa="خواندن و نوشتن فایل متنی" data-en="Reading and writing text files">خواندن و نوشتن فایل متنی</a><a class="" href="p4-errors.html" data-fa="پیمایش فایل و مدیریت خطا" data-en="Walking a file and handling errors">پیمایش فایل و مدیریت خطا</a><a class="" href="p4-json.html" data-fa="چند فایل و JSON" data-en="Several files and JSON">چند فایل و JSON</a><a class="" href="p4-assess-files.html" data-fa="ارزشیابی کار با فایل" data-en="Files assessment">ارزشیابی کار با فایل</a><p class="mod" data-fa="پودمان ۵: برنامه‌نویسی جنگو" data-en="Module 5: Django">پودمان ۵: برنامه‌نویسی جنگو</p><p class="unit" data-fa="معرفی پودمان" data-en="Module introduction">معرفی پودمان</p><a class="" href="p5-intro.html" data-fa="معرفی پودمان جنگو" data-en="Introducing the Django module">معرفی پودمان جنگو</a><p class="unit" data-fa="ایجاد وب‌اپلیکیشن" data-en="Creating the web app">ایجاد وب‌اپلیکیشن</p><a class="" href="p5-what.html" data-fa="جنگو چیست و نصب" data-en="What Django is, and installing it">جنگو چیست و نصب</a><a class="" href="p5-project.html" data-fa="پروژه، اپ و اولین view" data-en="Project, app, and the first view">پروژه، اپ و اولین view</a><a class="" href="p5-template.html" data-fa="قالب و دمای واقعی" data-en="Templates and a real temperature">قالب و دمای واقعی</a><a class="" href="p5-assess-create.html" data-fa="ارزشیابی ایجاد وب‌اپلیکیشن" data-en="Creating-the-app assessment">ارزشیابی ایجاد وب‌اپلیکیشن</a><p class="unit" data-fa="توسعه وب‌اپلیکیشن" data-en="Developing the web app">توسعه وب‌اپلیکیشن</p><a class="" href="p5-model.html" data-fa="مدل شهر و پنل ادمین" data-en="The city model and the admin">مدل شهر و پنل ادمین</a><a class="" href="p5-list.html" data-fa="خواندن شهرها و نمایش فهرست" data-en="Reading cities and showing the list">خواندن شهرها و نمایش فهرست</a><a class="" href="p5-auth.html" data-fa="ورود و خروج" data-en="Sign-in and sign-out">ورود و خروج</a><a class="" href="p5-crud.html" data-fa="افزودن و حذف شهر" data-en="Adding and deleting a city">افزودن و حذف شهر</a><a class="" href="p5-bugs.html" data-fa="باگ و امنیت" data-en="Bugs and security">باگ و امنیت</a><p class="mod" data-fa="پایان کتاب" data-en="Back of the book">پایان کتاب</p><p class="unit" data-fa="منابع" data-en="References">منابع</p><a class="" href="refs.html" data-fa="منابع کتاب" data-en="Book references">منابع کتاب</a></nav></details>
+    <div class="main">
+      <h1 class="section-title" data-fa="جاوااسکریپت در صفحه وب" data-en="JavaScript on the page">جاوااسکریپت در صفحه وب</h1><article class="lesson" lang="fa" dir="rtl" data-lang-block="fa"><h1 id="_1">طراحی صفحات وب تعاملی با جاوا اسکریپت</h1>
+<hr />
+<p class="page-mark">صفحه ۱۹۲</p>
+<h2 id="2">واحد یادگیری 2</h2>
+<h2 id="_2">طراحی صفحات وب تعاملی با جاوا اسکریپت</h2>
+<h3 id="_3">آیا تابه‌حال اندیشیده‌اید</h3>
+<p>واکنش به کلیک، حرکت ماوس یا فشردن کلیدهای صفح‌هکلید توسط چه زبانی برنامه‌نویسی م‌یشود؟</p>
+<p>بازی‌های ساده، اسلایدر تصاویر و منوهای بازشونده توسط چه زبانی ساخته م‌یشوند؟</p>
+<p>چگونه م‌یتوان با کلیک روی یک دکمه، عملی را اجرا نمود؟</p>
+<p>آیا امکان دسترسی به عناصر صفحه و تغییر محتوا و ویژگ‌یهای آنها وجود دارد؟</p>
+<p>آیا می‌توان بدون بار گذاری دوباره صفحه، محتوای آن را تغییر داد؟</p>
+<p>چگونه می‌توان اعتبار اطلاعات وارد شده در فرم را پیش از ارسال بررسی نمود؟</p>
+<p>محاسبات عددی و پردازش رشت‌ههای ورودی کاربر چگونه انجام م‌یشود؟</p>
+<h3 id="_4">در پایان از هنرجو انتظار می‌رود</h3>
+<p>با استفاده از متغیرها، عملگرها و ساختارهای کنترلی، منطق موردنیاز برنامه را پیاده‌سازی کند.</p>
+<p>نحوه تعریف وظایف تکراری را در قالب توابع بداند و از توابع داخلی جاوااسکریپت برای انجام سریع‌تر کارها استفاده نماید.</p>
+<p>با استفاده از انتخابگرهای <code>DOM</code>، محتوا و ویژگی‌های عناصر <code>HTML</code> را در پاسخ به رویدادها‌یکاربر تغییر دهد.</p>
+<p>ورود‌یهای کاربر را در فر‌مها اعتبارسنجی کرده و در صورت وجود خطا، پیام مناسب نمایش دهد.</p>
+<h3 id="_5">استاندارد عملکرد</h3>
+<p>بتواند با استفاده از <code>Java</code> <code>Script</code> به‌صورت بهینه و امن، رفتارهای پویا و تعاملی را به صفحات وب اضافه کند و خروجی نهایی را در مرورگرهای مختلف اجرا کند.</p>
+<hr />
+<p class="page-mark">صفحه ۱۹۳</p>
+<h3 id="_6">تعریف جاوا‌اسکریپت</h3>
+<p>در پودمان دوم، بخش‌هایی از صفحه اول یک فروشگاه اینترنتی با استفاده از <code>HTML</code> و <code>CSS</code> طراحی شد.</p>
+<p>این بخش‌ها ماهیتی ایستا دارند و فاقد قابلیت تعامل با کاربر هستند؛ به این معنا که نمی‌توانند در ازای ورودی‌های کاربر (مانند کلیک یا تایپ) واکنش مناسبی (مانند نمایش پیام یا تغییر محتوا) ارائه دهند. در واقع <code>HTML</code> ساختار و محتوای صفحه وب را تعریف می‌کند و <code>CSS</code> سبک نمایش عناصر صفحه را تعیین می‌کند.</p>
+<p><img alt="تصویر کتاب" src="../images/p199-01.png" /></p>
+<p>برای تبدیل ساختار و ظاهر ایستای صفحه به یک تجربه کاربری پویا، تعریف رفتار و منطق صفحه ضروری است. زبان برنامه‌نویسی جاوا‌اسکریپت با فراهم کردن بستر لازم برای مدیریت رویدادها و پردازش داده‌ها، امکان تعامل مستقیم با کاربر و تغییر پویای محتوای صفحه را بدون نیاز به بارگذاری مجدد، میسر می‌سازد.</p>
+<p>به بیان ساده، جاوا‌اسکریپت مسئولیت پاسخ‌گویی به اقدامات کاربر و پویا کردن رفتار عناصر صفحه را بر عهده دارد.</p>
+<p><strong>شکل 1</strong></p>
+<p>جاوا‌اسکریپت یک زبان برنامه‌نویسی سمت کاربر (<code>Front-End</code>) است، به این معنی که برای اجرای اسکریپت‌های آن نیازی به وب‌سرور نیست و کدهای آن توسط مرورگر اجرا می‌شود. با این‌حال جاوا‌اسکریپت قابلیت اجرا روی سرور را به کمک <code>Node.js</code> دارد. جاوا‌اسکریپت یک زبان مفسری است، مفسر جاوا‌اسکریپت یک نرم‌افزار است که کدهای نوشته شده به زبان جاوا‌اسکریپت را تجزیه کرده، سپس آنها را به‌صورت خط به خط خوانده و اجرا می‌کند. مفسرهای جاوا‌اسکریپت ب‌هعنوان بخشی از مرورگرهای وب عمل می‌کنند.</p>
+<p>زبان جاوا‌اسکریپت ب‌هعنوان زبان اصلی سمت کاربر، با امکان دستکاری مستقیم مدل اشیای سند (<code>DOM</code>)، امکان تغییر ساختار و محتوای عناصر صفحه را در پاسخ به اقدامات کاربر فراهم می‌کند. این زبان با پشتیبانی از الگوهای برنامه‌نویسی شیءگرا و رویدادمحور، به توسعه‌دهندگان امکان می‌دهد که منطق‌های پیچیده، اعتبارسنجی فرم‌ها و ارتباطات غیرهم‌زمان با سرور را پیاده‌سازی کنند. همچنین، گسترش دامنه کاربرد این زبان از طریق محیط‌های اجرا مانند <code>Node.js</code>، آن را به ابزاری چندمنظوره برای توسعه وب‌اپلیکیشن‌های تمام‌عیار تبدیل کرده است.</p>
+<p>جاوا‌اسکریپت توانایی اضافه کردن قابلیت‌های مختلفی را به صفحه وب دارد که از جمله آنها می‌توان به موارد زیر اشاره نمود:</p>
+<p>سبد خرید پویا: امکان افزودن، حذف یا تغییر تعداد محصولات در سبد خرید بدون بارگذاری مجدد صفحه و محاسبه خودکار مجموع قیمت.</p>
+<p>اعتبارسنجی فرم‌ها: بررسی صحت اطلاعات وارد شده در فرم ثبت‌نام یا خرید (مانند شماره تماس، کد پستی و ایمیل) قبل از ارسال نهایی.</p>
+<hr />
+<p class="page-mark">صفحه ۱۹۴</p>
+<p>نمایش محصولات به‌صورت پویا: فیلتر کردن محصولات بر اساس دسته‌بندی، قیمت یا برند و مرتب‌سازی لیست محصولات در لحظه.</p>
+<p>اسلایدر و گالری تصاویر: ایجاد حرکت خودکار یا دستی تصاویر محصولات برای نمایش زوایای مختلف یک محصول.</p>
+<p>منوی واکنش‌گرا (<code>Responsive</code>): باز و بسته شدن منوی موبایل با کلیک کاربر و نمایش مناسب در دستگاه‌های مختلف.</p>
+<p>ارسال پیام (<code>Notifciation</code>): نمایش پیام‌های موفقیت (مانند «محصول به سبد اضافه شد») یا خطا به‌صورت پاپ‌آپ (<code>pop</code> <code>up</code>) تاریخ و ساعت: نمایش تاریخ شمسی یا ساعت جاری برای اطلاع‌رسانی به کاربر.</p>
+<p>ذخیره‌سازی موقت: نگهداری اطلاعات ورود یا تنظیمات کاربر در مرورگر (کوکی‌ها) برای تجربه خرید آسان‌تر در بازدیدهای بعدی.</p>
+<div class="code-wrap" dir="ltr"><pre><code>محیط توسعه (Development Environment)
+</code></pre></div>
+<p>برای شروع برنامه‌نویسی با جاوا‌اسکریپت، نیاز به یک محیط توسعه مناسب است که امکان نوشتن کد، تست و اشکال‌زدایی آن را فراهم کند. مراحل آماده‌سازی محیط توسعه جاوا‌اسکریپت به شرح زیر است:</p>
+<p>انتخاب و نصب ویرایشگر: برای کد‌نویسی با جاوا‌اسکریپت می‌توان از ویرایشگرهای مختلفی مانند <code>VSCode</code>،<code>Sublime</code> <code>Text</code> و <code>Atom</code> و <code>++Notepad</code> استفاده نمود. این ویرایشگرها دارای امکاناتی نظیر رنگ‌آمیزی کد، تکمیل خودکار کد و ابزارهای خطایابی (<code>Debug</code>) هستند که به بهبود کارایی و تجربه برنامه‌نویسی کمک می‌کنند.</p>
+<p>انتخاب و نصب مرورگر وب: تمامی مرورگرهای مدرن امروزی همچون <code>Google</code> <code>Chrome</code>، <code>Mozilla</code> <code>Firefox</code>، <code>Microsoft</code> <code>Edge</code> و <code>Safari</code> امکان اجرای کدهای جاوا‌اسکریپت را به‌صورت پیش‌فرض دارند.</p>
+<p>به علاوه، این مرورگرها دارای ابزارهای توسعه‌دهنده (<code>Developer</code> <code>tools</code>) هستند که امکانات بیشتری را برای برنامه‌نویس وب فراهم می‌کنند. این ابزارها که توسط کلید <code>F12</code> فعال می‌شوند، شامل کنسول، بخش <code>Element</code> (حاوی عناصر <code>HTML</code> و استایل عناصر)، <code>Sources</code> (منابع پروژه) و... هستند (شکل2).</p>
+<figure class="shot"><img alt="شکل 2" src="../images/p200-01.png" /><figcaption>شکل 2</figcaption></figure>
+<hr />
+<p class="page-mark">صفحه ۱۹۵</p>
+<p>افزودن جاوا اسکرپیت به یک صفحه وب برای درج کدهای جاوا‌اسکریپت در صفحه وب، از تگ <code>&lt;script&gt;&lt;/script&gt;</code> استفاده می‌شود. این تگ می‌تواند در بخش <code>&lt;head&gt;</code>، <code>&lt;body&gt;</code> مورد استفاده قرار گیرد. محل نوشتن کد جاوا‌اسکریپت وابسته به نوع کد و نیازهای خاص پروژه است. با این‌حال توصیه می‌شود که تا حد امکان این کدها قبل از تگ <code>&lt;body/&gt;</code> نوشته شود. با انجام این کار ابتدا محتوای صفحه به‌طور کامل بارگذاری شده و در معرض دید کاربر قرار می‌گیرد، سپس اسکریپت‌ها اجرا می‌شوند، در نتیجه زمان بارگذاری صفحه کوتاه‌تر می‌شود. کدهای جاوا‌اسکریپت می‌توانند در یک فایل خارجی با پسوند <code>js</code> نوشته شوند. در این صورت فایل <code>js</code> باید به فایل <code>html</code> الحاق شود. در بخش بعد توضیحات بیشتری درباره روش‌های فوق ارائه می‌شود.</p>
+<figure class="shot"><img alt="شکل 3" src="../images/p201-01.png" /><figcaption>شکل 3</figcaption></figure>
+<p>نوشتن کد جاوا‌اسکریپت یک کد جاوا‌اسکریپت حاوی مجموعه‌ای از دستورالعمل‌هاست. هر دستورالعمل یک عملیات مجزا را تعریف می‌کند و با نقطه‌ویرگول (;) از دستور بعدی جدا می‌شود. یکی از ساده‌ترین و پرکاربردترین دستورات جاوا‌اسکریپت، متد<code>console.log</code>() است که برای نمایش خروجی کد در کنسول مرورگر مورد استفاده قرار می‌گیرد. نحوه صحیح به‌کارگیری این دستور به شکل زیر است:</p>
+<p>;)رشته ثابت یا متغیر( <code>console.log</code></p>
+<h3 id="_7">نکته</h3>
+<p>توصیه می‌شود که در انتهای دستورات جاوا‌اسکریپت از علامت سمی‌کالن (;) برای اعلام خاتمه دستور استفاده شود، اما استفاده از آن اجباری نیست.</p>
+<p>کدنویسی با زبان جاوا‌اسکریپت</p>
+<h3 id="_8">کار کارگاهی</h3>
+<p><img alt="تصویر کتاب" src="../images/p201-02.png" /></p>
+<p>1 برای شروع کار پوشه جدیدی با عنوان <code>JavaScript</code> ایجاد کنید و فایل کارگاه‌ها را درون آن ایجاد کنید.</p>
+<p>2 در پوشه <code>JavaScript</code>، یک فایل با نام<code>workshop1.html</code> ایجاد کنید و اسکریپتی مشابه تصویر روبه‌رو درون بخش <code>&lt;body&gt;</code> بنویسید.</p>
+<p><img alt="تصویر کتاب" src="../images/p201-03.png" /></p>
+<p>3 فایل <code>html.workshop1</code> را اجرا کنید و برای مشاهده خروجی کد، کلید <code>F12</code> را در مرورگر بفشارید تا ابزارهای توسعه‌دهنده (<code>Developer</code> <code>Tools</code>) ظاهر شوند. سپس برای مشاهده نتیجه اسکریپت روی دکمه <code>Console</code> کلیک کنید.</p>
+<hr />
+<p class="page-mark">صفحه ۱۹۶</p>
+<p><img alt="تصویر کتاب" src="../images/p202-01.png" /></p>
+<p>4 اسکریپت مشابهی را به بخش <code>&lt;head&gt;</code> اضافه کنید و فایل را ذخیره کنید. انتظار می‌رود که نتیجه کار در کنسول مشابه تصویر روبه‌رو باشد:</p>
+<p><img alt="تصویر کتاب" src="../images/p202-02.png" /></p>
+<p>مرور‌گر وب ابتدا اسکریپت بخش <code>&lt;head&gt;</code> و سپس اسکریپت بخش <code>&lt;body&gt;</code> را اجرا می‌کند. به همین دلیل عبارت <code>Second</code> <code>Statement</code> جلوتر نمایش داده شده است.</p>
+<p>5 یک فایل با نام <code>script.js</code> درون پوشه <code>JavaScript</code> ایجاد کنید و دستور زیر را درون آن بنویسید:</p>
+<p><img alt="تصویر کتاب" src="../images/p202-03.png" /></p>
+<p><img alt="تصویر کتاب" src="../images/p202-04.png" /></p>
+<p>6 سپس محتوای فایل را ذخیره کنید.</p>
+<div class="code-wrap" dir="ltr"><pre><code>7 در بخش &lt;head&gt; فایل workshop1.html،
+</code></pre></div>
+<p>فایل <code>script.js</code> را به صفحه وب الحاق کنید. دستور الحاق را دقیقًا قبل از تگ <code>&lt;head/&gt;</code> قرار دهید:</p>
+<p><img alt="تصویر کتاب" src="../images/p202-05.png" /></p>
+<p>8 خروجی کد را در کنسول مرورگر مشاهده کنید و نتایج حاصل را به ترتیب نمایش عبارات در جای خالی بنویسید.</p>
+<p>............................................................................................................................................</p>
+<p>9 کد الحاق فایل جاوا‌اسکریپت را به قبل از <code>&lt;body/&gt;</code> منتقل کنید و نتیجه این تغییر را در جای خالی بنویسید.</p>
+<p>............................................................................................................................................</p>
+<hr />
+<p class="page-mark">صفحه ۱۹۷</p>
+<p>10 برای نمایش یک عبارت در مرورگر (نه در بخش <code>console</code>) می‌توان از دستور <code>document.Write</code> استفاده کرد. این دستور عبارت داخل پرانتز را جایگزین محتوای فعلی صفحه می‌کند. دستور روبه‌رو را به فایل</p>
+<p><img alt="تصویر کتاب" src="../images/p203-01.png" /></p>
+<p><img alt="تصویر کتاب" src="../images/p203-02.png" /></p>
+<div class="code-wrap" dir="ltr"><pre><code>workshop1.html اضافه کنید:
+</code></pre></div>
+<p>فایل <code>HTML</code> را ذخیره کنید و نتیجه را در صفحه اصلی مرورگر به نمایش بگذارید. عبارت <code>Enjoy</code> <code>JavaScript</code> در اندازه <code>h2</code> درون صفحه مرورگر ظاهر می‌شود.</p>
+<p>در صورتی که صفحه وب دارای محتوا باشد، دستور <code>document.write</code>() باعث ناپدید شدن محتوای جاری و جایگزین شدن آن با محتوای درون پرانتز می‌گردد. بر این اساس به‌کارگیری این دستور برای انجام برخی تمرین‌های کوچک اشکالی ندارد، اما برای استفاده از آن در پروژه باید با احتیاط رفتار شود.</p>
+<h3 id="_9">کنجکاوی</h3>
+<p>درباره مزایای اسکریپت نویسی در فایل خارجی تحقیق کنید و نتایج را در کلاس ارائه کنید.</p>
+<p>توضیحات (<code>comments</code>): جاوا‌اسکریپت امکان ایجاد توضیحات تک خطی و چند خطی را توسط علائم // و /<em> </em>/ فراهم می‌کند. نوشتن توضیحات برای روشن کردن هدف، عملکرد و منطق کد ضروری است. از علائم کامنت برای لغو اجرای موقت برخی کدها به منظور اشکال‌زدایی برنامه نیز استفاده می‌شود.</p>
+<figure class="shot"><img alt="شکل 4" src="../images/p203-03.png" /><figcaption>شکل 4</figcaption></figure>
+<p>متغیرها (<code>Variables</code>): جاوا‌اسکریپت دارای دو کلمه کلیدی <code>let</code> و <code>var</code> برای تعریف متغیرها است. کلمه کلیدی <code>var</code> زمانی استفاده می‌شود که پشتیبانی از مرورگرهای قدیمی ضرورت داشته باشد. این کلمه تا سال 2015 برای تعریف متغیر استفاده می‌شد. از سال 2015 کلمه کلیدی <code>let</code> برای ایجاد متغیر معرفی شد.</p>
+<h3 id="_10">مثال</h3>
+<p>مثال زیر نحوه تعریف متغیرهای <code>x</code> و <code>y</code> را با مقادیر مختلف نمایش می‌دهد:</p>
+<div class="code-wrap" dir="ltr"><pre><code>;let x = 10
+;var y = 15.75
+</code></pre></div>
+<hr /></article><article class="lesson" lang="en" dir="ltr" data-lang-block="en" hidden><h1 id="designing-interactive-web-pages-with-javascript">Designing Interactive Web Pages with JavaScript</h1>
+<hr />
+<p class="page-mark">Page 192</p>
+<h2 id="learning-unit-2">Learning Unit 2</h2>
+<h2 id="designing-interactive-web-pages-with-javascript_1">Designing Interactive Web Pages with JavaScript</h2>
+<h3 id="have-you-ever-thought">Have you ever thought</h3>
+<p>What programming language handles reactions to clicks, mouse movement, or pressing keyboard keys?</p>
+<p>What language are simple games, image sliders, and drop-down menus built with?</p>
+<p>How can you run an action by clicking a button?</p>
+<p>Is it possible to access page elements and change their content and properties?</p>
+<p>Can you change a page’s content without reloading it?</p>
+<p>How can you check the validity of information entered in a form before it is sent?</p>
+<p>How are numerical calculations and processing of the user’s input strings done?</p>
+<h3 id="by-the-end-the-student-is-expected-to">By the end, the student is expected to</h3>
+<p>Implement the logic the program needs using variables, operators, and control structures.</p>
+<p>Know how to define repeated tasks as functions and use JavaScript’s built-in functions to get work done faster.</p>
+<p>Using <code>DOM</code> selectors, change the content and properties of <code>HTML</code> elements in response to user events.</p>
+<p>Validate user inputs in forms and, if there is an error, display an appropriate message.</p>
+<h3 id="performance-standard">Performance standard</h3>
+<p>Be able to use <code>Java</code> <code>Script</code> optimally and securely to add dynamic, interactive behaviors to web pages and run the final output in different browsers.</p>
+<hr />
+<p class="page-mark">Page 193</p>
+<h3 id="defining-javascript">Defining JavaScript</h3>
+<p>In Module 2, parts of the first page of an online store were designed using <code>HTML</code> and <code>CSS</code>.</p>
+<p>These parts are static in nature and have no ability to interact with the user; that is, they cannot provide an appropriate response (such as showing a message or changing content) to user inputs (such as a click or typing). In fact, <code>HTML</code> defines the structure and content of the web page, and <code>CSS</code> determines how the page elements are displayed.</p>
+<p><img alt="Book image" src="../images/p199-01.png" /></p>
+<p>To turn the page’s static structure and appearance into a dynamic user experience, defining the page’s behavior and logic is necessary. The JavaScript programming language, by providing what is needed to manage events and process data, makes direct interaction with the user and dynamic changes to the page content possible without reloading.</p>
+<p>Simply put, JavaScript is responsible for responding to the user’s actions and making the behavior of page elements dynamic.</p>
+<p><strong>Figure 1</strong></p>
+<p>JavaScript is a client-side (<code>Front-End</code>) programming language, meaning that running its scripts does not require a web server and its code is executed by the browser. However, JavaScript can also run on the server with the help of <code>Node.js</code>. JavaScript is an interpreted language; the JavaScript interpreter is software that parses code written in JavaScript, then reads and runs it line by line. JavaScript interpreters work as part of web browsers.</p>
+<p>As the main client-side language, JavaScript, with the ability to manipulate the Document Object Model (<code>DOM</code>) directly, makes it possible to change the structure and content of page elements in response to the user’s actions. With support for object-oriented and event-driven programming patterns, this language lets developers implement complex logic, form validation, and asynchronous communication with the server. Also, extending the language’s range of use through runtimes such as <code>Node.js</code> has turned it into a versatile tool for developing full-featured web applications.</p>
+<p>JavaScript can add various capabilities to a web page, including the following:</p>
+<p>Dynamic shopping cart: Adding, removing, or changing the quantity of products in the cart without reloading the page, and automatically calculating the total price.</p>
+<p>Form validation: Checking that information entered in a registration or purchase form (such as phone number, postal code, and email) is correct before final submission.</p>
+<hr />
+<p class="page-mark">Page 194</p>
+<p>Dynamic product display: Filtering products by category, price, or brand and sorting the product list in real time.</p>
+<p>Image slider and gallery: Creating automatic or manual movement of product images to show different angles of a product.</p>
+<p>Responsive menu (<code>Responsive</code>): Opening and closing the mobile menu with a user click and displaying it appropriately on different devices.</p>
+<p>Sending a message (<code>Notifciation</code>): Showing success messages (such as “Product added to cart”) or errors as a pop-up (<code>pop</code> <code>up</code>) Date and time: Displaying the solar (Persian) calendar date or the current time to inform the user.</p>
+<p>Temporary storage: Keeping login information or user settings in the browser (cookies) for an easier shopping experience on later visits.</p>
+<div class="code-wrap" dir="ltr"><pre><code>محیط توسعه (Development Environment)
+</code></pre></div>
+<p>To start programming with JavaScript, you need a suitable development environment that lets you write, test, and debug code. The steps for preparing a JavaScript development environment are as follows:</p>
+<p>Choosing and installing an editor: For coding with JavaScript you can use various editors such as <code>VSCode</code>, <code>Sublime</code> <code>Text</code>, <code>Atom</code>, and <code>++Notepad</code>. These editors have features such as syntax highlighting, code completion, and debugging (<code>Debug</code>) tools that help improve efficiency and the programming experience.</p>
+<p>Choosing and installing a web browser: All modern browsers today, such as <code>Google</code> <code>Chrome</code>, <code>Mozilla</code> <code>Firefox</code>, <code>Microsoft</code> <code>Edge</code>, and <code>Safari</code>, can run JavaScript code by default.</p>
+<p>In addition, these browsers have developer tools (<code>Developer</code> <code>tools</code>) that give the web programmer more capabilities. These tools, which are activated with the <code>F12</code> key, include the console, the <code>Element</code> section (containing <code>HTML</code> elements and element styles), <code>Sources</code> (project resources), and more (Figure 2).</p>
+<figure class="shot"><img alt="Figure 2" src="../images/p200-01.png" /><figcaption>Figure 2</figcaption></figure>
+<hr />
+<p class="page-mark">Page 195</p>
+<p>Adding JavaScript to a web page To insert JavaScript code into a web page, the <code>&lt;script&gt;&lt;/script&gt;</code> tag is used. This tag can be used in the <code>&lt;head&gt;</code> or <code>&lt;body&gt;</code> section. Where you write the JavaScript code depends on the type of code and the specific needs of the project. However, it is recommended that, as much as possible, this code be written before the <code>&lt;body/&gt;</code> tag. By doing this, the page content is fully loaded and shown to the user first, and then the scripts run, so the page load time is shorter. JavaScript code can also be written in an external file with the <code>js</code> extension. In that case, the <code>js</code> file must be attached to the <code>html</code> file. More explanation of the methods above is given in the next section.</p>
+<figure class="shot"><img alt="Figure 3" src="../images/p201-01.png" /><figcaption>Figure 3</figcaption></figure>
+<p>Writing JavaScript code A piece of JavaScript code contains a set of instructions. Each instruction defines a separate operation and is separated from the next instruction by a semicolon (;). One of the simplest and most widely used JavaScript statements is the <code>console.log</code>() method, which is used to display the code’s output in the browser console. The correct way to use this statement is as follows:</p>
+<p><code>console.log</code>(literal string or variable);</p>
+<h3 id="note">Note</h3>
+<p>It is recommended that you use a semicolon (;) at the end of JavaScript statements to mark the end of the statement, but using it is not required.</p>
+<p>Coding in the JavaScript language</p>
+<h3 id="workshop">Workshop</h3>
+<p><img alt="Book image" src="../images/p201-02.png" /></p>
+<p>1 To get started, create a new folder named <code>JavaScript</code> and create the workshop files inside it.</p>
+<p>2 In the <code>JavaScript</code> folder, create a file named <code>workshop1.html</code> and write a script similar to the image on the right inside the <code>&lt;body&gt;</code> section.</p>
+<p><img alt="Book image" src="../images/p201-03.png" /></p>
+<p>3 Run the <code>workshop1.html</code> file and, to see the code output, press the <code>F12</code> key in the browser so the developer tools (<code>Developer</code> <code>Tools</code>) appear. Then, to see the script result, click the <code>Console</code> button.</p>
+<hr />
+<p class="page-mark">Page 196</p>
+<p><img alt="Book image" src="../images/p202-01.png" /></p>
+<p>4 Add a similar script to the <code>&lt;head&gt;</code> section and save the file. The result in the console is expected to look like the image on the right:</p>
+<p><img alt="Book image" src="../images/p202-02.png" /></p>
+<p>The web browser runs the script in the <code>&lt;head&gt;</code> section first and then the script in the <code>&lt;body&gt;</code> section. That is why the phrase <code>Second</code> <code>Statement</code> appears earlier.</p>
+<p>5 Create a file named <code>script.js</code> inside the <code>JavaScript</code> folder and write the following statement in it:</p>
+<p><img alt="Book image" src="../images/p202-03.png" /></p>
+<p><img alt="Book image" src="../images/p202-04.png" /></p>
+<p>6 Then save the file contents.</p>
+<div class="code-wrap" dir="ltr"><pre><code>7 در بخش &lt;head&gt; فایل workshop1.html،
+</code></pre></div>
+<p>Attach the <code>script.js</code> file to the web page. Place the attach statement exactly before the <code>&lt;head/&gt;</code> tag:</p>
+<p><img alt="Book image" src="../images/p202-05.png" /></p>
+<p>8 View the code output in the browser console and write the results in the blank in the order the phrases are displayed.</p>
+<p>............................................................................................................................................</p>
+<p>9 Move the statement that attaches the JavaScript file to before <code>&lt;body/&gt;</code> and write the result of this change in the blank.</p>
+<p>............................................................................................................................................</p>
+<hr />
+<p class="page-mark">Page 197</p>
+<p>10 To display a phrase in the browser (not in the <code>console</code> section), you can use the <code>document.Write</code> statement. This statement replaces the current page content with the phrase inside the parentheses. Add the statement on the right to the file</p>
+<p><img alt="Book image" src="../images/p203-01.png" /></p>
+<p><img alt="Book image" src="../images/p203-02.png" /></p>
+<div class="code-wrap" dir="ltr"><pre><code>workshop1.html اضافه کنید:
+</code></pre></div>
+<p>Save the <code>HTML</code> file and display the result on the browser’s main page. The phrase <code>Enjoy</code> <code>JavaScript</code> appears on the browser page at size <code>h2</code>.</p>
+<p>If the web page already has content, the <code>document.write</code>() statement causes the current content to disappear and be replaced by the content inside the parentheses. Accordingly, using this statement for some small exercises is fine, but you should be careful when using it in a project.</p>
+<h3 id="try-this">Try this</h3>
+<p>Research the advantages of writing scripts in an external file and present the results in class.</p>
+<p>Comments (<code>comments</code>): JavaScript lets you create single-line and multi-line comments with the // and /<em> </em>/ marks. Writing comments is necessary to clarify the purpose, behavior, and logic of the code. Comment marks are also used to temporarily cancel the execution of some code for debugging the program.</p>
+<figure class="shot"><img alt="Figure 4" src="../images/p203-03.png" /><figcaption>Figure 4</figcaption></figure>
+<p>Variables (<code>Variables</code>): JavaScript has two keywords, <code>let</code> and <code>var</code>, for defining variables. The <code>var</code> keyword is used when support for older browsers is necessary. This keyword was used to define variables until 2015. From 2015, the <code>let</code> keyword was introduced for creating variables.</p>
+<h3 id="example">Example</h3>
+<p>The following example shows how to define the variables <code>x</code> and <code>y</code> with different values:</p>
+<div class="code-wrap" dir="ltr"><pre><code>;let x = 10
+;var y = 15.75
+</code></pre></div>
+<hr /></article>
+      <aside class="extra">
+        <h2 data-fa="تمرین این بخش" data-en="Exercises for this section">تمرین این بخش</h2>
+        <p class="extra-note" data-fa="این تمرین‌ها و پیوندها اضافه بر متن کتاب‌اند." data-en="These exercises and links are in addition to the book.">این تمرین‌ها و پیوندها اضافه بر متن کتاب‌اند.</p>
+        <ol><li data-fa="یک صفحه بساز که یک جمله را در کنسول چاپ کند و همان جمله را یک بار هم در خود صفحه نشان بدهد." data-en="Build a page that prints one sentence in the console and also shows that sentence on the page.">یک صفحه بساز که یک جمله را در کنسول چاپ کند و همان جمله را یک بار هم در خود صفحه نشان بدهد.</li><li data-fa="اسکریپت را یک بار ته body و یک بار در head بگذار و صفحه را طوری تنظیم کن که در هر دو حالت بدون خطای نبودن عنصر کار کند." data-en="Place the script once at the end of body and once in the head, and arrange the page so both versions run without an error about a missing element.">اسکریپت را یک بار ته body و یک بار در head بگذار و صفحه را طوری تنظیم کن که در هر دو حالت بدون خطای نبودن عنصر کار کند.</li></ol>
+        <h2 data-fa="پیوند مفید" data-en="Useful link">پیوند مفید</h2><ul><li><a href="https://developer.mozilla.org/en-US/docs/Learn/JavaScript/First_steps/What_is_JavaScript" data-fa="جاوااسکریپت چیست" data-en="What is JavaScript">جاوااسکریپت چیست</a></li></ul>
+      </aside>
+    <nav class="pager"><a rel="prev" class="prev" href="p3-bs-assess.html"><span class="pager-word" data-fa="قبلی" data-en="Previous">قبلی</span><span class="pager-name" data-fa="ارزشیابی بوت‌استرپ" data-en="Bootstrap assessment">ارزشیابی بوت‌استرپ</span></a><a rel="next" class="next" href="p3-js-vars.html"><span class="pager-word" data-fa="بعدی" data-en="Next">بعدی</span><span class="pager-name" data-fa="متغیر و نوع داده" data-en="Variables and data types">متغیر و نوع داده</span></a></nav>
+    </div>
+  </div>
+  <script src="../assets/search-index.js?v=4"></script>
+  <script src="../assets/app.js?v=4"></script>
+</body>
+</html>

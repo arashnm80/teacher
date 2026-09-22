@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title data-fa="خواندن شهرها و نمایش فهرست" data-en="Reading cities and showing the list">خواندن شهرها و نمایش فهرست</title>
+  <link rel="icon" href="../assets/favicon.svg">
+  <link rel="stylesheet" href="../assets/style.css?v=4">
+</head>
+<body data-root="../">
+  <header class="top">
+    <a class="brand" href="../index.html">
+      <span data-fa="طراح سایت" data-en="Site Design">طراح سایت</span>
+      <small data-fa="پایه یازدهم" data-en="Grade 11">پایه یازدهم</small>
+    </a>
+    <div class="search-wrap">
+      <input id="q" type="search" autocomplete="off"
+        data-fa-placeholder="جستجو در درس‌ها" data-en-placeholder="Search lessons"
+        placeholder="جستجو در درس‌ها">
+      <div id="results" class="results" hidden></div>
+    </div>
+    <a class="download" href="../grade11-offline.zip?v=2" data-fa="دانلود کل سایت" data-en="Download the whole site">دانلود کل سایت</a>
+    <button type="button" id="lang-toggle" class="lang-toggle" dir="ltr" data-lang="fa"
+      aria-label="تغییر زبان">
+      <span data-opt="fa">فا</span>
+      <span data-opt="en">EN</span>
+    </button>
+  </header>
+  <div class="layout">
+    <details class="toc" open><summary><span data-fa="فهرست درس‌ها" data-en="Lesson list">فهرست درس‌ها</span></summary><nav class="side" aria-label="lessons"><p class="mod" data-fa="شروع کتاب" data-en="Opening">شروع کتاب</p><p class="unit" data-fa="فهرست" data-en="Contents">فهرست</p><a class="" href="toc.html" data-fa="فهرست" data-en="Contents">فهرست</a><p class="mod" data-fa="پودمان ۱: برنامه‌نویسی پایتون" data-en="Module 1: Python programming">پودمان ۱: برنامه‌نویسی پایتون</p><p class="unit" data-fa="معرفی پودمان" data-en="Module introduction">معرفی پودمان</p><a class="" href="p1-intro.html" data-fa="معرفی پودمان پایتون" data-en="Introducing the Python module">معرفی پودمان پایتون</a><p class="unit" data-fa="مدل‌سازی داده" data-en="Data modeling">مدل‌سازی داده</p><a class="" href="p1-python.html" data-fa="پایتون و محیط برنامه‌نویسی" data-en="Python and the programming environment">پایتون و محیط برنامه‌نویسی</a><a class="" href="p1-vars.html" data-fa="متغیرها، نوع داده و عملگرها" data-en="Variables, types, and operators">متغیرها، نوع داده و عملگرها</a><a class="" href="p1-cast.html" data-fa="ورودی و تبدیل نوع" data-en="Input and type casting">ورودی و تبدیل نوع</a><a class="" href="p1-lists.html" data-fa="لیست‌ها" data-en="Lists">لیست‌ها</a><a class="" href="p1-if.html" data-fa="شرط‌های ساده" data-en="Simple conditions">شرط‌های ساده</a><a class="" href="p1-elif.html" data-fa="if، elif و else" data-en="if, elif, and else">if، elif و else</a><a class="" href="p1-for.html" data-fa="حلقه for و range" data-en="The for loop and range">حلقه for و range</a><a class="" href="p1-while.html" data-fa="حلقه while و کنترل حلقه" data-en="The while loop and loop control">حلقه while و کنترل حلقه</a><a class="" href="p1-assess-data.html" data-fa="ارزشیابی مدل‌سازی داده" data-en="Data-modeling assessment">ارزشیابی مدل‌سازی داده</a><p class="unit" data-fa="توابع و ماژول‌ها" data-en="Functions and modules">توابع و ماژول‌ها</p><a class="" href="p1-sets.html" data-fa="مجموعه (set)" data-en="Sets">مجموعه (set)</a><a class="" href="p1-dict.html" data-fa="دیکشنری" data-en="Dictionaries">دیکشنری</a><a class="" href="p1-quiz.html" data-fa="پروژه بازی Quiz" data-en="Quiz game project">پروژه بازی Quiz</a><a class="" href="p1-tuple.html" data-fa="تاپل" data-en="Tuples">تاپل</a><a class="" href="p1-func.html" data-fa="تعریف تابع، پارامتر و return" data-en="Defining functions, parameters, and return">تعریف تابع، پارامتر و return</a><a class="" href="p1-func-more.html" data-fa="تمرین تابع و مرتب‌سازی" data-en="Function practice and sorting">تمرین تابع و مرتب‌سازی</a><a class="" href="p1-modules.html" data-fa="ماژول‌ها و تفاوت تابع و متد" data-en="Modules, and functions versus methods">ماژول‌ها و تفاوت تابع و متد</a><a class="" href="p1-assess-func.html" data-fa="ارزشیابی توابع و ماژول‌ها" data-en="Functions and modules assessment">ارزشیابی توابع و ماژول‌ها</a><p class="mod" data-fa="پودمان ۲: صفحات وب ایستا" data-en="Module 2: Static web pages">پودمان ۲: صفحات وب ایستا</p><p class="unit" data-fa="معرفی پودمان" data-en="Module introduction">معرفی پودمان</p><a class="" href="p2-intro.html" data-fa="معرفی پودمان صفحات ایستا" data-en="Introducing static web pages">معرفی پودمان صفحات ایستا</a><p class="unit" data-fa="ساختار با HTML" data-en="Structure with HTML">ساختار با HTML</p><a class="" href="p2-web.html" data-fa="وب چگونه کار می‌کند" data-en="How the web works">وب چگونه کار می‌کند</a><a class="" href="p2-concepts.html" data-fa="مفاهیم طراحی وب و نقشه سایت" data-en="Web-design concepts and the site map">مفاهیم طراحی وب و نقشه سایت</a><a class="" href="p2-tags.html" data-fa="اولین صفحه HTML" data-en="A first HTML page">اولین صفحه HTML</a><a class="" href="p2-text.html" data-fa="متن، لیست و پیوند" data-en="Text, lists, and links">متن، لیست و پیوند</a><a class="" href="p2-img.html" data-fa="تصویر در صفحه" data-en="Images on the page">تصویر در صفحه</a><a class="" href="p2-forms.html" data-fa="فرم‌ها" data-en="Forms">فرم‌ها</a><a class="" href="p2-semantic.html" data-fa="عناصر معنایی" data-en="Semantic elements">عناصر معنایی</a><a class="" href="p2-assess-html.html" data-fa="ارزشیابی HTML" data-en="HTML assessment">ارزشیابی HTML</a><p class="unit" data-fa="ظاهر با CSS" data-en="Appearance with CSS">ظاهر با CSS</p><a class="" href="p2-css-start.html" data-fa="نوشتن CSS" data-en="Writing CSS">نوشتن CSS</a><a class="" href="p2-css-look.html" data-fa="رنگ، پس‌زمینه و انتخاب‌گر" data-en="Color, background, and selectors">رنگ، پس‌زمینه و انتخاب‌گر</a><a class="" href="p2-box.html" data-fa="مدل جعبه‌ای و display" data-en="The box model and display">مدل جعبه‌ای و display</a><a class="" href="p2-flex.html" data-fa="چیدمان با Flexbox" data-en="Layout with Flexbox">چیدمان با Flexbox</a><a class="" href="p2-flex-work.html" data-fa="کارگاه چیدمان صفحه" data-en="Page-layout workshop">کارگاه چیدمان صفحه</a><a class="" href="p2-media.html" data-fa="مدیا کوئری و ارزشیابی CSS" data-en="Media queries and the CSS assessment">مدیا کوئری و ارزشیابی CSS</a><p class="mod" data-fa="پودمان ۳: صفحات وب تعاملی" data-en="Module 3: Interactive web pages">پودمان ۳: صفحات وب تعاملی</p><p class="unit" data-fa="معرفی پودمان" data-en="Module introduction">معرفی پودمان</p><a class="" href="p3-intro.html" data-fa="معرفی پودمان تعاملی" data-en="Introducing the interactive module">معرفی پودمان تعاملی</a><p class="unit" data-fa="بوت‌استرپ" data-en="Bootstrap">بوت‌استرپ</p><a class="" href="p3-bs-start.html" data-fa="فریم‌ورک و شروع بوت‌استرپ" data-en="Frameworks and starting Bootstrap">فریم‌ورک و شروع بوت‌استرپ</a><a class="" href="p3-bs-util.html" data-fa="فاصله، گردی و لیست" data-en="Spacing, rounding, and lists">فاصله، گردی و لیست</a><a class="" href="p3-bs-header.html" data-fa="سرصفحه فروشگاه" data-en="The shop header">سرصفحه فروشگاه</a><a class="" href="p3-bs-grid.html" data-fa="شبکه Grid" data-en="The grid">شبکه Grid</a><a class="" href="p3-bs-rwd.html" data-fa="کلاس‌های واکنش‌گرا" data-en="Responsive classes">کلاس‌های واکنش‌گرا</a><a class="" href="p3-bs-nav.html" data-fa="نوار ناوبری و جزئیات محصول" data-en="Navbar and product details">نوار ناوبری و جزئیات محصول</a><a class="" href="p3-bs-form.html" data-fa="فرم و پنجره Modal" data-en="Forms and modals">فرم و پنجره Modal</a><a class="" href="p3-bs-show.html" data-fa="کاروسل و آکاردئون" data-en="Carousel and accordion">کاروسل و آکاردئون</a><a class="" href="p3-bs-assess.html" data-fa="ارزشیابی بوت‌استرپ" data-en="Bootstrap assessment">ارزشیابی بوت‌استرپ</a><p class="unit" data-fa="جاوااسکریپت" data-en="JavaScript">جاوااسکریپت</p><a class="" href="p3-js-start.html" data-fa="جاوااسکریپت در صفحه وب" data-en="JavaScript on the page">جاوااسکریپت در صفحه وب</a><a class="" href="p3-js-vars.html" data-fa="متغیر و نوع داده" data-en="Variables and data types">متغیر و نوع داده</a><a class="" href="p3-js-ops.html" data-fa="عملگرها" data-en="Operators">عملگرها</a><a class="" href="p3-js-data.html" data-fa="آرایه و شیء" data-en="Arrays and objects">آرایه و شیء</a><a class="" href="p3-js-if.html" data-fa="شرط در جاوااسکریپت" data-en="Conditions in JavaScript">شرط در جاوااسکریپت</a><a class="" href="p3-js-loops.html" data-fa="حلقه‌ها" data-en="Loops">حلقه‌ها</a><a class="" href="p3-js-func.html" data-fa="تابع‌ها" data-en="Functions">تابع‌ها</a><a class="" href="p3-js-dom.html" data-fa="صفحه، رویداد و اعتبار فرم" data-en="The page, events, and form validation">صفحه، رویداد و اعتبار فرم</a><a class="" href="p3-js-assess.html" data-fa="ارزشیابی جاوااسکریپت" data-en="JavaScript assessment">ارزشیابی جاوااسکریپت</a><p class="mod" data-fa="پودمان ۴: توسعه وب پایتون" data-en="Module 4: Python for the web">پودمان ۴: توسعه وب پایتون</p><p class="unit" data-fa="معرفی پودمان" data-en="Module introduction">معرفی پودمان</p><a class="" href="p4-intro.html" data-fa="معرفی پودمان شیءگرایی" data-en="Introducing the object-oriented module">معرفی پودمان شیءگرایی</a><p class="unit" data-fa="شیءگرایی" data-en="Object-oriented programming">شیءگرایی</p><a class="" href="p4-idea.html" data-fa="ایده شیء و کلاس" data-en="The idea of objects and classes">ایده شیء و کلاس</a><a class="" href="p4-class.html" data-fa="ساخت کلاس و متد" data-en="Writing a class and methods">ساخت کلاس و متد</a><a class="" href="p4-inherit.html" data-fa="وراثت" data-en="Inheritance">وراثت</a><a class="" href="p4-protect.html" data-fa="داده معتبر و استفاده داخلی" data-en="Valid data and internal use">داده معتبر و استفاده داخلی</a><a class="" href="p4-assess-oop.html" data-fa="ارزشیابی برنامه شیءگرا" data-en="Object-oriented assessment">ارزشیابی برنامه شیءگرا</a><p class="unit" data-fa="فایل و توسعه" data-en="Files and development">فایل و توسعه</p><a class="" href="p4-files.html" data-fa="خواندن و نوشتن فایل متنی" data-en="Reading and writing text files">خواندن و نوشتن فایل متنی</a><a class="" href="p4-errors.html" data-fa="پیمایش فایل و مدیریت خطا" data-en="Walking a file and handling errors">پیمایش فایل و مدیریت خطا</a><a class="" href="p4-json.html" data-fa="چند فایل و JSON" data-en="Several files and JSON">چند فایل و JSON</a><a class="" href="p4-assess-files.html" data-fa="ارزشیابی کار با فایل" data-en="Files assessment">ارزشیابی کار با فایل</a><p class="mod" data-fa="پودمان ۵: برنامه‌نویسی جنگو" data-en="Module 5: Django">پودمان ۵: برنامه‌نویسی جنگو</p><p class="unit" data-fa="معرفی پودمان" data-en="Module introduction">معرفی پودمان</p><a class="" href="p5-intro.html" data-fa="معرفی پودمان جنگو" data-en="Introducing the Django module">معرفی پودمان جنگو</a><p class="unit" data-fa="ایجاد وب‌اپلیکیشن" data-en="Creating the web app">ایجاد وب‌اپلیکیشن</p><a class="" href="p5-what.html" data-fa="جنگو چیست و نصب" data-en="What Django is, and installing it">جنگو چیست و نصب</a><a class="" href="p5-project.html" data-fa="پروژه، اپ و اولین view" data-en="Project, app, and the first view">پروژه، اپ و اولین view</a><a class="" href="p5-template.html" data-fa="قالب و دمای واقعی" data-en="Templates and a real temperature">قالب و دمای واقعی</a><a class="" href="p5-assess-create.html" data-fa="ارزشیابی ایجاد وب‌اپلیکیشن" data-en="Creating-the-app assessment">ارزشیابی ایجاد وب‌اپلیکیشن</a><p class="unit" data-fa="توسعه وب‌اپلیکیشن" data-en="Developing the web app">توسعه وب‌اپلیکیشن</p><a class="" href="p5-model.html" data-fa="مدل شهر و پنل ادمین" data-en="The city model and the admin">مدل شهر و پنل ادمین</a><a class="current" href="p5-list.html" data-fa="خواندن شهرها و نمایش فهرست" data-en="Reading cities and showing the list">خواندن شهرها و نمایش فهرست</a><a class="" href="p5-auth.html" data-fa="ورود و خروج" data-en="Sign-in and sign-out">ورود و خروج</a><a class="" href="p5-crud.html" data-fa="افزودن و حذف شهر" data-en="Adding and deleting a city">افزودن و حذف شهر</a><a class="" href="p5-bugs.html" data-fa="باگ و امنیت" data-en="Bugs and security">باگ و امنیت</a><p class="mod" data-fa="پایان کتاب" data-en="Back of the book">پایان کتاب</p><p class="unit" data-fa="منابع" data-en="References">منابع</p><a class="" href="refs.html" data-fa="منابع کتاب" data-en="Book references">منابع کتاب</a></nav></details>
+    <div class="main">
+      <h1 class="section-title" data-fa="خواندن شهرها و نمایش فهرست" data-en="Reading cities and showing the list">خواندن شهرها و نمایش فهرست</h1><article class="lesson" lang="fa" dir="rtl" data-lang-block="fa"><p class="page-mark">صفحه ۳۰۵</p>
+<h3 id="_1">فعالیت</h3>
+<p>با کمک هنرآموز خود، مقدار طول و عرض جغرافیایی چند شهر دیگر را یافته و در پایگاه داده ذخیره کنید.</p>
+<p>پس از ثبت شهرها، با کلیک روی <code>Citys</code>، لیست شهرهای ثبت شده نمایش داده می‌شود (شکل 43).</p>
+<p><img alt="شکل 43 لیست شهرهای ثبت شده" src="../images/p311-01.png" /></p>
+<p>شکل 43 لیست شهرهای ثبت شده</p>
+<p>در شکل 43 از <code>City</code> <code>object</code> برای نمایش عنوان هر شهر استفاده شده است. جهت نمایش مناسب عنوان شهرها، فایل <code>models.py</code> را باز کنید و تغییراتی همانند شکل 44 برای مدل <code>City</code> اعمال کنید و فایل را ذخیره کنید.</p>
+<p><img alt="شکل 44 افزودن متد str به مدل شهر" src="../images/p311-02.png" /></p>
+<p>شکل 44 افزودن متد <code>str</code> به مدل شهر</p>
+<hr />
+<p class="page-mark">صفحه ۳۰۶</p>
+<p>اگر پنل ادمین را <code>refresh</code> کنید، نتیجه به‌صورت شکل 45 خواهد بود.</p>
+<p><img alt="شکل 45 نمایش مناسب عنوان شهرها در پنل ادمین" src="../images/p312-01.png" /></p>
+<p>شکل 45 نمایش مناسب عنوان شهرها در پنل ادمین</p>
+<h3 id="_2">کنجکاوی</h3>
+<p>در زبان انگلیسی جمع <code>City</code> برابر با <code>Cities</code> است، اما در پنل ادمین جنگو عنوان جدول به‌صورت اشتباه <code>Citys</code> نمایش داده می‌شود. بررسی کنید چطور می‌توان این عنوان را در بخش ادمین جنگو تغییر داد.</p>
+<h3 id="orm">آشنایی با ابزار <bdi dir="ltr">ORM</bdi> جنگو</h3>
+<p>اکنون که چند رکورد حاوی نام چند شهر و مختصاتشان را به جدول شهر‌ها اضافه کردید، می‌توانید از داخل فایل <code>views.py</code> یکی از رکوردها (مثًلا اولین رکورد) را بخوانید، وضعیت آب و هوای آن شهر را به‌دست آوردید و جهت نمایش به فایل <code>index.html</code> ارسال کنید.</p>
+<p>برای این‌کار لازم است ابتدا ابزار <code>ORM</code> جنگو را بشناسید.</p>
+<p>برای کار با پایگاه داده از زبان <code>SQL</code> استفاده می‌شود، مثلاً دستور <code>SELECT</code> یکی از دستورات اصلی زبان <code>SQL</code> است.</p>
+<hr />
+<p class="page-mark">صفحه ۳۰۷</p>
+<p>با دستور <code>SELECT</code> به‌صورت زیر می‌توانید، همه شهرهای جدول <code>City</code> را از پایگاه داده دریافت کنید:</p>
+<div class="code-wrap" dir="ltr"><pre><code>SELECT id, title, lat, lon FROM weather_city
+</code></pre></div>
+<p>اما در جنگو یک ابزار مفید با نام <code>ORM</code> وجود دارد که کار با پایگاه داده را راحت‌تر می‌کند. <code>ORM</code> مثل یک مترجم است. عملیات مربوط به ارتباط با پایگاه داده را با زبان پایتون دریافت و در پشت صحنه، به دستورات <code>SQL</code> ترجمه می‌کند.</p>
+<p>به‌عنوان مثال دستور معادل پرس و جوی قبلی در <code>ORM</code> جنگو به‌صورت زیر است:</p>
+<div class="code-wrap" dir="ltr"><pre><code>City.objects.all()
+</code></pre></div>
+<p>در این کد پایتونی، <code>City</code> نام مدل است.</p>
+<p>اکنون کد <code>show_temp_view</code> را با استفاده از <code>ORM</code> جنگو همانند شکل 46 تغییر دهید.</p>
+<p><img alt="شکل 46 استفاده از ORM جنگو" src="../images/p313-01.png" /></p>
+<p>شکل 46 استفاده از <code>ORM</code> جنگو</p>
+<h3 id="_3">توضیحات کدها:</h3>
+<p>خط 3: مدل <code>City</code> از <code>models.py</code> در این فایل <code>import</code> شده است.</p>
+<p>خط 6: با استفاده از <code>ORM</code> جنگو، اولین شهر ذخیره شده در جدول شهر، در متغیر <code>city</code> ذخیره شده است.</p>
+<p>خط 7: مقدار <code>lat</code> و <code>lon</code> از شهرِ واکشی شده از جدول، دریافت و در متغیرهای <code>lat</code> و <code>lon</code> ذخیره شده است.</p>
+<p>خط 17: نام شهر نیز از پایگاه داده دریافت شده و درون دیکشنری <code>context</code> ذخیره شده است.</p>
+<p>فایل را ذخیره و صفحه اصلی سایت را باز کنید. دمای شهر همدان نمایش داده می‌شود.</p>
+<hr />
+<p class="page-mark">صفحه ۳۰۸</p>
+<p>نمایش لیست شهرها تا اینجا توانستید چند شهر را ذخیره‌سازی کنید. قرار است که این شهرها را از پایگاه داده بخوانید و درون سایت به‌صورت یک لیست نمایش دهید تا کاربر بتواند با کلیک بر روی شهر دلخواهش، وضعیت دمای آن شهر را مشاهده کند.</p>
+<p>این‌کار به کمک <code>view</code> و <code>template</code> صورت خواهد گرفت.</p>
+<p>در جنگو، <code>view</code> می‌تواند اطلاعات را از دیتابیس دریافت کرده و سند <code>html</code> را جهت نمایش به کاربر آماده کند.</p>
+<p>شکل 47 را مشاهده کنید، <code>request</code> از <code>url</code> به <code>view</code> ارسال شده و <code>view</code> با استفاده از <code>model</code> و <code>template</code>، اطلاعات را جهت نمایش به کاربر آماده می‌کند.</p>
+<p><img alt="شکل 47 دریافت اطلاعات از مدل توسط View" src="../images/p314-01.png" /></p>
+<p>شکل 47 دریافت اطلاعات از مدل توسط <code>View</code></p>
+<p>جهت نمایش لیست شهرها در صفحه اصلی سایت می‌توانید چهار مرحله را به‌صورت زیر انجام دهید:</p>
+<p>1 ساختن یک تابع با نام <code>city_list_view</code> در <code>Views.py</code></p>
+<div class="code-wrap" dir="ltr"><pre><code>2 ساختن یک template با نام city_list.html
+</code></pre></div>
+<p>3 تغییر و تنظیم فایل<code>urls.py</code></p>
+<p>4 قرار دادن لینک «لیست شهرها» در صفحه اصلی مرحله اول: یک <code>view</code> با نام <code>city_list_view</code> همانند شکل 48 ایجاد کنید.</p>
+<p><img alt="شکل 48 افزودن city_list_view" src="../images/p314-02.png" /></p>
+<div class="code-wrap" dir="ltr"><pre><code>شکل 48 افزودن city_list_view
+</code></pre></div>
+<hr />
+<p class="page-mark">صفحه ۳۰۹</p>
+<h3 id="_4">توضیحات کدها:</h3>
+<p>خط 6: با استفاده از <code>ORM</code> جنگو یک <code>Query</code> اجرا شده و لیست همه شهرها از جدول <code>City</code> واکشی شده است. <code>ORM</code> جنگو دستورات مختص به خود را دارد و این دستورات به کدهای <code>SQL</code> تبدیل شده و توسط پایگاه داده اجرا می‌شوند. سپس نتیجه دستور در متغیری با نام <code>cities</code> ذخیره شده است.</p>
+<p>خط 8: دیکشنری <code>context</code> برای <code>city_list.html</code> ارسال شده است، مقدار <code>value</code> این دیکشنری یعنی <code>cities</code> در خط 6 مقداردهی شده است.</p>
+<p>مرحله دوم: اکنون یک فایل <code>html</code> با نام <code>city_list.html</code> درون پوشه <code>templates</code> ایجاد کنید، کد این فایل را همانند شکل 49 وارد کنید.</p>
+<p><img alt="شکل 49 افزودن city_list.html" src="../images/p315-01.png" /></p>
+<div class="code-wrap" dir="ltr"><pre><code>شکل 49 افزودن city_list.html
+</code></pre></div>
+<h3 id="_5">توضیحات کدها:</h3>
+<p>خط 10: یک حلقه روی <code>cities</code> اجرا شده است تا لیست شهرها را به‌صورت تگ <code>p</code> در مرورگر نمایش دهد.</p>
+<p><code>cities</code> قبًلا در فایل <code>views.py</code> درون یک دیکشنری تعریف شده است.</p>
+<p>خط 11: با استفاده از {{ }} می‌توانید به فیلدهای هر <code>item</code> دسترسی داشته باشید. <code>title</code> فیلدی است که برای عنوان شهر، در مدل <code>City</code> تعریف کردید.</p>
+<p>خط 12: حتمًا باید حلقه <code>for</code> را با <code>endfor</code> خاتمه دهید، در غیر این‌صورت در مرورگر با خطا مواجه خواهید شد.</p>
+<hr />
+<p class="page-mark">صفحه ۳۱۰</p>
+<p>مرحله سوم: فایل <code>urls.py</code> در <code>weather</code> <code>app</code> را همانند شکل 50 تغییر دهید.</p>
+<p><img alt="شکل 50 افزودن path لیست شهرها به urls.py" src="../images/p316-01.png" /></p>
+<p>شکل 50 افزودن <code>path</code> لیست شهرها به <code>urls.py</code></p>
+<h3 id="_6">توضیحات کدها:</h3>
+<p>خط 6: یک <code>path</code> جدید جهت استفاده از <code>city_list_view</code> اضافه شده و به این معنی است که لیست شهرها</p>
+<div class="code-wrap" dir="ltr"><pre><code>در آدرس /listhttp://127.0.0.1:8000/city نمایش داده می‌شود.
+</code></pre></div>
+<p>مرحله چهارم: کد <code>show_temp.html</code> را جهت اضافه کردن لینک به صفحه لیست شهرها، همانند شکل51 تغییر دهید.</p>
+<p><img alt="شکل 51 اضافه کردن لینک به لیست شهرها" src="../images/p316-02.png" /></p>
+<p>شکل 51 اضافه کردن لینک به لیست شهرها</p>
+<hr />
+<p class="page-mark">صفحه ۳۱۱</p>
+<h3 id="_7">توضیحات کدها:</h3>
+<p>خط 15: در این خط تگ <code>a</code> اضافه شده و مقدار <code>href</code> آن برابر عبارت }% <code>'url</code> <code>'city_list</code> %{ است.</p>
+<p>در این عبارت }% <code>'url</code> <code>'city_list</code> %{ یک <code>Template</code> <code>Tag</code> است. از تگ <code>url</code> استفاده شده است و <code>city_list</code> آرگومان آن است. این خط با استفاده از نام مسیر <code>city_list</code>، آدرس لینک لیست شهرها را به صورت خودکار تولید می‌کند (شکل 52).</p>
+<p><img alt="شکل 52 روند کار تگ url در جنگو" src="../images/p317-01.png" /></p>
+<p>شکل 52 روند کار تگ <code>url</code> در جنگو</p>
+<p>اکنون فایل را ذخیره کرده و صفحه اصلی سایت را <code>refresh</code> کنید، لینک اضافه شده را همانند شکل 53 مشاهده خواهید کرد.</p>
+<p><img alt="شکل 53 نمایش لینک لیست شهرها" src="../images/p317-02.png" /></p>
+<p>شکل 53 نمایش لینک لیست شهرها</p>
+<hr />
+<p class="page-mark">صفحه ۳۱۲</p>
+<p>اکنون روی لینِک اضافه شده (لیست شهرها) کلیک کنید، همانند شکل 54، لیست شهرها را مشاهده خواهید کرد.</p>
+<p><img alt="شکل 54 نمایش لیست شهرها" src="../images/p318-01.png" /></p>
+<p>شکل 54 نمایش لیست شهرها</p>
+<p>نمایش دمای شهر انتخاب شده توسط کاربر شهرهایی که در لیست شهرها نمایش داده می‌شوند، قابلیت کلیک ندارند، لازم است تغییراتی اعمال کنید تا کاربر امکان کلیک کردن روی شهر مورد نظر خود را داشته باشد، تا دمای شهر انتخاب شده، نمایش داده شود.</p>
+<p>ابتدا فایل <code>city_list.html</code> را باز کرده و همانند شکل 55، تغییرات مورد نظر را اعمال کنید.</p>
+<p><img alt="شکل 55 افزودن لینک به هر شهر" src="../images/p318-02.png" /></p>
+<p>شکل 55 افزودن لینک به هر شهر</p>
+<hr /></article><article class="lesson" lang="en" dir="ltr" data-lang-block="en" hidden><p class="page-mark">Page 305</p>
+<h3 id="activity">Activity</h3>
+<p>With your instructor’s help, find the latitude and longitude of a few other cities and store them in the database.</p>
+<p>After registering the cities, by clicking on <code>Citys</code>, the list of registered cities is displayed (Figure 43).</p>
+<p><img alt="Figure 43 list of registered cities" src="../images/p311-01.png" /></p>
+<p>Figure 43 list of registered cities</p>
+<p>In Figure 43, <code>City</code> <code>object</code> has been used to display the title of each city. To display the city titles properly, open the <code>models.py</code> file and apply changes as shown in Figure 44 for the <code>City</code> model and save the file.</p>
+<p><img alt="Figure 44 adding the str method to the city model" src="../images/p311-02.png" /></p>
+<p>Figure 44 adding the <code>str</code> method to the city model</p>
+<hr />
+<p class="page-mark">Page 306</p>
+<p>If you <code>refresh</code> the admin panel, the result will be as in Figure 45.</p>
+<p><img alt="Figure 45 properly displaying city titles in the admin panel" src="../images/p312-01.png" /></p>
+<p>Figure 45 properly displaying city titles in the admin panel</p>
+<h3 id="try-this">Try this</h3>
+<p>In English the plural of <code>City</code> is <code>Cities</code>, but in the Django admin panel the table title is incorrectly displayed as <code>Citys</code>. Investigate how you can change this title in the Django admin section.</p>
+<h3 id="getting-to-know-djangos-orm-tool">Getting to know Django’s ORM tool</h3>
+<p>Now that you have added a few records containing the names of a few cities and their coordinates to the cities table, from inside the <code>views.py</code> file you can read one of the records (for example the first record), obtain that city’s weather status, and send it to the <code>index.html</code> file for display.</p>
+<p>For this you first need to get to know Django’s <code>ORM</code> tool.</p>
+<p>To work with the database the <code>SQL</code> language is used; for example the <code>SELECT</code> command is one of the main commands of the <code>SQL</code> language.</p>
+<hr />
+<p class="page-mark">Page 307</p>
+<p>With the <code>SELECT</code> command as follows you can retrieve all cities of the <code>City</code> table from the database:</p>
+<div class="code-wrap" dir="ltr"><pre><code>SELECT id, title, lat, lon FROM weather_city
+</code></pre></div>
+<p>But in Django there is a useful tool named <code>ORM</code> that makes working with the database easier. <code>ORM</code> is like a translator. It receives database-related operations in the Python language and behind the scenes translates them into <code>SQL</code> commands.</p>
+<p>For example the equivalent of the previous query in Django’s <code>ORM</code> is as follows:</p>
+<div class="code-wrap" dir="ltr"><pre><code>City.objects.all()
+</code></pre></div>
+<p>In this Python code, <code>City</code> is the model name.</p>
+<p>Now change the <code>show_temp_view</code> code using Django’s <code>ORM</code> as shown in Figure 46.</p>
+<p><img alt="Figure 46 using Django’s ORM" src="../images/p313-01.png" /></p>
+<p>Figure 46 using Django’s <code>ORM</code></p>
+<h3 id="code-notes">Code notes:</h3>
+<p>Line 3: the <code>City</code> model from <code>models.py</code> has been <code>import</code>ed in this file.</p>
+<p>Line 6: using Django’s <code>ORM</code>, the first city stored in the cities table has been stored in the <code>city</code> variable.</p>
+<p>Line 7: the <code>lat</code> and <code>lon</code> values from the city fetched from the table have been received and stored in the <code>lat</code> and <code>lon</code> variables.</p>
+<p>Line 17: the city name has also been received from the database and stored inside the <code>context</code> dictionary.</p>
+<p>Save the file and open the site’s home page. Hamedan’s temperature is displayed.</p>
+<hr />
+<p class="page-mark">Page 308</p>
+<p>Displaying the list of cities: up to here you have been able to store a few cities. The plan is to read these cities from the database and display them on the site as a list so that the user can click on their desired city and see that city’s temperature status.</p>
+<p>This work will be done with the help of a <code>view</code> and a <code>template</code>.</p>
+<p>In Django, a <code>view</code> can receive information from the database and prepare the <code>html</code> document for display to the user.</p>
+<p>Look at Figure 47; the <code>request</code> is sent from the <code>url</code> to the <code>view</code> and the <code>view</code>, using the <code>model</code> and <code>template</code>, prepares the information for display to the user.</p>
+<p><img alt="Figure 47 the View receiving information from the model" src="../images/p314-01.png" /></p>
+<p>Figure 47 the <code>View</code> receiving information from the model</p>
+<p>To display the list of cities on the site’s home page you can carry out four steps as follows:</p>
+<p>1 Creating a function named <code>city_list_view</code> in <code>Views.py</code></p>
+<div class="code-wrap" dir="ltr"><pre><code>2 ساختن یک template با نام city_list.html
+</code></pre></div>
+<p>3 Changing and configuring the <code>urls.py</code> file</p>
+<p>4 Placing a “list of cities” link on the home page Step one: create a <code>view</code> named <code>city_list_view</code> as shown in Figure 48.</p>
+<p><img alt="Figure 48 adding city_list_view" src="../images/p314-02.png" /></p>
+<div class="code-wrap" dir="ltr"><pre><code>شکل 48 افزودن city_list_view
+</code></pre></div>
+<hr />
+<p class="page-mark">Page 309</p>
+<h3 id="code-notes_1">Code notes:</h3>
+<p>Line 6: using Django’s <code>ORM</code> a <code>Query</code> has been run and the list of all cities has been fetched from the <code>City</code> table. Django’s <code>ORM</code> has its own commands and these commands are converted to <code>SQL</code> code and run by the database. Then the result of the command has been stored in a variable named <code>cities</code>.</p>
+<p>Line 8: the <code>context</code> dictionary has been sent for <code>city_list.html</code>; the <code>value</code> of this dictionary, namely <code>cities</code>, was assigned on line 6.</p>
+<p>Step two: now create an <code>html</code> file named <code>city_list.html</code> inside the <code>templates</code> folder; enter the code of this file as shown in Figure 49.</p>
+<p><img alt="Figure 49 adding city_list.html" src="../images/p315-01.png" /></p>
+<div class="code-wrap" dir="ltr"><pre><code>شکل 49 افزودن city_list.html
+</code></pre></div>
+<h3 id="code-notes_2">Code notes:</h3>
+<p>Line 10: a loop has been run over <code>cities</code> to display the list of cities as <code>p</code> tags in the browser.</p>
+<p><code>cities</code> was previously defined in the <code>views.py</code> file inside a dictionary.</p>
+<p>Line 11: using {{ }} you can access the fields of each <code>item</code>. <code>title</code> is the field that you defined for the city title in the <code>City</code> model.</p>
+<p>Line 12: you must definitely end the <code>for</code> loop with <code>endfor</code>; otherwise you will face an error in the browser.</p>
+<hr />
+<p class="page-mark">Page 310</p>
+<p>Step three: change the <code>urls.py</code> file in the <code>weather</code> <code>app</code> as shown in Figure 50.</p>
+<p><img alt="Figure 50 adding the cities list path to urls.py" src="../images/p316-01.png" /></p>
+<p>Figure 50 adding the cities list <code>path</code> to <code>urls.py</code></p>
+<h3 id="code-notes_3">Code notes:</h3>
+<p>Line 6: a new <code>path</code> has been added for using <code>city_list_view</code> and it means that the list of cities</p>
+<div class="code-wrap" dir="ltr"><pre><code>در آدرس /listhttp://127.0.0.1:8000/city نمایش داده می‌شود.
+</code></pre></div>
+<p>Step four: change the <code>show_temp.html</code> code to add a link to the cities list page, as shown in Figure 51.</p>
+<p><img alt="Figure 51 adding a link to the cities list" src="../images/p316-02.png" /></p>
+<p>Figure 51 adding a link to the cities list</p>
+<hr />
+<p class="page-mark">Page 311</p>
+<h3 id="code-notes_4">Code notes:</h3>
+<p>Line 15: on this line an <code>a</code> tag has been added and its <code>href</code> value equals the expression {% <code>'url</code> <code>'city_list</code> %}.</p>
+<p>In this expression {% <code>'url</code> <code>'city_list</code> %} is a <code>Template</code> <code>Tag</code>. The <code>url</code> tag has been used and <code>city_list</code> is its argument. This line, using the path name <code>city_list</code>, automatically generates the address of the cities list link (Figure 52).</p>
+<p><img alt="Figure 52 how the url tag works in Django" src="../images/p317-01.png" /></p>
+<p>Figure 52 how the <code>url</code> tag works in Django</p>
+<p>Now save the file and <code>refresh</code> the site’s home page; you will see the added link as in Figure 53.</p>
+<p><img alt="Figure 53 displaying the cities list link" src="../images/p317-02.png" /></p>
+<p>Figure 53 displaying the cities list link</p>
+<hr />
+<p class="page-mark">Page 312</p>
+<p>Now click the added link (list of cities); as in Figure 54, you will see the list of cities.</p>
+<p><img alt="Figure 54 displaying the list of cities" src="../images/p318-01.png" /></p>
+<p>Figure 54 displaying the list of cities</p>
+<p>Displaying the temperature of the city selected by the user: the cities that are displayed in the cities list are not clickable; you need to apply changes so that the user can click on their desired city, so that the temperature of the selected city is displayed.</p>
+<p>First open the <code>city_list.html</code> file and apply the desired changes as shown in Figure 55.</p>
+<p><img alt="Figure 55 adding a link to each city" src="../images/p318-02.png" /></p>
+<p>Figure 55 adding a link to each city</p>
+<hr /></article>
+      <aside class="extra">
+        <h2 data-fa="تمرین این بخش" data-en="Exercises for this section">تمرین این بخش</h2>
+        <p class="extra-note" data-fa="این تمرین‌ها و پیوندها اضافه بر متن کتاب‌اند." data-en="These exercises and links are in addition to the book.">این تمرین‌ها و پیوندها اضافه بر متن کتاب‌اند.</p>
+        <ol><li data-fa="صفحه‌ای بساز که همه شهرهای پایگاه را فهرست کند. اگر شهری نبود، به جای جدول خالی یک جمله نشان بده." data-en="Build a page that lists every city from the database. If there are no cities, show a sentence instead of an empty table.">صفحه‌ای بساز که همه شهرهای پایگاه را فهرست کند. اگر شهری نبود، به جای جدول خالی یک جمله نشان بده.</li><li data-fa="برای هر شهر یک پیوند جزئیات بساز که نام همان شهر را در صفحه جدا نشان بدهد." data-en="Give each city a detail link that shows that city&#x27;s name on its own page.">برای هر شهر یک پیوند جزئیات بساز که نام همان شهر را در صفحه جدا نشان بدهد.</li></ol>
+        <h2 data-fa="پیوند مفید" data-en="Useful link">پیوند مفید</h2><ul><li><a href="https://docs.djangoproject.com/en/stable/topics/db/queries/" data-fa="پرس‌وجوها" data-en="Making queries">پرس‌وجوها</a></li></ul>
+      </aside>
+    <nav class="pager"><a rel="prev" class="prev" href="p5-model.html"><span class="pager-word" data-fa="قبلی" data-en="Previous">قبلی</span><span class="pager-name" data-fa="مدل شهر و پنل ادمین" data-en="The city model and the admin">مدل شهر و پنل ادمین</span></a><a rel="next" class="next" href="p5-auth.html"><span class="pager-word" data-fa="بعدی" data-en="Next">بعدی</span><span class="pager-name" data-fa="ورود و خروج" data-en="Sign-in and sign-out">ورود و خروج</span></a></nav>
+    </div>
+  </div>
+  <script src="../assets/search-index.js?v=4"></script>
+  <script src="../assets/app.js?v=4"></script>
+</body>
+</html>

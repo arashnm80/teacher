@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title data-fa="متغیرها، نوع داده و عملگرها" data-en="Variables, types, and operators">متغیرها، نوع داده و عملگرها</title>
+  <link rel="icon" href="../assets/favicon.svg">
+  <link rel="stylesheet" href="../assets/style.css?v=4">
+</head>
+<body data-root="../">
+  <header class="top">
+    <a class="brand" href="../index.html">
+      <span data-fa="طراح سایت" data-en="Site Design">طراح سایت</span>
+      <small data-fa="پایه یازدهم" data-en="Grade 11">پایه یازدهم</small>
+    </a>
+    <div class="search-wrap">
+      <input id="q" type="search" autocomplete="off"
+        data-fa-placeholder="جستجو در درس‌ها" data-en-placeholder="Search lessons"
+        placeholder="جستجو در درس‌ها">
+      <div id="results" class="results" hidden></div>
+    </div>
+    <a class="download" href="../grade11-offline.zip?v=2" data-fa="دانلود کل سایت" data-en="Download the whole site">دانلود کل سایت</a>
+    <button type="button" id="lang-toggle" class="lang-toggle" dir="ltr" data-lang="fa"
+      aria-label="تغییر زبان">
+      <span data-opt="fa">فا</span>
+      <span data-opt="en">EN</span>
+    </button>
+  </header>
+  <div class="layout">
+    <details class="toc" open><summary><span data-fa="فهرست درس‌ها" data-en="Lesson list">فهرست درس‌ها</span></summary><nav class="side" aria-label="lessons"><p class="mod" data-fa="شروع کتاب" data-en="Opening">شروع کتاب</p><p class="unit" data-fa="فهرست" data-en="Contents">فهرست</p><a class="" href="toc.html" data-fa="فهرست" data-en="Contents">فهرست</a><p class="mod" data-fa="پودمان ۱: برنامه‌نویسی پایتون" data-en="Module 1: Python programming">پودمان ۱: برنامه‌نویسی پایتون</p><p class="unit" data-fa="معرفی پودمان" data-en="Module introduction">معرفی پودمان</p><a class="" href="p1-intro.html" data-fa="معرفی پودمان پایتون" data-en="Introducing the Python module">معرفی پودمان پایتون</a><p class="unit" data-fa="مدل‌سازی داده" data-en="Data modeling">مدل‌سازی داده</p><a class="" href="p1-python.html" data-fa="پایتون و محیط برنامه‌نویسی" data-en="Python and the programming environment">پایتون و محیط برنامه‌نویسی</a><a class="current" href="p1-vars.html" data-fa="متغیرها، نوع داده و عملگرها" data-en="Variables, types, and operators">متغیرها، نوع داده و عملگرها</a><a class="" href="p1-cast.html" data-fa="ورودی و تبدیل نوع" data-en="Input and type casting">ورودی و تبدیل نوع</a><a class="" href="p1-lists.html" data-fa="لیست‌ها" data-en="Lists">لیست‌ها</a><a class="" href="p1-if.html" data-fa="شرط‌های ساده" data-en="Simple conditions">شرط‌های ساده</a><a class="" href="p1-elif.html" data-fa="if، elif و else" data-en="if, elif, and else">if، elif و else</a><a class="" href="p1-for.html" data-fa="حلقه for و range" data-en="The for loop and range">حلقه for و range</a><a class="" href="p1-while.html" data-fa="حلقه while و کنترل حلقه" data-en="The while loop and loop control">حلقه while و کنترل حلقه</a><a class="" href="p1-assess-data.html" data-fa="ارزشیابی مدل‌سازی داده" data-en="Data-modeling assessment">ارزشیابی مدل‌سازی داده</a><p class="unit" data-fa="توابع و ماژول‌ها" data-en="Functions and modules">توابع و ماژول‌ها</p><a class="" href="p1-sets.html" data-fa="مجموعه (set)" data-en="Sets">مجموعه (set)</a><a class="" href="p1-dict.html" data-fa="دیکشنری" data-en="Dictionaries">دیکشنری</a><a class="" href="p1-quiz.html" data-fa="پروژه بازی Quiz" data-en="Quiz game project">پروژه بازی Quiz</a><a class="" href="p1-tuple.html" data-fa="تاپل" data-en="Tuples">تاپل</a><a class="" href="p1-func.html" data-fa="تعریف تابع، پارامتر و return" data-en="Defining functions, parameters, and return">تعریف تابع، پارامتر و return</a><a class="" href="p1-func-more.html" data-fa="تمرین تابع و مرتب‌سازی" data-en="Function practice and sorting">تمرین تابع و مرتب‌سازی</a><a class="" href="p1-modules.html" data-fa="ماژول‌ها و تفاوت تابع و متد" data-en="Modules, and functions versus methods">ماژول‌ها و تفاوت تابع و متد</a><a class="" href="p1-assess-func.html" data-fa="ارزشیابی توابع و ماژول‌ها" data-en="Functions and modules assessment">ارزشیابی توابع و ماژول‌ها</a><p class="mod" data-fa="پودمان ۲: صفحات وب ایستا" data-en="Module 2: Static web pages">پودمان ۲: صفحات وب ایستا</p><p class="unit" data-fa="معرفی پودمان" data-en="Module introduction">معرفی پودمان</p><a class="" href="p2-intro.html" data-fa="معرفی پودمان صفحات ایستا" data-en="Introducing static web pages">معرفی پودمان صفحات ایستا</a><p class="unit" data-fa="ساختار با HTML" data-en="Structure with HTML">ساختار با HTML</p><a class="" href="p2-web.html" data-fa="وب چگونه کار می‌کند" data-en="How the web works">وب چگونه کار می‌کند</a><a class="" href="p2-concepts.html" data-fa="مفاهیم طراحی وب و نقشه سایت" data-en="Web-design concepts and the site map">مفاهیم طراحی وب و نقشه سایت</a><a class="" href="p2-tags.html" data-fa="اولین صفحه HTML" data-en="A first HTML page">اولین صفحه HTML</a><a class="" href="p2-text.html" data-fa="متن، لیست و پیوند" data-en="Text, lists, and links">متن، لیست و پیوند</a><a class="" href="p2-img.html" data-fa="تصویر در صفحه" data-en="Images on the page">تصویر در صفحه</a><a class="" href="p2-forms.html" data-fa="فرم‌ها" data-en="Forms">فرم‌ها</a><a class="" href="p2-semantic.html" data-fa="عناصر معنایی" data-en="Semantic elements">عناصر معنایی</a><a class="" href="p2-assess-html.html" data-fa="ارزشیابی HTML" data-en="HTML assessment">ارزشیابی HTML</a><p class="unit" data-fa="ظاهر با CSS" data-en="Appearance with CSS">ظاهر با CSS</p><a class="" href="p2-css-start.html" data-fa="نوشتن CSS" data-en="Writing CSS">نوشتن CSS</a><a class="" href="p2-css-look.html" data-fa="رنگ، پس‌زمینه و انتخاب‌گر" data-en="Color, background, and selectors">رنگ، پس‌زمینه و انتخاب‌گر</a><a class="" href="p2-box.html" data-fa="مدل جعبه‌ای و display" data-en="The box model and display">مدل جعبه‌ای و display</a><a class="" href="p2-flex.html" data-fa="چیدمان با Flexbox" data-en="Layout with Flexbox">چیدمان با Flexbox</a><a class="" href="p2-flex-work.html" data-fa="کارگاه چیدمان صفحه" data-en="Page-layout workshop">کارگاه چیدمان صفحه</a><a class="" href="p2-media.html" data-fa="مدیا کوئری و ارزشیابی CSS" data-en="Media queries and the CSS assessment">مدیا کوئری و ارزشیابی CSS</a><p class="mod" data-fa="پودمان ۳: صفحات وب تعاملی" data-en="Module 3: Interactive web pages">پودمان ۳: صفحات وب تعاملی</p><p class="unit" data-fa="معرفی پودمان" data-en="Module introduction">معرفی پودمان</p><a class="" href="p3-intro.html" data-fa="معرفی پودمان تعاملی" data-en="Introducing the interactive module">معرفی پودمان تعاملی</a><p class="unit" data-fa="بوت‌استرپ" data-en="Bootstrap">بوت‌استرپ</p><a class="" href="p3-bs-start.html" data-fa="فریم‌ورک و شروع بوت‌استرپ" data-en="Frameworks and starting Bootstrap">فریم‌ورک و شروع بوت‌استرپ</a><a class="" href="p3-bs-util.html" data-fa="فاصله، گردی و لیست" data-en="Spacing, rounding, and lists">فاصله، گردی و لیست</a><a class="" href="p3-bs-header.html" data-fa="سرصفحه فروشگاه" data-en="The shop header">سرصفحه فروشگاه</a><a class="" href="p3-bs-grid.html" data-fa="شبکه Grid" data-en="The grid">شبکه Grid</a><a class="" href="p3-bs-rwd.html" data-fa="کلاس‌های واکنش‌گرا" data-en="Responsive classes">کلاس‌های واکنش‌گرا</a><a class="" href="p3-bs-nav.html" data-fa="نوار ناوبری و جزئیات محصول" data-en="Navbar and product details">نوار ناوبری و جزئیات محصول</a><a class="" href="p3-bs-form.html" data-fa="فرم و پنجره Modal" data-en="Forms and modals">فرم و پنجره Modal</a><a class="" href="p3-bs-show.html" data-fa="کاروسل و آکاردئون" data-en="Carousel and accordion">کاروسل و آکاردئون</a><a class="" href="p3-bs-assess.html" data-fa="ارزشیابی بوت‌استرپ" data-en="Bootstrap assessment">ارزشیابی بوت‌استرپ</a><p class="unit" data-fa="جاوااسکریپت" data-en="JavaScript">جاوااسکریپت</p><a class="" href="p3-js-start.html" data-fa="جاوااسکریپت در صفحه وب" data-en="JavaScript on the page">جاوااسکریپت در صفحه وب</a><a class="" href="p3-js-vars.html" data-fa="متغیر و نوع داده" data-en="Variables and data types">متغیر و نوع داده</a><a class="" href="p3-js-ops.html" data-fa="عملگرها" data-en="Operators">عملگرها</a><a class="" href="p3-js-data.html" data-fa="آرایه و شیء" data-en="Arrays and objects">آرایه و شیء</a><a class="" href="p3-js-if.html" data-fa="شرط در جاوااسکریپت" data-en="Conditions in JavaScript">شرط در جاوااسکریپت</a><a class="" href="p3-js-loops.html" data-fa="حلقه‌ها" data-en="Loops">حلقه‌ها</a><a class="" href="p3-js-func.html" data-fa="تابع‌ها" data-en="Functions">تابع‌ها</a><a class="" href="p3-js-dom.html" data-fa="صفحه، رویداد و اعتبار فرم" data-en="The page, events, and form validation">صفحه، رویداد و اعتبار فرم</a><a class="" href="p3-js-assess.html" data-fa="ارزشیابی جاوااسکریپت" data-en="JavaScript assessment">ارزشیابی جاوااسکریپت</a><p class="mod" data-fa="پودمان ۴: توسعه وب پایتون" data-en="Module 4: Python for the web">پودمان ۴: توسعه وب پایتون</p><p class="unit" data-fa="معرفی پودمان" data-en="Module introduction">معرفی پودمان</p><a class="" href="p4-intro.html" data-fa="معرفی پودمان شیءگرایی" data-en="Introducing the object-oriented module">معرفی پودمان شیءگرایی</a><p class="unit" data-fa="شیءگرایی" data-en="Object-oriented programming">شیءگرایی</p><a class="" href="p4-idea.html" data-fa="ایده شیء و کلاس" data-en="The idea of objects and classes">ایده شیء و کلاس</a><a class="" href="p4-class.html" data-fa="ساخت کلاس و متد" data-en="Writing a class and methods">ساخت کلاس و متد</a><a class="" href="p4-inherit.html" data-fa="وراثت" data-en="Inheritance">وراثت</a><a class="" href="p4-protect.html" data-fa="داده معتبر و استفاده داخلی" data-en="Valid data and internal use">داده معتبر و استفاده داخلی</a><a class="" href="p4-assess-oop.html" data-fa="ارزشیابی برنامه شیءگرا" data-en="Object-oriented assessment">ارزشیابی برنامه شیءگرا</a><p class="unit" data-fa="فایل و توسعه" data-en="Files and development">فایل و توسعه</p><a class="" href="p4-files.html" data-fa="خواندن و نوشتن فایل متنی" data-en="Reading and writing text files">خواندن و نوشتن فایل متنی</a><a class="" href="p4-errors.html" data-fa="پیمایش فایل و مدیریت خطا" data-en="Walking a file and handling errors">پیمایش فایل و مدیریت خطا</a><a class="" href="p4-json.html" data-fa="چند فایل و JSON" data-en="Several files and JSON">چند فایل و JSON</a><a class="" href="p4-assess-files.html" data-fa="ارزشیابی کار با فایل" data-en="Files assessment">ارزشیابی کار با فایل</a><p class="mod" data-fa="پودمان ۵: برنامه‌نویسی جنگو" data-en="Module 5: Django">پودمان ۵: برنامه‌نویسی جنگو</p><p class="unit" data-fa="معرفی پودمان" data-en="Module introduction">معرفی پودمان</p><a class="" href="p5-intro.html" data-fa="معرفی پودمان جنگو" data-en="Introducing the Django module">معرفی پودمان جنگو</a><p class="unit" data-fa="ایجاد وب‌اپلیکیشن" data-en="Creating the web app">ایجاد وب‌اپلیکیشن</p><a class="" href="p5-what.html" data-fa="جنگو چیست و نصب" data-en="What Django is, and installing it">جنگو چیست و نصب</a><a class="" href="p5-project.html" data-fa="پروژه، اپ و اولین view" data-en="Project, app, and the first view">پروژه، اپ و اولین view</a><a class="" href="p5-template.html" data-fa="قالب و دمای واقعی" data-en="Templates and a real temperature">قالب و دمای واقعی</a><a class="" href="p5-assess-create.html" data-fa="ارزشیابی ایجاد وب‌اپلیکیشن" data-en="Creating-the-app assessment">ارزشیابی ایجاد وب‌اپلیکیشن</a><p class="unit" data-fa="توسعه وب‌اپلیکیشن" data-en="Developing the web app">توسعه وب‌اپلیکیشن</p><a class="" href="p5-model.html" data-fa="مدل شهر و پنل ادمین" data-en="The city model and the admin">مدل شهر و پنل ادمین</a><a class="" href="p5-list.html" data-fa="خواندن شهرها و نمایش فهرست" data-en="Reading cities and showing the list">خواندن شهرها و نمایش فهرست</a><a class="" href="p5-auth.html" data-fa="ورود و خروج" data-en="Sign-in and sign-out">ورود و خروج</a><a class="" href="p5-crud.html" data-fa="افزودن و حذف شهر" data-en="Adding and deleting a city">افزودن و حذف شهر</a><a class="" href="p5-bugs.html" data-fa="باگ و امنیت" data-en="Bugs and security">باگ و امنیت</a><p class="mod" data-fa="پایان کتاب" data-en="Back of the book">پایان کتاب</p><p class="unit" data-fa="منابع" data-en="References">منابع</p><a class="" href="refs.html" data-fa="منابع کتاب" data-en="Book references">منابع کتاب</a></nav></details>
+    <div class="main">
+      <h1 class="section-title" data-fa="متغیرها، نوع داده و عملگرها" data-en="Variables, types, and operators">متغیرها، نوع داده و عملگرها</h1><article class="lesson" lang="fa" dir="rtl" data-lang-block="fa"><p class="page-mark">صفحه ۸</p>
+<h3 id="variable">متغیر <bdi dir="ltr">(variable)</bdi> و انواع داده</h3>
+<p>متغیر، محلی از حافظه <code>RAM</code> است که برای ذخیره موقت داده استفاده می‌شود. در پایتون برای ایجاد متغیر نیازی نیست که ابتدا آن را تعریف (<code>declare</code>) و سپس مقداردهی (<code>initialize</code>) کنید؛ نوع داده به‌صورت خودکار تشخیص داده می‌شود (شکل14).</p>
+<p><img alt="تصویر کتاب" src="../images/p014-04.png" /></p>
+<p><code>num</code> = 55</p>
+<p>کافی است که در سمت چپ عملگر انتساب یعنی " = " نام متغیر و در سمت راست آن، مقدارش را</p>
+<div class="code-wrap" dir="ltr"><pre><code>بنویسید. name=&quot;baran&quot; , num = 55
+</code></pre></div>
+<p><strong>شکل 14</strong></p>
+<p><img alt="تصویر کتاب" src="../images/p014-03.png" /></p>
+<p>پایتون از انواع مختلفی از متغیرها پشتیبانی می‌کند (شکل 15).</p>
+<p><code>list</code></p>
+<p><code>str</code></p>
+<p>پایتون از روی مقداری که به متغیر اختصاص داده</p>
+<p><code>int</code></p>
+<p><code>set</code></p>
+<p>می‌شود، نوع آن را تشخیص می‌دهد.</p>
+<div class="code-wrap" dir="ltr"><pre><code>f loat
+</code></pre></div>
+<p><code>tuple</code></p>
+<p>مثال: <code>num1=15</code> در این مثال پایتون نوع متغیر را از نوع عدد صحیح تعیین می‌کند و نیازی به بیان نوع</p>
+<p><code>dict</code></p>
+<p><code>bool</code></p>
+<p>متغیر هم نیست.</p>
+<p><strong>شکل 15</strong></p>
+<p>انواع داده پرکاربرد در پایتون نوع داده رشته‌ای (<code>str</code>): هر چیزی که متن باشد، مثل اسم، پیام، ایمیل، رمز عبور، شماره تلفن، توضیح، نوع داده رشته‌ای (<code>str</code>) است.</p>
+<p><img alt="تصویر کتاب" src="../images/p014-01.png" /></p>
+<p>نوع داده <code>str</code> که اختصار یافته کلمه <code>string</code> است را می‌توانید با استفاده از علامت نقل‌قول تکی یا دوتایی</p>
+<p><strong>شکل 16</strong></p>
+<p>یا سه‌تایی تعریف کنید (شکل16).</p>
+<p>نوع داده عدد صحیح (<code>int</code>): عددهایی که با آنها محاسبه انجام می‌دهید و اعشار ندارند همان عددهای صحیح (<code>int</code>) یا همان <code>integer</code>، هستند (شکل17).</p>
+<figure class="shot"><img alt="شکل 17" src="../images/p014-02.png" /><figcaption>شکل 17</figcaption></figure>
+<hr />
+<p class="page-mark">صفحه ۹</p>
+<p>نوع داده عدد اعشاری (<code>folat</code>): این داده‌ها عددی هستند و در محاسبات ریاضی به کار گرفته م‌یشوند و دارای مقدار اعشاری هستند. مثل:</p>
+<div class="code-wrap" dir="ltr"><pre><code>height = 1.75
+</code></pre></div>
+<p>تابع ()<code>type:</code> خروجی تابع <code>type</code>(), نوع داده هر متغیر می‌باشد (شکل18).</p>
+<figure class="shot"><img alt="شکل 18" src="../images/p015-01.png" /><figcaption>شکل 18</figcaption></figure>
+<p>از این مرحله به بعد کدها را در محیط <code>VS</code> <code>Code</code> بنویسید. برای انجام این کار برنامه <code>VS</code> <code>Code</code> را اجرا کرده و سپس از منوی فایل دستور <code>new</code> <code>folder</code> یک‌پوشه جدید به نام <code>PyProg</code> ایجاد کنید و سپس در آن پوشه از منو فایل با انتخاب گزینه <code>New</code> <code>File</code>،</p>
+<figure class="shot"><img alt="شکل 19" src="../images/p015-02.png" /><figcaption>شکل 19</figcaption></figure>
+<p>کادر <code>EXPLORER</code> انتخاب دکمه <code>New</code> <code>File</code> و یا کلید‌های ترکیبی <code>Ctrl+</code> <code>N</code> فایل جدیدی به نام <code>prog01.py</code> در این پوشه ایجاد کنید (شکل 19). حالا صفحه ویرایشگر کد باز شده و می‌توانید دستورات خود را در آن بنویسید.</p>
+<p>برای اجرای دستورات از دکمه</p>
+<p>در سمت راست‌بالای صفحه برنامه یا منوی <code>Run</code> استفاده کنید. نتیجه</p>
+<p>اجرای برنامه در پایین صفحه، نمایش داده خواهد شد (شکل20).</p>
+<figure class="shot"><img alt="شکل 20" src="../images/p015-03.png" /><figcaption>شکل 20</figcaption></figure>
+<p>شیوه‌نامه نگارش پایتون (<code>PEP</code>) نحوه نگارش کدهای پایتون و قراردادهای کدنویسی را ارائه می‌دهد و باعث خوانایی بیشتر و تمیز (<code>clean</code>) شدن کدها می‌شود. برای مشاهده می‌توانید به <code>pep8.ir</code> مراجعه کنید.</p>
+<hr />
+<p class="page-mark">صفحه ۱۰</p>
+<h3 id="_1">کنجکاوی</h3>
+<p>پس از مشاهده اصول <code>pep8</code> به سؤالات زیر پاسخ دهید:</p>
+<p>1 حداکثر در یک خط چند کاراکتر می‌توان نوشت؟</p>
+<p>2 تورفتگی‌ها چند کاراکتر باشد؟</p>
+<p>3 آیا می‌توان در ابتدای یک خط از کاراکتر فاصله استفاده کرد؟</p>
+<p>در <code>VSCode</code> پس از کدنویسی با فشار کلیدهای <code>Alt+Shift+F</code> به طور خودکار بیشتر مشکلات فرمت کد را بر اساس <code>pep8</code> اصلاح می‌کند. به‌شرط آنکه یکی از افزونه‌های <code>autopep8</code> ،<code>Black</code> <code>formatter</code> ، <code>Ruff</code> یا <code>yapf</code> نصب شده باشد.</p>
+<p>قواعد نام‌گذاری متغیرها در پایتون نام متغیر نمی‌تواند شامل کاراکتر فاصله باشد. به طور مثال نمی‌توان متغیری با نام <code>is</code> <code>valid</code> تعریف کرد.</p>
+<p>نام‌گذاری متغیرها در پایتون باید با یک حرف یا زیر خط آغاز شود. مثل (<code>_num</code> , <code>personl</code> ) نام متغیر می‌تواند شامل حروف، اعداد و زیر خط باشد.</p>
+<p>نام متغیرها به حروف کوچک و بزرگ حساس است <code>Age</code> ،<code>age</code> و <code>AGE</code> سه متغیر متفاوت هستند.</p>
+<p>نام متغیر نباید هیچ یک از کلمات کلیدی پایتون باشد. نام‌های <code>import</code>, <code>var</code>، <code>const</code>، <code>if</code>، <code>for</code> به‌عنوان نام متغیر اشتباه است. چون این کلمات از کلمات کلیدی پایتون هستند.</p>
+<h3 id="_2">نکته</h3>
+<p>کلمه کلیدی (<code>Keyword</code>) در پایتون به واژه‌هایی گفته می‌شود که خوِد زبان پایتون برای دستورها و ساختارهایش رزرو کرده است. این کلمات معنای از پیش تعریف‌شده دارند و به همین دلیل نمی‌توان از آنها به‌عنوان نام متغیر، تابع یا کلاس استفاده کرد.</p>
+<h3 id="_3">کنجکاوی</h3>
+<p>در پایتون روش‌های مختلفی برای تعیین نام متغیرهای چندکلمه‌ای وجود دارد. درباره آنها تحقیق کنید و در کلاس ارائه دهید.</p>
+<p>عملگر (<code>operator</code>): نمادهای ویژه‌ای هستند که عملیات خاصی را روی مقادیر یا متغیرها انجام می‌دهند.</p>
+<p>در این عبارات <code>a</code> + <code>b</code> یا <code>c</code> * <code>d</code> یا 4/2 به +، * و / عملگر (<code>operator</code>) گفته می‌شود.</p>
+<p>عملوند (<code>operand</code>): مقدار یا مقدارهایی هستند که عملگرها روی آن کار می‌کنند. مثلاًً در عبارت <code>b+</code> <code>a</code> علامت "+" عملگر و <code>a</code> , <code>b</code> عملوند هستند.</p>
+<hr />
+<p class="page-mark">صفحه ۱۱</p>
+<p>عملوندهاِی عملگر " +" در پایتون می‌توانند، هر دو عددی یا هر دو رشته‌ای باشند که در این صورت در حالت اول، جمع ریاضی و در حالت دوم الحاق (<code>concatenation</code>) اتفاق می‌افتد (شکل21).</p>
+<p><img alt="تصویر کتاب" src="../images/p017-04.png" /></p>
+<figure class="shot"><img alt="شکل 21" src="../images/p017-03.png" /><figcaption>شکل 21</figcaption></figure>
+<h3 id="_4">کنجکاوی</h3>
+<p>درصورتی‌که در عملگر + یکی از عملوندها عددی و دیگری رشته‌ای باشد، چه اتفاقی می‌افتد؟</p>
+<p>پروژه</p>
+<p>پروژه آشپزباشی:</p>
+<p>برنامه‌ای بنویسید که از درون لیست غذا، یکی را به‌تصادف انتخاب کند.</p>
+<p><img alt="تصویر کتاب" src="../images/p017-01.png" /></p>
+<p>در خط اول کتابخانه <code>random</code> را به درون برنامه وارد (<code>import</code>) کنید تا بتواند در خط ۳ از متد <code>choice</code> برای انتخاب تصادفی استفاده کند.</p>
+<p>در خط دوم شما می‌توانید لیست غذاهای محبوبتان را به لیست اضافه کنید و در منزل برای انتخاب غذا به مادر خود کمک کنید.</p>
+<p>در خط سوم، از درون لیست <code>foods</code> یک غذا به تصادف انتخاب و درون متغیر <code>item</code> ذخیره می‌شود.</p>
+<p>در خط چهارم، متغیر <code>item</code> که هم اکنون درون آن نام یک غذای تصادفی ذخیره است چاپ می‌شود.</p>
+<p>به نظر شما برای اینکه شانس یک غذا در انتخاب تصادفی بیشتر شود چه تغییری در کد می‌توان اعمال کرد؟</p>
+<p>پاسخ: در کد زیر با تکرار نام آش، شانس انتخاب آش بیشتر شده است.</p>
+<p><img alt="تصویر کتاب" src="../images/p017-02.png" /></p>
+<hr />
+<p class="page-mark">صفحه ۱۲</p>
+<p>برخی از انواع عملگرها در پایتون:</p>
+<p>جدول1 برخی از عملگرهای ریاضی را نشان می‌دهد که می‌توانید از آنها در انجام محاسبات ریاضی استفاده کنید.</p>
+<p><strong>جدول 1</strong></p>
+<p><img alt="تصویر کتاب" src="../images/p018-01.png" /></p>
+<p>عملگر ریاضی عملگر</p>
+<h3 id="_5">کاربرد</h3>
+<p>+جمع -تفریق</p>
+<p>*</p>
+<p>ضرب</p>
+<p>/</p>
+<p>تقسیم %باقی مانده تقسیم</p>
+<p><strong>شکل 22</strong></p>
+<h3 id="_6">کنجکاوی</h3>
+<p>در مورد انواع دیگر عملگرها تحقیق کنید و در کلاس ارائه دهید.</p>
+<p>دستورات ورودی و خروجی:</p>
+<p>دستور ()<code>print</code> : پیش‌تر گفته شد که دستور <code>print</code> برای نمایش خروجی استفاده می‌شود و با برخی از کاربردهای این دستور نیز آشنا شدید.</p>
+<p>تابع ()<code>len</code> : گاهی لازم است بدانید یک متن چند کاراکتر دارد. این تابع تعداد کاراکترهای یک متن را محاسبه می‌کند (شکل23).</p>
+<figure class="shot"><img alt="شکل 23" src="../images/p018-02.png" /><figcaption>شکل 23</figcaption></figure>
+<p>دستور()<code>input</code> : برای دریافت داده از کاربر و ذخیره در متغیر از دستور <code>input</code> استفاده می‌شود (شکل24).</p>
+<p><img alt="تصویر کتاب" src="../images/p018-03.png" /></p>
+<figure class="shot"><img alt="شکل 24" src="../images/p018-04.png" /><figcaption>شکل 24</figcaption></figure>
+<hr /></article><article class="lesson" lang="en" dir="ltr" data-lang-block="en" hidden><p class="page-mark">Page 8</p>
+<h3 id="variable-and-data-types">Variable and data types</h3>
+<p>A variable is a location in <code>RAM</code> memory that is used for temporary storage of data. In Python, to create a variable you do not need to first declare it and then initialize it; the data type is recognized automatically (Figure 14).</p>
+<p><img alt="Book image" src="../images/p014-04.png" /></p>
+<p><code>num</code> = 55</p>
+<p>It is enough that on the left side of the assignment operator, that is "=", you write the variable name and on the right side its value</p>
+<div class="code-wrap" dir="ltr"><pre><code>بنویسید. name=&quot;baran&quot; , num = 55
+</code></pre></div>
+<p><strong>Figure 14</strong></p>
+<p><img alt="Book image" src="../images/p014-03.png" /></p>
+<p>Python supports different kinds of variables (Figure 15).</p>
+<p><code>list</code></p>
+<p><code>str</code></p>
+<p>Python recognizes the type of a variable from the value assigned</p>
+<p><code>int</code></p>
+<p><code>set</code></p>
+<p>to it.</p>
+<div class="code-wrap" dir="ltr"><pre><code>f loat
+</code></pre></div>
+<p><code>tuple</code></p>
+<p>Example: <code>num1=15</code> In this example Python sets the variable type to integer, and there is no need to state the type</p>
+<p><code>dict</code></p>
+<p><code>bool</code></p>
+<p>of the variable either.</p>
+<p><strong>Figure 15</strong></p>
+<p>Common data types in Python String data type (<code>str</code>): Anything that is text—such as a name, a message, an email, a password, a phone number, or a description—is the string data type (<code>str</code>).</p>
+<p><img alt="Book image" src="../images/p014-01.png" /></p>
+<p>The <code>str</code> data type, which is short for the word <code>string</code>, can be defined using single, double,</p>
+<p><strong>Figure 16</strong></p>
+<p>or triple quotation marks (Figure 16).</p>
+<p>Integer data type (<code>int</code>): Numbers that you calculate with and that have no decimal part are integers (<code>int</code>), or <code>integer</code> (Figure 17).</p>
+<figure class="shot"><img alt="Figure 17" src="../images/p014-02.png" /><figcaption>Figure 17</figcaption></figure>
+<hr />
+<p class="page-mark">Page 9</p>
+<p>Floating-point data type (<code>folat</code>): These data are numeric and are used in mathematical calculations and have a decimal value. For example:</p>
+<div class="code-wrap" dir="ltr"><pre><code>height = 1.75
+</code></pre></div>
+<p>The ()<code>type</code> function: The output of the <code>type</code>() function is the data type of each variable (Figure 18).</p>
+<figure class="shot"><img alt="Figure 18" src="../images/p015-01.png" /><figcaption>Figure 18</figcaption></figure>
+<p>From this stage on, write the codes in the <code>VS</code> <code>Code</code> environment. To do this, run the <code>VS</code> <code>Code</code> program and then, from the File menu, use the <code>new</code> <code>folder</code> command to create a new folder named <code>PyProg</code>, and then in that folder, from the File menu by choosing the <code>New</code> <code>File</code> option,</p>
+<figure class="shot"><img alt="Figure 19" src="../images/p015-02.png" /><figcaption>Figure 19</figcaption></figure>
+<p>in the <code>EXPLORER</code> pane choose the <code>New</code> <code>File</code> button or the key combination <code>Ctrl+</code> <code>N</code> to create a new file named <code>prog01.py</code> in this folder (Figure 19). Now the code editor page opens and you can write your statements in it.</p>
+<p>To run the statements, use the button</p>
+<p>at the top right of the program window or the <code>Run</code> menu. The result</p>
+<p>of running the program will be displayed at the bottom of the page (Figure 20).</p>
+<figure class="shot"><img alt="Figure 20" src="../images/p015-03.png" /><figcaption>Figure 20</figcaption></figure>
+<p>The Python style guide (<code>PEP</code>) presents how to write Python code and coding conventions, and makes the codes more readable and cleaner (<code>clean</code>). To view it you can go to <code>pep8.ir</code>.</p>
+<hr />
+<p class="page-mark">Page 10</p>
+<h3 id="try-this">Try this</h3>
+<p>After viewing the principles of <code>pep8</code>, answer the following questions:</p>
+<p>1 What is the maximum number of characters you can write on one line?</p>
+<p>2 How many characters should indentations be?</p>
+<p>3 Can you use a space character at the beginning of a line?</p>
+<p>In <code>VSCode</code>, after coding, pressing the keys <code>Alt+Shift+F</code> automatically fixes most code formatting problems based on <code>pep8</code>, provided that one of the extensions <code>autopep8</code>, <code>Black</code> <code>formatter</code>, <code>Ruff</code>, or <code>yapf</code> is installed.</p>
+<p>Rules for naming variables in Python A variable name cannot include a space character. For example, you cannot define a variable named <code>is</code> <code>valid</code>.</p>
+<p>Naming variables in Python must begin with a letter or an underscore. For example (<code>_num</code> , <code>personl</code> ) A variable name can include letters, numbers, and underscores.</p>
+<p>Variable names are case-sensitive. <code>Age</code>, <code>age</code>, and <code>AGE</code> are three different variables.</p>
+<p>A variable name must not be any of the Python keywords. The names <code>import</code>, <code>var</code>, <code>const</code>, <code>if</code>, <code>for</code> are wrong as variable names, because these words are Python keywords.</p>
+<h3 id="note">Note</h3>
+<p>A keyword (<code>Keyword</code>) in Python refers to words that the Python language itself has reserved for its statements and structures. These words have a predefined meaning, and for that reason you cannot use them as the name of a variable, function, or class.</p>
+<h3 id="try-this_1">Try this</h3>
+<p>In Python there are different methods for naming multi-word variables. Research them and present them in class.</p>
+<p>Operator (<code>operator</code>): Special symbols that perform a particular operation on values or variables.</p>
+<p>In the expressions <code>a</code> + <code>b</code> or <code>c</code> * <code>d</code> or 4/2, +, *, and / are called operators (<code>operator</code>).</p>
+<p>Operand (<code>operand</code>): The value or values that operators work on. For example, in the expression <code>b+</code> <code>a</code>, the "+" sign is the operator and <code>a</code> and <code>b</code> are the operands.</p>
+<hr />
+<p class="page-mark">Page 11</p>
+<p>The operands of the "+" operator in Python can both be numeric or both be strings; in the first case mathematical addition happens, and in the second case concatenation happens (Figure 21).</p>
+<p><img alt="Book image" src="../images/p017-04.png" /></p>
+<figure class="shot"><img alt="Figure 21" src="../images/p017-03.png" /><figcaption>Figure 21</figcaption></figure>
+<h3 id="try-this_2">Try this</h3>
+<p>If in the + operator one of the operands is numeric and the other is a string, what happens?</p>
+<p>Project</p>
+<p>Ashpazbashi project:</p>
+<p>Write a program that randomly chooses one item from a list of foods.</p>
+<p><img alt="Book image" src="../images/p017-01.png" /></p>
+<p>On the first line, import the <code>random</code> library into the program so that on line 3 it can use the <code>choice</code> method for a random selection.</p>
+<p>On the second line you can add your favorite foods to the list and at home help your mother choose a meal.</p>
+<p>On the third line, one food is chosen at random from the <code>foods</code> list and stored in the <code>item</code> variable.</p>
+<p>On the fourth line, the <code>item</code> variable, which now holds the name of a random food, is printed.</p>
+<p>In your opinion, what change can you make to the code so that one food has a greater chance in the random selection?</p>
+<p>Answer: In the code below, by repeating the name ash, the chance of choosing ash has increased.</p>
+<p><img alt="Book image" src="../images/p017-02.png" /></p>
+<hr />
+<p class="page-mark">Page 12</p>
+<p>Some kinds of operators in Python:</p>
+<p>Table 1 shows some of the arithmetic operators that you can use to perform mathematical calculations.</p>
+<p><strong>Table 1</strong></p>
+<p><img alt="Book image" src="../images/p018-01.png" /></p>
+<p>Arithmetic operator Operator</p>
+<h3 id="in-practice">In practice</h3>
+<ul>
+<li>addition - subtraction</li>
+</ul>
+<p>*</p>
+<p>multiplication</p>
+<p>/</p>
+<p>division % remainder of division</p>
+<p><strong>Figure 22</strong></p>
+<h3 id="try-this_3">Try this</h3>
+<p>Research other kinds of operators and present them in class.</p>
+<p>Input and output statements:</p>
+<p>The ()<code>print</code> statement: Earlier it was said that the <code>print</code> statement is used to display output, and you also became familiar with some uses of this statement.</p>
+<p>The ()<code>len</code> function: Sometimes you need to know how many characters a text has. This function calculates the number of characters in a text (Figure 23).</p>
+<figure class="shot"><img alt="Figure 23" src="../images/p018-02.png" /><figcaption>Figure 23</figcaption></figure>
+<p>The ()<code>input</code> statement: To receive data from the user and store it in a variable, the <code>input</code> statement is used (Figure 24).</p>
+<p><img alt="Book image" src="../images/p018-03.png" /></p>
+<figure class="shot"><img alt="Figure 24" src="../images/p018-04.png" /><figcaption>Figure 24</figcaption></figure>
+<hr /></article>
+      <aside class="extra">
+        <h2 data-fa="تمرین این بخش" data-en="Exercises for this section">تمرین این بخش</h2>
+        <p class="extra-note" data-fa="این تمرین‌ها و پیوندها اضافه بر متن کتاب‌اند." data-en="These exercises and links are in addition to the book.">این تمرین‌ها و پیوندها اضافه بر متن کتاب‌اند.</p>
+        <ol><li data-fa="برنامه‌ای بساز با سه متغیر نام کالا، قیمت صحیح و تخفیف اعشاری، بعد مبلغ بعد از تخفیف را حساب و همراه نوع هر متغیر چاپ کن." data-en="Build a program with a product name, an integer price, and a float discount. Print the price after discount and the type of each variable.">برنامه‌ای بساز با سه متغیر نام کالا، قیمت صحیح و تخفیف اعشاری، بعد مبلغ بعد از تخفیف را حساب و همراه نوع هر متغیر چاپ کن.</li><li data-fa="همان برنامه را گسترش بده تا دو رشته را با + بچسباند و دو عدد را با + جمع کند و هر دو نتیجه را پشت سر هم نشان بدهد." data-en="Extend it so + joins two strings and + adds two numbers, and show both results.">همان برنامه را گسترش بده تا دو رشته را با + بچسباند و دو عدد را با + جمع کند و هر دو نتیجه را پشت سر هم نشان بدهد.</li></ol>
+        <h2 data-fa="پیوند مفید" data-en="Useful link">پیوند مفید</h2><ul><li><a href="https://docs.python.org/3/tutorial/introduction.html#an-informal-introduction-to-python" data-fa="عدد و رشته در پایتون" data-en="Numbers and strings in Python">عدد و رشته در پایتون</a></li></ul>
+      </aside>
+    <nav class="pager"><a rel="prev" class="prev" href="p1-python.html"><span class="pager-word" data-fa="قبلی" data-en="Previous">قبلی</span><span class="pager-name" data-fa="پایتون و محیط برنامه‌نویسی" data-en="Python and the programming environment">پایتون و محیط برنامه‌نویسی</span></a><a rel="next" class="next" href="p1-cast.html"><span class="pager-word" data-fa="بعدی" data-en="Next">بعدی</span><span class="pager-name" data-fa="ورودی و تبدیل نوع" data-en="Input and type casting">ورودی و تبدیل نوع</span></a></nav>
+    </div>
+  </div>
+  <script src="../assets/search-index.js?v=4"></script>
+  <script src="../assets/app.js?v=4"></script>
+</body>
+</html>

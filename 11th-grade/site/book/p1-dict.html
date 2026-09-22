@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title data-fa="دیکشنری" data-en="Dictionaries">دیکشنری</title>
+  <link rel="icon" href="../assets/favicon.svg">
+  <link rel="stylesheet" href="../assets/style.css?v=4">
+</head>
+<body data-root="../">
+  <header class="top">
+    <a class="brand" href="../index.html">
+      <span data-fa="طراح سایت" data-en="Site Design">طراح سایت</span>
+      <small data-fa="پایه یازدهم" data-en="Grade 11">پایه یازدهم</small>
+    </a>
+    <div class="search-wrap">
+      <input id="q" type="search" autocomplete="off"
+        data-fa-placeholder="جستجو در درس‌ها" data-en-placeholder="Search lessons"
+        placeholder="جستجو در درس‌ها">
+      <div id="results" class="results" hidden></div>
+    </div>
+    <a class="download" href="../grade11-offline.zip?v=2" data-fa="دانلود کل سایت" data-en="Download the whole site">دانلود کل سایت</a>
+    <button type="button" id="lang-toggle" class="lang-toggle" dir="ltr" data-lang="fa"
+      aria-label="تغییر زبان">
+      <span data-opt="fa">فا</span>
+      <span data-opt="en">EN</span>
+    </button>
+  </header>
+  <div class="layout">
+    <details class="toc" open><summary><span data-fa="فهرست درس‌ها" data-en="Lesson list">فهرست درس‌ها</span></summary><nav class="side" aria-label="lessons"><p class="mod" data-fa="شروع کتاب" data-en="Opening">شروع کتاب</p><p class="unit" data-fa="فهرست" data-en="Contents">فهرست</p><a class="" href="toc.html" data-fa="فهرست" data-en="Contents">فهرست</a><p class="mod" data-fa="پودمان ۱: برنامه‌نویسی پایتون" data-en="Module 1: Python programming">پودمان ۱: برنامه‌نویسی پایتون</p><p class="unit" data-fa="معرفی پودمان" data-en="Module introduction">معرفی پودمان</p><a class="" href="p1-intro.html" data-fa="معرفی پودمان پایتون" data-en="Introducing the Python module">معرفی پودمان پایتون</a><p class="unit" data-fa="مدل‌سازی داده" data-en="Data modeling">مدل‌سازی داده</p><a class="" href="p1-python.html" data-fa="پایتون و محیط برنامه‌نویسی" data-en="Python and the programming environment">پایتون و محیط برنامه‌نویسی</a><a class="" href="p1-vars.html" data-fa="متغیرها، نوع داده و عملگرها" data-en="Variables, types, and operators">متغیرها، نوع داده و عملگرها</a><a class="" href="p1-cast.html" data-fa="ورودی و تبدیل نوع" data-en="Input and type casting">ورودی و تبدیل نوع</a><a class="" href="p1-lists.html" data-fa="لیست‌ها" data-en="Lists">لیست‌ها</a><a class="" href="p1-if.html" data-fa="شرط‌های ساده" data-en="Simple conditions">شرط‌های ساده</a><a class="" href="p1-elif.html" data-fa="if، elif و else" data-en="if, elif, and else">if، elif و else</a><a class="" href="p1-for.html" data-fa="حلقه for و range" data-en="The for loop and range">حلقه for و range</a><a class="" href="p1-while.html" data-fa="حلقه while و کنترل حلقه" data-en="The while loop and loop control">حلقه while و کنترل حلقه</a><a class="" href="p1-assess-data.html" data-fa="ارزشیابی مدل‌سازی داده" data-en="Data-modeling assessment">ارزشیابی مدل‌سازی داده</a><p class="unit" data-fa="توابع و ماژول‌ها" data-en="Functions and modules">توابع و ماژول‌ها</p><a class="" href="p1-sets.html" data-fa="مجموعه (set)" data-en="Sets">مجموعه (set)</a><a class="current" href="p1-dict.html" data-fa="دیکشنری" data-en="Dictionaries">دیکشنری</a><a class="" href="p1-quiz.html" data-fa="پروژه بازی Quiz" data-en="Quiz game project">پروژه بازی Quiz</a><a class="" href="p1-tuple.html" data-fa="تاپل" data-en="Tuples">تاپل</a><a class="" href="p1-func.html" data-fa="تعریف تابع، پارامتر و return" data-en="Defining functions, parameters, and return">تعریف تابع، پارامتر و return</a><a class="" href="p1-func-more.html" data-fa="تمرین تابع و مرتب‌سازی" data-en="Function practice and sorting">تمرین تابع و مرتب‌سازی</a><a class="" href="p1-modules.html" data-fa="ماژول‌ها و تفاوت تابع و متد" data-en="Modules, and functions versus methods">ماژول‌ها و تفاوت تابع و متد</a><a class="" href="p1-assess-func.html" data-fa="ارزشیابی توابع و ماژول‌ها" data-en="Functions and modules assessment">ارزشیابی توابع و ماژول‌ها</a><p class="mod" data-fa="پودمان ۲: صفحات وب ایستا" data-en="Module 2: Static web pages">پودمان ۲: صفحات وب ایستا</p><p class="unit" data-fa="معرفی پودمان" data-en="Module introduction">معرفی پودمان</p><a class="" href="p2-intro.html" data-fa="معرفی پودمان صفحات ایستا" data-en="Introducing static web pages">معرفی پودمان صفحات ایستا</a><p class="unit" data-fa="ساختار با HTML" data-en="Structure with HTML">ساختار با HTML</p><a class="" href="p2-web.html" data-fa="وب چگونه کار می‌کند" data-en="How the web works">وب چگونه کار می‌کند</a><a class="" href="p2-concepts.html" data-fa="مفاهیم طراحی وب و نقشه سایت" data-en="Web-design concepts and the site map">مفاهیم طراحی وب و نقشه سایت</a><a class="" href="p2-tags.html" data-fa="اولین صفحه HTML" data-en="A first HTML page">اولین صفحه HTML</a><a class="" href="p2-text.html" data-fa="متن، لیست و پیوند" data-en="Text, lists, and links">متن، لیست و پیوند</a><a class="" href="p2-img.html" data-fa="تصویر در صفحه" data-en="Images on the page">تصویر در صفحه</a><a class="" href="p2-forms.html" data-fa="فرم‌ها" data-en="Forms">فرم‌ها</a><a class="" href="p2-semantic.html" data-fa="عناصر معنایی" data-en="Semantic elements">عناصر معنایی</a><a class="" href="p2-assess-html.html" data-fa="ارزشیابی HTML" data-en="HTML assessment">ارزشیابی HTML</a><p class="unit" data-fa="ظاهر با CSS" data-en="Appearance with CSS">ظاهر با CSS</p><a class="" href="p2-css-start.html" data-fa="نوشتن CSS" data-en="Writing CSS">نوشتن CSS</a><a class="" href="p2-css-look.html" data-fa="رنگ، پس‌زمینه و انتخاب‌گر" data-en="Color, background, and selectors">رنگ، پس‌زمینه و انتخاب‌گر</a><a class="" href="p2-box.html" data-fa="مدل جعبه‌ای و display" data-en="The box model and display">مدل جعبه‌ای و display</a><a class="" href="p2-flex.html" data-fa="چیدمان با Flexbox" data-en="Layout with Flexbox">چیدمان با Flexbox</a><a class="" href="p2-flex-work.html" data-fa="کارگاه چیدمان صفحه" data-en="Page-layout workshop">کارگاه چیدمان صفحه</a><a class="" href="p2-media.html" data-fa="مدیا کوئری و ارزشیابی CSS" data-en="Media queries and the CSS assessment">مدیا کوئری و ارزشیابی CSS</a><p class="mod" data-fa="پودمان ۳: صفحات وب تعاملی" data-en="Module 3: Interactive web pages">پودمان ۳: صفحات وب تعاملی</p><p class="unit" data-fa="معرفی پودمان" data-en="Module introduction">معرفی پودمان</p><a class="" href="p3-intro.html" data-fa="معرفی پودمان تعاملی" data-en="Introducing the interactive module">معرفی پودمان تعاملی</a><p class="unit" data-fa="بوت‌استرپ" data-en="Bootstrap">بوت‌استرپ</p><a class="" href="p3-bs-start.html" data-fa="فریم‌ورک و شروع بوت‌استرپ" data-en="Frameworks and starting Bootstrap">فریم‌ورک و شروع بوت‌استرپ</a><a class="" href="p3-bs-util.html" data-fa="فاصله، گردی و لیست" data-en="Spacing, rounding, and lists">فاصله، گردی و لیست</a><a class="" href="p3-bs-header.html" data-fa="سرصفحه فروشگاه" data-en="The shop header">سرصفحه فروشگاه</a><a class="" href="p3-bs-grid.html" data-fa="شبکه Grid" data-en="The grid">شبکه Grid</a><a class="" href="p3-bs-rwd.html" data-fa="کلاس‌های واکنش‌گرا" data-en="Responsive classes">کلاس‌های واکنش‌گرا</a><a class="" href="p3-bs-nav.html" data-fa="نوار ناوبری و جزئیات محصول" data-en="Navbar and product details">نوار ناوبری و جزئیات محصول</a><a class="" href="p3-bs-form.html" data-fa="فرم و پنجره Modal" data-en="Forms and modals">فرم و پنجره Modal</a><a class="" href="p3-bs-show.html" data-fa="کاروسل و آکاردئون" data-en="Carousel and accordion">کاروسل و آکاردئون</a><a class="" href="p3-bs-assess.html" data-fa="ارزشیابی بوت‌استرپ" data-en="Bootstrap assessment">ارزشیابی بوت‌استرپ</a><p class="unit" data-fa="جاوااسکریپت" data-en="JavaScript">جاوااسکریپت</p><a class="" href="p3-js-start.html" data-fa="جاوااسکریپت در صفحه وب" data-en="JavaScript on the page">جاوااسکریپت در صفحه وب</a><a class="" href="p3-js-vars.html" data-fa="متغیر و نوع داده" data-en="Variables and data types">متغیر و نوع داده</a><a class="" href="p3-js-ops.html" data-fa="عملگرها" data-en="Operators">عملگرها</a><a class="" href="p3-js-data.html" data-fa="آرایه و شیء" data-en="Arrays and objects">آرایه و شیء</a><a class="" href="p3-js-if.html" data-fa="شرط در جاوااسکریپت" data-en="Conditions in JavaScript">شرط در جاوااسکریپت</a><a class="" href="p3-js-loops.html" data-fa="حلقه‌ها" data-en="Loops">حلقه‌ها</a><a class="" href="p3-js-func.html" data-fa="تابع‌ها" data-en="Functions">تابع‌ها</a><a class="" href="p3-js-dom.html" data-fa="صفحه، رویداد و اعتبار فرم" data-en="The page, events, and form validation">صفحه، رویداد و اعتبار فرم</a><a class="" href="p3-js-assess.html" data-fa="ارزشیابی جاوااسکریپت" data-en="JavaScript assessment">ارزشیابی جاوااسکریپت</a><p class="mod" data-fa="پودمان ۴: توسعه وب پایتون" data-en="Module 4: Python for the web">پودمان ۴: توسعه وب پایتون</p><p class="unit" data-fa="معرفی پودمان" data-en="Module introduction">معرفی پودمان</p><a class="" href="p4-intro.html" data-fa="معرفی پودمان شیءگرایی" data-en="Introducing the object-oriented module">معرفی پودمان شیءگرایی</a><p class="unit" data-fa="شیءگرایی" data-en="Object-oriented programming">شیءگرایی</p><a class="" href="p4-idea.html" data-fa="ایده شیء و کلاس" data-en="The idea of objects and classes">ایده شیء و کلاس</a><a class="" href="p4-class.html" data-fa="ساخت کلاس و متد" data-en="Writing a class and methods">ساخت کلاس و متد</a><a class="" href="p4-inherit.html" data-fa="وراثت" data-en="Inheritance">وراثت</a><a class="" href="p4-protect.html" data-fa="داده معتبر و استفاده داخلی" data-en="Valid data and internal use">داده معتبر و استفاده داخلی</a><a class="" href="p4-assess-oop.html" data-fa="ارزشیابی برنامه شیءگرا" data-en="Object-oriented assessment">ارزشیابی برنامه شیءگرا</a><p class="unit" data-fa="فایل و توسعه" data-en="Files and development">فایل و توسعه</p><a class="" href="p4-files.html" data-fa="خواندن و نوشتن فایل متنی" data-en="Reading and writing text files">خواندن و نوشتن فایل متنی</a><a class="" href="p4-errors.html" data-fa="پیمایش فایل و مدیریت خطا" data-en="Walking a file and handling errors">پیمایش فایل و مدیریت خطا</a><a class="" href="p4-json.html" data-fa="چند فایل و JSON" data-en="Several files and JSON">چند فایل و JSON</a><a class="" href="p4-assess-files.html" data-fa="ارزشیابی کار با فایل" data-en="Files assessment">ارزشیابی کار با فایل</a><p class="mod" data-fa="پودمان ۵: برنامه‌نویسی جنگو" data-en="Module 5: Django">پودمان ۵: برنامه‌نویسی جنگو</p><p class="unit" data-fa="معرفی پودمان" data-en="Module introduction">معرفی پودمان</p><a class="" href="p5-intro.html" data-fa="معرفی پودمان جنگو" data-en="Introducing the Django module">معرفی پودمان جنگو</a><p class="unit" data-fa="ایجاد وب‌اپلیکیشن" data-en="Creating the web app">ایجاد وب‌اپلیکیشن</p><a class="" href="p5-what.html" data-fa="جنگو چیست و نصب" data-en="What Django is, and installing it">جنگو چیست و نصب</a><a class="" href="p5-project.html" data-fa="پروژه، اپ و اولین view" data-en="Project, app, and the first view">پروژه، اپ و اولین view</a><a class="" href="p5-template.html" data-fa="قالب و دمای واقعی" data-en="Templates and a real temperature">قالب و دمای واقعی</a><a class="" href="p5-assess-create.html" data-fa="ارزشیابی ایجاد وب‌اپلیکیشن" data-en="Creating-the-app assessment">ارزشیابی ایجاد وب‌اپلیکیشن</a><p class="unit" data-fa="توسعه وب‌اپلیکیشن" data-en="Developing the web app">توسعه وب‌اپلیکیشن</p><a class="" href="p5-model.html" data-fa="مدل شهر و پنل ادمین" data-en="The city model and the admin">مدل شهر و پنل ادمین</a><a class="" href="p5-list.html" data-fa="خواندن شهرها و نمایش فهرست" data-en="Reading cities and showing the list">خواندن شهرها و نمایش فهرست</a><a class="" href="p5-auth.html" data-fa="ورود و خروج" data-en="Sign-in and sign-out">ورود و خروج</a><a class="" href="p5-crud.html" data-fa="افزودن و حذف شهر" data-en="Adding and deleting a city">افزودن و حذف شهر</a><a class="" href="p5-bugs.html" data-fa="باگ و امنیت" data-en="Bugs and security">باگ و امنیت</a><p class="mod" data-fa="پایان کتاب" data-en="Back of the book">پایان کتاب</p><p class="unit" data-fa="منابع" data-en="References">منابع</p><a class="" href="refs.html" data-fa="منابع کتاب" data-en="Book references">منابع کتاب</a></nav></details>
+    <div class="main">
+      <h1 class="section-title" data-fa="دیکشنری" data-en="Dictionaries">دیکشنری</h1><article class="lesson" lang="fa" dir="rtl" data-lang-block="fa"><p class="page-mark">صفحه ۵۲</p>
+<h3 id="dictionary">دیکشنری <bdi dir="ltr">(dictionary)</bdi></h3>
+<p>نوع داده <code>dictionary</code> شبیه دفترچه تلفن است که هر نام با یک شماره‌تلفن مرتبط است.</p>
+<p><img alt="تصویر کتاب" src="../images/p058-01.png" /></p>
+<p>دیکشنری‌ها از تعدادی جفت کلید:</p>
+<p>مقدار (<code>key:value</code>) تشکیل شده‌اند که به هر یک از آنها <code>item</code> گفته می‌شود. هر کلید به یک مقدار خاص اشاره دارد.</p>
+<p>برای ایجاد <code>dictionary</code> آیتم‌ها درون {} قرار گرفته و با کاما از یکدیگر جدا می‌شوند. همچنین هر کلید و مقدار آن با علامت دونقطه از هم جدا شده است.</p>
+<p><strong>شکل 104</strong></p>
+<p>در مثال شکل105 یک <code>dictionary</code> شامل سه آیتم (کلید و مقدار) به نام <code>cardic</code> تعریف شده است:</p>
+<p><img alt="تصویر کتاب" src="../images/p058-02.png" /></p>
+<figure class="shot"><img alt="شکل 105" src="../images/p058-03.png" /><figcaption>شکل 105</figcaption></figure>
+<p>برای دسترسی به یک مقدار در <code>dictionary</code> بعد از نام <code>dictionary</code>، کلید، داخل براکت [] قرار داده می‌شود (شکل106).</p>
+<p>مثال: در کد شکل106 یک دیکشنری به نام <code>person</code> با 3 آیتم (کلید، مقدار) تعریف شده است. برای نمایش هر یک از عناصر داخل این دیکشنری از براکت [] استفاده شده است.</p>
+<figure class="shot"><img alt="شکل 106" src="../images/p058-04.png" /><figcaption>شکل 106</figcaption></figure>
+<hr />
+<p class="page-mark">صفحه ۵۳</p>
+<h3 id="_1">نکته</h3>
+<p>اگر هر عنصر دارای عنوان مشخص باشد (مانند نام دانش‌آموز و نمره او)، استفاده از دیکشنری بهتر از لیست است؛ زیرا در دیکشنری می‌توان مستقیمًا با نام کلید به مقدار معادل آن دسترسی داشت و نیازی به دانستن اندیس عنصر نیست.</p>
+<h3 id="_2">فعالیت</h3>
+<p>یک دیکشنری به نام <code>book</code> بسازید که اطلاعات یک کتاب را نگه دارد:</p>
+<div class="code-wrap" dir="ltr"><pre><code>&quot;title&quot;: &quot;python Basic&quot;
+&quot;author: &quot;Fatemeh
+250:pages
+</code></pre></div>
+<p>نام نویسنده (<code>author</code>) و تعداد صفحات (<code>pages</code>) را چاپ کنید.</p>
+<p>کلیدهای متفاوت می‌تواند مقادیر یکسان داشته باشند.</p>
+<p>مثال: دیکشنری <code>status</code> دارای دو آیتم است (شکل107).</p>
+<div class="code-wrap" dir="ltr"><pre><code>آیتم اول: &quot;user1&quot;:&quot;active&quot;
+</code></pre></div>
+<p>آیتم دوم: <code>"user2":"active"</code> کلیدها یکسان هستند ولی مقادیر هریک از آنها متفاوت است.</p>
+<p>در <code>dictionary</code> کلیدهای یکسان نمی‌توانند مقادیر یکسان داشته باشند. کلیدهای تکراری باعث بازنویسی مقدار قبلی می‌شوند، نه مقدارهای تکراری.</p>
+<p><img alt="تصویر کتاب" src="../images/p059-01.png" /></p>
+<figure class="shot"><img alt="شکل 107" src="../images/p059-02.png" /><figcaption>شکل 107</figcaption></figure>
+<p>در مثال شکل 108 دیکشنری <code>car_dic</code> دارای پنج آیتم است که دو تای آنها دارای کلیدهای با نام یکسان هستند. پس مقدار جدید به جای مقدار قبلی جایگزین می‌شود.</p>
+<p><img alt="تصویر کتاب" src="../images/p059-03.png" /></p>
+<figure class="shot"><img alt="شکل 108" src="../images/p059-04.png" /><figcaption>شکل 108</figcaption></figure>
+<hr />
+<p class="page-mark">صفحه ۵۴</p>
+<p><img alt="تصویر کتاب" src="../images/p060-07.png" /></p>
+<p>برای ساخت یک <code>dictionary</code> خالی از {} استفاده می‌شود (شکل109).</p>
+<p>مثال: یک دیکشنری خالی با نام <code>user</code> تعریف شده است.</p>
+<p><strong>شکل 109</strong></p>
+<p>اضافه‌کردن <code>item</code> جدید به <code>dictionary:</code></p>
+<p>برای اضافه‌کردن یک عضو جدید به <code>dictionary</code> در پایتون، کافی است یک کلید جدید را مقداردهی کنید (شکل110).</p>
+<p><img alt="تصویر کتاب" src="../images/p060-04.png" /></p>
+<p><img alt="تصویر کتاب" src="../images/p060-01.png" /></p>
+<p><img alt="تصویر کتاب" src="../images/p060-03.png" /></p>
+<figure class="shot"><img alt="شکل 110" src="../images/p060-02.png" /><figcaption>شکل 110</figcaption></figure>
+<h3 id="_3">فعالیت</h3>
+<p>یک <code>dictionary</code> به نام <code>product</code> با کلیدهای <code>name</code> <code>price</code> ، بسازید. قیمت محصول درون <code>dictionary</code> را تغییر دهید و سپس <code>dictionary</code> را چاپ کنید.</p>
+<p>مثال: یک <code>dictionary</code> خالی به نام <code>student</code> بسازید. سپس با استفاده از ورودی <code>name</code> و <code>grade</code> را به <code>dictionary</code> اضافه و در پایان دیکشنری را چاپ کنید (شکل111).</p>
+<p><img alt="تصویر کتاب" src="../images/p060-05.png" /></p>
+<figure class="shot"><img alt="شکل 111" src="../images/p060-06.png" /><figcaption>شکل 111</figcaption></figure>
+<h3 id="_4">فعالیت</h3>
+<p>یک <code>dictionary</code> خالی به نام <code>user</code> بسازید. از ورودی مقادیری برای کلیدهای <code>username</code> و <code>password</code> و <code>Age</code> را بگیرید و داخل <code>dictionary</code> ذخیره و در پایان کل اطلاعات کاربر را چاپ کنید.</p>
+<hr />
+<p class="page-mark">صفحه ۵۵</p>
+<p>حذف عنصر از <code>dictionary:</code></p>
+<p><img alt="تصویر کتاب" src="../images/p061-01.png" /></p>
+<p>روش‌های مختلفی برای حذف آیتم از <code>dictionary</code> وجود دارد ازآن‌جمله:</p>
+<p>در پایتون برای حذف یک آیتم از <code>dictionary</code>، از دستور <code>del</code> استفاده می‌شود. با این دستور، کلید و مقدار مربوط به آن به طور کامل از <code>dictionary</code> حذف می‌شود.</p>
+<p><strong>شکل 112</strong></p>
+<p><img alt="تصویر کتاب" src="../images/p061-02.png" /></p>
+<p>مثال: در مثال کلید <code>age</code> و مقدار آن 20، از <code>dictionary</code> حذف شده است. برنامه را بنویسید و نتیجه را مشاهده کنید (شکل113).</p>
+<p>در برنامه مقابل برای حذف آیتم <code>age":</code> 20" از دستور <code>del</code> استفاده شده است. مشاهده می‌کنید که با این دستور کلید و مقدار آن حذف شده‌اند.</p>
+<figure class="shot"><img alt="شکل 113" src="../images/p061-03.png" /><figcaption>شکل 113</figcaption></figure>
+<p><img alt="تصویر کتاب" src="../images/p061-04.png" /></p>
+<p>درصورتی‌که قصد حذف کلیدی را دارید که در <code>dictionary</code> وجود نداشته باشد، برنامه با خطا مواجه می‌شود؛ بنابراین قبل از حذف، باید وجود کلید بررسی شود. در برنامه مقابل برای جلوگیری از خطا پیش از حذف عنصر از لیست، وجود آن بررسی شده است.</p>
+<p>برنامه را وارد کرده و نتیجه را مشاهده کنید (شکل114).</p>
+<p><strong>شکل 114</strong></p>
+<hr />
+<p class="page-mark">صفحه ۵۶</p>
+<p>برای حذف عنصر از <code>dictionary</code> می‌توانید از متد <code>pop</code>() نیز استفاده کنید. متد <code>pop</code>()، عنصری که نام کلید مشخص شده را دارد، حذف می‌کند. (<code>key</code>)<code>dictionary.pop</code> مثال: در کد (شکل115) عنصر <code>"price</code> " از دیکشنری <code>product</code> با استفاده از دستور <code>product.pop</code>(<code>"price"</code>) حذف شده است.</p>
+<p><img alt="تصویر کتاب" src="../images/p062-03.png" /></p>
+<figure class="shot"><img alt="شکل 115" src="../images/p062-04.png" /><figcaption>شکل 115</figcaption></figure>
+<p>متد ()<code>pop</code> علاوه بر حذف آیتم، می‌تواند مقدار آیتم حذ‌فشده را برگرداند (شکل116).</p>
+<p><img alt="تصویر کتاب" src="../images/p062-01.png" /></p>
+<figure class="shot"><img alt="شکل 116" src="../images/p062-02.png" /><figcaption>شکل 116</figcaption></figure>
+<h3 id="_5">فعالیت</h3>
+<p>یک دیکشنری به نام <code>inventory</code> بسازید که شامل:</p>
+<div class="code-wrap" dir="ltr"><pre><code>,inventory = {&quot;Bag&quot;: 5, &quot;Ball&quot;: 8, &quot;Laptop&quot;: 3
+}Mouse&quot;: 10,  &quot;Flash memory&quot;: 14&quot;
+</code></pre></div>
+<p>وجود کالایی با نام <code>"Bag"</code> را بررسی و در صورت وجود، پیغام مناسبی چاپ شود که نشان‌دهندۀ وجود کالا باشد و سپس آن آیتم را با متد ()<code>pop</code> حذف کنید.</p>
+<p>مقدار حذ‌فشده را چاپ کنید.</p>
+<p>اگر کالا وجود نداشت، پیغامی مبنی بر عدم وجود آن نمایش داده شود.</p>
+<p>سپس <code>dictionary</code> جدید را چاپ کنید.</p>
+<hr /></article><article class="lesson" lang="en" dir="ltr" data-lang-block="en" hidden><p class="page-mark">Page 52</p>
+<h3 id="dictionary-dictionary">Dictionary (dictionary)</h3>
+<p>The <code>dictionary</code> data type is like a phone book in which each name is associated with a phone number.</p>
+<p><img alt="Book image" src="../images/p058-01.png" /></p>
+<p>Dictionaries are made up of a number of key:</p>
+<p>value (<code>key:value</code>) pairs, each of which is called an <code>item</code>. Each key points to a specific value.</p>
+<p>To create a <code>dictionary</code>, the items are placed inside {} and separated from each other by commas. Also, each key and its value are separated by a colon.</p>
+<p><strong>Figure 104</strong></p>
+<p>In the example in Figure 105, a <code>dictionary</code> named <code>cardic</code> containing three items (key and value) is defined:</p>
+<p><img alt="Book image" src="../images/p058-02.png" /></p>
+<figure class="shot"><img alt="Figure 105" src="../images/p058-03.png" /><figcaption>Figure 105</figcaption></figure>
+<p>To access a value in a <code>dictionary</code>, after the <code>dictionary</code> name, the key is placed inside brackets [] (Figure 106).</p>
+<p>Example: In the code in Figure 106, a dictionary named <code>person</code> with 3 items (key, value) is defined. Brackets [] are used to display each of the elements inside this dictionary.</p>
+<figure class="shot"><img alt="Figure 106" src="../images/p058-04.png" /><figcaption>Figure 106</figcaption></figure>
+<hr />
+<p class="page-mark">Page 53</p>
+<h3 id="note">Note</h3>
+<p>If each element has a clear label (such as a student’s name and score), using a dictionary is better than a list, because in a dictionary you can access the matching value directly by the key name and you do not need to know the element’s index.</p>
+<h3 id="activity">Activity</h3>
+<p>Build a dictionary named <code>book</code> that holds information about a book:</p>
+<div class="code-wrap" dir="ltr"><pre><code>&quot;title&quot;: &quot;python Basic&quot;
+&quot;author: &quot;Fatemeh
+250:pages
+</code></pre></div>
+<p>Print the author’s name (<code>author</code>) and the number of pages (<code>pages</code>).</p>
+<p>Different keys can have the same values.</p>
+<p>Example: The <code>status</code> dictionary has two items (Figure 107).</p>
+<div class="code-wrap" dir="ltr"><pre><code>آیتم اول: &quot;user1&quot;:&quot;active&quot;
+</code></pre></div>
+<p>Second item: <code>"user2":"active"</code> The keys are the same, but the values of each of them are different.</p>
+<p>In a <code>dictionary</code>, identical keys cannot have identical values. Duplicate keys cause the previous value to be overwritten, not duplicate values.</p>
+<p><img alt="Book image" src="../images/p059-01.png" /></p>
+<figure class="shot"><img alt="Figure 107" src="../images/p059-02.png" /><figcaption>Figure 107</figcaption></figure>
+<p>In the example in Figure 108, the <code>car_dic</code> dictionary has five items, two of which have keys with the same name. So the new value replaces the previous value.</p>
+<p><img alt="Book image" src="../images/p059-03.png" /></p>
+<figure class="shot"><img alt="Figure 108" src="../images/p059-04.png" /><figcaption>Figure 108</figcaption></figure>
+<hr />
+<p class="page-mark">Page 54</p>
+<p><img alt="Book image" src="../images/p060-07.png" /></p>
+<p>To build an empty <code>dictionary</code>, {} is used (Figure 109).</p>
+<p>Example: An empty dictionary named <code>user</code> is defined.</p>
+<p><strong>Figure 109</strong></p>
+<p>Adding a new <code>item</code> to a <code>dictionary:</code></p>
+<p>To add a new member to a <code>dictionary</code> in Python, it is enough to assign a value to a new key (Figure 110).</p>
+<p><img alt="Book image" src="../images/p060-04.png" /></p>
+<p><img alt="Book image" src="../images/p060-01.png" /></p>
+<p><img alt="Book image" src="../images/p060-03.png" /></p>
+<figure class="shot"><img alt="Figure 110" src="../images/p060-02.png" /><figcaption>Figure 110</figcaption></figure>
+<h3 id="activity_1">Activity</h3>
+<p>Build a <code>dictionary</code> named <code>product</code> with the keys <code>name</code> <code>price</code> . Change the product’s price inside the <code>dictionary</code> and then print the <code>dictionary</code>.</p>
+<p>Example: Build an empty <code>dictionary</code> named <code>student</code>. Then, using input, add <code>name</code> and <code>grade</code> to the <code>dictionary</code> and finally print the dictionary (Figure 111).</p>
+<p><img alt="Book image" src="../images/p060-05.png" /></p>
+<figure class="shot"><img alt="Figure 111" src="../images/p060-06.png" /><figcaption>Figure 111</figcaption></figure>
+<h3 id="activity_2">Activity</h3>
+<p>Build an empty <code>dictionary</code> named <code>user</code>. Take values for the keys <code>username</code> and <code>password</code> and <code>Age</code> from input, store them inside the <code>dictionary</code>, and finally print all of the user’s information.</p>
+<hr />
+<p class="page-mark">Page 55</p>
+<p>Removing an element from a <code>dictionary:</code></p>
+<p><img alt="Book image" src="../images/p061-01.png" /></p>
+<p>There are various ways to remove an item from a <code>dictionary</code>, including:</p>
+<p>In Python, the <code>del</code> statement is used to remove an item from a <code>dictionary</code>. With this statement, the key and its related value are completely removed from the <code>dictionary</code>.</p>
+<p><strong>Figure 112</strong></p>
+<p><img alt="Book image" src="../images/p061-02.png" /></p>
+<p>Example: In the example, the key <code>age</code> and its value 20 have been removed from the <code>dictionary</code>. Write the program and observe the result (Figure 113).</p>
+<p>In the program opposite, the <code>del</code> statement is used to remove the item <code>age":</code> 20". You can see that with this statement the key and its value have been removed.</p>
+<figure class="shot"><img alt="Figure 113" src="../images/p061-03.png" /><figcaption>Figure 113</figcaption></figure>
+<p><img alt="Book image" src="../images/p061-04.png" /></p>
+<p>If you intend to remove a key that does not exist in the <code>dictionary</code>, the program encounters an error; therefore, before removing, the existence of the key must be checked. In the program opposite, to prevent an error, the existence of the element is checked before removing it from the list.</p>
+<p>Enter the program and observe the result (Figure 114).</p>
+<p><strong>Figure 114</strong></p>
+<hr />
+<p class="page-mark">Page 56</p>
+<p>To remove an element from a <code>dictionary</code>, you can also use the <code>pop</code>() method. The <code>pop</code>() method removes the element that has the specified key name. (<code>key</code>)<code>dictionary.pop</code> Example: In the code (Figure 115), the element <code>"price</code> " has been removed from the <code>product</code> dictionary using the statement <code>product.pop</code>(<code>"price"</code>).</p>
+<p><img alt="Book image" src="../images/p062-03.png" /></p>
+<figure class="shot"><img alt="Figure 115" src="../images/p062-04.png" /><figcaption>Figure 115</figcaption></figure>
+<p>In addition to removing the item, the ()<code>pop</code> method can also return the value of the removed item (Figure 116).</p>
+<p><img alt="Book image" src="../images/p062-01.png" /></p>
+<figure class="shot"><img alt="Figure 116" src="../images/p062-02.png" /><figcaption>Figure 116</figcaption></figure>
+<h3 id="activity_3">Activity</h3>
+<p>Build a dictionary named <code>inventory</code> that includes:</p>
+<div class="code-wrap" dir="ltr"><pre><code>,inventory = {&quot;Bag&quot;: 5, &quot;Ball&quot;: 8, &quot;Laptop&quot;: 3
+}Mouse&quot;: 10,  &quot;Flash memory&quot;: 14&quot;
+</code></pre></div>
+<p>Check whether an item named <code>"Bag"</code> exists and, if it does, print a suitable message indicating that the item exists, and then remove that item with the ()<code>pop</code> method.</p>
+<p>Print the removed value.</p>
+<p>If the item did not exist, display a message stating that it does not exist.</p>
+<p>Then print the new <code>dictionary</code>.</p>
+<hr /></article>
+      <aside class="extra">
+        <h2 data-fa="تمرین این بخش" data-en="Exercises for this section">تمرین این بخش</h2>
+        <p class="extra-note" data-fa="این تمرین‌ها و پیوندها اضافه بر متن کتاب‌اند." data-en="These exercises and links are in addition to the book.">این تمرین‌ها و پیوندها اضافه بر متن کتاب‌اند.</p>
+        <ol><li data-fa="دفترچه تلفن بساز که سه نفر را نگه دارد، یک شماره را عوض کند، یک نفر را حذف کند و وجود یک نام را بررسی کند." data-en="Build a phone book of three people. Change one number, delete one person, and test whether a name exists.">دفترچه تلفن بساز که سه نفر را نگه دارد، یک شماره را عوض کند، یک نفر را حذف کند و وجود یک نام را بررسی کند.</li><li data-fa="نسخه تعاملی همان دفترچه را بساز که از کاربر سه نام و شماره جدید بگیرد و اگر نام تکراری بود شماره قبلی را عوض کند." data-en="Build an interactive version that reads three new names and numbers, and replaces the old number when the name already exists.">نسخه تعاملی همان دفترچه را بساز که از کاربر سه نام و شماره جدید بگیرد و اگر نام تکراری بود شماره قبلی را عوض کند.</li></ol>
+        <h2 data-fa="پیوند مفید" data-en="Useful link">پیوند مفید</h2><ul><li><a href="https://docs.python.org/3/tutorial/datastructures.html#dictionaries" data-fa="دیکشنری‌ها" data-en="Dictionaries">دیکشنری‌ها</a></li></ul>
+      </aside>
+    <nav class="pager"><a rel="prev" class="prev" href="p1-sets.html"><span class="pager-word" data-fa="قبلی" data-en="Previous">قبلی</span><span class="pager-name" data-fa="مجموعه (set)" data-en="Sets">مجموعه (set)</span></a><a rel="next" class="next" href="p1-quiz.html"><span class="pager-word" data-fa="بعدی" data-en="Next">بعدی</span><span class="pager-name" data-fa="پروژه بازی Quiz" data-en="Quiz game project">پروژه بازی Quiz</span></a></nav>
+    </div>
+  </div>
+  <script src="../assets/search-index.js?v=4"></script>
+  <script src="../assets/app.js?v=4"></script>
+</body>
+</html>

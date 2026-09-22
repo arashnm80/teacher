@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title data-fa="رنگ، پس‌زمینه و انتخاب‌گر" data-en="Color, background, and selectors">رنگ، پس‌زمینه و انتخاب‌گر</title>
+  <link rel="icon" href="../assets/favicon.svg">
+  <link rel="stylesheet" href="../assets/style.css?v=4">
+</head>
+<body data-root="../">
+  <header class="top">
+    <a class="brand" href="../index.html">
+      <span data-fa="طراح سایت" data-en="Site Design">طراح سایت</span>
+      <small data-fa="پایه یازدهم" data-en="Grade 11">پایه یازدهم</small>
+    </a>
+    <div class="search-wrap">
+      <input id="q" type="search" autocomplete="off"
+        data-fa-placeholder="جستجو در درس‌ها" data-en-placeholder="Search lessons"
+        placeholder="جستجو در درس‌ها">
+      <div id="results" class="results" hidden></div>
+    </div>
+    <a class="download" href="../grade11-offline.zip?v=2" data-fa="دانلود کل سایت" data-en="Download the whole site">دانلود کل سایت</a>
+    <button type="button" id="lang-toggle" class="lang-toggle" dir="ltr" data-lang="fa"
+      aria-label="تغییر زبان">
+      <span data-opt="fa">فا</span>
+      <span data-opt="en">EN</span>
+    </button>
+  </header>
+  <div class="layout">
+    <details class="toc" open><summary><span data-fa="فهرست درس‌ها" data-en="Lesson list">فهرست درس‌ها</span></summary><nav class="side" aria-label="lessons"><p class="mod" data-fa="شروع کتاب" data-en="Opening">شروع کتاب</p><p class="unit" data-fa="فهرست" data-en="Contents">فهرست</p><a class="" href="toc.html" data-fa="فهرست" data-en="Contents">فهرست</a><p class="mod" data-fa="پودمان ۱: برنامه‌نویسی پایتون" data-en="Module 1: Python programming">پودمان ۱: برنامه‌نویسی پایتون</p><p class="unit" data-fa="معرفی پودمان" data-en="Module introduction">معرفی پودمان</p><a class="" href="p1-intro.html" data-fa="معرفی پودمان پایتون" data-en="Introducing the Python module">معرفی پودمان پایتون</a><p class="unit" data-fa="مدل‌سازی داده" data-en="Data modeling">مدل‌سازی داده</p><a class="" href="p1-python.html" data-fa="پایتون و محیط برنامه‌نویسی" data-en="Python and the programming environment">پایتون و محیط برنامه‌نویسی</a><a class="" href="p1-vars.html" data-fa="متغیرها، نوع داده و عملگرها" data-en="Variables, types, and operators">متغیرها، نوع داده و عملگرها</a><a class="" href="p1-cast.html" data-fa="ورودی و تبدیل نوع" data-en="Input and type casting">ورودی و تبدیل نوع</a><a class="" href="p1-lists.html" data-fa="لیست‌ها" data-en="Lists">لیست‌ها</a><a class="" href="p1-if.html" data-fa="شرط‌های ساده" data-en="Simple conditions">شرط‌های ساده</a><a class="" href="p1-elif.html" data-fa="if، elif و else" data-en="if, elif, and else">if، elif و else</a><a class="" href="p1-for.html" data-fa="حلقه for و range" data-en="The for loop and range">حلقه for و range</a><a class="" href="p1-while.html" data-fa="حلقه while و کنترل حلقه" data-en="The while loop and loop control">حلقه while و کنترل حلقه</a><a class="" href="p1-assess-data.html" data-fa="ارزشیابی مدل‌سازی داده" data-en="Data-modeling assessment">ارزشیابی مدل‌سازی داده</a><p class="unit" data-fa="توابع و ماژول‌ها" data-en="Functions and modules">توابع و ماژول‌ها</p><a class="" href="p1-sets.html" data-fa="مجموعه (set)" data-en="Sets">مجموعه (set)</a><a class="" href="p1-dict.html" data-fa="دیکشنری" data-en="Dictionaries">دیکشنری</a><a class="" href="p1-quiz.html" data-fa="پروژه بازی Quiz" data-en="Quiz game project">پروژه بازی Quiz</a><a class="" href="p1-tuple.html" data-fa="تاپل" data-en="Tuples">تاپل</a><a class="" href="p1-func.html" data-fa="تعریف تابع، پارامتر و return" data-en="Defining functions, parameters, and return">تعریف تابع، پارامتر و return</a><a class="" href="p1-func-more.html" data-fa="تمرین تابع و مرتب‌سازی" data-en="Function practice and sorting">تمرین تابع و مرتب‌سازی</a><a class="" href="p1-modules.html" data-fa="ماژول‌ها و تفاوت تابع و متد" data-en="Modules, and functions versus methods">ماژول‌ها و تفاوت تابع و متد</a><a class="" href="p1-assess-func.html" data-fa="ارزشیابی توابع و ماژول‌ها" data-en="Functions and modules assessment">ارزشیابی توابع و ماژول‌ها</a><p class="mod" data-fa="پودمان ۲: صفحات وب ایستا" data-en="Module 2: Static web pages">پودمان ۲: صفحات وب ایستا</p><p class="unit" data-fa="معرفی پودمان" data-en="Module introduction">معرفی پودمان</p><a class="" href="p2-intro.html" data-fa="معرفی پودمان صفحات ایستا" data-en="Introducing static web pages">معرفی پودمان صفحات ایستا</a><p class="unit" data-fa="ساختار با HTML" data-en="Structure with HTML">ساختار با HTML</p><a class="" href="p2-web.html" data-fa="وب چگونه کار می‌کند" data-en="How the web works">وب چگونه کار می‌کند</a><a class="" href="p2-concepts.html" data-fa="مفاهیم طراحی وب و نقشه سایت" data-en="Web-design concepts and the site map">مفاهیم طراحی وب و نقشه سایت</a><a class="" href="p2-tags.html" data-fa="اولین صفحه HTML" data-en="A first HTML page">اولین صفحه HTML</a><a class="" href="p2-text.html" data-fa="متن، لیست و پیوند" data-en="Text, lists, and links">متن، لیست و پیوند</a><a class="" href="p2-img.html" data-fa="تصویر در صفحه" data-en="Images on the page">تصویر در صفحه</a><a class="" href="p2-forms.html" data-fa="فرم‌ها" data-en="Forms">فرم‌ها</a><a class="" href="p2-semantic.html" data-fa="عناصر معنایی" data-en="Semantic elements">عناصر معنایی</a><a class="" href="p2-assess-html.html" data-fa="ارزشیابی HTML" data-en="HTML assessment">ارزشیابی HTML</a><p class="unit" data-fa="ظاهر با CSS" data-en="Appearance with CSS">ظاهر با CSS</p><a class="" href="p2-css-start.html" data-fa="نوشتن CSS" data-en="Writing CSS">نوشتن CSS</a><a class="current" href="p2-css-look.html" data-fa="رنگ، پس‌زمینه و انتخاب‌گر" data-en="Color, background, and selectors">رنگ، پس‌زمینه و انتخاب‌گر</a><a class="" href="p2-box.html" data-fa="مدل جعبه‌ای و display" data-en="The box model and display">مدل جعبه‌ای و display</a><a class="" href="p2-flex.html" data-fa="چیدمان با Flexbox" data-en="Layout with Flexbox">چیدمان با Flexbox</a><a class="" href="p2-flex-work.html" data-fa="کارگاه چیدمان صفحه" data-en="Page-layout workshop">کارگاه چیدمان صفحه</a><a class="" href="p2-media.html" data-fa="مدیا کوئری و ارزشیابی CSS" data-en="Media queries and the CSS assessment">مدیا کوئری و ارزشیابی CSS</a><p class="mod" data-fa="پودمان ۳: صفحات وب تعاملی" data-en="Module 3: Interactive web pages">پودمان ۳: صفحات وب تعاملی</p><p class="unit" data-fa="معرفی پودمان" data-en="Module introduction">معرفی پودمان</p><a class="" href="p3-intro.html" data-fa="معرفی پودمان تعاملی" data-en="Introducing the interactive module">معرفی پودمان تعاملی</a><p class="unit" data-fa="بوت‌استرپ" data-en="Bootstrap">بوت‌استرپ</p><a class="" href="p3-bs-start.html" data-fa="فریم‌ورک و شروع بوت‌استرپ" data-en="Frameworks and starting Bootstrap">فریم‌ورک و شروع بوت‌استرپ</a><a class="" href="p3-bs-util.html" data-fa="فاصله، گردی و لیست" data-en="Spacing, rounding, and lists">فاصله، گردی و لیست</a><a class="" href="p3-bs-header.html" data-fa="سرصفحه فروشگاه" data-en="The shop header">سرصفحه فروشگاه</a><a class="" href="p3-bs-grid.html" data-fa="شبکه Grid" data-en="The grid">شبکه Grid</a><a class="" href="p3-bs-rwd.html" data-fa="کلاس‌های واکنش‌گرا" data-en="Responsive classes">کلاس‌های واکنش‌گرا</a><a class="" href="p3-bs-nav.html" data-fa="نوار ناوبری و جزئیات محصول" data-en="Navbar and product details">نوار ناوبری و جزئیات محصول</a><a class="" href="p3-bs-form.html" data-fa="فرم و پنجره Modal" data-en="Forms and modals">فرم و پنجره Modal</a><a class="" href="p3-bs-show.html" data-fa="کاروسل و آکاردئون" data-en="Carousel and accordion">کاروسل و آکاردئون</a><a class="" href="p3-bs-assess.html" data-fa="ارزشیابی بوت‌استرپ" data-en="Bootstrap assessment">ارزشیابی بوت‌استرپ</a><p class="unit" data-fa="جاوااسکریپت" data-en="JavaScript">جاوااسکریپت</p><a class="" href="p3-js-start.html" data-fa="جاوااسکریپت در صفحه وب" data-en="JavaScript on the page">جاوااسکریپت در صفحه وب</a><a class="" href="p3-js-vars.html" data-fa="متغیر و نوع داده" data-en="Variables and data types">متغیر و نوع داده</a><a class="" href="p3-js-ops.html" data-fa="عملگرها" data-en="Operators">عملگرها</a><a class="" href="p3-js-data.html" data-fa="آرایه و شیء" data-en="Arrays and objects">آرایه و شیء</a><a class="" href="p3-js-if.html" data-fa="شرط در جاوااسکریپت" data-en="Conditions in JavaScript">شرط در جاوااسکریپت</a><a class="" href="p3-js-loops.html" data-fa="حلقه‌ها" data-en="Loops">حلقه‌ها</a><a class="" href="p3-js-func.html" data-fa="تابع‌ها" data-en="Functions">تابع‌ها</a><a class="" href="p3-js-dom.html" data-fa="صفحه، رویداد و اعتبار فرم" data-en="The page, events, and form validation">صفحه، رویداد و اعتبار فرم</a><a class="" href="p3-js-assess.html" data-fa="ارزشیابی جاوااسکریپت" data-en="JavaScript assessment">ارزشیابی جاوااسکریپت</a><p class="mod" data-fa="پودمان ۴: توسعه وب پایتون" data-en="Module 4: Python for the web">پودمان ۴: توسعه وب پایتون</p><p class="unit" data-fa="معرفی پودمان" data-en="Module introduction">معرفی پودمان</p><a class="" href="p4-intro.html" data-fa="معرفی پودمان شیءگرایی" data-en="Introducing the object-oriented module">معرفی پودمان شیءگرایی</a><p class="unit" data-fa="شیءگرایی" data-en="Object-oriented programming">شیءگرایی</p><a class="" href="p4-idea.html" data-fa="ایده شیء و کلاس" data-en="The idea of objects and classes">ایده شیء و کلاس</a><a class="" href="p4-class.html" data-fa="ساخت کلاس و متد" data-en="Writing a class and methods">ساخت کلاس و متد</a><a class="" href="p4-inherit.html" data-fa="وراثت" data-en="Inheritance">وراثت</a><a class="" href="p4-protect.html" data-fa="داده معتبر و استفاده داخلی" data-en="Valid data and internal use">داده معتبر و استفاده داخلی</a><a class="" href="p4-assess-oop.html" data-fa="ارزشیابی برنامه شیءگرا" data-en="Object-oriented assessment">ارزشیابی برنامه شیءگرا</a><p class="unit" data-fa="فایل و توسعه" data-en="Files and development">فایل و توسعه</p><a class="" href="p4-files.html" data-fa="خواندن و نوشتن فایل متنی" data-en="Reading and writing text files">خواندن و نوشتن فایل متنی</a><a class="" href="p4-errors.html" data-fa="پیمایش فایل و مدیریت خطا" data-en="Walking a file and handling errors">پیمایش فایل و مدیریت خطا</a><a class="" href="p4-json.html" data-fa="چند فایل و JSON" data-en="Several files and JSON">چند فایل و JSON</a><a class="" href="p4-assess-files.html" data-fa="ارزشیابی کار با فایل" data-en="Files assessment">ارزشیابی کار با فایل</a><p class="mod" data-fa="پودمان ۵: برنامه‌نویسی جنگو" data-en="Module 5: Django">پودمان ۵: برنامه‌نویسی جنگو</p><p class="unit" data-fa="معرفی پودمان" data-en="Module introduction">معرفی پودمان</p><a class="" href="p5-intro.html" data-fa="معرفی پودمان جنگو" data-en="Introducing the Django module">معرفی پودمان جنگو</a><p class="unit" data-fa="ایجاد وب‌اپلیکیشن" data-en="Creating the web app">ایجاد وب‌اپلیکیشن</p><a class="" href="p5-what.html" data-fa="جنگو چیست و نصب" data-en="What Django is, and installing it">جنگو چیست و نصب</a><a class="" href="p5-project.html" data-fa="پروژه، اپ و اولین view" data-en="Project, app, and the first view">پروژه، اپ و اولین view</a><a class="" href="p5-template.html" data-fa="قالب و دمای واقعی" data-en="Templates and a real temperature">قالب و دمای واقعی</a><a class="" href="p5-assess-create.html" data-fa="ارزشیابی ایجاد وب‌اپلیکیشن" data-en="Creating-the-app assessment">ارزشیابی ایجاد وب‌اپلیکیشن</a><p class="unit" data-fa="توسعه وب‌اپلیکیشن" data-en="Developing the web app">توسعه وب‌اپلیکیشن</p><a class="" href="p5-model.html" data-fa="مدل شهر و پنل ادمین" data-en="The city model and the admin">مدل شهر و پنل ادمین</a><a class="" href="p5-list.html" data-fa="خواندن شهرها و نمایش فهرست" data-en="Reading cities and showing the list">خواندن شهرها و نمایش فهرست</a><a class="" href="p5-auth.html" data-fa="ورود و خروج" data-en="Sign-in and sign-out">ورود و خروج</a><a class="" href="p5-crud.html" data-fa="افزودن و حذف شهر" data-en="Adding and deleting a city">افزودن و حذف شهر</a><a class="" href="p5-bugs.html" data-fa="باگ و امنیت" data-en="Bugs and security">باگ و امنیت</a><p class="mod" data-fa="پایان کتاب" data-en="Back of the book">پایان کتاب</p><p class="unit" data-fa="منابع" data-en="References">منابع</p><a class="" href="refs.html" data-fa="منابع کتاب" data-en="Book references">منابع کتاب</a></nav></details>
+    <div class="main">
+      <h1 class="section-title" data-fa="رنگ، پس‌زمینه و انتخاب‌گر" data-en="Color, background, and selectors">رنگ، پس‌زمینه و انتخاب‌گر</h1><article class="lesson" lang="fa" dir="rtl" data-lang-block="fa"><p class="page-mark">صفحه ۱۲۱</p>
+<h3 id="_1">فعالیت</h3>
+<p>ویژگی‌های قالب بندی متن را برای عناصر فایل <code>test.html</code> به کار بگیرید و نتیجه را در مرورگر مشاهده کنید.</p>
+<h3 id="_2">طراحی ظاهر عناصر (رنگ ها، پس زمینه‌ها، شفافیت و خط دور)</h3>
+<p><code>CSS</code> دارای ویژگی‌های مختلفی در زمینه تنظیم ظاهر عناصر است. این ویژگی‌ها برای تعیین رنگ متن، رنگ زمینه، تصویر پس‌زمینه،کنترل تصویر پس‌زمینه، شفافیت و خط دور عناصر به‌کار می‌روند. در ادامه به برخی از این ویژگی‌ها اشاره می‌شود.</p>
+<p><code>color</code> و <code>background-color:</code> برای تعیین رنگ متن و زمینه عناصر به‌کار می‌رود. برای هر دو ویژگی فوق می‌توان از نام رنگ، کد هگزادسیمال رنگ یا کد <code>RGB</code> استفاده نمود.</p>
+<h3 id="_3">مثال</h3>
+<p>در مثال روبه‌رو از هر سه روش تعیین مقدار رنگ استفاده شده است.</p>
+<div class="code-wrap" dir="ltr"><pre><code>;color: blue
+;background-color: #0000FF
+;)0,0,255(background-color: rgb
+</code></pre></div>
+<p><code>opacity:</code> شفافیت عناصر توسط این ویژگی تعیین می‌شود. مقدار <code>opacity</code> با عددی بین 0 و 1 تعیین می‌شود.</p>
+<p>مقادیر پایین این ویژگی باعث کاهش شفافیت عنصر و مقادیر نزدیک 1 باعث افزایش شفافیت عنصر می‌شود.</p>
+<p><code>background-image:</code> برای تعیین تصویر پس‌زمینه به‌کار می‌رود. برای مقداردهی به این ویژگی ابتدا عبارت <code>url</code> و سپس نام تصویر داخل پرانتز نوشته می‌شود.</p>
+<h3 id="_4">مثال</h3>
+<p>مانند مثال روبه‌رو:</p>
+<div class="code-wrap" dir="ltr"><pre><code>;)images/background.jpg/.(background-image:url
+</code></pre></div>
+<p><code>background-repeat:</code> تصاویری که پهنای صفحه را پوشش ندهند، تکرار می‌شوند. برای تنظیم نحوه تکرار یا عدم تکرار تصویر از این ویژگی استفاده می‌شود که دارای مقادیر مختلفی مانند <code>no-repeat</code>، <code>repeat-x</code>،</p>
+<div class="code-wrap" dir="ltr"><pre><code>repeat-y و ... است.
+</code></pre></div>
+<p><code>background-size:</code> اندازه تصویر پس زمینه را تعیین می‌کند. این ویژگی مشخص می‌کند که تصویر پ‌سزمینه با چه ابعادی داخل عنصر نمایش داده شود. برای پوشش پهنای صفحه، بدون تکرار تصویر، از این ویژگی با مقدار <code>cover</code> استفاده می‌شود.</p>
+<p><code>background-position:</code> برای تنظیم محل نمایش تصویر پس‌زمینه به‌کار می‌رود و دارای مقادیر مختلفی مانند <code>center</code>، <code>left</code>، <code>right</code>، <code>left</code> <code>top</code>، <code>right</code> <code>bottom</code> و غیره است.</p>
+<hr />
+<p class="page-mark">صفحه ۱۲۲</p>
+<p><code>background-attachment:</code> اگر تصویر زمینه بزرگ‌تر از محدوده نمایش باشد، می‌توان با اسکرول کردن، بخش‌های پایین‌تر تصویر را به نمایش گذاشت. برای ثابت نگه داشتن تصویر در هنگام اسکرول صفحه، از این ویژگی با مقدار <code>fixed</code> استفاده می‌شود.</p>
+<p><code>border:</code> عناصر صفحه می‌توانند همراه با یک خط دور نمایش داده شوند. ایجاد خط دور توسط ویژگی <code>border</code> صورت می‌گیرد. مقادیر این ویژگی به ترتیب ضخامت خط دور، نوع خط دور و رنگ آن را تعیین می‌کنند.</p>
+<div class="code-wrap" dir="ltr"><pre><code>;border: 1px solid gray
+</code></pre></div>
+<p><code>border-radius:</code> برای گرد شدن گوشه‌ها از این ویژگی استفاده می‌شود و مقدار آن می‌تواند برحسب پیکسل یا درصد باشد:</p>
+<div class="code-wrap" dir="ltr"><pre><code>;border-radius:10px
+</code></pre></div>
+<p>طراحی ظاهر عناصر (رنگ‌ها، پس‌زمینه‌ها، شفافیت و خط دور)</p>
+<h3 id="_5">کار کارگاهی</h3>
+<p>در فایل <code>test.html</code> کد <code>HTML</code> زیر را بنویسید و نتیجه را در مرورگر مشاهده کنید. سپس استایل‌ها را به‌صورت مرحله به مرحله اضافه کنید تا تأثیر هر یک را بر عناصر صفحه درک کنید.</p>
+<p><img alt="تصویر کتاب" src="../images/p128-02.png" /></p>
+<p><img alt="تصویر کتاب" src="../images/p128-01.png" /></p>
+<p><img alt="تصویر کتاب" src="../images/p128-03.png" /></p>
+<hr />
+<p class="page-mark">صفحه ۱۲۳</p>
+<p>در نرم‌افزار <code>Paint</code> یک فایل جدید با نام <code>background.jpg</code> ایجاد کنید و آن را درون پوشه <code>images</code> در مسیر فایل <code>test.html</code> ذخیره کنید. ابعاد آن را 50×50 پیکسل تنظیم کنید. درون آن دو دایره توخالی با رنگ ملایم ایجاد کنید (مانند تصویر روبه‌رو) و فایل را ذخیره کنید. این تصویر به پس زمینه عنصر <code>div</code> اعمال می‌گردد.</p>
+<p><img alt="تصویر کتاب" src="../images/p129-01.png" /></p>
+<p>خروجی</p>
+<p>انتخاب‌گرهای <code>CSS</code> عنصر یا مجموعه عناصری که استایل <code>CSS</code> برای آنها نوشته می‌شود، انتخاب‌گر نامیده می‌شوند. <code>CSS</code> دارای انواع مختلفی از انتخاب‌گرها شامل انتخاب‌گرهای ساده، ترکیبی، شبه‌کلاس، شبه عنصر و ویژگی است که در این بخش به آنها پرداخته می‌شود.</p>
+<p>انتخاب‌گرهای ساده (<code>Simple</code>):</p>
+<p>این انتخاب‌گرها از اسامی تگ‌ها، شناسه‌ها، کلاس‌ها و علامت * برای انتخاب عناصر استفاده می‌کنند. انواع انتخاب‌گرهای ساده در جدول ٨ آمده است:</p>
+<p>جدول ٨ انواع انتخاب‌گرهای ساده</p>
+<p>نوع انتخاب‌گر</p>
+<p>عملکرد</p>
+<p>انتخاب عناصر صفحه بر اساس نام تگ، مانند <code>h2</code>، <code>p</code>، <code>table</code>، <code>body</code> و ...</p>
+<p><img alt="تصویر کتاب" src="../images/p129-02.png" /></p>
+<div class="code-wrap" dir="ltr"><pre><code>عنصر (Element)
+</code></pre></div>
+<p><img alt="تصویر کتاب" src="../images/p129-03.png" /></p>
+<hr />
+<p class="page-mark">صفحه ۱۲۴</p>
+<p>انتخاب عناصر صفحه براساس شناسه آنها: انتخاب‌گرهای شناسه با علامت # شروع می‌شوند. این انتخاب‌گرها عناصر را با استفاده از شناسه (<code>id</code>) آنها انتخاب می‌کنند. به عنوان مثال برای انتخاب عنصری با شناسه <code>test</code> از عبارت <code>test#</code> استفاده می‌شود. مقدار شناسه یک عنصر درون ویژگی <code>id</code> مشخص می‌شود. هر شناسه فقط مربوط به یک عنصر است و نباید برای سایر عناصر صفحه تکرار گردد. در مثال زیر انتخاب‌گر <code>test</code> متعلق به عنصر <code>&lt;h2&gt;</code> است.</p>
+<p><img alt="تصویر کتاب" src="../images/p130-01.png" /></p>
+<p>شناسه (<code>Id</code>)</p>
+<p><img alt="تصویر کتاب" src="../images/p130-02.png" /></p>
+<p>انتخاب عناصر صفحه براساس نام کلاس: انتخاب‌گرهای کلاس با علامت . شروع می‌شوند. این انتخاب‌گرها عناصر را با استفاده از نام کلاس (<code>class</code>) آنها انتخاب می‌کنند. ویژگی انتخاب‌گر کلاس این است که می‌تواند مجموعه‌ای از عناصر با نام کلاس یکسان را انتخاب نماید. به‌طور مثال انتخاب‌گر<code>.class1</code> تمام عناصر صفحه با ویژگی <code>"class="class1</code> را انتخاب می‌کند. در مثال زیر دو عنصر <code>&lt;h1&gt;</code> و <code>&lt;p&gt;</code> دارای نام کلاس یکسان هستند، پس رنگ متن هر دو آبی و اندازه فونت آنها 18 پیکسل می‌گردد.</p>
+<p><img alt="تصویر کتاب" src="../images/p130-03.png" /></p>
+<div class="code-wrap" dir="ltr"><pre><code>کلاس (Class)
+</code></pre></div>
+<p><img alt="تصویر کتاب" src="../images/p130-04.png" /></p>
+<hr />
+<p class="page-mark">صفحه ۱۲۵</p>
+<p>انتخاب گروهی از عناصر: انتخاب‌گرهای گروهی مجموعه‌ای از قوانین <code>CSS</code> را به چند عنصر اختصاص می‌دهند. در یک انتخابگر گروهی، نام عناصر به همراه کاما نوشته می‌شود. در مثال زیر عبارت <code>h1</code>, <code>h2</code>,<code>p</code> یک انتخاب‌گر گروهی محسوب می‌شود.</p>
+<p><img alt="تصویر کتاب" src="../images/p131-01.png" /></p>
+<div class="code-wrap" dir="ltr"><pre><code>گروهی(Group)
+</code></pre></div>
+<p>قوانین بالا به تگ‌های <code>&lt;h2&lt;</code>، <code>&gt;h1&gt;</code> و <code>&lt;p&gt;</code> اعمال می‌شود. درنتیجه همۀ آنها، آبی و وسط‌چین می‌شوند.</p>
+<p><img alt="تصویر کتاب" src="../images/p131-02.png" /></p>
+<p>انتخاب تمام عناصر صفحه توسط علامت *:</p>
+<p>در مثال زیر، مقدار حاشیه خارجی (<code>margin</code>) و فاصله داخلی (<code>padding</code>) در تمام عناصر صفحه برابر با صفر تنظیم شده است.</p>
+<div class="code-wrap" dir="ltr"><pre><code>سراسری (universal)
+</code></pre></div>
+<p><img alt="تصویر کتاب" src="../images/p131-03.png" /></p>
+<p>انتخاب‌گر ترکیبی(<code>Combinator</code>):</p>
+<p>انتخاب‌گرهای ترکیبی در <code>CSS</code> برای تعریف رابطه ساختاری و موقعیتی میان دو یا چند انتخاب‌گر به‌کار می‌روند. مانند انتخاب‌گر فرزند با نماد &lt; و انتخاب‌گر نوادگان با استفاده از فاصله، عناصری که به‌صورت تودرتو نوشته می‌شوند، رابطه والد و فرزندی پیدا می‌کنند. به‌عنوان مثال عنصر <code>li</code> فرزند عنصر <code>ul</code> است.</p>
+<p>درنتیجه برای انتخاب عناصر <code>li</code> عبارت <code>ul</code> <code>li</code> یا <code>ul</code> &gt; <code>li</code> استفاده می‌شود. استفاده از علامت &lt; باعث می‌شود که محدودۀ تأثیرگذاری به فرزندان مستقیم یک عنصر کاهش یابد.</p>
+<hr />
+<p class="page-mark">صفحه ۱۲۶</p>
+<h3 id="_6">مثال</h3>
+<p>تصویر زیر مثالی را درباره به‌کارگیری انتخاب‌گر ترکیبی نمایش می‌دهد.</p>
+<p><img alt="تصویر کتاب" src="../images/p132-01.png" /></p>
+<p><img alt="تصویر کتاب" src="../images/p132-02.png" /></p>
+<p>خروجی</p>
+<p>انتخاب‌گرهای شبه‌کلاس (<code>Pseudo-class</code> <code>Selectors</code>) انتخاب‌گرهای شب‌هکلاس امکان تعیین استایل عناصر را براساس وضعیت، موقعیت یا ویژگی‌های پویای آنها فراهم می‌کند. برخی از این انتخاب‌گرها وابسته به عملکرد کاربر فعال می‌شوند. شبه‌کلاس‌ها با علامت : بعد از نام عنصر نوشته می‌شوند. انتخاب‌گرهای شبه‌کلاس به شرح زیر هستند:</p>
+<p><code>hover:</code> زمانی فعال م‌یشود که کاربر اشار‌هگر ماوس خود را بر روی یک عنصر ببرد.</p>
+<p><code>focus:</code> این رویداد زمانی اتفاق می‌افتد که یک عنصر (معمولاً عناصر فرم) فعال شود و کار امکان تعامل با آن را داشته باشد.</p>
+<p><code>active:</code> زمانی فعال می‌شود که یک عنصر در حالت فعال قرار گیرد. مانند زمانی که کاربر روی یک دکمه کلیک می‌کند.</p>
+<p><code>:nth-child</code>() امکان انتخاب فرزندان یک عنصر را بر اساس موقعیت آنها فراهم می‌کند.</p>
+<p><code>:frist-child</code> () امکان انتخاب اولین فرزند یک عنصر را برای انتخاب اولین فرزند یک عنصر به‌کار می‌رود.</p>
+<p><code>:last-child</code>() برای انتخاب آخرین فرزند یک عنصر به‌کار می‌رود.</p>
+<hr />
+<p class="page-mark">صفحه ۱۲۷</p>
+<p>انتخاب‌گر ویژگی (<code>Attribute</code> <code>selector</code>) انتخاب‌گر ویژگی، انتخاب عناصر را بر اساس ویژگی‌های آنها انجام می‌دهد. به‌طور مثال برای انتخاب عناصر متنی فرم از انتخاب‌گر <code>]"input[type="text</code> و برای انتخاب عناصری که دارای ویژگی <code>href</code> باشند از انتخاب‌گر <code>[href]</code> استفاده می‌شود.</p>
+<p>کار با انواع انتخاب‌گرهای <code>CSS</code> (طراحی منو)</p>
+<h3 id="_7">کار کارگاهی</h3>
+<p>یک فایل با نام <code>index.html</code> ایجاد کنید و درون آن کدهای <code>HTML</code> زیر را بنویسید. فایل را ذخیره کنید و نتیجه را در مرورگر مشاهده کنید. سپس سبک عناصر را به‌صورت تدریجی به بخش <code>head</code> اضافه کنید و نتیجه هر سبک را بررسی کنید.</p>
+<p><img alt="تصویر کتاب" src="../images/p133-01.png" /></p>
+<p><img alt="تصویر کتاب" src="../images/p133-03.png" /></p>
+<p><img alt="تصویر کتاب" src="../images/p133-02.png" /></p>
+<p>خروجی</p>
+<h3 id="_8">فعالیت</h3>
+<p>1 در مقابل هر انتخاب‌گر، نوع آن را به‌صورت <code>comment</code> بنویسید. محتوای کامنت را درون علامت /<em> </em>/ قرار دهید.</p>
+<p>2 ویژگی <code>list-style</code> با مقدار <code>none</code> چه نتیجه‌ای دارد؟</p>
+<hr /></article><article class="lesson" lang="en" dir="ltr" data-lang-block="en" hidden><p class="page-mark">Page 121</p>
+<h3 id="activity">Activity</h3>
+<p>Apply the text formatting properties to the elements in the <code>test.html</code> file and view the result in the browser.</p>
+<h3 id="styling-element-appearance-colors-backgrounds-opacity-and-border">Styling element appearance (colors, backgrounds, opacity, and border)</h3>
+<p><code>CSS</code> has various properties for setting element appearance. These properties are used to set text color, background color, background image, control the background image, opacity, and element borders. Some of these properties are described below.</p>
+<p><code>color</code> and <code>background-color:</code> used to set the text color and background of elements. For both properties above you can use a color name, a hexadecimal color code, or an <code>RGB</code> code.</p>
+<h3 id="example">Example</h3>
+<p>In the example opposite, all three methods of setting a color value are used.</p>
+<div class="code-wrap" dir="ltr"><pre><code>;color: blue
+;background-color: #0000FF
+;)0,0,255(background-color: rgb
+</code></pre></div>
+<p><code>opacity:</code> element opacity is set with this property. The <code>opacity</code> value is a number between 0 and 1.</p>
+<p>Low values of this property reduce the opacity of the element, and values near 1 increase the opacity of the element.</p>
+<p><code>background-image:</code> used to set the background image. To assign a value to this property, first write the word <code>url</code> and then the image name in parentheses.</p>
+<h3 id="example_1">Example</h3>
+<p>As in the example opposite:</p>
+<div class="code-wrap" dir="ltr"><pre><code>;)images/background.jpg/.(background-image:url
+</code></pre></div>
+<p><code>background-repeat:</code> images that do not cover the width of the page are repeated. Use this property to set how the image is repeated or not repeated; it has various values such as <code>no-repeat</code>, <code>repeat-x</code>,</p>
+<div class="code-wrap" dir="ltr"><pre><code>repeat-y و ... است.
+</code></pre></div>
+<p><code>background-size:</code> sets the size of the background image. This property specifies at what dimensions the background image is shown inside the element. To cover the width of the page without repeating the image, use this property with the value <code>cover</code>.</p>
+<p><code>background-position:</code> used to set where the background image is shown, with various values such as <code>center</code>, <code>left</code>, <code>right</code>, <code>left</code> <code>top</code>, <code>right</code> <code>bottom</code>, and so on.</p>
+<hr />
+<p class="page-mark">Page 122</p>
+<p><code>background-attachment:</code> if the background image is larger than the display area, you can show lower parts of the image by scrolling. To keep the image fixed while scrolling the page, use this property with the value <code>fixed</code>.</p>
+<p><code>border:</code> page elements can be shown with a border. Creating a border is done with the <code>border</code> property. The values of this property set, in order, the border thickness, border type, and its color.</p>
+<div class="code-wrap" dir="ltr"><pre><code>;border: 1px solid gray
+</code></pre></div>
+<p><code>border-radius:</code> use this property to round the corners; its value can be in pixels or percent:</p>
+<div class="code-wrap" dir="ltr"><pre><code>;border-radius:10px
+</code></pre></div>
+<p>Styling element appearance (colors, backgrounds, opacity, and border)</p>
+<h3 id="workshop">Workshop</h3>
+<p>In the <code>test.html</code> file, write the <code>HTML</code> code below and view the result in the browser. Then add the styles step by step so you understand the effect of each one on the page elements.</p>
+<p><img alt="Book image" src="../images/p128-02.png" /></p>
+<p><img alt="Book image" src="../images/p128-01.png" /></p>
+<p><img alt="Book image" src="../images/p128-03.png" /></p>
+<hr />
+<p class="page-mark">Page 123</p>
+<p>In the <code>Paint</code> software, create a new file named <code>background.jpg</code> and save it in the <code>images</code> folder on the path of the <code>test.html</code> file. Set its dimensions to 50×50 pixels. Inside it create two hollow circles with a soft color (as in the image opposite) and save the file. This image is applied to the background of the <code>div</code> element.</p>
+<p><img alt="Book image" src="../images/p129-01.png" /></p>
+<p>Output</p>
+<p><code>CSS</code> selectors The element or set of elements for which a <code>CSS</code> style is written are called selectors. <code>CSS</code> has various types of selectors including simple, combined, pseudo-class, pseudo-element, and attribute selectors, which are covered in this section.</p>
+<p>Simple selectors (<code>Simple</code>):</p>
+<p>These selectors use tag names, IDs, classes, and the * symbol to select elements. Types of simple selectors are shown in Table 8:</p>
+<p>Table 8 Types of simple selectors</p>
+<p>Selector type</p>
+<p>Function</p>
+<p>Select page elements by tag name, such as <code>h2</code>, <code>p</code>, <code>table</code>, <code>body</code>, and so on</p>
+<p><img alt="Book image" src="../images/p129-02.png" /></p>
+<div class="code-wrap" dir="ltr"><pre><code>عنصر (Element)
+</code></pre></div>
+<p><img alt="Book image" src="../images/p129-03.png" /></p>
+<hr />
+<p class="page-mark">Page 124</p>
+<p>Select page elements by their ID: ID selectors start with the # symbol. These selectors select elements using their ID (<code>id</code>). For example, to select an element with the ID <code>test</code>, use the expression <code>test#</code>. The ID value of an element is specified in the <code>id</code> attribute. Each ID belongs to only one element and must not be repeated for other page elements. In the example below, the <code>test</code> selector belongs to the <code>&lt;h2&gt;</code> element.</p>
+<p><img alt="Book image" src="../images/p130-01.png" /></p>
+<p>ID (<code>Id</code>)</p>
+<p><img alt="Book image" src="../images/p130-02.png" /></p>
+<p>Select page elements by class name: class selectors start with the . symbol. These selectors select elements using their class name (<code>class</code>). A feature of the class selector is that it can select a set of elements with the same class name. For example, the <code>.class1</code> selector selects all page elements with the attribute <code>"class="class1</code>. In the example below, the two elements <code>&lt;h1&gt;</code> and <code>&lt;p&gt;</code> have the same class name, so the text color of both becomes blue and their font size becomes 18 pixels.</p>
+<p><img alt="Book image" src="../images/p130-03.png" /></p>
+<div class="code-wrap" dir="ltr"><pre><code>کلاس (Class)
+</code></pre></div>
+<p><img alt="Book image" src="../images/p130-04.png" /></p>
+<hr />
+<p class="page-mark">Page 125</p>
+<p>Selecting a group of elements: group selectors assign a set of <code>CSS</code> rules to several elements. In a group selector, element names are written with commas. In the example below, the expression <code>h1</code>, <code>h2</code>,<code>p</code> is a group selector.</p>
+<p><img alt="Book image" src="../images/p131-01.png" /></p>
+<div class="code-wrap" dir="ltr"><pre><code>گروهی(Group)
+</code></pre></div>
+<p>The rules above are applied to the <code>&lt;h2&lt;</code>, <code>&gt;h1&gt;</code>, and <code>&lt;p&gt;</code> tags. As a result, all of them become blue and centered.</p>
+<p><img alt="Book image" src="../images/p131-02.png" /></p>
+<p>Selecting all page elements with the * symbol:</p>
+<p>In the example below, the outer margin (<code>margin</code>) and inner spacing (<code>padding</code>) on all page elements are set to zero.</p>
+<div class="code-wrap" dir="ltr"><pre><code>سراسری (universal)
+</code></pre></div>
+<p><img alt="Book image" src="../images/p131-03.png" /></p>
+<p>Combined selector (<code>Combinator</code>):</p>
+<p>Combined selectors in <code>CSS</code> are used to define a structural and positional relationship between two or more selectors. For example, the child selector with the &lt; symbol and the descendant selector using a space; elements written nested have a parent–child relationship. For example, the <code>li</code> element is a child of the <code>ul</code> element.</p>
+<p>So to select <code>li</code> elements you use <code>ul</code> <code>li</code> or <code>ul</code> &gt; <code>li</code>. Using the &lt; symbol limits the effect to the direct children of an element.</p>
+<hr />
+<p class="page-mark">Page 126</p>
+<h3 id="example_2">Example</h3>
+<p>The image below shows an example of using a combined selector.</p>
+<p><img alt="Book image" src="../images/p132-01.png" /></p>
+<p><img alt="Book image" src="../images/p132-02.png" /></p>
+<p>Output</p>
+<p>Pseudo-class selectors (<code>Pseudo-class</code> <code>Selectors</code>) Pseudo-class selectors let you set element styles based on their state, position, or dynamic properties. Some of these selectors are activated by user actions. Pseudo-classes are written with the : symbol after the element name. Pseudo-class selectors are as follows:</p>
+<p><code>hover:</code> becomes active when the user moves the mouse pointer over an element.</p>
+<p><code>focus:</code> this event occurs when an element (usually form elements) becomes active and the user can interact with it.</p>
+<p><code>active:</code> becomes active when an element is in an active state—for example when the user clicks a button.</p>
+<p><code>:nth-child</code>() lets you select the children of an element based on their position.</p>
+<p><code>:frist-child</code> () is used to select the first child of an element.</p>
+<p><code>:last-child</code>() is used to select the last child of an element.</p>
+<hr />
+<p class="page-mark">Page 127</p>
+<p>Attribute selector (<code>Attribute</code> <code>selector</code>) The attribute selector selects elements based on their attributes. For example, to select text form elements use the selector <code>]"input[type="text</code>, and to select elements that have the <code>href</code> attribute use the selector <code>[href]</code>.</p>
+<p>Working with types of <code>CSS</code> selectors (designing a menu)</p>
+<h3 id="workshop_1">Workshop</h3>
+<p>Create a file named <code>index.html</code> and write the <code>HTML</code> code below inside it. Save the file and view the result in the browser. Then gradually add element styles to the <code>head</code> section and check the result of each style.</p>
+<p><img alt="Book image" src="../images/p133-01.png" /></p>
+<p><img alt="Book image" src="../images/p133-03.png" /></p>
+<p><img alt="Book image" src="../images/p133-02.png" /></p>
+<p>Output</p>
+<h3 id="activity_1">Activity</h3>
+<p>1 Next to each selector, write its type as a <code>comment</code>. Put the comment content inside the /<em> </em>/ symbols.</p>
+<p>2 What is the result of the <code>list-style</code> property with the value <code>none</code>?</p>
+<hr /></article>
+      <aside class="extra">
+        <h2 data-fa="تمرین این بخش" data-en="Exercises for this section">تمرین این بخش</h2>
+        <p class="extra-note" data-fa="این تمرین‌ها و پیوندها اضافه بر متن کتاب‌اند." data-en="These exercises and links are in addition to the book.">این تمرین‌ها و پیوندها اضافه بر متن کتاب‌اند.</p>
+        <ol><li data-fa="چهار انتخاب‌گر عنصر، کلاس، شناسه و گروه را روی یک صفحه واقعی اعمال کن و یک انتخاب‌گر ویژگی برای input لازم اضافه کن." data-en="On one real page, apply an element selector, a class, an id, and a group selector, then add an attribute selector for the required inputs.">چهار انتخاب‌گر عنصر، کلاس، شناسه و گروه را روی یک صفحه واقعی اعمال کن و یک انتخاب‌گر ویژگی برای input لازم اضافه کن.</li><li data-fa="برای همان صفحه یک تصویر پس‌زمینه بگذار و با اسکرول، چسبیدن یا حرکت پس‌زمینه را در خود صفحه ببین." data-en="Give that page a background image and scroll it so you can see whether the background stays fixed or moves.">برای همان صفحه یک تصویر پس‌زمینه بگذار و با اسکرول، چسبیدن یا حرکت پس‌زمینه را در خود صفحه ببین.</li></ol>
+        <h2 data-fa="پیوند مفید" data-en="Useful link">پیوند مفید</h2><ul><li><a href="https://developer.mozilla.org/en-US/docs/Learn/CSS/Building_blocks/Selectors" data-fa="انتخاب‌گرها" data-en="Selectors">انتخاب‌گرها</a></li></ul>
+      </aside>
+    <nav class="pager"><a rel="prev" class="prev" href="p2-css-start.html"><span class="pager-word" data-fa="قبلی" data-en="Previous">قبلی</span><span class="pager-name" data-fa="نوشتن CSS" data-en="Writing CSS">نوشتن CSS</span></a><a rel="next" class="next" href="p2-box.html"><span class="pager-word" data-fa="بعدی" data-en="Next">بعدی</span><span class="pager-name" data-fa="مدل جعبه‌ای و display" data-en="The box model and display">مدل جعبه‌ای و display</span></a></nav>
+    </div>
+  </div>
+  <script src="../assets/search-index.js?v=4"></script>
+  <script src="../assets/app.js?v=4"></script>
+</body>
+</html>

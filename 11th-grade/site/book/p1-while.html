@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title data-fa="حلقه while و کنترل حلقه" data-en="The while loop and loop control">حلقه while و کنترل حلقه</title>
+  <link rel="icon" href="../assets/favicon.svg">
+  <link rel="stylesheet" href="../assets/style.css?v=4">
+</head>
+<body data-root="../">
+  <header class="top">
+    <a class="brand" href="../index.html">
+      <span data-fa="طراح سایت" data-en="Site Design">طراح سایت</span>
+      <small data-fa="پایه یازدهم" data-en="Grade 11">پایه یازدهم</small>
+    </a>
+    <div class="search-wrap">
+      <input id="q" type="search" autocomplete="off"
+        data-fa-placeholder="جستجو در درس‌ها" data-en-placeholder="Search lessons"
+        placeholder="جستجو در درس‌ها">
+      <div id="results" class="results" hidden></div>
+    </div>
+    <a class="download" href="../grade11-offline.zip?v=2" data-fa="دانلود کل سایت" data-en="Download the whole site">دانلود کل سایت</a>
+    <button type="button" id="lang-toggle" class="lang-toggle" dir="ltr" data-lang="fa"
+      aria-label="تغییر زبان">
+      <span data-opt="fa">فا</span>
+      <span data-opt="en">EN</span>
+    </button>
+  </header>
+  <div class="layout">
+    <details class="toc" open><summary><span data-fa="فهرست درس‌ها" data-en="Lesson list">فهرست درس‌ها</span></summary><nav class="side" aria-label="lessons"><p class="mod" data-fa="شروع کتاب" data-en="Opening">شروع کتاب</p><p class="unit" data-fa="فهرست" data-en="Contents">فهرست</p><a class="" href="toc.html" data-fa="فهرست" data-en="Contents">فهرست</a><p class="mod" data-fa="پودمان ۱: برنامه‌نویسی پایتون" data-en="Module 1: Python programming">پودمان ۱: برنامه‌نویسی پایتون</p><p class="unit" data-fa="معرفی پودمان" data-en="Module introduction">معرفی پودمان</p><a class="" href="p1-intro.html" data-fa="معرفی پودمان پایتون" data-en="Introducing the Python module">معرفی پودمان پایتون</a><p class="unit" data-fa="مدل‌سازی داده" data-en="Data modeling">مدل‌سازی داده</p><a class="" href="p1-python.html" data-fa="پایتون و محیط برنامه‌نویسی" data-en="Python and the programming environment">پایتون و محیط برنامه‌نویسی</a><a class="" href="p1-vars.html" data-fa="متغیرها، نوع داده و عملگرها" data-en="Variables, types, and operators">متغیرها، نوع داده و عملگرها</a><a class="" href="p1-cast.html" data-fa="ورودی و تبدیل نوع" data-en="Input and type casting">ورودی و تبدیل نوع</a><a class="" href="p1-lists.html" data-fa="لیست‌ها" data-en="Lists">لیست‌ها</a><a class="" href="p1-if.html" data-fa="شرط‌های ساده" data-en="Simple conditions">شرط‌های ساده</a><a class="" href="p1-elif.html" data-fa="if، elif و else" data-en="if, elif, and else">if، elif و else</a><a class="" href="p1-for.html" data-fa="حلقه for و range" data-en="The for loop and range">حلقه for و range</a><a class="current" href="p1-while.html" data-fa="حلقه while و کنترل حلقه" data-en="The while loop and loop control">حلقه while و کنترل حلقه</a><a class="" href="p1-assess-data.html" data-fa="ارزشیابی مدل‌سازی داده" data-en="Data-modeling assessment">ارزشیابی مدل‌سازی داده</a><p class="unit" data-fa="توابع و ماژول‌ها" data-en="Functions and modules">توابع و ماژول‌ها</p><a class="" href="p1-sets.html" data-fa="مجموعه (set)" data-en="Sets">مجموعه (set)</a><a class="" href="p1-dict.html" data-fa="دیکشنری" data-en="Dictionaries">دیکشنری</a><a class="" href="p1-quiz.html" data-fa="پروژه بازی Quiz" data-en="Quiz game project">پروژه بازی Quiz</a><a class="" href="p1-tuple.html" data-fa="تاپل" data-en="Tuples">تاپل</a><a class="" href="p1-func.html" data-fa="تعریف تابع، پارامتر و return" data-en="Defining functions, parameters, and return">تعریف تابع، پارامتر و return</a><a class="" href="p1-func-more.html" data-fa="تمرین تابع و مرتب‌سازی" data-en="Function practice and sorting">تمرین تابع و مرتب‌سازی</a><a class="" href="p1-modules.html" data-fa="ماژول‌ها و تفاوت تابع و متد" data-en="Modules, and functions versus methods">ماژول‌ها و تفاوت تابع و متد</a><a class="" href="p1-assess-func.html" data-fa="ارزشیابی توابع و ماژول‌ها" data-en="Functions and modules assessment">ارزشیابی توابع و ماژول‌ها</a><p class="mod" data-fa="پودمان ۲: صفحات وب ایستا" data-en="Module 2: Static web pages">پودمان ۲: صفحات وب ایستا</p><p class="unit" data-fa="معرفی پودمان" data-en="Module introduction">معرفی پودمان</p><a class="" href="p2-intro.html" data-fa="معرفی پودمان صفحات ایستا" data-en="Introducing static web pages">معرفی پودمان صفحات ایستا</a><p class="unit" data-fa="ساختار با HTML" data-en="Structure with HTML">ساختار با HTML</p><a class="" href="p2-web.html" data-fa="وب چگونه کار می‌کند" data-en="How the web works">وب چگونه کار می‌کند</a><a class="" href="p2-concepts.html" data-fa="مفاهیم طراحی وب و نقشه سایت" data-en="Web-design concepts and the site map">مفاهیم طراحی وب و نقشه سایت</a><a class="" href="p2-tags.html" data-fa="اولین صفحه HTML" data-en="A first HTML page">اولین صفحه HTML</a><a class="" href="p2-text.html" data-fa="متن، لیست و پیوند" data-en="Text, lists, and links">متن، لیست و پیوند</a><a class="" href="p2-img.html" data-fa="تصویر در صفحه" data-en="Images on the page">تصویر در صفحه</a><a class="" href="p2-forms.html" data-fa="فرم‌ها" data-en="Forms">فرم‌ها</a><a class="" href="p2-semantic.html" data-fa="عناصر معنایی" data-en="Semantic elements">عناصر معنایی</a><a class="" href="p2-assess-html.html" data-fa="ارزشیابی HTML" data-en="HTML assessment">ارزشیابی HTML</a><p class="unit" data-fa="ظاهر با CSS" data-en="Appearance with CSS">ظاهر با CSS</p><a class="" href="p2-css-start.html" data-fa="نوشتن CSS" data-en="Writing CSS">نوشتن CSS</a><a class="" href="p2-css-look.html" data-fa="رنگ، پس‌زمینه و انتخاب‌گر" data-en="Color, background, and selectors">رنگ، پس‌زمینه و انتخاب‌گر</a><a class="" href="p2-box.html" data-fa="مدل جعبه‌ای و display" data-en="The box model and display">مدل جعبه‌ای و display</a><a class="" href="p2-flex.html" data-fa="چیدمان با Flexbox" data-en="Layout with Flexbox">چیدمان با Flexbox</a><a class="" href="p2-flex-work.html" data-fa="کارگاه چیدمان صفحه" data-en="Page-layout workshop">کارگاه چیدمان صفحه</a><a class="" href="p2-media.html" data-fa="مدیا کوئری و ارزشیابی CSS" data-en="Media queries and the CSS assessment">مدیا کوئری و ارزشیابی CSS</a><p class="mod" data-fa="پودمان ۳: صفحات وب تعاملی" data-en="Module 3: Interactive web pages">پودمان ۳: صفحات وب تعاملی</p><p class="unit" data-fa="معرفی پودمان" data-en="Module introduction">معرفی پودمان</p><a class="" href="p3-intro.html" data-fa="معرفی پودمان تعاملی" data-en="Introducing the interactive module">معرفی پودمان تعاملی</a><p class="unit" data-fa="بوت‌استرپ" data-en="Bootstrap">بوت‌استرپ</p><a class="" href="p3-bs-start.html" data-fa="فریم‌ورک و شروع بوت‌استرپ" data-en="Frameworks and starting Bootstrap">فریم‌ورک و شروع بوت‌استرپ</a><a class="" href="p3-bs-util.html" data-fa="فاصله، گردی و لیست" data-en="Spacing, rounding, and lists">فاصله، گردی و لیست</a><a class="" href="p3-bs-header.html" data-fa="سرصفحه فروشگاه" data-en="The shop header">سرصفحه فروشگاه</a><a class="" href="p3-bs-grid.html" data-fa="شبکه Grid" data-en="The grid">شبکه Grid</a><a class="" href="p3-bs-rwd.html" data-fa="کلاس‌های واکنش‌گرا" data-en="Responsive classes">کلاس‌های واکنش‌گرا</a><a class="" href="p3-bs-nav.html" data-fa="نوار ناوبری و جزئیات محصول" data-en="Navbar and product details">نوار ناوبری و جزئیات محصول</a><a class="" href="p3-bs-form.html" data-fa="فرم و پنجره Modal" data-en="Forms and modals">فرم و پنجره Modal</a><a class="" href="p3-bs-show.html" data-fa="کاروسل و آکاردئون" data-en="Carousel and accordion">کاروسل و آکاردئون</a><a class="" href="p3-bs-assess.html" data-fa="ارزشیابی بوت‌استرپ" data-en="Bootstrap assessment">ارزشیابی بوت‌استرپ</a><p class="unit" data-fa="جاوااسکریپت" data-en="JavaScript">جاوااسکریپت</p><a class="" href="p3-js-start.html" data-fa="جاوااسکریپت در صفحه وب" data-en="JavaScript on the page">جاوااسکریپت در صفحه وب</a><a class="" href="p3-js-vars.html" data-fa="متغیر و نوع داده" data-en="Variables and data types">متغیر و نوع داده</a><a class="" href="p3-js-ops.html" data-fa="عملگرها" data-en="Operators">عملگرها</a><a class="" href="p3-js-data.html" data-fa="آرایه و شیء" data-en="Arrays and objects">آرایه و شیء</a><a class="" href="p3-js-if.html" data-fa="شرط در جاوااسکریپت" data-en="Conditions in JavaScript">شرط در جاوااسکریپت</a><a class="" href="p3-js-loops.html" data-fa="حلقه‌ها" data-en="Loops">حلقه‌ها</a><a class="" href="p3-js-func.html" data-fa="تابع‌ها" data-en="Functions">تابع‌ها</a><a class="" href="p3-js-dom.html" data-fa="صفحه، رویداد و اعتبار فرم" data-en="The page, events, and form validation">صفحه، رویداد و اعتبار فرم</a><a class="" href="p3-js-assess.html" data-fa="ارزشیابی جاوااسکریپت" data-en="JavaScript assessment">ارزشیابی جاوااسکریپت</a><p class="mod" data-fa="پودمان ۴: توسعه وب پایتون" data-en="Module 4: Python for the web">پودمان ۴: توسعه وب پایتون</p><p class="unit" data-fa="معرفی پودمان" data-en="Module introduction">معرفی پودمان</p><a class="" href="p4-intro.html" data-fa="معرفی پودمان شیءگرایی" data-en="Introducing the object-oriented module">معرفی پودمان شیءگرایی</a><p class="unit" data-fa="شیءگرایی" data-en="Object-oriented programming">شیءگرایی</p><a class="" href="p4-idea.html" data-fa="ایده شیء و کلاس" data-en="The idea of objects and classes">ایده شیء و کلاس</a><a class="" href="p4-class.html" data-fa="ساخت کلاس و متد" data-en="Writing a class and methods">ساخت کلاس و متد</a><a class="" href="p4-inherit.html" data-fa="وراثت" data-en="Inheritance">وراثت</a><a class="" href="p4-protect.html" data-fa="داده معتبر و استفاده داخلی" data-en="Valid data and internal use">داده معتبر و استفاده داخلی</a><a class="" href="p4-assess-oop.html" data-fa="ارزشیابی برنامه شیءگرا" data-en="Object-oriented assessment">ارزشیابی برنامه شیءگرا</a><p class="unit" data-fa="فایل و توسعه" data-en="Files and development">فایل و توسعه</p><a class="" href="p4-files.html" data-fa="خواندن و نوشتن فایل متنی" data-en="Reading and writing text files">خواندن و نوشتن فایل متنی</a><a class="" href="p4-errors.html" data-fa="پیمایش فایل و مدیریت خطا" data-en="Walking a file and handling errors">پیمایش فایل و مدیریت خطا</a><a class="" href="p4-json.html" data-fa="چند فایل و JSON" data-en="Several files and JSON">چند فایل و JSON</a><a class="" href="p4-assess-files.html" data-fa="ارزشیابی کار با فایل" data-en="Files assessment">ارزشیابی کار با فایل</a><p class="mod" data-fa="پودمان ۵: برنامه‌نویسی جنگو" data-en="Module 5: Django">پودمان ۵: برنامه‌نویسی جنگو</p><p class="unit" data-fa="معرفی پودمان" data-en="Module introduction">معرفی پودمان</p><a class="" href="p5-intro.html" data-fa="معرفی پودمان جنگو" data-en="Introducing the Django module">معرفی پودمان جنگو</a><p class="unit" data-fa="ایجاد وب‌اپلیکیشن" data-en="Creating the web app">ایجاد وب‌اپلیکیشن</p><a class="" href="p5-what.html" data-fa="جنگو چیست و نصب" data-en="What Django is, and installing it">جنگو چیست و نصب</a><a class="" href="p5-project.html" data-fa="پروژه، اپ و اولین view" data-en="Project, app, and the first view">پروژه، اپ و اولین view</a><a class="" href="p5-template.html" data-fa="قالب و دمای واقعی" data-en="Templates and a real temperature">قالب و دمای واقعی</a><a class="" href="p5-assess-create.html" data-fa="ارزشیابی ایجاد وب‌اپلیکیشن" data-en="Creating-the-app assessment">ارزشیابی ایجاد وب‌اپلیکیشن</a><p class="unit" data-fa="توسعه وب‌اپلیکیشن" data-en="Developing the web app">توسعه وب‌اپلیکیشن</p><a class="" href="p5-model.html" data-fa="مدل شهر و پنل ادمین" data-en="The city model and the admin">مدل شهر و پنل ادمین</a><a class="" href="p5-list.html" data-fa="خواندن شهرها و نمایش فهرست" data-en="Reading cities and showing the list">خواندن شهرها و نمایش فهرست</a><a class="" href="p5-auth.html" data-fa="ورود و خروج" data-en="Sign-in and sign-out">ورود و خروج</a><a class="" href="p5-crud.html" data-fa="افزودن و حذف شهر" data-en="Adding and deleting a city">افزودن و حذف شهر</a><a class="" href="p5-bugs.html" data-fa="باگ و امنیت" data-en="Bugs and security">باگ و امنیت</a><p class="mod" data-fa="پایان کتاب" data-en="Back of the book">پایان کتاب</p><p class="unit" data-fa="منابع" data-en="References">منابع</p><a class="" href="refs.html" data-fa="منابع کتاب" data-en="Book references">منابع کتاب</a></nav></details>
+    <div class="main">
+      <h1 class="section-title" data-fa="حلقه while و کنترل حلقه" data-en="The while loop and loop control">حلقه while و کنترل حلقه</h1><article class="lesson" lang="fa" dir="rtl" data-lang-block="fa"><p class="page-mark">صفحه ۴۰</p>
+<p>حلقه <code>while</code> این حلقه مجموعه‌ای از دستورات را تا زمانی که شرط حلقه <code>True</code> باشد، اجرا می‌کند و هر زمان که شرط حلقه <code>False</code> شود، دیگر حلقه اجرا نمی‌شود و اجرای حلقه پایان می‌یابد. از این نوع حلقه معمولاً زمانی استفاده می‌شود که تعداد دفعات تکرار حلقه از قبل مشخص و معین نباشد.</p>
+<figure class="shot"><img alt="شکل 87" src="../images/p046-01.png" /><figcaption>شکل 87</figcaption></figure>
+<div class="code-wrap" dir="ltr"><pre><code>: while condition یا : شرط حلقه while
+</code></pre></div>
+<p><code>statements</code> → دستورات بدنه حلقه</p>
+<p>مثال: شخصی در ابتدای یک تالار غذاخوری به میهمانان یک مراسم عروسی خوشامد می‌گوید. به او گفته شده که آنجا بایستد و بعد از پرسیدن نام آنها به میهمان وارد شده خوشامد بگوید و برای پایان کار او محدودیتی در نظر گرفته نشده است. برنامه زیر به کمک حلقه <code>while</code> این کار را انجام می‌دهد (شکل88).</p>
+<p><img alt="تصویر کتاب" src="../images/p046-03.png" /></p>
+<figure class="shot"><img alt="شکل 88" src="../images/p046-02.png" /><figcaption>شکل 88</figcaption></figure>
+<p>توضیح کدهای برنامه: در جلوی دستور <code>while</code> به‌جای‌گذاشتن یک شرط خاص فعلاً از عبارت منطقی <code>True</code> استفاده شده است. با این کار حلقه بی‌وقفه تکرار می‌شود و پایانی برای توقف آن تعریف نشده است؛</p>
+<p>چرا که شرط جلوی <code>while</code> همیشه <code>True</code> است و هیچ‌گاه <code>False</code> نمی‌شود.</p>
+<p>در دو خط بعد نام میهمان پرسیده می‌شود و پیام خوشامدگویی چاپ خواهد شد.</p>
+<p>باتوجه به اینکه پایانی برای اجرای برنامه وجود ندارد، برای توقف برنامه یا باید از کلیدی ترکیب <code>Ctrl</code> + <code>C</code> استفاده نمود و یا باید پنجره برنامۀ در حال اجرا را بست.</p>
+<p>مثال: آیا می‌توان برنامه فوق را طوری نوشت که بعد از ورود داماد، وظیفه خوشامدگویی پایان یابد؟</p>
+<hr />
+<p class="page-mark">صفحه ۴۱</p>
+<p>توضیح کد: همان‌طور که در خروجی کد شکل89 مشاهده می‌شود، بعد از ورود ناِم داماد، برنامه پایان می‌یابد.</p>
+<figure class="shot"><img alt="شکل 89" src="../images/p047-03.png" /><figcaption>شکل 89</figcaption></figure>
+<p>درون حلقه پس از دریافت نام میهمان به کمک شرط <code>if</code> بررسی می‌شود که آیا نام وارد شده برابر <code>damad</code> است یا خیر و اگر برابر باشد به کمک دستور <code>break</code>، روند اجرای حلقه خاتمه می‌یابد و اجرای برنامه به بعد از حلقه <code>while</code> منتقل می‌شود.</p>
+<p>مثال: در این تالار به‌جز میهمانان، کارمندان (<code>Employee</code>) نیز در حال رفت و آمدند، حال اگر نخواهید به کارمندان خوشامد گفته شود می‌توان از یک دستور شرطی و دستور <code>continue</code> استفاده نمود.</p>
+<p>توضیح کد: همان‌طور که در خروجی کد شکل90 مشاهده می‌شود، بعد از ورود نام <code>Employee</code>، برنامه دوباره یک نام دیگر از کاربر دریافت می‌کند و به کارمند خوشامد گفته نخواهد شد. خروجی برنامه را به‌دقت ببینید.</p>
+<p><img alt="تصویر کتاب" src="../images/p047-02.png" /></p>
+<figure class="shot"><img alt="شکل 90" src="../images/p047-01.png" /><figcaption>شکل 90</figcaption></figure>
+<p>برنامه با رسیدن به دستور <code>continue</code> اجرای مابقی دستورات حلقه را رها کرده و اجرای برنامه را به ابتدای حلقه منتقل می‌کند.</p>
+<p>این برنامه گرچه به‌خوبی کار می‌کند؛ اما این ساختار، به خاطر وجود <code>True</code> در جلوی <code>while</code> برای برنامه‌نویسی خیلی مناسب نیست و می‌توان ساختار حلقه را به‌صورت مثال بعد تغییر داد.</p>
+<p>مثال: به مسئول خوشامدگویی گفته شده که این کار را تا زمانی ادامه دهد که داماد نیامده است؛ کد به‌صورت زیر تغییر می‌کند.</p>
+<p>دقت کنید که در این مثال شرط ادامه حلقه در جلوی دستور <code>while</code> آمده است و نیازی نیست که داخل حلقه چیزی را کنترل کنید.</p>
+<hr />
+<p class="page-mark">صفحه ۴۲</p>
+<p>توضیح کد: همان‌طور که در خروجی کد شکل91 مشاهده می‌شود، بعد از ورود نام داماد و خوشامدگویی به او برنامه پایان می‌یابد.</p>
+<p><img alt="تصویر کتاب" src="../images/p048-01.png" /></p>
+<figure class="shot"><img alt="شکل 91" src="../images/p048-02.png" /><figcaption>شکل 91</figcaption></figure>
+<p>در اولین خط یک متغیر به نام <code>name</code> ساخته شده است و مقدار آن خالی است تا شرط حلقه در ابتدا برقرار باشد.</p>
+<p>مفهوم خط دوم، یعنی تا زمانی که نام وارد شده یعنی مقدار متغیر (<code>name</code>) مخالف کلمه <code>damad</code> است، دستورات بدنه حلقه ادامه یابد.</p>
+<p>وقتی کاربر کلمه <code>damad</code> را وارد کند بعد از چاپ پیام، برنامه به ابتدای حلقه بر می‌گردد؛ ولی این بار شرط حلقه <code>False</code> است و اجرای حلقه پایان می‌پذیرد. در اینجا نسبت به برنامه قبلی، کد بهتر و منطقی‌تر شده است.</p>
+<p>مثال: به مسئول خوشامدگویی گفته شده است که آنجا بایستد و بعد از پرسیدن نام آنها به میهمان وارد شده خوش آمد بگوید و به‌محض ورود داماد وظیفه خوشامدگویی پایان می‌پذیرد؛ اما دیگر نیازی نیست به داماد خوش آمد گفته شود. کد بالا کمی تغییر خواهد کرد.</p>
+<p>توضیح کد: در شکل92 در اولین خط به‌جای آنکه یک رشته خالی را درون متغیر <code>name</code> قرار دهیم، با کمک دستور <code>input</code> یک نام واقعی از کاربر گرفته شده است. بدین ترتیب اگر در اولین خط برنامه نام <code>damad</code> وارد شود، شرط حلقه <code>False</code> شده و دستورات بدنه حلقه دیگر اجرا نخواهند شد و برنامه پایان می‌یابد.</p>
+<p><img alt="تصویر کتاب" src="../images/p048-03.png" /></p>
+<figure class="shot"><img alt="شکل 92" src="../images/p048-04.png" /><figcaption>شکل 92</figcaption></figure>
+<p>درون حلقه ابتدا خوشامدگویی چاپ شده است و در خط بعدی نامی دیگر دریافت خواهد شد تا در دور بعدی این نام درون شرط حلقه بررسی شود.</p>
+<h3 id="_1">نکته</h3>
+<p>مثال‌های بالا همگی برای یادگیری نحوه استفاده از حلقه <code>while</code> در شرایط مختلف به برنامه‌نویس کمک می‌کند. با نوشتن مجدد کدها و فکرکردن به روند هر یک از برنامه‌های فوق، برنامه‌نویس مطالب آن را دقیق‌تر یاد می‌گیرد. برای یادگیری بهتر به مثال‌های صفحه بعد توجه کنید.</p>
+<hr />
+<p class="page-mark">صفحه ۴۳</p>
+<p>مثال: برنامه‌ای بنویسید که از کاربر یک عدد صحیح دریافت و مربع آن عدد را چاپ کند این کار تا زمانی ادامه یابد که کاربر عددی بزرگ‌تر از صفر وارد کند (شکل93).</p>
+<p><img alt="تصویر کتاب" src="../images/p049-01.png" /></p>
+<figure class="shot"><img alt="شکل 93" src="../images/p049-02.png" /><figcaption>شکل 93</figcaption></figure>
+<p>توضیح کد: در اولین خط یک عدد صحیح از کاربر دریافت شده و درون متغیر <code>number</code> قرار می‌گیرد.</p>
+<p>مفهوم شرط <code>while:</code> یعنی تا زمانی که مقدار متغیر <code>number</code> بزرگ‌تر از صفر است دستورات حلقه، تکرار خواهد شد.</p>
+<p>داخل حلقه ابتدا با یک پیغام مناسب، عدد گرفته شده و مربع (یعنی توان دو) آن چاپ خواهد شد و در ادامه یک عدد دیگر از کاربر گرفته می‌شود.</p>
+<p>اگر در اولین خط برنامه مقداری کوچک‌تر یا مساوی صفر وارد شود، شرط حلقه <code>False</code> شده و دستورات بدنه حلقه دیگر اجرا نخواهند شد و برنامه پایان می‌یابد. دقت شود که در این مثال، مربع عددِ صفر و یا عدِد منفی چاپ نمی‌شود.</p>
+<h3 id="_2">فعالیت</h3>
+<p>برنامه بالا را طوری تغییر دهید که علاوه بر مربع عدد، مکعب (<code>Cube</code>) عدد (یعنی توان ۳ عدد) نیز چاپ شود.</p>
+<p>مثال: برنامه‌ای بنویسید که نام تعدادی غذا را از کاربر گرفته و به یک لیست خالی اضافه (<code>append</code>) کند.</p>
+<p>این کار تا زمانی ادامه می‌یابد که کاربر کلمه <code>exit</code> را وارد کند. پس از اتمام حلقه محتوای لیست به‌صورت یک‌جا چاپ خواهد شد (شکل94).</p>
+<p><img alt="تصویر کتاب" src="../images/p049-03.png" /></p>
+<figure class="shot"><img alt="شکل 94" src="../images/p049-04.png" /><figcaption>شکل 94</figcaption></figure>
+<hr />
+<p class="page-mark">صفحه ۴۴</p>
+<p>توضیح کد: در اولین خط، یک لیست خالی ایجاد شده است.</p>
+<p>همانند مثال‌های قبلی ابتدا نام یک غذا را بگیرید درون متغیر <code>food</code> ذخیره کنید.</p>
+<p>مفهوم شرط <code>while:</code> یعنی تا زمانی که مقدار متغیر <code>food</code> مخالف رشته <code>"exit"</code> است دستورات حلقه، تکرار خواهد شد.</p>
+<p>داخل حلقه ابتدا نام غذای گرفته می‌شود؛ به کمک متد <code>append</code> به انتهای لیست اضافه می‌شود و در ادامه نام یک غذای دیگر از کاربر گرفته می‌شود.</p>
+<p>در آخرین خط و بیرون از بدنه حلقه، محتویات کامل لیست غذا چاپ می‌شود.</p>
+<p><img alt="تصویر کتاب" src="../images/p050-02.png" /></p>
+<p>دقت کنید که آخرین خط نباید یک <code>tab</code> به جلو رود و بایستی دقیقاً زیر ستون <code>while</code> نوشته شود.</p>
+<p><img alt="تصویر کتاب" src="../images/p050-01.png" /></p>
+<p>مثال: به کد زیر دقت کنید. این کد اعداد یک تا پنج را به کمک حلقه <code>for</code> زیر هم چاپ می‌کند (شکل95).</p>
+<p><strong>شکل 95</strong></p>
+<p>حال اگر بخواهید همین کار را به کمک حلقه <code>while</code> انجام دهید، کد آن می‌تواند به‌صورت کد شکل96 باشد.</p>
+<p>توضیح کد: در اولین خط، متغیر <code>i</code> با مقدار پیش‌فرض یک، مقداردهی شده است.</p>
+<p>همانند مثال‌های قبلی ابتدا نام یک غذا را گرفته درون متغیر <code>food</code> ذخیره کنید.</p>
+<p><img alt="تصویر کتاب" src="../images/p050-04.png" /></p>
+<p><img alt="تصویر کتاب" src="../images/p050-03.png" /></p>
+<p>مفهوم شرط <code>while:</code> یعنی تا زمانی که مقدار متغیر <code>i</code> کوچک‌تر از</p>
+<p>6 است دستورات حلقه، تکرار خواهد شد. داخل حلقه ابتدا مقدار متغیر <code>i</code> چاپ شده است. در آخرین خط و درون حلقه به متغیر، یک واحد افزوده شده است.</p>
+<p><strong>شکل 96</strong></p>
+<p>همان‌طور که مشاهده می‌شود ساختار حلقه <code>while</code> برای حلقه‌های با تعداد تکرار معین پیچیده‌تر و نیازمند دقت بیشتر است. ازاین‌رو به برنامه‌نویسان توصیه می‌شود قبل از شروع به کدنویسی به این موضوع فکر کنند که طبق صورت‌مسئله موجود، بهتر است از کدام نوع حلقه استفاده کنند.</p>
+<p>نکات مهمی که از حلقه <code>while</code> فرا می‌گیرید:</p>
+<p>در این نوع حلقه‌ها از قبل نمی‌دانید چند بار تکرار لازم است؛ یعنی حلقه تا زمانی که شرط برقرار است، ادامه دارد.</p>
+<p>تکرار وابسته به یک شرط است که شرط می‌تواند مقایسه، ورودی کاربر یا وضعیت برنامه باشد.</p>
+<p>پایان کار را کاربر یا یک اتفاق مشخص، تعیین می‌کند. پس حلقه تا رسیدن به شرط پایان ادامه می‌یابد.</p>
+<p>برای کنترل حلقه و پیشگیری از اجرای بی‌نهایت، لازم است قبل از شروع حلقه، متغیر حلقه، مقداردهی اولیه شود.</p>
+<hr />
+<p class="page-mark">صفحه ۴۵</p>
+<p>درون حلقه می‌توان از <code>break</code> برای خاتمه اجرای حلقه استفاده کرد.</p>
+<p>درون حلقه می‌توان از <code>continue</code> برای بازگشت به ابتدای حلقه و اجرای دوباره آن استفاده کرد.</p>
+<p>دستورات <code>break</code> و <code>continue</code> باید به همراه یک شرط <code>if</code> درون حلقه‌ها استفاده شوند.</p>
+<p>برای پیاده‌سازی حلقه‌های با تعداد معین می‌توان از حلقه‌های <code>while</code> نیز استفاده نمود؛ اما این کار توصیه نمی‌شود؛ چرا که نوشتن این‌گونه برنامه‌ها با حلقه <code>for</code> ساده‌تر و منطقی‌تر است.</p>
+<h3 id="_3">فعالیت</h3>
+<p>در مثال قبلی و در انتهای برنامۀ بالا به کمک حلقۀ <code>for</code> تک‌تک غذاهای لیست را زیر هم چاپ کنید.</p>
+<h3 id="_4">فعالیت</h3>
+<p>برنامه‌ای بنویسید که کاربر بتواند به‌صورت مکرر سفارش غذا دهد، تا زمانی که <code>"done"</code> را وارد کند.</p>
+<p>هر بار که غذای جدیدی از کاربر گرفته شد پیام <code>".Your</code> <code>order</code> <code>for</code> <code>&lt;food&gt;</code> <code>has</code> <code>been</code> <code>added"</code> نمایش داده شود و غذای جدید به لیست سفارش غذا اضافه (<code>append</code>) شود. وقتی کاربر <code>"done"</code> را وارد نمود، برنامه تمام سفارش‌ها را نمایش دهد.</p>
+<hr /></article><article class="lesson" lang="en" dir="ltr" data-lang-block="en" hidden><p class="page-mark">Page 40</p>
+<p>The <code>while</code> loop This loop executes a set of statements as long as the loop condition is <code>True</code>, and whenever the loop condition becomes <code>False</code>, the loop is no longer executed and the loop's execution ends. This type of loop is usually used when the number of loop repetitions is not known and determined in advance.</p>
+<figure class="shot"><img alt="Figure 87" src="../images/p046-01.png" /><figcaption>Figure 87</figcaption></figure>
+<div class="code-wrap" dir="ltr"><pre><code>: while condition یا : شرط حلقه while
+</code></pre></div>
+<p><code>statements</code> → loop body statements</p>
+<p>Example: A person at the entrance of a dining hall welcomes the guests of a wedding ceremony. They have been told to stand there and, after asking their names, welcome each guest who enters, and no limit has been set for when their work ends. The program below does this with the help of a <code>while</code> loop (Figure 88).</p>
+<p><img alt="Book image" src="../images/p046-03.png" /></p>
+<figure class="shot"><img alt="Figure 88" src="../images/p046-02.png" /><figcaption>Figure 88</figcaption></figure>
+<p>Explanation of the program code: In front of the <code>while</code> statement, instead of putting a particular condition, for now the logical expression <code>True</code> is used. With this, the loop repeats without stopping and no end has been defined for stopping it;</p>
+<p>because the condition in front of <code>while</code> is always <code>True</code> and never becomes <code>False</code>.</p>
+<p>In the next two lines the guest's name is asked and the welcome message will be printed.</p>
+<p>Given that there is no end for the program's execution, to stop the program you must either use the key combination <code>Ctrl</code> + <code>C</code> or close the window of the running program.</p>
+<p>Example: Can the program above be written so that after the groom enters, the welcoming task ends?</p>
+<hr />
+<p class="page-mark">Page 41</p>
+<p>Code explanation: As you can see in the output of the code in Figure 89, after the groom's name is entered, the program ends.</p>
+<figure class="shot"><img alt="Figure 89" src="../images/p047-03.png" /><figcaption>Figure 89</figcaption></figure>
+<p>Inside the loop, after receiving the guest's name, with the help of an <code>if</code> condition it is checked whether the entered name equals <code>damad</code> or not, and if it equals, with the help of the <code>break</code> statement the loop's execution ends and the program's execution is moved to after the <code>while</code> loop.</p>
+<p>Example: In this hall, besides guests, employees (<code>Employee</code>) are also coming and going; now if you do not want employees to be welcomed, you can use a conditional statement and the <code>continue</code> statement.</p>
+<p>Code explanation: As you can see in the output of the code in Figure 90, after the name <code>Employee</code> is entered, the program again receives another name from the user and the employee will not be welcomed. Look carefully at the program output.</p>
+<p><img alt="Book image" src="../images/p047-02.png" /></p>
+<figure class="shot"><img alt="Figure 90" src="../images/p047-01.png" /><figcaption>Figure 90</figcaption></figure>
+<p>When the program reaches the <code>continue</code> statement, it abandons executing the rest of the loop statements and moves the program's execution to the beginning of the loop.</p>
+<p>Although this program works well, this structure, because of the presence of <code>True</code> in front of <code>while</code>, is not very suitable for programming, and the loop structure can be changed as in the next example.</p>
+<p>Example: The welcoming attendant has been told to continue this work until the groom has not arrived; the code changes as follows.</p>
+<p>Note that in this example the condition for continuing the loop is in front of the <code>while</code> statement and you do not need to control anything inside the loop.</p>
+<hr />
+<p class="page-mark">Page 42</p>
+<p>Code explanation: As you can see in the output of the code in Figure 91, after the groom's name is entered and he is welcomed, the program ends.</p>
+<p><img alt="Book image" src="../images/p048-01.png" /></p>
+<figure class="shot"><img alt="Figure 91" src="../images/p048-02.png" /><figcaption>Figure 91</figcaption></figure>
+<p>In the first line a variable named <code>name</code> is created and its value is empty so that the loop condition is initially met.</p>
+<p>The meaning of the second line is that as long as the entered name, that is the value of the variable (<code>name</code>), is not equal to the word <code>damad</code>, the loop body statements continue.</p>
+<p>When the user enters the word <code>damad</code>, after printing the message, the program returns to the beginning of the loop; but this time the loop condition is <code>False</code> and the loop's execution ends. Here, compared with the previous program, the code has become better and more logical.</p>
+<p>Example: The welcoming attendant has been told to stand there and, after asking their names, welcome each guest who enters, and as soon as the groom enters the welcoming task ends; but there is no longer a need to welcome the groom. The code above will change a little.</p>
+<p>Code explanation: In Figure 92, in the first line, instead of placing an empty string in the variable <code>name</code>, with the help of the <code>input</code> statement a real name is taken from the user. In this way, if in the first line of the program the name <code>damad</code> is entered, the loop condition becomes <code>False</code> and the loop body statements will no longer be executed and the program ends.</p>
+<p><img alt="Book image" src="../images/p048-03.png" /></p>
+<figure class="shot"><img alt="Figure 92" src="../images/p048-04.png" /><figcaption>Figure 92</figcaption></figure>
+<p>Inside the loop first the welcome is printed and in the next line another name will be received so that in the next round this name is checked in the loop condition.</p>
+<h3 id="note">Note</h3>
+<p>The examples above all help the programmer learn how to use the <code>while</code> loop in different situations. By rewriting the code and thinking about the process of each of the programs above, the programmer learns the material more precisely. For better learning, pay attention to the examples on the next page.</p>
+<hr />
+<p class="page-mark">Page 43</p>
+<p>Example: Write a program that receives an integer from the user and prints the square of that number; this continues as long as the user enters a number greater than zero (Figure 93).</p>
+<p><img alt="Book image" src="../images/p049-01.png" /></p>
+<figure class="shot"><img alt="Figure 93" src="../images/p049-02.png" /><figcaption>Figure 93</figcaption></figure>
+<p>Code explanation: In the first line an integer is received from the user and placed in the variable <code>number</code>.</p>
+<p>The meaning of the <code>while</code> condition: that is, as long as the value of the variable <code>number</code> is greater than zero, the loop statements will be repeated.</p>
+<p>Inside the loop first, with an appropriate message, the number taken and its square (that is, to the power of two) will be printed, and then another number is taken from the user.</p>
+<p>If in the first line of the program a value less than or equal to zero is entered, the loop condition becomes <code>False</code> and the loop body statements will no longer be executed and the program ends. Note that in this example, the square of the number zero or a negative number is not printed.</p>
+<h3 id="activity">Activity</h3>
+<p>Change the program above so that in addition to the square of the number, the cube (<code>Cube</code>) of the number (that is, the number to the power of 3) is also printed.</p>
+<p>Example: Write a program that takes the names of several foods from the user and adds (<code>append</code>) them to an empty list.</p>
+<p>This continues as long as the user enters the word <code>exit</code>. After the loop ends, the contents of the list will be printed all at once (Figure 94).</p>
+<p><img alt="Book image" src="../images/p049-03.png" /></p>
+<figure class="shot"><img alt="Figure 94" src="../images/p049-04.png" /><figcaption>Figure 94</figcaption></figure>
+<hr />
+<p class="page-mark">Page 44</p>
+<p>Code explanation: In the first line, an empty list is created.</p>
+<p>As in the previous examples, first take the name of a food and store it in the variable <code>food</code>.</p>
+<p>The meaning of the <code>while</code> condition: that is, as long as the value of the variable <code>food</code> is not equal to the string <code>"exit"</code>, the loop statements will be repeated.</p>
+<p>Inside the loop first the name of the food taken is added to the end of the list with the help of the <code>append</code> method, and then the name of another food is taken from the user.</p>
+<p>In the last line and outside the loop body, the complete contents of the food list are printed.</p>
+<p><img alt="Book image" src="../images/p050-02.png" /></p>
+<p>Note that the last line must not be moved forward by one <code>tab</code> and must be written exactly under the <code>while</code> column.</p>
+<p><img alt="Book image" src="../images/p050-01.png" /></p>
+<p>Example: Pay attention to the code below. This code prints the numbers one through five one under another with the help of a <code>for</code> loop (Figure 95).</p>
+<p><strong>Figure 95</strong></p>
+<p>Now if you want to do the same thing with the help of a <code>while</code> loop, its code can be like the code in Figure 96.</p>
+<p>Code explanation: In the first line, the variable <code>i</code> is assigned the default value one.</p>
+<p>As in the previous examples, first take the name of a food and store it in the variable <code>food</code>.</p>
+<p><img alt="Book image" src="../images/p050-04.png" /></p>
+<p><img alt="Book image" src="../images/p050-03.png" /></p>
+<p>The meaning of the <code>while</code> condition: that is, as long as the value of the variable <code>i</code> is less than</p>
+<p>6, the loop statements will be repeated. Inside the loop first the value of the variable <code>i</code> has been printed. In the last line and inside the loop, one has been added to the variable.</p>
+<p><strong>Figure 96</strong></p>
+<p>As you can see, the <code>while</code> loop structure for loops with a known number of repetitions is more complex and requires more care. Therefore programmers are advised, before starting to code, to think about, according to the given problem, which type of loop is better to use.</p>
+<p>Important points you learn from the <code>while</code> loop:</p>
+<p>In this type of loop you do not know in advance how many repetitions are needed; that is, the loop continues as long as the condition is met.</p>
+<p>Repetition depends on a condition, and the condition can be a comparison, user input, or the state of the program.</p>
+<p>The end of the work is determined by the user or a specific event. So the loop continues until the end condition is reached.</p>
+<p>To control the loop and prevent infinite execution, before the loop starts, the loop variable must be initialized.</p>
+<hr />
+<p class="page-mark">Page 45</p>
+<p>Inside the loop you can use <code>break</code> to end the loop's execution.</p>
+<p>Inside the loop you can use <code>continue</code> to return to the beginning of the loop and run it again.</p>
+<p>The <code>break</code> and <code>continue</code> statements must be used together with an <code>if</code> condition inside loops.</p>
+<p>To implement loops with a known count you can also use <code>while</code> loops; but this is not recommended, because writing such programs with a <code>for</code> loop is simpler and more logical.</p>
+<h3 id="activity_1">Activity</h3>
+<p>In the previous example and at the end of the program above, with the help of a <code>for</code> loop print each of the foods in the list one under another.</p>
+<h3 id="activity_2">Activity</h3>
+<p>Write a program so that the user can repeatedly order food, until they enter <code>"done"</code>.</p>
+<p>Each time a new food is taken from the user, the message <code>".Your</code> <code>order</code> <code>for</code> <code>&lt;food&gt;</code> <code>has</code> <code>been</code> <code>added"</code> should be displayed and the new food should be added (<code>append</code>) to the food order list. When the user enters <code>"done"</code>, the program should display all the orders.</p>
+<hr /></article>
+      <aside class="extra">
+        <h2 data-fa="تمرین این بخش" data-en="Exercises for this section">تمرین این بخش</h2>
+        <p class="extra-note" data-fa="این تمرین‌ها و پیوندها اضافه بر متن کتاب‌اند." data-en="These exercises and links are in addition to the book.">این تمرین‌ها و پیوندها اضافه بر متن کتاب‌اند.</p>
+        <ol><li data-fa="با while عدد بگیر و مربعش را چاپ کن تا کاربر ۰ وارد کند. ورودی غیرعددی نباید برنامه را ببندد." data-en="With while, read numbers and print their squares until the user enters 0. A non-number must not close the program.">با while عدد بگیر و مربعش را چاپ کن تا کاربر ۰ وارد کند. ورودی غیرعددی نباید برنامه را ببندد.</li><li data-fa="برنامه مهمان‌ها را بساز که نام‌ها را در یک لیست جمع کند تا کاربر «پایان» را بنویسد، بعد همه نام‌ها را چاپ کند." data-en="Build a guest-list program that collects names until the user types «end», then prints every name.">برنامه مهمان‌ها را بساز که نام‌ها را در یک لیست جمع کند تا کاربر «پایان» را بنویسد، بعد همه نام‌ها را چاپ کند.</li></ol>
+        <h2 data-fa="پیوند مفید" data-en="Useful link">پیوند مفید</h2><ul><li><a href="https://docs.python.org/3/tutorial/introduction.html#first-steps-towards-programming" data-fa="حلقه while" data-en="while loops">حلقه while</a></li></ul>
+      </aside>
+    <nav class="pager"><a rel="prev" class="prev" href="p1-for.html"><span class="pager-word" data-fa="قبلی" data-en="Previous">قبلی</span><span class="pager-name" data-fa="حلقه for و range" data-en="The for loop and range">حلقه for و range</span></a><a rel="next" class="next" href="p1-assess-data.html"><span class="pager-word" data-fa="بعدی" data-en="Next">بعدی</span><span class="pager-name" data-fa="ارزشیابی مدل‌سازی داده" data-en="Data-modeling assessment">ارزشیابی مدل‌سازی داده</span></a></nav>
+    </div>
+  </div>
+  <script src="../assets/search-index.js?v=4"></script>
+  <script src="../assets/app.js?v=4"></script>
+</body>
+</html>

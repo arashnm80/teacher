@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title data-fa="تمرین تابع و مرتب‌سازی" data-en="Function practice and sorting">تمرین تابع و مرتب‌سازی</title>
+  <link rel="icon" href="../assets/favicon.svg">
+  <link rel="stylesheet" href="../assets/style.css?v=4">
+</head>
+<body data-root="../">
+  <header class="top">
+    <a class="brand" href="../index.html">
+      <span data-fa="طراح سایت" data-en="Site Design">طراح سایت</span>
+      <small data-fa="پایه یازدهم" data-en="Grade 11">پایه یازدهم</small>
+    </a>
+    <div class="search-wrap">
+      <input id="q" type="search" autocomplete="off"
+        data-fa-placeholder="جستجو در درس‌ها" data-en-placeholder="Search lessons"
+        placeholder="جستجو در درس‌ها">
+      <div id="results" class="results" hidden></div>
+    </div>
+    <a class="download" href="../grade11-offline.zip?v=2" data-fa="دانلود کل سایت" data-en="Download the whole site">دانلود کل سایت</a>
+    <button type="button" id="lang-toggle" class="lang-toggle" dir="ltr" data-lang="fa"
+      aria-label="تغییر زبان">
+      <span data-opt="fa">فا</span>
+      <span data-opt="en">EN</span>
+    </button>
+  </header>
+  <div class="layout">
+    <details class="toc" open><summary><span data-fa="فهرست درس‌ها" data-en="Lesson list">فهرست درس‌ها</span></summary><nav class="side" aria-label="lessons"><p class="mod" data-fa="شروع کتاب" data-en="Opening">شروع کتاب</p><p class="unit" data-fa="فهرست" data-en="Contents">فهرست</p><a class="" href="toc.html" data-fa="فهرست" data-en="Contents">فهرست</a><p class="mod" data-fa="پودمان ۱: برنامه‌نویسی پایتون" data-en="Module 1: Python programming">پودمان ۱: برنامه‌نویسی پایتون</p><p class="unit" data-fa="معرفی پودمان" data-en="Module introduction">معرفی پودمان</p><a class="" href="p1-intro.html" data-fa="معرفی پودمان پایتون" data-en="Introducing the Python module">معرفی پودمان پایتون</a><p class="unit" data-fa="مدل‌سازی داده" data-en="Data modeling">مدل‌سازی داده</p><a class="" href="p1-python.html" data-fa="پایتون و محیط برنامه‌نویسی" data-en="Python and the programming environment">پایتون و محیط برنامه‌نویسی</a><a class="" href="p1-vars.html" data-fa="متغیرها، نوع داده و عملگرها" data-en="Variables, types, and operators">متغیرها، نوع داده و عملگرها</a><a class="" href="p1-cast.html" data-fa="ورودی و تبدیل نوع" data-en="Input and type casting">ورودی و تبدیل نوع</a><a class="" href="p1-lists.html" data-fa="لیست‌ها" data-en="Lists">لیست‌ها</a><a class="" href="p1-if.html" data-fa="شرط‌های ساده" data-en="Simple conditions">شرط‌های ساده</a><a class="" href="p1-elif.html" data-fa="if، elif و else" data-en="if, elif, and else">if، elif و else</a><a class="" href="p1-for.html" data-fa="حلقه for و range" data-en="The for loop and range">حلقه for و range</a><a class="" href="p1-while.html" data-fa="حلقه while و کنترل حلقه" data-en="The while loop and loop control">حلقه while و کنترل حلقه</a><a class="" href="p1-assess-data.html" data-fa="ارزشیابی مدل‌سازی داده" data-en="Data-modeling assessment">ارزشیابی مدل‌سازی داده</a><p class="unit" data-fa="توابع و ماژول‌ها" data-en="Functions and modules">توابع و ماژول‌ها</p><a class="" href="p1-sets.html" data-fa="مجموعه (set)" data-en="Sets">مجموعه (set)</a><a class="" href="p1-dict.html" data-fa="دیکشنری" data-en="Dictionaries">دیکشنری</a><a class="" href="p1-quiz.html" data-fa="پروژه بازی Quiz" data-en="Quiz game project">پروژه بازی Quiz</a><a class="" href="p1-tuple.html" data-fa="تاپل" data-en="Tuples">تاپل</a><a class="" href="p1-func.html" data-fa="تعریف تابع، پارامتر و return" data-en="Defining functions, parameters, and return">تعریف تابع، پارامتر و return</a><a class="current" href="p1-func-more.html" data-fa="تمرین تابع و مرتب‌سازی" data-en="Function practice and sorting">تمرین تابع و مرتب‌سازی</a><a class="" href="p1-modules.html" data-fa="ماژول‌ها و تفاوت تابع و متد" data-en="Modules, and functions versus methods">ماژول‌ها و تفاوت تابع و متد</a><a class="" href="p1-assess-func.html" data-fa="ارزشیابی توابع و ماژول‌ها" data-en="Functions and modules assessment">ارزشیابی توابع و ماژول‌ها</a><p class="mod" data-fa="پودمان ۲: صفحات وب ایستا" data-en="Module 2: Static web pages">پودمان ۲: صفحات وب ایستا</p><p class="unit" data-fa="معرفی پودمان" data-en="Module introduction">معرفی پودمان</p><a class="" href="p2-intro.html" data-fa="معرفی پودمان صفحات ایستا" data-en="Introducing static web pages">معرفی پودمان صفحات ایستا</a><p class="unit" data-fa="ساختار با HTML" data-en="Structure with HTML">ساختار با HTML</p><a class="" href="p2-web.html" data-fa="وب چگونه کار می‌کند" data-en="How the web works">وب چگونه کار می‌کند</a><a class="" href="p2-concepts.html" data-fa="مفاهیم طراحی وب و نقشه سایت" data-en="Web-design concepts and the site map">مفاهیم طراحی وب و نقشه سایت</a><a class="" href="p2-tags.html" data-fa="اولین صفحه HTML" data-en="A first HTML page">اولین صفحه HTML</a><a class="" href="p2-text.html" data-fa="متن، لیست و پیوند" data-en="Text, lists, and links">متن، لیست و پیوند</a><a class="" href="p2-img.html" data-fa="تصویر در صفحه" data-en="Images on the page">تصویر در صفحه</a><a class="" href="p2-forms.html" data-fa="فرم‌ها" data-en="Forms">فرم‌ها</a><a class="" href="p2-semantic.html" data-fa="عناصر معنایی" data-en="Semantic elements">عناصر معنایی</a><a class="" href="p2-assess-html.html" data-fa="ارزشیابی HTML" data-en="HTML assessment">ارزشیابی HTML</a><p class="unit" data-fa="ظاهر با CSS" data-en="Appearance with CSS">ظاهر با CSS</p><a class="" href="p2-css-start.html" data-fa="نوشتن CSS" data-en="Writing CSS">نوشتن CSS</a><a class="" href="p2-css-look.html" data-fa="رنگ، پس‌زمینه و انتخاب‌گر" data-en="Color, background, and selectors">رنگ، پس‌زمینه و انتخاب‌گر</a><a class="" href="p2-box.html" data-fa="مدل جعبه‌ای و display" data-en="The box model and display">مدل جعبه‌ای و display</a><a class="" href="p2-flex.html" data-fa="چیدمان با Flexbox" data-en="Layout with Flexbox">چیدمان با Flexbox</a><a class="" href="p2-flex-work.html" data-fa="کارگاه چیدمان صفحه" data-en="Page-layout workshop">کارگاه چیدمان صفحه</a><a class="" href="p2-media.html" data-fa="مدیا کوئری و ارزشیابی CSS" data-en="Media queries and the CSS assessment">مدیا کوئری و ارزشیابی CSS</a><p class="mod" data-fa="پودمان ۳: صفحات وب تعاملی" data-en="Module 3: Interactive web pages">پودمان ۳: صفحات وب تعاملی</p><p class="unit" data-fa="معرفی پودمان" data-en="Module introduction">معرفی پودمان</p><a class="" href="p3-intro.html" data-fa="معرفی پودمان تعاملی" data-en="Introducing the interactive module">معرفی پودمان تعاملی</a><p class="unit" data-fa="بوت‌استرپ" data-en="Bootstrap">بوت‌استرپ</p><a class="" href="p3-bs-start.html" data-fa="فریم‌ورک و شروع بوت‌استرپ" data-en="Frameworks and starting Bootstrap">فریم‌ورک و شروع بوت‌استرپ</a><a class="" href="p3-bs-util.html" data-fa="فاصله، گردی و لیست" data-en="Spacing, rounding, and lists">فاصله، گردی و لیست</a><a class="" href="p3-bs-header.html" data-fa="سرصفحه فروشگاه" data-en="The shop header">سرصفحه فروشگاه</a><a class="" href="p3-bs-grid.html" data-fa="شبکه Grid" data-en="The grid">شبکه Grid</a><a class="" href="p3-bs-rwd.html" data-fa="کلاس‌های واکنش‌گرا" data-en="Responsive classes">کلاس‌های واکنش‌گرا</a><a class="" href="p3-bs-nav.html" data-fa="نوار ناوبری و جزئیات محصول" data-en="Navbar and product details">نوار ناوبری و جزئیات محصول</a><a class="" href="p3-bs-form.html" data-fa="فرم و پنجره Modal" data-en="Forms and modals">فرم و پنجره Modal</a><a class="" href="p3-bs-show.html" data-fa="کاروسل و آکاردئون" data-en="Carousel and accordion">کاروسل و آکاردئون</a><a class="" href="p3-bs-assess.html" data-fa="ارزشیابی بوت‌استرپ" data-en="Bootstrap assessment">ارزشیابی بوت‌استرپ</a><p class="unit" data-fa="جاوااسکریپت" data-en="JavaScript">جاوااسکریپت</p><a class="" href="p3-js-start.html" data-fa="جاوااسکریپت در صفحه وب" data-en="JavaScript on the page">جاوااسکریپت در صفحه وب</a><a class="" href="p3-js-vars.html" data-fa="متغیر و نوع داده" data-en="Variables and data types">متغیر و نوع داده</a><a class="" href="p3-js-ops.html" data-fa="عملگرها" data-en="Operators">عملگرها</a><a class="" href="p3-js-data.html" data-fa="آرایه و شیء" data-en="Arrays and objects">آرایه و شیء</a><a class="" href="p3-js-if.html" data-fa="شرط در جاوااسکریپت" data-en="Conditions in JavaScript">شرط در جاوااسکریپت</a><a class="" href="p3-js-loops.html" data-fa="حلقه‌ها" data-en="Loops">حلقه‌ها</a><a class="" href="p3-js-func.html" data-fa="تابع‌ها" data-en="Functions">تابع‌ها</a><a class="" href="p3-js-dom.html" data-fa="صفحه، رویداد و اعتبار فرم" data-en="The page, events, and form validation">صفحه، رویداد و اعتبار فرم</a><a class="" href="p3-js-assess.html" data-fa="ارزشیابی جاوااسکریپت" data-en="JavaScript assessment">ارزشیابی جاوااسکریپت</a><p class="mod" data-fa="پودمان ۴: توسعه وب پایتون" data-en="Module 4: Python for the web">پودمان ۴: توسعه وب پایتون</p><p class="unit" data-fa="معرفی پودمان" data-en="Module introduction">معرفی پودمان</p><a class="" href="p4-intro.html" data-fa="معرفی پودمان شیءگرایی" data-en="Introducing the object-oriented module">معرفی پودمان شیءگرایی</a><p class="unit" data-fa="شیءگرایی" data-en="Object-oriented programming">شیءگرایی</p><a class="" href="p4-idea.html" data-fa="ایده شیء و کلاس" data-en="The idea of objects and classes">ایده شیء و کلاس</a><a class="" href="p4-class.html" data-fa="ساخت کلاس و متد" data-en="Writing a class and methods">ساخت کلاس و متد</a><a class="" href="p4-inherit.html" data-fa="وراثت" data-en="Inheritance">وراثت</a><a class="" href="p4-protect.html" data-fa="داده معتبر و استفاده داخلی" data-en="Valid data and internal use">داده معتبر و استفاده داخلی</a><a class="" href="p4-assess-oop.html" data-fa="ارزشیابی برنامه شیءگرا" data-en="Object-oriented assessment">ارزشیابی برنامه شیءگرا</a><p class="unit" data-fa="فایل و توسعه" data-en="Files and development">فایل و توسعه</p><a class="" href="p4-files.html" data-fa="خواندن و نوشتن فایل متنی" data-en="Reading and writing text files">خواندن و نوشتن فایل متنی</a><a class="" href="p4-errors.html" data-fa="پیمایش فایل و مدیریت خطا" data-en="Walking a file and handling errors">پیمایش فایل و مدیریت خطا</a><a class="" href="p4-json.html" data-fa="چند فایل و JSON" data-en="Several files and JSON">چند فایل و JSON</a><a class="" href="p4-assess-files.html" data-fa="ارزشیابی کار با فایل" data-en="Files assessment">ارزشیابی کار با فایل</a><p class="mod" data-fa="پودمان ۵: برنامه‌نویسی جنگو" data-en="Module 5: Django">پودمان ۵: برنامه‌نویسی جنگو</p><p class="unit" data-fa="معرفی پودمان" data-en="Module introduction">معرفی پودمان</p><a class="" href="p5-intro.html" data-fa="معرفی پودمان جنگو" data-en="Introducing the Django module">معرفی پودمان جنگو</a><p class="unit" data-fa="ایجاد وب‌اپلیکیشن" data-en="Creating the web app">ایجاد وب‌اپلیکیشن</p><a class="" href="p5-what.html" data-fa="جنگو چیست و نصب" data-en="What Django is, and installing it">جنگو چیست و نصب</a><a class="" href="p5-project.html" data-fa="پروژه، اپ و اولین view" data-en="Project, app, and the first view">پروژه، اپ و اولین view</a><a class="" href="p5-template.html" data-fa="قالب و دمای واقعی" data-en="Templates and a real temperature">قالب و دمای واقعی</a><a class="" href="p5-assess-create.html" data-fa="ارزشیابی ایجاد وب‌اپلیکیشن" data-en="Creating-the-app assessment">ارزشیابی ایجاد وب‌اپلیکیشن</a><p class="unit" data-fa="توسعه وب‌اپلیکیشن" data-en="Developing the web app">توسعه وب‌اپلیکیشن</p><a class="" href="p5-model.html" data-fa="مدل شهر و پنل ادمین" data-en="The city model and the admin">مدل شهر و پنل ادمین</a><a class="" href="p5-list.html" data-fa="خواندن شهرها و نمایش فهرست" data-en="Reading cities and showing the list">خواندن شهرها و نمایش فهرست</a><a class="" href="p5-auth.html" data-fa="ورود و خروج" data-en="Sign-in and sign-out">ورود و خروج</a><a class="" href="p5-crud.html" data-fa="افزودن و حذف شهر" data-en="Adding and deleting a city">افزودن و حذف شهر</a><a class="" href="p5-bugs.html" data-fa="باگ و امنیت" data-en="Bugs and security">باگ و امنیت</a><p class="mod" data-fa="پایان کتاب" data-en="Back of the book">پایان کتاب</p><p class="unit" data-fa="منابع" data-en="References">منابع</p><a class="" href="refs.html" data-fa="منابع کتاب" data-en="Book references">منابع کتاب</a></nav></details>
+    <div class="main">
+      <h1 class="section-title" data-fa="تمرین تابع و مرتب‌سازی" data-en="Function practice and sorting">تمرین تابع و مرتب‌سازی</h1><article class="lesson" lang="fa" dir="rtl" data-lang-block="fa"><p class="page-mark">صفحه ۷۰</p>
+<h3 id="_1">فعالیت</h3>
+<p><img alt="تصویر کتاب" src="../images/p076-01.png" /></p>
+<p>تابعی بنویسید که تفاوت نمرۀ دو دانش‌آموز را محاسبه و مقدار آن را برگرداند. با راهنمایی هنرآموز محترم خود کدهای برنامۀ مقابل را توضیح دهید.</p>
+<p>انواع توابع در پایتون <code>User-Defnied</code> <code>Function</code> (توابعی که برنامه‌نویس تعریف می‌کند): توابعی که تاکنون تعریف کردید در این دسته قرار دارند.</p>
+<p><code>Built-in</code> <code>functions</code> (یا توابع داخلی پایتون): توابعی که در پایتون از قبل تعریف شده‌اند و برنامه‌نویس آنها را در برنامه‌های خود استفاده می‌کند. کارهای رایج و تکراری را سریع، ساده و بدون نوشتن کد طولانی انجام می‌دهد. به کمک توابع داخلی، برنامه‌ها خواناتر، کوتاه‌تر و کم‌خطا می‌شوند.</p>
+<p>در بخش‌های پیش با برخی از این توابع آشنا شدید، در ادامه نیز کاربرد برخی دیگر را یاد خواهید گرفت.</p>
+<p>توابع ریاضی: این توابع فقط یا عمدتاً روی مقادیر عددی کار می‌کنند (جدول4).</p>
+<p><strong>جدول4</strong></p>
+<p>نام تابع</p>
+<h3 id="_2">کاربرد</h3>
+<h3 id="_3">مثال</h3>
+<p>خروجی</p>
+<p><code>abs</code>()محاسبه قدرمطلق عدد<code>print</code>(<code>abs</code>(-12))</p>
+<p>12</p>
+<div class="code-wrap" dir="ltr"><pre><code>print(round(3.6))
+</code></pre></div>
+<p>4</p>
+<div class="code-wrap" dir="ltr"><pre><code>round()گرد کردن عدد اعشاریprint(round(3.1415, 2))
+</code></pre></div>
+<p>3.14</p>
+<div class="code-wrap" dir="ltr"><pre><code>pow()محاسبه توانprint(pow(2, 3))
+</code></pre></div>
+<p>8</p>
+<p><code>int</code>()تبدیل به عدد صحیح<code>print</code>(<code>int</code><bdi dir="ltr">(4.8)</bdi>)</p>
+<p>4</p>
+<p><code>float</code>()تبدیل به عدد اعشاری<code>print</code>(<code>float</code><bdi dir="ltr">(5)</bdi>)</p>
+<p>50</p>
+<div class="code-wrap" dir="ltr"><pre><code>max()بزرگ‌ترین عددPrint(max(3, 9, 5))
+</code></pre></div>
+<p>9</p>
+<div class="code-wrap" dir="ltr"><pre><code>min()کوچک‌ترین عددPrint(min(3, 9, 5))
+</code></pre></div>
+<p>3</p>
+<div class="code-wrap" dir="ltr"><pre><code>sum()جمع چند عددPrint(sum([2, 4, 6]))
+</code></pre></div>
+<p>12</p>
+<hr />
+<p class="page-mark">صفحه ۷۱</p>
+<h3 id="_4">فعالیت</h3>
+<p>یک ماشین‌حساب با استفاده از توابع ریاضی ایجاد کنید. بخش‌هایی از کدهای مربوط به این برنامه نوشته شده است. با راهنمایی هنرآموز خود آنها را تکمیل کنید و برنامه را اجرا کنید.</p>
+<p><img alt="تصویر کتاب" src="../images/p077-01.png" /></p>
+<p><img alt="تصویر کتاب" src="../images/p077-02.png" /></p>
+<hr />
+<p class="page-mark">صفحه ۷۲</p>
+<p><img alt="تصویر کتاب" src="../images/p078-03.png" /></p>
+<p><img alt="تصویر کتاب" src="../images/p078-01.png" /></p>
+<p><img alt="تصویر کتاب" src="../images/p078-02.png" /></p>
+<p>تا این بخش با توابعی مثل <code>print</code> ,<code>len</code> ,<code>type</code> , <code>input</code> ,<code>str</code> آشنا شده‌اید. در ادامه با برخی از توابع داخلی غیرریاضی پایتون آشنا خواهید شد.</p>
+<p>تابع <code>sorted:</code> این تابع برای مرتب‌سازی رشته، مجموعه، توپل و دیکشنری مورد استفاده قرار می‌گیرد و نتیجه را در قالب یک لیست جدید برمی‌گرداند.</p>
+<p>ساختار کلی تابع:</p>
+<div class="code-wrap" dir="ltr"><pre><code>sorted(iterable, reverse=false)
+</code></pre></div>
+<p><code>iterable:</code> داده‌ای که می‌خواهید مرتب کنید (لیست، رشته، توپل، مجموعه، دیکشنری و …) <code>reverse:</code> اگر <code>true</code> باشد، ترتیب نزولی می‌شود. پیش‌فرض (<code>false</code> صعودی)</p>
+<hr />
+<p class="page-mark">صفحه ۷۳</p>
+<p>مثال: در این مثال تابع <code>sorted</code> رشته‌ای از کاراکترهای ذخیره‌شده در متغیر <code>data</code> را به‌صورت صعودی بر اساس کد اسکی کاراکترها مرتب می‌کند.</p>
+<p><img alt="تصویر کتاب" src="../images/p079-01.png" /></p>
+<figure class="shot"><img alt="شکل 149" src="../images/p079-02.png" /><figcaption>شکل 149</figcaption></figure>
+<h3 id="_5">فعالیت</h3>
+<p>نام شهرها را از کاربر دریافت و در یک لیست ذخیره کنید. سپس این لیست را به‌صورت نزولی مرتب کنید.</p>
+<h3 id="module">ماژول <bdi dir="ltr">(module)</bdi></h3>
+<p>ماژول یک فایل است که می‌تواند شامل چندین تابع، متغیر و کلاس باشد و برای سازمان‌دهی برنامه‌های بزرگ استفاده می‌شود. با استفاده از ماژول می‌توانید کدهای آماده را دوباره استفاده کنید و برنامۀ خود را کوتاه‌تر و مرتب‌تر کنید.</p>
+<figure class="shot"><img alt="شکل 150" src="../images/p079-03.png" /><figcaption>شکل 150</figcaption></figure>
+<p>انواع ماژول در پایتون:</p>
+<p>ماژول استاندارد (<code>standard</code>) ماژول‌هایی در پایتون وجود دارند که برنامه‌نویس فقط آنها را در برنامه خودش وارد می‌کند و نیازی به تعریف آنها نیست. مثل <code>time</code>، <code>date</code>، <code>random</code>، <code>math</code> و... . به دو روش می‌توان از ماژول‌های استاندارد استفاده کرد.</p>
+<p>روش اول: وارد کردن کل ماژول (<code>import</code> <code>mojvle</code>):</p>
+<p>این روش ام‌نترین راه است. چون از تداخل نا‌مها جلوگیری م‌یکند. در این روش باید نام ماژول را قبل از تابع بیاورید.</p>
+<p><img alt="تصویر کتاب" src="../images/p079-04.png" /></p>
+<p>مثال: <code>Sqrt</code> یک تابع آماده در ماژول <code>math</code> پایتون است، که برای محاسبه جذر اعداد استفاده می‌شود (شکل151).</p>
+<p><strong>شکل 151</strong></p>
+<hr /></article><article class="lesson" lang="en" dir="ltr" data-lang-block="en" hidden><p class="page-mark">Page 70</p>
+<h3 id="activity">Activity</h3>
+<p><img alt="Book image" src="../images/p076-01.png" /></p>
+<p>Write a function that calculates the difference between two students’ scores and returns that value. With guidance from your teacher, explain the code of the program opposite.</p>
+<p>Types of functions in Python <code>User-Defined</code> <code>Function</code> (functions that the programmer defines): The functions you have defined so far belong in this category.</p>
+<p><code>Built-in</code> <code>functions</code> (or Python’s internal functions): Functions that are already defined in Python and that the programmer uses in their programs. They perform common and repeated tasks quickly, simply, and without writing long code. With built-in functions, programs become more readable, shorter, and less error-prone.</p>
+<p>In earlier sections you became familiar with some of these functions; below you will also learn the use of some others.</p>
+<p>Math functions: These functions work only or mainly on numeric values (Table 4).</p>
+<p><strong>Table 4</strong></p>
+<p>Function name</p>
+<h3 id="use">Use</h3>
+<h3 id="example">Example</h3>
+<p>Output</p>
+<p><code>abs</code>()calculates the absolute value of a number<code>print</code>(<code>abs</code>(-12))</p>
+<p>12</p>
+<div class="code-wrap" dir="ltr"><pre><code>print(round(3.6))
+</code></pre></div>
+<p>4</p>
+<div class="code-wrap" dir="ltr"><pre><code>round()گرد کردن عدد اعشاریprint(round(3.1415, 2))
+</code></pre></div>
+<p>3.14</p>
+<div class="code-wrap" dir="ltr"><pre><code>pow()محاسبه توانprint(pow(2, 3))
+</code></pre></div>
+<p>8</p>
+<p><code>int</code>()converts to an integer<code>print</code>(<code>int</code>(4.8))</p>
+<p>4</p>
+<p><code>float</code>()converts to a floating-point number<code>print</code>(<code>float</code>(5))</p>
+<p>50</p>
+<div class="code-wrap" dir="ltr"><pre><code>max()بزرگ‌ترین عددPrint(max(3, 9, 5))
+</code></pre></div>
+<p>9</p>
+<div class="code-wrap" dir="ltr"><pre><code>min()کوچک‌ترین عددPrint(min(3, 9, 5))
+</code></pre></div>
+<p>3</p>
+<div class="code-wrap" dir="ltr"><pre><code>sum()جمع چند عددPrint(sum([2, 4, 6]))
+</code></pre></div>
+<p>12</p>
+<hr />
+<p class="page-mark">Page 71</p>
+<h3 id="activity_1">Activity</h3>
+<p>Create a calculator using math functions. Parts of the code related to this program have been written. With guidance from your teacher, complete them and run the program.</p>
+<p><img alt="Book image" src="../images/p077-01.png" /></p>
+<p><img alt="Book image" src="../images/p077-02.png" /></p>
+<hr />
+<p class="page-mark">Page 72</p>
+<p><img alt="Book image" src="../images/p078-03.png" /></p>
+<p><img alt="Book image" src="../images/p078-01.png" /></p>
+<p><img alt="Book image" src="../images/p078-02.png" /></p>
+<p>Up to this section you have become familiar with functions such as <code>print</code> ,<code>len</code> ,<code>type</code> , <code>input</code> ,<code>str</code>. Below you will become familiar with some of Python’s non-math built-in functions.</p>
+<p>The <code>sorted</code> function: This function is used to sort a string, set, tuple, and dictionary and returns the result as a new list.</p>
+<p>General structure of the function:</p>
+<div class="code-wrap" dir="ltr"><pre><code>sorted(iterable, reverse=false)
+</code></pre></div>
+<p><code>iterable:</code> the data you want to sort (list, string, tuple, set, dictionary, and so on) <code>reverse:</code> if <code>true</code>, the order becomes descending. Default (<code>false</code> ascending)</p>
+<hr />
+<p class="page-mark">Page 73</p>
+<p>Example: In this example the <code>sorted</code> function sorts a string of characters stored in the variable <code>data</code> in ascending order based on the ASCII codes of the characters.</p>
+<p><img alt="Book image" src="../images/p079-01.png" /></p>
+<figure class="shot"><img alt="Figure 149" src="../images/p079-02.png" /><figcaption>Figure 149</figcaption></figure>
+<h3 id="activity_2">Activity</h3>
+<p>Receive the names of cities from the user and store them in a list. Then sort this list in descending order.</p>
+<h3 id="module-module">Module (module)</h3>
+<p>A module is a file that can include several functions, variables, and classes and is used to organize large programs. Using a module, you can reuse ready-made code and make your program shorter and tidier.</p>
+<figure class="shot"><img alt="Figure 150" src="../images/p079-03.png" /><figcaption>Figure 150</figcaption></figure>
+<p>Types of modules in Python:</p>
+<p>Standard module (<code>standard</code>) There are modules in Python that the programmer only imports into their own program and does not need to define. Such as <code>time</code>, <code>date</code>, <code>random</code>, <code>math</code>, and so on. There are two ways to use standard modules.</p>
+<p>First method: importing the whole module (<code>import</code> <code>mojvle</code>):</p>
+<p>This is the safest way, because it prevents name conflicts. In this method you must put the module name before the function.</p>
+<p><img alt="Book image" src="../images/p079-04.png" /></p>
+<p>Example: <code>Sqrt</code> is a ready-made function in Python’s <code>math</code> module, which is used to calculate the square root of numbers (Figure 151).</p>
+<p><strong>Figure 151</strong></p>
+<hr /></article>
+      <aside class="extra">
+        <h2 data-fa="تمرین این بخش" data-en="Exercises for this section">تمرین این بخش</h2>
+        <p class="extra-note" data-fa="این تمرین‌ها و پیوندها اضافه بر متن کتاب‌اند." data-en="These exercises and links are in addition to the book.">این تمرین‌ها و پیوندها اضافه بر متن کتاب‌اند.</p>
+        <ol><li data-fa="تابعی بساز که لیست نام‌ها را بگیرد و تعداد نام‌های بلندتر از ۴ حرف را برگرداند. آن را روی یک لیست واقعی چاپ کن." data-en="Build a function that takes a list of names and returns how many are longer than 4 letters. Print the result for a real list.">تابعی بساز که لیست نام‌ها را بگیرد و تعداد نام‌های بلندتر از ۴ حرف را برگرداند. آن را روی یک لیست واقعی چاپ کن.</li><li data-fa="برنامه‌ای بساز که یک رشته به‌هم‌ریخته را مرتب کند و فهرست مرتب‌شده را در یک خط نشان بدهد." data-en="Build a program that sorts a scrambled string and prints the sorted list on one line.">برنامه‌ای بساز که یک رشته به‌هم‌ریخته را مرتب کند و فهرست مرتب‌شده را در یک خط نشان بدهد.</li></ol>
+        <h2 data-fa="پیوند مفید" data-en="Useful link">پیوند مفید</h2><ul><li><a href="https://docs.python.org/3/tutorial/controlflow.html#more-on-defining-functions" data-fa="ادامه تابع‌ها" data-en="More on defining functions">ادامه تابع‌ها</a></li></ul>
+      </aside>
+    <nav class="pager"><a rel="prev" class="prev" href="p1-func.html"><span class="pager-word" data-fa="قبلی" data-en="Previous">قبلی</span><span class="pager-name" data-fa="تعریف تابع، پارامتر و return" data-en="Defining functions, parameters, and return">تعریف تابع، پارامتر و return</span></a><a rel="next" class="next" href="p1-modules.html"><span class="pager-word" data-fa="بعدی" data-en="Next">بعدی</span><span class="pager-name" data-fa="ماژول‌ها و تفاوت تابع و متد" data-en="Modules, and functions versus methods">ماژول‌ها و تفاوت تابع و متد</span></a></nav>
+    </div>
+  </div>
+  <script src="../assets/search-index.js?v=4"></script>
+  <script src="../assets/app.js?v=4"></script>
+</body>
+</html>

@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title data-fa="حلقه for و range" data-en="The for loop and range">حلقه for و range</title>
+  <link rel="icon" href="../assets/favicon.svg">
+  <link rel="stylesheet" href="../assets/style.css?v=4">
+</head>
+<body data-root="../">
+  <header class="top">
+    <a class="brand" href="../index.html">
+      <span data-fa="طراح سایت" data-en="Site Design">طراح سایت</span>
+      <small data-fa="پایه یازدهم" data-en="Grade 11">پایه یازدهم</small>
+    </a>
+    <div class="search-wrap">
+      <input id="q" type="search" autocomplete="off"
+        data-fa-placeholder="جستجو در درس‌ها" data-en-placeholder="Search lessons"
+        placeholder="جستجو در درس‌ها">
+      <div id="results" class="results" hidden></div>
+    </div>
+    <a class="download" href="../grade11-offline.zip?v=2" data-fa="دانلود کل سایت" data-en="Download the whole site">دانلود کل سایت</a>
+    <button type="button" id="lang-toggle" class="lang-toggle" dir="ltr" data-lang="fa"
+      aria-label="تغییر زبان">
+      <span data-opt="fa">فا</span>
+      <span data-opt="en">EN</span>
+    </button>
+  </header>
+  <div class="layout">
+    <details class="toc" open><summary><span data-fa="فهرست درس‌ها" data-en="Lesson list">فهرست درس‌ها</span></summary><nav class="side" aria-label="lessons"><p class="mod" data-fa="شروع کتاب" data-en="Opening">شروع کتاب</p><p class="unit" data-fa="فهرست" data-en="Contents">فهرست</p><a class="" href="toc.html" data-fa="فهرست" data-en="Contents">فهرست</a><p class="mod" data-fa="پودمان ۱: برنامه‌نویسی پایتون" data-en="Module 1: Python programming">پودمان ۱: برنامه‌نویسی پایتون</p><p class="unit" data-fa="معرفی پودمان" data-en="Module introduction">معرفی پودمان</p><a class="" href="p1-intro.html" data-fa="معرفی پودمان پایتون" data-en="Introducing the Python module">معرفی پودمان پایتون</a><p class="unit" data-fa="مدل‌سازی داده" data-en="Data modeling">مدل‌سازی داده</p><a class="" href="p1-python.html" data-fa="پایتون و محیط برنامه‌نویسی" data-en="Python and the programming environment">پایتون و محیط برنامه‌نویسی</a><a class="" href="p1-vars.html" data-fa="متغیرها، نوع داده و عملگرها" data-en="Variables, types, and operators">متغیرها، نوع داده و عملگرها</a><a class="" href="p1-cast.html" data-fa="ورودی و تبدیل نوع" data-en="Input and type casting">ورودی و تبدیل نوع</a><a class="" href="p1-lists.html" data-fa="لیست‌ها" data-en="Lists">لیست‌ها</a><a class="" href="p1-if.html" data-fa="شرط‌های ساده" data-en="Simple conditions">شرط‌های ساده</a><a class="" href="p1-elif.html" data-fa="if، elif و else" data-en="if, elif, and else">if، elif و else</a><a class="current" href="p1-for.html" data-fa="حلقه for و range" data-en="The for loop and range">حلقه for و range</a><a class="" href="p1-while.html" data-fa="حلقه while و کنترل حلقه" data-en="The while loop and loop control">حلقه while و کنترل حلقه</a><a class="" href="p1-assess-data.html" data-fa="ارزشیابی مدل‌سازی داده" data-en="Data-modeling assessment">ارزشیابی مدل‌سازی داده</a><p class="unit" data-fa="توابع و ماژول‌ها" data-en="Functions and modules">توابع و ماژول‌ها</p><a class="" href="p1-sets.html" data-fa="مجموعه (set)" data-en="Sets">مجموعه (set)</a><a class="" href="p1-dict.html" data-fa="دیکشنری" data-en="Dictionaries">دیکشنری</a><a class="" href="p1-quiz.html" data-fa="پروژه بازی Quiz" data-en="Quiz game project">پروژه بازی Quiz</a><a class="" href="p1-tuple.html" data-fa="تاپل" data-en="Tuples">تاپل</a><a class="" href="p1-func.html" data-fa="تعریف تابع، پارامتر و return" data-en="Defining functions, parameters, and return">تعریف تابع، پارامتر و return</a><a class="" href="p1-func-more.html" data-fa="تمرین تابع و مرتب‌سازی" data-en="Function practice and sorting">تمرین تابع و مرتب‌سازی</a><a class="" href="p1-modules.html" data-fa="ماژول‌ها و تفاوت تابع و متد" data-en="Modules, and functions versus methods">ماژول‌ها و تفاوت تابع و متد</a><a class="" href="p1-assess-func.html" data-fa="ارزشیابی توابع و ماژول‌ها" data-en="Functions and modules assessment">ارزشیابی توابع و ماژول‌ها</a><p class="mod" data-fa="پودمان ۲: صفحات وب ایستا" data-en="Module 2: Static web pages">پودمان ۲: صفحات وب ایستا</p><p class="unit" data-fa="معرفی پودمان" data-en="Module introduction">معرفی پودمان</p><a class="" href="p2-intro.html" data-fa="معرفی پودمان صفحات ایستا" data-en="Introducing static web pages">معرفی پودمان صفحات ایستا</a><p class="unit" data-fa="ساختار با HTML" data-en="Structure with HTML">ساختار با HTML</p><a class="" href="p2-web.html" data-fa="وب چگونه کار می‌کند" data-en="How the web works">وب چگونه کار می‌کند</a><a class="" href="p2-concepts.html" data-fa="مفاهیم طراحی وب و نقشه سایت" data-en="Web-design concepts and the site map">مفاهیم طراحی وب و نقشه سایت</a><a class="" href="p2-tags.html" data-fa="اولین صفحه HTML" data-en="A first HTML page">اولین صفحه HTML</a><a class="" href="p2-text.html" data-fa="متن، لیست و پیوند" data-en="Text, lists, and links">متن، لیست و پیوند</a><a class="" href="p2-img.html" data-fa="تصویر در صفحه" data-en="Images on the page">تصویر در صفحه</a><a class="" href="p2-forms.html" data-fa="فرم‌ها" data-en="Forms">فرم‌ها</a><a class="" href="p2-semantic.html" data-fa="عناصر معنایی" data-en="Semantic elements">عناصر معنایی</a><a class="" href="p2-assess-html.html" data-fa="ارزشیابی HTML" data-en="HTML assessment">ارزشیابی HTML</a><p class="unit" data-fa="ظاهر با CSS" data-en="Appearance with CSS">ظاهر با CSS</p><a class="" href="p2-css-start.html" data-fa="نوشتن CSS" data-en="Writing CSS">نوشتن CSS</a><a class="" href="p2-css-look.html" data-fa="رنگ، پس‌زمینه و انتخاب‌گر" data-en="Color, background, and selectors">رنگ، پس‌زمینه و انتخاب‌گر</a><a class="" href="p2-box.html" data-fa="مدل جعبه‌ای و display" data-en="The box model and display">مدل جعبه‌ای و display</a><a class="" href="p2-flex.html" data-fa="چیدمان با Flexbox" data-en="Layout with Flexbox">چیدمان با Flexbox</a><a class="" href="p2-flex-work.html" data-fa="کارگاه چیدمان صفحه" data-en="Page-layout workshop">کارگاه چیدمان صفحه</a><a class="" href="p2-media.html" data-fa="مدیا کوئری و ارزشیابی CSS" data-en="Media queries and the CSS assessment">مدیا کوئری و ارزشیابی CSS</a><p class="mod" data-fa="پودمان ۳: صفحات وب تعاملی" data-en="Module 3: Interactive web pages">پودمان ۳: صفحات وب تعاملی</p><p class="unit" data-fa="معرفی پودمان" data-en="Module introduction">معرفی پودمان</p><a class="" href="p3-intro.html" data-fa="معرفی پودمان تعاملی" data-en="Introducing the interactive module">معرفی پودمان تعاملی</a><p class="unit" data-fa="بوت‌استرپ" data-en="Bootstrap">بوت‌استرپ</p><a class="" href="p3-bs-start.html" data-fa="فریم‌ورک و شروع بوت‌استرپ" data-en="Frameworks and starting Bootstrap">فریم‌ورک و شروع بوت‌استرپ</a><a class="" href="p3-bs-util.html" data-fa="فاصله، گردی و لیست" data-en="Spacing, rounding, and lists">فاصله، گردی و لیست</a><a class="" href="p3-bs-header.html" data-fa="سرصفحه فروشگاه" data-en="The shop header">سرصفحه فروشگاه</a><a class="" href="p3-bs-grid.html" data-fa="شبکه Grid" data-en="The grid">شبکه Grid</a><a class="" href="p3-bs-rwd.html" data-fa="کلاس‌های واکنش‌گرا" data-en="Responsive classes">کلاس‌های واکنش‌گرا</a><a class="" href="p3-bs-nav.html" data-fa="نوار ناوبری و جزئیات محصول" data-en="Navbar and product details">نوار ناوبری و جزئیات محصول</a><a class="" href="p3-bs-form.html" data-fa="فرم و پنجره Modal" data-en="Forms and modals">فرم و پنجره Modal</a><a class="" href="p3-bs-show.html" data-fa="کاروسل و آکاردئون" data-en="Carousel and accordion">کاروسل و آکاردئون</a><a class="" href="p3-bs-assess.html" data-fa="ارزشیابی بوت‌استرپ" data-en="Bootstrap assessment">ارزشیابی بوت‌استرپ</a><p class="unit" data-fa="جاوااسکریپت" data-en="JavaScript">جاوااسکریپت</p><a class="" href="p3-js-start.html" data-fa="جاوااسکریپت در صفحه وب" data-en="JavaScript on the page">جاوااسکریپت در صفحه وب</a><a class="" href="p3-js-vars.html" data-fa="متغیر و نوع داده" data-en="Variables and data types">متغیر و نوع داده</a><a class="" href="p3-js-ops.html" data-fa="عملگرها" data-en="Operators">عملگرها</a><a class="" href="p3-js-data.html" data-fa="آرایه و شیء" data-en="Arrays and objects">آرایه و شیء</a><a class="" href="p3-js-if.html" data-fa="شرط در جاوااسکریپت" data-en="Conditions in JavaScript">شرط در جاوااسکریپت</a><a class="" href="p3-js-loops.html" data-fa="حلقه‌ها" data-en="Loops">حلقه‌ها</a><a class="" href="p3-js-func.html" data-fa="تابع‌ها" data-en="Functions">تابع‌ها</a><a class="" href="p3-js-dom.html" data-fa="صفحه، رویداد و اعتبار فرم" data-en="The page, events, and form validation">صفحه، رویداد و اعتبار فرم</a><a class="" href="p3-js-assess.html" data-fa="ارزشیابی جاوااسکریپت" data-en="JavaScript assessment">ارزشیابی جاوااسکریپت</a><p class="mod" data-fa="پودمان ۴: توسعه وب پایتون" data-en="Module 4: Python for the web">پودمان ۴: توسعه وب پایتون</p><p class="unit" data-fa="معرفی پودمان" data-en="Module introduction">معرفی پودمان</p><a class="" href="p4-intro.html" data-fa="معرفی پودمان شیءگرایی" data-en="Introducing the object-oriented module">معرفی پودمان شیءگرایی</a><p class="unit" data-fa="شیءگرایی" data-en="Object-oriented programming">شیءگرایی</p><a class="" href="p4-idea.html" data-fa="ایده شیء و کلاس" data-en="The idea of objects and classes">ایده شیء و کلاس</a><a class="" href="p4-class.html" data-fa="ساخت کلاس و متد" data-en="Writing a class and methods">ساخت کلاس و متد</a><a class="" href="p4-inherit.html" data-fa="وراثت" data-en="Inheritance">وراثت</a><a class="" href="p4-protect.html" data-fa="داده معتبر و استفاده داخلی" data-en="Valid data and internal use">داده معتبر و استفاده داخلی</a><a class="" href="p4-assess-oop.html" data-fa="ارزشیابی برنامه شیءگرا" data-en="Object-oriented assessment">ارزشیابی برنامه شیءگرا</a><p class="unit" data-fa="فایل و توسعه" data-en="Files and development">فایل و توسعه</p><a class="" href="p4-files.html" data-fa="خواندن و نوشتن فایل متنی" data-en="Reading and writing text files">خواندن و نوشتن فایل متنی</a><a class="" href="p4-errors.html" data-fa="پیمایش فایل و مدیریت خطا" data-en="Walking a file and handling errors">پیمایش فایل و مدیریت خطا</a><a class="" href="p4-json.html" data-fa="چند فایل و JSON" data-en="Several files and JSON">چند فایل و JSON</a><a class="" href="p4-assess-files.html" data-fa="ارزشیابی کار با فایل" data-en="Files assessment">ارزشیابی کار با فایل</a><p class="mod" data-fa="پودمان ۵: برنامه‌نویسی جنگو" data-en="Module 5: Django">پودمان ۵: برنامه‌نویسی جنگو</p><p class="unit" data-fa="معرفی پودمان" data-en="Module introduction">معرفی پودمان</p><a class="" href="p5-intro.html" data-fa="معرفی پودمان جنگو" data-en="Introducing the Django module">معرفی پودمان جنگو</a><p class="unit" data-fa="ایجاد وب‌اپلیکیشن" data-en="Creating the web app">ایجاد وب‌اپلیکیشن</p><a class="" href="p5-what.html" data-fa="جنگو چیست و نصب" data-en="What Django is, and installing it">جنگو چیست و نصب</a><a class="" href="p5-project.html" data-fa="پروژه، اپ و اولین view" data-en="Project, app, and the first view">پروژه، اپ و اولین view</a><a class="" href="p5-template.html" data-fa="قالب و دمای واقعی" data-en="Templates and a real temperature">قالب و دمای واقعی</a><a class="" href="p5-assess-create.html" data-fa="ارزشیابی ایجاد وب‌اپلیکیشن" data-en="Creating-the-app assessment">ارزشیابی ایجاد وب‌اپلیکیشن</a><p class="unit" data-fa="توسعه وب‌اپلیکیشن" data-en="Developing the web app">توسعه وب‌اپلیکیشن</p><a class="" href="p5-model.html" data-fa="مدل شهر و پنل ادمین" data-en="The city model and the admin">مدل شهر و پنل ادمین</a><a class="" href="p5-list.html" data-fa="خواندن شهرها و نمایش فهرست" data-en="Reading cities and showing the list">خواندن شهرها و نمایش فهرست</a><a class="" href="p5-auth.html" data-fa="ورود و خروج" data-en="Sign-in and sign-out">ورود و خروج</a><a class="" href="p5-crud.html" data-fa="افزودن و حذف شهر" data-en="Adding and deleting a city">افزودن و حذف شهر</a><a class="" href="p5-bugs.html" data-fa="باگ و امنیت" data-en="Bugs and security">باگ و امنیت</a><p class="mod" data-fa="پایان کتاب" data-en="Back of the book">پایان کتاب</p><p class="unit" data-fa="منابع" data-en="References">منابع</p><a class="" href="refs.html" data-fa="منابع کتاب" data-en="Book references">منابع کتاب</a></nav></details>
+    <div class="main">
+      <h1 class="section-title" data-fa="حلقه for و range" data-en="The for loop and range">حلقه for و range</h1><article class="lesson" lang="fa" dir="rtl" data-lang-block="fa"><p class="page-mark">صفحه ۳۳</p>
+<p>در زبان برنامه‌نویسی پایتون، برای پیاده‌سازی حلقه‌های تکرار دو ساختار اصلی وجود دارد:</p>
+<p>1 حلقۀ <code>for</code></p>
+<p>2 حلقۀ <code>while</code></p>
+<p>حلقۀ <code>for</code> : برای تکرار اجرای دستورات روی یک دنباله (مانند لیست، رشته، توپل، مجموعه و دیکشنری) استفاده می‌شود و معموًلا زمانی به کار می‌رود که تعداد تکرارها از قبل مشخص یا قابل‌تعیین باشد.</p>
+<p>ساختار کلی حلقۀ <code>for</code> در زبان پایتون به شکل زیر است:</p>
+<div class="code-wrap" dir="ltr"><pre><code>:for variable in sequence
+statements
+</code></pre></div>
+<p>در این ساختار:</p>
+<p><code>variable</code> متغیری است که در هر تکرار، مقدار یکی از عناصر دنباله را دریافت می‌کند.</p>
+<p>نام متغیر می‌تواند دلخواه باشد؛ مثلاًً (<code>i</code>, <code>count</code>, <code>num</code>, <code>student</code>…) <code>sequence</code> یک دنباله مانند لیست، رشته، توپل، مجموعه یا دیکشنری است.</p>
+<p><code>statements</code> مجموعه دستوراتی در بدنه حلقه هستند که در هر بار تکرار، اجرا می‌شوند. به این دستورات اصطلاحًا بلاک حلقه گفته می‌شود و بایستی به اندازه یک <code>tab</code> تورفتگی داشته باشند.</p>
+<p>پیمایش لیست‌ها مثال ۱: کد زیر عناصر یک لیست شامل سه‌رنگ (<code>red</code>, <code>blue</code>, <code>green</code>) را چاپ می‌کند (شکل73).</p>
+<figure class="shot"><img alt="شکل 73" src="../images/p039-01.png" /><figcaption>شکل 73</figcaption></figure>
+<p>توضیح کد: در خط اول، یک لیست حاوی نام سه‌رنگ به‌صورت رشته‌ای تعریف شده است.</p>
+<p>در خط دوم، دستور <code>for</code> عناصر لیست را به ترتیب پیمایش کرده و هر عنصر را در متغیر <code>item</code> قرار می‌دهد.</p>
+<p>مثال 2: نمایش سبد خرید، در این برنامه، ابتدا لیستی با نام <code>shopping_cart</code> ایجاد شده و کالاهای خریداری‌شده در آن ذخیره می‌شوند. سپس عناصر موجود در لیست با استفاده از حلقه <code>for</code> چاپ می‌شوند.</p>
+<p>برنامه را اجرا و نتیجه را مشاهده کنید (شکل74).</p>
+<p><img alt="تصویر کتاب" src="../images/p039-02.png" /></p>
+<figure class="shot"><img alt="شکل 74" src="../images/p039-03.png" /><figcaption>شکل 74</figcaption></figure>
+<hr />
+<p class="page-mark">صفحه ۳۴</p>
+<p>توضیح کد: در خط اول، یک لیست حاوی نام کالاهای خریداری شده به‌صورت رشته‌ای تعریف شده است.</p>
+<p>دومین خط، یک پیغام مناسب را قبل از ورود به حلقه چاپ می‌کند.</p>
+<p>در خط سوم، دستور <code>for</code> عناصر لیست را به ترتیب پیمایش کرده و هر عنصر را در متغیر <code>item</code> قرار می‌دهد.</p>
+<p>در خط پایانی، یک پیغام حاوی نام تک‌تک عناصر لیست چاپ می‌شود.</p>
+<p><img alt="تصویر کتاب" src="../images/p040-02.png" /></p>
+<p>پیمایش رشته‌ها مثال: چاپ حروف کلمه <code>python</code> (شکل75)</p>
+<figure class="shot"><img alt="شکل 75" src="../images/p040-01.png" /><figcaption>شکل 75</figcaption></figure>
+<p>توضیح کد: در هر بار اجرای حلقه، یکی از حروف رشتۀ <code>python</code> در متغیر <code>ch</code> قرار گرفته و همان مقدار در داخل حلقه چاپ می‌شود.</p>
+<p>نمونه‌هایی از کاربرد حلقۀ <code>for</code> مثال ۱: برنامۀ زیر برای شمارش تعداد عناصر یک لیست با استفاده از حلقۀ <code>for</code> نوشته شده است (شکل76).</p>
+<figure class="shot"><img alt="شکل 76" src="../images/p040-03.png" /><figcaption>شکل 76</figcaption></figure>
+<p>توضیح کد: در خط اول، یک لیست حاوی نام چند میوه به‌صورت رشته‌ای تعریف شده است.</p>
+<p>در خط دوم، متغیر <code>count</code> با مقدار اولیه صفر ایجاد می‌شود.</p>
+<p>در خط سوم، حلقۀ <code>for</code> عناصر لیست را به ترتیب پیمایش کرده و هر عنصر را در متغیر <code>fruit</code> قرار می‌دهد.</p>
+<p>در خط چهارم، به‌ازای هر بار اجرای حلقه، یک واحد به متغیر <code>count</code> افزوده می‌شود. دو دستور زیر معادل هستند.</p>
+<div class="code-wrap" dir="ltr"><pre><code>count + = 1
+count = count + 1
+</code></pre></div>
+<p>در خط پایانی، مقدار نهایی <code>count</code> چاپ می‌شود. توجه داشته باشید که این خط خارج از حلقه قرار دارد.</p>
+<hr />
+<p class="page-mark">صفحه ۳۵</p>
+<h3 id="_1">فعالیت</h3>
+<p>در پایتون یک تابع آماده برای انجام کد صفحه قبل وجود دارد؛ در مورد آن تحقیق کنید.</p>
+<p>مثال 2: اگر هدف، شمارش تعداد یک عنصر خاص (برای مثال، تعداد <code>apple</code>) درون حلقه باشد، می‌توانید با استفاده از دستور شرطی <code>if</code> برنامه را به‌صورت زیر تغییر دهید (شکل77).</p>
+<figure class="shot"><img alt="شکل 77" src="../images/p041-01.png" /><figcaption>شکل 77</figcaption></figure>
+<p>توضیح کد: در خط چهارم، دستور <code>if</code> بررسی می‌کند که آیا مقدار <code>fruit</code> با مقدار <code>apple</code> برابر است یا خیر؟</p>
+<p>درصورتی‌که شرط فوق برقرار باشد، یک واحد به متغیر <code>count</code> افزوده می‌شود.</p>
+<h3 id="_2">فعالیت</h3>
+<p>لیست‌ها دارای یک متد برای انجام کد بالا هستند؛ در مورد آن تحقیق کنید.</p>
+<p>استفاده از تابع ()<code>range:</code> تا اینجا، از حلقۀ <code>for</code> برای پیمایش عناصر موجود در لیست‌ها و رشته‌ها استفاده شده است.</p>
+<p>در برخی موارد، لازم است یک دستور به تعداد دفعات مشخصی تکرار شود، بدون آنکه از قبل لیستی از مقادیر در اختیار باشد.</p>
+<p>در چنین شرایطی، از تابع <code>range</code> استفاده می‌شود.</p>
+<p>تابع ()<code>range</code> یک دنباله از اعداد تولید می‌کند که از مقدار <code>start</code> آغاز شده و با گام‌هایی که در <code>step</code> مشخص می‌شود، تا قبل از مقدار <code>stop</code> ادامه می‌یابد.</p>
+<p><code>Start:</code> (اختیاری و پیش‌فرض)</p>
+<div class="code-wrap" dir="ltr"><pre><code>:)start, stop, step( for counter in range
+</code></pre></div>
+<p><code>Stop:</code> (اجباری) است و خود آن انجام نمی‌شود.</p>
+<p>دستورات بدنه حلقه</p>
+<p><code>Step:</code> (اختیاری) پیش‌فرض آن یک است.</p>
+<p><strong>شکل 78</strong></p>
+<hr />
+<p class="page-mark">صفحه ۳۶</p>
+<p>اولین حالت: در ساده‌ترین حالت، تابع () <code>range</code> تنها یک عدد دریافت می‌کند که به‌صورت <code>range</code>(<code>stop</code>) نوشته می‌شود. به مثال زیر توجه کنید:</p>
+<p><img alt="تصویر کتاب" src="../images/p042-04.png" /></p>
+<p>مثال: حلقه‌ای برای چاپ اعداد 0 تا ۴ (شکل79).</p>
+<figure class="shot"><img alt="شکل 79" src="../images/p042-03.png" /><figcaption>شکل 79</figcaption></figure>
+<p>توضیح کد: مقدار شروع (<code>start</code>) به طور پیش‌فرض صفر است و گام (<code>step</code>) نیز به طور پیش‌فرض مقدار یک را دارد. مقدار پایان (<code>stop</code>) عدد ۵ در نظر گرفته شده و خود این عدد در خروجی تولید نمی‌شود.</p>
+<p>تابع <bdi dir="ltr">(5)</bdi><code>range</code> دنباله‌ای از اعداد ۰ تا ۴ را تولید می‌کند. حلقۀ <code>for</code> به تعداد ۵ بار اجرا می‌شود. متغیر <code>i</code> در هر تکرار مقدار یکی از این اعداد را دریافت می‌کند. در خط دوم، در هر بار اجرا مقدار متغیر <code>i</code> چاپ می‌شود.</p>
+<p>دومین حالت: استفاده از تابع به‌صورت <code>range</code>(<code>start</code>, <code>stop</code>) خواهد بود.</p>
+<p>مثال: حلقه‌ای برای چاپ اعداد از ۱ تا 6 (شکل80).</p>
+<p><img alt="تصویر کتاب" src="../images/p042-06.png" /></p>
+<figure class="shot"><img alt="شکل 80" src="../images/p042-05.png" /><figcaption>شکل 80</figcaption></figure>
+<p>توضیح کد: مقدار شروع (<code>start</code>) درون دستور <code>range</code>، یک است.</p>
+<p>مقدار پایان حلقه (<code>stop</code>) عدد 7 است؛ ولی خود عدد 7 در نظر گرفته نخواهد شد. تابع <code>range</code> دنبالۀ اعداِد از ۱ تا 6 را تولید می‌کند.</p>
+<p>گام (<code>step</code>) نیز به طور پیش‌فرض برابر یک است.</p>
+<p>در حالت سوم، تابع <code>range</code> سه عدد دریافت می‌کند که به‌صورت <code>range</code>(<code>start</code>, <code>stop</code>, <code>step</code>) نوشته می‌شود. به مثال زیر توجه کنید:</p>
+<p>مثال: حلقه‌ای برای چاپ اعدادِ زوج کوچک‌تر از 10 (شکل81).</p>
+<p><img alt="تصویر کتاب" src="../images/p042-02.png" /></p>
+<figure class="shot"><img alt="شکل 81" src="../images/p042-01.png" /><figcaption>شکل 81</figcaption></figure>
+<hr />
+<p class="page-mark">صفحه ۳۷</p>
+<p>توضیح کد: مقدار شروع (<code>start</code>) در دستور <code>range</code> برابر با صفر است.</p>
+<p>مقدار پایان (<code>stop</code>) عدد ۱۰ در نظر گرفته شده است، اما خود این عدد در خروجی تولید نمی‌شود. مقدار گام (<code>step</code>) برابر با 2 است.</p>
+<p>تابع <code>range</code> دنباله‌ای از اعدادِ زوج از 0 تا ۸ را تولید می‌کند.</p>
+<h3 id="_3">فعالیت</h3>
+<p>برنامۀ قبل را به‌گونه‌ای تغییر دهید که دنبالۀ اعداد زوج را از بزرگ به کوچک چاپ کند. برای این منظور، لازم است مقدار <code>step</code> منفی شود و مقادیر شروع (<code>start</code>) و پایان (<code>stop</code>) نیز متناسب با آن تغییر داده شوند.</p>
+<h3 id="_4">فعالیت</h3>
+<p>برنامه‌ای بنویسید که مدت‌زمان انتظار برای دریافت غذا را به‌صورت یک عدد (بر حسب دقیقه) از کاربر دریافت کرده و شمارش معکوس را نمایش دهد.</p>
+<p>در هر مرحله، پیام زیر چاپ شود:</p>
+<div class="code-wrap" dir="ltr"><pre><code>Time remaining: X minutes
+</code></pre></div>
+<p>که در آن، به‌جای <code>X</code> مقدار زمان باقی‌مانده نمایش داده می‌شود.</p>
+<p>پس از رسیدن مقدار شمارش به صفر، پیام زیر نمایش داده شود.</p>
+<div class="code-wrap" dir="ltr"><pre><code>!Your food is ready
+</code></pre></div>
+<h3 id="_5">فعالیت</h3>
+<p>برنامه‌ای بنویسید که قد ۵ نفر را از ورودی دریافت کند و میانگین قد آنها را محاسبه و نمایش دهد.</p>
+<p>استفاده از کاراکتر زیرخط (_ ) در نام متغیرها مجاز است؛ بنابراین می‌توان از آن به‌تنهایی نیز به‌عنوان نام یک متغیر استفاده کرد.</p>
+<p><img alt="تصویر کتاب" src="../images/p043-01.png" /></p>
+<p>کد شکل82 را مشاهده کنید.</p>
+<p><strong>شکل 82</strong></p>
+<p>در این مثال، از متغیر شمارندۀ حلقه در بدنۀ حلقه استفاده نشده است؛ بنابراین می‌توان به‌جای آن از کاراکتر زیرخط (_) استفاده کرد. استفاده از _ نشان می‌دهد که مقدار متغیر موردنظر در ادامۀ برنامه استفاده نخواهد شد.</p>
+<h3 id="_6">کنجکاوی</h3>
+<p>بررسی کنید که استفاده از _ به‌جای استفاده از نام متغیر چه مزایایی دارد؟</p>
+<hr />
+<p class="page-mark">صفحه ۳۸</p>
+<p>معرفی دستورات کنترلی (<code>break</code> و <code>continue</code>) در حلقه‌ها در زبان پایتون، دستورات کنترلی <code>break</code> و <code>continue</code> برای کنترل جریان اجرای حلقه‌ها استفاده می‌شوند.</p>
+<p><code>continue:</code> برای رد شدن از یک بخش خاص از حلقه و رفتن به تکرار بعدی استفاده می‌شود.</p>
+<p><code>break:</code> اجرای حلقه را به طور کامل متوقف کرده و از آن خارج می‌شود.</p>
+<p>مثال: برنامه زیر را نوشته و اجرا کنید. در این برنامه، نام تمام غذاهای موجود در یک لیست، هر کدام در یک خط چاپ می‌شوند. (شکل83)</p>
+<p><img alt="تصویر کتاب" src="../images/p044-03.png" /></p>
+<figure class="shot"><img alt="شکل 83" src="../images/p044-02.png" /><figcaption>شکل 83</figcaption></figure>
+<p>حال اگر بخواهید هنگام چاپ، نام یک غذای خاص (برای مثال، <code>soup</code>) نمایش داده نشود، می‌توان از دستور <code>continue</code> درون حلقه استفاده کرد. کد زیر را با دقت نوشته و اجرا کنید و هنگام نوشتن برنامه به تورفتگی‌ها (<code>Indentation</code>) توجه داشته باشید (شکل84).</p>
+<figure class="shot"><img alt="شکل 84" src="../images/p044-01.png" /><figcaption>شکل 84</figcaption></figure>
+<p>توضیح کد: در خط <code>"soup"</code> == <code>if</code> <code>item</code>، بررسی می‌شود که آیا مقدار متغیر <code>item</code> با مقدار <code>soup</code> برابر است یا خیر.</p>
+<p>در صورت برقرار بودن شرط <code>if</code>، دستور <code>continue</code> اجرا شده می‌شود و باعث می‌شود حلقه بلافاصله به سراغ عنصر بعدی برود که <code>"ash"</code> است. به همین دلیل، در خروجی برنامه نام <code>soup</code> چاپ نمی‌شود.</p>
+<p>به‌طورکلی، با استفاده از دستور <code>continue</code>، حلقه اجرای بخشی از کد درون حلقه را برای تکرارهای خاصی نادیده م‌یگیرد و مستقیماً به ابتدای تکرار بعدی وارد می‌شود.</p>
+<hr />
+<p class="page-mark">صفحه ۳۹</p>
+<p>حال اگر بخواهید هنگام چاپ، با رسیدن به نام یک غذای خاص (برای مثال، <code>soup</code>) پیغام مشخصی چاپ شده و اجرای حلقه خاتمه یابد، می‌توان از دستور <code>break</code> درون حلقه استفاده کرد. کد زیر را بنویسید و اجرا کنید. هنگام نوشتن برنامه به تورفتگی‌ها (<code>Indentation</code>) توجه داشته باشید (شکل85).</p>
+<p><img alt="تصویر کتاب" src="../images/p045-01.png" /></p>
+<figure class="shot"><img alt="شکل 85" src="../images/p045-02.png" /><figcaption>شکل 85</figcaption></figure>
+<p>توضیح کد: در خط سوم، بررسی می‌شود که آیا مقدار متغیر <code>item</code> با مقدار <code>soup</code> برابر است یا خیر.</p>
+<p>در صورت برقرار بودن شرط <code>if</code>، ابتدا پیام "سوپ که غذا نیست!" چاپ می‌شود و سپس دستور <code>break</code> اجرا شده و کنترل اجرای برنامه به بعد از حلقه منتقل می‌شود. در این حالت، اجرای حلقه به طور کامل متوقف شده و تکرارهای بعدی انجام نخواهند شد (شکل86).</p>
+<p>حال دو برنامه زیر را نوشته و اجرا کنید.</p>
+<p><img alt="تصویر کتاب" src="../images/p045-04.png" /></p>
+<p><img alt="تصویر کتاب" src="../images/p045-03.png" /></p>
+<p><img alt="تصویر کتاب" src="../images/p045-05.png" /></p>
+<figure class="shot"><img alt="شکل 86" src="../images/p045-06.png" /><figcaption>شکل 86</figcaption></figure>
+<h3 id="_7">کنجکاوی</h3>
+<p>با توجه به خروجی برنامه‌های بالا کاربرد کلمات <code>break</code> و <code>continue</code> را برای هر یک از برنامه‌ها بیان کنید.</p>
+<hr /></article><article class="lesson" lang="en" dir="ltr" data-lang-block="en" hidden><p class="page-mark">Page 33</p>
+<p>In the Python programming language, there are two main structures for implementing repetition loops:</p>
+<p>1 The <code>for</code> loop</p>
+<p>2 The <code>while</code> loop</p>
+<p>The <code>for</code> loop: is used to repeat the execution of statements over a sequence (such as a list, string, tuple, set, and dictionary) and is usually used when the number of repetitions is known or can be determined in advance.</p>
+<p>The overall structure of the <code>for</code> loop in Python is as follows:</p>
+<div class="code-wrap" dir="ltr"><pre><code>:for variable in sequence
+statements
+</code></pre></div>
+<p>In this structure:</p>
+<p><code>variable</code> is a variable that, in each repetition, receives the value of one of the elements of the sequence.</p>
+<p>The variable name can be chosen freely; for example (<code>i</code>, <code>count</code>, <code>num</code>, <code>student</code>…) <code>sequence</code> is a sequence such as a list, string, tuple, set, or dictionary.</p>
+<p><code>statements</code> are the set of statements in the loop body that are executed on each repetition. These statements are called the loop block and must have one <code>tab</code> of indentation.</p>
+<p>Traversing lists Example 1: The code below prints the elements of a list that includes three colors (<code>red</code>, <code>blue</code>, <code>green</code>) (Figure 73).</p>
+<figure class="shot"><img alt="Figure 73" src="../images/p039-01.png" /><figcaption>Figure 73</figcaption></figure>
+<p>Code explanation: In the first line, a list containing the names of three colors as strings is defined.</p>
+<p>In the second line, the <code>for</code> statement traverses the list elements in order and places each element in the variable <code>item</code>.</p>
+<p>Example 2: Displaying a shopping cart. In this program, first a list named <code>shopping_cart</code> is created and the purchased items are stored in it. Then the elements in the list are printed using a <code>for</code> loop.</p>
+<p>Run the program and observe the result (Figure 74).</p>
+<p><img alt="Book image" src="../images/p039-02.png" /></p>
+<figure class="shot"><img alt="Figure 74" src="../images/p039-03.png" /><figcaption>Figure 74</figcaption></figure>
+<hr />
+<p class="page-mark">Page 34</p>
+<p>Code explanation: In the first line, a list containing the names of the purchased items as strings is defined.</p>
+<p>The second line prints an appropriate message before entering the loop.</p>
+<p>In the third line, the <code>for</code> statement traverses the list elements in order and places each element in the variable <code>item</code>.</p>
+<p>In the final line, a message containing the name of each list element is printed.</p>
+<p><img alt="Book image" src="../images/p040-02.png" /></p>
+<p>Traversing strings Example: printing the letters of the word <code>python</code> (Figure 75)</p>
+<figure class="shot"><img alt="Figure 75" src="../images/p040-01.png" /><figcaption>Figure 75</figcaption></figure>
+<p>Code explanation: On each execution of the loop, one of the letters of the string <code>python</code> is placed in the variable <code>ch</code> and that same value is printed inside the loop.</p>
+<p>Examples of using the <code>for</code> loop Example 1: The program below is written to count the number of elements in a list using a <code>for</code> loop (Figure 76).</p>
+<figure class="shot"><img alt="Figure 76" src="../images/p040-03.png" /><figcaption>Figure 76</figcaption></figure>
+<p>Code explanation: In the first line, a list containing the names of several fruits as strings is defined.</p>
+<p>In the second line, the variable <code>count</code> is created with the initial value zero.</p>
+<p>In the third line, the <code>for</code> loop traverses the list elements in order and places each element in the variable <code>fruit</code>.</p>
+<p>In the fourth line, for each execution of the loop, one is added to the variable <code>count</code>. The two statements below are equivalent.</p>
+<div class="code-wrap" dir="ltr"><pre><code>count + = 1
+count = count + 1
+</code></pre></div>
+<p>In the final line, the final value of <code>count</code> is printed. Note that this line is outside the loop.</p>
+<hr />
+<p class="page-mark">Page 35</p>
+<h3 id="activity">Activity</h3>
+<p>In Python there is a built-in function for doing the code on the previous page; research it.</p>
+<p>Example 2: If the goal is to count the number of a specific element (for example, the number of <code>apple</code>) inside the loop, you can change the program as follows using the conditional statement <code>if</code> (Figure 77).</p>
+<figure class="shot"><img alt="Figure 77" src="../images/p041-01.png" /><figcaption>Figure 77</figcaption></figure>
+<p>Code explanation: In the fourth line, the <code>if</code> statement checks whether the value of <code>fruit</code> equals the value <code>apple</code> or not.</p>
+<p>If the above condition is met, one is added to the variable <code>count</code>.</p>
+<h3 id="activity_1">Activity</h3>
+<p>Lists have a method for doing the code above; research it.</p>
+<p>Using the <code>range</code>() function: So far, the <code>for</code> loop has been used to traverse the elements in lists and strings.</p>
+<p>In some cases, a statement needs to be repeated a specific number of times, without a list of values being available in advance.</p>
+<p>In such situations, the <code>range</code> function is used.</p>
+<p>The <code>range</code>() function produces a sequence of numbers that starts from the value <code>start</code> and, with steps specified in <code>step</code>, continues up to but not including the value <code>stop</code>.</p>
+<p><code>Start:</code> (optional and default)</p>
+<div class="code-wrap" dir="ltr"><pre><code>:)start, stop, step( for counter in range
+</code></pre></div>
+<p><code>Stop:</code> (required) and that value itself is not included.</p>
+<p>Loop body statements</p>
+<p><code>Step:</code> (optional) its default is one.</p>
+<p><strong>Figure 78</strong></p>
+<hr />
+<p class="page-mark">Page 36</p>
+<p>First form: In the simplest form, the <code>range</code>() function receives only one number, written as <code>range</code>(<code>stop</code>). Consider the example below:</p>
+<p><img alt="Book image" src="../images/p042-04.png" /></p>
+<p>Example: A loop to print the numbers 0 through 4 (Figure 79).</p>
+<figure class="shot"><img alt="Figure 79" src="../images/p042-03.png" /><figcaption>Figure 79</figcaption></figure>
+<p>Code explanation: The start value (<code>start</code>) is zero by default, and the step (<code>step</code>) also has the default value one. The end value (<code>stop</code>) is considered the number 5, and this number itself is not produced in the output.</p>
+<p>The function <code>range</code>(5) produces a sequence of numbers from 0 to 4. The <code>for</code> loop runs 5 times. The variable <code>i</code> receives the value of one of these numbers in each repetition. In the second line, on each run the value of the variable <code>i</code> is printed.</p>
+<p>Second form: Using the function as <code>range</code>(<code>start</code>, <code>stop</code>).</p>
+<p>Example: A loop to print the numbers from 1 to 6 (Figure 80).</p>
+<p><img alt="Book image" src="../images/p042-06.png" /></p>
+<figure class="shot"><img alt="Figure 80" src="../images/p042-05.png" /><figcaption>Figure 80</figcaption></figure>
+<p>Code explanation: The start value (<code>start</code>) inside the <code>range</code> statement is one.</p>
+<p>The loop end value (<code>stop</code>) is the number 7; but the number 7 itself will not be included. The <code>range</code> function produces the sequence of numbers from 1 to 6.</p>
+<p>The step (<code>step</code>) is also one by default.</p>
+<p>In the third form, the <code>range</code> function receives three numbers, written as <code>range</code>(<code>start</code>, <code>stop</code>, <code>step</code>). Consider the example below:</p>
+<p>Example: A loop to print even numbers less than 10 (Figure 81).</p>
+<p><img alt="Book image" src="../images/p042-02.png" /></p>
+<figure class="shot"><img alt="Figure 81" src="../images/p042-01.png" /><figcaption>Figure 81</figcaption></figure>
+<hr />
+<p class="page-mark">Page 37</p>
+<p>Code explanation: The start value (<code>start</code>) in the <code>range</code> statement is equal to zero.</p>
+<p>The end value (<code>stop</code>) is considered the number 10, but this number itself is not produced in the output. The step value (<code>step</code>) is equal to 2.</p>
+<p>The <code>range</code> function produces a sequence of even numbers from 0 to 8.</p>
+<h3 id="activity_2">Activity</h3>
+<p>Change the previous program so that it prints the sequence of even numbers from large to small. For this purpose, the value of <code>step</code> must become negative, and the start (<code>start</code>) and end (<code>stop</code>) values must also be changed accordingly.</p>
+<h3 id="activity_3">Activity</h3>
+<p>Write a program that receives the waiting time to get food as a number (in minutes) from the user and displays a countdown.</p>
+<p>At each step, the message below is printed:</p>
+<div class="code-wrap" dir="ltr"><pre><code>Time remaining: X minutes
+</code></pre></div>
+<p>in which, instead of <code>X</code>, the remaining time value is displayed.</p>
+<p>After the count reaches zero, the message below is displayed.</p>
+<div class="code-wrap" dir="ltr"><pre><code>!Your food is ready
+</code></pre></div>
+<h3 id="activity_4">Activity</h3>
+<p>Write a program that receives the heights of 5 people from input and calculates and displays their average height.</p>
+<p>Using the underscore character (_ ) in variable names is allowed; therefore you can also use it alone as a variable name.</p>
+<p><img alt="Book image" src="../images/p043-01.png" /></p>
+<p>Observe the code in Figure 82.</p>
+<p><strong>Figure 82</strong></p>
+<p>In this example, the loop counter variable is not used in the loop body; therefore you can use the underscore character (_) instead. Using _ shows that the value of the variable in question will not be used later in the program.</p>
+<h3 id="try-this">Try this</h3>
+<p>Investigate what advantages using _ instead of using a variable name has.</p>
+<hr />
+<p class="page-mark">Page 38</p>
+<p>Introducing control statements (<code>break</code> and <code>continue</code>) in loops In Python, the control statements <code>break</code> and <code>continue</code> are used to control the flow of loop execution.</p>
+<p><code>continue:</code> is used to skip a particular part of the loop and go to the next repetition.</p>
+<p><code>break:</code> completely stops the loop's execution and exits it.</p>
+<p>Example: Write and run the program below. In this program, the names of all foods in a list are each printed on one line. (Figure 83)</p>
+<p><img alt="Book image" src="../images/p044-03.png" /></p>
+<figure class="shot"><img alt="Figure 83" src="../images/p044-02.png" /><figcaption>Figure 83</figcaption></figure>
+<p>Now if you want, when printing, the name of a particular food (for example, <code>soup</code>) not to be displayed, you can use the <code>continue</code> statement inside the loop. Write the code below carefully and run it, and when writing the program pay attention to indentation (<code>Indentation</code>) (Figure 84).</p>
+<figure class="shot"><img alt="Figure 84" src="../images/p044-01.png" /><figcaption>Figure 84</figcaption></figure>
+<p>Code explanation: In the line <code>"soup"</code> == <code>if</code> <code>item</code>, it is checked whether the value of the variable <code>item</code> equals the value <code>soup</code> or not.</p>
+<p>If the <code>if</code> condition is met, the <code>continue</code> statement is executed and causes the loop to immediately go to the next element, which is <code>"ash"</code>. For that reason, the name <code>soup</code> is not printed in the program output.</p>
+<p>In general, using the <code>continue</code> statement, the loop skips executing part of the code inside the loop for particular repetitions and goes directly to the beginning of the next repetition.</p>
+<hr />
+<p class="page-mark">Page 39</p>
+<p>Now if you want, when printing, upon reaching the name of a particular food (for example, <code>soup</code>), a specific message to be printed and the loop's execution to end, you can use the <code>break</code> statement inside the loop. Write the code below and run it. When writing the program pay attention to indentation (<code>Indentation</code>) (Figure 85).</p>
+<p><img alt="Book image" src="../images/p045-01.png" /></p>
+<figure class="shot"><img alt="Figure 85" src="../images/p045-02.png" /><figcaption>Figure 85</figcaption></figure>
+<p>Code explanation: In the third line, it is checked whether the value of the variable <code>item</code> equals the value <code>soup</code> or not.</p>
+<p>If the <code>if</code> condition is met, first the message "Soup is not a food!" is printed and then the <code>break</code> statement is executed and control of the program's execution is moved to after the loop. In this case, the loop's execution is completely stopped and later repetitions will not be performed (Figure 86).</p>
+<p>Now write and run the two programs below.</p>
+<p><img alt="Book image" src="../images/p045-04.png" /></p>
+<p><img alt="Book image" src="../images/p045-03.png" /></p>
+<p><img alt="Book image" src="../images/p045-05.png" /></p>
+<figure class="shot"><img alt="Figure 86" src="../images/p045-06.png" /><figcaption>Figure 86</figcaption></figure>
+<h3 id="try-this_1">Try this</h3>
+<p>Given the output of the programs above, state the use of the words <code>break</code> and <code>continue</code> for each of the programs.</p>
+<hr /></article>
+      <aside class="extra">
+        <h2 data-fa="تمرین این بخش" data-en="Exercises for this section">تمرین این بخش</h2>
+        <p class="extra-note" data-fa="این تمرین‌ها و پیوندها اضافه بر متن کتاب‌اند." data-en="These exercises and links are in addition to the book.">این تمرین‌ها و پیوندها اضافه بر متن کتاب‌اند.</p>
+        <ol><li data-fa="لیست چهار کالا را با for چاپ کن و وقتی به یک نام خاص رسیدی یک خط اضافه نشان بده و با continue به کالای بعدی برو." data-en="Print four products with for. When you reach one chosen name, print an extra line and continue to the next product.">لیست چهار کالا را با for چاپ کن و وقتی به یک نام خاص رسیدی یک خط اضافه نشان بده و با continue به کالای بعدی برو.</li><li data-fa="با range جمع ۱ تا ۲۰ را حساب کن و همان جمع را یک بار دیگر با گام ۲ دوباره بساز و هر دو عدد را چاپ کن." data-en="Use range to add 1 through 20, then build the same kind of sum with a step of 2, and print both numbers.">با range جمع ۱ تا ۲۰ را حساب کن و همان جمع را یک بار دیگر با گام ۲ دوباره بساز و هر دو عدد را چاپ کن.</li></ol>
+        <h2 data-fa="پیوند مفید" data-en="Useful link">پیوند مفید</h2><ul><li><a href="https://docs.python.org/3/tutorial/controlflow.html#for-statements" data-fa="حلقه for" data-en="for statements">حلقه for</a></li></ul>
+      </aside>
+    <nav class="pager"><a rel="prev" class="prev" href="p1-elif.html"><span class="pager-word" data-fa="قبلی" data-en="Previous">قبلی</span><span class="pager-name" data-fa="if، elif و else" data-en="if, elif, and else">if، elif و else</span></a><a rel="next" class="next" href="p1-while.html"><span class="pager-word" data-fa="بعدی" data-en="Next">بعدی</span><span class="pager-name" data-fa="حلقه while و کنترل حلقه" data-en="The while loop and loop control">حلقه while و کنترل حلقه</span></a></nav>
+    </div>
+  </div>
+  <script src="../assets/search-index.js?v=4"></script>
+  <script src="../assets/app.js?v=4"></script>
+</body>
+</html>

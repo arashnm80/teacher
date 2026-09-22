@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title data-fa="خواندن و نوشتن فایل متنی" data-en="Reading and writing text files">خواندن و نوشتن فایل متنی</title>
+  <link rel="icon" href="../assets/favicon.svg">
+  <link rel="stylesheet" href="../assets/style.css?v=4">
+</head>
+<body data-root="../">
+  <header class="top">
+    <a class="brand" href="../index.html">
+      <span data-fa="طراح سایت" data-en="Site Design">طراح سایت</span>
+      <small data-fa="پایه یازدهم" data-en="Grade 11">پایه یازدهم</small>
+    </a>
+    <div class="search-wrap">
+      <input id="q" type="search" autocomplete="off"
+        data-fa-placeholder="جستجو در درس‌ها" data-en-placeholder="Search lessons"
+        placeholder="جستجو در درس‌ها">
+      <div id="results" class="results" hidden></div>
+    </div>
+    <a class="download" href="../grade11-offline.zip?v=2" data-fa="دانلود کل سایت" data-en="Download the whole site">دانلود کل سایت</a>
+    <button type="button" id="lang-toggle" class="lang-toggle" dir="ltr" data-lang="fa"
+      aria-label="تغییر زبان">
+      <span data-opt="fa">فا</span>
+      <span data-opt="en">EN</span>
+    </button>
+  </header>
+  <div class="layout">
+    <details class="toc" open><summary><span data-fa="فهرست درس‌ها" data-en="Lesson list">فهرست درس‌ها</span></summary><nav class="side" aria-label="lessons"><p class="mod" data-fa="شروع کتاب" data-en="Opening">شروع کتاب</p><p class="unit" data-fa="فهرست" data-en="Contents">فهرست</p><a class="" href="toc.html" data-fa="فهرست" data-en="Contents">فهرست</a><p class="mod" data-fa="پودمان ۱: برنامه‌نویسی پایتون" data-en="Module 1: Python programming">پودمان ۱: برنامه‌نویسی پایتون</p><p class="unit" data-fa="معرفی پودمان" data-en="Module introduction">معرفی پودمان</p><a class="" href="p1-intro.html" data-fa="معرفی پودمان پایتون" data-en="Introducing the Python module">معرفی پودمان پایتون</a><p class="unit" data-fa="مدل‌سازی داده" data-en="Data modeling">مدل‌سازی داده</p><a class="" href="p1-python.html" data-fa="پایتون و محیط برنامه‌نویسی" data-en="Python and the programming environment">پایتون و محیط برنامه‌نویسی</a><a class="" href="p1-vars.html" data-fa="متغیرها، نوع داده و عملگرها" data-en="Variables, types, and operators">متغیرها، نوع داده و عملگرها</a><a class="" href="p1-cast.html" data-fa="ورودی و تبدیل نوع" data-en="Input and type casting">ورودی و تبدیل نوع</a><a class="" href="p1-lists.html" data-fa="لیست‌ها" data-en="Lists">لیست‌ها</a><a class="" href="p1-if.html" data-fa="شرط‌های ساده" data-en="Simple conditions">شرط‌های ساده</a><a class="" href="p1-elif.html" data-fa="if، elif و else" data-en="if, elif, and else">if، elif و else</a><a class="" href="p1-for.html" data-fa="حلقه for و range" data-en="The for loop and range">حلقه for و range</a><a class="" href="p1-while.html" data-fa="حلقه while و کنترل حلقه" data-en="The while loop and loop control">حلقه while و کنترل حلقه</a><a class="" href="p1-assess-data.html" data-fa="ارزشیابی مدل‌سازی داده" data-en="Data-modeling assessment">ارزشیابی مدل‌سازی داده</a><p class="unit" data-fa="توابع و ماژول‌ها" data-en="Functions and modules">توابع و ماژول‌ها</p><a class="" href="p1-sets.html" data-fa="مجموعه (set)" data-en="Sets">مجموعه (set)</a><a class="" href="p1-dict.html" data-fa="دیکشنری" data-en="Dictionaries">دیکشنری</a><a class="" href="p1-quiz.html" data-fa="پروژه بازی Quiz" data-en="Quiz game project">پروژه بازی Quiz</a><a class="" href="p1-tuple.html" data-fa="تاپل" data-en="Tuples">تاپل</a><a class="" href="p1-func.html" data-fa="تعریف تابع، پارامتر و return" data-en="Defining functions, parameters, and return">تعریف تابع، پارامتر و return</a><a class="" href="p1-func-more.html" data-fa="تمرین تابع و مرتب‌سازی" data-en="Function practice and sorting">تمرین تابع و مرتب‌سازی</a><a class="" href="p1-modules.html" data-fa="ماژول‌ها و تفاوت تابع و متد" data-en="Modules, and functions versus methods">ماژول‌ها و تفاوت تابع و متد</a><a class="" href="p1-assess-func.html" data-fa="ارزشیابی توابع و ماژول‌ها" data-en="Functions and modules assessment">ارزشیابی توابع و ماژول‌ها</a><p class="mod" data-fa="پودمان ۲: صفحات وب ایستا" data-en="Module 2: Static web pages">پودمان ۲: صفحات وب ایستا</p><p class="unit" data-fa="معرفی پودمان" data-en="Module introduction">معرفی پودمان</p><a class="" href="p2-intro.html" data-fa="معرفی پودمان صفحات ایستا" data-en="Introducing static web pages">معرفی پودمان صفحات ایستا</a><p class="unit" data-fa="ساختار با HTML" data-en="Structure with HTML">ساختار با HTML</p><a class="" href="p2-web.html" data-fa="وب چگونه کار می‌کند" data-en="How the web works">وب چگونه کار می‌کند</a><a class="" href="p2-concepts.html" data-fa="مفاهیم طراحی وب و نقشه سایت" data-en="Web-design concepts and the site map">مفاهیم طراحی وب و نقشه سایت</a><a class="" href="p2-tags.html" data-fa="اولین صفحه HTML" data-en="A first HTML page">اولین صفحه HTML</a><a class="" href="p2-text.html" data-fa="متن، لیست و پیوند" data-en="Text, lists, and links">متن، لیست و پیوند</a><a class="" href="p2-img.html" data-fa="تصویر در صفحه" data-en="Images on the page">تصویر در صفحه</a><a class="" href="p2-forms.html" data-fa="فرم‌ها" data-en="Forms">فرم‌ها</a><a class="" href="p2-semantic.html" data-fa="عناصر معنایی" data-en="Semantic elements">عناصر معنایی</a><a class="" href="p2-assess-html.html" data-fa="ارزشیابی HTML" data-en="HTML assessment">ارزشیابی HTML</a><p class="unit" data-fa="ظاهر با CSS" data-en="Appearance with CSS">ظاهر با CSS</p><a class="" href="p2-css-start.html" data-fa="نوشتن CSS" data-en="Writing CSS">نوشتن CSS</a><a class="" href="p2-css-look.html" data-fa="رنگ، پس‌زمینه و انتخاب‌گر" data-en="Color, background, and selectors">رنگ، پس‌زمینه و انتخاب‌گر</a><a class="" href="p2-box.html" data-fa="مدل جعبه‌ای و display" data-en="The box model and display">مدل جعبه‌ای و display</a><a class="" href="p2-flex.html" data-fa="چیدمان با Flexbox" data-en="Layout with Flexbox">چیدمان با Flexbox</a><a class="" href="p2-flex-work.html" data-fa="کارگاه چیدمان صفحه" data-en="Page-layout workshop">کارگاه چیدمان صفحه</a><a class="" href="p2-media.html" data-fa="مدیا کوئری و ارزشیابی CSS" data-en="Media queries and the CSS assessment">مدیا کوئری و ارزشیابی CSS</a><p class="mod" data-fa="پودمان ۳: صفحات وب تعاملی" data-en="Module 3: Interactive web pages">پودمان ۳: صفحات وب تعاملی</p><p class="unit" data-fa="معرفی پودمان" data-en="Module introduction">معرفی پودمان</p><a class="" href="p3-intro.html" data-fa="معرفی پودمان تعاملی" data-en="Introducing the interactive module">معرفی پودمان تعاملی</a><p class="unit" data-fa="بوت‌استرپ" data-en="Bootstrap">بوت‌استرپ</p><a class="" href="p3-bs-start.html" data-fa="فریم‌ورک و شروع بوت‌استرپ" data-en="Frameworks and starting Bootstrap">فریم‌ورک و شروع بوت‌استرپ</a><a class="" href="p3-bs-util.html" data-fa="فاصله، گردی و لیست" data-en="Spacing, rounding, and lists">فاصله، گردی و لیست</a><a class="" href="p3-bs-header.html" data-fa="سرصفحه فروشگاه" data-en="The shop header">سرصفحه فروشگاه</a><a class="" href="p3-bs-grid.html" data-fa="شبکه Grid" data-en="The grid">شبکه Grid</a><a class="" href="p3-bs-rwd.html" data-fa="کلاس‌های واکنش‌گرا" data-en="Responsive classes">کلاس‌های واکنش‌گرا</a><a class="" href="p3-bs-nav.html" data-fa="نوار ناوبری و جزئیات محصول" data-en="Navbar and product details">نوار ناوبری و جزئیات محصول</a><a class="" href="p3-bs-form.html" data-fa="فرم و پنجره Modal" data-en="Forms and modals">فرم و پنجره Modal</a><a class="" href="p3-bs-show.html" data-fa="کاروسل و آکاردئون" data-en="Carousel and accordion">کاروسل و آکاردئون</a><a class="" href="p3-bs-assess.html" data-fa="ارزشیابی بوت‌استرپ" data-en="Bootstrap assessment">ارزشیابی بوت‌استرپ</a><p class="unit" data-fa="جاوااسکریپت" data-en="JavaScript">جاوااسکریپت</p><a class="" href="p3-js-start.html" data-fa="جاوااسکریپت در صفحه وب" data-en="JavaScript on the page">جاوااسکریپت در صفحه وب</a><a class="" href="p3-js-vars.html" data-fa="متغیر و نوع داده" data-en="Variables and data types">متغیر و نوع داده</a><a class="" href="p3-js-ops.html" data-fa="عملگرها" data-en="Operators">عملگرها</a><a class="" href="p3-js-data.html" data-fa="آرایه و شیء" data-en="Arrays and objects">آرایه و شیء</a><a class="" href="p3-js-if.html" data-fa="شرط در جاوااسکریپت" data-en="Conditions in JavaScript">شرط در جاوااسکریپت</a><a class="" href="p3-js-loops.html" data-fa="حلقه‌ها" data-en="Loops">حلقه‌ها</a><a class="" href="p3-js-func.html" data-fa="تابع‌ها" data-en="Functions">تابع‌ها</a><a class="" href="p3-js-dom.html" data-fa="صفحه، رویداد و اعتبار فرم" data-en="The page, events, and form validation">صفحه، رویداد و اعتبار فرم</a><a class="" href="p3-js-assess.html" data-fa="ارزشیابی جاوااسکریپت" data-en="JavaScript assessment">ارزشیابی جاوااسکریپت</a><p class="mod" data-fa="پودمان ۴: توسعه وب پایتون" data-en="Module 4: Python for the web">پودمان ۴: توسعه وب پایتون</p><p class="unit" data-fa="معرفی پودمان" data-en="Module introduction">معرفی پودمان</p><a class="" href="p4-intro.html" data-fa="معرفی پودمان شیءگرایی" data-en="Introducing the object-oriented module">معرفی پودمان شیءگرایی</a><p class="unit" data-fa="شیءگرایی" data-en="Object-oriented programming">شیءگرایی</p><a class="" href="p4-idea.html" data-fa="ایده شیء و کلاس" data-en="The idea of objects and classes">ایده شیء و کلاس</a><a class="" href="p4-class.html" data-fa="ساخت کلاس و متد" data-en="Writing a class and methods">ساخت کلاس و متد</a><a class="" href="p4-inherit.html" data-fa="وراثت" data-en="Inheritance">وراثت</a><a class="" href="p4-protect.html" data-fa="داده معتبر و استفاده داخلی" data-en="Valid data and internal use">داده معتبر و استفاده داخلی</a><a class="" href="p4-assess-oop.html" data-fa="ارزشیابی برنامه شیءگرا" data-en="Object-oriented assessment">ارزشیابی برنامه شیءگرا</a><p class="unit" data-fa="فایل و توسعه" data-en="Files and development">فایل و توسعه</p><a class="current" href="p4-files.html" data-fa="خواندن و نوشتن فایل متنی" data-en="Reading and writing text files">خواندن و نوشتن فایل متنی</a><a class="" href="p4-errors.html" data-fa="پیمایش فایل و مدیریت خطا" data-en="Walking a file and handling errors">پیمایش فایل و مدیریت خطا</a><a class="" href="p4-json.html" data-fa="چند فایل و JSON" data-en="Several files and JSON">چند فایل و JSON</a><a class="" href="p4-assess-files.html" data-fa="ارزشیابی کار با فایل" data-en="Files assessment">ارزشیابی کار با فایل</a><p class="mod" data-fa="پودمان ۵: برنامه‌نویسی جنگو" data-en="Module 5: Django">پودمان ۵: برنامه‌نویسی جنگو</p><p class="unit" data-fa="معرفی پودمان" data-en="Module introduction">معرفی پودمان</p><a class="" href="p5-intro.html" data-fa="معرفی پودمان جنگو" data-en="Introducing the Django module">معرفی پودمان جنگو</a><p class="unit" data-fa="ایجاد وب‌اپلیکیشن" data-en="Creating the web app">ایجاد وب‌اپلیکیشن</p><a class="" href="p5-what.html" data-fa="جنگو چیست و نصب" data-en="What Django is, and installing it">جنگو چیست و نصب</a><a class="" href="p5-project.html" data-fa="پروژه، اپ و اولین view" data-en="Project, app, and the first view">پروژه، اپ و اولین view</a><a class="" href="p5-template.html" data-fa="قالب و دمای واقعی" data-en="Templates and a real temperature">قالب و دمای واقعی</a><a class="" href="p5-assess-create.html" data-fa="ارزشیابی ایجاد وب‌اپلیکیشن" data-en="Creating-the-app assessment">ارزشیابی ایجاد وب‌اپلیکیشن</a><p class="unit" data-fa="توسعه وب‌اپلیکیشن" data-en="Developing the web app">توسعه وب‌اپلیکیشن</p><a class="" href="p5-model.html" data-fa="مدل شهر و پنل ادمین" data-en="The city model and the admin">مدل شهر و پنل ادمین</a><a class="" href="p5-list.html" data-fa="خواندن شهرها و نمایش فهرست" data-en="Reading cities and showing the list">خواندن شهرها و نمایش فهرست</a><a class="" href="p5-auth.html" data-fa="ورود و خروج" data-en="Sign-in and sign-out">ورود و خروج</a><a class="" href="p5-crud.html" data-fa="افزودن و حذف شهر" data-en="Adding and deleting a city">افزودن و حذف شهر</a><a class="" href="p5-bugs.html" data-fa="باگ و امنیت" data-en="Bugs and security">باگ و امنیت</a><p class="mod" data-fa="پایان کتاب" data-en="Back of the book">پایان کتاب</p><p class="unit" data-fa="منابع" data-en="References">منابع</p><a class="" href="refs.html" data-fa="منابع کتاب" data-en="Book references">منابع کتاب</a></nav></details>
+    <div class="main">
+      <h1 class="section-title" data-fa="خواندن و نوشتن فایل متنی" data-en="Reading and writing text files">خواندن و نوشتن فایل متنی</h1><article class="lesson" lang="fa" dir="rtl" data-lang-block="fa"><h1 id="_1">توسعه برنامه شیء‌گرا</h1>
+<hr />
+<p class="page-mark">صفحه ۲۵۴</p>
+<h2 id="2">واحد یادگیری 2</h2>
+<h2 id="_2">توسعه برنامه شیء‌گرا</h2>
+<h3 id="_3">آیا تابه‌حال اندیشیده‌اید</h3>
+<p>چرا نمی‌توان همیشه از متغیرها برای نگهداری اطلاعات استفاده کرد؟</p>
+<p>چه تفاوتی بین «ذخیره موقت اطلاعات در حافظه (<code>RAM</code>)» و «ذخیره در فایل» وجود دارد؟</p>
+<p>اگر چند بار برنامه را اجرا کنید و هر بار در فایل بنویسید، چه اتفاقی برای محتوای قبلی می‌افتد؟</p>
+<p>چه زمانی استفاده از فایل متنی ساده کافی است و چه زمانی بهتر است از <code>JSON</code> استفاده کنید؟</p>
+<p>اگر مسیر فایل اشتباه باشد، برنامه چگونه باید رفتار کند؟</p>
+<p>اگر قرار باشد یک برنامه فروشگاهی طراحی کنید، چه اطلاعاتی باید در فایل ذخیره شود و چرا؟</p>
+<h3 id="_4">در پایان از هنرجو انتظار می‌رود</h3>
+<p>1 از کلاس <code>"Path"</code> و ماژول <code>"pathlib"</code> برای مدیریت مسیرها (<code>Path</code> <code>Objects</code>) استفاده کند.</p>
+<p>2 محتوای فایل‌های متنی را بخواند و داده‌ها را در آنها بنویسد، اضافه کند و فایل‌ها را ایمن ببندد.</p>
+<p>3 داده‌ها را از چندین فایل بخواند، محتوای آنها را ترکیب کند و با استفاده از حلقه‌ها، مجموعه‌ای از فایل‌ها را پردازش نماید.</p>
+<p>4 خطاهای رایج مانند <code>"FileNotFoundError"</code> و <code>"ZeroDivisionError"</code> را تشخیص داده و با استفاده از <code>"try/except"</code> از توقف برنامه جلوگیری کند و پیام‌های خطای مناسب نمایش دهد.</p>
+<p>5 ساختار <code>"JSON"</code> را درک کرده و داده‌ها را با استفاده از <code>json.loads</code>() بخواند و با <code>json.dump</code>() در فایل بنویسد.</p>
+<h3 id="_5">استاندارد عملکرد</h3>
+<p>هنرجو باید بتواند با استفاده از شیء <code>Path</code> به‌صورت ایمن و دقیق عملیات ایجاد، خواندن، نوشتن و مدیریت فایل‌های متنی و <code>JSON</code> را انجام دهد و خطاها و استثناهای احتمالی را به‌درستی کنترل کند.</p>
+<hr />
+<p class="page-mark">صفحه ۲۵۵</p>
+<h3 id="_6">آشنایی با فایل در پایتون</h3>
+<p>در این واحد یادگیری با کار با فایل‌ها و ذخیره‌سازی داده‌ها آشنا می‌شوید تا برنامه‌های شما کاربردی‌تر و پایدارتر شوند. می‌آموزید چگونه داده‌ها را ذخیره و بازیابی کنید و با استفاده از مدیریت استثناها از توقف برنامه در شرایط غیرمنتظره جلوگیری نمایید.</p>
+<p>همچنین با ماژول <code>json</code> آشنا خواهید شد که امکان نگهداری اطلاعات کاربران را فراهم می‌کند.</p>
+<p>فرض کنید برنامه‌ای برای ثبت مخاطبین یک تلفن همراه نوشته‌اید. اگر برنامه را اجرا کنید و چند مخاطب وارد کنید، تا زمانی که برنامه باز است اطلاعات در حافظه نگهداری می‌شوند. اما اگر برنامه بسته شود، تمام اطلاعات از بین می‌روند.</p>
+<p><img alt="تصویر کتاب" src="../images/p261-02.png" /></p>
+<p>برای اینکه اطلاعات به‌صورت دائمی ذخیره شوند و بعداً بتوانید دوباره به آنها دسترسی داشته باشید، لازم است از فایل‌ها استفاده کنید.</p>
+<p>فایل‌ها امکان ذخیره اطلاعات روی حافظه جانبی (مانند هارد دیسک) را فراهم می‌کنند.</p>
+<p><strong>شکل 18</strong></p>
+<p>کار با فایل اطلاعات زیادی در فایل‌های متنی ذخیره می‌شوند؛ مثل نمرات دانش‌آموزان، لیست قیمت‌ها، داده‌های آب و هوا،ترافیک، یا متن یک داستان. برای اینکه یک برنامه بتواند از این اطلاعات استفاده کند، باید فایل را بخواند. اولین گام برای استفاده از یک فایل متنی، این است که فایل را وارد حافظه برنامه کنید، بعد از آن می‌توانیدکل فایل را یک‌جا بخوانید یا آن را خط‌به‌خط بررسی کنید. خواندن فایل به برنامه کمک می‌کند تا اطلاعات را تحلیل، نمایش یا تغییر دهد.</p>
+<figure class="shot"><img alt="شکل 19" src="../images/p261-01.png" /><figcaption>شکل 19</figcaption></figure>
+<hr />
+<p class="page-mark">صفحه ۲۵۶</p>
+<p>ایجاد فایل متنی ابتدا یک فایل متنی به نام <code>mobile_bransd.txt</code> بسازید و برندها را در آن بنویسید (هر برند دریک خط):</p>
+<p>خواندن کل فایل در پایتون برای خواندن کل محتویات فایل از کتابخانه <code>pathlib</code> استفاده کنید.</p>
+<p><img alt="تصویر کتاب" src="../images/p262-01.png" /></p>
+<figure class="shot"><img alt="شکل 20" src="../images/p262-02.png" /><figcaption>شکل 20</figcaption></figure>
+<p>توضیح کد:</p>
+<div class="code-wrap" dir="ltr"><pre><code>from pathlib import Path
+</code></pre></div>
+<p>این خط کلاس <code>Path</code> را از کتابخانۀ <code>pathlib</code> وارد می‌کند. <code>Path</code> ابزاری برای کار با مسیر فایل‌ها و پوشه‌ها است و استفاده از آن ساده‌تر و امن‌تر از <code>open</code> معمولی است.</p>
+<div class="code-wrap" dir="ltr"><pre><code>path = Path('mobile_brands.txt')
+</code></pre></div>
+<p>در اینجا <code>path</code> یک کلاس است که برای مدیریت مسیر فایل‌ها ساخته شده است. با نوشتن:</p>
+<div class="code-wrap" dir="ltr"><pre><code>path = Path('mobile_brands.txt')
+</code></pre></div>
+<p>یک نمونه (<code>object</code>) از کلاس <code>Path</code> ساخته می‌شود. این نمونه می‌داند که فایل <code>mobile_brands.txt</code> کجاست، ولی هنوز خود فایل باز نشده یا خوانده نشده به عبارت ساده: <code>path</code> فقط نشانی فایل روی رایانه را نگه می‌دارد.</p>
+<p>وقتی می‌نویسید <code>path.read_text</code>() آن وقت فایل باز و خوانده می‌شود، یک <code>Path</code> <code>object</code> ساخته شده است که به فایل <code>mobile_brands.txt</code> اشاره می‌کند. چون این فایل در همان پوشه‌ای است که فایل پایتون (<code>.py</code>) قرار دارد، فقط نام فایل کافی است. اگر فایل در پوشه‌ای دیگر بود، باید مسیر کامل یا نسبی آن را بدهید.</p>
+<div class="code-wrap" dir="ltr"><pre><code>brnds = path.read_text()
+</code></pre></div>
+<p>با متد <code>read_text</code> کل محتوای فایل خوانده می‌شود. نتیجه به‌صورت یک رشته (<code>string</code>) در متغیر <code>contents</code> ذخیره می‌شود. هر خط فایل در رشته با کاراکتر <code>\n</code> جدا شده است.</p>
+<hr />
+<p class="page-mark">صفحه ۲۵۷</p>
+<p>محتویات <code>brands</code> درخروجی چاپ می‌شود.</p>
+<div class="code-wrap" dir="ltr"><pre><code>print(brands)
+</code></pre></div>
+<p>خروجی مثال:</p>
+<figure class="shot"><img alt="شکل 21" src="../images/p263-01.png" /><figcaption>شکل 21</figcaption></figure>
+<p>حذف خط خالی اضافی: گاهی <code>read_text</code>() یک خط خالی اضافی در انتهای فایل ایجاد می‌کند. برای حذف آن می‌توانید از متد <code>rstrip</code> استفاده کنید.</p>
+<div class="code-wrap" dir="ltr"><pre><code>brands = brands.rstrip()
+</code></pre></div>
+<p>حالا خروجی تمیز و بدون خط خالی نمایش داده می‌شود.</p>
+<p>مسیرهای نسبی و مطلق فایل‌ها آدرس نسبی و مطلق مانند داشتن یک نقشه دقیق برای دسترسی به فایل‌های شماست. آدرس مطلق تضمین می‌کند که برنامه شما روی هر سیستمی، دقیقاً همان فایل را پیدا کند؛ اما آدرس نسبی به شما کمک می‌کند کدی بنویسید که بدون تغییر، در هر پوشه‌ای جابجا شود و باز هم فایل‌های مورد نیازش را بیابد.</p>
+<p>وقتی نام فایلی مثل <code>mobile_brands.txt</code> را به <code>Path</code> می‌دهید، پایتون در پوشه‌ای که فایل در حال اجرا (یعنی برنامه <code>.py</code> شما) در آن قرار دارد، جستجو می‌کند.گاهی اوقات، بسته به نحوه سازماندهی کارهایتان، فایلی که می‌خواهید باز کنید ممکن است در همان پوشه برنامه شما نباشد. مثلاًً، شاید برنامه‌هایتان را در پوشه‌ای به نام <code>py_progs</code> و داخل آن پوشه‌ای به نام <code>text_files</code> برای جدا کردن فایل‌های متنی از برنامه‌ها نگهداری کنید. با اینکه <code>text_files</code> داخل <code>py_progs</code> است، اگر فقط نام فایلی را در <code>text_files</code> به <code>Path</code> بدهید، کار نمی‌کند؛ چون پایتون فقط در <code>py_progs</code> جستجو می‌کند و متوقف می‌شود؛ به <code>text_files</code> نگاه نمی‌کند. برای اینکه پایتون بتواند فایل‌ها را از پوشه‌ای غیر از پوشه برنامه شما باز کند، نیاز به مسیر صحیح دارید.</p>
+<figure class="shot"><img alt="شکل 22" src="../images/p263-02.png" /><figcaption>شکل 22</figcaption></figure>
+<hr />
+<p class="page-mark">صفحه ۲۵۸</p>
+<p>دو راه برای مشخص کردن مسیر فایل‌ها در برنامه‌نویسی وجود دارد:</p>
+<p>1 آدرس نسبی (<code>Relative</code> <code>File</code> <code>Path</code>): این آدرس به پایتون می‌گوید که مکان مورد نظر را نسبت به پوشه برنامه در حال اجرا پیدا کند. از آنجایی که <code>text_files</code> داخل <code>py_progs</code> است، باید مسیری بسازید که با پوشه <code>text_files</code> شروع شود و به نام فایل ختم شود. نحوه ساخت این مسیر این‌گونه است:</p>
+<div class="code-wrap" dir="ltr"><pre><code>path = Path('text_files/filename.txt')
+</code></pre></div>
+<p>2 آدرس مطلق (<code>Absolute</code> <code>File</code> <code>Path</code>): در این نوع آدرس دهی شما می‌توانید دقیقاً به پایتون بگویید فایل در کجای رایانه شما قرار دارد، صرف نظر از اینکه برنامه در حال اجرا کجاست. اگر آدرس نسبی کار نکرد، می‌توانید از آدرس مطلق استفاده کنید. مثلاًً، اگر <code>text_files</code> را در پوشه‌ای غیر از <code>py_progs</code> قرار داده‌اید، دادن آدرس <code>'text_files/filename.txt'</code> کافی نیست؛ چون پایتون آن را فقط داخل <code>python_work</code> جست‌وجو می‌کند. در این حالت، باید آدرس مطلق را بنویسید تا مشخص شود پایتون کجا را جست‌وجو کند. آدرس‌های مطلق معمولاً بلندتر هستند، چون از پوشه ریشه سیستم عامل شروع می‌شوند:</p>
+<div class="code-wrap" dir="ltr"><pre><code>path = Path('/home/eric/py_progs/text_files/filename.txt')
+</code></pre></div>
+<p>با استفاده از آدرس‌های مطلق، می‌توانید فایل‌ها را از هر نقطه‌ای در سیستم خود بخوانید. برای شروع، ساده‌ترین کار این است که فایل‌ها را در همان پوشه برنامه خودتان یا در پوشه‌ای مانند <code>text_files</code> درون پوشه برنامه نگهداری کنید.</p>
+<h3 id="_7">نکته</h3>
+<p>سیستم‌های ویندوز هنگام نمایش مسیر فایل‌ها از بک‌اسلش () به جای اسلش (/) استفاده می‌کنند، اما شما همیشه در کد خود از اسلش (/ ) استفاده کنید، حتی در ویندوز. کتابخانه <code>pathlib</code> به طور خودکار هنگام تعامل با سیستم عامل شما، نمایش صحیح مسیر را به کار می‌گیرد.</p>
+<p>کار با محتویات فایل بعد از خواندن فایل متنی، محتوای آن در برنامه به‌صورت یک رشته (<code>string</code>) در اختیارشما قرار می‌گیرد.</p>
+<p>تبدیل محتوا به لیست: برای اینکه بتوانید روی هر برند تلفن همراه جداگانه کارکنید، لازم است متن فایل را به لیستی از خطوط تبدیل کنید.</p>
+<p>حالا هر برند یک عضو از لیست است و می‌توانید با آن کارکنید.</p>
+<p>-)(<code>splitlines</code> رشته متنی را به لیستی از خطوط تقسیم می‌کند.</p>
+<p><img alt="تصویر کتاب" src="../images/p264-01.png" /></p>
+<figure class="shot"><img alt="شکل 23" src="../images/p264-02.png" /><figcaption>شکل 23</figcaption></figure>
+<hr />
+<p class="page-mark">صفحه ۲۵۹</p>
+<p><img alt="تصویر کتاب" src="../images/p265-01.png" /></p>
+<figure class="shot"><img alt="شکل 24" src="../images/p265-02.png" /><figcaption>شکل 24</figcaption></figure>
+<p>شمارش داده‌ها: مثلاً تعداد برندهای موجود در فایل:</p>
+<p><img alt="تصویر کتاب" src="../images/p265-03.png" /></p>
+<figure class="shot"><img alt="شکل 25" src="../images/p265-04.png" /><figcaption>شکل 25</figcaption></figure>
+<h3 id="_8">فعالیت</h3>
+<p>برنامه را به نحوی تغییر دهید که بتوانید تعداد کاراکترهای هر برند را مشاهده کنید.</p>
+<p>جست‌وجو در محتویات فایل بررسی اینکه آیا یک برند خاص در فایل وجود دارد یا نه:</p>
+<p><img alt="تصویر کتاب" src="../images/p265-05.png" /></p>
+<figure class="shot"><img alt="شکل 26" src="../images/p265-06.png" /><figcaption>شکل 26</figcaption></figure>
+<hr /></article><article class="lesson" lang="en" dir="ltr" data-lang-block="en" hidden><h1 id="object-oriented-program-development">Object-oriented program development</h1>
+<hr />
+<p class="page-mark">Page 254</p>
+<h2 id="learning-unit-2">Learning unit 2</h2>
+<h2 id="object-oriented-program-development_1">Object-oriented program development</h2>
+<h3 id="have-you-ever-thought">Have you ever thought</h3>
+<p>Why can you not always use variables to store information?</p>
+<p>What is the difference between “temporary storage of information in memory (<code>RAM</code>)” and “storage in a file”?</p>
+<p>If you run the program several times and write to the file each time, what happens to the previous content?</p>
+<p>When is using a simple text file enough, and when is it better to use <code>JSON</code>?</p>
+<p>If the file path is wrong, how should the program behave?</p>
+<p>If you are going to design a store program, what information should be stored in a file, and why?</p>
+<h3 id="by-the-end-the-student-is-expected-to">By the end, the student is expected to</h3>
+<p>1 Use the <code>"Path"</code> class and the <code>"pathlib"</code> module to manage paths (<code>Path</code> <code>Objects</code>).</p>
+<p>2 Read the contents of text files and write data to them, append data, and close files safely.</p>
+<p>3 Read data from several files, combine their contents, and process a set of files using loops.</p>
+<p>4 Recognize common errors such as <code>"FileNotFoundError"</code> and <code>"ZeroDivisionError"</code> and, using <code>"try/except"</code>, prevent the program from stopping and display appropriate error messages.</p>
+<p>5 Understand the <code>"JSON"</code> structure and read data using <code>json.loads</code>() and write it to a file with <code>json.dump</code>().</p>
+<h3 id="performance-standard">Performance standard</h3>
+<p>The student should be able to use a <code>Path</code> object to create, read, write, and manage text and <code>JSON</code> files safely and accurately, and to handle possible errors and exceptions correctly.</p>
+<hr />
+<p class="page-mark">Page 255</p>
+<h3 id="getting-to-know-files-in-python">Getting to know files in Python</h3>
+<p>In this learning unit you get to know working with files and storing data so that your programs become more useful and more reliable. You learn how to store and retrieve data and how, by managing exceptions, you can keep the program from stopping in unexpected situations.</p>
+<p>You will also get to know the <code>json</code> module, which makes it possible to keep user information.</p>
+<p>Suppose you have written a program to record the contacts of a mobile phone. If you run the program and enter a few contacts, the information is kept in memory as long as the program is open. But if the program is closed, all the information is lost.</p>
+<p><img alt="Book image" src="../images/p261-02.png" /></p>
+<p>For the information to be stored permanently so you can access it again later, you need to use files.</p>
+<p>Files make it possible to store information on secondary storage (such as a hard disk).</p>
+<p><strong>Figure 18</strong></p>
+<p>Working with files A great deal of information is stored in text files; for example, students’ grades, price lists, weather data, traffic, or the text of a story. For a program to be able to use this information, it must read the file. The first step in using a text file is to bring the file into the program’s memory; after that you can read the whole file at once or examine it line by line. Reading a file helps the program analyze, display, or change the information.</p>
+<figure class="shot"><img alt="Figure 19" src="../images/p261-01.png" /><figcaption>Figure 19</figcaption></figure>
+<hr />
+<p class="page-mark">Page 256</p>
+<p>Creating a text file First create a text file named <code>mobile_bransd.txt</code> and write the brands in it (each brand on one line):</p>
+<p>Reading the whole file In Python, use the <code>pathlib</code> library to read the entire contents of a file.</p>
+<p><img alt="Book image" src="../images/p262-01.png" /></p>
+<figure class="shot"><img alt="Figure 20" src="../images/p262-02.png" /><figcaption>Figure 20</figcaption></figure>
+<p>Code explanation:</p>
+<div class="code-wrap" dir="ltr"><pre><code>from pathlib import Path
+</code></pre></div>
+<p>This line imports the <code>Path</code> class from the <code>pathlib</code> library. <code>Path</code> is a tool for working with the paths of files and folders, and using it is simpler and safer than ordinary <code>open</code>.</p>
+<div class="code-wrap" dir="ltr"><pre><code>path = Path('mobile_brands.txt')
+</code></pre></div>
+<p>Here <code>path</code> is a class built for managing file paths. By writing:</p>
+<div class="code-wrap" dir="ltr"><pre><code>path = Path('mobile_brands.txt')
+</code></pre></div>
+<p>an instance (<code>object</code>) of the <code>Path</code> class is created. This instance knows where the file <code>mobile_brands.txt</code> is, but the file itself has not yet been opened or read. In simple terms: <code>path</code> only holds the address of the file on the computer.</p>
+<p>When you write <code>path.read_text</code>(), then the file is opened and read; a <code>Path</code> <code>object</code> has been created that points to the file <code>mobile_brands.txt</code>. Because this file is in the same folder as the Python file (<code>.py</code>), only the file name is enough. If the file were in another folder, you would have to give its full or relative path.</p>
+<div class="code-wrap" dir="ltr"><pre><code>brnds = path.read_text()
+</code></pre></div>
+<p>With the <code>read_text</code> method, the entire contents of the file are read. The result is stored as a string (<code>string</code>) in the variable <code>contents</code>. Each line of the file in the string is separated by the character <code>\n</code>.</p>
+<hr />
+<p class="page-mark">Page 257</p>
+<p>The contents of <code>brands</code> are printed in the output.</p>
+<div class="code-wrap" dir="ltr"><pre><code>print(brands)
+</code></pre></div>
+<p>Example output:</p>
+<figure class="shot"><img alt="Figure 21" src="../images/p263-01.png" /><figcaption>Figure 21</figcaption></figure>
+<p>Removing an extra blank line: Sometimes <code>read_text</code>() creates an extra blank line at the end of the file. To remove it you can use the <code>rstrip</code> method.</p>
+<div class="code-wrap" dir="ltr"><pre><code>brands = brands.rstrip()
+</code></pre></div>
+<p>Now the output is displayed clean and without a blank line.</p>
+<p>Relative and absolute file paths Relative and absolute addresses are like having an accurate map for reaching your files. An absolute address guarantees that your program finds exactly the same file on any system; but a relative address helps you write code that can be moved to any folder without change and still find the files it needs.</p>
+<p>When you give a file name such as <code>mobile_brands.txt</code> to <code>Path</code>, Python searches in the folder where the file that is running (that is, your <code>.py</code> program) is located. Sometimes, depending on how you organize your work, the file you want to open may not be in the same folder as your program. For example, you might keep your programs in a folder named <code>py_progs</code> and inside it a folder named <code>text_files</code> to keep text files separate from the programs. Although <code>text_files</code> is inside <code>py_progs</code>, if you give only the name of a file in <code>text_files</code> to <code>Path</code>, it does not work; because Python searches only in <code>py_progs</code> and stops; it does not look into <code>text_files</code>. For Python to be able to open files from a folder other than your program folder, you need the correct path.</p>
+<figure class="shot"><img alt="Figure 22" src="../images/p263-02.png" /><figcaption>Figure 22</figcaption></figure>
+<hr />
+<p class="page-mark">Page 258</p>
+<p>There are two ways to specify file paths in programming:</p>
+<p>1 Relative address (<code>Relative</code> <code>File</code> <code>Path</code>): This address tells Python to find the desired location relative to the folder of the program that is running. Since <code>text_files</code> is inside <code>py_progs</code>, you must build a path that starts with the <code>text_files</code> folder and ends with the file name. You build this path like this:</p>
+<div class="code-wrap" dir="ltr"><pre><code>path = Path('text_files/filename.txt')
+</code></pre></div>
+<p>2 Absolute address (<code>Absolute</code> <code>File</code> <code>Path</code>): In this kind of addressing you can tell Python exactly where the file is on your computer, regardless of where the program that is running is. If a relative address does not work, you can use an absolute address. For example, if you have placed <code>text_files</code> in a folder other than <code>py_progs</code>, giving the address <code>'text_files/filename.txt'</code> is not enough; because Python searches for it only inside <code>python_work</code>. In this case, you must write the absolute address so that it is clear where Python should search. Absolute addresses are usually longer, because they start from the root folder of the operating system:</p>
+<div class="code-wrap" dir="ltr"><pre><code>path = Path('/home/eric/py_progs/text_files/filename.txt')
+</code></pre></div>
+<p>Using absolute addresses, you can read files from any point on your system. To start, the simplest thing is to keep the files in the same folder as your program, or in a folder such as <code>text_files</code> inside the program folder.</p>
+<h3 id="note">Note</h3>
+<p>Windows systems use a backslash () instead of a slash (/) when displaying file paths, but you should always use a slash (/) in your code, even on Windows. The <code>pathlib</code> library automatically uses the correct path display when interacting with your operating system.</p>
+<p>Working with file contents After reading a text file, its contents are available to the program as a string (<code>string</code>).</p>
+<p>Converting the content to a list: So that you can work with each mobile phone brand separately, you need to turn the file text into a list of lines.</p>
+<p>Now each brand is one member of the list and you can work with it.</p>
+<p><code>splitlines</code>() splits the text string into a list of lines.</p>
+<p><img alt="Book image" src="../images/p264-01.png" /></p>
+<figure class="shot"><img alt="Figure 23" src="../images/p264-02.png" /><figcaption>Figure 23</figcaption></figure>
+<hr />
+<p class="page-mark">Page 259</p>
+<p><img alt="Book image" src="../images/p265-01.png" /></p>
+<figure class="shot"><img alt="Figure 24" src="../images/p265-02.png" /><figcaption>Figure 24</figcaption></figure>
+<p>Counting data: for example, the number of brands in the file:</p>
+<p><img alt="Book image" src="../images/p265-03.png" /></p>
+<figure class="shot"><img alt="Figure 25" src="../images/p265-04.png" /><figcaption>Figure 25</figcaption></figure>
+<h3 id="activity">Activity</h3>
+<p>Change the program so that you can see the number of characters in each brand.</p>
+<p>Searching in the file contents Checking whether a particular brand exists in the file or not:</p>
+<p><img alt="Book image" src="../images/p265-05.png" /></p>
+<figure class="shot"><img alt="Figure 26" src="../images/p265-06.png" /><figcaption>Figure 26</figcaption></figure>
+<hr /></article>
+      <aside class="extra">
+        <h2 data-fa="تمرین این بخش" data-en="Exercises for this section">تمرین این بخش</h2>
+        <p class="extra-note" data-fa="این تمرین‌ها و پیوندها اضافه بر متن کتاب‌اند." data-en="These exercises and links are in addition to the book.">این تمرین‌ها و پیوندها اضافه بر متن کتاب‌اند.</p>
+        <ol><li data-fa="برندها را در brands.txt بنویس، فایل را ببند، دوباره باز کن و خط‌ها را چاپ کن." data-en="Write the brands into brands.txt, close the file, open it again, and print the lines.">برندها را در brands.txt بنویس، فایل را ببند، دوباره باز کن و خط‌ها را چاپ کن.</li><li data-fa="برنامه را یک بار با مسیر غلط اجرا کن تا خطا را ببینی، بعد مسیر را درست کن و همان برنامه را موفق اجرا کن." data-en="Run the program once with a wrong path so you see the error, then fix the path and run the same program successfully.">برنامه را یک بار با مسیر غلط اجرا کن تا خطا را ببینی، بعد مسیر را درست کن و همان برنامه را موفق اجرا کن.</li></ol>
+        <h2 data-fa="پیوند مفید" data-en="Useful link">پیوند مفید</h2><ul><li><a href="https://docs.python.org/3/tutorial/inputoutput.html#reading-and-writing-files" data-fa="خواندن و نوشتن فایل" data-en="Reading and writing files">خواندن و نوشتن فایل</a></li></ul>
+      </aside>
+    <nav class="pager"><a rel="prev" class="prev" href="p4-assess-oop.html"><span class="pager-word" data-fa="قبلی" data-en="Previous">قبلی</span><span class="pager-name" data-fa="ارزشیابی برنامه شیءگرا" data-en="Object-oriented assessment">ارزشیابی برنامه شیءگرا</span></a><a rel="next" class="next" href="p4-errors.html"><span class="pager-word" data-fa="بعدی" data-en="Next">بعدی</span><span class="pager-name" data-fa="پیمایش فایل و مدیریت خطا" data-en="Walking a file and handling errors">پیمایش فایل و مدیریت خطا</span></a></nav>
+    </div>
+  </div>
+  <script src="../assets/search-index.js?v=4"></script>
+  <script src="../assets/app.js?v=4"></script>
+</body>
+</html>

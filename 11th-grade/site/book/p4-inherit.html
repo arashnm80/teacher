@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title data-fa="وراثت" data-en="Inheritance">وراثت</title>
+  <link rel="icon" href="../assets/favicon.svg">
+  <link rel="stylesheet" href="../assets/style.css?v=4">
+</head>
+<body data-root="../">
+  <header class="top">
+    <a class="brand" href="../index.html">
+      <span data-fa="طراح سایت" data-en="Site Design">طراح سایت</span>
+      <small data-fa="پایه یازدهم" data-en="Grade 11">پایه یازدهم</small>
+    </a>
+    <div class="search-wrap">
+      <input id="q" type="search" autocomplete="off"
+        data-fa-placeholder="جستجو در درس‌ها" data-en-placeholder="Search lessons"
+        placeholder="جستجو در درس‌ها">
+      <div id="results" class="results" hidden></div>
+    </div>
+    <a class="download" href="../grade11-offline.zip?v=2" data-fa="دانلود کل سایت" data-en="Download the whole site">دانلود کل سایت</a>
+    <button type="button" id="lang-toggle" class="lang-toggle" dir="ltr" data-lang="fa"
+      aria-label="تغییر زبان">
+      <span data-opt="fa">فا</span>
+      <span data-opt="en">EN</span>
+    </button>
+  </header>
+  <div class="layout">
+    <details class="toc" open><summary><span data-fa="فهرست درس‌ها" data-en="Lesson list">فهرست درس‌ها</span></summary><nav class="side" aria-label="lessons"><p class="mod" data-fa="شروع کتاب" data-en="Opening">شروع کتاب</p><p class="unit" data-fa="فهرست" data-en="Contents">فهرست</p><a class="" href="toc.html" data-fa="فهرست" data-en="Contents">فهرست</a><p class="mod" data-fa="پودمان ۱: برنامه‌نویسی پایتون" data-en="Module 1: Python programming">پودمان ۱: برنامه‌نویسی پایتون</p><p class="unit" data-fa="معرفی پودمان" data-en="Module introduction">معرفی پودمان</p><a class="" href="p1-intro.html" data-fa="معرفی پودمان پایتون" data-en="Introducing the Python module">معرفی پودمان پایتون</a><p class="unit" data-fa="مدل‌سازی داده" data-en="Data modeling">مدل‌سازی داده</p><a class="" href="p1-python.html" data-fa="پایتون و محیط برنامه‌نویسی" data-en="Python and the programming environment">پایتون و محیط برنامه‌نویسی</a><a class="" href="p1-vars.html" data-fa="متغیرها، نوع داده و عملگرها" data-en="Variables, types, and operators">متغیرها، نوع داده و عملگرها</a><a class="" href="p1-cast.html" data-fa="ورودی و تبدیل نوع" data-en="Input and type casting">ورودی و تبدیل نوع</a><a class="" href="p1-lists.html" data-fa="لیست‌ها" data-en="Lists">لیست‌ها</a><a class="" href="p1-if.html" data-fa="شرط‌های ساده" data-en="Simple conditions">شرط‌های ساده</a><a class="" href="p1-elif.html" data-fa="if، elif و else" data-en="if, elif, and else">if، elif و else</a><a class="" href="p1-for.html" data-fa="حلقه for و range" data-en="The for loop and range">حلقه for و range</a><a class="" href="p1-while.html" data-fa="حلقه while و کنترل حلقه" data-en="The while loop and loop control">حلقه while و کنترل حلقه</a><a class="" href="p1-assess-data.html" data-fa="ارزشیابی مدل‌سازی داده" data-en="Data-modeling assessment">ارزشیابی مدل‌سازی داده</a><p class="unit" data-fa="توابع و ماژول‌ها" data-en="Functions and modules">توابع و ماژول‌ها</p><a class="" href="p1-sets.html" data-fa="مجموعه (set)" data-en="Sets">مجموعه (set)</a><a class="" href="p1-dict.html" data-fa="دیکشنری" data-en="Dictionaries">دیکشنری</a><a class="" href="p1-quiz.html" data-fa="پروژه بازی Quiz" data-en="Quiz game project">پروژه بازی Quiz</a><a class="" href="p1-tuple.html" data-fa="تاپل" data-en="Tuples">تاپل</a><a class="" href="p1-func.html" data-fa="تعریف تابع، پارامتر و return" data-en="Defining functions, parameters, and return">تعریف تابع، پارامتر و return</a><a class="" href="p1-func-more.html" data-fa="تمرین تابع و مرتب‌سازی" data-en="Function practice and sorting">تمرین تابع و مرتب‌سازی</a><a class="" href="p1-modules.html" data-fa="ماژول‌ها و تفاوت تابع و متد" data-en="Modules, and functions versus methods">ماژول‌ها و تفاوت تابع و متد</a><a class="" href="p1-assess-func.html" data-fa="ارزشیابی توابع و ماژول‌ها" data-en="Functions and modules assessment">ارزشیابی توابع و ماژول‌ها</a><p class="mod" data-fa="پودمان ۲: صفحات وب ایستا" data-en="Module 2: Static web pages">پودمان ۲: صفحات وب ایستا</p><p class="unit" data-fa="معرفی پودمان" data-en="Module introduction">معرفی پودمان</p><a class="" href="p2-intro.html" data-fa="معرفی پودمان صفحات ایستا" data-en="Introducing static web pages">معرفی پودمان صفحات ایستا</a><p class="unit" data-fa="ساختار با HTML" data-en="Structure with HTML">ساختار با HTML</p><a class="" href="p2-web.html" data-fa="وب چگونه کار می‌کند" data-en="How the web works">وب چگونه کار می‌کند</a><a class="" href="p2-concepts.html" data-fa="مفاهیم طراحی وب و نقشه سایت" data-en="Web-design concepts and the site map">مفاهیم طراحی وب و نقشه سایت</a><a class="" href="p2-tags.html" data-fa="اولین صفحه HTML" data-en="A first HTML page">اولین صفحه HTML</a><a class="" href="p2-text.html" data-fa="متن، لیست و پیوند" data-en="Text, lists, and links">متن، لیست و پیوند</a><a class="" href="p2-img.html" data-fa="تصویر در صفحه" data-en="Images on the page">تصویر در صفحه</a><a class="" href="p2-forms.html" data-fa="فرم‌ها" data-en="Forms">فرم‌ها</a><a class="" href="p2-semantic.html" data-fa="عناصر معنایی" data-en="Semantic elements">عناصر معنایی</a><a class="" href="p2-assess-html.html" data-fa="ارزشیابی HTML" data-en="HTML assessment">ارزشیابی HTML</a><p class="unit" data-fa="ظاهر با CSS" data-en="Appearance with CSS">ظاهر با CSS</p><a class="" href="p2-css-start.html" data-fa="نوشتن CSS" data-en="Writing CSS">نوشتن CSS</a><a class="" href="p2-css-look.html" data-fa="رنگ، پس‌زمینه و انتخاب‌گر" data-en="Color, background, and selectors">رنگ، پس‌زمینه و انتخاب‌گر</a><a class="" href="p2-box.html" data-fa="مدل جعبه‌ای و display" data-en="The box model and display">مدل جعبه‌ای و display</a><a class="" href="p2-flex.html" data-fa="چیدمان با Flexbox" data-en="Layout with Flexbox">چیدمان با Flexbox</a><a class="" href="p2-flex-work.html" data-fa="کارگاه چیدمان صفحه" data-en="Page-layout workshop">کارگاه چیدمان صفحه</a><a class="" href="p2-media.html" data-fa="مدیا کوئری و ارزشیابی CSS" data-en="Media queries and the CSS assessment">مدیا کوئری و ارزشیابی CSS</a><p class="mod" data-fa="پودمان ۳: صفحات وب تعاملی" data-en="Module 3: Interactive web pages">پودمان ۳: صفحات وب تعاملی</p><p class="unit" data-fa="معرفی پودمان" data-en="Module introduction">معرفی پودمان</p><a class="" href="p3-intro.html" data-fa="معرفی پودمان تعاملی" data-en="Introducing the interactive module">معرفی پودمان تعاملی</a><p class="unit" data-fa="بوت‌استرپ" data-en="Bootstrap">بوت‌استرپ</p><a class="" href="p3-bs-start.html" data-fa="فریم‌ورک و شروع بوت‌استرپ" data-en="Frameworks and starting Bootstrap">فریم‌ورک و شروع بوت‌استرپ</a><a class="" href="p3-bs-util.html" data-fa="فاصله، گردی و لیست" data-en="Spacing, rounding, and lists">فاصله، گردی و لیست</a><a class="" href="p3-bs-header.html" data-fa="سرصفحه فروشگاه" data-en="The shop header">سرصفحه فروشگاه</a><a class="" href="p3-bs-grid.html" data-fa="شبکه Grid" data-en="The grid">شبکه Grid</a><a class="" href="p3-bs-rwd.html" data-fa="کلاس‌های واکنش‌گرا" data-en="Responsive classes">کلاس‌های واکنش‌گرا</a><a class="" href="p3-bs-nav.html" data-fa="نوار ناوبری و جزئیات محصول" data-en="Navbar and product details">نوار ناوبری و جزئیات محصول</a><a class="" href="p3-bs-form.html" data-fa="فرم و پنجره Modal" data-en="Forms and modals">فرم و پنجره Modal</a><a class="" href="p3-bs-show.html" data-fa="کاروسل و آکاردئون" data-en="Carousel and accordion">کاروسل و آکاردئون</a><a class="" href="p3-bs-assess.html" data-fa="ارزشیابی بوت‌استرپ" data-en="Bootstrap assessment">ارزشیابی بوت‌استرپ</a><p class="unit" data-fa="جاوااسکریپت" data-en="JavaScript">جاوااسکریپت</p><a class="" href="p3-js-start.html" data-fa="جاوااسکریپت در صفحه وب" data-en="JavaScript on the page">جاوااسکریپت در صفحه وب</a><a class="" href="p3-js-vars.html" data-fa="متغیر و نوع داده" data-en="Variables and data types">متغیر و نوع داده</a><a class="" href="p3-js-ops.html" data-fa="عملگرها" data-en="Operators">عملگرها</a><a class="" href="p3-js-data.html" data-fa="آرایه و شیء" data-en="Arrays and objects">آرایه و شیء</a><a class="" href="p3-js-if.html" data-fa="شرط در جاوااسکریپت" data-en="Conditions in JavaScript">شرط در جاوااسکریپت</a><a class="" href="p3-js-loops.html" data-fa="حلقه‌ها" data-en="Loops">حلقه‌ها</a><a class="" href="p3-js-func.html" data-fa="تابع‌ها" data-en="Functions">تابع‌ها</a><a class="" href="p3-js-dom.html" data-fa="صفحه، رویداد و اعتبار فرم" data-en="The page, events, and form validation">صفحه، رویداد و اعتبار فرم</a><a class="" href="p3-js-assess.html" data-fa="ارزشیابی جاوااسکریپت" data-en="JavaScript assessment">ارزشیابی جاوااسکریپت</a><p class="mod" data-fa="پودمان ۴: توسعه وب پایتون" data-en="Module 4: Python for the web">پودمان ۴: توسعه وب پایتون</p><p class="unit" data-fa="معرفی پودمان" data-en="Module introduction">معرفی پودمان</p><a class="" href="p4-intro.html" data-fa="معرفی پودمان شیءگرایی" data-en="Introducing the object-oriented module">معرفی پودمان شیءگرایی</a><p class="unit" data-fa="شیءگرایی" data-en="Object-oriented programming">شیءگرایی</p><a class="" href="p4-idea.html" data-fa="ایده شیء و کلاس" data-en="The idea of objects and classes">ایده شیء و کلاس</a><a class="" href="p4-class.html" data-fa="ساخت کلاس و متد" data-en="Writing a class and methods">ساخت کلاس و متد</a><a class="current" href="p4-inherit.html" data-fa="وراثت" data-en="Inheritance">وراثت</a><a class="" href="p4-protect.html" data-fa="داده معتبر و استفاده داخلی" data-en="Valid data and internal use">داده معتبر و استفاده داخلی</a><a class="" href="p4-assess-oop.html" data-fa="ارزشیابی برنامه شیءگرا" data-en="Object-oriented assessment">ارزشیابی برنامه شیءگرا</a><p class="unit" data-fa="فایل و توسعه" data-en="Files and development">فایل و توسعه</p><a class="" href="p4-files.html" data-fa="خواندن و نوشتن فایل متنی" data-en="Reading and writing text files">خواندن و نوشتن فایل متنی</a><a class="" href="p4-errors.html" data-fa="پیمایش فایل و مدیریت خطا" data-en="Walking a file and handling errors">پیمایش فایل و مدیریت خطا</a><a class="" href="p4-json.html" data-fa="چند فایل و JSON" data-en="Several files and JSON">چند فایل و JSON</a><a class="" href="p4-assess-files.html" data-fa="ارزشیابی کار با فایل" data-en="Files assessment">ارزشیابی کار با فایل</a><p class="mod" data-fa="پودمان ۵: برنامه‌نویسی جنگو" data-en="Module 5: Django">پودمان ۵: برنامه‌نویسی جنگو</p><p class="unit" data-fa="معرفی پودمان" data-en="Module introduction">معرفی پودمان</p><a class="" href="p5-intro.html" data-fa="معرفی پودمان جنگو" data-en="Introducing the Django module">معرفی پودمان جنگو</a><p class="unit" data-fa="ایجاد وب‌اپلیکیشن" data-en="Creating the web app">ایجاد وب‌اپلیکیشن</p><a class="" href="p5-what.html" data-fa="جنگو چیست و نصب" data-en="What Django is, and installing it">جنگو چیست و نصب</a><a class="" href="p5-project.html" data-fa="پروژه، اپ و اولین view" data-en="Project, app, and the first view">پروژه، اپ و اولین view</a><a class="" href="p5-template.html" data-fa="قالب و دمای واقعی" data-en="Templates and a real temperature">قالب و دمای واقعی</a><a class="" href="p5-assess-create.html" data-fa="ارزشیابی ایجاد وب‌اپلیکیشن" data-en="Creating-the-app assessment">ارزشیابی ایجاد وب‌اپلیکیشن</a><p class="unit" data-fa="توسعه وب‌اپلیکیشن" data-en="Developing the web app">توسعه وب‌اپلیکیشن</p><a class="" href="p5-model.html" data-fa="مدل شهر و پنل ادمین" data-en="The city model and the admin">مدل شهر و پنل ادمین</a><a class="" href="p5-list.html" data-fa="خواندن شهرها و نمایش فهرست" data-en="Reading cities and showing the list">خواندن شهرها و نمایش فهرست</a><a class="" href="p5-auth.html" data-fa="ورود و خروج" data-en="Sign-in and sign-out">ورود و خروج</a><a class="" href="p5-crud.html" data-fa="افزودن و حذف شهر" data-en="Adding and deleting a city">افزودن و حذف شهر</a><a class="" href="p5-bugs.html" data-fa="باگ و امنیت" data-en="Bugs and security">باگ و امنیت</a><p class="mod" data-fa="پایان کتاب" data-en="Back of the book">پایان کتاب</p><p class="unit" data-fa="منابع" data-en="References">منابع</p><a class="" href="refs.html" data-fa="منابع کتاب" data-en="Book references">منابع کتاب</a></nav></details>
+    <div class="main">
+      <h1 class="section-title" data-fa="وراثت" data-en="Inheritance">وراثت</h1><article class="lesson" lang="fa" dir="rtl" data-lang-block="fa"><p class="page-mark">صفحه ۲۴۴</p>
+<p>2 <code>Gaming</code> <code>phone:</code> نوعی گوشی هوشمند است که علاوه بر داشتن تمام قابلیت‌های یک <code>Smartphone</code>، به‌طور ویژه برای اجرای بازی‌ها طراحی شده و از امکانات سخت‌افزاری قوی‌تری برخوردار است.</p>
+<p>دارای ویژگی پردازنده گرافیکی قوی و مجزا دارای ویژگی حافظه گرافیکی بالا</p>
+<p><img alt="تصویر کتاب" src="../images/p250-01.png" /></p>
+<p><img alt="تصویر کتاب" src="../images/p250-03.png" /></p>
+<p><img alt="شکل 11 موبایل پایه، هوشمند و موبایل مخصوص بازی" src="../images/p250-02.png" /></p>
+<p>شکل 11 موبایل پایه، هوشمند و موبایل مخصوص بازی</p>
+<p>در پی این تصمیم از برنامه‌نویسان شرکت خواسته شده است کلاس‌های لازمر برای موبایل‌های تخصصی را نوشته و تعریف کنند.</p>
+<p>جدول ٢</p>
+<p>پردازنده</p>
+<p>برند</p>
+<p>مدل</p>
+<p>رنگ وضعیت</p>
+<p>دوربینسیستم عامل1</p>
+<p>حافظه</p>
+<p>گرافیکی</p>
+<div class="code-wrap" dir="ltr"><pre><code>Mobile
+</code></pre></div>
+<p></p>
+<p></p>
+<p></p>
+<p></p>
+<p></p>
+<p></p>
+<p></p>
+<p></p>
+<div class="code-wrap" dir="ltr"><pre><code>Smartphone
+</code></pre></div>
+<p></p>
+<p></p>
+<p></p>
+<p></p>
+<p></p>
+<p></p>
+<p></p>
+<p></p>
+<div class="code-wrap" dir="ltr"><pre><code>GamingPhone
+</code></pre></div>
+<p></p>
+<p></p>
+<p></p>
+<p></p>
+<p></p>
+<p></p>
+<p></p>
+<p></p>
+<p>همان‌طور که در جدول مشاهده می‌شود، تمام گوشی‌ها ویژگی‌های مشترکی دارند: برند، مدل، رنگ و وضعیت. بنابراین، تعریف مجدد این ویژگی‌ها در هر یک از کلاس‌های گوشی‌های تخصصی، منجر به تکرار کد خواهد شد.</p>
+<p>برای جلوگیری از تکرار کد و استفادۀ بهتر از ویژگی‌های مشترک گوشی‌ها، می‌توان از مفهوم ارث‌بری (<code>Inheritance</code>) در برنامه‌نویسی شیءگرا استفاده کرد.</p>
+<p>ارث‌بری به این معناست که یک کلاس جدید می‌تواند ویژگی‌ها (<code>Attributes</code>) و رفتار(<code>Method</code>) یک کلاس دیگر را به ارث ببرد و از آنها استفاده کند.</p>
+<p>در این روش، ابتدا یک کلاس کلی‌تر تعریف می‌شود که شامل ویژگی‌های مشترک تمام گوشی‌ها مانند برند، مدل، رنگ و وضعیت است. به این نوع کلاس، کلاس والد (<code>Parent</code> <code>class</code> یا <code>Super</code> <code>class</code>) گفته می‌شود.</p>
+<p>در این مثال، کلاس <code>Mobile</code> به‌عنوان کلاس والد، شامل تمام ویژگی‌های مشترک همۀ موبایل‌هاست.</p>
+<div class="code-wrap" dir="ltr"><pre><code>1- Operating System
+</code></pre></div>
+<hr />
+<p class="page-mark">صفحه ۲۴۵</p>
+<p><img alt="تصویر کتاب" src="../images/p251-01.png" /></p>
+<p>سپس کلاس‌های تخصصی‌تر براساس کلاس پایه ایجاد می‌شود. به این کلاس‌ها، کلاس فرزند (<code>Child</code> <code>class</code>) گفته می‌شود. برای نمونه، کلاس <code>Smartphone</code> که از کلاس <code>Mobile</code> ارث‌بری می‌کند، تمام ویژگی‌های کلاس <code>Mobile</code> را به‌صورت خودکار در اختیار دارد و می‌تواند علاوه بر آن، ویژگی‌ها و رفتارهای اختصاصی خود مانند سیستم‌عامل و دوربین را تعریف کند.</p>
+<p>استفاده از این رویکرد نتایج زیر را به همراه دارد:</p>
+<p>کاهش حجم کدنویسی افزایش خوانایی کد بهبود قابلیت نگه‌داری برنامه</p>
+<p><strong>شکل 12</strong></p>
+<p>در ادامه یک کلاس جدید به نام <code>SmartPhone</code> تعریف شده است که از کلاس <code>Mobile</code> ارث‌بری می‌کند.</p>
+<p>کد شکل13 را ملاحظه بفرمایید.</p>
+<p><img alt="تصویر کتاب" src="../images/p251-02.png" /></p>
+<p>ویژگ‌یهای عمومی ومشترک بین دو کلاس ویژگ‌یهای اختصاصی همین کلاس</p>
+<p>شکل 13 تعریف کلاس <code>SmartPhone</code></p>
+<p>خط 16: در این خط، کلاسی به نام <code>SmartPhone</code> تعریف می‌شود که از کلاس <code>Mobile</code> ارث‌بری می‌کند.</p>
+<p>این یعنی کلاس <code>SmartPhone</code> علاوه بر ویژگی‌ها و متدهای خودش، تمام ویژگی‌ها و متدهای کلاس <code>Mobile</code> را ارث‌بری کرده و به آنها دسترسی دارد.</p>
+<p>به کلاس <code>Mobile</code> در این حالت، کلاس والد (<code>Parent</code> <code>class</code> یا <code>Super</code> <code>class</code>) گفته می‌شود.</p>
+<p>به کلاس <code>SmartPhone</code>، کلاس فرزند (<code>Child</code> <code>class</code>) گفته می‌شود.</p>
+<p>در این خط، جلوی نام کلاس <code>SmartPhone</code> داخل پرانتز نام کلاس والد (<code>Parent</code> <code>class</code>) باید نوشته شود.</p>
+<p>خط 17: در این خط، متد سازندۀ (<code>___init_</code>) کلاِس <code>SmartPhone</code> تعریف می‌شود.</p>
+<p>این متد در زمان ساخته شدن یک نمونه جدید از کلاس <code>SmartPhone</code> به‌صورت خودکار اجرا می‌شود.</p>
+<hr />
+<p class="page-mark">صفحه ۲۴۶</p>
+<p>پارامترهای این سازنده شامل ویژگی‌های عمومی گوشی (<code>brand</code>، <code>model</code> و<code>color</code>) و همچنین ویژگی‌های اختصاصی گوشی هوشمند (<code>os</code> و <code>camera</code>) هستند.</p>
+<p>خط 18: در این خط، سازنده کلاس والد (<code>Mobile</code>) با استفاده از تابع <code>super</code> فراخوانی می‌شود.</p>
+<p>از متد <code>super</code> برای دسترسی به متدها و ویژگی‌های کلاس والد در مبحث وراثت استفاده می‌شود.</p>
+<p>وقتی یک کلاس از کلاس دیگری ارث‌بری می‌کند، با استفاده از <code>super</code> می‌توان متدهای کلاس والد را فراخوانی کرد، بدون اینکه نام کلاس والد به‌صورت مستقیم نوشته شود.</p>
+<p>دقت کنید در این دستور تنها ویژگی‌های مشترک کلاس فرزند و کلاس والد به متد <code>___init_</code> از کلاس والد ارسال شده است.</p>
+<p>با این کار، مقداردهی اولیه ویژگی‌هایی که در کلاس<code>Mobile</code> تعریف شده‌اند انجام می‌گیرد.</p>
+<p>دقت کنید اگر این خط از کد نوشته نشود، ویژگی‌های کلاس والد در کلاس فرزند، مقداردهی نمی‌شوند.</p>
+<p>به این ترتیب، از تکرار کد جلوگیری شده و ویژگی‌های مشترک بین کلاس‌ها به شکل اصولی مدیریت می‌شوند.</p>
+<p>خط 19: در این خط، ویژگی <code>os</code> برای نمونه جاری ساخته می‌شود و مقدار آن برابر با مقدار ورودی پارامتر <code>os</code> قرار می‌گیرد.</p>
+<p>این ویژگی نشان‌دهنده سیستم‌عامل گوشی هوشمند است.</p>
+<p>خط 20: در این خط، ویژگی <code>camera</code> برای نمونه جاری ساخته می‌شود و مقدار آن برابر با مقدار ورودی پارامتر <code>camera</code> قرار می‌گیرد.</p>
+<p>این ویژگی مشخصات دوربین گوشی هوشمند را نگهداری می‌کند.</p>
+<p>خط 23: در این خط، یک نمونه (<code>Instance</code>) از کلاس <code>SmartPhone</code> ساخته می‌شود.</p>
+<p>در زمان ساخت این نمونه، متد سازنده کلاس <code>SmartPhone</code> اجرا شده و مقادیر ارسال‌شده به پارامترها اختصاص داده می‌شوند.</p>
+<p>علاوه بر این، با استفاده از تابع <code>super</code>، سازنده کلاس والد (<code>Mobile</code>) اجرا می‌شود تا ویژگی‌های پایۀ گوشی، که در کلاس والد تعریف شده‌اند، مقداردهی شوند.</p>
+<p><img alt="تصویر کتاب" src="../images/p252-01.png" /></p>
+<p>خط 24: در این خط، مقدار ویژگی <code>os</code> از نمونه <code>_my</code> <code>smartphone</code> خوانده شده و در خروجی برنامه چاپ می‌شود.</p>
+<p>خروجی این دستور مقدار <code>"android"</code> خواهد بود.</p>
+<p><strong>شکل 14</strong></p>
+<h3 id="_1">فعالیت</h3>
+<p>به برنامه فوق دستوراتی اضافه کنید تا سایر ویژگی‌های نمونه <code>my_smartphone</code> را چاپ کنید.</p>
+<hr />
+<p class="page-mark">صفحه ۲۴۷</p>
+<p>فراخوانی متدهای کلاس والد از طریق کلاس فرزند:</p>
+<p>تا اینجا متوجه شدید که کلاس <code>SmartPhone</code> ویژگی‌های کلاس <code>Mobile</code> را به ارث برده است. اگر کد کلاس <code>SmartPhone</code> را مشاهده کنید، درون آن به‌جز متد <code>___init_</code> متد دیگری وجود ندارد. برای بررسی اینکه آیا از کلاس والد (<code>Parent</code>) متدها را هم به ارث برده است یا خیر، دستور زیر را در انتهای برنامه نوشته و برنامه را اجرا می‌کنیم:</p>
+<div class="code-wrap" dir="ltr"><pre><code>brand: samsung model: s25 color: gray  )(my_smartphon.show_info
+</code></pre></div>
+<p><strong>شکل 15</strong></p>
+<p>با مشاهده خروجی متوجه می‌شوید نمونه <code>my_smartphone</code> متد <code>show_info</code> را از کلاس <code>Mobile</code> به ارث برده است.</p>
+<h3 id="_2">فعالیت</h3>
+<p>به برنامه فوق دستوراتی اضافه کنید تا سایر متد‌های نمونه <code>my_smartphone</code> را فراخوانی و اجرا کند.</p>
+<p>ایجاد متد مستقل از والد درون کلاس فرزند:</p>
+<p>در اینجا یک سؤال مطرح می‌شود که آیا کلاس فرزند (<code>Child</code> <code>class</code>) می‌تواند خودش به‌صورت مستقل متد داشته باشد؟</p>
+<p>پاسخ مثبت است. برای این منظور می‌توانید متدهای جدید و مستقل درون کلاس فرزند تعریف و از آنها استفاده کنید.</p>
+<p>در ادامه به کلاس <code>SmartPhone</code> متدهای <code>take_picture</code> برای گرفتن عکس و <code>show_os_info</code> برای نمایش ویژگی نام سیستم عامل را اضافه می‌کنید. کد شکل 16 را به دقت نوشته و اجرا کنید.</p>
+<p><img alt="شکل 16 تعریف دو متد جدید درون کلاس SmartPhone" src="../images/p253-01.png" /></p>
+<p>شکل 16 تعریف دو متد جدید درون کلاس <code>SmartPhone</code></p>
+<hr />
+<p class="page-mark">صفحه ۲۴۸</p>
+<p>خطوط 22 و 23: در این خطوط، متد <code>take_picture</code> تعریف شده و درون آن یک پیغام مبنی بر موفقیت در گرفتن عکس چاپ شده است.</p>
+<p>خطوط 25 و 26: در این خطوط، متد <code>show_os_info</code> تعریف شده و درون آن مشخصات ویژگی سیستم‌عامل چاپ شده است.</p>
+<p>بازنویسی متد والد درون کلاس فرزند (<code>Method</code> <code>Override</code>) می‌دانید که در کلاس <code>Mobile</code> متدی با نام <code>show_info</code> تعریف شده است که اطلاعات عمومی گوشی را نمایش می‌دهد. حال اگر کلاسی مانند <code>SmartPhone</code> از کلاس <code>Mobile</code> ارث‌بری کند، این متد نیز به کلاس فرزند منتقل شده و بدون تغییر قابل استفاده خواهد بود.</p>
+<p>در گوشی‌های هوشمند، علاوه بر اطلاعات عمومی، نمایش اطلاعات بیشتری مانند نام سیستم‌عامل و مشخصات دوربین اهمیت دارد. استفادۀ مستقیم از متد <code>show_info</code> کلاس والد برای کلاس <code>SmartPhone</code> کافی نیست و لازم است رفتار این متد متناسب با ویژگی‌های کلاس فرزند تغییر کند.</p>
+<p>برای حل این مشکل، متد <code>show_info</code> در کلاس<code>SmartPhone</code> بازنویسی می‌شود. به این ترتیب، می‌توان ابتدا با دستور<code>super</code>() متد کلاس والد را اجرا کرد و سپس اطلاعات جدید مورد نیاز را نمایش داد. این کار باعث می‌شود در متد بازنویسی‌شدۀ کلاس فرزند، ابتدا دستورات متد والد اجرا شده و سپس دستورات جدید نوشته و اجرا شوند.</p>
+<p>اکنون می‌توانید متد <code>show_info</code> را مطابق کد زیر در کلاس <code>SmartPhone</code> اضافه نمایید و نتیجۀ اجرای برنامه را مشاهده کنید.</p>
+<figure class="shot"><img alt="شکل 17" src="../images/p254-01.png" /><figcaption>شکل 17</figcaption></figure>
+<p>در خط اول کد، متدی با نام <code>show_info</code> درون کلاس <code>SmartPhone</code> تعریف شده است. نام این متد دقیقًا با نام متد موجود در کلاس والد یکسان است؛ به همین دلیل این متد به‌عنوان بازنویسی (<code>Override</code>) متد کلاس والد شناخته می‌شود.</p>
+<p>در دومین خط، با استفاده از متد <code>super</code>، متد <code>show_info</code> از کلاس والد (<code>Mobile</code>) اجرا می‌شود. به این ترتیب، اطلاعات عمومی گوشی مانند برند، مدل و رنگ که در کلاس والد تعریف شده‌اند، در ابتدای همین متد نمایش داده می‌شوند.</p>
+<p>در سومین خط، مقدار ویژگی <code>os</code> که مربوط به کلاس <code>SmartPhone</code> است، چاپ می‌شود. این ویژگی نشان‌دهندۀ نام سیستم‌عامل گوشی هوشمند می‌باشد و در کلاس والد وجود ندارد.</p>
+<p>در آخرین خط، مقدار ویژگی <code>camera</code> نمایش داده می‌شود. این ویژگی نیز مخصوص کلاس <code>SmartPhone</code> بوده و مشخصات دوربین گوشی هوشمند را نشان می‌دهد.</p>
+<hr />
+<p class="page-mark">صفحه ۲۴۹</p>
+<p>بازنویسی متد والد در کلاس فرزند، به گونه‌ای که نام متد یکسان باقی بماند اما نحوۀ اجرای آن تغییر کند، بازنویسی متد یا <code>Method</code> <code>Override</code> نامیده می‌شود.</p>
+<h3 id="_3">فعالیت</h3>
+<p>با توجه به مطالبی که تا کنون فرا گرفته اید، کلاس <code>GamingPhone</code> را مطابق توضیحات زیر پیاده‌سازی کنید:</p>
+<p>کلاس <code>GamingPhone</code> از کلاس <code>SmartPhone</code> ارث‌بری می‌کند.</p>
+<p>این کلاس، علاوه بر ویژگی‌های به‌ارث‌رسیده از کلاس پایه <code>Mobile</code> و کلاس <code>SmartPhone</code>، شامل دو ویژگی اختصاصی زیر است:</p>
+<p><code>gpu:</code> نام پردازنده گرافیکی <code>vram:</code> میزان حافظه گرافیکی این کلاس، علاوه بر متدهای به‌ارث‌رسیده از کلاس‌های <code>Mobile</code> و <code>SmartPhone</code>، شامل متد زیر نیز می‌باشد:</p>
+<p>متد <code>gaming_mode:</code> این متد هنگام فراخوانی، پیامی مناسب چاپ می‌کند که فعال بودن حالت بازی گوشی را نشان می‌دهد.</p>
+<p>پیام چاپ‌شده می‌تواند شامل نام گوشی، نام پردازندۀ گرافیکی و میزان حافظۀ گرافیکی باشد.</p>
+<p>تا اینجا با تعریف کلاس <code>Mobile</code> و ساخت نمونه‌هایی از آن آشنا شدید. همچنین دیدید که می‌توان به ویژگی‌های هر نمونه دسترسی داشت و مقدار آنها را تغییر داد. اما این پرسش مطرح می‌شود که آیا همۀ ویژگی‌های یک کلاس باید به‌صورت آزاد قابل تغییر باشند؟</p>
+<p>ویژگی‌های عمومی (<code>Public</code>) در حالت عادی، ویژگی‌های یک کلاس، عمومی (<code>Public</code>) هستند. یعنی از هر بخش از برنامه می‌توان به آنها دسترسی داشت و مقدارشان را تغییر داد. برخی ویژگی‌ها حتی اگر به‌صورت عمومی تعریف شوند، مشکلی ایجاد نمی‌کنند؛ زیرا تغییر آنها باعث بروز خطای منطقی در برنامه نمی‌شود. در کلاس <code>Mobile</code> که قبلاً ساختیم، سه ویژگی <code>brand</code> ،<code>model</code> و <code>color</code> از این نوع هستند زیرا:</p>
+<p>تغییر آنها خطرناک نیست.</p>
+<p>نیازی به کنترل خاص ندارند.</p>
+<p>بنابراین می‌توانند به‌صورت <code>Public</code> باقی بمانند.</p>
+<p>حال فرض کنید ویژگی باتری گوشی را نیز به‌صورت عمومی تعریف کنید (برای سادگی، فرض کنید مقدار اولیه باتری 100% در نظر گرفته شده است):</p>
+<div class="code-wrap" dir="ltr"><pre><code>self.battery = 100
+</code></pre></div>
+<p>در این حالت، می‌توان مقدار باتری را به شکل زیر تغییر داد:</p>
+<div class="code-wrap" dir="ltr"><pre><code>my_mobile.battery = 150
+my_mobile.battery = -20
+</code></pre></div>
+<hr /></article><article class="lesson" lang="en" dir="ltr" data-lang-block="en" hidden><p class="page-mark">Page 244</p>
+<p>2 <code>Gaming</code> <code>phone:</code> A type of smart phone that, in addition to having all the capabilities of a <code>Smartphone</code>, is specially designed for running games and has stronger hardware features.</p>
+<p>Has a strong, separate graphics processor attribute Has a high graphics memory attribute</p>
+<p><img alt="Book illustration" src="../images/p250-01.png" /></p>
+<p><img alt="Book illustration" src="../images/p250-03.png" /></p>
+<p><img alt="Figure 11 Basic mobile, smart phone, and gaming mobile" src="../images/p250-02.png" /></p>
+<p>Figure 11 Basic mobile, smart phone, and gaming mobile</p>
+<p>Following this decision, the company’s programmers have been asked to write and define the necessary classes for specialized mobiles.</p>
+<p>Table 2</p>
+<p>Processor</p>
+<p>Brand</p>
+<p>Model</p>
+<p>Color Status</p>
+<p>CameraOperating system1</p>
+<p>Memory</p>
+<p>Graphics</p>
+<div class="code-wrap" dir="ltr"><pre><code>Mobile
+</code></pre></div>
+<p></p>
+<p></p>
+<p></p>
+<p></p>
+<p></p>
+<p></p>
+<p></p>
+<p></p>
+<div class="code-wrap" dir="ltr"><pre><code>Smartphone
+</code></pre></div>
+<p></p>
+<p></p>
+<p></p>
+<p></p>
+<p></p>
+<p></p>
+<p></p>
+<p></p>
+<div class="code-wrap" dir="ltr"><pre><code>GamingPhone
+</code></pre></div>
+<p></p>
+<p></p>
+<p></p>
+<p></p>
+<p></p>
+<p></p>
+<p></p>
+<p></p>
+<p>As you see in the table, all phones have common attributes: brand, model, color, and status. Therefore, redefining these attributes in each of the specialized phone classes would lead to code repetition.</p>
+<p>To avoid code repetition and make better use of the phones’ shared attributes, you can use the concept of inheritance (<code>Inheritance</code>) in object-oriented programming.</p>
+<p>Inheritance means that a new class can inherit the attributes (<code>Attributes</code>) and behavior (<code>Method</code>) of another class and use them.</p>
+<p>In this approach, first a more general class is defined that includes the attributes common to all phones, such as brand, model, color, and status. This type of class is called a parent class (<code>Parent</code> <code>class</code> or <code>Super</code> <code>class</code>).</p>
+<p>In this example, the <code>Mobile</code> class, as the parent class, includes all attributes common to all mobiles.</p>
+<div class="code-wrap" dir="ltr"><pre><code>1- Operating System
+</code></pre></div>
+<hr />
+<p class="page-mark">Page 245</p>
+<p><img alt="Book illustration" src="../images/p251-01.png" /></p>
+<p>Then more specialized classes are created based on the base class. These classes are called child classes (<code>Child</code> <code>class</code>). For example, the <code>Smartphone</code> class, which inherits from the <code>Mobile</code> class, automatically has all attributes of the <code>Mobile</code> class and can, in addition, define its own specialized attributes and behaviors such as operating system and camera.</p>
+<p>Using this approach has the following results:</p>
+<p>Reduced amount of coding Increased code readability Improved program maintainability</p>
+<p><strong>Figure 12</strong></p>
+<p>Next, a new class named <code>SmartPhone</code> is defined that inherits from the <code>Mobile</code> class.</p>
+<p>Please look at the code of Figure 13.</p>
+<p><img alt="Book illustration" src="../images/p251-02.png" /></p>
+<p>General attributes shared between the two classes Specialized attributes of this class only</p>
+<p>Figure 13 Defining the <code>SmartPhone</code> class</p>
+<p>Line 16: On this line, a class named <code>SmartPhone</code> is defined that inherits from the <code>Mobile</code> class.</p>
+<p>This means that the <code>SmartPhone</code> class, in addition to its own attributes and methods, has inherited all attributes and methods of the <code>Mobile</code> class and has access to them.</p>
+<p>In this situation, the <code>Mobile</code> class is called the parent class (<code>Parent</code> <code>class</code> or <code>Super</code> <code>class</code>).</p>
+<p>The <code>SmartPhone</code> class is called the child class (<code>Child</code> <code>class</code>).</p>
+<p>On this line, after the name of the <code>SmartPhone</code> class, the name of the parent class (<code>Parent</code> <code>class</code>) must be written inside parentheses.</p>
+<p>Line 17: On this line, the constructor method (<code>__init__</code>) of the <code>SmartPhone</code> class is defined.</p>
+<p>This method runs automatically when a new instance of the <code>SmartPhone</code> class is created.</p>
+<hr />
+<p class="page-mark">Page 246</p>
+<p>The parameters of this constructor include the phone’s general attributes (<code>brand</code>, <code>model</code>, and<code>color</code>) as well as the smart phone’s specialized attributes (<code>os</code> and <code>camera</code>).</p>
+<p>Line 18: On this line, the parent class (<code>Mobile</code>) constructor is called using the <code>super</code> function.</p>
+<p>The <code>super</code> method is used to access the parent class’s methods and attributes in the topic of inheritance.</p>
+<p>When a class inherits from another class, using <code>super</code> you can call the parent class’s methods without writing the parent class’s name directly.</p>
+<p>Note that in this statement only the attributes shared by the child class and the parent class are sent to the <code>__init__</code> method of the parent class.</p>
+<p>This performs the initialization of the attributes defined in the <code>Mobile</code> class.</p>
+<p>Note that if this line of code is not written, the parent class attributes are not initialized in the child class.</p>
+<p>In this way, code repetition is avoided and attributes shared between classes are managed properly.</p>
+<p>Line 19: On this line, the <code>os</code> attribute is created for the current instance and its value is set equal to the value of the <code>os</code> input parameter.</p>
+<p>This attribute represents the smart phone’s operating system.</p>
+<p>Line 20: On this line, the <code>camera</code> attribute is created for the current instance and its value is set equal to the value of the <code>camera</code> input parameter.</p>
+<p>This attribute stores the specifications of the smart phone’s camera.</p>
+<p>Line 23: On this line, an instance (<code>Instance</code>) of the <code>SmartPhone</code> class is created.</p>
+<p>When this instance is created, the <code>SmartPhone</code> class constructor method runs and the values sent are assigned to the parameters.</p>
+<p>In addition, by using the <code>super</code> function, the parent class (<code>Mobile</code>) constructor runs so that the phone’s basic attributes, which are defined in the parent class, are initialized.</p>
+<p><img alt="Book illustration" src="../images/p252-01.png" /></p>
+<p>Line 24: On this line, the value of the <code>os</code> attribute of the <code>my_smartphone</code> instance is read and printed in the program output.</p>
+<p>The output of this statement will be the value <code>"android"</code>.</p>
+<p><strong>Figure 14</strong></p>
+<h3 id="activity">Activity</h3>
+<p>Add statements to the program above so that the other attributes of the <code>my_smartphone</code> instance are printed.</p>
+<hr />
+<p class="page-mark">Page 247</p>
+<p>Calling parent class methods through the child class:</p>
+<p>So far you have seen that the <code>SmartPhone</code> class has inherited the attributes of the <code>Mobile</code> class. If you look at the <code>SmartPhone</code> class code, other than the <code>__init__</code> method there is no other method inside it. To check whether it has also inherited methods from the parent class (<code>Parent</code>), write the following statement at the end of the program and run the program:</p>
+<div class="code-wrap" dir="ltr"><pre><code>brand: samsung model: s25 color: gray  )(my_smartphon.show_info
+</code></pre></div>
+<p><strong>Figure 15</strong></p>
+<p>By observing the output, you see that the <code>my_smartphone</code> instance has inherited the <code>show_info</code> method from the <code>Mobile</code> class.</p>
+<h3 id="activity_1">Activity</h3>
+<p>Add statements to the program above so that the other methods of the <code>my_smartphone</code> instance are called and run.</p>
+<p>Creating a method in the child class independent of the parent:</p>
+<p>Here a question arises: can a child class (<code>Child</code> <code>class</code>) have methods of its own independently?</p>
+<p>The answer is yes. For this purpose, you can define new, independent methods inside the child class and use them.</p>
+<p>Next, you add to the <code>SmartPhone</code> class the methods <code>take_picture</code> for taking a photo and <code>show_os_info</code> for displaying the operating system name attribute. Carefully write and run the code of Figure 16.</p>
+<p><img alt="Figure 16 Defining two new methods inside the SmartPhone class" src="../images/p253-01.png" /></p>
+<p>Figure 16 Defining two new methods inside the <code>SmartPhone</code> class</p>
+<hr />
+<p class="page-mark">Page 248</p>
+<p>Lines 22 and 23: On these lines, the <code>take_picture</code> method is defined, and inside it a message stating success in taking a photo is printed.</p>
+<p>Lines 25 and 26: On these lines, the <code>show_os_info</code> method is defined, and inside it the operating system attribute details are printed.</p>
+<p>Overriding a parent method inside the child class (<code>Method</code> <code>Override</code>) You know that in the <code>Mobile</code> class a method named <code>show_info</code> is defined that displays the phone’s general information. Now if a class such as <code>SmartPhone</code> inherits from the <code>Mobile</code> class, this method is also transferred to the child class and can be used without change.</p>
+<p>On smart phones, in addition to general information, displaying more information such as the operating system name and camera specifications matters. Using the parent class’s <code>show_info</code> method directly is not enough for the <code>SmartPhone</code> class, and the behavior of this method needs to change to match the child class’s attributes.</p>
+<p>To solve this problem, the <code>show_info</code> method is overridden in the <code>SmartPhone</code> class. In this way, you can first run the parent class method with the <code>super</code>() statement and then display the new information needed. This causes the parent method’s statements to run first in the overridden method of the child class, and then the new statements to be written and run.</p>
+<p>Now you can add the <code>show_info</code> method to the <code>SmartPhone</code> class according to the code below and observe the result of running the program.</p>
+<figure class="shot"><img alt="Figure 17" src="../images/p254-01.png" /><figcaption>Figure 17</figcaption></figure>
+<p>On the first line of the code, a method named <code>show_info</code> is defined inside the <code>SmartPhone</code> class. The name of this method is exactly the same as the name of the method in the parent class; for that reason this method is recognized as an override (<code>Override</code>) of the parent class method.</p>
+<p>On the second line, using the <code>super</code> method, the <code>show_info</code> method from the parent class (<code>Mobile</code>) is run. In this way, the phone’s general information such as brand, model, and color, which are defined in the parent class, are displayed at the beginning of this same method.</p>
+<p>On the third line, the value of the <code>os</code> attribute, which belongs to the <code>SmartPhone</code> class, is printed. This attribute represents the smart phone’s operating system name and does not exist in the parent class.</p>
+<p>On the last line, the value of the <code>camera</code> attribute is displayed. This attribute is also specific to the <code>SmartPhone</code> class and shows the specifications of the smart phone’s camera.</p>
+<hr />
+<p class="page-mark">Page 249</p>
+<p>Overriding a parent method in the child class in such a way that the method name stays the same but how it runs changes is called method overriding or <code>Method</code> <code>Override</code>.</p>
+<h3 id="activity_2">Activity</h3>
+<p>Based on what you have learned so far, implement the <code>GamingPhone</code> class according to the explanations below:</p>
+<p>The <code>GamingPhone</code> class inherits from the <code>SmartPhone</code> class.</p>
+<p>This class, in addition to the attributes inherited from the base class <code>Mobile</code> and the <code>SmartPhone</code> class, includes the two specialized attributes below:</p>
+<p><code>gpu:</code> graphics processor name <code>vram:</code> amount of graphics memory This class, in addition to the methods inherited from the <code>Mobile</code> and <code>SmartPhone</code> classes, also includes the following method:</p>
+<p>The <code>gaming_mode</code> method: When called, this method prints an appropriate message showing that the phone’s gaming mode is active.</p>
+<p>The printed message can include the phone name, the graphics processor name, and the amount of graphics memory.</p>
+<p>So far you have become familiar with defining the <code>Mobile</code> class and creating instances of it. You also saw that you can access each instance’s attributes and change their values. But this question arises: should all attributes of a class be freely changeable?</p>
+<p>Public attributes (<code>Public</code>) By default, a class’s attributes are public (<code>Public</code>). That is, from any part of the program you can access them and change their values. Some attributes cause no problem even if they are defined as public, because changing them does not cause a logic error in the program. In the <code>Mobile</code> class you built earlier, the three attributes <code>brand</code>, <code>model</code>, and <code>color</code> are of this type because:</p>
+<p>Changing them is not dangerous.</p>
+<p>They do not need special control.</p>
+<p>Therefore they can remain <code>Public</code>.</p>
+<p>Now suppose you also define the phone’s battery attribute as public (for simplicity, assume the battery’s initial value is set to 100%):</p>
+<div class="code-wrap" dir="ltr"><pre><code>self.battery = 100
+</code></pre></div>
+<p>In this case, you can change the battery value as follows:</p>
+<div class="code-wrap" dir="ltr"><pre><code>my_mobile.battery = 150
+my_mobile.battery = -20
+</code></pre></div>
+<hr /></article>
+      <aside class="extra">
+        <h2 data-fa="تمرین این بخش" data-en="Exercises for this section">تمرین این بخش</h2>
+        <p class="extra-note" data-fa="این تمرین‌ها و پیوندها اضافه بر متن کتاب‌اند." data-en="These exercises and links are in addition to the book.">این تمرین‌ها و پیوندها اضافه بر متن کتاب‌اند.</p>
+        <ol><li data-fa="کلاس Smartphone را از Mobile بساز که ویژگی دوربین دارد. یک شیء بساز و هم متد والد و هم متد take_picture را اجرا کن." data-en="Build a Smartphone class from Mobile that adds a camera attribute. Create one object and run both a parent method and take_picture.">کلاس Smartphone را از Mobile بساز که ویژگی دوربین دارد. یک شیء بساز و هم متد والد و هم متد take_picture را اجرا کن.</li><li data-fa="show_info را در فرزند بازنویسی کن تا همان نام متد، جمله دوربین را هم چاپ کند." data-en="Override show_info in the child so the same method name also prints a camera sentence.">show_info را در فرزند بازنویسی کن تا همان نام متد، جمله دوربین را هم چاپ کند.</li></ol>
+        <h2 data-fa="پیوند مفید" data-en="Useful link">پیوند مفید</h2><ul><li><a href="https://docs.python.org/3/tutorial/classes.html#inheritance" data-fa="وراثت" data-en="Inheritance">وراثت</a></li></ul>
+      </aside>
+    <nav class="pager"><a rel="prev" class="prev" href="p4-class.html"><span class="pager-word" data-fa="قبلی" data-en="Previous">قبلی</span><span class="pager-name" data-fa="ساخت کلاس و متد" data-en="Writing a class and methods">ساخت کلاس و متد</span></a><a rel="next" class="next" href="p4-protect.html"><span class="pager-word" data-fa="بعدی" data-en="Next">بعدی</span><span class="pager-name" data-fa="داده معتبر و استفاده داخلی" data-en="Valid data and internal use">داده معتبر و استفاده داخلی</span></a></nav>
+    </div>
+  </div>
+  <script src="../assets/search-index.js?v=4"></script>
+  <script src="../assets/app.js?v=4"></script>
+</body>
+</html>

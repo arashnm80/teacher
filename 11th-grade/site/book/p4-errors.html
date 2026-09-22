@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title data-fa="پیمایش فایل و مدیریت خطا" data-en="Walking a file and handling errors">پیمایش فایل و مدیریت خطا</title>
+  <link rel="icon" href="../assets/favicon.svg">
+  <link rel="stylesheet" href="../assets/style.css?v=4">
+</head>
+<body data-root="../">
+  <header class="top">
+    <a class="brand" href="../index.html">
+      <span data-fa="طراح سایت" data-en="Site Design">طراح سایت</span>
+      <small data-fa="پایه یازدهم" data-en="Grade 11">پایه یازدهم</small>
+    </a>
+    <div class="search-wrap">
+      <input id="q" type="search" autocomplete="off"
+        data-fa-placeholder="جستجو در درس‌ها" data-en-placeholder="Search lessons"
+        placeholder="جستجو در درس‌ها">
+      <div id="results" class="results" hidden></div>
+    </div>
+    <a class="download" href="../grade11-offline.zip?v=2" data-fa="دانلود کل سایت" data-en="Download the whole site">دانلود کل سایت</a>
+    <button type="button" id="lang-toggle" class="lang-toggle" dir="ltr" data-lang="fa"
+      aria-label="تغییر زبان">
+      <span data-opt="fa">فا</span>
+      <span data-opt="en">EN</span>
+    </button>
+  </header>
+  <div class="layout">
+    <details class="toc" open><summary><span data-fa="فهرست درس‌ها" data-en="Lesson list">فهرست درس‌ها</span></summary><nav class="side" aria-label="lessons"><p class="mod" data-fa="شروع کتاب" data-en="Opening">شروع کتاب</p><p class="unit" data-fa="فهرست" data-en="Contents">فهرست</p><a class="" href="toc.html" data-fa="فهرست" data-en="Contents">فهرست</a><p class="mod" data-fa="پودمان ۱: برنامه‌نویسی پایتون" data-en="Module 1: Python programming">پودمان ۱: برنامه‌نویسی پایتون</p><p class="unit" data-fa="معرفی پودمان" data-en="Module introduction">معرفی پودمان</p><a class="" href="p1-intro.html" data-fa="معرفی پودمان پایتون" data-en="Introducing the Python module">معرفی پودمان پایتون</a><p class="unit" data-fa="مدل‌سازی داده" data-en="Data modeling">مدل‌سازی داده</p><a class="" href="p1-python.html" data-fa="پایتون و محیط برنامه‌نویسی" data-en="Python and the programming environment">پایتون و محیط برنامه‌نویسی</a><a class="" href="p1-vars.html" data-fa="متغیرها، نوع داده و عملگرها" data-en="Variables, types, and operators">متغیرها، نوع داده و عملگرها</a><a class="" href="p1-cast.html" data-fa="ورودی و تبدیل نوع" data-en="Input and type casting">ورودی و تبدیل نوع</a><a class="" href="p1-lists.html" data-fa="لیست‌ها" data-en="Lists">لیست‌ها</a><a class="" href="p1-if.html" data-fa="شرط‌های ساده" data-en="Simple conditions">شرط‌های ساده</a><a class="" href="p1-elif.html" data-fa="if، elif و else" data-en="if, elif, and else">if، elif و else</a><a class="" href="p1-for.html" data-fa="حلقه for و range" data-en="The for loop and range">حلقه for و range</a><a class="" href="p1-while.html" data-fa="حلقه while و کنترل حلقه" data-en="The while loop and loop control">حلقه while و کنترل حلقه</a><a class="" href="p1-assess-data.html" data-fa="ارزشیابی مدل‌سازی داده" data-en="Data-modeling assessment">ارزشیابی مدل‌سازی داده</a><p class="unit" data-fa="توابع و ماژول‌ها" data-en="Functions and modules">توابع و ماژول‌ها</p><a class="" href="p1-sets.html" data-fa="مجموعه (set)" data-en="Sets">مجموعه (set)</a><a class="" href="p1-dict.html" data-fa="دیکشنری" data-en="Dictionaries">دیکشنری</a><a class="" href="p1-quiz.html" data-fa="پروژه بازی Quiz" data-en="Quiz game project">پروژه بازی Quiz</a><a class="" href="p1-tuple.html" data-fa="تاپل" data-en="Tuples">تاپل</a><a class="" href="p1-func.html" data-fa="تعریف تابع، پارامتر و return" data-en="Defining functions, parameters, and return">تعریف تابع، پارامتر و return</a><a class="" href="p1-func-more.html" data-fa="تمرین تابع و مرتب‌سازی" data-en="Function practice and sorting">تمرین تابع و مرتب‌سازی</a><a class="" href="p1-modules.html" data-fa="ماژول‌ها و تفاوت تابع و متد" data-en="Modules, and functions versus methods">ماژول‌ها و تفاوت تابع و متد</a><a class="" href="p1-assess-func.html" data-fa="ارزشیابی توابع و ماژول‌ها" data-en="Functions and modules assessment">ارزشیابی توابع و ماژول‌ها</a><p class="mod" data-fa="پودمان ۲: صفحات وب ایستا" data-en="Module 2: Static web pages">پودمان ۲: صفحات وب ایستا</p><p class="unit" data-fa="معرفی پودمان" data-en="Module introduction">معرفی پودمان</p><a class="" href="p2-intro.html" data-fa="معرفی پودمان صفحات ایستا" data-en="Introducing static web pages">معرفی پودمان صفحات ایستا</a><p class="unit" data-fa="ساختار با HTML" data-en="Structure with HTML">ساختار با HTML</p><a class="" href="p2-web.html" data-fa="وب چگونه کار می‌کند" data-en="How the web works">وب چگونه کار می‌کند</a><a class="" href="p2-concepts.html" data-fa="مفاهیم طراحی وب و نقشه سایت" data-en="Web-design concepts and the site map">مفاهیم طراحی وب و نقشه سایت</a><a class="" href="p2-tags.html" data-fa="اولین صفحه HTML" data-en="A first HTML page">اولین صفحه HTML</a><a class="" href="p2-text.html" data-fa="متن، لیست و پیوند" data-en="Text, lists, and links">متن، لیست و پیوند</a><a class="" href="p2-img.html" data-fa="تصویر در صفحه" data-en="Images on the page">تصویر در صفحه</a><a class="" href="p2-forms.html" data-fa="فرم‌ها" data-en="Forms">فرم‌ها</a><a class="" href="p2-semantic.html" data-fa="عناصر معنایی" data-en="Semantic elements">عناصر معنایی</a><a class="" href="p2-assess-html.html" data-fa="ارزشیابی HTML" data-en="HTML assessment">ارزشیابی HTML</a><p class="unit" data-fa="ظاهر با CSS" data-en="Appearance with CSS">ظاهر با CSS</p><a class="" href="p2-css-start.html" data-fa="نوشتن CSS" data-en="Writing CSS">نوشتن CSS</a><a class="" href="p2-css-look.html" data-fa="رنگ، پس‌زمینه و انتخاب‌گر" data-en="Color, background, and selectors">رنگ، پس‌زمینه و انتخاب‌گر</a><a class="" href="p2-box.html" data-fa="مدل جعبه‌ای و display" data-en="The box model and display">مدل جعبه‌ای و display</a><a class="" href="p2-flex.html" data-fa="چیدمان با Flexbox" data-en="Layout with Flexbox">چیدمان با Flexbox</a><a class="" href="p2-flex-work.html" data-fa="کارگاه چیدمان صفحه" data-en="Page-layout workshop">کارگاه چیدمان صفحه</a><a class="" href="p2-media.html" data-fa="مدیا کوئری و ارزشیابی CSS" data-en="Media queries and the CSS assessment">مدیا کوئری و ارزشیابی CSS</a><p class="mod" data-fa="پودمان ۳: صفحات وب تعاملی" data-en="Module 3: Interactive web pages">پودمان ۳: صفحات وب تعاملی</p><p class="unit" data-fa="معرفی پودمان" data-en="Module introduction">معرفی پودمان</p><a class="" href="p3-intro.html" data-fa="معرفی پودمان تعاملی" data-en="Introducing the interactive module">معرفی پودمان تعاملی</a><p class="unit" data-fa="بوت‌استرپ" data-en="Bootstrap">بوت‌استرپ</p><a class="" href="p3-bs-start.html" data-fa="فریم‌ورک و شروع بوت‌استرپ" data-en="Frameworks and starting Bootstrap">فریم‌ورک و شروع بوت‌استرپ</a><a class="" href="p3-bs-util.html" data-fa="فاصله، گردی و لیست" data-en="Spacing, rounding, and lists">فاصله، گردی و لیست</a><a class="" href="p3-bs-header.html" data-fa="سرصفحه فروشگاه" data-en="The shop header">سرصفحه فروشگاه</a><a class="" href="p3-bs-grid.html" data-fa="شبکه Grid" data-en="The grid">شبکه Grid</a><a class="" href="p3-bs-rwd.html" data-fa="کلاس‌های واکنش‌گرا" data-en="Responsive classes">کلاس‌های واکنش‌گرا</a><a class="" href="p3-bs-nav.html" data-fa="نوار ناوبری و جزئیات محصول" data-en="Navbar and product details">نوار ناوبری و جزئیات محصول</a><a class="" href="p3-bs-form.html" data-fa="فرم و پنجره Modal" data-en="Forms and modals">فرم و پنجره Modal</a><a class="" href="p3-bs-show.html" data-fa="کاروسل و آکاردئون" data-en="Carousel and accordion">کاروسل و آکاردئون</a><a class="" href="p3-bs-assess.html" data-fa="ارزشیابی بوت‌استرپ" data-en="Bootstrap assessment">ارزشیابی بوت‌استرپ</a><p class="unit" data-fa="جاوااسکریپت" data-en="JavaScript">جاوااسکریپت</p><a class="" href="p3-js-start.html" data-fa="جاوااسکریپت در صفحه وب" data-en="JavaScript on the page">جاوااسکریپت در صفحه وب</a><a class="" href="p3-js-vars.html" data-fa="متغیر و نوع داده" data-en="Variables and data types">متغیر و نوع داده</a><a class="" href="p3-js-ops.html" data-fa="عملگرها" data-en="Operators">عملگرها</a><a class="" href="p3-js-data.html" data-fa="آرایه و شیء" data-en="Arrays and objects">آرایه و شیء</a><a class="" href="p3-js-if.html" data-fa="شرط در جاوااسکریپت" data-en="Conditions in JavaScript">شرط در جاوااسکریپت</a><a class="" href="p3-js-loops.html" data-fa="حلقه‌ها" data-en="Loops">حلقه‌ها</a><a class="" href="p3-js-func.html" data-fa="تابع‌ها" data-en="Functions">تابع‌ها</a><a class="" href="p3-js-dom.html" data-fa="صفحه، رویداد و اعتبار فرم" data-en="The page, events, and form validation">صفحه، رویداد و اعتبار فرم</a><a class="" href="p3-js-assess.html" data-fa="ارزشیابی جاوااسکریپت" data-en="JavaScript assessment">ارزشیابی جاوااسکریپت</a><p class="mod" data-fa="پودمان ۴: توسعه وب پایتون" data-en="Module 4: Python for the web">پودمان ۴: توسعه وب پایتون</p><p class="unit" data-fa="معرفی پودمان" data-en="Module introduction">معرفی پودمان</p><a class="" href="p4-intro.html" data-fa="معرفی پودمان شیءگرایی" data-en="Introducing the object-oriented module">معرفی پودمان شیءگرایی</a><p class="unit" data-fa="شیءگرایی" data-en="Object-oriented programming">شیءگرایی</p><a class="" href="p4-idea.html" data-fa="ایده شیء و کلاس" data-en="The idea of objects and classes">ایده شیء و کلاس</a><a class="" href="p4-class.html" data-fa="ساخت کلاس و متد" data-en="Writing a class and methods">ساخت کلاس و متد</a><a class="" href="p4-inherit.html" data-fa="وراثت" data-en="Inheritance">وراثت</a><a class="" href="p4-protect.html" data-fa="داده معتبر و استفاده داخلی" data-en="Valid data and internal use">داده معتبر و استفاده داخلی</a><a class="" href="p4-assess-oop.html" data-fa="ارزشیابی برنامه شیءگرا" data-en="Object-oriented assessment">ارزشیابی برنامه شیءگرا</a><p class="unit" data-fa="فایل و توسعه" data-en="Files and development">فایل و توسعه</p><a class="" href="p4-files.html" data-fa="خواندن و نوشتن فایل متنی" data-en="Reading and writing text files">خواندن و نوشتن فایل متنی</a><a class="current" href="p4-errors.html" data-fa="پیمایش فایل و مدیریت خطا" data-en="Walking a file and handling errors">پیمایش فایل و مدیریت خطا</a><a class="" href="p4-json.html" data-fa="چند فایل و JSON" data-en="Several files and JSON">چند فایل و JSON</a><a class="" href="p4-assess-files.html" data-fa="ارزشیابی کار با فایل" data-en="Files assessment">ارزشیابی کار با فایل</a><p class="mod" data-fa="پودمان ۵: برنامه‌نویسی جنگو" data-en="Module 5: Django">پودمان ۵: برنامه‌نویسی جنگو</p><p class="unit" data-fa="معرفی پودمان" data-en="Module introduction">معرفی پودمان</p><a class="" href="p5-intro.html" data-fa="معرفی پودمان جنگو" data-en="Introducing the Django module">معرفی پودمان جنگو</a><p class="unit" data-fa="ایجاد وب‌اپلیکیشن" data-en="Creating the web app">ایجاد وب‌اپلیکیشن</p><a class="" href="p5-what.html" data-fa="جنگو چیست و نصب" data-en="What Django is, and installing it">جنگو چیست و نصب</a><a class="" href="p5-project.html" data-fa="پروژه، اپ و اولین view" data-en="Project, app, and the first view">پروژه، اپ و اولین view</a><a class="" href="p5-template.html" data-fa="قالب و دمای واقعی" data-en="Templates and a real temperature">قالب و دمای واقعی</a><a class="" href="p5-assess-create.html" data-fa="ارزشیابی ایجاد وب‌اپلیکیشن" data-en="Creating-the-app assessment">ارزشیابی ایجاد وب‌اپلیکیشن</a><p class="unit" data-fa="توسعه وب‌اپلیکیشن" data-en="Developing the web app">توسعه وب‌اپلیکیشن</p><a class="" href="p5-model.html" data-fa="مدل شهر و پنل ادمین" data-en="The city model and the admin">مدل شهر و پنل ادمین</a><a class="" href="p5-list.html" data-fa="خواندن شهرها و نمایش فهرست" data-en="Reading cities and showing the list">خواندن شهرها و نمایش فهرست</a><a class="" href="p5-auth.html" data-fa="ورود و خروج" data-en="Sign-in and sign-out">ورود و خروج</a><a class="" href="p5-crud.html" data-fa="افزودن و حذف شهر" data-en="Adding and deleting a city">افزودن و حذف شهر</a><a class="" href="p5-bugs.html" data-fa="باگ و امنیت" data-en="Bugs and security">باگ و امنیت</a><p class="mod" data-fa="پایان کتاب" data-en="Back of the book">پایان کتاب</p><p class="unit" data-fa="منابع" data-en="References">منابع</p><a class="" href="refs.html" data-fa="منابع کتاب" data-en="Book references">منابع کتاب</a></nav></details>
+    <div class="main">
+      <h1 class="section-title" data-fa="پیمایش فایل و مدیریت خطا" data-en="Walking a file and handling errors">پیمایش فایل و مدیریت خطا</h1><article class="lesson" lang="fa" dir="rtl" data-lang-block="fa"><p class="page-mark">صفحه ۲۶۰</p>
+<p>پیمایش خطوط فایل با حلقه <code>for</code></p>
+<p><img alt="تصویر کتاب" src="../images/p266-02.png" /></p>
+<figure class="shot"><img alt="شکل 27" src="../images/p266-01.png" /><figcaption>شکل 27</figcaption></figure>
+<h3 id="_1">فعالیت</h3>
+<p>کد‌های برنامه را به نحوی تغییردهید که بعد از نام هر برند یک جداکننده قرار گیرد.</p>
+<p>نوشتن در فایل: نوشتن یک خط پس از تعیین مسیر، می‌توانید با استفاده از متد () <code>write_text</code> در یک فایل متنی بنویسید. برای دیدن نحوۀ کار این تابع، یک پیام ساده نوشته و آن را به جای چاپ روی صفحه، در فایل متنی ذخیره کنید (شکل ٧٢):</p>
+<p>پس از نوشتن برنامه و اجرای آن، خروجی در ترمینال مشاهده نمی‌کنید. حالا فایل <code>mobile_brands.txt</code> را باز کنید. مشاهده می‌کنید متن شما در فایل نوشته و محتویات قبلی آن پاک شده است.</p>
+<p>اگر فایل از قبل وجود داشته باشد، ()<code>write_text</code> محتوای فعلی فایل را پاک کرده و محتوای جدید را در فایل می‌نویسد.</p>
+<p>متد ()<code>write_text</code> چند کار را در پشت صحنه انجام می‌دهد. اگر فایلی که مسیر به آن اشاره می‌کند وجود نداشته باشد، آن فایل را ایجاد می‌کند.</p>
+<p>همچنین، پس از نوشتن رشته در فایل، مطمئن می‌شود که فایل به درستی بسته شده است. فایل‌هایی که به درستی بسته نشده‌اند می‌توانند منجر به از دست رفتن یا خراب شدن داده‌ها شوند.</p>
+<figure class="shot"><img alt="شکل 28" src="../images/p266-03.png" /><figcaption>شکل 28</figcaption></figure>
+<h3 id="_2">نکته</h3>
+<p>دو متد <code>read_text</code> و <code>write_text</code> به‌طور داخلی مدیریت بستن فایل را انجام می‌دهند. در این حالت‌ها، <code>pathlib</code> خودش تضمین می‌کند که فایل به‌طور ایمن باز و سپس بسته شود.</p>
+<hr />
+<p class="page-mark">صفحه ۲۶۱</p>
+<p>اضافه کردن برند جدید برای نوشتن بیش از یک خط در یک فایل، باید رشته‌ای بسازید که شامل کل محتوای فایل باشد و سپس () <code>write_text</code> را با آن رشته فراخوانی کنید.</p>
+<p><img alt="تصویر کتاب" src="../images/p267-01.png" /></p>
+<figure class="shot"><img alt="شکل 29" src="../images/p267-02.png" /><figcaption>شکل 29</figcaption></figure>
+<h3 id="_3">فعالیت</h3>
+<p>دو برند دیگر<code>"LG"</code> و<code>"Motorola"</code> را به فایل <code>"mobile_brands.txt"</code> اضافه کنید.</p>
+<h3 id="_4">فعالیت</h3>
+<p>برنامه‌ای بنویسیدکه در یک حلقه مدل تلفن‌های همراه را از کاربر بپرسد. وقتی پاسخ می‌دهد، آنها را در فایلی به نام <code>"mobile_model.txt"</code> بنویسد. هر مدل در یک خط از فایل ظاهر شود.</p>
+<p>مدیریت استثناها (<code>Exceptions</code>) در هنگام اجرای برنامه، ممکن است خطاهایی رخ دهند که باعث توقف برنامه شوند. پایتون برای برخورد با این خطاها از سازوکاری به نام استثنا (<code>Exception</code>) استفاده می‌کند.</p>
+<p><img alt="تصویر کتاب" src="../images/p267-03.png" /></p>
+<p>هر وقت پایتون در اجرای برنامه با مشکلی روبه‌رو شود و نداند چه باید بکند، یک «شیء استثنا» ایجاد می‌کند.</p>
+<p>اگر برنامه‌نویس کدی برای مدیریت آن استثنا نوشته باشد، برنامه بدون توقف به کار خود ادامه می‌دهد. اما اگر استثنا مدیریت نشده باشد، اجرای برنامه متوقف و پیغامی شامل نوع خطا و محل آن نمایش داده می‌شود که به آن ردیابی (<code>Traceback</code>) می‌گویند.</p>
+<p><strong>شکل 30</strong></p>
+<hr />
+<p class="page-mark">صفحه ۲۶۲</p>
+<p>مدیریت خطای اشتباه درنوع داده: گاهی برنامه‌نویس اشتباهًا داده‌ای از نوع نادرست وارد می‌کند. مثًًلا وقتی می‌خواهد رشته‌ای (متن) را به عدد تبدیل کند اما مقدارش فقط متن باشد، خطای <code>ValueError</code> پیش می‌آید:</p>
+<p><img alt="تصویر کتاب" src="../images/p268-01.png" /></p>
+<figure class="shot"><img alt="شکل 31" src="../images/p268-02.png" /><figcaption>شکل 31</figcaption></figure>
+<p><img alt="تصویر کتاب" src="../images/p268-03.png" /></p>
+<p>مدیریت خطای تقسیم بر صفر: یکی از خطاهای رایج در برنامه‌نویسی، تقسیم عدد بر صفر است. این کار از نظر ریاضی ممکن نیست و پایتون سعی می‌کند برنامه را ادامه دهد ولی این کار ممکن نیست، پس برنامه متوقف و پایتون چیزی به اسم ردیابی برگشتی یا همان <code>Traceback</code> نشان می‌دهد.</p>
+<p><strong>شکل 32</strong></p>
+<p>یعنی وقتی پایتون با چنین دستوری روبه‌رو می‌شود، استثنایی به نام <code>ZeroDivisionError</code> ایجاد می‌کند.</p>
+<p>یعنی: خطا دقیقاً در کدام خط پیش آمده است. چه نوع خطایی بوده است (مثلاًً <code>ZeroDivisionError</code> یا <code>ValueError</code>). و تابع یا بخشی از کد که باعث خطا شده است را نشان می‌دهد.</p>
+<figure class="shot"><img alt="شکل 33" src="../images/p268-04.png" /><figcaption>شکل 33</figcaption></figure>
+<p>از این اطلاعات می‌توانید برای اصلاح برنامه استفاده کنید. به پایتون بگویید که هنگام وقوع این نوع استثنا چه کاری انجام دهد. به این ترتیب، اگر دوباره اتفاق بیفتد، آماده خواهید بود.</p>
+<p>مدیریت خطا با بلوک‌های <code>try-except:</code> برای مدیریت استثناها در پایتون از بلوک‌های <code>try</code> و <code>except</code> استفاده می‌شود.</p>
+<p>بخش <code>try</code> شامل دستوری است که ممکن است خطا ایجاد کند.</p>
+<p>بخش <code>except</code> مشخص می‌کند اگر خطایی رخ داد، برنامه چه واکنشی نشان دهد.</p>
+<p>با استفاده از این روش، می‌توانید برنامه‌هایی بنویسید که به جای نمایش پیام‌های پیچیده و گیج‌کننده، پیام‌های قابل فهم به کاربر نشان دهد.</p>
+<hr />
+<p class="page-mark">صفحه ۲۶۳</p>
+<p>مدیریت خطای اشتباه درنوع داده: در این‌جا پایتون نمی‌تواند کلمه <code>"Hello"</code> را به عدد تبدیل کند، پس استثنا تولید می‌شود، اما برنامه با استفاده از بلوک <code>try-except</code> کنترل خطا را در دست می‌گیرد.</p>
+<figure class="shot"><img alt="شکل 34" src="../images/p269-01.png" /><figcaption>شکل 34</figcaption></figure>
+<p>در اینجا پایتون نمی‌تواند عدد 5 را بر عدد 0 تقسیم کند، پس استثنا تولید می‌شود، اما برنامه با استفاده از بلوک <code>try-except</code> کنترل خطا را در دست می‌گیرد.</p>
+<figure class="shot"><img alt="شکل 35" src="../images/p269-02.png" /><figcaption>شکل 35</figcaption></figure>
+<p>استفاده از استثنائات برای جلوگیری از خطا: مدیریت صحیح استثناها (خطاها) زمانی اهمیت حیاتی پیدا می‌کند که برنامه پس از وقوع خطا، همچنان کارهای دیگری برای انجام دادن داشته باشد. این موقعیت به‌ویژه در برنامه‌هایی که به طور مداوم از کاربر ورودی دریافت می‌کنند، رایج است. اگر برنامه بتواند به ورودی نامعتبر به شیوه‌ای مناسب پاسخ دهد، به‌جای متوقف شدن و از کار افتادن، می‌تواند به‌طور هوشمندانه ورودی‌های معتبرتری را از کاربر درخواست کند و به اجرای خود ادامه دهد.</p>
+<p>برای یادگیری این موضوع توضیحاتی که در ادامه آمده است را با دقت بخوانید و انجام دهید.</p>
+<p>این برنامه از کاربر می‌خواهد که عدد اول را وارد کند و اگر کاربر برای خروج <code>q</code> را وارد نکند، عدد دوم را وارد می‌کند.</p>
+<figure class="shot"><img alt="شکل 36" src="../images/p269-03.png" /><figcaption>شکل 36</figcaption></figure>
+<hr />
+<p class="page-mark">صفحه ۲۶۴</p>
+<p>سپس این دو عدد را بر هم تقسیم می‌کند تا به جواب برسد.</p>
+<p>این برنامه هیچ کاری برای مدیریت خطاها انجام نمی‌دهد، اگر کاربر عدد دوم را صفر واردکند، درخواست تقسیم بر صفر باعث از کار افتادن آن می‌شود:</p>
+<figure class="shot"><img alt="شکل 37" src="../images/p270-01.png" /><figcaption>شکل 37</figcaption></figure>
+<h3 id="_5">نکته</h3>
+<p>اگرچه توقف ناگهانی برنامه (<code>crash</code>) قطعًا بد است، اما نمایش جزئیات فنی خطا (<code>Traceback</code>) نیز ایده خوبی نیست. این جزئیات برای کاربران معمولی سردرگم‌کننده است و در محیط‌های مخرب، اطلاعات ارزشمندی را در اختیار مهاجمان قرار می‌دهد. مهاجم با دیدن <code>Traceback</code>، نه تنها نام برنامه شما را می‌فهمد، بلکه می‌تواند بخشی از منطق کد را که دچار نقص شده‌است، مشاهده‌کند. یک مهاجم حرفه‌ای می‌تواند از این اطلاعات برای فهمیدن اینکه دقیقاً چه نوع حملاتی را باید علیه کد شما به کار ببرد، استفاده کند.</p>
+<p>کاربرد <code>The</code> <code>else</code> <code>Block:</code> وقتی در پایتون از دستورات <code>try</code> و <code>except</code> استفاده کنید، در واقع به مفسر (رایانه) می‌گویید: "یک کار را امتحان کن، و اگر خراب شد، این کار جایگزین را انجام بده." حالا، بلوک <code>else</code> دقیقًا به چه دردی می‌خورد؟</p>
+<p><img alt="تصویر کتاب" src="../images/p270-02.png" /></p>
+<p><code>else</code> یعنی: "فقط و فقط در صورتی این کار را انجام بده که بلوک <code>try</code> کاملاً، بدون هیچ خطایی، موفقیت‌آمیز بود."</p>
+<p><strong>شکل 38</strong></p>
+<hr />
+<p class="page-mark">صفحه ۲۶۵</p>
+<p>اگر خطایی در بلوک <code>try</code> (مثلاًً تقسیم عدد بر صفر) رخ دهد، پایتون مستقیم به بلوک <code>except</code> می‌رود و بلوک <code>else</code> کاملاً نادیده گرفته می‌شود. این قابلیت کمک می‌کند، کدی را که فقط پس از موفقیت کامل اجرا شود (مثلاًً نمایش نتیجه نهایی یا ذخیره در فایل)، از کدی که فقط برای تست خطا نوشته شده جدا کنید. این کار برنامه را هم تمیزتر و هم منطقی‌تر می‌کند.</p>
+<p><img alt="تصویر کتاب" src="../images/p271-01.png" /></p>
+<figure class="shot"><img alt="شکل 39" src="../images/p271-02.png" /><figcaption>شکل 39</figcaption></figure>
+<p><img alt="تصویر کتاب" src="../images/p271-03.png" /></p>
+<p>مدیریت خطای <code>File</code> <code>Not</code> <code>Found</code> <code>Error:</code> این خطا یکی از رایج‌ترین استثناهایی است که برنامه‌نویسان هنگام کار با فایل‌ها با آن روب‌هرو می‌شوند. دلایل متعددی برای این خطا وجود دارد: مسیر اشتباه، نام فایل غلط، یا حذف شدن فایل.</p>
+<p>بلوک <code>try-except</code> اجازه می‌دهد که کد را اجرا کنید و در صورت بروز این مشکل خاص، به جای متوقف شدن برنامه، یک واکنش مناسب نشان دهید.</p>
+<p><strong>شکل 40</strong></p>
+<p><img alt="تصویر کتاب" src="../images/p271-04.png" /></p>
+<p>در مثال برنامه تلاش می‌کند فایلی را که اصًلا وجود ندارد بخواند.</p>
+<p><strong>شکل 41</strong></p>
+<hr />
+<p class="page-mark">صفحه ۲۶۶</p>
+<figure class="shot"><img alt="شکل 42" src="../images/p272-01.png" /><figcaption>شکل 42</figcaption></figure>
+<p>توجه داشته باشید که از متد ()<code>read_text</code> کمی متفاوت از آنچه قبلاً دیدید استفاده شده است. آرگومان <code>encoding</code> زمانی ضروری است که کدگذاری پیش‌فرض سیستم شما با کدگذاری فایلی که در حال خواندن آن هستید مطابقت نداشته باشد. این وضعیت به احتمال زیاد هنگام خواندن فایلی رخ می‌دهد که روی سیستم شما ایجاد نشده باشد.</p>
+<p>پایتون نمی‌تواند از یک فایلی که وجود ندارد بخواند، بنابراین یک استثنا (<code>Exception</code>) ایجاد می‌کند (به عبارتی، خطا صادر می‌کند).</p>
+<p>بنابراین برای مدیریت خطایی که ایجاد می‌شود، بلوک <code>try</code> با خطی که در <code>traceback</code> به عنوان مشکل‌ساز شناسایی شده است، آغاز می‌شود.</p>
+<figure class="shot"><img alt="شکل 43" src="../images/p272-02.png" /><figcaption>شکل 43</figcaption></figure>
+<p>در مثال کد خط ٤ که شامل ()<code>read_text</code> است باعث بروز خطا شده است.</p>
+<p>در این مثال، کد موجود در بلوک <code>try</code> خطای <code>FileNotFoundError</code> تولید می‌کند، بنابراین یک بلوک <code>except</code> که با خطا مطابقت دارد، باید نوشته شود. سپس پایتون کد موجود در آن بلوک را زمانی که فایل پیدا نمی‌شود اجرا می‌کند و نتیجه به جای یک <code>traceback</code>، یک پیام خطای کاربرپسند است:</p>
+<figure class="shot"><img alt="شکل 44" src="../images/p272-03.png" /><figcaption>شکل 44</figcaption></figure>
+<hr /></article><article class="lesson" lang="en" dir="ltr" data-lang-block="en" hidden><p class="page-mark">Page 260</p>
+<p>Traversing the lines of a file with a <code>for</code> loop</p>
+<p><img alt="Book image" src="../images/p266-02.png" /></p>
+<figure class="shot"><img alt="Figure 27" src="../images/p266-01.png" /><figcaption>Figure 27</figcaption></figure>
+<h3 id="activity">Activity</h3>
+<p>Change the program code so that a separator is placed after the name of each brand.</p>
+<p>Writing to a file: Writing one line After you set the path, you can write to a text file using the <code>write_text</code>() method. To see how this function works, write a simple message and store it in a text file instead of printing it on the screen (Figure 72):</p>
+<p>After writing the program and running it, you do not see output in the terminal. Now open the file <code>mobile_brands.txt</code>. You see that your text has been written in the file and its previous contents have been erased.</p>
+<p>If the file already exists, <code>write_text</code>() clears the current contents of the file and writes the new content in the file.</p>
+<p>The <code>write_text</code>() method does several things behind the scenes. If the file that the path points to does not exist, it creates that file.</p>
+<p>Also, after writing the string to the file, it makes sure the file is closed correctly. Files that are not closed correctly can lead to data being lost or corrupted.</p>
+<figure class="shot"><img alt="Figure 28" src="../images/p266-03.png" /><figcaption>Figure 28</figcaption></figure>
+<h3 id="note">Note</h3>
+<p>The two methods <code>read_text</code> and <code>write_text</code> handle closing the file internally. In these cases, <code>pathlib</code> itself guarantees that the file is opened and then closed safely.</p>
+<hr />
+<p class="page-mark">Page 261</p>
+<p>Adding a new brand To write more than one line to a file, you must build a string that includes the entire contents of the file and then call <code>write_text</code>() with that string.</p>
+<p><img alt="Book image" src="../images/p267-01.png" /></p>
+<figure class="shot"><img alt="Figure 29" src="../images/p267-02.png" /><figcaption>Figure 29</figcaption></figure>
+<h3 id="activity_1">Activity</h3>
+<p>Add two more brands, <code>"LG"</code> and <code>"Motorola"</code>, to the file <code>"mobile_brands.txt"</code>.</p>
+<h3 id="activity_2">Activity</h3>
+<p>Write a program that, in a loop, asks the user for mobile phone models. When the user answers, write them to a file named <code>"mobile_model.txt"</code>. Each model should appear on one line of the file.</p>
+<p>Managing exceptions (<code>Exceptions</code>) While a program is running, errors may occur that cause the program to stop. Python uses a mechanism called an exception (<code>Exception</code>) to deal with these errors.</p>
+<p><img alt="Book image" src="../images/p267-03.png" /></p>
+<p>Whenever Python faces a problem while running the program and does not know what to do, it creates an “exception object.”</p>
+<p>If the programmer has written code to manage that exception, the program continues without stopping. But if the exception has not been managed, execution of the program stops and a message is displayed that includes the type of error and its location; this is called a traceback (<code>Traceback</code>).</p>
+<p><strong>Figure 30</strong></p>
+<hr />
+<p class="page-mark">Page 262</p>
+<p>Managing a wrong data-type error: Sometimes the programmer mistakenly enters data of the wrong type. For example, when they want to convert a string (text) to a number but its value is only text, a <code>ValueError</code> occurs:</p>
+<p><img alt="Book image" src="../images/p268-01.png" /></p>
+<figure class="shot"><img alt="Figure 31" src="../images/p268-02.png" /><figcaption>Figure 31</figcaption></figure>
+<p><img alt="Book image" src="../images/p268-03.png" /></p>
+<p>Managing a division-by-zero error: One of the common errors in programming is dividing a number by zero. This is not possible mathematically, and Python tries to continue the program but that is not possible, so the program stops and Python shows something called a traceback, or <code>Traceback</code>.</p>
+<p><strong>Figure 32</strong></p>
+<p>That is, when Python faces such a statement, it creates an exception named <code>ZeroDivisionError</code>.</p>
+<p>That is: exactly which line the error occurred on. What type of error it was (for example, <code>ZeroDivisionError</code> or <code>ValueError</code>). And it shows the function or part of the code that caused the error.</p>
+<figure class="shot"><img alt="Figure 33" src="../images/p268-04.png" /><figcaption>Figure 33</figcaption></figure>
+<p>You can use this information to fix the program. Tell Python what to do when this type of exception occurs. That way, if it happens again, you will be ready.</p>
+<p>Managing errors with <code>try-except</code> blocks: To manage exceptions in Python, <code>try</code> and <code>except</code> blocks are used.</p>
+<p>The <code>try</code> section contains the statement that may cause an error.</p>
+<p>The <code>except</code> section specifies how the program should react if an error occurs.</p>
+<p>Using this method, you can write programs that show understandable messages to the user instead of displaying complex and confusing messages.</p>
+<hr />
+<p class="page-mark">Page 263</p>
+<p>Managing a wrong data-type error: Here Python cannot convert the word <code>"Hello"</code> to a number, so an exception is produced, but the program takes control of the error using a <code>try-except</code> block.</p>
+<figure class="shot"><img alt="Figure 34" src="../images/p269-01.png" /><figcaption>Figure 34</figcaption></figure>
+<p>Here Python cannot divide the number 5 by the number 0, so an exception is produced, but the program takes control of the error using a <code>try-except</code> block.</p>
+<figure class="shot"><img alt="Figure 35" src="../images/p269-02.png" /><figcaption>Figure 35</figcaption></figure>
+<p>Using exceptions to prevent errors: Managing exceptions (errors) correctly becomes critically important when the program still has other work to do after an error occurs. This situation is especially common in programs that continually receive input from the user. If the program can respond to invalid input in an appropriate way, instead of stopping and breaking down, it can intelligently ask the user for more valid input and continue running.</p>
+<p>To learn this topic, carefully read and carry out the explanations that follow.</p>
+<p>This program asks the user to enter the first number and, if the user does not enter <code>q</code> to exit, enters the second number.</p>
+<figure class="shot"><img alt="Figure 36" src="../images/p269-03.png" /><figcaption>Figure 36</figcaption></figure>
+<hr />
+<p class="page-mark">Page 264</p>
+<p>Then it divides these two numbers by each other to reach the answer.</p>
+<p>This program does nothing to manage errors; if the user enters zero as the second number, the request to divide by zero causes it to break down:</p>
+<figure class="shot"><img alt="Figure 37" src="../images/p270-01.png" /><figcaption>Figure 37</figcaption></figure>
+<h3 id="note_1">Note</h3>
+<p>Although a sudden stop of the program (<code>crash</code>) is certainly bad, displaying the technical details of the error (<code>Traceback</code>) is also not a good idea. These details are confusing for ordinary users, and in hostile environments they give valuable information to attackers. By seeing a <code>Traceback</code>, an attacker not only learns the name of your program, but can also see part of the logic of the code that has a flaw. A professional attacker can use this information to understand exactly what kinds of attacks to use against your code.</p>
+<p>Using The else Block: When you use <code>try</code> and <code>except</code> statements in Python, you are in fact telling the interpreter (the computer): “Try one action, and if it fails, do this alternative action.” Now, what exactly is the <code>else</code> block useful for?</p>
+<p><img alt="Book image" src="../images/p270-02.png" /></p>
+<p><code>else</code> means: “Do this action if and only if the <code>try</code> block was completely successful, without any error.”</p>
+<p><strong>Figure 38</strong></p>
+<hr />
+<p class="page-mark">Page 265</p>
+<p>If an error occurs in the <code>try</code> block (for example, dividing a number by zero), Python goes directly to the <code>except</code> block and the <code>else</code> block is completely ignored. This feature helps you separate code that should run only after complete success (for example, displaying the final result or saving to a file) from code written only to test for errors. This makes the program both cleaner and more logical.</p>
+<p><img alt="Book image" src="../images/p271-01.png" /></p>
+<figure class="shot"><img alt="Figure 39" src="../images/p271-02.png" /><figcaption>Figure 39</figcaption></figure>
+<p><img alt="Book image" src="../images/p271-03.png" /></p>
+<p>Managing a File Not Found Error: This error is one of the most common exceptions programmers face when working with files. There are several reasons for this error: a wrong path, a wrong file name, or the file having been deleted.</p>
+<p>A <code>try-except</code> block lets you run the code and, if this particular problem occurs, show an appropriate reaction instead of stopping the program.</p>
+<p><strong>Figure 40</strong></p>
+<p><img alt="Book image" src="../images/p271-04.png" /></p>
+<p>In the example the program tries to read a file that does not exist at all.</p>
+<p><strong>Figure 41</strong></p>
+<hr />
+<p class="page-mark">Page 266</p>
+<figure class="shot"><img alt="Figure 42" src="../images/p272-01.png" /><figcaption>Figure 42</figcaption></figure>
+<p>Note that the <code>read_text</code>() method is used a little differently from what you saw before. The <code>encoding</code> argument is necessary when your system’s default encoding does not match the encoding of the file you are reading. This situation is most likely to occur when reading a file that was not created on your system.</p>
+<p>Python cannot read from a file that does not exist, so it creates an exception (<code>Exception</code>) (in other words, it raises an error).</p>
+<p>So to manage the error that is created, the <code>try</code> block begins with the line that is identified in the <code>traceback</code> as the problematic one.</p>
+<figure class="shot"><img alt="Figure 43" src="../images/p272-02.png" /><figcaption>Figure 43</figcaption></figure>
+<p>In the example code, line 4, which includes <code>read_text</code>(), causes the error.</p>
+<p>In this example, the code in the <code>try</code> block produces a <code>FileNotFoundError</code>, so an <code>except</code> block that matches the error must be written. Then Python runs the code in that block when the file is not found, and the result, instead of a <code>traceback</code>, is a user-friendly error message:</p>
+<figure class="shot"><img alt="Figure 44" src="../images/p272-03.png" /><figcaption>Figure 44</figcaption></figure>
+<hr /></article>
+      <aside class="extra">
+        <h2 data-fa="تمرین این بخش" data-en="Exercises for this section">تمرین این بخش</h2>
+        <p class="extra-note" data-fa="این تمرین‌ها و پیوندها اضافه بر متن کتاب‌اند." data-en="These exercises and links are in addition to the book.">این تمرین‌ها و پیوندها اضافه بر متن کتاب‌اند.</p>
+        <ol><li data-fa="برنامه تقسیم دو عدد بساز که تقسیم بر صفر و ورودی غیرعددی را با پیام خودت بگیرد و برنامه را ادامه بدهد." data-en="Build a divide-two-numbers program that catches division by zero and a non-numeric input with your own message, then keeps running.">برنامه تقسیم دو عدد بساز که تقسیم بر صفر و ورودی غیرعددی را با پیام خودت بگیرد و برنامه را ادامه بدهد.</li><li data-fa="به آن خواندن خط‌های یک فایل را اضافه کن و شماره هر خط را کنار متن چاپ کن." data-en="Add file-line reading to it and print a line number beside each line of text.">به آن خواندن خط‌های یک فایل را اضافه کن و شماره هر خط را کنار متن چاپ کن.</li></ol>
+        <h2 data-fa="پیوند مفید" data-en="Useful link">پیوند مفید</h2><ul><li><a href="https://docs.python.org/3/tutorial/errors.html" data-fa="خطاها و استثناها" data-en="Errors and exceptions">خطاها و استثناها</a></li></ul>
+      </aside>
+    <nav class="pager"><a rel="prev" class="prev" href="p4-files.html"><span class="pager-word" data-fa="قبلی" data-en="Previous">قبلی</span><span class="pager-name" data-fa="خواندن و نوشتن فایل متنی" data-en="Reading and writing text files">خواندن و نوشتن فایل متنی</span></a><a rel="next" class="next" href="p4-json.html"><span class="pager-word" data-fa="بعدی" data-en="Next">بعدی</span><span class="pager-name" data-fa="چند فایل و JSON" data-en="Several files and JSON">چند فایل و JSON</span></a></nav>
+    </div>
+  </div>
+  <script src="../assets/search-index.js?v=4"></script>
+  <script src="../assets/app.js?v=4"></script>
+</body>
+</html>

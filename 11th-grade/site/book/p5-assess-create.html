@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title data-fa="ارزشیابی ایجاد وب‌اپلیکیشن" data-en="Creating-the-app assessment">ارزشیابی ایجاد وب‌اپلیکیشن</title>
+  <link rel="icon" href="../assets/favicon.svg">
+  <link rel="stylesheet" href="../assets/style.css?v=4">
+</head>
+<body data-root="../">
+  <header class="top">
+    <a class="brand" href="../index.html">
+      <span data-fa="طراح سایت" data-en="Site Design">طراح سایت</span>
+      <small data-fa="پایه یازدهم" data-en="Grade 11">پایه یازدهم</small>
+    </a>
+    <div class="search-wrap">
+      <input id="q" type="search" autocomplete="off"
+        data-fa-placeholder="جستجو در درس‌ها" data-en-placeholder="Search lessons"
+        placeholder="جستجو در درس‌ها">
+      <div id="results" class="results" hidden></div>
+    </div>
+    <a class="download" href="../grade11-offline.zip?v=2" data-fa="دانلود کل سایت" data-en="Download the whole site">دانلود کل سایت</a>
+    <button type="button" id="lang-toggle" class="lang-toggle" dir="ltr" data-lang="fa"
+      aria-label="تغییر زبان">
+      <span data-opt="fa">فا</span>
+      <span data-opt="en">EN</span>
+    </button>
+  </header>
+  <div class="layout">
+    <details class="toc" open><summary><span data-fa="فهرست درس‌ها" data-en="Lesson list">فهرست درس‌ها</span></summary><nav class="side" aria-label="lessons"><p class="mod" data-fa="شروع کتاب" data-en="Opening">شروع کتاب</p><p class="unit" data-fa="فهرست" data-en="Contents">فهرست</p><a class="" href="toc.html" data-fa="فهرست" data-en="Contents">فهرست</a><p class="mod" data-fa="پودمان ۱: برنامه‌نویسی پایتون" data-en="Module 1: Python programming">پودمان ۱: برنامه‌نویسی پایتون</p><p class="unit" data-fa="معرفی پودمان" data-en="Module introduction">معرفی پودمان</p><a class="" href="p1-intro.html" data-fa="معرفی پودمان پایتون" data-en="Introducing the Python module">معرفی پودمان پایتون</a><p class="unit" data-fa="مدل‌سازی داده" data-en="Data modeling">مدل‌سازی داده</p><a class="" href="p1-python.html" data-fa="پایتون و محیط برنامه‌نویسی" data-en="Python and the programming environment">پایتون و محیط برنامه‌نویسی</a><a class="" href="p1-vars.html" data-fa="متغیرها، نوع داده و عملگرها" data-en="Variables, types, and operators">متغیرها، نوع داده و عملگرها</a><a class="" href="p1-cast.html" data-fa="ورودی و تبدیل نوع" data-en="Input and type casting">ورودی و تبدیل نوع</a><a class="" href="p1-lists.html" data-fa="لیست‌ها" data-en="Lists">لیست‌ها</a><a class="" href="p1-if.html" data-fa="شرط‌های ساده" data-en="Simple conditions">شرط‌های ساده</a><a class="" href="p1-elif.html" data-fa="if، elif و else" data-en="if, elif, and else">if، elif و else</a><a class="" href="p1-for.html" data-fa="حلقه for و range" data-en="The for loop and range">حلقه for و range</a><a class="" href="p1-while.html" data-fa="حلقه while و کنترل حلقه" data-en="The while loop and loop control">حلقه while و کنترل حلقه</a><a class="" href="p1-assess-data.html" data-fa="ارزشیابی مدل‌سازی داده" data-en="Data-modeling assessment">ارزشیابی مدل‌سازی داده</a><p class="unit" data-fa="توابع و ماژول‌ها" data-en="Functions and modules">توابع و ماژول‌ها</p><a class="" href="p1-sets.html" data-fa="مجموعه (set)" data-en="Sets">مجموعه (set)</a><a class="" href="p1-dict.html" data-fa="دیکشنری" data-en="Dictionaries">دیکشنری</a><a class="" href="p1-quiz.html" data-fa="پروژه بازی Quiz" data-en="Quiz game project">پروژه بازی Quiz</a><a class="" href="p1-tuple.html" data-fa="تاپل" data-en="Tuples">تاپل</a><a class="" href="p1-func.html" data-fa="تعریف تابع، پارامتر و return" data-en="Defining functions, parameters, and return">تعریف تابع، پارامتر و return</a><a class="" href="p1-func-more.html" data-fa="تمرین تابع و مرتب‌سازی" data-en="Function practice and sorting">تمرین تابع و مرتب‌سازی</a><a class="" href="p1-modules.html" data-fa="ماژول‌ها و تفاوت تابع و متد" data-en="Modules, and functions versus methods">ماژول‌ها و تفاوت تابع و متد</a><a class="" href="p1-assess-func.html" data-fa="ارزشیابی توابع و ماژول‌ها" data-en="Functions and modules assessment">ارزشیابی توابع و ماژول‌ها</a><p class="mod" data-fa="پودمان ۲: صفحات وب ایستا" data-en="Module 2: Static web pages">پودمان ۲: صفحات وب ایستا</p><p class="unit" data-fa="معرفی پودمان" data-en="Module introduction">معرفی پودمان</p><a class="" href="p2-intro.html" data-fa="معرفی پودمان صفحات ایستا" data-en="Introducing static web pages">معرفی پودمان صفحات ایستا</a><p class="unit" data-fa="ساختار با HTML" data-en="Structure with HTML">ساختار با HTML</p><a class="" href="p2-web.html" data-fa="وب چگونه کار می‌کند" data-en="How the web works">وب چگونه کار می‌کند</a><a class="" href="p2-concepts.html" data-fa="مفاهیم طراحی وب و نقشه سایت" data-en="Web-design concepts and the site map">مفاهیم طراحی وب و نقشه سایت</a><a class="" href="p2-tags.html" data-fa="اولین صفحه HTML" data-en="A first HTML page">اولین صفحه HTML</a><a class="" href="p2-text.html" data-fa="متن، لیست و پیوند" data-en="Text, lists, and links">متن، لیست و پیوند</a><a class="" href="p2-img.html" data-fa="تصویر در صفحه" data-en="Images on the page">تصویر در صفحه</a><a class="" href="p2-forms.html" data-fa="فرم‌ها" data-en="Forms">فرم‌ها</a><a class="" href="p2-semantic.html" data-fa="عناصر معنایی" data-en="Semantic elements">عناصر معنایی</a><a class="" href="p2-assess-html.html" data-fa="ارزشیابی HTML" data-en="HTML assessment">ارزشیابی HTML</a><p class="unit" data-fa="ظاهر با CSS" data-en="Appearance with CSS">ظاهر با CSS</p><a class="" href="p2-css-start.html" data-fa="نوشتن CSS" data-en="Writing CSS">نوشتن CSS</a><a class="" href="p2-css-look.html" data-fa="رنگ، پس‌زمینه و انتخاب‌گر" data-en="Color, background, and selectors">رنگ، پس‌زمینه و انتخاب‌گر</a><a class="" href="p2-box.html" data-fa="مدل جعبه‌ای و display" data-en="The box model and display">مدل جعبه‌ای و display</a><a class="" href="p2-flex.html" data-fa="چیدمان با Flexbox" data-en="Layout with Flexbox">چیدمان با Flexbox</a><a class="" href="p2-flex-work.html" data-fa="کارگاه چیدمان صفحه" data-en="Page-layout workshop">کارگاه چیدمان صفحه</a><a class="" href="p2-media.html" data-fa="مدیا کوئری و ارزشیابی CSS" data-en="Media queries and the CSS assessment">مدیا کوئری و ارزشیابی CSS</a><p class="mod" data-fa="پودمان ۳: صفحات وب تعاملی" data-en="Module 3: Interactive web pages">پودمان ۳: صفحات وب تعاملی</p><p class="unit" data-fa="معرفی پودمان" data-en="Module introduction">معرفی پودمان</p><a class="" href="p3-intro.html" data-fa="معرفی پودمان تعاملی" data-en="Introducing the interactive module">معرفی پودمان تعاملی</a><p class="unit" data-fa="بوت‌استرپ" data-en="Bootstrap">بوت‌استرپ</p><a class="" href="p3-bs-start.html" data-fa="فریم‌ورک و شروع بوت‌استرپ" data-en="Frameworks and starting Bootstrap">فریم‌ورک و شروع بوت‌استرپ</a><a class="" href="p3-bs-util.html" data-fa="فاصله، گردی و لیست" data-en="Spacing, rounding, and lists">فاصله، گردی و لیست</a><a class="" href="p3-bs-header.html" data-fa="سرصفحه فروشگاه" data-en="The shop header">سرصفحه فروشگاه</a><a class="" href="p3-bs-grid.html" data-fa="شبکه Grid" data-en="The grid">شبکه Grid</a><a class="" href="p3-bs-rwd.html" data-fa="کلاس‌های واکنش‌گرا" data-en="Responsive classes">کلاس‌های واکنش‌گرا</a><a class="" href="p3-bs-nav.html" data-fa="نوار ناوبری و جزئیات محصول" data-en="Navbar and product details">نوار ناوبری و جزئیات محصول</a><a class="" href="p3-bs-form.html" data-fa="فرم و پنجره Modal" data-en="Forms and modals">فرم و پنجره Modal</a><a class="" href="p3-bs-show.html" data-fa="کاروسل و آکاردئون" data-en="Carousel and accordion">کاروسل و آکاردئون</a><a class="" href="p3-bs-assess.html" data-fa="ارزشیابی بوت‌استرپ" data-en="Bootstrap assessment">ارزشیابی بوت‌استرپ</a><p class="unit" data-fa="جاوااسکریپت" data-en="JavaScript">جاوااسکریپت</p><a class="" href="p3-js-start.html" data-fa="جاوااسکریپت در صفحه وب" data-en="JavaScript on the page">جاوااسکریپت در صفحه وب</a><a class="" href="p3-js-vars.html" data-fa="متغیر و نوع داده" data-en="Variables and data types">متغیر و نوع داده</a><a class="" href="p3-js-ops.html" data-fa="عملگرها" data-en="Operators">عملگرها</a><a class="" href="p3-js-data.html" data-fa="آرایه و شیء" data-en="Arrays and objects">آرایه و شیء</a><a class="" href="p3-js-if.html" data-fa="شرط در جاوااسکریپت" data-en="Conditions in JavaScript">شرط در جاوااسکریپت</a><a class="" href="p3-js-loops.html" data-fa="حلقه‌ها" data-en="Loops">حلقه‌ها</a><a class="" href="p3-js-func.html" data-fa="تابع‌ها" data-en="Functions">تابع‌ها</a><a class="" href="p3-js-dom.html" data-fa="صفحه، رویداد و اعتبار فرم" data-en="The page, events, and form validation">صفحه، رویداد و اعتبار فرم</a><a class="" href="p3-js-assess.html" data-fa="ارزشیابی جاوااسکریپت" data-en="JavaScript assessment">ارزشیابی جاوااسکریپت</a><p class="mod" data-fa="پودمان ۴: توسعه وب پایتون" data-en="Module 4: Python for the web">پودمان ۴: توسعه وب پایتون</p><p class="unit" data-fa="معرفی پودمان" data-en="Module introduction">معرفی پودمان</p><a class="" href="p4-intro.html" data-fa="معرفی پودمان شیءگرایی" data-en="Introducing the object-oriented module">معرفی پودمان شیءگرایی</a><p class="unit" data-fa="شیءگرایی" data-en="Object-oriented programming">شیءگرایی</p><a class="" href="p4-idea.html" data-fa="ایده شیء و کلاس" data-en="The idea of objects and classes">ایده شیء و کلاس</a><a class="" href="p4-class.html" data-fa="ساخت کلاس و متد" data-en="Writing a class and methods">ساخت کلاس و متد</a><a class="" href="p4-inherit.html" data-fa="وراثت" data-en="Inheritance">وراثت</a><a class="" href="p4-protect.html" data-fa="داده معتبر و استفاده داخلی" data-en="Valid data and internal use">داده معتبر و استفاده داخلی</a><a class="" href="p4-assess-oop.html" data-fa="ارزشیابی برنامه شیءگرا" data-en="Object-oriented assessment">ارزشیابی برنامه شیءگرا</a><p class="unit" data-fa="فایل و توسعه" data-en="Files and development">فایل و توسعه</p><a class="" href="p4-files.html" data-fa="خواندن و نوشتن فایل متنی" data-en="Reading and writing text files">خواندن و نوشتن فایل متنی</a><a class="" href="p4-errors.html" data-fa="پیمایش فایل و مدیریت خطا" data-en="Walking a file and handling errors">پیمایش فایل و مدیریت خطا</a><a class="" href="p4-json.html" data-fa="چند فایل و JSON" data-en="Several files and JSON">چند فایل و JSON</a><a class="" href="p4-assess-files.html" data-fa="ارزشیابی کار با فایل" data-en="Files assessment">ارزشیابی کار با فایل</a><p class="mod" data-fa="پودمان ۵: برنامه‌نویسی جنگو" data-en="Module 5: Django">پودمان ۵: برنامه‌نویسی جنگو</p><p class="unit" data-fa="معرفی پودمان" data-en="Module introduction">معرفی پودمان</p><a class="" href="p5-intro.html" data-fa="معرفی پودمان جنگو" data-en="Introducing the Django module">معرفی پودمان جنگو</a><p class="unit" data-fa="ایجاد وب‌اپلیکیشن" data-en="Creating the web app">ایجاد وب‌اپلیکیشن</p><a class="" href="p5-what.html" data-fa="جنگو چیست و نصب" data-en="What Django is, and installing it">جنگو چیست و نصب</a><a class="" href="p5-project.html" data-fa="پروژه، اپ و اولین view" data-en="Project, app, and the first view">پروژه، اپ و اولین view</a><a class="" href="p5-template.html" data-fa="قالب و دمای واقعی" data-en="Templates and a real temperature">قالب و دمای واقعی</a><a class="current" href="p5-assess-create.html" data-fa="ارزشیابی ایجاد وب‌اپلیکیشن" data-en="Creating-the-app assessment">ارزشیابی ایجاد وب‌اپلیکیشن</a><p class="unit" data-fa="توسعه وب‌اپلیکیشن" data-en="Developing the web app">توسعه وب‌اپلیکیشن</p><a class="" href="p5-model.html" data-fa="مدل شهر و پنل ادمین" data-en="The city model and the admin">مدل شهر و پنل ادمین</a><a class="" href="p5-list.html" data-fa="خواندن شهرها و نمایش فهرست" data-en="Reading cities and showing the list">خواندن شهرها و نمایش فهرست</a><a class="" href="p5-auth.html" data-fa="ورود و خروج" data-en="Sign-in and sign-out">ورود و خروج</a><a class="" href="p5-crud.html" data-fa="افزودن و حذف شهر" data-en="Adding and deleting a city">افزودن و حذف شهر</a><a class="" href="p5-bugs.html" data-fa="باگ و امنیت" data-en="Bugs and security">باگ و امنیت</a><p class="mod" data-fa="پایان کتاب" data-en="Back of the book">پایان کتاب</p><p class="unit" data-fa="منابع" data-en="References">منابع</p><a class="" href="refs.html" data-fa="منابع کتاب" data-en="Book references">منابع کتاب</a></nav></details>
+    <div class="main">
+      <h1 class="section-title" data-fa="ارزشیابی ایجاد وب‌اپلیکیشن" data-en="Creating-the-app assessment">ارزشیابی ایجاد وب‌اپلیکیشن</h1><article class="lesson" lang="fa" dir="rtl" data-lang-block="fa"><p class="page-mark">صفحه ۲۹۳</p>
+<h3 id="_1">ارزشیابی شایستگی ایجاد وب اپلیکیشن</h3>
+<p>استاندارد عملکرد کار: هنرجو باید با درک صحیحی که از ساختار جنگو کسب کرده است، بتواند یک وب اپلیکیشن ساده را در رایانه خود پیاده‌سازی کند.</p>
+<p>نمره</p>
+<p>شرایط انجام کار (ابزار،مواد، تجهیزات،</p>
+<p>ابزارهای</p>
+<p>نتایج</p>
+<p>ردیف</p>
+<h3 id="_2">مراحل کار</h3>
+<p>استاندارد (شاخص‌ها/داوری/نمره‌دهی)</p>
+<p>کسب</p>
+<p>زمان، مکان و ...)</p>
+<h3 id="_3">ارزشیابی</h3>
+<p>ممکن شده</p>
+<p>پرسش</p>
+<p>1 توضیح مفهوم و مزایای جنگو 2 تحلیل پروژه آب‌وهوا و اجزای آن 3 مقایسه جنگو با پایتون خالص انجام کنجکاوی3 شفاهی، آزمون</p>
+<p>آشنایی با جنگو و پروژه</p>
+<p>1 توضیح مفهوم و مزایای جنگو 2 تحلیل پروژه آب‌وهوا و اجزای آن3 مقایسه</p>
+<p>1</p>
+<p>نهایی ابزار: رایانه زمان: 10 دقیقه؛ مکان: کارگاه</p>
+<p>کتبی جنگو با پایتون خالص2 کوتاه، اجرای انجام ناقص هر یک از مراحل1 عملی</p>
+<p>1 اجرای دستور <code>pip</code> <code>install</code> <code>django</code> بدون خطا 2 بررسی نسخه جنگو آزمون</p>
+<p>3</p>
+<p>3 آماده‌سازی پوشه پروژه 4 انجام کارها با روشی دیگر 5 انجام کنجکاوی‌ها</p>
+<p>ابزار: رایانه سیستم‌عامل نصب‌شده،</p>
+<p>کتبی</p>
+<p>نصب جنگو و راه‌اندازی</p>
+<p>2</p>
+<p><code>Django</code>،<code>Python</code> اینترنت (یا بسته آفلاین)،</p>
+<p>1 اجرای دستور <code>pip</code> <code>install</code> <code>django</code> بدون خطا 2 بررسی نسخه جنگو کوتاه،</p>
+<p>محیط توسعه</p>
+<p>2</p>
+<p>دسترسی نصب؛ زمان: 15 دقیقه؛</p>
+<p>اجرای</p>
+<p>3 آماده‌سازی پوشه پروژه عملی انجام ناقص هر یک از مراحل1</p>
+<p>1 استفاده از دستور <code>startproject</code> و بررسی ساختار 2 مشاهده صفحه آزمون پیش‌فرض جنگو 3 تشریح فایل‌های اصلی پروژه 4 انجام کارها با روشی</p>
+<p>3</p>
+<p>ابزار: رایانه، <code>Django</code> نصب‌شده، ترمینال، مرورگر کتبی</p>
+<p>دیگر 5 انجام کنجکاو‌یها</p>
+<p>ایجاد و اجرای اولین پروژه</p>
+<p>3</p>
+<p>وب، زمان: 15 دقیقه؛ مکان: کارگاه</p>
+<p>کوتاه،</p>
+<p>1 استفاده از دستور <code>startproject</code> و بررسی ساختار2 مشاهده صفحه</p>
+<p>جنگو</p>
+<p>اجرای پیش‌فرض جنگو3 تشریح فایل‌های اصلی پروژه2 عملی انجام ناقص هر یک از مراحل1</p>
+<p>1 اجرای دستور 2 <code>startapp</code> <code>weather2</code> تغییر در <code>settings.py</code> و آزمایش آزمون اجرا 3 بیان ارتباط پروژه با <code>app</code>ها 4 انجام کارها با روشی دیگر5 انجام</p>
+<p>3</p>
+<p>کتبی کنجکاوی‌ها</p>
+<p>ساخت و معرفی اولین <code>app</code></p>
+<p>ابزار: رایانه، ترمینال، <code>Django</code>، زمان: 15 دقیقه؛</p>
+<p>4</p>
+<p>کوتاه،</p>
+<p>1 اجرای دستور 2 <code>startapp</code> <code>weather2</code> تغییر در <code>settings.py</code> آزمایش</p>
+<p>در پروژه</p>
+<p>مکان: کارگاه</p>
+<p>اجرای اجرا 3 بیان ارتباط پروژه با <code>app</code>ها2 عملی انجام ناقص هر یک از مراحل1</p>
+<p>1 ایجاد تابع در 2 <code>views.py2</code> اتصال <code>view</code> به قالب با 3 <code>render</code> آزمون ویرایش فایل 4 <code>urls.py4</code> انجام کارها با روشی دیگر5 انجام کنجکاو‌یها3 کتبی</p>
+<p>ساخت اولین <code>view</code> و</p>
+<p>ابزار: ویرایشگر کد (<code>VS</code> <code>Code</code>) ترمینال، مرورگر؛</p>
+<p>5</p>
+<p>کوتاه،</p>
+<p>1 ایجاد تابع در 2 <code>views.py2</code> اتصال <code>view</code> به قالب با <code>render</code></p>
+<p>آشنایی با تابع <code>render</code></p>
+<p>زمان: 25 دقیقه؛</p>
+<p>2</p>
+<p>اجرای</p>
+<p>3 ویرایش فایل <code>urls.py</code> عملی انجام ناقص هر یک از مراحل1</p>
+<p>1 اجرای <code>view</code> با <code>context</code> داده‌های دما 2 مشاهده و تحلیل خروجی در آزمون مرورگر3 بررسی عملکرد کلی وب‌اپلیکیشن4 انجام کارها با روشی دیگر</p>
+<p>3</p>
+<p>کتبی</p>
+<p>5 انجام کنجکاوی ها</p>
+<p>نمایش دمای واقعی در</p>
+<p>ابزار: ویرایشگر کد(<code>VS</code> <code>Code</code>) و ترمینال،</p>
+<p>6</p>
+<p>کوتاه،</p>
+<p>وب‌اپلیکیشن</p>
+<p>مرورگر؛ زمان: 35 دقیقه</p>
+<p>1 اجرای <code>view</code> با <code>context</code> داده‌های دما2 مشاهده و تحلیل خروجی در اجرای مرورگر3 بررسی عملکرد کلی وب‌اپلیکیشن2 عملی انجام ناقص هر یک از مراحل1</p>
+<hr />
+<p class="page-mark">صفحه ۲۹۴</p>
+<p>شایستگی‌های غیر فنی، ایمنی،</p>
+<p>احراز همه شایستگی‌های غیرفنی2</p>
+<p>بهداشت، توجهات زیست محیطی</p>
+<p>عدم احراز هر یک از شایستگی‌های غیرفنی1</p>
+<p>و نگرش:</p>
+<p>بلی</p>
+<p>ارزشیابی کار (شایستگی انجام کار)</p>
+<p>خیر</p>
+<h3 id="_4">توضیحات:</h3>
+<p>1 معیار شایستگی انجام کار:</p>
+<p>کسب حداقل نمره 2 از مراحل 1، 2، 3، 4، 5 و 6 (مراحل بحرانی) کسب حداقل نمره 2 از بخش شایستگی‌های غیرفنی، ایمنی، بهداشت، توجهات زیست‌محیطی و نگرش کسب حداقل میانگین 2 از مراحل کار</p>
+<p>2 تعریف سطوح شایستگی: صرف‌نظر از اینکه یک تکلیف کاری در چه سطحی از صلاحیت حرفه‌ای انجام می‌شود، در هر محیط کاری ممکن است انجام هر کار با کیفیت مشخصی مورد انتظار باشد. سطح شایستگی انجام کار، معیار اساسی ارزشیابی است.</p>
+<p>مهارت (سطح سه): ماهر و قادر به آموزش و هدایت دیگران، توانایی برنامه‌ریزی و تحلیل، پاسخ‌گویی در برابر کارهای خود، سروکار داشتن با سطح وسیعی از کارها و فعالیت‌ها تسلط (سطح چهار): خبرگی در انجام کار و آموزش دیگران، ایجاد نوآوری، سازگاری، عیب‌یابی، هدایت و راهنمایی دیگران.</p></article><article class="lesson" lang="en" dir="ltr" data-lang-block="en" hidden><p class="page-mark">Page 293</p>
+<h3 id="assessment-of-competency-in-creating-a-web-application">Assessment of competency in creating a web application</h3>
+<p>Performance standard for the work: the student, with a correct understanding of the Django structure they have gained, must be able to implement a simple web application on their own computer.</p>
+<p>Score</p>
+<p>Conditions for performing the work (tools, materials, equipment,</p>
+<p>Tools</p>
+<p>Results</p>
+<p>Row</p>
+<h3 id="steps">Steps</h3>
+<p>Standard (indicators / judgment / scoring)</p>
+<p>Obtained</p>
+<p>time, place, and ...)</p>
+<h3 id="assessment">Assessment</h3>
+<p>Made possible</p>
+<p>Question</p>
+<p>1 Explain the concept and advantages of Django 2 Analyze the weather project and its components 3 Compare Django with pure Python Do Try this 3 Oral, test</p>
+<p>Getting to know Django and the project</p>
+<p>1 Explain the concept and advantages of Django 2 Analyze the weather project and its components 3 Compare</p>
+<p>1</p>
+<p>Final tools: computer time: 10 minutes; place: workshop</p>
+<p>Written Django with pure Python 2 Short, carrying out incomplete performance of any of the steps 1 Practical</p>
+<p>1 Running the <code>pip</code> <code>install</code> <code>django</code> command without error 2 Checking the Django version Test</p>
+<p>3</p>
+<p>3 Preparing the project folder 4 Doing the work another way 5 Doing the Try this activities</p>
+<p>Tools: computer with operating system installed,</p>
+<p>Written</p>
+<p>Installing Django and setting up</p>
+<p>2</p>
+<p><code>Django</code>, <code>Python</code> internet (or offline package),</p>
+<p>1 Running the <code>pip</code> <code>install</code> <code>django</code> command without error 2 Checking the Django version Short,</p>
+<p>development environment</p>
+<p>2</p>
+<p>installation access; time: 15 minutes;</p>
+<p>Running</p>
+<p>3 Preparing the project folder Practical incomplete performance of any of the steps 1</p>
+<p>1 Using the <code>startproject</code> command and examining the structure 2 Viewing Django’s default test page 3 Describing the project’s main files 4 Doing the work another</p>
+<p>3</p>
+<p>Tools: computer, <code>Django</code> installed, terminal, browser Written</p>
+<p>way 5 Doing the Try this activities</p>
+<p>Creating and running the first project</p>
+<p>3</p>
+<p>web, time: 15 minutes; place: workshop</p>
+<p>Short,</p>
+<p>1 Using the <code>startproject</code> command and examining the structure 2 Viewing Django’s</p>
+<p>Django</p>
+<p>default running page 3 Describing the project’s main files 2 Practical incomplete performance of any of the steps 1</p>
+<p>1 Running the command 2 <code>startapp</code> <code>weather2</code> Changing <code>settings.py</code> and testing the run test 3 Stating the relationship of the project with <code>app</code>s 4 Doing the work another way 5 Doing</p>
+<p>3</p>
+<p>Written Try this activities</p>
+<p>Creating and introducing the first <code>app</code></p>
+<p>Tools: computer, terminal, <code>Django</code>, time: 15 minutes;</p>
+<p>4</p>
+<p>Short,</p>
+<p>1 Running the command 2 <code>startapp</code> <code>weather2</code> Changing <code>settings.py</code> testing</p>
+<p>in the project</p>
+<p>place: workshop</p>
+<p>Running the run 3 Stating the relationship of the project with <code>app</code>s 2 Practical incomplete performance of any of the steps 1</p>
+<p>1 Creating a function in 2 <code>views.py2</code> Connecting the <code>view</code> to the template with 3 <code>render</code> Test editing the file 4 <code>urls.py4</code> Doing the work another way 5 Doing Try this activities 3 Written</p>
+<p>Creating the first <code>view</code> and</p>
+<p>Tools: code editor (<code>VS</code> <code>Code</code>) terminal, browser;</p>
+<p>5</p>
+<p>Short,</p>
+<p>1 Creating a function in 2 <code>views.py2</code> Connecting the <code>view</code> to the template with <code>render</code></p>
+<p>getting to know the <code>render</code> function</p>
+<p>time: 25 minutes;</p>
+<p>2</p>
+<p>Running</p>
+<p>3 Editing the <code>urls.py</code> file Practical incomplete performance of any of the steps 1</p>
+<p>1 Running the <code>view</code> with <code>context</code> temperature data 2 Viewing and analyzing the output in the browser test 3 Examining the overall performance of the web application 4 Doing the work another way</p>
+<p>3</p>
+<p>Written</p>
+<p>5 Doing Try this activities</p>
+<p>Displaying the real temperature in</p>
+<p>Tools: code editor (<code>VS</code> <code>Code</code>) and terminal,</p>
+<p>6</p>
+<p>Short,</p>
+<p>the web application</p>
+<p>browser; time: 35 minutes</p>
+<p>1 Running the <code>view</code> with <code>context</code> temperature data 2 Viewing and analyzing the output in the browser run 3 Examining the overall performance of the web application 2 Practical incomplete performance of any of the steps 1</p>
+<hr />
+<p class="page-mark">Page 294</p>
+<p>Non-technical competencies, safety,</p>
+<p>Confirming all non-technical competencies 2</p>
+<p>hygiene, environmental considerations</p>
+<p>Not confirming any of the non-technical competencies 1</p>
+<p>and attitude:</p>
+<p>Yes</p>
+<p>Work assessment (competency in performing the work)</p>
+<p>No</p>
+<h3 id="explanation">Explanation:</h3>
+<p>1 Criterion for competency in performing the work:</p>
+<p>Obtaining at least a score of 2 from steps 1, 2, 3, 4, 5, and 6 (critical steps) Obtaining at least a score of 2 from the non-technical competencies, safety, hygiene, environmental considerations, and attitude section Obtaining at least an average of 2 from the work steps</p>
+<p>2 Definition of competency levels: regardless of the level of professional qualification at which a work task is performed, in every workplace a certain quality of performing each task may be expected. The level of competency in performing the work is the basic criterion for assessment.</p>
+<p>Skill (level three): skilled and able to train and guide others, ability to plan and analyze, accountability for one’s own work, dealing with a wide range of tasks and activities Mastery (level four): expertise in performing the work and training others, creating innovation, adaptability, troubleshooting, guiding and advising others.</p></article>
+      <aside class="extra">
+        <h2 data-fa="تمرین این بخش" data-en="Exercises for this section">تمرین این بخش</h2>
+        <p class="extra-note" data-fa="این تمرین‌ها و پیوندها اضافه بر متن کتاب‌اند." data-en="These exercises and links are in addition to the book.">این تمرین‌ها و پیوندها اضافه بر متن کتاب‌اند.</p>
+        <ol><li data-fa="از صفر یک صفحه بساز که نام یک شهر را نشان بدهد: پروژه، اپ، view، url و قالب." data-en="From nothing, build a page that shows one city name: project, app, view, url, and template.">از صفر یک صفحه بساز که نام یک شهر را نشان بدهد: پروژه، اپ، view، url و قالب.</li><li data-fa="دکمه تازه‌سازی را در قالب بگذار که همان صفحه شهر را دوباره بارگذاری کند." data-en="Put a refresh control in the template that loads the same city page again.">دکمه تازه‌سازی را در قالب بگذار که همان صفحه شهر را دوباره بارگذاری کند.</li></ol>
+        
+      </aside>
+    <nav class="pager"><a rel="prev" class="prev" href="p5-template.html"><span class="pager-word" data-fa="قبلی" data-en="Previous">قبلی</span><span class="pager-name" data-fa="قالب و دمای واقعی" data-en="Templates and a real temperature">قالب و دمای واقعی</span></a><a rel="next" class="next" href="p5-model.html"><span class="pager-word" data-fa="بعدی" data-en="Next">بعدی</span><span class="pager-name" data-fa="مدل شهر و پنل ادمین" data-en="The city model and the admin">مدل شهر و پنل ادمین</span></a></nav>
+    </div>
+  </div>
+  <script src="../assets/search-index.js?v=4"></script>
+  <script src="../assets/app.js?v=4"></script>
+</body>
+</html>

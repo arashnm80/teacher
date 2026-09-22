@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title data-fa="چند فایل و JSON" data-en="Several files and JSON">چند فایل و JSON</title>
+  <link rel="icon" href="../assets/favicon.svg">
+  <link rel="stylesheet" href="../assets/style.css?v=4">
+</head>
+<body data-root="../">
+  <header class="top">
+    <a class="brand" href="../index.html">
+      <span data-fa="طراح سایت" data-en="Site Design">طراح سایت</span>
+      <small data-fa="پایه یازدهم" data-en="Grade 11">پایه یازدهم</small>
+    </a>
+    <div class="search-wrap">
+      <input id="q" type="search" autocomplete="off"
+        data-fa-placeholder="جستجو در درس‌ها" data-en-placeholder="Search lessons"
+        placeholder="جستجو در درس‌ها">
+      <div id="results" class="results" hidden></div>
+    </div>
+    <a class="download" href="../grade11-offline.zip?v=2" data-fa="دانلود کل سایت" data-en="Download the whole site">دانلود کل سایت</a>
+    <button type="button" id="lang-toggle" class="lang-toggle" dir="ltr" data-lang="fa"
+      aria-label="تغییر زبان">
+      <span data-opt="fa">فا</span>
+      <span data-opt="en">EN</span>
+    </button>
+  </header>
+  <div class="layout">
+    <details class="toc" open><summary><span data-fa="فهرست درس‌ها" data-en="Lesson list">فهرست درس‌ها</span></summary><nav class="side" aria-label="lessons"><p class="mod" data-fa="شروع کتاب" data-en="Opening">شروع کتاب</p><p class="unit" data-fa="فهرست" data-en="Contents">فهرست</p><a class="" href="toc.html" data-fa="فهرست" data-en="Contents">فهرست</a><p class="mod" data-fa="پودمان ۱: برنامه‌نویسی پایتون" data-en="Module 1: Python programming">پودمان ۱: برنامه‌نویسی پایتون</p><p class="unit" data-fa="معرفی پودمان" data-en="Module introduction">معرفی پودمان</p><a class="" href="p1-intro.html" data-fa="معرفی پودمان پایتون" data-en="Introducing the Python module">معرفی پودمان پایتون</a><p class="unit" data-fa="مدل‌سازی داده" data-en="Data modeling">مدل‌سازی داده</p><a class="" href="p1-python.html" data-fa="پایتون و محیط برنامه‌نویسی" data-en="Python and the programming environment">پایتون و محیط برنامه‌نویسی</a><a class="" href="p1-vars.html" data-fa="متغیرها، نوع داده و عملگرها" data-en="Variables, types, and operators">متغیرها، نوع داده و عملگرها</a><a class="" href="p1-cast.html" data-fa="ورودی و تبدیل نوع" data-en="Input and type casting">ورودی و تبدیل نوع</a><a class="" href="p1-lists.html" data-fa="لیست‌ها" data-en="Lists">لیست‌ها</a><a class="" href="p1-if.html" data-fa="شرط‌های ساده" data-en="Simple conditions">شرط‌های ساده</a><a class="" href="p1-elif.html" data-fa="if، elif و else" data-en="if, elif, and else">if، elif و else</a><a class="" href="p1-for.html" data-fa="حلقه for و range" data-en="The for loop and range">حلقه for و range</a><a class="" href="p1-while.html" data-fa="حلقه while و کنترل حلقه" data-en="The while loop and loop control">حلقه while و کنترل حلقه</a><a class="" href="p1-assess-data.html" data-fa="ارزشیابی مدل‌سازی داده" data-en="Data-modeling assessment">ارزشیابی مدل‌سازی داده</a><p class="unit" data-fa="توابع و ماژول‌ها" data-en="Functions and modules">توابع و ماژول‌ها</p><a class="" href="p1-sets.html" data-fa="مجموعه (set)" data-en="Sets">مجموعه (set)</a><a class="" href="p1-dict.html" data-fa="دیکشنری" data-en="Dictionaries">دیکشنری</a><a class="" href="p1-quiz.html" data-fa="پروژه بازی Quiz" data-en="Quiz game project">پروژه بازی Quiz</a><a class="" href="p1-tuple.html" data-fa="تاپل" data-en="Tuples">تاپل</a><a class="" href="p1-func.html" data-fa="تعریف تابع، پارامتر و return" data-en="Defining functions, parameters, and return">تعریف تابع، پارامتر و return</a><a class="" href="p1-func-more.html" data-fa="تمرین تابع و مرتب‌سازی" data-en="Function practice and sorting">تمرین تابع و مرتب‌سازی</a><a class="" href="p1-modules.html" data-fa="ماژول‌ها و تفاوت تابع و متد" data-en="Modules, and functions versus methods">ماژول‌ها و تفاوت تابع و متد</a><a class="" href="p1-assess-func.html" data-fa="ارزشیابی توابع و ماژول‌ها" data-en="Functions and modules assessment">ارزشیابی توابع و ماژول‌ها</a><p class="mod" data-fa="پودمان ۲: صفحات وب ایستا" data-en="Module 2: Static web pages">پودمان ۲: صفحات وب ایستا</p><p class="unit" data-fa="معرفی پودمان" data-en="Module introduction">معرفی پودمان</p><a class="" href="p2-intro.html" data-fa="معرفی پودمان صفحات ایستا" data-en="Introducing static web pages">معرفی پودمان صفحات ایستا</a><p class="unit" data-fa="ساختار با HTML" data-en="Structure with HTML">ساختار با HTML</p><a class="" href="p2-web.html" data-fa="وب چگونه کار می‌کند" data-en="How the web works">وب چگونه کار می‌کند</a><a class="" href="p2-concepts.html" data-fa="مفاهیم طراحی وب و نقشه سایت" data-en="Web-design concepts and the site map">مفاهیم طراحی وب و نقشه سایت</a><a class="" href="p2-tags.html" data-fa="اولین صفحه HTML" data-en="A first HTML page">اولین صفحه HTML</a><a class="" href="p2-text.html" data-fa="متن، لیست و پیوند" data-en="Text, lists, and links">متن، لیست و پیوند</a><a class="" href="p2-img.html" data-fa="تصویر در صفحه" data-en="Images on the page">تصویر در صفحه</a><a class="" href="p2-forms.html" data-fa="فرم‌ها" data-en="Forms">فرم‌ها</a><a class="" href="p2-semantic.html" data-fa="عناصر معنایی" data-en="Semantic elements">عناصر معنایی</a><a class="" href="p2-assess-html.html" data-fa="ارزشیابی HTML" data-en="HTML assessment">ارزشیابی HTML</a><p class="unit" data-fa="ظاهر با CSS" data-en="Appearance with CSS">ظاهر با CSS</p><a class="" href="p2-css-start.html" data-fa="نوشتن CSS" data-en="Writing CSS">نوشتن CSS</a><a class="" href="p2-css-look.html" data-fa="رنگ، پس‌زمینه و انتخاب‌گر" data-en="Color, background, and selectors">رنگ، پس‌زمینه و انتخاب‌گر</a><a class="" href="p2-box.html" data-fa="مدل جعبه‌ای و display" data-en="The box model and display">مدل جعبه‌ای و display</a><a class="" href="p2-flex.html" data-fa="چیدمان با Flexbox" data-en="Layout with Flexbox">چیدمان با Flexbox</a><a class="" href="p2-flex-work.html" data-fa="کارگاه چیدمان صفحه" data-en="Page-layout workshop">کارگاه چیدمان صفحه</a><a class="" href="p2-media.html" data-fa="مدیا کوئری و ارزشیابی CSS" data-en="Media queries and the CSS assessment">مدیا کوئری و ارزشیابی CSS</a><p class="mod" data-fa="پودمان ۳: صفحات وب تعاملی" data-en="Module 3: Interactive web pages">پودمان ۳: صفحات وب تعاملی</p><p class="unit" data-fa="معرفی پودمان" data-en="Module introduction">معرفی پودمان</p><a class="" href="p3-intro.html" data-fa="معرفی پودمان تعاملی" data-en="Introducing the interactive module">معرفی پودمان تعاملی</a><p class="unit" data-fa="بوت‌استرپ" data-en="Bootstrap">بوت‌استرپ</p><a class="" href="p3-bs-start.html" data-fa="فریم‌ورک و شروع بوت‌استرپ" data-en="Frameworks and starting Bootstrap">فریم‌ورک و شروع بوت‌استرپ</a><a class="" href="p3-bs-util.html" data-fa="فاصله، گردی و لیست" data-en="Spacing, rounding, and lists">فاصله، گردی و لیست</a><a class="" href="p3-bs-header.html" data-fa="سرصفحه فروشگاه" data-en="The shop header">سرصفحه فروشگاه</a><a class="" href="p3-bs-grid.html" data-fa="شبکه Grid" data-en="The grid">شبکه Grid</a><a class="" href="p3-bs-rwd.html" data-fa="کلاس‌های واکنش‌گرا" data-en="Responsive classes">کلاس‌های واکنش‌گرا</a><a class="" href="p3-bs-nav.html" data-fa="نوار ناوبری و جزئیات محصول" data-en="Navbar and product details">نوار ناوبری و جزئیات محصول</a><a class="" href="p3-bs-form.html" data-fa="فرم و پنجره Modal" data-en="Forms and modals">فرم و پنجره Modal</a><a class="" href="p3-bs-show.html" data-fa="کاروسل و آکاردئون" data-en="Carousel and accordion">کاروسل و آکاردئون</a><a class="" href="p3-bs-assess.html" data-fa="ارزشیابی بوت‌استرپ" data-en="Bootstrap assessment">ارزشیابی بوت‌استرپ</a><p class="unit" data-fa="جاوااسکریپت" data-en="JavaScript">جاوااسکریپت</p><a class="" href="p3-js-start.html" data-fa="جاوااسکریپت در صفحه وب" data-en="JavaScript on the page">جاوااسکریپت در صفحه وب</a><a class="" href="p3-js-vars.html" data-fa="متغیر و نوع داده" data-en="Variables and data types">متغیر و نوع داده</a><a class="" href="p3-js-ops.html" data-fa="عملگرها" data-en="Operators">عملگرها</a><a class="" href="p3-js-data.html" data-fa="آرایه و شیء" data-en="Arrays and objects">آرایه و شیء</a><a class="" href="p3-js-if.html" data-fa="شرط در جاوااسکریپت" data-en="Conditions in JavaScript">شرط در جاوااسکریپت</a><a class="" href="p3-js-loops.html" data-fa="حلقه‌ها" data-en="Loops">حلقه‌ها</a><a class="" href="p3-js-func.html" data-fa="تابع‌ها" data-en="Functions">تابع‌ها</a><a class="" href="p3-js-dom.html" data-fa="صفحه، رویداد و اعتبار فرم" data-en="The page, events, and form validation">صفحه، رویداد و اعتبار فرم</a><a class="" href="p3-js-assess.html" data-fa="ارزشیابی جاوااسکریپت" data-en="JavaScript assessment">ارزشیابی جاوااسکریپت</a><p class="mod" data-fa="پودمان ۴: توسعه وب پایتون" data-en="Module 4: Python for the web">پودمان ۴: توسعه وب پایتون</p><p class="unit" data-fa="معرفی پودمان" data-en="Module introduction">معرفی پودمان</p><a class="" href="p4-intro.html" data-fa="معرفی پودمان شیءگرایی" data-en="Introducing the object-oriented module">معرفی پودمان شیءگرایی</a><p class="unit" data-fa="شیءگرایی" data-en="Object-oriented programming">شیءگرایی</p><a class="" href="p4-idea.html" data-fa="ایده شیء و کلاس" data-en="The idea of objects and classes">ایده شیء و کلاس</a><a class="" href="p4-class.html" data-fa="ساخت کلاس و متد" data-en="Writing a class and methods">ساخت کلاس و متد</a><a class="" href="p4-inherit.html" data-fa="وراثت" data-en="Inheritance">وراثت</a><a class="" href="p4-protect.html" data-fa="داده معتبر و استفاده داخلی" data-en="Valid data and internal use">داده معتبر و استفاده داخلی</a><a class="" href="p4-assess-oop.html" data-fa="ارزشیابی برنامه شیءگرا" data-en="Object-oriented assessment">ارزشیابی برنامه شیءگرا</a><p class="unit" data-fa="فایل و توسعه" data-en="Files and development">فایل و توسعه</p><a class="" href="p4-files.html" data-fa="خواندن و نوشتن فایل متنی" data-en="Reading and writing text files">خواندن و نوشتن فایل متنی</a><a class="" href="p4-errors.html" data-fa="پیمایش فایل و مدیریت خطا" data-en="Walking a file and handling errors">پیمایش فایل و مدیریت خطا</a><a class="current" href="p4-json.html" data-fa="چند فایل و JSON" data-en="Several files and JSON">چند فایل و JSON</a><a class="" href="p4-assess-files.html" data-fa="ارزشیابی کار با فایل" data-en="Files assessment">ارزشیابی کار با فایل</a><p class="mod" data-fa="پودمان ۵: برنامه‌نویسی جنگو" data-en="Module 5: Django">پودمان ۵: برنامه‌نویسی جنگو</p><p class="unit" data-fa="معرفی پودمان" data-en="Module introduction">معرفی پودمان</p><a class="" href="p5-intro.html" data-fa="معرفی پودمان جنگو" data-en="Introducing the Django module">معرفی پودمان جنگو</a><p class="unit" data-fa="ایجاد وب‌اپلیکیشن" data-en="Creating the web app">ایجاد وب‌اپلیکیشن</p><a class="" href="p5-what.html" data-fa="جنگو چیست و نصب" data-en="What Django is, and installing it">جنگو چیست و نصب</a><a class="" href="p5-project.html" data-fa="پروژه، اپ و اولین view" data-en="Project, app, and the first view">پروژه، اپ و اولین view</a><a class="" href="p5-template.html" data-fa="قالب و دمای واقعی" data-en="Templates and a real temperature">قالب و دمای واقعی</a><a class="" href="p5-assess-create.html" data-fa="ارزشیابی ایجاد وب‌اپلیکیشن" data-en="Creating-the-app assessment">ارزشیابی ایجاد وب‌اپلیکیشن</a><p class="unit" data-fa="توسعه وب‌اپلیکیشن" data-en="Developing the web app">توسعه وب‌اپلیکیشن</p><a class="" href="p5-model.html" data-fa="مدل شهر و پنل ادمین" data-en="The city model and the admin">مدل شهر و پنل ادمین</a><a class="" href="p5-list.html" data-fa="خواندن شهرها و نمایش فهرست" data-en="Reading cities and showing the list">خواندن شهرها و نمایش فهرست</a><a class="" href="p5-auth.html" data-fa="ورود و خروج" data-en="Sign-in and sign-out">ورود و خروج</a><a class="" href="p5-crud.html" data-fa="افزودن و حذف شهر" data-en="Adding and deleting a city">افزودن و حذف شهر</a><a class="" href="p5-bugs.html" data-fa="باگ و امنیت" data-en="Bugs and security">باگ و امنیت</a><p class="mod" data-fa="پایان کتاب" data-en="Back of the book">پایان کتاب</p><p class="unit" data-fa="منابع" data-en="References">منابع</p><a class="" href="refs.html" data-fa="منابع کتاب" data-en="Book references">منابع کتاب</a></nav></details>
+    <div class="main">
+      <h1 class="section-title" data-fa="چند فایل و JSON" data-en="Several files and JSON">چند فایل و JSON</h1><article class="lesson" lang="fa" dir="rtl" data-lang-block="fa"><p class="page-mark">صفحه ۲۶۷</p>
+<p>حالا اگر فایل <code>alice.txt</code> را ایجاد کنید و آن را در پوشه مناسب قرار دهید این بار بلوک <code>try</code> اجرا خواهد شد.</p>
+<p>برنامه فایل را پیدا می‌کند و وارد بلوک <code>else</code> می‌شود.</p>
+<p>متن آلیس در سرزمین عجایب را واردکنید، پایتون متن فایل را به‌عنوان یک رشته طولانی درنظر می‌گیرد.</p>
+<p>برای تولید لیستی از تمام کلمات موجود در کتاب، از متد رشته‌ای استفاده کنیدکه به طور پیش‌فرض یک رشته را در هر جایی که فضای خالی پیدا کند، تقسیم می‌کند.</p>
+<p>برای شمارش تعداد این کلمات از )(<code>len</code> استفاده کنید.</p>
+<p><img alt="تصویر کتاب" src="../images/p273-02.png" /></p>
+<p><img alt="تصویر کتاب" src="../images/p273-01.png" /></p>
+<figure class="shot"><img alt="شکل 45" src="../images/p273-03.png" /><figcaption>شکل 45</figcaption></figure>
+<hr />
+<p class="page-mark">صفحه ۲۶۸</p>
+<p>کار با چند فایل کار با چند فایل یکی از مهارت‌های مهم است، چون تقریباً هیچ برنامه واقعی فقط با یک فایل کار نمی‌کند.</p>
+<p>کار با چند فایل یعنی برنامه بتواند بدون تکرار کد:</p>
+<p>چندین فایل را پشت هم بخواند و روی همه آنها یک عملیات مشابه انجام دهد. پس لازم است یک تابع تعریف کنید و همچنین خطاها هم مدیریت و سپس نتایج ذخیره شوند.</p>
+<p>برای انجام این کارکتاب‌های بیشتری را برای تحلیل اضافه کنید.</p>
+<p>برای اینکه اجرای تحلیل روی چندین کتاب مختلف ساده‌تر و منظم‌تر شود بهتر است، بخش اصلی برنامه را به یک تابع به نام <code>count_word</code> منتقل کنید. اگر کدها را با برنامه قبل مقایسه کنید، متوجه می‌شوید تغییرات شامل اصلاح تو رفتگی و انتقال به بدنه تابع است.</p>
+<p>خط 2: تابع <code>def</code> <code>count_words</code>(<code>path</code>) یک ورودی به نام <code>path</code> می‌گیرد که مسیر یک فایل متنی است.</p>
+<p>خط 11: این خط از کد نام فایل‌ها به‌صورت رشته‌های متنی (<code>String</code>) در یک لیست به نام<code>filenames</code> ذخیره می‌کند.</p>
+<div class="code-wrap" dir="ltr"><pre><code>]'filenames = ['alice.txt','moby_dick.txt','little_women.txt
+</code></pre></div>
+<p>خط 12: در این خط ازیک حلقه <code>for</code> برای بررسی تک‌تک فایل‌های داخل لیست و به دست آوردن تعداد کلمات متن فایل استفاده شده است.</p>
+<p>خط 13: نام فایل به یک شیء از نوع <code>Path</code> تبدیل می‌شود.</p>
+<p>خط 14: تابع <code>count_words</code> برای آن فایل اجرا می‌شود.</p>
+<p>و اگر فایلی وجود نداشته باشد، برنامه خطا نمی‌دهد و پیام مناسب نمایش می‌دهد.</p>
+<p><img alt="تصویر کتاب" src="../images/p274-01.png" /></p>
+<figure class="shot"><img alt="شکل 46" src="../images/p274-02.png" /><figcaption>شکل 46</figcaption></figure>
+<hr />
+<p class="page-mark">صفحه ۲۶۹</p>
+<p>نادیده گرفتن خطا (<code>Failing</code> <code>Silently</code>) در مثال قبلی، به کاربر اطلاع داده می‌شد که یکی از فایل‌ها در دسترس نیست. با این وجود، در همه برنامه‌ها نیازی نیست تمام خطاهای رخ‌داده به کاربر نمایش داده شود.</p>
+<p><img alt="تصویر کتاب" src="../images/p275-01.png" /></p>
+<p>در این حالت، خطا رخ می‌دهد، اما هیچ‌گونه پیامی به کاربر نمایش داده نمی‌شود و روند اجرای برنامه بدون وقفه ادامه می‌یابد.</p>
+<p>برای پیاده‌سازی این حالت، از ساختار <code>try-except</code> استفاده می‌شود. با این تفاوت که در بخش <code>except</code> به‌صورت صریح به مفسر پایتون دستور داده می‌شود هیچ عملی انجام ندهد. پس دستور<code>print</code> بعد از <code>except</code> را حذف کنید تاپیام خطا نمایش داده نشود و به جای آن دستور <code>pass</code> را اضافه کنید.</p>
+<p><strong>شکل 47</strong></p>
+<p>در زبان برنامه‌نویسی پایتون، دستور <code>pass</code> برای خالی نگه‌داشتن یک بلوک کد و انجام ندادن هیچ‌گونه عملی به کار می‌رود.</p>
+<p><img alt="تصویر کتاب" src="../images/p275-02.png" /></p>
+<p><img alt="تصویر کتاب" src="../images/p275-03.png" /></p>
+<p>اگر فایل وجود نداشته باشد، خطا رخ می‌دهد، اما هیچ پیامی نمایش داده نمی‌شود، برنامه متوقف نمی‌شود و اجرای برنامه ادامه پیدا می‌کند.</p>
+<p><strong>شکل 48</strong></p>
+<h3 id="_1">فعالیت</h3>
+<p>همان‌طور که در برنامه تقسیم عدد بر صفر دیدید با یک پیام خطا کاربر از خطای تقسیم بر صفر آگاه می‌شد. این برنامه را به نحوی تغییر دهید که هرگاه مخرج یک تقسیم صفر بود بدون توقف برنامه، پیامی هم نمایش داده نشود.</p>
+<p>ذخیره‌سازی داده‌ها در بیشتربرنامه‌ها، مثل تنظیمات دلخواه کاربری برای یک بازی یا داده‌هایی برای نمایش نمودار، اطلاعاتی از کاربران دریافت می‌شود. صرف نظر از نوع آنها، اطلاعات وارد شده در ساختارهای داده‌ای مانند لیست‌ها و دیکشنری‌ها ذخیره می‌شوند. اما وقتی برنامه بسته می‌شود، این داده‌ها از بین می‌روند. برای حفظ اطلاعات برای دفعات بعد اجرای برنامه‌ها می‌توانید آنها را در فایل ذخیره کنید. یکی از ساده‌ترین روش‌ها برای این‌کار، استفاده از فایل‌های <code>JSON</code> است که کمک می‌کنند داده‌های پایتون به‌صورت متنی ذخیره و در اجرای بعدی برنامه دوباره خوانده‌شوند. این قالب مخصوص پایتون نیست و در زبان‌های برنامه‌نویسی دیگر نیز کاربرد دارد. در پایتون برای کار با <code>JSON</code> از ماژول<code>json</code> استفاده می‌شود.</p>
+<figure class="shot"><img alt="شکل 49" src="../images/p275-04.png" /><figcaption>شکل 49</figcaption></figure>
+<hr />
+<p class="page-mark">صفحه ۲۷۰</p>
+<p><code>json.dump</code>() داده‌ها را به قالب <code>JSON</code> تبدیل می‌کند و <code>json.loads</code>() داده‌های ذخیره شده را دوباره به ساختارهای پایتون برمی‌گرداند.</p>
+<p>فایل‌های<code>JSON</code> به دلیل سادگی، خوانایی و کاربردگسترده یکی از روش‌های مهم ذخیره‌سازی داده‌ها در برنامه‌نویسی هستند.</p>
+<p>ذخیره یک لیست در فایل <code>JSON</code> توضیح کد:</p>
+<p>خط 2 ماژول <code>json</code> وارد برنامه شده‌است.</p>
+<p>خط 3 لیستی از برندهای تلفن همراه برای ذخیره‌سازی ایجاد شده است.</p>
+<p>خط 5 با استفاده از تابع <code>dump</code>، داده‌های مورد نظر به قالب <code>JSON</code> تبدیل شده‌است. خروجی این تابع یک رشته متنی است که نمایانگر داده‌ها به‌صورت <code>json</code> است</p>
+<figure class="shot"><img alt="شکل 50" src="../images/p276-01.png" /><figcaption>شکل 50</figcaption></figure>
+<p>خط 6 این رشته متنی با استفاده از متد <code>write-text</code> داخل فایل ذخیره می‌شود.</p>
+<p>این برنامه خروجی در صفحه نمایش ندارد، اما اگر فایل <code>mobiles_brand.json</code> را باز کنید خواهید دید که داده‌ها به شکلی ذخیره شده‌اند که بسیار شبیه به ساختار داده‌ها در پایتون است.</p>
+<figure class="shot"><img alt="شکل 51" src="../images/p276-02.png" /><figcaption>شکل 51</figcaption></figure>
+<p>خواندن داده‌ها از فایل <code>JSON</code> برای برگرداندن اطلاعات ذخیره شده در فایل<code>JSON</code> به حافظه، لازم است برنامه‌ای دیگر نوشت.</p>
+<p><img alt="تصویر کتاب" src="../images/p276-03.png" /></p>
+<figure class="shot"><img alt="شکل 52" src="../images/p276-04.png" /><figcaption>شکل 52</figcaption></figure>
+<hr />
+<p class="page-mark">صفحه ۲۷۱</p>
+<p>توضیح کد:</p>
+<p>خط 2 ابتدا ماژول <code>json</code> وارد برنامه شده است.</p>
+<p>خط3 سپس محتوای فایل <code>JSON</code> را خوانده و به‌صورت یک رشته متنی ذخیره شده است.</p>
+<p>خط 4 از آنجا که فایل <code>JSON</code> در اصل یک فایل متنی با قالب مشخص است، با استفاده از متد <code>read_text</code>() خوانده شده است.</p>
+<p>خط 5 در مرحله بعد با استفاده از تابع <code>loads</code>، این رشته متنی به ساختار داده‌ای مناسب در پایتون تبدیل شده است. در این برنامه، داده‌ها دوباره به‌صورت یک لیست از اعداد در حافظه ذخیره می‌شوند.</p>
+<p>پس از این مرحله، می‌توانید از داده‌ها مانند سایر لیست‌های پایتون استفاده کنید. به این ترتیب اطلاعاتی که قبلاً در فایل <code>JSON</code> ذخیره شده بودند، در اجرای بعدی برنامه دوباره قابل استفاده خواهند بود.</p>
+<p>مثال: برنامه‌ای بنویسید که مشخصات فنی یک گوشی هوشمند (شامل برند، مدل، مقدار رم و وضعیت گارانتی) را در قالب یک دیکشنری تعریف کند. سپس این برنامه باید:</p>
+<p>با استفاده از کتابخانه <code>json</code> و کلاس <code>Path</code> از کتابخانه <code>pathlib</code> این دیکشنری را در فایلی به‌نام</p>
+<div class="code-wrap" dir="ltr"><pre><code>mobile_specs.json ذخیره کند.
+</code></pre></div>
+<p>در مرحله بعد، فایل را باز کرده، محتوا را خوانده و فقط «مدل» و «مقدار رم» گوشی را در خروجی چاپ کند.</p>
+<h3 id="_2">فعالیت</h3>
+<p>خطوط کد برنامه را با کمک هنرآموز محترم خود توضیح دهید.</p>
+<p><img alt="تصویر کتاب" src="../images/p277-01.png" /></p>
+<p><img alt="تصویر کتاب" src="../images/p277-02.png" /></p>
+<hr />
+<p class="page-mark">صفحه ۲۷۲</p>
+<h3 id="_3">فعالیت</h3>
+<p>در کد نوشته شده قرار است اطلاعات آب‌وهوای یک شهر را در فایل ذخیره و سپس آن را بازخوانی کند.</p>
+<p>بخش‌هایی از کد که با علامت <strong><em>_</em></strong>__ مشخص شده است را با دستورات صحیح پر کنید.</p>
+<p><img alt="تصویر کتاب" src="../images/p278-01.png" /></p>
+<hr /></article><article class="lesson" lang="en" dir="ltr" data-lang-block="en" hidden><p class="page-mark">Page 267</p>
+<p>Now if you create the file <code>alice.txt</code> and place it in the appropriate folder, this time the <code>try</code> block will run.</p>
+<p>The program finds the file and enters the <code>else</code> block.</p>
+<p>Enter the text of Alice in Wonderland; Python treats the file text as one long string.</p>
+<p>To produce a list of all the words in the book, use the string method that by default splits a string wherever it finds a space.</p>
+<p>To count the number of these words, use <code>len</code>().</p>
+<p><img alt="Book image" src="../images/p273-02.png" /></p>
+<p><img alt="Book image" src="../images/p273-01.png" /></p>
+<figure class="shot"><img alt="Figure 45" src="../images/p273-03.png" /><figcaption>Figure 45</figcaption></figure>
+<hr />
+<p class="page-mark">Page 268</p>
+<p>Working with several files Working with several files is an important skill, because almost no real program works with only one file.</p>
+<p>Working with several files means the program can, without repeating code:</p>
+<p>read several files one after another and perform a similar operation on all of them. So you need to define a function, and errors must also be managed and then the results stored.</p>
+<p>To do this, add more books for analysis.</p>
+<p>To make running the analysis on several different books simpler and more organized, it is better to move the main part of the program into a function named <code>count_word</code>. If you compare the code with the previous program, you notice that the changes include fixing indentation and moving it into the body of the function.</p>
+<p>Line 2: The function <code>def</code> <code>count_words</code>(<code>path</code>) takes one input named <code>path</code>, which is the path of a text file.</p>
+<p>Line 11: This line of code stores the file names as text strings (<code>String</code>) in a list named <code>filenames</code>.</p>
+<div class="code-wrap" dir="ltr"><pre><code>]'filenames = ['alice.txt','moby_dick.txt','little_women.txt
+</code></pre></div>
+<p>Line 12: In this line a <code>for</code> loop is used to examine each file in the list one by one and obtain the number of words in the file text.</p>
+<p>Line 13: The file name is turned into an object of type <code>Path</code>.</p>
+<p>Line 14: The <code>count_words</code> function is run for that file.</p>
+<p>And if a file does not exist, the program does not give an error and displays an appropriate message.</p>
+<p><img alt="Book image" src="../images/p274-01.png" /></p>
+<figure class="shot"><img alt="Figure 46" src="../images/p274-02.png" /><figcaption>Figure 46</figcaption></figure>
+<hr />
+<p class="page-mark">Page 269</p>
+<p>Ignoring errors (Failing Silently) In the previous example, the user was told that one of the files was not available. Even so, not every program needs to display every error that occurs to the user.</p>
+<p><img alt="Book image" src="../images/p275-01.png" /></p>
+<p>In this case, an error occurs, but no message is displayed to the user and the program continues running without interruption.</p>
+<p>To implement this case, a <code>try-except</code> structure is used. The difference is that in the <code>except</code> section the Python interpreter is explicitly told to do nothing. So remove the <code>print</code> statement after <code>except</code> so that the error message is not displayed, and instead add the <code>pass</code> statement.</p>
+<p><strong>Figure 47</strong></p>
+<p>In the Python programming language, the <code>pass</code> statement is used to leave a block of code empty and perform no action.</p>
+<p><img alt="Book image" src="../images/p275-02.png" /></p>
+<p><img alt="Book image" src="../images/p275-03.png" /></p>
+<p>If the file does not exist, an error occurs, but no message is displayed, the program does not stop, and execution of the program continues.</p>
+<p><strong>Figure 48</strong></p>
+<h3 id="activity">Activity</h3>
+<p>As you saw in the division-by-zero program, an error message informed the user of the division-by-zero error. Change this program so that whenever the denominator of a division is zero, without stopping the program, no message is displayed either.</p>
+<p>Storing data In most programs, such as a user’s preferred settings for a game or data for displaying a chart, information is received from users. Regardless of their type, the entered information is stored in data structures such as lists and dictionaries. But when the program is closed, this data is lost. To keep the information for later runs of the programs, you can store it in a file. One of the simplest methods for this is to use <code>JSON</code> files, which help store Python data as text and read it again in the next run of the program. This format is not specific to Python and is also used in other programming languages. In Python, the <code>json</code> module is used to work with <code>JSON</code>.</p>
+<figure class="shot"><img alt="Figure 49" src="../images/p275-04.png" /><figcaption>Figure 49</figcaption></figure>
+<hr />
+<p class="page-mark">Page 270</p>
+<p><code>json.dump</code>() converts data to the <code>JSON</code> format, and <code>json.loads</code>() turns the stored data back into Python structures.</p>
+<p><code>JSON</code> files, because of their simplicity, readability, and wide use, are one of the important methods of storing data in programming.</p>
+<p>Storing a list in a <code>JSON</code> file Code explanation:</p>
+<p>Line 2 The <code>json</code> module has been imported into the program.</p>
+<p>Line 3 A list of mobile phone brands has been created for storage.</p>
+<p>Line 5 Using the <code>dump</code> function, the desired data has been converted to the <code>JSON</code> format. The output of this function is a text string that represents the data as <code>json</code></p>
+<figure class="shot"><img alt="Figure 50" src="../images/p276-01.png" /><figcaption>Figure 50</figcaption></figure>
+<p>Line 6 This text string is stored inside the file using the <code>write-text</code> method.</p>
+<p>This program has no output on the display, but if you open the file <code>mobiles_brand.json</code> you will see that the data has been stored in a form that is very similar to the structure of data in Python.</p>
+<figure class="shot"><img alt="Figure 51" src="../images/p276-02.png" /><figcaption>Figure 51</figcaption></figure>
+<p>Reading data from a <code>JSON</code> file To bring the information stored in a <code>JSON</code> file back into memory, another program must be written.</p>
+<p><img alt="Book image" src="../images/p276-03.png" /></p>
+<figure class="shot"><img alt="Figure 52" src="../images/p276-04.png" /><figcaption>Figure 52</figcaption></figure>
+<hr />
+<p class="page-mark">Page 271</p>
+<p>Code explanation:</p>
+<p>Line 2 First the <code>json</code> module has been imported into the program.</p>
+<p>Line 3 Then the contents of the <code>JSON</code> file have been read and stored as a text string.</p>
+<p>Line 4 Since a <code>JSON</code> file is essentially a text file with a specific format, it has been read using the <code>read_text</code>() method.</p>
+<p>Line 5 Next, using the <code>loads</code> function, this text string has been converted to an appropriate data structure in Python. In this program, the data is stored in memory again as a list of numbers.</p>
+<p>After this step, you can use the data like other Python lists. In this way, information that was previously stored in a <code>JSON</code> file will be usable again in the next run of the program.</p>
+<p>Example: Write a program that defines the technical specifications of a smartphone (including brand, model, amount of RAM, and warranty status) in the form of a dictionary. Then this program must:</p>
+<p>using the <code>json</code> library and the <code>Path</code> class from the <code>pathlib</code> library, store this dictionary in a file named</p>
+<div class="code-wrap" dir="ltr"><pre><code>mobile_specs.json ذخیره کند.
+</code></pre></div>
+<p>Next, open the file, read the content, and print only the “model” and “amount of RAM” of the phone in the output.</p>
+<h3 id="activity_1">Activity</h3>
+<p>Explain the lines of the program code with the help of your teacher.</p>
+<p><img alt="Book image" src="../images/p277-01.png" /></p>
+<p><img alt="Book image" src="../images/p277-02.png" /></p>
+<hr />
+<p class="page-mark">Page 272</p>
+<h3 id="activity_2">Activity</h3>
+<p>In the written code, the weather information of a city is to be stored in a file and then read back.</p>
+<p>Fill in the parts of the code marked with <strong><em>_</em></strong>__ with the correct statements.</p>
+<p><img alt="Book image" src="../images/p278-01.png" /></p>
+<hr /></article>
+      <aside class="extra">
+        <h2 data-fa="تمرین این بخش" data-en="Exercises for this section">تمرین این بخش</h2>
+        <p class="extra-note" data-fa="این تمرین‌ها و پیوندها اضافه بر متن کتاب‌اند." data-en="These exercises and links are in addition to the book.">این تمرین‌ها و پیوندها اضافه بر متن کتاب‌اند.</p>
+        <ol><li data-fa="لیست گوشی‌ها را در phones.json ذخیره کن، برنامه را ببند، دوباره باز کن و همان داده‌ها را برگردان." data-en="Save a list of phones in phones.json, quit, start again, and load the same data back.">لیست گوشی‌ها را در phones.json ذخیره کن، برنامه را ببند، دوباره باز کن و همان داده‌ها را برگردان.</li><li data-fa="یک فیلد قیمت را در فایل عوض کن و برنامه را طوری بساز که بعد از خواندن، قیمت تازه را چاپ کند. اگر فایل نبود، پیام بده و یک فایل خالی قابل‌استفاده بساز." data-en="Change one price in the file and make the program print the new price after reading. If the file is missing, show a message and create a usable empty file.">یک فیلد قیمت را در فایل عوض کن و برنامه را طوری بساز که بعد از خواندن، قیمت تازه را چاپ کند. اگر فایل نبود، پیام بده و یک فایل خالی قابل‌استفاده بساز.</li></ol>
+        <h2 data-fa="پیوند مفید" data-en="Useful link">پیوند مفید</h2><ul><li><a href="https://docs.python.org/3/library/json.html" data-fa="ماژول json" data-en="The json module">ماژول json</a></li></ul>
+      </aside>
+    <nav class="pager"><a rel="prev" class="prev" href="p4-errors.html"><span class="pager-word" data-fa="قبلی" data-en="Previous">قبلی</span><span class="pager-name" data-fa="پیمایش فایل و مدیریت خطا" data-en="Walking a file and handling errors">پیمایش فایل و مدیریت خطا</span></a><a rel="next" class="next" href="p4-assess-files.html"><span class="pager-word" data-fa="بعدی" data-en="Next">بعدی</span><span class="pager-name" data-fa="ارزشیابی کار با فایل" data-en="Files assessment">ارزشیابی کار با فایل</span></a></nav>
+    </div>
+  </div>
+  <script src="../assets/search-index.js?v=4"></script>
+  <script src="../assets/app.js?v=4"></script>
+</body>
+</html>

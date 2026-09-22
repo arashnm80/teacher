@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title data-fa="فاصله، گردی و لیست" data-en="Spacing, rounding, and lists">فاصله، گردی و لیست</title>
+  <link rel="icon" href="../assets/favicon.svg">
+  <link rel="stylesheet" href="../assets/style.css?v=4">
+</head>
+<body data-root="../">
+  <header class="top">
+    <a class="brand" href="../index.html">
+      <span data-fa="طراح سایت" data-en="Site Design">طراح سایت</span>
+      <small data-fa="پایه یازدهم" data-en="Grade 11">پایه یازدهم</small>
+    </a>
+    <div class="search-wrap">
+      <input id="q" type="search" autocomplete="off"
+        data-fa-placeholder="جستجو در درس‌ها" data-en-placeholder="Search lessons"
+        placeholder="جستجو در درس‌ها">
+      <div id="results" class="results" hidden></div>
+    </div>
+    <a class="download" href="../grade11-offline.zip?v=2" data-fa="دانلود کل سایت" data-en="Download the whole site">دانلود کل سایت</a>
+    <button type="button" id="lang-toggle" class="lang-toggle" dir="ltr" data-lang="fa"
+      aria-label="تغییر زبان">
+      <span data-opt="fa">فا</span>
+      <span data-opt="en">EN</span>
+    </button>
+  </header>
+  <div class="layout">
+    <details class="toc" open><summary><span data-fa="فهرست درس‌ها" data-en="Lesson list">فهرست درس‌ها</span></summary><nav class="side" aria-label="lessons"><p class="mod" data-fa="شروع کتاب" data-en="Opening">شروع کتاب</p><p class="unit" data-fa="فهرست" data-en="Contents">فهرست</p><a class="" href="toc.html" data-fa="فهرست" data-en="Contents">فهرست</a><p class="mod" data-fa="پودمان ۱: برنامه‌نویسی پایتون" data-en="Module 1: Python programming">پودمان ۱: برنامه‌نویسی پایتون</p><p class="unit" data-fa="معرفی پودمان" data-en="Module introduction">معرفی پودمان</p><a class="" href="p1-intro.html" data-fa="معرفی پودمان پایتون" data-en="Introducing the Python module">معرفی پودمان پایتون</a><p class="unit" data-fa="مدل‌سازی داده" data-en="Data modeling">مدل‌سازی داده</p><a class="" href="p1-python.html" data-fa="پایتون و محیط برنامه‌نویسی" data-en="Python and the programming environment">پایتون و محیط برنامه‌نویسی</a><a class="" href="p1-vars.html" data-fa="متغیرها، نوع داده و عملگرها" data-en="Variables, types, and operators">متغیرها، نوع داده و عملگرها</a><a class="" href="p1-cast.html" data-fa="ورودی و تبدیل نوع" data-en="Input and type casting">ورودی و تبدیل نوع</a><a class="" href="p1-lists.html" data-fa="لیست‌ها" data-en="Lists">لیست‌ها</a><a class="" href="p1-if.html" data-fa="شرط‌های ساده" data-en="Simple conditions">شرط‌های ساده</a><a class="" href="p1-elif.html" data-fa="if، elif و else" data-en="if, elif, and else">if، elif و else</a><a class="" href="p1-for.html" data-fa="حلقه for و range" data-en="The for loop and range">حلقه for و range</a><a class="" href="p1-while.html" data-fa="حلقه while و کنترل حلقه" data-en="The while loop and loop control">حلقه while و کنترل حلقه</a><a class="" href="p1-assess-data.html" data-fa="ارزشیابی مدل‌سازی داده" data-en="Data-modeling assessment">ارزشیابی مدل‌سازی داده</a><p class="unit" data-fa="توابع و ماژول‌ها" data-en="Functions and modules">توابع و ماژول‌ها</p><a class="" href="p1-sets.html" data-fa="مجموعه (set)" data-en="Sets">مجموعه (set)</a><a class="" href="p1-dict.html" data-fa="دیکشنری" data-en="Dictionaries">دیکشنری</a><a class="" href="p1-quiz.html" data-fa="پروژه بازی Quiz" data-en="Quiz game project">پروژه بازی Quiz</a><a class="" href="p1-tuple.html" data-fa="تاپل" data-en="Tuples">تاپل</a><a class="" href="p1-func.html" data-fa="تعریف تابع، پارامتر و return" data-en="Defining functions, parameters, and return">تعریف تابع، پارامتر و return</a><a class="" href="p1-func-more.html" data-fa="تمرین تابع و مرتب‌سازی" data-en="Function practice and sorting">تمرین تابع و مرتب‌سازی</a><a class="" href="p1-modules.html" data-fa="ماژول‌ها و تفاوت تابع و متد" data-en="Modules, and functions versus methods">ماژول‌ها و تفاوت تابع و متد</a><a class="" href="p1-assess-func.html" data-fa="ارزشیابی توابع و ماژول‌ها" data-en="Functions and modules assessment">ارزشیابی توابع و ماژول‌ها</a><p class="mod" data-fa="پودمان ۲: صفحات وب ایستا" data-en="Module 2: Static web pages">پودمان ۲: صفحات وب ایستا</p><p class="unit" data-fa="معرفی پودمان" data-en="Module introduction">معرفی پودمان</p><a class="" href="p2-intro.html" data-fa="معرفی پودمان صفحات ایستا" data-en="Introducing static web pages">معرفی پودمان صفحات ایستا</a><p class="unit" data-fa="ساختار با HTML" data-en="Structure with HTML">ساختار با HTML</p><a class="" href="p2-web.html" data-fa="وب چگونه کار می‌کند" data-en="How the web works">وب چگونه کار می‌کند</a><a class="" href="p2-concepts.html" data-fa="مفاهیم طراحی وب و نقشه سایت" data-en="Web-design concepts and the site map">مفاهیم طراحی وب و نقشه سایت</a><a class="" href="p2-tags.html" data-fa="اولین صفحه HTML" data-en="A first HTML page">اولین صفحه HTML</a><a class="" href="p2-text.html" data-fa="متن، لیست و پیوند" data-en="Text, lists, and links">متن، لیست و پیوند</a><a class="" href="p2-img.html" data-fa="تصویر در صفحه" data-en="Images on the page">تصویر در صفحه</a><a class="" href="p2-forms.html" data-fa="فرم‌ها" data-en="Forms">فرم‌ها</a><a class="" href="p2-semantic.html" data-fa="عناصر معنایی" data-en="Semantic elements">عناصر معنایی</a><a class="" href="p2-assess-html.html" data-fa="ارزشیابی HTML" data-en="HTML assessment">ارزشیابی HTML</a><p class="unit" data-fa="ظاهر با CSS" data-en="Appearance with CSS">ظاهر با CSS</p><a class="" href="p2-css-start.html" data-fa="نوشتن CSS" data-en="Writing CSS">نوشتن CSS</a><a class="" href="p2-css-look.html" data-fa="رنگ، پس‌زمینه و انتخاب‌گر" data-en="Color, background, and selectors">رنگ، پس‌زمینه و انتخاب‌گر</a><a class="" href="p2-box.html" data-fa="مدل جعبه‌ای و display" data-en="The box model and display">مدل جعبه‌ای و display</a><a class="" href="p2-flex.html" data-fa="چیدمان با Flexbox" data-en="Layout with Flexbox">چیدمان با Flexbox</a><a class="" href="p2-flex-work.html" data-fa="کارگاه چیدمان صفحه" data-en="Page-layout workshop">کارگاه چیدمان صفحه</a><a class="" href="p2-media.html" data-fa="مدیا کوئری و ارزشیابی CSS" data-en="Media queries and the CSS assessment">مدیا کوئری و ارزشیابی CSS</a><p class="mod" data-fa="پودمان ۳: صفحات وب تعاملی" data-en="Module 3: Interactive web pages">پودمان ۳: صفحات وب تعاملی</p><p class="unit" data-fa="معرفی پودمان" data-en="Module introduction">معرفی پودمان</p><a class="" href="p3-intro.html" data-fa="معرفی پودمان تعاملی" data-en="Introducing the interactive module">معرفی پودمان تعاملی</a><p class="unit" data-fa="بوت‌استرپ" data-en="Bootstrap">بوت‌استرپ</p><a class="" href="p3-bs-start.html" data-fa="فریم‌ورک و شروع بوت‌استرپ" data-en="Frameworks and starting Bootstrap">فریم‌ورک و شروع بوت‌استرپ</a><a class="current" href="p3-bs-util.html" data-fa="فاصله، گردی و لیست" data-en="Spacing, rounding, and lists">فاصله، گردی و لیست</a><a class="" href="p3-bs-header.html" data-fa="سرصفحه فروشگاه" data-en="The shop header">سرصفحه فروشگاه</a><a class="" href="p3-bs-grid.html" data-fa="شبکه Grid" data-en="The grid">شبکه Grid</a><a class="" href="p3-bs-rwd.html" data-fa="کلاس‌های واکنش‌گرا" data-en="Responsive classes">کلاس‌های واکنش‌گرا</a><a class="" href="p3-bs-nav.html" data-fa="نوار ناوبری و جزئیات محصول" data-en="Navbar and product details">نوار ناوبری و جزئیات محصول</a><a class="" href="p3-bs-form.html" data-fa="فرم و پنجره Modal" data-en="Forms and modals">فرم و پنجره Modal</a><a class="" href="p3-bs-show.html" data-fa="کاروسل و آکاردئون" data-en="Carousel and accordion">کاروسل و آکاردئون</a><a class="" href="p3-bs-assess.html" data-fa="ارزشیابی بوت‌استرپ" data-en="Bootstrap assessment">ارزشیابی بوت‌استرپ</a><p class="unit" data-fa="جاوااسکریپت" data-en="JavaScript">جاوااسکریپت</p><a class="" href="p3-js-start.html" data-fa="جاوااسکریپت در صفحه وب" data-en="JavaScript on the page">جاوااسکریپت در صفحه وب</a><a class="" href="p3-js-vars.html" data-fa="متغیر و نوع داده" data-en="Variables and data types">متغیر و نوع داده</a><a class="" href="p3-js-ops.html" data-fa="عملگرها" data-en="Operators">عملگرها</a><a class="" href="p3-js-data.html" data-fa="آرایه و شیء" data-en="Arrays and objects">آرایه و شیء</a><a class="" href="p3-js-if.html" data-fa="شرط در جاوااسکریپت" data-en="Conditions in JavaScript">شرط در جاوااسکریپت</a><a class="" href="p3-js-loops.html" data-fa="حلقه‌ها" data-en="Loops">حلقه‌ها</a><a class="" href="p3-js-func.html" data-fa="تابع‌ها" data-en="Functions">تابع‌ها</a><a class="" href="p3-js-dom.html" data-fa="صفحه، رویداد و اعتبار فرم" data-en="The page, events, and form validation">صفحه، رویداد و اعتبار فرم</a><a class="" href="p3-js-assess.html" data-fa="ارزشیابی جاوااسکریپت" data-en="JavaScript assessment">ارزشیابی جاوااسکریپت</a><p class="mod" data-fa="پودمان ۴: توسعه وب پایتون" data-en="Module 4: Python for the web">پودمان ۴: توسعه وب پایتون</p><p class="unit" data-fa="معرفی پودمان" data-en="Module introduction">معرفی پودمان</p><a class="" href="p4-intro.html" data-fa="معرفی پودمان شیءگرایی" data-en="Introducing the object-oriented module">معرفی پودمان شیءگرایی</a><p class="unit" data-fa="شیءگرایی" data-en="Object-oriented programming">شیءگرایی</p><a class="" href="p4-idea.html" data-fa="ایده شیء و کلاس" data-en="The idea of objects and classes">ایده شیء و کلاس</a><a class="" href="p4-class.html" data-fa="ساخت کلاس و متد" data-en="Writing a class and methods">ساخت کلاس و متد</a><a class="" href="p4-inherit.html" data-fa="وراثت" data-en="Inheritance">وراثت</a><a class="" href="p4-protect.html" data-fa="داده معتبر و استفاده داخلی" data-en="Valid data and internal use">داده معتبر و استفاده داخلی</a><a class="" href="p4-assess-oop.html" data-fa="ارزشیابی برنامه شیءگرا" data-en="Object-oriented assessment">ارزشیابی برنامه شیءگرا</a><p class="unit" data-fa="فایل و توسعه" data-en="Files and development">فایل و توسعه</p><a class="" href="p4-files.html" data-fa="خواندن و نوشتن فایل متنی" data-en="Reading and writing text files">خواندن و نوشتن فایل متنی</a><a class="" href="p4-errors.html" data-fa="پیمایش فایل و مدیریت خطا" data-en="Walking a file and handling errors">پیمایش فایل و مدیریت خطا</a><a class="" href="p4-json.html" data-fa="چند فایل و JSON" data-en="Several files and JSON">چند فایل و JSON</a><a class="" href="p4-assess-files.html" data-fa="ارزشیابی کار با فایل" data-en="Files assessment">ارزشیابی کار با فایل</a><p class="mod" data-fa="پودمان ۵: برنامه‌نویسی جنگو" data-en="Module 5: Django">پودمان ۵: برنامه‌نویسی جنگو</p><p class="unit" data-fa="معرفی پودمان" data-en="Module introduction">معرفی پودمان</p><a class="" href="p5-intro.html" data-fa="معرفی پودمان جنگو" data-en="Introducing the Django module">معرفی پودمان جنگو</a><p class="unit" data-fa="ایجاد وب‌اپلیکیشن" data-en="Creating the web app">ایجاد وب‌اپلیکیشن</p><a class="" href="p5-what.html" data-fa="جنگو چیست و نصب" data-en="What Django is, and installing it">جنگو چیست و نصب</a><a class="" href="p5-project.html" data-fa="پروژه، اپ و اولین view" data-en="Project, app, and the first view">پروژه، اپ و اولین view</a><a class="" href="p5-template.html" data-fa="قالب و دمای واقعی" data-en="Templates and a real temperature">قالب و دمای واقعی</a><a class="" href="p5-assess-create.html" data-fa="ارزشیابی ایجاد وب‌اپلیکیشن" data-en="Creating-the-app assessment">ارزشیابی ایجاد وب‌اپلیکیشن</a><p class="unit" data-fa="توسعه وب‌اپلیکیشن" data-en="Developing the web app">توسعه وب‌اپلیکیشن</p><a class="" href="p5-model.html" data-fa="مدل شهر و پنل ادمین" data-en="The city model and the admin">مدل شهر و پنل ادمین</a><a class="" href="p5-list.html" data-fa="خواندن شهرها و نمایش فهرست" data-en="Reading cities and showing the list">خواندن شهرها و نمایش فهرست</a><a class="" href="p5-auth.html" data-fa="ورود و خروج" data-en="Sign-in and sign-out">ورود و خروج</a><a class="" href="p5-crud.html" data-fa="افزودن و حذف شهر" data-en="Adding and deleting a city">افزودن و حذف شهر</a><a class="" href="p5-bugs.html" data-fa="باگ و امنیت" data-en="Bugs and security">باگ و امنیت</a><p class="mod" data-fa="پایان کتاب" data-en="Back of the book">پایان کتاب</p><p class="unit" data-fa="منابع" data-en="References">منابع</p><a class="" href="refs.html" data-fa="منابع کتاب" data-en="Book references">منابع کتاب</a></nav></details>
+    <div class="main">
+      <h1 class="section-title" data-fa="فاصله، گردی و لیست" data-en="Spacing, rounding, and lists">فاصله، گردی و لیست</h1><article class="lesson" lang="fa" dir="rtl" data-lang-block="fa"><p class="page-mark">صفحه ۱۵۱</p>
+<p>کلاس‌های <code>margin</code> و <code>padding</code> بوت‌استرپ دارای دو مجموعه کلاس <code>m</code>{<code>side</code>}<code>-size</code> و <code>p</code>{<code>side</code>}<code>-size</code> برای تعیین فاصلۀ اطراف و فضای اضافی داخل عناصر است که در <code>CSS</code> توسط ویژگی‌های <code>margin</code> و <code>padding</code> تعیین می‌شوند. پارامتر <code>side</code> تعیی‌نکنندۀ جهت درج حاشیه یا فضای خالی است و پارامتر <code>size</code> اندازه حاشیه یا فضای خالی را تعیین می‌کند. مجموعه کلاس‌های <code>m</code> و<code>p</code> و مفهوم آنها در جدول زیر آمده است:</p>
+<p>جدول 2- کلاس‌های <code>margin</code> و <code>padding</code> در بوت‌استرپ</p>
+<p>کلاس‌های <code>margin</code>کلاس‌های <code>padding</code></p>
+<p>مفهوم</p>
+<div class="code-wrap" dir="ltr"><pre><code>m-size
+</code></pre></div>
+<p><code>p-size</code> در تمام جهات</p>
+<div class="code-wrap" dir="ltr"><pre><code>m{t}-size
+p{t}-size
+</code></pre></div>
+<p>بالا (<code>top</code>)</p>
+<div class="code-wrap" dir="ltr"><pre><code>m{e}-size
+p{e}-size
+</code></pre></div>
+<p>سمت راست در <code>ltr</code> (<code>end</code>)</p>
+<div class="code-wrap" dir="ltr"><pre><code>m{b}-size
+p{b}-size
+پایین(bottom)
+m{s}-size
+p{s}-size
+</code></pre></div>
+<p>سمت چپ در <code>ltr</code> (<code>start</code>)</p>
+<div class="code-wrap" dir="ltr"><pre><code>m{x}-size
+p{x}-size
+</code></pre></div>
+<p>چپ و راست (محور <code>x</code>)</p>
+<div class="code-wrap" dir="ltr"><pre><code>m{y}-size
+p{y}-size
+</code></pre></div>
+<p>بالا و پایین (محور <code>y</code>)</p>
+<p>مقدار <code>size</code> عددی بین صفر تا پنج است. هر یک از اعداد این محدوده بیانگر فاصله مشخصی بر حسب <code>px</code> است.</p>
+<p>جدول 3 مقادیر پارامتر <code>size</code> بر حسب واحد اندازه گیری <code>px</code></p>
+<p>اندازه بر حسب <code>Sizepx</code></p>
+<p><code>4px</code></p>
+<p>1</p>
+<p><code>8px</code></p>
+<p>2</p>
+<p><code>16px</code></p>
+<p>3</p>
+<p><code>24px</code></p>
+<p>4</p>
+<p><code>48px</code></p>
+<p>5</p>
+<p>پارامتر <code>size</code> می‌تواند دارای مقدار <code>auto</code> نیز باشد. عبارت <code>auto</code> به معنای تنظیم خودکار است. استفاده از <code>mx-auto</code> باعث تنظیم فاصله چپ و راست عنصر با مقادیر مساوی می‌گردد، به‌طوری‌که عنصر در وسط عنصر والد خود قرار گیرد.</p>
+<hr />
+<p class="page-mark">صفحه ۱۵۲</p>
+<p>استفاده از کلاس‌های <code>margin</code> و <code>padding</code></p>
+<h3 id="_1">کار کارگاهی</h3>
+<p>در ادامه کارگاه قبل یک عنصر <code>div</code> با مشخصات زیر به صفحه وب اضافه کنید:</p>
+<p><img alt="تصویر کتاب" src="../images/p158-01.png" /></p>
+<p>در کد فوق مقدار فاصله عنصر <code>&lt;div&gt;</code> از عنصر بالایی برابر <code>24px</code> یا (<code>mt-4</code>) و مقدار فاصله چپ و راست آن به‌صورت خودکار (<code>mx-auto</code>) تنظیم شده است. همچنین فضای اضافی داخل عنصر از همه جهات برابر با <code>16px</code> (<code>p-3</code>) تعیین شده است.</p>
+<div class="code-wrap" dir="ltr"><pre><code>کلاس‌های border، rounded و shadow
+</code></pre></div>
+<p>بوت‌استرپ حاوی مجموعه‌ای از کلاس‌ها درباره خط دور، گردی گوشه‌ها و سایر عناصر است. کلاس‌های <code>border</code>، برای ایجاد خط دور، تعیین رنگ و ضخامت آن مورد استفاده قرار می‌گیرند. کلاس‌های <code>rounded</code> برای گردکردن گوشه‌ها و کلاس‌های <code>shadow</code> برای ایجاد سایر عناصر کاربرد دارند. جدول ٤ به معرفی انواع کلاس‌های <code>border</code>، <code>rounded</code> و <code>shadow</code> می‌پردازد.</p>
+<p>جدول 4 انواع کلاس‌های <code>border</code>، <code>rounded</code> و <code>shadow</code></p>
+<p>سایه و اندازه آن</p>
+<p>گردی گوشه‌ها</p>
+<p>رنگ خط دور</p>
+<p>خط دور و ضخامت آن</p>
+<div class="code-wrap" dir="ltr"><pre><code>border-primary
+rounded
+border-secondary
+border
+rounded-circle
+-shadow-none shadow
+border-success
+border-1
+rounded-pill
+</code></pre></div>
+<p><code>sm</code></p>
+<div class="code-wrap" dir="ltr"><pre><code>danger-danger
+border-2
+rounded-top
+shadow
+border-info
+border-3
+rounded-bottom
+shadow-lg
+border-warning
+border-4
+rounded-start
+border-light
+border-5
+rounded-end
+border-dark
+</code></pre></div>
+<p>جدول 5 کلاس‌های بوت‌استرپ برای تعیین اندازه گردی گوشه‌ها و ضخامت خط دور</p>
+<p>اندازه</p>
+<p>مقدار گردی گوشه‌ها</p>
+<p>ضخامت خط دور</p>
+<p>خط دور</p>
+<p><code>1px</code></p>
+<div class="code-wrap" dir="ltr"><pre><code>0px (no rounding)
+1 rounded
+1 border
+</code></pre></div>
+<p><code>2px</code></p>
+<p><code>2px</code></p>
+<div class="code-wrap" dir="ltr"><pre><code>2 rounded
+2 border
+</code></pre></div>
+<p><code>4px</code></p>
+<p><code>3px</code></p>
+<div class="code-wrap" dir="ltr"><pre><code>3 rounded
+3 border
+</code></pre></div>
+<p><code>6px</code></p>
+<p><code>4px</code></p>
+<div class="code-wrap" dir="ltr"><pre><code>4 rounded
+4 border
+</code></pre></div>
+<p><code>5px</code></p>
+<div class="code-wrap" dir="ltr"><pre><code>5 rounded
+5 border
+</code></pre></div>
+<hr />
+<p class="page-mark">صفحه ۱۵۳</p>
+<p>در مجموعه کلاس‌های <code>rounded</code>، کلاس <code>rounded-circle</code> برای گرد شدن کامل یک عنصر به‌کار می‌رود.</p>
+<p>شرط گرد‌شدن کامل یک عنصر، برابر بودن پهنا و ارتفاع آن است. کلاس <code>rounded-pill</code> نیز برای گرد شدن گوشه‌ها همانند قرص یا کپسول به‌کار می‌رود. کلمات <code>start</code> و <code>end</code> به سمت چپ و راست یک عنصر اشاره دارند.</p>
+<p>استفاده از کلاس‌های <code>border</code>، <code>shadow</code> و <code>rounded</code></p>
+<h3 id="_2">کار کارگاهی</h3>
+<p>در ادامه کارگاه قبل، دو عنصر با مشخصات زیر به صفحه <code>test-bs.html</code> اضافه کنید.</p>
+<p>برای ایجاد کادر مستطیلی تصویر زیر، کد زیر را بنویسید:</p>
+<p><img alt="تصویر کتاب" src="../images/p159-01.png" /></p>
+<p>برای ایجاد تصویر مدور، تصویر یک محصول را با ابعاد یکسان به صفحه اضافه کنید و تنظیمات آن را به شکل زیر انجام دهید:</p>
+<p><img alt="تصویر کتاب" src="../images/p159-02.png" /></p>
+<div class="code-wrap" dir="ltr"><pre><code>کلاس‌هایtypography
+</code></pre></div>
+<p>کلاس‌های متنی بوت‌استرپ برای تنظیم اندازه و وزن فونت، تراز، استایل لیست‌ها و موارد دیگر استفاده می‌شود. جدول ٦ به برخی از کلاس‌های متنی اشاره دارد.</p>
+<p>جدول 6 کلاس‌های متنی <code>Bootstrap</code></p>
+<p>اندازه متن</p>
+<p>وزن</p>
+<p>تراز متن</p>
+<p>استایل لیست</p>
+<p>آرایش متن</p>
+<div class="code-wrap" dir="ltr"><pre><code>fs-1 … fs-6
+fw-bold
+text-start
+list-unstyled
+text-decoration-none
+</code></pre></div>
+<p><code>h1</code> … <code>h6</code></p>
+<div class="code-wrap" dir="ltr"><pre><code>fw-light
+text-center
+list-inline
+text-capitalize
+display-1 … display-4
+fw-lighter
+text-end
+text-uppercase
+</code></pre></div>
+<p>کلاس‌های <code>*-fs</code> برای تنظیم اندازه فونت عناصر متنی از کوچک (<code>fs-6</code>) به بزرگ (<code>fs-1</code>) کاربرد دارد.</p>
+<p>کلاس‌های <code>h1</code> تا <code>h6</code> برای تنظیم اندازه برچسب‌های عنوان استفاده می‌شود.</p>
+<p>کلاس‌های <code>*-display</code> برای ایجاد عناوین بزرگ و جلب توجه کاربر استفاده می‌شوند و مفهوم خاصی را منتقل نمی‌کنند.</p>
+<hr />
+<p class="page-mark">صفحه ۱۵۴</p>
+<p>کلاس <code>list-unstyled</code> استایل پیش فرض لیست را حذف می‌کند؛ به این معنی که علائم یا شماره‌های کنار عنصر ناپدید شده و مقدار <code>padding-left</code> برابر صفر می‌گردد.</p>
+<p>کلاس <code>list-inline</code> عناصر لیست را آماده چیدمان افقی می‌کند، به‌شرطی که عناصر لیست دارای کلاس <code>-list</code> <code>inline-item</code> باشند. این نوع لیست برای منوهای ساده و ناوبری‌های کوچک کاربرد دارد.</p>
+<p>کلاس‌های <code>felx</code> بوت‌استرپ دارای کلاس‌های مختلفی در زمینه طراحی عناصر صفحه با تکنیک <code>Flexbox</code> است. سیستم فلکس دارای دو کلاس پایه با اسامی <code>d-flex</code> و <code>d-inline-flex</code> است که برای عناصر نگهدارنده استفاده می‌شوند. به‌طور مثال بخش معرفی محصولات نیازمند یک عنصر نگهدارنده است که محصولات درون آن به‌صورت انعطاف‌پذیر کنار هم قرار گیرند. جدول زیر برخی از کلاس‌های فلکس را بر‌اساس موضوعات مختلف معرفی می‌کند.</p>
+<p>جدول 7 کلاس‌های <code>Flexbox</code></p>
+<p>تراز افقی عناصر</p>
+<p>تراز عمودی عناصر</p>
+<p>جهت چیدمان</p>
+<p>انتقال به سطر بعد</p>
+<div class="code-wrap" dir="ltr"><pre><code>justify-content-start
+align-items-start
+flex-row
+flex-wrap
+justify-content-center
+align-items-center
+flex-row-reverse
+flex-nowrap
+justify-content-end
+align-items-end
+flex-column
+flex-wrap-reverse
+justify-content-between
+align-items-baseline
+flex-column-reverse
+justify-content-around
+justify-content-evenly
+</code></pre></div>
+<p>کلاس‌های <code>*-justify-content</code> برای تعیین تراز افقی محتوا در یک عنصر نگهدارنده استفاده می‌شوند. سه کلاس اول، محتوای یک عنصر را در سمت چپ (<code>start</code>)، وسط (<code>center</code>) و راست (<code>end</code>) تراز می‌کنند. سه کلاس بعدی نحوه توزیع عناصر را بر اساس فاصله بین آنها مشخص می‌کنند.</p>
+<p>کلاس‌های <code>*-align-items</code> برای تعیین تراز عناصر در راستای عمودی استفاده می‌شوند.</p>
+<p>به‌کارگیری کلاس‌های مختلف در لایه تصاویر محصولات</p>
+<h3 id="_3">کار کارگاهی</h3>
+<p>در این کارگاه کد لایه «جدیدترین محصولات» را توسط کلاس‌های بوت‌استرپ به شکل زیر تغییر خواهید داد.</p>
+<p>1 فایل <code>index.html</code> مربوط به واحد کار 1 را باز کنید. کد لینک و اسکریپت <code>CDN</code> بوت‌استرپ 5 را در مکان مناسب اضافه کنید.</p>
+<p>2 در عنصر <code>&lt;main&gt;</code>، تغییرات زیر را اعمال کنید:</p>
+<p><img alt="تصویر کتاب" src="../images/p160-01.png" /></p>
+<hr />
+<p class="page-mark">صفحه ۱۵۵</p>
+<div class="code-wrap" dir="ltr"><pre><code>3 استایل‌های مربوط به .products-section h2، .products و ویژگی margin در .products-section را
+</code></pre></div>
+<p>از فایل <code>styles.css</code> حذف کنید.</p>
+<p><img alt="تصویر کتاب" src="../images/p161-04.png" /></p>
+<p>طراحی بخش معرفی فروشگاه</p>
+<h3 id="_4">کار کارگاهی</h3>
+<p>در این کارگاه یک بخش با محتوای متنی در انتهای صفحه فروشگاه ایجاد خواهید کرد. برای طراحی این قسمت از کلاس‌های مختلف بوت‌استرپ استفاده کنید.</p>
+<p>در فایل <code>index.html</code> برچسب <code>&lt;article&gt;</code> را به شکل زیر قبل از برچسب <code>&lt;main/&gt;</code> اضافه نمایید:</p>
+<p><img alt="تصویر کتاب" src="../images/p161-01.png" /></p>
+<p>تیترها و پاراگراف‌های زیر را درون برچسب <code>&lt;article&gt;</code> اضافه کنید:</p>
+<p><img alt="تصویر کتاب" src="../images/p161-02.png" /></p>
+<p>فایل را ذخیره کنید و نتیجه را در مرورگر مشاهده کنید.</p>
+<p>بوت‌استرپ نسخه ۳ دارای کلاسی به نام <code>text-justify</code> بود که برای تراز کردن دوطرفه متن (<code>justify</code>) به‌کار می‌رفت. این کلاس در بوت‌استرپ نسخه ۵ موجود نیست. بنابراین، برای ایجاد تراز دوطرفه متن در پاراگراف‌ها، لازم است کلاس سفارشی <code>text-justify</code> را با استفاده از کد زیر به فایل <code>styles.css</code> اضافه نمایید:</p>
+<p><img alt="تصویر کتاب" src="../images/p161-03.png" /></p>
+<hr /></article><article class="lesson" lang="en" dir="ltr" data-lang-block="en" hidden><p class="page-mark">Page 151</p>
+<p>Bootstrap’s <code>margin</code> and <code>padding</code> classes Bootstrap has two sets of classes, <code>m</code>{<code>side</code>}<code>-size</code> and <code>p</code>{<code>side</code>}<code>-size</code>, for setting the space around and the extra space inside elements, which in <code>CSS</code> are set by the <code>margin</code> and <code>padding</code> properties. The <code>side</code> parameter determines the direction in which the margin or empty space is applied, and the <code>size</code> parameter determines the size of the margin or empty space. The sets of <code>m</code> and <code>p</code> classes and their meanings are shown in the table below:</p>
+<p>Table 2- <code>margin</code> and <code>padding</code> classes in Bootstrap</p>
+<p><code>margin</code> classes <code>padding</code> classes</p>
+<p>Meaning</p>
+<div class="code-wrap" dir="ltr"><pre><code>m-size
+</code></pre></div>
+<p><code>p-size</code> in all directions</p>
+<div class="code-wrap" dir="ltr"><pre><code>m{t}-size
+p{t}-size
+</code></pre></div>
+<p>top (<code>top</code>)</p>
+<div class="code-wrap" dir="ltr"><pre><code>m{e}-size
+p{e}-size
+</code></pre></div>
+<p>right side in <code>ltr</code> (<code>end</code>)</p>
+<div class="code-wrap" dir="ltr"><pre><code>m{b}-size
+p{b}-size
+پایین(bottom)
+m{s}-size
+p{s}-size
+</code></pre></div>
+<p>left side in <code>ltr</code> (<code>start</code>)</p>
+<div class="code-wrap" dir="ltr"><pre><code>m{x}-size
+p{x}-size
+</code></pre></div>
+<p>left and right (<code>x</code> axis)</p>
+<div class="code-wrap" dir="ltr"><pre><code>m{y}-size
+p{y}-size
+</code></pre></div>
+<p>top and bottom (<code>y</code> axis)</p>
+<p>The value of <code>size</code> is a number from zero to five. Each number in this range represents a specific distance in <code>px</code>.</p>
+<p>Table 3 Values of the <code>size</code> parameter in the measurement unit <code>px</code></p>
+<p>Size in <code>Sizepx</code></p>
+<p><code>4px</code></p>
+<p>1</p>
+<p><code>8px</code></p>
+<p>2</p>
+<p><code>16px</code></p>
+<p>3</p>
+<p><code>24px</code></p>
+<p>4</p>
+<p><code>48px</code></p>
+<p>5</p>
+<p>The <code>size</code> parameter can also have the value <code>auto</code>. The word <code>auto</code> means automatic adjustment. Using <code>mx-auto</code> sets the left and right spacing of the element to equal values, so that the element is placed in the middle of its parent element.</p>
+<hr />
+<p class="page-mark">Page 152</p>
+<p>Using <code>margin</code> and <code>padding</code> classes</p>
+<h3 id="workshop">Workshop</h3>
+<p>Continuing the previous workshop, add a <code>div</code> element with the following settings to the web page:</p>
+<p><img alt="Book image" src="../images/p158-01.png" /></p>
+<p>In the code above, the distance of the <code>&lt;div&gt;</code> element from the element above it is set to <code>24px</code> or (<code>mt-4</code>), and its left and right spacing is set automatically (<code>mx-auto</code>). Also, the extra space inside the element in all directions is set to <code>16px</code> (<code>p-3</code>).</p>
+<div class="code-wrap" dir="ltr"><pre><code>کلاس‌های border، rounded و shadow
+</code></pre></div>
+<p>Bootstrap contains a set of classes about borders, corner rounding, and other elements. The <code>border</code> classes are used to create a border and set its color and thickness. The <code>rounded</code> classes are used to round corners, and the <code>shadow</code> classes are used to create shadows on elements. Table 4 introduces the types of <code>border</code>, <code>rounded</code>, and <code>shadow</code> classes.</p>
+<p>Table 4 Types of <code>border</code>, <code>rounded</code>, and <code>shadow</code> classes</p>
+<p>Shadow and its size</p>
+<p>Corner rounding</p>
+<p>Border color</p>
+<p>Border and its thickness</p>
+<div class="code-wrap" dir="ltr"><pre><code>border-primary
+rounded
+border-secondary
+border
+rounded-circle
+-shadow-none shadow
+border-success
+border-1
+rounded-pill
+</code></pre></div>
+<p><code>sm</code></p>
+<div class="code-wrap" dir="ltr"><pre><code>danger-danger
+border-2
+rounded-top
+shadow
+border-info
+border-3
+rounded-bottom
+shadow-lg
+border-warning
+border-4
+rounded-start
+border-light
+border-5
+rounded-end
+border-dark
+</code></pre></div>
+<p>Table 5 Bootstrap classes for setting corner rounding size and border thickness</p>
+<p>Size</p>
+<p>Corner rounding amount</p>
+<p>Border thickness</p>
+<p>Border</p>
+<p><code>1px</code></p>
+<div class="code-wrap" dir="ltr"><pre><code>0px (no rounding)
+1 rounded
+1 border
+</code></pre></div>
+<p><code>2px</code></p>
+<p><code>2px</code></p>
+<div class="code-wrap" dir="ltr"><pre><code>2 rounded
+2 border
+</code></pre></div>
+<p><code>4px</code></p>
+<p><code>3px</code></p>
+<div class="code-wrap" dir="ltr"><pre><code>3 rounded
+3 border
+</code></pre></div>
+<p><code>6px</code></p>
+<p><code>4px</code></p>
+<div class="code-wrap" dir="ltr"><pre><code>4 rounded
+4 border
+</code></pre></div>
+<p><code>5px</code></p>
+<div class="code-wrap" dir="ltr"><pre><code>5 rounded
+5 border
+</code></pre></div>
+<hr />
+<p class="page-mark">Page 153</p>
+<p>In the set of <code>rounded</code> classes, the class <code>rounded-circle</code> is used to make an element fully round.</p>
+<p>The condition for an element to become fully round is that its width and height are equal. The class <code>rounded-pill</code> is also used to round corners like a pill or capsule. The words <code>start</code> and <code>end</code> refer to the left and right sides of an element.</p>
+<p>Using <code>border</code>, <code>shadow</code>, and <code>rounded</code> classes</p>
+<h3 id="workshop_1">Workshop</h3>
+<p>Continuing the previous workshop, add two elements with the following settings to the page <code>test-bs.html</code>.</p>
+<p>To create the rectangular box in the image below, write the following code:</p>
+<p><img alt="Book image" src="../images/p159-01.png" /></p>
+<p>To create a circular image, add a product image with equal dimensions to the page and set it as follows:</p>
+<p><img alt="Book image" src="../images/p159-02.png" /></p>
+<div class="code-wrap" dir="ltr"><pre><code>کلاس‌هایtypography
+</code></pre></div>
+<p>Bootstrap’s text classes are used to set font size and weight, alignment, list styles, and other items. Table 6 refers to some of the text classes.</p>
+<p>Table 6 Bootstrap text classes</p>
+<p>Text size</p>
+<p>Weight</p>
+<p>Text alignment</p>
+<p>List style</p>
+<p>Text decoration</p>
+<div class="code-wrap" dir="ltr"><pre><code>fs-1 … fs-6
+fw-bold
+text-start
+list-unstyled
+text-decoration-none
+</code></pre></div>
+<p><code>h1</code> … <code>h6</code></p>
+<div class="code-wrap" dir="ltr"><pre><code>fw-light
+text-center
+list-inline
+text-capitalize
+display-1 … display-4
+fw-lighter
+text-end
+text-uppercase
+</code></pre></div>
+<p>The <code>*-fs</code> classes are used to set the font size of text elements from small (<code>fs-6</code>) to large (<code>fs-1</code>).</p>
+<p>The classes <code>h1</code> through <code>h6</code> are used to set the size of heading tags.</p>
+<p>The <code>*-display</code> classes are used to create large headings and attract the user’s attention and do not convey a special meaning.</p>
+<hr />
+<p class="page-mark">Page 154</p>
+<p>The class <code>list-unstyled</code> removes the default list style; that means the markers or numbers next to the item disappear and the value of <code>padding-left</code> becomes zero.</p>
+<p>The class <code>list-inline</code> prepares list items for horizontal layout, provided that the list items have the class <code>-list</code> <code>inline-item</code>. This type of list is useful for simple menus and small navigations.</p>
+<p><code>felx</code> classes Bootstrap has various classes for designing page elements with the <code>Flexbox</code> technique. The flex system has two base classes named <code>d-flex</code> and <code>d-inline-flex</code> that are used for container elements. For example, a product introduction section needs a container element in which the products are placed flexibly next to each other. The table below introduces some flex classes based on different topics.</p>
+<p>Table 7 <code>Flexbox</code> classes</p>
+<p>Horizontal alignment of elements</p>
+<p>Vertical alignment of elements</p>
+<p>Layout direction</p>
+<p>Wrapping to the next row</p>
+<div class="code-wrap" dir="ltr"><pre><code>justify-content-start
+align-items-start
+flex-row
+flex-wrap
+justify-content-center
+align-items-center
+flex-row-reverse
+flex-nowrap
+justify-content-end
+align-items-end
+flex-column
+flex-wrap-reverse
+justify-content-between
+align-items-baseline
+flex-column-reverse
+justify-content-around
+justify-content-evenly
+</code></pre></div>
+<p>The <code>*-justify-content</code> classes are used to set the horizontal alignment of content in a container element. The first three classes align an element’s content to the left (<code>start</code>), center (<code>center</code>), and right (<code>end</code>). The next three classes determine how elements are distributed based on the space between them.</p>
+<p>The <code>*-align-items</code> classes are used to set the alignment of elements along the vertical axis.</p>
+<p>Using different classes in the product images layer</p>
+<h3 id="workshop_2">Workshop</h3>
+<p>In this workshop you will change the code of the “Newest products” layer using Bootstrap classes as shown below.</p>
+<p>1 Open the <code>index.html</code> file from work unit 1. Add the Bootstrap 5 <code>CDN</code> link and script code in the appropriate place.</p>
+<p>2 In the <code>&lt;main&gt;</code> element, apply the following changes:</p>
+<p><img alt="Book image" src="../images/p160-01.png" /></p>
+<hr />
+<p class="page-mark">Page 155</p>
+<div class="code-wrap" dir="ltr"><pre><code>3 استایل‌های مربوط به .products-section h2، .products و ویژگی margin در .products-section را
+</code></pre></div>
+<p>Remove them from the file <code>styles.css</code>.</p>
+<p><img alt="Book image" src="../images/p161-04.png" /></p>
+<p>Designing the store introduction section</p>
+<h3 id="workshop_3">Workshop</h3>
+<p>In this workshop you will create a section with text content at the end of the store page. Use different Bootstrap classes to design this part.</p>
+<p>In the file <code>index.html</code>, add the <code>&lt;article&gt;</code> tag as shown below before the <code>&lt;main/&gt;</code> tag:</p>
+<p><img alt="Book image" src="../images/p161-01.png" /></p>
+<p>Add the following headings and paragraphs inside the <code>&lt;article&gt;</code> tag:</p>
+<p><img alt="Book image" src="../images/p161-02.png" /></p>
+<p>Save the file and view the result in the browser.</p>
+<p>Bootstrap version 3 had a class named <code>text-justify</code> that was used for justified text alignment (<code>justify</code>). This class does not exist in Bootstrap version 5. Therefore, to create justified text alignment in paragraphs, you need to add the custom class <code>text-justify</code> to the file <code>styles.css</code> using the code below:</p>
+<p><img alt="Book image" src="../images/p161-03.png" /></p>
+<hr /></article>
+      <aside class="extra">
+        <h2 data-fa="تمرین این بخش" data-en="Exercises for this section">تمرین این بخش</h2>
+        <p class="extra-note" data-fa="این تمرین‌ها و پیوندها اضافه بر متن کتاب‌اند." data-en="These exercises and links are in addition to the book.">این تمرین‌ها و پیوندها اضافه بر متن کتاب‌اند.</p>
+        <ol><li data-fa="یک کارت بساز و چهار فاصله متفاوت margin و padding را با کلاس بوت‌استرپ روی بخش‌های مختلفش بگذار." data-en="Build one card and put four different margin and padding utilities on different parts of it.">یک کارت بساز و چهار فاصله متفاوت margin و padding را با کلاس بوت‌استرپ روی بخش‌های مختلفش بگذار.</li><li data-fa="یک فهرست را بدون نشانه بساز و یک تصویر کوچک را دایره‌ای کن." data-en="Build a list with no bullets and make a small image a circle.">یک فهرست را بدون نشانه بساز و یک تصویر کوچک را دایره‌ای کن.</li></ol>
+        <h2 data-fa="پیوند مفید" data-en="Useful link">پیوند مفید</h2><ul><li><a href="https://getbootstrap.com/docs/5.3/utilities/spacing/" data-fa="کلاس‌های فاصله" data-en="Spacing utilities">کلاس‌های فاصله</a></li></ul>
+      </aside>
+    <nav class="pager"><a rel="prev" class="prev" href="p3-bs-start.html"><span class="pager-word" data-fa="قبلی" data-en="Previous">قبلی</span><span class="pager-name" data-fa="فریم‌ورک و شروع بوت‌استرپ" data-en="Frameworks and starting Bootstrap">فریم‌ورک و شروع بوت‌استرپ</span></a><a rel="next" class="next" href="p3-bs-header.html"><span class="pager-word" data-fa="بعدی" data-en="Next">بعدی</span><span class="pager-name" data-fa="سرصفحه فروشگاه" data-en="The shop header">سرصفحه فروشگاه</span></a></nav>
+    </div>
+  </div>
+  <script src="../assets/search-index.js?v=4"></script>
+  <script src="../assets/app.js?v=4"></script>
+</body>
+</html>

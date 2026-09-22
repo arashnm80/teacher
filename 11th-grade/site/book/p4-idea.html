@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title data-fa="ایده شیء و کلاس" data-en="The idea of objects and classes">ایده شیء و کلاس</title>
+  <link rel="icon" href="../assets/favicon.svg">
+  <link rel="stylesheet" href="../assets/style.css?v=4">
+</head>
+<body data-root="../">
+  <header class="top">
+    <a class="brand" href="../index.html">
+      <span data-fa="طراح سایت" data-en="Site Design">طراح سایت</span>
+      <small data-fa="پایه یازدهم" data-en="Grade 11">پایه یازدهم</small>
+    </a>
+    <div class="search-wrap">
+      <input id="q" type="search" autocomplete="off"
+        data-fa-placeholder="جستجو در درس‌ها" data-en-placeholder="Search lessons"
+        placeholder="جستجو در درس‌ها">
+      <div id="results" class="results" hidden></div>
+    </div>
+    <a class="download" href="../grade11-offline.zip?v=2" data-fa="دانلود کل سایت" data-en="Download the whole site">دانلود کل سایت</a>
+    <button type="button" id="lang-toggle" class="lang-toggle" dir="ltr" data-lang="fa"
+      aria-label="تغییر زبان">
+      <span data-opt="fa">فا</span>
+      <span data-opt="en">EN</span>
+    </button>
+  </header>
+  <div class="layout">
+    <details class="toc" open><summary><span data-fa="فهرست درس‌ها" data-en="Lesson list">فهرست درس‌ها</span></summary><nav class="side" aria-label="lessons"><p class="mod" data-fa="شروع کتاب" data-en="Opening">شروع کتاب</p><p class="unit" data-fa="فهرست" data-en="Contents">فهرست</p><a class="" href="toc.html" data-fa="فهرست" data-en="Contents">فهرست</a><p class="mod" data-fa="پودمان ۱: برنامه‌نویسی پایتون" data-en="Module 1: Python programming">پودمان ۱: برنامه‌نویسی پایتون</p><p class="unit" data-fa="معرفی پودمان" data-en="Module introduction">معرفی پودمان</p><a class="" href="p1-intro.html" data-fa="معرفی پودمان پایتون" data-en="Introducing the Python module">معرفی پودمان پایتون</a><p class="unit" data-fa="مدل‌سازی داده" data-en="Data modeling">مدل‌سازی داده</p><a class="" href="p1-python.html" data-fa="پایتون و محیط برنامه‌نویسی" data-en="Python and the programming environment">پایتون و محیط برنامه‌نویسی</a><a class="" href="p1-vars.html" data-fa="متغیرها، نوع داده و عملگرها" data-en="Variables, types, and operators">متغیرها، نوع داده و عملگرها</a><a class="" href="p1-cast.html" data-fa="ورودی و تبدیل نوع" data-en="Input and type casting">ورودی و تبدیل نوع</a><a class="" href="p1-lists.html" data-fa="لیست‌ها" data-en="Lists">لیست‌ها</a><a class="" href="p1-if.html" data-fa="شرط‌های ساده" data-en="Simple conditions">شرط‌های ساده</a><a class="" href="p1-elif.html" data-fa="if، elif و else" data-en="if, elif, and else">if، elif و else</a><a class="" href="p1-for.html" data-fa="حلقه for و range" data-en="The for loop and range">حلقه for و range</a><a class="" href="p1-while.html" data-fa="حلقه while و کنترل حلقه" data-en="The while loop and loop control">حلقه while و کنترل حلقه</a><a class="" href="p1-assess-data.html" data-fa="ارزشیابی مدل‌سازی داده" data-en="Data-modeling assessment">ارزشیابی مدل‌سازی داده</a><p class="unit" data-fa="توابع و ماژول‌ها" data-en="Functions and modules">توابع و ماژول‌ها</p><a class="" href="p1-sets.html" data-fa="مجموعه (set)" data-en="Sets">مجموعه (set)</a><a class="" href="p1-dict.html" data-fa="دیکشنری" data-en="Dictionaries">دیکشنری</a><a class="" href="p1-quiz.html" data-fa="پروژه بازی Quiz" data-en="Quiz game project">پروژه بازی Quiz</a><a class="" href="p1-tuple.html" data-fa="تاپل" data-en="Tuples">تاپل</a><a class="" href="p1-func.html" data-fa="تعریف تابع، پارامتر و return" data-en="Defining functions, parameters, and return">تعریف تابع، پارامتر و return</a><a class="" href="p1-func-more.html" data-fa="تمرین تابع و مرتب‌سازی" data-en="Function practice and sorting">تمرین تابع و مرتب‌سازی</a><a class="" href="p1-modules.html" data-fa="ماژول‌ها و تفاوت تابع و متد" data-en="Modules, and functions versus methods">ماژول‌ها و تفاوت تابع و متد</a><a class="" href="p1-assess-func.html" data-fa="ارزشیابی توابع و ماژول‌ها" data-en="Functions and modules assessment">ارزشیابی توابع و ماژول‌ها</a><p class="mod" data-fa="پودمان ۲: صفحات وب ایستا" data-en="Module 2: Static web pages">پودمان ۲: صفحات وب ایستا</p><p class="unit" data-fa="معرفی پودمان" data-en="Module introduction">معرفی پودمان</p><a class="" href="p2-intro.html" data-fa="معرفی پودمان صفحات ایستا" data-en="Introducing static web pages">معرفی پودمان صفحات ایستا</a><p class="unit" data-fa="ساختار با HTML" data-en="Structure with HTML">ساختار با HTML</p><a class="" href="p2-web.html" data-fa="وب چگونه کار می‌کند" data-en="How the web works">وب چگونه کار می‌کند</a><a class="" href="p2-concepts.html" data-fa="مفاهیم طراحی وب و نقشه سایت" data-en="Web-design concepts and the site map">مفاهیم طراحی وب و نقشه سایت</a><a class="" href="p2-tags.html" data-fa="اولین صفحه HTML" data-en="A first HTML page">اولین صفحه HTML</a><a class="" href="p2-text.html" data-fa="متن، لیست و پیوند" data-en="Text, lists, and links">متن، لیست و پیوند</a><a class="" href="p2-img.html" data-fa="تصویر در صفحه" data-en="Images on the page">تصویر در صفحه</a><a class="" href="p2-forms.html" data-fa="فرم‌ها" data-en="Forms">فرم‌ها</a><a class="" href="p2-semantic.html" data-fa="عناصر معنایی" data-en="Semantic elements">عناصر معنایی</a><a class="" href="p2-assess-html.html" data-fa="ارزشیابی HTML" data-en="HTML assessment">ارزشیابی HTML</a><p class="unit" data-fa="ظاهر با CSS" data-en="Appearance with CSS">ظاهر با CSS</p><a class="" href="p2-css-start.html" data-fa="نوشتن CSS" data-en="Writing CSS">نوشتن CSS</a><a class="" href="p2-css-look.html" data-fa="رنگ، پس‌زمینه و انتخاب‌گر" data-en="Color, background, and selectors">رنگ، پس‌زمینه و انتخاب‌گر</a><a class="" href="p2-box.html" data-fa="مدل جعبه‌ای و display" data-en="The box model and display">مدل جعبه‌ای و display</a><a class="" href="p2-flex.html" data-fa="چیدمان با Flexbox" data-en="Layout with Flexbox">چیدمان با Flexbox</a><a class="" href="p2-flex-work.html" data-fa="کارگاه چیدمان صفحه" data-en="Page-layout workshop">کارگاه چیدمان صفحه</a><a class="" href="p2-media.html" data-fa="مدیا کوئری و ارزشیابی CSS" data-en="Media queries and the CSS assessment">مدیا کوئری و ارزشیابی CSS</a><p class="mod" data-fa="پودمان ۳: صفحات وب تعاملی" data-en="Module 3: Interactive web pages">پودمان ۳: صفحات وب تعاملی</p><p class="unit" data-fa="معرفی پودمان" data-en="Module introduction">معرفی پودمان</p><a class="" href="p3-intro.html" data-fa="معرفی پودمان تعاملی" data-en="Introducing the interactive module">معرفی پودمان تعاملی</a><p class="unit" data-fa="بوت‌استرپ" data-en="Bootstrap">بوت‌استرپ</p><a class="" href="p3-bs-start.html" data-fa="فریم‌ورک و شروع بوت‌استرپ" data-en="Frameworks and starting Bootstrap">فریم‌ورک و شروع بوت‌استرپ</a><a class="" href="p3-bs-util.html" data-fa="فاصله، گردی و لیست" data-en="Spacing, rounding, and lists">فاصله، گردی و لیست</a><a class="" href="p3-bs-header.html" data-fa="سرصفحه فروشگاه" data-en="The shop header">سرصفحه فروشگاه</a><a class="" href="p3-bs-grid.html" data-fa="شبکه Grid" data-en="The grid">شبکه Grid</a><a class="" href="p3-bs-rwd.html" data-fa="کلاس‌های واکنش‌گرا" data-en="Responsive classes">کلاس‌های واکنش‌گرا</a><a class="" href="p3-bs-nav.html" data-fa="نوار ناوبری و جزئیات محصول" data-en="Navbar and product details">نوار ناوبری و جزئیات محصول</a><a class="" href="p3-bs-form.html" data-fa="فرم و پنجره Modal" data-en="Forms and modals">فرم و پنجره Modal</a><a class="" href="p3-bs-show.html" data-fa="کاروسل و آکاردئون" data-en="Carousel and accordion">کاروسل و آکاردئون</a><a class="" href="p3-bs-assess.html" data-fa="ارزشیابی بوت‌استرپ" data-en="Bootstrap assessment">ارزشیابی بوت‌استرپ</a><p class="unit" data-fa="جاوااسکریپت" data-en="JavaScript">جاوااسکریپت</p><a class="" href="p3-js-start.html" data-fa="جاوااسکریپت در صفحه وب" data-en="JavaScript on the page">جاوااسکریپت در صفحه وب</a><a class="" href="p3-js-vars.html" data-fa="متغیر و نوع داده" data-en="Variables and data types">متغیر و نوع داده</a><a class="" href="p3-js-ops.html" data-fa="عملگرها" data-en="Operators">عملگرها</a><a class="" href="p3-js-data.html" data-fa="آرایه و شیء" data-en="Arrays and objects">آرایه و شیء</a><a class="" href="p3-js-if.html" data-fa="شرط در جاوااسکریپت" data-en="Conditions in JavaScript">شرط در جاوااسکریپت</a><a class="" href="p3-js-loops.html" data-fa="حلقه‌ها" data-en="Loops">حلقه‌ها</a><a class="" href="p3-js-func.html" data-fa="تابع‌ها" data-en="Functions">تابع‌ها</a><a class="" href="p3-js-dom.html" data-fa="صفحه، رویداد و اعتبار فرم" data-en="The page, events, and form validation">صفحه، رویداد و اعتبار فرم</a><a class="" href="p3-js-assess.html" data-fa="ارزشیابی جاوااسکریپت" data-en="JavaScript assessment">ارزشیابی جاوااسکریپت</a><p class="mod" data-fa="پودمان ۴: توسعه وب پایتون" data-en="Module 4: Python for the web">پودمان ۴: توسعه وب پایتون</p><p class="unit" data-fa="معرفی پودمان" data-en="Module introduction">معرفی پودمان</p><a class="" href="p4-intro.html" data-fa="معرفی پودمان شیءگرایی" data-en="Introducing the object-oriented module">معرفی پودمان شیءگرایی</a><p class="unit" data-fa="شیءگرایی" data-en="Object-oriented programming">شیءگرایی</p><a class="current" href="p4-idea.html" data-fa="ایده شیء و کلاس" data-en="The idea of objects and classes">ایده شیء و کلاس</a><a class="" href="p4-class.html" data-fa="ساخت کلاس و متد" data-en="Writing a class and methods">ساخت کلاس و متد</a><a class="" href="p4-inherit.html" data-fa="وراثت" data-en="Inheritance">وراثت</a><a class="" href="p4-protect.html" data-fa="داده معتبر و استفاده داخلی" data-en="Valid data and internal use">داده معتبر و استفاده داخلی</a><a class="" href="p4-assess-oop.html" data-fa="ارزشیابی برنامه شیءگرا" data-en="Object-oriented assessment">ارزشیابی برنامه شیءگرا</a><p class="unit" data-fa="فایل و توسعه" data-en="Files and development">فایل و توسعه</p><a class="" href="p4-files.html" data-fa="خواندن و نوشتن فایل متنی" data-en="Reading and writing text files">خواندن و نوشتن فایل متنی</a><a class="" href="p4-errors.html" data-fa="پیمایش فایل و مدیریت خطا" data-en="Walking a file and handling errors">پیمایش فایل و مدیریت خطا</a><a class="" href="p4-json.html" data-fa="چند فایل و JSON" data-en="Several files and JSON">چند فایل و JSON</a><a class="" href="p4-assess-files.html" data-fa="ارزشیابی کار با فایل" data-en="Files assessment">ارزشیابی کار با فایل</a><p class="mod" data-fa="پودمان ۵: برنامه‌نویسی جنگو" data-en="Module 5: Django">پودمان ۵: برنامه‌نویسی جنگو</p><p class="unit" data-fa="معرفی پودمان" data-en="Module introduction">معرفی پودمان</p><a class="" href="p5-intro.html" data-fa="معرفی پودمان جنگو" data-en="Introducing the Django module">معرفی پودمان جنگو</a><p class="unit" data-fa="ایجاد وب‌اپلیکیشن" data-en="Creating the web app">ایجاد وب‌اپلیکیشن</p><a class="" href="p5-what.html" data-fa="جنگو چیست و نصب" data-en="What Django is, and installing it">جنگو چیست و نصب</a><a class="" href="p5-project.html" data-fa="پروژه، اپ و اولین view" data-en="Project, app, and the first view">پروژه، اپ و اولین view</a><a class="" href="p5-template.html" data-fa="قالب و دمای واقعی" data-en="Templates and a real temperature">قالب و دمای واقعی</a><a class="" href="p5-assess-create.html" data-fa="ارزشیابی ایجاد وب‌اپلیکیشن" data-en="Creating-the-app assessment">ارزشیابی ایجاد وب‌اپلیکیشن</a><p class="unit" data-fa="توسعه وب‌اپلیکیشن" data-en="Developing the web app">توسعه وب‌اپلیکیشن</p><a class="" href="p5-model.html" data-fa="مدل شهر و پنل ادمین" data-en="The city model and the admin">مدل شهر و پنل ادمین</a><a class="" href="p5-list.html" data-fa="خواندن شهرها و نمایش فهرست" data-en="Reading cities and showing the list">خواندن شهرها و نمایش فهرست</a><a class="" href="p5-auth.html" data-fa="ورود و خروج" data-en="Sign-in and sign-out">ورود و خروج</a><a class="" href="p5-crud.html" data-fa="افزودن و حذف شهر" data-en="Adding and deleting a city">افزودن و حذف شهر</a><a class="" href="p5-bugs.html" data-fa="باگ و امنیت" data-en="Bugs and security">باگ و امنیت</a><p class="mod" data-fa="پایان کتاب" data-en="Back of the book">پایان کتاب</p><p class="unit" data-fa="منابع" data-en="References">منابع</p><a class="" href="refs.html" data-fa="منابع کتاب" data-en="Book references">منابع کتاب</a></nav></details>
+    <div class="main">
+      <h1 class="section-title" data-fa="ایده شیء و کلاس" data-en="The idea of objects and classes">ایده شیء و کلاس</h1><article class="lesson" lang="fa" dir="rtl" data-lang-block="fa"><h1 id="_1">تولید برنامه شیءگرا</h1>
+<hr />
+<p class="page-mark">صفحه ۲۳۴</p>
+<h2 id="_2">واحد یادگیری ۱</h2>
+<h2 id="_3">تولید برنامه شیءگرا</h2>
+<h3 id="_4">آیا تابه‌حال اندیشیده‌اید</h3>
+<p>در دنیای واقعی، اشیای مشابه (مانند خودروها) با وجود تفاوت در مدل و رنگ، ویژگی‌ها و رفتارهای مشترکی دارند. این موضوع به کدام مفهوم در برنامه‌نویسی مرتبط است؟</p>
+<p>چرا با افزایش حجم برنامه‌ها، نگهداری و اصلاح آنها دشوارتر می‌شود؟ چگونه می‌توان ساختار برنامه را به‌گونه‌ای طراحی کرد که تغییرات، کمترین تأثیر را بر سایر بخش‌ها داشته باشند؟</p>
+<p>اگر بخواهید در یک بازی رایانه‌ای، چند شخصیت با رفتارهای مشابه و ویژگی‌های متفاوت طراحی کنید، استفاده از چه روشی در برنامه‌نویسی مناسب‌تر است؟</p>
+<p>به چه دلیل در طراحی بسیاری از نرم‌افزارها و برنامه‌های بزرگ، از شیوه برنامه‌نویسی شیءگرا استفاده می‌شود؟</p>
+<p>«کلاس» در برنامه‌نویسی به چه چیزی شباهت بیشتری دارد: نقشه یک ساختمان یا خود ساختمان؟</p>
+<h3 id="_5">در پایان از هنرجو انتظار می‌رود</h3>
+<p>1 کلاس‌های پایتون را با ویژگی‌ها و متدهای مناسب، همراه با تعیین مقادیر پیش‌فرض و مدیریت دسترسی (<code>public</code>, <code>protected</code>, <code>private</code>) طراحی و پیاده‌سازی کند.</p>
+<p>2 از کلاس‌ها نمونه (<code>Instance</code>) بسازد و مقادیر و ویژگی‌های این نمونه‌ها را در طول اجرای برنامه به طور مؤثر تغییر دهد و مدیریت کند.</p>
+<p>3 با استفاده از ارث‌بری برای ایجاد سلسله مراتب کلاس‌ها، فراخوانی متدهای والد و بازنویسی آنها در کلاس‌های فرزند مطابق با نیازهای برنامه اقدام نماید.</p>
+<p>4 با استفاده از اصول <code>OOP</code>، کدی ماژولار، قابل فهم و با قابلیت استفاده مجدد (<code>reusable</code>) بنویسد که از تکرار کد جلوگیری کند.</p>
+<p>5 درک اولیه‌ای از نحوه عملکرد متاکلاس‌ها و نقش آنها در تعریف و ساختار کلاس‌ها پیدا کند.</p>
+<p>6 مسائل برنامه‌نویسی ساده تا متوسط را با استفاده از برنامه‌نویسی شیءگرا تحلیل کرده و راه‌حل‌های مبتنی بر شیء طراحی و پیاده‌سازی کند.</p>
+<h3 id="_6">استاندارد عملکرد</h3>
+<p>با استفاده از مفاهیم برنامه‌نویسی شیءگرا در زبان پایتون، مسائل ساده و کاربردی را مدل‌سازی کند، کلاس مناسب طراحی نماید و با ایجاد و به‌کارگیری نمونه‌ها، برنامه‌ای خوانا، قابل اجرا و قابل توسعه تولید کند.</p>
+<hr />
+<p class="page-mark">صفحه ۲۳۵</p>
+<h3 id="object-oriented-programming">برنامه‌نویسی شیءگرا <bdi dir="ltr">(Object-Oriented Programming)</bdi></h3>
+<p>برنامه‌نویسی شیءگرا روشی از برنامه‌نویسی است که در آن، اجزای برنامه به‌صورت موجودیت‌هایی شبیه به دنیای واقعی مدل‌سازی می‌شوند. در این روش، به‌جای آن‌که فقط به دستورات و توابع فکر کنید، ابتدا به چیزهایی فکرم‌یکنید که در دنیای واقعی وجود دارند، ویژگی دارند و می‌توانند کاری انجام دهند.</p>
+<p><img alt="تصویر کتاب" src="../images/p241-01.png" /></p>
+<p>به این چیزها در برنامه‌نویسی، شیء (<code>Object</code>) و به این شیوۀ برنامه‌نویسی، شیءگرایی یا به اختصار (<code>.O.O.P</code>) گفته می‌شود.</p>
+<p><strong>شکل 1</strong></p>
+<p>در این رویکرد، هدف اصلی، بازآفرینی منطق و ساختار دنیای واقعی در محیط برنامه‌نویسی است. برای درک بهتر این مفهوم، می‌توان به بازی‌های استراتژیک رایج همچون <code>Age</code> <code>of</code> <code>Empires</code> یا <code>Clash</code> <code>of</code> <code>Clans</code> اشاره کرد. در این بازی‌ها، شخصیت‌ها و موجودیت‌ها به گروه‌های گوناگون تقسیم می‌شوند؛ از کارگران و سربازان گرفته تا وسایل نقلیه و ماشین‌آلات جنگی. برنامه‌نویسی شیءگرا با معرفی مفهومی به نام کلاس (<code>Class</code>)، به شما کمک می‌کند موجودیت‌های مشابه را در قالب یک گروه قرار دهید. به این ترتیب، می‌توانید هر گروه را به‌صورت یک کلاس در نظر بگیرید و ویژگی‌ها و کارهای مربوط به آن را در برنامه مشخص کنید.</p>
+<figure class="shot"><img alt="شکل 2" src="../images/p241-02.png" /><figcaption>شکل 2</figcaption></figure>
+<p>فعًلا از دنیای بازی‌ها فاصله گرفته و یک مثال کامًلا واقعی بررسی می‌شود. یک تلفن همراه قدیمی را در نظر بگیرید. این تلفن همراه صرفًا یک وسیلۀ ساده نیست، بلکه دارای مجموعه‌ای از ویژگی‌هاست و قادر است وظایف و عملیات مختلفی را انجام دهد.</p>
+<p><img alt="تصویر کتاب" src="../images/p241-03.png" /></p>
+<p>برای مثال هر تلفن همراه این ویژگی‌ها را دارد:</p>
+<p>دارای رنگ است.</p>
+<p>دارای برند است.</p>
+<p>دارای مدل است.</p>
+<p>میزان شارژ باتری آن در هر لحظه مشخص است.</p>
+<p><strong>شکل 3</strong></p>
+<hr />
+<p class="page-mark">صفحه ۲۳۶</p>
+<h3 id="_7">نکته</h3>
+<p>فعلاً با مثال‌هایی از گوشی‌های قدیمی شروع کرده و در ادامه درس به گوشی‌های هوشمند و گوشی‌های مخصوص بازی هم پرداخته خواهد شد.</p>
+<h3 id="_8">فعالیت</h3>
+<p>بر اساس اطلاعات گوشی خودتان یا یک گوشی دلخواه، اطلاعات جدول زیر را تکمیل نمایید. (جدول ویژگی‌ها) در جدول زیر، نمونه‌هایی از تلفن همراه و ویژگی‌های آنها را مشاهده می‌کنید:</p>
+<p>نمونه‌ها / ویژگی‌ها<code>color</code></p>
+<p><code>brand</code></p>
+<p><code>model</code></p>
+<div class="code-wrap" dir="ltr"><pre><code>battery
+</code></pre></div>
+<p>گوشی من<code>gray</code></p>
+<p><code>nokia</code></p>
+<p>1100</p>
+<p>32%</p>
+<p>گوشی شما گوشی دوستتان</p>
+<p>اگر دو گوشی هم‌مدل داشته باشید، ویژگی‌های آنها مشابه است، اما میزان باتری یا رنگ می‌تواند متفاوت باشد. هرکدام از این گوشی‌ها یک شیء جداگانه محسوب می‌شوند. به مشخصاتی که یک شیء دارد، ویژگی (<code>Attribute</code>) گفته می‌شود. این ویژگی‌ها مشخص می‌کنند که هر شیء چه چیزهایی دارد.</p>
+<p>همچنین هر تلفن همراه کارهای مختلفی می‌تواند انجام دهد:</p>
+<p>روشن و خاموش شود.</p>
+<p>تماس بگیرد.</p>
+<p>پیام ارسال کند.</p>
+<h3 id="_9">فعالیت</h3>
+<p>به‌جز کار‌های فوق، با گوشی شخصی خودتان چه کارهای دیگری می‌توانید انجام دهید. جدول زیر را کامل کنید.</p>
+<p>1-</p>
+<p>3-</p>
+<p>2-</p>
+<p>4-</p>
+<p>متد کارهایی که یک شیء می‌تواند انجام دهد، متد (<code>Method</code>) نامیده می‌شود. در حقیقت متد‌ها مانند دستورالعمل‌هایی هستند که به شیء می‌گویند چه کاری انجام دهد.</p>
+<hr />
+<p class="page-mark">صفحه ۲۳۷</p>
+<p>در دنیای واقعی، این تلفن همراه یک «شیء» می‌باشد و در برنامه‌نویسی شیءگرا نیز دقیقًا با همین نگاه، اشیا مدل‌سازی می‌شوند.</p>
+<p>شیء شیء (<code>Object</code>) به هر چیزی گفته می‌شود که:</p>
+<p>دارای ویژگی (<code>Attribute</code>) باشد.</p>
+<p>بتواند کار یا کارهایی (<code>Method</code>) انجام دهد.</p>
+<div class="code-wrap" dir="ltr"><pre><code>نمونه (Instance)
+</code></pre></div>
+<p>در پایتون، شیءهایی که با استفاده از یک کلاس ساخته می‌شوند، نمونه (<code>Instance</code>) آن کلاس نامیده می‌شوند. بنابراین یک تلفن همراه مشخص (مثًًلا موبایل شخصی شما)، یک نمونه (<code>Instance</code>) از کلاس تلفن همراه محسوب می‌شود.</p>
+<h3 id="_10">نکته</h3>
+<p>در این کتاب از این به بعد به جای استفاده از عبارت شیء (<code>Object</code>) از اصطلاح نمونه (<code>Instance</code>) استفاده می‌شود.</p>
+<p>تعریف کلاس (<code>Class</code>) حال اگر بخواهید چندین تلفن همراه مختلف بسازید، نوشتن ویژگی‌ها و متدها برای هر کدام به‌صورت جداگانه کار درستی نیست.</p>
+<p>برای این کار، به یک قالب کلی نیاز داریم که مشخص کند:</p>
+<p>1 هر تلفن همراه چه ویژگی‌هایی دارد.</p>
+<p>2 چه کارهایی می‌تواند انجام دهد.</p>
+<p>به این قالب کلی، کلاس (<code>Class</code>) گفته می‌شود.</p>
+<p>کلاس مانند نقشۀ ساخت یک تلفن همراه است و هر تلفن همراهی که ساخته می‌شود، در واقع یک نمونه (<code>Instance</code>) از آن کلاس خواهد بود.</p>
+<p>جدول ١</p>
+<p>اصطلاحات</p>
+<p>معنی</p>
+<div class="code-wrap" dir="ltr"><pre><code>کلاس (Class)
+</code></pre></div>
+<p>قالب کلی یا نقشه ساخت</p>
+<div class="code-wrap" dir="ltr"><pre><code>نمونه (Instance)
+</code></pre></div>
+<p>موجود ساخته‌شده از روی یک کلاس</p>
+<div class="code-wrap" dir="ltr"><pre><code>ویژگی (Attribute)
+</code></pre></div>
+<p>چه چیزی دارد؟</p>
+<div class="code-wrap" dir="ltr"><pre><code>متد (Method)
+</code></pre></div>
+<p>چه کاری انجام می‌دهد؟</p>
+<hr /></article><article class="lesson" lang="en" dir="ltr" data-lang-block="en" hidden><h1 id="writing-an-object-oriented-program">Writing an Object-Oriented Program</h1>
+<hr />
+<p class="page-mark">Page 234</p>
+<h2 id="learning-unit-1">Learning Unit 1</h2>
+<h2 id="writing-an-object-oriented-program_1">Writing an Object-Oriented Program</h2>
+<h3 id="have-you-ever-thought">Have you ever thought</h3>
+<p>In the real world, similar objects (such as cars), despite differences in model and color, share common features and behaviors. Which programming concept does this relate to?</p>
+<p>Why does maintaining and modifying programs become harder as they grow larger? How can you design a program’s structure so that changes have the least effect on other parts?</p>
+<p>If you want to design several characters in a computer game that share similar behaviors but have different features, which programming approach is more suitable?</p>
+<p>Why is object-oriented programming used in the design of many large software systems and programs?</p>
+<p>Does a “class” in programming more closely resemble a building’s blueprint or the building itself?</p>
+<h3 id="by-the-end-the-student-is-expected-to">By the end, the student is expected to</h3>
+<p>1 Design and implement Python classes with appropriate attributes and methods, including default values and access control (<code>public</code>, <code>protected</code>, <code>private</code>).</p>
+<p>2 Create instances (<code>Instance</code>) of classes and effectively change and manage the values and attributes of those instances during program execution.</p>
+<p>3 Use inheritance to create class hierarchies, call parent methods, and override them in child classes according to the program’s needs.</p>
+<p>4 Using <code>OOP</code> principles, write modular, understandable, and reusable (<code>reusable</code>) code that avoids repetition.</p>
+<p>5 Gain a basic understanding of how metaclasses work and their role in defining and structuring classes.</p>
+<p>6 Analyze simple to intermediate programming problems using object-oriented programming and design and implement object-based solutions.</p>
+<h3 id="performance-standard">Performance standard</h3>
+<p>Using object-oriented programming concepts in Python, model simple practical problems, design an appropriate class, and by creating and using instances, produce a readable, runnable, and extensible program.</p>
+<hr />
+<p class="page-mark">Page 235</p>
+<h3 id="object-oriented-programming-object-oriented-programming">Object-Oriented Programming (Object-Oriented Programming)</h3>
+<p>Object-oriented programming is a programming approach in which the parts of a program are modeled as entities similar to the real world. In this approach, instead of thinking only about statements and functions, you first think about things that exist in the real world, have attributes, and can perform actions.</p>
+<p><img alt="Book illustration" src="../images/p241-01.png" /></p>
+<p>In programming, these things are called objects (<code>Object</code>), and this style of programming is called object orientation, or for short (<code>.O.O.P</code>).</p>
+<p><strong>Figure 1</strong></p>
+<p>In this approach, the main goal is to recreate the logic and structure of the real world in the programming environment. To understand this idea better, you can look at popular strategy games such as <code>Age</code> <code>of</code> <code>Empires</code> or <code>Clash</code> <code>of</code> <code>Clans</code>. In these games, characters and entities are divided into various groups—from workers and soldiers to vehicles and war machines. Object-oriented programming, by introducing a concept called a class (<code>Class</code>), helps you place similar entities into one group. In this way, you can treat each group as a class and specify its attributes and related actions in the program.</p>
+<figure class="shot"><img alt="Figure 2" src="../images/p241-02.png" /><figcaption>Figure 2</figcaption></figure>
+<p>For now, set games aside and look at a completely real example. Consider an older mobile phone. This phone is not merely a simple device; it has a set of attributes and can perform various tasks and operations.</p>
+<p><img alt="Book illustration" src="../images/p241-03.png" /></p>
+<p>For example, every mobile phone has these attributes:</p>
+<p>It has a color.</p>
+<p>It has a brand.</p>
+<p>It has a model.</p>
+<p>Its battery charge level is known at any moment.</p>
+<p><strong>Figure 3</strong></p>
+<hr />
+<p class="page-mark">Page 236</p>
+<h3 id="note">Note</h3>
+<p>For now, the examples start with older phones, and later in the lesson smart phones and gaming phones will also be covered.</p>
+<h3 id="activity">Activity</h3>
+<p>Based on information about your own phone or a phone of your choice, complete the table below. (Attributes table) In the table below, you see examples of mobile phones and their attributes:</p>
+<p>Samples / Attributes<code>color</code></p>
+<p><code>brand</code></p>
+<p><code>model</code></p>
+<div class="code-wrap" dir="ltr"><pre><code>battery
+</code></pre></div>
+<p>My phone<code>gray</code></p>
+<p><code>nokia</code></p>
+<p>1100</p>
+<p>32%</p>
+<p>Your phone Your friend’s phone</p>
+<p>If you have two phones of the same model, their attributes are similar, but the battery level or color may differ. Each of these phones is considered a separate object. The characteristics an object has are called attributes (<code>Attribute</code>). These attributes specify what each object has.</p>
+<p>Also, every mobile phone can perform various actions:</p>
+<p>Turn on and off.</p>
+<p>Make a call.</p>
+<p>Send a message.</p>
+<h3 id="activity_1">Activity</h3>
+<p>Besides the actions above, what other things can you do with your own phone? Complete the table below.</p>
+<p>1-</p>
+<p>3-</p>
+<p>2-</p>
+<p>4-</p>
+<p>A method is the name for the actions an object can perform; it is called a method (<code>Method</code>). In fact, methods are like instructions that tell the object what to do.</p>
+<hr />
+<p class="page-mark">Page 237</p>
+<p>In the real world, this mobile phone is an “object,” and in object-oriented programming, objects are modeled with exactly the same view.</p>
+<p>An object (<code>Object</code>) is anything that:</p>
+<p>Has attributes (<code>Attribute</code>).</p>
+<p>Can perform one or more actions (<code>Method</code>).</p>
+<div class="code-wrap" dir="ltr"><pre><code>نمونه (Instance)
+</code></pre></div>
+<p>In Python, objects created using a class are called instances (<code>Instance</code>) of that class. Therefore, a specific mobile phone (for example, your personal phone) is considered an instance (<code>Instance</code>) of the mobile phone class.</p>
+<h3 id="note_1">Note</h3>
+<p>From this point on in this book, the term instance (<code>Instance</code>) is used instead of the phrase object (<code>Object</code>).</p>
+<p>Defining a class (<code>Class</code>) Now, if you want to create several different mobile phones, writing the attributes and methods separately for each one is not the right approach.</p>
+<p>For this, you need a general template that specifies:</p>
+<p>1 What attributes every mobile phone has.</p>
+<p>2 What actions it can perform.</p>
+<p>This general template is called a class (<code>Class</code>).</p>
+<p>A class is like the blueprint for building a mobile phone, and every mobile phone that is built is in fact an instance (<code>Instance</code>) of that class.</p>
+<p>Table 1</p>
+<p>Terms</p>
+<p>Meaning</p>
+<div class="code-wrap" dir="ltr"><pre><code>کلاس (Class)
+</code></pre></div>
+<p>General template or construction blueprint</p>
+<div class="code-wrap" dir="ltr"><pre><code>نمونه (Instance)
+</code></pre></div>
+<p>An entity created from a class</p>
+<div class="code-wrap" dir="ltr"><pre><code>ویژگی (Attribute)
+</code></pre></div>
+<p>What does it have?</p>
+<div class="code-wrap" dir="ltr"><pre><code>متد (Method)
+</code></pre></div>
+<p>What does it do?</p>
+<hr /></article>
+      <aside class="extra">
+        <h2 data-fa="تمرین این بخش" data-en="Exercises for this section">تمرین این بخش</h2>
+        <p class="extra-note" data-fa="این تمرین‌ها و پیوندها اضافه بر متن کتاب‌اند." data-en="These exercises and links are in addition to the book.">این تمرین‌ها و پیوندها اضافه بر متن کتاب‌اند.</p>
+        <ol><li data-fa="برای وسیله آزمایشگاه یک کلاس با سه ویژگی و دو متد بساز و دو شیء واقعی از روی آن بساز." data-en="Build a class for a piece of lab equipment with three attributes and two methods, and create two real objects from it.">برای وسیله آزمایشگاه یک کلاس با سه ویژگی و دو متد بساز و دو شیء واقعی از روی آن بساز.</li><li data-fa="خروجی برنامه را طوری بنویس که ویژگی‌ها و نتیجه یکی از رفتارها برای هر دو شیء دیده شود." data-en="Make the program output show the attributes and the result of one behavior for both objects.">خروجی برنامه را طوری بنویس که ویژگی‌ها و نتیجه یکی از رفتارها برای هر دو شیء دیده شود.</li></ol>
+        <h2 data-fa="پیوند مفید" data-en="Useful link">پیوند مفید</h2><ul><li><a href="https://docs.python.org/3/tutorial/classes.html" data-fa="کلاس‌ها" data-en="Classes">کلاس‌ها</a></li></ul>
+      </aside>
+    <nav class="pager"><a rel="prev" class="prev" href="p4-intro.html"><span class="pager-word" data-fa="قبلی" data-en="Previous">قبلی</span><span class="pager-name" data-fa="معرفی پودمان شیءگرایی" data-en="Introducing the object-oriented module">معرفی پودمان شیءگرایی</span></a><a rel="next" class="next" href="p4-class.html"><span class="pager-word" data-fa="بعدی" data-en="Next">بعدی</span><span class="pager-name" data-fa="ساخت کلاس و متد" data-en="Writing a class and methods">ساخت کلاس و متد</span></a></nav>
+    </div>
+  </div>
+  <script src="../assets/search-index.js?v=4"></script>
+  <script src="../assets/app.js?v=4"></script>
+</body>
+</html>

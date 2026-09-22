@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title data-fa="وب چگونه کار می‌کند" data-en="How the web works">وب چگونه کار می‌کند</title>
+  <link rel="icon" href="../assets/favicon.svg">
+  <link rel="stylesheet" href="../assets/style.css?v=4">
+</head>
+<body data-root="../">
+  <header class="top">
+    <a class="brand" href="../index.html">
+      <span data-fa="طراح سایت" data-en="Site Design">طراح سایت</span>
+      <small data-fa="پایه یازدهم" data-en="Grade 11">پایه یازدهم</small>
+    </a>
+    <div class="search-wrap">
+      <input id="q" type="search" autocomplete="off"
+        data-fa-placeholder="جستجو در درس‌ها" data-en-placeholder="Search lessons"
+        placeholder="جستجو در درس‌ها">
+      <div id="results" class="results" hidden></div>
+    </div>
+    <a class="download" href="../grade11-offline.zip?v=2" data-fa="دانلود کل سایت" data-en="Download the whole site">دانلود کل سایت</a>
+    <button type="button" id="lang-toggle" class="lang-toggle" dir="ltr" data-lang="fa"
+      aria-label="تغییر زبان">
+      <span data-opt="fa">فا</span>
+      <span data-opt="en">EN</span>
+    </button>
+  </header>
+  <div class="layout">
+    <details class="toc" open><summary><span data-fa="فهرست درس‌ها" data-en="Lesson list">فهرست درس‌ها</span></summary><nav class="side" aria-label="lessons"><p class="mod" data-fa="شروع کتاب" data-en="Opening">شروع کتاب</p><p class="unit" data-fa="فهرست" data-en="Contents">فهرست</p><a class="" href="toc.html" data-fa="فهرست" data-en="Contents">فهرست</a><p class="mod" data-fa="پودمان ۱: برنامه‌نویسی پایتون" data-en="Module 1: Python programming">پودمان ۱: برنامه‌نویسی پایتون</p><p class="unit" data-fa="معرفی پودمان" data-en="Module introduction">معرفی پودمان</p><a class="" href="p1-intro.html" data-fa="معرفی پودمان پایتون" data-en="Introducing the Python module">معرفی پودمان پایتون</a><p class="unit" data-fa="مدل‌سازی داده" data-en="Data modeling">مدل‌سازی داده</p><a class="" href="p1-python.html" data-fa="پایتون و محیط برنامه‌نویسی" data-en="Python and the programming environment">پایتون و محیط برنامه‌نویسی</a><a class="" href="p1-vars.html" data-fa="متغیرها، نوع داده و عملگرها" data-en="Variables, types, and operators">متغیرها، نوع داده و عملگرها</a><a class="" href="p1-cast.html" data-fa="ورودی و تبدیل نوع" data-en="Input and type casting">ورودی و تبدیل نوع</a><a class="" href="p1-lists.html" data-fa="لیست‌ها" data-en="Lists">لیست‌ها</a><a class="" href="p1-if.html" data-fa="شرط‌های ساده" data-en="Simple conditions">شرط‌های ساده</a><a class="" href="p1-elif.html" data-fa="if، elif و else" data-en="if, elif, and else">if، elif و else</a><a class="" href="p1-for.html" data-fa="حلقه for و range" data-en="The for loop and range">حلقه for و range</a><a class="" href="p1-while.html" data-fa="حلقه while و کنترل حلقه" data-en="The while loop and loop control">حلقه while و کنترل حلقه</a><a class="" href="p1-assess-data.html" data-fa="ارزشیابی مدل‌سازی داده" data-en="Data-modeling assessment">ارزشیابی مدل‌سازی داده</a><p class="unit" data-fa="توابع و ماژول‌ها" data-en="Functions and modules">توابع و ماژول‌ها</p><a class="" href="p1-sets.html" data-fa="مجموعه (set)" data-en="Sets">مجموعه (set)</a><a class="" href="p1-dict.html" data-fa="دیکشنری" data-en="Dictionaries">دیکشنری</a><a class="" href="p1-quiz.html" data-fa="پروژه بازی Quiz" data-en="Quiz game project">پروژه بازی Quiz</a><a class="" href="p1-tuple.html" data-fa="تاپل" data-en="Tuples">تاپل</a><a class="" href="p1-func.html" data-fa="تعریف تابع، پارامتر و return" data-en="Defining functions, parameters, and return">تعریف تابع، پارامتر و return</a><a class="" href="p1-func-more.html" data-fa="تمرین تابع و مرتب‌سازی" data-en="Function practice and sorting">تمرین تابع و مرتب‌سازی</a><a class="" href="p1-modules.html" data-fa="ماژول‌ها و تفاوت تابع و متد" data-en="Modules, and functions versus methods">ماژول‌ها و تفاوت تابع و متد</a><a class="" href="p1-assess-func.html" data-fa="ارزشیابی توابع و ماژول‌ها" data-en="Functions and modules assessment">ارزشیابی توابع و ماژول‌ها</a><p class="mod" data-fa="پودمان ۲: صفحات وب ایستا" data-en="Module 2: Static web pages">پودمان ۲: صفحات وب ایستا</p><p class="unit" data-fa="معرفی پودمان" data-en="Module introduction">معرفی پودمان</p><a class="" href="p2-intro.html" data-fa="معرفی پودمان صفحات ایستا" data-en="Introducing static web pages">معرفی پودمان صفحات ایستا</a><p class="unit" data-fa="ساختار با HTML" data-en="Structure with HTML">ساختار با HTML</p><a class="current" href="p2-web.html" data-fa="وب چگونه کار می‌کند" data-en="How the web works">وب چگونه کار می‌کند</a><a class="" href="p2-concepts.html" data-fa="مفاهیم طراحی وب و نقشه سایت" data-en="Web-design concepts and the site map">مفاهیم طراحی وب و نقشه سایت</a><a class="" href="p2-tags.html" data-fa="اولین صفحه HTML" data-en="A first HTML page">اولین صفحه HTML</a><a class="" href="p2-text.html" data-fa="متن، لیست و پیوند" data-en="Text, lists, and links">متن، لیست و پیوند</a><a class="" href="p2-img.html" data-fa="تصویر در صفحه" data-en="Images on the page">تصویر در صفحه</a><a class="" href="p2-forms.html" data-fa="فرم‌ها" data-en="Forms">فرم‌ها</a><a class="" href="p2-semantic.html" data-fa="عناصر معنایی" data-en="Semantic elements">عناصر معنایی</a><a class="" href="p2-assess-html.html" data-fa="ارزشیابی HTML" data-en="HTML assessment">ارزشیابی HTML</a><p class="unit" data-fa="ظاهر با CSS" data-en="Appearance with CSS">ظاهر با CSS</p><a class="" href="p2-css-start.html" data-fa="نوشتن CSS" data-en="Writing CSS">نوشتن CSS</a><a class="" href="p2-css-look.html" data-fa="رنگ، پس‌زمینه و انتخاب‌گر" data-en="Color, background, and selectors">رنگ، پس‌زمینه و انتخاب‌گر</a><a class="" href="p2-box.html" data-fa="مدل جعبه‌ای و display" data-en="The box model and display">مدل جعبه‌ای و display</a><a class="" href="p2-flex.html" data-fa="چیدمان با Flexbox" data-en="Layout with Flexbox">چیدمان با Flexbox</a><a class="" href="p2-flex-work.html" data-fa="کارگاه چیدمان صفحه" data-en="Page-layout workshop">کارگاه چیدمان صفحه</a><a class="" href="p2-media.html" data-fa="مدیا کوئری و ارزشیابی CSS" data-en="Media queries and the CSS assessment">مدیا کوئری و ارزشیابی CSS</a><p class="mod" data-fa="پودمان ۳: صفحات وب تعاملی" data-en="Module 3: Interactive web pages">پودمان ۳: صفحات وب تعاملی</p><p class="unit" data-fa="معرفی پودمان" data-en="Module introduction">معرفی پودمان</p><a class="" href="p3-intro.html" data-fa="معرفی پودمان تعاملی" data-en="Introducing the interactive module">معرفی پودمان تعاملی</a><p class="unit" data-fa="بوت‌استرپ" data-en="Bootstrap">بوت‌استرپ</p><a class="" href="p3-bs-start.html" data-fa="فریم‌ورک و شروع بوت‌استرپ" data-en="Frameworks and starting Bootstrap">فریم‌ورک و شروع بوت‌استرپ</a><a class="" href="p3-bs-util.html" data-fa="فاصله، گردی و لیست" data-en="Spacing, rounding, and lists">فاصله، گردی و لیست</a><a class="" href="p3-bs-header.html" data-fa="سرصفحه فروشگاه" data-en="The shop header">سرصفحه فروشگاه</a><a class="" href="p3-bs-grid.html" data-fa="شبکه Grid" data-en="The grid">شبکه Grid</a><a class="" href="p3-bs-rwd.html" data-fa="کلاس‌های واکنش‌گرا" data-en="Responsive classes">کلاس‌های واکنش‌گرا</a><a class="" href="p3-bs-nav.html" data-fa="نوار ناوبری و جزئیات محصول" data-en="Navbar and product details">نوار ناوبری و جزئیات محصول</a><a class="" href="p3-bs-form.html" data-fa="فرم و پنجره Modal" data-en="Forms and modals">فرم و پنجره Modal</a><a class="" href="p3-bs-show.html" data-fa="کاروسل و آکاردئون" data-en="Carousel and accordion">کاروسل و آکاردئون</a><a class="" href="p3-bs-assess.html" data-fa="ارزشیابی بوت‌استرپ" data-en="Bootstrap assessment">ارزشیابی بوت‌استرپ</a><p class="unit" data-fa="جاوااسکریپت" data-en="JavaScript">جاوااسکریپت</p><a class="" href="p3-js-start.html" data-fa="جاوااسکریپت در صفحه وب" data-en="JavaScript on the page">جاوااسکریپت در صفحه وب</a><a class="" href="p3-js-vars.html" data-fa="متغیر و نوع داده" data-en="Variables and data types">متغیر و نوع داده</a><a class="" href="p3-js-ops.html" data-fa="عملگرها" data-en="Operators">عملگرها</a><a class="" href="p3-js-data.html" data-fa="آرایه و شیء" data-en="Arrays and objects">آرایه و شیء</a><a class="" href="p3-js-if.html" data-fa="شرط در جاوااسکریپت" data-en="Conditions in JavaScript">شرط در جاوااسکریپت</a><a class="" href="p3-js-loops.html" data-fa="حلقه‌ها" data-en="Loops">حلقه‌ها</a><a class="" href="p3-js-func.html" data-fa="تابع‌ها" data-en="Functions">تابع‌ها</a><a class="" href="p3-js-dom.html" data-fa="صفحه، رویداد و اعتبار فرم" data-en="The page, events, and form validation">صفحه، رویداد و اعتبار فرم</a><a class="" href="p3-js-assess.html" data-fa="ارزشیابی جاوااسکریپت" data-en="JavaScript assessment">ارزشیابی جاوااسکریپت</a><p class="mod" data-fa="پودمان ۴: توسعه وب پایتون" data-en="Module 4: Python for the web">پودمان ۴: توسعه وب پایتون</p><p class="unit" data-fa="معرفی پودمان" data-en="Module introduction">معرفی پودمان</p><a class="" href="p4-intro.html" data-fa="معرفی پودمان شیءگرایی" data-en="Introducing the object-oriented module">معرفی پودمان شیءگرایی</a><p class="unit" data-fa="شیءگرایی" data-en="Object-oriented programming">شیءگرایی</p><a class="" href="p4-idea.html" data-fa="ایده شیء و کلاس" data-en="The idea of objects and classes">ایده شیء و کلاس</a><a class="" href="p4-class.html" data-fa="ساخت کلاس و متد" data-en="Writing a class and methods">ساخت کلاس و متد</a><a class="" href="p4-inherit.html" data-fa="وراثت" data-en="Inheritance">وراثت</a><a class="" href="p4-protect.html" data-fa="داده معتبر و استفاده داخلی" data-en="Valid data and internal use">داده معتبر و استفاده داخلی</a><a class="" href="p4-assess-oop.html" data-fa="ارزشیابی برنامه شیءگرا" data-en="Object-oriented assessment">ارزشیابی برنامه شیءگرا</a><p class="unit" data-fa="فایل و توسعه" data-en="Files and development">فایل و توسعه</p><a class="" href="p4-files.html" data-fa="خواندن و نوشتن فایل متنی" data-en="Reading and writing text files">خواندن و نوشتن فایل متنی</a><a class="" href="p4-errors.html" data-fa="پیمایش فایل و مدیریت خطا" data-en="Walking a file and handling errors">پیمایش فایل و مدیریت خطا</a><a class="" href="p4-json.html" data-fa="چند فایل و JSON" data-en="Several files and JSON">چند فایل و JSON</a><a class="" href="p4-assess-files.html" data-fa="ارزشیابی کار با فایل" data-en="Files assessment">ارزشیابی کار با فایل</a><p class="mod" data-fa="پودمان ۵: برنامه‌نویسی جنگو" data-en="Module 5: Django">پودمان ۵: برنامه‌نویسی جنگو</p><p class="unit" data-fa="معرفی پودمان" data-en="Module introduction">معرفی پودمان</p><a class="" href="p5-intro.html" data-fa="معرفی پودمان جنگو" data-en="Introducing the Django module">معرفی پودمان جنگو</a><p class="unit" data-fa="ایجاد وب‌اپلیکیشن" data-en="Creating the web app">ایجاد وب‌اپلیکیشن</p><a class="" href="p5-what.html" data-fa="جنگو چیست و نصب" data-en="What Django is, and installing it">جنگو چیست و نصب</a><a class="" href="p5-project.html" data-fa="پروژه، اپ و اولین view" data-en="Project, app, and the first view">پروژه، اپ و اولین view</a><a class="" href="p5-template.html" data-fa="قالب و دمای واقعی" data-en="Templates and a real temperature">قالب و دمای واقعی</a><a class="" href="p5-assess-create.html" data-fa="ارزشیابی ایجاد وب‌اپلیکیشن" data-en="Creating-the-app assessment">ارزشیابی ایجاد وب‌اپلیکیشن</a><p class="unit" data-fa="توسعه وب‌اپلیکیشن" data-en="Developing the web app">توسعه وب‌اپلیکیشن</p><a class="" href="p5-model.html" data-fa="مدل شهر و پنل ادمین" data-en="The city model and the admin">مدل شهر و پنل ادمین</a><a class="" href="p5-list.html" data-fa="خواندن شهرها و نمایش فهرست" data-en="Reading cities and showing the list">خواندن شهرها و نمایش فهرست</a><a class="" href="p5-auth.html" data-fa="ورود و خروج" data-en="Sign-in and sign-out">ورود و خروج</a><a class="" href="p5-crud.html" data-fa="افزودن و حذف شهر" data-en="Adding and deleting a city">افزودن و حذف شهر</a><a class="" href="p5-bugs.html" data-fa="باگ و امنیت" data-en="Bugs and security">باگ و امنیت</a><p class="mod" data-fa="پایان کتاب" data-en="Back of the book">پایان کتاب</p><p class="unit" data-fa="منابع" data-en="References">منابع</p><a class="" href="refs.html" data-fa="منابع کتاب" data-en="Book references">منابع کتاب</a></nav></details>
+    <div class="main">
+      <h1 class="section-title" data-fa="وب چگونه کار می‌کند" data-en="How the web works">وب چگونه کار می‌کند</h1><article class="lesson" lang="fa" dir="rtl" data-lang-block="fa"><h1 id="html">طراحی ساختار صفحات وب با <bdi dir="ltr">HTML</bdi></h1>
+<hr />
+<p class="page-mark">صفحه ۸۴</p>
+<h2 id="_1">واحد یادگیری ١</h2>
+<h2 id="html_1">طراحی ساختار صفحات وب با <bdi dir="ltr">HTML</bdi></h2>
+<h3 id="_2">آیا تابه‌حال اندیشیده‌اید</h3>
+<p>فرایند طراحی یک وب‌سایت دارای چه مراحلی است؟</p>
+<p>طرح اولیه وب‌سایت به چه شکلی ارائه می‌شود؟</p>
+<p>چگونه می‌توان عناصر مختلفی مانند متن، تصویر، ویدئو، منو و ... را در صفحه وب نمایش داد؟</p>
+<p>پیوند بین صفحات چگونه ایجاد می‌شود؟</p>
+<p>فرم‌های ورود اطلاعات چگونه طراحی می‌شوند؟</p>
+<p><code>CSS</code> چه نقشی در طراحی و زیباسازی صفحات وب ایفا می‌کند؟</p>
+<p>طراحی واکنش‌گرای صفحه وب نسبت به پهنای دستگاه به چه شکلی انجام می‌شود؟</p>
+<h3 id="_3">در پایان از هنرجو انتظار می‌رود</h3>
+<p>1 صفحه اصلی سایت (<code>index.html</code>) را با ساختاری استاندارد ایجاد نماید.</p>
+<p>2 تگ‌های سطح بالای صفحه را به‌صورت صحیح استفاده نماید.</p>
+<p>3 منوی ناوبری صفحه را با استفاده از تگ <code>&lt;nav&gt;</code> و عنصر لیست، درون عنصر معنایی <code>&lt;header&gt;</code> ایجاد نماید.</p>
+<p>4 محتوای اصلی صفحه را درون عنصر معنایی <code>&lt;main&gt;</code> ایجاد نماید و توانایی به‌کارگیری تگ <code>&lt;section&gt;</code> را برای ایجاد بخش‌هایی از صفحه داشته باشد.</p>
+<p>5 برای نگهداری محتوای بخش‌هایی از صفحه از عنصر <code>&lt;div&gt;</code> استفاده نماید.</p>
+<p>6 تگ کامنت (&gt;-- --!&lt;) را برای مستندسازی برخی کدها استفاده نماید.</p>
+<h3 id="_4">استاندارد عملکرد</h3>
+<p>توانایی ایجاد یک ساختار استاندارد برای صفحه وب با به‌کارگیری صحیح تگ‌های <code>HTML5</code>، به‌گونه‌ای که ساختار و محتوای صفحه برای موتورهای جس‌توجو و ابزارهای صفحه‌خوان (<code>Screen</code> <code>reader</code>) قابل درک باشد، همچنین تنظیمات زبان صفحه و جهت نمایش محتوا در مرور‌گر به‌درستی انجام شود.</p>
+<hr />
+<p class="page-mark">صفحه ۸۵</p>
+<h3 id="_5">نحوه کار وب</h3>
+<p>وب (<code>World</code> <code>Wide</code> <code>Web</code>) در سال 1989 توسط تیم برنرزلی در سازمان پژوهش‌های هسته‌ای اروپا (<code>CERN</code>) ایجاد شد. هدف اولیه آن تسهیل به اشتراک‌گذاری اطلاعات بین محققان بود. اولین وب‌سایت در سال 1991 راه‌اندازی شد و از آن زمان به سرعت گسترش یافت و به بخشی اساسی از زندگی روزمره انسان‌ها تبدیل شد.</p>
+<p>وب ب‌هوسیله پروتکل‌های خاصی مانند <code>HTTP</code> و <code>HTTPS</code> کار می‌کند. این پروتکل‌ها روش‌هایی را برای ارسال و دریافت اطلاعات بین مرورگرها و سرورها مشخص می‌کنند.</p>
+<p>زمانی که کاربر یک آدرس وب را در مرورگر خود وارد می‌کند، مراحل زیر رخ می‌دهد:</p>
+<p>1 ترجمه نام دامنه: مرورگر به یک سیستم 1 <code>DNS</code> متصل می‌شود تا نام دامنه (مثلاً <code>www.chap.sch.ir</code>) را به یک آدرس <code>IP</code> تبدیل کند. آدرس <code>IP</code> دریافتی متعلق به وب‌سرور2 مورد نظر خواهد بود.</p>
+<p>2 ارسال درخواست (<code>HTTP</code> <code>Request</code>): پس از دریافت آدرس <code>IP</code>، مرورگر یک درخواست <code>HTTP</code> به وب‌سرور مقصد ارسال می‌کند که شامل اطلاعاتی درباره نوع محتوا و درخواست کاربر است.</p>
+<p>3 پاسخ‌دهی سرور (<code>HTTP</code> <code>Response</code>): سرور درخواست را پردازش می‌کند، در صورت لزوم اطلاعاتی را از پایگاه داده (<code>Database</code>) دریافت می‌کند و سپس محتوا را به صورت یک پاسخ <code>HTTP</code> به مرورگر کاربر ارسال می‌کند. این محتوا می‌تواند شامل فایل‌های <code>HTML</code>، <code>CSS</code>، <code>JavaScript</code> و تصاویر باشد.</p>
+<p>4 نمایش محتوا: مرورگر محتوای دریافت شده را تفسیر می‌کند و آن را به‌صورت یک صفحه وب برای کاربر نمایش می‌دهد (شکل1).</p>
+<p><img alt="تصویر کتاب" src="../images/p091-01.png" /></p>
+<div class="code-wrap" dir="ltr"><pre><code>(www.chap.sch.ir)
+</code></pre></div>
+<p>37.228.138.195</p>
+<p><strong>شکل 1</strong></p>
+<p>1 <code>DNS</code> وظیفه تبدیل نام دامنه وب‌سایت به آدرس عددی <code>IP</code> را دارد. مرورگرها برای ارسال درخواست کاربر به و‌بسرور مقصد نیازمند آدرس <code>IP</code> آن سرور هستند. از آنجایی که به خاطر سپردن آدرس <code>IP</code> وب سایت‌ها برای کاربران دشوار است، بنابراین کاربران در هنگام ارتباط با مرورگر، از نام دامنه استفاده می‌کنند (مانند <code>chap.sch.ir</code>)، اما مرورگر آدرس دامنه را برای <code>DNS</code> ارسال می‌کند تا آدرس <code>IP</code> مربوط به وب سرور مقصد را به‌دست آورد.</p>
+<p>2 و‌بسرور یک سیستم سخت‌افزاری است که میزبان اسناد وب سایت (مانند فایل‌های <code>HTML</code>، تصاویر، ویدئوها، پایگاه داده‌ها و ...) است، این سخت افزار با استفاده از نرم‌افزارهای مشخصی وظیفه نگهداری و مدیریت اطلاعات وب‌سایت را به عهده دارد. و‌بسرورها درخواست کاربران را با واسطه از طریق مرورگر دریافت می‌کنند و سپس صفحات پاسخ را برای مرورگر کاربر ارسال می‌کنند.</p>
+<hr /></article><article class="lesson" lang="en" dir="ltr" data-lang-block="en" hidden><h1 id="designing-the-structure-of-web-pages-with-html">Designing the structure of web pages with HTML</h1>
+<hr />
+<p class="page-mark">Page 84</p>
+<h2 id="learning-unit-1">Learning unit 1</h2>
+<h2 id="designing-the-structure-of-web-pages-with-html_1">Designing the structure of web pages with HTML</h2>
+<h3 id="have-you-ever-thought">Have you ever thought</h3>
+<p>What stages does the process of designing a website have?</p>
+<p>In what form is the initial design of a website presented?</p>
+<p>How can different elements such as text, image, video, menu, and so on be displayed on a web page?</p>
+<p>How is a link between pages created?</p>
+<p>How are data-entry forms designed?</p>
+<p>What role does <code>CSS</code> play in designing and beautifying web pages?</p>
+<p>How is responsive design of a web page relative to the width of the device done?</p>
+<h3 id="by-the-end-the-student-is-expected-to">By the end, the student is expected to</h3>
+<p>1 Create the site’s home page (<code>index.html</code>) with a standard structure.</p>
+<p>2 Use the page’s top-level tags correctly.</p>
+<p>3 Create the page’s navigation menu using the <code>&lt;nav&gt;</code> tag and a list element, inside the semantic <code>&lt;header&gt;</code> element.</p>
+<p>4 Create the main content of the page inside the semantic <code>&lt;main&gt;</code> element and be able to use the <code>&lt;section&gt;</code> tag to create sections of the page.</p>
+<p>5 Use the <code>&lt;div&gt;</code> element to hold the content of sections of the page.</p>
+<p>6 Use the comment tag (``) to document some of the code.</p>
+<h3 id="performance-standard">Performance standard</h3>
+<p>The ability to create a standard structure for a web page by correctly using <code>HTML5</code> tags, so that the structure and content of the page are understandable for search engines and screen reader (<code>Screen</code> <code>reader</code>) tools, and also so that the page language settings and the direction of content display in the browser are done correctly.</p>
+<hr />
+<p class="page-mark">Page 85</p>
+<h3 id="how-the-web-works">How the web works</h3>
+<p>The web (<code>World</code> <code>Wide</code> <code>Web</code>) was created in 1989 by Tim Berners-Lee at the European Organization for Nuclear Research (<code>CERN</code>). Its initial goal was to make sharing information among researchers easier. The first website was launched in 1991 and from then on expanded rapidly and became an essential part of people’s daily lives.</p>
+<p>The web works by means of specific protocols such as <code>HTTP</code> and <code>HTTPS</code>. These protocols define methods for sending and receiving information between browsers and servers.</p>
+<p>When a user enters a web address in their browser, the following steps occur:</p>
+<p>1 Translating the domain name: The browser connects to a 1 <code>DNS</code> system to convert the domain name (for example <code>www.chap.sch.ir</code>) into an <code>IP</code> address. The <code>IP</code> address received will belong to the intended web server2.</p>
+<p>2 Sending a request (<code>HTTP</code> <code>Request</code>): After receiving the <code>IP</code> address, the browser sends an <code>HTTP</code> request to the destination web server that includes information about the type of content and the user’s request.</p>
+<p>3 Server response (<code>HTTP</code> <code>Response</code>): The server processes the request, if necessary obtains information from a database (<code>Database</code>), and then sends the content as an <code>HTTP</code> response to the user’s browser. This content can include <code>HTML</code>, <code>CSS</code>, <code>JavaScript</code> files and images.</p>
+<p>4 Displaying the content: The browser interprets the received content and displays it as a web page for the user (Figure 1).</p>
+<p><img alt="Book image" src="../images/p091-01.png" /></p>
+<div class="code-wrap" dir="ltr"><pre><code>(www.chap.sch.ir)
+</code></pre></div>
+<p>37.228.138.195</p>
+<p><strong>Figure 1</strong></p>
+<p>1 <code>DNS</code> is responsible for converting a website’s domain name into a numeric <code>IP</code> address. Browsers need the destination web server’s <code>IP</code> address in order to send the user’s request to that server. Because remembering the <code>IP</code> addresses of websites is difficult for users, users use a domain name when communicating with the browser (such as <code>chap.sch.ir</code>), but the browser sends the domain address to <code>DNS</code> to obtain the <code>IP</code> address related to the destination web server.</p>
+<p>2 A web server is a hardware system that hosts the documents of a website (such as <code>HTML</code> files, images, videos, databases, and so on). This hardware, using specific software, is responsible for storing and managing the website’s information. Web servers receive users’ requests indirectly through the browser and then send response pages to the user’s browser.</p>
+<hr /></article>
+      <aside class="extra">
+        <h2 data-fa="تمرین این بخش" data-en="Exercises for this section">تمرین این بخش</h2>
+        <p class="extra-note" data-fa="این تمرین‌ها و پیوندها اضافه بر متن کتاب‌اند." data-en="These exercises and links are in addition to the book.">این تمرین‌ها و پیوندها اضافه بر متن کتاب‌اند.</p>
+        <ol><li data-fa="صفحه about.html بساز که مسیر درخواست را در چهار بند نشان بدهد: مرورگر، آدرس، سرور، پاسخ. هر بند یک تیتر باشد." data-en="Build about.html that shows the request path as four headings: browser, address, server, response.">صفحه about.html بساز که مسیر درخواست را در چهار بند نشان بدهد: مرورگر، آدرس، سرور، پاسخ. هر بند یک تیتر باشد.</li><li data-fa="همان پوشه را با یک نسخه دوم از همان فایل کامل کن که فقط روی رایانه باز شود، و در صفحه بنویس این نسخه میزبان ندارد." data-en="Add a second copy of the page in the same folder for opening on the computer, and write on the page that this copy has no host.">همان پوشه را با یک نسخه دوم از همان فایل کامل کن که فقط روی رایانه باز شود، و در صفحه بنویس این نسخه میزبان ندارد.</li></ol>
+        <h2 data-fa="پیوند مفید" data-en="Useful link">پیوند مفید</h2><ul><li><a href="https://developer.mozilla.org/en-US/docs/Learn/Common_questions/Web_mechanics/How_does_the_Internet_work" data-fa="اینترنت چگونه کار می‌کند" data-en="How the internet works">اینترنت چگونه کار می‌کند</a></li></ul>
+      </aside>
+    <nav class="pager"><a rel="prev" class="prev" href="p2-intro.html"><span class="pager-word" data-fa="قبلی" data-en="Previous">قبلی</span><span class="pager-name" data-fa="معرفی پودمان صفحات ایستا" data-en="Introducing static web pages">معرفی پودمان صفحات ایستا</span></a><a rel="next" class="next" href="p2-concepts.html"><span class="pager-word" data-fa="بعدی" data-en="Next">بعدی</span><span class="pager-name" data-fa="مفاهیم طراحی وب و نقشه سایت" data-en="Web-design concepts and the site map">مفاهیم طراحی وب و نقشه سایت</span></a></nav>
+    </div>
+  </div>
+  <script src="../assets/search-index.js?v=4"></script>
+  <script src="../assets/app.js?v=4"></script>
+</body>
+</html>

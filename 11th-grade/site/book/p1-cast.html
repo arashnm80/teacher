@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title data-fa="ورودی و تبدیل نوع" data-en="Input and type casting">ورودی و تبدیل نوع</title>
+  <link rel="icon" href="../assets/favicon.svg">
+  <link rel="stylesheet" href="../assets/style.css?v=4">
+</head>
+<body data-root="../">
+  <header class="top">
+    <a class="brand" href="../index.html">
+      <span data-fa="طراح سایت" data-en="Site Design">طراح سایت</span>
+      <small data-fa="پایه یازدهم" data-en="Grade 11">پایه یازدهم</small>
+    </a>
+    <div class="search-wrap">
+      <input id="q" type="search" autocomplete="off"
+        data-fa-placeholder="جستجو در درس‌ها" data-en-placeholder="Search lessons"
+        placeholder="جستجو در درس‌ها">
+      <div id="results" class="results" hidden></div>
+    </div>
+    <a class="download" href="../grade11-offline.zip?v=2" data-fa="دانلود کل سایت" data-en="Download the whole site">دانلود کل سایت</a>
+    <button type="button" id="lang-toggle" class="lang-toggle" dir="ltr" data-lang="fa"
+      aria-label="تغییر زبان">
+      <span data-opt="fa">فا</span>
+      <span data-opt="en">EN</span>
+    </button>
+  </header>
+  <div class="layout">
+    <details class="toc" open><summary><span data-fa="فهرست درس‌ها" data-en="Lesson list">فهرست درس‌ها</span></summary><nav class="side" aria-label="lessons"><p class="mod" data-fa="شروع کتاب" data-en="Opening">شروع کتاب</p><p class="unit" data-fa="فهرست" data-en="Contents">فهرست</p><a class="" href="toc.html" data-fa="فهرست" data-en="Contents">فهرست</a><p class="mod" data-fa="پودمان ۱: برنامه‌نویسی پایتون" data-en="Module 1: Python programming">پودمان ۱: برنامه‌نویسی پایتون</p><p class="unit" data-fa="معرفی پودمان" data-en="Module introduction">معرفی پودمان</p><a class="" href="p1-intro.html" data-fa="معرفی پودمان پایتون" data-en="Introducing the Python module">معرفی پودمان پایتون</a><p class="unit" data-fa="مدل‌سازی داده" data-en="Data modeling">مدل‌سازی داده</p><a class="" href="p1-python.html" data-fa="پایتون و محیط برنامه‌نویسی" data-en="Python and the programming environment">پایتون و محیط برنامه‌نویسی</a><a class="" href="p1-vars.html" data-fa="متغیرها، نوع داده و عملگرها" data-en="Variables, types, and operators">متغیرها، نوع داده و عملگرها</a><a class="current" href="p1-cast.html" data-fa="ورودی و تبدیل نوع" data-en="Input and type casting">ورودی و تبدیل نوع</a><a class="" href="p1-lists.html" data-fa="لیست‌ها" data-en="Lists">لیست‌ها</a><a class="" href="p1-if.html" data-fa="شرط‌های ساده" data-en="Simple conditions">شرط‌های ساده</a><a class="" href="p1-elif.html" data-fa="if، elif و else" data-en="if, elif, and else">if، elif و else</a><a class="" href="p1-for.html" data-fa="حلقه for و range" data-en="The for loop and range">حلقه for و range</a><a class="" href="p1-while.html" data-fa="حلقه while و کنترل حلقه" data-en="The while loop and loop control">حلقه while و کنترل حلقه</a><a class="" href="p1-assess-data.html" data-fa="ارزشیابی مدل‌سازی داده" data-en="Data-modeling assessment">ارزشیابی مدل‌سازی داده</a><p class="unit" data-fa="توابع و ماژول‌ها" data-en="Functions and modules">توابع و ماژول‌ها</p><a class="" href="p1-sets.html" data-fa="مجموعه (set)" data-en="Sets">مجموعه (set)</a><a class="" href="p1-dict.html" data-fa="دیکشنری" data-en="Dictionaries">دیکشنری</a><a class="" href="p1-quiz.html" data-fa="پروژه بازی Quiz" data-en="Quiz game project">پروژه بازی Quiz</a><a class="" href="p1-tuple.html" data-fa="تاپل" data-en="Tuples">تاپل</a><a class="" href="p1-func.html" data-fa="تعریف تابع، پارامتر و return" data-en="Defining functions, parameters, and return">تعریف تابع، پارامتر و return</a><a class="" href="p1-func-more.html" data-fa="تمرین تابع و مرتب‌سازی" data-en="Function practice and sorting">تمرین تابع و مرتب‌سازی</a><a class="" href="p1-modules.html" data-fa="ماژول‌ها و تفاوت تابع و متد" data-en="Modules, and functions versus methods">ماژول‌ها و تفاوت تابع و متد</a><a class="" href="p1-assess-func.html" data-fa="ارزشیابی توابع و ماژول‌ها" data-en="Functions and modules assessment">ارزشیابی توابع و ماژول‌ها</a><p class="mod" data-fa="پودمان ۲: صفحات وب ایستا" data-en="Module 2: Static web pages">پودمان ۲: صفحات وب ایستا</p><p class="unit" data-fa="معرفی پودمان" data-en="Module introduction">معرفی پودمان</p><a class="" href="p2-intro.html" data-fa="معرفی پودمان صفحات ایستا" data-en="Introducing static web pages">معرفی پودمان صفحات ایستا</a><p class="unit" data-fa="ساختار با HTML" data-en="Structure with HTML">ساختار با HTML</p><a class="" href="p2-web.html" data-fa="وب چگونه کار می‌کند" data-en="How the web works">وب چگونه کار می‌کند</a><a class="" href="p2-concepts.html" data-fa="مفاهیم طراحی وب و نقشه سایت" data-en="Web-design concepts and the site map">مفاهیم طراحی وب و نقشه سایت</a><a class="" href="p2-tags.html" data-fa="اولین صفحه HTML" data-en="A first HTML page">اولین صفحه HTML</a><a class="" href="p2-text.html" data-fa="متن، لیست و پیوند" data-en="Text, lists, and links">متن، لیست و پیوند</a><a class="" href="p2-img.html" data-fa="تصویر در صفحه" data-en="Images on the page">تصویر در صفحه</a><a class="" href="p2-forms.html" data-fa="فرم‌ها" data-en="Forms">فرم‌ها</a><a class="" href="p2-semantic.html" data-fa="عناصر معنایی" data-en="Semantic elements">عناصر معنایی</a><a class="" href="p2-assess-html.html" data-fa="ارزشیابی HTML" data-en="HTML assessment">ارزشیابی HTML</a><p class="unit" data-fa="ظاهر با CSS" data-en="Appearance with CSS">ظاهر با CSS</p><a class="" href="p2-css-start.html" data-fa="نوشتن CSS" data-en="Writing CSS">نوشتن CSS</a><a class="" href="p2-css-look.html" data-fa="رنگ، پس‌زمینه و انتخاب‌گر" data-en="Color, background, and selectors">رنگ، پس‌زمینه و انتخاب‌گر</a><a class="" href="p2-box.html" data-fa="مدل جعبه‌ای و display" data-en="The box model and display">مدل جعبه‌ای و display</a><a class="" href="p2-flex.html" data-fa="چیدمان با Flexbox" data-en="Layout with Flexbox">چیدمان با Flexbox</a><a class="" href="p2-flex-work.html" data-fa="کارگاه چیدمان صفحه" data-en="Page-layout workshop">کارگاه چیدمان صفحه</a><a class="" href="p2-media.html" data-fa="مدیا کوئری و ارزشیابی CSS" data-en="Media queries and the CSS assessment">مدیا کوئری و ارزشیابی CSS</a><p class="mod" data-fa="پودمان ۳: صفحات وب تعاملی" data-en="Module 3: Interactive web pages">پودمان ۳: صفحات وب تعاملی</p><p class="unit" data-fa="معرفی پودمان" data-en="Module introduction">معرفی پودمان</p><a class="" href="p3-intro.html" data-fa="معرفی پودمان تعاملی" data-en="Introducing the interactive module">معرفی پودمان تعاملی</a><p class="unit" data-fa="بوت‌استرپ" data-en="Bootstrap">بوت‌استرپ</p><a class="" href="p3-bs-start.html" data-fa="فریم‌ورک و شروع بوت‌استرپ" data-en="Frameworks and starting Bootstrap">فریم‌ورک و شروع بوت‌استرپ</a><a class="" href="p3-bs-util.html" data-fa="فاصله، گردی و لیست" data-en="Spacing, rounding, and lists">فاصله، گردی و لیست</a><a class="" href="p3-bs-header.html" data-fa="سرصفحه فروشگاه" data-en="The shop header">سرصفحه فروشگاه</a><a class="" href="p3-bs-grid.html" data-fa="شبکه Grid" data-en="The grid">شبکه Grid</a><a class="" href="p3-bs-rwd.html" data-fa="کلاس‌های واکنش‌گرا" data-en="Responsive classes">کلاس‌های واکنش‌گرا</a><a class="" href="p3-bs-nav.html" data-fa="نوار ناوبری و جزئیات محصول" data-en="Navbar and product details">نوار ناوبری و جزئیات محصول</a><a class="" href="p3-bs-form.html" data-fa="فرم و پنجره Modal" data-en="Forms and modals">فرم و پنجره Modal</a><a class="" href="p3-bs-show.html" data-fa="کاروسل و آکاردئون" data-en="Carousel and accordion">کاروسل و آکاردئون</a><a class="" href="p3-bs-assess.html" data-fa="ارزشیابی بوت‌استرپ" data-en="Bootstrap assessment">ارزشیابی بوت‌استرپ</a><p class="unit" data-fa="جاوااسکریپت" data-en="JavaScript">جاوااسکریپت</p><a class="" href="p3-js-start.html" data-fa="جاوااسکریپت در صفحه وب" data-en="JavaScript on the page">جاوااسکریپت در صفحه وب</a><a class="" href="p3-js-vars.html" data-fa="متغیر و نوع داده" data-en="Variables and data types">متغیر و نوع داده</a><a class="" href="p3-js-ops.html" data-fa="عملگرها" data-en="Operators">عملگرها</a><a class="" href="p3-js-data.html" data-fa="آرایه و شیء" data-en="Arrays and objects">آرایه و شیء</a><a class="" href="p3-js-if.html" data-fa="شرط در جاوااسکریپت" data-en="Conditions in JavaScript">شرط در جاوااسکریپت</a><a class="" href="p3-js-loops.html" data-fa="حلقه‌ها" data-en="Loops">حلقه‌ها</a><a class="" href="p3-js-func.html" data-fa="تابع‌ها" data-en="Functions">تابع‌ها</a><a class="" href="p3-js-dom.html" data-fa="صفحه، رویداد و اعتبار فرم" data-en="The page, events, and form validation">صفحه، رویداد و اعتبار فرم</a><a class="" href="p3-js-assess.html" data-fa="ارزشیابی جاوااسکریپت" data-en="JavaScript assessment">ارزشیابی جاوااسکریپت</a><p class="mod" data-fa="پودمان ۴: توسعه وب پایتون" data-en="Module 4: Python for the web">پودمان ۴: توسعه وب پایتون</p><p class="unit" data-fa="معرفی پودمان" data-en="Module introduction">معرفی پودمان</p><a class="" href="p4-intro.html" data-fa="معرفی پودمان شیءگرایی" data-en="Introducing the object-oriented module">معرفی پودمان شیءگرایی</a><p class="unit" data-fa="شیءگرایی" data-en="Object-oriented programming">شیءگرایی</p><a class="" href="p4-idea.html" data-fa="ایده شیء و کلاس" data-en="The idea of objects and classes">ایده شیء و کلاس</a><a class="" href="p4-class.html" data-fa="ساخت کلاس و متد" data-en="Writing a class and methods">ساخت کلاس و متد</a><a class="" href="p4-inherit.html" data-fa="وراثت" data-en="Inheritance">وراثت</a><a class="" href="p4-protect.html" data-fa="داده معتبر و استفاده داخلی" data-en="Valid data and internal use">داده معتبر و استفاده داخلی</a><a class="" href="p4-assess-oop.html" data-fa="ارزشیابی برنامه شیءگرا" data-en="Object-oriented assessment">ارزشیابی برنامه شیءگرا</a><p class="unit" data-fa="فایل و توسعه" data-en="Files and development">فایل و توسعه</p><a class="" href="p4-files.html" data-fa="خواندن و نوشتن فایل متنی" data-en="Reading and writing text files">خواندن و نوشتن فایل متنی</a><a class="" href="p4-errors.html" data-fa="پیمایش فایل و مدیریت خطا" data-en="Walking a file and handling errors">پیمایش فایل و مدیریت خطا</a><a class="" href="p4-json.html" data-fa="چند فایل و JSON" data-en="Several files and JSON">چند فایل و JSON</a><a class="" href="p4-assess-files.html" data-fa="ارزشیابی کار با فایل" data-en="Files assessment">ارزشیابی کار با فایل</a><p class="mod" data-fa="پودمان ۵: برنامه‌نویسی جنگو" data-en="Module 5: Django">پودمان ۵: برنامه‌نویسی جنگو</p><p class="unit" data-fa="معرفی پودمان" data-en="Module introduction">معرفی پودمان</p><a class="" href="p5-intro.html" data-fa="معرفی پودمان جنگو" data-en="Introducing the Django module">معرفی پودمان جنگو</a><p class="unit" data-fa="ایجاد وب‌اپلیکیشن" data-en="Creating the web app">ایجاد وب‌اپلیکیشن</p><a class="" href="p5-what.html" data-fa="جنگو چیست و نصب" data-en="What Django is, and installing it">جنگو چیست و نصب</a><a class="" href="p5-project.html" data-fa="پروژه، اپ و اولین view" data-en="Project, app, and the first view">پروژه، اپ و اولین view</a><a class="" href="p5-template.html" data-fa="قالب و دمای واقعی" data-en="Templates and a real temperature">قالب و دمای واقعی</a><a class="" href="p5-assess-create.html" data-fa="ارزشیابی ایجاد وب‌اپلیکیشن" data-en="Creating-the-app assessment">ارزشیابی ایجاد وب‌اپلیکیشن</a><p class="unit" data-fa="توسعه وب‌اپلیکیشن" data-en="Developing the web app">توسعه وب‌اپلیکیشن</p><a class="" href="p5-model.html" data-fa="مدل شهر و پنل ادمین" data-en="The city model and the admin">مدل شهر و پنل ادمین</a><a class="" href="p5-list.html" data-fa="خواندن شهرها و نمایش فهرست" data-en="Reading cities and showing the list">خواندن شهرها و نمایش فهرست</a><a class="" href="p5-auth.html" data-fa="ورود و خروج" data-en="Sign-in and sign-out">ورود و خروج</a><a class="" href="p5-crud.html" data-fa="افزودن و حذف شهر" data-en="Adding and deleting a city">افزودن و حذف شهر</a><a class="" href="p5-bugs.html" data-fa="باگ و امنیت" data-en="Bugs and security">باگ و امنیت</a><p class="mod" data-fa="پایان کتاب" data-en="Back of the book">پایان کتاب</p><p class="unit" data-fa="منابع" data-en="References">منابع</p><a class="" href="refs.html" data-fa="منابع کتاب" data-en="Book references">منابع کتاب</a></nav></details>
+    <div class="main">
+      <h1 class="section-title" data-fa="ورودی و تبدیل نوع" data-en="Input and type casting">ورودی و تبدیل نوع</h1><article class="lesson" lang="fa" dir="rtl" data-lang-block="fa"><p class="page-mark">صفحه ۱۳</p>
+<p>این دستور مقدار وارد شده از طریق صفحه‌کلید را به‌صورت رشته‌ای (<code>string</code>) دریافت می‌کند و خروجی آن یک مقدار رشته‌ای است (حتی اگر "عدد" وارد کرده باشید.) (شکل 25).</p>
+<h3 id="_1">فعالیت</h3>
+<p>متغیرهای <code>food</code>، <code>weighe</code> و <code>avg</code> را به ترتیب برای غذای موردعلاقه‌تان، وزن و معدل خود تعریف کنید. از ورودی برای هریک مقداری را دریافت کرده و سپس مقادیر را نمایش دهید و نوع هر یک را تعیین نمایید.</p>
+<p><img alt="تصویر کتاب" src="../images/p019-02.png" /></p>
+<figure class="shot"><img alt="شکل 25" src="../images/p019-03.png" /><figcaption>شکل 25</figcaption></figure>
+<h3 id="type-casting">تبدیل نوع داده <bdi dir="ltr">(Type Casting)</bdi> در پایتون</h3>
+<p>در برنامه‌نویسی پایتون گاهی لازم است نوع یک داده را به نوع دیگری تبدیل کنیم. به این کار تبدیل نوع داده یا <code>Type</code> <code>Casting</code> گفته می‌شود.</p>
+<figure class="shot"><img alt="شکل 26" src="../images/p019-01.png" /><figcaption>شکل 26</figcaption></figure>
+<p>برای مثال، وقتی ورودی را با تابع ()<code>input</code> دریافت می‌کنید، مقدار واردشده به‌صورت رشته (<code>str</code>) ذخیره می‌شود. اگر بخواهید با آن محاسبات ریاضی انجام دهید، لازم است آن را به عدد تبدیل کنید.</p>
+<p>پایتون برای تبدیل نوع داده، توابع آماده‌ای در اختیار برنامه نویس قرار داده است، مانند:</p>
+<p>تبدیل به عدد صحیح → )(<code>int</code> تبدیل به عدد اعشاری → )(<code>float</code> تبدیل به رشته → )(<code>str</code> تبدیل به مقدار منطقی (درست/ نادرست<code>bool</code>() → )</p>
+<hr />
+<p class="page-mark">صفحه ۱۴</p>
+<p>مطابق شکل27 برای اینکه نوع داده را به نوع عددی تبدیل کنید می‌توانید به این صورت عمل کنید:</p>
+<p>مثال: برنامه‌ای بنویسید که سن کاربر را دریافت و با یک پیغام مناسب نمایش دهد.</p>
+<figure class="shot"><img alt="شکل 27" src="../images/p020-02.png" /><figcaption>شکل 27</figcaption></figure>
+<p>مثال: به این مثال دقت کنید.</p>
+<p>بعد از اجرا، خطا را مشاهده خواهید کرد. چون عدد مستقیمًا به متن متصل شده است و این امکان‌پذیر نیست (شکل28).</p>
+<p><img alt="تصویر کتاب" src="../images/p020-01.png" /></p>
+<figure class="shot"><img alt="شکل 28" src="../images/p020-03.png" /><figcaption>شکل 28</figcaption></figure>
+<p>برای رفع این خطا لازم است، تبدیل نوع داده عددی به نوع داده رشته‌ای را به صورت زیر انجام دهید. پس از اجرا، کد خطایی مشاهده نخواهید کرد (شکل29).</p>
+<figure class="shot"><img alt="شکل 29" src="../images/p020-04.png" /><figcaption>شکل 29</figcaption></figure>
+<p>مثال: در خط1 کد مقابل سال تولد کاربر دریافت می‌شود، تابع <code>int</code> آن را به نوع عددی صحیح تبدیل و در متغیر <code>year</code> ذخیره می‌کند. در خط2 تفاضل عدد سال فعلی از سال تولد محاسبه و در متغیر <code>age</code> ذخیره می‌شود. در خط 3 با دستور <code>print</code> سن کاربر با پیغام <code>":your</code> <code>age</code> " نمایش داده می‌شود (شکل30).</p>
+<p><img alt="تصویر کتاب" src="../images/p020-05.png" /></p>
+<figure class="shot"><img alt="شکل 30" src="../images/p020-06.png" /><figcaption>شکل 30</figcaption></figure>
+<hr />
+<p class="page-mark">صفحه ۱۵</p>
+<p>مثال: مقدار متغیر <code>price</code> عددی از نوع صحیح است. در خط 2 برای تبدیل آن به یک عدد اعشاری از تابع <code>float</code> استفاده شده است (شکل31).</p>
+<figure class="shot"><img alt="شکل 31" src="../images/p021-01.png" /><figcaption>شکل 31</figcaption></figure>
+<p>مثال: تابع <code>input</code> وزن را به‌صورت یک مقدار عددی دریافت می‌کند و خروجی آن یک مقدار متنی است که تابع <code>float</code> آن را به نوع عدد اعشاری تبدیل و در متغیر<code>weight</code> ذخیره می‌کند. در خط بعد دستور <code>print</code> دو رشته را با عملگر " + " به هم الحاق می‌کند (شکل32).</p>
+<p><img alt="تصویر کتاب" src="../images/p021-03.png" /></p>
+<figure class="shot"><img alt="شکل 32" src="../images/p021-02.png" /><figcaption>شکل 32</figcaption></figure>
+<p>مشاهده می‌کنید که در این خط تابع <code>str</code> بار دیگر متغیر <code>weight</code> را به نوع متنی تبدیل کرده است.</p>
+<p>مثال: محاسبه قیمت کالا پس از اعمال ۹درصد مالیات بر ارزش افزوده (شکل33).</p>
+<p><img alt="تصویر کتاب" src="../images/p021-05.png" /></p>
+<figure class="shot"><img alt="شکل 33" src="../images/p021-04.png" /><figcaption>شکل 33</figcaption></figure>
+<h3 id="_2">فعالیت</h3>
+<p>اندازه قد کاربر را به‌صورت یک عدد اعشاری گرفته و مشابه پیام زیر را نمایش دهید.</p>
+<div class="code-wrap" dir="ltr"><pre><code>.Your height: 1.75 meters
+</code></pre></div>
+<h3 id="_3">فعالیت</h3>
+<p>برای راه‌اندازی یک فروشگاه هوشمند، مراحل زیر را انجام دهید.</p>
+<p>دریافت نام مدیر فروشگاه از ورودی دریافت سال شروع فعالیت فروشگاه تبدیل نوع داده ورودی‌ها نمایش پیام خوشامدگویی</p>
+<hr /></article><article class="lesson" lang="en" dir="ltr" data-lang-block="en" hidden><p class="page-mark">Page 13</p>
+<p>This statement receives the value entered through the keyboard as a string (<code>string</code>), and its output is a string value (even if you entered a "number") (Figure 25).</p>
+<h3 id="activity">Activity</h3>
+<p>Define the variables <code>food</code>, <code>weighe</code>, and <code>avg</code> in order for your favorite food, your weight, and your grade average. Receive a value from input for each one, then display the values and determine the type of each one.</p>
+<p><img alt="Book image" src="../images/p019-02.png" /></p>
+<figure class="shot"><img alt="Figure 25" src="../images/p019-03.png" /><figcaption>Figure 25</figcaption></figure>
+<h3 id="type-casting-in-python">Type casting in Python</h3>
+<p>In Python programming, sometimes you need to convert one data type to another. This is called type casting or <code>Type</code> <code>Casting</code>.</p>
+<figure class="shot"><img alt="Figure 26" src="../images/p019-01.png" /><figcaption>Figure 26</figcaption></figure>
+<p>For example, when you receive input with the ()<code>input</code> function, the entered value is stored as a string (<code>str</code>). If you want to perform mathematical calculations with it, you need to convert it to a number.</p>
+<p>Python provides the programmer with ready-made functions for type casting, such as:</p>
+<p>Convert to integer → )(<code>int</code> Convert to floating-point number → )(<code>float</code> Convert to string → )(<code>str</code> Convert to a logical value (true/false <code>bool</code>() → )</p>
+<hr />
+<p class="page-mark">Page 14</p>
+<p>According to Figure 27, to convert a data type to a numeric type you can do it like this:</p>
+<p>Example: Write a program that receives the user's age and displays it with a suitable message.</p>
+<figure class="shot"><img alt="Figure 27" src="../images/p020-02.png" /><figcaption>Figure 27</figcaption></figure>
+<p>Example: Pay attention to this example.</p>
+<p>After running, you will see an error, because a number has been directly joined to text, and that is not possible (Figure 28).</p>
+<p><img alt="Book image" src="../images/p020-01.png" /></p>
+<figure class="shot"><img alt="Figure 28" src="../images/p020-03.png" /><figcaption>Figure 28</figcaption></figure>
+<p>To fix this error, you need to convert the numeric data type to the string data type as follows. After running, you will not see an error code (Figure 29).</p>
+<figure class="shot"><img alt="Figure 29" src="../images/p020-04.png" /><figcaption>Figure 29</figcaption></figure>
+<p>Example: On line 1 of the code opposite, the user's year of birth is received; the <code>int</code> function converts it to an integer type and stores it in the <code>year</code> variable. On line 2 the difference between the current year and the year of birth is calculated and stored in the <code>age</code> variable. On line 3, with the <code>print</code> statement, the user's age is displayed with the message "<code>your</code> <code>age</code> :" (Figure 30).</p>
+<p><img alt="Book image" src="../images/p020-05.png" /></p>
+<figure class="shot"><img alt="Figure 30" src="../images/p020-06.png" /><figcaption>Figure 30</figcaption></figure>
+<hr />
+<p class="page-mark">Page 15</p>
+<p>Example: The value of the <code>price</code> variable is an integer. On line 2, the <code>float</code> function is used to convert it to a floating-point number (Figure 31).</p>
+<figure class="shot"><img alt="Figure 31" src="../images/p021-01.png" /><figcaption>Figure 31</figcaption></figure>
+<p>Example: The <code>input</code> function receives weight as a numeric value, and its output is a text value that the <code>float</code> function converts to a floating-point number and stores in the <code>weight</code> variable. On the next line the <code>print</code> statement concatenates two strings with the "+" operator (Figure 32).</p>
+<p><img alt="Book image" src="../images/p021-03.png" /></p>
+<figure class="shot"><img alt="Figure 32" src="../images/p021-02.png" /><figcaption>Figure 32</figcaption></figure>
+<p>You can see that on this line the <code>str</code> function converts the <code>weight</code> variable to a text type again.</p>
+<p>Example: Calculating the price of a product after applying 9 percent value-added tax (Figure 33).</p>
+<p><img alt="Book image" src="../images/p021-05.png" /></p>
+<figure class="shot"><img alt="Figure 33" src="../images/p021-04.png" /><figcaption>Figure 33</figcaption></figure>
+<h3 id="activity_1">Activity</h3>
+<p>Get the user's height as a floating-point number and display a message similar to the one below.</p>
+<div class="code-wrap" dir="ltr"><pre><code>.Your height: 1.75 meters
+</code></pre></div>
+<h3 id="activity_2">Activity</h3>
+<p>To set up a smart store, carry out the following steps.</p>
+<p>Receive the store manager's name from input Receive the year the store started operating Convert the type of the inputs Display a welcome message</p>
+<hr /></article>
+      <aside class="extra">
+        <h2 data-fa="تمرین این بخش" data-en="Exercises for this section">تمرین این بخش</h2>
+        <p class="extra-note" data-fa="این تمرین‌ها و پیوندها اضافه بر متن کتاب‌اند." data-en="These exercises and links are in addition to the book.">این تمرین‌ها و پیوندها اضافه بر متن کتاب‌اند.</p>
+        <ol><li data-fa="برنامه‌ای بساز که قیمت و تعداد را با input بگیرد، هر دو را به عدد تبدیل کند و مبلغ کل را چاپ کند." data-en="Build a program that reads a price and a quantity with input, converts both to numbers, and prints the total.">برنامه‌ای بساز که قیمت و تعداد را با input بگیرد، هر دو را به عدد تبدیل کند و مبلغ کل را چاپ کند.</li><li data-fa="به همان برنامه یک ورودی سن اضافه کن و فقط اگر سن به ۱۵ رسیده باشد پیام «مجاز» را نشان بده." data-en="Add an age input to the same program and print «allowed» only when the age is at least 15.">به همان برنامه یک ورودی سن اضافه کن و فقط اگر سن به ۱۵ رسیده باشد پیام «مجاز» را نشان بده.</li></ol>
+        <h2 data-fa="پیوند مفید" data-en="Useful link">پیوند مفید</h2><ul><li><a href="https://docs.python.org/3/tutorial/inputoutput.html" data-fa="ورودی و خروجی" data-en="Input and output">ورودی و خروجی</a></li></ul>
+      </aside>
+    <nav class="pager"><a rel="prev" class="prev" href="p1-vars.html"><span class="pager-word" data-fa="قبلی" data-en="Previous">قبلی</span><span class="pager-name" data-fa="متغیرها، نوع داده و عملگرها" data-en="Variables, types, and operators">متغیرها، نوع داده و عملگرها</span></a><a rel="next" class="next" href="p1-lists.html"><span class="pager-word" data-fa="بعدی" data-en="Next">بعدی</span><span class="pager-name" data-fa="لیست‌ها" data-en="Lists">لیست‌ها</span></a></nav>
+    </div>
+  </div>
+  <script src="../assets/search-index.js?v=4"></script>
+  <script src="../assets/app.js?v=4"></script>
+</body>
+</html>

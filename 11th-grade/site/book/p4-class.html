@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title data-fa="ساخت کلاس و متد" data-en="Writing a class and methods">ساخت کلاس و متد</title>
+  <link rel="icon" href="../assets/favicon.svg">
+  <link rel="stylesheet" href="../assets/style.css?v=4">
+</head>
+<body data-root="../">
+  <header class="top">
+    <a class="brand" href="../index.html">
+      <span data-fa="طراح سایت" data-en="Site Design">طراح سایت</span>
+      <small data-fa="پایه یازدهم" data-en="Grade 11">پایه یازدهم</small>
+    </a>
+    <div class="search-wrap">
+      <input id="q" type="search" autocomplete="off"
+        data-fa-placeholder="جستجو در درس‌ها" data-en-placeholder="Search lessons"
+        placeholder="جستجو در درس‌ها">
+      <div id="results" class="results" hidden></div>
+    </div>
+    <a class="download" href="../grade11-offline.zip?v=2" data-fa="دانلود کل سایت" data-en="Download the whole site">دانلود کل سایت</a>
+    <button type="button" id="lang-toggle" class="lang-toggle" dir="ltr" data-lang="fa"
+      aria-label="تغییر زبان">
+      <span data-opt="fa">فا</span>
+      <span data-opt="en">EN</span>
+    </button>
+  </header>
+  <div class="layout">
+    <details class="toc" open><summary><span data-fa="فهرست درس‌ها" data-en="Lesson list">فهرست درس‌ها</span></summary><nav class="side" aria-label="lessons"><p class="mod" data-fa="شروع کتاب" data-en="Opening">شروع کتاب</p><p class="unit" data-fa="فهرست" data-en="Contents">فهرست</p><a class="" href="toc.html" data-fa="فهرست" data-en="Contents">فهرست</a><p class="mod" data-fa="پودمان ۱: برنامه‌نویسی پایتون" data-en="Module 1: Python programming">پودمان ۱: برنامه‌نویسی پایتون</p><p class="unit" data-fa="معرفی پودمان" data-en="Module introduction">معرفی پودمان</p><a class="" href="p1-intro.html" data-fa="معرفی پودمان پایتون" data-en="Introducing the Python module">معرفی پودمان پایتون</a><p class="unit" data-fa="مدل‌سازی داده" data-en="Data modeling">مدل‌سازی داده</p><a class="" href="p1-python.html" data-fa="پایتون و محیط برنامه‌نویسی" data-en="Python and the programming environment">پایتون و محیط برنامه‌نویسی</a><a class="" href="p1-vars.html" data-fa="متغیرها، نوع داده و عملگرها" data-en="Variables, types, and operators">متغیرها، نوع داده و عملگرها</a><a class="" href="p1-cast.html" data-fa="ورودی و تبدیل نوع" data-en="Input and type casting">ورودی و تبدیل نوع</a><a class="" href="p1-lists.html" data-fa="لیست‌ها" data-en="Lists">لیست‌ها</a><a class="" href="p1-if.html" data-fa="شرط‌های ساده" data-en="Simple conditions">شرط‌های ساده</a><a class="" href="p1-elif.html" data-fa="if، elif و else" data-en="if, elif, and else">if، elif و else</a><a class="" href="p1-for.html" data-fa="حلقه for و range" data-en="The for loop and range">حلقه for و range</a><a class="" href="p1-while.html" data-fa="حلقه while و کنترل حلقه" data-en="The while loop and loop control">حلقه while و کنترل حلقه</a><a class="" href="p1-assess-data.html" data-fa="ارزشیابی مدل‌سازی داده" data-en="Data-modeling assessment">ارزشیابی مدل‌سازی داده</a><p class="unit" data-fa="توابع و ماژول‌ها" data-en="Functions and modules">توابع و ماژول‌ها</p><a class="" href="p1-sets.html" data-fa="مجموعه (set)" data-en="Sets">مجموعه (set)</a><a class="" href="p1-dict.html" data-fa="دیکشنری" data-en="Dictionaries">دیکشنری</a><a class="" href="p1-quiz.html" data-fa="پروژه بازی Quiz" data-en="Quiz game project">پروژه بازی Quiz</a><a class="" href="p1-tuple.html" data-fa="تاپل" data-en="Tuples">تاپل</a><a class="" href="p1-func.html" data-fa="تعریف تابع، پارامتر و return" data-en="Defining functions, parameters, and return">تعریف تابع، پارامتر و return</a><a class="" href="p1-func-more.html" data-fa="تمرین تابع و مرتب‌سازی" data-en="Function practice and sorting">تمرین تابع و مرتب‌سازی</a><a class="" href="p1-modules.html" data-fa="ماژول‌ها و تفاوت تابع و متد" data-en="Modules, and functions versus methods">ماژول‌ها و تفاوت تابع و متد</a><a class="" href="p1-assess-func.html" data-fa="ارزشیابی توابع و ماژول‌ها" data-en="Functions and modules assessment">ارزشیابی توابع و ماژول‌ها</a><p class="mod" data-fa="پودمان ۲: صفحات وب ایستا" data-en="Module 2: Static web pages">پودمان ۲: صفحات وب ایستا</p><p class="unit" data-fa="معرفی پودمان" data-en="Module introduction">معرفی پودمان</p><a class="" href="p2-intro.html" data-fa="معرفی پودمان صفحات ایستا" data-en="Introducing static web pages">معرفی پودمان صفحات ایستا</a><p class="unit" data-fa="ساختار با HTML" data-en="Structure with HTML">ساختار با HTML</p><a class="" href="p2-web.html" data-fa="وب چگونه کار می‌کند" data-en="How the web works">وب چگونه کار می‌کند</a><a class="" href="p2-concepts.html" data-fa="مفاهیم طراحی وب و نقشه سایت" data-en="Web-design concepts and the site map">مفاهیم طراحی وب و نقشه سایت</a><a class="" href="p2-tags.html" data-fa="اولین صفحه HTML" data-en="A first HTML page">اولین صفحه HTML</a><a class="" href="p2-text.html" data-fa="متن، لیست و پیوند" data-en="Text, lists, and links">متن، لیست و پیوند</a><a class="" href="p2-img.html" data-fa="تصویر در صفحه" data-en="Images on the page">تصویر در صفحه</a><a class="" href="p2-forms.html" data-fa="فرم‌ها" data-en="Forms">فرم‌ها</a><a class="" href="p2-semantic.html" data-fa="عناصر معنایی" data-en="Semantic elements">عناصر معنایی</a><a class="" href="p2-assess-html.html" data-fa="ارزشیابی HTML" data-en="HTML assessment">ارزشیابی HTML</a><p class="unit" data-fa="ظاهر با CSS" data-en="Appearance with CSS">ظاهر با CSS</p><a class="" href="p2-css-start.html" data-fa="نوشتن CSS" data-en="Writing CSS">نوشتن CSS</a><a class="" href="p2-css-look.html" data-fa="رنگ، پس‌زمینه و انتخاب‌گر" data-en="Color, background, and selectors">رنگ، پس‌زمینه و انتخاب‌گر</a><a class="" href="p2-box.html" data-fa="مدل جعبه‌ای و display" data-en="The box model and display">مدل جعبه‌ای و display</a><a class="" href="p2-flex.html" data-fa="چیدمان با Flexbox" data-en="Layout with Flexbox">چیدمان با Flexbox</a><a class="" href="p2-flex-work.html" data-fa="کارگاه چیدمان صفحه" data-en="Page-layout workshop">کارگاه چیدمان صفحه</a><a class="" href="p2-media.html" data-fa="مدیا کوئری و ارزشیابی CSS" data-en="Media queries and the CSS assessment">مدیا کوئری و ارزشیابی CSS</a><p class="mod" data-fa="پودمان ۳: صفحات وب تعاملی" data-en="Module 3: Interactive web pages">پودمان ۳: صفحات وب تعاملی</p><p class="unit" data-fa="معرفی پودمان" data-en="Module introduction">معرفی پودمان</p><a class="" href="p3-intro.html" data-fa="معرفی پودمان تعاملی" data-en="Introducing the interactive module">معرفی پودمان تعاملی</a><p class="unit" data-fa="بوت‌استرپ" data-en="Bootstrap">بوت‌استرپ</p><a class="" href="p3-bs-start.html" data-fa="فریم‌ورک و شروع بوت‌استرپ" data-en="Frameworks and starting Bootstrap">فریم‌ورک و شروع بوت‌استرپ</a><a class="" href="p3-bs-util.html" data-fa="فاصله، گردی و لیست" data-en="Spacing, rounding, and lists">فاصله، گردی و لیست</a><a class="" href="p3-bs-header.html" data-fa="سرصفحه فروشگاه" data-en="The shop header">سرصفحه فروشگاه</a><a class="" href="p3-bs-grid.html" data-fa="شبکه Grid" data-en="The grid">شبکه Grid</a><a class="" href="p3-bs-rwd.html" data-fa="کلاس‌های واکنش‌گرا" data-en="Responsive classes">کلاس‌های واکنش‌گرا</a><a class="" href="p3-bs-nav.html" data-fa="نوار ناوبری و جزئیات محصول" data-en="Navbar and product details">نوار ناوبری و جزئیات محصول</a><a class="" href="p3-bs-form.html" data-fa="فرم و پنجره Modal" data-en="Forms and modals">فرم و پنجره Modal</a><a class="" href="p3-bs-show.html" data-fa="کاروسل و آکاردئون" data-en="Carousel and accordion">کاروسل و آکاردئون</a><a class="" href="p3-bs-assess.html" data-fa="ارزشیابی بوت‌استرپ" data-en="Bootstrap assessment">ارزشیابی بوت‌استرپ</a><p class="unit" data-fa="جاوااسکریپت" data-en="JavaScript">جاوااسکریپت</p><a class="" href="p3-js-start.html" data-fa="جاوااسکریپت در صفحه وب" data-en="JavaScript on the page">جاوااسکریپت در صفحه وب</a><a class="" href="p3-js-vars.html" data-fa="متغیر و نوع داده" data-en="Variables and data types">متغیر و نوع داده</a><a class="" href="p3-js-ops.html" data-fa="عملگرها" data-en="Operators">عملگرها</a><a class="" href="p3-js-data.html" data-fa="آرایه و شیء" data-en="Arrays and objects">آرایه و شیء</a><a class="" href="p3-js-if.html" data-fa="شرط در جاوااسکریپت" data-en="Conditions in JavaScript">شرط در جاوااسکریپت</a><a class="" href="p3-js-loops.html" data-fa="حلقه‌ها" data-en="Loops">حلقه‌ها</a><a class="" href="p3-js-func.html" data-fa="تابع‌ها" data-en="Functions">تابع‌ها</a><a class="" href="p3-js-dom.html" data-fa="صفحه، رویداد و اعتبار فرم" data-en="The page, events, and form validation">صفحه، رویداد و اعتبار فرم</a><a class="" href="p3-js-assess.html" data-fa="ارزشیابی جاوااسکریپت" data-en="JavaScript assessment">ارزشیابی جاوااسکریپت</a><p class="mod" data-fa="پودمان ۴: توسعه وب پایتون" data-en="Module 4: Python for the web">پودمان ۴: توسعه وب پایتون</p><p class="unit" data-fa="معرفی پودمان" data-en="Module introduction">معرفی پودمان</p><a class="" href="p4-intro.html" data-fa="معرفی پودمان شیءگرایی" data-en="Introducing the object-oriented module">معرفی پودمان شیءگرایی</a><p class="unit" data-fa="شیءگرایی" data-en="Object-oriented programming">شیءگرایی</p><a class="" href="p4-idea.html" data-fa="ایده شیء و کلاس" data-en="The idea of objects and classes">ایده شیء و کلاس</a><a class="current" href="p4-class.html" data-fa="ساخت کلاس و متد" data-en="Writing a class and methods">ساخت کلاس و متد</a><a class="" href="p4-inherit.html" data-fa="وراثت" data-en="Inheritance">وراثت</a><a class="" href="p4-protect.html" data-fa="داده معتبر و استفاده داخلی" data-en="Valid data and internal use">داده معتبر و استفاده داخلی</a><a class="" href="p4-assess-oop.html" data-fa="ارزشیابی برنامه شیءگرا" data-en="Object-oriented assessment">ارزشیابی برنامه شیءگرا</a><p class="unit" data-fa="فایل و توسعه" data-en="Files and development">فایل و توسعه</p><a class="" href="p4-files.html" data-fa="خواندن و نوشتن فایل متنی" data-en="Reading and writing text files">خواندن و نوشتن فایل متنی</a><a class="" href="p4-errors.html" data-fa="پیمایش فایل و مدیریت خطا" data-en="Walking a file and handling errors">پیمایش فایل و مدیریت خطا</a><a class="" href="p4-json.html" data-fa="چند فایل و JSON" data-en="Several files and JSON">چند فایل و JSON</a><a class="" href="p4-assess-files.html" data-fa="ارزشیابی کار با فایل" data-en="Files assessment">ارزشیابی کار با فایل</a><p class="mod" data-fa="پودمان ۵: برنامه‌نویسی جنگو" data-en="Module 5: Django">پودمان ۵: برنامه‌نویسی جنگو</p><p class="unit" data-fa="معرفی پودمان" data-en="Module introduction">معرفی پودمان</p><a class="" href="p5-intro.html" data-fa="معرفی پودمان جنگو" data-en="Introducing the Django module">معرفی پودمان جنگو</a><p class="unit" data-fa="ایجاد وب‌اپلیکیشن" data-en="Creating the web app">ایجاد وب‌اپلیکیشن</p><a class="" href="p5-what.html" data-fa="جنگو چیست و نصب" data-en="What Django is, and installing it">جنگو چیست و نصب</a><a class="" href="p5-project.html" data-fa="پروژه، اپ و اولین view" data-en="Project, app, and the first view">پروژه، اپ و اولین view</a><a class="" href="p5-template.html" data-fa="قالب و دمای واقعی" data-en="Templates and a real temperature">قالب و دمای واقعی</a><a class="" href="p5-assess-create.html" data-fa="ارزشیابی ایجاد وب‌اپلیکیشن" data-en="Creating-the-app assessment">ارزشیابی ایجاد وب‌اپلیکیشن</a><p class="unit" data-fa="توسعه وب‌اپلیکیشن" data-en="Developing the web app">توسعه وب‌اپلیکیشن</p><a class="" href="p5-model.html" data-fa="مدل شهر و پنل ادمین" data-en="The city model and the admin">مدل شهر و پنل ادمین</a><a class="" href="p5-list.html" data-fa="خواندن شهرها و نمایش فهرست" data-en="Reading cities and showing the list">خواندن شهرها و نمایش فهرست</a><a class="" href="p5-auth.html" data-fa="ورود و خروج" data-en="Sign-in and sign-out">ورود و خروج</a><a class="" href="p5-crud.html" data-fa="افزودن و حذف شهر" data-en="Adding and deleting a city">افزودن و حذف شهر</a><a class="" href="p5-bugs.html" data-fa="باگ و امنیت" data-en="Bugs and security">باگ و امنیت</a><p class="mod" data-fa="پایان کتاب" data-en="Back of the book">پایان کتاب</p><p class="unit" data-fa="منابع" data-en="References">منابع</p><a class="" href="refs.html" data-fa="منابع کتاب" data-en="Book references">منابع کتاب</a></nav></details>
+    <div class="main">
+      <h1 class="section-title" data-fa="ساخت کلاس و متد" data-en="Writing a class and methods">ساخت کلاس و متد</h1><article class="lesson" lang="fa" dir="rtl" data-lang-block="fa"><p class="page-mark">صفحه ۲۳۸</p>
+<p>حالا نوبت آن است که در محیط برنامه‌نویسی، اولین کلاس (<code>class</code>) خود را ایجاد کنید و سپس با استفاده از آن کلاس، یک نمونه(<code>Instance</code>) بسازید. کد شکل 4 را درون یک فایل جدید به دقت تایپ کنید.</p>
+<p><img alt="شکل 4 اولین کد برای تعریف کلاس و ساخت نمونه" src="../images/p244-01.png" /></p>
+<p>شکل 4 اولین کد برای تعریف کلاس و ساخت نمونه</p>
+<p>خط 1: یک کلاس به نام <code>Mobile</code> تعریف می‌شود.</p>
+<p>کلاس در واقع یک الگو یا نقشه برای ساختن موبایل‌هاست.</p>
+<p>دقت کنید کلاس، خود موبایل نیست بلکه الگویی برای ساخت موبایل‌هاست.</p>
+<p>بر اساس استانداردهای نام‌گذاری در پایتون (<code>PEP8</code>)، نام کلاس‌ها باید با استفاده از شیوۀ <code>PascalCase</code> نوشته شود؛ به این معنا که حرف اول نام کلاس و حرف اول تمام کلمات تشکیل‌دهندۀ آن بزرگ باشد.</p>
+<p>خط 2: این متد، نقش متِد سازندۀ کلاس را در پایتون بر عهده دارد. به این متد اصطلاحاً <code>initializer</code> هم می‌گویند.</p>
+<p>هر زمان که از کلاس <code>Mobile</code> یک نمونه ساخته شود، یعنی با اجرای خط 7، این متد به‌طور خودکار اجرا می‌شود.</p>
+<p>وظیفه اصلی این متد مقداردهی اولیه به ویژگی‌های نمونه (<code>Instance</code>) است.</p>
+<p>دقت کنید که <code>___init_</code> نامی قراردادی در پایتون است و نمی‌توان آن را تغییر داد. در سمت چپ و راست کلمه <code>init</code> دو بار کاراکتر زیرخط (<code>underscore</code>) تایپ شده است.</p>
+<p>خطوط 3 و 4: ویژگی‌های نمونه را مشخص می‌کنند.</p>
+<p>هر موبایل یک برند و یک رنگ دارد.</p>
+<p>در کد ارائه شده، <code>self.brand</code> و <code>self.color</code> هر دو به عنوان ویژگی (<code>attribute</code>) شناخته می‌شوند.</p>
+<p>کلمۀ <code>self</code> به همان نمونه‌ای اشاره می‌کند که در حال ساخته شدن است و <code>brand</code> و <code>color</code> نام ویژگی‌هایی هستند که به آن نمونه تعلق دارند.</p>
+<hr />
+<p class="page-mark">صفحه ۲۳۹</p>
+<p>خطوط 5 و 6: خطوط خالی بر اساس استانداردهای کدنویسی پایتون (<code>PEP8</code>)، لازم است پس از پایان تعریف کلاس، دو خِط خالی قرار داده شود تا مرز بین کلاس و بخش کدهای سراسری (<code>Global</code>) به‌وضوح مشخص شود.</p>
+<p>خط 7: ساختن نمونه(<code>Instance</code>) در این خط، یک نمونه (<code>instance</code>) به نام <code>my_mobile</code> از روی کلاس <code>Mobile</code> ساخته‌اید.</p>
+<p>مقدار <code>"nokia"</code> برای ویژگِی <code>brand</code> و مقدار <code>"gray"</code> برای ویژگِی <code>color</code> در نظر گرفته شده‌اند.</p>
+<p><img alt="تصویر کتاب" src="../images/p245-01.png" /></p>
+<p>خط 8: دسترسی به ویژگی با استفاده از نام نمونه و علامت نقطه (.)، به ویژگی‌های آن دسترسی پیدا می‌کنید.</p>
+<p>این دستور مقدار ویژگی <code>brand</code> را برای نمونه <code>my_mobile</code> چاپ می‌کند.</p>
+<p><strong>شکل 5</strong></p>
+<p>خط 9: خط خالی طبق استانداردهای <code>PEP8</code>، پس از پایان کدها نیز یک خط خالی قرار داده می‌شود تا انتهای فایل از کدها به‌صورت خوانا و استاندارد مشخص شود.</p>
+<p>توجه داشته باشید که اگر در این مرحله همۀ جزئیات را به‌طور کامل متوجه نشدید، نگران نباشید؛ این یک مبحث جدید است و با ادامۀ آموزش و فعالیت‌های بیشتر، مرور کدها و ساخت برنامه‌های بیشتر، به مرور، مفاهیم برایتان روشن می‌شود و جا می‌افتد.</p>
+<p>حالا برنامه را اجرا کنید، می‌بینید که مقدار ویژگی <code>brand</code> از موبایلی که ساخته‌اید یعنی <code>nokia</code> چاپ می‌شود.</p>
+<p>توجه داشته باشید در این مرحله، کلاس فقط شامل ویژگی‌ها (<code>Attributes</code>) است و فعلاً هیچ رفتار یا متدی (<code>Method</code>) به‌جز سازنده (<code>___init_</code>) برای نمونه‌ها تعریف نشده است.</p>
+<p>حالا با یک تصویر روند اجرای برنامه را شرح داده شده است. شکل 6 را به دقت مشاهده کنید.</p>
+<p><img alt="شکل 6 روند اجرای برنامه" src="../images/p245-02.png" /></p>
+<p>شکل 6 روند اجرای برنامه</p>
+<hr />
+<p class="page-mark">صفحه ۲۴۰</p>
+<p>همان‌طور که در شکل مشاهده می‌شود بعد از اجرای خط 7 که برای ساختن نمونه <code>my_mobile</code> است مراحل زیر اتفاق می‌افتد:</p>
+<p>1 آرگومان‌های <code>"nokia"</code> و <code>"gray"</code> به متد <code>___init_</code> فرستاده و درون پارامترهای <code>brand</code> و <code>color</code> قرار می‌گیرند.</p>
+<p>2 مقدار پارامتر <code>brand</code> درون <code>self.brand</code> و مقدار پارامتر <code>color</code> درون <code>self.color</code> ریخته می‌شوند.</p>
+<p>3 در این مرحله نمونه مورد نظر ساخته خواهد شد.</p>
+<h3 id="_1">فعالیت</h3>
+<p>در انتهای برنامه دستوری اضافه کنید که رنگ موبایل را چاپ نماید.</p>
+<h3 id="_2">فعالیت</h3>
+<p>داخل متد <code>___init_</code> دستوری اضافه کنید که مدل گوشی شما را نیز به عنوان ویژگی در نظر بگیرد.</p>
+<p>فراموش نکنید که در خط 7 نیز باید مدل گوشی خودتان را اضافه کنید. سعی کنید خودتان این فعالیت را انجام دهید ولی اگر هنوز ابهام داشتید در ادامه پاسخ این کد را می‌بینید و می‌توانید با کد خودتان مقایسه کنید.</p>
+<p>در ادامه بر اساس کلاسی که تعریف کرده‌اید یک نمونه دیگر به عنوان موبایلی برای دوستتان بسازید. کد شکل 7 را به دقت بنویسید.</p>
+<p><img alt="شکل 7 ساختن یک نمونه به عنوان گوشی برای دوستتان" src="../images/p246-01.png" /></p>
+<p>شکل 7 ساختن یک نمونه به عنوان گوشی برای دوستتان</p>
+<hr />
+<p class="page-mark">صفحه ۲۴۱</p>
+<p>خط 4: یک ویژگی جدید برای مدل گوشی همراه تعریف و مقداردهی شده است.</p>
+<p>خط 9: یک نمونه جدید با نام <code>friend_mobile</code> با ویژگی‌هایی متفاوت از <code>my_mobile</code> ایجاد شده است.</p>
+<figure class="shot"><img alt="شکل 8" src="../images/p247-01.png" /><figcaption>شکل 8</figcaption></figure>
+<p>خطوط 15 تا 17: در این خطوط ویژگی‌های نمونه دوم چاپ شده است.</p>
+<h3 id="_3">نکته</h3>
+<p>دقت کنید <code>my_mobile</code> و <code>friend_mobile</code> هر دو نمونه‌هایی مجزا هستند که از روی کلاس <code>Mobile</code> ساخته شده‌اند.</p>
+<p>در ادامه یک متد به کلاس <code>Mobile</code> اضافه کنید تا مقدار تمام ویژگی‌های نمونه‌ای که ساخته‌اید را چاپ کند. کد قبلی را مانند شکل 9 تغییر دهید.</p>
+<p><img alt="شکل 9 افزودن متد" src="../images/p247-02.png" /></p>
+<p>شکل 9 افزودن متد</p>
+<div class="code-wrap" dir="ltr"><pre><code>show_info
+</code></pre></div>
+<hr />
+<p class="page-mark">صفحه ۲۴۲</p>
+<p>خط 7: این خط، تعریف یک متد (<code>method</code>) به نام <code>show_info</code> را در داخل کلاس <code>Mobile</code> انجام می‌دهد.</p>
+<p>متدها، توابعی هستند که به یک کلاس مرتبط هستند و می‌توانند به ویژگی‌های (<code>Attributes</code>) آن کلاس دسترسی داشته باشند.</p>
+<p>پارامتر <code>self</code> در تعریف متد، به خودِ نمونه‌ای که متد روی آن فراخوانی می‌شود، اشاره می‌کند. به عبارت دیگر، <code>self</code> به کلاس <code>Mobile</code> اجازه می‌دهد تا به ویژگی‌های (<code>Attributes</code>) خاص هر نمونه از نوع <code>Mobile</code> دسترسی پیدا کند.</p>
+<p>خطوط 8 تا 10: این دستور، مقادیر ویژگی‌های برند، مدل و رنگ نمونه را با استفاده از برچسب‌های مشخص، نمایش می‌دهد.</p>
+<p>خط 14: در این خط متد <code>show_info</code> از نمونه <code>my_mobile</code> فراخوانی و اجرا می‌شود.</p>
+<p>به همین ترتیب می‌توانید متدهای بیشتری برای این کلاس تعریف کنید. به عنوان مثال متد <code>incoming_call</code> برای نمایش پیام هنگام تماس دریافتی می‌باشد. کدهای این متد را در زیِر متِد <code>show_info</code> براساس شکل 10 بنویسید.</p>
+<p><img alt="شکل 10 افزودن متد" src="../images/p248-01.png" /></p>
+<p>شکل 10 افزودن متد</p>
+<div class="code-wrap" dir="ltr"><pre><code>incoming_call
+</code></pre></div>
+<p>اولین خط، تعریف متدی به نام <code>incoming_call</code> را در داخل کلاس <code>Mobile</code> انجام می‌دهد. این متد یک پارامتر به نام <code>phone_number</code> را دریافت می‌کند که نشان‌دهنده شماره تلفن تماس‌گیرنده است.</p>
+<p>دستورات داخل متد، پیام ‌"تماس ورودی" و شماره تلفن تماس‌گیرنده را در خروجی نمایش می‌دهند.</p>
+<p>دقت کنید این متد باید درون کلاس <code>Mobile</code> و هم‌سطح متد <code>___init_</code> تعریف شود، بنابراین یک <code>tab</code> جلوتر از بدنه کلاس قرار می‌گیرد.</p>
+<p>در آخرین خط برنامه متد <code>incoming_call</code>  را بر روی نمونه <code>my_mobile</code>  فراخوانی می‌کند.</p>
+<p>آرگومان "0912-345-6789" به عنوان پارامتر <code>phone_number</code>  ارسال می‌شود که نشان‌دهنده شماره تلفن تماس‌گیرنده است. سپس متد اجرا می‌شود و پیام‌های مشخص شده و شماره تلفن ارائه شده را نمایش می‌دهد.</p>
+<hr />
+<p class="page-mark">صفحه ۲۴۳</p>
+<h3 id="_4">فعالیت</h3>
+<p>در کلاس <code>Mobile</code> متدی با نام <code>make_call</code> ایجاد کنید. این متد باید یک پارامتر به نام <code>phone_number</code> دریافت کند که شماره تلفنی که می‌خواهید با آن تماس بگیرید را در خود نگه دارد. متد باید با چاپ پیام‌هایی مناسب، شروع عملیات شماره‌گیری را اعلام کند. به عنوان مثال، می‌توانید پیام‌هایی مانند</p>
+<div class="code-wrap" dir="ltr"><pre><code>&quot;...Calling&quot; یا &quot;...Dialing&quot; را چاپ کنید.
+</code></pre></div>
+<p>تعیین مقدار پیش فرض برای ویژگی‌ها برای جذابیت و کارایی بیشتر در ادامه، یک ویژگی تعریف خواهد شد که بعد از اجرای برنامه مقدار آنها قابل تغییر باشند. از این رو درون کلاس، ویژگی وضعیت روشن و خاموش بودن (<code>status</code>) و یک مقدار پیش فرض هم برای آن تعریف خواهد شد. کافیست در متد <code>___init_</code> یک ویژگی جدید مانند کد زیر تعریف کنید.</p>
+<div class="code-wrap" dir="ltr"><pre><code>&quot;self.status = &quot;on
+</code></pre></div>
+<p>توجه داشته باشید هنگام تعریف نمونه دیگر ضرورتی ندارد مقداری برای این ویژگی تعریف شود.</p>
+<p>تغییر مقدار ویژگی: در این روش پس از ایجاد نمونه <code>my_mobile</code> به سادگی با نوشتن کد زیر، مقدار آن تغییر خواهد کرد.</p>
+<div class="code-wrap" dir="ltr"><pre><code>my_mobile = Mobile(&quot;nokia&quot;, &quot;1100&quot;, &quot;gray&quot;)
+&quot; my_mobile.status = &quot;off
+</code></pre></div>
+<p>در این دستور از نشانه <code>dot</code> یا همان نقطه برای دسترسی به ویژگی یک نمونه استفاده شده است. این خط از پایتون می‌خواهد برای نمونه <code>my_mobile</code> ویژگی <code>status</code> مرتبط با آن را پیدا کند و در ادامه مقدار "‌ <code>off"</code> را درون آن قرار دهد.</p>
+<div class="code-wrap" dir="ltr"><pre><code>ارث‌بری (Inheritance)
+</code></pre></div>
+<p>فرض کنید در یک شرکت تولیدکنندۀ گوشی همراه، تاکنون تنها نسخه‌های پایۀ تلفن همراه تولید می‌شده است؛ گوشی‌هایی که امکانات آنها به ویژگی‌هایی مانند برند، مدل، رنگ و وضعیت محدود بوده و فاقد سیستم‌عامل و دوربین هستند. مهم ترین کاری که با این گوشی‌های همراه می‌توان انجام داد، تماس تلفنی و ارسال پیامک است. در این شرکت، یک کلاس اصلی به نام <code>Mobile</code> وجود دارد که این ویژگی‌های پایه را مدل‌سازی می‌کند.</p>
+<p>حالا شرکت تصمیم گرفته است نسل جدیدی از گوشی‌های همراه را طراحی کند؛ گوشی‌های هوشمند (<code>Smartphone</code>) که در کنار ویژگی‌های پایۀ گوشی همراه، قابلیت‌هایی مانند سیستم‌عامل و دوربین را ارائه می‌دهند و همچنین مدل‌هایی تخصصی‌تر، مانند گوشی‌های مناسب بازی (<code>Gaming</code> <code>phone</code>)، که برای اجرای بهتر بازی‌ها با امکانات سخت‌افزاری قوی‌تر طراحی شده‌اند.</p>
+<p>1 <code>Smartphone:</code> تلفن هوشمند نوعی تلفن همراه است که با بهره‌گیری از سیستم‌عامل (<code>Operating</code> <code>System</code>)، امکان اجرای برنامه‌ها و ارائۀ قابلیت‌های پیشرفته، فراتر از تماس و پیامک را فراهم می‌کند.</p>
+<p>دارای ویژگی دوربین پیشرفته دارای ویژگی سیستم عامل قابل نصب و ارتقا</p>
+<hr /></article><article class="lesson" lang="en" dir="ltr" data-lang-block="en" hidden><p class="page-mark">Page 238</p>
+<p>Now it is time, in the programming environment, to create your first class (<code>class</code>) and then use that class to build an instance (<code>Instance</code>). Carefully type the code of Figure 4 into a new file.</p>
+<p><img alt="Figure 4 First code for defining a class and creating an instance" src="../images/p244-01.png" /></p>
+<p>Figure 4 First code for defining a class and creating an instance</p>
+<p>Line 1: A class named <code>Mobile</code> is defined.</p>
+<p>A class is in fact a pattern or blueprint for building mobiles.</p>
+<p>Note that a class is not itself a mobile; rather, it is a pattern for building mobiles.</p>
+<p>Based on Python naming standards (<code>PEP8</code>), class names should be written using the <code>PascalCase</code> style; that is, the first letter of the class name and the first letter of every word that forms it should be uppercase.</p>
+<p>Line 2: This method plays the role of the class constructor method in Python. This method is also called an <code>initializer</code>.</p>
+<p>Whenever an instance is created from the <code>Mobile</code> class—that is, when line 7 runs—this method runs automatically.</p>
+<p>The main job of this method is to initialize the instance (<code>Instance</code>) attributes.</p>
+<p>Note that <code>__init__</code> is a conventional name in Python and cannot be changed. On the left and right of the word <code>init</code>, the underscore (<code>underscore</code>) character is typed twice.</p>
+<p>Lines 3 and 4: These specify the instance attributes.</p>
+<p>Every mobile has a brand and a color.</p>
+<p>In the given code, <code>self.brand</code> and <code>self.color</code> are both recognized as attributes (<code>attribute</code>).</p>
+<p>The word <code>self</code> refers to the same instance that is being created, and <code>brand</code> and <code>color</code> are the names of attributes that belong to that instance.</p>
+<hr />
+<p class="page-mark">Page 239</p>
+<p>Lines 5 and 6: Blank lines According to Python coding standards (<code>PEP8</code>), after the end of a class definition, two blank lines should be placed so that the boundary between the class and the global (<code>Global</code>) code section is clearly marked.</p>
+<p>Line 7: Creating an instance (<code>Instance</code>) On this line, you have created an instance (<code>instance</code>) named <code>my_mobile</code> from the <code>Mobile</code> class.</p>
+<p>The value <code>"nokia"</code> is assigned for the <code>brand</code> attribute and the value <code>"gray"</code> for the <code>color</code> attribute.</p>
+<p><img alt="Book illustration" src="../images/p245-01.png" /></p>
+<p>Line 8: Accessing an attribute Using the instance name and the dot (.) symbol, you access its attributes.</p>
+<p>This statement prints the value of the <code>brand</code> attribute for the <code>my_mobile</code> instance.</p>
+<p><strong>Figure 5</strong></p>
+<p>Line 9: Blank line According to <code>PEP8</code> standards, after the end of the code a blank line is also placed so that the end of the file is marked in a readable and standard way relative to the code.</p>
+<p>Keep in mind that if you do not fully understand every detail at this stage, do not worry; this is a new topic, and with continued instruction and more activities, reviewing the code, and building more programs, the concepts will gradually become clear and settle in for you.</p>
+<p>Now run the program; you will see that the value of the <code>brand</code> attribute of the mobile you created, namely <code>nokia</code>, is printed.</p>
+<p>Note that at this stage the class includes only attributes (<code>Attributes</code>), and so far no behavior or method (<code>Method</code>) other than the constructor (<code>__init__</code>) has been defined for the instances.</p>
+<p>Now the program’s execution flow is explained with a diagram. Observe Figure 6 carefully.</p>
+<p><img alt="Figure 6 Program execution flow" src="../images/p245-02.png" /></p>
+<p>Figure 6 Program execution flow</p>
+<hr />
+<p class="page-mark">Page 240</p>
+<p>As you see in the figure, after line 7 runs to create the <code>my_mobile</code> instance, the following steps occur:</p>
+<p>1 The arguments <code>"nokia"</code> and <code>"gray"</code> are sent to the <code>__init__</code> method and placed in the <code>brand</code> and <code>color</code> parameters.</p>
+<p>2 The value of the <code>brand</code> parameter is assigned to <code>self.brand</code> and the value of the <code>color</code> parameter to <code>self.color</code>.</p>
+<p>3 At this stage the desired instance will be created.</p>
+<h3 id="activity">Activity</h3>
+<p>At the end of the program, add a statement that prints the mobile’s color.</p>
+<h3 id="activity_1">Activity</h3>
+<p>Inside the <code>__init__</code> method, add a statement that also treats your phone’s model as an attribute.</p>
+<p>Do not forget that on line 7 you must also add your phone’s model. Try to do this activity yourself, but if you still have questions, later you will see the answer to this code and can compare it with your own code.</p>
+<p>Next, based on the class you defined, create another instance as a mobile for your friend. Carefully write the code of Figure 7.</p>
+<p><img alt="Figure 7 Creating an instance as a phone for your friend" src="../images/p246-01.png" /></p>
+<p>Figure 7 Creating an instance as a phone for your friend</p>
+<hr />
+<p class="page-mark">Page 241</p>
+<p>Line 4: A new attribute for the mobile phone’s model has been defined and assigned a value.</p>
+<p>Line 9: A new instance named <code>friend_mobile</code> has been created with attributes different from <code>my_mobile</code>.</p>
+<figure class="shot"><img alt="Figure 8" src="../images/p247-01.png" /><figcaption>Figure 8</figcaption></figure>
+<p>Lines 15 to 17: On these lines the attributes of the second instance have been printed.</p>
+<h3 id="note">Note</h3>
+<p>Note that <code>my_mobile</code> and <code>friend_mobile</code> are both separate instances created from the <code>Mobile</code> class.</p>
+<p>Next, add a method to the <code>Mobile</code> class that prints the values of all attributes of the instance you have created. Change the previous code as in Figure 9.</p>
+<p><img alt="Figure 9 Adding a method" src="../images/p247-02.png" /></p>
+<p>Figure 9 Adding a method</p>
+<div class="code-wrap" dir="ltr"><pre><code>show_info
+</code></pre></div>
+<hr />
+<p class="page-mark">Page 242</p>
+<p>Line 7: This line defines a method (<code>method</code>) named <code>show_info</code> inside the <code>Mobile</code> class.</p>
+<p>Methods are functions that are associated with a class and can access that class’s attributes (<code>Attributes</code>).</p>
+<p>The <code>self</code> parameter in the method definition refers to the instance on which the method is called. In other words, <code>self</code> allows the <code>Mobile</code> class to access the specific attributes (<code>Attributes</code>) of each instance of type <code>Mobile</code>.</p>
+<p>Lines 8 to 10: This statement displays the values of the instance’s brand, model, and color attributes using specified labels.</p>
+<p>Line 14: On this line the <code>show_info</code> method is called and run on the <code>my_mobile</code> instance.</p>
+<p>In the same way, you can define more methods for this class. For example, the <code>incoming_call</code> method is for displaying a message on an incoming call. Write the code for this method below the <code>show_info</code> method according to Figure 10.</p>
+<p><img alt="Figure 10 Adding a method" src="../images/p248-01.png" /></p>
+<p>Figure 10 Adding a method</p>
+<div class="code-wrap" dir="ltr"><pre><code>incoming_call
+</code></pre></div>
+<p>The first line defines a method named <code>incoming_call</code> inside the <code>Mobile</code> class. This method receives a parameter named <code>phone_number</code> that represents the caller’s phone number.</p>
+<p>The statements inside the method display the message "incoming call" and the caller’s phone number in the output.</p>
+<p>Note that this method must be defined inside the <code>Mobile</code> class and at the same level as the <code>__init__</code> method, so it is placed one <code>tab</code> further in than the class body.</p>
+<p>On the last line of the program, the <code>incoming_call</code> method is called on the <code>my_mobile</code> instance.</p>
+<p>The argument "0912-345-6789" is sent as the <code>phone_number</code> parameter, which represents the caller’s phone number. Then the method runs and displays the specified messages and the provided phone number.</p>
+<hr />
+<p class="page-mark">Page 243</p>
+<h3 id="activity_2">Activity</h3>
+<p>In the <code>Mobile</code> class, create a method named <code>make_call</code>. This method should receive a parameter named <code>phone_number</code> that holds the phone number you want to call. The method should announce the start of the dialing operation by printing appropriate messages. For example, you can print messages such as</p>
+<div class="code-wrap" dir="ltr"><pre><code>&quot;...Calling&quot; یا &quot;...Dialing&quot; را چاپ کنید.
+</code></pre></div>
+<p>Setting default values for attributes For greater appeal and usefulness, next an attribute will be defined whose value can be changed after the program runs. Therefore, inside the class, an on/off status attribute (<code>status</code>) and a default value for it will also be defined. It is enough to define a new attribute in the <code>__init__</code> method as in the code below.</p>
+<div class="code-wrap" dir="ltr"><pre><code>&quot;self.status = &quot;on
+</code></pre></div>
+<p>Note that when defining an instance, it is no longer necessary to provide a value for this attribute.</p>
+<p>Changing an attribute value: In this approach, after creating the <code>my_mobile</code> instance, you can simply change its value by writing the code below.</p>
+<div class="code-wrap" dir="ltr"><pre><code>my_mobile = Mobile(&quot;nokia&quot;, &quot;1100&quot;, &quot;gray&quot;)
+&quot; my_mobile.status = &quot;off
+</code></pre></div>
+<p>In this statement, the <code>dot</code> symbol, or period, is used to access an instance attribute. This line asks Python to find the <code>status</code> attribute associated with the <code>my_mobile</code> instance and then place the value "<code>off"</code> into it.</p>
+<div class="code-wrap" dir="ltr"><pre><code>ارث‌بری (Inheritance)
+</code></pre></div>
+<p>Suppose that in a mobile phone manufacturing company, until now only basic versions of mobile phones have been produced—phones whose capabilities have been limited to attributes such as brand, model, color, and status, and that lack an operating system and a camera. The most important things you can do with these mobile phones are make phone calls and send text messages. In this company, there is a main class named <code>Mobile</code> that models these basic attributes.</p>
+<p>Now the company has decided to design a new generation of mobile phones: smart phones (<code>Smartphone</code>) that, alongside the basic attributes of a mobile phone, offer capabilities such as an operating system and a camera, and also more specialized models, such as phones suitable for gaming (<code>Gaming</code> <code>phone</code>), designed with stronger hardware features for better game performance.</p>
+<p>1 <code>Smartphone:</code> A smart phone is a type of mobile phone that, by using an operating system (<code>Operating</code> <code>System</code>), makes it possible to run apps and provide advanced capabilities beyond calling and texting.</p>
+<p>Has an advanced camera attribute Has an installable and upgradable operating system attribute</p>
+<hr /></article>
+      <aside class="extra">
+        <h2 data-fa="تمرین این بخش" data-en="Exercises for this section">تمرین این بخش</h2>
+        <p class="extra-note" data-fa="این تمرین‌ها و پیوندها اضافه بر متن کتاب‌اند." data-en="These exercises and links are in addition to the book.">این تمرین‌ها و پیوندها اضافه بر متن کتاب‌اند.</p>
+        <ol><li data-fa="کلاس Mobile را با برند، مدل و رنگ بساز، دو گوشی بساز و متد show_info را برای هر دو صدا بزن." data-en="Build a Mobile class with brand, model, and color. Create two phones and call show_info on both.">کلاس Mobile را با برند، مدل و رنگ بساز، دو گوشی بساز و متد show_info را برای هر دو صدا بزن.</li><li data-fa="بعد از ساخت شیء، رنگ یکی را عوض کن و show_info را دوباره چاپ کن تا تغییر در خروجی بیاید." data-en="After creating an object, change one phone&#x27;s color and print show_info again so the change appears in the output.">بعد از ساخت شیء، رنگ یکی را عوض کن و show_info را دوباره چاپ کن تا تغییر در خروجی بیاید.</li></ol>
+        <h2 data-fa="پیوند مفید" data-en="Useful link">پیوند مفید</h2><ul><li><a href="https://docs.python.org/3/tutorial/classes.html#class-objects" data-fa="شیءهای کلاس" data-en="Class objects">شیءهای کلاس</a></li></ul>
+      </aside>
+    <nav class="pager"><a rel="prev" class="prev" href="p4-idea.html"><span class="pager-word" data-fa="قبلی" data-en="Previous">قبلی</span><span class="pager-name" data-fa="ایده شیء و کلاس" data-en="The idea of objects and classes">ایده شیء و کلاس</span></a><a rel="next" class="next" href="p4-inherit.html"><span class="pager-word" data-fa="بعدی" data-en="Next">بعدی</span><span class="pager-name" data-fa="وراثت" data-en="Inheritance">وراثت</span></a></nav>
+    </div>
+  </div>
+  <script src="../assets/search-index.js?v=4"></script>
+  <script src="../assets/app.js?v=4"></script>
+</body>
+</html>

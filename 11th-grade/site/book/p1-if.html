@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title data-fa="شرط‌های ساده" data-en="Simple conditions">شرط‌های ساده</title>
+  <link rel="icon" href="../assets/favicon.svg">
+  <link rel="stylesheet" href="../assets/style.css?v=4">
+</head>
+<body data-root="../">
+  <header class="top">
+    <a class="brand" href="../index.html">
+      <span data-fa="طراح سایت" data-en="Site Design">طراح سایت</span>
+      <small data-fa="پایه یازدهم" data-en="Grade 11">پایه یازدهم</small>
+    </a>
+    <div class="search-wrap">
+      <input id="q" type="search" autocomplete="off"
+        data-fa-placeholder="جستجو در درس‌ها" data-en-placeholder="Search lessons"
+        placeholder="جستجو در درس‌ها">
+      <div id="results" class="results" hidden></div>
+    </div>
+    <a class="download" href="../grade11-offline.zip?v=2" data-fa="دانلود کل سایت" data-en="Download the whole site">دانلود کل سایت</a>
+    <button type="button" id="lang-toggle" class="lang-toggle" dir="ltr" data-lang="fa"
+      aria-label="تغییر زبان">
+      <span data-opt="fa">فا</span>
+      <span data-opt="en">EN</span>
+    </button>
+  </header>
+  <div class="layout">
+    <details class="toc" open><summary><span data-fa="فهرست درس‌ها" data-en="Lesson list">فهرست درس‌ها</span></summary><nav class="side" aria-label="lessons"><p class="mod" data-fa="شروع کتاب" data-en="Opening">شروع کتاب</p><p class="unit" data-fa="فهرست" data-en="Contents">فهرست</p><a class="" href="toc.html" data-fa="فهرست" data-en="Contents">فهرست</a><p class="mod" data-fa="پودمان ۱: برنامه‌نویسی پایتون" data-en="Module 1: Python programming">پودمان ۱: برنامه‌نویسی پایتون</p><p class="unit" data-fa="معرفی پودمان" data-en="Module introduction">معرفی پودمان</p><a class="" href="p1-intro.html" data-fa="معرفی پودمان پایتون" data-en="Introducing the Python module">معرفی پودمان پایتون</a><p class="unit" data-fa="مدل‌سازی داده" data-en="Data modeling">مدل‌سازی داده</p><a class="" href="p1-python.html" data-fa="پایتون و محیط برنامه‌نویسی" data-en="Python and the programming environment">پایتون و محیط برنامه‌نویسی</a><a class="" href="p1-vars.html" data-fa="متغیرها، نوع داده و عملگرها" data-en="Variables, types, and operators">متغیرها، نوع داده و عملگرها</a><a class="" href="p1-cast.html" data-fa="ورودی و تبدیل نوع" data-en="Input and type casting">ورودی و تبدیل نوع</a><a class="" href="p1-lists.html" data-fa="لیست‌ها" data-en="Lists">لیست‌ها</a><a class="current" href="p1-if.html" data-fa="شرط‌های ساده" data-en="Simple conditions">شرط‌های ساده</a><a class="" href="p1-elif.html" data-fa="if، elif و else" data-en="if, elif, and else">if، elif و else</a><a class="" href="p1-for.html" data-fa="حلقه for و range" data-en="The for loop and range">حلقه for و range</a><a class="" href="p1-while.html" data-fa="حلقه while و کنترل حلقه" data-en="The while loop and loop control">حلقه while و کنترل حلقه</a><a class="" href="p1-assess-data.html" data-fa="ارزشیابی مدل‌سازی داده" data-en="Data-modeling assessment">ارزشیابی مدل‌سازی داده</a><p class="unit" data-fa="توابع و ماژول‌ها" data-en="Functions and modules">توابع و ماژول‌ها</p><a class="" href="p1-sets.html" data-fa="مجموعه (set)" data-en="Sets">مجموعه (set)</a><a class="" href="p1-dict.html" data-fa="دیکشنری" data-en="Dictionaries">دیکشنری</a><a class="" href="p1-quiz.html" data-fa="پروژه بازی Quiz" data-en="Quiz game project">پروژه بازی Quiz</a><a class="" href="p1-tuple.html" data-fa="تاپل" data-en="Tuples">تاپل</a><a class="" href="p1-func.html" data-fa="تعریف تابع، پارامتر و return" data-en="Defining functions, parameters, and return">تعریف تابع، پارامتر و return</a><a class="" href="p1-func-more.html" data-fa="تمرین تابع و مرتب‌سازی" data-en="Function practice and sorting">تمرین تابع و مرتب‌سازی</a><a class="" href="p1-modules.html" data-fa="ماژول‌ها و تفاوت تابع و متد" data-en="Modules, and functions versus methods">ماژول‌ها و تفاوت تابع و متد</a><a class="" href="p1-assess-func.html" data-fa="ارزشیابی توابع و ماژول‌ها" data-en="Functions and modules assessment">ارزشیابی توابع و ماژول‌ها</a><p class="mod" data-fa="پودمان ۲: صفحات وب ایستا" data-en="Module 2: Static web pages">پودمان ۲: صفحات وب ایستا</p><p class="unit" data-fa="معرفی پودمان" data-en="Module introduction">معرفی پودمان</p><a class="" href="p2-intro.html" data-fa="معرفی پودمان صفحات ایستا" data-en="Introducing static web pages">معرفی پودمان صفحات ایستا</a><p class="unit" data-fa="ساختار با HTML" data-en="Structure with HTML">ساختار با HTML</p><a class="" href="p2-web.html" data-fa="وب چگونه کار می‌کند" data-en="How the web works">وب چگونه کار می‌کند</a><a class="" href="p2-concepts.html" data-fa="مفاهیم طراحی وب و نقشه سایت" data-en="Web-design concepts and the site map">مفاهیم طراحی وب و نقشه سایت</a><a class="" href="p2-tags.html" data-fa="اولین صفحه HTML" data-en="A first HTML page">اولین صفحه HTML</a><a class="" href="p2-text.html" data-fa="متن، لیست و پیوند" data-en="Text, lists, and links">متن، لیست و پیوند</a><a class="" href="p2-img.html" data-fa="تصویر در صفحه" data-en="Images on the page">تصویر در صفحه</a><a class="" href="p2-forms.html" data-fa="فرم‌ها" data-en="Forms">فرم‌ها</a><a class="" href="p2-semantic.html" data-fa="عناصر معنایی" data-en="Semantic elements">عناصر معنایی</a><a class="" href="p2-assess-html.html" data-fa="ارزشیابی HTML" data-en="HTML assessment">ارزشیابی HTML</a><p class="unit" data-fa="ظاهر با CSS" data-en="Appearance with CSS">ظاهر با CSS</p><a class="" href="p2-css-start.html" data-fa="نوشتن CSS" data-en="Writing CSS">نوشتن CSS</a><a class="" href="p2-css-look.html" data-fa="رنگ، پس‌زمینه و انتخاب‌گر" data-en="Color, background, and selectors">رنگ، پس‌زمینه و انتخاب‌گر</a><a class="" href="p2-box.html" data-fa="مدل جعبه‌ای و display" data-en="The box model and display">مدل جعبه‌ای و display</a><a class="" href="p2-flex.html" data-fa="چیدمان با Flexbox" data-en="Layout with Flexbox">چیدمان با Flexbox</a><a class="" href="p2-flex-work.html" data-fa="کارگاه چیدمان صفحه" data-en="Page-layout workshop">کارگاه چیدمان صفحه</a><a class="" href="p2-media.html" data-fa="مدیا کوئری و ارزشیابی CSS" data-en="Media queries and the CSS assessment">مدیا کوئری و ارزشیابی CSS</a><p class="mod" data-fa="پودمان ۳: صفحات وب تعاملی" data-en="Module 3: Interactive web pages">پودمان ۳: صفحات وب تعاملی</p><p class="unit" data-fa="معرفی پودمان" data-en="Module introduction">معرفی پودمان</p><a class="" href="p3-intro.html" data-fa="معرفی پودمان تعاملی" data-en="Introducing the interactive module">معرفی پودمان تعاملی</a><p class="unit" data-fa="بوت‌استرپ" data-en="Bootstrap">بوت‌استرپ</p><a class="" href="p3-bs-start.html" data-fa="فریم‌ورک و شروع بوت‌استرپ" data-en="Frameworks and starting Bootstrap">فریم‌ورک و شروع بوت‌استرپ</a><a class="" href="p3-bs-util.html" data-fa="فاصله، گردی و لیست" data-en="Spacing, rounding, and lists">فاصله، گردی و لیست</a><a class="" href="p3-bs-header.html" data-fa="سرصفحه فروشگاه" data-en="The shop header">سرصفحه فروشگاه</a><a class="" href="p3-bs-grid.html" data-fa="شبکه Grid" data-en="The grid">شبکه Grid</a><a class="" href="p3-bs-rwd.html" data-fa="کلاس‌های واکنش‌گرا" data-en="Responsive classes">کلاس‌های واکنش‌گرا</a><a class="" href="p3-bs-nav.html" data-fa="نوار ناوبری و جزئیات محصول" data-en="Navbar and product details">نوار ناوبری و جزئیات محصول</a><a class="" href="p3-bs-form.html" data-fa="فرم و پنجره Modal" data-en="Forms and modals">فرم و پنجره Modal</a><a class="" href="p3-bs-show.html" data-fa="کاروسل و آکاردئون" data-en="Carousel and accordion">کاروسل و آکاردئون</a><a class="" href="p3-bs-assess.html" data-fa="ارزشیابی بوت‌استرپ" data-en="Bootstrap assessment">ارزشیابی بوت‌استرپ</a><p class="unit" data-fa="جاوااسکریپت" data-en="JavaScript">جاوااسکریپت</p><a class="" href="p3-js-start.html" data-fa="جاوااسکریپت در صفحه وب" data-en="JavaScript on the page">جاوااسکریپت در صفحه وب</a><a class="" href="p3-js-vars.html" data-fa="متغیر و نوع داده" data-en="Variables and data types">متغیر و نوع داده</a><a class="" href="p3-js-ops.html" data-fa="عملگرها" data-en="Operators">عملگرها</a><a class="" href="p3-js-data.html" data-fa="آرایه و شیء" data-en="Arrays and objects">آرایه و شیء</a><a class="" href="p3-js-if.html" data-fa="شرط در جاوااسکریپت" data-en="Conditions in JavaScript">شرط در جاوااسکریپت</a><a class="" href="p3-js-loops.html" data-fa="حلقه‌ها" data-en="Loops">حلقه‌ها</a><a class="" href="p3-js-func.html" data-fa="تابع‌ها" data-en="Functions">تابع‌ها</a><a class="" href="p3-js-dom.html" data-fa="صفحه، رویداد و اعتبار فرم" data-en="The page, events, and form validation">صفحه، رویداد و اعتبار فرم</a><a class="" href="p3-js-assess.html" data-fa="ارزشیابی جاوااسکریپت" data-en="JavaScript assessment">ارزشیابی جاوااسکریپت</a><p class="mod" data-fa="پودمان ۴: توسعه وب پایتون" data-en="Module 4: Python for the web">پودمان ۴: توسعه وب پایتون</p><p class="unit" data-fa="معرفی پودمان" data-en="Module introduction">معرفی پودمان</p><a class="" href="p4-intro.html" data-fa="معرفی پودمان شیءگرایی" data-en="Introducing the object-oriented module">معرفی پودمان شیءگرایی</a><p class="unit" data-fa="شیءگرایی" data-en="Object-oriented programming">شیءگرایی</p><a class="" href="p4-idea.html" data-fa="ایده شیء و کلاس" data-en="The idea of objects and classes">ایده شیء و کلاس</a><a class="" href="p4-class.html" data-fa="ساخت کلاس و متد" data-en="Writing a class and methods">ساخت کلاس و متد</a><a class="" href="p4-inherit.html" data-fa="وراثت" data-en="Inheritance">وراثت</a><a class="" href="p4-protect.html" data-fa="داده معتبر و استفاده داخلی" data-en="Valid data and internal use">داده معتبر و استفاده داخلی</a><a class="" href="p4-assess-oop.html" data-fa="ارزشیابی برنامه شیءگرا" data-en="Object-oriented assessment">ارزشیابی برنامه شیءگرا</a><p class="unit" data-fa="فایل و توسعه" data-en="Files and development">فایل و توسعه</p><a class="" href="p4-files.html" data-fa="خواندن و نوشتن فایل متنی" data-en="Reading and writing text files">خواندن و نوشتن فایل متنی</a><a class="" href="p4-errors.html" data-fa="پیمایش فایل و مدیریت خطا" data-en="Walking a file and handling errors">پیمایش فایل و مدیریت خطا</a><a class="" href="p4-json.html" data-fa="چند فایل و JSON" data-en="Several files and JSON">چند فایل و JSON</a><a class="" href="p4-assess-files.html" data-fa="ارزشیابی کار با فایل" data-en="Files assessment">ارزشیابی کار با فایل</a><p class="mod" data-fa="پودمان ۵: برنامه‌نویسی جنگو" data-en="Module 5: Django">پودمان ۵: برنامه‌نویسی جنگو</p><p class="unit" data-fa="معرفی پودمان" data-en="Module introduction">معرفی پودمان</p><a class="" href="p5-intro.html" data-fa="معرفی پودمان جنگو" data-en="Introducing the Django module">معرفی پودمان جنگو</a><p class="unit" data-fa="ایجاد وب‌اپلیکیشن" data-en="Creating the web app">ایجاد وب‌اپلیکیشن</p><a class="" href="p5-what.html" data-fa="جنگو چیست و نصب" data-en="What Django is, and installing it">جنگو چیست و نصب</a><a class="" href="p5-project.html" data-fa="پروژه، اپ و اولین view" data-en="Project, app, and the first view">پروژه، اپ و اولین view</a><a class="" href="p5-template.html" data-fa="قالب و دمای واقعی" data-en="Templates and a real temperature">قالب و دمای واقعی</a><a class="" href="p5-assess-create.html" data-fa="ارزشیابی ایجاد وب‌اپلیکیشن" data-en="Creating-the-app assessment">ارزشیابی ایجاد وب‌اپلیکیشن</a><p class="unit" data-fa="توسعه وب‌اپلیکیشن" data-en="Developing the web app">توسعه وب‌اپلیکیشن</p><a class="" href="p5-model.html" data-fa="مدل شهر و پنل ادمین" data-en="The city model and the admin">مدل شهر و پنل ادمین</a><a class="" href="p5-list.html" data-fa="خواندن شهرها و نمایش فهرست" data-en="Reading cities and showing the list">خواندن شهرها و نمایش فهرست</a><a class="" href="p5-auth.html" data-fa="ورود و خروج" data-en="Sign-in and sign-out">ورود و خروج</a><a class="" href="p5-crud.html" data-fa="افزودن و حذف شهر" data-en="Adding and deleting a city">افزودن و حذف شهر</a><a class="" href="p5-bugs.html" data-fa="باگ و امنیت" data-en="Bugs and security">باگ و امنیت</a><p class="mod" data-fa="پایان کتاب" data-en="Back of the book">پایان کتاب</p><p class="unit" data-fa="منابع" data-en="References">منابع</p><a class="" href="refs.html" data-fa="منابع کتاب" data-en="Book references">منابع کتاب</a></nav></details>
+    <div class="main">
+      <h1 class="section-title" data-fa="شرط‌های ساده" data-en="Simple conditions">شرط‌های ساده</h1><article class="lesson" lang="fa" dir="rtl" data-lang-block="fa"><p class="page-mark">صفحه ۲۲</p>
+<p>دستور <code>if</code> :</p>
+<p>در زبان پایتون، دستور <code>if</code> ساده‌ترین و پرکاربردترین ابزار برای پیاده‌سازی ساختار شرطی است. این دستور یک عبارت منطقی را ارزیابی می‌کند که نتیجۀ آن می‌تواند <code>True</code> یا <code>False</code> باشد. اگر نتیجۀ شرط <code>True</code> باشد، بلوک کد مربوط به آن اجرا می‌شود و در غیر این صورت، این بلوک کد اجرا نخواهد شد.</p>
+<h3 id="_1">نکته</h3>
+<p>دستورات مربوط به ساختار شرطی باید با یک <code>tab</code> (چند فاصلۀ معادل) نسبت به خط دستور <code>if</code> جلوتر نوشته شوند. این تورفتگی مشخص می‌کند که کدام دستورات به‌شرط مربوط هستند.</p>
+<p>نوع اول ساختارشرطی<code>if</code> :</p>
+<div class="code-wrap" dir="ltr"><pre><code>:if condition
+statement
+</code></pre></div>
+<p><strong>جدول 2</strong></p>
+<p>شرط (<code>condition</code>): عبارتی منطقی است که نتیجۀ آن</p>
+<div class="code-wrap" dir="ltr"><pre><code>True یا False است.
+</code></pre></div>
+<p>عملگر مقایسه‌ای عملگر</p>
+<h3 id="_2">کاربرد</h3>
+<p>دستورات (<code>statements</code>): دستوراتی هستند که فقط در</p>
+<p>==</p>
+<p>صورت درست بودن شرط اجرا می‌شوند.</p>
+<p>مساوی است</p>
+<p>= !</p>
+<p>مساوی نیست</p>
+<p>تورفتگی (<code>Indentation</code>): این دستورات باید با یک <code>tab</code> نسبت به دستور <code>if</code> جلوتر نوشته شوند.</p>
+<p>&lt;</p>
+<p>بزرگ‌تر از</p>
+<p>عملگرهای مقایسه‌ای (<code>Comparison</code> <code>Operators</code>): این</p>
+<p>کوچک‌تر از</p>
+<blockquote></blockquote>
+<p>عملگرها برای مقایسه دو مقدار یا دو متغیر استفاده</p>
+<p>= &gt;بزرگ‌تر یا مساوی</p>
+<p>می‌شوند و نتیجه آنها همیشه یکی از دو مقدار <code>True</code> یا</p>
+<p>= &lt;کوچک‌تر یا مساوی</p>
+<p><code>False</code> است (جدول2).</p>
+<p>عملگر مساوی (==): برای مقایسه دو مقدار یا دو تا متغیر استفاده می‌شود تا مشخص شود برابر هستند یا نه.</p>
+<p>مثال: برنامه‌ای بنویسید که نام کاربر را دریافت کند. اگر نام واردشده برابر با مقدار <code>admin</code> باشد، پیام "!<code>welcome</code> <code>admin"</code> را نمایش دهد (شکل 51).</p>
+<p><img alt="تصویر کتاب" src="../images/p028-01.png" /></p>
+<figure class="shot"><img alt="شکل 51" src="../images/p028-02.png" /><figcaption>شکل 51</figcaption></figure>
+<hr />
+<p class="page-mark">صفحه ۲۳</p>
+<p>عملگر (=!): مقایسه می‌کند آیا دو مقدار نامساوی هستند یا نه؟</p>
+<p>در برنامه زیر در ابتدا <code>price</code> = 120 است و شرط درصورتی‌که مقدار آن نامساوی با ۱۰۰ باشد برقرار شده و پیام <code>"price</code> <code>is</code> <code>not</code> <code>true"</code> را چاپ می‌کند (شکل52).</p>
+<p><img alt="تصویر کتاب" src="../images/p029-01.png" /></p>
+<figure class="shot"><img alt="شکل 52" src="../images/p029-02.png" /><figcaption>شکل 52</figcaption></figure>
+<p>عملگرهای منطقی (<code>Logical</code> <code>Operators</code>)</p>
+<p><strong>جدول 2</strong></p>
+<p>در برنامه‌نویسی، برای بررسی هم‌زمان چند شرط و تصمیم‌گیری</p>
+<p>عملگرهای منطقی</p>
+<p>دقیق‌تر از عملگرهای منطقی استفاده می‌شود. این عملگرها</p>
+<p>عملگر</p>
+<h3 id="_3">کاربرد</h3>
+<p>امکان ترکیب چند عبارت شرطی را فراهم می‌کنند و نتیجۀ آنها معمولاً یکی از دو مقدار درست (<code>True</code>) یا نادرست (<code>False</code>)</p>
+<p><code>and</code>و</p>
+<p>است (جدول3).</p>
+<p><code>or</code>یا</p>
+<p>عملگرهای منطقی معمولاً در کنار دستورات شرطی مانند <code>if</code> به</p>
+<p><code>not</code>نقیض</p>
+<p>کار می‌روند و به برنامه‌نویس کمک می‌کنند شرایط پیچیده‌تری را بررسی کند.</p>
+<p>1 عملگر <code>and:</code> این عملگر زمانی نتیجۀ درست (<code>True</code>) می‌دهد که تمام شرط‌ها درست باشند.</p>
+<p>مثال: در این مثال با استفاده از عملگر منطقی <code>and</code> هم زمان دو شرط <code>"username</code> == <code>"admin</code> و <code>"password</code> == "1234 بررسی شده است و اگر کاربر هر دو را درست وارد کند پیام <code>login</code> <code>successful</code> نمایش داده می‌شود. برنامه را نوشته و اجرا کنید (شکل53).</p>
+<p><img alt="تصویر کتاب" src="../images/p029-03.png" /></p>
+<figure class="shot"><img alt="شکل 53" src="../images/p029-04.png" /><figcaption>شکل 53</figcaption></figure>
+<hr />
+<p class="page-mark">صفحه ۲۴</p>
+<p>2 عملگر <code>or:</code> این عملگر زمانی نتیجۀ درست (<code>True</code>) می‌دهد که حداقل یکی از شرط‌ها درست باشد.</p>
+<p>اگر هر دو شرط نادرست باشند، نتیجه نادرست خواهد بود.</p>
+<p>مثال: در این برنامه شرط با عملگر <code>or</code> بررسی می‌شود؛ یعنی اگر کاربر نام روز <code>Friday</code> یا <code>Thursday</code> را وارد کند، پیام <code>Holiday</code> نمایش داده می‌شود (شکل54).</p>
+<p><img alt="تصویر کتاب" src="../images/p030-02.png" /></p>
+<p><img alt="تصویر کتاب" src="../images/p030-01.png" /></p>
+<figure class="shot"><img alt="شکل 54" src="../images/p030-03.png" /><figcaption>شکل 54</figcaption></figure>
+<h3 id="_4">فعالیت</h3>
+<p>با راهنمایی هنرآموز محترم خود کدهای زیر را توضیح دهید.</p>
+<p><img alt="تصویر کتاب" src="../images/p030-04.png" /></p>
+<p>نوع دوم ساختار شرطی <code>if</code> – <code>else</code> :</p>
+<div class="code-wrap" dir="ltr"><pre><code>: if condition
+statements_if
+</code></pre></div>
+<p><code>:else</code></p>
+<div class="code-wrap" dir="ltr"><pre><code>statements_else
+</code></pre></div>
+<p>ساختار <code>if-else</code> زمانی استفاده می‌شود که بخواهید در صورت درست بودن شرط، یک کار و در غیر این صورت کار دیگری انجام شود.</p>
+<p><code>condition:</code> عبارتی منطقی که نتیجۀ آن <code>True</code> یا <code>False</code> است.</p>
+<p><code>statements_if:</code> دستوراتی که در صورت درست بودن شرط اجرا می‌شوند.</p>
+<p><code>else:</code> به معنی در غیر این صورت است. زمانی که شرط درست نباشد، برنامه وارد بخش <code>else</code> می‌شود و کدهای آن اجرا می‌گردد.</p>
+<p><code>statements_else:</code> دستوراتی که در صورت نادرست بودن شرط اجرا می‌شوند.</p>
+<hr />
+<p class="page-mark">صفحه ۲۵</p>
+<p>مثال: برنامه‌ای بنویسید که روزهای هفته را دریافت کرده و درصورتی‌که جمعه باشد، پیام " <code>you</code> <code>are</code> <code>off"</code> و در غیر این صورت <code>"you</code> <code>have</code> <code>to</code> <code>go</code> <code>to</code> <code>school"</code> نمایش داده شود.</p>
+<p>به نظر شما اشکال کد شکل55 چیست؟ اگر کاربر عبارتی غیر از روزهای هفته وارد کند چه پیغامی چاپ می‌شود؟</p>
+<p><img alt="تصویر کتاب" src="../images/p031-01.png" /></p>
+<p><img alt="تصویر کتاب" src="../images/p031-02.png" /></p>
+<figure class="shot"><img alt="شکل 55" src="../images/p031-03.png" /><figcaption>شکل 55</figcaption></figure>
+<p>مثال: برنامه‌ای بنویسید که اعداد مابین ۰ و ۱۰ را دریافت کند، اگر عدد دریافت شده در این بازه بود، پیام <code>"The</code> <code>number</code> <code>is</code> <code>valid"</code> و در غیر این صورت پیام <code>"The</code> <code>number</code> <code>is</code> <code>not</code> <code>valid"</code> نمایش داده شود.</p>
+<p>در این مثال دو شرط به طور هم‌زمان بررسی می‌شود (شکل56).</p>
+<figure class="shot"><img alt="شکل 56" src="../images/p031-04.png" /><figcaption>شکل 56</figcaption></figure>
+<h3 id="_5">فعالیت</h3>
+<p>برنامه‌ای بنویسید که نمره درس ریاضی و زبان کاربر را دریافت و اگر هر دو بزرگ‌تر یا مساوی 17 باشد، پیام " شما می‌توانید در رشته شبکه و نرم‌افزار ثبت‌نام کنید " را نمایش دهد و در غیر این صورت پیام" شما مجاز به انتخاب رشته نیستید " را نمایش دهد.</p>
+<h3 id="_6">فعالیت</h3>
+<p>برنامه‌ای بنویسید که سن کاربر و وضعیت عضویت او را دریافت کند. اگر سن کاربر بزرگ‌تر یا مساوی 18 باشد و عضو سایت باشد، پیام " <code>Access</code> <code>allowed"</code> را نمایش دهد: و در غیر این صورت پیام " <code>Access</code> <code>denied"</code> را نمایش دهد.</p>
+<hr />
+<p class="page-mark">صفحه ۲۶</p>
+<p>مثال: برنامه‌ای بنویسید که کاربر وضعیت اتصال اینترنت و سرعت اینترنت را وارد کند، اگر وضعیت اتصال <code>"yes"</code> و سرعت " بزرگ‌تر یا مساوی3 " وارد شد، پیام " <code>Internet</code> <code>is</code> <code>connected</code> " چاپ شود و در غیر این صورت پیام <code>"Internet</code> <code>is</code> <code>disconnect"</code> چاپ شود (شکل57).</p>
+<p><img alt="تصویر کتاب" src="../images/p032-01.png" /></p>
+<p><img alt="تصویر کتاب" src="../images/p032-02.png" /></p>
+<figure class="shot"><img alt="شکل 57" src="../images/p032-03.png" /><figcaption>شکل 57</figcaption></figure>
+<p>مثال: برنامه‌ای بنویسید که اگر کاربر مهمان <code>"guest"</code> نبود، پیام "!<code>Welcome"</code> نمایش داده شود و در این صورت پیام <code>"Access</code> <code>denied"</code> نمایش داده شود.</p>
+<p><code>not</code> مقدار <code>Boolean</code> شرط را نقض می‌کند (شکل 58).</p>
+<figure class="shot"><img alt="شکل 58" src="../images/p032-04.png" /><figcaption>شکل 58</figcaption></figure>
+<p>ترکیب دو عملگر <code>and</code> و <code>or:</code> در برنامه‌نویسی گاهی نیاز است بیش از یک شرط را با هم بررسی کرد.</p>
+<p>برای این کار می‌توان عملگرهای منطقی <code>and</code> و <code>or</code> را با هم ترکیب کرد.</p>
+<p>مثال: برنامه‌ای بنویسید که نام کاربری و رمز عبور را دریافت کند و اگر نقش کاربر <code>"teacher"</code> یا <code>"admin"</code> بود و رمز واردشده برابر با "1234" باشد. پیام <code>"Access</code> <code>allowed"</code> و در غیر این صورت پیام <code>"Access</code> <code>denied"</code> چاپ شود (شکل 59).</p>
+<figure class="shot"><img alt="شکل 59" src="../images/p032-05.png" /><figcaption>شکل 59</figcaption></figure>
+<hr /></article><article class="lesson" lang="en" dir="ltr" data-lang-block="en" hidden><p class="page-mark">Page 22</p>
+<p>The <code>if</code> statement:</p>
+<p>In Python, the <code>if</code> statement is the simplest and most widely used tool for implementing a conditional structure. This statement evaluates a logical expression whose result can be <code>True</code> or <code>False</code>. If the result of the condition is <code>True</code>, the related block of code is executed; otherwise, that block of code is not executed.</p>
+<h3 id="note">Note</h3>
+<p>The statements that belong to a conditional structure must be written one <code>tab</code> (or an equivalent number of spaces) farther in than the <code>if</code> line. This indentation shows which statements belong to the condition.</p>
+<p>First type of the <code>if</code> conditional structure:</p>
+<div class="code-wrap" dir="ltr"><pre><code>:if condition
+statement
+</code></pre></div>
+<p><strong>Table 2</strong></p>
+<p>Condition (<code>condition</code>): a logical expression whose result</p>
+<div class="code-wrap" dir="ltr"><pre><code>True یا False است.
+</code></pre></div>
+<p>Comparison operator Operator</p>
+<h3 id="application">Application</h3>
+<p>Statements (<code>statements</code>): statements that are executed only when</p>
+<p>==</p>
+<p>the condition is true.</p>
+<p>is equal</p>
+<p>!=</p>
+<p>is not equal</p>
+<p>Indentation (<code>Indentation</code>): these statements must be written one <code>tab</code> farther in than the <code>if</code> statement.</p>
+<p>&lt;</p>
+<p>greater than</p>
+<p>Comparison operators (<code>Comparison</code> <code>Operators</code>): these</p>
+<p>less than</p>
+<blockquote></blockquote>
+<p>operators are used to compare two values or two variables</p>
+<blockquote>
+<p>= greater than or equal</p>
+</blockquote>
+<p>and their result is always one of the two values <code>True</code> or</p>
+<p>&lt;= less than or equal</p>
+<p><code>False</code> (Table 2).</p>
+<p>The equality operator (==): is used to compare two values or two variables to determine whether they are equal or not.</p>
+<p>Example: Write a program that receives the user's name. If the entered name equals the value <code>admin</code>, display the message "!<code>welcome</code> <code>admin</code>" (Figure 51).</p>
+<p><img alt="Book image" src="../images/p028-01.png" /></p>
+<figure class="shot"><img alt="Figure 51" src="../images/p028-02.png" /><figcaption>Figure 51</figcaption></figure>
+<hr />
+<p class="page-mark">Page 23</p>
+<p>The operator (<code>!=</code>): compares whether two values are unequal or not.</p>
+<p>In the program below, at first <code>price</code> = 120, and the condition is satisfied when its value is not equal to 100, and the message <code>"price</code> <code>is</code> <code>not</code> <code>true"</code> is printed (Figure 52).</p>
+<p><img alt="Book image" src="../images/p029-01.png" /></p>
+<figure class="shot"><img alt="Figure 52" src="../images/p029-02.png" /><figcaption>Figure 52</figcaption></figure>
+<p>Logical operators (<code>Logical</code> <code>Operators</code>)</p>
+<p><strong>Table 2</strong></p>
+<p>In programming, to check several conditions at the same time and make more precise decisions,</p>
+<p>Logical operators</p>
+<p>logical operators are used. These operators</p>
+<p>Operator</p>
+<h3 id="application_1">Application</h3>
+<p>let you combine several conditional expressions, and their result is usually one of the two values true (<code>True</code>) or false (<code>False</code>)</p>
+<p><code>and</code> and</p>
+<p>(Table 3).</p>
+<p><code>or</code> or</p>
+<p>Logical operators are usually used together with conditional statements such as <code>if</code> and</p>
+<p><code>not</code> negation</p>
+<p>help the programmer check more complex conditions.</p>
+<p>1 The <code>and</code> operator: this operator returns true (<code>True</code>) only when all conditions are true.</p>
+<p>Example: In this example, using the logical operator <code>and</code>, the two conditions <code>"username</code> == <code>"admin</code> and <code>"password</code> == "1234 are checked at the same time, and if the user enters both correctly, the message <code>login</code> <code>successful</code> is displayed. Write and run the program (Figure 53).</p>
+<p><img alt="Book image" src="../images/p029-03.png" /></p>
+<figure class="shot"><img alt="Figure 53" src="../images/p029-04.png" /><figcaption>Figure 53</figcaption></figure>
+<hr />
+<p class="page-mark">Page 24</p>
+<p>2 The <code>or</code> operator: this operator returns true (<code>True</code>) when at least one of the conditions is true.</p>
+<p>If both conditions are false, the result will be false.</p>
+<p>Example: In this program the condition is checked with the <code>or</code> operator; that is, if the user enters the day name <code>Friday</code> or <code>Thursday</code>, the message <code>Holiday</code> is displayed (Figure 54).</p>
+<p><img alt="Book image" src="../images/p030-02.png" /></p>
+<p><img alt="Book image" src="../images/p030-01.png" /></p>
+<figure class="shot"><img alt="Figure 54" src="../images/p030-03.png" /><figcaption>Figure 54</figcaption></figure>
+<h3 id="activity">Activity</h3>
+<p>With guidance from your instructor, explain the code below.</p>
+<p><img alt="Book image" src="../images/p030-04.png" /></p>
+<p>Second type of the conditional structure <code>if</code> – <code>else</code>:</p>
+<div class="code-wrap" dir="ltr"><pre><code>: if condition
+statements_if
+</code></pre></div>
+<p><code>:else</code></p>
+<div class="code-wrap" dir="ltr"><pre><code>statements_else
+</code></pre></div>
+<p>The <code>if-else</code> structure is used when you want to do one thing if the condition is true and something else otherwise.</p>
+<p><code>condition:</code> a logical expression whose result is <code>True</code> or <code>False</code>.</p>
+<p><code>statements_if:</code> statements that are executed when the condition is true.</p>
+<p><code>else:</code> means otherwise. When the condition is not true, the program enters the <code>else</code> section and its code is executed.</p>
+<p><code>statements_else:</code> statements that are executed when the condition is false.</p>
+<hr />
+<p class="page-mark">Page 25</p>
+<p>Example: Write a program that receives the days of the week and, if it is Friday, displays the message " <code>you</code> <code>are</code> <code>off"</code> and otherwise displays <code>"you</code> <code>have</code> <code>to</code> <code>go</code> <code>to</code> <code>school"</code>.</p>
+<p>What do you think is wrong with the code in Figure 55? If the user enters something other than the days of the week, what message is printed?</p>
+<p><img alt="Book image" src="../images/p031-01.png" /></p>
+<p><img alt="Book image" src="../images/p031-02.png" /></p>
+<figure class="shot"><img alt="Figure 55" src="../images/p031-03.png" /><figcaption>Figure 55</figcaption></figure>
+<p>Example: Write a program that receives numbers between 0 and 10; if the received number is in this range, display the message <code>"The</code> <code>number</code> <code>is</code> <code>valid"</code> and otherwise display the message <code>"The</code> <code>number</code> <code>is</code> <code>not</code> <code>valid"</code>.</p>
+<p>In this example two conditions are checked at the same time (Figure 56).</p>
+<figure class="shot"><img alt="Figure 56" src="../images/p031-04.png" /><figcaption>Figure 56</figcaption></figure>
+<h3 id="activity_1">Activity</h3>
+<p>Write a program that receives the user's math and language grades and, if both are greater than or equal to 17, displays the message "You can register in the Network and Software major" and otherwise displays the message "You are not allowed to choose this major".</p>
+<h3 id="activity_2">Activity</h3>
+<p>Write a program that receives the user's age and membership status. If the user's age is greater than or equal to 18 and the user is a member of the site, display the message " <code>Access</code> <code>allowed"</code>; otherwise display the message " <code>Access</code> <code>denied"</code>.</p>
+<hr />
+<p class="page-mark">Page 26</p>
+<p>Example: Write a program in which the user enters the internet connection status and internet speed; if the connection status is <code>"yes"</code> and the speed entered is "greater than or equal to 3", print the message " <code>Internet</code> <code>is</code> <code>connected</code> " and otherwise print the message <code>"Internet</code> <code>is</code> <code>disconnect"</code> (Figure 57).</p>
+<p><img alt="Book image" src="../images/p032-01.png" /></p>
+<p><img alt="Book image" src="../images/p032-02.png" /></p>
+<figure class="shot"><img alt="Figure 57" src="../images/p032-03.png" /><figcaption>Figure 57</figcaption></figure>
+<p>Example: Write a program that if the user is not a guest <code>"guest"</code>, displays the message "!<code>Welcome"</code> and in that case displays the message <code>"Access</code> <code>denied"</code>.</p>
+<p><code>not</code> negates the <code>Boolean</code> value of the condition (Figure 58).</p>
+<figure class="shot"><img alt="Figure 58" src="../images/p032-04.png" /><figcaption>Figure 58</figcaption></figure>
+<p>Combining the two operators <code>and</code> and <code>or:</code> In programming you sometimes need to check more than one condition together.</p>
+<p>To do this, you can combine the logical operators <code>and</code> and <code>or</code>.</p>
+<p>Example: Write a program that receives a username and password and, if the user's role is <code>"teacher"</code> or <code>"admin"</code> and the entered password equals "1234", prints the message <code>"Access</code> <code>allowed"</code> and otherwise prints the message <code>"Access</code> <code>denied"</code> (Figure 59).</p>
+<figure class="shot"><img alt="Figure 59" src="../images/p032-05.png" /><figcaption>Figure 59</figcaption></figure>
+<hr /></article>
+      <aside class="extra">
+        <h2 data-fa="تمرین این بخش" data-en="Exercises for this section">تمرین این بخش</h2>
+        <p class="extra-note" data-fa="این تمرین‌ها و پیوندها اضافه بر متن کتاب‌اند." data-en="These exercises and links are in addition to the book.">این تمرین‌ها و پیوندها اضافه بر متن کتاب‌اند.</p>
+        <ol><li data-fa="برنامه‌ای بساز که نمره را بگیرد و برای ۱۸ به بالا، زیر ۱۰، و بین آن‌ها سه پیام متفاوت چاپ کند." data-en="Build a program that reads a score and prints a different message for 18 or above, below 10, and the scores in between.">برنامه‌ای بساز که نمره را بگیرد و برای ۱۸ به بالا، زیر ۱۰، و بین آن‌ها سه پیام متفاوت چاپ کند.</li><li data-fa="به آن یک رمز اضافه کن که فقط وقتی قبول شود که حداقل ۸ حرف داشته باشد و حداقل یک رقم داخلش باشد." data-en="Add a password check that accepts the password only when it has at least 8 characters and at least one digit.">به آن یک رمز اضافه کن که فقط وقتی قبول شود که حداقل ۸ حرف داشته باشد و حداقل یک رقم داخلش باشد.</li></ol>
+        <h2 data-fa="پیوند مفید" data-en="Useful link">پیوند مفید</h2><ul><li><a href="https://docs.python.org/3/tutorial/controlflow.html#if-statements" data-fa="دستور if" data-en="if statements">دستور if</a></li></ul>
+      </aside>
+    <nav class="pager"><a rel="prev" class="prev" href="p1-lists.html"><span class="pager-word" data-fa="قبلی" data-en="Previous">قبلی</span><span class="pager-name" data-fa="لیست‌ها" data-en="Lists">لیست‌ها</span></a><a rel="next" class="next" href="p1-elif.html"><span class="pager-word" data-fa="بعدی" data-en="Next">بعدی</span><span class="pager-name" data-fa="if، elif و else" data-en="if, elif, and else">if، elif و else</span></a></nav>
+    </div>
+  </div>
+  <script src="../assets/search-index.js?v=4"></script>
+  <script src="../assets/app.js?v=4"></script>
+</body>
+</html>

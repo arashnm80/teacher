@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title data-fa="تعریف تابع، پارامتر و return" data-en="Defining functions, parameters, and return">تعریف تابع، پارامتر و return</title>
+  <link rel="icon" href="../assets/favicon.svg">
+  <link rel="stylesheet" href="../assets/style.css?v=4">
+</head>
+<body data-root="../">
+  <header class="top">
+    <a class="brand" href="../index.html">
+      <span data-fa="طراح سایت" data-en="Site Design">طراح سایت</span>
+      <small data-fa="پایه یازدهم" data-en="Grade 11">پایه یازدهم</small>
+    </a>
+    <div class="search-wrap">
+      <input id="q" type="search" autocomplete="off"
+        data-fa-placeholder="جستجو در درس‌ها" data-en-placeholder="Search lessons"
+        placeholder="جستجو در درس‌ها">
+      <div id="results" class="results" hidden></div>
+    </div>
+    <a class="download" href="../grade11-offline.zip?v=2" data-fa="دانلود کل سایت" data-en="Download the whole site">دانلود کل سایت</a>
+    <button type="button" id="lang-toggle" class="lang-toggle" dir="ltr" data-lang="fa"
+      aria-label="تغییر زبان">
+      <span data-opt="fa">فا</span>
+      <span data-opt="en">EN</span>
+    </button>
+  </header>
+  <div class="layout">
+    <details class="toc" open><summary><span data-fa="فهرست درس‌ها" data-en="Lesson list">فهرست درس‌ها</span></summary><nav class="side" aria-label="lessons"><p class="mod" data-fa="شروع کتاب" data-en="Opening">شروع کتاب</p><p class="unit" data-fa="فهرست" data-en="Contents">فهرست</p><a class="" href="toc.html" data-fa="فهرست" data-en="Contents">فهرست</a><p class="mod" data-fa="پودمان ۱: برنامه‌نویسی پایتون" data-en="Module 1: Python programming">پودمان ۱: برنامه‌نویسی پایتون</p><p class="unit" data-fa="معرفی پودمان" data-en="Module introduction">معرفی پودمان</p><a class="" href="p1-intro.html" data-fa="معرفی پودمان پایتون" data-en="Introducing the Python module">معرفی پودمان پایتون</a><p class="unit" data-fa="مدل‌سازی داده" data-en="Data modeling">مدل‌سازی داده</p><a class="" href="p1-python.html" data-fa="پایتون و محیط برنامه‌نویسی" data-en="Python and the programming environment">پایتون و محیط برنامه‌نویسی</a><a class="" href="p1-vars.html" data-fa="متغیرها، نوع داده و عملگرها" data-en="Variables, types, and operators">متغیرها، نوع داده و عملگرها</a><a class="" href="p1-cast.html" data-fa="ورودی و تبدیل نوع" data-en="Input and type casting">ورودی و تبدیل نوع</a><a class="" href="p1-lists.html" data-fa="لیست‌ها" data-en="Lists">لیست‌ها</a><a class="" href="p1-if.html" data-fa="شرط‌های ساده" data-en="Simple conditions">شرط‌های ساده</a><a class="" href="p1-elif.html" data-fa="if، elif و else" data-en="if, elif, and else">if، elif و else</a><a class="" href="p1-for.html" data-fa="حلقه for و range" data-en="The for loop and range">حلقه for و range</a><a class="" href="p1-while.html" data-fa="حلقه while و کنترل حلقه" data-en="The while loop and loop control">حلقه while و کنترل حلقه</a><a class="" href="p1-assess-data.html" data-fa="ارزشیابی مدل‌سازی داده" data-en="Data-modeling assessment">ارزشیابی مدل‌سازی داده</a><p class="unit" data-fa="توابع و ماژول‌ها" data-en="Functions and modules">توابع و ماژول‌ها</p><a class="" href="p1-sets.html" data-fa="مجموعه (set)" data-en="Sets">مجموعه (set)</a><a class="" href="p1-dict.html" data-fa="دیکشنری" data-en="Dictionaries">دیکشنری</a><a class="" href="p1-quiz.html" data-fa="پروژه بازی Quiz" data-en="Quiz game project">پروژه بازی Quiz</a><a class="" href="p1-tuple.html" data-fa="تاپل" data-en="Tuples">تاپل</a><a class="current" href="p1-func.html" data-fa="تعریف تابع، پارامتر و return" data-en="Defining functions, parameters, and return">تعریف تابع، پارامتر و return</a><a class="" href="p1-func-more.html" data-fa="تمرین تابع و مرتب‌سازی" data-en="Function practice and sorting">تمرین تابع و مرتب‌سازی</a><a class="" href="p1-modules.html" data-fa="ماژول‌ها و تفاوت تابع و متد" data-en="Modules, and functions versus methods">ماژول‌ها و تفاوت تابع و متد</a><a class="" href="p1-assess-func.html" data-fa="ارزشیابی توابع و ماژول‌ها" data-en="Functions and modules assessment">ارزشیابی توابع و ماژول‌ها</a><p class="mod" data-fa="پودمان ۲: صفحات وب ایستا" data-en="Module 2: Static web pages">پودمان ۲: صفحات وب ایستا</p><p class="unit" data-fa="معرفی پودمان" data-en="Module introduction">معرفی پودمان</p><a class="" href="p2-intro.html" data-fa="معرفی پودمان صفحات ایستا" data-en="Introducing static web pages">معرفی پودمان صفحات ایستا</a><p class="unit" data-fa="ساختار با HTML" data-en="Structure with HTML">ساختار با HTML</p><a class="" href="p2-web.html" data-fa="وب چگونه کار می‌کند" data-en="How the web works">وب چگونه کار می‌کند</a><a class="" href="p2-concepts.html" data-fa="مفاهیم طراحی وب و نقشه سایت" data-en="Web-design concepts and the site map">مفاهیم طراحی وب و نقشه سایت</a><a class="" href="p2-tags.html" data-fa="اولین صفحه HTML" data-en="A first HTML page">اولین صفحه HTML</a><a class="" href="p2-text.html" data-fa="متن، لیست و پیوند" data-en="Text, lists, and links">متن، لیست و پیوند</a><a class="" href="p2-img.html" data-fa="تصویر در صفحه" data-en="Images on the page">تصویر در صفحه</a><a class="" href="p2-forms.html" data-fa="فرم‌ها" data-en="Forms">فرم‌ها</a><a class="" href="p2-semantic.html" data-fa="عناصر معنایی" data-en="Semantic elements">عناصر معنایی</a><a class="" href="p2-assess-html.html" data-fa="ارزشیابی HTML" data-en="HTML assessment">ارزشیابی HTML</a><p class="unit" data-fa="ظاهر با CSS" data-en="Appearance with CSS">ظاهر با CSS</p><a class="" href="p2-css-start.html" data-fa="نوشتن CSS" data-en="Writing CSS">نوشتن CSS</a><a class="" href="p2-css-look.html" data-fa="رنگ، پس‌زمینه و انتخاب‌گر" data-en="Color, background, and selectors">رنگ، پس‌زمینه و انتخاب‌گر</a><a class="" href="p2-box.html" data-fa="مدل جعبه‌ای و display" data-en="The box model and display">مدل جعبه‌ای و display</a><a class="" href="p2-flex.html" data-fa="چیدمان با Flexbox" data-en="Layout with Flexbox">چیدمان با Flexbox</a><a class="" href="p2-flex-work.html" data-fa="کارگاه چیدمان صفحه" data-en="Page-layout workshop">کارگاه چیدمان صفحه</a><a class="" href="p2-media.html" data-fa="مدیا کوئری و ارزشیابی CSS" data-en="Media queries and the CSS assessment">مدیا کوئری و ارزشیابی CSS</a><p class="mod" data-fa="پودمان ۳: صفحات وب تعاملی" data-en="Module 3: Interactive web pages">پودمان ۳: صفحات وب تعاملی</p><p class="unit" data-fa="معرفی پودمان" data-en="Module introduction">معرفی پودمان</p><a class="" href="p3-intro.html" data-fa="معرفی پودمان تعاملی" data-en="Introducing the interactive module">معرفی پودمان تعاملی</a><p class="unit" data-fa="بوت‌استرپ" data-en="Bootstrap">بوت‌استرپ</p><a class="" href="p3-bs-start.html" data-fa="فریم‌ورک و شروع بوت‌استرپ" data-en="Frameworks and starting Bootstrap">فریم‌ورک و شروع بوت‌استرپ</a><a class="" href="p3-bs-util.html" data-fa="فاصله، گردی و لیست" data-en="Spacing, rounding, and lists">فاصله، گردی و لیست</a><a class="" href="p3-bs-header.html" data-fa="سرصفحه فروشگاه" data-en="The shop header">سرصفحه فروشگاه</a><a class="" href="p3-bs-grid.html" data-fa="شبکه Grid" data-en="The grid">شبکه Grid</a><a class="" href="p3-bs-rwd.html" data-fa="کلاس‌های واکنش‌گرا" data-en="Responsive classes">کلاس‌های واکنش‌گرا</a><a class="" href="p3-bs-nav.html" data-fa="نوار ناوبری و جزئیات محصول" data-en="Navbar and product details">نوار ناوبری و جزئیات محصول</a><a class="" href="p3-bs-form.html" data-fa="فرم و پنجره Modal" data-en="Forms and modals">فرم و پنجره Modal</a><a class="" href="p3-bs-show.html" data-fa="کاروسل و آکاردئون" data-en="Carousel and accordion">کاروسل و آکاردئون</a><a class="" href="p3-bs-assess.html" data-fa="ارزشیابی بوت‌استرپ" data-en="Bootstrap assessment">ارزشیابی بوت‌استرپ</a><p class="unit" data-fa="جاوااسکریپت" data-en="JavaScript">جاوااسکریپت</p><a class="" href="p3-js-start.html" data-fa="جاوااسکریپت در صفحه وب" data-en="JavaScript on the page">جاوااسکریپت در صفحه وب</a><a class="" href="p3-js-vars.html" data-fa="متغیر و نوع داده" data-en="Variables and data types">متغیر و نوع داده</a><a class="" href="p3-js-ops.html" data-fa="عملگرها" data-en="Operators">عملگرها</a><a class="" href="p3-js-data.html" data-fa="آرایه و شیء" data-en="Arrays and objects">آرایه و شیء</a><a class="" href="p3-js-if.html" data-fa="شرط در جاوااسکریپت" data-en="Conditions in JavaScript">شرط در جاوااسکریپت</a><a class="" href="p3-js-loops.html" data-fa="حلقه‌ها" data-en="Loops">حلقه‌ها</a><a class="" href="p3-js-func.html" data-fa="تابع‌ها" data-en="Functions">تابع‌ها</a><a class="" href="p3-js-dom.html" data-fa="صفحه، رویداد و اعتبار فرم" data-en="The page, events, and form validation">صفحه، رویداد و اعتبار فرم</a><a class="" href="p3-js-assess.html" data-fa="ارزشیابی جاوااسکریپت" data-en="JavaScript assessment">ارزشیابی جاوااسکریپت</a><p class="mod" data-fa="پودمان ۴: توسعه وب پایتون" data-en="Module 4: Python for the web">پودمان ۴: توسعه وب پایتون</p><p class="unit" data-fa="معرفی پودمان" data-en="Module introduction">معرفی پودمان</p><a class="" href="p4-intro.html" data-fa="معرفی پودمان شیءگرایی" data-en="Introducing the object-oriented module">معرفی پودمان شیءگرایی</a><p class="unit" data-fa="شیءگرایی" data-en="Object-oriented programming">شیءگرایی</p><a class="" href="p4-idea.html" data-fa="ایده شیء و کلاس" data-en="The idea of objects and classes">ایده شیء و کلاس</a><a class="" href="p4-class.html" data-fa="ساخت کلاس و متد" data-en="Writing a class and methods">ساخت کلاس و متد</a><a class="" href="p4-inherit.html" data-fa="وراثت" data-en="Inheritance">وراثت</a><a class="" href="p4-protect.html" data-fa="داده معتبر و استفاده داخلی" data-en="Valid data and internal use">داده معتبر و استفاده داخلی</a><a class="" href="p4-assess-oop.html" data-fa="ارزشیابی برنامه شیءگرا" data-en="Object-oriented assessment">ارزشیابی برنامه شیءگرا</a><p class="unit" data-fa="فایل و توسعه" data-en="Files and development">فایل و توسعه</p><a class="" href="p4-files.html" data-fa="خواندن و نوشتن فایل متنی" data-en="Reading and writing text files">خواندن و نوشتن فایل متنی</a><a class="" href="p4-errors.html" data-fa="پیمایش فایل و مدیریت خطا" data-en="Walking a file and handling errors">پیمایش فایل و مدیریت خطا</a><a class="" href="p4-json.html" data-fa="چند فایل و JSON" data-en="Several files and JSON">چند فایل و JSON</a><a class="" href="p4-assess-files.html" data-fa="ارزشیابی کار با فایل" data-en="Files assessment">ارزشیابی کار با فایل</a><p class="mod" data-fa="پودمان ۵: برنامه‌نویسی جنگو" data-en="Module 5: Django">پودمان ۵: برنامه‌نویسی جنگو</p><p class="unit" data-fa="معرفی پودمان" data-en="Module introduction">معرفی پودمان</p><a class="" href="p5-intro.html" data-fa="معرفی پودمان جنگو" data-en="Introducing the Django module">معرفی پودمان جنگو</a><p class="unit" data-fa="ایجاد وب‌اپلیکیشن" data-en="Creating the web app">ایجاد وب‌اپلیکیشن</p><a class="" href="p5-what.html" data-fa="جنگو چیست و نصب" data-en="What Django is, and installing it">جنگو چیست و نصب</a><a class="" href="p5-project.html" data-fa="پروژه، اپ و اولین view" data-en="Project, app, and the first view">پروژه، اپ و اولین view</a><a class="" href="p5-template.html" data-fa="قالب و دمای واقعی" data-en="Templates and a real temperature">قالب و دمای واقعی</a><a class="" href="p5-assess-create.html" data-fa="ارزشیابی ایجاد وب‌اپلیکیشن" data-en="Creating-the-app assessment">ارزشیابی ایجاد وب‌اپلیکیشن</a><p class="unit" data-fa="توسعه وب‌اپلیکیشن" data-en="Developing the web app">توسعه وب‌اپلیکیشن</p><a class="" href="p5-model.html" data-fa="مدل شهر و پنل ادمین" data-en="The city model and the admin">مدل شهر و پنل ادمین</a><a class="" href="p5-list.html" data-fa="خواندن شهرها و نمایش فهرست" data-en="Reading cities and showing the list">خواندن شهرها و نمایش فهرست</a><a class="" href="p5-auth.html" data-fa="ورود و خروج" data-en="Sign-in and sign-out">ورود و خروج</a><a class="" href="p5-crud.html" data-fa="افزودن و حذف شهر" data-en="Adding and deleting a city">افزودن و حذف شهر</a><a class="" href="p5-bugs.html" data-fa="باگ و امنیت" data-en="Bugs and security">باگ و امنیت</a><p class="mod" data-fa="پایان کتاب" data-en="Back of the book">پایان کتاب</p><p class="unit" data-fa="منابع" data-en="References">منابع</p><a class="" href="refs.html" data-fa="منابع کتاب" data-en="Book references">منابع کتاب</a></nav></details>
+    <div class="main">
+      <h1 class="section-title" data-fa="تعریف تابع، پارامتر و return" data-en="Defining functions, parameters, and return">تعریف تابع، پارامتر و return</h1><article class="lesson" lang="fa" dir="rtl" data-lang-block="fa"><p class="page-mark">صفحه ۶۲</p>
+<h3 id="function">تابع <bdi dir="ltr">(Function)</bdi></h3>
+<p>تابع، بلاک یا قطعه کدی است که یک‌بار آن را تعریف کرده و بارها آن را در چندین مکان برنامه می‌توان فراخوانی کرد.</p>
+<figure class="shot"><img alt="شکل 129" src="../images/p068-01.png" /><figcaption>شکل 129</figcaption></figure>
+<p>مزایای استفاده از تابع:</p>
+<p>برنامه‌نویس با تعریف یک تابع، تنها یک بار کد مورد نظر را می‌نویسد و سپس در هر نقطه‌ای از برنامه یا حتی در پروژه‌های دیگر که نیاز باشد، آن را فراخوانی و استفاده می‌کند.</p>
+<p>تقسیم کد به توابع کوچک و مشخص، درک و فهم کد را به طور چشمگیری افزایش می‌دهد.</p>
+<p>یافتن و رفع اشکالات و اعمال تغییرات در کد بسیار ساد‌هتر می‌شود.</p>
+<p>سازماندهی کدها به‌صورت منطقی و مرتب و ساختار کلی برنامه آسان‌تر می‌شود.</p>
+<p>تعریف تابع: یک تابع با استفاده از کلمه کلیدی <code>def</code> تعریف می‌شود و به دنبال آن نام تابع و پرانتز قرار می‌گیرد.</p>
+<p>فرم کلی تعریف تابع با پارامتر ورودی به شکل زیر است:</p>
+<p><img alt="تصویر کتاب" src="../images/p068-02.png" /></p>
+<p>:(پارامترهای تابع) نام تابع <code>def</code></p>
+<p>مقدار برگشتنی</p>
+<p>دستور یا دستورات بدنه تابع</p>
+<p>تابع</p>
+<p>ورودی‌ها</p>
+<p>مقدار یا مقادیر <code>return</code></p>
+<p><strong>شکل 130</strong></p>
+<hr />
+<p class="page-mark">صفحه ۶۳</p>
+<p>مثال: در این برنامه تابعی به نام <code>show_store_name</code> تعریف شده و یک دستور <code>print</code> (<code>"Digital</code> <code>Online</code> <code>Store"</code>) در آن نوشته شده است (شکل131).</p>
+<figure class="shot"><img alt="شکل 131" src="../images/p069-01.png" /><figcaption>شکل 131</figcaption></figure>
+<p>مثال: در این برنامه نیز یک تابع به نام <code>greet</code> تعریف شده است و دستور <code>print</code>(<code>"Hello</code>! ") در آن نوشته شده است (شکل132).</p>
+<figure class="shot"><img alt="شکل 132" src="../images/p069-02.png" /><figcaption>شکل 132</figcaption></figure>
+<p>مثال: در این برنامه تابع <code>greet</code>() بدون پارامتر تعریف شده است، پس در هنگام فراخوانی نیازی به ارسال آرگومان ندارد (شکل133).</p>
+<p><img alt="تصویر کتاب" src="../images/p069-03.png" /></p>
+<p>خروجی</p>
+<p><strong>شکل 133</strong></p>
+<p>مثال: در این برنامه نیز تابع بدون پارامتر تعریف شده است. در هنگام فراخوانی نیازی به ارسال آرگومان ندارد (شکل134).</p>
+<p><img alt="تصویر کتاب" src="../images/p069-04.png" /></p>
+<figure class="shot"><img alt="شکل 134" src="../images/p069-05.png" /><figcaption>شکل 134</figcaption></figure>
+<hr />
+<p class="page-mark">صفحه ۶۴</p>
+<p>پارامتر و آرگومان (<code>Parameters</code> &amp; <code>Arguments</code>) پارامتر چیست؟ تابع می‌تواند ورودی‌هایی را دریافت کند. به ورودی‌های تابع در زمان تعریف تابع، پارامتر (<code>parameter</code>) گفته می‌شود.</p>
+<p>آرگومان چیست؟ ورودی‌های تابع که هنگام فراخوانی تابع به آن داده می‌شود.</p>
+<p>پس از تعریف، تابع باید فراخوانی شود تا اجرا شود. اگر تابع را فقط تعریف کنید ولی فراخوانی نشود هیچ اتفاقی نمی‌افتد. مثل این است که اصلاً تعریف نشده باشد.</p>
+<p>برای فراخوانی تابع نام آن را نوشته و به تعداد پارامترها، به آن آرگومان ارسال کنید (در اصطلاح پاس‌دادن گفته می‌شود) یک تابع را بارها می‌توانید فراخوانی کنید.</p>
+<p>نحوه فراخوانی تابع به شکل زیر است:</p>
+<p>(آرگومان‌های تابع) :نام تابع</p>
+<p>مثال: در مثال شکل135 تابع <code>show_product</code>(<code>name</code>, <code>price</code>) با دو پارامتر <code>name</code> , <code>price</code> تعریف شده است. در زمان فراخوانی هم باید دو مقدار به‌عنوان آرگومان ارسال شود.</p>
+<p><img alt="تصویر کتاب" src="../images/p070-01.png" /></p>
+<p>خروجی</p>
+<figure class="shot"><img alt="شکل 135" src="../images/p070-02.png" /><figcaption>شکل 135</figcaption></figure>
+<p>مثال: در مثال شکل136 تابع <code>print_age</code>(<code>age</code>) دارای یک پارامتر به نام <code>age</code> است. در زمان فراخوانی هم یک آرگومان به آن ارسال شود. همان‌طور که مشاهده می‌کنید تابع <code>print_age</code>(<code>age</code>) دو بار و با دو آرگومان متفاوت فراخوانی شده است.</p>
+<p><img alt="تصویر کتاب" src="../images/p070-03.png" /></p>
+<p>خروجی</p>
+<figure class="shot"><img alt="شکل 136" src="../images/p070-04.png" /><figcaption>شکل 136</figcaption></figure>
+<hr />
+<p class="page-mark">صفحه ۶۵</p>
+<h3 id="_1">نکته</h3>
+<p>ترتیب، تعداد و نوع پارامترها (در زمان تعریف تابع) با ترتیب، تعداد و نوع آرگومان‌ها (در زمان فراخوانی تابع) باید با هم یکسان باشد.</p>
+<p>اگر ترتیب و نوع ارسال آرگومان‌ها رعایت نشود، خروجی اشتباه تولید می‌شود. در هنگام اجرا خطا نمی‌دهد؛</p>
+<p>ولی منطق برنامه نادرست است.</p>
+<p>راه‌حل، استفاده از آرگومان کلیدی (<code>keyword</code> <code>arguments</code>) یا همان آرگومان‌های با نام است، یعنی می‌توان در زمان فراخوانی تابع، نام پارامتر را ب‌ههمراه عملگر انتساب نوشت.</p>
+<p>مثال: به کدهای شکل 137 دقت کنید. خروجی‌ها را بررسی کنید. فراخوانی بدون رعایت ترتیب آرگومان‌ها، باعث شده اول قیمت و سپس نام کالا چاپ شود و این منطق نادرستی است.</p>
+<p><img alt="تصویر کتاب" src="../images/p071-01.png" /></p>
+<p>خروجی</p>
+<p>فراخوانی بدون رعایت ترتیب فراخوانی با رعایت ترتیب</p>
+<figure class="shot"><img alt="شکل 137" src="../images/p071-02.png" /><figcaption>شکل 137</figcaption></figure>
+<p>مثال: در مثال شکل 138 برای جلوگیری از خروجی اشتباه با ارسال آرگومان‌ها بدون ترتیب، از آرگومان‌های کلیدی استفاده شده است. برنامه را نوشته و نتیجه را با مثال قبل مقایسه کنید.</p>
+<figure class="shot"><img alt="شکل 138" src="../images/p071-03.png" /><figcaption>شکل 138</figcaption></figure>
+<h3 id="_2">نکته</h3>
+<p>وقتی آرگومان‌ها بدون نام پارامتر به تابع داده شود، ترتیب ارسال آنها مهم است، چون هر آرگومان ب‌هترتیب به پارامترهای تابع نسبت داده می‌شود. به این آرگومان‌ها آرگومان‌های موقعیتی</p>
+<div class="code-wrap" dir="ltr"><pre><code>(positional arguments) گفته می‌شود.
+</code></pre></div>
+<h3 id="_3">فعالیت</h3>
+<p>یک تابع به نام <code>square</code> بنویسید که یک عدد بگیرد و مربع آن را چاپ کند.</p>
+<hr />
+<p class="page-mark">صفحه ۶۶</p>
+<h3 id="_4">نکته</h3>
+<p>تابعی بنویسید که دو عدد را به‌عنوان پارامتر دریافت و حاصل‌جمع آنها را نشان دهد.</p>
+<h3 id="_5">نکته</h3>
+<p>تابعی بنویسید که نام ۳ کاربر را از ورودی به‌عنوان پارامتر دریافت و آنها را چاپ کند.</p>
+<p>مثال: تعداد آرگومان‌های ارسالی به تابع باید با تعداد پارامترهای آن در زمان تعریف تابع برابر باشد. در غیر این صورت در زمان اجرای پیام خطا نمایش داده می‌شود (شکل139).</p>
+<p><img alt="تصویر کتاب" src="../images/p072-01.png" /></p>
+<p>تعداد آرگومان ارسال شده کمتر از تعداد پارامترهای تابع است</p>
+<p><img alt="تصویر کتاب" src="../images/p072-02.png" /></p>
+<p>پیام خطای نمایش داده شده پس از اجرای برنامه</p>
+<p><strong>شکل 139</strong></p>
+<h3 id="_6">نکته</h3>
+<p>می‌توان برای پارامتر مقدار پیش‌فرض تعیین کرد. اگر آرگومان داده نشود، مقدار پیش‌فرض استفاده می‌شود.</p>
+<p>مثال: در اولین خط کد شکل 140، تابع با یک پارامتر تعریف شده است. در خط ۴ هنگام فراخوانی، آرگومان آن ارسال نشده است، بنابراین از مقدار پیش‌فرض آن <code>"Tehran"</code> استفاده می‌شود. در خط ۵ تابع با آرگومان فراخوانی شده است. برنامه را نوشته و نتیجه را بررسی کنید. مقدار پیش‌فرض را تغییر دهید و برنامه را اجرا کنید.</p>
+<p><img alt="تصویر کتاب" src="../images/p072-03.png" /></p>
+<figure class="shot"><img alt="شکل 140" src="../images/p072-04.png" /><figcaption>شکل 140</figcaption></figure>
+<hr />
+<p class="page-mark">صفحه ۶۷</p>
+<p>مثال: در این مثال تابع با دو پارامتر تعریف شده که مقدار پیش‌فرض برای آنها وجود دارد. در هر بار فراخوانی آرگومان‌ها با روش‌های مختلف ارسال شده‌اند. برنامه را نوشته، نتیجه را بررسی کنید. مقدار پیش‌فرض را تغییر دهید و دوباره برنامه را اجرا کنید (شکل141).</p>
+<p><img alt="تصویر کتاب" src="../images/p073-01.png" /></p>
+<figure class="shot"><img alt="شکل 141" src="../images/p073-02.png" /><figcaption>شکل 141</figcaption></figure>
+<p>مقدار بازگشتی تابع (<code>Return</code> <code>Value</code>) تابع می‌تواند مقداری را محاسبه کند و به برنامه برگرداند تا بعدًا از آن استفاده شود که به آن مقدار بازگشتی ) <code>Return</code> <code>Value</code>) گفته می‌شود. بدون <code>return</code> تابع کار خودش را انجام می‌دهد (مثلاًً چاپ می‌کند) ولی هیچ مقداری به بیرون برنمی‌گرداند و اگر بخواهید نتیجه تابع را در متغیر ذخیره کنید مقدار آن <code>None</code> می‌شود (شکل142).</p>
+<figure class="shot"><img alt="شکل 142" src="../images/p073-03.png" /><figcaption>شکل 142</figcaption></figure>
+<p>مثال: با اجرای برنامه شکل143 مقدار 8 نمایش داده می‌شود. اما عدد8 ذخیره نشده و همچنین جای دیگری نمی‌توان از آن استفاده کرد.</p>
+<p><img alt="تصویر کتاب" src="../images/p073-04.png" /></p>
+<p>حالا برنامه را با استفاده از <code>return</code> تغییر داده و نتیجه را مشاهده کنید.</p>
+<p>این بار: تابع عدد 8 را برگردانده و مقدار بازگشتی در متغیر <code>result</code> ذخیره می‌شود و می‌توان دوباره از آن استفاده کرد.</p>
+<p><strong>شکل 143</strong></p>
+<p>مثال: بدون استفاده از <code>return</code> فقط (<code>price</code> * <code>count</code>) محاسبه می‌شود و هیچ مقداری را به برنامه برنمی‌گرداند، پس با فراخوانی تابع 200000),2( <code>total_</code> <code>price</code> در متغیر <code>x</code> مقدار <code>None</code> ذخیره و با اجرای برنامه مقدار <code>None</code> هم چاپ می‌شود</p>
+<p><img alt="تصویر کتاب" src="../images/p073-05.png" /></p>
+<p>(شکل144).</p>
+<p><strong>شکل 144</strong></p>
+<hr />
+<p class="page-mark">صفحه ۶۸</p>
+<p>مثال: با استفاده از <code>return</code> مقدار محاسبه‌شده به برنامه برگردانده می‌شود و می‌توان آن را در متغیر <code>x</code> ذخیره کرد و با چاپ متغیر <code>x</code> مقدار ذخیره‌شده، نمایش داده می‌شود (شکل145).</p>
+<figure class="shot"><img alt="شکل 145" src="../images/p074-01.png" /><figcaption>شکل 145</figcaption></figure>
+<h3 id="_7">فعالیت</h3>
+<p>یک تابع به نام <code>avg_numbers</code> بسازید که سه عدد دریافت کرده و میانگین آنها را برگرداند.</p>
+<p>مثال: تابعی بنویسید که قیمت کل خرید را حساب کند و اگر تعداد خرید بیشتر از ۵ بود، 10٪ تخفیف بدهد.</p>
+<p>داخل تابع از <code>if</code> استفاده شده تا شرطی بررسی شود.</p>
+<p>اگر شرط (<code>count</code> &gt; 5) برقرار باشد مقدار با تخفیف برگردانده می‌شود.</p>
+<p>اگر شرط برقرار نباشد، مقدار بدون تخفیف برگردانده می‌شود.</p>
+<p>از <code>return</code> استفاده شده است تا نتیجه محاسبه شده به بیرون تابع برگردد و بتوان آن را چاپ یا ذخیره کرد (شکل146).</p>
+<figure class="shot"><img alt="شکل 146" src="../images/p074-02.png" /><figcaption>شکل 146</figcaption></figure>
+<p>استفاده از حلقه در داخل تابع:</p>
+<p>استفاده از حلقه در داخل تابع به این منظور است که بتوانید دستورات مشخصی را چندین بار و به‌صورت خودکار، تا زمانی‌که شرط تعیین‌شده برقرار است یا تعداد دفعات مشخصی تکرار شوند، اجرا کنید. این کار باعث کاهش تکرار کد، افزایش خوانایی و بهینه‌سازی عملکرد تابع می‌شود.</p>
+<p><img alt="تصویر کتاب" src="../images/p074-03.png" /></p>
+<p>مثال: در این مثال، تابع تعریف شده اعداد طبیعی کوچک‌تر از 6 را چاپ می‌کند. برنامه را اجرا و نتیجه را مشاهده کنید (شکل147).</p>
+<p><strong>شکل 147</strong></p>
+<hr />
+<p class="page-mark">صفحه ۶۹</p>
+<p>مثال: ابتدا تابع تعریف شده یک پارامتر به نام <code>names</code> دارد که انتظار می‌رود آرگومان‌های دریافتی آن لیستی از اسامی باشند (شکل148).</p>
+<p>با حلقه <code>for</code> عناصر لیست را یکی‌یکی دریافت و به متغیر <code>name</code> اختصاص می‌دهد.</p>
+<p>دستور <code>print</code> هم داخل حلقه اجرا شده و اسامی را جداگانه چاپ می‌کند.</p>
+<p>قبل از فراخوانی تابع در اولین خط از برنامه، لیست <code>students</code> که شامل نام دانش‌آموزان است ایجاد می‌شود.</p>
+<p>سپس تابع با آرگومان <code>students</code> فراخوانی می‌شود. حلقه داخل تابع یکی‌یکی اسامی داخل لیست را چاپ می‌کند.</p>
+<figure class="shot"><img alt="شکل 148" src="../images/p075-01.png" /><figcaption>شکل 148</figcaption></figure>
+<h3 id="_8">فعالیت</h3>
+<p><img alt="تصویر کتاب" src="../images/p075-04.png" /></p>
+<p>تابع نوشته‌شده حاصل جمع تمام اعداد یک لیست را محاسبه می‌کند. برنامه را بنویسید و اجرا کنید. با راهنمایی هنرآموز محترم خود خطوط کد نوشت‌هشده در آن را توضیح دهید. تابع را به نحوی تغییر دهید که عناصر لیست را کاربر از صفحه‌کلید وارد کند.</p>
+<h3 id="_9">فعالیت</h3>
+<p><img alt="تصویر کتاب" src="../images/p075-02.png" /></p>
+<p>تابع نوشته‌شده که طول رشته ورودی کاربر را محاسبه و نمایش می‌دهد. برنامه را اجرا و آن را بررسی و همچنین با راهنمایی هنرآموز محترم خود کدهای برنامه مقابل را توضیح دهید.</p>
+<h3 id="_10">فعالیت</h3>
+<p><img alt="تصویر کتاب" src="../images/p075-03.png" /></p>
+<p>کدهای مقابل بیشترین مقدار را در بین اعداد یک لیست محاسبه کرده و نمایش می‌دهد. کد را اجرا و خطوط آن را توضیح دهید.</p>
+<hr /></article><article class="lesson" lang="en" dir="ltr" data-lang-block="en" hidden><p class="page-mark">Page 62</p>
+<h3 id="function-function">Function (Function)</h3>
+<p>A function is a block or piece of code that you define once and can call many times in several places in the program.</p>
+<figure class="shot"><img alt="Figure 129" src="../images/p068-01.png" /><figcaption>Figure 129</figcaption></figure>
+<p>Advantages of using a function:</p>
+<p>By defining a function, the programmer writes the desired code only once and then, at any point in the program or even in other projects where it is needed, calls and uses it.</p>
+<p>Dividing code into small, specific functions greatly increases understanding of the code.</p>
+<p>Finding and fixing bugs and making changes in the code become much simpler.</p>
+<p>Organizing the code logically and neatly, and the overall structure of the program, becomes easier.</p>
+<p>Defining a function: A function is defined using the keyword <code>def</code>, followed by the function name and parentheses.</p>
+<p>The general form of defining a function with an input parameter is as follows:</p>
+<p><img alt="Book image" src="../images/p068-02.png" /></p>
+<p><code>def</code> function name (function parameters):</p>
+<p>return value</p>
+<p>statement or statements of the function body</p>
+<p>function</p>
+<p>inputs</p>
+<p><code>return</code> value or values</p>
+<p><strong>Figure 130</strong></p>
+<hr />
+<p class="page-mark">Page 63</p>
+<p>Example: In this program a function named <code>show_store_name</code> is defined and a <code>print</code> (<code>"Digital</code> <code>Online</code> <code>Store"</code>) statement is written in it (Figure 131).</p>
+<figure class="shot"><img alt="Figure 131" src="../images/p069-01.png" /><figcaption>Figure 131</figcaption></figure>
+<p>Example: In this program also a function named <code>greet</code> is defined and the statement <code>print</code>(<code>"Hello</code>! ") is written in it (Figure 132).</p>
+<figure class="shot"><img alt="Figure 132" src="../images/p069-02.png" /><figcaption>Figure 132</figcaption></figure>
+<p>Example: In this program the function <code>greet</code>() is defined without a parameter, so when calling it there is no need to send an argument (Figure 133).</p>
+<p><img alt="Book image" src="../images/p069-03.png" /></p>
+<p>Output</p>
+<p><strong>Figure 133</strong></p>
+<p>Example: In this program also the function is defined without a parameter. When calling it there is no need to send an argument (Figure 134).</p>
+<p><img alt="Book image" src="../images/p069-04.png" /></p>
+<figure class="shot"><img alt="Figure 134" src="../images/p069-05.png" /><figcaption>Figure 134</figcaption></figure>
+<hr />
+<p class="page-mark">Page 64</p>
+<p>Parameter and argument (<code>Parameters</code> &amp; <code>Arguments</code>) What is a parameter? A function can receive inputs. The inputs of a function at the time the function is defined are called a parameter (<code>parameter</code>).</p>
+<p>What is an argument? The inputs of a function that are given to it when the function is called.</p>
+<p>After definition, the function must be called to run. If you only define the function but it is not called, nothing happens. It is as if it was never defined.</p>
+<p>To call a function, write its name and send it as many arguments as there are parameters (this is called passing). You can call a function many times.</p>
+<p>The way to call a function is as follows:</p>
+<p>function name (function arguments)</p>
+<p>Example: In the example in Figure 135, the function <code>show_product</code>(<code>name</code>, <code>price</code>) is defined with two parameters <code>name</code> , <code>price</code>. When calling it, two values must also be sent as arguments.</p>
+<p><img alt="Book image" src="../images/p070-01.png" /></p>
+<p>Output</p>
+<figure class="shot"><img alt="Figure 135" src="../images/p070-02.png" /><figcaption>Figure 135</figcaption></figure>
+<p>Example: In the example in Figure 136, the function <code>print_age</code>(<code>age</code>) has one parameter named <code>age</code>. When calling it, one argument should also be sent to it. As you can see, the function <code>print_age</code>(<code>age</code>) is called twice with two different arguments.</p>
+<p><img alt="Book image" src="../images/p070-03.png" /></p>
+<p>Output</p>
+<figure class="shot"><img alt="Figure 136" src="../images/p070-04.png" /><figcaption>Figure 136</figcaption></figure>
+<hr />
+<p class="page-mark">Page 65</p>
+<h3 id="note">Note</h3>
+<p>The order, number, and type of parameters (at the time the function is defined) must match the order, number, and type of arguments (at the time the function is called).</p>
+<p>If the order and type of sending arguments are not observed, incorrect output is produced. It does not give an error at run time;</p>
+<p>but the program logic is wrong.</p>
+<p>The solution is to use keyword arguments (<code>keyword</code> <code>arguments</code>), or named arguments; that is, when calling the function, you can write the parameter name together with the assignment operator.</p>
+<p>Example: Look carefully at the code in Figure 137. Check the outputs. Calling without observing the order of the arguments has caused the price to be printed first and then the product name, and this is incorrect logic.</p>
+<p><img alt="Book image" src="../images/p071-01.png" /></p>
+<p>Output</p>
+<p>Calling without observing order Calling with observing order</p>
+<figure class="shot"><img alt="Figure 137" src="../images/p071-02.png" /><figcaption>Figure 137</figcaption></figure>
+<p>Example: In the example in Figure 138, to prevent incorrect output when sending arguments out of order, keyword arguments are used. Write the program and compare the result with the previous example.</p>
+<figure class="shot"><img alt="Figure 138" src="../images/p071-03.png" /><figcaption>Figure 138</figcaption></figure>
+<h3 id="note_1">Note</h3>
+<p>When arguments are given to the function without the parameter name, the order in which they are sent is important, because each argument is assigned in turn to the function’s parameters. These arguments are called positional arguments</p>
+<div class="code-wrap" dir="ltr"><pre><code>(positional arguments) گفته می‌شود.
+</code></pre></div>
+<h3 id="activity">Activity</h3>
+<p>Write a function named <code>square</code> that takes a number and prints its square.</p>
+<hr />
+<p class="page-mark">Page 66</p>
+<h3 id="note_2">Note</h3>
+<p>Write a function that receives two numbers as parameters and shows their sum.</p>
+<h3 id="note_3">Note</h3>
+<p>Write a function that receives the names of 3 users from input as parameters and prints them.</p>
+<p>Example: The number of arguments sent to a function must equal the number of its parameters at the time the function is defined. Otherwise, an error message is displayed at run time (Figure 139).</p>
+<p><img alt="Book image" src="../images/p072-01.png" /></p>
+<p>The number of arguments sent is less than the number of function parameters</p>
+<p><img alt="Book image" src="../images/p072-02.png" /></p>
+<p>The error message displayed after running the program</p>
+<p><strong>Figure 139</strong></p>
+<h3 id="note_4">Note</h3>
+<p>You can set a default value for a parameter. If an argument is not given, the default value is used.</p>
+<p>Example: In the first line of the code in Figure 140, the function is defined with one parameter. On line 4, when calling, its argument is not sent, so its default value <code>"Tehran"</code> is used. On line 5 the function is called with an argument. Write the program and check the result. Change the default value and run the program.</p>
+<p><img alt="Book image" src="../images/p072-03.png" /></p>
+<figure class="shot"><img alt="Figure 140" src="../images/p072-04.png" /><figcaption>Figure 140</figcaption></figure>
+<hr />
+<p class="page-mark">Page 67</p>
+<p>Example: In this example the function is defined with two parameters that have default values. Each time it is called, the arguments are sent in different ways. Write the program, check the result. Change the default value and run the program again (Figure 141).</p>
+<p><img alt="Book image" src="../images/p073-01.png" /></p>
+<figure class="shot"><img alt="Figure 141" src="../images/p073-02.png" /><figcaption>Figure 141</figcaption></figure>
+<p>Function return value (<code>Return</code> <code>Value</code>) A function can calculate a value and return it to the program so that it can be used later; that is called a return value (<code>Return</code> <code>Value</code>). Without <code>return</code>, the function does its own work (for example, it prints) but returns no value outward, and if you want to store the function’s result in a variable, its value becomes <code>None</code> (Figure 142).</p>
+<figure class="shot"><img alt="Figure 142" src="../images/p073-03.png" /><figcaption>Figure 142</figcaption></figure>
+<p>Example: By running the program in Figure 143, the value 8 is displayed. But the number 8 is not stored and also cannot be used elsewhere.</p>
+<p><img alt="Book image" src="../images/p073-04.png" /></p>
+<p>Now change the program using <code>return</code> and observe the result.</p>
+<p>This time: the function returns the number 8 and the return value is stored in the variable <code>result</code> and can be used again.</p>
+<p><strong>Figure 143</strong></p>
+<p>Example: Without using <code>return</code>, only (<code>price</code> * <code>count</code>) is calculated and no value is returned to the program, so by calling the function <code>total_</code> <code>price</code>(200000, 2) in the variable <code>x</code> the value <code>None</code> is stored and by running the program the value <code>None</code> is also printed</p>
+<p><img alt="Book image" src="../images/p073-05.png" /></p>
+<p>(Figure 144).</p>
+<p><strong>Figure 144</strong></p>
+<hr />
+<p class="page-mark">Page 68</p>
+<p>Example: Using <code>return</code>, the calculated value is returned to the program and you can store it in the variable <code>x</code>, and by printing the variable <code>x</code> the stored value is displayed (Figure 145).</p>
+<figure class="shot"><img alt="Figure 145" src="../images/p074-01.png" /><figcaption>Figure 145</figcaption></figure>
+<h3 id="activity_1">Activity</h3>
+<p>Build a function named <code>avg_numbers</code> that receives three numbers and returns their average.</p>
+<p>Example: Write a function that calculates the total purchase price and, if the purchase quantity is more than 5, gives a 10% discount.</p>
+<p>Inside the function, <code>if</code> is used so that a condition is checked.</p>
+<p>If the condition (<code>count</code> &gt; 5) is true, the value with the discount is returned.</p>
+<p>If the condition is not true, the value without the discount is returned.</p>
+<p><code>return</code> is used so that the calculated result returns outside the function and you can print or store it (Figure 146).</p>
+<figure class="shot"><img alt="Figure 146" src="../images/p074-02.png" /><figcaption>Figure 146</figcaption></figure>
+<p>Using a loop inside a function:</p>
+<p>Using a loop inside a function is so that you can run specific statements several times automatically, for as long as the set condition is true or for a specific number of times. This reduces code repetition, increases readability, and optimizes the function’s performance.</p>
+<p><img alt="Book image" src="../images/p074-03.png" /></p>
+<p>Example: In this example, the defined function prints the natural numbers smaller than 6. Run the program and observe the result (Figure 147).</p>
+<p><strong>Figure 147</strong></p>
+<hr />
+<p class="page-mark">Page 69</p>
+<p>Example: First, the defined function has a parameter named <code>names</code>, which is expected to receive arguments that are a list of names (Figure 148).</p>
+<p>With a <code>for</code> loop it receives the list elements one by one and assigns them to the variable <code>name</code>.</p>
+<p>The <code>print</code> statement also runs inside the loop and prints the names separately.</p>
+<p>Before calling the function, on the first line of the program, the list <code>students</code> that includes the students’ names is created.</p>
+<p>Then the function is called with the argument <code>students</code>. The loop inside the function prints the names inside the list one by one.</p>
+<figure class="shot"><img alt="Figure 148" src="../images/p075-01.png" /><figcaption>Figure 148</figcaption></figure>
+<h3 id="activity_2">Activity</h3>
+<p><img alt="Book image" src="../images/p075-04.png" /></p>
+<p>The written function calculates the sum of all numbers in a list. Write the program and run it. With guidance from your teacher, explain the lines of code written in it. Change the function so that the user enters the list elements from the keyboard.</p>
+<h3 id="activity_3">Activity</h3>
+<p><img alt="Book image" src="../images/p075-02.png" /></p>
+<p>The written function that calculates and displays the length of the user’s input string. Run the program and examine it, and also with guidance from your teacher explain the code of the program opposite.</p>
+<h3 id="activity_4">Activity</h3>
+<p><img alt="Book image" src="../images/p075-03.png" /></p>
+<p>The code opposite calculates and displays the largest value among the numbers in a list. Run the code and explain its lines.</p>
+<hr /></article>
+      <aside class="extra">
+        <h2 data-fa="تمرین این بخش" data-en="Exercises for this section">تمرین این بخش</h2>
+        <p class="extra-note" data-fa="این تمرین‌ها و پیوندها اضافه بر متن کتاب‌اند." data-en="These exercises and links are in addition to the book.">این تمرین‌ها و پیوندها اضافه بر متن کتاب‌اند.</p>
+        <ol><li data-fa="دو تابع بساز: یکی نام فروشگاه را چاپ کند و یکی دو قیمت بگیرد و قیمت بیشتر را برگرداند. نتیجه را در متغیر ذخیره کن." data-en="Build two functions: one prints the shop name, one takes two prices and returns the higher one. Store the returned value.">دو تابع بساز: یکی نام فروشگاه را چاپ کند و یکی دو قیمت بگیرد و قیمت بیشتر را برگرداند. نتیجه را در متغیر ذخیره کن.</li><li data-fa="تابع خوشامد با دو مقدار پیش‌فرض بساز و آن را هم بدون آرگومان و هم با آرگومان صدا بزن." data-en="Build a greeting function with two default values and call it once with no arguments and once with arguments.">تابع خوشامد با دو مقدار پیش‌فرض بساز و آن را هم بدون آرگومان و هم با آرگومان صدا بزن.</li></ol>
+        <h2 data-fa="پیوند مفید" data-en="Useful link">پیوند مفید</h2><ul><li><a href="https://docs.python.org/3/tutorial/controlflow.html#defining-functions" data-fa="تعریف تابع" data-en="Defining functions">تعریف تابع</a></li></ul>
+      </aside>
+    <nav class="pager"><a rel="prev" class="prev" href="p1-tuple.html"><span class="pager-word" data-fa="قبلی" data-en="Previous">قبلی</span><span class="pager-name" data-fa="تاپل" data-en="Tuples">تاپل</span></a><a rel="next" class="next" href="p1-func-more.html"><span class="pager-word" data-fa="بعدی" data-en="Next">بعدی</span><span class="pager-name" data-fa="تمرین تابع و مرتب‌سازی" data-en="Function practice and sorting">تمرین تابع و مرتب‌سازی</span></a></nav>
+    </div>
+  </div>
+  <script src="../assets/search-index.js?v=4"></script>
+  <script src="../assets/app.js?v=4"></script>
+</body>
+</html>

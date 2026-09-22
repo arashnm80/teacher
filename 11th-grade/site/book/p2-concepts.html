@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title data-fa="مفاهیم طراحی وب و نقشه سایت" data-en="Web-design concepts and the site map">مفاهیم طراحی وب و نقشه سایت</title>
+  <link rel="icon" href="../assets/favicon.svg">
+  <link rel="stylesheet" href="../assets/style.css?v=4">
+</head>
+<body data-root="../">
+  <header class="top">
+    <a class="brand" href="../index.html">
+      <span data-fa="طراح سایت" data-en="Site Design">طراح سایت</span>
+      <small data-fa="پایه یازدهم" data-en="Grade 11">پایه یازدهم</small>
+    </a>
+    <div class="search-wrap">
+      <input id="q" type="search" autocomplete="off"
+        data-fa-placeholder="جستجو در درس‌ها" data-en-placeholder="Search lessons"
+        placeholder="جستجو در درس‌ها">
+      <div id="results" class="results" hidden></div>
+    </div>
+    <a class="download" href="../grade11-offline.zip?v=2" data-fa="دانلود کل سایت" data-en="Download the whole site">دانلود کل سایت</a>
+    <button type="button" id="lang-toggle" class="lang-toggle" dir="ltr" data-lang="fa"
+      aria-label="تغییر زبان">
+      <span data-opt="fa">فا</span>
+      <span data-opt="en">EN</span>
+    </button>
+  </header>
+  <div class="layout">
+    <details class="toc" open><summary><span data-fa="فهرست درس‌ها" data-en="Lesson list">فهرست درس‌ها</span></summary><nav class="side" aria-label="lessons"><p class="mod" data-fa="شروع کتاب" data-en="Opening">شروع کتاب</p><p class="unit" data-fa="فهرست" data-en="Contents">فهرست</p><a class="" href="toc.html" data-fa="فهرست" data-en="Contents">فهرست</a><p class="mod" data-fa="پودمان ۱: برنامه‌نویسی پایتون" data-en="Module 1: Python programming">پودمان ۱: برنامه‌نویسی پایتون</p><p class="unit" data-fa="معرفی پودمان" data-en="Module introduction">معرفی پودمان</p><a class="" href="p1-intro.html" data-fa="معرفی پودمان پایتون" data-en="Introducing the Python module">معرفی پودمان پایتون</a><p class="unit" data-fa="مدل‌سازی داده" data-en="Data modeling">مدل‌سازی داده</p><a class="" href="p1-python.html" data-fa="پایتون و محیط برنامه‌نویسی" data-en="Python and the programming environment">پایتون و محیط برنامه‌نویسی</a><a class="" href="p1-vars.html" data-fa="متغیرها، نوع داده و عملگرها" data-en="Variables, types, and operators">متغیرها، نوع داده و عملگرها</a><a class="" href="p1-cast.html" data-fa="ورودی و تبدیل نوع" data-en="Input and type casting">ورودی و تبدیل نوع</a><a class="" href="p1-lists.html" data-fa="لیست‌ها" data-en="Lists">لیست‌ها</a><a class="" href="p1-if.html" data-fa="شرط‌های ساده" data-en="Simple conditions">شرط‌های ساده</a><a class="" href="p1-elif.html" data-fa="if، elif و else" data-en="if, elif, and else">if، elif و else</a><a class="" href="p1-for.html" data-fa="حلقه for و range" data-en="The for loop and range">حلقه for و range</a><a class="" href="p1-while.html" data-fa="حلقه while و کنترل حلقه" data-en="The while loop and loop control">حلقه while و کنترل حلقه</a><a class="" href="p1-assess-data.html" data-fa="ارزشیابی مدل‌سازی داده" data-en="Data-modeling assessment">ارزشیابی مدل‌سازی داده</a><p class="unit" data-fa="توابع و ماژول‌ها" data-en="Functions and modules">توابع و ماژول‌ها</p><a class="" href="p1-sets.html" data-fa="مجموعه (set)" data-en="Sets">مجموعه (set)</a><a class="" href="p1-dict.html" data-fa="دیکشنری" data-en="Dictionaries">دیکشنری</a><a class="" href="p1-quiz.html" data-fa="پروژه بازی Quiz" data-en="Quiz game project">پروژه بازی Quiz</a><a class="" href="p1-tuple.html" data-fa="تاپل" data-en="Tuples">تاپل</a><a class="" href="p1-func.html" data-fa="تعریف تابع، پارامتر و return" data-en="Defining functions, parameters, and return">تعریف تابع، پارامتر و return</a><a class="" href="p1-func-more.html" data-fa="تمرین تابع و مرتب‌سازی" data-en="Function practice and sorting">تمرین تابع و مرتب‌سازی</a><a class="" href="p1-modules.html" data-fa="ماژول‌ها و تفاوت تابع و متد" data-en="Modules, and functions versus methods">ماژول‌ها و تفاوت تابع و متد</a><a class="" href="p1-assess-func.html" data-fa="ارزشیابی توابع و ماژول‌ها" data-en="Functions and modules assessment">ارزشیابی توابع و ماژول‌ها</a><p class="mod" data-fa="پودمان ۲: صفحات وب ایستا" data-en="Module 2: Static web pages">پودمان ۲: صفحات وب ایستا</p><p class="unit" data-fa="معرفی پودمان" data-en="Module introduction">معرفی پودمان</p><a class="" href="p2-intro.html" data-fa="معرفی پودمان صفحات ایستا" data-en="Introducing static web pages">معرفی پودمان صفحات ایستا</a><p class="unit" data-fa="ساختار با HTML" data-en="Structure with HTML">ساختار با HTML</p><a class="" href="p2-web.html" data-fa="وب چگونه کار می‌کند" data-en="How the web works">وب چگونه کار می‌کند</a><a class="current" href="p2-concepts.html" data-fa="مفاهیم طراحی وب و نقشه سایت" data-en="Web-design concepts and the site map">مفاهیم طراحی وب و نقشه سایت</a><a class="" href="p2-tags.html" data-fa="اولین صفحه HTML" data-en="A first HTML page">اولین صفحه HTML</a><a class="" href="p2-text.html" data-fa="متن، لیست و پیوند" data-en="Text, lists, and links">متن، لیست و پیوند</a><a class="" href="p2-img.html" data-fa="تصویر در صفحه" data-en="Images on the page">تصویر در صفحه</a><a class="" href="p2-forms.html" data-fa="فرم‌ها" data-en="Forms">فرم‌ها</a><a class="" href="p2-semantic.html" data-fa="عناصر معنایی" data-en="Semantic elements">عناصر معنایی</a><a class="" href="p2-assess-html.html" data-fa="ارزشیابی HTML" data-en="HTML assessment">ارزشیابی HTML</a><p class="unit" data-fa="ظاهر با CSS" data-en="Appearance with CSS">ظاهر با CSS</p><a class="" href="p2-css-start.html" data-fa="نوشتن CSS" data-en="Writing CSS">نوشتن CSS</a><a class="" href="p2-css-look.html" data-fa="رنگ، پس‌زمینه و انتخاب‌گر" data-en="Color, background, and selectors">رنگ، پس‌زمینه و انتخاب‌گر</a><a class="" href="p2-box.html" data-fa="مدل جعبه‌ای و display" data-en="The box model and display">مدل جعبه‌ای و display</a><a class="" href="p2-flex.html" data-fa="چیدمان با Flexbox" data-en="Layout with Flexbox">چیدمان با Flexbox</a><a class="" href="p2-flex-work.html" data-fa="کارگاه چیدمان صفحه" data-en="Page-layout workshop">کارگاه چیدمان صفحه</a><a class="" href="p2-media.html" data-fa="مدیا کوئری و ارزشیابی CSS" data-en="Media queries and the CSS assessment">مدیا کوئری و ارزشیابی CSS</a><p class="mod" data-fa="پودمان ۳: صفحات وب تعاملی" data-en="Module 3: Interactive web pages">پودمان ۳: صفحات وب تعاملی</p><p class="unit" data-fa="معرفی پودمان" data-en="Module introduction">معرفی پودمان</p><a class="" href="p3-intro.html" data-fa="معرفی پودمان تعاملی" data-en="Introducing the interactive module">معرفی پودمان تعاملی</a><p class="unit" data-fa="بوت‌استرپ" data-en="Bootstrap">بوت‌استرپ</p><a class="" href="p3-bs-start.html" data-fa="فریم‌ورک و شروع بوت‌استرپ" data-en="Frameworks and starting Bootstrap">فریم‌ورک و شروع بوت‌استرپ</a><a class="" href="p3-bs-util.html" data-fa="فاصله، گردی و لیست" data-en="Spacing, rounding, and lists">فاصله، گردی و لیست</a><a class="" href="p3-bs-header.html" data-fa="سرصفحه فروشگاه" data-en="The shop header">سرصفحه فروشگاه</a><a class="" href="p3-bs-grid.html" data-fa="شبکه Grid" data-en="The grid">شبکه Grid</a><a class="" href="p3-bs-rwd.html" data-fa="کلاس‌های واکنش‌گرا" data-en="Responsive classes">کلاس‌های واکنش‌گرا</a><a class="" href="p3-bs-nav.html" data-fa="نوار ناوبری و جزئیات محصول" data-en="Navbar and product details">نوار ناوبری و جزئیات محصول</a><a class="" href="p3-bs-form.html" data-fa="فرم و پنجره Modal" data-en="Forms and modals">فرم و پنجره Modal</a><a class="" href="p3-bs-show.html" data-fa="کاروسل و آکاردئون" data-en="Carousel and accordion">کاروسل و آکاردئون</a><a class="" href="p3-bs-assess.html" data-fa="ارزشیابی بوت‌استرپ" data-en="Bootstrap assessment">ارزشیابی بوت‌استرپ</a><p class="unit" data-fa="جاوااسکریپت" data-en="JavaScript">جاوااسکریپت</p><a class="" href="p3-js-start.html" data-fa="جاوااسکریپت در صفحه وب" data-en="JavaScript on the page">جاوااسکریپت در صفحه وب</a><a class="" href="p3-js-vars.html" data-fa="متغیر و نوع داده" data-en="Variables and data types">متغیر و نوع داده</a><a class="" href="p3-js-ops.html" data-fa="عملگرها" data-en="Operators">عملگرها</a><a class="" href="p3-js-data.html" data-fa="آرایه و شیء" data-en="Arrays and objects">آرایه و شیء</a><a class="" href="p3-js-if.html" data-fa="شرط در جاوااسکریپت" data-en="Conditions in JavaScript">شرط در جاوااسکریپت</a><a class="" href="p3-js-loops.html" data-fa="حلقه‌ها" data-en="Loops">حلقه‌ها</a><a class="" href="p3-js-func.html" data-fa="تابع‌ها" data-en="Functions">تابع‌ها</a><a class="" href="p3-js-dom.html" data-fa="صفحه، رویداد و اعتبار فرم" data-en="The page, events, and form validation">صفحه، رویداد و اعتبار فرم</a><a class="" href="p3-js-assess.html" data-fa="ارزشیابی جاوااسکریپت" data-en="JavaScript assessment">ارزشیابی جاوااسکریپت</a><p class="mod" data-fa="پودمان ۴: توسعه وب پایتون" data-en="Module 4: Python for the web">پودمان ۴: توسعه وب پایتون</p><p class="unit" data-fa="معرفی پودمان" data-en="Module introduction">معرفی پودمان</p><a class="" href="p4-intro.html" data-fa="معرفی پودمان شیءگرایی" data-en="Introducing the object-oriented module">معرفی پودمان شیءگرایی</a><p class="unit" data-fa="شیءگرایی" data-en="Object-oriented programming">شیءگرایی</p><a class="" href="p4-idea.html" data-fa="ایده شیء و کلاس" data-en="The idea of objects and classes">ایده شیء و کلاس</a><a class="" href="p4-class.html" data-fa="ساخت کلاس و متد" data-en="Writing a class and methods">ساخت کلاس و متد</a><a class="" href="p4-inherit.html" data-fa="وراثت" data-en="Inheritance">وراثت</a><a class="" href="p4-protect.html" data-fa="داده معتبر و استفاده داخلی" data-en="Valid data and internal use">داده معتبر و استفاده داخلی</a><a class="" href="p4-assess-oop.html" data-fa="ارزشیابی برنامه شیءگرا" data-en="Object-oriented assessment">ارزشیابی برنامه شیءگرا</a><p class="unit" data-fa="فایل و توسعه" data-en="Files and development">فایل و توسعه</p><a class="" href="p4-files.html" data-fa="خواندن و نوشتن فایل متنی" data-en="Reading and writing text files">خواندن و نوشتن فایل متنی</a><a class="" href="p4-errors.html" data-fa="پیمایش فایل و مدیریت خطا" data-en="Walking a file and handling errors">پیمایش فایل و مدیریت خطا</a><a class="" href="p4-json.html" data-fa="چند فایل و JSON" data-en="Several files and JSON">چند فایل و JSON</a><a class="" href="p4-assess-files.html" data-fa="ارزشیابی کار با فایل" data-en="Files assessment">ارزشیابی کار با فایل</a><p class="mod" data-fa="پودمان ۵: برنامه‌نویسی جنگو" data-en="Module 5: Django">پودمان ۵: برنامه‌نویسی جنگو</p><p class="unit" data-fa="معرفی پودمان" data-en="Module introduction">معرفی پودمان</p><a class="" href="p5-intro.html" data-fa="معرفی پودمان جنگو" data-en="Introducing the Django module">معرفی پودمان جنگو</a><p class="unit" data-fa="ایجاد وب‌اپلیکیشن" data-en="Creating the web app">ایجاد وب‌اپلیکیشن</p><a class="" href="p5-what.html" data-fa="جنگو چیست و نصب" data-en="What Django is, and installing it">جنگو چیست و نصب</a><a class="" href="p5-project.html" data-fa="پروژه، اپ و اولین view" data-en="Project, app, and the first view">پروژه، اپ و اولین view</a><a class="" href="p5-template.html" data-fa="قالب و دمای واقعی" data-en="Templates and a real temperature">قالب و دمای واقعی</a><a class="" href="p5-assess-create.html" data-fa="ارزشیابی ایجاد وب‌اپلیکیشن" data-en="Creating-the-app assessment">ارزشیابی ایجاد وب‌اپلیکیشن</a><p class="unit" data-fa="توسعه وب‌اپلیکیشن" data-en="Developing the web app">توسعه وب‌اپلیکیشن</p><a class="" href="p5-model.html" data-fa="مدل شهر و پنل ادمین" data-en="The city model and the admin">مدل شهر و پنل ادمین</a><a class="" href="p5-list.html" data-fa="خواندن شهرها و نمایش فهرست" data-en="Reading cities and showing the list">خواندن شهرها و نمایش فهرست</a><a class="" href="p5-auth.html" data-fa="ورود و خروج" data-en="Sign-in and sign-out">ورود و خروج</a><a class="" href="p5-crud.html" data-fa="افزودن و حذف شهر" data-en="Adding and deleting a city">افزودن و حذف شهر</a><a class="" href="p5-bugs.html" data-fa="باگ و امنیت" data-en="Bugs and security">باگ و امنیت</a><p class="mod" data-fa="پایان کتاب" data-en="Back of the book">پایان کتاب</p><p class="unit" data-fa="منابع" data-en="References">منابع</p><a class="" href="refs.html" data-fa="منابع کتاب" data-en="Book references">منابع کتاب</a></nav></details>
+    <div class="main">
+      <h1 class="section-title" data-fa="مفاهیم طراحی وب و نقشه سایت" data-en="Web-design concepts and the site map">مفاهیم طراحی وب و نقشه سایت</h1><article class="lesson" lang="fa" dir="rtl" data-lang-block="fa"><p class="page-mark">صفحه ۸۶</p>
+<h3 id="_1">برخی از مفاهیم اصلی طراحی وب</h3>
+<p>وب دارای مفاهیم کلیدی مختلفی است که آگاهی نسبت به آنها برای هر توسعه‌دهندۀ وب (<code>Web</code> <code>developer</code>) ضروری است. در ادامه، به شرح این مفاهیم پرداخته می‌شود:</p>
+<p>طراح وب (<code>Web</code> <code>designer</code>): فرد یا تیمی که مسئول طراحی ظاهر نمایشی و‌ب‌سایت است. این حرفه ترکیبی از طراحی گرافیکی، طراحی تجربه کاربری (<code>UX</code>) و طراحی رابط کاربری (<code>UI</code>)، ایجاد <code>wire</code> <code>frame</code> و نمونه اولیه است.</p>
+<p>تجربه کاربری (<code>UX</code>): تجربه‌ای که کاربر بعد از بازدید از وب‌سایت برای دسترسی به اطلاعات، محصولات و خدمات کسب می‌کند.</p>
+<p>رابط کاربری (<code>UI</code>): عناصر تعاملی صفحه مانند دکمه‌ها، فرم‌ها و منوها که کاربران ب‌هوسیله آنها با وب‌سایت تعامل دارند.</p>
+<p><code>Front-end:</code> بخشی از وب‌سایت که ارتباط مستقیمی با کاربر دارد. مباحث بخش فرانت‌اند شامل ظاهر صفحه وب، رابط کاربری (<code>UI</code>) و تجربه کاربری (<code>UX</code>) می‌شود.</p>
+<p><code>Back-end:</code> بخش پش‌تصحنۀ وب‌سایت یا اپلیکیشن که شامل منطق اصلی برنامه، پردازش داده‌ها و ارتباط با پایگاه داده است و کاربر تعامل مستقیمی با آن ندارد.</p>
+<p>توسعه‌دهندۀ وب (<code>Web</code> <code>developer</code>): فرد یا تیمی که طرح اولیۀ وب‌سایت را با استفاده از زبان‌های برنام‌هنویسی، به صفحات وب قابل استفاده تبدیل می‌کند. توسعه‌دهندۀ وب می‌تواند نقش طراح وب را نیز داشته باشد. وظایف اصلی توسعه دهندۀ وب شامل موارد زیرمی‌باشد:</p>
+<p>1 توسعه‌دهندۀ سمت کاربر (<code>Front-end-developer</code>): روی ظاهر سایت و عناصری تمرکز دارد که کاربر مستقیمًا با آنها سروکار دارد.</p>
+<p>2 توسعه‌دهندۀ سمت سرور (<code>Back-end-developer</code>): روی مباحث سمت سرور مانند مدیریت پایگاه داده و پردازش داده‌های کاربران تمرکز دارد.</p>
+<p>دامنه (<code>Domain</code>): نامی منحصر‌به‌فرد که برای دسترسی به یک وب‌سایت استفاده می‌شود، مانند <code>.google.com</code> کاربران با استفاده از نام دامنه وارد یک سایت می‌شوند. نام دامنه، جایگزینی قابل فهم برای آدرس‌های عددی <code>IP</code> است که به‌خاطر سپردن آدرس سایت را برای کاربران سهولت می‌بخشد.</p>
+<p><code>URL:</code> آدرس منحصربه‌فردی که برای پیدا کردن و شناسایی یک منبع خاص (مثل صفحه وب، عکس، ویدئو یا فایل) در اینترنت استفاده می‌شود. <code>URL</code> مخفف <code>Uniform</code> <code>Resource</code> <code>Locator</code> است (شکل2).</p>
+<hr />
+<p class="page-mark">صفحه ۸۷</p>
+<p><code>Host:</code> فضایی برای ذخیره‌سازی اسناد وب‌سایت است، به‌طوری‌که امکان دسترسی به منابع سایت از طریق اینترنت فراهم گردد. تمام فایل‌های یک سایت (شامل فایل های <code>HTML</code>، <code>CSS</code>، اسکریپ‌تها، تصاویر و ...) باید روی یک رایانه و‌بسرور ذخیره گردند تا کاربران بتوانند با وارد کردن آدرس سایت به محتوای آن دسترسی پیدا کنند.</p>
+<figure class="shot"><img alt="شکل 2" src="../images/p093-01.png" /><figcaption>شکل 2</figcaption></figure>
+<p><code>Localhost</code> (هاست محلی): یک سیستم رایانه‌ای مجهز به نر‌مافزار و‌بسرور است که برای اجرای کدهای سمت سرور (<code>Back-End</code>)، ایجاد و مدیریت پایگاه داده‌ها استفاده می‌شود. هاست محلی صرفًا برای تمرین، آزمایش و رفع اشکال صفحات وب‌سایت کاربرد دارد. نرم‌افزارهای وب‌سرور مختلفی وجود دارند که می‌توانند یک سیستم خانگی را به و‌بسرور تبدیل کنند، اما نکته مهم این است که تمام و‌بسرورهایی که در سطح اینترنت پاسخگوی کاربران هستند، دارای <code>IP</code> اینترنتی هستند؛ بنابراین سیستم‌های خانگی و کلاس درس که فاقد <code>IP</code> اینترنت هستند، امکان پاسخ‌دهی به کاربران راه دور را ندارند.</p>
+<h3 id="_2">نکته</h3>
+<p>پس از طراحی و آزمایش صفحات سایت روی لوکال هاست، می‌توانید محتوای سایت خود را به یک وب هاست یا وب سرور انتقال دهید. دسترسی به یک وب سرور نیازمند پرداخت هزینه است، اما برخی شرکت‌ها امکان استفاده از هاست‌های رایگان را با امکانات و منابع محدود فراهم می‌کنند که برای یک پروژه واقعی مناسب نیستند. مناسب‌ترین‌هاست برای سایت‌هایی که منابع سخت افزاری قدرتمندی نیاز ندارند هاست‌های اشتراکی هستند.</p>
+<p>هاست اشتراکی:</p>
+<p>شرکت‌های هاستینگ طرح‌های مختلفی را برای ارائه خدمات خود دارند که هر طرح (<code>Plan</code>) دارای امکانات سخت‌افزاری و پهنای باند متفاوتی است. از جمله این طرح‌ها می‌توان به هاست اشتراکی، سرور مجازی، سرور اختصاصی و سرور ابری اشاره نمود. در طرح هاست اشتراکی امکانات سخت‌افزاری هاست مانند فضای دیسک، پهنای باند، <code>CPU</code> و حافظه <code>RAM</code> بین چندین وب سایت تقسیم می‌شود. به این ترتیب تمام توان سخت‌افزاری و‌بسرور صرف پاسخ‌دهی به درخواست‌های کاربران یک سایت نمی‌شود. به همین دلیل چنین هاس‌تهایی برای سایت‌های کوچک با ترافیک محدود مناسب هستند.</p>
+<hr />
+<p class="page-mark">صفحه ۸۸</p>
+<p>طراحی واکنش‌گرا (<code>Responsive</code> <code>Design</code>): یک روش طراحی صفحه که امکان تطبیق‌پذیری خودکار صفحه را بر اساس اندازه صفحه نمایش (دستگاه‌های مختلف مانند موبایل، تبلت و دسکتاپ) فراهم می‌کند.</p>
+<p>سئو (<code>SEO</code>): مجموعه‌ای از تکنیک‌ها برای بهبود رتبه وب‌سایت در نتایج موتورهای جس‌توجو است. سئو شامل بهینه‌سازی محتوا، ساختار <code>URL</code> و استفاده از متاتگ‌ها و ... است.</p>
+<p>دسترس‌پذیری (<code>Accessibility</code>): طراحی وب‌سایت به گونه‌ای که برای همه کاربران (از جمله افراد دارای ناتوانی‌های جسمی یا بینایی) قابل دسترسی باشد.</p>
+<p>پایگاه‌داده: بسیاری از وب‌سایت‌ها برای ذخیره و مدیریت اطلاعات از پایگاه‌داده‌ها (<code>Database</code>) استفاده می‌کنند. پایگاه‌داده‌ها می‌تواند شامل اطلاعات کاربران، محصولات، مقالات و محتواهای دیگر باشند.</p>
+<p>کنترل نسخه: سیستم‌های کنترل نسخه امکان مدیریت تغییرات کد را فراهم می‌کنند، به‌گونه‌ای که بازگشت به نسخه‌های قبلی به‌راحتی امکان‌پذیر باشد.</p>
+<h3 id="_3">کنجکاوی</h3>
+<p>1 در مورد پروتکل <code>SSL</code> تحقیق کنید و نتیجه آن را در کلاس ارائه دهید.</p>
+<p>2 درباره انواع وب‌سایت و کاربرد آنها تحقیق کنید و نتیجه آن را در کلاس ارائه دهید.</p>
+<p>فرایند طراحی سایت طراحی و پیاده‌سازی یک وب‌سایت، فرایندی مرحله‌به‌مرحله است که هر مرحله نقش مهمی در موفقیت نهایی پروژه دارد. اگر این مراحل به‌درستی و با ترتیب مناسب انجام شوند، نتیجۀ کار سایتی کاربردی، زیبا و قابل گسترش خواهد بود.</p>
+<p>مراحل کلی طراحی سایت فرایند طراحی سایت به‌صورت خلاصه شامل مراحل زیر است:</p>
+<p>تعریف هدف و نیازمندی‌ها طراحی نقشه سایت (<code>site</code> <code>map</code>) ایجاد وایر فریم (<code>wire</code> <code>frame</code>) ایجاد ساختار صفحات با <code>HTML</code> طراحی ظاهر صفحات با <code>CSS</code> افزودن تعاملات کاربر با <code>JavaScript</code> طراحی پایگاه داده (مانند جدول کاربران، محصولات و سفارش‌ها) ایجاد ارتباط بین صفحات و پایگاه داده افزودن قابلیت ورود و ثبت‌نام کاربران پیاده‌سازی سبد خرید و پرداخت تست عملکرد سایت رفع خطاها و بهینه‌سازی انتشار سایت روی سرور</p>
+<hr />
+<p class="page-mark">صفحه ۸۹</p>
+<p>تعریف هدف و نیازمندی‌ها: پیش از شروع طراحی یا نوشتن کد صفحات سایت، باید مشخص شود که و‌بسایت به چه منظور و برای چه گروهی از کاربران طراحی می‌شود. شروع طراحی بدون شناخت نیازها و تعیین مأموریت وب‌سایت، معموًلا باعث بروز مشکلات اساسی در حین پیاده‌سازی پروژه و نیاز به طراحی مجدد می‌شود. به همین دلیل، اولین و مهم‌ترین گام در طراحی هر وب‌سایت، تعریف هدف و نیازمندی‌های آن است.</p>
+<p>تعیین هدف پروژه: در این مرحله باید به پرسش‌های زیر پاسخ داده شود:</p>
+<p>هدف از ایجاد سایت چیست؟</p>
+<p>چه نوع کالا یا خدماتی در سایت ارائه می‌شود؟</p>
+<p>کاربران اصلی سایت چه کسانی هستند؟</p>
+<p>چه امکاناتی باید در سایت وجود داشته باشد؟</p>
+<h3 id="_4">مثال</h3>
+<p>یک تیم طراح و توسع‌هدهندۀ وب قصد دارد وب سایتی را برای فروش کتاب‌های درسی ایجاد نماید.</p>
+<p>اغلب کاربران این سایت هنرآموزان و هنرجویان هستند. امکانات مورد نیاز شامل ثبت نام کاربران، نمایش کالاها، سبد خرید و پرداخت آنلاین است.</p>
+<p>تحلیل نیازمندی‌ها: در این مرحله، نیازهای سایت از دو جنبه بررسی می‌شود:</p>
+<p>الف) نیازمندی‌های کاربر (<code>User</code> <code>Requirements</code>): این نیازمندی‌ها شامل ویژگی‌ها و امکاناتی است که کاربران در هنگام استفاده از سایت به آنها نیاز دارند (جدول1).</p>
+<p><strong>جدول 1</strong></p>
+<p>توضیح</p>
+<p>نیاز کاربر</p>
+<p>کاربر بتواند حساب کاربری ایجاد کرده و وارد سایت شود.</p>
+<p>ثبت‌نام و ورود جس‌توجوی</p>
+<p>امکان جست‌وجو براساس نام یا دسته‌بندی کالا وجود داشته باشد.</p>
+<p>محصول</p>
+<p>کاربر بتواند محصولات را به سبد خرید اضافه کند.</p>
+<p>سبد خرید</p>
+<p>فرایند خرید از طریق درگاه پرداخت انجام شود.</p>
+<p>پرداخت اینترنتی</p>
+<p>کاربر بتواند سفارش‌های قبلی خود را مشاهده کند.</p>
+<p>مشاهده سفارش‌ها</p>
+<hr />
+<p class="page-mark">صفحه ۹۰</p>
+<p>ب) نیازمندی‌های فنی (<code>Technical</code> <code>Requirements</code>): این نیازمندی‌ها شامل زبان‌های نشانه‌گذاری و برنامه‌نویسی، سیستم مدیریت پایگاه‌ها و توجه به امنیت و گسترش‌پذیری وب‌سایت است (جدول 2).</p>
+<p><strong>جدول 2</strong></p>
+<p>توضیح</p>
+<p>مورد <code>Python</code> (<code>Django</code>)زبان برنامه‌نویسی <code>SQLite</code> یا <code>MySQL</code>پایگاه داده <code>HTML</code>، <code>CSS</code>، <code>Bootstrap</code>طراحی ظاهر رمزنگاری رمز عبور کاربران امنیت</p>
+<p>امکان افزودن محصولات و امکانات جدید در آینده</p>
+<p>قابلیت گسترش</p>
+<p>طراحی نقشۀ سایت (<code>Site</code> <code>Map</code>): پس از مشخص شدن هدف و نیازهای وب‌سایت، طراحی نقشۀ سایت امری ضروری است. نقشۀ سایت ساختار صفحات، ارتباطات میان آنها و مسیر حرکت کاربر را درون سایت مشخص می‌کند. طراحی صحیح نقشۀ سایت موجب درک بهتر ساختار سایت و ساده شدن فرایند طراحی و پیاده‌سازی آن می‌گردد.</p>
+<p>مراحل طراحی نقشۀ سایت</p>
+<h3 id="_5">کار کارگاهی</h3>
+<p>مرحلۀ ۱: مشاهده و بررسی سایت‌های فروشگاهی با راهنمایی هنرآموز خود، دو یا سه سایت فروشگاهی ساده را بررسی کنید.</p>
+<p>به‌عنوان نمونه: فروشگاه موبایل، فروشگاه لباس، فروشگاه لوازم دیجیتال مواردی که باید بررسی شود: چه صفحاتی در منوی سایت وجود دارد؟ کاربر از صفحۀ اصلی به کدام صفحات هدایت می‌شود؟ فرایند ورود کاربر، انتخاب کالا و استفاده از سبد خرید چگونه انجام می‌شود؟</p>
+<p>ظاهر سایت ساده است یا شلوغ؟</p>
+<p>مرحلۀ ۲: شناسایی صفحات اصلی سایت در این مرحله، لازم است صفحات مشترک میان سایت‌ها بررسی‌شده را شناسایی و یادداشت نمایید.</p>
+<p>نمونه‌ای از صفحات رایج در یک فروشگاه اینترنتی عبارت‌اند از:</p>
+<p><code>Home</code></p>
+<div class="code-wrap" dir="ltr"><pre><code>Products
+Product Details
+</code></pre></div>
+<p><code>Cart</code></p>
+<div class="code-wrap" dir="ltr"><pre><code>Login / Register
+User Profile
+About / Contact
+</code></pre></div>
+<hr />
+<p class="page-mark">صفحه ۹۱</p>
+<p>مرحله ۳: ترسیم نقشۀ سایت (<code>Site</code> <code>Map</code>) درا ین مرحله نقشه سایت را به‌صورت نوشتاری یا گرافیکی</p>
+<p><code>Home</code></p>
+<p>طراحی کنید. یک روش ساده برای ترسیم نقشه این است که صفحۀ اصلی در بالای نقشه و سایر صفحات</p>
+<div class="code-wrap" dir="ltr"><pre><code>Products details
+Products
+</code></pre></div>
+<p>به‌صورت زیر شاخه در زیر صفحۀ اصلی قرار گیرند.</p>
+<p><code>Cart</code></p>
+<div class="code-wrap" dir="ltr"><pre><code>User proflie
+Login/Register
+</code></pre></div>
+<p>شکل روبه‌رو یک نقشۀ نوشتاری محسوب می‌شود:</p>
+<p>علاوه بر روش نوشتاری، نقشه سایت می‌تواند به‌صورت</p>
+<div class="code-wrap" dir="ltr"><pre><code>Contact us
+</code></pre></div>
+<p>ترسیمی با استفاده از کادرها و فلش‌ها نمایش داده شود.</p>
+<p>مرحله ۴: بیان مسیر حرکت کاربر در این مرحله، مسیر حرکت کاربر در سایت توضیح داده می‌شود. برای توصیف مسیر به موارد زیر توجه کنید:</p>
+<p>کاربر از چه صفحه‌ای وارد سایت می‌شود؟ چگونه محصول موردنظر را انتخاب می‌کند؟ از چه مسیری به سبد خرید می‌رسد؟</p>
+<p>در چه مرحله‌ای وارد حساب کاربری می‌شود؟</p>
+<p>مثال زیر یک نمونه از توصیف مسیر حرکت کاربر است:</p>
+<p>کاربر ابتدا وارد صفحۀ اصلی سایت می‌شود، سپس به صفحۀ محصولات مراجعه کرده و یک محصول را انتخاب می‌کند. پس از مشاهدۀ جزئیات محصول، آن را به سبد خرید اضافه کرده و در نهایت برای ثبت سفارش وارد حساب کاربری می‌شود.</p>
+<p>طراحی ظاهر صفحات</p>
+<p><strong>جدول3</strong></p>
+<p>پس از مشخص شدن هدف و نیازمندی‌ها، نوبت آن</p>
+<p>ابزارهای طراحی ظاهر سایت (فرانت‌اند)</p>
+<p>است که ظاهر صفحات وب سایت طراحی شود.</p>
+<p>هرچقدر ظاهر سایت زیباتر و منظم‌تر باشد، کاربران</p>
+<h3 id="_6">کاربرد</h3>
+<p>زبان</p>
+<p>بیشتری جذب سایت خواهند شد. در یک سایت</p>
+<p>ساختار و عناصر صفحه (مثل متن،</p>
+<p>فروشگاهی، زیبایی سایت می‌تواند منجر به جذب</p>
+<p><code>HTML</code></p>
+<p>تصویر، جدول، دکمه)</p>
+<p>مشتری و فروش بیشتر شود.</p>
+<p>زیباسازی وکنترل ظاهر عناصر شامل</p>
+<p>برای ایجاد عناصر درون صفحات وب از فرازبان</p>
+<p><code>CSS</code></p>
+<p>تنظیم رنگ‌ها، فونت‌ها ، اندازه‌ها،</p>
+<p><code>HTML</code> و برای سب‌کدهی به عناصر صفحه از زبان</p>
+<p>چیدمان و ...</p>
+<p>توصیفی <code>CSS</code> استفاده می‌شود (جدول3).</p>
+<hr />
+<p class="page-mark">صفحه ۹۲</p>
+<p>طراحی سایت به‌صورت تیمی: فرایند طراحی سایت شامل مراحل متعددی است که هر کدام نیازمند مهارت‌های تخصصی هستند. به همین دلیل، طراحی سایت معمولاً به‌صورت تیمی انجام می‌شود و هر عضو مسئولیت مشخصی دارد.</p>
+<p>نقش‌های اصلی در تیم طراحی سایت</p>
+<p>1 طراح تجربه کاربری (<code>UX</code> <code>Designer</code>): تحلیل نیاز کاربران و بهینه‌سازی تجربه استفاده از سایت</p>
+<p>2 طراح رابط کاربری (<code>UI</code> <code>Designer</code>): طراحی عناصر بصری مانند رنگ‌ها، فونت‌ها، دکمه‌ها و فرم‌ها</p>
+<p>3 توسعه‌دهندۀ فرانت‌اند (<code>Front-End</code> <code>Developer</code>): پیاده‌سازی بخش ظاهری و تعاملی سایت</p>
+<p>4 توسعه‌دهندۀ بک‌اند (<code>Back-End</code> <code>Developer</code>): برنامه‌نویسی سمت سرور، مدیریت پایگاه داده و امنیت</p>
+<p>5 متخصص محتوا (<code>Content</code> <code>Specialist</code>): تحقیق کلمات کلیدی و تولید محتوای متنی جذاب</p>
+<p>6 متخصص سئو (<code>SEO</code> <code>Specialist</code>): بهینه‌سازی سایت برای موتورهای جس‌توجو</p>
+<p>بسته به حجم کار پروژه، بودجه و تعداد نفرات تیم طراح و توسعه‌دهنده وب‌سایت، هر نقش می‌تواند به یک یا چند نفر اختصاص داده شود. در پروژه‌های کوچک ممکن است یک فرد چندین نقش را بر عهده داشته باشد. در جدول 4 ابزارهای متداول مورد استفاده توسط هر یک از نقش‌های تیم طراحی سایت معرفی شده است. این ابزارها به بهبود کیفیت پروژه و تسهیل همکاری بین اعضای تیم کمک می‌کنند.</p>
+<p>جدول 4 ابزارهای متداول در طراحی سایت</p>
+<p>نقش</p>
+<p>ابزارها</p>
+<div class="code-wrap" dir="ltr"><pre><code>Photoshop ،InVision ،Sketch ،Adobe XD ،Figma
+</code></pre></div>
+<p>طراح <code>UX</code> و <code>UI</code> توسعه‌دهندۀ فرانت‌اند<code>Bootstrap</code> ،<code>JavaScript</code> ،<code>CSS</code> ،<code>HTML</code></p>
+<div class="code-wrap" dir="ltr"><pre><code>توسعه‌دهندۀ بک‌اندDjango) ،Python ،Flask( ،JavaScript (Node.js)
+ویرایشگر کدAtom ،Sublime Text ،Visual Studio Code
+مرورگر و ابزار توسعهMicrosoft Edge ،Mozilla Firefox ،Google Chrome
+</code></pre></div>
+<p>پلتفرم‌های مدیریت محتوا و تولید محتوای</p>
+<div class="code-wrap" dir="ltr"><pre><code>Grammarly ،Google Docs ،WordPress
+</code></pre></div>
+<p>تحت وب</p>
+<div class="code-wrap" dir="ltr"><pre><code>Yoast SEO ،Moz ،SEMrush ،Google Analytics
+</code></pre></div>
+<p>متخصص سئو</p>
+<p>سایر ابزار مورد استفاده تیم طراحی<code>Cyberduck</code> ،<code>FileZilla</code></p>
+<div class="code-wrap" dir="ltr"><pre><code>GitHub ،Git
+</code></pre></div>
+<p>کنترل نسخه</p>
+<hr /></article><article class="lesson" lang="en" dir="ltr" data-lang-block="en" hidden><p class="page-mark">Page 86</p>
+<h3 id="some-main-concepts-of-web-design">Some main concepts of web design</h3>
+<p>The web has various key concepts that awareness of them is essential for every web developer (<code>Web</code> <code>developer</code>). In the following, these concepts are explained:</p>
+<p>Web designer (<code>Web</code> <code>designer</code>): The person or team responsible for designing the visual appearance of the website. This profession is a combination of graphic design, user experience (<code>UX</code>) design and user interface (<code>UI</code>) design, creating a <code>wire</code> <code>frame</code> and a prototype.</p>
+<p>User experience (<code>UX</code>): The experience the user gains after visiting the website to access information, products, and services.</p>
+<p>User interface (<code>UI</code>): Interactive elements of the page such as buttons, forms, and menus that users interact with the website by means of.</p>
+<p><code>Front-end:</code> The part of the website that has a direct connection with the user. Topics in the front-end section include the appearance of the web page, the user interface (<code>UI</code>), and the user experience (<code>UX</code>).</p>
+<p><code>Back-end:</code> The behind-the-scenes part of the website or application that includes the main program logic, data processing, and connection to the database, and with which the user has no direct interaction.</p>
+<p>Web developer (<code>Web</code> <code>developer</code>): The person or team that turns the initial design of the website into usable web pages using programming languages. The web developer can also have the role of web designer. The main duties of a web developer include the following:</p>
+<p>1 Client-side developer (<code>Front-end-developer</code>): Focuses on the appearance of the site and the elements that the user deals with directly.</p>
+<p>2 Server-side developer (<code>Back-end-developer</code>): Focuses on server-side topics such as database management and processing users’ data.</p>
+<p>Domain (<code>Domain</code>): A unique name used to access a website, such as <code>.google.com</code> Users enter a site using the domain name. The domain name is an understandable substitute for numeric <code>IP</code> addresses that makes remembering the site address easier for users.</p>
+<p><code>URL:</code> A unique address used to find and identify a particular resource (such as a web page, photo, video, or file) on the Internet. <code>URL</code> stands for <code>Uniform</code> <code>Resource</code> <code>Locator</code> (Figure 2).</p>
+<hr />
+<p class="page-mark">Page 87</p>
+<p><code>Host:</code> Space for storing the documents of a website so that access to the site’s resources through the Internet is provided. All files of a site (including <code>HTML</code>, <code>CSS</code> files, scripts, images, and so on) must be stored on a web-server computer so that users can access its content by entering the site address.</p>
+<figure class="shot"><img alt="Figure 2" src="../images/p093-01.png" /><figcaption>Figure 2</figcaption></figure>
+<p><code>Localhost</code> (local host): A computer system equipped with web-server software that is used to run server-side (<code>Back-End</code>) code and to create and manage databases. A local host is used only for practice, testing, and debugging website pages. There are various web-server software programs that can turn a home system into a web server, but the important point is that all web servers that respond to users across the Internet have an Internet <code>IP</code>; therefore home systems and classroom systems that lack an Internet <code>IP</code> cannot respond to remote users.</p>
+<h3 id="note">Note</h3>
+<p>After designing and testing the site pages on localhost, you can transfer your site’s content to a web host or web server. Access to a web server requires payment, but some companies provide the possibility of using free hosts with limited features and resources that are not suitable for a real project. The most suitable hosts for sites that do not need powerful hardware resources are shared hosts.</p>
+<p>Shared host:</p>
+<p>Hosting companies have various plans for offering their services, and each plan (<code>Plan</code>) has different hardware features and bandwidth. Among these plans one can mention shared host, virtual server, dedicated server, and cloud server. In a shared-host plan, the host’s hardware features such as disk space, bandwidth, <code>CPU</code>, and <code>RAM</code> memory are divided among several websites. In this way, the entire hardware power of the web server is not spent responding to the requests of the users of one site. For this reason such hosts are suitable for small sites with limited traffic.</p>
+<hr />
+<p class="page-mark">Page 88</p>
+<p>Responsive design (<code>Responsive</code> <code>Design</code>): A method of page design that provides automatic adaptability of the page based on the size of the display (different devices such as mobile, tablet, and desktop).</p>
+<p>SEO (<code>SEO</code>): A set of techniques for improving a website’s ranking in search engine results. SEO includes optimizing content, <code>URL</code> structure, and the use of meta tags, and so on.</p>
+<p>Accessibility (<code>Accessibility</code>): Designing a website so that it is accessible for all users (including people with physical or visual disabilities).</p>
+<p>Database: Many websites use databases (<code>Database</code>) to store and manage information. Databases can include information about users, products, articles, and other content.</p>
+<p>Version control: Version-control systems make it possible to manage code changes so that returning to previous versions is easily possible.</p>
+<h3 id="try-this">Try this</h3>
+<p>1 Research the <code>SSL</code> protocol and present the result in class.</p>
+<p>2 Research types of websites and their uses and present the result in class.</p>
+<p>The process of site design Designing and implementing a website is a step-by-step process in which each stage plays an important role in the final success of the project. If these stages are done correctly and in the proper order, the result of the work will be a practical, beautiful, and extensible site.</p>
+<p>Overall stages of site design The process of site design, in summary, includes the following stages:</p>
+<p>Defining the goal and requirements Designing the site map (<code>site</code> <code>map</code>) Creating a wireframe (<code>wire</code> <code>frame</code>) Creating the structure of pages with <code>HTML</code> Designing the appearance of pages with <code>CSS</code> Adding user interactions with <code>JavaScript</code> Designing the database (such as tables for users, products, and orders) Creating a connection between the pages and the database Adding user login and registration Implementing a shopping cart and payment Testing the site’s performance Fixing errors and optimizing Publishing the site on the server</p>
+<hr />
+<p class="page-mark">Page 89</p>
+<p>Defining the goal and requirements: Before starting to design or write the code of the site pages, it must be clear for what purpose and for what group of users the website is being designed. Starting design without recognizing the needs and determining the mission of the website usually causes fundamental problems during project implementation and the need to redesign. For this reason, the first and most important step in designing any website is defining its goal and requirements.</p>
+<p>Determining the project goal: In this stage the following questions must be answered:</p>
+<p>What is the goal of creating the site?</p>
+<p>What kind of goods or services are offered on the site?</p>
+<p>Who are the main users of the site?</p>
+<p>What features must exist on the site?</p>
+<h3 id="example">Example</h3>
+<p>A team of web designers and developers intends to create a website for selling textbooks.</p>
+<p>Most users of this site are instructors and students. Required features include user registration, displaying goods, a shopping cart, and online payment.</p>
+<p>Analyzing requirements: In this stage, the site’s needs are examined from two aspects:</p>
+<p>a) User requirements (<code>User</code> <code>Requirements</code>): These requirements include the features and capabilities that users need when using the site (Table 1).</p>
+<p><strong>Table 1</strong></p>
+<p>Explanation</p>
+<p>User need</p>
+<p>The user should be able to create a user account and log in to the site.</p>
+<p>Registration and login Search</p>
+<p>The ability to search based on the name or category of goods should exist.</p>
+<p>Product</p>
+<p>The user should be able to add products to the shopping cart.</p>
+<p>Shopping cart</p>
+<p>The purchase process should be carried out through a payment gateway.</p>
+<p>Internet payment</p>
+<p>The user should be able to view their previous orders.</p>
+<p>Viewing orders</p>
+<hr />
+<p class="page-mark">Page 90</p>
+<p>b) Technical requirements (<code>Technical</code> <code>Requirements</code>): These requirements include markup and programming languages, the database management system, and attention to the security and extensibility of the website (Table 2).</p>
+<p><strong>Table 2</strong></p>
+<p>Explanation</p>
+<p>Item <code>Python</code> (<code>Django</code>) programming language <code>SQLite</code> or <code>MySQL</code> database <code>HTML</code>, <code>CSS</code>, <code>Bootstrap</code> appearance design Encrypting users’ passwords security</p>
+<p>The possibility of adding new products and features in the future</p>
+<p>Extensibility</p>
+<p>Designing the site map (<code>Site</code> <code>Map</code>): After the goal and needs of the website have been specified, designing the site map is essential. The site map specifies the structure of the pages, the connections among them, and the path of the user’s movement within the site. Correct design of the site map leads to a better understanding of the site’s structure and simplifies the process of designing and implementing it.</p>
+<p>Stages of designing the site map</p>
+<h3 id="workshop">Workshop</h3>
+<p>Stage 1: Observing and examining store sites With guidance from your instructor, examine two or three simple store sites.</p>
+<p>For example: a mobile store, a clothing store, a digital accessories store Items that should be examined: What pages exist in the site menu? Which pages is the user directed to from the home page? How are the process of user login, selecting goods, and using the shopping cart done?</p>
+<p>Is the appearance of the site simple or busy?</p>
+<p>Stage 2: Identifying the main pages of the site In this stage, you need to identify and note the pages common among the sites you examined.</p>
+<p>Examples of common pages in an online store are:</p>
+<p><code>Home</code></p>
+<div class="code-wrap" dir="ltr"><pre><code>Products
+Product Details
+</code></pre></div>
+<p><code>Cart</code></p>
+<div class="code-wrap" dir="ltr"><pre><code>Login / Register
+User Profile
+About / Contact
+</code></pre></div>
+<hr />
+<p class="page-mark">Page 91</p>
+<p>Stage 3: Drawing the site map (<code>Site</code> <code>Map</code>) In this stage design the site map in written or graphic form</p>
+<p><code>Home</code></p>
+<p>. A simple method for drawing the map is that the home page is at the top of the map and the other pages</p>
+<div class="code-wrap" dir="ltr"><pre><code>Products details
+Products
+</code></pre></div>
+<p>are placed as sub-branches under the home page.</p>
+<p><code>Cart</code></p>
+<div class="code-wrap" dir="ltr"><pre><code>User proflie
+Login/Register
+</code></pre></div>
+<p>The figure opposite is considered a written map:</p>
+<p>In addition to the written method, the site map can be</p>
+<div class="code-wrap" dir="ltr"><pre><code>Contact us
+</code></pre></div>
+<p>displayed graphically using boxes and arrows.</p>
+<p>Stage 4: Stating the path of the user’s movement In this stage, the path of the user’s movement on the site is explained. To describe the path, pay attention to the following:</p>
+<p>From which page does the user enter the site? How does the user select the desired product? By what path does the user reach the shopping cart?</p>
+<p>At what stage does the user enter their user account?</p>
+<p>The following example is a sample description of the path of the user’s movement:</p>
+<p>The user first enters the site’s home page, then goes to the products page and selects a product. After viewing the product details, the user adds it to the shopping cart and finally logs in to their user account to place the order.</p>
+<p>Designing the appearance of pages</p>
+<p><strong>Table 3</strong></p>
+<p>After the goal and requirements have been specified, it is time</p>
+<p>Tools for designing the appearance of the site (front-end)</p>
+<p>to design the appearance of the website pages.</p>
+<p>The more beautiful and orderly the appearance of the site is, the more users</p>
+<h3 id="in-practice">In practice</h3>
+<p>Language</p>
+<p>will be attracted to the site. On a store</p>
+<p>Structure and elements of the page (such as text,</p>
+<p>site, the beauty of the site can lead to attracting</p>
+<p><code>HTML</code></p>
+<p>image, table, button)</p>
+<p>customers and more sales.</p>
+<p>Beautifying and controlling the appearance of elements including</p>
+<p>To create elements inside web pages the markup language</p>
+<p><code>CSS</code></p>
+<p>setting colors, fonts, sizes,</p>
+<p><code>HTML</code> is used, and to style the page elements the</p>
+<p>layout, and so on</p>
+<p>descriptive language <code>CSS</code> is used (Table 3).</p>
+<hr />
+<p class="page-mark">Page 92</p>
+<p>Designing a site as a team: The process of site design includes numerous stages, each of which requires specialized skills. For this reason, site design is usually done as a team and each member has a specific responsibility.</p>
+<p>Main roles in the site design team</p>
+<p>1 User experience designer (<code>UX</code> <code>Designer</code>): Analyzing users’ needs and optimizing the experience of using the site</p>
+<p>2 User interface designer (<code>UI</code> <code>Designer</code>): Designing visual elements such as colors, fonts, buttons, and forms</p>
+<p>3 Front-end developer (<code>Front-End</code> <code>Developer</code>): Implementing the visual and interactive part of the site</p>
+<p>4 Back-end developer (<code>Back-End</code> <code>Developer</code>): Server-side programming, database management, and security</p>
+<p>5 Content specialist (<code>Content</code> <code>Specialist</code>): Researching keywords and producing attractive text content</p>
+<p>6 SEO specialist (<code>SEO</code> <code>Specialist</code>): Optimizing the site for search engines</p>
+<p>Depending on the volume of project work, the budget, and the number of people on the website design and development team, each role can be assigned to one or more people. In small projects one person may take on several roles. In Table 4 the common tools used by each of the roles on the site design team are introduced. These tools help improve the quality of the project and facilitate collaboration among team members.</p>
+<p>Table 4 Common tools in site design</p>
+<p>Role</p>
+<p>Tools</p>
+<div class="code-wrap" dir="ltr"><pre><code>Photoshop ،InVision ،Sketch ،Adobe XD ،Figma
+</code></pre></div>
+<p><code>UX</code> and <code>UI</code> designer Front-end developer <code>Bootstrap</code> ،<code>JavaScript</code> ،<code>CSS</code> ،<code>HTML</code></p>
+<div class="code-wrap" dir="ltr"><pre><code>توسعه‌دهندۀ بک‌اندDjango) ،Python ،Flask( ،JavaScript (Node.js)
+ویرایشگر کدAtom ،Sublime Text ،Visual Studio Code
+مرورگر و ابزار توسعهMicrosoft Edge ،Mozilla Firefox ،Google Chrome
+</code></pre></div>
+<p>Content management platforms and producing</p>
+<div class="code-wrap" dir="ltr"><pre><code>Grammarly ،Google Docs ،WordPress
+</code></pre></div>
+<p>web-based content</p>
+<div class="code-wrap" dir="ltr"><pre><code>Yoast SEO ،Moz ،SEMrush ،Google Analytics
+</code></pre></div>
+<p>SEO specialist</p>
+<p>Other tools used by the design team <code>Cyberduck</code> ،<code>FileZilla</code></p>
+<div class="code-wrap" dir="ltr"><pre><code>GitHub ،Git
+</code></pre></div>
+<p>Version control</p>
+<hr /></article>
+      <aside class="extra">
+        <h2 data-fa="تمرین این بخش" data-en="Exercises for this section">تمرین این بخش</h2>
+        <p class="extra-note" data-fa="این تمرین‌ها و پیوندها اضافه بر متن کتاب‌اند." data-en="These exercises and links are in addition to the book.">این تمرین‌ها و پیوندها اضافه بر متن کتاب‌اند.</p>
+        <ol><li data-fa="برای کتابخانه مدرسه سه فایل HTML بساز: خانه، فهرست کتاب، تماس. در خانه، نقشه سایت را با پیوند به دو صفحه دیگر بگذار." data-en="Build three HTML files for a school library: home, book list, contact. On the home page, put a site map linking to the other two.">برای کتابخانه مدرسه سه فایل HTML بساز: خانه، فهرست کتاب، تماس. در خانه، نقشه سایت را با پیوند به دو صفحه دیگر بگذار.</li><li data-fa="با یک فایل CSS عرض صفحه را در دو حالت نشان بده: ستون‌ها کنار هم، و زیر ۶۰۰ پیکسل زیر هم." data-en="With one CSS file, show the columns side by side, and stack them below 600 pixels.">با یک فایل CSS عرض صفحه را در دو حالت نشان بده: ستون‌ها کنار هم، و زیر ۶۰۰ پیکسل زیر هم.</li></ol>
+        <h2 data-fa="پیوند مفید" data-en="Useful link">پیوند مفید</h2><ul><li><a href="https://developer.mozilla.org/en-US/docs/Learn/Getting_started_with_the_web" data-fa="شروع ساخت وب" data-en="Getting started with the web">شروع ساخت وب</a></li></ul>
+      </aside>
+    <nav class="pager"><a rel="prev" class="prev" href="p2-web.html"><span class="pager-word" data-fa="قبلی" data-en="Previous">قبلی</span><span class="pager-name" data-fa="وب چگونه کار می‌کند" data-en="How the web works">وب چگونه کار می‌کند</span></a><a rel="next" class="next" href="p2-tags.html"><span class="pager-word" data-fa="بعدی" data-en="Next">بعدی</span><span class="pager-name" data-fa="اولین صفحه HTML" data-en="A first HTML page">اولین صفحه HTML</span></a></nav>
+    </div>
+  </div>
+  <script src="../assets/search-index.js?v=4"></script>
+  <script src="../assets/app.js?v=4"></script>
+</body>
+</html>

@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title data-fa="مدل جعبه‌ای و display" data-en="The box model and display">مدل جعبه‌ای و display</title>
+  <link rel="icon" href="../assets/favicon.svg">
+  <link rel="stylesheet" href="../assets/style.css?v=4">
+</head>
+<body data-root="../">
+  <header class="top">
+    <a class="brand" href="../index.html">
+      <span data-fa="طراح سایت" data-en="Site Design">طراح سایت</span>
+      <small data-fa="پایه یازدهم" data-en="Grade 11">پایه یازدهم</small>
+    </a>
+    <div class="search-wrap">
+      <input id="q" type="search" autocomplete="off"
+        data-fa-placeholder="جستجو در درس‌ها" data-en-placeholder="Search lessons"
+        placeholder="جستجو در درس‌ها">
+      <div id="results" class="results" hidden></div>
+    </div>
+    <a class="download" href="../grade11-offline.zip?v=2" data-fa="دانلود کل سایت" data-en="Download the whole site">دانلود کل سایت</a>
+    <button type="button" id="lang-toggle" class="lang-toggle" dir="ltr" data-lang="fa"
+      aria-label="تغییر زبان">
+      <span data-opt="fa">فا</span>
+      <span data-opt="en">EN</span>
+    </button>
+  </header>
+  <div class="layout">
+    <details class="toc" open><summary><span data-fa="فهرست درس‌ها" data-en="Lesson list">فهرست درس‌ها</span></summary><nav class="side" aria-label="lessons"><p class="mod" data-fa="شروع کتاب" data-en="Opening">شروع کتاب</p><p class="unit" data-fa="فهرست" data-en="Contents">فهرست</p><a class="" href="toc.html" data-fa="فهرست" data-en="Contents">فهرست</a><p class="mod" data-fa="پودمان ۱: برنامه‌نویسی پایتون" data-en="Module 1: Python programming">پودمان ۱: برنامه‌نویسی پایتون</p><p class="unit" data-fa="معرفی پودمان" data-en="Module introduction">معرفی پودمان</p><a class="" href="p1-intro.html" data-fa="معرفی پودمان پایتون" data-en="Introducing the Python module">معرفی پودمان پایتون</a><p class="unit" data-fa="مدل‌سازی داده" data-en="Data modeling">مدل‌سازی داده</p><a class="" href="p1-python.html" data-fa="پایتون و محیط برنامه‌نویسی" data-en="Python and the programming environment">پایتون و محیط برنامه‌نویسی</a><a class="" href="p1-vars.html" data-fa="متغیرها، نوع داده و عملگرها" data-en="Variables, types, and operators">متغیرها، نوع داده و عملگرها</a><a class="" href="p1-cast.html" data-fa="ورودی و تبدیل نوع" data-en="Input and type casting">ورودی و تبدیل نوع</a><a class="" href="p1-lists.html" data-fa="لیست‌ها" data-en="Lists">لیست‌ها</a><a class="" href="p1-if.html" data-fa="شرط‌های ساده" data-en="Simple conditions">شرط‌های ساده</a><a class="" href="p1-elif.html" data-fa="if، elif و else" data-en="if, elif, and else">if، elif و else</a><a class="" href="p1-for.html" data-fa="حلقه for و range" data-en="The for loop and range">حلقه for و range</a><a class="" href="p1-while.html" data-fa="حلقه while و کنترل حلقه" data-en="The while loop and loop control">حلقه while و کنترل حلقه</a><a class="" href="p1-assess-data.html" data-fa="ارزشیابی مدل‌سازی داده" data-en="Data-modeling assessment">ارزشیابی مدل‌سازی داده</a><p class="unit" data-fa="توابع و ماژول‌ها" data-en="Functions and modules">توابع و ماژول‌ها</p><a class="" href="p1-sets.html" data-fa="مجموعه (set)" data-en="Sets">مجموعه (set)</a><a class="" href="p1-dict.html" data-fa="دیکشنری" data-en="Dictionaries">دیکشنری</a><a class="" href="p1-quiz.html" data-fa="پروژه بازی Quiz" data-en="Quiz game project">پروژه بازی Quiz</a><a class="" href="p1-tuple.html" data-fa="تاپل" data-en="Tuples">تاپل</a><a class="" href="p1-func.html" data-fa="تعریف تابع، پارامتر و return" data-en="Defining functions, parameters, and return">تعریف تابع، پارامتر و return</a><a class="" href="p1-func-more.html" data-fa="تمرین تابع و مرتب‌سازی" data-en="Function practice and sorting">تمرین تابع و مرتب‌سازی</a><a class="" href="p1-modules.html" data-fa="ماژول‌ها و تفاوت تابع و متد" data-en="Modules, and functions versus methods">ماژول‌ها و تفاوت تابع و متد</a><a class="" href="p1-assess-func.html" data-fa="ارزشیابی توابع و ماژول‌ها" data-en="Functions and modules assessment">ارزشیابی توابع و ماژول‌ها</a><p class="mod" data-fa="پودمان ۲: صفحات وب ایستا" data-en="Module 2: Static web pages">پودمان ۲: صفحات وب ایستا</p><p class="unit" data-fa="معرفی پودمان" data-en="Module introduction">معرفی پودمان</p><a class="" href="p2-intro.html" data-fa="معرفی پودمان صفحات ایستا" data-en="Introducing static web pages">معرفی پودمان صفحات ایستا</a><p class="unit" data-fa="ساختار با HTML" data-en="Structure with HTML">ساختار با HTML</p><a class="" href="p2-web.html" data-fa="وب چگونه کار می‌کند" data-en="How the web works">وب چگونه کار می‌کند</a><a class="" href="p2-concepts.html" data-fa="مفاهیم طراحی وب و نقشه سایت" data-en="Web-design concepts and the site map">مفاهیم طراحی وب و نقشه سایت</a><a class="" href="p2-tags.html" data-fa="اولین صفحه HTML" data-en="A first HTML page">اولین صفحه HTML</a><a class="" href="p2-text.html" data-fa="متن، لیست و پیوند" data-en="Text, lists, and links">متن، لیست و پیوند</a><a class="" href="p2-img.html" data-fa="تصویر در صفحه" data-en="Images on the page">تصویر در صفحه</a><a class="" href="p2-forms.html" data-fa="فرم‌ها" data-en="Forms">فرم‌ها</a><a class="" href="p2-semantic.html" data-fa="عناصر معنایی" data-en="Semantic elements">عناصر معنایی</a><a class="" href="p2-assess-html.html" data-fa="ارزشیابی HTML" data-en="HTML assessment">ارزشیابی HTML</a><p class="unit" data-fa="ظاهر با CSS" data-en="Appearance with CSS">ظاهر با CSS</p><a class="" href="p2-css-start.html" data-fa="نوشتن CSS" data-en="Writing CSS">نوشتن CSS</a><a class="" href="p2-css-look.html" data-fa="رنگ، پس‌زمینه و انتخاب‌گر" data-en="Color, background, and selectors">رنگ، پس‌زمینه و انتخاب‌گر</a><a class="current" href="p2-box.html" data-fa="مدل جعبه‌ای و display" data-en="The box model and display">مدل جعبه‌ای و display</a><a class="" href="p2-flex.html" data-fa="چیدمان با Flexbox" data-en="Layout with Flexbox">چیدمان با Flexbox</a><a class="" href="p2-flex-work.html" data-fa="کارگاه چیدمان صفحه" data-en="Page-layout workshop">کارگاه چیدمان صفحه</a><a class="" href="p2-media.html" data-fa="مدیا کوئری و ارزشیابی CSS" data-en="Media queries and the CSS assessment">مدیا کوئری و ارزشیابی CSS</a><p class="mod" data-fa="پودمان ۳: صفحات وب تعاملی" data-en="Module 3: Interactive web pages">پودمان ۳: صفحات وب تعاملی</p><p class="unit" data-fa="معرفی پودمان" data-en="Module introduction">معرفی پودمان</p><a class="" href="p3-intro.html" data-fa="معرفی پودمان تعاملی" data-en="Introducing the interactive module">معرفی پودمان تعاملی</a><p class="unit" data-fa="بوت‌استرپ" data-en="Bootstrap">بوت‌استرپ</p><a class="" href="p3-bs-start.html" data-fa="فریم‌ورک و شروع بوت‌استرپ" data-en="Frameworks and starting Bootstrap">فریم‌ورک و شروع بوت‌استرپ</a><a class="" href="p3-bs-util.html" data-fa="فاصله، گردی و لیست" data-en="Spacing, rounding, and lists">فاصله، گردی و لیست</a><a class="" href="p3-bs-header.html" data-fa="سرصفحه فروشگاه" data-en="The shop header">سرصفحه فروشگاه</a><a class="" href="p3-bs-grid.html" data-fa="شبکه Grid" data-en="The grid">شبکه Grid</a><a class="" href="p3-bs-rwd.html" data-fa="کلاس‌های واکنش‌گرا" data-en="Responsive classes">کلاس‌های واکنش‌گرا</a><a class="" href="p3-bs-nav.html" data-fa="نوار ناوبری و جزئیات محصول" data-en="Navbar and product details">نوار ناوبری و جزئیات محصول</a><a class="" href="p3-bs-form.html" data-fa="فرم و پنجره Modal" data-en="Forms and modals">فرم و پنجره Modal</a><a class="" href="p3-bs-show.html" data-fa="کاروسل و آکاردئون" data-en="Carousel and accordion">کاروسل و آکاردئون</a><a class="" href="p3-bs-assess.html" data-fa="ارزشیابی بوت‌استرپ" data-en="Bootstrap assessment">ارزشیابی بوت‌استرپ</a><p class="unit" data-fa="جاوااسکریپت" data-en="JavaScript">جاوااسکریپت</p><a class="" href="p3-js-start.html" data-fa="جاوااسکریپت در صفحه وب" data-en="JavaScript on the page">جاوااسکریپت در صفحه وب</a><a class="" href="p3-js-vars.html" data-fa="متغیر و نوع داده" data-en="Variables and data types">متغیر و نوع داده</a><a class="" href="p3-js-ops.html" data-fa="عملگرها" data-en="Operators">عملگرها</a><a class="" href="p3-js-data.html" data-fa="آرایه و شیء" data-en="Arrays and objects">آرایه و شیء</a><a class="" href="p3-js-if.html" data-fa="شرط در جاوااسکریپت" data-en="Conditions in JavaScript">شرط در جاوااسکریپت</a><a class="" href="p3-js-loops.html" data-fa="حلقه‌ها" data-en="Loops">حلقه‌ها</a><a class="" href="p3-js-func.html" data-fa="تابع‌ها" data-en="Functions">تابع‌ها</a><a class="" href="p3-js-dom.html" data-fa="صفحه، رویداد و اعتبار فرم" data-en="The page, events, and form validation">صفحه، رویداد و اعتبار فرم</a><a class="" href="p3-js-assess.html" data-fa="ارزشیابی جاوااسکریپت" data-en="JavaScript assessment">ارزشیابی جاوااسکریپت</a><p class="mod" data-fa="پودمان ۴: توسعه وب پایتون" data-en="Module 4: Python for the web">پودمان ۴: توسعه وب پایتون</p><p class="unit" data-fa="معرفی پودمان" data-en="Module introduction">معرفی پودمان</p><a class="" href="p4-intro.html" data-fa="معرفی پودمان شیءگرایی" data-en="Introducing the object-oriented module">معرفی پودمان شیءگرایی</a><p class="unit" data-fa="شیءگرایی" data-en="Object-oriented programming">شیءگرایی</p><a class="" href="p4-idea.html" data-fa="ایده شیء و کلاس" data-en="The idea of objects and classes">ایده شیء و کلاس</a><a class="" href="p4-class.html" data-fa="ساخت کلاس و متد" data-en="Writing a class and methods">ساخت کلاس و متد</a><a class="" href="p4-inherit.html" data-fa="وراثت" data-en="Inheritance">وراثت</a><a class="" href="p4-protect.html" data-fa="داده معتبر و استفاده داخلی" data-en="Valid data and internal use">داده معتبر و استفاده داخلی</a><a class="" href="p4-assess-oop.html" data-fa="ارزشیابی برنامه شیءگرا" data-en="Object-oriented assessment">ارزشیابی برنامه شیءگرا</a><p class="unit" data-fa="فایل و توسعه" data-en="Files and development">فایل و توسعه</p><a class="" href="p4-files.html" data-fa="خواندن و نوشتن فایل متنی" data-en="Reading and writing text files">خواندن و نوشتن فایل متنی</a><a class="" href="p4-errors.html" data-fa="پیمایش فایل و مدیریت خطا" data-en="Walking a file and handling errors">پیمایش فایل و مدیریت خطا</a><a class="" href="p4-json.html" data-fa="چند فایل و JSON" data-en="Several files and JSON">چند فایل و JSON</a><a class="" href="p4-assess-files.html" data-fa="ارزشیابی کار با فایل" data-en="Files assessment">ارزشیابی کار با فایل</a><p class="mod" data-fa="پودمان ۵: برنامه‌نویسی جنگو" data-en="Module 5: Django">پودمان ۵: برنامه‌نویسی جنگو</p><p class="unit" data-fa="معرفی پودمان" data-en="Module introduction">معرفی پودمان</p><a class="" href="p5-intro.html" data-fa="معرفی پودمان جنگو" data-en="Introducing the Django module">معرفی پودمان جنگو</a><p class="unit" data-fa="ایجاد وب‌اپلیکیشن" data-en="Creating the web app">ایجاد وب‌اپلیکیشن</p><a class="" href="p5-what.html" data-fa="جنگو چیست و نصب" data-en="What Django is, and installing it">جنگو چیست و نصب</a><a class="" href="p5-project.html" data-fa="پروژه، اپ و اولین view" data-en="Project, app, and the first view">پروژه، اپ و اولین view</a><a class="" href="p5-template.html" data-fa="قالب و دمای واقعی" data-en="Templates and a real temperature">قالب و دمای واقعی</a><a class="" href="p5-assess-create.html" data-fa="ارزشیابی ایجاد وب‌اپلیکیشن" data-en="Creating-the-app assessment">ارزشیابی ایجاد وب‌اپلیکیشن</a><p class="unit" data-fa="توسعه وب‌اپلیکیشن" data-en="Developing the web app">توسعه وب‌اپلیکیشن</p><a class="" href="p5-model.html" data-fa="مدل شهر و پنل ادمین" data-en="The city model and the admin">مدل شهر و پنل ادمین</a><a class="" href="p5-list.html" data-fa="خواندن شهرها و نمایش فهرست" data-en="Reading cities and showing the list">خواندن شهرها و نمایش فهرست</a><a class="" href="p5-auth.html" data-fa="ورود و خروج" data-en="Sign-in and sign-out">ورود و خروج</a><a class="" href="p5-crud.html" data-fa="افزودن و حذف شهر" data-en="Adding and deleting a city">افزودن و حذف شهر</a><a class="" href="p5-bugs.html" data-fa="باگ و امنیت" data-en="Bugs and security">باگ و امنیت</a><p class="mod" data-fa="پایان کتاب" data-en="Back of the book">پایان کتاب</p><p class="unit" data-fa="منابع" data-en="References">منابع</p><a class="" href="refs.html" data-fa="منابع کتاب" data-en="Book references">منابع کتاب</a></nav></details>
+    <div class="main">
+      <h1 class="section-title" data-fa="مدل جعبه‌ای و display" data-en="The box model and display">مدل جعبه‌ای و display</h1><article class="lesson" lang="fa" dir="rtl" data-lang-block="fa"><p class="page-mark">صفحه ۱۲۸</p>
+<p>مدل جعبه‌ای (<code>Box</code> <code>Model</code>) مدل جعبه‌ای (<code>Box</code> <code>Model</code>) در <code>CSS</code> برای طراحی و چیدمان عناصر در صفحات وب استفاده می‌شود. هر عنصر <code>HTML</code> به‌عنوان یک «جعبه» در نظر گرفته می‌شود که شامل چهار قسمت محتوا (<code>content</code>)، فضای اضافی داخل عنصر (<code>padding</code>)، خط دور (<code>border</code>) و فاصله عنصر تا عناصر مجاور (<code>margin</code>) است. در مثال زیر این تنظیمات قابل مشاهده و بررسی است: (شکل25) .</p>
+<p>ویژگی‌های <code>width</code> و <code>height</code> صرفاً پهنا و ارتفاع ناحیه محتوا (<code>content</code>) را مشخص می‌کنند. بنابراین مقداردهی به ویژگی‌های <code>padding</code>، <code>margin</code> و <code>border</code> باعث افزایش ابعاد نهایی جعبه می‌شود. این مقادیر باید در محاسبات ابعاد جعبه لحاظ شود. برای</p>
+<p><img alt="تصویر کتاب" src="../images/p134-01.png" /></p>
+<p>فاصله تا عناصر دیگر</p>
+<p>جلوگیری از تأثیر دو ویژگی <code>border</code> و <code>padding</code></p>
+<p>فاصله بین محتوا و خط دور</p>
+<p>روی پهنا و ارتفاع عنصر از ویژگی <code>box-sizing</code> با</p>
+<p>محتوای عنصر</p>
+<p>مقدار <code>border-box</code> استفاده می‌شود. با انجام این کار، مجموع ابعاد محتوا، <code>padding</code> و <code>border</code> در</p>
+<p>خط دور عنصر</p>
+<p>راستای افقی و عمودی برابر با مقادیر <code>width</code> و <code>height</code> خواهد بود.</p>
+<p><strong>شکل24</strong></p>
+<p>بررسی عملکرد مدل جعبه‌ای</p>
+<h3 id="_1">کار کارگاهی</h3>
+<p>فایلی با نام <code>box-model.html</code> ایجاد کنید و دو عنصر <code>&lt;div&gt;</code> و <code>&lt;img&gt;</code> را به همراه سبک آنها درون فایل وارد کنید:</p>
+<p><img alt="تصویر کتاب" src="../images/p134-02.png" /></p>
+<hr />
+<p class="page-mark">صفحه ۱۲۹</p>
+<p>در فایل <code>index.html</code> (کارگاه قبل) ویژگی‌های مارجین و پدینگ عنصر <code>ul</code> را برابر صفر قرار دهید (<code>margin:0</code>;<code>padding:0</code>) و برای عنصر <code>header</code> مقداری پدینگ تنظیم کنید (<code>padding:10px20.px</code>) سپس تغییرات منو را در مرورگر بررسی کنید.</p>
+<div class="code-wrap" dir="ltr"><pre><code>مدل نمایش (Display Model)
+</code></pre></div>
+<p>مدل نمایش در <code>CSS</code> به نحوه نمایش و رفتار عناصر در صفحه وب اشاره دارد. این مدل تعیین می‌کند که عناصر چگونه در کنار یکدیگر قرار بگیرند و چگونه با هم تعامل کنند. مدل نمایش توسط ویژگی <code>display</code> با مقادیر مختلف تعیین می‌شود. در ادامه به شرح مقادیر این ویژگی پرداخته می‌شود:</p>
+<p><code>block:</code> عناصری با ویژگی <code>display:</code> <code>block</code> به صورت بلوکی نمایش داده می‌شوند و فضای کامل خط را اشغال می‌کنند. این عناصر به طور پیش‌فرض در یک خط جدید شروع می‌شوند و امکان تعیین <code>width</code> و <code>height</code> برای آنها فراهم است.</p>
+<p><code>Inline:</code> عناصر <code>inline</code> مانند کلمات رفتار می‌کنند، یعنی عناصر پشت سر هم قرار می‌گیرند و خط جدید ایجاد نمی‌کنند. این عناصر تنها ب‌هاندازۀ محتوای خود فضا اشغال می‌کنند؛ در نتیجه تعیین <code>width</code> و <code>height</code> برای آنها بی اثر است. به‌علاوه اختصاص ویژگی‌های <code>margin</code> برای قسمت‌های بالا و پایین عنصر اثرگذار نخواهد بود.</p>
+<p><code>Inline-block:</code> این حالت ترکیبی از <code>block</code> و <code>inline</code> است. عناصر <code>inline-block</code> می‌توانند به صورت بلوکی رفتار کنند، اما درون خط جاری قرار می‌گیرند. این عناصر می‌توانند پهنا و ارتفاع داشته باشند و به اندازه محتوای خود فضا اشغال می‌کنند.</p>
+<p>جدول 9 مقایسه عناصر <code>Block</code> و <code>Inline</code> در <code>CSS</code></p>
+<p>عناصر <code>Inline</code>عناصر <code>Block</code></p>
+<p>ویژگی</p>
+<p>در همان سطر ادامه پیدا می‌کنند.</p>
+<p>همیشه در سطر جدید شروع می‌شوند.</p>
+<p>شروع در سطر جدید</p>
+<p>فقط به اندازۀ محتوای عنصر است. حتی با تعیین پهنا، کل سطر را به خود اختصاص می‌دهد.</p>
+<div class="code-wrap" dir="ltr"><pre><code>پهنا (width)
+</code></pre></div>
+<p>معمولاً فقط به اندازۀ محتوا است.</p>
+<p>می‌توان تنظیم کرد.</p>
+<p>ارتفاع (<code>height</code>)</p>
+<div class="code-wrap" dir="ltr"><pre><code>&lt;span&gt;, &lt;a&gt;, &lt;b&gt;, &lt;i&gt;
+&lt;div&gt;, &lt;p&gt;, &lt;h1&gt;, &lt;section&gt;
+</code></pre></div>
+<p>نمونه عناصر</p>
+<p>چند عنصر کنار هم قرار می‌گیرند.</p>
+<p>هرکدام در خط جدا قرار می‌گیرند.</p>
+<p>رفتار در کنار هم</p>
+<hr />
+<p class="page-mark">صفحه ۱۳۰</p>
+<p>به‌کارگیری ویژگی <code>display</code> با مقادیر <code>block</code> ، <code>Inline</code> و <code>Inline-block</code> .</p>
+<h3 id="_2">کار کارگاهی</h3>
+<p><img alt="تصویر کتاب" src="../images/p136-02.png" /></p>
+<p><img alt="تصویر کتاب" src="../images/p136-01.png" /></p>
+<p><img alt="تصویر کتاب" src="../images/p136-03.png" /></p>
+<p>باکس شماره 1 باکس شماره 2 هر باکس در یک سطر مجزا قرار می‌گیرد و پهنای هر یک معادل پهنای کل صفحه است.</p>
+<p>ایتم شماره 1 ایتم شماره 2 همانند کلمات در کنار یکدیگر قرار م‌یگیرند، امکان تعیین پهنا و ارتفاع وجود ندارد.</p>
+<p>باکس <code>A</code></p>
+<p>باکس <code>B</code></p>
+<p>باک‌سها در کنار یکدیگر قرار م‌یگیرند، امکان تعیین پهنا و ارتفاع موجود است.</p>
+<hr />
+<p class="page-mark">صفحه ۱۳۱</p>
+<p>به‌کارگیری ویژگی <code>display</code> در طراحی فرم ورود به سایت</p>
+<h3 id="_3">کار کارگاهی</h3>
+<p>فایل <code>login.html</code> را در پوشه <code>web</code> برای ورود کاربر به سایت ایجاد کنید.</p>
+<p><img alt="تصویر کتاب" src="../images/p137-02.png" /></p>
+<p><img alt="تصویر کتاب" src="../images/p137-01.png" /></p>
+<hr /></article><article class="lesson" lang="en" dir="ltr" data-lang-block="en" hidden><p class="page-mark">Page 128</p>
+<p>Box model (<code>Box</code> <code>Model</code>) The box model (<code>Box</code> <code>Model</code>) in <code>CSS</code> is used to design and lay out elements on web pages. Every <code>HTML</code> element is treated as a “box” that includes four parts: content (<code>content</code>), extra space inside the element (<code>padding</code>), border (<code>border</code>), and the distance of the element from neighboring elements (<code>margin</code>). In the example below these settings can be viewed and examined: (Figure 25).</p>
+<p>The <code>width</code> and <code>height</code> properties only specify the width and height of the content area (<code>content</code>). So assigning values to the <code>padding</code>, <code>margin</code>, and <code>border</code> properties increases the final dimensions of the box. These values must be included in box dimension calculations. To</p>
+<p><img alt="Book image" src="../images/p134-01.png" /></p>
+<p>Distance to other elements</p>
+<p>prevent the <code>border</code> and <code>padding</code> properties from affecting</p>
+<p>Distance between content and border</p>
+<p>the width and height of the element, use the <code>box-sizing</code> property with</p>
+<p>Element content</p>
+<p>the value <code>border-box</code>. When you do this, the total of content, <code>padding</code>, and <code>border</code> dimensions in</p>
+<p>Element border</p>
+<p>the horizontal and vertical directions will equal the <code>width</code> and <code>height</code> values.</p>
+<p><strong>Figure 24</strong></p>
+<p>Examining how the box model works</p>
+<h3 id="workshop">Workshop</h3>
+<p>Create a file named <code>box-model.html</code> and put two <code>&lt;div&gt;</code> and <code>&lt;img&gt;</code> elements along with their styles into the file:</p>
+<p><img alt="Book image" src="../images/p134-02.png" /></p>
+<hr />
+<p class="page-mark">Page 129</p>
+<p>In the <code>index.html</code> file (previous workshop), set the margin and padding properties of the <code>ul</code> element to zero (<code>margin:0</code>;<code>padding:0</code>) and set some padding for the <code>header</code> element (<code>padding:10px20.px</code>). Then check the menu changes in the browser.</p>
+<div class="code-wrap" dir="ltr"><pre><code>مدل نمایش (Display Model)
+</code></pre></div>
+<p>The display model in <code>CSS</code> refers to how elements are shown and behave on the web page. This model determines how elements are placed next to each other and how they interact. The display model is set by the <code>display</code> property with various values. The values of this property are described below:</p>
+<p><code>block:</code> elements with <code>display:</code> <code>block</code> are shown as blocks and take the full width of the line. By default these elements start on a new line, and you can set <code>width</code> and <code>height</code> for them.</p>
+<p><code>Inline:</code> <code>inline</code> elements behave like words—that is, elements sit one after another and do not create a new line. These elements only take as much space as their content; so setting <code>width</code> and <code>height</code> for them has no effect. Also, assigning <code>margin</code> properties for the top and bottom of the element will not have an effect.</p>
+<p><code>Inline-block:</code> this mode is a mix of <code>block</code> and <code>inline</code>. <code>inline-block</code> elements can behave as blocks but sit in the current line. These elements can have width and height and take as much space as their content.</p>
+<p>Table 9 Comparing <code>Block</code> and <code>Inline</code> elements in <code>CSS</code></p>
+<p><code>Inline</code> elements<code>Block</code> elements</p>
+<p>Property</p>
+<p>Continue on the same row.</p>
+<p>Always start on a new row.</p>
+<p>Start on a new row</p>
+<p>Only as wide as the element content. Even when width is set, it takes the whole row.</p>
+<div class="code-wrap" dir="ltr"><pre><code>پهنا (width)
+</code></pre></div>
+<p>Usually only as tall as the content.</p>
+<p>Can be set.</p>
+<p>Height (<code>height</code>)</p>
+<div class="code-wrap" dir="ltr"><pre><code>&lt;span&gt;, &lt;a&gt;, &lt;b&gt;, &lt;i&gt;
+&lt;div&gt;, &lt;p&gt;, &lt;h1&gt;, &lt;section&gt;
+</code></pre></div>
+<p>Example elements</p>
+<p>Several elements sit side by side.</p>
+<p>Each sits on a separate line.</p>
+<p>Behavior next to each other</p>
+<hr />
+<p class="page-mark">Page 130</p>
+<p>Using the <code>display</code> property with the values <code>block</code>, <code>Inline</code>, and <code>Inline-block</code>.</p>
+<h3 id="workshop_1">Workshop</h3>
+<p><img alt="Book image" src="../images/p136-02.png" /></p>
+<p><img alt="Book image" src="../images/p136-01.png" /></p>
+<p><img alt="Book image" src="../images/p136-03.png" /></p>
+<p>Box number 1 Box number 2 Each box sits on a separate row and the width of each equals the full width of the page.</p>
+<p>Item number 1 Item number 2 Sit next to each other like words; you cannot set width and height.</p>
+<p>Box <code>A</code></p>
+<p>Box <code>B</code></p>
+<p>The boxes sit next to each other; you can set width and height.</p>
+<hr />
+<p class="page-mark">Page 131</p>
+<p>Using the <code>display</code> property in designing a site login form</p>
+<h3 id="workshop_2">Workshop</h3>
+<p>Create the <code>login.html</code> file in the <code>web</code> folder for user login to the site.</p>
+<p><img alt="Book image" src="../images/p137-02.png" /></p>
+<p><img alt="Book image" src="../images/p137-01.png" /></p>
+<hr /></article>
+      <aside class="extra">
+        <h2 data-fa="تمرین این بخش" data-en="Exercises for this section">تمرین این بخش</h2>
+        <p class="extra-note" data-fa="این تمرین‌ها و پیوندها اضافه بر متن کتاب‌اند." data-en="These exercises and links are in addition to the book.">این تمرین‌ها و پیوندها اضافه بر متن کتاب‌اند.</p>
+        <ol><li data-fa="یک جعبه با margin و padding و border متفاوت بساز و متن داخلش را طوری بگذار که فاصله داخل و بیرون در مرورگر دیده شود." data-en="Build a box with different margin, padding, and border, and put text in it so the inner and outer space is visible in the browser.">یک جعبه با margin و padding و border متفاوت بساز و متن داخلش را طوری بگذار که فاصله داخل و بیرون در مرورگر دیده شود.</li><li data-fa="سه دکمه فرم ورود را بساز و هر کدام را با block و inline و inline-block امتحان کن، بعد حالتی را که برای فرم بهتر است نگه دار." data-en="Build three login buttons and try block, inline, and inline-block. Keep the display value that works better for the form.">سه دکمه فرم ورود را بساز و هر کدام را با block و inline و inline-block امتحان کن، بعد حالتی را که برای فرم بهتر است نگه دار.</li></ol>
+        <h2 data-fa="پیوند مفید" data-en="Useful link">پیوند مفید</h2><ul><li><a href="https://developer.mozilla.org/en-US/docs/Learn/CSS/Building_blocks/The_box_model" data-fa="مدل جعبه‌ای" data-en="The box model">مدل جعبه‌ای</a></li></ul>
+      </aside>
+    <nav class="pager"><a rel="prev" class="prev" href="p2-css-look.html"><span class="pager-word" data-fa="قبلی" data-en="Previous">قبلی</span><span class="pager-name" data-fa="رنگ، پس‌زمینه و انتخاب‌گر" data-en="Color, background, and selectors">رنگ، پس‌زمینه و انتخاب‌گر</span></a><a rel="next" class="next" href="p2-flex.html"><span class="pager-word" data-fa="بعدی" data-en="Next">بعدی</span><span class="pager-name" data-fa="چیدمان با Flexbox" data-en="Layout with Flexbox">چیدمان با Flexbox</span></a></nav>
+    </div>
+  </div>
+  <script src="../assets/search-index.js?v=4"></script>
+  <script src="../assets/app.js?v=4"></script>
+</body>
+</html>

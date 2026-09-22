@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title data-fa="مدل شهر و پنل ادمین" data-en="The city model and the admin">مدل شهر و پنل ادمین</title>
+  <link rel="icon" href="../assets/favicon.svg">
+  <link rel="stylesheet" href="../assets/style.css?v=4">
+</head>
+<body data-root="../">
+  <header class="top">
+    <a class="brand" href="../index.html">
+      <span data-fa="طراح سایت" data-en="Site Design">طراح سایت</span>
+      <small data-fa="پایه یازدهم" data-en="Grade 11">پایه یازدهم</small>
+    </a>
+    <div class="search-wrap">
+      <input id="q" type="search" autocomplete="off"
+        data-fa-placeholder="جستجو در درس‌ها" data-en-placeholder="Search lessons"
+        placeholder="جستجو در درس‌ها">
+      <div id="results" class="results" hidden></div>
+    </div>
+    <a class="download" href="../grade11-offline.zip?v=2" data-fa="دانلود کل سایت" data-en="Download the whole site">دانلود کل سایت</a>
+    <button type="button" id="lang-toggle" class="lang-toggle" dir="ltr" data-lang="fa"
+      aria-label="تغییر زبان">
+      <span data-opt="fa">فا</span>
+      <span data-opt="en">EN</span>
+    </button>
+  </header>
+  <div class="layout">
+    <details class="toc" open><summary><span data-fa="فهرست درس‌ها" data-en="Lesson list">فهرست درس‌ها</span></summary><nav class="side" aria-label="lessons"><p class="mod" data-fa="شروع کتاب" data-en="Opening">شروع کتاب</p><p class="unit" data-fa="فهرست" data-en="Contents">فهرست</p><a class="" href="toc.html" data-fa="فهرست" data-en="Contents">فهرست</a><p class="mod" data-fa="پودمان ۱: برنامه‌نویسی پایتون" data-en="Module 1: Python programming">پودمان ۱: برنامه‌نویسی پایتون</p><p class="unit" data-fa="معرفی پودمان" data-en="Module introduction">معرفی پودمان</p><a class="" href="p1-intro.html" data-fa="معرفی پودمان پایتون" data-en="Introducing the Python module">معرفی پودمان پایتون</a><p class="unit" data-fa="مدل‌سازی داده" data-en="Data modeling">مدل‌سازی داده</p><a class="" href="p1-python.html" data-fa="پایتون و محیط برنامه‌نویسی" data-en="Python and the programming environment">پایتون و محیط برنامه‌نویسی</a><a class="" href="p1-vars.html" data-fa="متغیرها، نوع داده و عملگرها" data-en="Variables, types, and operators">متغیرها، نوع داده و عملگرها</a><a class="" href="p1-cast.html" data-fa="ورودی و تبدیل نوع" data-en="Input and type casting">ورودی و تبدیل نوع</a><a class="" href="p1-lists.html" data-fa="لیست‌ها" data-en="Lists">لیست‌ها</a><a class="" href="p1-if.html" data-fa="شرط‌های ساده" data-en="Simple conditions">شرط‌های ساده</a><a class="" href="p1-elif.html" data-fa="if، elif و else" data-en="if, elif, and else">if، elif و else</a><a class="" href="p1-for.html" data-fa="حلقه for و range" data-en="The for loop and range">حلقه for و range</a><a class="" href="p1-while.html" data-fa="حلقه while و کنترل حلقه" data-en="The while loop and loop control">حلقه while و کنترل حلقه</a><a class="" href="p1-assess-data.html" data-fa="ارزشیابی مدل‌سازی داده" data-en="Data-modeling assessment">ارزشیابی مدل‌سازی داده</a><p class="unit" data-fa="توابع و ماژول‌ها" data-en="Functions and modules">توابع و ماژول‌ها</p><a class="" href="p1-sets.html" data-fa="مجموعه (set)" data-en="Sets">مجموعه (set)</a><a class="" href="p1-dict.html" data-fa="دیکشنری" data-en="Dictionaries">دیکشنری</a><a class="" href="p1-quiz.html" data-fa="پروژه بازی Quiz" data-en="Quiz game project">پروژه بازی Quiz</a><a class="" href="p1-tuple.html" data-fa="تاپل" data-en="Tuples">تاپل</a><a class="" href="p1-func.html" data-fa="تعریف تابع، پارامتر و return" data-en="Defining functions, parameters, and return">تعریف تابع، پارامتر و return</a><a class="" href="p1-func-more.html" data-fa="تمرین تابع و مرتب‌سازی" data-en="Function practice and sorting">تمرین تابع و مرتب‌سازی</a><a class="" href="p1-modules.html" data-fa="ماژول‌ها و تفاوت تابع و متد" data-en="Modules, and functions versus methods">ماژول‌ها و تفاوت تابع و متد</a><a class="" href="p1-assess-func.html" data-fa="ارزشیابی توابع و ماژول‌ها" data-en="Functions and modules assessment">ارزشیابی توابع و ماژول‌ها</a><p class="mod" data-fa="پودمان ۲: صفحات وب ایستا" data-en="Module 2: Static web pages">پودمان ۲: صفحات وب ایستا</p><p class="unit" data-fa="معرفی پودمان" data-en="Module introduction">معرفی پودمان</p><a class="" href="p2-intro.html" data-fa="معرفی پودمان صفحات ایستا" data-en="Introducing static web pages">معرفی پودمان صفحات ایستا</a><p class="unit" data-fa="ساختار با HTML" data-en="Structure with HTML">ساختار با HTML</p><a class="" href="p2-web.html" data-fa="وب چگونه کار می‌کند" data-en="How the web works">وب چگونه کار می‌کند</a><a class="" href="p2-concepts.html" data-fa="مفاهیم طراحی وب و نقشه سایت" data-en="Web-design concepts and the site map">مفاهیم طراحی وب و نقشه سایت</a><a class="" href="p2-tags.html" data-fa="اولین صفحه HTML" data-en="A first HTML page">اولین صفحه HTML</a><a class="" href="p2-text.html" data-fa="متن، لیست و پیوند" data-en="Text, lists, and links">متن، لیست و پیوند</a><a class="" href="p2-img.html" data-fa="تصویر در صفحه" data-en="Images on the page">تصویر در صفحه</a><a class="" href="p2-forms.html" data-fa="فرم‌ها" data-en="Forms">فرم‌ها</a><a class="" href="p2-semantic.html" data-fa="عناصر معنایی" data-en="Semantic elements">عناصر معنایی</a><a class="" href="p2-assess-html.html" data-fa="ارزشیابی HTML" data-en="HTML assessment">ارزشیابی HTML</a><p class="unit" data-fa="ظاهر با CSS" data-en="Appearance with CSS">ظاهر با CSS</p><a class="" href="p2-css-start.html" data-fa="نوشتن CSS" data-en="Writing CSS">نوشتن CSS</a><a class="" href="p2-css-look.html" data-fa="رنگ، پس‌زمینه و انتخاب‌گر" data-en="Color, background, and selectors">رنگ، پس‌زمینه و انتخاب‌گر</a><a class="" href="p2-box.html" data-fa="مدل جعبه‌ای و display" data-en="The box model and display">مدل جعبه‌ای و display</a><a class="" href="p2-flex.html" data-fa="چیدمان با Flexbox" data-en="Layout with Flexbox">چیدمان با Flexbox</a><a class="" href="p2-flex-work.html" data-fa="کارگاه چیدمان صفحه" data-en="Page-layout workshop">کارگاه چیدمان صفحه</a><a class="" href="p2-media.html" data-fa="مدیا کوئری و ارزشیابی CSS" data-en="Media queries and the CSS assessment">مدیا کوئری و ارزشیابی CSS</a><p class="mod" data-fa="پودمان ۳: صفحات وب تعاملی" data-en="Module 3: Interactive web pages">پودمان ۳: صفحات وب تعاملی</p><p class="unit" data-fa="معرفی پودمان" data-en="Module introduction">معرفی پودمان</p><a class="" href="p3-intro.html" data-fa="معرفی پودمان تعاملی" data-en="Introducing the interactive module">معرفی پودمان تعاملی</a><p class="unit" data-fa="بوت‌استرپ" data-en="Bootstrap">بوت‌استرپ</p><a class="" href="p3-bs-start.html" data-fa="فریم‌ورک و شروع بوت‌استرپ" data-en="Frameworks and starting Bootstrap">فریم‌ورک و شروع بوت‌استرپ</a><a class="" href="p3-bs-util.html" data-fa="فاصله، گردی و لیست" data-en="Spacing, rounding, and lists">فاصله، گردی و لیست</a><a class="" href="p3-bs-header.html" data-fa="سرصفحه فروشگاه" data-en="The shop header">سرصفحه فروشگاه</a><a class="" href="p3-bs-grid.html" data-fa="شبکه Grid" data-en="The grid">شبکه Grid</a><a class="" href="p3-bs-rwd.html" data-fa="کلاس‌های واکنش‌گرا" data-en="Responsive classes">کلاس‌های واکنش‌گرا</a><a class="" href="p3-bs-nav.html" data-fa="نوار ناوبری و جزئیات محصول" data-en="Navbar and product details">نوار ناوبری و جزئیات محصول</a><a class="" href="p3-bs-form.html" data-fa="فرم و پنجره Modal" data-en="Forms and modals">فرم و پنجره Modal</a><a class="" href="p3-bs-show.html" data-fa="کاروسل و آکاردئون" data-en="Carousel and accordion">کاروسل و آکاردئون</a><a class="" href="p3-bs-assess.html" data-fa="ارزشیابی بوت‌استرپ" data-en="Bootstrap assessment">ارزشیابی بوت‌استرپ</a><p class="unit" data-fa="جاوااسکریپت" data-en="JavaScript">جاوااسکریپت</p><a class="" href="p3-js-start.html" data-fa="جاوااسکریپت در صفحه وب" data-en="JavaScript on the page">جاوااسکریپت در صفحه وب</a><a class="" href="p3-js-vars.html" data-fa="متغیر و نوع داده" data-en="Variables and data types">متغیر و نوع داده</a><a class="" href="p3-js-ops.html" data-fa="عملگرها" data-en="Operators">عملگرها</a><a class="" href="p3-js-data.html" data-fa="آرایه و شیء" data-en="Arrays and objects">آرایه و شیء</a><a class="" href="p3-js-if.html" data-fa="شرط در جاوااسکریپت" data-en="Conditions in JavaScript">شرط در جاوااسکریپت</a><a class="" href="p3-js-loops.html" data-fa="حلقه‌ها" data-en="Loops">حلقه‌ها</a><a class="" href="p3-js-func.html" data-fa="تابع‌ها" data-en="Functions">تابع‌ها</a><a class="" href="p3-js-dom.html" data-fa="صفحه، رویداد و اعتبار فرم" data-en="The page, events, and form validation">صفحه، رویداد و اعتبار فرم</a><a class="" href="p3-js-assess.html" data-fa="ارزشیابی جاوااسکریپت" data-en="JavaScript assessment">ارزشیابی جاوااسکریپت</a><p class="mod" data-fa="پودمان ۴: توسعه وب پایتون" data-en="Module 4: Python for the web">پودمان ۴: توسعه وب پایتون</p><p class="unit" data-fa="معرفی پودمان" data-en="Module introduction">معرفی پودمان</p><a class="" href="p4-intro.html" data-fa="معرفی پودمان شیءگرایی" data-en="Introducing the object-oriented module">معرفی پودمان شیءگرایی</a><p class="unit" data-fa="شیءگرایی" data-en="Object-oriented programming">شیءگرایی</p><a class="" href="p4-idea.html" data-fa="ایده شیء و کلاس" data-en="The idea of objects and classes">ایده شیء و کلاس</a><a class="" href="p4-class.html" data-fa="ساخت کلاس و متد" data-en="Writing a class and methods">ساخت کلاس و متد</a><a class="" href="p4-inherit.html" data-fa="وراثت" data-en="Inheritance">وراثت</a><a class="" href="p4-protect.html" data-fa="داده معتبر و استفاده داخلی" data-en="Valid data and internal use">داده معتبر و استفاده داخلی</a><a class="" href="p4-assess-oop.html" data-fa="ارزشیابی برنامه شیءگرا" data-en="Object-oriented assessment">ارزشیابی برنامه شیءگرا</a><p class="unit" data-fa="فایل و توسعه" data-en="Files and development">فایل و توسعه</p><a class="" href="p4-files.html" data-fa="خواندن و نوشتن فایل متنی" data-en="Reading and writing text files">خواندن و نوشتن فایل متنی</a><a class="" href="p4-errors.html" data-fa="پیمایش فایل و مدیریت خطا" data-en="Walking a file and handling errors">پیمایش فایل و مدیریت خطا</a><a class="" href="p4-json.html" data-fa="چند فایل و JSON" data-en="Several files and JSON">چند فایل و JSON</a><a class="" href="p4-assess-files.html" data-fa="ارزشیابی کار با فایل" data-en="Files assessment">ارزشیابی کار با فایل</a><p class="mod" data-fa="پودمان ۵: برنامه‌نویسی جنگو" data-en="Module 5: Django">پودمان ۵: برنامه‌نویسی جنگو</p><p class="unit" data-fa="معرفی پودمان" data-en="Module introduction">معرفی پودمان</p><a class="" href="p5-intro.html" data-fa="معرفی پودمان جنگو" data-en="Introducing the Django module">معرفی پودمان جنگو</a><p class="unit" data-fa="ایجاد وب‌اپلیکیشن" data-en="Creating the web app">ایجاد وب‌اپلیکیشن</p><a class="" href="p5-what.html" data-fa="جنگو چیست و نصب" data-en="What Django is, and installing it">جنگو چیست و نصب</a><a class="" href="p5-project.html" data-fa="پروژه، اپ و اولین view" data-en="Project, app, and the first view">پروژه، اپ و اولین view</a><a class="" href="p5-template.html" data-fa="قالب و دمای واقعی" data-en="Templates and a real temperature">قالب و دمای واقعی</a><a class="" href="p5-assess-create.html" data-fa="ارزشیابی ایجاد وب‌اپلیکیشن" data-en="Creating-the-app assessment">ارزشیابی ایجاد وب‌اپلیکیشن</a><p class="unit" data-fa="توسعه وب‌اپلیکیشن" data-en="Developing the web app">توسعه وب‌اپلیکیشن</p><a class="current" href="p5-model.html" data-fa="مدل شهر و پنل ادمین" data-en="The city model and the admin">مدل شهر و پنل ادمین</a><a class="" href="p5-list.html" data-fa="خواندن شهرها و نمایش فهرست" data-en="Reading cities and showing the list">خواندن شهرها و نمایش فهرست</a><a class="" href="p5-auth.html" data-fa="ورود و خروج" data-en="Sign-in and sign-out">ورود و خروج</a><a class="" href="p5-crud.html" data-fa="افزودن و حذف شهر" data-en="Adding and deleting a city">افزودن و حذف شهر</a><a class="" href="p5-bugs.html" data-fa="باگ و امنیت" data-en="Bugs and security">باگ و امنیت</a><p class="mod" data-fa="پایان کتاب" data-en="Back of the book">پایان کتاب</p><p class="unit" data-fa="منابع" data-en="References">منابع</p><a class="" href="refs.html" data-fa="منابع کتاب" data-en="Book references">منابع کتاب</a></nav></details>
+    <div class="main">
+      <h1 class="section-title" data-fa="مدل شهر و پنل ادمین" data-en="The city model and the admin">مدل شهر و پنل ادمین</h1><article class="lesson" lang="fa" dir="rtl" data-lang-block="fa"><h1 id="_1">توسعه وب اپلیکیشن</h1>
+<hr />
+<p class="page-mark">صفحه ۲۹۵</p>
+<h2 id="_2">واحد یادگیری ٢</h2>
+<h2 id="_3">توسعه وب اپلیکیشن</h2>
+<h3 id="_4">آیا تابه‌حال اندیشیده‌اید</h3>
+<p>یک سایت چطور با پایگاه داده ارتباط برقرار می‌کند؟</p>
+<p>یک وب اپلیکیشن چطور کاربر مهمان را تشخیص می‌دهد؟</p>
+<p>اطلاعاتی که کاربران در فرم‌ها وارد می‌کنند، چطور در پایگاه داده ذخیره می‌شود؟</p>
+<p>برنامه‌نویس چگونه می‌تواند از بروز خطاها در سایت جلوگیری کند؟</p>
+<h3 id="_5">در پایان از هنرجو انتظار می‌رود</h3>
+<p>1 بتواند با استفاده از جنگو در پایگاه داده تغییرات اعمال کند.</p>
+<p>2 مفهوم فیلد و جدول در جنگو را درک کرده و درباره آن استدلال نماید.</p>
+<p>3 با استفاده از جنگو، بتواند اطلاعات فرم‌ها را در پایگاه داده ذخیره نمایند.</p>
+<p>4 با مفهوم <code>ORM</code> در جنگو آشنا شود و بتواند پرس‌وجوهای ساده بنویسد.</p>
+<p>5 مشکلات و باگ‌های مرسوم در وب اپلیکیشن‌ها را بشناسد و بتواند به‌صورت عملی مشکلات را برطرف نماید.</p>
+<h3 id="_6">استاندارد عملکرد</h3>
+<p>هنرجو بتواند با ساخت <code>Model</code> در جنگو و استفاده از فرم‌های <code>HTML</code> ارتباط با پایگاه داده را پیاده‌سازی کند و اطلاعاتی که کاربران وارد می‌کنند را در جداول ذخیره و بازیابی نماید.</p>
+<hr />
+<p class="page-mark">صفحه ۲۹۶</p>
+<h3 id="_7">ساخت جدول شهر در پایگاه داده</h3>
+<p>تا این مرحله سایت شما فقط دمای شهرهایی را نمایش می‌دهد که در <code>view</code> مشخص کرده‌اید، یعنی در <code>show_temp_view</code> اسم شهر ثابت است و همیشه دمای یک شهر، نمایش داده خواهد شد. روش بهتر این است که کاربر مهمان، قابلیت انتخاب شهر موردنظرش را داشته باشد.</p>
+<p>جهت پیاده‌سازی این قابلیت، نیاز است، اطلاعات شهرها را به همراه طول و عرض جغرافیایی هر شهر، در پایگاه داده ذخیره کنید، سپس وقتی کاربر وارد سایت شد، لیستی از شهرها را مشاهده کرده و با کلیک روی نام شهر، دمای شهر موردنظر خود را ببیند.</p>
+<p>برای پیاده‌سازی این قابلیت باید یک جدول (<code>table</code>) در پایگاه‌داده ایجاد کنید.</p>
+<p>هر <code>app</code> یک فایل با نام <code>models.py</code> دارد. جنگو برای ساخت جداول از مدل‌ها (<code>model</code>) استفاده می‌کند. هر مدل در جنگو معادل یک جدول، با همان نام، در پایگاه‌داده است. در اولین قدم باید درون فایل <code>models.py</code> کلاس لازم برای تعریف جدول و ستون‌های جدول ایجاد شود.</p>
+<p>فایل <code>models.py</code> در <code>weather</code> <code>app</code> را باز کنید. سپس محتوای این فایل را همانند شکل 27 تغییر دهید.</p>
+<p><img alt="شکل 27 ساخت مدل City" src="../images/p302-01.png" /></p>
+<p>شکل 27 ساخت مدل <code>City</code></p>
+<h3 id="_8">توضیحات کدها:</h3>
+<p>خط 1: ماژول <code>models</code> از ماژول <code>django.db</code>، وارد (<code>import</code>) شده است. در واقع با این خط، ابزارها و کلاس‌های لازم برای تعریف مدل‌های پایگاه‌داده (<code>Database</code> <code>Models</code>) وارد (<code>import</code>) می‌شوند.</p>
+<p>خط 3: کلاس <code>City</code> جهت ساخت جدول شهرها با ارث‌بری از <code>Model</code> ایجاد شده است. <code>Model</code> کلاس پایه جنگو برای ساخت مدل‌ها (جدول‌های پایگاه‌داده) است و امکانات لازم برای ارتباط با پایگاه‌داده را فراهم می‌کند.</p>
+<p>خط 4: این دستور یک فیلد برای نگهداری نام شهر به‌صورت متن، در جدول می‌سازد که حداکثر 50 کاراکتر طول دارد. برای <code>CharField</code> تعیین‌کردن <code>max_length</code> اجباری است.</p>
+<p>خط 5: از <code>FloatField</code> جهت نگهداری اعداد اعشاری استفاده شده است. عرض جغرافیایی (<code>Latitude</code>) و طول جغرافیایی (<code>Longitude</code>) هر دو عدد اعشاری هستند.</p>
+<hr />
+<p class="page-mark">صفحه ۲۹۷</p>
+<p>برای استفاده از مدل <code>City</code>، نیاز است که جدول معادلش در پایگاه‌داده ساخته شود.</p>
+<p>در ترمینال دستور <code>makemigrations</code> را همانند شکل 28 اجرا کنید.</p>
+<p><img alt="شکل 28 اجرای دستور makemigrations" src="../images/p303-01.png" /></p>
+<p>شکل 28 اجرای دستور <code>makemigrations</code></p>
+<p>وقتی <code>makemigrations</code> را اجرا می‌کنید، درون <code>weather</code> <code>app</code>، فایلی با نام <code>0001_initial.py</code> در پوشه <code>migrations</code> ایجاد می‌شود. این فایل کدهای لازم جهت تبدیل مدل به جدول واقعی را آماده‌سازی می‌کند.</p>
+<p>در مرحله بعد دستور <code>migrate</code> را همانند شکل 29 در ترمینال اجرا کنید.</p>
+<p><img alt="شکل 29 اجرای دستور migrate" src="../images/p303-02.png" /></p>
+<p>شکل 29 اجرای دستور <code>migrate</code></p>
+<hr />
+<p class="page-mark">صفحه ۲۹۸</p>
+<p>پس از اجرای <code>migrate</code>، جدول‌های پیش‌فرض جنگو و جدول <code>city</code> در پایگاه‌داده <code>db.sqlite3</code> ساخته می‌شوند.</p>
+<p>مشاهده جداول پایگاه‌داده برای مشاهده ساختار و محتوای جداول درون پایگاه‌داده، می‌توانید افزونه <code>SQLite</code> <code>Viewer</code> را به‌عنوان یک ابزار کمکی نصب کنید. برای نصب این افزونه مطمئن شوید که اینترنت متصل باشد (شکل 30).</p>
+<p><img alt="شکل 30 جست‌وجوی افزونه SQLite Viewer" src="../images/p304-01.png" /></p>
+<p>شکل 30 جست‌وجوی افزونه <code>SQLite</code> <code>Viewer</code></p>
+<p>پس از نصب افزونه ذکر شده، با کلیک بر روی فایل <code>db.sqlite3</code> جدول‌های پیش‌فرض جنگو و جدول <code>city</code> را مشاهده خواهید کرد (شکل 31).</p>
+<p><img alt="شکل 31 جداول پایگاه‌داده" src="../images/p304-02.png" /></p>
+<p>شکل 31 جداول پایگاه‌داده</p>
+<hr />
+<p class="page-mark">صفحه ۲۹۹</p>
+<p>همان‌طور‌که در‌شکل 31 مشخص است، جدول <code>city</code> با پیشوند <code>weather</code> ساخته شده است. با کلیک روی جدول <code>weather_city</code>، لیست فیلدها در سمت راست نمایش داده می‌شود. در حال حاضر هیچ رکوردی در جدول <code>city</code> وجود ندارد.</p>
+<p>با افزونه <code>SQLite</code> <code>Viewer</code> فقط می‌توانید محتوا و ساختار جداول را مشاهده کنید و امکان ذخیره اطلاعات وجود ندارد.</p>
+<p>برای تغییر محتوای جدول <code>city</code> و یا افزودن نام شهرهایی جدید به جدول لازم است وارد پنل ادمین جنگو شوید. البته هنوز نمی‌توانید از طریق پنل <code>admin</code> داده‌های مربوط به شهر‌ها را وارد دیتابیس کنید، چرا که هنوز کاربر <code>admin</code> تعریف نشده است؛ بنابراین در مرحله بعد نوبت تعریف کاربر <code>admin</code> است.</p>
+<p>پنل مدیریت جنگو برای ورود به پنل ادمین، نیاز به نام کاربری و رمز عبور است. دستور زیر را در ترمینال وارد کنید:</p>
+<div class="code-wrap" dir="ltr"><pre><code>python manage.py createsuperuser
+</code></pre></div>
+<p>جنگو از شما نام کاربری درخواست می‌کند (شکل 32).</p>
+<p><img alt="شکل 32 اجرای دستور createsuperuser" src="../images/p305-01.png" /></p>
+<p>شکل 32 اجرای دستور <code>createsuperuser</code></p>
+<p>همان‌گونه که مشخص است، نام کاربر جاری ویندوز را به‌عنوان نام کاربری پیشنهاد داده است.</p>
+<p>می‌توانید نام کاربری <code>admin</code> و یا هر نام کاربری دیگری را به‌دلخواه وارد کنید، سپس به‌ترتیب، ایمیل، کلمه عبور و تکرار کلمه عبور را وارد کنید (شکل 33).</p>
+<p><img alt="شکل 33 ایجاد موفق کاربر ادمین" src="../images/p305-02.png" /></p>
+<p>شکل 33 ایجاد موفق کاربر ادمین</p>
+<hr />
+<p class="page-mark">صفحه ۳۰۰</p>
+<h3 id="_9">نکته</h3>
+<p>می‌توانید ایمیل را خالی وارد کنید، همچنین اگر رمز عبور ساده‌ای وارد کنید، همانند شکل 34 به شما اخطار خواهد داد.</p>
+<p><img alt="شکل 34 اخطار ساده‌بودن رمز ادمین" src="../images/p306-01.png" /></p>
+<p>شکل 34 اخطار ساده‌بودن رمز ادمین</p>
+<p>پس از ایجاد کاربر ادمین، با افزونه <code>SQLite</code> <code>Viewer</code> می‌توانید، کاربر ایجاد شده را در جدول <code>auth_user</code> همانند شکل 35 مشاهده کنید.</p>
+<p><img alt="شکل 35 نمایش کاربر admin ایجاد شده در دیتابیس" src="../images/p306-02.png" /></p>
+<p>شکل 35 نمایش کاربر <code>admin</code> ایجاد شده در دیتابیس</p>
+<hr />
+<p class="page-mark">صفحه ۳۰۱</p>
+<p>اکنون جهت ورود به پنل مدیریت ادمین جنگو، سرور جنگو را روشن کرده و صفحه ادمین را با تایپ آدرس زیر در نوار آدرس مرورگر، باز کنید:</p>
+<div class="code-wrap" dir="ltr"><pre><code>http://127.0.0.1:8000/admin/
+</code></pre></div>
+<p>سپس با نام کاربری و رمز عبوری که ساخته‌اید، وارد شوید.</p>
+<p>پنل ادمین همانند شکل 36 نمایش داده خواهد شد.</p>
+<p><img alt="شکل 36 ورود موفق به پنل ادمین جنگو" src="../images/p307-01.png" /></p>
+<p>شکل 36 ورود موفق به پنل ادمین جنگو</p>
+<p>در قسمت <code>1Authentication</code> <code>and</code> <code>Authorization</code> با استفاده از <code>Users</code> می‌توان کاربران سایت را مشاهده و مدیریت کرد.</p>
+<p>با استفاده از دکمه <code>add</code> می‌توان کاربر جدید ایجاد کرد. برای ایجاد کاربر جدید، لازم است فیلدهای نام کاربری، رمز عبور و تکرار رمز عبور را وارد کرده و دکمه <code>save</code> را بزنید (شکل 37).</p>
+<p><img alt="شکل 37 فرم ساخت کاربر جدید" src="../images/p307-02.png" /></p>
+<p>شکل 37 فرم ساخت کاربر جدید</p>
+<p>1- احراز هویت و مجوز</p>
+<hr />
+<p class="page-mark">صفحه ۳۰۲</p>
+<p>پیغام ذخیره موفقیت‌آمیز همانند شکل 38 مشاهده خواهید کرد. در این مرحله می‌توانید اطلاعات تکمیلی، مثل نام، نام خانوادگی، ایمیل و… را برای کاربر ایجاد شده ثبت کنید.</p>
+<p><img alt="شکل 38 ذخیره موفق کاربر" src="../images/p308-01.png" /></p>
+<p>شکل 38 ذخیره موفق کاربر</p>
+<p>برای مشاهده لیست کاربران ایجاد شده، روی <code>Users</code> کلیک کنید (شکل 39).</p>
+<p><img alt="شکل 39 مشاهده لیست کاربران" src="../images/p308-02.png" /></p>
+<p>شکل 39 مشاهده لیست کاربران</p>
+<h3 id="_10">فعالیت</h3>
+<p>با کمک هنرآموز خود، کاربر دیگری ایجاد کنید. سپس با کاربرهای مختلف در پنل ادمین <code>login</code> کرده و تفاوت کاربرهای مختلف را بررسی کنید.</p>
+<p>افزودن جدول شهر به پنل ادمین اگر دقت کرده باشد در شکل 36، در پنل ادمین جدول شهرها مشاهده نشد، با انجام مراحلی که در ادامه آمده است، می‌توانید جدول <code>City</code> را به پنل ادمین اضافه کنید.</p>
+<hr />
+<p class="page-mark">صفحه ۳۰۳</p>
+<p>هر <code>app</code> در جنگو یک فایل <code>admin.py</code> دارد. فایل <code>admin.py</code> در <code>weather</code> <code>app</code> را باز کنید و همانند شکل 40، مدل <code>City</code> را به ادمین جنگو معرفی کنید.</p>
+<p><img alt="شکل 40 معرفی مدل City به پنل ادمین جنگو" src="../images/p309-01.png" /></p>
+<p>شکل 40 معرفی مدل <code>City</code> به پنل ادمین جنگو</p>
+<h3 id="_11">توضیحات کدها:</h3>
+<p>خط 1: ماژول <code>admin</code> جهت مدیریت پنل ادمین از <code>contrib</code> وارد (<code>import</code>) شده است.</p>
+<p>خط 2: مدل <code>City</code> از فایل <code>models.py</code> وارد (<code>import</code>) شده است.</p>
+<p>خط 4: مدل <code>City</code> با دستور <code>register</code> به پنل ادمین معرفی شده است.</p>
+<p>اکنون فایل را ذخیره کنید، سپس مرورگر را <code>refresh</code> کنید، جدول <code>city</code> به ادمین جنگو اضافه شده است و حرف <code>s</code> به انتهای نام مدل اضافه شده است (شکل 41).</p>
+<p><img alt="شکل 41 اضافه شدن City به پنل ادمین" src="../images/p309-02.png" /></p>
+<p>شکل 41 اضافه شدن <code>City</code> به پنل ادمین</p>
+<hr />
+<p class="page-mark">صفحه ۳۰۴</p>
+<p>وارد کردن اطلاعات شهرها در پنل ادمین، روی دکمه <code>Add</code> (مقابل <code>Citys</code>) کلیک کنید، فرم ثبت شهر (<code>Add</code> <code>city</code>) را مشاهده خواهید کرد (شکل 42) .</p>
+<p><img alt="شکل 42 فرم Add city" src="../images/p310-01.png" /></p>
+<p>شکل 42 فرم <code>Add</code> <code>city</code></p>
+<h3 id="_12">فعالیت</h3>
+<p>با استفاده از اطلاعات جدول 2، چند شهر را با فرم <code>Add</code> <code>city</code> در پایگاه داده ذخیره کنید.</p>
+<p>جدول 2 طول و عرض جغرافیایی چند شهر</p>
+<p>نام شهر</p>
+<p>عرض جغرافیایی (<code>lat</code>)</p>
+<p>طول جغرافیایی (<code>lon</code>)</p>
+<p>میناب27.1478</p>
+<p>57.0738</p>
+<p>همدان.798137</p>
+<p>.514648</p>
+<p>تهران.721935</p>
+<p>.334751</p>
+<p>الشتر33.8632</p>
+<p>.261748</p>
+<p>تفرش.693634</p>
+<p>.015450</p>
+<p>بابل36.5387</p>
+<p>52.6765</p>
+<p>جهرم.517728</p>
+<p>.574453</p>
+<p>تبریز.079238</p>
+<p>46.2887</p>
+<p>سبزوار36.2152</p>
+<p>.667857</p>
+<hr /></article><article class="lesson" lang="en" dir="ltr" data-lang-block="en" hidden><h1 id="developing-a-web-application">Developing a web application</h1>
+<hr />
+<p class="page-mark">Page 295</p>
+<h2 id="learning-unit-2">Learning unit 2</h2>
+<h2 id="developing-a-web-application_1">Developing a web application</h2>
+<h3 id="have-you-ever-thought">Have you ever thought</h3>
+<p>How does a site communicate with a database?</p>
+<p>How does a web application recognize a guest user?</p>
+<p>How is the information that users enter in forms stored in the database?</p>
+<p>How can a programmer prevent errors from occurring on the site?</p>
+<h3 id="by-the-end-the-student-is-expected-to">By the end, the student is expected to</h3>
+<p>1 be able to apply changes in the database using Django.</p>
+<p>2 understand the concept of field and table in Django and reason about it.</p>
+<p>3 using Django, be able to store form information in the database.</p>
+<p>4 become familiar with the concept of <code>ORM</code> in Django and be able to write simple queries.</p>
+<p>5 recognize common problems and bugs in web applications and be able to fix the problems in practice.</p>
+<h3 id="performance-standard">Performance standard</h3>
+<p>The student should be able, by building a <code>Model</code> in Django and using <code>HTML</code> forms, to implement communication with the database and store and retrieve the information that users enter in tables.</p>
+<hr />
+<p class="page-mark">Page 296</p>
+<h3 id="creating-the-city-table-in-the-database">Creating the city table in the database</h3>
+<p>Up to this stage your site only displays the temperature of cities that you have specified in the <code>view</code>, meaning in <code>show_temp_view</code> the city name is fixed and the temperature of one city will always be displayed. A better method is for the guest user to be able to choose their desired city.</p>
+<p>To implement this capability, you need to store city information together with the latitude and longitude of each city in the database, then when the user enters the site, they see a list of cities and by clicking on the city name see the temperature of their desired city.</p>
+<p>To implement this capability you must create a table (<code>table</code>) in the database.</p>
+<p>Each <code>app</code> has a file named <code>models.py</code>. Django uses models (<code>model</code>) to build tables. Each model in Django corresponds to a table with the same name in the database. As a first step, inside the <code>models.py</code> file the class needed to define the table and the table columns must be created.</p>
+<p>Open the <code>models.py</code> file in the <code>weather</code> <code>app</code>. Then change the content of this file as shown in Figure 27.</p>
+<p><img alt="Figure 27 creating the City model" src="../images/p302-01.png" /></p>
+<p>Figure 27 creating the <code>City</code> model</p>
+<h3 id="code-notes">Code notes:</h3>
+<p>Line 1: the <code>models</code> module has been imported from the <code>django.db</code> module. In fact with this line, the tools and classes needed to define database models (<code>Database</code> <code>Models</code>) are imported.</p>
+<p>Line 3: the <code>City</code> class has been created to build the cities table by inheriting from <code>Model</code>. <code>Model</code> is Django’s base class for building models (database tables) and provides the facilities needed to communicate with the database.</p>
+<p>Line 4: this command builds a field in the table for holding the city name as text, with a maximum length of 50 characters. For <code>CharField</code>, setting <code>max_length</code> is required.</p>
+<p>Line 5: <code>FloatField</code> has been used to hold decimal numbers. Geographic latitude (<code>Latitude</code>) and geographic longitude (<code>Longitude</code>) are both decimal numbers.</p>
+<hr />
+<p class="page-mark">Page 297</p>
+<p>To use the <code>City</code> model, the equivalent table needs to be created in the database.</p>
+<p>In the terminal run the <code>makemigrations</code> command as shown in Figure 28.</p>
+<p><img alt="Figure 28 running the makemigrations command" src="../images/p303-01.png" /></p>
+<p>Figure 28 running the <code>makemigrations</code> command</p>
+<p>When you run <code>makemigrations</code>, inside the <code>weather</code> <code>app</code>, a file named <code>0001_initial.py</code> is created in the <code>migrations</code> folder. This file prepares the code needed to turn the model into a real table.</p>
+<p>In the next step run the <code>migrate</code> command in the terminal as shown in Figure 29.</p>
+<p><img alt="Figure 29 running the migrate command" src="../images/p303-02.png" /></p>
+<p>Figure 29 running the <code>migrate</code> command</p>
+<hr />
+<p class="page-mark">Page 298</p>
+<p>After running <code>migrate</code>, Django’s default tables and the <code>city</code> table are created in the <code>db.sqlite3</code> database.</p>
+<p>Viewing database tables: to view the structure and content of the tables inside the database, you can install the <code>SQLite</code> <code>Viewer</code> extension as a helper tool. To install this extension make sure the internet is connected (Figure 30).</p>
+<p><img alt="Figure 30 searching for the SQLite Viewer extension" src="../images/p304-01.png" /></p>
+<p>Figure 30 searching for the <code>SQLite</code> <code>Viewer</code> extension</p>
+<p>After installing the mentioned extension, by clicking on the <code>db.sqlite3</code> file you will see Django’s default tables and the <code>city</code> table (Figure 31).</p>
+<p><img alt="Figure 31 database tables" src="../images/p304-02.png" /></p>
+<p>Figure 31 database tables</p>
+<hr />
+<p class="page-mark">Page 299</p>
+<p>As is clear in Figure 31, the <code>city</code> table has been created with the <code>weather</code> prefix. By clicking on the <code>weather_city</code> table, the list of fields is displayed on the right. At present there is no record in the <code>city</code> table.</p>
+<p>With the <code>SQLite</code> <code>Viewer</code> extension you can only view the content and structure of the tables and there is no possibility of storing information.</p>
+<p>To change the content of the <code>city</code> table or to add new city names to the table, you need to enter Django’s admin panel. Of course you still cannot enter city-related data into the database through the <code>admin</code> panel, because the <code>admin</code> user has not been defined yet; so in the next step it is time to define the <code>admin</code> user.</p>
+<p>Django management panel: to enter the admin panel, a username and password are needed. Enter the following command in the terminal:</p>
+<div class="code-wrap" dir="ltr"><pre><code>python manage.py createsuperuser
+</code></pre></div>
+<p>Django asks you for a username (Figure 32).</p>
+<p><img alt="Figure 32 running the createsuperuser command" src="../images/p305-01.png" /></p>
+<p>Figure 32 running the <code>createsuperuser</code> command</p>
+<p>As is clear, it has suggested the current Windows user’s name as the username.</p>
+<p>You can enter the username <code>admin</code> or any other username of your choice, then enter the email, password, and password confirmation in order (Figure 33).</p>
+<p><img alt="Figure 33 successfully creating the admin user" src="../images/p305-02.png" /></p>
+<p>Figure 33 successfully creating the admin user</p>
+<hr />
+<p class="page-mark">Page 300</p>
+<h3 id="note">Note</h3>
+<p>You can leave the email empty; also if you enter a simple password, as in Figure 34 it will warn you.</p>
+<p><img alt="Figure 34 warning that the admin password is simple" src="../images/p306-01.png" /></p>
+<p>Figure 34 warning that the admin password is simple</p>
+<p>After creating the admin user, with the <code>SQLite</code> <code>Viewer</code> extension you can see the created user in the <code>auth_user</code> table as in Figure 35.</p>
+<p><img alt="Figure 35 displaying the created admin user in the database" src="../images/p306-02.png" /></p>
+<p>Figure 35 displaying the created <code>admin</code> user in the database</p>
+<hr />
+<p class="page-mark">Page 301</p>
+<p>Now to enter Django’s admin management panel, turn on the Django server and open the admin page by typing the following address in the browser’s address bar:</p>
+<div class="code-wrap" dir="ltr"><pre><code>http://127.0.0.1:8000/admin/
+</code></pre></div>
+<p>Then log in with the username and password you created.</p>
+<p>The admin panel will be displayed as in Figure 36.</p>
+<p><img alt="Figure 36 successfully logging into the Django admin panel" src="../images/p307-01.png" /></p>
+<p>Figure 36 successfully logging into the Django admin panel</p>
+<p>In the <code>1Authentication</code> <code>and</code> <code>Authorization</code> section, using <code>Users</code> you can view and manage the site’s users.</p>
+<p>Using the <code>add</code> button you can create a new user. To create a new user, you need to enter the username, password, and password confirmation fields and press the <code>save</code> button (Figure 37).</p>
+<p><img alt="Figure 37 the form for creating a new user" src="../images/p307-02.png" /></p>
+<p>Figure 37 the form for creating a new user</p>
+<p>1- Authentication and authorization</p>
+<hr />
+<p class="page-mark">Page 302</p>
+<p>You will see a successful save message as in Figure 38. At this stage you can register additional information, such as first name, last name, email, and so on, for the created user.</p>
+<p><img alt="Figure 38 successfully saving the user" src="../images/p308-01.png" /></p>
+<p>Figure 38 successfully saving the user</p>
+<p>To view the list of created users, click on <code>Users</code> (Figure 39).</p>
+<p><img alt="Figure 39 viewing the list of users" src="../images/p308-02.png" /></p>
+<p>Figure 39 viewing the list of users</p>
+<h3 id="activity">Activity</h3>
+<p>With your instructor’s help, create another user. Then <code>login</code> to the admin panel with different users and examine the differences between different users.</p>
+<p>Adding the city table to the admin panel: if you have paid attention, in Figure 36 the cities table was not seen in the admin panel. By carrying out the steps that follow, you can add the <code>City</code> table to the admin panel.</p>
+<hr />
+<p class="page-mark">Page 303</p>
+<p>Each <code>app</code> in Django has an <code>admin.py</code> file. Open the <code>admin.py</code> file in the <code>weather</code> <code>app</code> and introduce the <code>City</code> model to Django admin as shown in Figure 40.</p>
+<p><img alt="Figure 40 introducing the City model to the Django admin panel" src="../images/p309-01.png" /></p>
+<p>Figure 40 introducing the <code>City</code> model to the Django admin panel</p>
+<h3 id="code-notes_1">Code notes:</h3>
+<p>Line 1: the <code>admin</code> module for managing the admin panel has been imported from <code>contrib</code>.</p>
+<p>Line 2: the <code>City</code> model has been imported from the <code>models.py</code> file.</p>
+<p>Line 4: the <code>City</code> model has been introduced to the admin panel with the <code>register</code> command.</p>
+<p>Now save the file, then <code>refresh</code> the browser; the <code>city</code> table has been added to Django admin and the letter <code>s</code> has been added to the end of the model name (Figure 41).</p>
+<p><img alt="Figure 41 City being added to the admin panel" src="../images/p309-02.png" /></p>
+<p>Figure 41 <code>City</code> being added to the admin panel</p>
+<hr />
+<p class="page-mark">Page 304</p>
+<p>Entering city information: in the admin panel, click the <code>Add</code> button (next to <code>Citys</code>); you will see the city registration form (<code>Add</code> <code>city</code>) (Figure 42).</p>
+<p><img alt="Figure 42 the Add city form" src="../images/p310-01.png" /></p>
+<p>Figure 42 the <code>Add</code> <code>city</code> form</p>
+<h3 id="activity_1">Activity</h3>
+<p>Using the information in Table 2, store a few cities in the database with the <code>Add</code> <code>city</code> form.</p>
+<p>Table 2 latitude and longitude of a few cities</p>
+<p>City name</p>
+<p>Latitude (<code>lat</code>)</p>
+<p>Longitude (<code>lon</code>)</p>
+<p>Minab27.1478</p>
+<p>57.0738</p>
+<p>Hamedan.798137</p>
+<p>.514648</p>
+<p>Tehran.721935</p>
+<p>.334751</p>
+<p>Aleshtar33.8632</p>
+<p>.261748</p>
+<p>Tafresh.693634</p>
+<p>.015450</p>
+<p>Babol36.5387</p>
+<p>52.6765</p>
+<p>Jahrom.517728</p>
+<p>.574453</p>
+<p>Tabriz.079238</p>
+<p>46.2887</p>
+<p>Sabzevar36.2152</p>
+<p>.667857</p>
+<hr /></article>
+      <aside class="extra">
+        <h2 data-fa="تمرین این بخش" data-en="Exercises for this section">تمرین این بخش</h2>
+        <p class="extra-note" data-fa="این تمرین‌ها و پیوندها اضافه بر متن کتاب‌اند." data-en="These exercises and links are in addition to the book.">این تمرین‌ها و پیوندها اضافه بر متن کتاب‌اند.</p>
+        <ol><li data-fa="مدل City را با نام اجباری بساز، migrate کن و از پنل ادمین دو شهر ثبت کن." data-en="Build a City model with a required name, migrate, and add two cities in the admin.">مدل City را با نام اجباری بساز، migrate کن و از پنل ادمین دو شهر ثبت کن.</li><li data-fa="یکی از شهرها را در ادمین ویرایش کن و در فهرست ادمین نتیجه را ببین." data-en="Edit one city in the admin and see the result in the admin list.">یکی از شهرها را در ادمین ویرایش کن و در فهرست ادمین نتیجه را ببین.</li></ol>
+        <h2 data-fa="پیوند مفید" data-en="Useful link">پیوند مفید</h2><ul><li><a href="https://docs.djangoproject.com/en/stable/intro/tutorial02/" data-fa="آموزش ۲: مدل و ادمین" data-en="Tutorial 2: models and the admin">آموزش ۲: مدل و ادمین</a></li></ul>
+      </aside>
+    <nav class="pager"><a rel="prev" class="prev" href="p5-assess-create.html"><span class="pager-word" data-fa="قبلی" data-en="Previous">قبلی</span><span class="pager-name" data-fa="ارزشیابی ایجاد وب‌اپلیکیشن" data-en="Creating-the-app assessment">ارزشیابی ایجاد وب‌اپلیکیشن</span></a><a rel="next" class="next" href="p5-list.html"><span class="pager-word" data-fa="بعدی" data-en="Next">بعدی</span><span class="pager-name" data-fa="خواندن شهرها و نمایش فهرست" data-en="Reading cities and showing the list">خواندن شهرها و نمایش فهرست</span></a></nav>
+    </div>
+  </div>
+  <script src="../assets/search-index.js?v=4"></script>
+  <script src="../assets/app.js?v=4"></script>
+</body>
+</html>

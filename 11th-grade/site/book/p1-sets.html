@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title data-fa="مجموعه (set)" data-en="Sets">مجموعه (set)</title>
+  <link rel="icon" href="../assets/favicon.svg">
+  <link rel="stylesheet" href="../assets/style.css?v=4">
+</head>
+<body data-root="../">
+  <header class="top">
+    <a class="brand" href="../index.html">
+      <span data-fa="طراح سایت" data-en="Site Design">طراح سایت</span>
+      <small data-fa="پایه یازدهم" data-en="Grade 11">پایه یازدهم</small>
+    </a>
+    <div class="search-wrap">
+      <input id="q" type="search" autocomplete="off"
+        data-fa-placeholder="جستجو در درس‌ها" data-en-placeholder="Search lessons"
+        placeholder="جستجو در درس‌ها">
+      <div id="results" class="results" hidden></div>
+    </div>
+    <a class="download" href="../grade11-offline.zip?v=2" data-fa="دانلود کل سایت" data-en="Download the whole site">دانلود کل سایت</a>
+    <button type="button" id="lang-toggle" class="lang-toggle" dir="ltr" data-lang="fa"
+      aria-label="تغییر زبان">
+      <span data-opt="fa">فا</span>
+      <span data-opt="en">EN</span>
+    </button>
+  </header>
+  <div class="layout">
+    <details class="toc" open><summary><span data-fa="فهرست درس‌ها" data-en="Lesson list">فهرست درس‌ها</span></summary><nav class="side" aria-label="lessons"><p class="mod" data-fa="شروع کتاب" data-en="Opening">شروع کتاب</p><p class="unit" data-fa="فهرست" data-en="Contents">فهرست</p><a class="" href="toc.html" data-fa="فهرست" data-en="Contents">فهرست</a><p class="mod" data-fa="پودمان ۱: برنامه‌نویسی پایتون" data-en="Module 1: Python programming">پودمان ۱: برنامه‌نویسی پایتون</p><p class="unit" data-fa="معرفی پودمان" data-en="Module introduction">معرفی پودمان</p><a class="" href="p1-intro.html" data-fa="معرفی پودمان پایتون" data-en="Introducing the Python module">معرفی پودمان پایتون</a><p class="unit" data-fa="مدل‌سازی داده" data-en="Data modeling">مدل‌سازی داده</p><a class="" href="p1-python.html" data-fa="پایتون و محیط برنامه‌نویسی" data-en="Python and the programming environment">پایتون و محیط برنامه‌نویسی</a><a class="" href="p1-vars.html" data-fa="متغیرها، نوع داده و عملگرها" data-en="Variables, types, and operators">متغیرها، نوع داده و عملگرها</a><a class="" href="p1-cast.html" data-fa="ورودی و تبدیل نوع" data-en="Input and type casting">ورودی و تبدیل نوع</a><a class="" href="p1-lists.html" data-fa="لیست‌ها" data-en="Lists">لیست‌ها</a><a class="" href="p1-if.html" data-fa="شرط‌های ساده" data-en="Simple conditions">شرط‌های ساده</a><a class="" href="p1-elif.html" data-fa="if، elif و else" data-en="if, elif, and else">if، elif و else</a><a class="" href="p1-for.html" data-fa="حلقه for و range" data-en="The for loop and range">حلقه for و range</a><a class="" href="p1-while.html" data-fa="حلقه while و کنترل حلقه" data-en="The while loop and loop control">حلقه while و کنترل حلقه</a><a class="" href="p1-assess-data.html" data-fa="ارزشیابی مدل‌سازی داده" data-en="Data-modeling assessment">ارزشیابی مدل‌سازی داده</a><p class="unit" data-fa="توابع و ماژول‌ها" data-en="Functions and modules">توابع و ماژول‌ها</p><a class="current" href="p1-sets.html" data-fa="مجموعه (set)" data-en="Sets">مجموعه (set)</a><a class="" href="p1-dict.html" data-fa="دیکشنری" data-en="Dictionaries">دیکشنری</a><a class="" href="p1-quiz.html" data-fa="پروژه بازی Quiz" data-en="Quiz game project">پروژه بازی Quiz</a><a class="" href="p1-tuple.html" data-fa="تاپل" data-en="Tuples">تاپل</a><a class="" href="p1-func.html" data-fa="تعریف تابع، پارامتر و return" data-en="Defining functions, parameters, and return">تعریف تابع، پارامتر و return</a><a class="" href="p1-func-more.html" data-fa="تمرین تابع و مرتب‌سازی" data-en="Function practice and sorting">تمرین تابع و مرتب‌سازی</a><a class="" href="p1-modules.html" data-fa="ماژول‌ها و تفاوت تابع و متد" data-en="Modules, and functions versus methods">ماژول‌ها و تفاوت تابع و متد</a><a class="" href="p1-assess-func.html" data-fa="ارزشیابی توابع و ماژول‌ها" data-en="Functions and modules assessment">ارزشیابی توابع و ماژول‌ها</a><p class="mod" data-fa="پودمان ۲: صفحات وب ایستا" data-en="Module 2: Static web pages">پودمان ۲: صفحات وب ایستا</p><p class="unit" data-fa="معرفی پودمان" data-en="Module introduction">معرفی پودمان</p><a class="" href="p2-intro.html" data-fa="معرفی پودمان صفحات ایستا" data-en="Introducing static web pages">معرفی پودمان صفحات ایستا</a><p class="unit" data-fa="ساختار با HTML" data-en="Structure with HTML">ساختار با HTML</p><a class="" href="p2-web.html" data-fa="وب چگونه کار می‌کند" data-en="How the web works">وب چگونه کار می‌کند</a><a class="" href="p2-concepts.html" data-fa="مفاهیم طراحی وب و نقشه سایت" data-en="Web-design concepts and the site map">مفاهیم طراحی وب و نقشه سایت</a><a class="" href="p2-tags.html" data-fa="اولین صفحه HTML" data-en="A first HTML page">اولین صفحه HTML</a><a class="" href="p2-text.html" data-fa="متن، لیست و پیوند" data-en="Text, lists, and links">متن، لیست و پیوند</a><a class="" href="p2-img.html" data-fa="تصویر در صفحه" data-en="Images on the page">تصویر در صفحه</a><a class="" href="p2-forms.html" data-fa="فرم‌ها" data-en="Forms">فرم‌ها</a><a class="" href="p2-semantic.html" data-fa="عناصر معنایی" data-en="Semantic elements">عناصر معنایی</a><a class="" href="p2-assess-html.html" data-fa="ارزشیابی HTML" data-en="HTML assessment">ارزشیابی HTML</a><p class="unit" data-fa="ظاهر با CSS" data-en="Appearance with CSS">ظاهر با CSS</p><a class="" href="p2-css-start.html" data-fa="نوشتن CSS" data-en="Writing CSS">نوشتن CSS</a><a class="" href="p2-css-look.html" data-fa="رنگ، پس‌زمینه و انتخاب‌گر" data-en="Color, background, and selectors">رنگ، پس‌زمینه و انتخاب‌گر</a><a class="" href="p2-box.html" data-fa="مدل جعبه‌ای و display" data-en="The box model and display">مدل جعبه‌ای و display</a><a class="" href="p2-flex.html" data-fa="چیدمان با Flexbox" data-en="Layout with Flexbox">چیدمان با Flexbox</a><a class="" href="p2-flex-work.html" data-fa="کارگاه چیدمان صفحه" data-en="Page-layout workshop">کارگاه چیدمان صفحه</a><a class="" href="p2-media.html" data-fa="مدیا کوئری و ارزشیابی CSS" data-en="Media queries and the CSS assessment">مدیا کوئری و ارزشیابی CSS</a><p class="mod" data-fa="پودمان ۳: صفحات وب تعاملی" data-en="Module 3: Interactive web pages">پودمان ۳: صفحات وب تعاملی</p><p class="unit" data-fa="معرفی پودمان" data-en="Module introduction">معرفی پودمان</p><a class="" href="p3-intro.html" data-fa="معرفی پودمان تعاملی" data-en="Introducing the interactive module">معرفی پودمان تعاملی</a><p class="unit" data-fa="بوت‌استرپ" data-en="Bootstrap">بوت‌استرپ</p><a class="" href="p3-bs-start.html" data-fa="فریم‌ورک و شروع بوت‌استرپ" data-en="Frameworks and starting Bootstrap">فریم‌ورک و شروع بوت‌استرپ</a><a class="" href="p3-bs-util.html" data-fa="فاصله، گردی و لیست" data-en="Spacing, rounding, and lists">فاصله، گردی و لیست</a><a class="" href="p3-bs-header.html" data-fa="سرصفحه فروشگاه" data-en="The shop header">سرصفحه فروشگاه</a><a class="" href="p3-bs-grid.html" data-fa="شبکه Grid" data-en="The grid">شبکه Grid</a><a class="" href="p3-bs-rwd.html" data-fa="کلاس‌های واکنش‌گرا" data-en="Responsive classes">کلاس‌های واکنش‌گرا</a><a class="" href="p3-bs-nav.html" data-fa="نوار ناوبری و جزئیات محصول" data-en="Navbar and product details">نوار ناوبری و جزئیات محصول</a><a class="" href="p3-bs-form.html" data-fa="فرم و پنجره Modal" data-en="Forms and modals">فرم و پنجره Modal</a><a class="" href="p3-bs-show.html" data-fa="کاروسل و آکاردئون" data-en="Carousel and accordion">کاروسل و آکاردئون</a><a class="" href="p3-bs-assess.html" data-fa="ارزشیابی بوت‌استرپ" data-en="Bootstrap assessment">ارزشیابی بوت‌استرپ</a><p class="unit" data-fa="جاوااسکریپت" data-en="JavaScript">جاوااسکریپت</p><a class="" href="p3-js-start.html" data-fa="جاوااسکریپت در صفحه وب" data-en="JavaScript on the page">جاوااسکریپت در صفحه وب</a><a class="" href="p3-js-vars.html" data-fa="متغیر و نوع داده" data-en="Variables and data types">متغیر و نوع داده</a><a class="" href="p3-js-ops.html" data-fa="عملگرها" data-en="Operators">عملگرها</a><a class="" href="p3-js-data.html" data-fa="آرایه و شیء" data-en="Arrays and objects">آرایه و شیء</a><a class="" href="p3-js-if.html" data-fa="شرط در جاوااسکریپت" data-en="Conditions in JavaScript">شرط در جاوااسکریپت</a><a class="" href="p3-js-loops.html" data-fa="حلقه‌ها" data-en="Loops">حلقه‌ها</a><a class="" href="p3-js-func.html" data-fa="تابع‌ها" data-en="Functions">تابع‌ها</a><a class="" href="p3-js-dom.html" data-fa="صفحه، رویداد و اعتبار فرم" data-en="The page, events, and form validation">صفحه، رویداد و اعتبار فرم</a><a class="" href="p3-js-assess.html" data-fa="ارزشیابی جاوااسکریپت" data-en="JavaScript assessment">ارزشیابی جاوااسکریپت</a><p class="mod" data-fa="پودمان ۴: توسعه وب پایتون" data-en="Module 4: Python for the web">پودمان ۴: توسعه وب پایتون</p><p class="unit" data-fa="معرفی پودمان" data-en="Module introduction">معرفی پودمان</p><a class="" href="p4-intro.html" data-fa="معرفی پودمان شیءگرایی" data-en="Introducing the object-oriented module">معرفی پودمان شیءگرایی</a><p class="unit" data-fa="شیءگرایی" data-en="Object-oriented programming">شیءگرایی</p><a class="" href="p4-idea.html" data-fa="ایده شیء و کلاس" data-en="The idea of objects and classes">ایده شیء و کلاس</a><a class="" href="p4-class.html" data-fa="ساخت کلاس و متد" data-en="Writing a class and methods">ساخت کلاس و متد</a><a class="" href="p4-inherit.html" data-fa="وراثت" data-en="Inheritance">وراثت</a><a class="" href="p4-protect.html" data-fa="داده معتبر و استفاده داخلی" data-en="Valid data and internal use">داده معتبر و استفاده داخلی</a><a class="" href="p4-assess-oop.html" data-fa="ارزشیابی برنامه شیءگرا" data-en="Object-oriented assessment">ارزشیابی برنامه شیءگرا</a><p class="unit" data-fa="فایل و توسعه" data-en="Files and development">فایل و توسعه</p><a class="" href="p4-files.html" data-fa="خواندن و نوشتن فایل متنی" data-en="Reading and writing text files">خواندن و نوشتن فایل متنی</a><a class="" href="p4-errors.html" data-fa="پیمایش فایل و مدیریت خطا" data-en="Walking a file and handling errors">پیمایش فایل و مدیریت خطا</a><a class="" href="p4-json.html" data-fa="چند فایل و JSON" data-en="Several files and JSON">چند فایل و JSON</a><a class="" href="p4-assess-files.html" data-fa="ارزشیابی کار با فایل" data-en="Files assessment">ارزشیابی کار با فایل</a><p class="mod" data-fa="پودمان ۵: برنامه‌نویسی جنگو" data-en="Module 5: Django">پودمان ۵: برنامه‌نویسی جنگو</p><p class="unit" data-fa="معرفی پودمان" data-en="Module introduction">معرفی پودمان</p><a class="" href="p5-intro.html" data-fa="معرفی پودمان جنگو" data-en="Introducing the Django module">معرفی پودمان جنگو</a><p class="unit" data-fa="ایجاد وب‌اپلیکیشن" data-en="Creating the web app">ایجاد وب‌اپلیکیشن</p><a class="" href="p5-what.html" data-fa="جنگو چیست و نصب" data-en="What Django is, and installing it">جنگو چیست و نصب</a><a class="" href="p5-project.html" data-fa="پروژه، اپ و اولین view" data-en="Project, app, and the first view">پروژه، اپ و اولین view</a><a class="" href="p5-template.html" data-fa="قالب و دمای واقعی" data-en="Templates and a real temperature">قالب و دمای واقعی</a><a class="" href="p5-assess-create.html" data-fa="ارزشیابی ایجاد وب‌اپلیکیشن" data-en="Creating-the-app assessment">ارزشیابی ایجاد وب‌اپلیکیشن</a><p class="unit" data-fa="توسعه وب‌اپلیکیشن" data-en="Developing the web app">توسعه وب‌اپلیکیشن</p><a class="" href="p5-model.html" data-fa="مدل شهر و پنل ادمین" data-en="The city model and the admin">مدل شهر و پنل ادمین</a><a class="" href="p5-list.html" data-fa="خواندن شهرها و نمایش فهرست" data-en="Reading cities and showing the list">خواندن شهرها و نمایش فهرست</a><a class="" href="p5-auth.html" data-fa="ورود و خروج" data-en="Sign-in and sign-out">ورود و خروج</a><a class="" href="p5-crud.html" data-fa="افزودن و حذف شهر" data-en="Adding and deleting a city">افزودن و حذف شهر</a><a class="" href="p5-bugs.html" data-fa="باگ و امنیت" data-en="Bugs and security">باگ و امنیت</a><p class="mod" data-fa="پایان کتاب" data-en="Back of the book">پایان کتاب</p><p class="unit" data-fa="منابع" data-en="References">منابع</p><a class="" href="refs.html" data-fa="منابع کتاب" data-en="Book references">منابع کتاب</a></nav></details>
+    <div class="main">
+      <h1 class="section-title" data-fa="مجموعه (set)" data-en="Sets">مجموعه (set)</h1><article class="lesson" lang="fa" dir="rtl" data-lang-block="fa"><h1 id="_1">کار با توابع و ماژول ها</h1>
+<hr />
+<p class="page-mark">صفحه ۴۸</p>
+<h2 id="2">واحد یادگیری 2</h2>
+<h2 id="_2">کار با توابع و ماژول ها</h2>
+<h3 id="_3">آیا تابه‌حال اندیشیده‌اید</h3>
+<p>اگر بخواهید یک مجموعه از اعداد بدون تکرار بسازید، یا ترتیب داده‌ها را حفظ کنید و تغییرناپذیر باشد، از چه نوع داده‌ای استفاده می‌کنید؟</p>
+<p>فرض کنید می‌خواهید اطلاعات یک دانش‌آموز مثل نام، سن و نمرات او را ذخیره کنید و سریع به هر مورد دسترسی داشته باشید، چه ساختار داده‌ای مناسب است؟</p>
+<p>اگر بخواهید یک عمل خاص را چند بار در برنامه استفاده کنید، بدون اینکه کد را تکرار کنید، چه راهی وجود دارد؟</p>
+<p>چگونه می‌توانید در یک تابع تعداد زیادی داده را پردازش کنید یا عملیات تکراری انجام دهید، بدون اینکه کد طولانی شود؟</p>
+<p>چگونه می‌توانید از کدهای آماده دیگران استفاده کنید؟ چه تفاوتی بین تابع و متد وجود دارد؟</p>
+<h3 id="_4">در پایان از هنرجو انتظار می‌رود</h3>
+<p>1 مجموعه‌ها و توپِل‌ها را تعریف کند، عناصر آنها را اضافه یا حذف کند و کاربرد هریک را بداند.</p>
+<p>2 دیکشنری بسازد، کلید و مقدار اضافه کند، داده‌ها را با کلیدها بازیابی کند و کاربرد دیکشنری را در ذخیره‌سازی اطلاعات بداند.</p>
+<p>3 هنرجو قادر باشد توابع ساده بنویسد، پارامترها و آرگومان‌ها را استفاده کند و مقدار بازگشتی تابع را دریافت و به کار ببرد.</p>
+<p>4 هنرجو بتواند توابع پیچیده‌تری بنویسد، از حلقه‌ها در توابع استفاده کند و عملیات تکراری را در توابع مدیریت کند.</p>
+<p>5 ماژول‌ها را وارد کند، توابع و کلاس‌های آماده را در برنامه خود استفاده کند و ماژول‌های استاندارد پایتون را شناسایی کند.</p>
+<p>6 ماژول‌های محلی را ایجاد و استفاده کند.</p>
+<h3 id="_5">استاندارد عملکرد</h3>
+<p>هنرجو بتواند توابع و ماژول‌ها را ایجاد و استفاده کند، داده‌ها و عملیات تکراری را با توابع مدیریت کند، از ماژول‌های محلی بهره ببرد و تفاوت بین تابع و متد را تشخیص دهد.</p>
+<hr />
+<p class="page-mark">صفحه ۴۹</p>
+<p>در برنامه‌نویسی، هرچه برنامه‌ها بزرگ‌تر و پیچیده‌تر می‌شوند، نیاز به سازماندهی و استفاده مجدد از کد بیشتر حس می‌شود. توابع و ماژول‌ها ابزارهایی هستند که به برنامه‌نویس کمک می‌کنند تا کدهای خود را مرتب، قابل فهم و قابل استفاده دوباره بسازد. در این واحد یادگیری، شما با ساخت توابع، استفاده از پارامترها و مقدار بازگشتی، نوشتن توابع پیشرفته با حلقه‌ها و همچنین استفاده از ماژول‌های آماده و ماژول‌های محلی آشنا می‌شوید. با یادگیری این مفاهیم، می‌توانید برنامه‌های سازمان‌یافته‌تر و حرفه‌ای‌تری ایجاد کنید.</p>
+<h3 id="set">مجموعه‌ها <bdi dir="ltr">(set)</bdi></h3>
+<p><img alt="تصویر کتاب" src="../images/p055-01.png" /></p>
+<p>مجموعه‌ها برای ذخیره چند مقدار در یک متغیر استفاده می‌شوند. مجموعه یکی از چهار نوع دادۀ پایتون است که برای ذخیره‌سازی انواع داده‌ها مثل اعداد صحیح، اعداد اعشاری، رشته‌ها، بولین‌ها و توپل‌ها (<code>tuple</code>) به‌صورت مجموعه‌ای به‌کار می‌رود.</p>
+<p><strong>شکل 97</strong></p>
+<p>ساخت <code>set</code> :</p>
+<p>استفاده از آکولاد {}:</p>
+<p>این روش معمولاً برای ساختن مجموعه‌ای از عناصر مشخص و از پیش تعیی‌نشده استفاده می‌شود.</p>
+<p>پس از هر بار اجرای برنامه مشاهده خواهید کرد که ترتیب نمایش اعضای مجموعه فرق می‌کند (شکل98).</p>
+<p>یعنی <code>set</code> ترتیب نمایش عناصر را تضمین نمی‌کند و <code>Unorder</code> است.</p>
+<p><img alt="تصویر کتاب" src="../images/p055-02.png" /></p>
+<p>1</p>
+<p>2</p>
+<p>3</p>
+<p><strong>شکل 98</strong></p>
+<hr />
+<p class="page-mark">صفحه ۵۰</p>
+<p>استفاده از متد (<code>add</code>) برای اضافه‌کردن عنصر جدید به <code>set:</code></p>
+<p>برنامه را اجرا کنید. مشاهده خواهید کرد که عناصر تکراری به مجموعه اضافه نشده‌اند (شکل99).</p>
+<p><img alt="تصویر کتاب" src="../images/p056-01.png" /></p>
+<figure class="shot"><img alt="شکل 99" src="../images/p056-02.png" /><figcaption>شکل 99</figcaption></figure>
+<p>استفاده از متد (<code>remove</code>) برای حذف عنصر از <code>set:</code></p>
+<p>با استفاده از متد <code>remove</code> می‌توانید عناصر یک <code>set</code> را حذف کنید.</p>
+<p>مثال: با استفاده از متد <code>remove</code> عنصر <code>"banana"</code> از مجموعه حذف شده است (شکل100).</p>
+<p><img alt="تصویر کتاب" src="../images/p056-03.png" /></p>
+<figure class="shot"><img alt="شکل 100" src="../images/p056-04.png" /><figcaption>شکل 100</figcaption></figure>
+<p>درصورتی‌که عضو وجود نداشته باشد در زمان اجرا پیغام خطا نشان داده می‌شود (شکل101).</p>
+<p><img alt="تصویر کتاب" src="../images/p056-05.png" /></p>
+<figure class="shot"><img alt="شکل 101" src="../images/p056-06.png" /><figcaption>شکل 101</figcaption></figure>
+<h3 id="_6">کنجکاوی</h3>
+<p>در مورد سایر متدهای مربوط به <code>set</code> از سایت <code>www.w3schools.com</code> تحقیق کنید و در کلاس ارائه دهید.</p>
+<hr />
+<p class="page-mark">صفحه ۵۱</p>
+<p>استفاده از <code>in</code> برای بررسی وجود عنصر در <code>set:</code></p>
+<figure class="shot"><img alt="شکل 102" src="../images/p057-01.png" /><figcaption>شکل 102</figcaption></figure>
+<p>مثال: در کد شکل 103 وجود عنصر<code>"grape"</code> در مجموعه <code>fruits</code> مورد بررسی قرار گرفته است. خروجی کد نشان می دهد این عنصر در مجموعه وجود ندارد.</p>
+<p><img alt="تصویر کتاب" src="../images/p057-02.png" /></p>
+<figure class="shot"><img alt="شکل 103" src="../images/p057-03.png" /><figcaption>شکل 103</figcaption></figure>
+<h3 id="_7">فعالیت</h3>
+<p>برنامه‌ای بنویسید که یک <code>set</code> از اعداد داشته باشد و بررسی کند عدد 10 در <code>set</code> وجود دارد یا خیر.</p>
+<h3 id="_8">فعالیت</h3>
+<p>مجموعه‌ای از میوه‌ها وجود دارد:</p>
+<div class="code-wrap" dir="ltr"><pre><code>}&quot;fruits = {&quot;apple&quot;, &quot;banana&quot;, &quot;orange&quot;, &quot;grape
+</code></pre></div>
+<p>برنامه‌ای بنویسید که کاربر نام میوه‌ای وارد کند و اگر در <code>set</code> بود، پیغام دهد که آن میوه درون مجموعه موجود است و <code>set</code> نهایی را چاپ کنید.</p>
+<hr /></article><article class="lesson" lang="en" dir="ltr" data-lang-block="en" hidden><h1 id="working-with-functions-and-modules">Working with functions and modules</h1>
+<hr />
+<p class="page-mark">Page 48</p>
+<h2 id="learning-unit-2">Learning unit 2</h2>
+<h2 id="working-with-functions-and-modules_1">Working with functions and modules</h2>
+<h3 id="have-you-ever-thought">Have you ever thought</h3>
+<p>If you want to build a set of numbers without duplicates, or keep the order of data and make it unchangeable, what data type do you use?</p>
+<p>Suppose you want to store a student’s information such as name, age, and scores and access each item quickly—what data structure is suitable?</p>
+<p>If you want to use a specific action several times in a program without repeating the code, what approach is there?</p>
+<p>How can you process a large amount of data in a function or perform repeated operations without making the code long?</p>
+<p>How can you use ready-made code written by others? What is the difference between a function and a method?</p>
+<h3 id="by-the-end-the-student-is-expected-to">By the end, the student is expected to</h3>
+<p>1 Define sets and tuples, add or remove their elements, and know the use of each.</p>
+<p>2 Build a dictionary, add keys and values, retrieve data by keys, and know the use of a dictionary for storing information.</p>
+<p>3 Be able to write simple functions, use parameters and arguments, and receive and use a function’s return value.</p>
+<p>4 Be able to write more complex functions, use loops inside functions, and manage repeated operations in functions.</p>
+<p>5 Import modules, use ready-made functions and classes in their program, and identify Python’s standard modules.</p>
+<p>6 Create and use local modules.</p>
+<h3 id="performance-standard">Performance standard</h3>
+<p>The student can create and use functions and modules, manage data and repeated operations with functions, benefit from local modules, and recognize the difference between a function and a method.</p>
+<hr />
+<p class="page-mark">Page 49</p>
+<p>In programming, as programs grow larger and more complex, the need to organize and reuse code is felt more. Functions and modules are tools that help the programmer make code tidy, understandable, and reusable. In this learning unit, you become familiar with building functions, using parameters and return values, writing advanced functions with loops, and using ready-made modules and local modules. By learning these concepts, you can create more organized and professional programs.</p>
+<h3 id="sets-set">Sets (set)</h3>
+<p><img alt="Book image" src="../images/p055-01.png" /></p>
+<p>Sets are used to store several values in one variable. A set is one of Python’s four data types used to store data types such as integers, floating-point numbers, strings, booleans, and tuples (<code>tuple</code>) as a collection.</p>
+<p><strong>Figure 97</strong></p>
+<p>Building a <code>set</code> :</p>
+<p>Using braces {}:</p>
+<p>This method is usually used to build a set of specific, predetermined elements.</p>
+<p>After each run of the program, you will see that the display order of the set members changes (Figure 98).</p>
+<p>That is, a <code>set</code> does not guarantee the display order of elements and is <code>Unordered</code>.</p>
+<p><img alt="Book image" src="../images/p055-02.png" /></p>
+<p>1</p>
+<p>2</p>
+<p>3</p>
+<p><strong>Figure 98</strong></p>
+<hr />
+<p class="page-mark">Page 50</p>
+<p>Using the (<code>add</code>) method to add a new element to a <code>set:</code></p>
+<p>Run the program. You will see that duplicate elements were not added to the set (Figure 99).</p>
+<p><img alt="Book image" src="../images/p056-01.png" /></p>
+<figure class="shot"><img alt="Figure 99" src="../images/p056-02.png" /><figcaption>Figure 99</figcaption></figure>
+<p>Using the (<code>remove</code>) method to remove an element from a <code>set:</code></p>
+<p>With the <code>remove</code> method, you can remove elements from a <code>set</code>.</p>
+<p>Example: Using the <code>remove</code> method, the element <code>"banana"</code> has been removed from the set (Figure 100).</p>
+<p><img alt="Book image" src="../images/p056-03.png" /></p>
+<figure class="shot"><img alt="Figure 100" src="../images/p056-04.png" /><figcaption>Figure 100</figcaption></figure>
+<p>If the member does not exist, an error message is shown at run time (Figure 101).</p>
+<p><img alt="Book image" src="../images/p056-05.png" /></p>
+<figure class="shot"><img alt="Figure 101" src="../images/p056-06.png" /><figcaption>Figure 101</figcaption></figure>
+<h3 id="try-this">Try this</h3>
+<p>Research the other methods related to <code>set</code> on the site <code>www.w3schools.com</code> and present them in class.</p>
+<hr />
+<p class="page-mark">Page 51</p>
+<p>Using <code>in</code> to check whether an element exists in a <code>set:</code></p>
+<figure class="shot"><img alt="Figure 102" src="../images/p057-01.png" /><figcaption>Figure 102</figcaption></figure>
+<p>Example: In the code in Figure 103, the existence of the element <code>"grape"</code> in the <code>fruits</code> set is checked. The output of the code shows that this element does not exist in the set.</p>
+<p><img alt="Book image" src="../images/p057-02.png" /></p>
+<figure class="shot"><img alt="Figure 103" src="../images/p057-03.png" /><figcaption>Figure 103</figcaption></figure>
+<h3 id="activity">Activity</h3>
+<p>Write a program that has a <code>set</code> of numbers and checks whether the number 10 exists in the <code>set</code> or not.</p>
+<h3 id="activity_1">Activity</h3>
+<p>There is a set of fruits:</p>
+<div class="code-wrap" dir="ltr"><pre><code>}&quot;fruits = {&quot;apple&quot;, &quot;banana&quot;, &quot;orange&quot;, &quot;grape
+</code></pre></div>
+<p>Write a program in which the user enters a fruit name and, if it is in the <code>set</code>, displays a message that the fruit exists in the set, and print the final <code>set</code>.</p>
+<hr /></article>
+      <aside class="extra">
+        <h2 data-fa="تمرین این بخش" data-en="Exercises for this section">تمرین این بخش</h2>
+        <p class="extra-note" data-fa="این تمرین‌ها و پیوندها اضافه بر متن کتاب‌اند." data-en="These exercises and links are in addition to the book.">این تمرین‌ها و پیوندها اضافه بر متن کتاب‌اند.</p>
+        <ol><li data-fa="برنامه دو دانش‌آموز بساز که درس‌های مشترک و درس‌های مخصوص نفر اول را از روی دو مجموعه چاپ کند." data-en="Build a two-student program that prints the shared subjects and the subjects only the first student has.">برنامه دو دانش‌آموز بساز که درس‌های مشترک و درس‌های مخصوص نفر اول را از روی دو مجموعه چاپ کند.</li><li data-fa="همان برنامه را طوری کامل کن که افزودن درس تکراری تعداد مجموعه را عوض نکند و قبل و بعدِ طول را نشان بدهد." data-en="Finish it so adding a duplicate subject does not change the set size, and print the length before and after.">همان برنامه را طوری کامل کن که افزودن درس تکراری تعداد مجموعه را عوض نکند و قبل و بعدِ طول را نشان بدهد.</li></ol>
+        <h2 data-fa="پیوند مفید" data-en="Useful link">پیوند مفید</h2><ul><li><a href="https://docs.python.org/3/tutorial/datastructures.html#sets" data-fa="مجموعه‌ها" data-en="Sets">مجموعه‌ها</a></li></ul>
+      </aside>
+    <nav class="pager"><a rel="prev" class="prev" href="p1-assess-data.html"><span class="pager-word" data-fa="قبلی" data-en="Previous">قبلی</span><span class="pager-name" data-fa="ارزشیابی مدل‌سازی داده" data-en="Data-modeling assessment">ارزشیابی مدل‌سازی داده</span></a><a rel="next" class="next" href="p1-dict.html"><span class="pager-word" data-fa="بعدی" data-en="Next">بعدی</span><span class="pager-name" data-fa="دیکشنری" data-en="Dictionaries">دیکشنری</span></a></nav>
+    </div>
+  </div>
+  <script src="../assets/search-index.js?v=4"></script>
+  <script src="../assets/app.js?v=4"></script>
+</body>
+</html>

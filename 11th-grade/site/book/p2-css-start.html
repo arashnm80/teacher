@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title data-fa="نوشتن CSS" data-en="Writing CSS">نوشتن CSS</title>
+  <link rel="icon" href="../assets/favicon.svg">
+  <link rel="stylesheet" href="../assets/style.css?v=4">
+</head>
+<body data-root="../">
+  <header class="top">
+    <a class="brand" href="../index.html">
+      <span data-fa="طراح سایت" data-en="Site Design">طراح سایت</span>
+      <small data-fa="پایه یازدهم" data-en="Grade 11">پایه یازدهم</small>
+    </a>
+    <div class="search-wrap">
+      <input id="q" type="search" autocomplete="off"
+        data-fa-placeholder="جستجو در درس‌ها" data-en-placeholder="Search lessons"
+        placeholder="جستجو در درس‌ها">
+      <div id="results" class="results" hidden></div>
+    </div>
+    <a class="download" href="../grade11-offline.zip?v=2" data-fa="دانلود کل سایت" data-en="Download the whole site">دانلود کل سایت</a>
+    <button type="button" id="lang-toggle" class="lang-toggle" dir="ltr" data-lang="fa"
+      aria-label="تغییر زبان">
+      <span data-opt="fa">فا</span>
+      <span data-opt="en">EN</span>
+    </button>
+  </header>
+  <div class="layout">
+    <details class="toc" open><summary><span data-fa="فهرست درس‌ها" data-en="Lesson list">فهرست درس‌ها</span></summary><nav class="side" aria-label="lessons"><p class="mod" data-fa="شروع کتاب" data-en="Opening">شروع کتاب</p><p class="unit" data-fa="فهرست" data-en="Contents">فهرست</p><a class="" href="toc.html" data-fa="فهرست" data-en="Contents">فهرست</a><p class="mod" data-fa="پودمان ۱: برنامه‌نویسی پایتون" data-en="Module 1: Python programming">پودمان ۱: برنامه‌نویسی پایتون</p><p class="unit" data-fa="معرفی پودمان" data-en="Module introduction">معرفی پودمان</p><a class="" href="p1-intro.html" data-fa="معرفی پودمان پایتون" data-en="Introducing the Python module">معرفی پودمان پایتون</a><p class="unit" data-fa="مدل‌سازی داده" data-en="Data modeling">مدل‌سازی داده</p><a class="" href="p1-python.html" data-fa="پایتون و محیط برنامه‌نویسی" data-en="Python and the programming environment">پایتون و محیط برنامه‌نویسی</a><a class="" href="p1-vars.html" data-fa="متغیرها، نوع داده و عملگرها" data-en="Variables, types, and operators">متغیرها، نوع داده و عملگرها</a><a class="" href="p1-cast.html" data-fa="ورودی و تبدیل نوع" data-en="Input and type casting">ورودی و تبدیل نوع</a><a class="" href="p1-lists.html" data-fa="لیست‌ها" data-en="Lists">لیست‌ها</a><a class="" href="p1-if.html" data-fa="شرط‌های ساده" data-en="Simple conditions">شرط‌های ساده</a><a class="" href="p1-elif.html" data-fa="if، elif و else" data-en="if, elif, and else">if، elif و else</a><a class="" href="p1-for.html" data-fa="حلقه for و range" data-en="The for loop and range">حلقه for و range</a><a class="" href="p1-while.html" data-fa="حلقه while و کنترل حلقه" data-en="The while loop and loop control">حلقه while و کنترل حلقه</a><a class="" href="p1-assess-data.html" data-fa="ارزشیابی مدل‌سازی داده" data-en="Data-modeling assessment">ارزشیابی مدل‌سازی داده</a><p class="unit" data-fa="توابع و ماژول‌ها" data-en="Functions and modules">توابع و ماژول‌ها</p><a class="" href="p1-sets.html" data-fa="مجموعه (set)" data-en="Sets">مجموعه (set)</a><a class="" href="p1-dict.html" data-fa="دیکشنری" data-en="Dictionaries">دیکشنری</a><a class="" href="p1-quiz.html" data-fa="پروژه بازی Quiz" data-en="Quiz game project">پروژه بازی Quiz</a><a class="" href="p1-tuple.html" data-fa="تاپل" data-en="Tuples">تاپل</a><a class="" href="p1-func.html" data-fa="تعریف تابع، پارامتر و return" data-en="Defining functions, parameters, and return">تعریف تابع، پارامتر و return</a><a class="" href="p1-func-more.html" data-fa="تمرین تابع و مرتب‌سازی" data-en="Function practice and sorting">تمرین تابع و مرتب‌سازی</a><a class="" href="p1-modules.html" data-fa="ماژول‌ها و تفاوت تابع و متد" data-en="Modules, and functions versus methods">ماژول‌ها و تفاوت تابع و متد</a><a class="" href="p1-assess-func.html" data-fa="ارزشیابی توابع و ماژول‌ها" data-en="Functions and modules assessment">ارزشیابی توابع و ماژول‌ها</a><p class="mod" data-fa="پودمان ۲: صفحات وب ایستا" data-en="Module 2: Static web pages">پودمان ۲: صفحات وب ایستا</p><p class="unit" data-fa="معرفی پودمان" data-en="Module introduction">معرفی پودمان</p><a class="" href="p2-intro.html" data-fa="معرفی پودمان صفحات ایستا" data-en="Introducing static web pages">معرفی پودمان صفحات ایستا</a><p class="unit" data-fa="ساختار با HTML" data-en="Structure with HTML">ساختار با HTML</p><a class="" href="p2-web.html" data-fa="وب چگونه کار می‌کند" data-en="How the web works">وب چگونه کار می‌کند</a><a class="" href="p2-concepts.html" data-fa="مفاهیم طراحی وب و نقشه سایت" data-en="Web-design concepts and the site map">مفاهیم طراحی وب و نقشه سایت</a><a class="" href="p2-tags.html" data-fa="اولین صفحه HTML" data-en="A first HTML page">اولین صفحه HTML</a><a class="" href="p2-text.html" data-fa="متن، لیست و پیوند" data-en="Text, lists, and links">متن، لیست و پیوند</a><a class="" href="p2-img.html" data-fa="تصویر در صفحه" data-en="Images on the page">تصویر در صفحه</a><a class="" href="p2-forms.html" data-fa="فرم‌ها" data-en="Forms">فرم‌ها</a><a class="" href="p2-semantic.html" data-fa="عناصر معنایی" data-en="Semantic elements">عناصر معنایی</a><a class="" href="p2-assess-html.html" data-fa="ارزشیابی HTML" data-en="HTML assessment">ارزشیابی HTML</a><p class="unit" data-fa="ظاهر با CSS" data-en="Appearance with CSS">ظاهر با CSS</p><a class="current" href="p2-css-start.html" data-fa="نوشتن CSS" data-en="Writing CSS">نوشتن CSS</a><a class="" href="p2-css-look.html" data-fa="رنگ، پس‌زمینه و انتخاب‌گر" data-en="Color, background, and selectors">رنگ، پس‌زمینه و انتخاب‌گر</a><a class="" href="p2-box.html" data-fa="مدل جعبه‌ای و display" data-en="The box model and display">مدل جعبه‌ای و display</a><a class="" href="p2-flex.html" data-fa="چیدمان با Flexbox" data-en="Layout with Flexbox">چیدمان با Flexbox</a><a class="" href="p2-flex-work.html" data-fa="کارگاه چیدمان صفحه" data-en="Page-layout workshop">کارگاه چیدمان صفحه</a><a class="" href="p2-media.html" data-fa="مدیا کوئری و ارزشیابی CSS" data-en="Media queries and the CSS assessment">مدیا کوئری و ارزشیابی CSS</a><p class="mod" data-fa="پودمان ۳: صفحات وب تعاملی" data-en="Module 3: Interactive web pages">پودمان ۳: صفحات وب تعاملی</p><p class="unit" data-fa="معرفی پودمان" data-en="Module introduction">معرفی پودمان</p><a class="" href="p3-intro.html" data-fa="معرفی پودمان تعاملی" data-en="Introducing the interactive module">معرفی پودمان تعاملی</a><p class="unit" data-fa="بوت‌استرپ" data-en="Bootstrap">بوت‌استرپ</p><a class="" href="p3-bs-start.html" data-fa="فریم‌ورک و شروع بوت‌استرپ" data-en="Frameworks and starting Bootstrap">فریم‌ورک و شروع بوت‌استرپ</a><a class="" href="p3-bs-util.html" data-fa="فاصله، گردی و لیست" data-en="Spacing, rounding, and lists">فاصله، گردی و لیست</a><a class="" href="p3-bs-header.html" data-fa="سرصفحه فروشگاه" data-en="The shop header">سرصفحه فروشگاه</a><a class="" href="p3-bs-grid.html" data-fa="شبکه Grid" data-en="The grid">شبکه Grid</a><a class="" href="p3-bs-rwd.html" data-fa="کلاس‌های واکنش‌گرا" data-en="Responsive classes">کلاس‌های واکنش‌گرا</a><a class="" href="p3-bs-nav.html" data-fa="نوار ناوبری و جزئیات محصول" data-en="Navbar and product details">نوار ناوبری و جزئیات محصول</a><a class="" href="p3-bs-form.html" data-fa="فرم و پنجره Modal" data-en="Forms and modals">فرم و پنجره Modal</a><a class="" href="p3-bs-show.html" data-fa="کاروسل و آکاردئون" data-en="Carousel and accordion">کاروسل و آکاردئون</a><a class="" href="p3-bs-assess.html" data-fa="ارزشیابی بوت‌استرپ" data-en="Bootstrap assessment">ارزشیابی بوت‌استرپ</a><p class="unit" data-fa="جاوااسکریپت" data-en="JavaScript">جاوااسکریپت</p><a class="" href="p3-js-start.html" data-fa="جاوااسکریپت در صفحه وب" data-en="JavaScript on the page">جاوااسکریپت در صفحه وب</a><a class="" href="p3-js-vars.html" data-fa="متغیر و نوع داده" data-en="Variables and data types">متغیر و نوع داده</a><a class="" href="p3-js-ops.html" data-fa="عملگرها" data-en="Operators">عملگرها</a><a class="" href="p3-js-data.html" data-fa="آرایه و شیء" data-en="Arrays and objects">آرایه و شیء</a><a class="" href="p3-js-if.html" data-fa="شرط در جاوااسکریپت" data-en="Conditions in JavaScript">شرط در جاوااسکریپت</a><a class="" href="p3-js-loops.html" data-fa="حلقه‌ها" data-en="Loops">حلقه‌ها</a><a class="" href="p3-js-func.html" data-fa="تابع‌ها" data-en="Functions">تابع‌ها</a><a class="" href="p3-js-dom.html" data-fa="صفحه، رویداد و اعتبار فرم" data-en="The page, events, and form validation">صفحه، رویداد و اعتبار فرم</a><a class="" href="p3-js-assess.html" data-fa="ارزشیابی جاوااسکریپت" data-en="JavaScript assessment">ارزشیابی جاوااسکریپت</a><p class="mod" data-fa="پودمان ۴: توسعه وب پایتون" data-en="Module 4: Python for the web">پودمان ۴: توسعه وب پایتون</p><p class="unit" data-fa="معرفی پودمان" data-en="Module introduction">معرفی پودمان</p><a class="" href="p4-intro.html" data-fa="معرفی پودمان شیءگرایی" data-en="Introducing the object-oriented module">معرفی پودمان شیءگرایی</a><p class="unit" data-fa="شیءگرایی" data-en="Object-oriented programming">شیءگرایی</p><a class="" href="p4-idea.html" data-fa="ایده شیء و کلاس" data-en="The idea of objects and classes">ایده شیء و کلاس</a><a class="" href="p4-class.html" data-fa="ساخت کلاس و متد" data-en="Writing a class and methods">ساخت کلاس و متد</a><a class="" href="p4-inherit.html" data-fa="وراثت" data-en="Inheritance">وراثت</a><a class="" href="p4-protect.html" data-fa="داده معتبر و استفاده داخلی" data-en="Valid data and internal use">داده معتبر و استفاده داخلی</a><a class="" href="p4-assess-oop.html" data-fa="ارزشیابی برنامه شیءگرا" data-en="Object-oriented assessment">ارزشیابی برنامه شیءگرا</a><p class="unit" data-fa="فایل و توسعه" data-en="Files and development">فایل و توسعه</p><a class="" href="p4-files.html" data-fa="خواندن و نوشتن فایل متنی" data-en="Reading and writing text files">خواندن و نوشتن فایل متنی</a><a class="" href="p4-errors.html" data-fa="پیمایش فایل و مدیریت خطا" data-en="Walking a file and handling errors">پیمایش فایل و مدیریت خطا</a><a class="" href="p4-json.html" data-fa="چند فایل و JSON" data-en="Several files and JSON">چند فایل و JSON</a><a class="" href="p4-assess-files.html" data-fa="ارزشیابی کار با فایل" data-en="Files assessment">ارزشیابی کار با فایل</a><p class="mod" data-fa="پودمان ۵: برنامه‌نویسی جنگو" data-en="Module 5: Django">پودمان ۵: برنامه‌نویسی جنگو</p><p class="unit" data-fa="معرفی پودمان" data-en="Module introduction">معرفی پودمان</p><a class="" href="p5-intro.html" data-fa="معرفی پودمان جنگو" data-en="Introducing the Django module">معرفی پودمان جنگو</a><p class="unit" data-fa="ایجاد وب‌اپلیکیشن" data-en="Creating the web app">ایجاد وب‌اپلیکیشن</p><a class="" href="p5-what.html" data-fa="جنگو چیست و نصب" data-en="What Django is, and installing it">جنگو چیست و نصب</a><a class="" href="p5-project.html" data-fa="پروژه، اپ و اولین view" data-en="Project, app, and the first view">پروژه، اپ و اولین view</a><a class="" href="p5-template.html" data-fa="قالب و دمای واقعی" data-en="Templates and a real temperature">قالب و دمای واقعی</a><a class="" href="p5-assess-create.html" data-fa="ارزشیابی ایجاد وب‌اپلیکیشن" data-en="Creating-the-app assessment">ارزشیابی ایجاد وب‌اپلیکیشن</a><p class="unit" data-fa="توسعه وب‌اپلیکیشن" data-en="Developing the web app">توسعه وب‌اپلیکیشن</p><a class="" href="p5-model.html" data-fa="مدل شهر و پنل ادمین" data-en="The city model and the admin">مدل شهر و پنل ادمین</a><a class="" href="p5-list.html" data-fa="خواندن شهرها و نمایش فهرست" data-en="Reading cities and showing the list">خواندن شهرها و نمایش فهرست</a><a class="" href="p5-auth.html" data-fa="ورود و خروج" data-en="Sign-in and sign-out">ورود و خروج</a><a class="" href="p5-crud.html" data-fa="افزودن و حذف شهر" data-en="Adding and deleting a city">افزودن و حذف شهر</a><a class="" href="p5-bugs.html" data-fa="باگ و امنیت" data-en="Bugs and security">باگ و امنیت</a><p class="mod" data-fa="پایان کتاب" data-en="Back of the book">پایان کتاب</p><p class="unit" data-fa="منابع" data-en="References">منابع</p><a class="" href="refs.html" data-fa="منابع کتاب" data-en="Book references">منابع کتاب</a></nav></details>
+    <div class="main">
+      <h1 class="section-title" data-fa="نوشتن CSS" data-en="Writing CSS">نوشتن CSS</h1><article class="lesson" lang="fa" dir="rtl" data-lang-block="fa"><h1 id="css">طراحی ظاهر صفحات وب با <bdi dir="ltr">CSS</bdi></h1>
+<hr />
+<p class="page-mark">صفحه ۱۱۶</p>
+<h2 id="2">واحد یادگیری 2</h2>
+<h2 id="css_1">طراحی ظاهر صفحات وب با <bdi dir="ltr">CSS</bdi></h2>
+<h3 id="_1">آیا تابه‌حال اندیشیده‌اید</h3>
+<p>چگونه می‌توان رنگ متن و زمینه عناصر صفحه وب را مشخص نمود؟</p>
+<p>چگونه می‌توان چیدمان عناصر صفحه را با فواصل مناسب انجام داد؟</p>
+<p>آیا می‌توان بدون تغییر در ساختار <code>HTML</code>، ظاهر یک سایت را دگرگون نمود؟</p>
+<p>چگونه می‌توان چیدمان و استایل عناصر صفحه را در دستگاه‌های مختلف تغییر داد؟</p>
+<p>جذابیت بصری صفحه وب چه تأثیری روی تجربه کاربری دارد؟</p>
+<h3 id="_2">در پایان از هنرجو انتظار می‌رود</h3>
+<p>1 شیوه‌های مختلف تعریف <code>CSS</code> و اولویت اجرای آنها را بداند.</p>
+<p>2 توانایی تنظیم استایل عناصر متنی شامل نوع قلم، اندازه، رنگ، وزن و تراز آنها را داشته باشد.</p>
+<p>3 توانایی تنظیم ویژگی‌های ظاهری عناصر شامل رنگ، پس‌زمینه، شفافیت، خط دور و سایه را داشته باشد.</p>
+<p>4 انواع انتخاب‌گرهای ساده، ترکیبی، شب‌هکلاس و ویژگی را بشناسد و از آنها برای انتخاب دقیق عناصر به‌شکل بهینه استفاده نماید.</p>
+<p>5 با مفهوم مدل جعبه‌ای آشنا باشد و توانایی تنظیم فواصل داخلی (<code>margin</code>) و خارجی (<code>padding</code>) عناصر را داشته باشد.</p>
+<p>6 کاربرد ویژگی <code>Display</code> را بداند و از آن برای کنترل نحوه نمایش عناصر استفاده نماید.</p>
+<p>7 توانایی چیدمان واکنش‌گرای عناصر صفحه را توسط قابلیت‌های <code>Flex</code> و <code>Grid</code> داشته باشد.</p>
+<p>8 کدهای <code>CSS</code> را به شکل خوانا و با رعایت تورفتگی به‌کار ببرد و برای هر یک از استایل‌های صفحه از کامنت‌های مناسب و قابل درک استفاده نماید.</p>
+<h3 id="_3">استاندارد عملکرد</h3>
+<p>با استفاده از قابلیت‌های <code>CSS</code>، ظاهر و چیدمان عناصر صفحه وب را مطابق با اصول و استانداردهای نوین طراحی وب، پیاده‌سازی و تنظیم نماید.</p>
+<hr />
+<p class="page-mark">صفحه ۱۱۷</p>
+<h3 id="css_2">زیباسازی صفحه با <bdi dir="ltr">CSS</bdi></h3>
+<p>در واحدکار قبل نحوه طراحی ساختار صفحات وب با استفاده از برچسب‌های <code>HTML</code> آموزش داده شد.</p>
+<p>صفحاتی که صرفاً توسط <code>HTML</code> ایجاد شده باشند، دارای متون ساده، پس زمینه سفید، فواصل و چیدمان پی‌شفرض می‌باشند و در نتیجه فاقد جذابیت بصری هستند. برای ایجاد ظاهری زیبا و کاربرپسند استفاده از <code>CSS</code> جهت استای‌لدهی به عناصر ضروری است. این ابزار به توسعه‌دهندگان وب امکان می‌دهد که ظاهر و چیدمان عناصر صفحه را به سادگی و با انعطاف بالا مدیریت کنند.</p>
+<p><code>CSS</code> مخفف عبارت <code>Cascading</code> <code>Style</code> <code>Sheets</code> و زبانی برای استایل‌دهی و کنترل ظاهر صفحات وب است.</p>
+<p>این زبان به توسعه‌دهندگان وب امکان می‌دهد که ظاهر و چیدمان عناصر را کاملاً جدا از ساختار اصلی صفحه مدیریت کنند. این موضوع باعث آسان‌تر شدن نگهداری و به‌روزرسانی سایت می‌شود. با استفاده از <code>CSS</code> می‌توان استایل‌های متنوعی را برای عناصر مختلف وب‌سایت تنظیم نمود؛ مانند تعیین رنگ متن و زمینه عناصر، ایجاد سایه، خط دور، تغییرات ظاهری در هنگام قرارگیری ماوس روی عناصر و ...</p>
+<p><img alt="تصویر کتاب" src="../images/p123-01.png" /></p>
+<p>خروجی صفحه با</p>
+<p>خروجی صفحه بدون</p>
+<p><strong>شکل 22</strong></p>
+<p>ساختار <code>CSS</code> <code>CSS</code> ب‌هشکل مجموعه‌ای از قوانین است که توسط انتخاب‌گرها (<code>selectors</code>) و ویژگی‌ها (<code>properties</code>) ایجاد می‌شوند. هر قانون معمولاً به صورت زیر نوشته می‌شود:</p>
+<div class="code-wrap" dir="ltr"><pre><code>{ selector
+;property: value
+</code></pre></div>
+<p>}</p>
+<p>عبارت <code>Selector</code> به معنای انتخاب‌گر است و برای انتخاب عناصر صفحه استفاده می‌شود. به عنوان مثال برای تعیین استایل عناصر پاراگراف، از انتخاب‌گر <code>p</code> و برای انتخاب همه عناصر صفحه از علامت * استفاده می‌شود. عبارت <code>Property</code> به ویژگی‌های قابل مقداردهی در <code>CSS</code> گفته می‌شود، مانند <code>color</code>، <code>font-size</code> و <code>.border</code> عبارت <code>Value</code> به مقدار ویژگی عنصر اشاره دارد.</p>
+<hr />
+<p class="page-mark">صفحه ۱۱۸</p>
+<h3 id="_4">مثال</h3>
+<p>در مثال زیر رنگ زمینه عنصر <code>h1</code> با مقدار <code>orange</code> تنظیم شده است.</p>
+<p>{ <code>h1</code></p>
+<div class="code-wrap" dir="ltr"><pre><code>;background-color: orange
+</code></pre></div>
+<p>}</p>
+<p>نحوه به‌کارگیری <code>CSS</code> در صفحات برای ایجاد و به‌کارگیری استایل‌های سفارشی روی عناصر صفحه از سه روش به شرح زیر استفاده می‌شود:</p>
+<p><code>CSS</code> 1 درون خطی(<code>Inline</code>): استایل عناصر درون تگ‌های <code>HTML</code> نوشته می‌شود.</p>
+<h3 id="_5">مثال</h3>
+<p>در مثال زیر رنگ متن و پس زمینه عنصر <code>h1</code> به‌صورت درون خطی تعیین شده است:</p>
+<p><img alt="تصویر کتاب" src="../images/p124-01.png" /></p>
+<div class="code-wrap" dir="ltr"><pre><code>&lt;/h1&gt; سلام دنیا! &gt;”h1 style=”color:blue; background-color:orange&lt;
+CSS 2 داخلی (Internal):
+</code></pre></div>
+<p>استایل عناصر درون تگ <code>&lt;style&gt;</code> در بخش <code>&lt;head&gt;</code> نوشته می‌شود.</p>
+<p>در سبک درون خطی در صورتی‌که تعداد ویژگی‌های اختصاص داده شده به عنصر زیاد باشد، کد عنصر شلوغ و ناخوانا می‌شود. بنابراین از <code>CSS</code> داخلی یا خارجی برای مدیریت بهتر استایل‌ها استفاده می‌شود.</p>
+<h3 id="_6">مثال</h3>
+<p>مثال زیر نمونه‌ای از <code>CSS</code> داخلی برای تعیین ویژگی‌های عنصر <code>h1</code> است:</p>
+<div class="code-wrap" dir="ltr"><pre><code>&lt;head&gt;
+&lt;style&gt;
+</code></pre></div>
+<p>{ <code>h1</code></p>
+<div class="code-wrap" dir="ltr"><pre><code>;color: blue
+;background-color: pink
+</code></pre></div>
+<p>}</p>
+<div class="code-wrap" dir="ltr"><pre><code>&lt;/style&gt;
+&lt;/head&gt;
+CSS 3 خارجی (External):
+</code></pre></div>
+<p>در روش <code>CSS</code> خارجی، استایل عناصر، درون فایلی با پسوند <code>CSS</code> قرار می‌گیرد. محتوای این فایل نیازی به تگ <code>&lt;style&gt;</code> ندارد و صرفًا سبک عناصر درون آن تعیین می‌شود. فایل <code>CSS</code> باید توسط تگ <code>&lt;link&gt;</code> به صفحه وب الحاق شود تا قوانین این فایل روی عناصر صفحه وب اعمال شود. الحاق فایل <code>CSS</code> به فایل <code>HTML</code> در بخش <code>&lt;head&gt;</code> انجام می‌شود:</p>
+<div class="code-wrap" dir="ltr"><pre><code>&lt;head&gt;
+&lt;link rel=”stylesheet” href=”./styles.css”&gt;
+&lt;/head&gt;
+</code></pre></div>
+<hr />
+<p class="page-mark">صفحه ۱۱۹</p>
+<p>استفاده از فایل‌های <code>CSS</code> خارجی، بهترین روش استایل‌دهی در پروژه‌های متوسط و بزرگ است. مهم‌ترین مزایای روش خارجی عبارت‌اند از:</p>
+<p>1 فایل <code>CSS</code> قابلیت استفاده مجدد دارد، یعنی می‌تواند به صفحات مختلف سایت الحاق شود.</p>
+<p>2 با جدا شدن کدهای <code>CSS</code> و <code>HTML</code>، نگهداری، به‌روزرسانی واشکال‌زدایی (<code>Debug</code>) استایل و کدهای <code>HTML</code> آسان‌تر می‌شود.</p>
+<p>3 مرورگرها می‌توانند فایل‌های <code>CSS</code> خارجی را در حافظه پنهان (<code>cache</code>) خود ذخیره کنند، این موضوع به بارگذاری سریع‌تر صفحات در دفعات بعدی ورود به سایت کمک می‌کند.</p>
+<p>عیب این روش این است که فایل <code>CSS</code> باید به‌صورت مجزا بارگذاری شود و این کار ممکن است سرعت بارگذاری سبک عناصر صفحه وب را در اولین بارگذاری پایین بیاورد.</p>
+<p>برای تمرین‌های کوچک در حد سبک‌دهی به یک عنصر می‌توان از <code>CSS</code> خطی استفاده نمود. سبک داخلی برای پروژه‌های کوچک و سبک خارجی برای پروژه‌های متوسط، بزرگ و پیچیده مناسب است.</p>
+<h3 id="_7">اولویت اعمال انواع استایل‌ها</h3>
+<p>چنانچه سبک‌های مختلفی برای یک عنصر نوشته شده باشد، اولویت اعمال سبک‌ها به ترتیب درون خطی، داخلی و خارجی خواهد بود. اگر عنصری دارای هیچ یک از این سبک‌ها نباشد، از سبک عنصر والد خود استفاده می‌کند.</p>
+<p>بررسی اولویت اعمال سبک روی عناصر صفحه</p>
+<h3 id="_8">کار کارگاهی</h3>
+<p>یک صفحه وب با نام <code>test-style.html</code> ایجاد کنید.</p>
+<p>یک فایل <code>CSS</code> با نام <code>styles.css</code> ایجاد کنید.</p>
+<p><img alt="تصویر کتاب" src="../images/p125-01.png" /></p>
+<p>محتوای فایل‌های <code>HTML</code> و <code>CSS</code> را مطابق تصویر مقابل تنظیم کنید.</p>
+<p>فایل‌ها را ذخیره و نتیجه را در مرورگر بررسی کنید.</p>
+<p>در هر سه سبک رنگ متن مشخص شده است، اما رنگ سبک درون‌خطی (سبز) روی متن اعمال می‌شود.</p>
+<p>رنگ زمینه فقط در سبک داخلی تعیین شده است، بنابراین رنگ زمینه زرد به عنصر <code>h1</code> اعمال می‌شود.</p>
+<p><img alt="تصویر کتاب" src="../images/p125-02.png" /></p>
+<p>پهنای عنصر فقط در سبک خارجی</p>
+<p>خروجی</p>
+<p>مشخص شده است، در نتیجه پهنای عنصر <code>h1</code> برابر 200 پیکسل خواهد بود.</p>
+<p><img alt="تصویر کتاب" src="../images/p125-03.png" /></p>
+<hr />
+<p class="page-mark">صفحه ۱۲۰</p>
+<p>توضیحات (<code>Comment</code>) در <code>CSS</code> برای افزودن توضیحات در <code>CSS</code> به صورت تک‌خطی یا چند‌خطی از علائم /<em> </em>/ از شکل ٣٢ استفاده می‌شود.</p>
+<div class="code-wrap" dir="ltr"><pre><code>/* this is a comment */
+</code></pre></div>
+<p><strong>شکل23</strong></p>
+<p>نحوه قالب‌بندی متن در <code>CSS</code> <code>CSS</code> دارای مجموعه‌ای از ویژگی‌ها برای قالب‌بندی متون است. این ویژگی‌ها امکان تعیین فونت، اندازه فونت، ارتفاع خطوط، تزئینات متن و ... را فراهم می‌کنند. ویژگی‌های عناصر متنی به شرح زیر است:</p>
+<p><code>font-family</code> و <code>font-size:</code> تعیین نوع و اندازه فونت</p>
+<p><code>text-align:</code> تعیین تراز متن شامل مقادیر <code>left</code>، <code>right</code>، <code>center</code> و <code>justify</code></p>
+<p><code>text-shadow:</code> ایجاد سایه با رنگ و اندازه دلخواه. ساختار کلی این ویژگی به شکل زیر است:</p>
+<div class="code-wrap" dir="ltr"><pre><code>;text-shadow: offset-x offset-y blur-radius color
+</code></pre></div>
+<p><strong>شکل24</strong></p>
+<p>مقادیر این ویژگی به ترتیب مقدار جابه‌جایی افقی و عمودی سایه، میزان محو شدگی و رنگ سایه است.</p>
+<p><code>text-transform:</code> تغییر شکل حروف به صورت بزرگ،کوچک و... شامل مقادیر <code>lowercase</code>، �<code>upper</code></p>
+<div class="code-wrap" dir="ltr"><pre><code>cas، capitalize none،…
+</code></pre></div>
+<p><code>direction:</code> تعیین جهت نمایش متن، شامل مقادیر <code>ltr</code> و <code>rtl</code> برای چپ به راست و راست به چپ</p>
+<p><code>line-height:</code> تعیین فاصلۀ عمودی بین خطوط متنی. این ویژگی فاصلۀ عمودی خط متن را تعیین می‌کند. مقدار این ویژگی شامل ارتفاع حروف به‌علاوه فضای خالی قبل و بعد آنهاست. شامل ارتفاع حروف (فونت) به‌اضافه فضای خالی قبل و بعد از آنهاست.</p>
+<div class="code-wrap" dir="ltr"><pre><code>text-decoration: تعیین تزیینات متن، شامل مقادیر none، underline، overline، .line-through
+</code></pre></div>
+<p>ویژگی <code>text-decoration</code> با مقدار <code>none</code> موجب حذف زیرخط لینک می‌شود.</p>
+<p><code>vertical-align:</code> تراز متن در راستای عمودی، شامل مقادیر <code>top</code>، <code>bottom</code>، <code>baseline</code> و...</p>
+<hr /></article><article class="lesson" lang="en" dir="ltr" data-lang-block="en" hidden><h1 id="styling-web-page-appearance-with-css">Styling web page appearance with CSS</h1>
+<hr />
+<p class="page-mark">Page 116</p>
+<h2 id="learning-unit-2">Learning unit 2</h2>
+<h2 id="styling-web-page-appearance-with-css_1">Styling web page appearance with CSS</h2>
+<h3 id="have-you-ever-thought">Have you ever thought</h3>
+<p>How can you set the text color and background of web page elements?</p>
+<p>How can you arrange page elements with appropriate spacing?</p>
+<p>Can you change the look of a site without changing the <code>HTML</code> structure?</p>
+<p>How can you change the layout and style of page elements on different devices?</p>
+<p>What effect does the visual appeal of a web page have on the user experience?</p>
+<h3 id="by-the-end-the-student-is-expected-to">By the end, the student is expected to</h3>
+<p>1 Know the different ways to define <code>CSS</code> and the order in which they are applied.</p>
+<p>2 Be able to set text element styles including font type, size, color, weight, and alignment.</p>
+<p>3 Be able to set visual properties of elements including color, background, opacity, border, and shadow.</p>
+<p>4 Know simple, combined, pseudo-class, and attribute selectors and use them to select elements precisely and efficiently.</p>
+<p>5 Be familiar with the box model and be able to set the internal (<code>padding</code>) and external (<code>margin</code>) spacing of elements.</p>
+<p>6 Know what the <code>Display</code> property does and use it to control how elements are shown.</p>
+<p>7 Be able to create responsive layouts of page elements using <code>Flex</code> and <code>Grid</code>.</p>
+<p>8 Write <code>CSS</code> code in a readable way with proper indentation and use clear, understandable comments for each page style.</p>
+<h3 id="performance-standard">Performance standard</h3>
+<p>Using <code>CSS</code> features, implement and adjust the appearance and layout of web page elements according to modern web design principles and standards.</p>
+<hr />
+<p class="page-mark">Page 117</p>
+<h3 id="beautifying-a-page-with-css">Beautifying a page with CSS</h3>
+<p>In the previous work unit, you learned how to design the structure of web pages using <code>HTML</code> tags.</p>
+<p>Pages created with <code>HTML</code> alone have plain text, a white background, and default spacing and layout, so they lack visual appeal. To create a beautiful, user-friendly look, you need <code>CSS</code> to style the elements. This tool lets web developers manage the appearance and layout of page elements simply and flexibly.</p>
+<p><code>CSS</code> stands for <code>Cascading</code> <code>Style</code> <code>Sheets</code> and is a language for styling and controlling the appearance of web pages.</p>
+<p>This language lets web developers manage the appearance and layout of elements completely separately from the main page structure. That makes it easier to maintain and update the site. With <code>CSS</code> you can set many styles for different website elements—for example text and background colors, shadows, borders, appearance changes when the mouse is over elements, and more.</p>
+<p><img alt="Book image" src="../images/p123-01.png" /></p>
+<p>Page output with</p>
+<p>Page output without</p>
+<p><strong>Figure 22</strong></p>
+<p><code>CSS</code> structure <code>CSS</code> is a set of rules made of selectors (<code>selectors</code>) and properties (<code>properties</code>). Each rule is usually written as follows:</p>
+<div class="code-wrap" dir="ltr"><pre><code>{ selector
+;property: value
+</code></pre></div>
+<p>}</p>
+<p>The word <code>Selector</code> means the selector and is used to choose page elements. For example, to style paragraph elements you use the <code>p</code> selector, and to select all page elements you use the * symbol. <code>Property</code> refers to the assignable properties in <code>CSS</code>, such as <code>color</code>, <code>font-size</code>, and <code>.border</code>. <code>Value</code> refers to the value of the element property.</p>
+<hr />
+<p class="page-mark">Page 118</p>
+<h3 id="example">Example</h3>
+<p>In the example below, the background color of the <code>h1</code> element is set to <code>orange</code>.</p>
+<p>{ <code>h1</code></p>
+<div class="code-wrap" dir="ltr"><pre><code>;background-color: orange
+</code></pre></div>
+<p>}</p>
+<p>How to use <code>CSS</code> in pages To create and apply custom styles to page elements, you use three methods as follows:</p>
+<p>1 Inline <code>CSS</code> (<code>Inline</code>): Element styles are written inside <code>HTML</code> tags.</p>
+<h3 id="example_1">Example</h3>
+<p>In the example below, the text color and background of the <code>h1</code> element are set inline:</p>
+<p><img alt="Book image" src="../images/p124-01.png" /></p>
+<div class="code-wrap" dir="ltr"><pre><code>&lt;/h1&gt; سلام دنیا! &gt;”h1 style=”color:blue; background-color:orange&lt;
+CSS 2 داخلی (Internal):
+</code></pre></div>
+<p>Element styles are written inside a <code>&lt;style&gt;</code> tag in the <code>&lt;head&gt;</code> section.</p>
+<p>With inline style, if you assign many properties to an element, the element code becomes crowded and hard to read. So internal or external <code>CSS</code> is used for better style management.</p>
+<h3 id="example_2">Example</h3>
+<p>The example below is a sample of internal <code>CSS</code> for setting <code>h1</code> element properties:</p>
+<div class="code-wrap" dir="ltr"><pre><code>&lt;head&gt;
+&lt;style&gt;
+</code></pre></div>
+<p>{ <code>h1</code></p>
+<div class="code-wrap" dir="ltr"><pre><code>;color: blue
+;background-color: pink
+</code></pre></div>
+<p>}</p>
+<div class="code-wrap" dir="ltr"><pre><code>&lt;/style&gt;
+&lt;/head&gt;
+CSS 3 خارجی (External):
+</code></pre></div>
+<p>In the external <code>CSS</code> method, element styles go in a file with a <code>CSS</code> extension. The content of this file does not need a <code>&lt;style&gt;</code> tag; only the styles of the elements are defined in it. The <code>CSS</code> file must be attached to the web page with a <code>&lt;link&gt;</code> tag so that the rules in this file apply to the page elements. Attaching the <code>CSS</code> file to the <code>HTML</code> file is done in the <code>&lt;head&gt;</code> section:</p>
+<div class="code-wrap" dir="ltr"><pre><code>&lt;head&gt;
+&lt;link rel=”stylesheet” href=”./styles.css”&gt;
+&lt;/head&gt;
+</code></pre></div>
+<hr />
+<p class="page-mark">Page 119</p>
+<p>Using external <code>CSS</code> files is the best styling method in medium and large projects. The most important advantages of the external method are:</p>
+<p>1 The <code>CSS</code> file can be reused—that is, it can be attached to different pages of the site.</p>
+<p>2 With <code>CSS</code> and <code>HTML</code> code separated, maintaining, updating, and debugging (<code>Debug</code>) styles and <code>HTML</code> code becomes easier.</p>
+<p>3 Browsers can store external <code>CSS</code> files in their cache (<code>cache</code>), which helps pages load faster on later visits to the site.</p>
+<p>The disadvantage of this method is that the <code>CSS</code> file must be loaded separately, which may slow down the loading of page element styles on the first load.</p>
+<p>For small exercises that only style one element, you can use inline <code>CSS</code>. Internal style suits small projects, and external style suits medium, large, and complex projects.</p>
+<h3 id="priority-of-applying-style-types">Priority of applying style types</h3>
+<p>If different styles are written for one element, the order of applying styles is inline, then internal, then external. If an element has none of these styles, it uses the style of its parent element.</p>
+<p>Examining the priority of applying style to page elements</p>
+<h3 id="workshop">Workshop</h3>
+<p>Create a web page named <code>test-style.html</code>.</p>
+<p>Create a <code>CSS</code> file named <code>styles.css</code>.</p>
+<p><img alt="Book image" src="../images/p125-01.png" /></p>
+<p>Set the contents of the <code>HTML</code> and <code>CSS</code> files as shown in the image opposite.</p>
+<p>Save the files and check the result in the browser.</p>
+<p>In all three styles the text color is specified, but the inline style color (green) is applied to the text.</p>
+<p>The background color is set only in the internal style, so the yellow background color is applied to the <code>h1</code> element.</p>
+<p><img alt="Book image" src="../images/p125-02.png" /></p>
+<p>The element width is only in the external style</p>
+<p>Output</p>
+<p>specified, so the width of the <code>h1</code> element will be 200 pixels.</p>
+<p><img alt="Book image" src="../images/p125-03.png" /></p>
+<hr />
+<p class="page-mark">Page 120</p>
+<p>Comments (<code>Comment</code>) in <code>CSS</code> To add single-line or multi-line comments in <code>CSS</code>, use the /<em> </em>/ symbols as in Figure 23.</p>
+<div class="code-wrap" dir="ltr"><pre><code>/* this is a comment */
+</code></pre></div>
+<p><strong>Figure 23</strong></p>
+<p>How to format text in <code>CSS</code> <code>CSS</code> has a set of properties for formatting text. These properties let you set the font, font size, line height, text decorations, and more. Text element properties are as follows:</p>
+<p><code>font-family</code> and <code>font-size:</code> set the font type and size</p>
+<p><code>text-align:</code> set text alignment with values <code>left</code>, <code>right</code>, <code>center</code>, and <code>justify</code></p>
+<p><code>text-shadow:</code> create a shadow with the color and size you want. The general structure of this property is as follows:</p>
+<div class="code-wrap" dir="ltr"><pre><code>;text-shadow: offset-x offset-y blur-radius color
+</code></pre></div>
+<p><strong>Figure 24</strong></p>
+<p>The values of this property are, in order, the horizontal and vertical shadow offset, the blur amount, and the shadow color.</p>
+<p><code>text-transform:</code> change letter case to uppercase, lowercase, and so on, with values <code>lowercase</code>, <code>upper</code></p>
+<div class="code-wrap" dir="ltr"><pre><code>cas، capitalize none،…
+</code></pre></div>
+<p><code>direction:</code> set the text display direction, with values <code>ltr</code> and <code>rtl</code> for left-to-right and right-to-left</p>
+<p><code>line-height:</code> set the vertical spacing between text lines. This property sets the vertical spacing of the text line. The value of this property includes the height of the letters plus the empty space before and after them. It includes the height of the letters (font) plus the empty space before and after them.</p>
+<div class="code-wrap" dir="ltr"><pre><code>text-decoration: تعیین تزیینات متن، شامل مقادیر none، underline، overline، .line-through
+</code></pre></div>
+<p>The <code>text-decoration</code> property with the value <code>none</code> removes the underline from a link.</p>
+<p><code>vertical-align:</code> vertical text alignment, with values <code>top</code>, <code>bottom</code>, <code>baseline</code>, and so on.</p>
+<hr /></article>
+      <aside class="extra">
+        <h2 data-fa="تمرین این بخش" data-en="Exercises for this section">تمرین این بخش</h2>
+        <p class="extra-note" data-fa="این تمرین‌ها و پیوندها اضافه بر متن کتاب‌اند." data-en="These exercises and links are in addition to the book.">این تمرین‌ها و پیوندها اضافه بر متن کتاب‌اند.</p>
+        <ol><li data-fa="یک قانون رنگ را یک بار در خود صفحه و یک بار در فایل style.css جدا اعمال کن و صفحه را به فایل خارجی وصل کن." data-en="Apply one color rule once inside the page and once in a separate style.css, and connect the page to the external file.">یک قانون رنگ را یک بار در خود صفحه و یک بار در فایل style.css جدا اعمال کن و صفحه را به فایل خارجی وصل کن.</li><li data-fa="بالای قانون فایل خارجی یک توضیح CSS بگذار و مطمئن شو آن توضیح روی صفحه دیده نمی‌شود." data-en="Put a CSS comment above the external rule and check that the comment does not appear on the page.">بالای قانون فایل خارجی یک توضیح CSS بگذار و مطمئن شو آن توضیح روی صفحه دیده نمی‌شود.</li></ol>
+        <h2 data-fa="پیوند مفید" data-en="Useful link">پیوند مفید</h2><ul><li><a href="https://developer.mozilla.org/en-US/docs/Learn/CSS/First_steps" data-fa="اولین قدم‌های CSS" data-en="CSS first steps">اولین قدم‌های CSS</a></li></ul>
+      </aside>
+    <nav class="pager"><a rel="prev" class="prev" href="p2-assess-html.html"><span class="pager-word" data-fa="قبلی" data-en="Previous">قبلی</span><span class="pager-name" data-fa="ارزشیابی HTML" data-en="HTML assessment">ارزشیابی HTML</span></a><a rel="next" class="next" href="p2-css-look.html"><span class="pager-word" data-fa="بعدی" data-en="Next">بعدی</span><span class="pager-name" data-fa="رنگ، پس‌زمینه و انتخاب‌گر" data-en="Color, background, and selectors">رنگ، پس‌زمینه و انتخاب‌گر</span></a></nav>
+    </div>
+  </div>
+  <script src="../assets/search-index.js?v=4"></script>
+  <script src="../assets/app.js?v=4"></script>
+</body>
+</html>

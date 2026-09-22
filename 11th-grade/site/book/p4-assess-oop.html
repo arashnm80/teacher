@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title data-fa="ارزشیابی برنامه شیءگرا" data-en="Object-oriented assessment">ارزشیابی برنامه شیءگرا</title>
+  <link rel="icon" href="../assets/favicon.svg">
+  <link rel="stylesheet" href="../assets/style.css?v=4">
+</head>
+<body data-root="../">
+  <header class="top">
+    <a class="brand" href="../index.html">
+      <span data-fa="طراح سایت" data-en="Site Design">طراح سایت</span>
+      <small data-fa="پایه یازدهم" data-en="Grade 11">پایه یازدهم</small>
+    </a>
+    <div class="search-wrap">
+      <input id="q" type="search" autocomplete="off"
+        data-fa-placeholder="جستجو در درس‌ها" data-en-placeholder="Search lessons"
+        placeholder="جستجو در درس‌ها">
+      <div id="results" class="results" hidden></div>
+    </div>
+    <a class="download" href="../grade11-offline.zip?v=2" data-fa="دانلود کل سایت" data-en="Download the whole site">دانلود کل سایت</a>
+    <button type="button" id="lang-toggle" class="lang-toggle" dir="ltr" data-lang="fa"
+      aria-label="تغییر زبان">
+      <span data-opt="fa">فا</span>
+      <span data-opt="en">EN</span>
+    </button>
+  </header>
+  <div class="layout">
+    <details class="toc" open><summary><span data-fa="فهرست درس‌ها" data-en="Lesson list">فهرست درس‌ها</span></summary><nav class="side" aria-label="lessons"><p class="mod" data-fa="شروع کتاب" data-en="Opening">شروع کتاب</p><p class="unit" data-fa="فهرست" data-en="Contents">فهرست</p><a class="" href="toc.html" data-fa="فهرست" data-en="Contents">فهرست</a><p class="mod" data-fa="پودمان ۱: برنامه‌نویسی پایتون" data-en="Module 1: Python programming">پودمان ۱: برنامه‌نویسی پایتون</p><p class="unit" data-fa="معرفی پودمان" data-en="Module introduction">معرفی پودمان</p><a class="" href="p1-intro.html" data-fa="معرفی پودمان پایتون" data-en="Introducing the Python module">معرفی پودمان پایتون</a><p class="unit" data-fa="مدل‌سازی داده" data-en="Data modeling">مدل‌سازی داده</p><a class="" href="p1-python.html" data-fa="پایتون و محیط برنامه‌نویسی" data-en="Python and the programming environment">پایتون و محیط برنامه‌نویسی</a><a class="" href="p1-vars.html" data-fa="متغیرها، نوع داده و عملگرها" data-en="Variables, types, and operators">متغیرها، نوع داده و عملگرها</a><a class="" href="p1-cast.html" data-fa="ورودی و تبدیل نوع" data-en="Input and type casting">ورودی و تبدیل نوع</a><a class="" href="p1-lists.html" data-fa="لیست‌ها" data-en="Lists">لیست‌ها</a><a class="" href="p1-if.html" data-fa="شرط‌های ساده" data-en="Simple conditions">شرط‌های ساده</a><a class="" href="p1-elif.html" data-fa="if، elif و else" data-en="if, elif, and else">if، elif و else</a><a class="" href="p1-for.html" data-fa="حلقه for و range" data-en="The for loop and range">حلقه for و range</a><a class="" href="p1-while.html" data-fa="حلقه while و کنترل حلقه" data-en="The while loop and loop control">حلقه while و کنترل حلقه</a><a class="" href="p1-assess-data.html" data-fa="ارزشیابی مدل‌سازی داده" data-en="Data-modeling assessment">ارزشیابی مدل‌سازی داده</a><p class="unit" data-fa="توابع و ماژول‌ها" data-en="Functions and modules">توابع و ماژول‌ها</p><a class="" href="p1-sets.html" data-fa="مجموعه (set)" data-en="Sets">مجموعه (set)</a><a class="" href="p1-dict.html" data-fa="دیکشنری" data-en="Dictionaries">دیکشنری</a><a class="" href="p1-quiz.html" data-fa="پروژه بازی Quiz" data-en="Quiz game project">پروژه بازی Quiz</a><a class="" href="p1-tuple.html" data-fa="تاپل" data-en="Tuples">تاپل</a><a class="" href="p1-func.html" data-fa="تعریف تابع، پارامتر و return" data-en="Defining functions, parameters, and return">تعریف تابع، پارامتر و return</a><a class="" href="p1-func-more.html" data-fa="تمرین تابع و مرتب‌سازی" data-en="Function practice and sorting">تمرین تابع و مرتب‌سازی</a><a class="" href="p1-modules.html" data-fa="ماژول‌ها و تفاوت تابع و متد" data-en="Modules, and functions versus methods">ماژول‌ها و تفاوت تابع و متد</a><a class="" href="p1-assess-func.html" data-fa="ارزشیابی توابع و ماژول‌ها" data-en="Functions and modules assessment">ارزشیابی توابع و ماژول‌ها</a><p class="mod" data-fa="پودمان ۲: صفحات وب ایستا" data-en="Module 2: Static web pages">پودمان ۲: صفحات وب ایستا</p><p class="unit" data-fa="معرفی پودمان" data-en="Module introduction">معرفی پودمان</p><a class="" href="p2-intro.html" data-fa="معرفی پودمان صفحات ایستا" data-en="Introducing static web pages">معرفی پودمان صفحات ایستا</a><p class="unit" data-fa="ساختار با HTML" data-en="Structure with HTML">ساختار با HTML</p><a class="" href="p2-web.html" data-fa="وب چگونه کار می‌کند" data-en="How the web works">وب چگونه کار می‌کند</a><a class="" href="p2-concepts.html" data-fa="مفاهیم طراحی وب و نقشه سایت" data-en="Web-design concepts and the site map">مفاهیم طراحی وب و نقشه سایت</a><a class="" href="p2-tags.html" data-fa="اولین صفحه HTML" data-en="A first HTML page">اولین صفحه HTML</a><a class="" href="p2-text.html" data-fa="متن، لیست و پیوند" data-en="Text, lists, and links">متن، لیست و پیوند</a><a class="" href="p2-img.html" data-fa="تصویر در صفحه" data-en="Images on the page">تصویر در صفحه</a><a class="" href="p2-forms.html" data-fa="فرم‌ها" data-en="Forms">فرم‌ها</a><a class="" href="p2-semantic.html" data-fa="عناصر معنایی" data-en="Semantic elements">عناصر معنایی</a><a class="" href="p2-assess-html.html" data-fa="ارزشیابی HTML" data-en="HTML assessment">ارزشیابی HTML</a><p class="unit" data-fa="ظاهر با CSS" data-en="Appearance with CSS">ظاهر با CSS</p><a class="" href="p2-css-start.html" data-fa="نوشتن CSS" data-en="Writing CSS">نوشتن CSS</a><a class="" href="p2-css-look.html" data-fa="رنگ، پس‌زمینه و انتخاب‌گر" data-en="Color, background, and selectors">رنگ، پس‌زمینه و انتخاب‌گر</a><a class="" href="p2-box.html" data-fa="مدل جعبه‌ای و display" data-en="The box model and display">مدل جعبه‌ای و display</a><a class="" href="p2-flex.html" data-fa="چیدمان با Flexbox" data-en="Layout with Flexbox">چیدمان با Flexbox</a><a class="" href="p2-flex-work.html" data-fa="کارگاه چیدمان صفحه" data-en="Page-layout workshop">کارگاه چیدمان صفحه</a><a class="" href="p2-media.html" data-fa="مدیا کوئری و ارزشیابی CSS" data-en="Media queries and the CSS assessment">مدیا کوئری و ارزشیابی CSS</a><p class="mod" data-fa="پودمان ۳: صفحات وب تعاملی" data-en="Module 3: Interactive web pages">پودمان ۳: صفحات وب تعاملی</p><p class="unit" data-fa="معرفی پودمان" data-en="Module introduction">معرفی پودمان</p><a class="" href="p3-intro.html" data-fa="معرفی پودمان تعاملی" data-en="Introducing the interactive module">معرفی پودمان تعاملی</a><p class="unit" data-fa="بوت‌استرپ" data-en="Bootstrap">بوت‌استرپ</p><a class="" href="p3-bs-start.html" data-fa="فریم‌ورک و شروع بوت‌استرپ" data-en="Frameworks and starting Bootstrap">فریم‌ورک و شروع بوت‌استرپ</a><a class="" href="p3-bs-util.html" data-fa="فاصله، گردی و لیست" data-en="Spacing, rounding, and lists">فاصله، گردی و لیست</a><a class="" href="p3-bs-header.html" data-fa="سرصفحه فروشگاه" data-en="The shop header">سرصفحه فروشگاه</a><a class="" href="p3-bs-grid.html" data-fa="شبکه Grid" data-en="The grid">شبکه Grid</a><a class="" href="p3-bs-rwd.html" data-fa="کلاس‌های واکنش‌گرا" data-en="Responsive classes">کلاس‌های واکنش‌گرا</a><a class="" href="p3-bs-nav.html" data-fa="نوار ناوبری و جزئیات محصول" data-en="Navbar and product details">نوار ناوبری و جزئیات محصول</a><a class="" href="p3-bs-form.html" data-fa="فرم و پنجره Modal" data-en="Forms and modals">فرم و پنجره Modal</a><a class="" href="p3-bs-show.html" data-fa="کاروسل و آکاردئون" data-en="Carousel and accordion">کاروسل و آکاردئون</a><a class="" href="p3-bs-assess.html" data-fa="ارزشیابی بوت‌استرپ" data-en="Bootstrap assessment">ارزشیابی بوت‌استرپ</a><p class="unit" data-fa="جاوااسکریپت" data-en="JavaScript">جاوااسکریپت</p><a class="" href="p3-js-start.html" data-fa="جاوااسکریپت در صفحه وب" data-en="JavaScript on the page">جاوااسکریپت در صفحه وب</a><a class="" href="p3-js-vars.html" data-fa="متغیر و نوع داده" data-en="Variables and data types">متغیر و نوع داده</a><a class="" href="p3-js-ops.html" data-fa="عملگرها" data-en="Operators">عملگرها</a><a class="" href="p3-js-data.html" data-fa="آرایه و شیء" data-en="Arrays and objects">آرایه و شیء</a><a class="" href="p3-js-if.html" data-fa="شرط در جاوااسکریپت" data-en="Conditions in JavaScript">شرط در جاوااسکریپت</a><a class="" href="p3-js-loops.html" data-fa="حلقه‌ها" data-en="Loops">حلقه‌ها</a><a class="" href="p3-js-func.html" data-fa="تابع‌ها" data-en="Functions">تابع‌ها</a><a class="" href="p3-js-dom.html" data-fa="صفحه، رویداد و اعتبار فرم" data-en="The page, events, and form validation">صفحه، رویداد و اعتبار فرم</a><a class="" href="p3-js-assess.html" data-fa="ارزشیابی جاوااسکریپت" data-en="JavaScript assessment">ارزشیابی جاوااسکریپت</a><p class="mod" data-fa="پودمان ۴: توسعه وب پایتون" data-en="Module 4: Python for the web">پودمان ۴: توسعه وب پایتون</p><p class="unit" data-fa="معرفی پودمان" data-en="Module introduction">معرفی پودمان</p><a class="" href="p4-intro.html" data-fa="معرفی پودمان شیءگرایی" data-en="Introducing the object-oriented module">معرفی پودمان شیءگرایی</a><p class="unit" data-fa="شیءگرایی" data-en="Object-oriented programming">شیءگرایی</p><a class="" href="p4-idea.html" data-fa="ایده شیء و کلاس" data-en="The idea of objects and classes">ایده شیء و کلاس</a><a class="" href="p4-class.html" data-fa="ساخت کلاس و متد" data-en="Writing a class and methods">ساخت کلاس و متد</a><a class="" href="p4-inherit.html" data-fa="وراثت" data-en="Inheritance">وراثت</a><a class="" href="p4-protect.html" data-fa="داده معتبر و استفاده داخلی" data-en="Valid data and internal use">داده معتبر و استفاده داخلی</a><a class="current" href="p4-assess-oop.html" data-fa="ارزشیابی برنامه شیءگرا" data-en="Object-oriented assessment">ارزشیابی برنامه شیءگرا</a><p class="unit" data-fa="فایل و توسعه" data-en="Files and development">فایل و توسعه</p><a class="" href="p4-files.html" data-fa="خواندن و نوشتن فایل متنی" data-en="Reading and writing text files">خواندن و نوشتن فایل متنی</a><a class="" href="p4-errors.html" data-fa="پیمایش فایل و مدیریت خطا" data-en="Walking a file and handling errors">پیمایش فایل و مدیریت خطا</a><a class="" href="p4-json.html" data-fa="چند فایل و JSON" data-en="Several files and JSON">چند فایل و JSON</a><a class="" href="p4-assess-files.html" data-fa="ارزشیابی کار با فایل" data-en="Files assessment">ارزشیابی کار با فایل</a><p class="mod" data-fa="پودمان ۵: برنامه‌نویسی جنگو" data-en="Module 5: Django">پودمان ۵: برنامه‌نویسی جنگو</p><p class="unit" data-fa="معرفی پودمان" data-en="Module introduction">معرفی پودمان</p><a class="" href="p5-intro.html" data-fa="معرفی پودمان جنگو" data-en="Introducing the Django module">معرفی پودمان جنگو</a><p class="unit" data-fa="ایجاد وب‌اپلیکیشن" data-en="Creating the web app">ایجاد وب‌اپلیکیشن</p><a class="" href="p5-what.html" data-fa="جنگو چیست و نصب" data-en="What Django is, and installing it">جنگو چیست و نصب</a><a class="" href="p5-project.html" data-fa="پروژه، اپ و اولین view" data-en="Project, app, and the first view">پروژه، اپ و اولین view</a><a class="" href="p5-template.html" data-fa="قالب و دمای واقعی" data-en="Templates and a real temperature">قالب و دمای واقعی</a><a class="" href="p5-assess-create.html" data-fa="ارزشیابی ایجاد وب‌اپلیکیشن" data-en="Creating-the-app assessment">ارزشیابی ایجاد وب‌اپلیکیشن</a><p class="unit" data-fa="توسعه وب‌اپلیکیشن" data-en="Developing the web app">توسعه وب‌اپلیکیشن</p><a class="" href="p5-model.html" data-fa="مدل شهر و پنل ادمین" data-en="The city model and the admin">مدل شهر و پنل ادمین</a><a class="" href="p5-list.html" data-fa="خواندن شهرها و نمایش فهرست" data-en="Reading cities and showing the list">خواندن شهرها و نمایش فهرست</a><a class="" href="p5-auth.html" data-fa="ورود و خروج" data-en="Sign-in and sign-out">ورود و خروج</a><a class="" href="p5-crud.html" data-fa="افزودن و حذف شهر" data-en="Adding and deleting a city">افزودن و حذف شهر</a><a class="" href="p5-bugs.html" data-fa="باگ و امنیت" data-en="Bugs and security">باگ و امنیت</a><p class="mod" data-fa="پایان کتاب" data-en="Back of the book">پایان کتاب</p><p class="unit" data-fa="منابع" data-en="References">منابع</p><a class="" href="refs.html" data-fa="منابع کتاب" data-en="Book references">منابع کتاب</a></nav></details>
+    <div class="main">
+      <h1 class="section-title" data-fa="ارزشیابی برنامه شیءگرا" data-en="Object-oriented assessment">ارزشیابی برنامه شیءگرا</h1><article class="lesson" lang="fa" dir="rtl" data-lang-block="fa"><p class="page-mark">صفحه ۲۵۲</p>
+<h3 id="_1">ارزشیابی شایستگی تولید برنامه شیء گرا</h3>
+<p>استاندارد عملکرد کار: هنرجو بتواند با به‌کارگیری مفاهیم شیء‌گرایی در پایتون، کلاس و شیء تعریف کند، وراثت و بازنویسی متدها را پیاده‌سازی نماید، سطوح دسترسی را مدیریت کند و رفتار کلاس‌ها را تا سطح مقدماتی متاکلاس تحلیل و اجرا کند به‌گونه‌ای که برنامه بدون خطا و با ساختار صحیح اجرا شود.</p>
+<p>نمره</p>
+<p>شرایط انجام کار (ابزار،مواد، تجهیزات،</p>
+<p>ابزارهای</p>
+<p>نتایج</p>
+<p>ردیف</p>
+<h3 id="_2">مراحل کار</h3>
+<p>استاندارد (شاخص‌ها/داوری/نمره‌دهی)</p>
+<p>کسب</p>
+<p>زمان، مکان و ...)</p>
+<h3 id="_3">ارزشیابی</h3>
+<p>ممکن شده</p>
+<p>1 تعریف صحیح کلاس و سازنده (<code>___init_</code>) بررسی فایل کد</p>
+<p>2 ایجاد نمونه بدون خطای اجرایی 3 تغییر صحیح مقدار ویژگی‌ها 4 اجرای برنامه</p>
+<p>3</p>
+<p>نوشته‌شده،</p>
+<p>و نمایش خروجی درست5 انجام کنجکاوی ها6 انجام مراحل به رو‌شهای دیگر</p>
+<p>رایانه یا لپ‌تاپ سالم، نصب <code>Python</code> (نسخه <code>x.3</code>)، اجرای</p>
+<p>1 تعریف صحیح کلاس و سازنده (<code>___init_</code>)</p>
+<p>1ایجاد و کار با کلاس پایه</p>
+<p>ویرایشگر کد (مانند <code>IDLE</code> یا <code>VS</code> <code>Code</code>) زمان</p>
+<p>عملی برنامه</p>
+<p>2 ایجاد نمونه بدون خطای اجرایی3 تغییر صحیح مقدار ویژگی‌ها4 اجرای</p>
+<p>2</p>
+<p>25دقیقه، اجرای فعالیت در کارگاه .</p>
+<p>و مشاهده برنامه و نمایش خروجی درست خروجی، چک‌لیست</p>
+<p>انجام ناقص مراحل1 عملکردی.</p>
+<p>1 تعریف ویژگی با مقدار پیش‌فرض2 استفاده صحیح از _ و _ _ 3 درک محدودیت دسترسی و تحلیل خطا 4 رعایت قراردادهای نام‌گذاری 5 انجام</p>
+<p>3</p>
+<p>مشاهده</p>
+<p>رایانه مجهز به <code>Python</code>، شامل کلاس با</p>
+<p>کنجکاوی‌ها 6 انجام مراحل به روش‌های دیگر</p>
+<p>مدیریت ویژگی‌ها و سطوح</p>
+<p>عملی،</p>
+<p>2</p>
+<p>ویژگی‌های مختلف، زمان 15 دقیقه، محیط</p>
+<p>دسترسی</p>
+<p>تحلیل کد</p>
+<p>1 تعریف ویژگی با مقدار پیش‌فرض 2 استفاده صحیح از _ و _ _ 3 درک</p>
+<p>کارگاهی استاندارد.</p>
+<p>محدودیت دسترسی و تحلیل خطا4 رعایت قراردادهای نام‌گذاری2 هنرجو انجام ناقص مراحل1</p>
+<p>1 تعریف صحیح کلاس فرزند2 استفاده درست از 3 <code>super</code> انتقال صحیح ویژگی‌های والد 4 انجام کنجکاو‌یها 5 انجام مراحل به رو‌شهای دیگر3</p>
+<p>رایانه با محیط اجرای <code>Python</code>، شامل کلاس</p>
+<p>مشاهده</p>
+<p>1 تعریف صحیح کلاس فرزند2 استفاده درست از 3 <code>super</code> انتقال صحیح</p>
+<p>3پیاده‌سازی وراثت</p>
+<p>ویژگی‌های والد2</p>
+<p>والد، زمان 25 دقیقه، کلاس رایانه.</p>
+<p>عملیات انجام ناقص مراحل1 تعریف متد جدید در کلاس فرزند2 بازنویسی صحیح متد والد (<code>Override</code>)</p>
+<p>3</p>
+<p>توسعه و بازنویسی رفتار</p>
+<p>3 انجام کنجکاوی‌ها 4 انجام مراحل به روش‌های دیگر</p>
+<p>کلاس‌ها</p>
+<p>مشاهده</p>
+<p>4</p>
+<p>رایانه، زمان 25 دقیقه، محیط کارگاهی.</p>
+<p>1 تعریف متد جدید در کلاس فرزند2 بازنویسی صحیح متد والد (<code>Override</code>)</p>
+<p>شرایط انجام کار</p>
+<p>عملی</p>
+<p>2</p>
+<p>انجام ناقص مراحل1</p>
+<p>1 استفاده صحیح از ()2 <code>type</code> تشخیص تفاوت کلاس و نمونه3 تحلیل اجرای خروجی به صورت مفهومی 4 انجام کنجکاوی‌ها 5 انجام مراحل به رو‌شهای</p>
+<p>3</p>
+<p>دستورات دیگر</p>
+<div class="code-wrap" dir="ltr"><pre><code>type()
+</code></pre></div>
+<p>رایانه مجهز به <code>Python</code>، زمان 15 دقیقه، محیط و تحلیل</p>
+<p>5بررسی نوع و ساختار کلاس</p>
+<p>1 استفاده صحیح از ()2 <code>type</code> تشخیص تفاوت کلاس و نمونه 3 تحلیل</p>
+<p>کلاس عملی.</p>
+<p>خروجی، خروجی به صورت مفهومی2 پرسش شفاهی تحلیلی انجام ناقص هر مرحله1</p>
+<hr />
+<p class="page-mark">صفحه ۲۵۳</p>
+<p>شایستگی‌های غیر فنی، ایمنی،</p>
+<p>احراز همه شایستگی‌های غیرفنی2</p>
+<p>بهداشت، توجهات زیست محیطی</p>
+<p>عدم احراز هر یک از شایستگی‌های غیرفنی1</p>
+<p>و نگرش:</p>
+<p>بلی</p>
+<p>ارزشیابی کار (شایستگی انجام کار)</p>
+<p>خیر</p>
+<h3 id="_4">توضیحات:</h3>
+<p>1 معیار شایستگی انجام کار:</p>
+<p>کسب حداقل نمره 2 از مراحل 1، 2، 3 و 4 (مراحل بحرانی) کسب حداقل نمره 2 از بخش شایستگی‌های غیرفنی، ایمنی، بهداشت، توجهات زیست‌محیطی و نگرش کسب حداقل میانگین 2 از مراحل کار</p>
+<p>2 تعریف سطوح شایستگی: صرف‌نظر از اینکه یک تکلیف کاری در چه سطحی از صلاحیت حرفه‌ای انجام می‌شود، در هر محیط کاری ممکن است انجام هر کار با کیفیت مشخصی مورد انتظار باشد. سطح شایستگی انجام کار، معیار اساسی ارزشیابی است.</p>
+<p>مهارت (سطح سه): ماهر و قادر به آموزش و هدایت دیگران، توانایی برنامه‌ریزی و تحلیل، پاسخ‌گویی در برابر کارهای خود، سروکار داشتن با سطح وسیعی از کارها و فعالیت‌ها تسلط (سطح چهار): خبرگی در انجام کار و آموزش دیگران، ایجاد نوآوری، سازگاری، عیب‌یابی، هدایت و راهنمایی دیگران.</p></article><article class="lesson" lang="en" dir="ltr" data-lang-block="en" hidden><p class="page-mark">Page 252</p>
+<h3 id="assessment-of-competence-in-writing-an-object-oriented-program">Assessment of competence in writing an object-oriented program</h3>
+<p>Work performance standard: The student should be able, by applying object-oriented concepts in Python, to define a class and an object, implement inheritance and method overriding, manage access levels, and analyze and run class behavior up to an introductory metaclasses level so that the program runs without error and with a correct structure.</p>
+<p>Score</p>
+<p>Conditions for performing the work (tools, materials, equipment,</p>
+<p>Tools</p>
+<p>Results</p>
+<p>Row</p>
+<h3 id="steps">Steps</h3>
+<p>Standard (indicators / judgment / scoring)</p>
+<p>Earned</p>
+<p>Time, place, and ...)</p>
+<h3 id="assessment">Assessment</h3>
+<p>Made possible</p>
+<p>1 Correct definition of the class and constructor (<code>__init__</code>) Review of the code file</p>
+<p>2 Creating an instance without a runtime error 3 Correctly changing attribute values 4 Running the program</p>
+<p>3</p>
+<p>Written,</p>
+<p>and correct output display5 Completing Try this items6 Completing the steps in other ways</p>
+<p>A working computer or laptop, <code>Python</code> installed (version <code>x.3</code>), running</p>
+<p>1 Correct definition of the class and constructor (<code>__init__</code>)</p>
+<p>1Creating and working with a base class</p>
+<p>A code editor (such as <code>IDLE</code> or <code>VS</code> <code>Code</code>) Time</p>
+<p>Practical program</p>
+<p>2 Creating an instance without a runtime error3 Correctly changing attribute values4 Running</p>
+<p>2</p>
+<p>25 minutes, carrying out the activity in the workshop .</p>
+<p>and observing the program and correct output display Output, checklist</p>
+<p>Incomplete completion of steps1 Functional.</p>
+<p>1 Defining an attribute with a default value2 Correct use of _ and _ _ 3 Understanding access restrictions and analyzing errors 4 Observing naming conventions 5 Completing</p>
+<p>3</p>
+<p>Observation</p>
+<p>A computer equipped with <code>Python</code>, including a class with</p>
+<p>Try this items 6 Completing the steps in other ways</p>
+<p>Managing attributes and access</p>
+<p>Practical,</p>
+<p>2</p>
+<p>Various attributes, time 15 minutes, environment</p>
+<p>Levels</p>
+<p>Code analysis</p>
+<p>1 Defining an attribute with a default value 2 Correct use of _ and _ _ 3 Understanding</p>
+<p>Standard workshop.</p>
+<p>Access restrictions and analyzing errors4 Observing naming conventions2 Student Incomplete completion of steps1</p>
+<p>1 Correct definition of the child class2 Correct use of 3 <code>super</code> Correct transfer of parent attributes 4 Completing Try this items 5 Completing the steps in other ways3</p>
+<p>A computer with a <code>Python</code> runtime environment, including a class</p>
+<p>Observation</p>
+<p>1 Correct definition of the child class2 Correct use of 3 <code>super</code> Correct transfer of</p>
+<p>3Implementing inheritance</p>
+<p>Parent attributes2</p>
+<p>Parent, time 25 minutes, computer classroom.</p>
+<p>Operations Incomplete completion of steps1 Defining a new method in the child class2 Correctly overriding the parent method (<code>Override</code>)</p>
+<p>3</p>
+<p>Developing and overriding behavior</p>
+<p>3 Completing Try this items 4 Completing the steps in other ways</p>
+<p>Of classes</p>
+<p>Observation</p>
+<p>4</p>
+<p>Computer, time 25 minutes, workshop environment.</p>
+<p>1 Defining a new method in the child class2 Correctly overriding the parent method (<code>Override</code>)</p>
+<p>Conditions for performing the work</p>
+<p>Practical</p>
+<p>2</p>
+<p>Incomplete completion of steps1</p>
+<p>1 Correct use of ()2 <code>type</code> Distinguishing the difference between class and instance3 Conceptually analyzing the output execution 4 Completing Try this items 5 Completing the steps in other</p>
+<p>3</p>
+<p>Other statements</p>
+<div class="code-wrap" dir="ltr"><pre><code>type()
+</code></pre></div>
+<p>A computer equipped with <code>Python</code>, time 15 minutes, environment and analysis</p>
+<p>5Examining class type and structure</p>
+<p>1 Correct use of ()2 <code>type</code> Distinguishing the difference between class and instance 3 Analyzing</p>
+<p>Practical class.</p>
+<p>Output, output conceptually2 Analytical oral questioning Incomplete completion of each step1</p>
+<hr />
+<p class="page-mark">Page 253</p>
+<p>Non-technical competencies, safety,</p>
+<p>Demonstrating all non-technical competencies2</p>
+<p>Hygiene, environmental considerations</p>
+<p>Failure to demonstrate any of the non-technical competencies1</p>
+<p>And attitude:</p>
+<p>Yes</p>
+<p>Work assessment (competence in performing the work)</p>
+<p>No</p>
+<h3 id="explanation">Explanation:</h3>
+<p>1 Criterion for competence in performing the work:</p>
+<p>Earning at least a score of 2 from steps 1, 2, 3, and 4 (critical steps) Earning at least a score of 2 from the non-technical competencies, safety, hygiene, environmental considerations, and attitude section Earning at least an average of 2 from the work steps</p>
+<p>2 Definition of competence levels: Regardless of the level of professional qualification at which a work task is performed, in every workplace a specific quality of work performance may be expected. The level of competence in performing the work is the basic assessment criterion.</p>
+<p>Skill (level three): Skilled and able to train and guide others, able to plan and analyze, accountable for one’s own work, dealing with a wide range of tasks and activities Mastery (level four): Expertise in performing the work and training others, creating innovation, adaptability, troubleshooting, guiding and advising others.</p></article>
+      <aside class="extra">
+        <h2 data-fa="تمرین این بخش" data-en="Exercises for this section">تمرین این بخش</h2>
+        <p class="extra-note" data-fa="این تمرین‌ها و پیوندها اضافه بر متن کتاب‌اند." data-en="These exercises and links are in addition to the book.">این تمرین‌ها و پیوندها اضافه بر متن کتاب‌اند.</p>
+        <ol><li data-fa="یک کلاس پایه و یک کلاس فرزند برای وسایل آزمایشگاه بساز و دو شیء را با ویژگی‌ها و یک رفتار چاپ کن." data-en="Build a base class and a child class for lab equipment, and print two objects with their attributes and one behavior.">یک کلاس پایه و یک کلاس فرزند برای وسایل آزمایشگاه بساز و دو شیء را با ویژگی‌ها و یک رفتار چاپ کن.</li><li data-fa="در همان برنامه یک مقدار نامعتبر را به سازنده بده و به جای قطع بی‌خبر، پیام خطا نشان بده." data-en="In the same program, pass an invalid value to the constructor and show an error message instead of failing silently.">در همان برنامه یک مقدار نامعتبر را به سازنده بده و به جای قطع بی‌خبر، پیام خطا نشان بده.</li></ol>
+        
+      </aside>
+    <nav class="pager"><a rel="prev" class="prev" href="p4-protect.html"><span class="pager-word" data-fa="قبلی" data-en="Previous">قبلی</span><span class="pager-name" data-fa="داده معتبر و استفاده داخلی" data-en="Valid data and internal use">داده معتبر و استفاده داخلی</span></a><a rel="next" class="next" href="p4-files.html"><span class="pager-word" data-fa="بعدی" data-en="Next">بعدی</span><span class="pager-name" data-fa="خواندن و نوشتن فایل متنی" data-en="Reading and writing text files">خواندن و نوشتن فایل متنی</span></a></nav>
+    </div>
+  </div>
+  <script src="../assets/search-index.js?v=4"></script>
+  <script src="../assets/app.js?v=4"></script>
+</body>
+</html>

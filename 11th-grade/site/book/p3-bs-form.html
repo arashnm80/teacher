@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title data-fa="فرم و پنجره Modal" data-en="Forms and modals">فرم و پنجره Modal</title>
+  <link rel="icon" href="../assets/favicon.svg">
+  <link rel="stylesheet" href="../assets/style.css?v=4">
+</head>
+<body data-root="../">
+  <header class="top">
+    <a class="brand" href="../index.html">
+      <span data-fa="طراح سایت" data-en="Site Design">طراح سایت</span>
+      <small data-fa="پایه یازدهم" data-en="Grade 11">پایه یازدهم</small>
+    </a>
+    <div class="search-wrap">
+      <input id="q" type="search" autocomplete="off"
+        data-fa-placeholder="جستجو در درس‌ها" data-en-placeholder="Search lessons"
+        placeholder="جستجو در درس‌ها">
+      <div id="results" class="results" hidden></div>
+    </div>
+    <a class="download" href="../grade11-offline.zip?v=2" data-fa="دانلود کل سایت" data-en="Download the whole site">دانلود کل سایت</a>
+    <button type="button" id="lang-toggle" class="lang-toggle" dir="ltr" data-lang="fa"
+      aria-label="تغییر زبان">
+      <span data-opt="fa">فا</span>
+      <span data-opt="en">EN</span>
+    </button>
+  </header>
+  <div class="layout">
+    <details class="toc" open><summary><span data-fa="فهرست درس‌ها" data-en="Lesson list">فهرست درس‌ها</span></summary><nav class="side" aria-label="lessons"><p class="mod" data-fa="شروع کتاب" data-en="Opening">شروع کتاب</p><p class="unit" data-fa="فهرست" data-en="Contents">فهرست</p><a class="" href="toc.html" data-fa="فهرست" data-en="Contents">فهرست</a><p class="mod" data-fa="پودمان ۱: برنامه‌نویسی پایتون" data-en="Module 1: Python programming">پودمان ۱: برنامه‌نویسی پایتون</p><p class="unit" data-fa="معرفی پودمان" data-en="Module introduction">معرفی پودمان</p><a class="" href="p1-intro.html" data-fa="معرفی پودمان پایتون" data-en="Introducing the Python module">معرفی پودمان پایتون</a><p class="unit" data-fa="مدل‌سازی داده" data-en="Data modeling">مدل‌سازی داده</p><a class="" href="p1-python.html" data-fa="پایتون و محیط برنامه‌نویسی" data-en="Python and the programming environment">پایتون و محیط برنامه‌نویسی</a><a class="" href="p1-vars.html" data-fa="متغیرها، نوع داده و عملگرها" data-en="Variables, types, and operators">متغیرها، نوع داده و عملگرها</a><a class="" href="p1-cast.html" data-fa="ورودی و تبدیل نوع" data-en="Input and type casting">ورودی و تبدیل نوع</a><a class="" href="p1-lists.html" data-fa="لیست‌ها" data-en="Lists">لیست‌ها</a><a class="" href="p1-if.html" data-fa="شرط‌های ساده" data-en="Simple conditions">شرط‌های ساده</a><a class="" href="p1-elif.html" data-fa="if، elif و else" data-en="if, elif, and else">if، elif و else</a><a class="" href="p1-for.html" data-fa="حلقه for و range" data-en="The for loop and range">حلقه for و range</a><a class="" href="p1-while.html" data-fa="حلقه while و کنترل حلقه" data-en="The while loop and loop control">حلقه while و کنترل حلقه</a><a class="" href="p1-assess-data.html" data-fa="ارزشیابی مدل‌سازی داده" data-en="Data-modeling assessment">ارزشیابی مدل‌سازی داده</a><p class="unit" data-fa="توابع و ماژول‌ها" data-en="Functions and modules">توابع و ماژول‌ها</p><a class="" href="p1-sets.html" data-fa="مجموعه (set)" data-en="Sets">مجموعه (set)</a><a class="" href="p1-dict.html" data-fa="دیکشنری" data-en="Dictionaries">دیکشنری</a><a class="" href="p1-quiz.html" data-fa="پروژه بازی Quiz" data-en="Quiz game project">پروژه بازی Quiz</a><a class="" href="p1-tuple.html" data-fa="تاپل" data-en="Tuples">تاپل</a><a class="" href="p1-func.html" data-fa="تعریف تابع، پارامتر و return" data-en="Defining functions, parameters, and return">تعریف تابع، پارامتر و return</a><a class="" href="p1-func-more.html" data-fa="تمرین تابع و مرتب‌سازی" data-en="Function practice and sorting">تمرین تابع و مرتب‌سازی</a><a class="" href="p1-modules.html" data-fa="ماژول‌ها و تفاوت تابع و متد" data-en="Modules, and functions versus methods">ماژول‌ها و تفاوت تابع و متد</a><a class="" href="p1-assess-func.html" data-fa="ارزشیابی توابع و ماژول‌ها" data-en="Functions and modules assessment">ارزشیابی توابع و ماژول‌ها</a><p class="mod" data-fa="پودمان ۲: صفحات وب ایستا" data-en="Module 2: Static web pages">پودمان ۲: صفحات وب ایستا</p><p class="unit" data-fa="معرفی پودمان" data-en="Module introduction">معرفی پودمان</p><a class="" href="p2-intro.html" data-fa="معرفی پودمان صفحات ایستا" data-en="Introducing static web pages">معرفی پودمان صفحات ایستا</a><p class="unit" data-fa="ساختار با HTML" data-en="Structure with HTML">ساختار با HTML</p><a class="" href="p2-web.html" data-fa="وب چگونه کار می‌کند" data-en="How the web works">وب چگونه کار می‌کند</a><a class="" href="p2-concepts.html" data-fa="مفاهیم طراحی وب و نقشه سایت" data-en="Web-design concepts and the site map">مفاهیم طراحی وب و نقشه سایت</a><a class="" href="p2-tags.html" data-fa="اولین صفحه HTML" data-en="A first HTML page">اولین صفحه HTML</a><a class="" href="p2-text.html" data-fa="متن، لیست و پیوند" data-en="Text, lists, and links">متن، لیست و پیوند</a><a class="" href="p2-img.html" data-fa="تصویر در صفحه" data-en="Images on the page">تصویر در صفحه</a><a class="" href="p2-forms.html" data-fa="فرم‌ها" data-en="Forms">فرم‌ها</a><a class="" href="p2-semantic.html" data-fa="عناصر معنایی" data-en="Semantic elements">عناصر معنایی</a><a class="" href="p2-assess-html.html" data-fa="ارزشیابی HTML" data-en="HTML assessment">ارزشیابی HTML</a><p class="unit" data-fa="ظاهر با CSS" data-en="Appearance with CSS">ظاهر با CSS</p><a class="" href="p2-css-start.html" data-fa="نوشتن CSS" data-en="Writing CSS">نوشتن CSS</a><a class="" href="p2-css-look.html" data-fa="رنگ، پس‌زمینه و انتخاب‌گر" data-en="Color, background, and selectors">رنگ، پس‌زمینه و انتخاب‌گر</a><a class="" href="p2-box.html" data-fa="مدل جعبه‌ای و display" data-en="The box model and display">مدل جعبه‌ای و display</a><a class="" href="p2-flex.html" data-fa="چیدمان با Flexbox" data-en="Layout with Flexbox">چیدمان با Flexbox</a><a class="" href="p2-flex-work.html" data-fa="کارگاه چیدمان صفحه" data-en="Page-layout workshop">کارگاه چیدمان صفحه</a><a class="" href="p2-media.html" data-fa="مدیا کوئری و ارزشیابی CSS" data-en="Media queries and the CSS assessment">مدیا کوئری و ارزشیابی CSS</a><p class="mod" data-fa="پودمان ۳: صفحات وب تعاملی" data-en="Module 3: Interactive web pages">پودمان ۳: صفحات وب تعاملی</p><p class="unit" data-fa="معرفی پودمان" data-en="Module introduction">معرفی پودمان</p><a class="" href="p3-intro.html" data-fa="معرفی پودمان تعاملی" data-en="Introducing the interactive module">معرفی پودمان تعاملی</a><p class="unit" data-fa="بوت‌استرپ" data-en="Bootstrap">بوت‌استرپ</p><a class="" href="p3-bs-start.html" data-fa="فریم‌ورک و شروع بوت‌استرپ" data-en="Frameworks and starting Bootstrap">فریم‌ورک و شروع بوت‌استرپ</a><a class="" href="p3-bs-util.html" data-fa="فاصله، گردی و لیست" data-en="Spacing, rounding, and lists">فاصله، گردی و لیست</a><a class="" href="p3-bs-header.html" data-fa="سرصفحه فروشگاه" data-en="The shop header">سرصفحه فروشگاه</a><a class="" href="p3-bs-grid.html" data-fa="شبکه Grid" data-en="The grid">شبکه Grid</a><a class="" href="p3-bs-rwd.html" data-fa="کلاس‌های واکنش‌گرا" data-en="Responsive classes">کلاس‌های واکنش‌گرا</a><a class="" href="p3-bs-nav.html" data-fa="نوار ناوبری و جزئیات محصول" data-en="Navbar and product details">نوار ناوبری و جزئیات محصول</a><a class="current" href="p3-bs-form.html" data-fa="فرم و پنجره Modal" data-en="Forms and modals">فرم و پنجره Modal</a><a class="" href="p3-bs-show.html" data-fa="کاروسل و آکاردئون" data-en="Carousel and accordion">کاروسل و آکاردئون</a><a class="" href="p3-bs-assess.html" data-fa="ارزشیابی بوت‌استرپ" data-en="Bootstrap assessment">ارزشیابی بوت‌استرپ</a><p class="unit" data-fa="جاوااسکریپت" data-en="JavaScript">جاوااسکریپت</p><a class="" href="p3-js-start.html" data-fa="جاوااسکریپت در صفحه وب" data-en="JavaScript on the page">جاوااسکریپت در صفحه وب</a><a class="" href="p3-js-vars.html" data-fa="متغیر و نوع داده" data-en="Variables and data types">متغیر و نوع داده</a><a class="" href="p3-js-ops.html" data-fa="عملگرها" data-en="Operators">عملگرها</a><a class="" href="p3-js-data.html" data-fa="آرایه و شیء" data-en="Arrays and objects">آرایه و شیء</a><a class="" href="p3-js-if.html" data-fa="شرط در جاوااسکریپت" data-en="Conditions in JavaScript">شرط در جاوااسکریپت</a><a class="" href="p3-js-loops.html" data-fa="حلقه‌ها" data-en="Loops">حلقه‌ها</a><a class="" href="p3-js-func.html" data-fa="تابع‌ها" data-en="Functions">تابع‌ها</a><a class="" href="p3-js-dom.html" data-fa="صفحه، رویداد و اعتبار فرم" data-en="The page, events, and form validation">صفحه، رویداد و اعتبار فرم</a><a class="" href="p3-js-assess.html" data-fa="ارزشیابی جاوااسکریپت" data-en="JavaScript assessment">ارزشیابی جاوااسکریپت</a><p class="mod" data-fa="پودمان ۴: توسعه وب پایتون" data-en="Module 4: Python for the web">پودمان ۴: توسعه وب پایتون</p><p class="unit" data-fa="معرفی پودمان" data-en="Module introduction">معرفی پودمان</p><a class="" href="p4-intro.html" data-fa="معرفی پودمان شیءگرایی" data-en="Introducing the object-oriented module">معرفی پودمان شیءگرایی</a><p class="unit" data-fa="شیءگرایی" data-en="Object-oriented programming">شیءگرایی</p><a class="" href="p4-idea.html" data-fa="ایده شیء و کلاس" data-en="The idea of objects and classes">ایده شیء و کلاس</a><a class="" href="p4-class.html" data-fa="ساخت کلاس و متد" data-en="Writing a class and methods">ساخت کلاس و متد</a><a class="" href="p4-inherit.html" data-fa="وراثت" data-en="Inheritance">وراثت</a><a class="" href="p4-protect.html" data-fa="داده معتبر و استفاده داخلی" data-en="Valid data and internal use">داده معتبر و استفاده داخلی</a><a class="" href="p4-assess-oop.html" data-fa="ارزشیابی برنامه شیءگرا" data-en="Object-oriented assessment">ارزشیابی برنامه شیءگرا</a><p class="unit" data-fa="فایل و توسعه" data-en="Files and development">فایل و توسعه</p><a class="" href="p4-files.html" data-fa="خواندن و نوشتن فایل متنی" data-en="Reading and writing text files">خواندن و نوشتن فایل متنی</a><a class="" href="p4-errors.html" data-fa="پیمایش فایل و مدیریت خطا" data-en="Walking a file and handling errors">پیمایش فایل و مدیریت خطا</a><a class="" href="p4-json.html" data-fa="چند فایل و JSON" data-en="Several files and JSON">چند فایل و JSON</a><a class="" href="p4-assess-files.html" data-fa="ارزشیابی کار با فایل" data-en="Files assessment">ارزشیابی کار با فایل</a><p class="mod" data-fa="پودمان ۵: برنامه‌نویسی جنگو" data-en="Module 5: Django">پودمان ۵: برنامه‌نویسی جنگو</p><p class="unit" data-fa="معرفی پودمان" data-en="Module introduction">معرفی پودمان</p><a class="" href="p5-intro.html" data-fa="معرفی پودمان جنگو" data-en="Introducing the Django module">معرفی پودمان جنگو</a><p class="unit" data-fa="ایجاد وب‌اپلیکیشن" data-en="Creating the web app">ایجاد وب‌اپلیکیشن</p><a class="" href="p5-what.html" data-fa="جنگو چیست و نصب" data-en="What Django is, and installing it">جنگو چیست و نصب</a><a class="" href="p5-project.html" data-fa="پروژه، اپ و اولین view" data-en="Project, app, and the first view">پروژه، اپ و اولین view</a><a class="" href="p5-template.html" data-fa="قالب و دمای واقعی" data-en="Templates and a real temperature">قالب و دمای واقعی</a><a class="" href="p5-assess-create.html" data-fa="ارزشیابی ایجاد وب‌اپلیکیشن" data-en="Creating-the-app assessment">ارزشیابی ایجاد وب‌اپلیکیشن</a><p class="unit" data-fa="توسعه وب‌اپلیکیشن" data-en="Developing the web app">توسعه وب‌اپلیکیشن</p><a class="" href="p5-model.html" data-fa="مدل شهر و پنل ادمین" data-en="The city model and the admin">مدل شهر و پنل ادمین</a><a class="" href="p5-list.html" data-fa="خواندن شهرها و نمایش فهرست" data-en="Reading cities and showing the list">خواندن شهرها و نمایش فهرست</a><a class="" href="p5-auth.html" data-fa="ورود و خروج" data-en="Sign-in and sign-out">ورود و خروج</a><a class="" href="p5-crud.html" data-fa="افزودن و حذف شهر" data-en="Adding and deleting a city">افزودن و حذف شهر</a><a class="" href="p5-bugs.html" data-fa="باگ و امنیت" data-en="Bugs and security">باگ و امنیت</a><p class="mod" data-fa="پایان کتاب" data-en="Back of the book">پایان کتاب</p><p class="unit" data-fa="منابع" data-en="References">منابع</p><a class="" href="refs.html" data-fa="منابع کتاب" data-en="Book references">منابع کتاب</a></nav></details>
+    <div class="main">
+      <h1 class="section-title" data-fa="فرم و پنجره Modal" data-en="Forms and modals">فرم و پنجره Modal</h1><article class="lesson" lang="fa" dir="rtl" data-lang-block="fa"><p class="page-mark">صفحه ۱۸۰</p>
+<p>بوت‌استرپ دارای مجموعه‌ای از کلاس‌های آماده برای طرح‌بندی انواع فرم‌هاست. به کمک این کلاس‌ها می‌توان فرم‌های واکنش‌گرا و جذاب را با سرعت بالا و کمترین نیاز به کدنویسی ایجاد نمود. جدول ٢١ حاوی برخی کلاس‌های فرم در بوت‌استرپ 5 است.</p>
+<p>جدول 12 کلاس‌های فرم</p>
+<p>نام کلاس</p>
+<h3 id="_1">کاربرد</h3>
+<div class="code-wrap" dir="ltr"><pre><code>form-control
+</code></pre></div>
+<p>تعیین استایل فیلدهای ورودی مانند <code>input</code>, <code>textarea</code> و <code>select</code></p>
+<p><code>form-label</code>تعیین استایل برچسب‌های فرم <code>form-check</code>استایل‌دهی به کادرهای تأیید و دکمه‌های رادیویی</p>
+<div class="code-wrap" dir="ltr"><pre><code>form-check-label
+</code></pre></div>
+<p>این کلاس برای متن کنار کادر تأیید یا دکمه رادیویی استفاده می‌شود.</p>
+<p><code>form-check-input</code>برای استایل‌دهی به کادر تأیید و دکمه رادیویی</p>
+<div class="code-wrap" dir="ltr"><pre><code>form-text
+</code></pre></div>
+<p>این کلاس برای نمایش توضیح کمکی زیر یک فیلد فرم استفاده می‌شود.</p>
+<h3 id="_2">بیشتر بدانید</h3>
+<p>طراحی فرم ثبت نام در این کارگاه یک فرم ثب‌تنام را به شکل روبه‌رو توسط کلاس‌های بوت‌استرپ طراحی خواهید کرد.</p>
+<p><img alt="تصویر کتاب" src="../images/p186-02.png" /></p>
+<p>1 یک صفحه وب با نام <code>signup-form.html</code> ایجاد کنید و کدهای اولیه سند <code>HTML</code> را درون آن بنویسید. سپس متاتگ‌های <code>charset</code>، <code>viewport</code>، <code>title</code> و لینک <code>CDN</code> بوت‌استرپ را در بخش <code>&lt;head&gt;</code> به صفحه اضافه کنید. همچنین جهت نمایش صفحه را به‌صورت <code>rtl</code> تنظیم کنید.</p>
+<p><img alt="تصویر کتاب" src="../images/p186-01.png" /></p>
+<hr />
+<p class="page-mark">صفحه ۱۸۱</p>
+<p>2 در صفحه <code>signup-form.html</code> تنها یک فرم نمایش داده می‌شود. این فرم باید در راستای افقی و عمودی در وسط صفحه ظاهر گردد. بنابراین ویژگی‌های برچسب <code>body</code> را به شکل زیر تنظیم کنید:</p>
+<p><img alt="تصویر کتاب" src="../images/p187-01.png" /></p>
+<p><code>vh</code> یک واحد اندازه‌گیری در <code>CSS</code> است که مخفف <code>Viewport</code> <code>Height</code> است. کلمه <code>viewport</code> به بخشی از صفحه اشاره دارد که در معرض دید کاربر است. <code>1vh</code> برابر 1% ارتفاع <code>viewport</code> است. بنابراین، <code>height:100vh</code> به معنای آن است که ارتفاع عنصر <code>&lt;body&gt;</code> باید برابر 100% ارتفاع <code>viewport</code> باشد.</p>
+<p>به عبارت دیگر، این عنصر باید تمام ارتفاع صفحه را اشغال کند.</p>
+<p>استفاده از کلاس‌های <code>d-flex</code> و <code>align-items-center</code> باعث می‌شود که محتوای بخش <code>body</code> در وسط صفحه قرار گیرد.</p>
+<p>3 درون عنصر <code>body</code> یک عنصر نگهدارنده با محتوای شکل زیر ایجاد کنید:</p>
+<p><img alt="تصویر کتاب" src="../images/p187-02.png" /></p>
+<p>4 پهنای فرم باید در دستگاه‌های مختلف کنترل شود. برای این‌کار بهتر است از کلاس‌های <code>grid</code> استفاده شود تا بسته به اندازۀ دستگاه، پهنای عنصر نگهدارنده فرم تغییر نماید. در کد فوق یک عنصر نگهدارنده با کلاس <code>row</code> ایجاد شده است و درون آن تنها یک ستون حاوی فرم و عنوان آن موجود است. با توجه به اینکه فرم درون ستون <code>grid</code> قرار دارد، بنابراین پهنای فرم وابسته به پهنای ستون تغییر خواهد کرد.</p>
+<p>کلاس <code>justify-content-center</code> باعث قرار گرفتن محتوای عنصر نگهدارنده در وسط صفحه خواهد شد.</p>
+<p>کلاس‌های <code>col-10</code>، <code>col-md-6</code> و <code>col-lg-5</code> پهنای ستون <code>grid</code> را در دستگاه‌های موبایل، تبلت و دسکتاپ تعیین می‌کنند.</p>
+<hr />
+<p class="page-mark">صفحه ۱۸۲</p>
+<p>5 محتوای فرم را به مطابق کدهای شکل زیر در محل تعیین شده در کد فوق، به صفحه اضافه کنید:</p>
+<p><img alt="تصویر کتاب" src="../images/p188-01.png" /></p>
+<p>فایل را ذخیره کنید و نتیجه را در مرورگر بررسی کنید.</p>
+<p>6 رنگ متن عنوان فرم را به رنگ آبی و رنگ متن برچسب‌ها را به رنگ خاکستری تغییر دهید. این کار را توسط کلاس‌های بوت‌استرپ انجام دهید.</p>
+<p>7 زیرخط پیوند «ورود» در پایین صفحه را توسط کلاس بوت‌استرپ حذف کنید.</p>
+<h3 id="_3">بیشتر بدانید</h3>
+<p><code>Modal</code></p>
+<p>مُدال یک رابط کاربری است که به‌صورت یک کادر محاوره‌ای شناور در بالای صفحه، نمایش داده می‌شود و کاربر را وادار می‌کند که قبل از بازگشت به صفحه وب، با آن تعامل داشته باشد. این عنصر معمولاً برای نمایش اطلاعات اضافی، تأیید کاربر، فرم‌ها یا تعاملات دیگر با کاربر استفاده می‌شود.</p>
+<p>فشردن کلید <code>Esc</code>، کلیک روی دکمه <code>close</code> یا ناحیه‌ای خارج از پنجره مدال باعث بسته شدن کادر محاوره‌ای می‌شود.</p>
+<p>پنجرۀ مدال دارای سه بخش <code>header</code>، <code>body</code> و <code>footer</code> است. این بخش‌ها توسط کلاس‌های <code>-modal</code> <code>header</code>، <code>modal-body</code> و <code>modal-footer</code> ایجاد می‌شوند. مجموعه این سه بخش درون یک عنصر نگهدارنده با کلاس <code>modal-content</code> قرار می‌گیرند.</p>
+<p>مدال یک عنصر وابسته به جاوا‌اسکریپت است، پس اضافه کردن فایل جاوا‌اسکریپت بوت‌استرپ قبل از <code>&lt;body/&gt;</code> ضروری است.</p>
+<p>برای نمایش کادر محاوره‌ای نیاز به یک عنصر فعا‌لکننده مانند دکمه است.</p>
+<hr />
+<p class="page-mark">صفحه ۱۸۳</p>
+<p><img alt="تصویر کتاب" src="../images/p189-03.png" /></p>
+<p>ساختار کامل مدال در <code>Bootstrap</code></p>
+<p>نمایش پیغام اضافه شدن محصول به سبد خرید توسط <code>Modal</code></p>
+<h3 id="_4">کار کارگاهی</h3>
+<p>در کارگاه‌های قبلی، صفحه نمایش اطلاعات محصول (<code>product-details.html</code>) را طراحی کردید. در برخی سایت‌های فروشگاهی، زمانی که کاربر روی دکمه «افزودن به سبد خرید» کلیک می‌کند، یک پیغام با محتوای «محصول مورد نظر به سبد خرید اضافه شد» نمایش داده می‌شود. در این کارگاه قصد داریم صفحه <code>product-details.html</code> را به همین طریق تغییر دهیم.</p>
+<p>فایل <code>product-details.html</code> را باز کنید و دکمه افزودن به سبد خرید را به مطابق کد شکل زیر تغییر دهید:</p>
+<p><img alt="تصویر کتاب" src="../images/p189-01.png" /></p>
+<p>با کلیک روی این دکمه کادر محاوره‌ای (مُدال) با شناسه <code>addTocartMsg</code> ظاهر می‌شود.</p>
+<p><code>btn:</code> استایل یک دکمۀ بو‌تاسترپ را به عنصر <code>&lt;button&gt;</code> اختصاص می‌دهد.</p>
+<p><code>"data-bs-toggle="modal:</code> مشخص می‌کند این دکمه برای باز کردن مدال است.</p>
+<p><code>"data-bs-target="#addToCartMsg:</code> مشخص می‌کند کدام مدال باز شود.</p>
+<p>کد مُدال را بعد از برچسب <code>&lt;button/&gt;</code> به صفحه اضافه کنید:</p>
+<p><img alt="تصویر کتاب" src="../images/p189-02.png" /></p>
+<hr />
+<p class="page-mark">صفحه ۱۸۴</p>
+<p><img alt="تصویر کتاب" src="../images/p190-01.png" /></p>
+<p><code>tabindex</code> ترتیب انتقال فوکوس (تمرکز) روی عناصر را هنگام استفاده از کلید <code>Tab</code> مشخص می‌کند.</p>
+<p>عبارت <code>tabindex=-1</code> به معنای آن است که مُدال قابلیت دریافت فوکوس توسط کلید <code>Tab</code> را ندارد.</p>
+<p><code>btn-close</code> استایل دکمه بستن در پنجره مُدال را به‌صورت یک علامت ضربدر مشخص می‌کند.</p>
+<p><code>data-bs-dismiss="modal":</code> رفتار دکمه <code>close</code> را مشخص می‌کند؛ به‌صورتی که وقتی کاربر روی دکمه کلیک نماید، مُدال بسته شود.</p>
+<p>دکمه <code>close</code> بالای پنجره مدال در حالت پیش‌فرض در سمت راست پنجره ظاهر می‌شود. به همین دلیل از کلاس‌های <code>d-flex</code>، <code>justify-content-end</code> و <code>ms-0</code> برای تنظیم محل دکمه استفاده شده است.</p>
+<p>بعد از کلیک روی دکمه «مشاهده سبد خرید»، باید صفحه <code>shopping-cart.html</code> باز شود. برای این‌کار از ویژگی <code>onclick</code> دکمه استفاده کنید و مقدار آن را برابر یک دستور جاوا‌اسکریپت طبق شکل زیر قرار دهید:</p>
+<p><img alt="تصویر کتاب" src="../images/p190-02.png" /></p>
+<div class="code-wrap" dir="ltr"><pre><code>کروسل (Carousel)
+</code></pre></div>
+<p>کروسل یک ابزار مبتنی بر جاوا‌اسکریپت است که برای ایجاد یک مجموعه اسلاید یا گالری تصاویر افقی استفاده می‌شود. کروسل امکان نمایش چند محتوا یا تصویر را در یک فضای محدود فراهم می‌کند؛ به‌طوری‌که کاربران بتوانند با استفاده از دکمه‌های کنترلی یا با کشیدن (<code>swipe</code>)، محتواهای بعدی را مشاهده کنند.</p>
+<p>در یک سایت فروشگاهی، کروسل‌ها یا اسلایدرها امکان نمایش مجموعه‌ای از محصولات یا محتوای تبلیغاتی را به‌صورت چرخشی فراهم می‌کنند. استفاده از کروسل تجربۀ کاربری بهتری را برای کاربران ارائه می‌کند.</p>
+<p>برای ایجاد یک کروسل بوت‌استرپ از کلاس <code>carousel</code> و کلاس‌های زیرمجموعه آن استفاده می‌شود.</p>
+<p>جدو‌ل٣١ اسامی کلاس‌ها و کاربرد آنها را توصیف می‌کند:</p>
+<hr /></article><article class="lesson" lang="en" dir="ltr" data-lang-block="en" hidden><p class="page-mark">Page 180</p>
+<p>Bootstrap has a set of ready-made classes for laying out various forms. With these classes you can create responsive and attractive forms quickly and with little need for coding. Table 12 contains some form classes in Bootstrap 5.</p>
+<p>Table 12 Form classes</p>
+<p>Class name</p>
+<h3 id="use">Use</h3>
+<div class="code-wrap" dir="ltr"><pre><code>form-control
+</code></pre></div>
+<p>Sets the style of input fields such as <code>input</code>, <code>textarea</code>, and <code>select</code></p>
+<p><code>form-label</code> Sets the style of form labels <code>form-check</code> Styles checkboxes and radio buttons</p>
+<div class="code-wrap" dir="ltr"><pre><code>form-check-label
+</code></pre></div>
+<p>This class is used for the text next to a checkbox or radio button.</p>
+<p><code>form-check-input</code> For styling a checkbox and radio button</p>
+<div class="code-wrap" dir="ltr"><pre><code>form-text
+</code></pre></div>
+<p>This class is used to show helpful text under a form field.</p>
+<h3 id="learn-more">Learn more</h3>
+<p>Designing the sign-up form. In this workshop you will design a sign-up form like the one opposite using Bootstrap classes.</p>
+<p><img alt="Book image" src="../images/p186-02.png" /></p>
+<p>1 Create a web page named <code>signup-form.html</code> and write the initial <code>HTML</code> document code in it. Then add the <code>charset</code>, <code>viewport</code>, and <code>title</code> meta tags and the Bootstrap <code>CDN</code> link in the <code>&lt;head&gt;</code> section of the page. Also set the page direction to <code>rtl</code>.</p>
+<p><img alt="Book image" src="../images/p186-01.png" /></p>
+<hr />
+<p class="page-mark">Page 181</p>
+<p>2 On the <code>signup-form.html</code> page only one form is displayed. This form should appear in the horizontal and vertical center of the page. Therefore set the properties of the <code>body</code> tag as shown below:</p>
+<p><img alt="Book image" src="../images/p187-01.png" /></p>
+<p><code>vh</code> is a unit of measurement in <code>CSS</code> that stands for <code>Viewport</code> <code>Height</code>. The word <code>viewport</code> refers to the part of the page that is in the user’s view. <code>1vh</code> equals 1% of the <code>viewport</code> height. Therefore, <code>height:100vh</code> means that the height of the <code>&lt;body&gt;</code> element should equal 100% of the <code>viewport</code> height.</p>
+<p>In other words, this element should occupy the full height of the page.</p>
+<p>Using the <code>d-flex</code> and <code>align-items-center</code> classes makes the content of the <code>body</code> section sit in the middle of the page.</p>
+<p>3 Inside the <code>body</code> element create a container element with the content shown below:</p>
+<p><img alt="Book image" src="../images/p187-02.png" /></p>
+<p>4 The width of the form should be controlled on different devices. For this it is better to use the <code>grid</code> classes so that, depending on the device size, the width of the form’s container element changes. In the code above a container element with the <code>row</code> class has been created, and inside it there is only one column containing the form and its title. Because the form is inside a <code>grid</code> column, the form width will change depending on the column width.</p>
+<p>The <code>justify-content-center</code> class centers the content of the container element on the page.</p>
+<p>The <code>col-10</code>, <code>col-md-6</code>, and <code>col-lg-5</code> classes set the width of the <code>grid</code> column on mobile, tablet, and desktop devices.</p>
+<hr />
+<p class="page-mark">Page 182</p>
+<p>5 Add the form content according to the code in the figure below in the place set aside in the code above:</p>
+<p><img alt="Book image" src="../images/p188-01.png" /></p>
+<p>Save the file and check the result in the browser.</p>
+<p>6 Change the color of the form title text to blue and the color of the label text to gray. Do this with Bootstrap classes.</p>
+<p>7 Remove the underline from the “Sign in” link at the bottom of the page with a Bootstrap class.</p>
+<h3 id="learn-more_1">Learn more</h3>
+<p><code>Modal</code></p>
+<p>A modal is a user interface that appears as a floating dialog box on top of the page and requires the user to interact with it before returning to the web page. This element is usually used to show extra information, get user confirmation, forms, or other interactions with the user.</p>
+<p>Pressing the <code>Esc</code> key, clicking the <code>close</code> button, or clicking an area outside the modal window closes the dialog box.</p>
+<p>A modal window has three sections: <code>header</code>, <code>body</code>, and <code>footer</code>. These sections are created with the <code>modal-header</code>, <code>modal-body</code>, and <code>modal-footer</code> classes. All three sections sit inside a container element with the <code>modal-content</code> class.</p>
+<p>A modal depends on JavaScript, so adding the Bootstrap JavaScript file before <code>&lt;/body&gt;</code> is required.</p>
+<p>To show the dialog box you need an activating element such as a button.</p>
+<hr />
+<p class="page-mark">Page 183</p>
+<p><img alt="Book image" src="../images/p189-03.png" /></p>
+<p>Complete structure of a modal in <code>Bootstrap</code></p>
+<p>Showing a message that a product was added to the shopping cart with a <code>Modal</code></p>
+<h3 id="workshop">Workshop</h3>
+<p>In previous workshops you designed the product information page (<code>product-details.html</code>). On some shopping sites, when the user clicks the “Add to cart” button, a message with the content “The selected product was added to the shopping cart” is displayed. In this workshop you will change the <code>product-details.html</code> page in the same way.</p>
+<p>Open the <code>product-details.html</code> file and change the Add to cart button according to the code in the figure below:</p>
+<p><img alt="Book image" src="../images/p189-01.png" /></p>
+<p>When you click this button, the dialog box (modal) with the id <code>addTocartMsg</code> appears.</p>
+<p><code>btn:</code> Assigns a Bootstrap button style to the <code>&lt;button&gt;</code> element.</p>
+<p><code>"data-bs-toggle="modal:</code> Specifies that this button is for opening a modal.</p>
+<p><code>"data-bs-target="#addToCartMsg:</code> Specifies which modal should open.</p>
+<p>Add the modal code to the page after the <code>&lt;/button&gt;</code> tag:</p>
+<p><img alt="Book image" src="../images/p189-02.png" /></p>
+<hr />
+<p class="page-mark">Page 184</p>
+<p><img alt="Book image" src="../images/p190-01.png" /></p>
+<p><code>tabindex</code> specifies the order in which focus moves among elements when the <code>Tab</code> key is used.</p>
+<p>The expression <code>tabindex=-1</code> means that the modal cannot receive focus with the <code>Tab</code> key.</p>
+<p><code>btn-close</code> sets the style of the close button in the modal window as an × mark.</p>
+<p><code>data-bs-dismiss="modal":</code> Specifies the behavior of the <code>close</code> button so that when the user clicks the button, the modal closes.</p>
+<p>By default the <code>close</code> button at the top of the modal window appears on the right side of the window. That is why the <code>d-flex</code>, <code>justify-content-end</code>, and <code>ms-0</code> classes are used to set the position of the button.</p>
+<p>After clicking the “View cart” button, the <code>shopping-cart.html</code> page should open. For this, use the button’s <code>onclick</code> attribute and set its value to a JavaScript statement as shown below:</p>
+<p><img alt="Book image" src="../images/p190-02.png" /></p>
+<div class="code-wrap" dir="ltr"><pre><code>کروسل (Carousel)
+</code></pre></div>
+<p>A carousel is a JavaScript-based tool used to create a set of slides or a horizontal image gallery. A carousel lets you show several pieces of content or images in a limited space so that users can see the next items with control buttons or by swiping (<code>swipe</code>).</p>
+<p>On a shopping site, carousels or sliders let you show a set of products or promotional content in a rotating way. Using a carousel provides a better user experience.</p>
+<p>To create a Bootstrap carousel, the <code>carousel</code> class and its related classes are used.</p>
+<p>Table 13 describes the class names and their uses:</p>
+<hr /></article>
+      <aside class="extra">
+        <h2 data-fa="تمرین این بخش" data-en="Exercises for this section">تمرین این بخش</h2>
+        <p class="extra-note" data-fa="این تمرین‌ها و پیوندها اضافه بر متن کتاب‌اند." data-en="These exercises and links are in addition to the book.">این تمرین‌ها و پیوندها اضافه بر متن کتاب‌اند.</p>
+        <ol><li data-fa="فرم ثبت‌نام را وسط صفحه بساز و حداقل سه کنترل را با کلاس فرم بوت‌استرپ استایل بده." data-en="Build the signup form centered on the page and style at least three controls with Bootstrap form classes.">فرم ثبت‌نام را وسط صفحه بساز و حداقل سه کنترل را با کلاس فرم بوت‌استرپ استایل بده.</li><li data-fa="یک پنجره modal با عنوان، متن و دکمه بستن بساز و آن را با یک دکمه در صفحه باز کن." data-en="Build a modal with a title, text, and a close button, and open it from a button on the page.">یک پنجره modal با عنوان، متن و دکمه بستن بساز و آن را با یک دکمه در صفحه باز کن.</li></ol>
+        <h2 data-fa="پیوند مفید" data-en="Useful link">پیوند مفید</h2><ul><li><a href="https://getbootstrap.com/docs/5.3/components/modal/" data-fa="پنجره modal" data-en="Modal">پنجره modal</a></li></ul>
+      </aside>
+    <nav class="pager"><a rel="prev" class="prev" href="p3-bs-nav.html"><span class="pager-word" data-fa="قبلی" data-en="Previous">قبلی</span><span class="pager-name" data-fa="نوار ناوبری و جزئیات محصول" data-en="Navbar and product details">نوار ناوبری و جزئیات محصول</span></a><a rel="next" class="next" href="p3-bs-show.html"><span class="pager-word" data-fa="بعدی" data-en="Next">بعدی</span><span class="pager-name" data-fa="کاروسل و آکاردئون" data-en="Carousel and accordion">کاروسل و آکاردئون</span></a></nav>
+    </div>
+  </div>
+  <script src="../assets/search-index.js?v=4"></script>
+  <script src="../assets/app.js?v=4"></script>
+</body>
+</html>

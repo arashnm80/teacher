@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title data-fa="آرایه و شیء" data-en="Arrays and objects">آرایه و شیء</title>
+  <link rel="icon" href="../assets/favicon.svg">
+  <link rel="stylesheet" href="../assets/style.css?v=4">
+</head>
+<body data-root="../">
+  <header class="top">
+    <a class="brand" href="../index.html">
+      <span data-fa="طراح سایت" data-en="Site Design">طراح سایت</span>
+      <small data-fa="پایه یازدهم" data-en="Grade 11">پایه یازدهم</small>
+    </a>
+    <div class="search-wrap">
+      <input id="q" type="search" autocomplete="off"
+        data-fa-placeholder="جستجو در درس‌ها" data-en-placeholder="Search lessons"
+        placeholder="جستجو در درس‌ها">
+      <div id="results" class="results" hidden></div>
+    </div>
+    <a class="download" href="../grade11-offline.zip?v=2" data-fa="دانلود کل سایت" data-en="Download the whole site">دانلود کل سایت</a>
+    <button type="button" id="lang-toggle" class="lang-toggle" dir="ltr" data-lang="fa"
+      aria-label="تغییر زبان">
+      <span data-opt="fa">فا</span>
+      <span data-opt="en">EN</span>
+    </button>
+  </header>
+  <div class="layout">
+    <details class="toc" open><summary><span data-fa="فهرست درس‌ها" data-en="Lesson list">فهرست درس‌ها</span></summary><nav class="side" aria-label="lessons"><p class="mod" data-fa="شروع کتاب" data-en="Opening">شروع کتاب</p><p class="unit" data-fa="فهرست" data-en="Contents">فهرست</p><a class="" href="toc.html" data-fa="فهرست" data-en="Contents">فهرست</a><p class="mod" data-fa="پودمان ۱: برنامه‌نویسی پایتون" data-en="Module 1: Python programming">پودمان ۱: برنامه‌نویسی پایتون</p><p class="unit" data-fa="معرفی پودمان" data-en="Module introduction">معرفی پودمان</p><a class="" href="p1-intro.html" data-fa="معرفی پودمان پایتون" data-en="Introducing the Python module">معرفی پودمان پایتون</a><p class="unit" data-fa="مدل‌سازی داده" data-en="Data modeling">مدل‌سازی داده</p><a class="" href="p1-python.html" data-fa="پایتون و محیط برنامه‌نویسی" data-en="Python and the programming environment">پایتون و محیط برنامه‌نویسی</a><a class="" href="p1-vars.html" data-fa="متغیرها، نوع داده و عملگرها" data-en="Variables, types, and operators">متغیرها، نوع داده و عملگرها</a><a class="" href="p1-cast.html" data-fa="ورودی و تبدیل نوع" data-en="Input and type casting">ورودی و تبدیل نوع</a><a class="" href="p1-lists.html" data-fa="لیست‌ها" data-en="Lists">لیست‌ها</a><a class="" href="p1-if.html" data-fa="شرط‌های ساده" data-en="Simple conditions">شرط‌های ساده</a><a class="" href="p1-elif.html" data-fa="if، elif و else" data-en="if, elif, and else">if، elif و else</a><a class="" href="p1-for.html" data-fa="حلقه for و range" data-en="The for loop and range">حلقه for و range</a><a class="" href="p1-while.html" data-fa="حلقه while و کنترل حلقه" data-en="The while loop and loop control">حلقه while و کنترل حلقه</a><a class="" href="p1-assess-data.html" data-fa="ارزشیابی مدل‌سازی داده" data-en="Data-modeling assessment">ارزشیابی مدل‌سازی داده</a><p class="unit" data-fa="توابع و ماژول‌ها" data-en="Functions and modules">توابع و ماژول‌ها</p><a class="" href="p1-sets.html" data-fa="مجموعه (set)" data-en="Sets">مجموعه (set)</a><a class="" href="p1-dict.html" data-fa="دیکشنری" data-en="Dictionaries">دیکشنری</a><a class="" href="p1-quiz.html" data-fa="پروژه بازی Quiz" data-en="Quiz game project">پروژه بازی Quiz</a><a class="" href="p1-tuple.html" data-fa="تاپل" data-en="Tuples">تاپل</a><a class="" href="p1-func.html" data-fa="تعریف تابع، پارامتر و return" data-en="Defining functions, parameters, and return">تعریف تابع، پارامتر و return</a><a class="" href="p1-func-more.html" data-fa="تمرین تابع و مرتب‌سازی" data-en="Function practice and sorting">تمرین تابع و مرتب‌سازی</a><a class="" href="p1-modules.html" data-fa="ماژول‌ها و تفاوت تابع و متد" data-en="Modules, and functions versus methods">ماژول‌ها و تفاوت تابع و متد</a><a class="" href="p1-assess-func.html" data-fa="ارزشیابی توابع و ماژول‌ها" data-en="Functions and modules assessment">ارزشیابی توابع و ماژول‌ها</a><p class="mod" data-fa="پودمان ۲: صفحات وب ایستا" data-en="Module 2: Static web pages">پودمان ۲: صفحات وب ایستا</p><p class="unit" data-fa="معرفی پودمان" data-en="Module introduction">معرفی پودمان</p><a class="" href="p2-intro.html" data-fa="معرفی پودمان صفحات ایستا" data-en="Introducing static web pages">معرفی پودمان صفحات ایستا</a><p class="unit" data-fa="ساختار با HTML" data-en="Structure with HTML">ساختار با HTML</p><a class="" href="p2-web.html" data-fa="وب چگونه کار می‌کند" data-en="How the web works">وب چگونه کار می‌کند</a><a class="" href="p2-concepts.html" data-fa="مفاهیم طراحی وب و نقشه سایت" data-en="Web-design concepts and the site map">مفاهیم طراحی وب و نقشه سایت</a><a class="" href="p2-tags.html" data-fa="اولین صفحه HTML" data-en="A first HTML page">اولین صفحه HTML</a><a class="" href="p2-text.html" data-fa="متن، لیست و پیوند" data-en="Text, lists, and links">متن، لیست و پیوند</a><a class="" href="p2-img.html" data-fa="تصویر در صفحه" data-en="Images on the page">تصویر در صفحه</a><a class="" href="p2-forms.html" data-fa="فرم‌ها" data-en="Forms">فرم‌ها</a><a class="" href="p2-semantic.html" data-fa="عناصر معنایی" data-en="Semantic elements">عناصر معنایی</a><a class="" href="p2-assess-html.html" data-fa="ارزشیابی HTML" data-en="HTML assessment">ارزشیابی HTML</a><p class="unit" data-fa="ظاهر با CSS" data-en="Appearance with CSS">ظاهر با CSS</p><a class="" href="p2-css-start.html" data-fa="نوشتن CSS" data-en="Writing CSS">نوشتن CSS</a><a class="" href="p2-css-look.html" data-fa="رنگ، پس‌زمینه و انتخاب‌گر" data-en="Color, background, and selectors">رنگ، پس‌زمینه و انتخاب‌گر</a><a class="" href="p2-box.html" data-fa="مدل جعبه‌ای و display" data-en="The box model and display">مدل جعبه‌ای و display</a><a class="" href="p2-flex.html" data-fa="چیدمان با Flexbox" data-en="Layout with Flexbox">چیدمان با Flexbox</a><a class="" href="p2-flex-work.html" data-fa="کارگاه چیدمان صفحه" data-en="Page-layout workshop">کارگاه چیدمان صفحه</a><a class="" href="p2-media.html" data-fa="مدیا کوئری و ارزشیابی CSS" data-en="Media queries and the CSS assessment">مدیا کوئری و ارزشیابی CSS</a><p class="mod" data-fa="پودمان ۳: صفحات وب تعاملی" data-en="Module 3: Interactive web pages">پودمان ۳: صفحات وب تعاملی</p><p class="unit" data-fa="معرفی پودمان" data-en="Module introduction">معرفی پودمان</p><a class="" href="p3-intro.html" data-fa="معرفی پودمان تعاملی" data-en="Introducing the interactive module">معرفی پودمان تعاملی</a><p class="unit" data-fa="بوت‌استرپ" data-en="Bootstrap">بوت‌استرپ</p><a class="" href="p3-bs-start.html" data-fa="فریم‌ورک و شروع بوت‌استرپ" data-en="Frameworks and starting Bootstrap">فریم‌ورک و شروع بوت‌استرپ</a><a class="" href="p3-bs-util.html" data-fa="فاصله، گردی و لیست" data-en="Spacing, rounding, and lists">فاصله، گردی و لیست</a><a class="" href="p3-bs-header.html" data-fa="سرصفحه فروشگاه" data-en="The shop header">سرصفحه فروشگاه</a><a class="" href="p3-bs-grid.html" data-fa="شبکه Grid" data-en="The grid">شبکه Grid</a><a class="" href="p3-bs-rwd.html" data-fa="کلاس‌های واکنش‌گرا" data-en="Responsive classes">کلاس‌های واکنش‌گرا</a><a class="" href="p3-bs-nav.html" data-fa="نوار ناوبری و جزئیات محصول" data-en="Navbar and product details">نوار ناوبری و جزئیات محصول</a><a class="" href="p3-bs-form.html" data-fa="فرم و پنجره Modal" data-en="Forms and modals">فرم و پنجره Modal</a><a class="" href="p3-bs-show.html" data-fa="کاروسل و آکاردئون" data-en="Carousel and accordion">کاروسل و آکاردئون</a><a class="" href="p3-bs-assess.html" data-fa="ارزشیابی بوت‌استرپ" data-en="Bootstrap assessment">ارزشیابی بوت‌استرپ</a><p class="unit" data-fa="جاوااسکریپت" data-en="JavaScript">جاوااسکریپت</p><a class="" href="p3-js-start.html" data-fa="جاوااسکریپت در صفحه وب" data-en="JavaScript on the page">جاوااسکریپت در صفحه وب</a><a class="" href="p3-js-vars.html" data-fa="متغیر و نوع داده" data-en="Variables and data types">متغیر و نوع داده</a><a class="" href="p3-js-ops.html" data-fa="عملگرها" data-en="Operators">عملگرها</a><a class="current" href="p3-js-data.html" data-fa="آرایه و شیء" data-en="Arrays and objects">آرایه و شیء</a><a class="" href="p3-js-if.html" data-fa="شرط در جاوااسکریپت" data-en="Conditions in JavaScript">شرط در جاوااسکریپت</a><a class="" href="p3-js-loops.html" data-fa="حلقه‌ها" data-en="Loops">حلقه‌ها</a><a class="" href="p3-js-func.html" data-fa="تابع‌ها" data-en="Functions">تابع‌ها</a><a class="" href="p3-js-dom.html" data-fa="صفحه، رویداد و اعتبار فرم" data-en="The page, events, and form validation">صفحه، رویداد و اعتبار فرم</a><a class="" href="p3-js-assess.html" data-fa="ارزشیابی جاوااسکریپت" data-en="JavaScript assessment">ارزشیابی جاوااسکریپت</a><p class="mod" data-fa="پودمان ۴: توسعه وب پایتون" data-en="Module 4: Python for the web">پودمان ۴: توسعه وب پایتون</p><p class="unit" data-fa="معرفی پودمان" data-en="Module introduction">معرفی پودمان</p><a class="" href="p4-intro.html" data-fa="معرفی پودمان شیءگرایی" data-en="Introducing the object-oriented module">معرفی پودمان شیءگرایی</a><p class="unit" data-fa="شیءگرایی" data-en="Object-oriented programming">شیءگرایی</p><a class="" href="p4-idea.html" data-fa="ایده شیء و کلاس" data-en="The idea of objects and classes">ایده شیء و کلاس</a><a class="" href="p4-class.html" data-fa="ساخت کلاس و متد" data-en="Writing a class and methods">ساخت کلاس و متد</a><a class="" href="p4-inherit.html" data-fa="وراثت" data-en="Inheritance">وراثت</a><a class="" href="p4-protect.html" data-fa="داده معتبر و استفاده داخلی" data-en="Valid data and internal use">داده معتبر و استفاده داخلی</a><a class="" href="p4-assess-oop.html" data-fa="ارزشیابی برنامه شیءگرا" data-en="Object-oriented assessment">ارزشیابی برنامه شیءگرا</a><p class="unit" data-fa="فایل و توسعه" data-en="Files and development">فایل و توسعه</p><a class="" href="p4-files.html" data-fa="خواندن و نوشتن فایل متنی" data-en="Reading and writing text files">خواندن و نوشتن فایل متنی</a><a class="" href="p4-errors.html" data-fa="پیمایش فایل و مدیریت خطا" data-en="Walking a file and handling errors">پیمایش فایل و مدیریت خطا</a><a class="" href="p4-json.html" data-fa="چند فایل و JSON" data-en="Several files and JSON">چند فایل و JSON</a><a class="" href="p4-assess-files.html" data-fa="ارزشیابی کار با فایل" data-en="Files assessment">ارزشیابی کار با فایل</a><p class="mod" data-fa="پودمان ۵: برنامه‌نویسی جنگو" data-en="Module 5: Django">پودمان ۵: برنامه‌نویسی جنگو</p><p class="unit" data-fa="معرفی پودمان" data-en="Module introduction">معرفی پودمان</p><a class="" href="p5-intro.html" data-fa="معرفی پودمان جنگو" data-en="Introducing the Django module">معرفی پودمان جنگو</a><p class="unit" data-fa="ایجاد وب‌اپلیکیشن" data-en="Creating the web app">ایجاد وب‌اپلیکیشن</p><a class="" href="p5-what.html" data-fa="جنگو چیست و نصب" data-en="What Django is, and installing it">جنگو چیست و نصب</a><a class="" href="p5-project.html" data-fa="پروژه، اپ و اولین view" data-en="Project, app, and the first view">پروژه، اپ و اولین view</a><a class="" href="p5-template.html" data-fa="قالب و دمای واقعی" data-en="Templates and a real temperature">قالب و دمای واقعی</a><a class="" href="p5-assess-create.html" data-fa="ارزشیابی ایجاد وب‌اپلیکیشن" data-en="Creating-the-app assessment">ارزشیابی ایجاد وب‌اپلیکیشن</a><p class="unit" data-fa="توسعه وب‌اپلیکیشن" data-en="Developing the web app">توسعه وب‌اپلیکیشن</p><a class="" href="p5-model.html" data-fa="مدل شهر و پنل ادمین" data-en="The city model and the admin">مدل شهر و پنل ادمین</a><a class="" href="p5-list.html" data-fa="خواندن شهرها و نمایش فهرست" data-en="Reading cities and showing the list">خواندن شهرها و نمایش فهرست</a><a class="" href="p5-auth.html" data-fa="ورود و خروج" data-en="Sign-in and sign-out">ورود و خروج</a><a class="" href="p5-crud.html" data-fa="افزودن و حذف شهر" data-en="Adding and deleting a city">افزودن و حذف شهر</a><a class="" href="p5-bugs.html" data-fa="باگ و امنیت" data-en="Bugs and security">باگ و امنیت</a><p class="mod" data-fa="پایان کتاب" data-en="Back of the book">پایان کتاب</p><p class="unit" data-fa="منابع" data-en="References">منابع</p><a class="" href="refs.html" data-fa="منابع کتاب" data-en="Book references">منابع کتاب</a></nav></details>
+    <div class="main">
+      <h1 class="section-title" data-fa="آرایه و شیء" data-en="Arrays and objects">آرایه و شیء</h1><article class="lesson" lang="fa" dir="rtl" data-lang-block="fa"><p class="page-mark">صفحه ۲۰۶</p>
+<p>آرایه‌ها (<code>Arrays</code>) متغیرهای آرایه امکان نگهداری چند عنصر با انواع داده‌های مختلف را دارند. در هنگام تعریف یک متغیر از نوع آرایه، مقادیر آرایه درون علامت کروشه نوشته می‌شوند. یک آرایه می‌تواند دارای عناصری با نوع داده یکسان یا متفاوت باشد.</p>
+<h3 id="_1">مثال</h3>
+<p>در مثال زیر سه آرایه با مقادیر رشته‌ای، عددی و ترکیبی تعریف شده است:</p>
+<div class="code-wrap" dir="ltr"><pre><code>;]&quot;let cars = [&quot;Opel&quot;, &quot;Saab&quot;, &quot;Volvo&quot;, &quot;BMW&quot;, &quot;Hyundai
+;]let numbers = [1, 20 , 5 , 25 , 1000 , 10 , 1 , 5
+;]let data = [123, &quot;Opel&quot;, false , 12 , 35
+</code></pre></div>
+<p>هر یک از عناصر آرایه دارای اندیس هستند. اندیس عناصر آرایه از صفر شروع می‌شود، بنابراین اگر یک آرایه دارای 5 عنصر باشد، اندیس عنصر اول صفر و اندیس عنصر آخر 4 خواهد بود. برای دسترسی به عناصر آرایه از اندیس عناصر استفاده می‌شود. شکل زیر نمایی از عناصر آرایه <code>cars</code> و مقادیر آنها را نمایش می‌دهد:</p>
+<div class="code-wrap" dir="ltr"><pre><code>Hyundai
+</code></pre></div>
+<p><code>Volvo</code></p>
+<p><code>Saab</code></p>
+<p><code>Opel</code>مقدار عناصر</p>
+<p><code>BMW</code></p>
+<p>0اندیس عناصر</p>
+<p>4</p>
+<p>3</p>
+<p>2</p>
+<p>1</p>
+<p><strong>شکل 9</strong></p>
+<p>برای دسترسی به عنصر اول آرایه از عبارت <code>]cars[0</code> و برای دسترسی به عنصر چهارم از عبارت <code>]cars[4</code> استفاده می‌شود.</p>
+<h3 id="_2">مثال</h3>
+<p>در خط دوم مثال زیر مقدار عنصر سوم آرایه <code>cars</code> و در خط سوم کل آرایه درون کنسول نمایش داده می‌شود.</p>
+<p><img alt="تصویر کتاب" src="../images/p212-02.png" /></p>
+<p><img alt="تصویر کتاب" src="../images/p212-01.png" /></p>
+<p>چنانچه اندیس عنصر آرایه مشخص نشود، کل عناصر آرایه روی صفحه چاپ می‌شود.</p>
+<h3 id="_3">نکته</h3>
+<p>با تعریف آرایه توسط کلمه کلیدی <code>const</code> امکان تغییر عناصر آرایه موجود است؛ اما متغیر آرایه نمی‌تواند به آرایه دیگری نسبت داده شود. به‌عنوان مثال نوشتن عبارت زیر با خطا مواجه می‌شود:</p>
+<div class="code-wrap" dir="ltr"><pre><code>]&quot;cars = [&quot;Tara&quot;, &quot;Shahin&quot;, &quot;Dena&quot;,&quot; Lamari Eama
+</code></pre></div>
+<hr />
+<p class="page-mark">صفحه ۲۰۷</p>
+<p>ایجاد آرایه و چاپ مقادیر</p>
+<h3 id="_4">کار کارگاهی</h3>
+<p>1 فایل جدیدی با نام <code>workshop4.html</code> ایجاد کنید و درون آن آرایه‌ای با نام <code>colors</code> با مقادیر <code>yellow</code>، <code>blue</code>، <code>red</code>، <code>green</code> و <code>orange</code> تعریف کنید. بعد از بررسی صحت برنامه، دستورات را در جاهای خالی بنویسید.</p>
+<p>2 دستوری بنویسید که عنصر <code>blue</code> را در کنسول مرورگر نمایش دهد.</p>
+<p>……………………………</p>
+<p>3 دستوری بنویسید که تمام عناصر آرایه <code>colors</code> را به یک باره چاپ نماید.</p>
+<p>……………………………</p>
+<h3 id="_5">بیشتر بدانید</h3>
+<p>آرایه‌های چندبعدی در بخش قبل نحوۀ ایجاد یک آرایۀ تک‌بعدی و دسترسی به عناصر آن معرفی شد. جاوا‌اسکریپت امکان تعریف آرایه چن‌دبعدی را نیز فراهم می‌کند. آرایه چند بعدی زمانی ایجاد می‌شود که هر یک عناصر آرایه محتوای آرایه دیگری باشند. رایج‌ترین نوع آرایه چندبعدی، آرایه دو بعدی است که می‌تواند به عنوان ماتریس استفاده شود.</p>
+<p>در مثال زیر یک آرایۀ دو بعدی با نام <code>users</code> تعریف شده است:</p>
+<p><img alt="تصویر کتاب" src="../images/p213-02.png" /></p>
+<p><img alt="تصویر کتاب" src="../images/p213-01.png" /></p>
+<p>برای دسترسی به عنصر اول آرایۀ اول (<code>Arash</code>) باید از عبارت <code>]users[0][0</code> استفاده شود و برای دسترسی به عنصر چهارم آرایۀ دوم (<code>Doctor</code>) از عبارت <code>].users[1][3</code> تصویر سمت راست، اندیس عناصر آرایۀ دوبعدی <code>users</code> را نمایش می‌دهد.</p>
+<p>کار با آرایه‌های دو بعدی در فایل <code>workshop4.html</code> محتوای آرایۀ <code>users</code> (مثال قبل) را بنویسید.</p>
+<p>1 دستورات زیر را بعد از معرفی آرایه وارد کنید و خروجی هر‌یک از دستورات را در کنسول مرورگر بررسی کنید. نتیجه را مقابل هر دستور یادداشت کنید.</p>
+<p>……………………………………… ;(<code>users</code>)<code>console.log</code> ……………………………………… ;)<code>]users[1</code>(<code>console.log</code> ……………………………………… ;)<code>]users[2][3</code>(<code>console.log</code></p>
+<p>2 دستوری بنویسید که باعث نمایش عنصر <code>Rose</code> شود.</p>
+<p>………………………………….</p>
+<hr />
+<p class="page-mark">صفحه ۲۰۸</p>
+<p>اشیا در جاوا‌اسکریپت شیء (<code>Object</code>) یک ساختار داده است که برای ذخیرۀ مجموعه‌ای از داده‌های مرتبط، به‌صورت جفت‌های کلید: مقدار استفاده می‌شود، در ساختار داده شیء، مجموعه‌ای از کلیدها (<code>keys</code>) به مقادیر (<code>values</code>) متناظر خود اشاره می‌کنند. اشیا برای ذخیره و سازماندهی داده‌ها و رفتارهای یک موجودیت استفاده می‌شوند. که ساختاری شبیه به دیکشنری در پاتیون دارد.</p>
+<h3 id="_6">مثال</h3>
+<p>در مثال زیر شیء <code>person</code> دارای چهار ویژگی نام، نام خانوادگی، سن و رنگ چشم است که هر یک دارای مقدار مشخصی هستند:</p>
+<p><img alt="تصویر کتاب" src="../images/p214-01.png" /></p>
+<p>در هنگام تعریف یک شیء استفاده از فواصل و ایجاد سطر جدید اهمیتی ندارد؛ بنابراین شیء <code>person</code> می‌تواند به‌صورت زیر نیز تعریف شود:</p>
+<p><img alt="تصویر کتاب" src="../images/p214-02.png" /></p>
+<p>دسترسی به مقدار ویژگی‌های یک شیء از طریق علامت نقطه یا کروشه امکان‌پذیر است. هر دو دستور زیر مقدار ویژگی <code>firstName</code> در شیء <code>person</code> را نمایش می‌دهد:</p>
+<p><img alt="تصویر کتاب" src="../images/p214-03.png" /></p>
+<h3 id="_7">بیشتر بدانید</h3>
+<p>یک شیء علاوه بر ویژگی‌ها دارای رفتارهایی است که با عنوان متد تعریف می‌شوند. تعریف متدها معموًلا در انتهای جفت‌های کلید-مقدار شیء انجام می‌شود.</p>
+<p>روش جدید</p>
+<p>روش قدیم</p>
+<div class="code-wrap" dir="ltr"><pre><code>{)(methodName:function
+{)(methodName
+</code></pre></div>
+<p>دستوراتی که متد انجام می‌دهد //</p>
+<p>دستوراتی که متد انجام می‌دهد //</p>
+<p>}</p>
+<p>}</p>
+<p>در خطوط 13 تا 15 کد صفحه بعد متد <code>displayInfo</code>() برای شیء <code>person</code> تعریف شده و در خط 17 فراخوانی آن انجام شده است.</p>
+<hr />
+<p class="page-mark">صفحه ۲۰۹</p>
+<h3 id="_8">بیشتر بدانید</h3>
+<p><img alt="تصویر کتاب" src="../images/p215-03.png" /></p>
+<p>در تعریف فوق، کلمه کلیدی <code>this</code> به شیء جاری (<code>person</code>) اشاره می‌کند و برای دسترسی به ویژگی‌های شیء جاری به‌کار می‌رود. این متد اطلاعات شیء <code>person</code> را به محل فراخوانی برمی‌گرداند.</p>
+<p>برای فراخوانی متد شیء، ابتدا نام شیء (<code>Person</code>) و سپس نام متد(<code>displayInfo</code>) به همراه علائم () نوشته می‌شود.</p>
+<p>رشته‌ای که توسط متد <code>displayInfo</code>() به محل فراخوانی برگردانده (<code>return</code>) می‌شود، باید درون علامت <code>backtick</code> قرار گیرد. این علامت در گوشه بالای صفحه کلید، زیر دکمه <code>esc</code> واقع شده است.</p>
+<p>ایجاد شیء در جاوا‌اسکریپت</p>
+<h3 id="_9">کار کارگاهی</h3>
+<p>1 فایل جدیدی با نام <code>workshop5.html</code> ایجاد کنید.</p>
+<p>2 یک شیء با نام <code>book</code> با ویژگی‌های <code>title</code>، <code>author</code> و <code>year</code> و مقادیر <code>"JavaScript"</code>، <code>"Douglas</code> <code>Crockford"</code> و 2008 ایجاد کنید.</p>
+<p>……………………………………………………………</p>
+<p>3 دستوری بنویسید که مقدار ویژگی <code>author</code> در شیء <code>book</code> را چاپ نماید. ..………………....</p>
+<h3 id="_10">بیشتر بدانید</h3>
+<p>ترکیب اشیا و آرایه‌ها جاوا‌اسکریپت امکان ترکیب اشیا و آرایه‌ها را با هم فراهم می‌کند. برنامه‌نویس جاوا‌اسکریپت می‌تواند آرایه‌ای از اشیا یا یک شیء شامل آرایه را ایجاد نماید.</p>
+<h3 id="_11">مثال</h3>
+<p>مثال زیر آرایه‌ای از اشیا را ایجاد می‌کند:</p>
+<p><img alt="تصویر کتاب" src="../images/p215-02.png" /></p>
+<p><img alt="تصویر کتاب" src="../images/p215-01.png" /></p>
+<hr />
+<p class="page-mark">صفحه ۲۱۰</p>
+<h3 id="_12">مثال</h3>
+<p>در مثال زیر شیء <code>school</code> حاوی آرایه <code>students</code> است:</p>
+<p><img alt="تصویر کتاب" src="../images/p216-01.png" /></p>
+<p><img alt="تصویر کتاب" src="../images/p216-02.png" /></p>
+<h3 id="_13">فعالیت</h3>
+<p>کار با اشیا و آرایه‌ها در فایل <code>workshop5.html</code> آرایه <code>students</code> و <code>school</code> را مطابق مثال فوق تعریف کنید و نتایج را در کنسول مرورگر بررسی کنید دستوری بنویسید که نام و سن خانم <code>mona</code> را در کنسول نمایش دهد.</p>
+<p>…………………………………………………</p>
+<p>ساختارهای شرطی و حلقه در جاوا‌اسکریپت ساختارهای شرطی و حلقه از اجزای اساسی زبان‌های برنامه‌نویسی، از جمله جاوا‌اسکریپت هستند. ساختارهای شرطی منطق برنامه را بر اساس شرایط خاص کنترل می‌کنند و ساختارهای حلقه عملیات خاصی را به‌صورت تکراری انجام می‌دهند. این بخش به معرفی این ساختارها می‌پردازد.</p>
+<p>دستورات شرطی <code>If</code> یک دستور شرطی امکان اجرای مجموعه‌ای از دستورات را به ازای برقراری یک شرط خاص فراهم می‌کند.</p>
+<p>بسته به نیاز برنامه، دستور <code>if</code> می‌تواند به سه صورت نوشته شود. جدول 20 شکل کلی ساختار شرطی <code>if</code> را در سه حالت مختلف نمایش می‌دهد.</p>
+<p>جدول 20 انواع ساختارهای شرطی <code>if</code></p>
+<div class="code-wrap" dir="ltr"><pre><code>else-if
+ifif-else ساده
+{ (condition1) if
+statement1
+{(condition) if
+{(condition) if
+{ (condition2) else if }
+Statement1
+statements
+statement2
+{else}
+</code></pre></div>
+<p>}</p>
+<div class="code-wrap" dir="ltr"><pre><code>{ else }
+Statement2
+statement3
+</code></pre></div>
+<p>}</p>
+<p>}</p>
+<hr /></article><article class="lesson" lang="en" dir="ltr" data-lang-block="en" hidden><p class="page-mark">Page 206</p>
+<p>Arrays (<code>Arrays</code>) Array variables can hold several elements with different data types. When you define a variable of array type, the array values are written inside square brackets. An array can have elements of the same data type or of different types.</p>
+<h3 id="example">Example</h3>
+<p>In the following example, three arrays with string, numeric, and mixed values are defined:</p>
+<div class="code-wrap" dir="ltr"><pre><code>;]&quot;let cars = [&quot;Opel&quot;, &quot;Saab&quot;, &quot;Volvo&quot;, &quot;BMW&quot;, &quot;Hyundai
+;]let numbers = [1, 20 , 5 , 25 , 1000 , 10 , 1 , 5
+;]let data = [123, &quot;Opel&quot;, false , 12 , 35
+</code></pre></div>
+<p>Each of the array elements has an index. Array element indexes start at zero, so if an array has 5 elements, the index of the first element is zero and the index of the last element is 4. To access array elements, the element indexes are used. The figure below shows a view of the elements of the <code>cars</code> array and their values:</p>
+<div class="code-wrap" dir="ltr"><pre><code>Hyundai
+</code></pre></div>
+<p><code>Volvo</code></p>
+<p><code>Saab</code></p>
+<p><code>Opel</code>Element values</p>
+<p><code>BMW</code></p>
+<p>0Element indexes</p>
+<p>4</p>
+<p>3</p>
+<p>2</p>
+<p>1</p>
+<p><strong>Figure 9</strong></p>
+<p>To access the first element of the array, the expression <code>]cars[0</code> is used, and to access the fourth element, the expression <code>]cars[4</code> is used.</p>
+<h3 id="example_1">Example</h3>
+<p>On the second line of the following example, the value of the third element of the <code>cars</code> array is displayed in the console, and on the third line the entire array is displayed.</p>
+<p><img alt="Book image" src="../images/p212-02.png" /></p>
+<p><img alt="Book image" src="../images/p212-01.png" /></p>
+<p>If the index of an array element is not specified, all elements of the array are printed on the page.</p>
+<h3 id="note">Note</h3>
+<p>When you define an array with the keyword <code>const</code>, you can still change the elements of the existing array; but the array variable cannot be assigned to another array. For example, writing the following expression causes an error:</p>
+<div class="code-wrap" dir="ltr"><pre><code>]&quot;cars = [&quot;Tara&quot;, &quot;Shahin&quot;, &quot;Dena&quot;,&quot; Lamari Eama
+</code></pre></div>
+<hr />
+<p class="page-mark">Page 207</p>
+<p>Creating an array and printing values</p>
+<h3 id="workshop">Workshop</h3>
+<p>1 Create a new file named <code>workshop4.html</code> and inside it define an array named <code>colors</code> with the values <code>yellow</code>, <code>blue</code>, <code>red</code>, <code>green</code>, and <code>orange</code>. After checking that the program is correct, write the statements in the blanks.</p>
+<p>2 Write a statement that displays the element <code>blue</code> in the browser console.</p>
+<p>……………………………</p>
+<p>3 Write a statement that prints all elements of the <code>colors</code> array at once.</p>
+<p>……………………………</p>
+<h3 id="learn-more">Learn more</h3>
+<p>Multidimensional arrays In the previous section, how to create a one-dimensional array and access its elements was introduced. JavaScript also makes it possible to define a multidimensional array. A multidimensional array is created when each of the array’s elements contains another array. The most common type of multidimensional array is a two-dimensional array, which can be used as a matrix.</p>
+<p>In the following example, a two-dimensional array named <code>users</code> is defined:</p>
+<p><img alt="Book image" src="../images/p213-02.png" /></p>
+<p><img alt="Book image" src="../images/p213-01.png" /></p>
+<p>To access the first element of the first array (<code>Arash</code>), the expression <code>]users[0][0</code> must be used, and to access the fourth element of the second array (<code>Doctor</code>), the expression <code>].users[1][3</code> The image on the right shows the indexes of the elements of the two-dimensional array <code>users</code>.</p>
+<p>Working with two-dimensional arrays In the <code>workshop4.html</code> file, write the contents of the <code>users</code> array (the previous example).</p>
+<p>1 Enter the following statements after introducing the array and check the output of each statement in the browser console. Note the result next to each statement.</p>
+<p>……………………………………… ;(<code>users</code>)<code>console.log</code> ……………………………………… ;)<code>]users[1</code>(<code>console.log</code> ……………………………………… ;)<code>]users[2][3</code>(<code>console.log</code></p>
+<p>2 Write a statement that causes the element <code>Rose</code> to be displayed.</p>
+<p>………………………………….</p>
+<hr />
+<p class="page-mark">Page 208</p>
+<p>Objects in JavaScript An object (<code>Object</code>) is a data structure used to store a set of related data as key: value pairs; in an object data structure, a set of keys (<code>keys</code>) point to their corresponding values (<code>values</code>). Objects are used to store and organize the data and behaviors of an entity. which has a structure similar to a dictionary in Python.</p>
+<h3 id="example_2">Example</h3>
+<p>In the following example, the object <code>person</code> has four properties—first name, last name, age, and eye color—each of which has a specific value:</p>
+<p><img alt="Book image" src="../images/p214-01.png" /></p>
+<p>When defining an object, using spaces and creating a new line does not matter; therefore the object <code>person</code> can also be defined as follows:</p>
+<p><img alt="Book image" src="../images/p214-02.png" /></p>
+<p>Accessing the value of an object’s properties is possible with a dot or with square brackets. Both of the following statements display the value of the <code>firstName</code> property in the object <code>person</code>:</p>
+<p><img alt="Book image" src="../images/p214-03.png" /></p>
+<h3 id="learn-more_1">Learn more</h3>
+<p>In addition to properties, an object has behaviors that are defined as methods. Methods are usually defined at the end of the object’s key-value pairs.</p>
+<p>New method</p>
+<p>Old method</p>
+<div class="code-wrap" dir="ltr"><pre><code>{)(methodName:function
+{)(methodName
+</code></pre></div>
+<p>// Statements that the method performs</p>
+<p>// Statements that the method performs</p>
+<p>}</p>
+<p>}</p>
+<p>On lines 13 through 15 of the code on the next page, the method <code>displayInfo</code>() is defined for the object <code>person</code>, and on line 17 it is called.</p>
+<hr />
+<p class="page-mark">Page 209</p>
+<h3 id="learn-more_2">Learn more</h3>
+<p><img alt="Book image" src="../images/p215-03.png" /></p>
+<p>In the definition above, the keyword <code>this</code> refers to the current object (<code>person</code>) and is used to access the properties of the current object. This method returns the information of the object <code>person</code> to the place where it is called.</p>
+<p>To call an object’s method, first the object name (<code>Person</code>) and then the method name (<code>displayInfo</code>) are written together with the () marks.</p>
+<p>The string that the method <code>displayInfo</code>() returns (<code>return</code>) to the place where it is called must be placed inside a <code>backtick</code> mark. This mark is at the top corner of the keyboard, below the <code>esc</code> key.</p>
+<p>Creating an object in JavaScript</p>
+<h3 id="workshop_1">Workshop</h3>
+<p>1 Create a new file named <code>workshop5.html</code>.</p>
+<p>2 Create an object named <code>book</code> with the properties <code>title</code>, <code>author</code>, and <code>year</code> and the values <code>"JavaScript"</code>, <code>"Douglas</code> <code>Crockford"</code>, and 2008.</p>
+<p>……………………………………………………………</p>
+<p>3 Write a statement that prints the value of the <code>author</code> property in the object <code>book</code>. ..………………....</p>
+<h3 id="learn-more_3">Learn more</h3>
+<p>Combining objects and arrays JavaScript makes it possible to combine objects and arrays. A JavaScript programmer can create an array of objects or an object that contains an array.</p>
+<h3 id="example_3">Example</h3>
+<p>The following example creates an array of objects:</p>
+<p><img alt="Book image" src="../images/p215-02.png" /></p>
+<p><img alt="Book image" src="../images/p215-01.png" /></p>
+<hr />
+<p class="page-mark">Page 210</p>
+<h3 id="example_4">Example</h3>
+<p>In the following example, the object <code>school</code> contains the array <code>students</code>:</p>
+<p><img alt="Book image" src="../images/p216-01.png" /></p>
+<p><img alt="Book image" src="../images/p216-02.png" /></p>
+<h3 id="activity">Activity</h3>
+<p>Working with objects and arrays In the <code>workshop5.html</code> file, define the array <code>students</code> and <code>school</code> according to the example above and check the results in the browser console. Write a statement that displays Ms. <code>mona</code>’s name and age in the console.</p>
+<p>…………………………………………………</p>
+<p>Conditional and loop structures in JavaScript Conditional and loop structures are essential parts of programming languages, including JavaScript. Conditional structures control the program’s logic based on specific conditions, and loop structures perform particular operations repeatedly. This section introduces these structures.</p>
+<p>Conditional <code>If</code> statements A conditional statement makes it possible to run a set of statements when a particular condition is met.</p>
+<p>Depending on what the program needs, the <code>if</code> statement can be written in three forms. Table 20 shows the general form of the <code>if</code> conditional structure in three different cases.</p>
+<p>Table 20 Types of <code>if</code> conditional structures</p>
+<div class="code-wrap" dir="ltr"><pre><code>else-if
+ifif-else ساده
+{ (condition1) if
+statement1
+{(condition) if
+{(condition) if
+{ (condition2) else if }
+Statement1
+statements
+statement2
+{else}
+</code></pre></div>
+<p>}</p>
+<div class="code-wrap" dir="ltr"><pre><code>{ else }
+Statement2
+statement3
+</code></pre></div>
+<p>}</p>
+<p>}</p>
+<hr /></article>
+      <aside class="extra">
+        <h2 data-fa="تمرین این بخش" data-en="Exercises for this section">تمرین این بخش</h2>
+        <p class="extra-note" data-fa="این تمرین‌ها و پیوندها اضافه بر متن کتاب‌اند." data-en="These exercises and links are in addition to the book.">این تمرین‌ها و پیوندها اضافه بر متن کتاب‌اند.</p>
+        <ol><li data-fa="آرایه سه محصول بساز، یکی اضافه کن و همه را در صفحه فهرست کن. بعد یک شیء محصول با نام، قیمت و موجودی بساز و فقط قیمتش را عوض کن." data-en="Build an array of three products, add one, and list them all on the page. Then make a product object with name, price, and stock, and change only the price.">آرایه سه محصول بساز، یکی اضافه کن و همه را در صفحه فهرست کن. بعد یک شیء محصول با نام، قیمت و موجودی بساز و فقط قیمتش را عوض کن.</li><li data-fa="از همان شیء یک کارت HTML بساز که نام و قیمت را در صفحه نشان بدهد." data-en="From that object, build an HTML card that shows the name and the price on the page.">از همان شیء یک کارت HTML بساز که نام و قیمت را در صفحه نشان بدهد.</li></ol>
+        <h2 data-fa="پیوند مفید" data-en="Useful link">پیوند مفید</h2><ul><li><a href="https://developer.mozilla.org/en-US/docs/Learn/JavaScript/First_steps/Arrays" data-fa="آرایه‌ها" data-en="Arrays">آرایه‌ها</a></li></ul>
+      </aside>
+    <nav class="pager"><a rel="prev" class="prev" href="p3-js-ops.html"><span class="pager-word" data-fa="قبلی" data-en="Previous">قبلی</span><span class="pager-name" data-fa="عملگرها" data-en="Operators">عملگرها</span></a><a rel="next" class="next" href="p3-js-if.html"><span class="pager-word" data-fa="بعدی" data-en="Next">بعدی</span><span class="pager-name" data-fa="شرط در جاوااسکریپت" data-en="Conditions in JavaScript">شرط در جاوااسکریپت</span></a></nav>
+    </div>
+  </div>
+  <script src="../assets/search-index.js?v=4"></script>
+  <script src="../assets/app.js?v=4"></script>
+</body>
+</html>

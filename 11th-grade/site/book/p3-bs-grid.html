@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title data-fa="شبکه Grid" data-en="The grid">شبکه Grid</title>
+  <link rel="icon" href="../assets/favicon.svg">
+  <link rel="stylesheet" href="../assets/style.css?v=4">
+</head>
+<body data-root="../">
+  <header class="top">
+    <a class="brand" href="../index.html">
+      <span data-fa="طراح سایت" data-en="Site Design">طراح سایت</span>
+      <small data-fa="پایه یازدهم" data-en="Grade 11">پایه یازدهم</small>
+    </a>
+    <div class="search-wrap">
+      <input id="q" type="search" autocomplete="off"
+        data-fa-placeholder="جستجو در درس‌ها" data-en-placeholder="Search lessons"
+        placeholder="جستجو در درس‌ها">
+      <div id="results" class="results" hidden></div>
+    </div>
+    <a class="download" href="../grade11-offline.zip?v=2" data-fa="دانلود کل سایت" data-en="Download the whole site">دانلود کل سایت</a>
+    <button type="button" id="lang-toggle" class="lang-toggle" dir="ltr" data-lang="fa"
+      aria-label="تغییر زبان">
+      <span data-opt="fa">فا</span>
+      <span data-opt="en">EN</span>
+    </button>
+  </header>
+  <div class="layout">
+    <details class="toc" open><summary><span data-fa="فهرست درس‌ها" data-en="Lesson list">فهرست درس‌ها</span></summary><nav class="side" aria-label="lessons"><p class="mod" data-fa="شروع کتاب" data-en="Opening">شروع کتاب</p><p class="unit" data-fa="فهرست" data-en="Contents">فهرست</p><a class="" href="toc.html" data-fa="فهرست" data-en="Contents">فهرست</a><p class="mod" data-fa="پودمان ۱: برنامه‌نویسی پایتون" data-en="Module 1: Python programming">پودمان ۱: برنامه‌نویسی پایتون</p><p class="unit" data-fa="معرفی پودمان" data-en="Module introduction">معرفی پودمان</p><a class="" href="p1-intro.html" data-fa="معرفی پودمان پایتون" data-en="Introducing the Python module">معرفی پودمان پایتون</a><p class="unit" data-fa="مدل‌سازی داده" data-en="Data modeling">مدل‌سازی داده</p><a class="" href="p1-python.html" data-fa="پایتون و محیط برنامه‌نویسی" data-en="Python and the programming environment">پایتون و محیط برنامه‌نویسی</a><a class="" href="p1-vars.html" data-fa="متغیرها، نوع داده و عملگرها" data-en="Variables, types, and operators">متغیرها، نوع داده و عملگرها</a><a class="" href="p1-cast.html" data-fa="ورودی و تبدیل نوع" data-en="Input and type casting">ورودی و تبدیل نوع</a><a class="" href="p1-lists.html" data-fa="لیست‌ها" data-en="Lists">لیست‌ها</a><a class="" href="p1-if.html" data-fa="شرط‌های ساده" data-en="Simple conditions">شرط‌های ساده</a><a class="" href="p1-elif.html" data-fa="if، elif و else" data-en="if, elif, and else">if، elif و else</a><a class="" href="p1-for.html" data-fa="حلقه for و range" data-en="The for loop and range">حلقه for و range</a><a class="" href="p1-while.html" data-fa="حلقه while و کنترل حلقه" data-en="The while loop and loop control">حلقه while و کنترل حلقه</a><a class="" href="p1-assess-data.html" data-fa="ارزشیابی مدل‌سازی داده" data-en="Data-modeling assessment">ارزشیابی مدل‌سازی داده</a><p class="unit" data-fa="توابع و ماژول‌ها" data-en="Functions and modules">توابع و ماژول‌ها</p><a class="" href="p1-sets.html" data-fa="مجموعه (set)" data-en="Sets">مجموعه (set)</a><a class="" href="p1-dict.html" data-fa="دیکشنری" data-en="Dictionaries">دیکشنری</a><a class="" href="p1-quiz.html" data-fa="پروژه بازی Quiz" data-en="Quiz game project">پروژه بازی Quiz</a><a class="" href="p1-tuple.html" data-fa="تاپل" data-en="Tuples">تاپل</a><a class="" href="p1-func.html" data-fa="تعریف تابع، پارامتر و return" data-en="Defining functions, parameters, and return">تعریف تابع، پارامتر و return</a><a class="" href="p1-func-more.html" data-fa="تمرین تابع و مرتب‌سازی" data-en="Function practice and sorting">تمرین تابع و مرتب‌سازی</a><a class="" href="p1-modules.html" data-fa="ماژول‌ها و تفاوت تابع و متد" data-en="Modules, and functions versus methods">ماژول‌ها و تفاوت تابع و متد</a><a class="" href="p1-assess-func.html" data-fa="ارزشیابی توابع و ماژول‌ها" data-en="Functions and modules assessment">ارزشیابی توابع و ماژول‌ها</a><p class="mod" data-fa="پودمان ۲: صفحات وب ایستا" data-en="Module 2: Static web pages">پودمان ۲: صفحات وب ایستا</p><p class="unit" data-fa="معرفی پودمان" data-en="Module introduction">معرفی پودمان</p><a class="" href="p2-intro.html" data-fa="معرفی پودمان صفحات ایستا" data-en="Introducing static web pages">معرفی پودمان صفحات ایستا</a><p class="unit" data-fa="ساختار با HTML" data-en="Structure with HTML">ساختار با HTML</p><a class="" href="p2-web.html" data-fa="وب چگونه کار می‌کند" data-en="How the web works">وب چگونه کار می‌کند</a><a class="" href="p2-concepts.html" data-fa="مفاهیم طراحی وب و نقشه سایت" data-en="Web-design concepts and the site map">مفاهیم طراحی وب و نقشه سایت</a><a class="" href="p2-tags.html" data-fa="اولین صفحه HTML" data-en="A first HTML page">اولین صفحه HTML</a><a class="" href="p2-text.html" data-fa="متن، لیست و پیوند" data-en="Text, lists, and links">متن، لیست و پیوند</a><a class="" href="p2-img.html" data-fa="تصویر در صفحه" data-en="Images on the page">تصویر در صفحه</a><a class="" href="p2-forms.html" data-fa="فرم‌ها" data-en="Forms">فرم‌ها</a><a class="" href="p2-semantic.html" data-fa="عناصر معنایی" data-en="Semantic elements">عناصر معنایی</a><a class="" href="p2-assess-html.html" data-fa="ارزشیابی HTML" data-en="HTML assessment">ارزشیابی HTML</a><p class="unit" data-fa="ظاهر با CSS" data-en="Appearance with CSS">ظاهر با CSS</p><a class="" href="p2-css-start.html" data-fa="نوشتن CSS" data-en="Writing CSS">نوشتن CSS</a><a class="" href="p2-css-look.html" data-fa="رنگ، پس‌زمینه و انتخاب‌گر" data-en="Color, background, and selectors">رنگ، پس‌زمینه و انتخاب‌گر</a><a class="" href="p2-box.html" data-fa="مدل جعبه‌ای و display" data-en="The box model and display">مدل جعبه‌ای و display</a><a class="" href="p2-flex.html" data-fa="چیدمان با Flexbox" data-en="Layout with Flexbox">چیدمان با Flexbox</a><a class="" href="p2-flex-work.html" data-fa="کارگاه چیدمان صفحه" data-en="Page-layout workshop">کارگاه چیدمان صفحه</a><a class="" href="p2-media.html" data-fa="مدیا کوئری و ارزشیابی CSS" data-en="Media queries and the CSS assessment">مدیا کوئری و ارزشیابی CSS</a><p class="mod" data-fa="پودمان ۳: صفحات وب تعاملی" data-en="Module 3: Interactive web pages">پودمان ۳: صفحات وب تعاملی</p><p class="unit" data-fa="معرفی پودمان" data-en="Module introduction">معرفی پودمان</p><a class="" href="p3-intro.html" data-fa="معرفی پودمان تعاملی" data-en="Introducing the interactive module">معرفی پودمان تعاملی</a><p class="unit" data-fa="بوت‌استرپ" data-en="Bootstrap">بوت‌استرپ</p><a class="" href="p3-bs-start.html" data-fa="فریم‌ورک و شروع بوت‌استرپ" data-en="Frameworks and starting Bootstrap">فریم‌ورک و شروع بوت‌استرپ</a><a class="" href="p3-bs-util.html" data-fa="فاصله، گردی و لیست" data-en="Spacing, rounding, and lists">فاصله، گردی و لیست</a><a class="" href="p3-bs-header.html" data-fa="سرصفحه فروشگاه" data-en="The shop header">سرصفحه فروشگاه</a><a class="current" href="p3-bs-grid.html" data-fa="شبکه Grid" data-en="The grid">شبکه Grid</a><a class="" href="p3-bs-rwd.html" data-fa="کلاس‌های واکنش‌گرا" data-en="Responsive classes">کلاس‌های واکنش‌گرا</a><a class="" href="p3-bs-nav.html" data-fa="نوار ناوبری و جزئیات محصول" data-en="Navbar and product details">نوار ناوبری و جزئیات محصول</a><a class="" href="p3-bs-form.html" data-fa="فرم و پنجره Modal" data-en="Forms and modals">فرم و پنجره Modal</a><a class="" href="p3-bs-show.html" data-fa="کاروسل و آکاردئون" data-en="Carousel and accordion">کاروسل و آکاردئون</a><a class="" href="p3-bs-assess.html" data-fa="ارزشیابی بوت‌استرپ" data-en="Bootstrap assessment">ارزشیابی بوت‌استرپ</a><p class="unit" data-fa="جاوااسکریپت" data-en="JavaScript">جاوااسکریپت</p><a class="" href="p3-js-start.html" data-fa="جاوااسکریپت در صفحه وب" data-en="JavaScript on the page">جاوااسکریپت در صفحه وب</a><a class="" href="p3-js-vars.html" data-fa="متغیر و نوع داده" data-en="Variables and data types">متغیر و نوع داده</a><a class="" href="p3-js-ops.html" data-fa="عملگرها" data-en="Operators">عملگرها</a><a class="" href="p3-js-data.html" data-fa="آرایه و شیء" data-en="Arrays and objects">آرایه و شیء</a><a class="" href="p3-js-if.html" data-fa="شرط در جاوااسکریپت" data-en="Conditions in JavaScript">شرط در جاوااسکریپت</a><a class="" href="p3-js-loops.html" data-fa="حلقه‌ها" data-en="Loops">حلقه‌ها</a><a class="" href="p3-js-func.html" data-fa="تابع‌ها" data-en="Functions">تابع‌ها</a><a class="" href="p3-js-dom.html" data-fa="صفحه، رویداد و اعتبار فرم" data-en="The page, events, and form validation">صفحه، رویداد و اعتبار فرم</a><a class="" href="p3-js-assess.html" data-fa="ارزشیابی جاوااسکریپت" data-en="JavaScript assessment">ارزشیابی جاوااسکریپت</a><p class="mod" data-fa="پودمان ۴: توسعه وب پایتون" data-en="Module 4: Python for the web">پودمان ۴: توسعه وب پایتون</p><p class="unit" data-fa="معرفی پودمان" data-en="Module introduction">معرفی پودمان</p><a class="" href="p4-intro.html" data-fa="معرفی پودمان شیءگرایی" data-en="Introducing the object-oriented module">معرفی پودمان شیءگرایی</a><p class="unit" data-fa="شیءگرایی" data-en="Object-oriented programming">شیءگرایی</p><a class="" href="p4-idea.html" data-fa="ایده شیء و کلاس" data-en="The idea of objects and classes">ایده شیء و کلاس</a><a class="" href="p4-class.html" data-fa="ساخت کلاس و متد" data-en="Writing a class and methods">ساخت کلاس و متد</a><a class="" href="p4-inherit.html" data-fa="وراثت" data-en="Inheritance">وراثت</a><a class="" href="p4-protect.html" data-fa="داده معتبر و استفاده داخلی" data-en="Valid data and internal use">داده معتبر و استفاده داخلی</a><a class="" href="p4-assess-oop.html" data-fa="ارزشیابی برنامه شیءگرا" data-en="Object-oriented assessment">ارزشیابی برنامه شیءگرا</a><p class="unit" data-fa="فایل و توسعه" data-en="Files and development">فایل و توسعه</p><a class="" href="p4-files.html" data-fa="خواندن و نوشتن فایل متنی" data-en="Reading and writing text files">خواندن و نوشتن فایل متنی</a><a class="" href="p4-errors.html" data-fa="پیمایش فایل و مدیریت خطا" data-en="Walking a file and handling errors">پیمایش فایل و مدیریت خطا</a><a class="" href="p4-json.html" data-fa="چند فایل و JSON" data-en="Several files and JSON">چند فایل و JSON</a><a class="" href="p4-assess-files.html" data-fa="ارزشیابی کار با فایل" data-en="Files assessment">ارزشیابی کار با فایل</a><p class="mod" data-fa="پودمان ۵: برنامه‌نویسی جنگو" data-en="Module 5: Django">پودمان ۵: برنامه‌نویسی جنگو</p><p class="unit" data-fa="معرفی پودمان" data-en="Module introduction">معرفی پودمان</p><a class="" href="p5-intro.html" data-fa="معرفی پودمان جنگو" data-en="Introducing the Django module">معرفی پودمان جنگو</a><p class="unit" data-fa="ایجاد وب‌اپلیکیشن" data-en="Creating the web app">ایجاد وب‌اپلیکیشن</p><a class="" href="p5-what.html" data-fa="جنگو چیست و نصب" data-en="What Django is, and installing it">جنگو چیست و نصب</a><a class="" href="p5-project.html" data-fa="پروژه، اپ و اولین view" data-en="Project, app, and the first view">پروژه، اپ و اولین view</a><a class="" href="p5-template.html" data-fa="قالب و دمای واقعی" data-en="Templates and a real temperature">قالب و دمای واقعی</a><a class="" href="p5-assess-create.html" data-fa="ارزشیابی ایجاد وب‌اپلیکیشن" data-en="Creating-the-app assessment">ارزشیابی ایجاد وب‌اپلیکیشن</a><p class="unit" data-fa="توسعه وب‌اپلیکیشن" data-en="Developing the web app">توسعه وب‌اپلیکیشن</p><a class="" href="p5-model.html" data-fa="مدل شهر و پنل ادمین" data-en="The city model and the admin">مدل شهر و پنل ادمین</a><a class="" href="p5-list.html" data-fa="خواندن شهرها و نمایش فهرست" data-en="Reading cities and showing the list">خواندن شهرها و نمایش فهرست</a><a class="" href="p5-auth.html" data-fa="ورود و خروج" data-en="Sign-in and sign-out">ورود و خروج</a><a class="" href="p5-crud.html" data-fa="افزودن و حذف شهر" data-en="Adding and deleting a city">افزودن و حذف شهر</a><a class="" href="p5-bugs.html" data-fa="باگ و امنیت" data-en="Bugs and security">باگ و امنیت</a><p class="mod" data-fa="پایان کتاب" data-en="Back of the book">پایان کتاب</p><p class="unit" data-fa="منابع" data-en="References">منابع</p><a class="" href="refs.html" data-fa="منابع کتاب" data-en="Book references">منابع کتاب</a></nav></details>
+    <div class="main">
+      <h1 class="section-title" data-fa="شبکه Grid" data-en="The grid">شبکه Grid</h1><article class="lesson" lang="fa" dir="rtl" data-lang-block="fa"><p class="page-mark">صفحه ۱۶۰</p>
+<p>شبکه‌بندی صفحه (<code>Grid</code> <code>Systems</code>) بوت‌استرپ دارای یک سیستم شبکه‌بندی با نام <code>Grid</code> است که توسط <code>Flexbox</code> ایجاد شده است و امکان تقسیم پهنای صفحه را به 12ستون فراهم می‌کند. هر سلول در این شبکه می‌تواند محتوای بخشی از صفحه را درون خود نگه دارد. سیستم <code>Grid</code> امکان گروه‌بندی ستون‌ها را برای ایجاد ستون‌های عریض‌تر فراهم می‌کند به‌طوری‌که فضای کافی برای قرار دادن محتوا درون یک ستون موجود باشد. سیستم <code>Grid</code> واکنش‌گرا است و بسته به اندازه صفحه، ستون‌ها را به‌طور خودکار مرتب می‌کند.</p>
+<p><img alt="تصویر کتاب" src="../images/p166-01.png" /></p>
+<p>استفاده از کلاس‌های شبکه‌بندی (<code>rows</code> و <code>columns</code>) برای ایجاد سطرها و ستون‌های شبکه از کلاس‌های <code>row</code> و <code>col</code> استفاده می‌شود. کلاس <code>row</code> باعث می‌شود سلول‌های شبکه در یک خط افقی قرار بگیرند و فواصل مناسب بین آنها اعمال شود. پهنای ستون‌ها به‌صورت خودکار توسط پارامتر <code>size</code> در نام کلاس <code>col</code> مشخص می‌شود. شکل کلی کلاس <code>col</code> به صورت <code>-col</code> <code>breakpoint-size</code> است، پارامتر <code>breakpoint</code> به اندازه دستگاه (<code>sm</code>, <code>md</code>, <code>lg</code>,<code>xl</code>, <code>xxl</code>) و پارامتر سایز به اندازه ستون اشاره دارد. به‌عنوان مثال <code>col-sm-3</code> یعنی اشغال سه ستون از 12 ستون در تمام دستگاه‌های بزرگ‌تر یا مساوی 576 پیکسل.</p>
+<p>شبکه سطرها و ستون‌ها باید درون یک عنصر نگهدارنده قرارگیرد. بوت‌استرپ دارای دو کلاس با اسامی <code>container</code> و <code>container-fluid</code> است که برای ایجاد نگهدارنده استفاده می‌شوند. تفاوت این دو نگهدارنده در میزان حاشیه چپ و راست آنهاست. کلاس <code>container</code> یک فضای خالی با پهنای مساوی در چپ و راست عنصر نگهدارنده ایجاد می‌کند، در حالی‌که کلاس <code>container-fluid</code> تمام پهنای صفحه را اشغال می‌کند.</p>
+<h3 id="_1">مثال</h3>
+<p>در مثال زیر یک سطر با سه ستون ایجاد می‌شود که سهم هر ستون برابر 4 از 12 خواهد بود:</p>
+<p><img alt="تصویر کتاب" src="../images/p166-02.png" /></p>
+<p><img alt="تصویر کتاب" src="../images/p166-03.png" /></p>
+<hr />
+<p class="page-mark">صفحه ۱۶۱</p>
+<p>ستون‌های مثال صفحه قبل در تمام دستگاه‌ها در کنار هم نمایش داده می‌شوند. اگر به جای کلاس <code>col</code> از کلاس <code>col-sm-4</code> استفاده شود، این ستون‌ها در تمام دستگاه‌های بزرگ‌تر یا مساوی 576 پیکسل در کنار هم خواهند بود، اما در دستگاه‌های کوچک‌تر، به‌صورت پشته روی هم قرار می‌گیرند.</p>
+<p>پارامترهای <code>breakpoint</code> و <code>size</code> مشخص می‌کنند که نحوه نمایش ستون‌ها در دستگاه‌های مختلف (موبایل، تبلت، دسکتاپ) چگونه باشد.</p>
+<p>سیستم <code>grid</code> دارای کلاس‌های مختلفی برای اندازه ستون‌ها در دستگاه‌های مختلف است که در جدول زیر به آنها اشاره شده است:</p>
+<p>جدول8 پارامترهای کلاس<code>-col</code> برای دستگاه‌های مختلف</p>
+<p>پارامتر</p>
+<h3 id="_2">کاربرد</h3>
+<p>توضیح برای دستگاه‌های بسیار کوچک پهنای صفحه کمتر از 576 پیکسل<code>-col</code></p>
+<p>بدون پیشوند }<code>sm-</code>{<code>n</code>برای دستگاه‌های کوچک پهنای صفحه بزرگ‌تر یا مساوی 576 پیکسل<code>-col-sm</code> }<code>md-</code>{<code>n</code>برای دستگاه‌های متوسط پهنای صفحه بزرگ‌تر یا مساوی 768 پیکسل<code>-col-md</code> }<code>lg-</code>{<code>n</code>برای دستگاه‌های بزرگ پهنای صفحه بزرگ‌تر یا مساوی 992 پیکسل<code>-col-lg</code> }<code>xl-</code>{<code>n</code>برای دستگاه‌های بزرگ پهنای صفحه بزرگ‌تر یا مساوی 1200 پیکسل<code>-col-xl</code> }<code>xxl-</code>{<code>n</code>برای دستگاه‌های بزرگ پهنای صفحه بزرگ‌تر یا مساوی 1400 پیکسل<code>-col-xxl</code> {<code>n</code>} عددی از 1 تا 12 است. منظور از <code>n</code> تعداد ستون‌هایی است که یک عنصر از ۱۲ ستون <code>grid</code> اشغال می‌کند.</p>
+<h3 id="_3">مثال</h3>
+<p>__4 و 12 __8 ایجاد می‌شود:</p>
+<p>در مثال زیر یک ردیف با دو ستون در دو اندازه 12</p>
+<p><img alt="تصویر کتاب" src="../images/p167-01.png" /></p>
+<p>__4</p>
+<p>این دو ستون در دستگاه‌هایی با پهنای بزرگ‌تر یا مساوی 576 پیکسل در کنار هم و با اندازه‌های 12 __8 نمایش داده می‌شوند. اما در دستگاه‌های کوچک‌تر، محتوای ستون‌ها روی هم قرار می‌گیرند و و 12 در نتیجه هر ستون 100% پهنای صفحه را اشغال خواهد کرد.</p>
+<p><img alt="تصویر کتاب" src="../images/p167-02.png" /></p>
+<p><img alt="تصویر کتاب" src="../images/p167-03.png" /></p>
+<p>پهنای دستگاه: بزرگ‌تر یا مساوی 576 پیکسل پهنای دستگاه: کمتر از 576 پیکسل</p>
+<hr />
+<p class="page-mark">صفحه ۱۶۲</p>
+<h3 id="_4">مثال</h3>
+<p>برای ایجاد طرح‌بندی‌های پویا و انعطا‌فپذیر می‌توان کلاس‌های فوق را به‌صورت ترکیبی استفاده نمود. مانند مثال زیر:</p>
+<p><img alt="تصویر کتاب" src="../images/p168-04.png" /></p>
+<p>این دو ستون در دستگاه‌های کوچک‌تر از 576 پیکسل زیر هم نمایش داده می‌شوند؛ در دستگاه‌هایی</p>
+<p>__9 و 12 __3 و در دستگاه‌های</p>
+<p>با پهنای بزرگ‌تر از 576 پیکسل و کوچک‌تر از 992 پیکسل در اندازه 12</p>
+<p>__4 و 12 __8 نمایش داده می‌شوند.</p>
+<p>بزرگ‌تر با اندازه 12</p>
+<p>طرح‌بندی فوتر صفحه وب</p>
+<h3 id="_5">کار کارگاهی</h3>
+<p>در فایل <code>index.html</code>، ناحیه فوتر را به شکل زیر بعد از برچسب <code>&lt;main/&gt;</code> ایجاد کنید:</p>
+<p><img alt="تصویر کتاب" src="../images/p168-01.png" /></p>
+<p>برای محتوای ستون اول از کد زیر استفاده کنید:</p>
+<p><img alt="تصویر کتاب" src="../images/p168-02.png" /></p>
+<p>ستون دوم مربوط به آیکن شبکه‌های اجتماعی است. برای به‌دست آوردن کد آیکن‌ها وارد آدرس <code>.icons</code> <code>getbootstrap.com</code> شوید و در انتهای این صفحه، در بخش <code>CDN</code> لینک فایل <code>CSS</code> آیکن‌ها را کپی کنید و در بخش <code>&lt;head&gt;</code> بچسبانید. این لینک به شکل زیر است:</p>
+<p><img alt="تصویر کتاب" src="../images/p168-03.png" /></p>
+<hr />
+<p class="page-mark">صفحه ۱۶۳</p>
+<p>سپس به ابتدای صفحه آیکن‌ها برگردید و برای جست‌وجوی آیکن، در کادر <code>ilterf</code> نام شبکه اجتماعی مورد نظر را بنویسید. بعد از ظاهر شدن آیکن‌ها روی یک مورد به دلخواه کلیک کنید تا صفحه اختصاصی آیکن باز شود. در بخش <code>icon</code> <code>font</code> کد <code>html</code> را کپی کنید و آن را در ستون دوم فوتر بچسبانید. محتوای ستون دوم را به شکل زیر تنظیم کنید:</p>
+<p><img alt="تصویر کتاب" src="../images/p169-01.png" /></p>
+<p>در ستون سوم کد شکل زیر را وارد کنید:</p>
+<p><img alt="تصویر کتاب" src="../images/p169-02.png" /></p>
+<p>در ستون چهارم کد شکل زیر را بنویسید:</p>
+<p><img alt="تصویر کتاب" src="../images/p169-03.png" /></p>
+<p>برای حذف زیرخط پیوندها و تنظیم رنگ و اندازه متون فوتر، استایل شکل زیر را به فایل <code>styles.css</code> اضافه کنید:</p>
+<p><img alt="تصویر کتاب" src="../images/p169-04.png" /></p>
+<p>برای تنظیم استایل پاراگراف «کلیه حقوق مادی و معنوی ....» از کد شکل زیر استفاده کنید:</p>
+<p><img alt="تصویر کتاب" src="../images/p169-05.png" /></p>
+<hr />
+<p class="page-mark">صفحه ۱۶۴</p>
+<p>این استایل متن پاراگراف را در وسط صفحه به همراه یک خط در بالای آن نمایش می‌دهد. استایل فوق فقط روی پاراگراف آخر اعمال می‌شود، چرا که تنها این پاراگراف فرزند مستقیم عنصر <code>footer</code> است.</p>
+<p>برای تغییر تراز عناصر در نمای موبایل و جابه‌جا شدن محل نمایش پاراگراف آخر، استایل شکل زیر را اضافه کنید:</p>
+<p><img alt="تصویر کتاب" src="../images/p170-01.png" /></p>
+<p>به‌دلیل حضور <code>bottom-navbar</code> در پایین صفحه، امکان مشاهده پاراگراف انتهایی فوتر در نمای موبایل فراهم نیست؛ به همین دلیل موقعیت پاراگراف توسط ویژگی <code>position</code> و <code>bottom</code> تنظیم شده است.</p>
+<p>بعد از اینکه همه عناصر ب‌هدرستی در جای خود قرار گرفتند، رنگ زمینۀ ستون‌ها را حذف کنید.</p>
+<p>واکنش‌گرایی و کلاس‌های مرتبط واکنش‌گرایی به‌معنای توانایی یک صفحه وب برای تغییر و سازگاری با اندازه‌ها و ویژگی‌های مختلف دستگاه‌ها و صفحه نمایش‌ها است. در یک طراحی واکنش‌گرا عناصر وب‌سایت به‌طور خودکار اندازه و چیدمان خود را تغییر می‌دهند تا مناسب با اندازۀ صفحه نمایش کاربر باشند. هدف از انجام یک طراحی واکنش‌گرا (<code>Responsive</code>) این است که تجربه کاربری بهتری برای بازدیدکنندگان فراهم شود. برای طراحی عناصر واکنش‌گرا، روش‌های مختلفی به شرح زیر موجود است:</p>
+<p><code>Media</code> <code>query</code> 1: برای تنظیم ویژگی‌های عناصر در دستگاه‌های مختلف <code>Flexbox</code> 2: برای مدیریت نحوه چینش عناصر و فضای بین آنها <code>CSS</code> <code>Grid</code> 3: برای سازمان‌دهی عناصر در سطرها و ستون‌ها</p>
+<p>4 استفاده از <code>max-width</code> به جای <code>width</code> برای اینکه تصاویر در اندازه‌های مختلف به‌درستی نمایش داده شوند:</p>
+<p><img alt="تصویر کتاب" src="../images/p170-02.png" /></p>
+<p>5 استفاده از واحدهای نسبی %، <code>rem</code> و <code>em</code> به‌جای استفاده از واحدهای ثابت (مانند <code>px</code>)</p>
+<p>6 به‌کارگیری فریم‌ورک‌هایی مانند بوت‌استرپ که دارای کلاس‌های واکنش‌گرای آماده هستند.</p>
+<hr />
+<p class="page-mark">صفحه ۱۶۵</p>
+<h3 id="_6">کنجکاوی</h3>
+<p>در مورد واحدهای <code>rem</code> و <code>em</code> تحقیق کنید.</p>
+<p>کلاس‌های واکنش‌گرای بوت‌استرپ دارای موضوعات مختلفی هستند که در جدول ٩ به آنها پرداخته شده است:</p>
+<p>جدول9 کلاس‌های واکنش‌گرای بوت‌استرپ</p>
+<p>نوع کلاس</p>
+<p>نام کلاس‌ها</p>
+<div class="code-wrap" dir="ltr"><pre><code>Container
+container و container-sm، container-md، container-lg و...
+</code></pre></div>
+<p><code>Grid</code></p>
+<div class="code-wrap" dir="ltr"><pre><code>row، row-cols، col، col-sm، col-md و col-lg و...
+d-flex، d-*-flex، d-*-inline، d-*-block start، d-*-none مانند زیر:
+Layout
+d-sm-none، d-md-block، flex-md-row، justify-content-sm-center
+align-items-md- و...
+Margin
+m-*-size مانند mb-sm-3 و mx-sm-1
+Padding
+p-*-size مانند py-sm-3، px-lg-3
+d-none ، d-block،d-*-none، d-*-block
+Display Classes
+</code></pre></div>
+<p><code>Image</code></p>
+<div class="code-wrap" dir="ltr"><pre><code>img-fluid
+Components
+button، form، navbar، cards، carousel و...
+</code></pre></div>
+<p>در کلاس‌های جدول 10 علامت * معادل <code>sm</code>،<code>lg</code> و... است.</p>
+<div class="code-wrap" dir="ltr"><pre><code>جدول10 Breakpoints
+کلاسBreakpoint
+</code></pre></div>
+<p>پهنای صفحه کمتر از <code>xs576</code> <code>px</code></p>
+<div class="code-wrap" dir="ltr"><pre><code>Extra small
+</code></pre></div>
+<p><code>sm</code></p>
+<p><code>Small</code></p>
+<p>576 <code>px</code> و بیشتر</p>
+<p><code>md</code></p>
+<div class="code-wrap" dir="ltr"><pre><code>Medium
+</code></pre></div>
+<p>768 <code>px</code> و بیشتر</p>
+<p><code>lg</code></p>
+<p><code>Large</code></p>
+<p>992 <code>px</code>و بیشتر</p>
+<p><code>xl</code></p>
+<p>1200 <code>px</code>و بیشتر</p>
+<div class="code-wrap" dir="ltr"><pre><code>Extra large
+</code></pre></div>
+<p><code>xxl</code></p>
+<p>1400 <code>px</code>و بیشتر</p>
+<div class="code-wrap" dir="ltr"><pre><code>Extra extra large
+</code></pre></div>
+<hr /></article><article class="lesson" lang="en" dir="ltr" data-lang-block="en" hidden><p class="page-mark">Page 160</p>
+<p>Page grid (<code>Grid</code> <code>Systems</code>) Bootstrap has a grid system named <code>Grid</code> that is created with <code>Flexbox</code> and makes it possible to divide the page width into 12 columns. Each cell in this grid can hold the content of part of the page. The <code>Grid</code> system makes it possible to group columns to create wider columns so that there is enough space to place content inside a column. The <code>Grid</code> system is responsive and, depending on the page size, rearranges the columns automatically.</p>
+<p><img alt="Book image" src="../images/p166-01.png" /></p>
+<p>Using grid classes (<code>rows</code> and <code>columns</code>) To create the rows and columns of the grid, the classes <code>row</code> and <code>col</code> are used. The class <code>row</code> causes the grid cells to be placed on a horizontal line and applies suitable spacing between them. The width of the columns is set automatically by the <code>size</code> parameter in the name of the <code>col</code> class. The general form of the <code>col</code> class is <code>-col</code> <code>breakpoint-size</code>; the <code>breakpoint</code> parameter refers to the device size (<code>sm</code>, <code>md</code>, <code>lg</code>,<code>xl</code>, <code>xxl</code>) and the size parameter refers to the column size. For example, <code>col-sm-3</code> means occupying three columns out of 12 on all devices larger than or equal to 576 pixels.</p>
+<p>The grid of rows and columns must be placed inside a container element. Bootstrap has two classes named <code>container</code> and <code>container-fluid</code> that are used to create a container. The difference between these two containers is the amount of left and right margin. The class <code>container</code> creates an empty space of equal width on the left and right of the container element, while the class <code>container-fluid</code> occupies the full width of the page.</p>
+<h3 id="example">Example</h3>
+<p>In the example below, a row with three columns is created in which each column’s share is 4 out of 12:</p>
+<p><img alt="Book image" src="../images/p166-02.png" /></p>
+<p><img alt="Book image" src="../images/p166-03.png" /></p>
+<hr />
+<p class="page-mark">Page 161</p>
+<p>The columns in the example on the previous page are displayed side by side on all devices. If instead of the class <code>col</code> the class <code>col-sm-4</code> is used, these columns will be side by side on all devices larger than or equal to 576 pixels, but on smaller devices they stack on top of each other.</p>
+<p>The <code>breakpoint</code> and <code>size</code> parameters determine how the columns are displayed on different devices (mobile, tablet, desktop).</p>
+<p>The <code>grid</code> system has various classes for column size on different devices, which are referred to in the table below:</p>
+<p>Table 8 Parameters of the <code>-col</code> class for different devices</p>
+<p>Parameter</p>
+<h3 id="usage">Usage</h3>
+<p>Explanation for very small devices page width less than 576 pixels <code>-col</code></p>
+<p>Without the prefix }<code>sm-</code>{<code>n</code> for small devices page width greater than or equal to 576 pixels <code>-col-sm</code> }<code>md-</code>{<code>n</code> for medium devices page width greater than or equal to 768 pixels <code>-col-md</code> }<code>lg-</code>{<code>n</code> for large devices page width greater than or equal to 992 pixels <code>-col-lg</code> }<code>xl-</code>{<code>n</code> for large devices page width greater than or equal to 1200 pixels <code>-col-xl</code> }<code>xxl-</code>{<code>n</code> for large devices page width greater than or equal to 1400 pixels <code>-col-xxl</code> {<code>n</code>} is a number from 1 to 12. By <code>n</code> is meant the number of columns that an element occupies out of the 12 <code>grid</code> columns.</p>
+<h3 id="example_1">Example</h3>
+<p>__4 and 12 __8 is created:</p>
+<p>In the example below, a row with two columns in two sizes 12</p>
+<p><img alt="Book image" src="../images/p167-01.png" /></p>
+<p>__4</p>
+<p>These two columns are displayed side by side on devices with a width greater than or equal to 576 pixels with the sizes 12 __8. But on smaller devices, the content of the columns stacks and and 12 as a result each column will occupy 100% of the page width.</p>
+<p><img alt="Book image" src="../images/p167-02.png" /></p>
+<p><img alt="Book image" src="../images/p167-03.png" /></p>
+<p>Device width: greater than or equal to 576 pixels Device width: less than 576 pixels</p>
+<hr />
+<p class="page-mark">Page 162</p>
+<h3 id="example_2">Example</h3>
+<p>To create dynamic and flexible layouts, you can use the classes above in combination. As in the example below:</p>
+<p><img alt="Book image" src="../images/p168-04.png" /></p>
+<p>These two columns are displayed one under the other on devices smaller than 576 pixels; on devices</p>
+<p>__9 and 12 __3 and on devices</p>
+<p>with a width greater than 576 pixels and smaller than 992 pixels in the size 12</p>
+<p>__4 and 12 __8 are displayed.</p>
+<p>larger with the size 12</p>
+<p>Web page footer layout</p>
+<h3 id="workshop">Workshop</h3>
+<p>In the file <code>index.html</code>, create the footer area as shown below after the <code>&lt;main/&gt;</code> tag:</p>
+<p><img alt="Book image" src="../images/p168-01.png" /></p>
+<p>For the content of the first column, use the following code:</p>
+<p><img alt="Book image" src="../images/p168-02.png" /></p>
+<p>The second column is for social network icons. To get the icon codes, go to the address <code>.icons</code> <code>getbootstrap.com</code> and at the end of this page, in the <code>CDN</code> section, copy the link to the icons <code>CSS</code> file and paste it in the <code>&lt;head&gt;</code> section. This link looks like the following:</p>
+<p><img alt="Book image" src="../images/p168-03.png" /></p>
+<hr />
+<p class="page-mark">Page 163</p>
+<p>Then go back to the beginning of the icons page and, to search for an icon, type the name of the desired social network in the <code>ilterf</code> box. After the icons appear, click one of them as you prefer so that the icon’s dedicated page opens. In the <code>icon</code> <code>font</code> section, copy the <code>html</code> code and paste it in the second column of the footer. Set the content of the second column as follows:</p>
+<p><img alt="Book image" src="../images/p169-01.png" /></p>
+<p>In the third column, enter the code from the figure below:</p>
+<p><img alt="Book image" src="../images/p169-02.png" /></p>
+<p>In the fourth column, write the code from the figure below:</p>
+<p><img alt="Book image" src="../images/p169-03.png" /></p>
+<p>To remove the underline from links and set the color and size of the footer texts, add the style from the figure below to the file <code>styles.css</code>:</p>
+<p><img alt="Book image" src="../images/p169-04.png" /></p>
+<p>To set the style of the paragraph “All material and intellectual rights ....”, use the code from the figure below:</p>
+<p><img alt="Book image" src="../images/p169-05.png" /></p>
+<hr />
+<p class="page-mark">Page 164</p>
+<p>This style displays the paragraph text in the center of the page with a line above it. The style above is applied only to the last paragraph, because only this paragraph is a direct child of the <code>footer</code> element.</p>
+<p>To change the alignment of elements in the mobile view and move where the last paragraph is displayed, add the style from the figure below:</p>
+<p><img alt="Book image" src="../images/p170-01.png" /></p>
+<p>Because of the presence of <code>bottom-navbar</code> at the bottom of the page, it is not possible to see the final footer paragraph in the mobile view; for that reason, the position of the paragraph is set with the <code>position</code> and <code>bottom</code> properties.</p>
+<p>After all elements are placed correctly in their positions, remove the background color of the columns.</p>
+<p>Responsiveness and related classes Responsiveness means the ability of a web page to change and adapt to different sizes and features of devices and screens. In a responsive design, website elements automatically change their size and layout to suit the size of the user’s screen. The goal of doing a responsive design (<code>Responsive</code>) is to provide a better user experience for visitors. To design responsive elements, there are various methods as follows:</p>
+<p><code>Media</code> <code>query</code> 1: To set the properties of elements on different devices <code>Flexbox</code> 2: To manage how elements are arranged and the space between them <code>CSS</code> <code>Grid</code> 3: To organize elements in rows and columns</p>
+<p>4 Using <code>max-width</code> instead of <code>width</code> so that images display correctly at different sizes:</p>
+<p><img alt="Book image" src="../images/p170-02.png" /></p>
+<p>5 Using relative units %, <code>rem</code>, and <code>em</code> instead of using fixed units (such as <code>px</code>)</p>
+<p>6 Using frameworks such as Bootstrap that have ready-made responsive classes.</p>
+<hr />
+<p class="page-mark">Page 165</p>
+<h3 id="try-this">Try this</h3>
+<p>Research the units <code>rem</code> and <code>em</code>.</p>
+<p>Bootstrap’s responsive classes cover various topics that are addressed in Table 9:</p>
+<p>Table 9 Bootstrap responsive classes</p>
+<p>Class type</p>
+<p>Class names</p>
+<div class="code-wrap" dir="ltr"><pre><code>Container
+container و container-sm، container-md، container-lg و...
+</code></pre></div>
+<p><code>Grid</code></p>
+<div class="code-wrap" dir="ltr"><pre><code>row، row-cols، col، col-sm، col-md و col-lg و...
+d-flex، d-*-flex، d-*-inline، d-*-block start، d-*-none مانند زیر:
+Layout
+d-sm-none، d-md-block، flex-md-row، justify-content-sm-center
+align-items-md- و...
+Margin
+m-*-size مانند mb-sm-3 و mx-sm-1
+Padding
+p-*-size مانند py-sm-3، px-lg-3
+d-none ، d-block،d-*-none، d-*-block
+Display Classes
+</code></pre></div>
+<p><code>Image</code></p>
+<div class="code-wrap" dir="ltr"><pre><code>img-fluid
+Components
+button، form، navbar، cards، carousel و...
+</code></pre></div>
+<p>In the classes in Table 10, the * mark is equivalent to <code>sm</code>, <code>lg</code>, and so on.</p>
+<div class="code-wrap" dir="ltr"><pre><code>جدول10 Breakpoints
+کلاسBreakpoint
+</code></pre></div>
+<p>Page width less than <code>xs576</code> <code>px</code></p>
+<div class="code-wrap" dir="ltr"><pre><code>Extra small
+</code></pre></div>
+<p><code>sm</code></p>
+<p><code>Small</code></p>
+<p>576 <code>px</code> and more</p>
+<p><code>md</code></p>
+<div class="code-wrap" dir="ltr"><pre><code>Medium
+</code></pre></div>
+<p>768 <code>px</code> and more</p>
+<p><code>lg</code></p>
+<p><code>Large</code></p>
+<p>992 <code>px</code> and more</p>
+<p><code>xl</code></p>
+<p>1200 <code>px</code> and more</p>
+<div class="code-wrap" dir="ltr"><pre><code>Extra large
+</code></pre></div>
+<p><code>xxl</code></p>
+<p>1400 <code>px</code> and more</p>
+<div class="code-wrap" dir="ltr"><pre><code>Extra extra large
+</code></pre></div>
+<hr /></article>
+      <aside class="extra">
+        <h2 data-fa="تمرین این بخش" data-en="Exercises for this section">تمرین این بخش</h2>
+        <p class="extra-note" data-fa="این تمرین‌ها و پیوندها اضافه بر متن کتاب‌اند." data-en="These exercises and links are in addition to the book.">این تمرین‌ها و پیوندها اضافه بر متن کتاب‌اند.</p>
+        <ol><li data-fa="یک ردیف سه ستونه بساز که در موبایل زیر هم و در صفحه بزرگ کنار هم باشد." data-en="Build a row of three columns that stack on a phone and sit side by side on a large screen.">یک ردیف سه ستونه بساز که در موبایل زیر هم و در صفحه بزرگ کنار هم باشد.</li><li data-fa="زیر شبکه، یک پاراگراف و یک آیکن را در یک ردیف کنار هم وسط صفحه بگذار." data-en="Under the grid, place a paragraph and an icon in one row, centered on the page.">زیر شبکه، یک پاراگراف و یک آیکن را در یک ردیف کنار هم وسط صفحه بگذار.</li></ol>
+        <h2 data-fa="پیوند مفید" data-en="Useful link">پیوند مفید</h2><ul><li><a href="https://getbootstrap.com/docs/5.3/layout/grid/" data-fa="سیستم شبکه" data-en="Grid system">سیستم شبکه</a></li></ul>
+      </aside>
+    <nav class="pager"><a rel="prev" class="prev" href="p3-bs-header.html"><span class="pager-word" data-fa="قبلی" data-en="Previous">قبلی</span><span class="pager-name" data-fa="سرصفحه فروشگاه" data-en="The shop header">سرصفحه فروشگاه</span></a><a rel="next" class="next" href="p3-bs-rwd.html"><span class="pager-word" data-fa="بعدی" data-en="Next">بعدی</span><span class="pager-name" data-fa="کلاس‌های واکنش‌گرا" data-en="Responsive classes">کلاس‌های واکنش‌گرا</span></a></nav>
+    </div>
+  </div>
+  <script src="../assets/search-index.js?v=4"></script>
+  <script src="../assets/app.js?v=4"></script>
+</body>
+</html>

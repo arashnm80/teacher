@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title data-fa="لیست‌ها" data-en="Lists">لیست‌ها</title>
+  <link rel="icon" href="../assets/favicon.svg">
+  <link rel="stylesheet" href="../assets/style.css?v=4">
+</head>
+<body data-root="../">
+  <header class="top">
+    <a class="brand" href="../index.html">
+      <span data-fa="طراح سایت" data-en="Site Design">طراح سایت</span>
+      <small data-fa="پایه یازدهم" data-en="Grade 11">پایه یازدهم</small>
+    </a>
+    <div class="search-wrap">
+      <input id="q" type="search" autocomplete="off"
+        data-fa-placeholder="جستجو در درس‌ها" data-en-placeholder="Search lessons"
+        placeholder="جستجو در درس‌ها">
+      <div id="results" class="results" hidden></div>
+    </div>
+    <a class="download" href="../grade11-offline.zip?v=2" data-fa="دانلود کل سایت" data-en="Download the whole site">دانلود کل سایت</a>
+    <button type="button" id="lang-toggle" class="lang-toggle" dir="ltr" data-lang="fa"
+      aria-label="تغییر زبان">
+      <span data-opt="fa">فا</span>
+      <span data-opt="en">EN</span>
+    </button>
+  </header>
+  <div class="layout">
+    <details class="toc" open><summary><span data-fa="فهرست درس‌ها" data-en="Lesson list">فهرست درس‌ها</span></summary><nav class="side" aria-label="lessons"><p class="mod" data-fa="شروع کتاب" data-en="Opening">شروع کتاب</p><p class="unit" data-fa="فهرست" data-en="Contents">فهرست</p><a class="" href="toc.html" data-fa="فهرست" data-en="Contents">فهرست</a><p class="mod" data-fa="پودمان ۱: برنامه‌نویسی پایتون" data-en="Module 1: Python programming">پودمان ۱: برنامه‌نویسی پایتون</p><p class="unit" data-fa="معرفی پودمان" data-en="Module introduction">معرفی پودمان</p><a class="" href="p1-intro.html" data-fa="معرفی پودمان پایتون" data-en="Introducing the Python module">معرفی پودمان پایتون</a><p class="unit" data-fa="مدل‌سازی داده" data-en="Data modeling">مدل‌سازی داده</p><a class="" href="p1-python.html" data-fa="پایتون و محیط برنامه‌نویسی" data-en="Python and the programming environment">پایتون و محیط برنامه‌نویسی</a><a class="" href="p1-vars.html" data-fa="متغیرها، نوع داده و عملگرها" data-en="Variables, types, and operators">متغیرها، نوع داده و عملگرها</a><a class="" href="p1-cast.html" data-fa="ورودی و تبدیل نوع" data-en="Input and type casting">ورودی و تبدیل نوع</a><a class="current" href="p1-lists.html" data-fa="لیست‌ها" data-en="Lists">لیست‌ها</a><a class="" href="p1-if.html" data-fa="شرط‌های ساده" data-en="Simple conditions">شرط‌های ساده</a><a class="" href="p1-elif.html" data-fa="if، elif و else" data-en="if, elif, and else">if، elif و else</a><a class="" href="p1-for.html" data-fa="حلقه for و range" data-en="The for loop and range">حلقه for و range</a><a class="" href="p1-while.html" data-fa="حلقه while و کنترل حلقه" data-en="The while loop and loop control">حلقه while و کنترل حلقه</a><a class="" href="p1-assess-data.html" data-fa="ارزشیابی مدل‌سازی داده" data-en="Data-modeling assessment">ارزشیابی مدل‌سازی داده</a><p class="unit" data-fa="توابع و ماژول‌ها" data-en="Functions and modules">توابع و ماژول‌ها</p><a class="" href="p1-sets.html" data-fa="مجموعه (set)" data-en="Sets">مجموعه (set)</a><a class="" href="p1-dict.html" data-fa="دیکشنری" data-en="Dictionaries">دیکشنری</a><a class="" href="p1-quiz.html" data-fa="پروژه بازی Quiz" data-en="Quiz game project">پروژه بازی Quiz</a><a class="" href="p1-tuple.html" data-fa="تاپل" data-en="Tuples">تاپل</a><a class="" href="p1-func.html" data-fa="تعریف تابع، پارامتر و return" data-en="Defining functions, parameters, and return">تعریف تابع، پارامتر و return</a><a class="" href="p1-func-more.html" data-fa="تمرین تابع و مرتب‌سازی" data-en="Function practice and sorting">تمرین تابع و مرتب‌سازی</a><a class="" href="p1-modules.html" data-fa="ماژول‌ها و تفاوت تابع و متد" data-en="Modules, and functions versus methods">ماژول‌ها و تفاوت تابع و متد</a><a class="" href="p1-assess-func.html" data-fa="ارزشیابی توابع و ماژول‌ها" data-en="Functions and modules assessment">ارزشیابی توابع و ماژول‌ها</a><p class="mod" data-fa="پودمان ۲: صفحات وب ایستا" data-en="Module 2: Static web pages">پودمان ۲: صفحات وب ایستا</p><p class="unit" data-fa="معرفی پودمان" data-en="Module introduction">معرفی پودمان</p><a class="" href="p2-intro.html" data-fa="معرفی پودمان صفحات ایستا" data-en="Introducing static web pages">معرفی پودمان صفحات ایستا</a><p class="unit" data-fa="ساختار با HTML" data-en="Structure with HTML">ساختار با HTML</p><a class="" href="p2-web.html" data-fa="وب چگونه کار می‌کند" data-en="How the web works">وب چگونه کار می‌کند</a><a class="" href="p2-concepts.html" data-fa="مفاهیم طراحی وب و نقشه سایت" data-en="Web-design concepts and the site map">مفاهیم طراحی وب و نقشه سایت</a><a class="" href="p2-tags.html" data-fa="اولین صفحه HTML" data-en="A first HTML page">اولین صفحه HTML</a><a class="" href="p2-text.html" data-fa="متن، لیست و پیوند" data-en="Text, lists, and links">متن، لیست و پیوند</a><a class="" href="p2-img.html" data-fa="تصویر در صفحه" data-en="Images on the page">تصویر در صفحه</a><a class="" href="p2-forms.html" data-fa="فرم‌ها" data-en="Forms">فرم‌ها</a><a class="" href="p2-semantic.html" data-fa="عناصر معنایی" data-en="Semantic elements">عناصر معنایی</a><a class="" href="p2-assess-html.html" data-fa="ارزشیابی HTML" data-en="HTML assessment">ارزشیابی HTML</a><p class="unit" data-fa="ظاهر با CSS" data-en="Appearance with CSS">ظاهر با CSS</p><a class="" href="p2-css-start.html" data-fa="نوشتن CSS" data-en="Writing CSS">نوشتن CSS</a><a class="" href="p2-css-look.html" data-fa="رنگ، پس‌زمینه و انتخاب‌گر" data-en="Color, background, and selectors">رنگ، پس‌زمینه و انتخاب‌گر</a><a class="" href="p2-box.html" data-fa="مدل جعبه‌ای و display" data-en="The box model and display">مدل جعبه‌ای و display</a><a class="" href="p2-flex.html" data-fa="چیدمان با Flexbox" data-en="Layout with Flexbox">چیدمان با Flexbox</a><a class="" href="p2-flex-work.html" data-fa="کارگاه چیدمان صفحه" data-en="Page-layout workshop">کارگاه چیدمان صفحه</a><a class="" href="p2-media.html" data-fa="مدیا کوئری و ارزشیابی CSS" data-en="Media queries and the CSS assessment">مدیا کوئری و ارزشیابی CSS</a><p class="mod" data-fa="پودمان ۳: صفحات وب تعاملی" data-en="Module 3: Interactive web pages">پودمان ۳: صفحات وب تعاملی</p><p class="unit" data-fa="معرفی پودمان" data-en="Module introduction">معرفی پودمان</p><a class="" href="p3-intro.html" data-fa="معرفی پودمان تعاملی" data-en="Introducing the interactive module">معرفی پودمان تعاملی</a><p class="unit" data-fa="بوت‌استرپ" data-en="Bootstrap">بوت‌استرپ</p><a class="" href="p3-bs-start.html" data-fa="فریم‌ورک و شروع بوت‌استرپ" data-en="Frameworks and starting Bootstrap">فریم‌ورک و شروع بوت‌استرپ</a><a class="" href="p3-bs-util.html" data-fa="فاصله، گردی و لیست" data-en="Spacing, rounding, and lists">فاصله، گردی و لیست</a><a class="" href="p3-bs-header.html" data-fa="سرصفحه فروشگاه" data-en="The shop header">سرصفحه فروشگاه</a><a class="" href="p3-bs-grid.html" data-fa="شبکه Grid" data-en="The grid">شبکه Grid</a><a class="" href="p3-bs-rwd.html" data-fa="کلاس‌های واکنش‌گرا" data-en="Responsive classes">کلاس‌های واکنش‌گرا</a><a class="" href="p3-bs-nav.html" data-fa="نوار ناوبری و جزئیات محصول" data-en="Navbar and product details">نوار ناوبری و جزئیات محصول</a><a class="" href="p3-bs-form.html" data-fa="فرم و پنجره Modal" data-en="Forms and modals">فرم و پنجره Modal</a><a class="" href="p3-bs-show.html" data-fa="کاروسل و آکاردئون" data-en="Carousel and accordion">کاروسل و آکاردئون</a><a class="" href="p3-bs-assess.html" data-fa="ارزشیابی بوت‌استرپ" data-en="Bootstrap assessment">ارزشیابی بوت‌استرپ</a><p class="unit" data-fa="جاوااسکریپت" data-en="JavaScript">جاوااسکریپت</p><a class="" href="p3-js-start.html" data-fa="جاوااسکریپت در صفحه وب" data-en="JavaScript on the page">جاوااسکریپت در صفحه وب</a><a class="" href="p3-js-vars.html" data-fa="متغیر و نوع داده" data-en="Variables and data types">متغیر و نوع داده</a><a class="" href="p3-js-ops.html" data-fa="عملگرها" data-en="Operators">عملگرها</a><a class="" href="p3-js-data.html" data-fa="آرایه و شیء" data-en="Arrays and objects">آرایه و شیء</a><a class="" href="p3-js-if.html" data-fa="شرط در جاوااسکریپت" data-en="Conditions in JavaScript">شرط در جاوااسکریپت</a><a class="" href="p3-js-loops.html" data-fa="حلقه‌ها" data-en="Loops">حلقه‌ها</a><a class="" href="p3-js-func.html" data-fa="تابع‌ها" data-en="Functions">تابع‌ها</a><a class="" href="p3-js-dom.html" data-fa="صفحه، رویداد و اعتبار فرم" data-en="The page, events, and form validation">صفحه، رویداد و اعتبار فرم</a><a class="" href="p3-js-assess.html" data-fa="ارزشیابی جاوااسکریپت" data-en="JavaScript assessment">ارزشیابی جاوااسکریپت</a><p class="mod" data-fa="پودمان ۴: توسعه وب پایتون" data-en="Module 4: Python for the web">پودمان ۴: توسعه وب پایتون</p><p class="unit" data-fa="معرفی پودمان" data-en="Module introduction">معرفی پودمان</p><a class="" href="p4-intro.html" data-fa="معرفی پودمان شیءگرایی" data-en="Introducing the object-oriented module">معرفی پودمان شیءگرایی</a><p class="unit" data-fa="شیءگرایی" data-en="Object-oriented programming">شیءگرایی</p><a class="" href="p4-idea.html" data-fa="ایده شیء و کلاس" data-en="The idea of objects and classes">ایده شیء و کلاس</a><a class="" href="p4-class.html" data-fa="ساخت کلاس و متد" data-en="Writing a class and methods">ساخت کلاس و متد</a><a class="" href="p4-inherit.html" data-fa="وراثت" data-en="Inheritance">وراثت</a><a class="" href="p4-protect.html" data-fa="داده معتبر و استفاده داخلی" data-en="Valid data and internal use">داده معتبر و استفاده داخلی</a><a class="" href="p4-assess-oop.html" data-fa="ارزشیابی برنامه شیءگرا" data-en="Object-oriented assessment">ارزشیابی برنامه شیءگرا</a><p class="unit" data-fa="فایل و توسعه" data-en="Files and development">فایل و توسعه</p><a class="" href="p4-files.html" data-fa="خواندن و نوشتن فایل متنی" data-en="Reading and writing text files">خواندن و نوشتن فایل متنی</a><a class="" href="p4-errors.html" data-fa="پیمایش فایل و مدیریت خطا" data-en="Walking a file and handling errors">پیمایش فایل و مدیریت خطا</a><a class="" href="p4-json.html" data-fa="چند فایل و JSON" data-en="Several files and JSON">چند فایل و JSON</a><a class="" href="p4-assess-files.html" data-fa="ارزشیابی کار با فایل" data-en="Files assessment">ارزشیابی کار با فایل</a><p class="mod" data-fa="پودمان ۵: برنامه‌نویسی جنگو" data-en="Module 5: Django">پودمان ۵: برنامه‌نویسی جنگو</p><p class="unit" data-fa="معرفی پودمان" data-en="Module introduction">معرفی پودمان</p><a class="" href="p5-intro.html" data-fa="معرفی پودمان جنگو" data-en="Introducing the Django module">معرفی پودمان جنگو</a><p class="unit" data-fa="ایجاد وب‌اپلیکیشن" data-en="Creating the web app">ایجاد وب‌اپلیکیشن</p><a class="" href="p5-what.html" data-fa="جنگو چیست و نصب" data-en="What Django is, and installing it">جنگو چیست و نصب</a><a class="" href="p5-project.html" data-fa="پروژه، اپ و اولین view" data-en="Project, app, and the first view">پروژه، اپ و اولین view</a><a class="" href="p5-template.html" data-fa="قالب و دمای واقعی" data-en="Templates and a real temperature">قالب و دمای واقعی</a><a class="" href="p5-assess-create.html" data-fa="ارزشیابی ایجاد وب‌اپلیکیشن" data-en="Creating-the-app assessment">ارزشیابی ایجاد وب‌اپلیکیشن</a><p class="unit" data-fa="توسعه وب‌اپلیکیشن" data-en="Developing the web app">توسعه وب‌اپلیکیشن</p><a class="" href="p5-model.html" data-fa="مدل شهر و پنل ادمین" data-en="The city model and the admin">مدل شهر و پنل ادمین</a><a class="" href="p5-list.html" data-fa="خواندن شهرها و نمایش فهرست" data-en="Reading cities and showing the list">خواندن شهرها و نمایش فهرست</a><a class="" href="p5-auth.html" data-fa="ورود و خروج" data-en="Sign-in and sign-out">ورود و خروج</a><a class="" href="p5-crud.html" data-fa="افزودن و حذف شهر" data-en="Adding and deleting a city">افزودن و حذف شهر</a><a class="" href="p5-bugs.html" data-fa="باگ و امنیت" data-en="Bugs and security">باگ و امنیت</a><p class="mod" data-fa="پایان کتاب" data-en="Back of the book">پایان کتاب</p><p class="unit" data-fa="منابع" data-en="References">منابع</p><a class="" href="refs.html" data-fa="منابع کتاب" data-en="Book references">منابع کتاب</a></nav></details>
+    <div class="main">
+      <h1 class="section-title" data-fa="لیست‌ها" data-en="Lists">لیست‌ها</h1><article class="lesson" lang="fa" dir="rtl" data-lang-block="fa"><p class="page-mark">صفحه ۱۶</p>
+<div class="code-wrap" dir="ltr"><pre><code>لیست (list):
+</code></pre></div>
+<p><img alt="تصویر کتاب" src="../images/p022-01.png" /></p>
+<p>لیست‌ها یکی از ۴ نوع داده در پایتون هستند که برای ذخیرۀ مجموعه‌ای از داده‌ها در یک متغیر واحد استفاده می‌شوند، ۳ نوع دیگر <code>Set</code> ، <code>Tuple</code> و <code>Dictionary</code> هستند که هر کدام کاربردهای متفاوتی دارند.</p>
+<p>ایجاد لیست: لیست‌ها با استفاده از</p>
+<div class="code-wrap" dir="ltr"><pre><code>کروشه‌ها (Square brackets)&quot;[]&quot; ایجاد
+</code></pre></div>
+<p>می‌شوند.</p>
+<p><strong>شکل 34</strong></p>
+<p>در کد مقابل یک لیست شامل رشته‌ای از نام میوه‌ها ایجاد شده است. <code>]"fruits</code> = <code>["apple"</code>, <code>"banana"</code>, <code>"cherry</code> دستور مقابل یک لیست شامل اعداد 1 و 2 و 3 و 4 و 5 را ذخیره می‌کند. <code>]numbers</code> = [1, 2, 3, 4, 5</p>
+<p>ویژگی‌های لیست: <code>Mixed</code> <code>data</code> لیست انواع مختلف داده را می‌تواند نگهداری کند. در کد زیر یک لیست که انواع داده متفاوت عددی، رشته‌ای، بولین و اعشاری و حتی لیست دیگر را در خود ذخیره می‌کند، ایجاد شده است (شکل35).</p>
+<figure class="shot"><img alt="شکل 35" src="../images/p022-02.png" /><figcaption>شکل 35</figcaption></figure>
+<p><code>Indexed:</code> عناصر لیست دارای ایندکس (<code>Index</code>) هستند؛ یعنی هر عنصر یک شماره دارد و اولین عنصر لیست دارای اندیس صفر است (شکل36).</p>
+<figure class="shot"><img alt="شکل 36" src="../images/p022-03.png" /><figcaption>شکل 36</figcaption></figure>
+<hr />
+<p class="page-mark">صفحه ۱۷</p>
+<p>با ایندکس می‌توان به عناصر لیست دسترسی داشت (شکل37).</p>
+<figure class="shot"><img alt="شکل 37" src="../images/p023-01.png" /><figcaption>شکل 37</figcaption></figure>
+<p><code>Mutable:</code> لیست قابلیت تغییر دارد؛ یعنی بعد از ایجاد لیست، می‌توان عناصر آن را ویرایش، حذف یا اضافه کرد.</p>
+<p>در این مثال عنصر دوم لیست که اندیس آن[1] و مقدارش <code>"banana"</code> است به <code>"oranges"</code> تغییر داده شده است.</p>
+<figure class="shot"><img alt="شکل 38" src="../images/p023-02.png" /><figcaption>شکل 38</figcaption></figure>
+<p><code>Ordered:</code> لیست‌ها دارای ترتیب مشخص هستند: عناصر لیست به همان ترتیبی که وارد می‌شوند، ذخیره می‌گردند و این ترتیب تغییر نمی‌کند، مگر برنامه‌نویس آن را تغییر دهد.</p>
+<p>عوامل مؤثر در ویژگی <code>Ordered:</code></p>
+<p>الف حفظ ترتیب ورود عناصر: همان‌طور که در مثال مشاهده می‌کنید عناصر دقیقًا به همان ترتیبی که وارد شده‌اند، نمایش داده می‌شوند (شکل 39).</p>
+<p><img alt="تصویر کتاب" src="../images/p023-03.png" /></p>
+<figure class="shot"><img alt="شکل 39" src="../images/p023-04.png" /><figcaption>شکل 39</figcaption></figure>
+<p>ب تأثیر ترتیب در نمایش عناصر لیست: اگر ترتیب تغییر کند، ایندکس‌ها هم تغییر می‌کنند (شکل40).</p>
+<p><img alt="تصویر کتاب" src="../images/p023-06.png" /></p>
+<figure class="shot"><img alt="شکل 40" src="../images/p023-05.png" /><figcaption>شکل 40</figcaption></figure>
+<hr />
+<p class="page-mark">صفحه ۱۸</p>
+<p>ج تغییر ترتیب عناصر: در این مثال فقط عنصر اول تغییر کرد، بقیه سر جای خود ماندند ← یعنی ترتیب مشخص است (شکل41).</p>
+<p><img alt="تصویر کتاب" src="../images/p024-01.png" /></p>
+<figure class="shot"><img alt="شکل 41" src="../images/p024-02.png" /><figcaption>شکل 41</figcaption></figure>
+<p>د مقایسه دو لیست با ترتیب متفاوت: در این مثال با اینکه عناصر یکی هستند، چون ترتیب متفاوت است، دو لیست برابر نیستند (شکل42).</p>
+<figure class="shot"><img alt="شکل 42" src="../images/p024-03.png" /><figcaption>شکل 42</figcaption></figure>
+<h3 id="_1">فعالیت</h3>
+<p>1 لیستی با ۵ عنصر " <code>headset</code> ،<code>book</code> ،<code>mouse</code> ،<code>phone</code> ،<code>book</code> " ایجاد کنید و آن را نمایش دهید.</p>
+<p>سپس به‌جای عنصر شماره 4 یک عنصر به نام " <code>External</code> <code>HDD</code> " را جایگزین کنید و نتیجه را نمایش دهید.</p>
+<p>2 لیستی با ۴ عنصر عددی دلخواه ایجاد کنید و سپس عنصر اول آن را نمایش دهید.</p>
+<p>3 لیستی ایجاد کنید که ۶ عنصر داشته باشد که نام ماشین‌های موردعلاقه و سال تولید آنها را ذخیره کند. سپس این لیست را نمایش دهید.</p>
+<p>افزودن عنصر جدید به لیست: با استفاده از متد ()<code>append</code> می‌توانید عنصر جدیدی را به انتهای لیست اضافه کنید (شکل 43).</p>
+<p><img alt="تصویر کتاب" src="../images/p024-05.png" /></p>
+<p><img alt="تصویر کتاب" src="../images/p024-06.png" /></p>
+<figure class="shot"><img alt="شکل 43" src="../images/p024-04.png" /><figcaption>شکل 43</figcaption></figure>
+<hr />
+<p class="page-mark">صفحه ۱۹</p>
+<p>در پایتون برای افزودن یک عنصر بعد از یک عنصر مشخص در لیست، از متد ()<code>insert</code> استفاده کنید.</p>
+<div class="code-wrap" dir="ltr"><pre><code>list_name. insert (index, value)
+</code></pre></div>
+<h3 id="_2">نکته</h3>
+<p>برای شنیدن تلفظ صحیح این کلمه به آدرس زیر مراجعه کنید.</p>
+<div class="code-wrap" dir="ltr"><pre><code>https://dictionary.cambridge.org/dictionary/english/insert
+</code></pre></div>
+<p>مثال: لیست وظایف زیر را در نظر بگیرید:</p>
+<div class="code-wrap" dir="ltr"><pre><code>]&quot;tasks = [&quot;Study&quot;, &quot;Exercise&quot;, &quot;Sleep
+</code></pre></div>
+<p>وظیفه <code>"Break"</code> را بین <code>"Exercise"</code> و <code>"Sleep"</code> اضافه کنید. لیست را نمایش دهید (شکل44).</p>
+<p><img alt="تصویر کتاب" src="../images/p025-02.png" /></p>
+<figure class="shot"><img alt="شکل 44" src="../images/p025-03.png" /><figcaption>شکل 44</figcaption></figure>
+<h3 id="_3">فعالیت</h3>
+<p>برنامه‌های بنویسید که در لیست <code>fruit</code> که شامل 2 نوع میوه است قیمت هر میوه را بعد از نام آن اضافه کرده و آن را نمایش دهد.</p>
+<p><img alt="تصویر کتاب" src="../images/p025-01.png" /></p>
+<p>حذف عنصر از لیست:</p>
+<p>در پایتون برای حذف عناصر از یک لیست (<code>list</code>) روش‌های مختلفی وجود دارد. انتخاب روش مناسب به این بستگی دارد که بخواهیم بر اساس مقدار حذف کنیم یا بر اساس موقعیت (اندیس).</p>
+<p><strong>شکل 45</strong></p>
+<hr />
+<p class="page-mark">صفحه ۲۰</p>
+<p>1 حذف عنصر با مقدار: متد ()<code>remove</code> برای حذف مقدار یک عنصر از لیست است. اولین عنصری که همان مقدار را داشته باشد، حذف می‌شود.</p>
+<div class="code-wrap" dir="ltr"><pre><code>list_name.remove(value)
+</code></pre></div>
+<p>مثال ۱: این برنامه با استفاده از متد ()<code>remove</code> مقدار 12 را از لیست <code>scores</code> حذف کرده است (شکل46).</p>
+<p><img alt="تصویر کتاب" src="../images/p026-01.png" /></p>
+<figure class="shot"><img alt="شکل 46" src="../images/p026-02.png" /><figcaption>شکل 46</figcaption></figure>
+<p>مثال 2: این برنامه با استفاده از متد ()<code>remove</code> مقدار اولین 20 را از لیست <code>numbers</code> حذف کرده است (شکل47).</p>
+<p><img alt="تصویر کتاب" src="../images/p026-03.png" /></p>
+<figure class="shot"><img alt="شکل 47" src="../images/p026-04.png" /><figcaption>شکل 47</figcaption></figure>
+<p>2 حذف عنصر با ایندکس (<code>index</code>): متد ()<code>pop</code> برای حذف عنصر با ایندکس مشخص شده استفاده می‌شود.</p>
+<div class="code-wrap" dir="ltr"><pre><code>list_name.pop(index)
+</code></pre></div>
+<p>مثال: در این برنامه ایندکس با شماره یک، یعنی دومین عنصر لیست حذف شده است (شکل48).</p>
+<h3 id="_4">نکته</h3>
+<p>دقت کنید اولین عضو لیست دارای اندیس صفر می‌باشد.</p>
+<p><img alt="تصویر کتاب" src="../images/p026-05.png" /></p>
+<figure class="shot"><img alt="شکل 48" src="../images/p026-06.png" /><figcaption>شکل 48</figcaption></figure>
+<hr />
+<p class="page-mark">صفحه ۲۱</p>
+<p>اگر داخل متد ()<code>pop</code> چیزی نوشته نشود، آخرین عنصر لیست حذف می‌شود. در کد زیر لیست <code>food</code> سه عنصر دارد (شکل49).</p>
+<p><img alt="تصویر کتاب" src="../images/p027-03.png" /></p>
+<figure class="shot"><img alt="شکل 49" src="../images/p027-01.png" /><figcaption>شکل 49</figcaption></figure>
+<p>در خط 2 متد ()<code>pop</code> چیزی نوشته نشده است؛ پس آخرین عنصر لیست یعنی <code>"kabab"</code> حذف می‌شود.</p>
+<p>اجرای برنامه این موضوع را تأیید می‌کند.</p>
+<h3 id="_5">فعالیت</h3>
+<p>لیست کارها شامل <code>]"tasks</code> = <code>["Study"</code>, <code>"Exercise"</code>, <code>"Rest"</code>, <code>"Sleep</code> است. برنامه‌ای بنویسید که آخرین کار را از لیست حذف کند.</p>
+<h3 id="_6">کنجکاوی</h3>
+<p>تحقیق کنید اگر درون متد <code>pop</code> عدد 1- بیاید کدام عنصر حذف می‌شود؟ سایر اعداد منفی چطور؟</p>
+<p>مثلاً:</p>
+<div class="code-wrap" dir="ltr"><pre><code>(1-)food.pop
+</code></pre></div>
+<h3 id="_7">کنجکاوی</h3>
+<p>متد ()<code>clear</code> و دستور <code>del</code> نیز برای حذف عناصر لیست کاربرد دارند. در مورد نحوه کاربرد آنها تحقیق کنید و در کلاس ارائه دهید.</p>
+<p>ساختارهای شرطی:</p>
+<p><img alt="تصویر کتاب" src="../images/p027-02.png" /></p>
+<p>ساختار شرطی به برنامه این امکان را می‌دهد که بر اساس برقرار بودن یا نبودن یک شرط، تصمیم‌گیری کند و مسیر اجرای دستورات را تغییر دهد.</p>
+<p>در این ساختار، ابتدا یک شرط بررسی می‌شود و سپس، در صورت درست بودن آن، مجموعه‌ای از دستورات اجرا می‌گردد.</p>
+<p><strong>شکل 50</strong></p>
+<hr /></article><article class="lesson" lang="en" dir="ltr" data-lang-block="en" hidden><p class="page-mark">Page 16</p>
+<div class="code-wrap" dir="ltr"><pre><code>لیست (list):
+</code></pre></div>
+<p><img alt="Book image" src="../images/p022-01.png" /></p>
+<p>Lists are one of the 4 data types in Python that are used to store a collection of data in a single variable; the other 3 types are <code>Set</code>, <code>Tuple</code>, and <code>Dictionary</code>, each of which has different uses.</p>
+<p>Creating a list: Lists are created using</p>
+<div class="code-wrap" dir="ltr"><pre><code>کروشه‌ها (Square brackets)&quot;[]&quot; ایجاد
+</code></pre></div>
+<p>.</p>
+<p><strong>Figure 34</strong></p>
+<p>In the code opposite, a list containing a string of fruit names has been created. <code>fruits</code> = <code>["apple"</code>, <code>"banana"</code>, <code>"cherry"]</code> The opposite statement stores a list containing the numbers 1, 2, 3, 4, and 5. <code>numbers</code> = [1, 2, 3, 4, 5]</p>
+<p>List features: <code>Mixed</code> <code>data</code> A list can hold different kinds of data. In the code below, a list has been created that stores different data types—numeric, string, Boolean, and floating-point, and even another list (Figure 35).</p>
+<figure class="shot"><img alt="Figure 35" src="../images/p022-02.png" /><figcaption>Figure 35</figcaption></figure>
+<p><code>Indexed:</code> List elements have an index (<code>Index</code>); that means each element has a number, and the first element of the list has index zero (Figure 36).</p>
+<figure class="shot"><img alt="Figure 36" src="../images/p022-03.png" /><figcaption>Figure 36</figcaption></figure>
+<hr />
+<p class="page-mark">Page 17</p>
+<p>With an index you can access the elements of a list (Figure 37).</p>
+<figure class="shot"><img alt="Figure 37" src="../images/p023-01.png" /><figcaption>Figure 37</figcaption></figure>
+<p><code>Mutable:</code> A list can be changed; that means after creating a list, you can edit, delete, or add elements.</p>
+<p>In this example, the second element of the list, whose index is [1] and whose value is <code>"banana"</code>, has been changed to <code>"oranges"</code>.</p>
+<figure class="shot"><img alt="Figure 38" src="../images/p023-02.png" /><figcaption>Figure 38</figcaption></figure>
+<p><code>Ordered:</code> Lists have a definite order: list elements are stored in the same order they are entered, and this order does not change unless the programmer changes it.</p>
+<p>Factors that affect the <code>Ordered</code> feature:</p>
+<p>a Preserving the order of entry of elements: As you can see in the example, the elements are displayed exactly in the same order they were entered (Figure 39).</p>
+<p><img alt="Book image" src="../images/p023-03.png" /></p>
+<figure class="shot"><img alt="Figure 39" src="../images/p023-04.png" /><figcaption>Figure 39</figcaption></figure>
+<p>b The effect of order on displaying list elements: If the order changes, the indexes change too (Figure 40).</p>
+<p><img alt="Book image" src="../images/p023-06.png" /></p>
+<figure class="shot"><img alt="Figure 40" src="../images/p023-05.png" /><figcaption>Figure 40</figcaption></figure>
+<hr />
+<p class="page-mark">Page 18</p>
+<p>c Changing the order of elements: In this example only the first element changed; the rest stayed in place ← that means the order is definite (Figure 41).</p>
+<p><img alt="Book image" src="../images/p024-01.png" /></p>
+<figure class="shot"><img alt="Figure 41" src="../images/p024-02.png" /><figcaption>Figure 41</figcaption></figure>
+<p>d Comparing two lists with different order: In this example, although the elements are the same, because the order is different, the two lists are not equal (Figure 42).</p>
+<figure class="shot"><img alt="Figure 42" src="../images/p024-03.png" /><figcaption>Figure 42</figcaption></figure>
+<h3 id="activity">Activity</h3>
+<p>1 Create a list with 5 elements "<code>headset</code>, <code>book</code>, <code>mouse</code>, <code>phone</code>, <code>book</code>" and display it.</p>
+<p>Then replace element number 4 with an element named "<code>External</code> <code>HDD</code>" and display the result.</p>
+<p>2 Create a list with 4 numeric elements of your choice and then display its first element.</p>
+<p>3 Create a list that has 6 elements that store the names of your favorite cars and their years of production. Then display this list.</p>
+<p>Adding a new element to a list: Using the ()<code>append</code> method you can add a new element to the end of the list (Figure 43).</p>
+<p><img alt="Book image" src="../images/p024-05.png" /></p>
+<p><img alt="Book image" src="../images/p024-06.png" /></p>
+<figure class="shot"><img alt="Figure 43" src="../images/p024-04.png" /><figcaption>Figure 43</figcaption></figure>
+<hr />
+<p class="page-mark">Page 19</p>
+<p>In Python, to add an element after a specific element in a list, use the ()<code>insert</code> method.</p>
+<div class="code-wrap" dir="ltr"><pre><code>list_name. insert (index, value)
+</code></pre></div>
+<h3 id="note">Note</h3>
+<p>To hear the correct pronunciation of this word, go to the address below.</p>
+<div class="code-wrap" dir="ltr"><pre><code>https://dictionary.cambridge.org/dictionary/english/insert
+</code></pre></div>
+<p>Example: Consider the following list of tasks:</p>
+<div class="code-wrap" dir="ltr"><pre><code>]&quot;tasks = [&quot;Study&quot;, &quot;Exercise&quot;, &quot;Sleep
+</code></pre></div>
+<p>Add the task <code>"Break"</code> between <code>"Exercise"</code> and <code>"Sleep"</code>. Display the list (Figure 44).</p>
+<p><img alt="Book image" src="../images/p025-02.png" /></p>
+<figure class="shot"><img alt="Figure 44" src="../images/p025-03.png" /><figcaption>Figure 44</figcaption></figure>
+<h3 id="activity_1">Activity</h3>
+<p>Write a program that, in the <code>fruit</code> list which includes 2 kinds of fruit, adds the price of each fruit after its name and displays it.</p>
+<p><img alt="Book image" src="../images/p025-01.png" /></p>
+<p>Removing an element from a list:</p>
+<p>In Python there are different methods for removing elements from a list (<code>list</code>). Choosing the suitable method depends on whether you want to remove based on value or based on position (index).</p>
+<p><strong>Figure 45</strong></p>
+<hr />
+<p class="page-mark">Page 20</p>
+<p>1 Removing an element by value: The ()<code>remove</code> method is for removing the value of an element from a list. The first element that has the same value is removed.</p>
+<div class="code-wrap" dir="ltr"><pre><code>list_name.remove(value)
+</code></pre></div>
+<p>Example 1: This program has used the ()<code>remove</code> method to remove the value 12 from the <code>scores</code> list (Figure 46).</p>
+<p><img alt="Book image" src="../images/p026-01.png" /></p>
+<figure class="shot"><img alt="Figure 46" src="../images/p026-02.png" /><figcaption>Figure 46</figcaption></figure>
+<p>Example 2: This program has used the ()<code>remove</code> method to remove the first value 20 from the <code>numbers</code> list (Figure 47).</p>
+<p><img alt="Book image" src="../images/p026-03.png" /></p>
+<figure class="shot"><img alt="Figure 47" src="../images/p026-04.png" /><figcaption>Figure 47</figcaption></figure>
+<p>2 Removing an element by index (<code>index</code>): The ()<code>pop</code> method is used to remove an element with a specified index.</p>
+<div class="code-wrap" dir="ltr"><pre><code>list_name.pop(index)
+</code></pre></div>
+<p>Example: In this program the index with number one, that is the second element of the list, has been removed (Figure 48).</p>
+<h3 id="note_1">Note</h3>
+<p>Note that the first member of the list has index zero.</p>
+<p><img alt="Book image" src="../images/p026-05.png" /></p>
+<figure class="shot"><img alt="Figure 48" src="../images/p026-06.png" /><figcaption>Figure 48</figcaption></figure>
+<hr />
+<p class="page-mark">Page 21</p>
+<p>If nothing is written inside the ()<code>pop</code> method, the last element of the list is removed. In the code below the <code>food</code> list has three elements (Figure 49).</p>
+<p><img alt="Book image" src="../images/p027-03.png" /></p>
+<figure class="shot"><img alt="Figure 49" src="../images/p027-01.png" /><figcaption>Figure 49</figcaption></figure>
+<p>On line 2 nothing is written in the ()<code>pop</code> method; so the last element of the list, that is <code>"kabab"</code>, is removed.</p>
+<p>Running the program confirms this.</p>
+<h3 id="activity_2">Activity</h3>
+<p>The task list is <code>tasks</code> = <code>["Study"</code>, <code>"Exercise"</code>, <code>"Rest"</code>, <code>"Sleep"]</code>. Write a program that removes the last task from the list.</p>
+<h3 id="try-this">Try this</h3>
+<p>Research what happens if the number -1 is placed inside the <code>pop</code> method—which element is removed? What about other negative numbers?</p>
+<p>For example:</p>
+<div class="code-wrap" dir="ltr"><pre><code>(1-)food.pop
+</code></pre></div>
+<h3 id="try-this_1">Try this</h3>
+<p>The ()<code>clear</code> method and the <code>del</code> statement are also used for removing list elements. Research how they are used and present them in class.</p>
+<p>Conditional structures:</p>
+<p><img alt="Book image" src="../images/p027-02.png" /></p>
+<p>A conditional structure lets the program make a decision based on whether a condition is true or not, and change the path of running statements.</p>
+<p>In this structure, first a condition is checked, and then, if it is true, a set of statements is executed.</p>
+<p><strong>Figure 50</strong></p>
+<hr /></article>
+      <aside class="extra">
+        <h2 data-fa="تمرین این بخش" data-en="Exercises for this section">تمرین این بخش</h2>
+        <p class="extra-note" data-fa="این تمرین‌ها و پیوندها اضافه بر متن کتاب‌اند." data-en="These exercises and links are in addition to the book.">این تمرین‌ها و پیوندها اضافه بر متن کتاب‌اند.</p>
+        <ol><li data-fa="یک لیست پنج خوراکی بساز. با برنامه یک مورد را در جایگاه دوم درج کن، یکی را با مقدار حذف کن، آخری را pop کن و بعد از هر تغییر لیست را چاپ کن." data-en="Build a list of five snacks. Insert one at index 1, remove one by value, pop the last item, and print the list after each change.">یک لیست پنج خوراکی بساز. با برنامه یک مورد را در جایگاه دوم درج کن، یکی را با مقدار حذف کن، آخری را pop کن و بعد از هر تغییر لیست را چاپ کن.</li><li data-fa="تابع کوچکی بنویس که جای عنصر اول و سوم همان لیست را عوض کند و لیست تازه را برگرداند." data-en="Write a small function that swaps the first and third items of that list and returns the new list.">تابع کوچکی بنویس که جای عنصر اول و سوم همان لیست را عوض کند و لیست تازه را برگرداند.</li></ol>
+        <h2 data-fa="پیوند مفید" data-en="Useful link">پیوند مفید</h2><ul><li><a href="https://docs.python.org/3/tutorial/introduction.html#lists" data-fa="لیست‌ها در آموزش پایتون" data-en="Lists in the Python tutorial">لیست‌ها در آموزش پایتون</a></li></ul>
+      </aside>
+    <nav class="pager"><a rel="prev" class="prev" href="p1-cast.html"><span class="pager-word" data-fa="قبلی" data-en="Previous">قبلی</span><span class="pager-name" data-fa="ورودی و تبدیل نوع" data-en="Input and type casting">ورودی و تبدیل نوع</span></a><a rel="next" class="next" href="p1-if.html"><span class="pager-word" data-fa="بعدی" data-en="Next">بعدی</span><span class="pager-name" data-fa="شرط‌های ساده" data-en="Simple conditions">شرط‌های ساده</span></a></nav>
+    </div>
+  </div>
+  <script src="../assets/search-index.js?v=4"></script>
+  <script src="../assets/app.js?v=4"></script>
+</body>
+</html>

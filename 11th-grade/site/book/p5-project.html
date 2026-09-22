@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title data-fa="پروژه، اپ و اولین view" data-en="Project, app, and the first view">پروژه، اپ و اولین view</title>
+  <link rel="icon" href="../assets/favicon.svg">
+  <link rel="stylesheet" href="../assets/style.css?v=4">
+</head>
+<body data-root="../">
+  <header class="top">
+    <a class="brand" href="../index.html">
+      <span data-fa="طراح سایت" data-en="Site Design">طراح سایت</span>
+      <small data-fa="پایه یازدهم" data-en="Grade 11">پایه یازدهم</small>
+    </a>
+    <div class="search-wrap">
+      <input id="q" type="search" autocomplete="off"
+        data-fa-placeholder="جستجو در درس‌ها" data-en-placeholder="Search lessons"
+        placeholder="جستجو در درس‌ها">
+      <div id="results" class="results" hidden></div>
+    </div>
+    <a class="download" href="../grade11-offline.zip?v=2" data-fa="دانلود کل سایت" data-en="Download the whole site">دانلود کل سایت</a>
+    <button type="button" id="lang-toggle" class="lang-toggle" dir="ltr" data-lang="fa"
+      aria-label="تغییر زبان">
+      <span data-opt="fa">فا</span>
+      <span data-opt="en">EN</span>
+    </button>
+  </header>
+  <div class="layout">
+    <details class="toc" open><summary><span data-fa="فهرست درس‌ها" data-en="Lesson list">فهرست درس‌ها</span></summary><nav class="side" aria-label="lessons"><p class="mod" data-fa="شروع کتاب" data-en="Opening">شروع کتاب</p><p class="unit" data-fa="فهرست" data-en="Contents">فهرست</p><a class="" href="toc.html" data-fa="فهرست" data-en="Contents">فهرست</a><p class="mod" data-fa="پودمان ۱: برنامه‌نویسی پایتون" data-en="Module 1: Python programming">پودمان ۱: برنامه‌نویسی پایتون</p><p class="unit" data-fa="معرفی پودمان" data-en="Module introduction">معرفی پودمان</p><a class="" href="p1-intro.html" data-fa="معرفی پودمان پایتون" data-en="Introducing the Python module">معرفی پودمان پایتون</a><p class="unit" data-fa="مدل‌سازی داده" data-en="Data modeling">مدل‌سازی داده</p><a class="" href="p1-python.html" data-fa="پایتون و محیط برنامه‌نویسی" data-en="Python and the programming environment">پایتون و محیط برنامه‌نویسی</a><a class="" href="p1-vars.html" data-fa="متغیرها، نوع داده و عملگرها" data-en="Variables, types, and operators">متغیرها، نوع داده و عملگرها</a><a class="" href="p1-cast.html" data-fa="ورودی و تبدیل نوع" data-en="Input and type casting">ورودی و تبدیل نوع</a><a class="" href="p1-lists.html" data-fa="لیست‌ها" data-en="Lists">لیست‌ها</a><a class="" href="p1-if.html" data-fa="شرط‌های ساده" data-en="Simple conditions">شرط‌های ساده</a><a class="" href="p1-elif.html" data-fa="if، elif و else" data-en="if, elif, and else">if، elif و else</a><a class="" href="p1-for.html" data-fa="حلقه for و range" data-en="The for loop and range">حلقه for و range</a><a class="" href="p1-while.html" data-fa="حلقه while و کنترل حلقه" data-en="The while loop and loop control">حلقه while و کنترل حلقه</a><a class="" href="p1-assess-data.html" data-fa="ارزشیابی مدل‌سازی داده" data-en="Data-modeling assessment">ارزشیابی مدل‌سازی داده</a><p class="unit" data-fa="توابع و ماژول‌ها" data-en="Functions and modules">توابع و ماژول‌ها</p><a class="" href="p1-sets.html" data-fa="مجموعه (set)" data-en="Sets">مجموعه (set)</a><a class="" href="p1-dict.html" data-fa="دیکشنری" data-en="Dictionaries">دیکشنری</a><a class="" href="p1-quiz.html" data-fa="پروژه بازی Quiz" data-en="Quiz game project">پروژه بازی Quiz</a><a class="" href="p1-tuple.html" data-fa="تاپل" data-en="Tuples">تاپل</a><a class="" href="p1-func.html" data-fa="تعریف تابع، پارامتر و return" data-en="Defining functions, parameters, and return">تعریف تابع، پارامتر و return</a><a class="" href="p1-func-more.html" data-fa="تمرین تابع و مرتب‌سازی" data-en="Function practice and sorting">تمرین تابع و مرتب‌سازی</a><a class="" href="p1-modules.html" data-fa="ماژول‌ها و تفاوت تابع و متد" data-en="Modules, and functions versus methods">ماژول‌ها و تفاوت تابع و متد</a><a class="" href="p1-assess-func.html" data-fa="ارزشیابی توابع و ماژول‌ها" data-en="Functions and modules assessment">ارزشیابی توابع و ماژول‌ها</a><p class="mod" data-fa="پودمان ۲: صفحات وب ایستا" data-en="Module 2: Static web pages">پودمان ۲: صفحات وب ایستا</p><p class="unit" data-fa="معرفی پودمان" data-en="Module introduction">معرفی پودمان</p><a class="" href="p2-intro.html" data-fa="معرفی پودمان صفحات ایستا" data-en="Introducing static web pages">معرفی پودمان صفحات ایستا</a><p class="unit" data-fa="ساختار با HTML" data-en="Structure with HTML">ساختار با HTML</p><a class="" href="p2-web.html" data-fa="وب چگونه کار می‌کند" data-en="How the web works">وب چگونه کار می‌کند</a><a class="" href="p2-concepts.html" data-fa="مفاهیم طراحی وب و نقشه سایت" data-en="Web-design concepts and the site map">مفاهیم طراحی وب و نقشه سایت</a><a class="" href="p2-tags.html" data-fa="اولین صفحه HTML" data-en="A first HTML page">اولین صفحه HTML</a><a class="" href="p2-text.html" data-fa="متن، لیست و پیوند" data-en="Text, lists, and links">متن، لیست و پیوند</a><a class="" href="p2-img.html" data-fa="تصویر در صفحه" data-en="Images on the page">تصویر در صفحه</a><a class="" href="p2-forms.html" data-fa="فرم‌ها" data-en="Forms">فرم‌ها</a><a class="" href="p2-semantic.html" data-fa="عناصر معنایی" data-en="Semantic elements">عناصر معنایی</a><a class="" href="p2-assess-html.html" data-fa="ارزشیابی HTML" data-en="HTML assessment">ارزشیابی HTML</a><p class="unit" data-fa="ظاهر با CSS" data-en="Appearance with CSS">ظاهر با CSS</p><a class="" href="p2-css-start.html" data-fa="نوشتن CSS" data-en="Writing CSS">نوشتن CSS</a><a class="" href="p2-css-look.html" data-fa="رنگ، پس‌زمینه و انتخاب‌گر" data-en="Color, background, and selectors">رنگ، پس‌زمینه و انتخاب‌گر</a><a class="" href="p2-box.html" data-fa="مدل جعبه‌ای و display" data-en="The box model and display">مدل جعبه‌ای و display</a><a class="" href="p2-flex.html" data-fa="چیدمان با Flexbox" data-en="Layout with Flexbox">چیدمان با Flexbox</a><a class="" href="p2-flex-work.html" data-fa="کارگاه چیدمان صفحه" data-en="Page-layout workshop">کارگاه چیدمان صفحه</a><a class="" href="p2-media.html" data-fa="مدیا کوئری و ارزشیابی CSS" data-en="Media queries and the CSS assessment">مدیا کوئری و ارزشیابی CSS</a><p class="mod" data-fa="پودمان ۳: صفحات وب تعاملی" data-en="Module 3: Interactive web pages">پودمان ۳: صفحات وب تعاملی</p><p class="unit" data-fa="معرفی پودمان" data-en="Module introduction">معرفی پودمان</p><a class="" href="p3-intro.html" data-fa="معرفی پودمان تعاملی" data-en="Introducing the interactive module">معرفی پودمان تعاملی</a><p class="unit" data-fa="بوت‌استرپ" data-en="Bootstrap">بوت‌استرپ</p><a class="" href="p3-bs-start.html" data-fa="فریم‌ورک و شروع بوت‌استرپ" data-en="Frameworks and starting Bootstrap">فریم‌ورک و شروع بوت‌استرپ</a><a class="" href="p3-bs-util.html" data-fa="فاصله، گردی و لیست" data-en="Spacing, rounding, and lists">فاصله، گردی و لیست</a><a class="" href="p3-bs-header.html" data-fa="سرصفحه فروشگاه" data-en="The shop header">سرصفحه فروشگاه</a><a class="" href="p3-bs-grid.html" data-fa="شبکه Grid" data-en="The grid">شبکه Grid</a><a class="" href="p3-bs-rwd.html" data-fa="کلاس‌های واکنش‌گرا" data-en="Responsive classes">کلاس‌های واکنش‌گرا</a><a class="" href="p3-bs-nav.html" data-fa="نوار ناوبری و جزئیات محصول" data-en="Navbar and product details">نوار ناوبری و جزئیات محصول</a><a class="" href="p3-bs-form.html" data-fa="فرم و پنجره Modal" data-en="Forms and modals">فرم و پنجره Modal</a><a class="" href="p3-bs-show.html" data-fa="کاروسل و آکاردئون" data-en="Carousel and accordion">کاروسل و آکاردئون</a><a class="" href="p3-bs-assess.html" data-fa="ارزشیابی بوت‌استرپ" data-en="Bootstrap assessment">ارزشیابی بوت‌استرپ</a><p class="unit" data-fa="جاوااسکریپت" data-en="JavaScript">جاوااسکریپت</p><a class="" href="p3-js-start.html" data-fa="جاوااسکریپت در صفحه وب" data-en="JavaScript on the page">جاوااسکریپت در صفحه وب</a><a class="" href="p3-js-vars.html" data-fa="متغیر و نوع داده" data-en="Variables and data types">متغیر و نوع داده</a><a class="" href="p3-js-ops.html" data-fa="عملگرها" data-en="Operators">عملگرها</a><a class="" href="p3-js-data.html" data-fa="آرایه و شیء" data-en="Arrays and objects">آرایه و شیء</a><a class="" href="p3-js-if.html" data-fa="شرط در جاوااسکریپت" data-en="Conditions in JavaScript">شرط در جاوااسکریپت</a><a class="" href="p3-js-loops.html" data-fa="حلقه‌ها" data-en="Loops">حلقه‌ها</a><a class="" href="p3-js-func.html" data-fa="تابع‌ها" data-en="Functions">تابع‌ها</a><a class="" href="p3-js-dom.html" data-fa="صفحه، رویداد و اعتبار فرم" data-en="The page, events, and form validation">صفحه، رویداد و اعتبار فرم</a><a class="" href="p3-js-assess.html" data-fa="ارزشیابی جاوااسکریپت" data-en="JavaScript assessment">ارزشیابی جاوااسکریپت</a><p class="mod" data-fa="پودمان ۴: توسعه وب پایتون" data-en="Module 4: Python for the web">پودمان ۴: توسعه وب پایتون</p><p class="unit" data-fa="معرفی پودمان" data-en="Module introduction">معرفی پودمان</p><a class="" href="p4-intro.html" data-fa="معرفی پودمان شیءگرایی" data-en="Introducing the object-oriented module">معرفی پودمان شیءگرایی</a><p class="unit" data-fa="شیءگرایی" data-en="Object-oriented programming">شیءگرایی</p><a class="" href="p4-idea.html" data-fa="ایده شیء و کلاس" data-en="The idea of objects and classes">ایده شیء و کلاس</a><a class="" href="p4-class.html" data-fa="ساخت کلاس و متد" data-en="Writing a class and methods">ساخت کلاس و متد</a><a class="" href="p4-inherit.html" data-fa="وراثت" data-en="Inheritance">وراثت</a><a class="" href="p4-protect.html" data-fa="داده معتبر و استفاده داخلی" data-en="Valid data and internal use">داده معتبر و استفاده داخلی</a><a class="" href="p4-assess-oop.html" data-fa="ارزشیابی برنامه شیءگرا" data-en="Object-oriented assessment">ارزشیابی برنامه شیءگرا</a><p class="unit" data-fa="فایل و توسعه" data-en="Files and development">فایل و توسعه</p><a class="" href="p4-files.html" data-fa="خواندن و نوشتن فایل متنی" data-en="Reading and writing text files">خواندن و نوشتن فایل متنی</a><a class="" href="p4-errors.html" data-fa="پیمایش فایل و مدیریت خطا" data-en="Walking a file and handling errors">پیمایش فایل و مدیریت خطا</a><a class="" href="p4-json.html" data-fa="چند فایل و JSON" data-en="Several files and JSON">چند فایل و JSON</a><a class="" href="p4-assess-files.html" data-fa="ارزشیابی کار با فایل" data-en="Files assessment">ارزشیابی کار با فایل</a><p class="mod" data-fa="پودمان ۵: برنامه‌نویسی جنگو" data-en="Module 5: Django">پودمان ۵: برنامه‌نویسی جنگو</p><p class="unit" data-fa="معرفی پودمان" data-en="Module introduction">معرفی پودمان</p><a class="" href="p5-intro.html" data-fa="معرفی پودمان جنگو" data-en="Introducing the Django module">معرفی پودمان جنگو</a><p class="unit" data-fa="ایجاد وب‌اپلیکیشن" data-en="Creating the web app">ایجاد وب‌اپلیکیشن</p><a class="" href="p5-what.html" data-fa="جنگو چیست و نصب" data-en="What Django is, and installing it">جنگو چیست و نصب</a><a class="current" href="p5-project.html" data-fa="پروژه، اپ و اولین view" data-en="Project, app, and the first view">پروژه، اپ و اولین view</a><a class="" href="p5-template.html" data-fa="قالب و دمای واقعی" data-en="Templates and a real temperature">قالب و دمای واقعی</a><a class="" href="p5-assess-create.html" data-fa="ارزشیابی ایجاد وب‌اپلیکیشن" data-en="Creating-the-app assessment">ارزشیابی ایجاد وب‌اپلیکیشن</a><p class="unit" data-fa="توسعه وب‌اپلیکیشن" data-en="Developing the web app">توسعه وب‌اپلیکیشن</p><a class="" href="p5-model.html" data-fa="مدل شهر و پنل ادمین" data-en="The city model and the admin">مدل شهر و پنل ادمین</a><a class="" href="p5-list.html" data-fa="خواندن شهرها و نمایش فهرست" data-en="Reading cities and showing the list">خواندن شهرها و نمایش فهرست</a><a class="" href="p5-auth.html" data-fa="ورود و خروج" data-en="Sign-in and sign-out">ورود و خروج</a><a class="" href="p5-crud.html" data-fa="افزودن و حذف شهر" data-en="Adding and deleting a city">افزودن و حذف شهر</a><a class="" href="p5-bugs.html" data-fa="باگ و امنیت" data-en="Bugs and security">باگ و امنیت</a><p class="mod" data-fa="پایان کتاب" data-en="Back of the book">پایان کتاب</p><p class="unit" data-fa="منابع" data-en="References">منابع</p><a class="" href="refs.html" data-fa="منابع کتاب" data-en="Book references">منابع کتاب</a></nav></details>
+    <div class="main">
+      <h1 class="section-title" data-fa="پروژه، اپ و اولین view" data-en="Project, app, and the first view">پروژه، اپ و اولین view</h1><article class="lesson" lang="fa" dir="rtl" data-lang-block="fa"><p class="page-mark">صفحه ۲۸۰</p>
+<h3 id="_1">ایجاد پروژه آب‌وهوا</h3>
+<p>در <code>Vscode</code> از منو <code>File</code> گزینه <code>Open</code> <code>Folder</code> را کلیک کنید. سپس یک‌پوشه جدید با نام <code>meteo</code> در مسیر دلخواه ایجاد کرده و پوشه <code>meteo</code> ساخته شده را باز کنید (شکل 5):</p>
+<p><img alt="شکل 5 باز کردن پوشه meteo" src="../images/p286-01.png" /></p>
+<p>شکل 5 باز کردن پوشه <code>meteo</code></p>
+<p>دوباره ترمینال را باز و دستور زیر را اجرا کنید (شکل 6):</p>
+<div class="code-wrap" dir="ltr"><pre><code>.django-admin startproject config
+</code></pre></div>
+<p><img alt="شکل 6 ایجاد پروژه" src="../images/p286-02.png" /></p>
+<p>شکل 6 ایجاد پروژه</p>
+<hr />
+<p class="page-mark">صفحه ۲۸۱</p>
+<p>دستور قبل، پوشه پروژه را با نام <code>Config</code> در مسیر جاری ایجاد می‌کند که حاوی فایل تنظیمات <code>settings.py</code> و فایل‌های اصلی پروژه است. حرف نقطه در انتهای دستور فوق به معنی مسیر جاری است.</p>
+<p>آشنایی با برخی فایل‌های اصلی پروژه فایل<code>settings.py:</code> تنظیمات اصلی پروژه در این فایل قرار می‌گیرند.</p>
+<p>فایل<code>urls.py:</code> هرگاه کاربر وارد یک آدرس (<code>URL</code>) شود، این فایل تعیین می‌کند که سایت کدام صفحه یا بخش را نمایش دهد.</p>
+<h3 id="_2">کنجکاوی</h3>
+<p>در مورد کاربرد فایل‌های دیگر موجود در پروژه تحقیق کنید.</p>
+<p>اجرای پروژه جنگو دستور زیر را در ترمینال اجرا نمایید.</p>
+<div class="code-wrap" dir="ltr"><pre><code>python manage.py runserver
+</code></pre></div>
+<p>دستور <code>runserver</code> یک وب سرور (<code>web</code> <code>server</code>) مجازی کوچک برای پروژه جنگو راه‌اندازی می‌کند، این وب سرور فقط مخصوص برنامه‌نویس جنگو است تا بتواند پروژه جنگو را در رایانه خودش اجرا کند (شکل 7).</p>
+<p><img alt="شکل 7 راه‌اندازی موفق وب سرور جنگو" src="../images/p287-01.png" /></p>
+<p>شکل 7 راه‌اندازی موفق وب سرور جنگو</p>
+<hr />
+<p class="page-mark">صفحه ۲۸۲</p>
+<p>بعد از اجرای دستور، یک فایل با نام <code>db.sqlite3</code> کنار فایل <code>manage.py</code> ساخته می‌شود. این فایل، پایگاه‌داده پیش‌فرض جنگو است. جنگو از این فایل برای مدیریت پایگاه‌داده و جداول استفاده می‌کند.</p>
+<p>همان‌طوری که در شکل 7 مشخص شده است، می‌توانید سایت خود را در آدرس <code>http://127.0.0.1:8000</code> مشاهده کنید.</p>
+<p>با تایپ آدرس فوق درون نوار آدرس مرورگر، صفحه اصلی سایت را مشابه شکل 8 مشاهده می‌کنید. ممکن است به‌دلیل نسخه‌های متفاوت جنگو تصویر متفاوتی مشاهده کنید.</p>
+<p><img alt="شکل 8 اجرای موفقیت‌آمیز سایت" src="../images/p288-01.png" /></p>
+<p>شکل 8 اجرای موفقیت‌آمیز سایت</p>
+<p>آدرس <code>ip</code> که جنگو روی آن اجرا می‌شود، 127.0.0.1 است. این آدرس به آدرس <code>local</code> معروف است. این <code>ip</code> به رایانه جاری اشاره می‌کند، یعنی همین رایانه‌ای که سرور جنگو را روی آن اجرا کرده‌اید. اگر رایانه شما در یک شبکه قرار داشته باشد، رایانه‌های دیگر نمی‌توانند با این آدرس، به رایانه شما متصل شوند.</p>
+<h3 id="_3">کنجکاوی</h3>
+<p>بررسی کنید، برای پروژه‌هایی که در بستر اینترنت در حال استفاده هستند، از چه وب‌سرورها و چه پایگاه داده‌هایی استفاده می‌شود؟</p>
+<p>ساخت اولین <code>app</code> در جنگو یک پروژه جنگو می‌تواند شامل یک یا چندین <code>app</code> (اپلیکیشن) باشد. پروژه‌ای که با دستور <code>startproject</code> ایجاد کردید، هنوز <code>app</code> ندارد. در جنگو می‌توانید برای وظایف مستقل یک <code>app</code> ایجاد کنید.</p>
+<p>فرض کنید پروژه شما یک کارخانه در دنیای واقعی است، واحدهای تولید کارخانه هر‌کدام می‌توانند مانند یک <code>app</code> باشند. به‌عنوان‌مثال، واحدی که وظیفه رنگ‌کردن خودرو را بر‌عهده دارد، مستقل از واحدهای دیگر می‌تواند عمل کند. کافی است یک خودرو به این واحد تحویل شود و رنگ درخواستی مشخص شود. این واحد کار خود را انجام داده و خودرو را رنگ شده تحویل می‌دهد.</p>
+<p>هر <code>app</code> وظیفه خاصی انجام می‌دهد و باید به‌صورتی ایجاد گردد که قابلیت استفاده مجدد داشته باشد، یعنی یک <code>app</code> را بتوان در پروژه دیگری استفاده کرد و همان وظیفه را به‌خوبی انجام دهد.</p>
+<hr />
+<p class="page-mark">صفحه ۲۸۳</p>
+<p>برای ساخت <code>app</code> از دستور <code>startapp</code> استفاده می‌شود، ابتدا سرور جنگو را متوقف کرده (با <code>ctrl</code> + <code>c</code>) و سپس دستور زیر را اجرا کنید.</p>
+<div class="code-wrap" dir="ltr"><pre><code>python manage.py startapp weather
+</code></pre></div>
+<p>یک‌پوشه با نام <code>weather</code> ساخته می‌شود. پوشه <code>weather</code> در حقیقت یک <code>app</code> جنگویی است که وظیفه نمایش وضعیت آب‌وهوای شهر موردنظر را برعهده دارد.</p>
+<p>پس از ساخت <code>weather</code> <code>app</code> ساختار پروژه همانند شکل 9 خواهد بود.</p>
+<p><img alt="شکل 9 محتوای weather app" src="../images/p289-01.png" /></p>
+<p>شکل 9 محتوای <code>weather</code> <code>app</code></p>
+<p>معرفی <code>app</code> ایجاد شده به جنگو در <code>settings.py</code> در این مرحله، لازم است <code>app</code> ساخته شده به جنگو معرفی شود. برای این کار فایل <code>settings.py</code> را باز کنید و <code>weather</code> را مطابق شکل 10 به انتهای لیست <code>INSTALLED_APPS</code> اضافه کنید.</p>
+<p><img alt="شکل 10 اضافه‌کردن weather به installed_apps" src="../images/p289-02.png" /></p>
+<p>شکل 10 اضافه‌کردن <code>weather</code> به <code>installed_apps</code></p>
+<hr />
+<p class="page-mark">صفحه ۲۸۴</p>
+<p>ساخت اولین <code>view</code> هر <code>view</code> که در فایل <code>views.py</code> است، برحسب وظیفه‌اش، با کاربر تعامل می‌کند، پس برای نمایش دمای یک شهر، یک <code>view</code> باید ساخته شود.</p>
+<p>فایل‌های <code>View</code> در جنگو مسئول پاسخ‌گویی به درخواست کاربران هستند، یعنی <code>Request</code> کاربر را بعد از مسیریابی می‌گیرند و به آن درخواست یک پاسخ درست می‌دهند.</p>
+<p>مرحله اول: فایل <code>views.py</code> را باز کنید. یک تابع با نام <code>show_temp_view</code> همانند شکل 11 اضافه کنید:</p>
+<p><img alt="شکل 11 ایجاد view با نام show_temp_view" src="../images/p290-01.png" /></p>
+<p>شکل 11 ایجاد <code>view</code> با نام <code>show_temp_view</code></p>
+<h3 id="_4">توضیحات کدها:</h3>
+<p>خط 1: کلاس <code>HttpResponse</code> از ماژول <code>http</code> وارد (<code>import</code>) شده است.</p>
+<p>خط 3: یک تابع با نام <code>show_temp_view</code> ایجاد شده است. هر <code>view</code> در جنگو، تابعی است که باید پارامتر <code>request</code> را داشته باشد.</p>
+<p>خط 4: یک <code>object</code> از نوع <code>HttpResponse</code> ایجاد شده است. <code>HttpResponse</code> محتوای نهاییِ ارسال‌شده به مرورگر را در خود نگهداری می‌کند و مشخص می‌کند کاربر چه چیزی از سرور دریافت کند.</p>
+<p>تابع <code>show_temp_view</code> در فایل <code>views.py</code> فقط یک متن ساده، نمایش خواهد داد.</p>
+<p>فایل را ذخیره نمایید و سرور جنگو را با <code>python</code> <code>manage.py</code> <code>runserver</code> راه‌اندازی کنید.</p>
+<p>آدرس صفحه اصلی را وارد کنید، باز هم صفحه خوشامدگویی را می‌بینید. پس لازم است تغییراتی اعمال کنید تا در صفحه اصلی سایت، به‌جای خوشامدگویی متن «همدان 27 درجه سانتی‌گراد» نمایش داده شود.</p>
+<p>فایل <code>urls.py</code> در پوشه <code>config</code> را باز کنید (شکل 12).</p>
+<hr />
+<p class="page-mark">صفحه ۲۸۵</p>
+<p><img alt="شکل 12 فایل urls.py" src="../images/p291-01.png" /></p>
+<p>شکل 12 فایل <code>urls.py</code></p>
+<p>بعد از ایجاد پروژه، فایل <code>urls.py</code> نیز کنار <code>settings.py</code> ایجاد می‌شود. هرگاه کاربر وارد یک آدرس (<code>URL</code>) شود، این فایل تعیین می‌کند که سایت کدام صفحه یا بخش را نمایش دهد.</p>
+<h3 id="_5">توضیحات کدها:</h3>
+<p>خط 4: جنگو از یک لیست با نام <code>urlpatterns</code> برای مدیریت آدرس صفحات سایت استفاده می‌کند.</p>
+<p>خط 5: هر عضو از <code>urlpattrns</code> یک <code>path</code> است که معادل آدرس یک صفحه در سایت است. به‌صورت پیش‌فرض یک <code>path</code> برای صفحه پنل ادمین جنگو با مقدار <code>/admin</code> وجود دارد که معادل آدرس <code>http://127.0.0.1:8000/admin</code> در مرورگر است.</p>
+<p>آدرس <code>http://127.0.0.1:8000/admin</code> را در مرورگر باز کنید. صفحه ورود به پنل ادمین همانند شکل 13 از شما نام کاربری و رمز عبور را درخواست می‌کند. در ادامه روش ساخت نام کاربری و رمز عبور را خواهید آموخت.</p>
+<p><img alt="شکل 13 صفحه ورود به پنل ادمین" src="../images/p291-02.png" /></p>
+<p>شکل 13 صفحه ورود به پنل ادمین</p>
+<hr />
+<p class="page-mark">صفحه ۲۸۶</p>
+<p>مرحله دوم: دوباره وارد فایل <code>urls.py</code> شده و تغییراتی همانند شکل 14 در فایل اعمال کنید.</p>
+<p><img alt="شکل 14 اضافه‌کردن path جدید" src="../images/p292-01.png" /></p>
+<p>شکل 14 اضافه‌کردن <code>path</code> جدید</p>
+<h3 id="_6">توضیحات کدها:</h3>
+<p>خط 2: ماژول <code>include</code> وارد (<code>import</code>) شده است.</p>
+<p>خط 6: یک <code>path</code> جدید اضافه شده است. اولین آرگومان تابع <code>path</code> در این دستور فقط یک‌رشته خالی است و به این معناست که اگر در آدرس (<code>URL</code>) رسیده به سرور جنگو، جلوی آدرس سایت هیچ عبارتی درج نشده بود، با استفاده از ماژول <code>include</code> به سراغ فایل <code>urls.py</code> در <code>weather</code> <code>app</code> بروید و کار را از آنجا ادامه دهید. در واقع این خط، درخواست‌های صفحۀ اصلی را به <code>weather</code> <code>app</code> ارسال می‌کند.</p>
+<p>مرحله سوم: وارد پوشه <code>weather</code> شده و برای <code>weather</code> <code>app</code> یک <code>urls.py</code> همانند شکل 15 ایجاد کنید.</p>
+<p>هر <code>app</code> می‌تواند یک <code>urls.py</code> اختصاصی داشته باشد.</p>
+<p><img alt="شکل 15 ایجاد فایل urls.py برای app" src="../images/p292-02.png" /></p>
+<p>شکل 15 ایجاد فایل <code>urls.py</code> برای <code>app</code></p>
+<hr /></article><article class="lesson" lang="en" dir="ltr" data-lang-block="en" hidden><p class="page-mark">Page 280</p>
+<h3 id="creating-the-weather-project">Creating the weather project</h3>
+<p>In <code>Vscode</code>, from the <code>File</code> menu, click <code>Open</code> <code>Folder</code>. Then create a new folder named <code>meteo</code> in a path of your choice and open the <code>meteo</code> folder you created (Figure 5):</p>
+<p><img alt="Figure 5 opening the meteo folder" src="../images/p286-01.png" /></p>
+<p>Figure 5 opening the <code>meteo</code> folder</p>
+<p>Open the terminal again and run the following command (Figure 6):</p>
+<div class="code-wrap" dir="ltr"><pre><code>.django-admin startproject config
+</code></pre></div>
+<p><img alt="Figure 6 creating the project" src="../images/p286-02.png" /></p>
+<p>Figure 6 creating the project</p>
+<hr />
+<p class="page-mark">Page 281</p>
+<p>The previous command creates a project folder named <code>Config</code> in the current path, which contains the <code>settings.py</code> settings file and the project’s main files. The period at the end of the command above means the current path.</p>
+<p>Getting to know some of the project’s main files: the <code>settings.py</code> file: the project’s main settings are placed in this file.</p>
+<p>The <code>urls.py</code> file: whenever the user goes to an address (<code>URL</code>), this file decides which page or section of the site to display.</p>
+<h3 id="try-this">Try this</h3>
+<p>Research the purpose of the other files in the project.</p>
+<p>Running the Django project: run the following command in the terminal.</p>
+<div class="code-wrap" dir="ltr"><pre><code>python manage.py runserver
+</code></pre></div>
+<p>The <code>runserver</code> command starts a small virtual web server (<code>web</code> <code>server</code>) for the Django project. This web server is only for the Django programmer so they can run the Django project on their own computer (Figure 7).</p>
+<p><img alt="Figure 7 successfully starting the Django web server" src="../images/p287-01.png" /></p>
+<p>Figure 7 successfully starting the Django web server</p>
+<hr />
+<p class="page-mark">Page 282</p>
+<p>After you run the command, a file named <code>db.sqlite3</code> is created next to the <code>manage.py</code> file. This file is Django’s default database. Django uses this file to manage the database and tables.</p>
+<p>As shown in Figure 7, you can view your site at the address <code>http://127.0.0.1:8000</code>.</p>
+<p>By typing the address above in the browser’s address bar, you see the site’s home page similar to Figure 8. You may see a different image because of different Django versions.</p>
+<p><img alt="Figure 8 successfully running the site" src="../images/p288-01.png" /></p>
+<p>Figure 8 successfully running the site</p>
+<p>The <code>ip</code> address that Django runs on is 127.0.0.1. This address is known as the <code>local</code> address. This <code>ip</code> points to the current computer, meaning the same computer on which you have run the Django server. If your computer is on a network, other computers cannot connect to your computer with this address.</p>
+<h3 id="try-this_1">Try this</h3>
+<p>Investigate which web servers and which databases are used for projects that are in use on the internet.</p>
+<p>Creating the first <code>app</code> in Django: a Django project can include one or more <code>app</code>s (applications). The project you created with the <code>startproject</code> command still has no <code>app</code>. In Django you can create an <code>app</code> for independent tasks.</p>
+<p>Suppose your project is a factory in the real world. Each of the factory’s production units can be like an <code>app</code>. For example, the unit responsible for painting cars can operate independently of the other units. It is enough to deliver a car to this unit and specify the requested color. This unit does its work and delivers the painted car.</p>
+<p>Each <code>app</code> performs a specific task and should be created so that it is reusable, meaning you can use an <code>app</code> in another project and it performs the same task well.</p>
+<hr />
+<p class="page-mark">Page 283</p>
+<p>To create an <code>app</code>, the <code>startapp</code> command is used. First stop the Django server (with <code>ctrl</code> + <code>c</code>) and then run the following command.</p>
+<div class="code-wrap" dir="ltr"><pre><code>python manage.py startapp weather
+</code></pre></div>
+<p>A folder named <code>weather</code> is created. The <code>weather</code> folder is in fact a Django <code>app</code> whose task is to display the weather for the desired city.</p>
+<p>After creating the <code>weather</code> <code>app</code>, the project structure will be like Figure 9.</p>
+<p><img alt="Figure 9 contents of the weather app" src="../images/p289-01.png" /></p>
+<p>Figure 9 contents of the <code>weather</code> <code>app</code></p>
+<p>Introducing the created <code>app</code> to Django in <code>settings.py</code>: at this stage, you need to introduce the created <code>app</code> to Django. To do this, open the <code>settings.py</code> file and add <code>weather</code> to the end of the <code>INSTALLED_APPS</code> list as shown in Figure 10.</p>
+<p><img alt="Figure 10 adding weather to installed_apps" src="../images/p289-02.png" /></p>
+<p>Figure 10 adding <code>weather</code> to <code>installed_apps</code></p>
+<hr />
+<p class="page-mark">Page 284</p>
+<p>Creating the first <code>view</code>: each <code>view</code> in the <code>views.py</code> file interacts with the user according to its task, so to display a city’s temperature, a <code>view</code> must be created.</p>
+<p><code>View</code> files in Django are responsible for responding to user requests, meaning they receive the user’s <code>Request</code> after routing and give that request a correct response.</p>
+<p>Step one: open the <code>views.py</code> file. Add a function named <code>show_temp_view</code> as shown in Figure 11:</p>
+<p><img alt="Figure 11 creating a view named show_temp_view" src="../images/p290-01.png" /></p>
+<p>Figure 11 creating a <code>view</code> named <code>show_temp_view</code></p>
+<h3 id="code-notes">Code notes:</h3>
+<p>Line 1: the <code>HttpResponse</code> class has been imported from the <code>http</code> module.</p>
+<p>Line 3: a function named <code>show_temp_view</code> has been created. Every <code>view</code> in Django is a function that must have the <code>request</code> parameter.</p>
+<p>Line 4: an <code>object</code> of type <code>HttpResponse</code> has been created. <code>HttpResponse</code> holds the final content sent to the browser and determines what the user receives from the server.</p>
+<p>The <code>show_temp_view</code> function in the <code>views.py</code> file will display only a simple text.</p>
+<p>Save the file and start the Django server with <code>python</code> <code>manage.py</code> <code>runserver</code>.</p>
+<p>Enter the home page address; you still see the welcome page. So you need to make changes so that on the site’s home page, instead of the welcome message, the text “Hamedan 27 degrees Celsius” is displayed.</p>
+<p>Open the <code>urls.py</code> file in the <code>config</code> folder (Figure 12).</p>
+<hr />
+<p class="page-mark">Page 285</p>
+<p><img alt="Figure 12 the urls.py file" src="../images/p291-01.png" /></p>
+<p>Figure 12 the <code>urls.py</code> file</p>
+<p>After creating the project, the <code>urls.py</code> file is also created next to <code>settings.py</code>. Whenever the user goes to an address (<code>URL</code>), this file decides which page or section of the site to display.</p>
+<h3 id="code-notes_1">Code notes:</h3>
+<p>Line 4: Django uses a list named <code>urlpatterns</code> to manage the site’s page addresses.</p>
+<p>Line 5: each member of <code>urlpattrns</code> is a <code>path</code> that corresponds to the address of a page on the site. By default there is a <code>path</code> for Django’s admin panel page with the value <code>/admin</code>, which corresponds to the address <code>http://127.0.0.1:8000/admin</code> in the browser.</p>
+<p>Open the address <code>http://127.0.0.1:8000/admin</code> in the browser. The admin panel login page, as in Figure 13, asks you for a username and password. Later you will learn how to create a username and password.</p>
+<p><img alt="Figure 13 the admin panel login page" src="../images/p291-02.png" /></p>
+<p>Figure 13 the admin panel login page</p>
+<hr />
+<p class="page-mark">Page 286</p>
+<p>Step two: go back into the <code>urls.py</code> file and apply changes as shown in Figure 14.</p>
+<p><img alt="Figure 14 adding a new path" src="../images/p292-01.png" /></p>
+<p>Figure 14 adding a new <code>path</code></p>
+<h3 id="code-notes_2">Code notes:</h3>
+<p>Line 2: the <code>include</code> module has been imported.</p>
+<p>Line 6: a new <code>path</code> has been added. The first argument of the <code>path</code> function in this command is only an empty string, and it means that if in the address (<code>URL</code>) that reaches the Django server, no expression was entered after the site address, use the <code>include</code> module to go to the <code>urls.py</code> file in the <code>weather</code> <code>app</code> and continue from there. In fact this line sends home page requests to the <code>weather</code> <code>app</code>.</p>
+<p>Step three: go into the <code>weather</code> folder and create a <code>urls.py</code> for the <code>weather</code> <code>app</code> as shown in Figure 15.</p>
+<p>Each <code>app</code> can have its own <code>urls.py</code>.</p>
+<p><img alt="Figure 15 creating the urls.py file for the app" src="../images/p292-02.png" /></p>
+<p>Figure 15 creating the <code>urls.py</code> file for the <code>app</code></p>
+<hr /></article>
+      <aside class="extra">
+        <h2 data-fa="تمرین این بخش" data-en="Exercises for this section">تمرین این بخش</h2>
+        <p class="extra-note" data-fa="این تمرین‌ها و پیوندها اضافه بر متن کتاب‌اند." data-en="These exercises and links are in addition to the book.">این تمرین‌ها و پیوندها اضافه بر متن کتاب‌اند.</p>
+        <ol><li data-fa="پروژه و اپ آب‌وهوا را بساز، migrate را اجرا کن و یک view بساز که یک جمله ساده را در مرورگر نشان بدهد." data-en="Create the project and the weather app, run migrate, and build a view that shows one plain sentence in the browser.">پروژه و اپ آب‌وهوا را بساز، migrate را اجرا کن و یک view بساز که یک جمله ساده را در مرورگر نشان بدهد.</li><li data-fa="اگر مسیر را از urls حذف کنی صفحه باید ۴۰۴ بدهد. مسیر را برگردان تا همان جمله دوباره دیده شود." data-en="Removing the path from urls should make the page 404. Put the path back so the same sentence shows again.">اگر مسیر را از urls حذف کنی صفحه باید ۴۰۴ بدهد. مسیر را برگردان تا همان جمله دوباره دیده شود.</li></ol>
+        <h2 data-fa="پیوند مفید" data-en="Useful link">پیوند مفید</h2><ul><li><a href="https://docs.djangoproject.com/en/stable/intro/tutorial01/" data-fa="آموزش ۱: درخواست و پاسخ" data-en="Tutorial 1: requests and responses">آموزش ۱: درخواست و پاسخ</a></li></ul>
+      </aside>
+    <nav class="pager"><a rel="prev" class="prev" href="p5-what.html"><span class="pager-word" data-fa="قبلی" data-en="Previous">قبلی</span><span class="pager-name" data-fa="جنگو چیست و نصب" data-en="What Django is, and installing it">جنگو چیست و نصب</span></a><a rel="next" class="next" href="p5-template.html"><span class="pager-word" data-fa="بعدی" data-en="Next">بعدی</span><span class="pager-name" data-fa="قالب و دمای واقعی" data-en="Templates and a real temperature">قالب و دمای واقعی</span></a></nav>
+    </div>
+  </div>
+  <script src="../assets/search-index.js?v=4"></script>
+  <script src="../assets/app.js?v=4"></script>
+</body>
+</html>

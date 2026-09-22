@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title data-fa="جنگو چیست و نصب" data-en="What Django is, and installing it">جنگو چیست و نصب</title>
+  <link rel="icon" href="../assets/favicon.svg">
+  <link rel="stylesheet" href="../assets/style.css?v=4">
+</head>
+<body data-root="../">
+  <header class="top">
+    <a class="brand" href="../index.html">
+      <span data-fa="طراح سایت" data-en="Site Design">طراح سایت</span>
+      <small data-fa="پایه یازدهم" data-en="Grade 11">پایه یازدهم</small>
+    </a>
+    <div class="search-wrap">
+      <input id="q" type="search" autocomplete="off"
+        data-fa-placeholder="جستجو در درس‌ها" data-en-placeholder="Search lessons"
+        placeholder="جستجو در درس‌ها">
+      <div id="results" class="results" hidden></div>
+    </div>
+    <a class="download" href="../grade11-offline.zip?v=2" data-fa="دانلود کل سایت" data-en="Download the whole site">دانلود کل سایت</a>
+    <button type="button" id="lang-toggle" class="lang-toggle" dir="ltr" data-lang="fa"
+      aria-label="تغییر زبان">
+      <span data-opt="fa">فا</span>
+      <span data-opt="en">EN</span>
+    </button>
+  </header>
+  <div class="layout">
+    <details class="toc" open><summary><span data-fa="فهرست درس‌ها" data-en="Lesson list">فهرست درس‌ها</span></summary><nav class="side" aria-label="lessons"><p class="mod" data-fa="شروع کتاب" data-en="Opening">شروع کتاب</p><p class="unit" data-fa="فهرست" data-en="Contents">فهرست</p><a class="" href="toc.html" data-fa="فهرست" data-en="Contents">فهرست</a><p class="mod" data-fa="پودمان ۱: برنامه‌نویسی پایتون" data-en="Module 1: Python programming">پودمان ۱: برنامه‌نویسی پایتون</p><p class="unit" data-fa="معرفی پودمان" data-en="Module introduction">معرفی پودمان</p><a class="" href="p1-intro.html" data-fa="معرفی پودمان پایتون" data-en="Introducing the Python module">معرفی پودمان پایتون</a><p class="unit" data-fa="مدل‌سازی داده" data-en="Data modeling">مدل‌سازی داده</p><a class="" href="p1-python.html" data-fa="پایتون و محیط برنامه‌نویسی" data-en="Python and the programming environment">پایتون و محیط برنامه‌نویسی</a><a class="" href="p1-vars.html" data-fa="متغیرها، نوع داده و عملگرها" data-en="Variables, types, and operators">متغیرها، نوع داده و عملگرها</a><a class="" href="p1-cast.html" data-fa="ورودی و تبدیل نوع" data-en="Input and type casting">ورودی و تبدیل نوع</a><a class="" href="p1-lists.html" data-fa="لیست‌ها" data-en="Lists">لیست‌ها</a><a class="" href="p1-if.html" data-fa="شرط‌های ساده" data-en="Simple conditions">شرط‌های ساده</a><a class="" href="p1-elif.html" data-fa="if، elif و else" data-en="if, elif, and else">if، elif و else</a><a class="" href="p1-for.html" data-fa="حلقه for و range" data-en="The for loop and range">حلقه for و range</a><a class="" href="p1-while.html" data-fa="حلقه while و کنترل حلقه" data-en="The while loop and loop control">حلقه while و کنترل حلقه</a><a class="" href="p1-assess-data.html" data-fa="ارزشیابی مدل‌سازی داده" data-en="Data-modeling assessment">ارزشیابی مدل‌سازی داده</a><p class="unit" data-fa="توابع و ماژول‌ها" data-en="Functions and modules">توابع و ماژول‌ها</p><a class="" href="p1-sets.html" data-fa="مجموعه (set)" data-en="Sets">مجموعه (set)</a><a class="" href="p1-dict.html" data-fa="دیکشنری" data-en="Dictionaries">دیکشنری</a><a class="" href="p1-quiz.html" data-fa="پروژه بازی Quiz" data-en="Quiz game project">پروژه بازی Quiz</a><a class="" href="p1-tuple.html" data-fa="تاپل" data-en="Tuples">تاپل</a><a class="" href="p1-func.html" data-fa="تعریف تابع، پارامتر و return" data-en="Defining functions, parameters, and return">تعریف تابع، پارامتر و return</a><a class="" href="p1-func-more.html" data-fa="تمرین تابع و مرتب‌سازی" data-en="Function practice and sorting">تمرین تابع و مرتب‌سازی</a><a class="" href="p1-modules.html" data-fa="ماژول‌ها و تفاوت تابع و متد" data-en="Modules, and functions versus methods">ماژول‌ها و تفاوت تابع و متد</a><a class="" href="p1-assess-func.html" data-fa="ارزشیابی توابع و ماژول‌ها" data-en="Functions and modules assessment">ارزشیابی توابع و ماژول‌ها</a><p class="mod" data-fa="پودمان ۲: صفحات وب ایستا" data-en="Module 2: Static web pages">پودمان ۲: صفحات وب ایستا</p><p class="unit" data-fa="معرفی پودمان" data-en="Module introduction">معرفی پودمان</p><a class="" href="p2-intro.html" data-fa="معرفی پودمان صفحات ایستا" data-en="Introducing static web pages">معرفی پودمان صفحات ایستا</a><p class="unit" data-fa="ساختار با HTML" data-en="Structure with HTML">ساختار با HTML</p><a class="" href="p2-web.html" data-fa="وب چگونه کار می‌کند" data-en="How the web works">وب چگونه کار می‌کند</a><a class="" href="p2-concepts.html" data-fa="مفاهیم طراحی وب و نقشه سایت" data-en="Web-design concepts and the site map">مفاهیم طراحی وب و نقشه سایت</a><a class="" href="p2-tags.html" data-fa="اولین صفحه HTML" data-en="A first HTML page">اولین صفحه HTML</a><a class="" href="p2-text.html" data-fa="متن، لیست و پیوند" data-en="Text, lists, and links">متن، لیست و پیوند</a><a class="" href="p2-img.html" data-fa="تصویر در صفحه" data-en="Images on the page">تصویر در صفحه</a><a class="" href="p2-forms.html" data-fa="فرم‌ها" data-en="Forms">فرم‌ها</a><a class="" href="p2-semantic.html" data-fa="عناصر معنایی" data-en="Semantic elements">عناصر معنایی</a><a class="" href="p2-assess-html.html" data-fa="ارزشیابی HTML" data-en="HTML assessment">ارزشیابی HTML</a><p class="unit" data-fa="ظاهر با CSS" data-en="Appearance with CSS">ظاهر با CSS</p><a class="" href="p2-css-start.html" data-fa="نوشتن CSS" data-en="Writing CSS">نوشتن CSS</a><a class="" href="p2-css-look.html" data-fa="رنگ، پس‌زمینه و انتخاب‌گر" data-en="Color, background, and selectors">رنگ، پس‌زمینه و انتخاب‌گر</a><a class="" href="p2-box.html" data-fa="مدل جعبه‌ای و display" data-en="The box model and display">مدل جعبه‌ای و display</a><a class="" href="p2-flex.html" data-fa="چیدمان با Flexbox" data-en="Layout with Flexbox">چیدمان با Flexbox</a><a class="" href="p2-flex-work.html" data-fa="کارگاه چیدمان صفحه" data-en="Page-layout workshop">کارگاه چیدمان صفحه</a><a class="" href="p2-media.html" data-fa="مدیا کوئری و ارزشیابی CSS" data-en="Media queries and the CSS assessment">مدیا کوئری و ارزشیابی CSS</a><p class="mod" data-fa="پودمان ۳: صفحات وب تعاملی" data-en="Module 3: Interactive web pages">پودمان ۳: صفحات وب تعاملی</p><p class="unit" data-fa="معرفی پودمان" data-en="Module introduction">معرفی پودمان</p><a class="" href="p3-intro.html" data-fa="معرفی پودمان تعاملی" data-en="Introducing the interactive module">معرفی پودمان تعاملی</a><p class="unit" data-fa="بوت‌استرپ" data-en="Bootstrap">بوت‌استرپ</p><a class="" href="p3-bs-start.html" data-fa="فریم‌ورک و شروع بوت‌استرپ" data-en="Frameworks and starting Bootstrap">فریم‌ورک و شروع بوت‌استرپ</a><a class="" href="p3-bs-util.html" data-fa="فاصله، گردی و لیست" data-en="Spacing, rounding, and lists">فاصله، گردی و لیست</a><a class="" href="p3-bs-header.html" data-fa="سرصفحه فروشگاه" data-en="The shop header">سرصفحه فروشگاه</a><a class="" href="p3-bs-grid.html" data-fa="شبکه Grid" data-en="The grid">شبکه Grid</a><a class="" href="p3-bs-rwd.html" data-fa="کلاس‌های واکنش‌گرا" data-en="Responsive classes">کلاس‌های واکنش‌گرا</a><a class="" href="p3-bs-nav.html" data-fa="نوار ناوبری و جزئیات محصول" data-en="Navbar and product details">نوار ناوبری و جزئیات محصول</a><a class="" href="p3-bs-form.html" data-fa="فرم و پنجره Modal" data-en="Forms and modals">فرم و پنجره Modal</a><a class="" href="p3-bs-show.html" data-fa="کاروسل و آکاردئون" data-en="Carousel and accordion">کاروسل و آکاردئون</a><a class="" href="p3-bs-assess.html" data-fa="ارزشیابی بوت‌استرپ" data-en="Bootstrap assessment">ارزشیابی بوت‌استرپ</a><p class="unit" data-fa="جاوااسکریپت" data-en="JavaScript">جاوااسکریپت</p><a class="" href="p3-js-start.html" data-fa="جاوااسکریپت در صفحه وب" data-en="JavaScript on the page">جاوااسکریپت در صفحه وب</a><a class="" href="p3-js-vars.html" data-fa="متغیر و نوع داده" data-en="Variables and data types">متغیر و نوع داده</a><a class="" href="p3-js-ops.html" data-fa="عملگرها" data-en="Operators">عملگرها</a><a class="" href="p3-js-data.html" data-fa="آرایه و شیء" data-en="Arrays and objects">آرایه و شیء</a><a class="" href="p3-js-if.html" data-fa="شرط در جاوااسکریپت" data-en="Conditions in JavaScript">شرط در جاوااسکریپت</a><a class="" href="p3-js-loops.html" data-fa="حلقه‌ها" data-en="Loops">حلقه‌ها</a><a class="" href="p3-js-func.html" data-fa="تابع‌ها" data-en="Functions">تابع‌ها</a><a class="" href="p3-js-dom.html" data-fa="صفحه، رویداد و اعتبار فرم" data-en="The page, events, and form validation">صفحه، رویداد و اعتبار فرم</a><a class="" href="p3-js-assess.html" data-fa="ارزشیابی جاوااسکریپت" data-en="JavaScript assessment">ارزشیابی جاوااسکریپت</a><p class="mod" data-fa="پودمان ۴: توسعه وب پایتون" data-en="Module 4: Python for the web">پودمان ۴: توسعه وب پایتون</p><p class="unit" data-fa="معرفی پودمان" data-en="Module introduction">معرفی پودمان</p><a class="" href="p4-intro.html" data-fa="معرفی پودمان شیءگرایی" data-en="Introducing the object-oriented module">معرفی پودمان شیءگرایی</a><p class="unit" data-fa="شیءگرایی" data-en="Object-oriented programming">شیءگرایی</p><a class="" href="p4-idea.html" data-fa="ایده شیء و کلاس" data-en="The idea of objects and classes">ایده شیء و کلاس</a><a class="" href="p4-class.html" data-fa="ساخت کلاس و متد" data-en="Writing a class and methods">ساخت کلاس و متد</a><a class="" href="p4-inherit.html" data-fa="وراثت" data-en="Inheritance">وراثت</a><a class="" href="p4-protect.html" data-fa="داده معتبر و استفاده داخلی" data-en="Valid data and internal use">داده معتبر و استفاده داخلی</a><a class="" href="p4-assess-oop.html" data-fa="ارزشیابی برنامه شیءگرا" data-en="Object-oriented assessment">ارزشیابی برنامه شیءگرا</a><p class="unit" data-fa="فایل و توسعه" data-en="Files and development">فایل و توسعه</p><a class="" href="p4-files.html" data-fa="خواندن و نوشتن فایل متنی" data-en="Reading and writing text files">خواندن و نوشتن فایل متنی</a><a class="" href="p4-errors.html" data-fa="پیمایش فایل و مدیریت خطا" data-en="Walking a file and handling errors">پیمایش فایل و مدیریت خطا</a><a class="" href="p4-json.html" data-fa="چند فایل و JSON" data-en="Several files and JSON">چند فایل و JSON</a><a class="" href="p4-assess-files.html" data-fa="ارزشیابی کار با فایل" data-en="Files assessment">ارزشیابی کار با فایل</a><p class="mod" data-fa="پودمان ۵: برنامه‌نویسی جنگو" data-en="Module 5: Django">پودمان ۵: برنامه‌نویسی جنگو</p><p class="unit" data-fa="معرفی پودمان" data-en="Module introduction">معرفی پودمان</p><a class="" href="p5-intro.html" data-fa="معرفی پودمان جنگو" data-en="Introducing the Django module">معرفی پودمان جنگو</a><p class="unit" data-fa="ایجاد وب‌اپلیکیشن" data-en="Creating the web app">ایجاد وب‌اپلیکیشن</p><a class="current" href="p5-what.html" data-fa="جنگو چیست و نصب" data-en="What Django is, and installing it">جنگو چیست و نصب</a><a class="" href="p5-project.html" data-fa="پروژه، اپ و اولین view" data-en="Project, app, and the first view">پروژه، اپ و اولین view</a><a class="" href="p5-template.html" data-fa="قالب و دمای واقعی" data-en="Templates and a real temperature">قالب و دمای واقعی</a><a class="" href="p5-assess-create.html" data-fa="ارزشیابی ایجاد وب‌اپلیکیشن" data-en="Creating-the-app assessment">ارزشیابی ایجاد وب‌اپلیکیشن</a><p class="unit" data-fa="توسعه وب‌اپلیکیشن" data-en="Developing the web app">توسعه وب‌اپلیکیشن</p><a class="" href="p5-model.html" data-fa="مدل شهر و پنل ادمین" data-en="The city model and the admin">مدل شهر و پنل ادمین</a><a class="" href="p5-list.html" data-fa="خواندن شهرها و نمایش فهرست" data-en="Reading cities and showing the list">خواندن شهرها و نمایش فهرست</a><a class="" href="p5-auth.html" data-fa="ورود و خروج" data-en="Sign-in and sign-out">ورود و خروج</a><a class="" href="p5-crud.html" data-fa="افزودن و حذف شهر" data-en="Adding and deleting a city">افزودن و حذف شهر</a><a class="" href="p5-bugs.html" data-fa="باگ و امنیت" data-en="Bugs and security">باگ و امنیت</a><p class="mod" data-fa="پایان کتاب" data-en="Back of the book">پایان کتاب</p><p class="unit" data-fa="منابع" data-en="References">منابع</p><a class="" href="refs.html" data-fa="منابع کتاب" data-en="Book references">منابع کتاب</a></nav></details>
+    <div class="main">
+      <h1 class="section-title" data-fa="جنگو چیست و نصب" data-en="What Django is, and installing it">جنگو چیست و نصب</h1><article class="lesson" lang="fa" dir="rtl" data-lang-block="fa"><h1 id="_1">ایجاد وب اپلیکیشن</h1>
+<hr />
+<p class="page-mark">صفحه ۲۷۶</p>
+<h2 id="_2">واحد یادگیری ١</h2>
+<h2 id="_3">ایجاد وب اپلیکیشن</h2>
+<h3 id="_4">آیا تابه‌حال اندیشیده‌اید</h3>
+<p>وب سایت با وب اپلیکیشن چه تفاوت‌هایی دارد؟</p>
+<p>چگونه می‌توانید یک وب اپلیکیشن بسازید؟</p>
+<p>یک وب اپلیکیشن چطور با کاربر تعامل می‌کند؟</p>
+<h3 id="_5">در پایان از هنرجو انتظار می‌رود</h3>
+<p>1 با مزایای جنگو آشنا شود.</p>
+<p>2 ساختار یک پروژه جنگو را درک کند.</p>
+<p>3 روند کار جنگو، جهت تعامل با کاربر را درک کرده و درباره آن استدلال نماید.</p>
+<p>4 مفهوم <code>url</code> ،<code>view</code> و <code>template</code> در جنگو را درک کند.</p>
+<p>5 هنرجو بتواند به‌صورت عملی یک وب اپلیکیشن ساده را پیاده‌سازی کند.</p>
+<h3 id="_6">استاندارد عملکرد</h3>
+<p>هنرجو باید با درک صحیحی که از ساختار جنگو کسب کرده است، بتواند یک وب اپلیکیشن ساده را در رایانه خود پیاده‌سازی کند.</p>
+<hr />
+<p class="page-mark">صفحه ۲۷۷</p>
+<p>جنگو چیست؟</p>
+<p>جنگو (<code>Django</code>) یک <code>framework</code> منبع‌باز (<code>open</code> <code>source</code>) است که با زبان برنامه‌نویسی <code>Python</code> نوشته و برای ساخت و پیاده‌سازی بخش <code>backend</code> وب‌سایت‌ها (<code>Website</code>) و وب اپلیکیشن‌ها (<code>Web</code> <code>Application</code>) استفاده می‌شود.</p>
+<p>جدول 1 مقایسه وب‌سایت و وب اپلیکیشن</p>
+<p>معیار</p>
+<p>وب‌سایت (<code>Website</code>)</p>
+<div class="code-wrap" dir="ltr"><pre><code>وب اپلیکیشن (Web Application)
+</code></pre></div>
+<p>هدف اصلی</p>
+<p>اطلاع‌رسانی و نمایش محتوا</p>
+<p>انجام عملیات و پردازش داده</p>
+<p>تعامل کاربر</p>
+<p>کم یا تقریبًا یک‌طرفه</p>
+<p>زیاد و دوطرفه</p>
+<p>نیاز به لاگین</p>
+<p>معموًلا ندارد</p>
+<p>معموًلا دارد</p>
+<p>پردازش سمت سرور</p>
+<p>کم</p>
+<p>زیاد</p>
+<p>وابستگی به <code>backend</code></p>
+<p>کم یا متوسط</p>
+<p>بسیار زیاد</p>
+<p>تغییر محتوا توسط کاربر</p>
+<p>معموًلا ندارد</p>
+<p>دارد</p>
+<p>مثال‌ها</p>
+<p>سایت خبری، سایت شرکتی، بلاگپنل کاربری، فروشگاه آنلاین، سامانه</p>
+<p>آموزشی</p>
+<p>مزایای جنگو جنگو یک <code>framework</code> امن و سریع است که قابلیت‌های آمادۀ زیادی را در اختیار برنامه‌نویس قرار می‌دهد.</p>
+<p>به همین دلیل، سرعت توسعۀ نرم‌افزار در جنگو بسیار بالاست.</p>
+<p>در پروژه‌های جنگو، با افزایش تعداد کاربران نیز می‌توان تنها با اعمال تغییراتی اندک، همچنان یک وب‌سایت سریع و امن داشت.</p>
+<p>یکی دیگر از مزایای جنگو، وجود مستندات (راهنمای) جامع و همچنین یک جامعۀ بزرگ و فعال از برنامه‌نویسان است. این یعنی اگر هنگام کار با جنگو با مشکلی مواجه شوید، با یک جست‌وجوی ساده در اینترنت می‌توانید راه‌حل‌ها و توضیحات زیادی از سوی برنامه‌نویسان دیگر پیدا کنید.</p>
+<p><img alt="تصویر کتاب" src="../images/p283-01.png" /></p>
+<p>از دیگر مزیت‌های مهم جنگو، وجود فرصت‌های شغلی فراوان در حوزۀ پایتون و <code>framework</code> جنگو است که آن را به گزینه‌ای مناسب برای یادگیری و ورود به بازار کار تبدیل می‌کند.</p>
+<p>شرکت‌های بزرگی در دنیا و ایران از</p>
+<p>شکل 1 شرکت‌هایی که از جنگو استفاده کرده‌اند</p>
+<p>جنگو استفاده کرده‌اند.</p>
+<hr />
+<p class="page-mark">صفحه ۲۷۸</p>
+<h3 id="_7">کنجکاوی</h3>
+<p>در مورد شرکت‌های ذکر شده تحقیق کنید.</p>
+<p>پروژه نهایی این کتاب در پایان این کتاب، با استفاده از جنگو یک وب اپلیکیشن واقعی نمایش وضعیت آب‌وهوا طراحی خواهد شد (شکل 2).</p>
+<p>در این پروژه کاربر می‌تواند نام یک شهر را جهت نمایش وضعیت آب‌وهوا انتخاب و مشاهده نماید.</p>
+<p>این وب اپلیکیشن اطلاعات آب‌وهوا را به‌صورت آنلاین دریافت کرده و نتیجه را به‌صورت لحظه‌ای نمایش می‌دهد.</p>
+<p>پروژه به شما کمک می‌کند یاد بگیرید جنگو در عمل چگونه کار می‌کند و یک وب‌سایت چگونه ساخته می‌شود.</p>
+<p><img alt="شکل 2 بخش‌هایی از پروژه نهایی" src="../images/p284-01.png" /></p>
+<p>شکل 2 بخش‌هایی از پروژه نهایی</p>
+<p>نصب جنگو ابتدا مطمئن شوید آخرین نسخه پایتون روی رایانه شما نصب باشد و رایانه به اینترنت متصل باشد. برای این کار وارد برنامه <code>Vscode</code> شده اگر از قبل فایل یا پوشه‌ای باز بود با دستور <code>Close</code> <code>Folder</code> از منوی <code>File</code> آن را ببندید سپس از منوی <code>terminal</code>، یک ترمینال جدید باز کنید.</p>
+<p>در ادامه همانند شکل 3 درون قسمت ترمینال دستورات را به‌ترتیب اجرا نمایید.</p>
+<hr />
+<p class="page-mark">صفحه ۲۷۹</p>
+<p><img alt="شکل 3 نصب جنگو نسخه5.2.9" src="../images/p285-01.png" /></p>
+<p>شکل 3 نصب جنگو نسخه5.2.9</p>
+<p>نمایش پیام <code>Successfully</code> <code>installed</code> <code>Django-5.2.9</code> نشان‌دهنده نصب موفقیت‌آمیز جنگو است.</p>
+<p>درصورتی‌که پیغام نصب موفقیت‌آمیز جنگو را مشاهده نکردید، از هنرآموز خود راهنمایی بگیرید.</p>
+<p>می‌توانید آخرین نسخه منتشر شده جنگو را هم نصب کنید، فقط باید در سایت <code>pypi.org</code> و صفحه جنگو، نسخه پایتون سازگار را به‌دست آورید.</p>
+<div class="code-wrap" dir="ltr"><pre><code>وارد آدرس https://pypi.org/project/Django شوید و در بخش Programming Language نسخه‌های
+</code></pre></div>
+<p>پایتون پشتیبانی شده جنگو را مشاهده کنید (شکل 4).</p>
+<p><img alt="شکل 4 نسخه‌های پایتون مناسب برای جنگو" src="../images/p285-02.png" /></p>
+<p>شکل 4 نسخه‌های پایتون مناسب برای جنگو</p>
+<hr /></article><article class="lesson" lang="en" dir="ltr" data-lang-block="en" hidden><h1 id="creating-a-web-application">Creating a web application</h1>
+<hr />
+<p class="page-mark">Page 276</p>
+<h2 id="learning-unit-1">Learning unit 1</h2>
+<h2 id="creating-a-web-application_1">Creating a web application</h2>
+<h3 id="have-you-ever-thought">Have you ever thought</h3>
+<p>What differences does a website have from a web application?</p>
+<p>How can you build a web application?</p>
+<p>How does a web application interact with the user?</p>
+<h3 id="by-the-end-the-student-is-expected-to">By the end, the student is expected to</h3>
+<p>1 Become familiar with the advantages of Django.</p>
+<p>2 Understand the structure of a Django project.</p>
+<p>3 Understand Django’s process for interacting with the user and reason about it.</p>
+<p>4 Understand the concepts of <code>url</code>, <code>view</code>, and <code>template</code> in Django.</p>
+<p>5 Be able to implement a simple web application in practice.</p>
+<h3 id="performance-standard">Performance standard</h3>
+<p>The student, with a correct understanding of Django’s structure, should be able to implement a simple web application on their own computer.</p>
+<hr />
+<p class="page-mark">Page 277</p>
+<p>What is Django?</p>
+<p>Django (<code>Django</code>) is an open-source (<code>open</code> <code>source</code>) <code>framework</code> written in the <code>Python</code> programming language and used to build and implement the <code>backend</code> of websites (<code>Website</code>) and web applications (<code>Web</code> <code>Application</code>).</p>
+<p>Table 1 Comparison of a website and a web application</p>
+<p>Criterion</p>
+<p>Website (<code>Website</code>)</p>
+<div class="code-wrap" dir="ltr"><pre><code>وب اپلیکیشن (Web Application)
+</code></pre></div>
+<p>Main purpose</p>
+<p>Informing and displaying content</p>
+<p>Carrying out operations and processing data</p>
+<p>User interaction</p>
+<p>Little or almost one-way</p>
+<p>Much and two-way</p>
+<p>Need for login</p>
+<p>Usually does not have</p>
+<p>Usually has</p>
+<p>Server-side processing</p>
+<p>Little</p>
+<p>Much</p>
+<p>Dependence on the <code>backend</code></p>
+<p>Little or medium</p>
+<p>Very much</p>
+<p>Change of content by the user</p>
+<p>Usually does not have</p>
+<p>Has</p>
+<p>Examples</p>
+<p>News site, company site, blog User panel, online store, educational</p>
+<p>system</p>
+<p>Advantages of Django Django is a secure and fast <code>framework</code> that puts many ready-made capabilities at the programmer’s disposal.</p>
+<p>For this reason, the speed of software development in Django is very high.</p>
+<p>In Django projects, as the number of users increases, you can still have a fast and secure website by making only a few changes.</p>
+<p>Another advantage of Django is the existence of comprehensive documentation (guides) as well as a large and active community of programmers. This means that if you face a problem while working with Django, with a simple search on the internet you can find many solutions and explanations from other programmers.</p>
+<p><img alt="Book image" src="../images/p283-01.png" /></p>
+<p>Another important advantage of Django is the many job opportunities in the field of Python and the Django <code>framework</code>, which makes it a suitable option for learning and entering the job market.</p>
+<p>Large companies in the world and in Iran have</p>
+<p>Figure 1 Companies that have used Django</p>
+<p>used Django.</p>
+<hr />
+<p class="page-mark">Page 278</p>
+<h3 id="try-this">Try this</h3>
+<p>Research the companies mentioned.</p>
+<p>Final project of this book At the end of this book, using Django, a real web application for displaying weather status will be designed (Figure 2).</p>
+<p>In this project the user can select the name of a city to display the weather status and view it.</p>
+<p>This web application receives weather information online and displays the result in real time.</p>
+<p>The project helps you learn how Django works in practice and how a website is built.</p>
+<p><img alt="Figure 2 Parts of the final project" src="../images/p284-01.png" /></p>
+<p>Figure 2 Parts of the final project</p>
+<p>Installing Django First make sure the latest version of Python is installed on your computer and that the computer is connected to the internet. To do this, enter the <code>Vscode</code> program; if a file or folder was already open, close it with the <code>Close</code> <code>Folder</code> command from the <code>File</code> menu, then from the <code>terminal</code> menu open a new terminal.</p>
+<p>Then, as in Figure 3, run the commands in order in the terminal section.</p>
+<hr />
+<p class="page-mark">Page 279</p>
+<p><img alt="Figure 3 Installing Django version 5.2.9" src="../images/p285-01.png" /></p>
+<p>Figure 3 Installing Django version 5.2.9</p>
+<p>Displaying the message <code>Successfully</code> <code>installed</code> <code>Django-5.2.9</code> indicates that Django has been installed successfully.</p>
+<p>If you do not see the message that Django was installed successfully, get guidance from your teacher.</p>
+<p>You can also install the latest released version of Django; you only need to find the compatible Python version on the <code>pypi.org</code> site and the Django page.</p>
+<div class="code-wrap" dir="ltr"><pre><code>وارد آدرس https://pypi.org/project/Django شوید و در بخش Programming Language نسخه‌های
+</code></pre></div>
+<p>Observe the Python versions supported by Django (Figure 4).</p>
+<p><img alt="Figure 4 Suitable Python versions for Django" src="../images/p285-02.png" /></p>
+<p>Figure 4 Suitable Python versions for Django</p>
+<hr /></article>
+      <aside class="extra">
+        <h2 data-fa="تمرین این بخش" data-en="Exercises for this section">تمرین این بخش</h2>
+        <p class="extra-note" data-fa="این تمرین‌ها و پیوندها اضافه بر متن کتاب‌اند." data-en="These exercises and links are in addition to the book.">این تمرین‌ها و پیوندها اضافه بر متن کتاب‌اند.</p>
+        <ol><li data-fa="محیط پروژه را بساز، جنگو را نصب کن و دستوری را اجرا کن که نسخه جنگو و نسخه پایتون را در ترمینال چاپ کند." data-en="Create the project environment, install Django, and run a command that prints the Django version and the Python version in the terminal.">محیط پروژه را بساز، جنگو را نصب کن و دستوری را اجرا کن که نسخه جنگو و نسخه پایتون را در ترمینال چاپ کند.</li><li data-fa="پروژه را start کن و صفحه پیش‌فرض جنگو را یک بار در مرورگر باز کن تا مطمئن شوی سرور بالا آمده است." data-en="Start the project and open Django&#x27;s default page once in the browser so you know the server is up.">پروژه را start کن و صفحه پیش‌فرض جنگو را یک بار در مرورگر باز کن تا مطمئن شوی سرور بالا آمده است.</li></ol>
+        <h2 data-fa="پیوند مفید" data-en="Useful link">پیوند مفید</h2><ul><li><a href="https://docs.djangoproject.com/en/stable/intro/install/" data-fa="نصب جنگو" data-en="Installing Django">نصب جنگو</a></li></ul>
+      </aside>
+    <nav class="pager"><a rel="prev" class="prev" href="p5-intro.html"><span class="pager-word" data-fa="قبلی" data-en="Previous">قبلی</span><span class="pager-name" data-fa="معرفی پودمان جنگو" data-en="Introducing the Django module">معرفی پودمان جنگو</span></a><a rel="next" class="next" href="p5-project.html"><span class="pager-word" data-fa="بعدی" data-en="Next">بعدی</span><span class="pager-name" data-fa="پروژه، اپ و اولین view" data-en="Project, app, and the first view">پروژه، اپ و اولین view</span></a></nav>
+    </div>
+  </div>
+  <script src="../assets/search-index.js?v=4"></script>
+  <script src="../assets/app.js?v=4"></script>
+</body>
+</html>

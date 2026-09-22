@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title data-fa="افزودن و حذف شهر" data-en="Adding and deleting a city">افزودن و حذف شهر</title>
+  <link rel="icon" href="../assets/favicon.svg">
+  <link rel="stylesheet" href="../assets/style.css?v=4">
+</head>
+<body data-root="../">
+  <header class="top">
+    <a class="brand" href="../index.html">
+      <span data-fa="طراح سایت" data-en="Site Design">طراح سایت</span>
+      <small data-fa="پایه یازدهم" data-en="Grade 11">پایه یازدهم</small>
+    </a>
+    <div class="search-wrap">
+      <input id="q" type="search" autocomplete="off"
+        data-fa-placeholder="جستجو در درس‌ها" data-en-placeholder="Search lessons"
+        placeholder="جستجو در درس‌ها">
+      <div id="results" class="results" hidden></div>
+    </div>
+    <a class="download" href="../grade11-offline.zip?v=2" data-fa="دانلود کل سایت" data-en="Download the whole site">دانلود کل سایت</a>
+    <button type="button" id="lang-toggle" class="lang-toggle" dir="ltr" data-lang="fa"
+      aria-label="تغییر زبان">
+      <span data-opt="fa">فا</span>
+      <span data-opt="en">EN</span>
+    </button>
+  </header>
+  <div class="layout">
+    <details class="toc" open><summary><span data-fa="فهرست درس‌ها" data-en="Lesson list">فهرست درس‌ها</span></summary><nav class="side" aria-label="lessons"><p class="mod" data-fa="شروع کتاب" data-en="Opening">شروع کتاب</p><p class="unit" data-fa="فهرست" data-en="Contents">فهرست</p><a class="" href="toc.html" data-fa="فهرست" data-en="Contents">فهرست</a><p class="mod" data-fa="پودمان ۱: برنامه‌نویسی پایتون" data-en="Module 1: Python programming">پودمان ۱: برنامه‌نویسی پایتون</p><p class="unit" data-fa="معرفی پودمان" data-en="Module introduction">معرفی پودمان</p><a class="" href="p1-intro.html" data-fa="معرفی پودمان پایتون" data-en="Introducing the Python module">معرفی پودمان پایتون</a><p class="unit" data-fa="مدل‌سازی داده" data-en="Data modeling">مدل‌سازی داده</p><a class="" href="p1-python.html" data-fa="پایتون و محیط برنامه‌نویسی" data-en="Python and the programming environment">پایتون و محیط برنامه‌نویسی</a><a class="" href="p1-vars.html" data-fa="متغیرها، نوع داده و عملگرها" data-en="Variables, types, and operators">متغیرها، نوع داده و عملگرها</a><a class="" href="p1-cast.html" data-fa="ورودی و تبدیل نوع" data-en="Input and type casting">ورودی و تبدیل نوع</a><a class="" href="p1-lists.html" data-fa="لیست‌ها" data-en="Lists">لیست‌ها</a><a class="" href="p1-if.html" data-fa="شرط‌های ساده" data-en="Simple conditions">شرط‌های ساده</a><a class="" href="p1-elif.html" data-fa="if، elif و else" data-en="if, elif, and else">if، elif و else</a><a class="" href="p1-for.html" data-fa="حلقه for و range" data-en="The for loop and range">حلقه for و range</a><a class="" href="p1-while.html" data-fa="حلقه while و کنترل حلقه" data-en="The while loop and loop control">حلقه while و کنترل حلقه</a><a class="" href="p1-assess-data.html" data-fa="ارزشیابی مدل‌سازی داده" data-en="Data-modeling assessment">ارزشیابی مدل‌سازی داده</a><p class="unit" data-fa="توابع و ماژول‌ها" data-en="Functions and modules">توابع و ماژول‌ها</p><a class="" href="p1-sets.html" data-fa="مجموعه (set)" data-en="Sets">مجموعه (set)</a><a class="" href="p1-dict.html" data-fa="دیکشنری" data-en="Dictionaries">دیکشنری</a><a class="" href="p1-quiz.html" data-fa="پروژه بازی Quiz" data-en="Quiz game project">پروژه بازی Quiz</a><a class="" href="p1-tuple.html" data-fa="تاپل" data-en="Tuples">تاپل</a><a class="" href="p1-func.html" data-fa="تعریف تابع، پارامتر و return" data-en="Defining functions, parameters, and return">تعریف تابع، پارامتر و return</a><a class="" href="p1-func-more.html" data-fa="تمرین تابع و مرتب‌سازی" data-en="Function practice and sorting">تمرین تابع و مرتب‌سازی</a><a class="" href="p1-modules.html" data-fa="ماژول‌ها و تفاوت تابع و متد" data-en="Modules, and functions versus methods">ماژول‌ها و تفاوت تابع و متد</a><a class="" href="p1-assess-func.html" data-fa="ارزشیابی توابع و ماژول‌ها" data-en="Functions and modules assessment">ارزشیابی توابع و ماژول‌ها</a><p class="mod" data-fa="پودمان ۲: صفحات وب ایستا" data-en="Module 2: Static web pages">پودمان ۲: صفحات وب ایستا</p><p class="unit" data-fa="معرفی پودمان" data-en="Module introduction">معرفی پودمان</p><a class="" href="p2-intro.html" data-fa="معرفی پودمان صفحات ایستا" data-en="Introducing static web pages">معرفی پودمان صفحات ایستا</a><p class="unit" data-fa="ساختار با HTML" data-en="Structure with HTML">ساختار با HTML</p><a class="" href="p2-web.html" data-fa="وب چگونه کار می‌کند" data-en="How the web works">وب چگونه کار می‌کند</a><a class="" href="p2-concepts.html" data-fa="مفاهیم طراحی وب و نقشه سایت" data-en="Web-design concepts and the site map">مفاهیم طراحی وب و نقشه سایت</a><a class="" href="p2-tags.html" data-fa="اولین صفحه HTML" data-en="A first HTML page">اولین صفحه HTML</a><a class="" href="p2-text.html" data-fa="متن، لیست و پیوند" data-en="Text, lists, and links">متن، لیست و پیوند</a><a class="" href="p2-img.html" data-fa="تصویر در صفحه" data-en="Images on the page">تصویر در صفحه</a><a class="" href="p2-forms.html" data-fa="فرم‌ها" data-en="Forms">فرم‌ها</a><a class="" href="p2-semantic.html" data-fa="عناصر معنایی" data-en="Semantic elements">عناصر معنایی</a><a class="" href="p2-assess-html.html" data-fa="ارزشیابی HTML" data-en="HTML assessment">ارزشیابی HTML</a><p class="unit" data-fa="ظاهر با CSS" data-en="Appearance with CSS">ظاهر با CSS</p><a class="" href="p2-css-start.html" data-fa="نوشتن CSS" data-en="Writing CSS">نوشتن CSS</a><a class="" href="p2-css-look.html" data-fa="رنگ، پس‌زمینه و انتخاب‌گر" data-en="Color, background, and selectors">رنگ، پس‌زمینه و انتخاب‌گر</a><a class="" href="p2-box.html" data-fa="مدل جعبه‌ای و display" data-en="The box model and display">مدل جعبه‌ای و display</a><a class="" href="p2-flex.html" data-fa="چیدمان با Flexbox" data-en="Layout with Flexbox">چیدمان با Flexbox</a><a class="" href="p2-flex-work.html" data-fa="کارگاه چیدمان صفحه" data-en="Page-layout workshop">کارگاه چیدمان صفحه</a><a class="" href="p2-media.html" data-fa="مدیا کوئری و ارزشیابی CSS" data-en="Media queries and the CSS assessment">مدیا کوئری و ارزشیابی CSS</a><p class="mod" data-fa="پودمان ۳: صفحات وب تعاملی" data-en="Module 3: Interactive web pages">پودمان ۳: صفحات وب تعاملی</p><p class="unit" data-fa="معرفی پودمان" data-en="Module introduction">معرفی پودمان</p><a class="" href="p3-intro.html" data-fa="معرفی پودمان تعاملی" data-en="Introducing the interactive module">معرفی پودمان تعاملی</a><p class="unit" data-fa="بوت‌استرپ" data-en="Bootstrap">بوت‌استرپ</p><a class="" href="p3-bs-start.html" data-fa="فریم‌ورک و شروع بوت‌استرپ" data-en="Frameworks and starting Bootstrap">فریم‌ورک و شروع بوت‌استرپ</a><a class="" href="p3-bs-util.html" data-fa="فاصله، گردی و لیست" data-en="Spacing, rounding, and lists">فاصله، گردی و لیست</a><a class="" href="p3-bs-header.html" data-fa="سرصفحه فروشگاه" data-en="The shop header">سرصفحه فروشگاه</a><a class="" href="p3-bs-grid.html" data-fa="شبکه Grid" data-en="The grid">شبکه Grid</a><a class="" href="p3-bs-rwd.html" data-fa="کلاس‌های واکنش‌گرا" data-en="Responsive classes">کلاس‌های واکنش‌گرا</a><a class="" href="p3-bs-nav.html" data-fa="نوار ناوبری و جزئیات محصول" data-en="Navbar and product details">نوار ناوبری و جزئیات محصول</a><a class="" href="p3-bs-form.html" data-fa="فرم و پنجره Modal" data-en="Forms and modals">فرم و پنجره Modal</a><a class="" href="p3-bs-show.html" data-fa="کاروسل و آکاردئون" data-en="Carousel and accordion">کاروسل و آکاردئون</a><a class="" href="p3-bs-assess.html" data-fa="ارزشیابی بوت‌استرپ" data-en="Bootstrap assessment">ارزشیابی بوت‌استرپ</a><p class="unit" data-fa="جاوااسکریپت" data-en="JavaScript">جاوااسکریپت</p><a class="" href="p3-js-start.html" data-fa="جاوااسکریپت در صفحه وب" data-en="JavaScript on the page">جاوااسکریپت در صفحه وب</a><a class="" href="p3-js-vars.html" data-fa="متغیر و نوع داده" data-en="Variables and data types">متغیر و نوع داده</a><a class="" href="p3-js-ops.html" data-fa="عملگرها" data-en="Operators">عملگرها</a><a class="" href="p3-js-data.html" data-fa="آرایه و شیء" data-en="Arrays and objects">آرایه و شیء</a><a class="" href="p3-js-if.html" data-fa="شرط در جاوااسکریپت" data-en="Conditions in JavaScript">شرط در جاوااسکریپت</a><a class="" href="p3-js-loops.html" data-fa="حلقه‌ها" data-en="Loops">حلقه‌ها</a><a class="" href="p3-js-func.html" data-fa="تابع‌ها" data-en="Functions">تابع‌ها</a><a class="" href="p3-js-dom.html" data-fa="صفحه، رویداد و اعتبار فرم" data-en="The page, events, and form validation">صفحه، رویداد و اعتبار فرم</a><a class="" href="p3-js-assess.html" data-fa="ارزشیابی جاوااسکریپت" data-en="JavaScript assessment">ارزشیابی جاوااسکریپت</a><p class="mod" data-fa="پودمان ۴: توسعه وب پایتون" data-en="Module 4: Python for the web">پودمان ۴: توسعه وب پایتون</p><p class="unit" data-fa="معرفی پودمان" data-en="Module introduction">معرفی پودمان</p><a class="" href="p4-intro.html" data-fa="معرفی پودمان شیءگرایی" data-en="Introducing the object-oriented module">معرفی پودمان شیءگرایی</a><p class="unit" data-fa="شیءگرایی" data-en="Object-oriented programming">شیءگرایی</p><a class="" href="p4-idea.html" data-fa="ایده شیء و کلاس" data-en="The idea of objects and classes">ایده شیء و کلاس</a><a class="" href="p4-class.html" data-fa="ساخت کلاس و متد" data-en="Writing a class and methods">ساخت کلاس و متد</a><a class="" href="p4-inherit.html" data-fa="وراثت" data-en="Inheritance">وراثت</a><a class="" href="p4-protect.html" data-fa="داده معتبر و استفاده داخلی" data-en="Valid data and internal use">داده معتبر و استفاده داخلی</a><a class="" href="p4-assess-oop.html" data-fa="ارزشیابی برنامه شیءگرا" data-en="Object-oriented assessment">ارزشیابی برنامه شیءگرا</a><p class="unit" data-fa="فایل و توسعه" data-en="Files and development">فایل و توسعه</p><a class="" href="p4-files.html" data-fa="خواندن و نوشتن فایل متنی" data-en="Reading and writing text files">خواندن و نوشتن فایل متنی</a><a class="" href="p4-errors.html" data-fa="پیمایش فایل و مدیریت خطا" data-en="Walking a file and handling errors">پیمایش فایل و مدیریت خطا</a><a class="" href="p4-json.html" data-fa="چند فایل و JSON" data-en="Several files and JSON">چند فایل و JSON</a><a class="" href="p4-assess-files.html" data-fa="ارزشیابی کار با فایل" data-en="Files assessment">ارزشیابی کار با فایل</a><p class="mod" data-fa="پودمان ۵: برنامه‌نویسی جنگو" data-en="Module 5: Django">پودمان ۵: برنامه‌نویسی جنگو</p><p class="unit" data-fa="معرفی پودمان" data-en="Module introduction">معرفی پودمان</p><a class="" href="p5-intro.html" data-fa="معرفی پودمان جنگو" data-en="Introducing the Django module">معرفی پودمان جنگو</a><p class="unit" data-fa="ایجاد وب‌اپلیکیشن" data-en="Creating the web app">ایجاد وب‌اپلیکیشن</p><a class="" href="p5-what.html" data-fa="جنگو چیست و نصب" data-en="What Django is, and installing it">جنگو چیست و نصب</a><a class="" href="p5-project.html" data-fa="پروژه، اپ و اولین view" data-en="Project, app, and the first view">پروژه، اپ و اولین view</a><a class="" href="p5-template.html" data-fa="قالب و دمای واقعی" data-en="Templates and a real temperature">قالب و دمای واقعی</a><a class="" href="p5-assess-create.html" data-fa="ارزشیابی ایجاد وب‌اپلیکیشن" data-en="Creating-the-app assessment">ارزشیابی ایجاد وب‌اپلیکیشن</a><p class="unit" data-fa="توسعه وب‌اپلیکیشن" data-en="Developing the web app">توسعه وب‌اپلیکیشن</p><a class="" href="p5-model.html" data-fa="مدل شهر و پنل ادمین" data-en="The city model and the admin">مدل شهر و پنل ادمین</a><a class="" href="p5-list.html" data-fa="خواندن شهرها و نمایش فهرست" data-en="Reading cities and showing the list">خواندن شهرها و نمایش فهرست</a><a class="" href="p5-auth.html" data-fa="ورود و خروج" data-en="Sign-in and sign-out">ورود و خروج</a><a class="current" href="p5-crud.html" data-fa="افزودن و حذف شهر" data-en="Adding and deleting a city">افزودن و حذف شهر</a><a class="" href="p5-bugs.html" data-fa="باگ و امنیت" data-en="Bugs and security">باگ و امنیت</a><p class="mod" data-fa="پایان کتاب" data-en="Back of the book">پایان کتاب</p><p class="unit" data-fa="منابع" data-en="References">منابع</p><a class="" href="refs.html" data-fa="منابع کتاب" data-en="Book references">منابع کتاب</a></nav></details>
+    <div class="main">
+      <h1 class="section-title" data-fa="افزودن و حذف شهر" data-en="Adding and deleting a city">افزودن و حذف شهر</h1><article class="lesson" lang="fa" dir="rtl" data-lang-block="fa"><p class="page-mark">صفحه ۳۲۰</p>
+<p>مرحله سوم: در فایل <code>views.py</code> تابع <code>add_city_view</code> را همانند شکل 66 اضافه کنید.</p>
+<p><img alt="شکل 66 ایجاد view جهت افزودن شهر" src="../images/p326-01.png" /></p>
+<p>شکل 66 ایجاد <code>view</code> جهت افزودن شهر</p>
+<h3 id="_1">توضیحات کدها:</h3>
+<p>خط 1: متد <code>redirect</code> درون این فایل <code>import</code> شده است.</p>
+<p>خط 4: کلاس <code>CityForm</code> از فایل <code>forms.py</code> درون این فایل <code>import</code> شده است.</p>
+<p>خط 33: اگر کاربر در صفحه «اضافه‌کردن شهر»، اطلاعات فرم را وارد کرده و دکمه «ذخیره شهر جدید» را کلیک کند، یک <code>request</code> از نوع <code>post</code> برای <code>add_city_view</code> ارسال می‌شود، در این خط نوع <code>request</code> با <code>if</code> بررسی شده است.</p>
+<p>خط 34: یک فرم از <code>CityForm</code> براساس نوع درخواست ارسال‌شدۀ کاربر ایجاد و در متغیر <code>form</code> ذخیره شده است تا به کمک آن اطلاعاتی که کاربر به‌وسیله آن فرم ارسال کرده است، ذخیره شود.</p>
+<p>خط 35: تابع <code>is_valid</code> فیلدهای وارد شده کاربر را بررسی می‌کند. در <code>request</code> ارسال کاربر، باید فیلدهای اجباری مقدار گرفته باشند و همچنین نوع فیلدها صحیح باشد.</p>
+<p>خط 36: در صورت معتبر بودن درخواست، اطلاعات در جدول <code>city</code> ذخیره خواهد شد.</p>
+<p>خط 37: پس از ذخیره موفق اطلاعات شهر، کاربر به صفحه لیست شهرها منتقل خواهد شد.</p>
+<p>خط 39: وقتی کاربر آدرس این صفحه را در مرورگر وارد می‌کند، یک درخواست از نوع <code>GET</code> اتفاق افتاده است، در این حالت، نوع <code>request</code> چیزی غیر از <code>POST</code> است، پس یک فرم جدید از <code>CityForm</code> ایجاد و در متغیر <code>form</code> ذخیره شده است تا فرم افزودن شهر به کاربر نمایش داده شود.</p>
+<hr />
+<p class="page-mark">صفحه ۳۲۱</p>
+<p>خط 41: فرم ساخته شده، در دیکشنری <code>context</code> قرار گرفته و در خط بعد به <code>add_city.html</code> ارسال شده است.</p>
+<p>مرحله چهارم: در فایل <code>urls.py</code> مربوط به <code>weather</code> <code>app</code> یک <code>path</code> جدید همانند شکل 67 اضافه کنید.</p>
+<p><img alt="شکل 67 اضافه‌کردن path جدید برای افزودن شهر" src="../images/p327-01.png" /></p>
+<p>شکل 67 اضافه‌کردن <code>path</code> جدید برای افزودن شهر</p>
+<h3 id="_2">توضیحات کدها:</h3>
+<p>یک <code>path</code> جدید جهت افزودن شهر اضافه شده است.</p>
+<p>مرحله پنجم: در فایل <code>show_temp.html</code> یک لینک برای افزودن شهر، در خط 10 همانند شکل 68 اضافه کنید.</p>
+<p><img alt="شکل 68 ایجاد لینک به صفحه افزودن شهر" src="../images/p327-02.png" /></p>
+<p>شکل 68 ایجاد لینک به صفحه افزودن شهر</p>
+<hr />
+<p class="page-mark">صفحه ۳۲۲</p>
+<p>اکنون همه فایل‌ها را ذخیره و صفحه اصلی سایت را <code>refresh</code> کنید.</p>
+<p>با دکمه [ورود به سایت] <code>login</code> کنید. لینک افزودن شهر برای شما نمایش داده خواهد شد (شکل 69).</p>
+<p><img alt="شکل 69 نمایش لینک پس از login کاربر" src="../images/p328-01.png" /></p>
+<p>شکل 69 نمایش لینک پس از <code>login</code> کاربر</p>
+<p>بر روی لینک «افزودن شهر» کلیک کنید، سپس همانند شکل 70، اطلاعات شهر موردنظر خود را وارد و دکمه ذخیره شهر جدید را کلیک کنید. در صورت ذخیره موفِق این فرم، کاربر به صفحه لیست شهر‌ها منتقل و شهر اضافه شده به انتهای لیست افزوده خواهد شد.</p>
+<p><img alt="شکل 70 فرم اضافه‌کردن شهر جدید" src="../images/p328-02.png" /></p>
+<p>شکل 70 فرم اضافه‌کردن شهر جدید</p>
+<p>حذف شهر با کاربر عضو سایت در این پروژه می‌توانید امکان حذف شهرها را به کاربر عضو سایت بدهید، این کار را در سه مرحله می‌توانید انجام دهید.</p>
+<hr />
+<p class="page-mark">صفحه ۳۲۳</p>
+<p>مرحله اول: یک <code>view</code> جدید با نام <code>delete_city_view</code> در <code>views.py</code> همانند شکل 71 ایجاد کنید.</p>
+<p><img alt="شکل 71 ساخت view جهت حذف شهرها" src="../images/p329-01.png" /></p>
+<p>شکل 71 ساخت <code>view</code> جهت حذف شهرها</p>
+<h3 id="_3">توضیحات کدها:</h3>
+<p>خط 49: دستور <code>delete</code> از <code>ORM</code> جنگو استفاده می‌کند و شهر انتخاب شده را از پایگاه‌داده حذف می‌کند.</p>
+<p>خط 50: بعد از حذف‌کردن شهر، کاربر را به لیست شهرها منتقل می‌کند.</p>
+<p>مرحله دوم: یک <code>path</code> جدید برای <code>delete_city_view</code> در <code>urls.py</code> همانند شکل 72 اضافه کنید.</p>
+<p><img alt="شکل 72 افزودن path جدید برای حذف شهرها" src="../images/p329-02.png" /></p>
+<p>شکل 72 افزودن <code>path</code> جدید برای حذف شهرها</p>
+<hr />
+<p class="page-mark">صفحه ۳۲۴</p>
+<p>مرحله سوم: فایل <code>city_list.html</code> را همانند شکل 73 تغییر دهید.</p>
+<p><img alt="شکل 73 اضافه‌کردن دکمه حذف به city_list.html" src="../images/p330-01.png" /></p>
+<p>شکل 73 اضافه‌کردن دکمه حذف به <code>city_list.html</code></p>
+<p><img alt="تصویر کتاب" src="../images/p330-02.png" /></p>
+<h3 id="_4">توضیحات کدها:</h3>
+<p>خط 13: این دستور باعث می‌شود دکمه حذف شهر فقط برای کاربر <code>login</code> شده نمایش داده شود.</p>
+<p>خط 14: یک فرم با متد از نوع <code>POST</code> ایجاد شده است. در <code>action</code> این فرم، به <code>_delete</code> <code>city</code> اشاره شده است، یعنی درخواست حذف به <code>view</code> حذف شهر ارسال خواهد شد.</p>
+<p>خط 17: آیدی شهر به‌صورت یک فیلد مخفی (<code>hidden</code>) اضافه شده است. آیدی شهر در خروجی نمایش داده نخواهد شد.</p>
+<p>فایل‌ها را ذخیره کنید، صفحه لیست شهرها را باز کنید. خروجی همانند شکل 74 خواهد بود.</p>
+<p>شکل 74 دکمه حذف در لیست شهرها</p>
+<hr />
+<p class="page-mark">صفحه ۳۲۵</p>
+<p>با کلیک روی لینک حذف مقابل هر شهر، شهر موردنظر حذف شده و لیست شهرها به‌روزرسانی می‌شود.</p>
+<p>درصورتی‌که کاربر مهمان باشد، لینک حذف را مشاهده نخواهد کرد.</p>
+<h3 id="_5">فعالیت</h3>
+<p>با دانشی که از پودمان‌های قبل کسب کرده‌اید، ظاهر سایت را با <code>html</code> و <code>css</code> و <code>bootstrap</code> زیبا کنید.</p>
+<h3 id="_6">بهینه‌سازی و امن کردن پروژه</h3>
+<p>در این مرحله، برای بهینه‌سازی پروژه، ایرادها و باگ‌های امنیتی پروژه بررسی می‌شوند.</p>
+<p>باگ کدنویسی شماره یک:</p>
+<p>اگر هیچ شهری در جدول <code>City</code> وجود نداشته باشد یا همه شهرها حذف شده باشند، در صفحه اصلی سایت خطایی همانند شکل 75 مشاهده خواهد شد.</p>
+<p><img alt="شکل 75 خطا در صورت خالی بودن جدول شهرها" src="../images/p331-01.png" /></p>
+<p>شکل 75 خطا در صورت خالی بودن جدول شهرها</p>
+<hr /></article><article class="lesson" lang="en" dir="ltr" data-lang-block="en" hidden><p class="page-mark">Page 320</p>
+<p>Stage three: In the <code>views.py</code> file, add the <code>add_city_view</code> function as in Figure 66.</p>
+<p><img alt="Figure 66 creating a view for adding a city" src="../images/p326-01.png" /></p>
+<p>Figure 66 creating a <code>view</code> for adding a city</p>
+<h3 id="code-notes">Code notes:</h3>
+<p>Line 1: The <code>redirect</code> method has been <code>import</code>ed into this file.</p>
+<p>Line 4: The <code>CityForm</code> class from the <code>forms.py</code> file has been <code>import</code>ed into this file.</p>
+<p>Line 33: If the user enters the form information on the “Add city” page and clicks the “Save new city” button, a <code>request</code> of type <code>post</code> is sent to <code>add_city_view</code>; in this line the type of <code>request</code> is checked with <code>if</code>.</p>
+<p>Line 34: A form from <code>CityForm</code> is created based on the type of request the user sent and is stored in the variable <code>form</code> so that, with its help, the information the user sent through that form can be saved.</p>
+<p>Line 35: The <code>is_valid</code> function checks the fields the user entered. In the user’s submitted <code>request</code>, the required fields must have values and the field types must also be correct.</p>
+<p>Line 36: If the request is valid, the information will be stored in the <code>city</code> table.</p>
+<p>Line 37: After the city information is saved successfully, the user will be taken to the city list page.</p>
+<p>Line 39: When the user enters this page’s address in the browser, a request of type <code>GET</code> has occurred; in this case, the type of <code>request</code> is something other than <code>POST</code>, so a new form from <code>CityForm</code> is created and stored in the variable <code>form</code> so that the add-city form can be shown to the user.</p>
+<hr />
+<p class="page-mark">Page 321</p>
+<p>Line 41: The form that was built is placed in the <code>context</code> dictionary and on the next line is sent to <code>add_city.html</code>.</p>
+<p>Stage four: In the <code>urls.py</code> file for the <code>weather</code> <code>app</code>, add a new <code>path</code> as in Figure 67.</p>
+<p><img alt="Figure 67 adding a new path for adding a city" src="../images/p327-01.png" /></p>
+<p>Figure 67 adding a new <code>path</code> for adding a city</p>
+<h3 id="code-notes_1">Code notes:</h3>
+<p>A new <code>path</code> for adding a city has been added.</p>
+<p>Stage five: In the <code>show_temp.html</code> file, add a link for adding a city on line 10 as in Figure 68.</p>
+<p><img alt="Figure 68 creating a link to the add-city page" src="../images/p327-02.png" /></p>
+<p>Figure 68 creating a link to the add-city page</p>
+<hr />
+<p class="page-mark">Page 322</p>
+<p>Now save all the files and <code>refresh</code> the site’s home page.</p>
+<p>With the [Log in to the site] button, <code>login</code>. The add-city link will be shown to you (Figure 69).</p>
+<p><img alt="Figure 69 showing the link after the user login" src="../images/p328-01.png" /></p>
+<p>Figure 69 showing the link after the user <code>login</code></p>
+<p>Click the “Add city” link, then as in Figure 70 enter the information for your chosen city and click the Save new city button. If this form is saved successfully, the user will be taken to the city list page and the added city will be appended to the end of the list.</p>
+<p><img alt="Figure 70 form for adding a new city" src="../images/p328-02.png" /></p>
+<p>Figure 70 form for adding a new city</p>
+<p>Deleting a city with a site member user In this project you can give member users of the site the ability to delete cities; you can do this in three stages.</p>
+<hr />
+<p class="page-mark">Page 323</p>
+<p>Stage one: Create a new <code>view</code> named <code>delete_city_view</code> in <code>views.py</code> as in Figure 71.</p>
+<p><img alt="Figure 71 building a view for deleting cities" src="../images/p329-01.png" /></p>
+<p>Figure 71 building a <code>view</code> for deleting cities</p>
+<h3 id="code-notes_2">Code notes:</h3>
+<p>Line 49: The <code>delete</code> statement uses Django’s <code>ORM</code> and deletes the selected city from the database.</p>
+<p>Line 50: After deleting the city, it takes the user to the city list.</p>
+<p>Stage two: Add a new <code>path</code> for <code>delete_city_view</code> in <code>urls.py</code> as in Figure 72.</p>
+<p><img alt="Figure 72 adding a new path for deleting cities" src="../images/p329-02.png" /></p>
+<p>Figure 72 adding a new <code>path</code> for deleting cities</p>
+<hr />
+<p class="page-mark">Page 324</p>
+<p>Stage three: Change the <code>city_list.html</code> file as in Figure 73.</p>
+<p><img alt="Figure 73 adding a delete button to city_list.html" src="../images/p330-01.png" /></p>
+<p>Figure 73 adding a delete button to <code>city_list.html</code></p>
+<p><img alt="book image" src="../images/p330-02.png" /></p>
+<h3 id="code-notes_3">Code notes:</h3>
+<p>Line 13: This statement causes the city delete button to be shown only for a user who is <code>login</code>.</p>
+<p>Line 14: A form with a method of type <code>POST</code> has been created. In this form’s <code>action</code>, <code>city_delete</code> is referred to, meaning the delete request will be sent to the city-delete <code>view</code>.</p>
+<p>Line 17: The city’s id has been added as a hidden field (<code>hidden</code>). The city’s id will not be shown in the output.</p>
+<p>Save the files and open the city list page. The output will be as in Figure 74.</p>
+<p>Figure 74 delete button in the city list</p>
+<hr />
+<p class="page-mark">Page 325</p>
+<p>By clicking the delete link next to each city, the chosen city is deleted and the city list is updated.</p>
+<p>If the user is a guest, they will not see the delete link.</p>
+<h3 id="activity">Activity</h3>
+<p>With the knowledge you gained from the previous modules, make the site’s appearance attractive with <code>html</code> and <code>css</code> and <code>bootstrap</code>.</p>
+<h3 id="optimizing-and-securing-the-project">Optimizing and securing the project</h3>
+<p>In this stage, to optimize the project, the project’s flaws and security bugs are reviewed.</p>
+<p>Coding bug number one:</p>
+<p>If no city exists in the <code>City</code> table or all cities have been deleted, an error like Figure 75 will be seen on the site’s home page.</p>
+<p><img alt="Figure 75 error when the cities table is empty" src="../images/p331-01.png" /></p>
+<p>Figure 75 error when the cities table is empty</p>
+<hr /></article>
+      <aside class="extra">
+        <h2 data-fa="تمرین این بخش" data-en="Exercises for this section">تمرین این بخش</h2>
+        <p class="extra-note" data-fa="این تمرین‌ها و پیوندها اضافه بر متن کتاب‌اند." data-en="These exercises and links are in addition to the book.">این تمرین‌ها و پیوندها اضافه بر متن کتاب‌اند.</p>
+        <ol><li data-fa="فرم افزودن شهر را روی خود سایت بساز و یک شهر را بدون پنل ادمین ثبت کن." data-en="Build the add-city form on the site itself and save one city without using the admin.">فرم افزودن شهر را روی خود سایت بساز و یک شهر را بدون پنل ادمین ثبت کن.</li><li data-fa="کنار هر شهر دکمه حذف بگذار که بعد از حذف، فهرست همان صفحه تازه شود و شهر پاک‌شده دیگر در فهرست نباشد." data-en="Put a delete button beside each city that refreshes the list on the same page, so the deleted city is gone.">کنار هر شهر دکمه حذف بگذار که بعد از حذف، فهرست همان صفحه تازه شود و شهر پاک‌شده دیگر در فهرست نباشد.</li></ol>
+        <h2 data-fa="پیوند مفید" data-en="Useful link">پیوند مفید</h2><ul><li><a href="https://docs.djangoproject.com/en/stable/topics/forms/" data-fa="فرم‌ها در جنگو" data-en="Working with forms">فرم‌ها در جنگو</a></li></ul>
+      </aside>
+    <nav class="pager"><a rel="prev" class="prev" href="p5-auth.html"><span class="pager-word" data-fa="قبلی" data-en="Previous">قبلی</span><span class="pager-name" data-fa="ورود و خروج" data-en="Sign-in and sign-out">ورود و خروج</span></a><a rel="next" class="next" href="p5-bugs.html"><span class="pager-word" data-fa="بعدی" data-en="Next">بعدی</span><span class="pager-name" data-fa="باگ و امنیت" data-en="Bugs and security">باگ و امنیت</span></a></nav>
+    </div>
+  </div>
+  <script src="../assets/search-index.js?v=4"></script>
+  <script src="../assets/app.js?v=4"></script>
+</body>
+</html>

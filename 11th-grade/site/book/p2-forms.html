@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title data-fa="فرم‌ها" data-en="Forms">فرم‌ها</title>
+  <link rel="icon" href="../assets/favicon.svg">
+  <link rel="stylesheet" href="../assets/style.css?v=4">
+</head>
+<body data-root="../">
+  <header class="top">
+    <a class="brand" href="../index.html">
+      <span data-fa="طراح سایت" data-en="Site Design">طراح سایت</span>
+      <small data-fa="پایه یازدهم" data-en="Grade 11">پایه یازدهم</small>
+    </a>
+    <div class="search-wrap">
+      <input id="q" type="search" autocomplete="off"
+        data-fa-placeholder="جستجو در درس‌ها" data-en-placeholder="Search lessons"
+        placeholder="جستجو در درس‌ها">
+      <div id="results" class="results" hidden></div>
+    </div>
+    <a class="download" href="../grade11-offline.zip?v=2" data-fa="دانلود کل سایت" data-en="Download the whole site">دانلود کل سایت</a>
+    <button type="button" id="lang-toggle" class="lang-toggle" dir="ltr" data-lang="fa"
+      aria-label="تغییر زبان">
+      <span data-opt="fa">فا</span>
+      <span data-opt="en">EN</span>
+    </button>
+  </header>
+  <div class="layout">
+    <details class="toc" open><summary><span data-fa="فهرست درس‌ها" data-en="Lesson list">فهرست درس‌ها</span></summary><nav class="side" aria-label="lessons"><p class="mod" data-fa="شروع کتاب" data-en="Opening">شروع کتاب</p><p class="unit" data-fa="فهرست" data-en="Contents">فهرست</p><a class="" href="toc.html" data-fa="فهرست" data-en="Contents">فهرست</a><p class="mod" data-fa="پودمان ۱: برنامه‌نویسی پایتون" data-en="Module 1: Python programming">پودمان ۱: برنامه‌نویسی پایتون</p><p class="unit" data-fa="معرفی پودمان" data-en="Module introduction">معرفی پودمان</p><a class="" href="p1-intro.html" data-fa="معرفی پودمان پایتون" data-en="Introducing the Python module">معرفی پودمان پایتون</a><p class="unit" data-fa="مدل‌سازی داده" data-en="Data modeling">مدل‌سازی داده</p><a class="" href="p1-python.html" data-fa="پایتون و محیط برنامه‌نویسی" data-en="Python and the programming environment">پایتون و محیط برنامه‌نویسی</a><a class="" href="p1-vars.html" data-fa="متغیرها، نوع داده و عملگرها" data-en="Variables, types, and operators">متغیرها، نوع داده و عملگرها</a><a class="" href="p1-cast.html" data-fa="ورودی و تبدیل نوع" data-en="Input and type casting">ورودی و تبدیل نوع</a><a class="" href="p1-lists.html" data-fa="لیست‌ها" data-en="Lists">لیست‌ها</a><a class="" href="p1-if.html" data-fa="شرط‌های ساده" data-en="Simple conditions">شرط‌های ساده</a><a class="" href="p1-elif.html" data-fa="if، elif و else" data-en="if, elif, and else">if، elif و else</a><a class="" href="p1-for.html" data-fa="حلقه for و range" data-en="The for loop and range">حلقه for و range</a><a class="" href="p1-while.html" data-fa="حلقه while و کنترل حلقه" data-en="The while loop and loop control">حلقه while و کنترل حلقه</a><a class="" href="p1-assess-data.html" data-fa="ارزشیابی مدل‌سازی داده" data-en="Data-modeling assessment">ارزشیابی مدل‌سازی داده</a><p class="unit" data-fa="توابع و ماژول‌ها" data-en="Functions and modules">توابع و ماژول‌ها</p><a class="" href="p1-sets.html" data-fa="مجموعه (set)" data-en="Sets">مجموعه (set)</a><a class="" href="p1-dict.html" data-fa="دیکشنری" data-en="Dictionaries">دیکشنری</a><a class="" href="p1-quiz.html" data-fa="پروژه بازی Quiz" data-en="Quiz game project">پروژه بازی Quiz</a><a class="" href="p1-tuple.html" data-fa="تاپل" data-en="Tuples">تاپل</a><a class="" href="p1-func.html" data-fa="تعریف تابع، پارامتر و return" data-en="Defining functions, parameters, and return">تعریف تابع، پارامتر و return</a><a class="" href="p1-func-more.html" data-fa="تمرین تابع و مرتب‌سازی" data-en="Function practice and sorting">تمرین تابع و مرتب‌سازی</a><a class="" href="p1-modules.html" data-fa="ماژول‌ها و تفاوت تابع و متد" data-en="Modules, and functions versus methods">ماژول‌ها و تفاوت تابع و متد</a><a class="" href="p1-assess-func.html" data-fa="ارزشیابی توابع و ماژول‌ها" data-en="Functions and modules assessment">ارزشیابی توابع و ماژول‌ها</a><p class="mod" data-fa="پودمان ۲: صفحات وب ایستا" data-en="Module 2: Static web pages">پودمان ۲: صفحات وب ایستا</p><p class="unit" data-fa="معرفی پودمان" data-en="Module introduction">معرفی پودمان</p><a class="" href="p2-intro.html" data-fa="معرفی پودمان صفحات ایستا" data-en="Introducing static web pages">معرفی پودمان صفحات ایستا</a><p class="unit" data-fa="ساختار با HTML" data-en="Structure with HTML">ساختار با HTML</p><a class="" href="p2-web.html" data-fa="وب چگونه کار می‌کند" data-en="How the web works">وب چگونه کار می‌کند</a><a class="" href="p2-concepts.html" data-fa="مفاهیم طراحی وب و نقشه سایت" data-en="Web-design concepts and the site map">مفاهیم طراحی وب و نقشه سایت</a><a class="" href="p2-tags.html" data-fa="اولین صفحه HTML" data-en="A first HTML page">اولین صفحه HTML</a><a class="" href="p2-text.html" data-fa="متن، لیست و پیوند" data-en="Text, lists, and links">متن، لیست و پیوند</a><a class="" href="p2-img.html" data-fa="تصویر در صفحه" data-en="Images on the page">تصویر در صفحه</a><a class="current" href="p2-forms.html" data-fa="فرم‌ها" data-en="Forms">فرم‌ها</a><a class="" href="p2-semantic.html" data-fa="عناصر معنایی" data-en="Semantic elements">عناصر معنایی</a><a class="" href="p2-assess-html.html" data-fa="ارزشیابی HTML" data-en="HTML assessment">ارزشیابی HTML</a><p class="unit" data-fa="ظاهر با CSS" data-en="Appearance with CSS">ظاهر با CSS</p><a class="" href="p2-css-start.html" data-fa="نوشتن CSS" data-en="Writing CSS">نوشتن CSS</a><a class="" href="p2-css-look.html" data-fa="رنگ، پس‌زمینه و انتخاب‌گر" data-en="Color, background, and selectors">رنگ، پس‌زمینه و انتخاب‌گر</a><a class="" href="p2-box.html" data-fa="مدل جعبه‌ای و display" data-en="The box model and display">مدل جعبه‌ای و display</a><a class="" href="p2-flex.html" data-fa="چیدمان با Flexbox" data-en="Layout with Flexbox">چیدمان با Flexbox</a><a class="" href="p2-flex-work.html" data-fa="کارگاه چیدمان صفحه" data-en="Page-layout workshop">کارگاه چیدمان صفحه</a><a class="" href="p2-media.html" data-fa="مدیا کوئری و ارزشیابی CSS" data-en="Media queries and the CSS assessment">مدیا کوئری و ارزشیابی CSS</a><p class="mod" data-fa="پودمان ۳: صفحات وب تعاملی" data-en="Module 3: Interactive web pages">پودمان ۳: صفحات وب تعاملی</p><p class="unit" data-fa="معرفی پودمان" data-en="Module introduction">معرفی پودمان</p><a class="" href="p3-intro.html" data-fa="معرفی پودمان تعاملی" data-en="Introducing the interactive module">معرفی پودمان تعاملی</a><p class="unit" data-fa="بوت‌استرپ" data-en="Bootstrap">بوت‌استرپ</p><a class="" href="p3-bs-start.html" data-fa="فریم‌ورک و شروع بوت‌استرپ" data-en="Frameworks and starting Bootstrap">فریم‌ورک و شروع بوت‌استرپ</a><a class="" href="p3-bs-util.html" data-fa="فاصله، گردی و لیست" data-en="Spacing, rounding, and lists">فاصله، گردی و لیست</a><a class="" href="p3-bs-header.html" data-fa="سرصفحه فروشگاه" data-en="The shop header">سرصفحه فروشگاه</a><a class="" href="p3-bs-grid.html" data-fa="شبکه Grid" data-en="The grid">شبکه Grid</a><a class="" href="p3-bs-rwd.html" data-fa="کلاس‌های واکنش‌گرا" data-en="Responsive classes">کلاس‌های واکنش‌گرا</a><a class="" href="p3-bs-nav.html" data-fa="نوار ناوبری و جزئیات محصول" data-en="Navbar and product details">نوار ناوبری و جزئیات محصول</a><a class="" href="p3-bs-form.html" data-fa="فرم و پنجره Modal" data-en="Forms and modals">فرم و پنجره Modal</a><a class="" href="p3-bs-show.html" data-fa="کاروسل و آکاردئون" data-en="Carousel and accordion">کاروسل و آکاردئون</a><a class="" href="p3-bs-assess.html" data-fa="ارزشیابی بوت‌استرپ" data-en="Bootstrap assessment">ارزشیابی بوت‌استرپ</a><p class="unit" data-fa="جاوااسکریپت" data-en="JavaScript">جاوااسکریپت</p><a class="" href="p3-js-start.html" data-fa="جاوااسکریپت در صفحه وب" data-en="JavaScript on the page">جاوااسکریپت در صفحه وب</a><a class="" href="p3-js-vars.html" data-fa="متغیر و نوع داده" data-en="Variables and data types">متغیر و نوع داده</a><a class="" href="p3-js-ops.html" data-fa="عملگرها" data-en="Operators">عملگرها</a><a class="" href="p3-js-data.html" data-fa="آرایه و شیء" data-en="Arrays and objects">آرایه و شیء</a><a class="" href="p3-js-if.html" data-fa="شرط در جاوااسکریپت" data-en="Conditions in JavaScript">شرط در جاوااسکریپت</a><a class="" href="p3-js-loops.html" data-fa="حلقه‌ها" data-en="Loops">حلقه‌ها</a><a class="" href="p3-js-func.html" data-fa="تابع‌ها" data-en="Functions">تابع‌ها</a><a class="" href="p3-js-dom.html" data-fa="صفحه، رویداد و اعتبار فرم" data-en="The page, events, and form validation">صفحه، رویداد و اعتبار فرم</a><a class="" href="p3-js-assess.html" data-fa="ارزشیابی جاوااسکریپت" data-en="JavaScript assessment">ارزشیابی جاوااسکریپت</a><p class="mod" data-fa="پودمان ۴: توسعه وب پایتون" data-en="Module 4: Python for the web">پودمان ۴: توسعه وب پایتون</p><p class="unit" data-fa="معرفی پودمان" data-en="Module introduction">معرفی پودمان</p><a class="" href="p4-intro.html" data-fa="معرفی پودمان شیءگرایی" data-en="Introducing the object-oriented module">معرفی پودمان شیءگرایی</a><p class="unit" data-fa="شیءگرایی" data-en="Object-oriented programming">شیءگرایی</p><a class="" href="p4-idea.html" data-fa="ایده شیء و کلاس" data-en="The idea of objects and classes">ایده شیء و کلاس</a><a class="" href="p4-class.html" data-fa="ساخت کلاس و متد" data-en="Writing a class and methods">ساخت کلاس و متد</a><a class="" href="p4-inherit.html" data-fa="وراثت" data-en="Inheritance">وراثت</a><a class="" href="p4-protect.html" data-fa="داده معتبر و استفاده داخلی" data-en="Valid data and internal use">داده معتبر و استفاده داخلی</a><a class="" href="p4-assess-oop.html" data-fa="ارزشیابی برنامه شیءگرا" data-en="Object-oriented assessment">ارزشیابی برنامه شیءگرا</a><p class="unit" data-fa="فایل و توسعه" data-en="Files and development">فایل و توسعه</p><a class="" href="p4-files.html" data-fa="خواندن و نوشتن فایل متنی" data-en="Reading and writing text files">خواندن و نوشتن فایل متنی</a><a class="" href="p4-errors.html" data-fa="پیمایش فایل و مدیریت خطا" data-en="Walking a file and handling errors">پیمایش فایل و مدیریت خطا</a><a class="" href="p4-json.html" data-fa="چند فایل و JSON" data-en="Several files and JSON">چند فایل و JSON</a><a class="" href="p4-assess-files.html" data-fa="ارزشیابی کار با فایل" data-en="Files assessment">ارزشیابی کار با فایل</a><p class="mod" data-fa="پودمان ۵: برنامه‌نویسی جنگو" data-en="Module 5: Django">پودمان ۵: برنامه‌نویسی جنگو</p><p class="unit" data-fa="معرفی پودمان" data-en="Module introduction">معرفی پودمان</p><a class="" href="p5-intro.html" data-fa="معرفی پودمان جنگو" data-en="Introducing the Django module">معرفی پودمان جنگو</a><p class="unit" data-fa="ایجاد وب‌اپلیکیشن" data-en="Creating the web app">ایجاد وب‌اپلیکیشن</p><a class="" href="p5-what.html" data-fa="جنگو چیست و نصب" data-en="What Django is, and installing it">جنگو چیست و نصب</a><a class="" href="p5-project.html" data-fa="پروژه، اپ و اولین view" data-en="Project, app, and the first view">پروژه، اپ و اولین view</a><a class="" href="p5-template.html" data-fa="قالب و دمای واقعی" data-en="Templates and a real temperature">قالب و دمای واقعی</a><a class="" href="p5-assess-create.html" data-fa="ارزشیابی ایجاد وب‌اپلیکیشن" data-en="Creating-the-app assessment">ارزشیابی ایجاد وب‌اپلیکیشن</a><p class="unit" data-fa="توسعه وب‌اپلیکیشن" data-en="Developing the web app">توسعه وب‌اپلیکیشن</p><a class="" href="p5-model.html" data-fa="مدل شهر و پنل ادمین" data-en="The city model and the admin">مدل شهر و پنل ادمین</a><a class="" href="p5-list.html" data-fa="خواندن شهرها و نمایش فهرست" data-en="Reading cities and showing the list">خواندن شهرها و نمایش فهرست</a><a class="" href="p5-auth.html" data-fa="ورود و خروج" data-en="Sign-in and sign-out">ورود و خروج</a><a class="" href="p5-crud.html" data-fa="افزودن و حذف شهر" data-en="Adding and deleting a city">افزودن و حذف شهر</a><a class="" href="p5-bugs.html" data-fa="باگ و امنیت" data-en="Bugs and security">باگ و امنیت</a><p class="mod" data-fa="پایان کتاب" data-en="Back of the book">پایان کتاب</p><p class="unit" data-fa="منابع" data-en="References">منابع</p><a class="" href="refs.html" data-fa="منابع کتاب" data-en="Book references">منابع کتاب</a></nav></details>
+    <div class="main">
+      <h1 class="section-title" data-fa="فرم‌ها" data-en="Forms">فرم‌ها</h1><article class="lesson" lang="fa" dir="rtl" data-lang-block="fa"><p class="page-mark">صفحه ۱۰۶</p>
+<p>به‌کارگیری تگ جدول</p>
+<h3 id="_1">کار کارگاهی</h3>
+<p>مطابق تصویر، تگ‌های مورد نیاز را برای ایجاد جدول بنویسید و نتیجه را در مرورگر مشاهده کنید.</p>
+<p><img alt="تصویر کتاب" src="../images/p112-01.png" /></p>
+<h3 id="_2">طراحی فرم</h3>
+<p>فرم‌های ورود اطلاعات فرم‌ها ابزارهای قدرتمندی برای جمع‌آوری اطلاعات از کاربران هستند. یک فرم ورود داده، اطلاعات کاربران را دریافت می‌کند و سپس آنها را برای پردازش و ذخیره‌سازی به یک و‌بسرور ارسال می‌نماید. پردازش و ذخیره‌سازی در</p>
+<figure class="shot"><img alt="شکل 16" src="../images/p112-02.png" /><figcaption>شکل 16</figcaption></figure>
+<p>سمت سرور انجام می‌شود. یک فرم اطلاعاتی شامل تگ‌های مختلفی برای دریافت داده‌های کاربران است.</p>
+<p>این تگ‌ها به شرح زیر هستند:</p>
+<p><code>&lt;form&gt;:</code> برای تعریف یک فرم استفاده می‌شود.</p>
+<p>شکل کلی این تگ به‌صورت زیر است:</p>
+<div class="code-wrap" dir="ltr"><pre><code>&lt;form action=&quot;URL&quot; method=&quot;http_method&quot; enctype=&quot;encoding_type&quot;&gt;
+</code></pre></div>
+<p>ویژگی‌های عنصر فرم به شرح زیر است:</p>
+<p><code>action:</code> این ویژگی مشخص می‌کند که داده‌های فرم برای پردازش به چه آدرسی (<code>URL</code>) در سمت سرور ارسال شوند.</p>
+<p><code>method:</code> روش ارسال داده های فرم را به سرور مشخص می‌کند. این ویژگی دارای دو مقدار <code>get</code> و <code>post</code> است. در روش <code>get</code> داده‌های فرم به عنوان پارامترهای <code>URL</code> به سرور ارسال می‌شوند. این روش برای ارسال داده‌های حساس کاربر مناسب نیست. در روش <code>post</code> اطلاعات فرم به‌صورت پنهانی به سرور ارسال می‌شوند، این روش برای ارسال داده‌های حساس مناسب است. درجدول صفحۀ بعد مقایسه دو روش ارسال اطلاعات به در فرم‌ها را مشاهده کنید (جدول 5).</p>
+<hr />
+<p class="page-mark">صفحه ۱۰۷</p>
+<p>جدول 5 مقایسه دو روش ارسال اطلاعات به در فرم‌ها</p>
+<p>عملیاتروش <code>GET</code>روش <code>POST</code></p>
+<p>داده‌ها در بدنه درخواست <code>HTTP</code> ارسال می‌شوند و</p>
+<p>نحوه ارسال</p>
+<p>داده‌ها از طریق نوار آدرس مرورگر ارسال می‌شوند و در</p>
+<p>در <code>URL</code> مشاهده نمی‌شوند.</p>
+<p>داده‌ها</p>
+<p>نتیجه توسط کاربر مشاهده می‌شوند.</p>
+<p>مرورگرها در هنگام ارسال درخواست توسط روش <code>GET</code></p>
+<p>محدودیت</p>
+<p>دارای محدودیت هستند. بسته به نوع مرورگر و تنظیمات</p>
+<p>محدودیت کمی دارد و می‌تواند برای ارسال فایل و</p>
+<p>حجم داده</p>
+<p>سرور، طول رشته قابل ارسال از طریق نوار آدرس بین</p>
+<p>متن‌های طولانی استفاده شود.</p>
+<p>2000 تا 8000 کاراکتر است.</p>
+<p>امنیت پایینی دارد، علاوه بر نمایش داده‌های کاربران</p>
+<p>امن‌تر از روش <code>GET</code> است اما امنیت کامل ندارد،</p>
+<p>امنیت</p>
+<p>در نوار آدرس، امکان ذخیره شدن محتوای آدرس (کش</p>
+<p>مگر اینکه از پروتکل <code>HTTPS</code> استفاده شود.</p>
+<p>شدن) در حافظه مرورگر موجود است.</p>
+<p>برای دریافت اطلاعات از سرور (مانند جس‌توجو و فیلتر</p>
+<p>برای ارسال اطلاعات به سرور جهت پردازش یا</p>
+<p>کاربردها</p>
+<p>کردن). در این حالت کاربر قصد تغییر داده‌های سرور</p>
+<p>ذخیره‌سازی (مانند ثبت‌نام، ورود، آپلود فایل)</p>
+<p>را ندارد.</p>
+<h3 id="_3">مثال</h3>
+<p>مثالی از به‌کارگیری متد <code>GET</code></p>
+<p><img alt="تصویر کتاب" src="../images/p113-03.png" /></p>
+<p><img alt="تصویر کتاب" src="../images/p113-04.png" /></p>
+<p><img alt="تصویر کتاب" src="../images/p113-05.png" /></p>
+<p>خروجی</p>
+<h3 id="_4">مثال</h3>
+<p>مثالی از به‌کارگیری متد <code>POST</code></p>
+<p><img alt="تصویر کتاب" src="../images/p113-01.png" /></p>
+<p><img alt="تصویر کتاب" src="../images/p113-02.png" /></p>
+<hr />
+<p class="page-mark">صفحه ۱۰۸</p>
+<p>یک فرم حاوی مجموعه‌ای از عناصر برای دریافت اطلاعات مختلف از کاربران است که در جدول ٦ نمایش داده شده است:</p>
+<p>جدول 6 عناصر فرم (تگ هایی که در عنصر فرم مورد استفاده قرار می‌گیرند) و کاربرد آنها عنصر فرم</p>
+<p>کاربرد و شکل کلی عنصر</p>
+<p>تعیین برچسب عناصر فرم.</p>
+<div class="code-wrap" dir="ltr"><pre><code>&lt;label&gt;
+&lt;label for=&quot; &quot;&gt; &lt;/label&gt;
+</code></pre></div>
+<p>دریافت اطلاعات مختلف از کاربر. نوع ورودی توسط ویژگی <code>type</code> مشخص می‌شود.</p>
+<div class="code-wrap" dir="ltr"><pre><code>&lt;input&gt;
+&lt;input type=&quot;&quot; name=&quot;&quot; id=&quot;&quot; value=&quot;&quot; placeholder=&quot;&quot; required &gt;
+&lt;feildset&gt;
+</code></pre></div>
+<p>گروه‌بندی عناصر فرم، این تگ باعث نمایش یک کادر دور گروه فیلدها می‌شود.</p>
+<div class="code-wrap" dir="ltr"><pre><code>&lt;fieldset&gt; &lt;legend&gt; &lt;/legend&gt; &lt;/fieldset&gt;
+&lt;legend&gt;
+</code></pre></div>
+<p>برچسب <code>legend</code> عنوان گروه را مشخص می‌کند.</p>
+<p>دریافت عبارات طولانی از کاربران، اندازه کادر متنی با ویژگی‌های <code>rows</code> و <code>cols</code> مشخص می‌شود.</p>
+<div class="code-wrap" dir="ltr"><pre><code>&lt;textarea&gt;
+&lt;textarea id=&quot;&quot; name=&quot; &quot; rows=&quot;&quot; cols=&quot;&quot; required&gt; &lt;/textarea&gt;
+</code></pre></div>
+<p>ایجاد فهرست یا لیست کشویی. گزینه‌های لیست توسط تگ <code>&lt;option&gt;</code> مشخص می‌شود.</p>
+<div class="code-wrap" dir="ltr"><pre><code>&lt;select id=&quot;&quot; name=&quot;&quot; required&gt;
+&lt;select&gt;
+&lt;option value=&quot;&quot;&gt; &lt;/option&gt;
+&lt;/select&gt;
+</code></pre></div>
+<p>ویژگی <code>type</code> در عنصر <code>&lt;input&gt;</code> نوع داده ورودی کاربر را تعیین می‌کند. مقدار این ویژگی در جدول 7 تشریح شده است:</p>
+<p>جدول 7 مقادیر ویژگی <code>type</code> در عنصر <code>&lt;input&gt;</code></p>
+<p>مقدار ویژگی <code>type</code></p>
+<h3 id="_5">کاربرد</h3>
+<div class="code-wrap" dir="ltr"><pre><code>text, password, email
+</code></pre></div>
+<p>دریافت مقادیر متنی کوتاه مانند نام کاربری، کلمه عبور و ایمیل.</p>
+<div class="code-wrap" dir="ltr"><pre><code>tel, number
+</code></pre></div>
+<p>دریافت شماره تلفن و مقادیر عددی.</p>
+<p><code>radio</code></p>
+<p>ایجاد لیستی از گزینه‌ها که کاربر تنها مجاز به انتخاب یک گزینه باشد.</p>
+<p>ایجاد لیستی از گزینه‌ها به‌کار می‌رود که کاربر امکان انتخاب صفر، یک یا چند گزینه</p>
+<div class="code-wrap" dir="ltr"><pre><code>checkbox
+</code></pre></div>
+<p>را دارد.</p>
+<p><code>file</code></p>
+<p>دریافت فایل از کاربران (آپلود).</p>
+<p><code>submit</code>ایجاد دکمه ارسال اطلاعات</p>
+<p><code>reset</code></p>
+<p>محتوای فرم را پاک می‌کند.</p>
+<hr />
+<p class="page-mark">صفحه ۱۰۹</p>
+<p>برای ایجاد یک گروه دکمه رادیویی باید ویژگی <code>name</code> برای تمام دکمه‌های رادیویی گروه یکسان باشد، در غیراین‌صورت امکان انتخاب چند عنصر وجود دارد. دکمه‌های رادیویی معمولاً زمانی به کار می‌روند که انتخاب یک گزینه از میان چند گزینه مطرح باشد.</p>
+<h3 id="_6">مثال</h3>
+<h3 id="_7">مثال:</h3>
+<p><img alt="تصویر کتاب" src="../images/p115-01.png" /></p>
+<div class="code-wrap" dir="ltr"><pre><code>مرد&lt;input type=&quot;radio&quot; name=&quot;gender&quot; value=&quot;male&quot;&gt;
+زن&lt;input type=&quot;radio&quot; name=&quot;gender&quot; value=&quot;female&quot;&gt;
+</code></pre></div>
+<p>ایجاد فرم ثبت سفارش</p>
+<h3 id="_8">کار کارگاهی</h3>
+<p>یک صفحه جدید با نام <code>order_form.html</code> ایجاد کنید و فرم ثبت سفارش را به صورت شکل زیر درون آن بنویسید. سپس نتیجه را در مرورگر بررسی کنید.</p>
+<p><img alt="تصویر کتاب" src="../images/p115-02.png" /></p>
+<p><img alt="تصویر کتاب" src="../images/p115-03.png" /></p>
+<p>خروجی</p>
+<hr />
+<p class="page-mark">صفحه ۱۱۰</p>
+<p><code>name:</code> نام عنصر را تعیین می‌کند که در کدنویسی سمت سرور کاربرد دارد.</p>
+<p><code>id:</code> شناسه عنصر فرم را تعیین می‌کند که باید مقداری منحصر به‌فرد باشد.</p>
+<p><code>value:</code> مقدار پیش‌فرض عنصر فرم را تعیین می‌کند.</p>
+<p><code>required:</code> استفاده از این ویژگی در عناصر فرم باعث می‌شود که در صورت خالی رها شدن یک فیلد پیغام خطا ظاهر شود.</p>
+<h3 id="_9">فعالیت</h3>
+<p>یک فرم بازگشت کالا حاوی نام و نام خانوادگی، شماره سفارش، نام کالا، علت مرجوع کالا و تصویر کالا ایجاد کنید.</p>
+<h3 id="semantic-elements">ساختاردهی به صفحه با عناصر معنایی <bdi dir="ltr">(Semantic Elements)</bdi></h3>
+<p>عناصر معنایی در <code>HTML</code> به عناصری اطلاق می‌شود که محتوای درون خود را به وضوح توصیف می‌کنند.</p>
+<p>استفاده از این عناصر باعث می‌شود که ابزارهای صفح‌هخوان و موتورهای جس‌توجو درک بهتری از ساختار و محتوای صفحه داشته باشند. عناصر معنایی نه تنها سئوی صفحه را بهبود می‌دهند، بلکه سازمان‌دهی و نگهداری کد را ساده‌تر می‌کنند. این عناصر به شرح زیر هستند:</p>
+<p><code>&lt;main&gt;:</code> برای نمایش محتوای اصلی صفحه به‌کار می‌رود. هر صفحه باید تنها یک عنصر <code>&lt;main&gt;</code> داشته باشد.</p>
+<p><code>&lt;header&gt;:</code> برای تعریف سرصفحه یک سند استفاده می‌شود. درون این تگ امکان استفاده از تگ‌های مختلفی مانند <code>&lt;h1&gt;</code>، <code>&lt;p&gt;</code>، <code>&lt;nav&gt;</code>، <code>&lt;ul&gt;</code>، <code>&lt;img&gt;</code> و <code>&lt;form&gt;</code> وجود دارد.</p>
+<p><code>&lt;nav&gt;:</code> در هنگام ایجاد منوهای ناوبری1 استفاده می‌شود (شکل17).</p>
+<figure class="shot"><img alt="شکل 17" src="../images/p116-01.png" /><figcaption>شکل 17</figcaption></figure>
+<p>1 منوی ناوبری (<code>Navigation</code> <code>Menu</code>) شامل مجموعه‌ای از پیوندهاست که به کاربران اجازه می‌دهد در صفحات یا بخش‌های مختلف داخل یک وب‌سایت حرکت کنند. منوی ناوبری سایت معمولاً در بالا یا کنار یک صفحه وب قرار می‌گیرد.</p>
+<hr /></article><article class="lesson" lang="en" dir="ltr" data-lang-block="en" hidden><p class="page-mark">Page 106</p>
+<p>Using the table tag</p>
+<h3 id="workshop">Workshop</h3>
+<p>As in the image, write the tags needed to create the table and observe the result in the browser.</p>
+<p><img alt="Book image" src="../images/p112-01.png" /></p>
+<h3 id="form-design">Form design</h3>
+<p>Data entry forms Forms are powerful tools for collecting information from users. A data entry form receives user information and then sends it to a web server for processing and storage. Processing and storage are</p>
+<figure class="shot"><img alt="Figure 16" src="../images/p112-02.png" /><figcaption>Figure 16</figcaption></figure>
+<p>done on the server side. An information form includes various tags for receiving user data.</p>
+<p>These tags are as follows:</p>
+<p><code>&lt;form&gt;:</code> Used to define a form.</p>
+<p>The general form of this tag is as follows:</p>
+<div class="code-wrap" dir="ltr"><pre><code>&lt;form action=&quot;URL&quot; method=&quot;http_method&quot; enctype=&quot;encoding_type&quot;&gt;
+</code></pre></div>
+<p>The attributes of the form element are as follows:</p>
+<p><code>action:</code> This attribute specifies to which address (<code>URL</code>) on the server side the form data should be sent for processing.</p>
+<p><code>method:</code> Specifies the method of sending the form data to the server. This attribute has two values, <code>get</code> and <code>post</code>. In the <code>get</code> method, the form data are sent to the server as <code>URL</code> parameters. This method is not suitable for sending sensitive user data. In the <code>post</code> method, the form information is sent to the server in a hidden way; this method is suitable for sending sensitive data. In the table on the next page, see the comparison of the two methods of sending information in forms (Table 5).</p>
+<hr />
+<p class="page-mark">Page 107</p>
+<p>Table 5 Comparison of the two methods of sending information in forms</p>
+<p>Operation <code>GET</code> method <code>POST</code> method</p>
+<p>How data are sent</p>
+<p>Data are sent through the browser address bar and</p>
+<p>Data are sent in the body of the <code>HTTP</code> request and</p>
+<p>are visible to the user as a result.</p>
+<p>are not visible in the <code>URL</code>.</p>
+<p>Data volume limit</p>
+<p>Browsers have a limit when sending a request with the <code>GET</code></p>
+<p>method. Depending on the browser type and server</p>
+<p>settings, the length of the string that can be sent through the address bar is between</p>
+<p>2000 and 8000 characters.</p>
+<p>Has little limit and can be used for sending files and</p>
+<p>long texts.</p>
+<p>Security</p>
+<p>Has low security; in addition to displaying user data</p>
+<p>in the address bar, it is possible for the address content to be stored (cached)</p>
+<p>in the browser memory.</p>
+<p>Is more secure than the <code>GET</code> method but does not have complete security,</p>
+<p>unless the <code>HTTPS</code> protocol is used.</p>
+<p>Uses</p>
+<p>For receiving information from the server (such as search and filtering).</p>
+<p>In this case the user does not intend to change the server data.</p>
+<p>For sending information to the server for processing or</p>
+<p>storage (such as registration, login, file upload)</p>
+<h3 id="example">Example</h3>
+<p>An example of using the <code>GET</code> method</p>
+<p><img alt="Book image" src="../images/p113-03.png" /></p>
+<p><img alt="Book image" src="../images/p113-04.png" /></p>
+<p><img alt="Book image" src="../images/p113-05.png" /></p>
+<p>Output</p>
+<h3 id="example_1">Example</h3>
+<p>An example of using the <code>POST</code> method</p>
+<p><img alt="Book image" src="../images/p113-01.png" /></p>
+<p><img alt="Book image" src="../images/p113-02.png" /></p>
+<hr />
+<p class="page-mark">Page 108</p>
+<p>A form contains a set of elements for receiving various information from users, which is shown in Table 6:</p>
+<p>Table 6 Form elements (tags used inside the form element) and their uses Form element</p>
+<p>Use and general form of the element</p>
+<p>Setting labels for form elements.</p>
+<div class="code-wrap" dir="ltr"><pre><code>&lt;label&gt;
+&lt;label for=&quot; &quot;&gt; &lt;/label&gt;
+</code></pre></div>
+<p>Receiving various information from the user. The input type is specified by the <code>type</code> attribute.</p>
+<div class="code-wrap" dir="ltr"><pre><code>&lt;input&gt;
+&lt;input type=&quot;&quot; name=&quot;&quot; id=&quot;&quot; value=&quot;&quot; placeholder=&quot;&quot; required &gt;
+&lt;feildset&gt;
+</code></pre></div>
+<p>Grouping form elements; this tag causes a box to be displayed around the group of fields.</p>
+<div class="code-wrap" dir="ltr"><pre><code>&lt;fieldset&gt; &lt;legend&gt; &lt;/legend&gt; &lt;/fieldset&gt;
+&lt;legend&gt;
+</code></pre></div>
+<p>The <code>legend</code> label specifies the group title.</p>
+<p>Receiving long phrases from users; the size of the text box is specified with the <code>rows</code> and <code>cols</code> attributes.</p>
+<div class="code-wrap" dir="ltr"><pre><code>&lt;textarea&gt;
+&lt;textarea id=&quot;&quot; name=&quot; &quot; rows=&quot;&quot; cols=&quot;&quot; required&gt; &lt;/textarea&gt;
+</code></pre></div>
+<p>Creating a list or drop-down list. The list options are specified with the <code>&lt;option&gt;</code> tag.</p>
+<div class="code-wrap" dir="ltr"><pre><code>&lt;select id=&quot;&quot; name=&quot;&quot; required&gt;
+&lt;select&gt;
+&lt;option value=&quot;&quot;&gt; &lt;/option&gt;
+&lt;/select&gt;
+</code></pre></div>
+<p>The <code>type</code> attribute on the <code>&lt;input&gt;</code> element determines the type of user input data. The value of this attribute is described in Table 7:</p>
+<p>Table 7 Values of the <code>type</code> attribute on the <code>&lt;input&gt;</code> element</p>
+<p>Value of the <code>type</code> attribute</p>
+<h3 id="use">Use</h3>
+<div class="code-wrap" dir="ltr"><pre><code>text, password, email
+</code></pre></div>
+<p>Receiving short text values such as username, password, and email.</p>
+<div class="code-wrap" dir="ltr"><pre><code>tel, number
+</code></pre></div>
+<p>Receiving a phone number and numeric values.</p>
+<p><code>radio</code></p>
+<p>Creating a list of options where the user is allowed to select only one option.</p>
+<p>Used to create a list of options where the user can select zero, one, or more options</p>
+<div class="code-wrap" dir="ltr"><pre><code>checkbox
+</code></pre></div>
+<p>.</p>
+<p><code>file</code></p>
+<p>Receiving a file from users (upload).</p>
+<p><code>submit</code> Creating a button to send information</p>
+<p><code>reset</code></p>
+<p>Clears the form content.</p>
+<hr />
+<p class="page-mark">Page 109</p>
+<p>To create a group of radio buttons, the <code>name</code> attribute must be the same for all radio buttons in the group; otherwise it is possible to select more than one element. Radio buttons are usually used when choosing one option from among several options is involved.</p>
+<h3 id="example_2">Example</h3>
+<h3 id="example_3">Example:</h3>
+<p><img alt="Book image" src="../images/p115-01.png" /></p>
+<div class="code-wrap" dir="ltr"><pre><code>مرد&lt;input type=&quot;radio&quot; name=&quot;gender&quot; value=&quot;male&quot;&gt;
+زن&lt;input type=&quot;radio&quot; name=&quot;gender&quot; value=&quot;female&quot;&gt;
+</code></pre></div>
+<p>Creating an order form</p>
+<h3 id="workshop_1">Workshop</h3>
+<p>Create a new page named <code>order_form.html</code> and write the order form inside it as in the figure below. Then check the result in the browser.</p>
+<p><img alt="Book image" src="../images/p115-02.png" /></p>
+<p><img alt="Book image" src="../images/p115-03.png" /></p>
+<p>Output</p>
+<hr />
+<p class="page-mark">Page 110</p>
+<p><code>name:</code> Sets the name of the element, which is used in server-side coding.</p>
+<p><code>id:</code> Sets the identifier of the form element, which must be a unique value.</p>
+<p><code>value:</code> Sets the default value of the form element.</p>
+<p><code>required:</code> Using this attribute on form elements causes an error message to appear if a field is left empty.</p>
+<h3 id="activity">Activity</h3>
+<p>Create a product return form containing first and last name, order number, product name, reason for return, and product image.</p>
+<h3 id="structuring-the-page-with-semantic-elements-semantic-elements">Structuring the page with semantic elements (Semantic Elements)</h3>
+<p>Semantic elements in <code>HTML</code> are elements that clearly describe the content inside them.</p>
+<p>Using these elements helps screen readers and search engines better understand the structure and content of the page. Semantic elements not only improve the page’s SEO, but also make organizing and maintaining the code easier. These elements are as follows:</p>
+<p><code>&lt;main&gt;:</code> Used to display the main content of the page. Each page should have only one <code>&lt;main&gt;</code> element.</p>
+<p><code>&lt;header&gt;:</code> Used to define the header of a document. Inside this tag it is possible to use various tags such as <code>&lt;h1&gt;</code>, <code>&lt;p&gt;</code>, <code>&lt;nav&gt;</code>, <code>&lt;ul&gt;</code>, <code>&lt;img&gt;</code>, and <code>&lt;form&gt;</code>.</p>
+<p><code>&lt;nav&gt;:</code> Used when creating navigation menus1 (Figure 17).</p>
+<figure class="shot"><img alt="Figure 17" src="../images/p116-01.png" /><figcaption>Figure 17</figcaption></figure>
+<p>1 A navigation menu (<code>Navigation</code> <code>Menu</code>) includes a set of links that allow users to move through different pages or sections inside a website. The site navigation menu is usually placed at the top or side of a web page.</p>
+<hr /></article>
+      <aside class="extra">
+        <h2 data-fa="تمرین این بخش" data-en="Exercises for this section">تمرین این بخش</h2>
+        <p class="extra-note" data-fa="این تمرین‌ها و پیوندها اضافه بر متن کتاب‌اند." data-en="These exercises and links are in addition to the book.">این تمرین‌ها و پیوندها اضافه بر متن کتاب‌اند.</p>
+        <ol><li data-fa="فرم عضویت بساز با نام، رمز، یک گروه رادیویی با name یکسان، و دکمه ارسال." data-en="Build a signup form with a name, a password, one radio group that shares a name, and a submit button.">فرم عضویت بساز با نام، رمز، یک گروه رادیویی با name یکسان، و دکمه ارسال.</li><li data-fa="به فرم یک منوی انتخاب رشته اضافه کن و صفحه را طوری کامل کن که بدون پر کردن نام، فیلد نام خالی ماندنش معلوم باشد." data-en="Add a field-of-study menu to the form, and mark the name field so an empty name is visible as missing.">به فرم یک منوی انتخاب رشته اضافه کن و صفحه را طوری کامل کن که بدون پر کردن نام، فیلد نام خالی ماندنش معلوم باشد.</li></ol>
+        <h2 data-fa="پیوند مفید" data-en="Useful link">پیوند مفید</h2><ul><li><a href="https://developer.mozilla.org/en-US/docs/Learn/Forms" data-fa="فرم‌های وب" data-en="Web forms">فرم‌های وب</a></li></ul>
+      </aside>
+    <nav class="pager"><a rel="prev" class="prev" href="p2-img.html"><span class="pager-word" data-fa="قبلی" data-en="Previous">قبلی</span><span class="pager-name" data-fa="تصویر در صفحه" data-en="Images on the page">تصویر در صفحه</span></a><a rel="next" class="next" href="p2-semantic.html"><span class="pager-word" data-fa="بعدی" data-en="Next">بعدی</span><span class="pager-name" data-fa="عناصر معنایی" data-en="Semantic elements">عناصر معنایی</span></a></nav>
+    </div>
+  </div>
+  <script src="../assets/search-index.js?v=4"></script>
+  <script src="../assets/app.js?v=4"></script>
+</body>
+</html>

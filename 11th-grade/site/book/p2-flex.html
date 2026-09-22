@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title data-fa="چیدمان با Flexbox" data-en="Layout with Flexbox">چیدمان با Flexbox</title>
+  <link rel="icon" href="../assets/favicon.svg">
+  <link rel="stylesheet" href="../assets/style.css?v=4">
+</head>
+<body data-root="../">
+  <header class="top">
+    <a class="brand" href="../index.html">
+      <span data-fa="طراح سایت" data-en="Site Design">طراح سایت</span>
+      <small data-fa="پایه یازدهم" data-en="Grade 11">پایه یازدهم</small>
+    </a>
+    <div class="search-wrap">
+      <input id="q" type="search" autocomplete="off"
+        data-fa-placeholder="جستجو در درس‌ها" data-en-placeholder="Search lessons"
+        placeholder="جستجو در درس‌ها">
+      <div id="results" class="results" hidden></div>
+    </div>
+    <a class="download" href="../grade11-offline.zip?v=2" data-fa="دانلود کل سایت" data-en="Download the whole site">دانلود کل سایت</a>
+    <button type="button" id="lang-toggle" class="lang-toggle" dir="ltr" data-lang="fa"
+      aria-label="تغییر زبان">
+      <span data-opt="fa">فا</span>
+      <span data-opt="en">EN</span>
+    </button>
+  </header>
+  <div class="layout">
+    <details class="toc" open><summary><span data-fa="فهرست درس‌ها" data-en="Lesson list">فهرست درس‌ها</span></summary><nav class="side" aria-label="lessons"><p class="mod" data-fa="شروع کتاب" data-en="Opening">شروع کتاب</p><p class="unit" data-fa="فهرست" data-en="Contents">فهرست</p><a class="" href="toc.html" data-fa="فهرست" data-en="Contents">فهرست</a><p class="mod" data-fa="پودمان ۱: برنامه‌نویسی پایتون" data-en="Module 1: Python programming">پودمان ۱: برنامه‌نویسی پایتون</p><p class="unit" data-fa="معرفی پودمان" data-en="Module introduction">معرفی پودمان</p><a class="" href="p1-intro.html" data-fa="معرفی پودمان پایتون" data-en="Introducing the Python module">معرفی پودمان پایتون</a><p class="unit" data-fa="مدل‌سازی داده" data-en="Data modeling">مدل‌سازی داده</p><a class="" href="p1-python.html" data-fa="پایتون و محیط برنامه‌نویسی" data-en="Python and the programming environment">پایتون و محیط برنامه‌نویسی</a><a class="" href="p1-vars.html" data-fa="متغیرها، نوع داده و عملگرها" data-en="Variables, types, and operators">متغیرها، نوع داده و عملگرها</a><a class="" href="p1-cast.html" data-fa="ورودی و تبدیل نوع" data-en="Input and type casting">ورودی و تبدیل نوع</a><a class="" href="p1-lists.html" data-fa="لیست‌ها" data-en="Lists">لیست‌ها</a><a class="" href="p1-if.html" data-fa="شرط‌های ساده" data-en="Simple conditions">شرط‌های ساده</a><a class="" href="p1-elif.html" data-fa="if، elif و else" data-en="if, elif, and else">if، elif و else</a><a class="" href="p1-for.html" data-fa="حلقه for و range" data-en="The for loop and range">حلقه for و range</a><a class="" href="p1-while.html" data-fa="حلقه while و کنترل حلقه" data-en="The while loop and loop control">حلقه while و کنترل حلقه</a><a class="" href="p1-assess-data.html" data-fa="ارزشیابی مدل‌سازی داده" data-en="Data-modeling assessment">ارزشیابی مدل‌سازی داده</a><p class="unit" data-fa="توابع و ماژول‌ها" data-en="Functions and modules">توابع و ماژول‌ها</p><a class="" href="p1-sets.html" data-fa="مجموعه (set)" data-en="Sets">مجموعه (set)</a><a class="" href="p1-dict.html" data-fa="دیکشنری" data-en="Dictionaries">دیکشنری</a><a class="" href="p1-quiz.html" data-fa="پروژه بازی Quiz" data-en="Quiz game project">پروژه بازی Quiz</a><a class="" href="p1-tuple.html" data-fa="تاپل" data-en="Tuples">تاپل</a><a class="" href="p1-func.html" data-fa="تعریف تابع، پارامتر و return" data-en="Defining functions, parameters, and return">تعریف تابع، پارامتر و return</a><a class="" href="p1-func-more.html" data-fa="تمرین تابع و مرتب‌سازی" data-en="Function practice and sorting">تمرین تابع و مرتب‌سازی</a><a class="" href="p1-modules.html" data-fa="ماژول‌ها و تفاوت تابع و متد" data-en="Modules, and functions versus methods">ماژول‌ها و تفاوت تابع و متد</a><a class="" href="p1-assess-func.html" data-fa="ارزشیابی توابع و ماژول‌ها" data-en="Functions and modules assessment">ارزشیابی توابع و ماژول‌ها</a><p class="mod" data-fa="پودمان ۲: صفحات وب ایستا" data-en="Module 2: Static web pages">پودمان ۲: صفحات وب ایستا</p><p class="unit" data-fa="معرفی پودمان" data-en="Module introduction">معرفی پودمان</p><a class="" href="p2-intro.html" data-fa="معرفی پودمان صفحات ایستا" data-en="Introducing static web pages">معرفی پودمان صفحات ایستا</a><p class="unit" data-fa="ساختار با HTML" data-en="Structure with HTML">ساختار با HTML</p><a class="" href="p2-web.html" data-fa="وب چگونه کار می‌کند" data-en="How the web works">وب چگونه کار می‌کند</a><a class="" href="p2-concepts.html" data-fa="مفاهیم طراحی وب و نقشه سایت" data-en="Web-design concepts and the site map">مفاهیم طراحی وب و نقشه سایت</a><a class="" href="p2-tags.html" data-fa="اولین صفحه HTML" data-en="A first HTML page">اولین صفحه HTML</a><a class="" href="p2-text.html" data-fa="متن، لیست و پیوند" data-en="Text, lists, and links">متن، لیست و پیوند</a><a class="" href="p2-img.html" data-fa="تصویر در صفحه" data-en="Images on the page">تصویر در صفحه</a><a class="" href="p2-forms.html" data-fa="فرم‌ها" data-en="Forms">فرم‌ها</a><a class="" href="p2-semantic.html" data-fa="عناصر معنایی" data-en="Semantic elements">عناصر معنایی</a><a class="" href="p2-assess-html.html" data-fa="ارزشیابی HTML" data-en="HTML assessment">ارزشیابی HTML</a><p class="unit" data-fa="ظاهر با CSS" data-en="Appearance with CSS">ظاهر با CSS</p><a class="" href="p2-css-start.html" data-fa="نوشتن CSS" data-en="Writing CSS">نوشتن CSS</a><a class="" href="p2-css-look.html" data-fa="رنگ، پس‌زمینه و انتخاب‌گر" data-en="Color, background, and selectors">رنگ، پس‌زمینه و انتخاب‌گر</a><a class="" href="p2-box.html" data-fa="مدل جعبه‌ای و display" data-en="The box model and display">مدل جعبه‌ای و display</a><a class="current" href="p2-flex.html" data-fa="چیدمان با Flexbox" data-en="Layout with Flexbox">چیدمان با Flexbox</a><a class="" href="p2-flex-work.html" data-fa="کارگاه چیدمان صفحه" data-en="Page-layout workshop">کارگاه چیدمان صفحه</a><a class="" href="p2-media.html" data-fa="مدیا کوئری و ارزشیابی CSS" data-en="Media queries and the CSS assessment">مدیا کوئری و ارزشیابی CSS</a><p class="mod" data-fa="پودمان ۳: صفحات وب تعاملی" data-en="Module 3: Interactive web pages">پودمان ۳: صفحات وب تعاملی</p><p class="unit" data-fa="معرفی پودمان" data-en="Module introduction">معرفی پودمان</p><a class="" href="p3-intro.html" data-fa="معرفی پودمان تعاملی" data-en="Introducing the interactive module">معرفی پودمان تعاملی</a><p class="unit" data-fa="بوت‌استرپ" data-en="Bootstrap">بوت‌استرپ</p><a class="" href="p3-bs-start.html" data-fa="فریم‌ورک و شروع بوت‌استرپ" data-en="Frameworks and starting Bootstrap">فریم‌ورک و شروع بوت‌استرپ</a><a class="" href="p3-bs-util.html" data-fa="فاصله، گردی و لیست" data-en="Spacing, rounding, and lists">فاصله، گردی و لیست</a><a class="" href="p3-bs-header.html" data-fa="سرصفحه فروشگاه" data-en="The shop header">سرصفحه فروشگاه</a><a class="" href="p3-bs-grid.html" data-fa="شبکه Grid" data-en="The grid">شبکه Grid</a><a class="" href="p3-bs-rwd.html" data-fa="کلاس‌های واکنش‌گرا" data-en="Responsive classes">کلاس‌های واکنش‌گرا</a><a class="" href="p3-bs-nav.html" data-fa="نوار ناوبری و جزئیات محصول" data-en="Navbar and product details">نوار ناوبری و جزئیات محصول</a><a class="" href="p3-bs-form.html" data-fa="فرم و پنجره Modal" data-en="Forms and modals">فرم و پنجره Modal</a><a class="" href="p3-bs-show.html" data-fa="کاروسل و آکاردئون" data-en="Carousel and accordion">کاروسل و آکاردئون</a><a class="" href="p3-bs-assess.html" data-fa="ارزشیابی بوت‌استرپ" data-en="Bootstrap assessment">ارزشیابی بوت‌استرپ</a><p class="unit" data-fa="جاوااسکریپت" data-en="JavaScript">جاوااسکریپت</p><a class="" href="p3-js-start.html" data-fa="جاوااسکریپت در صفحه وب" data-en="JavaScript on the page">جاوااسکریپت در صفحه وب</a><a class="" href="p3-js-vars.html" data-fa="متغیر و نوع داده" data-en="Variables and data types">متغیر و نوع داده</a><a class="" href="p3-js-ops.html" data-fa="عملگرها" data-en="Operators">عملگرها</a><a class="" href="p3-js-data.html" data-fa="آرایه و شیء" data-en="Arrays and objects">آرایه و شیء</a><a class="" href="p3-js-if.html" data-fa="شرط در جاوااسکریپت" data-en="Conditions in JavaScript">شرط در جاوااسکریپت</a><a class="" href="p3-js-loops.html" data-fa="حلقه‌ها" data-en="Loops">حلقه‌ها</a><a class="" href="p3-js-func.html" data-fa="تابع‌ها" data-en="Functions">تابع‌ها</a><a class="" href="p3-js-dom.html" data-fa="صفحه، رویداد و اعتبار فرم" data-en="The page, events, and form validation">صفحه، رویداد و اعتبار فرم</a><a class="" href="p3-js-assess.html" data-fa="ارزشیابی جاوااسکریپت" data-en="JavaScript assessment">ارزشیابی جاوااسکریپت</a><p class="mod" data-fa="پودمان ۴: توسعه وب پایتون" data-en="Module 4: Python for the web">پودمان ۴: توسعه وب پایتون</p><p class="unit" data-fa="معرفی پودمان" data-en="Module introduction">معرفی پودمان</p><a class="" href="p4-intro.html" data-fa="معرفی پودمان شیءگرایی" data-en="Introducing the object-oriented module">معرفی پودمان شیءگرایی</a><p class="unit" data-fa="شیءگرایی" data-en="Object-oriented programming">شیءگرایی</p><a class="" href="p4-idea.html" data-fa="ایده شیء و کلاس" data-en="The idea of objects and classes">ایده شیء و کلاس</a><a class="" href="p4-class.html" data-fa="ساخت کلاس و متد" data-en="Writing a class and methods">ساخت کلاس و متد</a><a class="" href="p4-inherit.html" data-fa="وراثت" data-en="Inheritance">وراثت</a><a class="" href="p4-protect.html" data-fa="داده معتبر و استفاده داخلی" data-en="Valid data and internal use">داده معتبر و استفاده داخلی</a><a class="" href="p4-assess-oop.html" data-fa="ارزشیابی برنامه شیءگرا" data-en="Object-oriented assessment">ارزشیابی برنامه شیءگرا</a><p class="unit" data-fa="فایل و توسعه" data-en="Files and development">فایل و توسعه</p><a class="" href="p4-files.html" data-fa="خواندن و نوشتن فایل متنی" data-en="Reading and writing text files">خواندن و نوشتن فایل متنی</a><a class="" href="p4-errors.html" data-fa="پیمایش فایل و مدیریت خطا" data-en="Walking a file and handling errors">پیمایش فایل و مدیریت خطا</a><a class="" href="p4-json.html" data-fa="چند فایل و JSON" data-en="Several files and JSON">چند فایل و JSON</a><a class="" href="p4-assess-files.html" data-fa="ارزشیابی کار با فایل" data-en="Files assessment">ارزشیابی کار با فایل</a><p class="mod" data-fa="پودمان ۵: برنامه‌نویسی جنگو" data-en="Module 5: Django">پودمان ۵: برنامه‌نویسی جنگو</p><p class="unit" data-fa="معرفی پودمان" data-en="Module introduction">معرفی پودمان</p><a class="" href="p5-intro.html" data-fa="معرفی پودمان جنگو" data-en="Introducing the Django module">معرفی پودمان جنگو</a><p class="unit" data-fa="ایجاد وب‌اپلیکیشن" data-en="Creating the web app">ایجاد وب‌اپلیکیشن</p><a class="" href="p5-what.html" data-fa="جنگو چیست و نصب" data-en="What Django is, and installing it">جنگو چیست و نصب</a><a class="" href="p5-project.html" data-fa="پروژه، اپ و اولین view" data-en="Project, app, and the first view">پروژه، اپ و اولین view</a><a class="" href="p5-template.html" data-fa="قالب و دمای واقعی" data-en="Templates and a real temperature">قالب و دمای واقعی</a><a class="" href="p5-assess-create.html" data-fa="ارزشیابی ایجاد وب‌اپلیکیشن" data-en="Creating-the-app assessment">ارزشیابی ایجاد وب‌اپلیکیشن</a><p class="unit" data-fa="توسعه وب‌اپلیکیشن" data-en="Developing the web app">توسعه وب‌اپلیکیشن</p><a class="" href="p5-model.html" data-fa="مدل شهر و پنل ادمین" data-en="The city model and the admin">مدل شهر و پنل ادمین</a><a class="" href="p5-list.html" data-fa="خواندن شهرها و نمایش فهرست" data-en="Reading cities and showing the list">خواندن شهرها و نمایش فهرست</a><a class="" href="p5-auth.html" data-fa="ورود و خروج" data-en="Sign-in and sign-out">ورود و خروج</a><a class="" href="p5-crud.html" data-fa="افزودن و حذف شهر" data-en="Adding and deleting a city">افزودن و حذف شهر</a><a class="" href="p5-bugs.html" data-fa="باگ و امنیت" data-en="Bugs and security">باگ و امنیت</a><p class="mod" data-fa="پایان کتاب" data-en="Back of the book">پایان کتاب</p><p class="unit" data-fa="منابع" data-en="References">منابع</p><a class="" href="refs.html" data-fa="منابع کتاب" data-en="Book references">منابع کتاب</a></nav></details>
+    <div class="main">
+      <h1 class="section-title" data-fa="چیدمان با Flexbox" data-en="Layout with Flexbox">چیدمان با Flexbox</h1><article class="lesson" lang="fa" dir="rtl" data-lang-block="fa"><p class="page-mark">صفحه ۱۳۲</p>
+<p>چیدمان <code>Flexbox</code> فلکس یک مدل طرح‌بندی در <code>CSS</code> است که برای ایجاد طرح‌های منعطف، واکنش‌گرا و یک بعدی استفاده می‌شود. فلکس توانایی ایجاد یک چیدمان افقی یا عمودی را برای عناصر صفحه دارد؛ به‌علاوه امکان تراز کردن عناصر و توزیع خودکار فضا را به توسعه‌دهنده می‌دهد. طرح‌هایی که توسط <code>flexbox</code> ایجاد می‌شوند، با اندازه‌های مختلف صفحه نمایش سازگاری خواهند داشت (جدول 10).</p>
+<p>تنظیم ویژگی‌های عنصر والد برای چینش افقی یا عمودی عناصر فرزند در یک عنصر مشخص، از مدل فلکس استفاده می‌شود. بدین منظور ویژگی <code>display</code> با مقدار <code>Flex</code> برای عنصر والد به‌کار می‌رود. در حالت پیش‌فرض این کار باعث ایجاد چیدمان افقی برای فرزندان عنصر والد می‌گردد.</p>
+<p>برای فعال‌کردن <code>Flexbox</code> کافی است ویژگی زیر را به عنصر والد اضافه کنید:</p>
+<div class="code-wrap" dir="ltr"><pre><code>;display: flex
+</code></pre></div>
+<p><code>felx-direction:</code> این ویژگی برای تعیین جهت چینش عناصر، به‌صورت افقی یا عمودی استفاده می‌شود.</p>
+<p>مقادیر این ویژگی در جدول 10 مشخص شده است.</p>
+<p>جدول 10 مقادیر ویژگی <code>flex-direction</code> و تأثیر آنها روی نحوه چینش عناصر</p>
+<p>مقدار<code>row</code></p>
+<div class="code-wrap" dir="ltr"><pre><code>Row-reverse
+</code></pre></div>
+<p>افقی (پیش فرض)</p>
+<p>افقی (راست به چپ)</p>
+<div class="code-wrap" dir="ltr"><pre><code>flex-direction:row
+flex-direction:row-reverse
+</code></pre></div>
+<p>توضیح</p>
+<p><code>box3</code></p>
+<p><code>box2</code></p>
+<p><code>box1</code></p>
+<p><code>box1</code></p>
+<p><code>box2</code></p>
+<p><code>box3</code></p>
+<p>مقدار<code>column</code></p>
+<div class="code-wrap" dir="ltr"><pre><code>Column-reverse
+</code></pre></div>
+<p>عمودی از بالا به پایین</p>
+<p>عمودی از پایین به بالا</p>
+<div class="code-wrap" dir="ltr"><pre><code>flex-direction:column
+flex-direction:column-reverse
+</code></pre></div>
+<p><code>box1</code></p>
+<p><code>box3</code></p>
+<p>توضیح</p>
+<p><code>box2</code></p>
+<p><code>box2</code></p>
+<p><code>box3</code></p>
+<p><code>box1</code></p>
+<hr />
+<p class="page-mark">صفحه ۱۳۳</p>
+<p><code>felx-wrap:</code> گاهی پهنای صفحه به اندازه‌ای نیست که همه عناصر در کنار یکدیگر قرار بگیرند. ویژگی <code>flex-wrap</code> مشخص می‌کند که عناصر اضافی به سطر بعد منتقل شوند یا همگی در همان سطر فشرده شوند (جدول11).</p>
+<p>جدول 11 مقادیر ویژگی <code>felx-wrap</code></p>
+<p>مقدار<code>wrap</code></p>
+<div class="code-wrap" dir="ltr"><pre><code>nowrap
+</code></pre></div>
+<p>توضیح</p>
+<p>انتقال به سطر بعد</p>
+<p>عدم انتقال به سطر بعد</p>
+<p><code>felx-folw:</code> ویژگی <code>flex-flow</code> ترکیب <code>flex-direction</code> و <code>flex-wrap</code> است. به‌جای نوشتن دو خط کد می‌توان هر دو ویژگی را در یک خط تنظیم نمود. مانند زیر:</p>
+<div class="code-wrap" dir="ltr"><pre><code>{.container
+;flex-flow: row wrap
+</code></pre></div>
+<p>}</p>
+<p><code>justify-content:</code> این ویژگی تراز عناصر و نحوه توزیع فضای خالی بین عناصر را در راستای محور اصلی کنترل می‌کند (جدول 12).</p>
+<p>جدول 12 مقادیر ویژگی <code>justify-content</code></p>
+<p>مقدار</p>
+<h3 id="_1">توضیحات</h3>
+<p>مقدار</p>
+<h3 id="_2">توضیحات</h3>
+<p>چینش عناصر در سمت</p>
+<p>ایجاد فضای خالی به میزان برابر در اطراف هر</p>
+<div class="code-wrap" dir="ltr"><pre><code>Flex-start
+Space-around
+</code></pre></div>
+<p>چپ</p>
+<p>عنصر</p>
+<p>چینش عناصر در سمت</p>
+<p>فضای خالی برابر بین عناصر (عنصر اول و آخر</p>
+<div class="code-wrap" dir="ltr"><pre><code>Flex-end
+Space-between
+</code></pre></div>
+<p>راست</p>
+<p>به لبه‌ها می‌چسبند)</p>
+<p>فضای خالی برابر در بین عناصر و همچنین بین</p>
+<div class="code-wrap" dir="ltr"><pre><code>Center
+</code></pre></div>
+<p>چینش عناصر در مرکز <code>Space-evenly</code></p>
+<p>عناصر و لبه‌ها</p>
+<hr />
+<p class="page-mark">صفحه ۱۳۴</p>
+<p><code>align-items:</code> ویژگی<code>align-items</code> در <code>Flexbox</code> برای تراز‌کردن عناصر در راستای محور متقاطع (عمود بر محور اصلی) استفاده می‌شود. به کمک این ویژگی می‌توان عناصر را در بالا، پایین و وسط یک سطر قرار داد (شکل 26).</p>
+<p><img alt="تصویر کتاب" src="../images/p140-01.png" /></p>
+<p><code>box1</code></p>
+<p><code>box2</code></p>
+<p><code>box3</code></p>
+<p><code>box1</code></p>
+<p><code>box2</code></p>
+<p><code>box3</code></p>
+<p><code>box3</code></p>
+<p><code>box2</code></p>
+<p><code>box1</code></p>
+<p><code>box1</code></p>
+<p><code>box2</code></p>
+<p><code>box3</code></p>
+<p><strong>شکل 26</strong></p>
+<p>جدول 13 مقادیر ویژگی <code>align-items</code></p>
+<div class="code-wrap" dir="ltr"><pre><code>مقدارStretch
+flex-start
+flex-end
+center
+</code></pre></div>
+<p>به‌صورت کشیده درون</p>
+<p>در بالای عنصر والد قرار</p>
+<p>در پایین عنصر والد قرار</p>
+<p>در وسط عنصر والد</p>
+<p>توضیح</p>
+<p>عنصر والد قرار می‌گیرد</p>
+<p>می‌گیرد.</p>
+<p>می‌گیرد.</p>
+<p>قرار می‌گیرد.</p>
+<p>(پیش‌فرض)</p>
+<hr />
+<p class="page-mark">صفحه ۱۳۵</p>
+<p>طرح بندی صفحات با <code>Flexbox</code> تعیین چیدمان عناصر منوی ناوبری با استفاده از <code>Flexbox</code></p>
+<h3 id="_3">کار کارگاهی</h3>
+<p>فایل <code>index.html</code> را باز کنید و تغییرات زیر را درون آن انجام دهید:</p>
+<p>1 عناصر زیر را درون برچسب <code>&lt;nav&gt;</code> بعد از برچسب <code>&lt;ul/&gt;</code> اضافه کنید و درون آن آیکن سبد خرید و عبارت «ورود | ثبت نام» را قرار دهید:</p>
+<p><img alt="تصویر کتاب" src="../images/p141-01.png" /></p>
+<p>برای تهیه آیکن سبد خرید به سایت <code>svgrepo.com</code> مراجعه کنید و عبارت <code>shopping-cart</code> را جست‌وجو کنید. یک سبد خرید دلخواه را انتخاب کرده و سپس با کلیک روی گزینه <code>Edit</code> <code>vector</code>، تصویر را ویرایش نمایید. اندازه آیکن را روی مقدار حداقل تنظیم کنید. سپس روی دکمه <code>Export</code> کلیک کنید. یک فایل <code>svg</code> دانلود می‌شود. این فایل را با نام <code>shopping-cart.svg</code> در پوشه تصاویر ذخیره کنید.</p>
+<p>2 استایل نوار ناوبری (<code>.top-menu</code>) را به‌صورت شکل زیر تنظیم کنید:</p>
+<p><img alt="تصویر کتاب" src="../images/p141-02.png" /></p>
+<p><img alt="تصویر کتاب" src="../images/p141-03.png" /></p>
+<p>ویژگی <code>flex:</code> <code>display</code>، نوار ناوبری را به یک نگهدارنده فلکس تبدیل می‌کند تا آیتم‌های درون آن (لیست منو در سمت راست و بخش <code>user-action</code> در سمت چپ) به صورت افقی چیده شوند.</p>
+<p>ویژگی ;<code>space-between:</code> <code>justify-content</code>، لیست منو و بخش <code>user-actions</code> را به صورت افقی در دو انتهای نگهدارنده قرار می‌دهد.</p>
+<p>ویژگی <code>align-items:</code> <code>center</code> باعث می‌شود که عناصر درون نگهدارنده فلکس در راستای عمودی در مرکز قرار گیرند.</p>
+<p>ویژگی <code>max-width:</code> <code>1200px</code>، حداکثر پهنای نوار ناوبری را برابر ۱۲۰۰ پیکسل قرار می‌دهد.</p>
+<p>این مقداردهی باعث می‌شود که نوار ناوبری در صفحه نمایش‌های بزرگ، بیش از حد کشیده نشود.</p>
+<p>ویژگی <code>margin:0</code> <code>auto</code> برای قرار گرفتن محدوده نوار منو در وسط صفحه استفاده می‌شود.</p>
+<hr />
+<p class="page-mark">صفحه ۱۳۶</p>
+<p>3 استایل عناصر درون برچسب <code>&lt;ul&gt;</code> را به شکل زیر تنظیم کنید:</p>
+<p>ویژگی <code>display:flex</code> برای چیدمان افقی عناصر درون برچسب <code>&lt;ul&gt;</code> استفاده شده است و ویژگی <code>justify-content</code> فضای بین عناصر را به شکل مناسب توزیع می‌نماید.</p>
+<p>ویژگی <code>margin-left:25px</code> فاصله هر عنصر منو را از عنصر سمت چپ مشخص می نماید.</p>
+<p><img alt="تصویر کتاب" src="../images/p142-01.png" /></p>
+<p><img alt="تصویر کتاب" src="../images/p142-02.png" /></p>
+<p>4 استایل بخش <code>user-actions</code> را به شکل زیر تنظیم کنید:</p>
+<p>به‌کارگیری ویژگی <code>display:flex</code> موجب نمایش دو عنصر «ورود|ثبت نام» و سبد خرید به صورت افقی می‌شود و ویژگی <code>align-items:Center</code> این عناصر را در راستای محور عمودی در وسط ناحیه <code>user-actions</code> نمایش می‌دهد.</p>
+<p>پهنای تصویر سبد خرید باید به اندازه 25 پیکسل و فاصله آن از سمت چپ (<code>margin-left</code>) باید با مقدار صفر تنظیم شود.</p>
+<p><img alt="تصویر کتاب" src="../images/p142-03.png" /></p>
+<p><img alt="تصویر کتاب" src="../images/p142-04.png" /></p>
+<hr />
+<p class="page-mark">صفحه ۱۳۷</p>
+<p>رنگ‌های پس زمینه را از کلاس‌های <code>top-menu</code>، <code>user-actions</code> حذف کنید تا نتیجه زیر حاصل شود</p>
+<p><img alt="تصویر کتاب" src="../images/p143-01.png" /></p>
+<p>ایجاد بخش اصلی صفحه بعد از طراحی بخش هدر سایت، نوبت به طراحی محتوای اصلی صفحه، شامل بخش‌های «جدیدترین محصولات» و «خدمات ویژه» می‌رسد.</p>
+<p>برای طراحی بخش اصلی صفحه از برچسب <code>&lt;main&gt;</code> استفاده می‌شود. این برچسب باید بعد از برچسب <code>&lt;header/&gt;</code> و قبل از <code>&lt;body/&gt;</code> قرار گیرد.</p>
+<p>محتوای نواحی «جدیدترین محصولات» و «خدمات ویژه» باید درون عنصر <code>&lt;main&gt;</code> واقع شود.</p>
+<p>طراحی بخش «جدیدترین محصولات» با استفاده از <code>Flexbox</code></p>
+<h3 id="_4">کار کارگاهی</h3>
+<p>1 یک برچسب <code>&lt;main&gt;</code> بعد از برچسب <code>&lt;header/&gt;</code> درج کنید و درون آن یک عنصر <code>&lt;section&gt;</code> قرار دهید. یک عنصر <code>&lt;section&gt;</code> با کلاس <code>container</code> درون عنصر <code>&lt;main&gt;</code> ایجاد کنید. این عنصر باید حاوی یک عنوان (<code>h2</code>) و یک عنصر نگهدارنده (<code>div</code>) برای نگهداری کارت محصولات باشد. عنوان «جدیدترین محصولات» را درون تگ <code>&lt;h2&gt;</code> بنویسید.</p>
+<p>2 یک کلاس با عنوان <code>products</code> به عنصر <code>&lt;div&gt;</code> اختصاص دهید و درون عنصر <code>products</code> کارت محصولات را قرار دهید. کارت محصول را توسط یک عنصر با کلاس <code>product-card</code> ایجاد کنید. هر کارت حاوی تصویر، عنوان و قیمت محصول است.</p>
+<p><img alt="تصویر کتاب" src="../images/p143-02.png" /></p>
+<p>3 برای آنکه مجموعه تصویر، عنوان و قیمت قابل کلیک باشد، کل محتوای کارت را درون برچسب <code>&lt;a&gt;</code> قرار دهید. تصمیم‌گیری در خصوص چیدمان ستونی تصویر، عنوان و قیمت محصول در تنظیمات عنصر <code>&lt;a&gt;</code> انجام می‌شود.</p>
+<p><img alt="تصویر کتاب" src="../images/p143-03.png" /></p>
+<p>کارت محصول</p>
+<hr />
+<p class="page-mark">صفحه ۱۳۸</p>
+<p><img alt="تصویر کتاب" src="../images/p144-01.png" /></p>
+<p>محتوای سه کارت دیگر را نیز مشابه کد صفحه قبل بنویسید. ویژگی عناصر را به‌صورت تدریجی به صفحه اضافه کنید و نتیجه هر تغییر را در مرورگر بررسی کنید.</p>
+<p>ویژگی <code>max-width</code> حداکثر پهنای ناحیه نگهدارنده را مشخص می‌کند.</p>
+<p>ویژگی <code>margin:20px</code> <code>auto</code> عنصر نگهدارنده را در راستای افقی در وسط صفحه قرار می‌دهد.</p>
+<p>ویژگی <code>display:flex</code> توزیع کارت‌های موجود در عنصر <code>products</code> را توسط تکنیک فلکس انجام می‌دهد.</p>
+<p>ویژگی <code>justify-content:center</code> کارت‌ها را در وسط ناحیۀ نگهدارنده توزیع می‌کند.</p>
+<p>ویژگی <code>flex-wrap:wrap</code> باعث تغییر چیدمان عناصر در هنگام کوچک‌تر شدن پهنای دستگاه می‌گردد. به‌طوری‌که کارت محصولات به سطر بعدی منتقل شوند.</p>
+<p>ویژگی <code>gap</code> فاصله بین کارت محصولات را مشخص می‌کند.</p>
+<p>با توجه به اینکه مجموعه «تصویر، عنوان و قیمت محصول» درون عنصر <code>&lt;a&gt;</code> قرار گرفته است، پس تنظیم چیدمان ستونی این عناصر توسط انتخاب‌گر <code>.product-card</code> <code>a</code> انجام می‌شود.</p>
+<p>ویژگی <code>flex-direction:column</code> چیدمان عناصر را به‌صورت ستونی انجام می‌دهد.</p>
+<p>ویژگی <code>align-items:center</code> تراز عناصر را در راستای محور عمودی تنظیم می‌کند.</p>
+<p><img alt="تصویر کتاب" src="../images/p144-02.png" /></p>
+<hr /></article><article class="lesson" lang="en" dir="ltr" data-lang-block="en" hidden><p class="page-mark">Page 132</p>
+<p><code>Flexbox</code> layout Flex is a layout model in <code>CSS</code> used to create flexible, responsive, one-dimensional designs. Flex can create a horizontal or vertical layout for page elements; it also lets the developer align elements and distribute space automatically. Designs created with <code>flexbox</code> will adapt to different screen sizes (Table 10).</p>
+<p>Setting parent element properties for horizontal or vertical arrangement of child elements In a given element, the flex model is used. To do this, the <code>display</code> property with the value <code>Flex</code> is applied to the parent element. By default this creates a horizontal layout for the children of the parent element.</p>
+<p>To enable <code>Flexbox</code>, it is enough to add the following property to the parent element:</p>
+<div class="code-wrap" dir="ltr"><pre><code>;display: flex
+</code></pre></div>
+<p><code>felx-direction:</code> this property is used to set the direction of arranging elements, horizontally or vertically.</p>
+<p>The values of this property are shown in Table 10.</p>
+<p>Table 10 Values of the <code>flex-direction</code> property and their effect on how elements are arranged</p>
+<p>Value<code>row</code></p>
+<div class="code-wrap" dir="ltr"><pre><code>Row-reverse
+</code></pre></div>
+<p>Horizontal (default)</p>
+<p>Horizontal (right to left)</p>
+<div class="code-wrap" dir="ltr"><pre><code>flex-direction:row
+flex-direction:row-reverse
+</code></pre></div>
+<p>Explanation</p>
+<p><code>box3</code></p>
+<p><code>box2</code></p>
+<p><code>box1</code></p>
+<p><code>box1</code></p>
+<p><code>box2</code></p>
+<p><code>box3</code></p>
+<p>Value<code>column</code></p>
+<div class="code-wrap" dir="ltr"><pre><code>Column-reverse
+</code></pre></div>
+<p>Vertical from top to bottom</p>
+<p>Vertical from bottom to top</p>
+<div class="code-wrap" dir="ltr"><pre><code>flex-direction:column
+flex-direction:column-reverse
+</code></pre></div>
+<p><code>box1</code></p>
+<p><code>box3</code></p>
+<p>Explanation</p>
+<p><code>box2</code></p>
+<p><code>box2</code></p>
+<p><code>box3</code></p>
+<p><code>box1</code></p>
+<hr />
+<p class="page-mark">Page 133</p>
+<p><code>felx-wrap:</code> sometimes the page width is not enough for all elements to sit next to each other. The <code>flex-wrap</code> property specifies whether extra elements move to the next row or all are squeezed into the same row (Table 11).</p>
+<p>Table 11 Values of the <code>felx-wrap</code> property</p>
+<p>Value<code>wrap</code></p>
+<div class="code-wrap" dir="ltr"><pre><code>nowrap
+</code></pre></div>
+<p>Explanation</p>
+<p>Move to the next row</p>
+<p>Do not move to the next row</p>
+<p><code>felx-folw:</code> the <code>flex-flow</code> property combines <code>flex-direction</code> and <code>flex-wrap</code>. Instead of writing two lines of code, you can set both properties in one line. As below:</p>
+<div class="code-wrap" dir="ltr"><pre><code>{.container
+;flex-flow: row wrap
+</code></pre></div>
+<p>}</p>
+<p><code>justify-content:</code> this property controls the alignment of elements and how empty space is distributed between elements along the main axis (Table 12).</p>
+<p>Table 12 Values of the <code>justify-content</code> property</p>
+<p>Value</p>
+<h3 id="explanation">Explanation</h3>
+<p>Value</p>
+<h3 id="explanation_1">Explanation</h3>
+<p>Arrange elements on the</p>
+<p>Create equal empty space around each</p>
+<div class="code-wrap" dir="ltr"><pre><code>Flex-start
+Space-around
+</code></pre></div>
+<p>left</p>
+<p>element</p>
+<p>Arrange elements on the</p>
+<p>Equal empty space between elements (the first and last</p>
+<div class="code-wrap" dir="ltr"><pre><code>Flex-end
+Space-between
+</code></pre></div>
+<p>right</p>
+<p>elements stick to the edges)</p>
+<p>Equal empty space between elements and also between</p>
+<div class="code-wrap" dir="ltr"><pre><code>Center
+</code></pre></div>
+<p>Arrange elements in the center <code>Space-evenly</code></p>
+<p>elements and the edges</p>
+<hr />
+<p class="page-mark">Page 134</p>
+<p><code>align-items:</code> the <code>align-items</code> property in <code>Flexbox</code> is used to align elements along the cross axis (perpendicular to the main axis). With this property you can place elements at the top, bottom, and middle of a row (Figure 26).</p>
+<p><img alt="Book image" src="../images/p140-01.png" /></p>
+<p><code>box1</code></p>
+<p><code>box2</code></p>
+<p><code>box3</code></p>
+<p><code>box1</code></p>
+<p><code>box2</code></p>
+<p><code>box3</code></p>
+<p><code>box3</code></p>
+<p><code>box2</code></p>
+<p><code>box1</code></p>
+<p><code>box1</code></p>
+<p><code>box2</code></p>
+<p><code>box3</code></p>
+<p><strong>Figure 26</strong></p>
+<p>Table 13 Values of the <code>align-items</code> property</p>
+<div class="code-wrap" dir="ltr"><pre><code>مقدارStretch
+flex-start
+flex-end
+center
+</code></pre></div>
+<p>Stretched inside</p>
+<p>Placed at the top of the parent</p>
+<p>Placed at the bottom of the parent</p>
+<p>In the middle of the parent</p>
+<p>Explanation</p>
+<p>the parent element</p>
+<p>element.</p>
+<p>element.</p>
+<p>element.</p>
+<p>(default)</p>
+<hr />
+<p class="page-mark">Page 135</p>
+<p>Page layout with <code>Flexbox</code> Setting the layout of navigation menu elements using <code>Flexbox</code></p>
+<h3 id="workshop">Workshop</h3>
+<p>Open the <code>index.html</code> file and make the following changes in it:</p>
+<p>1 Add the following elements inside the <code>&lt;nav&gt;</code> tag after the <code>&lt;ul/&gt;</code> tag and place the shopping cart icon and the phrase “Login | Sign up” inside it:</p>
+<p><img alt="Book image" src="../images/p141-01.png" /></p>
+<p>To get a shopping cart icon, go to the site <code>svgrepo.com</code> and search for <code>shopping-cart</code>. Choose a shopping cart you like, then click <code>Edit</code> <code>vector</code> to edit the image. Set the icon size to the minimum value. Then click the <code>Export</code> button. An <code>svg</code> file is downloaded. Save this file as <code>shopping-cart.svg</code> in the images folder.</p>
+<p>2 Set the style of the navigation bar (<code>.top-menu</code>) as in the figure below:</p>
+<p><img alt="Book image" src="../images/p141-02.png" /></p>
+<p><img alt="Book image" src="../images/p141-03.png" /></p>
+<p>The <code>flex:</code> <code>display</code> property turns the navigation bar into a flex container so that the items inside it (the menu list on the right and the <code>user-action</code> section on the left) are arranged horizontally.</p>
+<p>The ;<code>space-between:</code> <code>justify-content</code> property places the menu list and the <code>user-actions</code> section horizontally at the two ends of the container.</p>
+<p>The <code>align-items:</code> <code>center</code> property makes the elements inside the flex container centered vertically.</p>
+<p>The <code>max-width:</code> <code>1200px</code> property sets the maximum width of the navigation bar to 1200 pixels.</p>
+<p>This setting keeps the navigation bar from stretching too much on large displays.</p>
+<p>The <code>margin:0</code> <code>auto</code> property is used to center the menu bar area on the page.</p>
+<hr />
+<p class="page-mark">Page 136</p>
+<p>3 Set the style of the elements inside the <code>&lt;ul&gt;</code> tag as follows:</p>
+<p>The <code>display:flex</code> property is used for horizontal layout of elements inside the <code>&lt;ul&gt;</code> tag, and the <code>justify-content</code> property distributes the space between elements appropriately.</p>
+<p>The <code>margin-left:25px</code> property sets the distance of each menu element from the element on its left.</p>
+<p><img alt="Book image" src="../images/p142-01.png" /></p>
+<p><img alt="Book image" src="../images/p142-02.png" /></p>
+<p>4 Set the style of the <code>user-actions</code> section as follows:</p>
+<p>Using the <code>display:flex</code> property shows the two elements “Login|Sign up” and the shopping cart horizontally, and the <code>align-items:Center</code> property shows these elements centered vertically in the <code>user-actions</code> area.</p>
+<p>The shopping cart image width should be 25 pixels and its left margin (<code>margin-left</code>) should be set to zero.</p>
+<p><img alt="Book image" src="../images/p142-03.png" /></p>
+<p><img alt="Book image" src="../images/p142-04.png" /></p>
+<hr />
+<p class="page-mark">Page 137</p>
+<p>Remove the background colors from the <code>top-menu</code> and <code>user-actions</code> classes so you get the result below</p>
+<p><img alt="Book image" src="../images/p143-01.png" /></p>
+<p>Creating the main section of the page After designing the site header section, it is time to design the main page content, including the “Newest products” and “Special services” sections.</p>
+<p>To design the main section of the page, use the <code>&lt;main&gt;</code> tag. This tag must be placed after the <code>&lt;header/&gt;</code> tag and before <code>&lt;body/&gt;</code>.</p>
+<p>The content of the “Newest products” and “Special services” areas must be inside the <code>&lt;main&gt;</code> element.</p>
+<p>Designing the “Newest products” section using <code>Flexbox</code></p>
+<h3 id="workshop_1">Workshop</h3>
+<p>1 Insert a <code>&lt;main&gt;</code> tag after the <code>&lt;header/&gt;</code> tag and place a <code>&lt;section&gt;</code> element inside it. Create a <code>&lt;section&gt;</code> element with the class <code>container</code> inside the <code>&lt;main&gt;</code> element. This element should contain a heading (<code>h2</code>) and a container element (<code>div</code>) to hold the product cards. Write the title “Newest products” inside the <code>&lt;h2&gt;</code> tag.</p>
+<p>2 Assign a class named <code>products</code> to the <code>&lt;div&gt;</code> element and place the product cards inside the <code>products</code> element. Create the product card with an element that has the class <code>product-card</code>. Each card contains the product image, title, and price.</p>
+<p><img alt="Book image" src="../images/p143-02.png" /></p>
+<p>3 So that the set of image, title, and price is clickable, place the entire card content inside an <code>&lt;a&gt;</code> tag. Decisions about the column layout of the product image, title, and price are made in the settings of the <code>&lt;a&gt;</code> element.</p>
+<p><img alt="Book image" src="../images/p143-03.png" /></p>
+<p>Product card</p>
+<hr />
+<p class="page-mark">Page 138</p>
+<p><img alt="Book image" src="../images/p144-01.png" /></p>
+<p>Also write the content of three other cards like the code on the previous page. Gradually add element properties to the page and check the result of each change in the browser.</p>
+<p>The <code>max-width</code> property sets the maximum width of the container area.</p>
+<p>The <code>margin:20px</code> <code>auto</code> property centers the container element horizontally on the page.</p>
+<p>The <code>display:flex</code> property distributes the cards in the <code>products</code> element using the flex technique.</p>
+<p>The <code>justify-content:center</code> property distributes the cards in the center of the container area.</p>
+<p>The <code>flex-wrap:wrap</code> property changes the layout of elements when the device width gets smaller, so that product cards move to the next row.</p>
+<p>The <code>gap</code> property sets the spacing between product cards.</p>
+<p>Because the set “product image, title, and price” is inside the <code>&lt;a&gt;</code> element, the column layout of these elements is set with the selector <code>.product-card</code> <code>a</code>.</p>
+<p>The <code>flex-direction:column</code> property lays out the elements in a column.</p>
+<p>The <code>align-items:center</code> property sets the alignment of elements along the vertical axis.</p>
+<p><img alt="Book image" src="../images/p144-02.png" /></p>
+<hr /></article>
+      <aside class="extra">
+        <h2 data-fa="تمرین این بخش" data-en="Exercises for this section">تمرین این بخش</h2>
+        <p class="extra-note" data-fa="این تمرین‌ها و پیوندها اضافه بر متن کتاب‌اند." data-en="These exercises and links are in addition to the book.">این تمرین‌ها و پیوندها اضافه بر متن کتاب‌اند.</p>
+        <ol><li data-fa="نوار منو را با Flexbox بساز که در عرض کم به خط بعد برود و فاصله بین آیتم‌ها را خود فلکس بدهد." data-en="Build a menu bar with Flexbox that wraps on a narrow width, and let flex set the gap between items.">نوار منو را با Flexbox بساز که در عرض کم به خط بعد برود و فاصله بین آیتم‌ها را خود فلکس بدهد.</li><li data-fa="زیر همان منو سه کارت هم‌عرض بچین و متن یکی را طولانی‌تر کن تا ارتفاع ردیف را در عمل ببینی." data-en="Under that menu, place three equal cards and make one text longer so you can see the row height.">زیر همان منو سه کارت هم‌عرض بچین و متن یکی را طولانی‌تر کن تا ارتفاع ردیف را در عمل ببینی.</li></ol>
+        <h2 data-fa="پیوند مفید" data-en="Useful link">پیوند مفید</h2><ul><li><a href="https://developer.mozilla.org/en-US/docs/Learn/CSS/CSS_layout/Flexbox" data-fa="فلکس‌باکس" data-en="Flexbox">فلکس‌باکس</a></li></ul>
+      </aside>
+    <nav class="pager"><a rel="prev" class="prev" href="p2-box.html"><span class="pager-word" data-fa="قبلی" data-en="Previous">قبلی</span><span class="pager-name" data-fa="مدل جعبه‌ای و display" data-en="The box model and display">مدل جعبه‌ای و display</span></a><a rel="next" class="next" href="p2-flex-work.html"><span class="pager-word" data-fa="بعدی" data-en="Next">بعدی</span><span class="pager-name" data-fa="کارگاه چیدمان صفحه" data-en="Page-layout workshop">کارگاه چیدمان صفحه</span></a></nav>
+    </div>
+  </div>
+  <script src="../assets/search-index.js?v=4"></script>
+  <script src="../assets/app.js?v=4"></script>
+</body>
+</html>

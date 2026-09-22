@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title data-fa="تابع‌ها" data-en="Functions">تابع‌ها</title>
+  <link rel="icon" href="../assets/favicon.svg">
+  <link rel="stylesheet" href="../assets/style.css?v=4">
+</head>
+<body data-root="../">
+  <header class="top">
+    <a class="brand" href="../index.html">
+      <span data-fa="طراح سایت" data-en="Site Design">طراح سایت</span>
+      <small data-fa="پایه یازدهم" data-en="Grade 11">پایه یازدهم</small>
+    </a>
+    <div class="search-wrap">
+      <input id="q" type="search" autocomplete="off"
+        data-fa-placeholder="جستجو در درس‌ها" data-en-placeholder="Search lessons"
+        placeholder="جستجو در درس‌ها">
+      <div id="results" class="results" hidden></div>
+    </div>
+    <a class="download" href="../grade11-offline.zip?v=2" data-fa="دانلود کل سایت" data-en="Download the whole site">دانلود کل سایت</a>
+    <button type="button" id="lang-toggle" class="lang-toggle" dir="ltr" data-lang="fa"
+      aria-label="تغییر زبان">
+      <span data-opt="fa">فا</span>
+      <span data-opt="en">EN</span>
+    </button>
+  </header>
+  <div class="layout">
+    <details class="toc" open><summary><span data-fa="فهرست درس‌ها" data-en="Lesson list">فهرست درس‌ها</span></summary><nav class="side" aria-label="lessons"><p class="mod" data-fa="شروع کتاب" data-en="Opening">شروع کتاب</p><p class="unit" data-fa="فهرست" data-en="Contents">فهرست</p><a class="" href="toc.html" data-fa="فهرست" data-en="Contents">فهرست</a><p class="mod" data-fa="پودمان ۱: برنامه‌نویسی پایتون" data-en="Module 1: Python programming">پودمان ۱: برنامه‌نویسی پایتون</p><p class="unit" data-fa="معرفی پودمان" data-en="Module introduction">معرفی پودمان</p><a class="" href="p1-intro.html" data-fa="معرفی پودمان پایتون" data-en="Introducing the Python module">معرفی پودمان پایتون</a><p class="unit" data-fa="مدل‌سازی داده" data-en="Data modeling">مدل‌سازی داده</p><a class="" href="p1-python.html" data-fa="پایتون و محیط برنامه‌نویسی" data-en="Python and the programming environment">پایتون و محیط برنامه‌نویسی</a><a class="" href="p1-vars.html" data-fa="متغیرها، نوع داده و عملگرها" data-en="Variables, types, and operators">متغیرها، نوع داده و عملگرها</a><a class="" href="p1-cast.html" data-fa="ورودی و تبدیل نوع" data-en="Input and type casting">ورودی و تبدیل نوع</a><a class="" href="p1-lists.html" data-fa="لیست‌ها" data-en="Lists">لیست‌ها</a><a class="" href="p1-if.html" data-fa="شرط‌های ساده" data-en="Simple conditions">شرط‌های ساده</a><a class="" href="p1-elif.html" data-fa="if، elif و else" data-en="if, elif, and else">if، elif و else</a><a class="" href="p1-for.html" data-fa="حلقه for و range" data-en="The for loop and range">حلقه for و range</a><a class="" href="p1-while.html" data-fa="حلقه while و کنترل حلقه" data-en="The while loop and loop control">حلقه while و کنترل حلقه</a><a class="" href="p1-assess-data.html" data-fa="ارزشیابی مدل‌سازی داده" data-en="Data-modeling assessment">ارزشیابی مدل‌سازی داده</a><p class="unit" data-fa="توابع و ماژول‌ها" data-en="Functions and modules">توابع و ماژول‌ها</p><a class="" href="p1-sets.html" data-fa="مجموعه (set)" data-en="Sets">مجموعه (set)</a><a class="" href="p1-dict.html" data-fa="دیکشنری" data-en="Dictionaries">دیکشنری</a><a class="" href="p1-quiz.html" data-fa="پروژه بازی Quiz" data-en="Quiz game project">پروژه بازی Quiz</a><a class="" href="p1-tuple.html" data-fa="تاپل" data-en="Tuples">تاپل</a><a class="" href="p1-func.html" data-fa="تعریف تابع، پارامتر و return" data-en="Defining functions, parameters, and return">تعریف تابع، پارامتر و return</a><a class="" href="p1-func-more.html" data-fa="تمرین تابع و مرتب‌سازی" data-en="Function practice and sorting">تمرین تابع و مرتب‌سازی</a><a class="" href="p1-modules.html" data-fa="ماژول‌ها و تفاوت تابع و متد" data-en="Modules, and functions versus methods">ماژول‌ها و تفاوت تابع و متد</a><a class="" href="p1-assess-func.html" data-fa="ارزشیابی توابع و ماژول‌ها" data-en="Functions and modules assessment">ارزشیابی توابع و ماژول‌ها</a><p class="mod" data-fa="پودمان ۲: صفحات وب ایستا" data-en="Module 2: Static web pages">پودمان ۲: صفحات وب ایستا</p><p class="unit" data-fa="معرفی پودمان" data-en="Module introduction">معرفی پودمان</p><a class="" href="p2-intro.html" data-fa="معرفی پودمان صفحات ایستا" data-en="Introducing static web pages">معرفی پودمان صفحات ایستا</a><p class="unit" data-fa="ساختار با HTML" data-en="Structure with HTML">ساختار با HTML</p><a class="" href="p2-web.html" data-fa="وب چگونه کار می‌کند" data-en="How the web works">وب چگونه کار می‌کند</a><a class="" href="p2-concepts.html" data-fa="مفاهیم طراحی وب و نقشه سایت" data-en="Web-design concepts and the site map">مفاهیم طراحی وب و نقشه سایت</a><a class="" href="p2-tags.html" data-fa="اولین صفحه HTML" data-en="A first HTML page">اولین صفحه HTML</a><a class="" href="p2-text.html" data-fa="متن، لیست و پیوند" data-en="Text, lists, and links">متن، لیست و پیوند</a><a class="" href="p2-img.html" data-fa="تصویر در صفحه" data-en="Images on the page">تصویر در صفحه</a><a class="" href="p2-forms.html" data-fa="فرم‌ها" data-en="Forms">فرم‌ها</a><a class="" href="p2-semantic.html" data-fa="عناصر معنایی" data-en="Semantic elements">عناصر معنایی</a><a class="" href="p2-assess-html.html" data-fa="ارزشیابی HTML" data-en="HTML assessment">ارزشیابی HTML</a><p class="unit" data-fa="ظاهر با CSS" data-en="Appearance with CSS">ظاهر با CSS</p><a class="" href="p2-css-start.html" data-fa="نوشتن CSS" data-en="Writing CSS">نوشتن CSS</a><a class="" href="p2-css-look.html" data-fa="رنگ، پس‌زمینه و انتخاب‌گر" data-en="Color, background, and selectors">رنگ، پس‌زمینه و انتخاب‌گر</a><a class="" href="p2-box.html" data-fa="مدل جعبه‌ای و display" data-en="The box model and display">مدل جعبه‌ای و display</a><a class="" href="p2-flex.html" data-fa="چیدمان با Flexbox" data-en="Layout with Flexbox">چیدمان با Flexbox</a><a class="" href="p2-flex-work.html" data-fa="کارگاه چیدمان صفحه" data-en="Page-layout workshop">کارگاه چیدمان صفحه</a><a class="" href="p2-media.html" data-fa="مدیا کوئری و ارزشیابی CSS" data-en="Media queries and the CSS assessment">مدیا کوئری و ارزشیابی CSS</a><p class="mod" data-fa="پودمان ۳: صفحات وب تعاملی" data-en="Module 3: Interactive web pages">پودمان ۳: صفحات وب تعاملی</p><p class="unit" data-fa="معرفی پودمان" data-en="Module introduction">معرفی پودمان</p><a class="" href="p3-intro.html" data-fa="معرفی پودمان تعاملی" data-en="Introducing the interactive module">معرفی پودمان تعاملی</a><p class="unit" data-fa="بوت‌استرپ" data-en="Bootstrap">بوت‌استرپ</p><a class="" href="p3-bs-start.html" data-fa="فریم‌ورک و شروع بوت‌استرپ" data-en="Frameworks and starting Bootstrap">فریم‌ورک و شروع بوت‌استرپ</a><a class="" href="p3-bs-util.html" data-fa="فاصله، گردی و لیست" data-en="Spacing, rounding, and lists">فاصله، گردی و لیست</a><a class="" href="p3-bs-header.html" data-fa="سرصفحه فروشگاه" data-en="The shop header">سرصفحه فروشگاه</a><a class="" href="p3-bs-grid.html" data-fa="شبکه Grid" data-en="The grid">شبکه Grid</a><a class="" href="p3-bs-rwd.html" data-fa="کلاس‌های واکنش‌گرا" data-en="Responsive classes">کلاس‌های واکنش‌گرا</a><a class="" href="p3-bs-nav.html" data-fa="نوار ناوبری و جزئیات محصول" data-en="Navbar and product details">نوار ناوبری و جزئیات محصول</a><a class="" href="p3-bs-form.html" data-fa="فرم و پنجره Modal" data-en="Forms and modals">فرم و پنجره Modal</a><a class="" href="p3-bs-show.html" data-fa="کاروسل و آکاردئون" data-en="Carousel and accordion">کاروسل و آکاردئون</a><a class="" href="p3-bs-assess.html" data-fa="ارزشیابی بوت‌استرپ" data-en="Bootstrap assessment">ارزشیابی بوت‌استرپ</a><p class="unit" data-fa="جاوااسکریپت" data-en="JavaScript">جاوااسکریپت</p><a class="" href="p3-js-start.html" data-fa="جاوااسکریپت در صفحه وب" data-en="JavaScript on the page">جاوااسکریپت در صفحه وب</a><a class="" href="p3-js-vars.html" data-fa="متغیر و نوع داده" data-en="Variables and data types">متغیر و نوع داده</a><a class="" href="p3-js-ops.html" data-fa="عملگرها" data-en="Operators">عملگرها</a><a class="" href="p3-js-data.html" data-fa="آرایه و شیء" data-en="Arrays and objects">آرایه و شیء</a><a class="" href="p3-js-if.html" data-fa="شرط در جاوااسکریپت" data-en="Conditions in JavaScript">شرط در جاوااسکریپت</a><a class="" href="p3-js-loops.html" data-fa="حلقه‌ها" data-en="Loops">حلقه‌ها</a><a class="current" href="p3-js-func.html" data-fa="تابع‌ها" data-en="Functions">تابع‌ها</a><a class="" href="p3-js-dom.html" data-fa="صفحه، رویداد و اعتبار فرم" data-en="The page, events, and form validation">صفحه، رویداد و اعتبار فرم</a><a class="" href="p3-js-assess.html" data-fa="ارزشیابی جاوااسکریپت" data-en="JavaScript assessment">ارزشیابی جاوااسکریپت</a><p class="mod" data-fa="پودمان ۴: توسعه وب پایتون" data-en="Module 4: Python for the web">پودمان ۴: توسعه وب پایتون</p><p class="unit" data-fa="معرفی پودمان" data-en="Module introduction">معرفی پودمان</p><a class="" href="p4-intro.html" data-fa="معرفی پودمان شیءگرایی" data-en="Introducing the object-oriented module">معرفی پودمان شیءگرایی</a><p class="unit" data-fa="شیءگرایی" data-en="Object-oriented programming">شیءگرایی</p><a class="" href="p4-idea.html" data-fa="ایده شیء و کلاس" data-en="The idea of objects and classes">ایده شیء و کلاس</a><a class="" href="p4-class.html" data-fa="ساخت کلاس و متد" data-en="Writing a class and methods">ساخت کلاس و متد</a><a class="" href="p4-inherit.html" data-fa="وراثت" data-en="Inheritance">وراثت</a><a class="" href="p4-protect.html" data-fa="داده معتبر و استفاده داخلی" data-en="Valid data and internal use">داده معتبر و استفاده داخلی</a><a class="" href="p4-assess-oop.html" data-fa="ارزشیابی برنامه شیءگرا" data-en="Object-oriented assessment">ارزشیابی برنامه شیءگرا</a><p class="unit" data-fa="فایل و توسعه" data-en="Files and development">فایل و توسعه</p><a class="" href="p4-files.html" data-fa="خواندن و نوشتن فایل متنی" data-en="Reading and writing text files">خواندن و نوشتن فایل متنی</a><a class="" href="p4-errors.html" data-fa="پیمایش فایل و مدیریت خطا" data-en="Walking a file and handling errors">پیمایش فایل و مدیریت خطا</a><a class="" href="p4-json.html" data-fa="چند فایل و JSON" data-en="Several files and JSON">چند فایل و JSON</a><a class="" href="p4-assess-files.html" data-fa="ارزشیابی کار با فایل" data-en="Files assessment">ارزشیابی کار با فایل</a><p class="mod" data-fa="پودمان ۵: برنامه‌نویسی جنگو" data-en="Module 5: Django">پودمان ۵: برنامه‌نویسی جنگو</p><p class="unit" data-fa="معرفی پودمان" data-en="Module introduction">معرفی پودمان</p><a class="" href="p5-intro.html" data-fa="معرفی پودمان جنگو" data-en="Introducing the Django module">معرفی پودمان جنگو</a><p class="unit" data-fa="ایجاد وب‌اپلیکیشن" data-en="Creating the web app">ایجاد وب‌اپلیکیشن</p><a class="" href="p5-what.html" data-fa="جنگو چیست و نصب" data-en="What Django is, and installing it">جنگو چیست و نصب</a><a class="" href="p5-project.html" data-fa="پروژه، اپ و اولین view" data-en="Project, app, and the first view">پروژه، اپ و اولین view</a><a class="" href="p5-template.html" data-fa="قالب و دمای واقعی" data-en="Templates and a real temperature">قالب و دمای واقعی</a><a class="" href="p5-assess-create.html" data-fa="ارزشیابی ایجاد وب‌اپلیکیشن" data-en="Creating-the-app assessment">ارزشیابی ایجاد وب‌اپلیکیشن</a><p class="unit" data-fa="توسعه وب‌اپلیکیشن" data-en="Developing the web app">توسعه وب‌اپلیکیشن</p><a class="" href="p5-model.html" data-fa="مدل شهر و پنل ادمین" data-en="The city model and the admin">مدل شهر و پنل ادمین</a><a class="" href="p5-list.html" data-fa="خواندن شهرها و نمایش فهرست" data-en="Reading cities and showing the list">خواندن شهرها و نمایش فهرست</a><a class="" href="p5-auth.html" data-fa="ورود و خروج" data-en="Sign-in and sign-out">ورود و خروج</a><a class="" href="p5-crud.html" data-fa="افزودن و حذف شهر" data-en="Adding and deleting a city">افزودن و حذف شهر</a><a class="" href="p5-bugs.html" data-fa="باگ و امنیت" data-en="Bugs and security">باگ و امنیت</a><p class="mod" data-fa="پایان کتاب" data-en="Back of the book">پایان کتاب</p><p class="unit" data-fa="منابع" data-en="References">منابع</p><a class="" href="refs.html" data-fa="منابع کتاب" data-en="Book references">منابع کتاب</a></nav></details>
+    <div class="main">
+      <h1 class="section-title" data-fa="تابع‌ها" data-en="Functions">تابع‌ها</h1><article class="lesson" lang="fa" dir="rtl" data-lang-block="fa"><p class="page-mark">صفحه ۲۱۹</p>
+<p>اصول تعریف تابع در جاوا‌اسکریپت به شرح زیر است:</p>
+<p>در تعریف تابع ابتدا عبارت کلیدی <code>function</code> و سپس نام آن نوشته می‌شود.</p>
+<p>نام تابع باید با حرف کوچک شروع شود و هر کلمه جدید با حرف بزرگ آغاز شود.</p>
+<p>پارامترهای ورودی تابع درون پرانتز مشخص می‌شود.</p>
+<p>تعداد پارامترها می‌تواند صفر، یک یا بیشتر باشد. مجموعه دستورات تابع درون آکولاد نوشته می‌شوند.</p>
+<p>خروجی تابع معمولاً توسط تابع <code>return</code> به محل فراخوانی برگردانده می‌شود.</p>
+<p>دستورات درون تابع زمانی اجرا می‌شوند که تابع فراخوانی شود.</p>
+<p>برای فراخوانی تابع باید از نام تابع به همراه آرگومان‌های ورودی استفاده شود. شکل کلی فراخوانی تابع به‌صورت زیر است:</p>
+<div class="code-wrap" dir="ltr"><pre><code>functionName(Arguments)
+</code></pre></div>
+<h3 id="_1">مثال</h3>
+<p>در مثال زیر تابعی به نام <code>calculateCartTotal</code> با سه پارامتر ورودی <code>price3</code>, <code>price2</code>, <code>price1</code> ایجاد شده است. تابع <code>calculateCartTotal</code> مجموع مقادیر این سه پارامتر را محاسبه و درون متغیر <code>total</code> ذخیره می‌کند. دستور <code>return</code> مقدار متغیر <code>total</code> را به محل فراخوانی بازمی‌گرداند.</p>
+<p><img alt="تصویر کتاب" src="../images/p225-01.png" /></p>
+<p><img alt="تصویر کتاب" src="../images/p225-02.png" /></p>
+<h3 id="_2">نکته</h3>
+<p>پارامترها متغیرهایی هستند که در هنگام تعریف تابع استفاده می‌شوند. در مثال فوق متغیرهای <code>price3</code>, <code>price2</code>, <code>price1</code> پارامتر ورودی تابع هستند. آرگومان به مقادیری گفته می‌شود که هنگام فراخوانی برای تابع ارسال می‌شوند. به عبارت دیگر آرگومان‌ها مقادیری هستند که به پارامترهای تابع نسبت داده می‌شوند.</p>
+<hr />
+<p class="page-mark">صفحه ۲۲۰</p>
+<p>ایجاد تابع و فراخوانی آن</p>
+<h3 id="_3">کار کارگاهی</h3>
+<p>فایل جدیدی با نام <code>workshop8.html</code> ایجاد کنید و تابع <code>calculateCartTotal</code> را درون آن بنویسید.</p>
+<p>سپس تابع را با آرگومان‌های ورودی دلخواه فراخوانی کنید.</p>
+<p>یک تابع لزوماً دارای مقدار بازگشتی نیست. یک تابع می‌تواند با هدف اجرای مجموعه‌ای از دستورالعمل‌ها نوشته شود، بدون اینکه مقداری را به محل فراخوانی بازگرداند. در این‌صورت نیازی به استفاده از دستور <code>return</code> نخواهد بود. در مثال زیر تابع <code>showCartTotal</code> سه مقدار را ب‌هعنوان پارامتر ورودی دریافت می‌کند، حاصل جمع آنها را محاسبه کرده و نتیجه را در کنسول مرورگر نمایش می‌دهد؛ اما هیچ مقداری را به محل فراخوانی برنمی‌گرداند.</p>
+<p><img alt="تصویر کتاب" src="../images/p226-01.png" /></p>
+<p><img alt="تصویر کتاب" src="../images/p226-02.png" /></p>
+<p>توابع آماده جاوا‌اسکریپت (<code>Built-in</code> <code>Functions</code>) جاوا‌اسکریپت دارای مجموعه‌ای از توابع آماده است که برای انجام عملیات مختلف به‌کار می‌روند. توابع آماده جاوا‌اسکریپت به برنامه‌نویسان امکان می‌دهند که ب‌هراحتی داده‌ها را مدیریت کرده و وظایف پیچیده را به سادگی پیاده‌سازی کنند. این توابع شامل توابع ریاضی، رشته‌ای، آرایه، اشیا، ورودی-خروجی و تاریخ و زمان است که در این بخش به معرفی آنها پرداخته می‌شود.</p>
+<p>به کارگیری توابع ریاضی جاوا‌اسکریپت</p>
+<h3 id="_4">کار کارگاهی</h3>
+<p>توابع ریاضی جاوا‌اسکریپت که درون شیء<code>Math</code> سازماندهی شده‌اند، مجموعه‌ای از ابزارهای قدرتمند و کارآمد برای انجام محاسبات پیچیده ریاضی هستند. دسترسی به توابع ریاضی به‌صورت نقطه‌ای <code>.Math</code>( <code>functionName</code>) امکان‌پذیر است و استفاده از آنها نه‌تنها کدنویسی را کوتاه‌تر و خواناتر می‌کند، بلکه از خطاهای احتمالی در پیاده‌سازی دستی الگوریتم‌ها نیز جلوگیری کرده و عملکرد بهینه‌تری در برنامه‌های کاربردی ایجاد می‌نماید. چند نمونه از توابع پر کاربرد ریاضی در جاوا‌اسکریپت به شرح زیر است:</p>
+<p><code>:Math.abs</code>() قدرمطلق مقدار آرگومان ورودی را برمی‌گرداند.</p>
+<p><code>:Math.round</code>() مقدار آرگومان ورودی را گرد می‌کند.</p>
+<p><code>:Math.random</code>() یک عدد تصادفی بین 0 (شامل) تا 1 (غیرشامل) برمی‌گرداند.</p>
+<p><code>:Math.max</code>() بزرگ‌ترین عدد را از بین آرگومان‌های ورودی برمی‌گرداند.</p>
+<p><code>:Math.min</code>() کوچک‌ترین عدد را از بین آرگومان‌های ورودی برمی‌گرداند.</p>
+<hr />
+<p class="page-mark">صفحه ۲۲۱</p>
+<p>در طراحی فروشگاه‌های اینترنتی، توابع ریاضی جاوا‌اسکریپت نقشی حیاتی ایفا می‌کنند، زیرا مدیریت عملیات اصلی مانند محاسبه قیمت نهایی پس از اعمال تخفیف، جمع‌بندی اقلام سبد خرید و تعیین هزینه‌های حمل‌ونقل مستلزم استفاده دقیق از این توابع است. ب‌همنظور آشنایی با نحوۀ فراخوانی و عملکرد این توابع، فایلی به‌نام <code>shopping-cart.html</code> ایجاد کنید و اسکریپت زیر را در آن بنویسید.</p>
+<p>سپس نتایج به‌دست‌آمده را در کلاس بررسی و تحلیل کنید.</p>
+<p><img alt="تصویر کتاب" src="../images/p227-01.png" /></p>
+<p><img alt="تصویر کتاب" src="../images/p227-02.png" /></p>
+<hr />
+<p class="page-mark">صفحه ۲۲۲</p>
+<p>به کارگیری توابع رشته ای در جاوا‌اسکریپت</p>
+<h3 id="_5">کار کارگاهی</h3>
+<p>توابع و ویژگی‌های رشته‌ای جاوا‌اسکریپت، ابزارهای ضروری برای پردازش و مدیریت متن هستند که امکان قالب‌بندی و تغییر رشته‌ها را با دقت و کارایی بالا فراهم می‌کنند. این متدها امکان اعتبارسنجی داده‌های ورودی کاربران، بهینه‌سازی متن برای نمایش یا ارسال به سرور را فراهم می‌کنند. برخی از توابع رشته‌ای جاوا‌اسکریپت به شرح زیر است:</p>
+<p><code>:toUpperCase</code>() حروف رشته ورودی را به حالت بزرگ در می‌آورد.</p>
+<p><code>:indexOf</code>() اندیس موقعیت کاراکتر یا رشتۀ داخل پرانتز را در رشته اصلی برمی‌گرداند.</p>
+<p><code>:substring</code>() یک زیررشته را از رشته اصلی برمی‌گرداند. ورودی‌های این تابع اندیس ابتدا و انتهای زیر رشته است.</p>
+<p><code>:split</code>() رشته را بر اساس جداکننده داخل پرانتز (مانند کاما) تقسیم می‌کند و آرایه‌ای از رشته‌ها را برمی‌گرداند.</p>
+<p><code>:replace</code>() دو رشته را به عنوان ورودی دریافت کرده و رشتۀ دوم (/) را به‌جای رشتۀ اول (-) در رشته اصلی قرار می‌دهد. این تابع در اولین موقعیت یافتن رشتۀ مورد نظر(-)، جایگزینی رشته را انجام می‌دهد.</p>
+<p><code>:startsWith</code>() وجود یک حرف یا رشته را در ابتدای یک متغیر رشته‌ای بررسی می‌کند.</p>
+<p>شیء <code>string</code> دارای یک ویژگی به‌نام <code>length</code> است که طول یک رشته را تعیین می‌کند. بر این اساس، دستور زیر مقدار 11 را نمایش می‌دهد.</p>
+<div class="code-wrap" dir="ltr"><pre><code>;(str1.length)console.log
+</code></pre></div>
+<p>فایلی به نام <code>user-info.html</code> ایجاد کنید و اسکریپت زیر را برای آشنایی با عملکرد توابع رشته‌ای بنویسید:</p>
+<p><img alt="تصویر کتاب" src="../images/p228-01.png" /></p>
+<p><img alt="تصویر کتاب" src="../images/p228-02.png" /></p>
+<hr />
+<p class="page-mark">صفحه ۲۲۳</p>
+<h3 id="_6">بیشتر بدانید</h3>
+<p>به‌کارگیری توابع آرایه در جاوا‌اسکریپت توابع آرایه‌ای جاوا‌اسکریپت، ابزارهای مناسبی برای مدیریت، جست‌وجو، فیلتر و تبدیل داده‌های ساختاریافته هستند. به کمک این متدها می‌توان اعمال مختلفی همچون مرتب‌سازی (<code>sort</code>)، فیلتر کردن(<code>filter</code>) و استخراج اطلاعات، لیست‌ها را به سادگی و بدون نیاز به نوشتن حلقه‌های پیچیده، انجام داد. برخی از توابع آرایه به شرح زیر است:</p>
+<p><code>:push</code>() برای اضافه کردن یک یا چند عنصر به انتهای آرایه استفاده می‌شود.</p>
+<p><code>:slice</code>() برای استخراج بخشی از آرایه و ایجاد یک آرایه جدید به‌کار می‌رود.</p>
+<p><code>:filter</code>() آرایه جدیدی را با فیلتر کردن عناصر آرایه اصلی براساس یک شرط خاص ایجاد می‌کند.</p>
+<p><code>:sort</code>() مرتب‌سازی عناصر آرایه را انجام می‌دهد.</p>
+<p>ویژگی <code>length</code> تعداد عناصر موجود در آرایه را برمی‌گرداند. به‌طور مثال عبارت <code>names.length</code> عدد6 را برمی‌گرداند.</p>
+<p>فایلی به نام <code>customer-list.html</code> ایجاد کنید و اسکریپت زیر را برای آشنایی با عملکرد توابع آرایه بنویسید. نتایج اسکریپت را در کلاس بررسی و تحلیل کنید.</p>
+<p><img alt="تصویر کتاب" src="../images/p229-01.png" /></p>
+<p><img alt="تصویر کتاب" src="../images/p229-02.png" /></p>
+<hr />
+<p class="page-mark">صفحه ۲۲۴</p>
+<h3 id="_7">بیشتر بدانید</h3>
+<p>به کارگیری توابع و دستورات ورودی و خروجی جاوا‌اسکریپت توابع ورودی و خروجی (<code>I/O</code>) در جاوا‌اسکریپت، پل ارتباطی بین برنامه و دنیای خارج از آن هستند و امکان ایجاد یک تجریه تعاملی و پویا را برای کاربران فراهم می‌کنند. در محیط مرورگر، این توابع برای دریافت ورودی از کاربر، نمایش جعبه پیغام، نمایش داده در کنسول و دریافت تأیید کاربر استفاده می‌شوند.</p>
+<p>برای بررسی عملکرد توابع ورودی و خروجی، یک فایل جدید با نام <code>user-interaction.html</code> ایجاد کنید و کد زیر را در بخش <code>body</code> بنویسید.</p>
+<p><img alt="تصویر کتاب" src="../images/p230-01.png" /></p>
+<p>فایل را ذخیره کنید و نتیجه را در مرورگر مشاهده کنید.</p>
+<p><img alt="تصویر کتاب" src="../images/p230-06.png" /></p>
+<p><code>:console.log</code>() نمایش مقادیر را در کنسول مرورگر به عهده دارد.</p>
+<p><code>:prompt</code>() نمایش یک کادر محاوره‌ای برای دریافت داده از کاربر. مقدار دریافتی به محل فراخوانی ارسال می‌شود.</p>
+<p><code>:alert</code>() نمایش پنجره هشدار با یک پیام و دکمه <code>.OK</code> <code>:confrim</code>() نمایش یک پنجره تأیید شامل دکمه <code>OK</code> و <code>.Cancel</code> مقدار بازگشتی تابع <code>True</code> یا</p>
+<div class="code-wrap" dir="ltr"><pre><code>False است.
+</code></pre></div>
+<p><img alt="تصویر کتاب" src="../images/p230-02.png" /></p>
+<p><img alt="تصویر کتاب" src="../images/p230-03.png" /></p>
+<p>پنجره <code>alert</code> و <code>prompt</code></p>
+<p><img alt="تصویر کتاب" src="../images/p230-05.png" /></p>
+<p><img alt="تصویر کتاب" src="../images/p230-04.png" /></p>
+<p>پنجره <code>confrim</code></p>
+<p><code>:document.write</code>() نوشتن مستقیم در صفحه وب (استفاده از این روش در برنامه‌نویسی مدرن توصیه نمی‌شود).</p>
+<hr /></article><article class="lesson" lang="en" dir="ltr" data-lang-block="en" hidden><p class="page-mark">Page 219</p>
+<p>The principles of defining a function in JavaScript are as follows:</p>
+<p>When defining a function, first the keyword <code>function</code> is written and then its name.</p>
+<p>The function name must start with a lowercase letter, and each new word must begin with an uppercase letter.</p>
+<p>The function’s input parameters are specified inside parentheses.</p>
+<p>The number of parameters can be zero, one, or more. The set of function statements is written inside braces.</p>
+<p>The function’s output is usually returned to the call site by the <code>return</code> statement.</p>
+<p>The statements inside a function are executed when the function is called.</p>
+<p>To call a function, you must use the function name together with the input arguments. The general form of calling a function is as follows:</p>
+<div class="code-wrap" dir="ltr"><pre><code>functionName(Arguments)
+</code></pre></div>
+<h3 id="example">Example</h3>
+<p>In the example below, a function named <code>calculateCartTotal</code> has been created with three input parameters <code>price3</code>, <code>price2</code>, <code>price1</code>. The function <code>calculateCartTotal</code> calculates the sum of these three parameters’ values and stores it in the variable <code>total</code>. The <code>return</code> statement returns the value of the variable <code>total</code> to the call site.</p>
+<p><img alt="Book image" src="../images/p225-01.png" /></p>
+<p><img alt="Book image" src="../images/p225-02.png" /></p>
+<h3 id="note">Note</h3>
+<p>Parameters are variables that are used when the function is defined. In the example above, the variables <code>price3</code>, <code>price2</code>, <code>price1</code> are the function’s input parameters. An argument refers to the values that are sent to the function when it is called. In other words, arguments are the values that are assigned to the function’s parameters.</p>
+<hr />
+<p class="page-mark">Page 220</p>
+<p>Creating a function and calling it</p>
+<h3 id="workshop">Workshop</h3>
+<p>Create a new file named <code>workshop8.html</code> and write the function <code>calculateCartTotal</code> inside it.</p>
+<p>Then call the function with input arguments of your choice.</p>
+<p>A function does not necessarily have a return value. A function can be written with the goal of executing a set of instructions without returning a value to the call site. In that case, there will be no need to use the <code>return</code> statement. In the example below, the function <code>showCartTotal</code> receives three values as input parameters, calculates their sum, and displays the result in the browser console; but it does not return any value to the call site.</p>
+<p><img alt="Book image" src="../images/p226-01.png" /></p>
+<p><img alt="Book image" src="../images/p226-02.png" /></p>
+<p>JavaScript built-in functions (<code>Built-in</code> <code>Functions</code>): JavaScript has a set of built-in functions that are used to perform various operations. JavaScript’s built-in functions allow programmers to manage data easily and implement complex tasks simply. These functions include mathematical, string, array, object, input–output, and date and time functions, which are introduced in this section.</p>
+<p>Using JavaScript’s mathematical functions</p>
+<h3 id="workshop_1">Workshop</h3>
+<p>JavaScript’s mathematical functions, which are organized inside the <code>Math</code> object, are a set of powerful and efficient tools for performing complex mathematical calculations. Access to mathematical functions is possible in dotted form as <code>Math.functionName</code>, and using them not only makes coding shorter and more readable but also prevents possible errors in manually implementing algorithms and creates more optimal performance in applications. A few examples of commonly used mathematical functions in JavaScript are as follows:</p>
+<p><code>:Math.abs</code>(): Returns the absolute value of the input argument.</p>
+<p><code>:Math.round</code>(): Rounds the value of the input argument.</p>
+<p><code>:Math.random</code>(): Returns a random number between 0 (inclusive) and 1 (exclusive).</p>
+<p><code>:Math.max</code>(): Returns the largest number among the input arguments.</p>
+<p><code>:Math.min</code>(): Returns the smallest number among the input arguments.</p>
+<hr />
+<p class="page-mark">Page 221</p>
+<p>In designing online stores, JavaScript’s mathematical functions play a vital role, because managing main operations such as calculating the final price after applying a discount, totaling the items in the shopping cart, and determining shipping costs requires precise use of these functions. To become familiar with how to call and how these functions work, create a file named <code>shopping-cart.html</code> and write the script below in it.</p>
+<p>Then examine and analyze the results obtained in class.</p>
+<p><img alt="Book image" src="../images/p227-01.png" /></p>
+<p><img alt="Book image" src="../images/p227-02.png" /></p>
+<hr />
+<p class="page-mark">Page 222</p>
+<p>Using string functions in JavaScript</p>
+<h3 id="workshop_2">Workshop</h3>
+<p>JavaScript’s string functions and properties are essential tools for processing and managing text that make it possible to format and change strings with high precision and efficiency. These methods make it possible to validate user input data and optimize text for display or sending to the server. Some of JavaScript’s string functions are as follows:</p>
+<p><code>:toUpperCase</code>(): Converts the letters of the input string to uppercase.</p>
+<p><code>:indexOf</code>(): Returns the index of the position of the character or string inside the parentheses in the main string.</p>
+<p><code>:substring</code>(): Returns a substring from the main string. The inputs of this function are the start and end indices of the substring.</p>
+<p><code>:split</code>(): Splits the string based on the separator inside the parentheses (such as a comma) and returns an array of strings.</p>
+<p><code>:replace</code>(): Receives two strings as input and places the second string (/) in place of the first string (-) in the main string. This function performs the string replacement at the first position where the desired string (-) is found.</p>
+<p><code>:startsWith</code>(): Checks for the presence of a letter or string at the beginning of a string variable.</p>
+<p>The <code>string</code> object has a property named <code>length</code> that determines the length of a string. Based on this, the statement below displays the value 11.</p>
+<div class="code-wrap" dir="ltr"><pre><code>;(str1.length)console.log
+</code></pre></div>
+<p>Create a file named <code>user-info.html</code> and write the script below to become familiar with how string functions work:</p>
+<p><img alt="Book image" src="../images/p228-01.png" /></p>
+<p><img alt="Book image" src="../images/p228-02.png" /></p>
+<hr />
+<p class="page-mark">Page 223</p>
+<h3 id="learn-more">Learn more</h3>
+<p>Using array functions in JavaScript: JavaScript’s array functions are suitable tools for managing, searching, filtering, and transforming structured data. With these methods you can perform various operations such as sorting (<code>sort</code>), filtering (<code>filter</code>), and extracting information from lists simply and without needing to write complex loops. Some array functions are as follows:</p>
+<p><code>:push</code>(): Is used to add one or more elements to the end of an array.</p>
+<p><code>:slice</code>(): Is used to extract part of an array and create a new array.</p>
+<p><code>:filter</code>(): Creates a new array by filtering the elements of the main array based on a specific condition.</p>
+<p><code>:sort</code>(): Sorts the elements of the array.</p>
+<p>The <code>length</code> property returns the number of elements in the array. For example, the expression <code>names.length</code> returns the number 6.</p>
+<p>Create a file named <code>customer-list.html</code> and write the script below to become familiar with how array functions work. Examine and analyze the script results in class.</p>
+<p><img alt="Book image" src="../images/p229-01.png" /></p>
+<p><img alt="Book image" src="../images/p229-02.png" /></p>
+<hr />
+<p class="page-mark">Page 224</p>
+<h3 id="learn-more_1">Learn more</h3>
+<p>Using JavaScript’s input and output functions and statements: Input and output (<code>I/O</code>) functions in JavaScript are the communication bridge between the program and the world outside it and make it possible to create an interactive and dynamic experience for users. In the browser environment, these functions are used to receive input from the user, display a message box, display data in the console, and receive user confirmation.</p>
+<p>To examine how input and output functions work, create a new file named <code>user-interaction.html</code> and write the code below in the <code>body</code> section.</p>
+<p><img alt="Book image" src="../images/p230-01.png" /></p>
+<p>Save the file and observe the result in the browser.</p>
+<p><img alt="Book image" src="../images/p230-06.png" /></p>
+<p><code>:console.log</code>(): Is responsible for displaying values in the browser console.</p>
+<p><code>:prompt</code>(): Displays a dialog box to receive data from the user. The received value is sent to the call site.</p>
+<p><code>:alert</code>(): Displays a warning window with a message and an <code>.OK</code> button. <code>:confrim</code>(): Displays a confirmation window that includes an <code>OK</code> button and <code>.Cancel</code>. The return value of the function is <code>True</code> or</p>
+<div class="code-wrap" dir="ltr"><pre><code>False است.
+</code></pre></div>
+<p><img alt="Book image" src="../images/p230-02.png" /></p>
+<p><img alt="Book image" src="../images/p230-03.png" /></p>
+<p>The <code>alert</code> and <code>prompt</code> windows</p>
+<p><img alt="Book image" src="../images/p230-05.png" /></p>
+<p><img alt="Book image" src="../images/p230-04.png" /></p>
+<p>The <code>confrim</code> window</p>
+<p><code>:document.write</code>(): Writing directly to the web page (using this method is not recommended in modern programming).</p></article>
+      <aside class="extra">
+        <h2 data-fa="تمرین این بخش" data-en="Exercises for this section">تمرین این بخش</h2>
+        <p class="extra-note" data-fa="این تمرین‌ها و پیوندها اضافه بر متن کتاب‌اند." data-en="These exercises and links are in addition to the book.">این تمرین‌ها و پیوندها اضافه بر متن کتاب‌اند.</p>
+        <ol><li data-fa="تابعی بساز که قیمت و درصد تخفیف را بگیرد و قیمت نهایی را برگرداند. دو کالا را با آن در صفحه نشان بده." data-en="Build a function that takes a price and a discount percent and returns the final price. Show two products with it on the page.">تابعی بساز که قیمت و درصد تخفیف را بگیرد و قیمت نهایی را برگرداند. دو کالا را با آن در صفحه نشان بده.</li><li data-fa="تابع دوم بساز که نام کالا را با حرف بزرگ اول برگرداند و قیمت را گرد کند، بعد هر دو را داخل یک کارت بگذار." data-en="Build a second function that returns the product name with a capital first letter and a rounded price, then put both into one card.">تابع دوم بساز که نام کالا را با حرف بزرگ اول برگرداند و قیمت را گرد کند، بعد هر دو را داخل یک کارت بگذار.</li></ol>
+        <h2 data-fa="پیوند مفید" data-en="Useful link">پیوند مفید</h2><ul><li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Functions" data-fa="تابع‌ها" data-en="Functions">تابع‌ها</a></li></ul>
+      </aside>
+    <nav class="pager"><a rel="prev" class="prev" href="p3-js-loops.html"><span class="pager-word" data-fa="قبلی" data-en="Previous">قبلی</span><span class="pager-name" data-fa="حلقه‌ها" data-en="Loops">حلقه‌ها</span></a><a rel="next" class="next" href="p3-js-dom.html"><span class="pager-word" data-fa="بعدی" data-en="Next">بعدی</span><span class="pager-name" data-fa="صفحه، رویداد و اعتبار فرم" data-en="The page, events, and form validation">صفحه، رویداد و اعتبار فرم</span></a></nav>
+    </div>
+  </div>
+  <script src="../assets/search-index.js?v=4"></script>
+  <script src="../assets/app.js?v=4"></script>
+</body>
+</html>

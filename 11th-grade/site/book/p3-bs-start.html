@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title data-fa="فریم‌ورک و شروع بوت‌استرپ" data-en="Frameworks and starting Bootstrap">فریم‌ورک و شروع بوت‌استرپ</title>
+  <link rel="icon" href="../assets/favicon.svg">
+  <link rel="stylesheet" href="../assets/style.css?v=4">
+</head>
+<body data-root="../">
+  <header class="top">
+    <a class="brand" href="../index.html">
+      <span data-fa="طراح سایت" data-en="Site Design">طراح سایت</span>
+      <small data-fa="پایه یازدهم" data-en="Grade 11">پایه یازدهم</small>
+    </a>
+    <div class="search-wrap">
+      <input id="q" type="search" autocomplete="off"
+        data-fa-placeholder="جستجو در درس‌ها" data-en-placeholder="Search lessons"
+        placeholder="جستجو در درس‌ها">
+      <div id="results" class="results" hidden></div>
+    </div>
+    <a class="download" href="../grade11-offline.zip?v=2" data-fa="دانلود کل سایت" data-en="Download the whole site">دانلود کل سایت</a>
+    <button type="button" id="lang-toggle" class="lang-toggle" dir="ltr" data-lang="fa"
+      aria-label="تغییر زبان">
+      <span data-opt="fa">فا</span>
+      <span data-opt="en">EN</span>
+    </button>
+  </header>
+  <div class="layout">
+    <details class="toc" open><summary><span data-fa="فهرست درس‌ها" data-en="Lesson list">فهرست درس‌ها</span></summary><nav class="side" aria-label="lessons"><p class="mod" data-fa="شروع کتاب" data-en="Opening">شروع کتاب</p><p class="unit" data-fa="فهرست" data-en="Contents">فهرست</p><a class="" href="toc.html" data-fa="فهرست" data-en="Contents">فهرست</a><p class="mod" data-fa="پودمان ۱: برنامه‌نویسی پایتون" data-en="Module 1: Python programming">پودمان ۱: برنامه‌نویسی پایتون</p><p class="unit" data-fa="معرفی پودمان" data-en="Module introduction">معرفی پودمان</p><a class="" href="p1-intro.html" data-fa="معرفی پودمان پایتون" data-en="Introducing the Python module">معرفی پودمان پایتون</a><p class="unit" data-fa="مدل‌سازی داده" data-en="Data modeling">مدل‌سازی داده</p><a class="" href="p1-python.html" data-fa="پایتون و محیط برنامه‌نویسی" data-en="Python and the programming environment">پایتون و محیط برنامه‌نویسی</a><a class="" href="p1-vars.html" data-fa="متغیرها، نوع داده و عملگرها" data-en="Variables, types, and operators">متغیرها، نوع داده و عملگرها</a><a class="" href="p1-cast.html" data-fa="ورودی و تبدیل نوع" data-en="Input and type casting">ورودی و تبدیل نوع</a><a class="" href="p1-lists.html" data-fa="لیست‌ها" data-en="Lists">لیست‌ها</a><a class="" href="p1-if.html" data-fa="شرط‌های ساده" data-en="Simple conditions">شرط‌های ساده</a><a class="" href="p1-elif.html" data-fa="if، elif و else" data-en="if, elif, and else">if، elif و else</a><a class="" href="p1-for.html" data-fa="حلقه for و range" data-en="The for loop and range">حلقه for و range</a><a class="" href="p1-while.html" data-fa="حلقه while و کنترل حلقه" data-en="The while loop and loop control">حلقه while و کنترل حلقه</a><a class="" href="p1-assess-data.html" data-fa="ارزشیابی مدل‌سازی داده" data-en="Data-modeling assessment">ارزشیابی مدل‌سازی داده</a><p class="unit" data-fa="توابع و ماژول‌ها" data-en="Functions and modules">توابع و ماژول‌ها</p><a class="" href="p1-sets.html" data-fa="مجموعه (set)" data-en="Sets">مجموعه (set)</a><a class="" href="p1-dict.html" data-fa="دیکشنری" data-en="Dictionaries">دیکشنری</a><a class="" href="p1-quiz.html" data-fa="پروژه بازی Quiz" data-en="Quiz game project">پروژه بازی Quiz</a><a class="" href="p1-tuple.html" data-fa="تاپل" data-en="Tuples">تاپل</a><a class="" href="p1-func.html" data-fa="تعریف تابع، پارامتر و return" data-en="Defining functions, parameters, and return">تعریف تابع، پارامتر و return</a><a class="" href="p1-func-more.html" data-fa="تمرین تابع و مرتب‌سازی" data-en="Function practice and sorting">تمرین تابع و مرتب‌سازی</a><a class="" href="p1-modules.html" data-fa="ماژول‌ها و تفاوت تابع و متد" data-en="Modules, and functions versus methods">ماژول‌ها و تفاوت تابع و متد</a><a class="" href="p1-assess-func.html" data-fa="ارزشیابی توابع و ماژول‌ها" data-en="Functions and modules assessment">ارزشیابی توابع و ماژول‌ها</a><p class="mod" data-fa="پودمان ۲: صفحات وب ایستا" data-en="Module 2: Static web pages">پودمان ۲: صفحات وب ایستا</p><p class="unit" data-fa="معرفی پودمان" data-en="Module introduction">معرفی پودمان</p><a class="" href="p2-intro.html" data-fa="معرفی پودمان صفحات ایستا" data-en="Introducing static web pages">معرفی پودمان صفحات ایستا</a><p class="unit" data-fa="ساختار با HTML" data-en="Structure with HTML">ساختار با HTML</p><a class="" href="p2-web.html" data-fa="وب چگونه کار می‌کند" data-en="How the web works">وب چگونه کار می‌کند</a><a class="" href="p2-concepts.html" data-fa="مفاهیم طراحی وب و نقشه سایت" data-en="Web-design concepts and the site map">مفاهیم طراحی وب و نقشه سایت</a><a class="" href="p2-tags.html" data-fa="اولین صفحه HTML" data-en="A first HTML page">اولین صفحه HTML</a><a class="" href="p2-text.html" data-fa="متن، لیست و پیوند" data-en="Text, lists, and links">متن، لیست و پیوند</a><a class="" href="p2-img.html" data-fa="تصویر در صفحه" data-en="Images on the page">تصویر در صفحه</a><a class="" href="p2-forms.html" data-fa="فرم‌ها" data-en="Forms">فرم‌ها</a><a class="" href="p2-semantic.html" data-fa="عناصر معنایی" data-en="Semantic elements">عناصر معنایی</a><a class="" href="p2-assess-html.html" data-fa="ارزشیابی HTML" data-en="HTML assessment">ارزشیابی HTML</a><p class="unit" data-fa="ظاهر با CSS" data-en="Appearance with CSS">ظاهر با CSS</p><a class="" href="p2-css-start.html" data-fa="نوشتن CSS" data-en="Writing CSS">نوشتن CSS</a><a class="" href="p2-css-look.html" data-fa="رنگ، پس‌زمینه و انتخاب‌گر" data-en="Color, background, and selectors">رنگ، پس‌زمینه و انتخاب‌گر</a><a class="" href="p2-box.html" data-fa="مدل جعبه‌ای و display" data-en="The box model and display">مدل جعبه‌ای و display</a><a class="" href="p2-flex.html" data-fa="چیدمان با Flexbox" data-en="Layout with Flexbox">چیدمان با Flexbox</a><a class="" href="p2-flex-work.html" data-fa="کارگاه چیدمان صفحه" data-en="Page-layout workshop">کارگاه چیدمان صفحه</a><a class="" href="p2-media.html" data-fa="مدیا کوئری و ارزشیابی CSS" data-en="Media queries and the CSS assessment">مدیا کوئری و ارزشیابی CSS</a><p class="mod" data-fa="پودمان ۳: صفحات وب تعاملی" data-en="Module 3: Interactive web pages">پودمان ۳: صفحات وب تعاملی</p><p class="unit" data-fa="معرفی پودمان" data-en="Module introduction">معرفی پودمان</p><a class="" href="p3-intro.html" data-fa="معرفی پودمان تعاملی" data-en="Introducing the interactive module">معرفی پودمان تعاملی</a><p class="unit" data-fa="بوت‌استرپ" data-en="Bootstrap">بوت‌استرپ</p><a class="current" href="p3-bs-start.html" data-fa="فریم‌ورک و شروع بوت‌استرپ" data-en="Frameworks and starting Bootstrap">فریم‌ورک و شروع بوت‌استرپ</a><a class="" href="p3-bs-util.html" data-fa="فاصله، گردی و لیست" data-en="Spacing, rounding, and lists">فاصله، گردی و لیست</a><a class="" href="p3-bs-header.html" data-fa="سرصفحه فروشگاه" data-en="The shop header">سرصفحه فروشگاه</a><a class="" href="p3-bs-grid.html" data-fa="شبکه Grid" data-en="The grid">شبکه Grid</a><a class="" href="p3-bs-rwd.html" data-fa="کلاس‌های واکنش‌گرا" data-en="Responsive classes">کلاس‌های واکنش‌گرا</a><a class="" href="p3-bs-nav.html" data-fa="نوار ناوبری و جزئیات محصول" data-en="Navbar and product details">نوار ناوبری و جزئیات محصول</a><a class="" href="p3-bs-form.html" data-fa="فرم و پنجره Modal" data-en="Forms and modals">فرم و پنجره Modal</a><a class="" href="p3-bs-show.html" data-fa="کاروسل و آکاردئون" data-en="Carousel and accordion">کاروسل و آکاردئون</a><a class="" href="p3-bs-assess.html" data-fa="ارزشیابی بوت‌استرپ" data-en="Bootstrap assessment">ارزشیابی بوت‌استرپ</a><p class="unit" data-fa="جاوااسکریپت" data-en="JavaScript">جاوااسکریپت</p><a class="" href="p3-js-start.html" data-fa="جاوااسکریپت در صفحه وب" data-en="JavaScript on the page">جاوااسکریپت در صفحه وب</a><a class="" href="p3-js-vars.html" data-fa="متغیر و نوع داده" data-en="Variables and data types">متغیر و نوع داده</a><a class="" href="p3-js-ops.html" data-fa="عملگرها" data-en="Operators">عملگرها</a><a class="" href="p3-js-data.html" data-fa="آرایه و شیء" data-en="Arrays and objects">آرایه و شیء</a><a class="" href="p3-js-if.html" data-fa="شرط در جاوااسکریپت" data-en="Conditions in JavaScript">شرط در جاوااسکریپت</a><a class="" href="p3-js-loops.html" data-fa="حلقه‌ها" data-en="Loops">حلقه‌ها</a><a class="" href="p3-js-func.html" data-fa="تابع‌ها" data-en="Functions">تابع‌ها</a><a class="" href="p3-js-dom.html" data-fa="صفحه، رویداد و اعتبار فرم" data-en="The page, events, and form validation">صفحه، رویداد و اعتبار فرم</a><a class="" href="p3-js-assess.html" data-fa="ارزشیابی جاوااسکریپت" data-en="JavaScript assessment">ارزشیابی جاوااسکریپت</a><p class="mod" data-fa="پودمان ۴: توسعه وب پایتون" data-en="Module 4: Python for the web">پودمان ۴: توسعه وب پایتون</p><p class="unit" data-fa="معرفی پودمان" data-en="Module introduction">معرفی پودمان</p><a class="" href="p4-intro.html" data-fa="معرفی پودمان شیءگرایی" data-en="Introducing the object-oriented module">معرفی پودمان شیءگرایی</a><p class="unit" data-fa="شیءگرایی" data-en="Object-oriented programming">شیءگرایی</p><a class="" href="p4-idea.html" data-fa="ایده شیء و کلاس" data-en="The idea of objects and classes">ایده شیء و کلاس</a><a class="" href="p4-class.html" data-fa="ساخت کلاس و متد" data-en="Writing a class and methods">ساخت کلاس و متد</a><a class="" href="p4-inherit.html" data-fa="وراثت" data-en="Inheritance">وراثت</a><a class="" href="p4-protect.html" data-fa="داده معتبر و استفاده داخلی" data-en="Valid data and internal use">داده معتبر و استفاده داخلی</a><a class="" href="p4-assess-oop.html" data-fa="ارزشیابی برنامه شیءگرا" data-en="Object-oriented assessment">ارزشیابی برنامه شیءگرا</a><p class="unit" data-fa="فایل و توسعه" data-en="Files and development">فایل و توسعه</p><a class="" href="p4-files.html" data-fa="خواندن و نوشتن فایل متنی" data-en="Reading and writing text files">خواندن و نوشتن فایل متنی</a><a class="" href="p4-errors.html" data-fa="پیمایش فایل و مدیریت خطا" data-en="Walking a file and handling errors">پیمایش فایل و مدیریت خطا</a><a class="" href="p4-json.html" data-fa="چند فایل و JSON" data-en="Several files and JSON">چند فایل و JSON</a><a class="" href="p4-assess-files.html" data-fa="ارزشیابی کار با فایل" data-en="Files assessment">ارزشیابی کار با فایل</a><p class="mod" data-fa="پودمان ۵: برنامه‌نویسی جنگو" data-en="Module 5: Django">پودمان ۵: برنامه‌نویسی جنگو</p><p class="unit" data-fa="معرفی پودمان" data-en="Module introduction">معرفی پودمان</p><a class="" href="p5-intro.html" data-fa="معرفی پودمان جنگو" data-en="Introducing the Django module">معرفی پودمان جنگو</a><p class="unit" data-fa="ایجاد وب‌اپلیکیشن" data-en="Creating the web app">ایجاد وب‌اپلیکیشن</p><a class="" href="p5-what.html" data-fa="جنگو چیست و نصب" data-en="What Django is, and installing it">جنگو چیست و نصب</a><a class="" href="p5-project.html" data-fa="پروژه، اپ و اولین view" data-en="Project, app, and the first view">پروژه، اپ و اولین view</a><a class="" href="p5-template.html" data-fa="قالب و دمای واقعی" data-en="Templates and a real temperature">قالب و دمای واقعی</a><a class="" href="p5-assess-create.html" data-fa="ارزشیابی ایجاد وب‌اپلیکیشن" data-en="Creating-the-app assessment">ارزشیابی ایجاد وب‌اپلیکیشن</a><p class="unit" data-fa="توسعه وب‌اپلیکیشن" data-en="Developing the web app">توسعه وب‌اپلیکیشن</p><a class="" href="p5-model.html" data-fa="مدل شهر و پنل ادمین" data-en="The city model and the admin">مدل شهر و پنل ادمین</a><a class="" href="p5-list.html" data-fa="خواندن شهرها و نمایش فهرست" data-en="Reading cities and showing the list">خواندن شهرها و نمایش فهرست</a><a class="" href="p5-auth.html" data-fa="ورود و خروج" data-en="Sign-in and sign-out">ورود و خروج</a><a class="" href="p5-crud.html" data-fa="افزودن و حذف شهر" data-en="Adding and deleting a city">افزودن و حذف شهر</a><a class="" href="p5-bugs.html" data-fa="باگ و امنیت" data-en="Bugs and security">باگ و امنیت</a><p class="mod" data-fa="پایان کتاب" data-en="Back of the book">پایان کتاب</p><p class="unit" data-fa="منابع" data-en="References">منابع</p><a class="" href="refs.html" data-fa="منابع کتاب" data-en="Book references">منابع کتاب</a></nav></details>
+    <div class="main">
+      <h1 class="section-title" data-fa="فریم‌ورک و شروع بوت‌استرپ" data-en="Frameworks and starting Bootstrap">فریم‌ورک و شروع بوت‌استرپ</h1><article class="lesson" lang="fa" dir="rtl" data-lang-block="fa"><h1 id="_1">توسعه صفحات وب تعاملی با بوت استرپ</h1>
+<hr />
+<p class="page-mark">صفحه ۱۴۶</p>
+<h2 id="_2">واحد یادگیری ١</h2>
+<h2 id="_3">توسعه صفحات وب تعاملی با بوت استرپ</h2>
+<h3 id="_4">آیا تابه‌حال اندیشیده‌اید</h3>
+<p>چگونه می‌توان طراحی وب‌سایت‌های واکنش‌گرا و سازگار با موبایل را بدون نوشتن کدهای <code>CSS</code> پیچیده انجام داد؟</p>
+<p>آیا فریم ورک‌هایی وجود دارند که کلاس‌های آماده <code>CSS</code> را برای توسعه‌دهندگان وب ارائه کنند؟</p>
+<p>بوت‌استرپ چه کلاس‌ها و اجزای آماده‌ای برای طراحی بخش‌های مختلف صفحات وب دارد؟</p>
+<p>چگونه می‌توان با بوت‌استرپ، فرم‌های ورود اطلاعات را با سرعت بالا و به شکل مدرن طراحی کرد؟</p>
+<p>چگونه می‌توان طراحی صفحات وب را با استفاده از بوت‌استرپ بهینه کرد تا در تمام دستگاه‌ها به بهترین نحو نمایش داده شوند؟</p>
+<h3 id="_5">در پایان از هنرجو انتظار می‌رود</h3>
+<p>1 طراحی کامل ساختار یک صفحه وب (شامل هدر، بدنه و فوتر) با استفاده از سیستم شبکه‌بندی (<code>Grid</code> <code>System</code>) بوت‌استرپ، به‌طوری‌که طرح‌بندی در اندازه‌های مختلف صفحه نمایش (موبایل، تبلت، دسکتاپ) به‌درستی واکنش نشان دهد.</p>
+<p>2 انتخاب و به‌کارگیری کلاس‌های کمکی (<code>Utility</code> <code>Classes</code>) مانند کلاس‌های رنگ، فاصله (<code>Margin/Padding</code>)، سایه‌ها و تایپوگرافی برای استایل‌دهی سریع و استاندارد به عناصر بدون نیاز به نوشتن <code>CSS</code> دستی برای موارد متداول.</p>
+<p>3 ساخت یک نوار ناوبری (<code>Navbar</code>) کاربردی و زیبا که شامل لینک‌ها، دکمه‌ها و قابلیت‌های واکنش‌گرا باشد و همچنین طراحی یک فوتر ساختاریافته.</p>
+<p>4 مهارت در پیاده‌سازی اجزای رابط کاربری مانند کروسل (تصاویر اسلایدی) و آکاردئون‌ها برای ارائه اطلاعات به شیوه‌ای جذاب و پویا.</p>
+<p>5 ساخت فرم‌های ثبت‌نام یا تماس با استایل‌دهی کامل بوت‌استرپ.</p>
+<p>6 تغییر و لغو استایل‌های پیش‌فرض بوت‌استرپ با استفاده از روش‌های سفارشی‌سازی برای هماهنگ کردن ظاهر وب‌سایت با برند یا نیازهای خاص پروژه.</p>
+<h3 id="_6">استاندارد عملکرد</h3>
+<p>کلاس‌های آماده بوت‌استرپ را برای تعیین سبک عناصر مختلف صفحه مانند دکمه‌ها، فرم‌ها و منوها و... به کار ببرد و توانایی طراحی واکنش‌گرای صفحه را در دستگاه‌های مختلف داشته باشد.</p>
+<hr />
+<p class="page-mark">صفحه ۱۴۷</p>
+<h3 id="_7">تعریف فریم ورک</h3>
+<p>فریم‌ورک (<code>Framework</code>) یک چارچوب نرم‌افزاری از پیش طراحی‌شده است که به منظور سرعت بخشیدن به فرایند طراحی و توسعه وب‌سایت‌ها و اپلیکیشن‌های وب به‌کار می‌رود. یک فریم ورک با ارائۀ مجموعه‌ای از ابزارها، کتابخانه‌ها و الگوهای آماده، به توسعه‌دهندگان امکان می‌دهد که تنها روی ویژگی‌ها و عملکردهای خاص پروژه تمرکز کنند و از کارهای تکراری و ابتدایی دوری کنند.</p>
+<div class="code-wrap" dir="ltr"><pre><code>Bootstrap چیست؟
+</code></pre></div>
+<p>بوت‌استرپ یک فریم‌ورک متن باز برای طراحی ظاهر سایت است که شامل مجموعه‌ای از کدهای آماده نوشت‌هشده با زبان‌های <code>Css</code>،<code>Html</code> و <code>Java</code> <code>Script</code> است. توسعه‌دهندگان به‌جای اینکه از صفر همه چیز را بنویسند از این کدهای آماده استفاده می‌کنند.</p>
+<p>ویژگی‌های <code>Bootstrap:</code> بوت‌استرپ دارای ویژگی‌های متعددی در زمینه طراحی صفحات وب است که باعث محبوبیت آن در میان توسعه‌دهندگان و طراحان وب شده است. این ویژگی‌ها به شرح زیر است:</p>
+<p>طراحی واکنش‌گرا (<code>Responsive</code> <code>Design</code>): بوت‌استرپ دارای یک سیستم گرید 12 ستونی است که امکان طراحی واکنش‌گرا را برای دستگاه‌های مختلف فراهم می‌کند.</p>
+<p>اجزای از پیش طراحی‌شده (<code>Components</code>): بوت‌استرپ شامل اجزای مختلفی مانند دکمه‌ها، فرم‌ها، منوی ناوبری، کاردها، مدال‌ها و نوار جست‌وجو است که به‌صورت آماده قابل استفاده هستند.</p>
+<p>پشتیبانی از جاوا‌اسکریپت: بوت‌استرپ حاوی کتابخانه‌های جاوا‌اسکریپت برای ایجاد تعاملات و انیمیشن‌ها در بخش‌های مختلف صفحه است.</p>
+<p>پشتیبانی از مرورگرها: بوت‌استرپ با اکثر مرورگرهای مدرن مانند <code>Chrome</code>، <code>Firefox</code>، <code>Safari</code> و <code>Edge</code> سازگار است.</p>
+<p>مستندات جامع: سایت رسمی بوت‌استرپ (<code>getbootstrap.com</code>) دارای مستندات کامل برای آموزش نحوۀ استفاده از اجزا و کلاس‌های بوت‌استرپ است.</p>
+<p>کاربردهای <code>Bootstrap</code> طراحی وب‌سایت‌های واکنش‌گرا: طراحی و توسعه وب‌سایت‌های شرکتی، فروشگاهی، وبلاگ‌ها و غیره.</p>
+<p>ایجاد رابط‌های کاربری جذاب: طراحی رابط‌های کاربری زیبا و مدرن برای وب‌سایت‌ها و اپلیکیشن‌های وب.</p>
+<p>پروژه‌های <code>minimum</code> <code>viable</code> <code>product</code> )<code>MVP</code>): ساخت نمونه‌های اولیه وب‌سایت‌ها (<code>MVP</code>) و ارزیابی ایده‌های طراحی.</p>
+<p>طراحی فرم‌ها: طراحی فرم‌های زیبا و واکنش‌گرا توسط کلاس‌های آماده بوت‌استرپ.</p>
+<hr />
+<p class="page-mark">صفحه ۱۴۸</p>
+<p>به‌کارگیری بوت‌استرپ در صفحه وب برای استفاده از امکانات بوت‌استرپ در یک صفحه وب، ابتدا باید فایل <code>HTML</code> پایه ایجاد شود و سپس فایل‌های <code>CSS</code> و جاوا‌اسکریپت بوت‌استرپ به آن الحاق شود. فایل پایه شامل برچسب‌های <code>&lt;DOCTYPE</code>!&gt;،</p>
+<div class="code-wrap" dir="ltr"><pre><code>&lt;html&gt;، &lt;head&gt;، متاتگ‌های viewport، &lt;title&gt; و &lt;body&gt; است.
+</code></pre></div>
+<p>استفاده از <code>CDN1</code> در صفحه وب</p>
+<h3 id="_8">کار کارگاهی</h3>
+<p>یک صفحه وب با نام <code>test-bs.html</code> ایجاد کنید و برچسب‌های اولیه آن را بنویسید. سپس سایت <code>getbootstrap.com</code> را باز کنید. صفحه را تا بخش <code>Include</code> <code>via</code> <code>CDN</code> پیمایش کنید تا کدهای آماده <code>&lt;Link&gt;</code> و <code>&lt;script&gt;</code> را مشاهده کنید. کد <code>&lt;link&gt;</code> را در بخش <code>&lt;head&gt;</code> و کد <code>&lt;script&gt;</code> را قبل از <code>&lt;body/&gt;</code> کپی کنید. این دو کد فایل‌های <code>CSS</code> و جاوا‌اسکریپت بوت استرپ را به صفحه وب الحاق می‌کنند.</p>
+<p>کد لینک و اسکریپت بوت‌استرپ حاوی یک ویژگی به‌نام <code>Integrity</code> است که برای حفظ امنیت فایل دریافت شده از <code>CDN</code> استفاده می‌شود. با این حال امکان استفاده از کلاس‌های بوت‌استرپ بدون <code>Integrity</code> هم فراهم است. به همین دلیل در کد فوق ویژگی <code>Integrity</code> حذف شده است تا خوانایی کد افزایش یابد ولی استفاده از این ویژگی در پروژه‌های واقعی ضروری است.</p>
+<p><img alt="تصویر کتاب" src="../images/p154-01.png" /></p>
+<p>کلاس‌ها و کامپوننت‌های بوت‌استرپ کلاس‌های بوت‌استرپ مجموعه‌ای از استایل‌های از پیش تعریف شده هستند که امکان طراحی سریع و راحت اجزای رابط کاربری صفحات وب را فراهم می‌کنند. این کلاس‌ها که با استفاده از <code>CSS</code> ایجاد شده‌اند، به توسعه‌دهنده وب کمک می‌کنند که با نوشتن کدهای <code>CSS</code> کمتر، عناصری کاربرپسند و واکنش‌گرا را به صفحه وب اضافه کند.</p>
+<div class="code-wrap" dir="ltr"><pre><code>)شبکه توزیع محتوا( CDN: Content Delivery Network١
+</code></pre></div>
+<hr />
+<p class="page-mark">صفحه ۱۴۹</p>
+<p>کامپوننت‌های بوت‌استرپ عناصر از پیش طراحی شده‌ای هستند که امکان طراحی سریع و آسان رابط کاربری وب‌سایت‌ها را فراهم می‌کنند. توسع‌هدهندۀ وب می‌تواند به کمک این عناصر آماده، بدون نوشتن کدهای <code>CSS</code> و <code>JavaScript</code>، عناصر کاربرپسند و واکنش‌گرا را به صفحه وب اضافه کند. از جمله کامپوننت‌های بوت‌استرپ می‌توان به دکمه، نوار ناوبری1، کروسل2، آکاردئون3 و مُدال4 اشاره نمود. این بخش به معرفی کلاس‌ها و کامپوننت‌های بوت‌استرپ می‌پردازد.</p>
+<p>کلاس‌های <code>Utility</code> : کلاس‌های <code>Utility</code> در بوت‌استرپ، به‌طور ویژه برای استایل‌دهی عناصر صفحه استفاده می‌شوند و به‌طور مستقیم با <code>HTML</code> و <code>CSS</code> کار می‌کنند. برای استفاده از این کلاس‌ها نیازی به جاوا‌اسکریپت نیست. کلاس‌های آماده بوت‌استرپ برای تعیین رنگ، اندازه عناصر، فواصل، خط دور، سایه و غیره قابل استفاده هستند.</p>
+<p>کلاس‌های رنگ: کلاس‌های رنگ بوت‌استرپ به دو دستۀ رنگ‌های زمینه و رنگ متن تقسیم می‌شوند.</p>
+<p>هر یک از کلاس‌های رنگ دارای مفهوم و رنگ مشخصی هستند. کلاس‌های رنگ زمینه و متن به ترتیب دارای پیشوند <code>bg</code> و <code>text</code> هستند. برخی از این کلاس‌ها در جدول زیر گردآوری شده است:</p>
+<p>جدول 1 کلاس‌های رنگ <code>Bootstrap</code></p>
+<p>کلاس رنگ زمینه</p>
+<p>کلاس رنگ متن</p>
+<p>مفهوم</p>
+<div class="code-wrap" dir="ltr"><pre><code>bg-primary
+text-primaryرنگ اصلی
+bg-secondary
+text-secondaryرنگ ثانویه
+bg-success
+</code></pre></div>
+<p><code>text-success</code>رنگ موفقیت</p>
+<div class="code-wrap" dir="ltr"><pre><code>bg-danger
+text-dangerرنگ خطر
+bg-warning
+text-warningرنگ هشدار
+bg-info
+</code></pre></div>
+<p><code>text-info</code>رنگ اطلاعات</p>
+<div class="code-wrap" dir="ltr"><pre><code>bg-light
+text-lightرنگ روشن
+bg-dark
+</code></pre></div>
+<p><code>text-dark</code>رنگ تیره</p>
+<p>1- نوار ناوبری (<code>Navbar</code>): نوار بالاتری صفحه که معمولاً شامل لوگو، لین‌کها و منوهاست.</p>
+<p>2- کروسل (<code>Carousel</code>): یک عنصر تعاملی که مجموعه‌ای از تصاویر یا محتوا را به صورت پشت سرهم در یک فضای مشخص نمایش م‌یدهد و کاربر م‌یتواند بین آنها جابه‌جا شود.</p>
+<p>3- آکاردئون (<code>Accordion</code>): یک بخش قابل باز و بسته شدن برای نمایش محتوا.</p>
+<p>4- مُدال (<code>Modal</code>): پنجره یا کادر محاوره‌ای که روی محتوای صفحه ظاهر م‌یشود.</p>
+<hr />
+<p class="page-mark">صفحه ۱۵۰</p>
+<h3 id="_9">کنجکاوی</h3>
+<p>برای کسب اطلاعات بیشتر دربارۀ سایر کلاس‌های رنگ، عبارت <code>Bootstrap5.3</code> <code>background</code> و <code>Bootstrap5.3</code> <code>colors</code> را در گوگل جست‌وجو کنید.</p>
+<p>استفاده از کلاس‌های رنگ بوت استرپ</p>
+<h3 id="_10">کار کارگاهی</h3>
+<p>فایل <code>test-bs.html</code> را باز کنید، سپس یک عنصر <code>&lt;div&gt;</code> با مشخصات زیر بعد از برچسب <code>body</code> درج کنید.</p>
+<p><img alt="تصویر کتاب" src="../images/p156-03.png" /></p>
+<p>فایل را ذخیره کنید و نتیجه را در مرورگر بررسی کنید.</p>
+<p>به انتهای کلاس رنگ، عبارت <code>subtle</code> را اضافه کنید (<code>bg-primary-subtle</code>) و نتیجه را در مرورگر مشاهده کنید.</p>
+<p>کلاس‌های تعیین اندازه (<code>Sizing</code>) بوت‌استرپ دارای دو مجموعه کلاس <code>*-w</code> و <code>*-h</code> برای تعیین پهنا و ارتفاع عناصر است. پارامتر * می‌تواند جایگزین اعداد 25،50، 75 و 100 و عبارت <code>auto</code> شود. اختصاص کلاس <code>w-75</code> برای یک عنصر باعث می‌شود که پهنای عنصر برابر 75% پهنای عنصر والد باشد. کلاس‌های <code>w-auto</code> و <code>h-auto</code> پهنا و ارتفاع یک عنصر را به اندازۀ محتوای آن تنظیم می‌نمایند.</p>
+<p>استفاده از کلاس‌های <code>Sizing</code></p>
+<h3 id="_11">کار کارگاهی</h3>
+<p>در فایل <code>test-bs.html</code> یک عنصر <code>div</code> دیگری به شکل زیر به صفحه وب اضافه کنید. این عنصر حاوی یک عنصر پاراگراف است که پهنا و ارتفاع پاراگراف، 75% پهنا و ارتفاع عنصر <code>div</code> خواهد بود.</p>
+<p><img alt="تصویر کتاب" src="../images/p156-01.png" /></p>
+<p>در کد فوق پهنا و ارتفاع عنصر پاراگراف توسط کلاس‌های <code>w-75</code> و <code>h-75</code> مشخص شده است. فایل را ذخیره کنید و نتیجه را در مرورگر بررسی کنید.</p>
+<p><img alt="تصویر کتاب" src="../images/p156-02.png" /></p>
+<hr /></article><article class="lesson" lang="en" dir="ltr" data-lang-block="en" hidden><h1 id="developing-interactive-web-pages-with-bootstrap">Developing interactive web pages with Bootstrap</h1>
+<hr />
+<p class="page-mark">Page 146</p>
+<h2 id="learning-unit-1">Learning unit 1</h2>
+<h2 id="developing-interactive-web-pages-with-bootstrap_1">Developing interactive web pages with Bootstrap</h2>
+<h3 id="have-you-ever-thought">Have you ever thought</h3>
+<p>How can you design responsive, mobile-friendly websites without writing complex <code>CSS</code> code?</p>
+<p>Are there frameworks that provide ready-made <code>CSS</code> classes for web developers?</p>
+<p>What ready-made classes and components does Bootstrap have for designing different parts of web pages?</p>
+<p>How can you use Bootstrap to design data-entry forms quickly and in a modern style?</p>
+<p>How can you optimize web page design with Bootstrap so that pages display in the best way on all devices?</p>
+<h3 id="at-the-end-the-student-is-expected-to">At the end, the student is expected to</h3>
+<p>1 Fully design the structure of a web page (including header, body, and footer) using Bootstrap’s grid system (<code>Grid</code> <code>System</code>), so that the layout responds correctly on different screen sizes (mobile, tablet, desktop).</p>
+<p>2 Select and use utility classes (<code>Utility</code> <code>Classes</code>) such as color, spacing (<code>Margin/Padding</code>), shadow, and typography classes for fast, standard styling of elements without writing manual <code>CSS</code> for common cases.</p>
+<p>3 Build a practical and attractive navigation bar (<code>Navbar</code>) that includes links, buttons, and responsive features, and also design a structured footer.</p>
+<p>4 Gain skill in implementing user-interface components such as carousels (sliding images) and accordions to present information in an engaging and dynamic way.</p>
+<p>5 Build registration or contact forms with complete Bootstrap styling.</p>
+<p>6 Change and override Bootstrap’s default styles using customization methods to match the website’s appearance with the brand or the specific needs of the project.</p>
+<h3 id="performance-standard">Performance standard</h3>
+<p>Use Bootstrap’s ready-made classes to set the style of different page elements such as buttons, forms, menus, and so on, and be able to design a responsive page on different devices.</p>
+<hr />
+<p class="page-mark">Page 147</p>
+<h3 id="definition-of-a-framework">Definition of a framework</h3>
+<p>A framework (<code>Framework</code>) is a pre-designed software framework used to speed up the process of designing and developing websites and web applications. By providing a set of tools, libraries, and ready-made patterns, a framework lets developers focus only on the specific features and functions of the project and avoid repetitive, basic work.</p>
+<div class="code-wrap" dir="ltr"><pre><code>Bootstrap چیست؟
+</code></pre></div>
+<p>Bootstrap is an open-source framework for designing a site’s appearance that includes a set of ready-made code written in the languages <code>Css</code>, <code>Html</code>, and <code>Java</code> <code>Script</code>. Instead of writing everything from scratch, developers use this ready-made code.</p>
+<p>Features of <code>Bootstrap:</code> Bootstrap has many features for designing web pages that have made it popular among web developers and designers. These features are as follows:</p>
+<p>Responsive design (<code>Responsive</code> <code>Design</code>): Bootstrap has a 12-column grid system that makes responsive design possible for different devices.</p>
+<p>Pre-designed components (<code>Components</code>): Bootstrap includes various components such as buttons, forms, navigation menus, cards, modals, and search bars that are ready to use.</p>
+<p>JavaScript support: Bootstrap contains JavaScript libraries for creating interactions and animations in different parts of the page.</p>
+<p>Browser support: Bootstrap is compatible with most modern browsers such as <code>Chrome</code>, <code>Firefox</code>, <code>Safari</code>, and <code>Edge</code>.</p>
+<p>Comprehensive documentation: The official Bootstrap site (<code>getbootstrap.com</code>) has complete documentation for learning how to use Bootstrap’s components and classes.</p>
+<p>Uses of <code>Bootstrap</code> Designing responsive websites: Designing and developing corporate sites, stores, blogs, and so on.</p>
+<p>Creating attractive user interfaces: Designing beautiful, modern user interfaces for websites and web applications.</p>
+<p><code>minimum</code> <code>viable</code> <code>product</code> (<code>MVP</code>) projects: Building website prototypes (<code>MVP</code>) and evaluating design ideas.</p>
+<p>Designing forms: Designing beautiful, responsive forms using Bootstrap’s ready-made classes.</p>
+<hr />
+<p class="page-mark">Page 148</p>
+<p>Using Bootstrap on a web page To use Bootstrap’s features on a web page, you must first create a basic <code>HTML</code> file and then attach Bootstrap’s <code>CSS</code> and JavaScript files to it. The basic file includes the <code>&lt;DOCTYPE</code>!&gt;,</p>
+<div class="code-wrap" dir="ltr"><pre><code>&lt;html&gt;، &lt;head&gt;، متاتگ‌های viewport، &lt;title&gt; و &lt;body&gt; است.
+</code></pre></div>
+<p>Using <code>CDN1</code> on a web page</p>
+<h3 id="workshop">Workshop</h3>
+<p>Create a web page named <code>test-bs.html</code> and write its initial tags. Then open the site <code>getbootstrap.com</code>. Scroll the page to the <code>Include</code> <code>via</code> <code>CDN</code> section so you can see the ready-made <code>&lt;Link&gt;</code> and <code>&lt;script&gt;</code> codes. Copy the <code>&lt;link&gt;</code> code into the <code>&lt;head&gt;</code> section and the <code>&lt;script&gt;</code> code before <code>&lt;body/&gt;</code>. These two codes attach Bootstrap’s <code>CSS</code> and JavaScript files to the web page.</p>
+<p>The Bootstrap link and script code contains an attribute called <code>Integrity</code> that is used to keep the file received from the <code>CDN</code> secure. However, it is also possible to use Bootstrap classes without <code>Integrity</code>. For that reason, in the code above the <code>Integrity</code> attribute has been removed to make the code more readable, but using this attribute is essential in real projects.</p>
+<p><img alt="Book image" src="../images/p154-01.png" /></p>
+<p>Bootstrap classes and components Bootstrap classes are a set of predefined styles that make it possible to design user-interface parts of web pages quickly and easily. These classes, which were created using <code>CSS</code>, help the web developer add user-friendly, responsive elements to the web page while writing less <code>CSS</code> code.</p>
+<div class="code-wrap" dir="ltr"><pre><code>)شبکه توزیع محتوا( CDN: Content Delivery Network١
+</code></pre></div>
+<hr />
+<p class="page-mark">Page 149</p>
+<p>Bootstrap components are pre-designed elements that make it possible to design website user interfaces quickly and easily. With these ready-made elements, the web developer can add user-friendly, responsive elements to the web page without writing <code>CSS</code> and <code>JavaScript</code> code. Among Bootstrap’s components are the button, navigation bar1, carousel2, accordion3, and modal4. This section introduces Bootstrap’s classes and components.</p>
+<p><code>Utility</code> classes: <code>Utility</code> classes in Bootstrap are used especially for styling page elements and work directly with <code>HTML</code> and <code>CSS</code>. You do not need JavaScript to use these classes. Bootstrap’s ready-made classes can be used to set color, element size, spacing, border, shadow, and so on.</p>
+<p>Color classes: Bootstrap’s color classes are divided into two groups: background colors and text colors.</p>
+<p>Each color class has a specific meaning and color. Background and text color classes have the prefixes <code>bg</code> and <code>text</code>, respectively. Some of these classes are collected in the table below:</p>
+<p>Table 1 Bootstrap color classes</p>
+<p>Background color class</p>
+<p>Text color class</p>
+<p>Meaning</p>
+<div class="code-wrap" dir="ltr"><pre><code>bg-primary
+text-primaryرنگ اصلی
+bg-secondary
+text-secondaryرنگ ثانویه
+bg-success
+</code></pre></div>
+<p><code>text-success</code> Success color</p>
+<div class="code-wrap" dir="ltr"><pre><code>bg-danger
+text-dangerرنگ خطر
+bg-warning
+text-warningرنگ هشدار
+bg-info
+</code></pre></div>
+<p><code>text-info</code> Information color</p>
+<div class="code-wrap" dir="ltr"><pre><code>bg-light
+text-lightرنگ روشن
+bg-dark
+</code></pre></div>
+<p><code>text-dark</code> Dark color</p>
+<p>1- Navigation bar (<code>Navbar</code>): The top bar of the page that usually includes the logo, links, and menus.</p>
+<p>2- Carousel (<code>Carousel</code>): An interactive element that displays a set of images or content one after another in a defined space, and the user can move between them.</p>
+<p>3- Accordion (<code>Accordion</code>): A section that can open and close to display content.</p>
+<p>4- Modal (<code>Modal</code>): A window or dialog box that appears over the page content.</p>
+<hr />
+<p class="page-mark">Page 150</p>
+<h3 id="try-this">Try this</h3>
+<p>For more information about other color classes, search for the phrases <code>Bootstrap5.3</code> <code>background</code> and <code>Bootstrap5.3</code> <code>colors</code> on Google.</p>
+<p>Using Bootstrap color classes</p>
+<h3 id="workshop_1">Workshop</h3>
+<p>Open the file <code>test-bs.html</code>, then insert a <code>&lt;div&gt;</code> element with the following settings after the <code>body</code> tag.</p>
+<p><img alt="Book image" src="../images/p156-03.png" /></p>
+<p>Save the file and check the result in the browser.</p>
+<p>Add the word <code>subtle</code> to the end of the color class (<code>bg-primary-subtle</code>) and view the result in the browser.</p>
+<p>Sizing classes (<code>Sizing</code>) Bootstrap has two sets of classes, <code>*-w</code> and <code>*-h</code>, for setting the width and height of elements. The * parameter can be replaced with the numbers 25, 50, 75, and 100 and the word <code>auto</code>. Assigning the class <code>w-75</code> to an element makes the element’s width equal to 75% of the parent element’s width. The classes <code>w-auto</code> and <code>h-auto</code> set an element’s width and height to the size of its content.</p>
+<p>Using <code>Sizing</code> classes</p>
+<h3 id="workshop_2">Workshop</h3>
+<p>In the file <code>test-bs.html</code>, add another <code>div</code> element to the web page as shown below. This element contains a paragraph element whose width and height will be 75% of the width and height of the <code>div</code> element.</p>
+<p><img alt="Book image" src="../images/p156-01.png" /></p>
+<p>In the code above, the width and height of the paragraph element are set by the classes <code>w-75</code> and <code>h-75</code>. Save the file and check the result in the browser.</p>
+<p><img alt="Book image" src="../images/p156-02.png" /></p>
+<hr /></article>
+      <aside class="extra">
+        <h2 data-fa="تمرین این بخش" data-en="Exercises for this section">تمرین این بخش</h2>
+        <p class="extra-note" data-fa="این تمرین‌ها و پیوندها اضافه بر متن کتاب‌اند." data-en="These exercises and links are in addition to the book.">این تمرین‌ها و پیوندها اضافه بر متن کتاب‌اند.</p>
+        <ol><li data-fa="بوت‌استرپ را به یک صفحه خالی وصل کن و فقط با کلاس آماده یک دکمه و یک جعبه هشدار رنگی نشان بده." data-en="Connect Bootstrap to an empty page and, using only ready-made classes, show a button and a colored alert.">بوت‌استرپ را به یک صفحه خالی وصل کن و فقط با کلاس آماده یک دکمه و یک جعبه هشدار رنگی نشان بده.</li><li data-fa="زیر آن‌ها یک کارت ساده با عنوان و متن بساز، بدون نوشتن CSS تازه." data-en="Under those, build a simple card with a title and text, without writing new CSS.">زیر آن‌ها یک کارت ساده با عنوان و متن بساز، بدون نوشتن CSS تازه.</li></ol>
+        <h2 data-fa="پیوند مفید" data-en="Useful link">پیوند مفید</h2><ul><li><a href="https://getbootstrap.com/docs/5.3/getting-started/introduction/" data-fa="معرفی بوت‌استرپ ۵" data-en="Bootstrap 5 introduction">معرفی بوت‌استرپ ۵</a></li></ul>
+      </aside>
+    <nav class="pager"><a rel="prev" class="prev" href="p3-intro.html"><span class="pager-word" data-fa="قبلی" data-en="Previous">قبلی</span><span class="pager-name" data-fa="معرفی پودمان تعاملی" data-en="Introducing the interactive module">معرفی پودمان تعاملی</span></a><a rel="next" class="next" href="p3-bs-util.html"><span class="pager-word" data-fa="بعدی" data-en="Next">بعدی</span><span class="pager-name" data-fa="فاصله، گردی و لیست" data-en="Spacing, rounding, and lists">فاصله، گردی و لیست</span></a></nav>
+    </div>
+  </div>
+  <script src="../assets/search-index.js?v=4"></script>
+  <script src="../assets/app.js?v=4"></script>
+</body>
+</html>

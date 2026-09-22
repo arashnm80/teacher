@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title data-fa="ورود و خروج" data-en="Sign-in and sign-out">ورود و خروج</title>
+  <link rel="icon" href="../assets/favicon.svg">
+  <link rel="stylesheet" href="../assets/style.css?v=4">
+</head>
+<body data-root="../">
+  <header class="top">
+    <a class="brand" href="../index.html">
+      <span data-fa="طراح سایت" data-en="Site Design">طراح سایت</span>
+      <small data-fa="پایه یازدهم" data-en="Grade 11">پایه یازدهم</small>
+    </a>
+    <div class="search-wrap">
+      <input id="q" type="search" autocomplete="off"
+        data-fa-placeholder="جستجو در درس‌ها" data-en-placeholder="Search lessons"
+        placeholder="جستجو در درس‌ها">
+      <div id="results" class="results" hidden></div>
+    </div>
+    <a class="download" href="../grade11-offline.zip?v=2" data-fa="دانلود کل سایت" data-en="Download the whole site">دانلود کل سایت</a>
+    <button type="button" id="lang-toggle" class="lang-toggle" dir="ltr" data-lang="fa"
+      aria-label="تغییر زبان">
+      <span data-opt="fa">فا</span>
+      <span data-opt="en">EN</span>
+    </button>
+  </header>
+  <div class="layout">
+    <details class="toc" open><summary><span data-fa="فهرست درس‌ها" data-en="Lesson list">فهرست درس‌ها</span></summary><nav class="side" aria-label="lessons"><p class="mod" data-fa="شروع کتاب" data-en="Opening">شروع کتاب</p><p class="unit" data-fa="فهرست" data-en="Contents">فهرست</p><a class="" href="toc.html" data-fa="فهرست" data-en="Contents">فهرست</a><p class="mod" data-fa="پودمان ۱: برنامه‌نویسی پایتون" data-en="Module 1: Python programming">پودمان ۱: برنامه‌نویسی پایتون</p><p class="unit" data-fa="معرفی پودمان" data-en="Module introduction">معرفی پودمان</p><a class="" href="p1-intro.html" data-fa="معرفی پودمان پایتون" data-en="Introducing the Python module">معرفی پودمان پایتون</a><p class="unit" data-fa="مدل‌سازی داده" data-en="Data modeling">مدل‌سازی داده</p><a class="" href="p1-python.html" data-fa="پایتون و محیط برنامه‌نویسی" data-en="Python and the programming environment">پایتون و محیط برنامه‌نویسی</a><a class="" href="p1-vars.html" data-fa="متغیرها، نوع داده و عملگرها" data-en="Variables, types, and operators">متغیرها، نوع داده و عملگرها</a><a class="" href="p1-cast.html" data-fa="ورودی و تبدیل نوع" data-en="Input and type casting">ورودی و تبدیل نوع</a><a class="" href="p1-lists.html" data-fa="لیست‌ها" data-en="Lists">لیست‌ها</a><a class="" href="p1-if.html" data-fa="شرط‌های ساده" data-en="Simple conditions">شرط‌های ساده</a><a class="" href="p1-elif.html" data-fa="if، elif و else" data-en="if, elif, and else">if، elif و else</a><a class="" href="p1-for.html" data-fa="حلقه for و range" data-en="The for loop and range">حلقه for و range</a><a class="" href="p1-while.html" data-fa="حلقه while و کنترل حلقه" data-en="The while loop and loop control">حلقه while و کنترل حلقه</a><a class="" href="p1-assess-data.html" data-fa="ارزشیابی مدل‌سازی داده" data-en="Data-modeling assessment">ارزشیابی مدل‌سازی داده</a><p class="unit" data-fa="توابع و ماژول‌ها" data-en="Functions and modules">توابع و ماژول‌ها</p><a class="" href="p1-sets.html" data-fa="مجموعه (set)" data-en="Sets">مجموعه (set)</a><a class="" href="p1-dict.html" data-fa="دیکشنری" data-en="Dictionaries">دیکشنری</a><a class="" href="p1-quiz.html" data-fa="پروژه بازی Quiz" data-en="Quiz game project">پروژه بازی Quiz</a><a class="" href="p1-tuple.html" data-fa="تاپل" data-en="Tuples">تاپل</a><a class="" href="p1-func.html" data-fa="تعریف تابع، پارامتر و return" data-en="Defining functions, parameters, and return">تعریف تابع، پارامتر و return</a><a class="" href="p1-func-more.html" data-fa="تمرین تابع و مرتب‌سازی" data-en="Function practice and sorting">تمرین تابع و مرتب‌سازی</a><a class="" href="p1-modules.html" data-fa="ماژول‌ها و تفاوت تابع و متد" data-en="Modules, and functions versus methods">ماژول‌ها و تفاوت تابع و متد</a><a class="" href="p1-assess-func.html" data-fa="ارزشیابی توابع و ماژول‌ها" data-en="Functions and modules assessment">ارزشیابی توابع و ماژول‌ها</a><p class="mod" data-fa="پودمان ۲: صفحات وب ایستا" data-en="Module 2: Static web pages">پودمان ۲: صفحات وب ایستا</p><p class="unit" data-fa="معرفی پودمان" data-en="Module introduction">معرفی پودمان</p><a class="" href="p2-intro.html" data-fa="معرفی پودمان صفحات ایستا" data-en="Introducing static web pages">معرفی پودمان صفحات ایستا</a><p class="unit" data-fa="ساختار با HTML" data-en="Structure with HTML">ساختار با HTML</p><a class="" href="p2-web.html" data-fa="وب چگونه کار می‌کند" data-en="How the web works">وب چگونه کار می‌کند</a><a class="" href="p2-concepts.html" data-fa="مفاهیم طراحی وب و نقشه سایت" data-en="Web-design concepts and the site map">مفاهیم طراحی وب و نقشه سایت</a><a class="" href="p2-tags.html" data-fa="اولین صفحه HTML" data-en="A first HTML page">اولین صفحه HTML</a><a class="" href="p2-text.html" data-fa="متن، لیست و پیوند" data-en="Text, lists, and links">متن، لیست و پیوند</a><a class="" href="p2-img.html" data-fa="تصویر در صفحه" data-en="Images on the page">تصویر در صفحه</a><a class="" href="p2-forms.html" data-fa="فرم‌ها" data-en="Forms">فرم‌ها</a><a class="" href="p2-semantic.html" data-fa="عناصر معنایی" data-en="Semantic elements">عناصر معنایی</a><a class="" href="p2-assess-html.html" data-fa="ارزشیابی HTML" data-en="HTML assessment">ارزشیابی HTML</a><p class="unit" data-fa="ظاهر با CSS" data-en="Appearance with CSS">ظاهر با CSS</p><a class="" href="p2-css-start.html" data-fa="نوشتن CSS" data-en="Writing CSS">نوشتن CSS</a><a class="" href="p2-css-look.html" data-fa="رنگ، پس‌زمینه و انتخاب‌گر" data-en="Color, background, and selectors">رنگ، پس‌زمینه و انتخاب‌گر</a><a class="" href="p2-box.html" data-fa="مدل جعبه‌ای و display" data-en="The box model and display">مدل جعبه‌ای و display</a><a class="" href="p2-flex.html" data-fa="چیدمان با Flexbox" data-en="Layout with Flexbox">چیدمان با Flexbox</a><a class="" href="p2-flex-work.html" data-fa="کارگاه چیدمان صفحه" data-en="Page-layout workshop">کارگاه چیدمان صفحه</a><a class="" href="p2-media.html" data-fa="مدیا کوئری و ارزشیابی CSS" data-en="Media queries and the CSS assessment">مدیا کوئری و ارزشیابی CSS</a><p class="mod" data-fa="پودمان ۳: صفحات وب تعاملی" data-en="Module 3: Interactive web pages">پودمان ۳: صفحات وب تعاملی</p><p class="unit" data-fa="معرفی پودمان" data-en="Module introduction">معرفی پودمان</p><a class="" href="p3-intro.html" data-fa="معرفی پودمان تعاملی" data-en="Introducing the interactive module">معرفی پودمان تعاملی</a><p class="unit" data-fa="بوت‌استرپ" data-en="Bootstrap">بوت‌استرپ</p><a class="" href="p3-bs-start.html" data-fa="فریم‌ورک و شروع بوت‌استرپ" data-en="Frameworks and starting Bootstrap">فریم‌ورک و شروع بوت‌استرپ</a><a class="" href="p3-bs-util.html" data-fa="فاصله، گردی و لیست" data-en="Spacing, rounding, and lists">فاصله، گردی و لیست</a><a class="" href="p3-bs-header.html" data-fa="سرصفحه فروشگاه" data-en="The shop header">سرصفحه فروشگاه</a><a class="" href="p3-bs-grid.html" data-fa="شبکه Grid" data-en="The grid">شبکه Grid</a><a class="" href="p3-bs-rwd.html" data-fa="کلاس‌های واکنش‌گرا" data-en="Responsive classes">کلاس‌های واکنش‌گرا</a><a class="" href="p3-bs-nav.html" data-fa="نوار ناوبری و جزئیات محصول" data-en="Navbar and product details">نوار ناوبری و جزئیات محصول</a><a class="" href="p3-bs-form.html" data-fa="فرم و پنجره Modal" data-en="Forms and modals">فرم و پنجره Modal</a><a class="" href="p3-bs-show.html" data-fa="کاروسل و آکاردئون" data-en="Carousel and accordion">کاروسل و آکاردئون</a><a class="" href="p3-bs-assess.html" data-fa="ارزشیابی بوت‌استرپ" data-en="Bootstrap assessment">ارزشیابی بوت‌استرپ</a><p class="unit" data-fa="جاوااسکریپت" data-en="JavaScript">جاوااسکریپت</p><a class="" href="p3-js-start.html" data-fa="جاوااسکریپت در صفحه وب" data-en="JavaScript on the page">جاوااسکریپت در صفحه وب</a><a class="" href="p3-js-vars.html" data-fa="متغیر و نوع داده" data-en="Variables and data types">متغیر و نوع داده</a><a class="" href="p3-js-ops.html" data-fa="عملگرها" data-en="Operators">عملگرها</a><a class="" href="p3-js-data.html" data-fa="آرایه و شیء" data-en="Arrays and objects">آرایه و شیء</a><a class="" href="p3-js-if.html" data-fa="شرط در جاوااسکریپت" data-en="Conditions in JavaScript">شرط در جاوااسکریپت</a><a class="" href="p3-js-loops.html" data-fa="حلقه‌ها" data-en="Loops">حلقه‌ها</a><a class="" href="p3-js-func.html" data-fa="تابع‌ها" data-en="Functions">تابع‌ها</a><a class="" href="p3-js-dom.html" data-fa="صفحه، رویداد و اعتبار فرم" data-en="The page, events, and form validation">صفحه، رویداد و اعتبار فرم</a><a class="" href="p3-js-assess.html" data-fa="ارزشیابی جاوااسکریپت" data-en="JavaScript assessment">ارزشیابی جاوااسکریپت</a><p class="mod" data-fa="پودمان ۴: توسعه وب پایتون" data-en="Module 4: Python for the web">پودمان ۴: توسعه وب پایتون</p><p class="unit" data-fa="معرفی پودمان" data-en="Module introduction">معرفی پودمان</p><a class="" href="p4-intro.html" data-fa="معرفی پودمان شیءگرایی" data-en="Introducing the object-oriented module">معرفی پودمان شیءگرایی</a><p class="unit" data-fa="شیءگرایی" data-en="Object-oriented programming">شیءگرایی</p><a class="" href="p4-idea.html" data-fa="ایده شیء و کلاس" data-en="The idea of objects and classes">ایده شیء و کلاس</a><a class="" href="p4-class.html" data-fa="ساخت کلاس و متد" data-en="Writing a class and methods">ساخت کلاس و متد</a><a class="" href="p4-inherit.html" data-fa="وراثت" data-en="Inheritance">وراثت</a><a class="" href="p4-protect.html" data-fa="داده معتبر و استفاده داخلی" data-en="Valid data and internal use">داده معتبر و استفاده داخلی</a><a class="" href="p4-assess-oop.html" data-fa="ارزشیابی برنامه شیءگرا" data-en="Object-oriented assessment">ارزشیابی برنامه شیءگرا</a><p class="unit" data-fa="فایل و توسعه" data-en="Files and development">فایل و توسعه</p><a class="" href="p4-files.html" data-fa="خواندن و نوشتن فایل متنی" data-en="Reading and writing text files">خواندن و نوشتن فایل متنی</a><a class="" href="p4-errors.html" data-fa="پیمایش فایل و مدیریت خطا" data-en="Walking a file and handling errors">پیمایش فایل و مدیریت خطا</a><a class="" href="p4-json.html" data-fa="چند فایل و JSON" data-en="Several files and JSON">چند فایل و JSON</a><a class="" href="p4-assess-files.html" data-fa="ارزشیابی کار با فایل" data-en="Files assessment">ارزشیابی کار با فایل</a><p class="mod" data-fa="پودمان ۵: برنامه‌نویسی جنگو" data-en="Module 5: Django">پودمان ۵: برنامه‌نویسی جنگو</p><p class="unit" data-fa="معرفی پودمان" data-en="Module introduction">معرفی پودمان</p><a class="" href="p5-intro.html" data-fa="معرفی پودمان جنگو" data-en="Introducing the Django module">معرفی پودمان جنگو</a><p class="unit" data-fa="ایجاد وب‌اپلیکیشن" data-en="Creating the web app">ایجاد وب‌اپلیکیشن</p><a class="" href="p5-what.html" data-fa="جنگو چیست و نصب" data-en="What Django is, and installing it">جنگو چیست و نصب</a><a class="" href="p5-project.html" data-fa="پروژه، اپ و اولین view" data-en="Project, app, and the first view">پروژه، اپ و اولین view</a><a class="" href="p5-template.html" data-fa="قالب و دمای واقعی" data-en="Templates and a real temperature">قالب و دمای واقعی</a><a class="" href="p5-assess-create.html" data-fa="ارزشیابی ایجاد وب‌اپلیکیشن" data-en="Creating-the-app assessment">ارزشیابی ایجاد وب‌اپلیکیشن</a><p class="unit" data-fa="توسعه وب‌اپلیکیشن" data-en="Developing the web app">توسعه وب‌اپلیکیشن</p><a class="" href="p5-model.html" data-fa="مدل شهر و پنل ادمین" data-en="The city model and the admin">مدل شهر و پنل ادمین</a><a class="" href="p5-list.html" data-fa="خواندن شهرها و نمایش فهرست" data-en="Reading cities and showing the list">خواندن شهرها و نمایش فهرست</a><a class="current" href="p5-auth.html" data-fa="ورود و خروج" data-en="Sign-in and sign-out">ورود و خروج</a><a class="" href="p5-crud.html" data-fa="افزودن و حذف شهر" data-en="Adding and deleting a city">افزودن و حذف شهر</a><a class="" href="p5-bugs.html" data-fa="باگ و امنیت" data-en="Bugs and security">باگ و امنیت</a><p class="mod" data-fa="پایان کتاب" data-en="Back of the book">پایان کتاب</p><p class="unit" data-fa="منابع" data-en="References">منابع</p><a class="" href="refs.html" data-fa="منابع کتاب" data-en="Book references">منابع کتاب</a></nav></details>
+    <div class="main">
+      <h1 class="section-title" data-fa="ورود و خروج" data-en="Sign-in and sign-out">ورود و خروج</h1><article class="lesson" lang="fa" dir="rtl" data-lang-block="fa"><p class="page-mark">صفحه ۳۱۳</p>
+<h3 id="_1">توضیحات کدها:</h3>
+<p>خط 10: برای اینکه نام شهرها قابلیت کلیک شدن داشته باشند، یک تگ <code>a</code> درون تگ <code>p</code> ایجاد شده و جهت نمایش عنوان لینک، از متغیر {{ <code>item.title</code> }} استفاده شده است. آدرس لینک (<code>href</code>) به صفحه اصلی اشاره کرده و متغیر {{ <code>item.id</code> }} به پارامتر <code>id</code> مقدار داده است.</p>
+<p>این کد <code>id</code> را به درخواست <code>GET</code> اضافه و به صفحه اصلی ارسال می‌کند. به عنوان مثال اگر آیدی شهر انتخاب شده 11 باشد، کاربر به آدرس زیر منتقل می‌شود:</p>
+<div class="code-wrap" dir="ltr"><pre><code>http://127.0.0.1:8000/?id=11
+</code></pre></div>
+<p>در گام بعد، <code>views.py</code> را باز کنید و <code>show_temp_view</code> را همانند شکل 56 تغییر دهید.</p>
+<p><img alt="شکل 56 استفاده از id جهت انتخاب شهر" src="../images/p319-01.png" /></p>
+<p>شکل 56 استفاده از <code>id</code> جهت انتخاب شهر</p>
+<h3 id="_2">توضیحات کدها:</h3>
+<p>خط 11: مقدار پارامتر <code>id</code> که از طریق متد <code>GET</code> در نوار آدرس ارسال شده است، در متغیر <code>city_id</code> ذخیره می‌شود.</p>
+<p>درصورتی‌که پارامتر <code>id</code> در نوار آدرس وجود نداشته باشد، تابع <code>get</code>(<code>'id'</code>) که بعد از <code>GET</code> استفاده شده است، مقدار <code>city_id</code> را برابر <code>None</code> ذخیره خواهد کرد.</p>
+<p>خط 13: اگر <code>city_id</code> مقدار داشته باشد، با استفاده از <code>ORM</code> جنگو، شهر انتخاب شده توسط کاربر، به‌صورت یک شیء (<code>object</code>)، در متغیر <code>city</code> ذخیره می‌شود.</p>
+<p>خط 15: اگر <code>city_id</code> برابر <code>None</code> باشد (<code>id</code> در نوار آدرس وجود نداشته باشد)، اولین شهر از پایگاه داده واکشی می‌شود.</p>
+<hr />
+<p class="page-mark">صفحه ۳۱۴</p>
+<p>اکنون تمام فایل‌ها را ذخیره نموده، صفحه لیست شهرها را <code>refresh</code> کنید. همه شهرها لینک دارند.</p>
+<p>روی هر شهری که کلیک کنید، در صفحه جدید دمای هوای آن شهر مشاهده می‌شود (شکل 57).</p>
+<p><img alt="شکل 57 نمایش دمای یک شهر کلیک شده" src="../images/p320-01.png" /></p>
+<p>شکل 57 نمایش دمای یک شهر کلیک شده</p>
+<p>ورود به سایت (<code>login</code>) در حال حاضر، صفحه اصلی و صفحه لیست شهرها توسط کاربر مهمان و کاربر ادمین قابل مشاهده هستند.</p>
+<p>اما هر سایت می‌تواند صفحه‌هایی داشته باشد که برای دیده شدن نیاز به <code>login</code> (ورود به سایت) داشته باشند. به‌عنوان مثال برای دیدن پنل ادمین جنگو، باید با نام کاربری و رمز عبور ادمین <code>login</code> کنید.</p>
+<p>شما می‌توانید، امکان دسترسی به قسمت افزودن نام شهرها را فقط به کاربرانی اعطا کنید که با نام کاربری و رمز عبور خودشان وارد سایت می‌شوند.</p>
+<p>جنگو خودش به‌طور پیش‌فرض امکاناتی برای مدیریت کاربران دارد تا بتوانید عملیات <code>login</code> و <code>logout</code> را درون سایت اجرا نمایید. فقط کافیست فایل <code>template</code> لازم یعنی <code>login.html</code> را در پوشه مناسب ساخته و در فایل <code>urls</code> اصلی پروژه (موجود در پوشه <code>config</code>) یک <code>path</code> جدید اضافه کنید.</p>
+<p>مرحله اول: فایل <code>urls.py</code> اصلی پروژه را همانند شکل 58 تغییر دهید.</p>
+<p><img alt="شکل 58 افزودن path جدید جهت login و logout" src="../images/p320-02.png" /></p>
+<p>شکل 58 افزودن <code>path</code> جدید جهت <code>login</code> و <code>logout</code></p>
+<hr />
+<p class="page-mark">صفحه ۳۱۵</p>
+<h3 id="_3">توضیحات کدها:</h3>
+<p>خط 7: یک <code>path</code> جدید اضافه شده است و در ادامه منجر به این خواهد شد که <code>App</code> مدیریت کاربران جنگو (<code>auth</code>) به کمک <code>urls</code> و <code>views</code> پیش‌فرض، فایل <code>login.html</code> را نمایش دهد. برای مدیریت احراز هویت کاربر در پروژه جنگو، از ماژول <code>django.contrib.auth</code> استفاده شده است.</p>
+<p>با اضافه‌کردن این خط کد به فایل <code>urls.py</code>، امکان ورود، خروج و تغییر رمز عبور به سایت اضافه می‌شود.</p>
+<p>همه این قابلیت‌ها توسط ماژول <code>django.contrib.auth</code> مدیریت می‌شوند و نیازی به تعریف دستی <code>path</code> دیگری ندارید.</p>
+<p>مرحله دوم: در پوشه <code>templates</code> از <code>weather</code> <code>app</code>، یک‌پوشه جدید با نام <code>registration</code> ایجاد کنید، سپس درون آن یک فایل با نام <code>login.html</code> همانند شکل 59 بسازید.</p>
+<p><img alt="شکل 59 افزودن فایل login.html" src="../images/p321-01.png" /></p>
+<p>شکل 59 افزودن فایل <code>login.html</code></p>
+<h3 id="_4">توضیحات کدها:</h3>
+<p>خط 10: یک فرم با متدی از نوع <code>post</code> ایجاد شده است.</p>
+<p>خط 11: فیلد <code>csrf_token</code> به فرم اضافه شده است. <code>csrf_token</code> در جنگو یک مقدار امنیتی است که داخل فرم‌ها قرار می‌گیرد تا مطمئن شود درخواست ارسال‌شده واقعًا از همان سایت و توسط کاربر مجاز آمده است.</p>
+<p>این توکن از حملۀ <code>Cross-Site</code> <code>Request</code> <code>Forgery</code> جلوگیری می‌کند.</p>
+<p>خط 12: فیلدهای فرم را به‌صورت تگ‌های<code>&lt;p&gt;</code> در <code>HTML</code> نمایش می‌دهد.</p>
+<p>خط 13: یک دکمه از نوع <code>submit</code> برای ارسال اطلاعات به سرور جنگو اضافه شده است.</p>
+<h3 id="_5">کنجکاوی</h3>
+<p>در مورد <code>csrf_token</code> و حمله <code>Cross-Site</code> <code>Request</code> <code>Forgery</code> تحقیق و بررسی کنید.</p>
+<hr />
+<p class="page-mark">صفحه ۳۱۶</p>
+<p>مرحله سوم: در فایل <code>settings.py</code>، تنظیمات لازم را برای بعد از اتمام عملیات <code>login</code> و <code>logout</code> همانند شکل60 انجام دهید.</p>
+<p><img alt="شکل 60 تنظیمات login و logout در settings.py" src="../images/p322-01.png" /></p>
+<p>شکل 60 تنظیمات <code>login</code> و <code>logout</code> در <code>settings.py</code></p>
+<h3 id="_6">توضیحات کدها</h3>
+<p>خط 125: کاربر بعد از <code>login</code> موفق به صفحه <code>home</code> منتقل خواهد شد. <code>home</code> همان نامی‌است که برای آدرس صفحه اصلی در <code>urls.py</code> تعریف شده است.</p>
+<p>خط 126: کاربر بعد از <code>logout</code> موفق به صفحه <code>home</code> منتقل خواهد شد.</p>
+<p>مرحله چهارم: در فایل <code>show_temp.html</code>، دکمه‌های ورود و خروج را همانند شکل 61 اضافه کنید.</p>
+<p><img alt="شکل 61 افزودن دکمه ورود و خروج به صفحه اصلی" src="../images/p322-02.png" /></p>
+<p>شکل 61 افزودن دکمه ورود و خروج به صفحه اصلی</p>
+<hr />
+<p class="page-mark">صفحه ۳۱۷</p>
+<h3 id="_7">توضیحات کدها:</h3>
+<p>خط 9: این دستور بررسی می‌کند که آیا کاربر وارد سیستم شده است یا خیر. اگر <code>user.is_authenticated</code> مقدار <code>True</code> داشته باشد؛ یعنی کاربر احراز هویت شده است و دستورات داخل این شرط اجرا خواهند شد.</p>
+<p>خط 10: در این خط یک فرم <code>HTML</code>، تعریف شده است که درخواست را با متد <code>POST</code> به آدرس خروج از حساب کاربری ارسال می‌کند.</p>
+<p>خط 14: از <code>else</code> استفاده شده است و به این معنی است، اگر کاربر <code>login</code> نباشد، چه چیزی به او نمایش داده شود.</p>
+<p>خط 15: در این خط یک فرم با متد <code>GET</code> تعریف شده است که کاربر را به صفحه ورود به سایت یعنی صفحه <code>login</code> هدایت می‌کند.</p>
+<p>اکنون فایل‌ها را ذخیره کرده و سرور جنگو را متوقف و دوباره راه‌اندازی کنید. سپس صفحه اصلی سایت را <code>refresh</code> کنید. اگر کاربر <code>login</code> نکرده باشد، دکمه ورود به سایت را مشاهده می‌کند (شکل 62).</p>
+<p><img alt="شکل 62 نمایش دکمه ورود برای کاربر مهمان" src="../images/p323-01.png" /></p>
+<p>شکل 62 نمایش دکمه ورود برای کاربر مهمان</p>
+<p>با کلیک روی دکمه ورود به سایت، کاربر به صفحه <code>login</code> منتقل می‌شود (شکل 63).</p>
+<p><img alt="شکل 63 فرم ورود به سایت" src="../images/p323-02.png" /></p>
+<p>شکل 63 فرم ورود به سایت</p>
+<hr />
+<p class="page-mark">صفحه ۳۱۸</p>
+<p>پس از ورود موفق به سایت، کاربر به صفحه اصلی سایت منتقل شده و این بار دکمه خروج از سایت برای کاربر نمایش داده می‌شود.</p>
+<p>درصورتی‌که کاربر روی دکمه خروج از سایت کلیک کند، از سایت خارج شده و بلافاصله به صفحه اصلی منتقل خواهد شد.</p>
+<p>ثبت شهر جدید با کاربر عضو سایت تاکنون فقط در پنل ادمین و با کاربر <code>admin</code> امکان ثبت شهرها را داشتید. اما این امکان وجود دارد که کاربرهای عضو سایت هم بتوانند بدون مراجعه به پنل ادمین، شهر جدید را ثبت کنند.</p>
+<p>برای این کار می‌توانید با استفاده از فرم‌های جنگو و انجام چهار مرحلۀ زیر، این قابلیت را به سایت اضافه کنید.</p>
+<p>1 ایجاد <code>forms.py</code> برای ساخت فرم ثبت شهر جدید</p>
+<p>2 ساختن <code>template</code> ساده برای فرم</p>
+<p>3 ساختن تابع <code>add_city_view</code> برای نمایش فرم</p>
+<p>4 اضافه‌کردن <code>path</code> مخصوص فرم در فایل <code>urls.py</code></p>
+<p>5 قراردادن لینک «افزودن شهر» در صفحه اصلی مرحله اول: یک فایل جدید در پوشه <code>weather</code> با نام <code>forms.py</code> ایجاد کنید و همانند شکل 64 آن را تکمیل کنید.</p>
+<p><img alt="شکل 64 ایجاد CityForm" src="../images/p324-01.png" /></p>
+<p>شکل 64 ایجاد <code>CityForm</code></p>
+<hr />
+<p class="page-mark">صفحه ۳۱۹</p>
+<h3 id="_8">توضیحات کدها:</h3>
+<p>خط 1: ماژول <code>forms</code> درون این فایل <code>import</code> شده است. این ماژول همه کارهای مربوط به فرم‌ها را پشتیبانی می‌کند.</p>
+<p>خط 2: کلاس <code>City</code> از فایل <code>model</code> درون این فایل <code>import</code> شده است. <code>City</code> همان مدل شهر‌ها است که قبًلا تعریف کرده‌ایم.</p>
+<p>خط 4: یک کلاس با نام <code>CityForm</code> ساخته شده است که از <code>ModelForm</code> ارث‌بری می‌کند.</p>
+<p>خط 5: برای تعیین مدل و فیلدهایی که می‌خواهید نمایش داده شود باید از یک کلاس <code>Meta</code> در کلاس اصلی استفاده شود و در آن مدل و فیلدها مشخص گردد.</p>
+<p>خط 6: کلاس <code>City</code> به‌عنوان <code>model</code> تعیین شده است.</p>
+<p>خط 7: لیست فیلدهایی که می‌خواهید نمایش داده شود، تعیین شده است.</p>
+<p>مرحله دوم: فایل <code>add_city.html</code> را همانند شکل 65 ایجاد کنید.</p>
+<p><img alt="شکل 65 افزودن add_city.html" src="../images/p325-01.png" /></p>
+<div class="code-wrap" dir="ltr"><pre><code>شکل 65 افزودن add_city.html
+</code></pre></div>
+<h3 id="_9">توضیحات کدها:</h3>
+<p>یک فرم با متد از نوع <code>post</code> ایجاد شده است. این فرم طول و عرض جغرافیایی و همچنین نام شهر را از کاربر گرفته و برای سرور جنگو ارسال می‌کند تا در دیتابیس ذخیره شود.</p>
+<hr /></article><article class="lesson" lang="en" dir="ltr" data-lang-block="en" hidden><p class="page-mark">Page 313</p>
+<h3 id="code-notes">Code notes:</h3>
+<p>Line 10: So that city names can be clicked, an <code>a</code> tag has been created inside a <code>p</code> tag, and the variable {{ <code>item.title</code> }} is used to show the link title. The link address (<code>href</code>) points to the home page, and the variable {{ <code>item.id</code> }} has been assigned to the <code>id</code> parameter.</p>
+<p>This code adds <code>id</code> to the <code>GET</code> request and sends it to the home page. For example, if the selected city’s id is 11, the user is taken to the following address:</p>
+<div class="code-wrap" dir="ltr"><pre><code>    10|http://127.0.0.1:8000/?id=11
+</code></pre></div>
+<p>In the next step, open <code>views.py</code> and change <code>show_temp_view</code> as in Figure 56.</p>
+<p><img alt="Figure 56 using id to select a city" src="../images/p319-01.png" /></p>
+<p>Figure 56 using <code>id</code> to select a city</p>
+<h3 id="code-notes_1">Code notes:</h3>
+<p>Line 11: The value of the <code>id</code> parameter that was sent through the <code>GET</code> method in the address bar is stored in the variable <code>city_id</code>.</p>
+<p>If the <code>id</code> parameter is not in the address bar, the <code>get</code>(<code>'id'</code>) function used after <code>GET</code> will store the value of <code>city_id</code> as <code>None</code>.</p>
+<p>Line 13: If <code>city_id</code> has a value, using Django’s <code>ORM</code>, the city selected by the user is stored as an object (<code>object</code>) in the variable <code>city</code>.</p>
+<p>Line 15: If <code>city_id</code> is equal to <code>None</code> (<code>id</code> is not in the address bar), the first city is fetched from the database.</p>
+<hr />
+<p class="page-mark">Page 314</p>
+<p>Now save all the files and <code>refresh</code> the city list page. All cities have links.</p>
+<p>Whichever city you click, you will see that city’s air temperature on the new page (Figure 57).</p>
+<p><img alt="Figure 57 showing the temperature of a clicked city" src="../images/p320-01.png" /></p>
+<p>Figure 57 showing the temperature of a clicked city</p>
+<p>Logging in to the site (<code>login</code>) At present, the home page and the city list page can be viewed by a guest user and by an admin user.</p>
+<p>But any site can have pages that need a <code>login</code> (signing in to the site) to be viewed. For example, to see the Django admin panel, you must <code>login</code> with the admin username and password.</p>
+<p>You can grant access to the part for adding city names only to users who sign in to the site with their own username and password.</p>
+<p>Django itself has built-in features for managing users so that you can run <code>login</code> and <code>logout</code> operations inside the site. You only need to create the required <code>template</code> file, namely <code>login.html</code>, in the appropriate folder and add a new <code>path</code> in the project’s main <code>urls</code> file (in the <code>config</code> folder).</p>
+<p>Stage one: Change the project’s main <code>urls.py</code> file as in Figure 58.</p>
+<p><img alt="Figure 58 adding a new path for login and logout" src="../images/p320-02.png" /></p>
+<p>Figure 58 adding a new <code>path</code> for <code>login</code> and <code>logout</code></p>
+<hr />
+<p class="page-mark">Page 315</p>
+<h3 id="code-notes_2">Code notes:</h3>
+<p>Line 7: A new <code>path</code> has been added, and as a result Django’s user-management <code>App</code> (<code>auth</code>) will display the <code>login.html</code> file with the help of the default <code>urls</code> and <code>views</code>. To manage user authentication in a Django project, the <code>django.contrib.auth</code> module is used.</p>
+<p>By adding this line of code to the <code>urls.py</code> file, the ability to log in, log out, and change the password on the site is added.</p>
+<p>All of these features are managed by the <code>django.contrib.auth</code> module, and you do not need to define another <code>path</code> by hand.</p>
+<p>Stage two: In the <code>templates</code> folder of the <code>weather</code> <code>app</code>, create a new folder named <code>registration</code>, then inside it create a file named <code>login.html</code> as in Figure 59.</p>
+<p><img alt="Figure 59 adding the login.html file" src="../images/p321-01.png" /></p>
+<p>Figure 59 adding the <code>login.html</code> file</p>
+<h3 id="code-notes_3">Code notes:</h3>
+<p>Line 10: A form with a method of type <code>post</code> has been created.</p>
+<p>Line 11: The <code>csrf_token</code> field has been added to the form. In Django, <code>csrf_token</code> is a security value that is placed inside forms so that it can be sure the submitted request really came from the same site and from an authorized user.</p>
+<p>This token prevents a <code>Cross-Site</code> <code>Request</code> <code>Forgery</code> attack.</p>
+<p>Line 12: It displays the form fields as <code>&lt;p&gt;</code> tags in <code>HTML</code>.</p>
+<p>Line 13: A button of type <code>submit</code> has been added to send the information to the Django server.</p>
+<h3 id="try-this">Try this</h3>
+<p>Research and study <code>csrf_token</code> and the <code>Cross-Site</code> <code>Request</code> <code>Forgery</code> attack.</p>
+<hr />
+<p class="page-mark">Page 316</p>
+<p>Stage three: In the <code>settings.py</code> file, make the needed settings for after the <code>login</code> and <code>logout</code> operations finish, as in Figure 60.</p>
+<p><img alt="Figure 60 login and logout settings in settings.py" src="../images/p322-01.png" /></p>
+<p>Figure 60 <code>login</code> and <code>logout</code> settings in <code>settings.py</code></p>
+<h3 id="code-notes_4">Code notes</h3>
+<p>Line 125: After a successful <code>login</code>, the user will be redirected to the <code>home</code> page. <code>home</code> is the same name that was defined for the home page address in <code>urls.py</code>.</p>
+<p>Line 126: After a successful <code>logout</code>, the user will be redirected to the <code>home</code> page.</p>
+<p>Stage four: In the <code>show_temp.html</code> file, add the login and logout buttons as in Figure 61.</p>
+<p><img alt="Figure 61 adding login and logout buttons to the home page" src="../images/p322-02.png" /></p>
+<p>Figure 61 adding login and logout buttons to the home page</p>
+<hr />
+<p class="page-mark">Page 317</p>
+<h3 id="code-notes_5">Code notes:</h3>
+<p>Line 9: This statement checks whether the user is signed in to the system or not. If <code>user.is_authenticated</code> has the value <code>True</code>, it means the user has been authenticated and the statements inside this condition will run.</p>
+<p>Line 10: In this line an <code>HTML</code> form is defined that sends the request with the <code>POST</code> method to the account logout address.</p>
+<p>Line 14: <code>else</code> has been used, and it means what should be shown to the user if the user is not <code>login</code>.</p>
+<p>Line 15: In this line a form with the <code>GET</code> method is defined that directs the user to the site login page, namely the <code>login</code> page.</p>
+<p>Now save the files and stop and restart the Django server. Then <code>refresh</code> the site’s home page. If the user has not <code>login</code>, they will see the site login button (Figure 62).</p>
+<p><img alt="Figure 62 showing the login button for a guest user" src="../images/p323-01.png" /></p>
+<p>Figure 62 showing the login button for a guest user</p>
+<p>By clicking the site login button, the user is taken to the <code>login</code> page (Figure 63).</p>
+<p><img alt="Figure 63 site login form" src="../images/p323-02.png" /></p>
+<p>Figure 63 site login form</p>
+<hr />
+<p class="page-mark">Page 318</p>
+<p>After a successful login to the site, the user is taken to the site’s home page, and this time the site logout button is shown to the user.</p>
+<p>If the user clicks the site logout button, they will leave the site and will immediately be taken to the home page.</p>
+<p>Registering a new city with a site member user Until now you could only register cities in the admin panel and with the <code>admin</code> user. But it is possible for member users of the site to register a new city without going to the admin panel.</p>
+<p>To do this, you can add this feature to the site by using Django forms and carrying out the four stages below.</p>
+<p>1 Create <code>forms.py</code> to build the new-city registration form</p>
+<p>2 Build a simple <code>template</code> for the form</p>
+<p>3 Build the <code>add_city_view</code> function to display the form</p>
+<p>4 Add a special <code>path</code> for the form in the <code>urls.py</code> file</p>
+<p>5 Place the “Add city” link on the home page Stage one: Create a new file in the <code>weather</code> folder named <code>forms.py</code> and complete it as in Figure 64.</p>
+<p><img alt="Figure 64 creating CityForm" src="../images/p324-01.png" /></p>
+<p>Figure 64 creating <code>CityForm</code></p>
+<hr />
+<p class="page-mark">Page 319</p>
+<h3 id="code-notes_6">Code notes:</h3>
+<p>Line 1: The <code>forms</code> module has been <code>import</code>ed into this file. This module supports all work related to forms.</p>
+<p>Line 2: The <code>City</code> class from the <code>model</code> file has been <code>import</code>ed into this file. <code>City</code> is the same cities model that we defined previously.</p>
+<p>Line 4: A class named <code>CityForm</code> has been created that inherits from <code>ModelForm</code>.</p>
+<p>Line 5: To specify the model and the fields you want to display, you must use a <code>Meta</code> class inside the main class and specify the model and fields in it.</p>
+<p>Line 6: The <code>City</code> class has been set as the <code>model</code>.</p>
+<p>Line 7: The list of fields you want to display has been set.</p>
+<p>Stage two: Create the <code>add_city.html</code> file as in Figure 65.</p>
+<p><img alt="Figure 65 adding add_city.html" src="../images/p325-01.png" /></p>
+<div class="code-wrap" dir="ltr"><pre><code>شکل 65 افزودن add_city.html
+</code></pre></div>
+<h3 id="code-notes_7">Code notes:</h3>
+<p>A form with a method of type <code>post</code> has been created. This form takes the latitude and longitude as well as the city name from the user and sends them to the Django server to be stored in the database.</p>
+<hr /></article>
+      <aside class="extra">
+        <h2 data-fa="تمرین این بخش" data-en="Exercises for this section">تمرین این بخش</h2>
+        <p class="extra-note" data-fa="این تمرین‌ها و پیوندها اضافه بر متن کتاب‌اند." data-en="These exercises and links are in addition to the book.">این تمرین‌ها و پیوندها اضافه بر متن کتاب‌اند.</p>
+        <ol><li data-fa="ورود را بساز تا بعد از ورود کاربر به صفحه اصلی برگردد و دکمه خروج را ببیند. بدون ورود، همان دکمه دیده نشود." data-en="Build sign-in so that after signing in the user returns to the home page and sees a sign-out button. Without signing in, that button must not appear.">ورود را بساز تا بعد از ورود کاربر به صفحه اصلی برگردد و دکمه خروج را ببیند. بدون ورود، همان دکمه دیده نشود.</li><li data-fa="خروج را هم بساز و بعد از خروج، کاربر را به صفحه ورود برگردان." data-en="Also build sign-out, and after sign-out send the user back to the sign-in page.">خروج را هم بساز و بعد از خروج، کاربر را به صفحه ورود برگردان.</li></ol>
+        <h2 data-fa="پیوند مفید" data-en="Useful link">پیوند مفید</h2><ul><li><a href="https://docs.djangoproject.com/en/stable/topics/auth/default/" data-fa="احراز هویت جنگو" data-en="Django authentication">احراز هویت جنگو</a></li></ul>
+      </aside>
+    <nav class="pager"><a rel="prev" class="prev" href="p5-list.html"><span class="pager-word" data-fa="قبلی" data-en="Previous">قبلی</span><span class="pager-name" data-fa="خواندن شهرها و نمایش فهرست" data-en="Reading cities and showing the list">خواندن شهرها و نمایش فهرست</span></a><a rel="next" class="next" href="p5-crud.html"><span class="pager-word" data-fa="بعدی" data-en="Next">بعدی</span><span class="pager-name" data-fa="افزودن و حذف شهر" data-en="Adding and deleting a city">افزودن و حذف شهر</span></a></nav>
+    </div>
+  </div>
+  <script src="../assets/search-index.js?v=4"></script>
+  <script src="../assets/app.js?v=4"></script>
+</body>
+</html>

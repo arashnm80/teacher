@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title data-fa="ارزشیابی مدل‌سازی داده" data-en="Data-modeling assessment">ارزشیابی مدل‌سازی داده</title>
+  <link rel="icon" href="../assets/favicon.svg">
+  <link rel="stylesheet" href="../assets/style.css?v=4">
+</head>
+<body data-root="../">
+  <header class="top">
+    <a class="brand" href="../index.html">
+      <span data-fa="طراح سایت" data-en="Site Design">طراح سایت</span>
+      <small data-fa="پایه یازدهم" data-en="Grade 11">پایه یازدهم</small>
+    </a>
+    <div class="search-wrap">
+      <input id="q" type="search" autocomplete="off"
+        data-fa-placeholder="جستجو در درس‌ها" data-en-placeholder="Search lessons"
+        placeholder="جستجو در درس‌ها">
+      <div id="results" class="results" hidden></div>
+    </div>
+    <a class="download" href="../grade11-offline.zip?v=2" data-fa="دانلود کل سایت" data-en="Download the whole site">دانلود کل سایت</a>
+    <button type="button" id="lang-toggle" class="lang-toggle" dir="ltr" data-lang="fa"
+      aria-label="تغییر زبان">
+      <span data-opt="fa">فا</span>
+      <span data-opt="en">EN</span>
+    </button>
+  </header>
+  <div class="layout">
+    <details class="toc" open><summary><span data-fa="فهرست درس‌ها" data-en="Lesson list">فهرست درس‌ها</span></summary><nav class="side" aria-label="lessons"><p class="mod" data-fa="شروع کتاب" data-en="Opening">شروع کتاب</p><p class="unit" data-fa="فهرست" data-en="Contents">فهرست</p><a class="" href="toc.html" data-fa="فهرست" data-en="Contents">فهرست</a><p class="mod" data-fa="پودمان ۱: برنامه‌نویسی پایتون" data-en="Module 1: Python programming">پودمان ۱: برنامه‌نویسی پایتون</p><p class="unit" data-fa="معرفی پودمان" data-en="Module introduction">معرفی پودمان</p><a class="" href="p1-intro.html" data-fa="معرفی پودمان پایتون" data-en="Introducing the Python module">معرفی پودمان پایتون</a><p class="unit" data-fa="مدل‌سازی داده" data-en="Data modeling">مدل‌سازی داده</p><a class="" href="p1-python.html" data-fa="پایتون و محیط برنامه‌نویسی" data-en="Python and the programming environment">پایتون و محیط برنامه‌نویسی</a><a class="" href="p1-vars.html" data-fa="متغیرها، نوع داده و عملگرها" data-en="Variables, types, and operators">متغیرها، نوع داده و عملگرها</a><a class="" href="p1-cast.html" data-fa="ورودی و تبدیل نوع" data-en="Input and type casting">ورودی و تبدیل نوع</a><a class="" href="p1-lists.html" data-fa="لیست‌ها" data-en="Lists">لیست‌ها</a><a class="" href="p1-if.html" data-fa="شرط‌های ساده" data-en="Simple conditions">شرط‌های ساده</a><a class="" href="p1-elif.html" data-fa="if، elif و else" data-en="if, elif, and else">if، elif و else</a><a class="" href="p1-for.html" data-fa="حلقه for و range" data-en="The for loop and range">حلقه for و range</a><a class="" href="p1-while.html" data-fa="حلقه while و کنترل حلقه" data-en="The while loop and loop control">حلقه while و کنترل حلقه</a><a class="current" href="p1-assess-data.html" data-fa="ارزشیابی مدل‌سازی داده" data-en="Data-modeling assessment">ارزشیابی مدل‌سازی داده</a><p class="unit" data-fa="توابع و ماژول‌ها" data-en="Functions and modules">توابع و ماژول‌ها</p><a class="" href="p1-sets.html" data-fa="مجموعه (set)" data-en="Sets">مجموعه (set)</a><a class="" href="p1-dict.html" data-fa="دیکشنری" data-en="Dictionaries">دیکشنری</a><a class="" href="p1-quiz.html" data-fa="پروژه بازی Quiz" data-en="Quiz game project">پروژه بازی Quiz</a><a class="" href="p1-tuple.html" data-fa="تاپل" data-en="Tuples">تاپل</a><a class="" href="p1-func.html" data-fa="تعریف تابع، پارامتر و return" data-en="Defining functions, parameters, and return">تعریف تابع، پارامتر و return</a><a class="" href="p1-func-more.html" data-fa="تمرین تابع و مرتب‌سازی" data-en="Function practice and sorting">تمرین تابع و مرتب‌سازی</a><a class="" href="p1-modules.html" data-fa="ماژول‌ها و تفاوت تابع و متد" data-en="Modules, and functions versus methods">ماژول‌ها و تفاوت تابع و متد</a><a class="" href="p1-assess-func.html" data-fa="ارزشیابی توابع و ماژول‌ها" data-en="Functions and modules assessment">ارزشیابی توابع و ماژول‌ها</a><p class="mod" data-fa="پودمان ۲: صفحات وب ایستا" data-en="Module 2: Static web pages">پودمان ۲: صفحات وب ایستا</p><p class="unit" data-fa="معرفی پودمان" data-en="Module introduction">معرفی پودمان</p><a class="" href="p2-intro.html" data-fa="معرفی پودمان صفحات ایستا" data-en="Introducing static web pages">معرفی پودمان صفحات ایستا</a><p class="unit" data-fa="ساختار با HTML" data-en="Structure with HTML">ساختار با HTML</p><a class="" href="p2-web.html" data-fa="وب چگونه کار می‌کند" data-en="How the web works">وب چگونه کار می‌کند</a><a class="" href="p2-concepts.html" data-fa="مفاهیم طراحی وب و نقشه سایت" data-en="Web-design concepts and the site map">مفاهیم طراحی وب و نقشه سایت</a><a class="" href="p2-tags.html" data-fa="اولین صفحه HTML" data-en="A first HTML page">اولین صفحه HTML</a><a class="" href="p2-text.html" data-fa="متن، لیست و پیوند" data-en="Text, lists, and links">متن، لیست و پیوند</a><a class="" href="p2-img.html" data-fa="تصویر در صفحه" data-en="Images on the page">تصویر در صفحه</a><a class="" href="p2-forms.html" data-fa="فرم‌ها" data-en="Forms">فرم‌ها</a><a class="" href="p2-semantic.html" data-fa="عناصر معنایی" data-en="Semantic elements">عناصر معنایی</a><a class="" href="p2-assess-html.html" data-fa="ارزشیابی HTML" data-en="HTML assessment">ارزشیابی HTML</a><p class="unit" data-fa="ظاهر با CSS" data-en="Appearance with CSS">ظاهر با CSS</p><a class="" href="p2-css-start.html" data-fa="نوشتن CSS" data-en="Writing CSS">نوشتن CSS</a><a class="" href="p2-css-look.html" data-fa="رنگ، پس‌زمینه و انتخاب‌گر" data-en="Color, background, and selectors">رنگ، پس‌زمینه و انتخاب‌گر</a><a class="" href="p2-box.html" data-fa="مدل جعبه‌ای و display" data-en="The box model and display">مدل جعبه‌ای و display</a><a class="" href="p2-flex.html" data-fa="چیدمان با Flexbox" data-en="Layout with Flexbox">چیدمان با Flexbox</a><a class="" href="p2-flex-work.html" data-fa="کارگاه چیدمان صفحه" data-en="Page-layout workshop">کارگاه چیدمان صفحه</a><a class="" href="p2-media.html" data-fa="مدیا کوئری و ارزشیابی CSS" data-en="Media queries and the CSS assessment">مدیا کوئری و ارزشیابی CSS</a><p class="mod" data-fa="پودمان ۳: صفحات وب تعاملی" data-en="Module 3: Interactive web pages">پودمان ۳: صفحات وب تعاملی</p><p class="unit" data-fa="معرفی پودمان" data-en="Module introduction">معرفی پودمان</p><a class="" href="p3-intro.html" data-fa="معرفی پودمان تعاملی" data-en="Introducing the interactive module">معرفی پودمان تعاملی</a><p class="unit" data-fa="بوت‌استرپ" data-en="Bootstrap">بوت‌استرپ</p><a class="" href="p3-bs-start.html" data-fa="فریم‌ورک و شروع بوت‌استرپ" data-en="Frameworks and starting Bootstrap">فریم‌ورک و شروع بوت‌استرپ</a><a class="" href="p3-bs-util.html" data-fa="فاصله، گردی و لیست" data-en="Spacing, rounding, and lists">فاصله، گردی و لیست</a><a class="" href="p3-bs-header.html" data-fa="سرصفحه فروشگاه" data-en="The shop header">سرصفحه فروشگاه</a><a class="" href="p3-bs-grid.html" data-fa="شبکه Grid" data-en="The grid">شبکه Grid</a><a class="" href="p3-bs-rwd.html" data-fa="کلاس‌های واکنش‌گرا" data-en="Responsive classes">کلاس‌های واکنش‌گرا</a><a class="" href="p3-bs-nav.html" data-fa="نوار ناوبری و جزئیات محصول" data-en="Navbar and product details">نوار ناوبری و جزئیات محصول</a><a class="" href="p3-bs-form.html" data-fa="فرم و پنجره Modal" data-en="Forms and modals">فرم و پنجره Modal</a><a class="" href="p3-bs-show.html" data-fa="کاروسل و آکاردئون" data-en="Carousel and accordion">کاروسل و آکاردئون</a><a class="" href="p3-bs-assess.html" data-fa="ارزشیابی بوت‌استرپ" data-en="Bootstrap assessment">ارزشیابی بوت‌استرپ</a><p class="unit" data-fa="جاوااسکریپت" data-en="JavaScript">جاوااسکریپت</p><a class="" href="p3-js-start.html" data-fa="جاوااسکریپت در صفحه وب" data-en="JavaScript on the page">جاوااسکریپت در صفحه وب</a><a class="" href="p3-js-vars.html" data-fa="متغیر و نوع داده" data-en="Variables and data types">متغیر و نوع داده</a><a class="" href="p3-js-ops.html" data-fa="عملگرها" data-en="Operators">عملگرها</a><a class="" href="p3-js-data.html" data-fa="آرایه و شیء" data-en="Arrays and objects">آرایه و شیء</a><a class="" href="p3-js-if.html" data-fa="شرط در جاوااسکریپت" data-en="Conditions in JavaScript">شرط در جاوااسکریپت</a><a class="" href="p3-js-loops.html" data-fa="حلقه‌ها" data-en="Loops">حلقه‌ها</a><a class="" href="p3-js-func.html" data-fa="تابع‌ها" data-en="Functions">تابع‌ها</a><a class="" href="p3-js-dom.html" data-fa="صفحه، رویداد و اعتبار فرم" data-en="The page, events, and form validation">صفحه، رویداد و اعتبار فرم</a><a class="" href="p3-js-assess.html" data-fa="ارزشیابی جاوااسکریپت" data-en="JavaScript assessment">ارزشیابی جاوااسکریپت</a><p class="mod" data-fa="پودمان ۴: توسعه وب پایتون" data-en="Module 4: Python for the web">پودمان ۴: توسعه وب پایتون</p><p class="unit" data-fa="معرفی پودمان" data-en="Module introduction">معرفی پودمان</p><a class="" href="p4-intro.html" data-fa="معرفی پودمان شیءگرایی" data-en="Introducing the object-oriented module">معرفی پودمان شیءگرایی</a><p class="unit" data-fa="شیءگرایی" data-en="Object-oriented programming">شیءگرایی</p><a class="" href="p4-idea.html" data-fa="ایده شیء و کلاس" data-en="The idea of objects and classes">ایده شیء و کلاس</a><a class="" href="p4-class.html" data-fa="ساخت کلاس و متد" data-en="Writing a class and methods">ساخت کلاس و متد</a><a class="" href="p4-inherit.html" data-fa="وراثت" data-en="Inheritance">وراثت</a><a class="" href="p4-protect.html" data-fa="داده معتبر و استفاده داخلی" data-en="Valid data and internal use">داده معتبر و استفاده داخلی</a><a class="" href="p4-assess-oop.html" data-fa="ارزشیابی برنامه شیءگرا" data-en="Object-oriented assessment">ارزشیابی برنامه شیءگرا</a><p class="unit" data-fa="فایل و توسعه" data-en="Files and development">فایل و توسعه</p><a class="" href="p4-files.html" data-fa="خواندن و نوشتن فایل متنی" data-en="Reading and writing text files">خواندن و نوشتن فایل متنی</a><a class="" href="p4-errors.html" data-fa="پیمایش فایل و مدیریت خطا" data-en="Walking a file and handling errors">پیمایش فایل و مدیریت خطا</a><a class="" href="p4-json.html" data-fa="چند فایل و JSON" data-en="Several files and JSON">چند فایل و JSON</a><a class="" href="p4-assess-files.html" data-fa="ارزشیابی کار با فایل" data-en="Files assessment">ارزشیابی کار با فایل</a><p class="mod" data-fa="پودمان ۵: برنامه‌نویسی جنگو" data-en="Module 5: Django">پودمان ۵: برنامه‌نویسی جنگو</p><p class="unit" data-fa="معرفی پودمان" data-en="Module introduction">معرفی پودمان</p><a class="" href="p5-intro.html" data-fa="معرفی پودمان جنگو" data-en="Introducing the Django module">معرفی پودمان جنگو</a><p class="unit" data-fa="ایجاد وب‌اپلیکیشن" data-en="Creating the web app">ایجاد وب‌اپلیکیشن</p><a class="" href="p5-what.html" data-fa="جنگو چیست و نصب" data-en="What Django is, and installing it">جنگو چیست و نصب</a><a class="" href="p5-project.html" data-fa="پروژه، اپ و اولین view" data-en="Project, app, and the first view">پروژه، اپ و اولین view</a><a class="" href="p5-template.html" data-fa="قالب و دمای واقعی" data-en="Templates and a real temperature">قالب و دمای واقعی</a><a class="" href="p5-assess-create.html" data-fa="ارزشیابی ایجاد وب‌اپلیکیشن" data-en="Creating-the-app assessment">ارزشیابی ایجاد وب‌اپلیکیشن</a><p class="unit" data-fa="توسعه وب‌اپلیکیشن" data-en="Developing the web app">توسعه وب‌اپلیکیشن</p><a class="" href="p5-model.html" data-fa="مدل شهر و پنل ادمین" data-en="The city model and the admin">مدل شهر و پنل ادمین</a><a class="" href="p5-list.html" data-fa="خواندن شهرها و نمایش فهرست" data-en="Reading cities and showing the list">خواندن شهرها و نمایش فهرست</a><a class="" href="p5-auth.html" data-fa="ورود و خروج" data-en="Sign-in and sign-out">ورود و خروج</a><a class="" href="p5-crud.html" data-fa="افزودن و حذف شهر" data-en="Adding and deleting a city">افزودن و حذف شهر</a><a class="" href="p5-bugs.html" data-fa="باگ و امنیت" data-en="Bugs and security">باگ و امنیت</a><p class="mod" data-fa="پایان کتاب" data-en="Back of the book">پایان کتاب</p><p class="unit" data-fa="منابع" data-en="References">منابع</p><a class="" href="refs.html" data-fa="منابع کتاب" data-en="Book references">منابع کتاب</a></nav></details>
+    <div class="main">
+      <h1 class="section-title" data-fa="ارزشیابی مدل‌سازی داده" data-en="Data-modeling assessment">ارزشیابی مدل‌سازی داده</h1><article class="lesson" lang="fa" dir="rtl" data-lang-block="fa"><p class="page-mark">صفحه ۴۶</p>
+<h3 id="_1">ارزشیابی شایستگی مد‌لسازی داده</h3>
+<p>استاندارد عملکرد: هنرجو بتواند داده‌ها را در پایتون تعریف و مدیریت کند ، عملیات پایه را روی داده‌ها انجام دهد،ازساختارهای شرطی و حلقه‌ها استفاده کند و داده‌ها را به صورت سازمان یافته پردازش کند.</p>
+<p>نمره</p>
+<p>شرایط انجام کار (ابزار،مواد، تجهیزات،</p>
+<p>ابزارهای</p>
+<p>نتایج</p>
+<p>ردیف</p>
+<p>مرا حل کار</p>
+<p>استاندارد (شاخص‌ها/داوری/نمره دهی)</p>
+<p>کسب</p>
+<p>زمان، مکان و ...)</p>
+<h3 id="_2">ارزشیابی</h3>
+<p>ممکن شده</p>
+<p>نصب پایتون و یک محیط توسعه (<code>IDE</code>) مناسب روی رایانه شخصی یا استفاده از محیط‌های آنلاین. اجرای برنامه‌های ساده در محیط <code>IDLE</code> نوشتن اولین دستور ()<code>.print</code> درک تفاوت بین خط فرمان و اجرای فایل.</p>
+<p>3</p>
+<p>دریافت یک قطعه کد پایتون با خطاهای سینتکسی یا تورفتگی و اصلاح آن.</p>
+<p>انجام کار با روش‌های دیگر انجام کنجکاوی‌ها</p>
+<p>مقدمات و شروع کار با</p>
+<p>رایانه، <code>vscode</code> نصب‌شده، مرورگر، 15 دقیقه، مشاهده</p>
+<p>۱ اجرای برنامه‌های ساده در محیط <code>.IDLE</code></p>
+<p>1</p>
+<p>پایتون</p>
+<p>کارگاه</p>
+<p>عملی</p>
+<p>۲ نوشتن اولین دستور ()<code>.print</code></p>
+<p>۳ درک تفاوت بین خط فرمان و اجرای فایل.</p>
+<p>2</p>
+<p>4 دریافت یک قطعه کد پایتون با خطاهای سینتکسی یا تورفتگی و اصلاح آن.</p>
+<p>عدم انجام و یا انجام ناقص مرحله کاری1 نوشتن کدی که در آن چند متغیر با انواع داده مختلف (رشته، عدد صحیح، عدد اعشار) تعریف شده و مقادیر آنها در ادامه استفاده شود. نوشتن کدی که یک نوع داده را به نوع دیگری تبدیل کند و از آن در محاسبات استفاده کند.</p>
+<p>3</p>
+<p>جواب دادن به سوالات تستی یا تشریحی در مورد نام‌گذاری صحیح متغیرها، تفاوت انواع داده، و زمان استفاده از تبدیل نوع.4 انجام کار با روش‌های دیگر انجام کنجکاوی‌ها</p>
+<p>متغیرها، انواع داده و</p>
+<p>رایانه، <code>vscode</code> نصب‌شده، فایل تمرینی،</p>
+<p>مشاهده</p>
+<p>2</p>
+<p>تبدیل نوع</p>
+<p>15دقیقه</p>
+<p>عملی نوشتن کدی که در آن چند متغیر با انواع داده مختلف (رشته، عدد صحیح، عدد اعشار) تعریف شده و مقادیر آن‌ها در ادامه استفاده شود. نوشتن کدی که یک نوع داده را به نوع دیگری تبدیل کند و از آن در محاسبات استفاده</p>
+<p>2</p>
+<p>کند. جواب دادن به سوالات تستی یا تشریحی در مورد نام‌گذاری صحیح متغیرها، تفاوت انواع داده، و زمان استفاده از تبدیل نوع.</p>
+<p>عدم انجام و یا انجام ناقص مرحله کاری1 نوشتن برنامه‌ای که از عملگرهای ریاضی (جمع، تفریق، ضرب، تقسیم) و شاید مقایسه‌ای استفاده کند.</p>
+<p>نوشتن برنامه‌ای که از کاربر اطلاعاتی (دریافت کند و سپس یک خروجی سفارشی نمایش دهد.</p>
+<p>3</p>
+<p>حل یک مسئله ساده که نیاز به ترکیب ورودی، پردازش با عملگرها و نمایش خروجی دارد (مثلاً محاسبه مساحت مستطیل با دریافت طول و عرض از کاربر).</p>
+<p>انجام کارها با روش‌های دیگر انجام کنجکاوی ها مشاهده نوشتن برنامه‌ای که از عملگرهای ریاضی (جمع، تفریق، ضرب، تقسیم) و</p>
+<p>3عملگرها و ورودی/خروجی</p>
+<p>رایانه، <code>vscode</code> نصب‌شده، 15دقیقه</p>
+<p>عملی شاید مقایسه‌ای استفاده کند. نوشتن برنامه‌ای که از کاربر اطلاعاتی (دریافت کند و سپس یک خروجی سفارشی نمایش دهد. حل یک مسئله ساده</p>
+<p>2</p>
+<p>که نیاز به ترکیب ورودی، پردازش با عملگرها و نمایش خروجی دارد (مثًلا محاسبه مساحت مستطیل با دریافت طول و عرض از کاربر).</p>
+<p>عدم انجام و یا انجام ناقص مرحله کاری1</p>
+<hr />
+<p class="page-mark">صفحه ۴۷</p>
+<p>ایجاد یک لیست، اضافه کردن آیتم جدید به آن، حذف یک آیتم، و نمایش محتوای لیست. نوشتن یک کد با استفاده از <code>else</code>، <code>elif</code>، <code>if</code> یک تصمیم‌گیری انجام شود.</p>
+<p>ترکیب شرط‌ها با استفاده از <code>and</code>, <code>or</code>, <code>not</code> برای پیاده‌سازی منطق‌های</p>
+<p>3</p>
+<p>پیچیده‌تر.</p>
+<p>ساخت یک برنامه ساده که لیست و شرط را ترکیب کند انجام کنجکاوی‌ها انجام کارها با روش‌های دیگر</p>
+<p>ساختارهای داده پایه</p>
+<p>مشاهده</p>
+<p>4</p>
+<p>رایانه، <code>vscode</code> نصب‌شده، 20 دقیقه</p>
+<p>(لیست) و شرطی</p>
+<p>عملی ایجاد یک لیست، اضافه کردن آیتم جدید به آن، حذف یک آیتم و نمایش محتوای لیست نوشتن یک کد با استفاده از <code>else</code>، <code>elif</code>، <code>if</code> یک تصمیم‌گیری انجام شود.</p>
+<p>2</p>
+<p>ترکیب شرط‌ها با استفاده از <code>and</code>, <code>or</code>, <code>not</code> برای پیاده‌سازی منطق‌های پیچیده‌تر.</p>
+<p>ساخت یک برنامه ساده که لیست و شرط را ترکیب کند.</p>
+<p>عدم انجام و یا انجام ناقص مرحله کاری1 نوشتن کدی که روی عناصر یک لیست یا کاراکترهای یک رشته پیمایش کرده و هر کدام را چاپ کند. استفاده از تابع ()<code>range</code> در حلقه <code>for</code> برای اجرای یک دستور به تعداد مشخص یا پیمایش اعداد در یک بازه.</p>
+<p>3</p>
+<p>نوشتن برنامه‌ای که با استفاده از حلقه <code>for</code> کاری تکراری را انجام دهد انجام کنجکاوی‌ها انجام کار با چند روش مشاهده</p>
+<p>5</p>
+<p>حلقه‌های تکرار: <code>for</code></p>
+<p>رایانه، <code>vscode</code> نصب‌شده، 25 دقیقه</p>
+<p>عملی نوشتن کدی که روی عناصر یک لیست یا کاراکترهای یک رشته پیمایش کرده و هر کدام را چاپ کند. استفاده از تابع ()<code>range</code> در حلقه <code>for</code> برای</p>
+<p>2</p>
+<p>اجرای یک دستور به تعداد مشخص یا پیمایش اعداد در یک بازه.</p>
+<p>نوشتن برنامه‌ای که با استفاده از حلقه <code>for</code> کاری تکراری را انجام دهد عدم انجام و یا انجام ناقص مرحله کاری1 نوشتن برنامه‌ای که تا زمانی که یک شرط برقرار است، ادامه یابد نوشتن کدی که در آن از <code>break</code> برای خروج از حلقه و از <code>continue</code> برای رد شدن از یک تکرار خاص استفاده شود. حل یک مسئله که نیاز به ترکیب</p>
+<p>3</p>
+<p>هوشمندانه حلقه‌ها (<code>for</code> یا <code>while</code>) و دستورات شرطی دارد. انجام کنجکاوی‌ها انجام کار با چند روش</p>
+<p>حلقه‌های تکرار و دستورات</p>
+<p>مشاهده</p>
+<p>6</p>
+<p>رایانه، <code>vscode</code> نصب‌شده، 25 دقیقه</p>
+<p>کنترلی <code>while</code></p>
+<p>عملی</p>
+<p>۱ نوشتن برنامه‌ای که تا زمانی که یک شرط برقرار است، ادامه یابد نوشتن کدی که در آن از <code>break</code> برای خروج از حلقه و از <code>continue</code> برای رد</p>
+<p>2</p>
+<p>شدن از یک تکرار خاص استفاده شود. حل یک مسئله که نیاز به ترکیب هوشمندانه حلقه‌ها (<code>for</code> یا <code>while</code>) و دستورات شرطی دارد..</p>
+<p>عدم انجام و یا انجام ناقص مرحله کاری1</p>
+<p>شایستگی‌های غیر فنی، ایمنی،</p>
+<p>احراز همه شایستگی‌های غیرفنی2</p>
+<p>بهداشت، توجهات زیست محیطی و نگرش:</p>
+<p>عدم احراز هریک از شایستگی‌های غیرفنی1 بلی</p>
+<p>ارزشیابی کار (شایستگی انجام کار)</p>
+<p>خیر</p>
+<h3 id="_3">توضیحات:</h3>
+<p>1 معیار شایستگی انجام کار:</p>
+<p>کسب حداقل نمره 2 از مراحل 1، 2 و 3 (مراحل بحرانی) کسب حداقل نمره 2 از بخش شایستگی‌های غیر فنی، ایمنی، بهداشت، توجهات زیست‌محیطی و نگرش کسب حداقل میانگین 2 از مراحل کار</p>
+<p>2 تعریف سطوح شایستگی: صرف‌نظر از اینکه یک تکلیف کاری در چه سطحی از صلاحیت حرفه‌ای انجام می شود، در هر محیط کاری ممکن است انجام هر کار با کیفیت مشخصی مورد انتظار باشد. سطح شایستگی انجام کار، معیار اساسی ارزشیابی است.</p>
+<p>مهارت (سطح سه): ماهر و قادر به آموزش و هدایت دیگران، توانایی برنامه‌ریزی و تحلیل، پاسخ‌گویی در برابر کارهای خود، سروکار داشتن با سطح وسیعی از کارها و فعالیت‌ها تسلط (سطح چهار): خبرگی در انجام کار و آموزش دیگران، ایجاد نوآوری، سازگاری، عیب‌یابی، هدایت و راهنمایی دیگران.</p></article><article class="lesson" lang="en" dir="ltr" data-lang-block="en" hidden><p class="page-mark">Page 46</p>
+<h3 id="assessment-of-data-modeling-competency">Assessment of data modeling competency</h3>
+<p>Performance standard: The student should be able to define and manage data in Python, perform basic operations on data, use conditional structures and loops, and process data in an organized way.</p>
+<p>Score</p>
+<p>Conditions for performing the work (tools, materials, equipment,</p>
+<p>Tools</p>
+<p>Results</p>
+<p>Row</p>
+<p>Steps</p>
+<p>Standard (indicators / judgment / scoring)</p>
+<p>Earned</p>
+<p>time, place, etc.)</p>
+<h3 id="assessment">Assessment</h3>
+<p>Enabled</p>
+<p>Installing Python and a suitable development environment (<code>IDE</code>) on a personal computer or using online environments. Running simple programs in the <code>IDLE</code> environment Writing the first <code>print</code>() statement Understanding the difference between the command line and running a file.</p>
+<p>3</p>
+<p>Receiving a piece of Python code with syntax or indentation errors and correcting it.</p>
+<p>Doing the work with other methods Doing the Try this activities</p>
+<p>Basics and getting started with</p>
+<p>Computer, <code>vscode</code> installed, browser, 15 minutes, observation</p>
+<p>1 Running simple programs in the <code>.IDLE</code> environment</p>
+<p>1</p>
+<p>Python</p>
+<p>Workshop</p>
+<p>Practical</p>
+<p>2 Writing the first <code>print</code>() statement</p>
+<p>3 Understanding the difference between the command line and running a file.</p>
+<p>2</p>
+<p>4 Receiving a piece of Python code with syntax or indentation errors and correcting it.</p>
+<p>Not doing or incompletely doing work step 1 Writing code in which several variables with different data types (string, integer, decimal number) are defined and their values are used later. Writing code that converts one data type to another and uses it in calculations.</p>
+<p>3</p>
+<p>Answering multiple-choice or open-ended questions about correct variable naming, differences among data types, and when to use type conversion. 4 Doing the work with other methods Doing the Try this activities</p>
+<p>Variables, data types and</p>
+<p>Computer, <code>vscode</code> installed, practice file,</p>
+<p>Observation</p>
+<p>2</p>
+<p>type conversion</p>
+<p>15 minutes</p>
+<p>Practical Writing code in which several variables with different data types (string, integer, decimal number) are defined and their values are used later. Writing code that converts one data type to another and uses it in calculations</p>
+<p>2</p>
+<p>. Answering multiple-choice or open-ended questions about correct variable naming, differences among data types, and when to use type conversion.</p>
+<p>Not doing or incompletely doing work step 1 Writing a program that uses arithmetic operators (addition, subtraction, multiplication, division) and perhaps comparison operators.</p>
+<p>Writing a program that receives information from the user and then displays a customized output.</p>
+<p>3</p>
+<p>Solving a simple problem that requires combining input, processing with operators, and displaying output (for example calculating the area of a rectangle by receiving length and width from the user).</p>
+<p>Doing the work with other methods Doing the Try this activities Observation Writing a program that uses arithmetic operators (addition, subtraction, multiplication, division) and</p>
+<p>3 Operators and input/output</p>
+<p>Computer, <code>vscode</code> installed, 15 minutes</p>
+<p>Practical perhaps comparison operators. Writing a program that receives information from the user and then displays a customized output. Solving a simple problem</p>
+<p>2</p>
+<p>that requires combining input, processing with operators, and displaying output (for example calculating the area of a rectangle by receiving length and width from the user).</p>
+<p>Not doing or incompletely doing work step 1</p>
+<hr />
+<p class="page-mark">Page 47</p>
+<p>Creating a list, adding a new item to it, deleting an item, and displaying the list contents. Writing code using <code>else</code>, <code>elif</code>, <code>if</code> so that a decision is made.</p>
+<p>Combining conditions using <code>and</code>, <code>or</code>, <code>not</code> to implement more</p>
+<p>3</p>
+<p>complex logic.</p>
+<p>Building a simple program that combines a list and a condition Doing the Try this activities Doing the work with other methods</p>
+<p>Basic data structures</p>
+<p>Observation</p>
+<p>4</p>
+<p>Computer, <code>vscode</code> installed, 20 minutes</p>
+<p>(list) and conditional</p>
+<p>Practical Creating a list, adding a new item to it, deleting an item and displaying the list contents Writing code using <code>else</code>, <code>elif</code>, <code>if</code> so that a decision is made.</p>
+<p>2</p>
+<p>Combining conditions using <code>and</code>, <code>or</code>, <code>not</code> to implement more complex logic.</p>
+<p>Building a simple program that combines a list and a condition.</p>
+<p>Not doing or incompletely doing work step 1 Writing code that traverses the elements of a list or the characters of a string and prints each one. Using the <code>range</code>() function in a <code>for</code> loop to run a statement a specific number of times or to traverse numbers in a range.</p>
+<p>3</p>
+<p>Writing a program that uses a <code>for</code> loop to do a repetitive task Doing the Try this activities Doing the work in several ways Observation</p>
+<p>5</p>
+<p>Repetition loops: <code>for</code></p>
+<p>Computer, <code>vscode</code> installed, 25 minutes</p>
+<p>Practical Writing code that traverses the elements of a list or the characters of a string and prints each one. Using the <code>range</code>() function in a <code>for</code> loop to</p>
+<p>2</p>
+<p>run a statement a specific number of times or to traverse numbers in a range.</p>
+<p>Writing a program that uses a <code>for</code> loop to do a repetitive task Not doing or incompletely doing work step 1 Writing a program that continues as long as a condition is met Writing code in which <code>break</code> is used to exit the loop and <code>continue</code> is used to skip a particular repetition. Solving a problem that requires</p>
+<p>3</p>
+<p>smartly combining loops (<code>for</code> or <code>while</code>) and conditional statements. Doing the Try this activities Doing the work in several ways</p>
+<p>Repetition loops and control</p>
+<p>Observation</p>
+<p>6</p>
+<p>Computer, <code>vscode</code> installed, 25 minutes</p>
+<p>statements <code>while</code></p>
+<p>Practical</p>
+<p>1 Writing a program that continues as long as a condition is met Writing code in which <code>break</code> is used to exit the loop and <code>continue</code> is used to skip</p>
+<p>2</p>
+<p>a particular repetition. Solving a problem that requires smartly combining loops (<code>for</code> or <code>while</code>) and conditional statements.</p>
+<p>Not doing or incompletely doing work step 1</p>
+<p>Non-technical competencies, safety,</p>
+<p>Meeting all non-technical competencies 2</p>
+<p>hygiene, environmental considerations and attitude:</p>
+<p>Not meeting any of the non-technical competencies 1 Yes</p>
+<p>Work assessment (competency in performing the work)</p>
+<p>No</p>
+<h3 id="explanation">Explanation:</h3>
+<p>1 Criterion for competency in performing the work:</p>
+<p>Earning a minimum score of 2 from steps 1, 2 and 3 (critical steps) Earning a minimum score of 2 from the section on non-technical competencies, safety, hygiene, environmental considerations and attitude Earning a minimum average of 2 from the work steps</p>
+<p>2 Definition of competency levels: Regardless of the level of professional qualification at which a work task is performed, in any work environment a specific quality of performing each task may be expected. The level of competency in performing the work is the basic criterion for assessment.</p>
+<p>Skill (level three): skilled and able to train and guide others, ability to plan and analyze, accountability for one's own work, dealing with a wide range of tasks and activities Mastery (level four): expertise in performing the work and training others, creating innovation, adaptability, troubleshooting, leading and guiding others.</p></article>
+      <aside class="extra">
+        <h2 data-fa="تمرین این بخش" data-en="Exercises for this section">تمرین این بخش</h2>
+        <p class="extra-note" data-fa="این تمرین‌ها و پیوندها اضافه بر متن کتاب‌اند." data-en="These exercises and links are in addition to the book.">این تمرین‌ها و پیوندها اضافه بر متن کتاب‌اند.</p>
+        <ol><li data-fa="یک برنامه فروشگاه کوچک بساز: لیست کالا، افزودن، حذف، و یک شرط که بگوید جمع قیمت‌ها از بودجه کاربر بیشتر است یا نه." data-en="Build a tiny shop program: a product list, add, remove, and a condition that says whether the total is over the user&#x27;s budget.">یک برنامه فروشگاه کوچک بساز: لیست کالا، افزودن، حذف، و یک شرط که بگوید جمع قیمت‌ها از بودجه کاربر بیشتر است یا نه.</li><li data-fa="همان برنامه را با یک حلقه کامل کن که بعد از هر عمل، کل لیست و جمع قیمت را دوباره نشان بدهد." data-en="Finish the same program with a loop that shows the whole list and the total after every action.">همان برنامه را با یک حلقه کامل کن که بعد از هر عمل، کل لیست و جمع قیمت را دوباره نشان بدهد.</li></ol>
+        
+      </aside>
+    <nav class="pager"><a rel="prev" class="prev" href="p1-while.html"><span class="pager-word" data-fa="قبلی" data-en="Previous">قبلی</span><span class="pager-name" data-fa="حلقه while و کنترل حلقه" data-en="The while loop and loop control">حلقه while و کنترل حلقه</span></a><a rel="next" class="next" href="p1-sets.html"><span class="pager-word" data-fa="بعدی" data-en="Next">بعدی</span><span class="pager-name" data-fa="مجموعه (set)" data-en="Sets">مجموعه (set)</span></a></nav>
+    </div>
+  </div>
+  <script src="../assets/search-index.js?v=4"></script>
+  <script src="../assets/app.js?v=4"></script>
+</body>
+</html>

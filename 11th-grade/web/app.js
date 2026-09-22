@@ -9,31 +9,45 @@
     }
   }
 
-  function apply(lang) {
-    document.documentElement.lang = lang;
-    document.documentElement.dir = lang === "fa" ? "rtl" : "ltr";
+  function apply(next) {
+    lang = next;
+    document.documentElement.lang = next;
+    document.documentElement.dir = next === "fa" ? "rtl" : "ltr";
     var nodes = document.querySelectorAll("[data-fa][data-en]");
     for (var i = 0; i < nodes.length; i++) {
-      nodes[i].textContent = nodes[i].getAttribute("data-" + lang);
+      nodes[i].textContent = nodes[i].getAttribute("data-" + next);
     }
     var fields = document.querySelectorAll("[data-fa-placeholder]");
     for (var j = 0; j < fields.length; j++) {
-      fields[j].placeholder = fields[j].getAttribute("data-" + lang + "-placeholder");
+      fields[j].placeholder = fields[j].getAttribute("data-" + next + "-placeholder");
     }
     var blocks = document.querySelectorAll("[data-lang-block]");
     for (var k = 0; k < blocks.length; k++) {
-      blocks[k].hidden = blocks[k].getAttribute("data-lang-block") !== lang;
+      blocks[k].hidden = blocks[k].getAttribute("data-lang-block") !== next;
     }
-    var buttons = document.querySelectorAll("[data-set-lang]");
-    for (var b = 0; b < buttons.length; b++) {
-      buttons[b].setAttribute("aria-pressed", buttons[b].getAttribute("data-set-lang") === lang ? "true" : "false");
+    var toggle = document.getElementById("lang-toggle");
+    if (toggle) toggle.setAttribute("data-lang", next);
+    var title = document.querySelector("title");
+    if (title && title.getAttribute("data-fa")) {
+      title.textContent = title.getAttribute("data-" + next);
     }
-    try { localStorage.setItem(KEY, lang); } catch (e) {}
+    try { localStorage.setItem(KEY, next); } catch (e) {}
+  }
+
+  var toc = document.querySelector(".toc");
+  if (toc && window.matchMedia("(max-width: 860px)").matches) toc.removeAttribute("open");
+
+  var lang = current();
+  var toggle = document.getElementById("lang-toggle");
+  if (toggle) {
+    toggle.addEventListener("click", function (event) {
+      event.preventDefault();
+      lang = lang === "fa" ? "en" : "fa";
+      apply(lang);
+    });
   }
 
   document.addEventListener("click", function (event) {
-    var btn = event.target.closest ? event.target.closest("[data-set-lang]") : null;
-    if (btn) apply(btn.getAttribute("data-set-lang"));
     var box = document.getElementById("results");
     var input = document.getElementById("q");
     if (box && input && !event.target.closest(".search-wrap")) box.hidden = true;
@@ -53,14 +67,18 @@
       var needle = q.toLowerCase();
       var hits = [];
       var rows = window.BOOK_SEARCH;
-      for (var i = 0; i < rows.length && hits.length < 10; i++) {
+      for (var i = 0; i < rows.length && hits.length < 8; i++) {
         var row = rows[i];
-        var hay = (row.titleFa + "\n" + row.titleEn + "\n" + row.text).toLowerCase();
-        var at = hay.indexOf(needle);
-        if (at < 0) continue;
+        var faAt = (row.titleFa + "\n" + row.textFa).toLowerCase().indexOf(needle);
+        var enAt = (row.titleEn + "\n" + row.textEn).toLowerCase().indexOf(needle);
+        if (faAt < 0 && enAt < 0) continue;
+        var useEn = lang === "en" ? enAt >= 0 : faAt < 0;
+        var source = useEn ? row.textEn : row.textFa;
+        var at = useEn ? enAt : faAt;
+        if (at < 0) at = 0;
         var from = Math.max(0, at - 40);
-        var excerpt = row.text.slice(from, from + 110).replace(/\s+/g, " ");
-        hits.push({ row: row, excerpt: excerpt });
+        var excerpt = source.slice(from, from + 110).replace(/\s+/g, " ");
+        hits.push({ row: row, excerpt: excerpt, useEn: useEn });
       }
       if (!hits.length) {
         box.hidden = false;
@@ -70,9 +88,9 @@
         box.appendChild(empty);
         return;
       }
+      var root = document.body.getAttribute("data-root") || "";
       for (var h = 0; h < hits.length; h++) {
         var a = document.createElement("a");
-        var root = document.body.getAttribute("data-root") || "";
         a.href = root + hits[h].row.href;
         var title = document.createElement("strong");
         title.textContent = lang === "en" ? hits[h].row.titleEn : hits[h].row.titleFa;

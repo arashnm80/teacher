@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title data-fa="سرصفحه فروشگاه" data-en="The shop header">سرصفحه فروشگاه</title>
+  <link rel="icon" href="../assets/favicon.svg">
+  <link rel="stylesheet" href="../assets/style.css?v=4">
+</head>
+<body data-root="../">
+  <header class="top">
+    <a class="brand" href="../index.html">
+      <span data-fa="طراح سایت" data-en="Site Design">طراح سایت</span>
+      <small data-fa="پایه یازدهم" data-en="Grade 11">پایه یازدهم</small>
+    </a>
+    <div class="search-wrap">
+      <input id="q" type="search" autocomplete="off"
+        data-fa-placeholder="جستجو در درس‌ها" data-en-placeholder="Search lessons"
+        placeholder="جستجو در درس‌ها">
+      <div id="results" class="results" hidden></div>
+    </div>
+    <a class="download" href="../grade11-offline.zip?v=2" data-fa="دانلود کل سایت" data-en="Download the whole site">دانلود کل سایت</a>
+    <button type="button" id="lang-toggle" class="lang-toggle" dir="ltr" data-lang="fa"
+      aria-label="تغییر زبان">
+      <span data-opt="fa">فا</span>
+      <span data-opt="en">EN</span>
+    </button>
+  </header>
+  <div class="layout">
+    <details class="toc" open><summary><span data-fa="فهرست درس‌ها" data-en="Lesson list">فهرست درس‌ها</span></summary><nav class="side" aria-label="lessons"><p class="mod" data-fa="شروع کتاب" data-en="Opening">شروع کتاب</p><p class="unit" data-fa="فهرست" data-en="Contents">فهرست</p><a class="" href="toc.html" data-fa="فهرست" data-en="Contents">فهرست</a><p class="mod" data-fa="پودمان ۱: برنامه‌نویسی پایتون" data-en="Module 1: Python programming">پودمان ۱: برنامه‌نویسی پایتون</p><p class="unit" data-fa="معرفی پودمان" data-en="Module introduction">معرفی پودمان</p><a class="" href="p1-intro.html" data-fa="معرفی پودمان پایتون" data-en="Introducing the Python module">معرفی پودمان پایتون</a><p class="unit" data-fa="مدل‌سازی داده" data-en="Data modeling">مدل‌سازی داده</p><a class="" href="p1-python.html" data-fa="پایتون و محیط برنامه‌نویسی" data-en="Python and the programming environment">پایتون و محیط برنامه‌نویسی</a><a class="" href="p1-vars.html" data-fa="متغیرها، نوع داده و عملگرها" data-en="Variables, types, and operators">متغیرها، نوع داده و عملگرها</a><a class="" href="p1-cast.html" data-fa="ورودی و تبدیل نوع" data-en="Input and type casting">ورودی و تبدیل نوع</a><a class="" href="p1-lists.html" data-fa="لیست‌ها" data-en="Lists">لیست‌ها</a><a class="" href="p1-if.html" data-fa="شرط‌های ساده" data-en="Simple conditions">شرط‌های ساده</a><a class="" href="p1-elif.html" data-fa="if، elif و else" data-en="if, elif, and else">if، elif و else</a><a class="" href="p1-for.html" data-fa="حلقه for و range" data-en="The for loop and range">حلقه for و range</a><a class="" href="p1-while.html" data-fa="حلقه while و کنترل حلقه" data-en="The while loop and loop control">حلقه while و کنترل حلقه</a><a class="" href="p1-assess-data.html" data-fa="ارزشیابی مدل‌سازی داده" data-en="Data-modeling assessment">ارزشیابی مدل‌سازی داده</a><p class="unit" data-fa="توابع و ماژول‌ها" data-en="Functions and modules">توابع و ماژول‌ها</p><a class="" href="p1-sets.html" data-fa="مجموعه (set)" data-en="Sets">مجموعه (set)</a><a class="" href="p1-dict.html" data-fa="دیکشنری" data-en="Dictionaries">دیکشنری</a><a class="" href="p1-quiz.html" data-fa="پروژه بازی Quiz" data-en="Quiz game project">پروژه بازی Quiz</a><a class="" href="p1-tuple.html" data-fa="تاپل" data-en="Tuples">تاپل</a><a class="" href="p1-func.html" data-fa="تعریف تابع، پارامتر و return" data-en="Defining functions, parameters, and return">تعریف تابع، پارامتر و return</a><a class="" href="p1-func-more.html" data-fa="تمرین تابع و مرتب‌سازی" data-en="Function practice and sorting">تمرین تابع و مرتب‌سازی</a><a class="" href="p1-modules.html" data-fa="ماژول‌ها و تفاوت تابع و متد" data-en="Modules, and functions versus methods">ماژول‌ها و تفاوت تابع و متد</a><a class="" href="p1-assess-func.html" data-fa="ارزشیابی توابع و ماژول‌ها" data-en="Functions and modules assessment">ارزشیابی توابع و ماژول‌ها</a><p class="mod" data-fa="پودمان ۲: صفحات وب ایستا" data-en="Module 2: Static web pages">پودمان ۲: صفحات وب ایستا</p><p class="unit" data-fa="معرفی پودمان" data-en="Module introduction">معرفی پودمان</p><a class="" href="p2-intro.html" data-fa="معرفی پودمان صفحات ایستا" data-en="Introducing static web pages">معرفی پودمان صفحات ایستا</a><p class="unit" data-fa="ساختار با HTML" data-en="Structure with HTML">ساختار با HTML</p><a class="" href="p2-web.html" data-fa="وب چگونه کار می‌کند" data-en="How the web works">وب چگونه کار می‌کند</a><a class="" href="p2-concepts.html" data-fa="مفاهیم طراحی وب و نقشه سایت" data-en="Web-design concepts and the site map">مفاهیم طراحی وب و نقشه سایت</a><a class="" href="p2-tags.html" data-fa="اولین صفحه HTML" data-en="A first HTML page">اولین صفحه HTML</a><a class="" href="p2-text.html" data-fa="متن، لیست و پیوند" data-en="Text, lists, and links">متن، لیست و پیوند</a><a class="" href="p2-img.html" data-fa="تصویر در صفحه" data-en="Images on the page">تصویر در صفحه</a><a class="" href="p2-forms.html" data-fa="فرم‌ها" data-en="Forms">فرم‌ها</a><a class="" href="p2-semantic.html" data-fa="عناصر معنایی" data-en="Semantic elements">عناصر معنایی</a><a class="" href="p2-assess-html.html" data-fa="ارزشیابی HTML" data-en="HTML assessment">ارزشیابی HTML</a><p class="unit" data-fa="ظاهر با CSS" data-en="Appearance with CSS">ظاهر با CSS</p><a class="" href="p2-css-start.html" data-fa="نوشتن CSS" data-en="Writing CSS">نوشتن CSS</a><a class="" href="p2-css-look.html" data-fa="رنگ، پس‌زمینه و انتخاب‌گر" data-en="Color, background, and selectors">رنگ، پس‌زمینه و انتخاب‌گر</a><a class="" href="p2-box.html" data-fa="مدل جعبه‌ای و display" data-en="The box model and display">مدل جعبه‌ای و display</a><a class="" href="p2-flex.html" data-fa="چیدمان با Flexbox" data-en="Layout with Flexbox">چیدمان با Flexbox</a><a class="" href="p2-flex-work.html" data-fa="کارگاه چیدمان صفحه" data-en="Page-layout workshop">کارگاه چیدمان صفحه</a><a class="" href="p2-media.html" data-fa="مدیا کوئری و ارزشیابی CSS" data-en="Media queries and the CSS assessment">مدیا کوئری و ارزشیابی CSS</a><p class="mod" data-fa="پودمان ۳: صفحات وب تعاملی" data-en="Module 3: Interactive web pages">پودمان ۳: صفحات وب تعاملی</p><p class="unit" data-fa="معرفی پودمان" data-en="Module introduction">معرفی پودمان</p><a class="" href="p3-intro.html" data-fa="معرفی پودمان تعاملی" data-en="Introducing the interactive module">معرفی پودمان تعاملی</a><p class="unit" data-fa="بوت‌استرپ" data-en="Bootstrap">بوت‌استرپ</p><a class="" href="p3-bs-start.html" data-fa="فریم‌ورک و شروع بوت‌استرپ" data-en="Frameworks and starting Bootstrap">فریم‌ورک و شروع بوت‌استرپ</a><a class="" href="p3-bs-util.html" data-fa="فاصله، گردی و لیست" data-en="Spacing, rounding, and lists">فاصله، گردی و لیست</a><a class="current" href="p3-bs-header.html" data-fa="سرصفحه فروشگاه" data-en="The shop header">سرصفحه فروشگاه</a><a class="" href="p3-bs-grid.html" data-fa="شبکه Grid" data-en="The grid">شبکه Grid</a><a class="" href="p3-bs-rwd.html" data-fa="کلاس‌های واکنش‌گرا" data-en="Responsive classes">کلاس‌های واکنش‌گرا</a><a class="" href="p3-bs-nav.html" data-fa="نوار ناوبری و جزئیات محصول" data-en="Navbar and product details">نوار ناوبری و جزئیات محصول</a><a class="" href="p3-bs-form.html" data-fa="فرم و پنجره Modal" data-en="Forms and modals">فرم و پنجره Modal</a><a class="" href="p3-bs-show.html" data-fa="کاروسل و آکاردئون" data-en="Carousel and accordion">کاروسل و آکاردئون</a><a class="" href="p3-bs-assess.html" data-fa="ارزشیابی بوت‌استرپ" data-en="Bootstrap assessment">ارزشیابی بوت‌استرپ</a><p class="unit" data-fa="جاوااسکریپت" data-en="JavaScript">جاوااسکریپت</p><a class="" href="p3-js-start.html" data-fa="جاوااسکریپت در صفحه وب" data-en="JavaScript on the page">جاوااسکریپت در صفحه وب</a><a class="" href="p3-js-vars.html" data-fa="متغیر و نوع داده" data-en="Variables and data types">متغیر و نوع داده</a><a class="" href="p3-js-ops.html" data-fa="عملگرها" data-en="Operators">عملگرها</a><a class="" href="p3-js-data.html" data-fa="آرایه و شیء" data-en="Arrays and objects">آرایه و شیء</a><a class="" href="p3-js-if.html" data-fa="شرط در جاوااسکریپت" data-en="Conditions in JavaScript">شرط در جاوااسکریپت</a><a class="" href="p3-js-loops.html" data-fa="حلقه‌ها" data-en="Loops">حلقه‌ها</a><a class="" href="p3-js-func.html" data-fa="تابع‌ها" data-en="Functions">تابع‌ها</a><a class="" href="p3-js-dom.html" data-fa="صفحه، رویداد و اعتبار فرم" data-en="The page, events, and form validation">صفحه، رویداد و اعتبار فرم</a><a class="" href="p3-js-assess.html" data-fa="ارزشیابی جاوااسکریپت" data-en="JavaScript assessment">ارزشیابی جاوااسکریپت</a><p class="mod" data-fa="پودمان ۴: توسعه وب پایتون" data-en="Module 4: Python for the web">پودمان ۴: توسعه وب پایتون</p><p class="unit" data-fa="معرفی پودمان" data-en="Module introduction">معرفی پودمان</p><a class="" href="p4-intro.html" data-fa="معرفی پودمان شیءگرایی" data-en="Introducing the object-oriented module">معرفی پودمان شیءگرایی</a><p class="unit" data-fa="شیءگرایی" data-en="Object-oriented programming">شیءگرایی</p><a class="" href="p4-idea.html" data-fa="ایده شیء و کلاس" data-en="The idea of objects and classes">ایده شیء و کلاس</a><a class="" href="p4-class.html" data-fa="ساخت کلاس و متد" data-en="Writing a class and methods">ساخت کلاس و متد</a><a class="" href="p4-inherit.html" data-fa="وراثت" data-en="Inheritance">وراثت</a><a class="" href="p4-protect.html" data-fa="داده معتبر و استفاده داخلی" data-en="Valid data and internal use">داده معتبر و استفاده داخلی</a><a class="" href="p4-assess-oop.html" data-fa="ارزشیابی برنامه شیءگرا" data-en="Object-oriented assessment">ارزشیابی برنامه شیءگرا</a><p class="unit" data-fa="فایل و توسعه" data-en="Files and development">فایل و توسعه</p><a class="" href="p4-files.html" data-fa="خواندن و نوشتن فایل متنی" data-en="Reading and writing text files">خواندن و نوشتن فایل متنی</a><a class="" href="p4-errors.html" data-fa="پیمایش فایل و مدیریت خطا" data-en="Walking a file and handling errors">پیمایش فایل و مدیریت خطا</a><a class="" href="p4-json.html" data-fa="چند فایل و JSON" data-en="Several files and JSON">چند فایل و JSON</a><a class="" href="p4-assess-files.html" data-fa="ارزشیابی کار با فایل" data-en="Files assessment">ارزشیابی کار با فایل</a><p class="mod" data-fa="پودمان ۵: برنامه‌نویسی جنگو" data-en="Module 5: Django">پودمان ۵: برنامه‌نویسی جنگو</p><p class="unit" data-fa="معرفی پودمان" data-en="Module introduction">معرفی پودمان</p><a class="" href="p5-intro.html" data-fa="معرفی پودمان جنگو" data-en="Introducing the Django module">معرفی پودمان جنگو</a><p class="unit" data-fa="ایجاد وب‌اپلیکیشن" data-en="Creating the web app">ایجاد وب‌اپلیکیشن</p><a class="" href="p5-what.html" data-fa="جنگو چیست و نصب" data-en="What Django is, and installing it">جنگو چیست و نصب</a><a class="" href="p5-project.html" data-fa="پروژه، اپ و اولین view" data-en="Project, app, and the first view">پروژه، اپ و اولین view</a><a class="" href="p5-template.html" data-fa="قالب و دمای واقعی" data-en="Templates and a real temperature">قالب و دمای واقعی</a><a class="" href="p5-assess-create.html" data-fa="ارزشیابی ایجاد وب‌اپلیکیشن" data-en="Creating-the-app assessment">ارزشیابی ایجاد وب‌اپلیکیشن</a><p class="unit" data-fa="توسعه وب‌اپلیکیشن" data-en="Developing the web app">توسعه وب‌اپلیکیشن</p><a class="" href="p5-model.html" data-fa="مدل شهر و پنل ادمین" data-en="The city model and the admin">مدل شهر و پنل ادمین</a><a class="" href="p5-list.html" data-fa="خواندن شهرها و نمایش فهرست" data-en="Reading cities and showing the list">خواندن شهرها و نمایش فهرست</a><a class="" href="p5-auth.html" data-fa="ورود و خروج" data-en="Sign-in and sign-out">ورود و خروج</a><a class="" href="p5-crud.html" data-fa="افزودن و حذف شهر" data-en="Adding and deleting a city">افزودن و حذف شهر</a><a class="" href="p5-bugs.html" data-fa="باگ و امنیت" data-en="Bugs and security">باگ و امنیت</a><p class="mod" data-fa="پایان کتاب" data-en="Back of the book">پایان کتاب</p><p class="unit" data-fa="منابع" data-en="References">منابع</p><a class="" href="refs.html" data-fa="منابع کتاب" data-en="Book references">منابع کتاب</a></nav></details>
+    <div class="main">
+      <h1 class="section-title" data-fa="سرصفحه فروشگاه" data-en="The shop header">سرصفحه فروشگاه</h1><article class="lesson" lang="fa" dir="rtl" data-lang-block="fa"><p class="page-mark">صفحه ۱۵۶</p>
+<p>محتوای عناصر پاراگراف را بر اساس تصویر زیر تکمیل نمایید. برای نمایش کلمات به‌صورت ضخیم (<code>bold</code>)، از تگ مناسب استفاده کنید فایل را ذخیره و نتیجه را در مرورگر بررسی کنید.</p>
+<p><img alt="تصویر کتاب" src="../images/p162-01.png" /></p>
+<p>برای اصلاح نمای موبایل، کلاس <code>w-75</code> را از عنصر <code>article</code> حذف کنید و استایل مربوط به آن را به فایل <code>styles.css</code> اضافه کنید:</p>
+<p><img alt="تصویر کتاب" src="../images/p162-02.png" /></p>
+<p>برای دستگاه‌هایی با پهنای کمتر از 600 پیکسل قانون زیر را در فایل <code>styles.css</code> اضافه کنید:</p>
+<p><img alt="تصویر کتاب" src="../images/p162-03.png" /></p>
+<h3 id="_1">بیشتر بدانید</h3>
+<p>طراحی نوار ابزار حاوی لوگو، کادر جست‌وجو، گزینه‌های ورود | ثبت نام و سبد خرید در این کارگاه ناحیه‌ای مشابه تصویر زیر را در بالای نوار منو ایجاد خواهید کرد:</p>
+<p><img alt="تصویر کتاب" src="../images/p162-04.png" /></p>
+<p>یک لوگو با ارتفاع 70 پیکسل ایجاد کنید و سپس فایل تصویر را با نام <code>logo.jpg</code> در پوشه <code>images</code> سایت ذخیره نمایید.</p>
+<p>درون کادر جست‌وجو باید یک آیکن جست‌وجو ظاهر شود. برای دانلود آیکن جست‌وجو از سایت <code>svgrepo.com</code> استفاده کنید و عبارت <code>search</code> را در آن جست‌وجو کنید. آیکن دلخواه خود را توسط دکمه <code>Edit</code> <code>vector</code> در کوچک‌ترین اندازه و رنگ دلخواه تنظیم کرده و سپس روی دکمه <code>Export</code> کلیک کنید. فایل آیکن را با نام <code>search.svg</code> در پوشه تصاویر سایت (<code>images</code>) ذخیره نمایید.</p>
+<hr />
+<p class="page-mark">صفحه ۱۵۷</p>
+<p>تصویر صفحۀ قبل حاوی لوگو، کادر جست‌وجو (شامل آیکن جست‌وجو و کادر متنی)، گزینه ورود| ثبت‌نام و سبد خرید است. این عناصر را به شکل زیر به صفحه <code>index.html</code> قبل از عنصر <code>nav</code> اضافه کنید:</p>
+<p><img alt="تصویر کتاب" src="../images/p163-01.png" /></p>
+<p>استایل عناصر را در نمای دسکتاپ به شکل زیر تنظیم کنید:</p>
+<p><img alt="تصویر کتاب" src="../images/p163-02.png" /></p>
+<p>کلاس‌های زیر را به عنصر <code>toolbar</code> اضافه کنید. سپس فایل را ذخیره کرده و نتیجه را در مرورگر بررسی نمایید.</p>
+<p><img alt="تصویر کتاب" src="../images/p163-03.png" /></p>
+<hr />
+<p class="page-mark">صفحه ۱۵۸</p>
+<p>با تنظیمات <code>CSS</code> فوق، گزینه «ورود|ثبت‌نام» و لوگو از نمای موبایل حذف می‌شود، بنابراین این گزینه‌ها باید در جای دیگری نمایش داده شود. بهتر است این گزینه‌ها به‌صورت یک لایۀ ثابت در پایین صفحه نمایش داده شوند. بدین منظور کد زیر را قبل از <code>&lt;main/&gt;</code> وارد کنید:</p>
+<p><img alt="تصویر کتاب" src="../images/p164-01.png" /></p>
+<p>کلاس <code>fixed-bottom</code> لایه <code>bottom-toolbar</code> را در پایین صفحه ثابت نگه می‌دارد.</p>
+<p>استایل زیر را برای عنصر <code>bottom-toolbar</code> بنویسید:</p>
+<p><img alt="تصویر کتاب" src="../images/p164-02.png" /></p>
+<p>استایل زیر را برای نمایش صحیح نوار ابزار در نمای موبایل اضافه کنید:</p>
+<p><img alt="تصویر کتاب" src="../images/p164-03.png" /></p>
+<p>با این تنظیمات عنصر <code>bottom-toolbar</code> به‌صورت شکل زیر در پایین دستگاه موبایل ظاهر می‌شود.</p>
+<p><img alt="تصویر کتاب" src="../images/p164-04.png" /></p>
+<p>برای فاصله گرفتن منو از <code>toolbar</code>، از کلاس <code>mt-3</code> در برچسب <code>&lt;nav&gt;</code> استفاده کنید.</p>
+<p>با توجه به اینکه گزینه‌های ورود|ثبت نام و سبد خرید به بخش <code>toolbar</code> اضافه شده است، بنابراین عنصر <code>user-actions</code> را از منوی ناوبری (عنصر <code>top-menu</code>) حذف کنید. سپس استایل‌های مربوط به آن را از فایل <code>styles.css</code> حذف کنید. با حذف شدن ناحیه <code>user-action</code> نیازی به ویژگی‌های فلکس در کلاس <code>.top-menu</code> نیست. پس ویژگی‌های فلکس را هم حذف کنید. در انتها آنچه درون کلاس <code>top-menu</code> باقی می‌ماند ویژگی <code>max-width</code> خواهد بود.</p>
+<p><img alt="تصویر کتاب" src="../images/p164-05.png" /></p>
+<hr />
+<p class="page-mark">صفحه ۱۵۹</p>
+<p>بهتر است که گزینه‌های منو در راستای افقی در وسط صفحه توزیع شوند، برای این کار از کلاس <code>-justify</code> <code>content-center</code> در عنصر <code>ul</code> استفاده کنید:</p>
+<p><img alt="تصویر کتاب" src="../images/p165-01.png" /></p>
+<p>توسط کد فوق تمام ویژگی‌های انتخاب‌گر <code>.top-menu</code> <code>ul</code> با کلاس‌های بوت‌استرپ معادل جایگزین شد. بنابراین ویژگی‌های درون انتخابگر <code>.top-menu</code> <code>ul</code> را از فایل <code>styles.css</code> حذف کنید.</p>
+<p>انتظار می‌رود که با تنظمیات فوق نتیجه زیر حاصل شود:</p>
+<p><img alt="تصویر کتاب" src="../images/p165-02.png" /></p>
+<p>سفارشی‌سازی کلاس‌های بوت استرپ کلاس‌های بوت‌استرپ دارای ویژگی‌ها و مقادیر از پیش تعیین شده‌ای هستند که امکان طراحی سریع عناصر صفحه را فراهم می‌کنند. گاهی لازم است که عملکرد این کلاس‌ها توسط توسعه‌دهندۀ صفحات تغییر نماید.</p>
+<p>این کار توسط <code>CSS</code> و <code>SASS</code>١ امکان‌پذیر است. برای تغییر استایل یک کلاس توسط <code>CSS</code> لازم است که ویژگی کلاس مورد نظر با مقادیر جدید تنظیم شود. در حالت پیش‌فرض اعمال کلاس بوت‌استرپ دارای اولویت بالاتری است. بنابراین برای بالا بردن اهمیت کلاس سفارشی باید از کلمه <code>important</code> ! در انتهای مقدار جدید استفاده شود، در غیر این‌صورت مقدار جدید اعمال نمی‌شود.</p>
+<p>تغییر استایل کلاس رنگ بوت‌استرپ</p>
+<h3 id="_2">کار کارگاهی</h3>
+<p>در این کارگاه رنگ کلاس <code>bg-light</code> را در فایل <code>index.html</code> تغییرخواهید داد. بدین منظور استایل زیر را برای کلاس <code>bg-light</code> به شکل زیر بنویسید:</p>
+<p><img alt="تصویر کتاب" src="../images/p165-03.png" /></p>
+<p>الحاق فایل <code>styles.css</code> باید بعد از الحاق فایل <code>bootstrap.min.css</code> انجام شود، در غیر این‌صورت اولویت اجرا با تنظیمات پیش فرض کلاس بوت استرپ خواهد بود. کلاس <code>bg-light</code> در دو عنصر کادر جست‌وجو و <code>article</code> مورد استفاده قرار گرفته است. بعد از ذخیره‌سازی کد فوق بررسی کنید که آیا تغییر رنگ در این دو عنصر اعمال شده است یا خیر.</p>
+<p>١ ابزاری است که نوشتن، سازمان‌دهی و نگهداری کدهای <code>CSS</code> را در پروژه‌های وب ساده‌تر و حرفه‌ای‌تر می‌کند.</p>
+<hr /></article><article class="lesson" lang="en" dir="ltr" data-lang-block="en" hidden><p class="page-mark">Page 156</p>
+<p>Complete the content of the paragraph elements based on the image below. To display words in bold (<code>bold</code>), use the appropriate tag. Save the file and check the result in the browser.</p>
+<p><img alt="Book image" src="../images/p162-01.png" /></p>
+<p>To fix the mobile view, remove the class <code>w-75</code> from the <code>article</code> element and add the related style to the file <code>styles.css</code>:</p>
+<p><img alt="Book image" src="../images/p162-02.png" /></p>
+<p>For devices with a width less than 600 pixels, add the following rule to the file <code>styles.css</code>:</p>
+<p><img alt="Book image" src="../images/p162-03.png" /></p>
+<h3 id="learn-more">Learn more</h3>
+<p>Designing a toolbar that contains a logo, a search box, Sign in | Register options, and a shopping cart In this workshop you will create an area similar to the image below above the menu bar:</p>
+<p><img alt="Book image" src="../images/p162-04.png" /></p>
+<p>Create a logo with a height of 70 pixels and then save the image file with the name <code>logo.jpg</code> in the site’s <code>images</code> folder.</p>
+<p>A search icon should appear inside the search box. To download a search icon, use the site <code>svgrepo.com</code> and search for the word <code>search</code> on it. Adjust your preferred icon with the <code>Edit</code> <code>vector</code> button at the smallest size and preferred color, then click the <code>Export</code> button. Save the icon file with the name <code>search.svg</code> in the site’s images folder (<code>images</code>).</p>
+<hr />
+<p class="page-mark">Page 157</p>
+<p>The image on the previous page contains a logo, a search box (including a search icon and a text box), a Sign in | Register option, and a shopping cart. Add these elements as shown below to the page <code>index.html</code> before the <code>nav</code> element:</p>
+<p><img alt="Book image" src="../images/p163-01.png" /></p>
+<p>Set the styles of the elements in the desktop view as follows:</p>
+<p><img alt="Book image" src="../images/p163-02.png" /></p>
+<p>Add the following classes to the <code>toolbar</code> element. Then save the file and check the result in the browser.</p>
+<p><img alt="Book image" src="../images/p163-03.png" /></p>
+<hr />
+<p class="page-mark">Page 158</p>
+<p>With the <code>CSS</code> settings above, the “Sign in|Register” option and the logo are removed from the mobile view, so these options must be displayed somewhere else. It is better to display these options as a fixed layer at the bottom of the page. For this purpose, enter the following code before <code>&lt;main/&gt;</code>:</p>
+<p><img alt="Book image" src="../images/p164-01.png" /></p>
+<p>The class <code>fixed-bottom</code> keeps the <code>bottom-toolbar</code> layer fixed at the bottom of the page.</p>
+<p>Write the following style for the <code>bottom-toolbar</code> element:</p>
+<p><img alt="Book image" src="../images/p164-02.png" /></p>
+<p>Add the following style for correct display of the toolbar in the mobile view:</p>
+<p><img alt="Book image" src="../images/p164-03.png" /></p>
+<p>With these settings, the <code>bottom-toolbar</code> element appears at the bottom of the mobile device as shown below.</p>
+<p><img alt="Book image" src="../images/p164-04.png" /></p>
+<p>To create space between the menu and the <code>toolbar</code>, use the class <code>mt-3</code> on the <code>&lt;nav&gt;</code> tag.</p>
+<p>Because the Sign in|Register and shopping cart options have been added to the <code>toolbar</code> section, remove the <code>user-actions</code> element from the navigation menu (the <code>top-menu</code> element). Then remove the related styles from the file <code>styles.css</code>. With the <code>user-action</code> area removed, the flex properties in the <code>.top-menu</code> class are no longer needed. So remove the flex properties as well. In the end, what remains inside the <code>top-menu</code> class will be the <code>max-width</code> property.</p>
+<p><img alt="Book image" src="../images/p164-05.png" /></p>
+<hr />
+<p class="page-mark">Page 159</p>
+<p>It is better for the menu options to be distributed horizontally in the center of the page; for this, use the class <code>-justify</code> <code>content-center</code> on the <code>ul</code> element:</p>
+<p><img alt="Book image" src="../images/p165-01.png" /></p>
+<p>With the code above, all properties of the selector <code>.top-menu</code> <code>ul</code> were replaced with equivalent Bootstrap classes. Therefore, remove the properties inside the selector <code>.top-menu</code> <code>ul</code> from the file <code>styles.css</code>.</p>
+<p>With the settings above, the following result is expected:</p>
+<p><img alt="Book image" src="../images/p165-02.png" /></p>
+<p>Customizing Bootstrap classes Bootstrap classes have predefined properties and values that make it possible to design page elements quickly. Sometimes it is necessary for the page developer to change how these classes work.</p>
+<p>This can be done with <code>CSS</code> and <code>SASS</code>1. To change the style of a class with <code>CSS</code>, the property of the desired class must be set with new values. By default, applying a Bootstrap class has higher priority. Therefore, to raise the importance of the custom class you must use the word <code>important</code> ! at the end of the new value; otherwise the new value is not applied.</p>
+<p>Changing the style of a Bootstrap color class</p>
+<h3 id="workshop">Workshop</h3>
+<p>In this workshop you will change the color of the class <code>bg-light</code> in the file <code>index.html</code>. For this purpose, write the following style for the class <code>bg-light</code> as shown below:</p>
+<p><img alt="Book image" src="../images/p165-03.png" /></p>
+<p>Attaching the file <code>styles.css</code> must be done after attaching the file <code>bootstrap.min.css</code>; otherwise the default Bootstrap class settings will have execution priority. The class <code>bg-light</code> is used on two elements: the search box and <code>article</code>. After saving the code above, check whether the color change has been applied to these two elements.</p>
+<p>1 A tool that makes writing, organizing, and maintaining <code>CSS</code> code in web projects simpler and more professional.</p>
+<hr /></article>
+      <aside class="extra">
+        <h2 data-fa="تمرین این بخش" data-en="Exercises for this section">تمرین این بخش</h2>
+        <p class="extra-note" data-fa="این تمرین‌ها و پیوندها اضافه بر متن کتاب‌اند." data-en="These exercises and links are in addition to the book.">این تمرین‌ها و پیوندها اضافه بر متن کتاب‌اند.</p>
+        <ol><li data-fa="سرصفحه فروشگاه را با لوگو، جعبه جستجو و پیوند ورود بساز. در عرض کم، لوگو و ورود را پنهان کن ولی جستجو بماند." data-en="Build a shop header with a logo, a search box, and a sign-in link. On a narrow width, hide the logo and sign-in, and keep the search.">سرصفحه فروشگاه را با لوگو، جعبه جستجو و پیوند ورود بساز. در عرض کم، لوگو و ورود را پنهان کن ولی جستجو بماند.</li><li data-fa="آیتم‌های منوی همان سرصفحه را در محور افقی وسط‌چین کن." data-en="Center that header&#x27;s menu items on the horizontal axis.">آیتم‌های منوی همان سرصفحه را در محور افقی وسط‌چین کن.</li></ol>
+        <h2 data-fa="پیوند مفید" data-en="Useful link">پیوند مفید</h2><ul><li><a href="https://getbootstrap.com/docs/5.3/utilities/display/" data-fa="نمایش و پنهان کردن" data-en="Display utilities">نمایش و پنهان کردن</a></li></ul>
+      </aside>
+    <nav class="pager"><a rel="prev" class="prev" href="p3-bs-util.html"><span class="pager-word" data-fa="قبلی" data-en="Previous">قبلی</span><span class="pager-name" data-fa="فاصله، گردی و لیست" data-en="Spacing, rounding, and lists">فاصله، گردی و لیست</span></a><a rel="next" class="next" href="p3-bs-grid.html"><span class="pager-word" data-fa="بعدی" data-en="Next">بعدی</span><span class="pager-name" data-fa="شبکه Grid" data-en="The grid">شبکه Grid</span></a></nav>
+    </div>
+  </div>
+  <script src="../assets/search-index.js?v=4"></script>
+  <script src="../assets/app.js?v=4"></script>
+</body>
+</html>

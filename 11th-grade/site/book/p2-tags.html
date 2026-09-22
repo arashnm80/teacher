@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title data-fa="اولین صفحه HTML" data-en="A first HTML page">اولین صفحه HTML</title>
+  <link rel="icon" href="../assets/favicon.svg">
+  <link rel="stylesheet" href="../assets/style.css?v=4">
+</head>
+<body data-root="../">
+  <header class="top">
+    <a class="brand" href="../index.html">
+      <span data-fa="طراح سایت" data-en="Site Design">طراح سایت</span>
+      <small data-fa="پایه یازدهم" data-en="Grade 11">پایه یازدهم</small>
+    </a>
+    <div class="search-wrap">
+      <input id="q" type="search" autocomplete="off"
+        data-fa-placeholder="جستجو در درس‌ها" data-en-placeholder="Search lessons"
+        placeholder="جستجو در درس‌ها">
+      <div id="results" class="results" hidden></div>
+    </div>
+    <a class="download" href="../grade11-offline.zip?v=2" data-fa="دانلود کل سایت" data-en="Download the whole site">دانلود کل سایت</a>
+    <button type="button" id="lang-toggle" class="lang-toggle" dir="ltr" data-lang="fa"
+      aria-label="تغییر زبان">
+      <span data-opt="fa">فا</span>
+      <span data-opt="en">EN</span>
+    </button>
+  </header>
+  <div class="layout">
+    <details class="toc" open><summary><span data-fa="فهرست درس‌ها" data-en="Lesson list">فهرست درس‌ها</span></summary><nav class="side" aria-label="lessons"><p class="mod" data-fa="شروع کتاب" data-en="Opening">شروع کتاب</p><p class="unit" data-fa="فهرست" data-en="Contents">فهرست</p><a class="" href="toc.html" data-fa="فهرست" data-en="Contents">فهرست</a><p class="mod" data-fa="پودمان ۱: برنامه‌نویسی پایتون" data-en="Module 1: Python programming">پودمان ۱: برنامه‌نویسی پایتون</p><p class="unit" data-fa="معرفی پودمان" data-en="Module introduction">معرفی پودمان</p><a class="" href="p1-intro.html" data-fa="معرفی پودمان پایتون" data-en="Introducing the Python module">معرفی پودمان پایتون</a><p class="unit" data-fa="مدل‌سازی داده" data-en="Data modeling">مدل‌سازی داده</p><a class="" href="p1-python.html" data-fa="پایتون و محیط برنامه‌نویسی" data-en="Python and the programming environment">پایتون و محیط برنامه‌نویسی</a><a class="" href="p1-vars.html" data-fa="متغیرها، نوع داده و عملگرها" data-en="Variables, types, and operators">متغیرها، نوع داده و عملگرها</a><a class="" href="p1-cast.html" data-fa="ورودی و تبدیل نوع" data-en="Input and type casting">ورودی و تبدیل نوع</a><a class="" href="p1-lists.html" data-fa="لیست‌ها" data-en="Lists">لیست‌ها</a><a class="" href="p1-if.html" data-fa="شرط‌های ساده" data-en="Simple conditions">شرط‌های ساده</a><a class="" href="p1-elif.html" data-fa="if، elif و else" data-en="if, elif, and else">if، elif و else</a><a class="" href="p1-for.html" data-fa="حلقه for و range" data-en="The for loop and range">حلقه for و range</a><a class="" href="p1-while.html" data-fa="حلقه while و کنترل حلقه" data-en="The while loop and loop control">حلقه while و کنترل حلقه</a><a class="" href="p1-assess-data.html" data-fa="ارزشیابی مدل‌سازی داده" data-en="Data-modeling assessment">ارزشیابی مدل‌سازی داده</a><p class="unit" data-fa="توابع و ماژول‌ها" data-en="Functions and modules">توابع و ماژول‌ها</p><a class="" href="p1-sets.html" data-fa="مجموعه (set)" data-en="Sets">مجموعه (set)</a><a class="" href="p1-dict.html" data-fa="دیکشنری" data-en="Dictionaries">دیکشنری</a><a class="" href="p1-quiz.html" data-fa="پروژه بازی Quiz" data-en="Quiz game project">پروژه بازی Quiz</a><a class="" href="p1-tuple.html" data-fa="تاپل" data-en="Tuples">تاپل</a><a class="" href="p1-func.html" data-fa="تعریف تابع، پارامتر و return" data-en="Defining functions, parameters, and return">تعریف تابع، پارامتر و return</a><a class="" href="p1-func-more.html" data-fa="تمرین تابع و مرتب‌سازی" data-en="Function practice and sorting">تمرین تابع و مرتب‌سازی</a><a class="" href="p1-modules.html" data-fa="ماژول‌ها و تفاوت تابع و متد" data-en="Modules, and functions versus methods">ماژول‌ها و تفاوت تابع و متد</a><a class="" href="p1-assess-func.html" data-fa="ارزشیابی توابع و ماژول‌ها" data-en="Functions and modules assessment">ارزشیابی توابع و ماژول‌ها</a><p class="mod" data-fa="پودمان ۲: صفحات وب ایستا" data-en="Module 2: Static web pages">پودمان ۲: صفحات وب ایستا</p><p class="unit" data-fa="معرفی پودمان" data-en="Module introduction">معرفی پودمان</p><a class="" href="p2-intro.html" data-fa="معرفی پودمان صفحات ایستا" data-en="Introducing static web pages">معرفی پودمان صفحات ایستا</a><p class="unit" data-fa="ساختار با HTML" data-en="Structure with HTML">ساختار با HTML</p><a class="" href="p2-web.html" data-fa="وب چگونه کار می‌کند" data-en="How the web works">وب چگونه کار می‌کند</a><a class="" href="p2-concepts.html" data-fa="مفاهیم طراحی وب و نقشه سایت" data-en="Web-design concepts and the site map">مفاهیم طراحی وب و نقشه سایت</a><a class="current" href="p2-tags.html" data-fa="اولین صفحه HTML" data-en="A first HTML page">اولین صفحه HTML</a><a class="" href="p2-text.html" data-fa="متن، لیست و پیوند" data-en="Text, lists, and links">متن، لیست و پیوند</a><a class="" href="p2-img.html" data-fa="تصویر در صفحه" data-en="Images on the page">تصویر در صفحه</a><a class="" href="p2-forms.html" data-fa="فرم‌ها" data-en="Forms">فرم‌ها</a><a class="" href="p2-semantic.html" data-fa="عناصر معنایی" data-en="Semantic elements">عناصر معنایی</a><a class="" href="p2-assess-html.html" data-fa="ارزشیابی HTML" data-en="HTML assessment">ارزشیابی HTML</a><p class="unit" data-fa="ظاهر با CSS" data-en="Appearance with CSS">ظاهر با CSS</p><a class="" href="p2-css-start.html" data-fa="نوشتن CSS" data-en="Writing CSS">نوشتن CSS</a><a class="" href="p2-css-look.html" data-fa="رنگ، پس‌زمینه و انتخاب‌گر" data-en="Color, background, and selectors">رنگ، پس‌زمینه و انتخاب‌گر</a><a class="" href="p2-box.html" data-fa="مدل جعبه‌ای و display" data-en="The box model and display">مدل جعبه‌ای و display</a><a class="" href="p2-flex.html" data-fa="چیدمان با Flexbox" data-en="Layout with Flexbox">چیدمان با Flexbox</a><a class="" href="p2-flex-work.html" data-fa="کارگاه چیدمان صفحه" data-en="Page-layout workshop">کارگاه چیدمان صفحه</a><a class="" href="p2-media.html" data-fa="مدیا کوئری و ارزشیابی CSS" data-en="Media queries and the CSS assessment">مدیا کوئری و ارزشیابی CSS</a><p class="mod" data-fa="پودمان ۳: صفحات وب تعاملی" data-en="Module 3: Interactive web pages">پودمان ۳: صفحات وب تعاملی</p><p class="unit" data-fa="معرفی پودمان" data-en="Module introduction">معرفی پودمان</p><a class="" href="p3-intro.html" data-fa="معرفی پودمان تعاملی" data-en="Introducing the interactive module">معرفی پودمان تعاملی</a><p class="unit" data-fa="بوت‌استرپ" data-en="Bootstrap">بوت‌استرپ</p><a class="" href="p3-bs-start.html" data-fa="فریم‌ورک و شروع بوت‌استرپ" data-en="Frameworks and starting Bootstrap">فریم‌ورک و شروع بوت‌استرپ</a><a class="" href="p3-bs-util.html" data-fa="فاصله، گردی و لیست" data-en="Spacing, rounding, and lists">فاصله، گردی و لیست</a><a class="" href="p3-bs-header.html" data-fa="سرصفحه فروشگاه" data-en="The shop header">سرصفحه فروشگاه</a><a class="" href="p3-bs-grid.html" data-fa="شبکه Grid" data-en="The grid">شبکه Grid</a><a class="" href="p3-bs-rwd.html" data-fa="کلاس‌های واکنش‌گرا" data-en="Responsive classes">کلاس‌های واکنش‌گرا</a><a class="" href="p3-bs-nav.html" data-fa="نوار ناوبری و جزئیات محصول" data-en="Navbar and product details">نوار ناوبری و جزئیات محصول</a><a class="" href="p3-bs-form.html" data-fa="فرم و پنجره Modal" data-en="Forms and modals">فرم و پنجره Modal</a><a class="" href="p3-bs-show.html" data-fa="کاروسل و آکاردئون" data-en="Carousel and accordion">کاروسل و آکاردئون</a><a class="" href="p3-bs-assess.html" data-fa="ارزشیابی بوت‌استرپ" data-en="Bootstrap assessment">ارزشیابی بوت‌استرپ</a><p class="unit" data-fa="جاوااسکریپت" data-en="JavaScript">جاوااسکریپت</p><a class="" href="p3-js-start.html" data-fa="جاوااسکریپت در صفحه وب" data-en="JavaScript on the page">جاوااسکریپت در صفحه وب</a><a class="" href="p3-js-vars.html" data-fa="متغیر و نوع داده" data-en="Variables and data types">متغیر و نوع داده</a><a class="" href="p3-js-ops.html" data-fa="عملگرها" data-en="Operators">عملگرها</a><a class="" href="p3-js-data.html" data-fa="آرایه و شیء" data-en="Arrays and objects">آرایه و شیء</a><a class="" href="p3-js-if.html" data-fa="شرط در جاوااسکریپت" data-en="Conditions in JavaScript">شرط در جاوااسکریپت</a><a class="" href="p3-js-loops.html" data-fa="حلقه‌ها" data-en="Loops">حلقه‌ها</a><a class="" href="p3-js-func.html" data-fa="تابع‌ها" data-en="Functions">تابع‌ها</a><a class="" href="p3-js-dom.html" data-fa="صفحه، رویداد و اعتبار فرم" data-en="The page, events, and form validation">صفحه، رویداد و اعتبار فرم</a><a class="" href="p3-js-assess.html" data-fa="ارزشیابی جاوااسکریپت" data-en="JavaScript assessment">ارزشیابی جاوااسکریپت</a><p class="mod" data-fa="پودمان ۴: توسعه وب پایتون" data-en="Module 4: Python for the web">پودمان ۴: توسعه وب پایتون</p><p class="unit" data-fa="معرفی پودمان" data-en="Module introduction">معرفی پودمان</p><a class="" href="p4-intro.html" data-fa="معرفی پودمان شیءگرایی" data-en="Introducing the object-oriented module">معرفی پودمان شیءگرایی</a><p class="unit" data-fa="شیءگرایی" data-en="Object-oriented programming">شیءگرایی</p><a class="" href="p4-idea.html" data-fa="ایده شیء و کلاس" data-en="The idea of objects and classes">ایده شیء و کلاس</a><a class="" href="p4-class.html" data-fa="ساخت کلاس و متد" data-en="Writing a class and methods">ساخت کلاس و متد</a><a class="" href="p4-inherit.html" data-fa="وراثت" data-en="Inheritance">وراثت</a><a class="" href="p4-protect.html" data-fa="داده معتبر و استفاده داخلی" data-en="Valid data and internal use">داده معتبر و استفاده داخلی</a><a class="" href="p4-assess-oop.html" data-fa="ارزشیابی برنامه شیءگرا" data-en="Object-oriented assessment">ارزشیابی برنامه شیءگرا</a><p class="unit" data-fa="فایل و توسعه" data-en="Files and development">فایل و توسعه</p><a class="" href="p4-files.html" data-fa="خواندن و نوشتن فایل متنی" data-en="Reading and writing text files">خواندن و نوشتن فایل متنی</a><a class="" href="p4-errors.html" data-fa="پیمایش فایل و مدیریت خطا" data-en="Walking a file and handling errors">پیمایش فایل و مدیریت خطا</a><a class="" href="p4-json.html" data-fa="چند فایل و JSON" data-en="Several files and JSON">چند فایل و JSON</a><a class="" href="p4-assess-files.html" data-fa="ارزشیابی کار با فایل" data-en="Files assessment">ارزشیابی کار با فایل</a><p class="mod" data-fa="پودمان ۵: برنامه‌نویسی جنگو" data-en="Module 5: Django">پودمان ۵: برنامه‌نویسی جنگو</p><p class="unit" data-fa="معرفی پودمان" data-en="Module introduction">معرفی پودمان</p><a class="" href="p5-intro.html" data-fa="معرفی پودمان جنگو" data-en="Introducing the Django module">معرفی پودمان جنگو</a><p class="unit" data-fa="ایجاد وب‌اپلیکیشن" data-en="Creating the web app">ایجاد وب‌اپلیکیشن</p><a class="" href="p5-what.html" data-fa="جنگو چیست و نصب" data-en="What Django is, and installing it">جنگو چیست و نصب</a><a class="" href="p5-project.html" data-fa="پروژه، اپ و اولین view" data-en="Project, app, and the first view">پروژه، اپ و اولین view</a><a class="" href="p5-template.html" data-fa="قالب و دمای واقعی" data-en="Templates and a real temperature">قالب و دمای واقعی</a><a class="" href="p5-assess-create.html" data-fa="ارزشیابی ایجاد وب‌اپلیکیشن" data-en="Creating-the-app assessment">ارزشیابی ایجاد وب‌اپلیکیشن</a><p class="unit" data-fa="توسعه وب‌اپلیکیشن" data-en="Developing the web app">توسعه وب‌اپلیکیشن</p><a class="" href="p5-model.html" data-fa="مدل شهر و پنل ادمین" data-en="The city model and the admin">مدل شهر و پنل ادمین</a><a class="" href="p5-list.html" data-fa="خواندن شهرها و نمایش فهرست" data-en="Reading cities and showing the list">خواندن شهرها و نمایش فهرست</a><a class="" href="p5-auth.html" data-fa="ورود و خروج" data-en="Sign-in and sign-out">ورود و خروج</a><a class="" href="p5-crud.html" data-fa="افزودن و حذف شهر" data-en="Adding and deleting a city">افزودن و حذف شهر</a><a class="" href="p5-bugs.html" data-fa="باگ و امنیت" data-en="Bugs and security">باگ و امنیت</a><p class="mod" data-fa="پایان کتاب" data-en="Back of the book">پایان کتاب</p><p class="unit" data-fa="منابع" data-en="References">منابع</p><a class="" href="refs.html" data-fa="منابع کتاب" data-en="Book references">منابع کتاب</a></nav></details>
+    <div class="main">
+      <h1 class="section-title" data-fa="اولین صفحه HTML" data-en="A first HTML page">اولین صفحه HTML</h1><article class="lesson" lang="fa" dir="rtl" data-lang-block="fa"><p class="page-mark">صفحه ۹۳</p>
+<p>طراحی ساختار صفحه با <code>HTML</code> در یک وب‌سایت، صفحات وب متعددی مانند موارد زیر وجود دارد:</p>
+<p><img alt="تصویر کتاب" src="../images/p099-01.png" /></p>
+<p>صفحۀ اصلی (<code>index.html</code>) صفحۀ محصولات (<code>products.html</code>) صفحۀ سبد خرید (<code>cart.html</code>) صفحۀ ورود/ثبت‌نام (<code>login.html</code>)</p>
+<p><strong>شکل 3</strong></p>
+<p>گام اول در طراحی این صفحات، ایجاد ساختار اولیه صفحات و قرار دادن عناصر صفحه درون آنهاست. این بخش به معرفی نحوه درج عناصر درون صفحات وب می‌پردازد.</p>
+<p>نشانه‌گذاری عناصر در سند <code>HTML</code> <code>:HTML</code> مخفف <code>Hypertext</code> <code>Markup</code> <code>Language</code> به معنای زبان نشانه‌گذاری ابرمتن است. <code>HTML</code> یک زبان برنامه‌نویسی نیست، بلکه یک زبان نشانه‌گذاری برای ایجاد و ساختاردهی عناصر مختلف در صفحات وب به شمار می‌آید. جانمایی بخش‌های مختلف صفحه مانند سرصفحه، منو، ناحیه محتوای اصلی، ستون کناری و پاصفحه توسط <code>HTML</code> انجام می‌شود.</p>
+<p><img alt="تصویر کتاب" src="../images/p099-02.png" /></p>
+<p>علاوه‌براین عناصر مختلفی همچون متن، تصویر، ویدئو، صوت و ... توسط کدهای <code>HTML</code> درون بخش‌های مختلف صفحه درج می‌شود.</p>
+<p><strong>شکل 4</strong></p>
+<p><img alt="تصویر کتاب" src="../images/p099-03.png" /></p>
+<p>معرفی تگ (<code>Tag</code>): یک صفحۀ وب شامل عناصر مختلفی مانند تیترها، پاراگراف‌ها، پیوندها، تصاویر، لیست و غیره است. هر یک از عناصر موجود در صفحات وب توسط تگ‌ها یا تگ‌های تعری‌فشده در زبان نشانه‌گذاری <code>HTML</code> ایجاد می‌شود. تگ‌های <code>HTML</code> در موضوعات مختلف قابل استفاده هستند.</p>
+<p><strong>شکل 5</strong></p>
+<hr />
+<p class="page-mark">صفحه ۹۴</p>
+<p>شکل کلی یک تگ به صورت زیر است:</p>
+<div class="code-wrap" dir="ltr"><pre><code>&lt;TagName Attribute=&quot;&quot;&gt; Content &lt;/TagName&gt;
+</code></pre></div>
+<p>اغلب تگ‌های <code>HTML</code> به‌صورت جفتی هستند. یعنی دارای تگ آغازین و پایانی هستند. تگ پایانی با علامت اسلش (/) شروع می‌شود. برخی تگ‌ها نیز به‌صورت خود بسته یا <code>self-closing</code> هستند و دارای تگ پایانی نیستند.</p>
+<h3 id="_1">مثال</h3>
+<p>به‌طور مثال تگ <code>p</code> به‌صورت جفتی نوشته می‌شود و تگ <code>img</code> به‌صورت خودبسته:</p>
+<div class="code-wrap" dir="ltr"><pre><code>&lt;p&gt; This is a paragraph &lt;/p&gt;
+&lt;img src=&quot;./flower.jpg&quot; /&gt;
+</code></pre></div>
+<p>عبارت <code>Content</code> به محتوای داخل تگ <code>HTML</code> اشاره دارد. مجموعه تگ‌های آغازین، پایانی و محتوای بین آنها، یک عنصر وب را تشکیل می‌دهد.</p>
+<p>عبارت <code>Attribute</code> به ویژگی یک عنصر اشاره می‌کند. به طور مثال تگ <code>&lt;img&gt;</code> دارای ویژگی <code>width</code>، <code>height</code> و <code>src</code> برای تعیین پهنا، ارتفاع و آدرس تصویر است:</p>
+<div class="code-wrap" dir="ltr"><pre><code>&lt;img src=&quot;flower.jpg&quot; width=&quot;200px&quot; height=&quot;150px&quot;&gt;
+</code></pre></div>
+<p>ایجاد یک صفحه وب ساده</p>
+<h3 id="_2">کار کارگاهی</h3>
+<p>برای ایجاد یک صفحه وب، باید از یک ساختار استاندارد استفاده شود، در غیراین‌صورت مشکلات مختلفی در زمینه نمایش صفحه توسط مرورگرهای مختلف، دستر‌سپذیری محتوا برای افراد نابینا، سرعت بارگذاری و .... ایجاد می‌شود. ساختار اولیه یک صفحه وب شامل تگ‌ها (برچسب‌های) تصویر روبه‌رو است:</p>
+<div class="code-wrap" dir="ltr"><pre><code>&lt;DOCTYPE html!&gt;
+&lt;html lang=&quot;fa&quot;&gt;
+</code></pre></div>
+<p><img alt="تصویر کتاب" src="../images/p100-01.png" /></p>
+<div class="code-wrap" dir="ltr"><pre><code>&lt;head&gt;
+&lt;meta charset=&quot;UTF-8&quot;&gt;
+&lt;/title&gt; عنوان صفحه &lt;title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre></div>
+<hr />
+<p class="page-mark">صفحه ۹۵</p>
+<p>تگ <code>&lt;Doctype</code> <code>html</code>!&gt;: در ابتدای یک صفحه وب از تگ <code>&lt;Doctype</code>!</p>
+<p><img alt="تصویر کتاب" src="../images/p101-01.png" /></p>
+<p><code>html&gt;</code> استفاده می‌شود. این تگ به مرورگرها و موتورهای جس‌توجو اعلام می‌کند که این سند از نوع <code>html5</code> است.</p>
+<p><strong>شکل 6</strong></p>
+<p>تگ <code>&lt;html&lt;</code> <code>:&gt;html&gt;</code> تگ ریشه سند <code>HTML</code> است. تمام محتوای یک صفحه وب درون این تگ قرار می‌گیرد. این تگ دارای یک ویژگی مهم به‌نام <code>lang</code> است که زبان صفحه را برای مرورگر، ابزارهای صفح‌هخوان و موتورهای جس‌توجو مشخص می‌کند. تگ <code>&lt;html&gt;</code> دارای ویژگی دیگری با نام <code>dir</code> است که جهت نمایش محتوا را مشخص می‌کند و دارای دو مقدار <code>rtl</code> و <code>ltr</code> به معنای راست به چپ و چپ به راست است.</p>
+<figure class="shot"><img alt="شکل 7" src="../images/p101-02.png" /><figcaption>شکل 7</figcaption></figure>
+<p>تگ <code>&lt;head&gt;:</code> این برچسب باید قبل از تگ <code>&lt;body&gt;</code> نوشته شود. در این بخش اطلاعات متا، عنوان صفحه، الحاق فایل‌های <code>CSS</code> و دیگر منابع غیرنمایشی قرار می‌گیرد. این اطلاعات برای مرورگر و موتورهای جس‌توجو مهم هستند.</p>
+<p>تگ <code>&lt;title&gt;:</code> این تگ عنوان صفحه را مشخص می‌کند که در نوار عنوان مرورگر و نتایج جس‌توجو نمایش داده می‌شود.</p>
+<p>تگ‌های <code>&lt;meta&gt;:</code> این تگ‌ها اطلاعاتی را درباره صفحه وب فراهم می‌کنند. برخی از متداول‌ترین تگ‌های متا عبارت‌انداز:</p>
+<p>متاتگ <code>Charset:</code> نوع رمزگذاری کاراکترهای صفحه وب را برای مرورگر مشخص می‌کند. این تگ به مرورگرها اعلام می‌کند که کاراکترهای صفحه را چگونه تفسیر کنند تا محتوای صفحه به درستی نمایش داده شود.</p>
+<p>متاتگ <code>viewport:</code> برای بهینه‌سازی نمایش صفحه وب بر روی دستگاه‌های موبایل و تبلت استفاده می‌شود:</p>
+<div class="code-wrap" dir="ltr"><pre><code>&lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;
+</code></pre></div>
+<h3 id="_3">کنجکاوی</h3>
+<p>درباره این متا‌تگ تحقیق کنید و نتیجه را توسط چند تصویر درباره تأثیر ب‌هکارگیری این تگ بر چیدمان عناصر صفحه در دستگاه‌های مختلف نمایش دهید.</p>
+<p><img alt="تصویر کتاب" src="../images/p101-03.png" /></p>
+<p>تگ <code>&lt;body&gt;:</code> شامل محتوای قابل مشاهده برای کاربران است.</p>
+<p>تمام عناصر نمایشی مانند متن، تصاویر، ویدئوها و غیره در این بخش قرار می‌گیرند.</p>
+<p><strong>شکل 8</strong></p>
+<hr />
+<p class="page-mark">صفحه ۹۶</p>
+<p>ایجاد یک صفحه وب ساده</p>
+<h3 id="_4">کار کارگاهی</h3>
+<p>کدهای <code>HTML</code> درون یک فایل متنی با پسوند <code>html</code> ذخیره می‌شوند. برای نوشتن این کدها می‌توان از ویرایشگرهای متنی ساده مانند <code>Notepad</code> یا ویرایشگرهای حرفه‌ای همچون <code>VScode</code> استفاده نمود.</p>
+<p>از قابلیت‌های برنامه <code>VScode</code> می‌توان به نمایش رنگی کدها، تکمیل خودکار کد، امکان اجرای سریع کد برنامه و اضافه کردن انواع افزونه‌ها اشاره کرد.</p>
+<p>ایجاد فایل <code>HTML</code> برای مجموعه تمرین‌ها یک پوشه با نام <code>Web</code> در مسیر <code>Document</code> یا یکی از درایوها ایجاد کنید تا فایل‌های <code>HTML</code> درون آن پوشه ذخیره گردد. در برنامه <code>VScode</code> از منوی <code>file</code> گزینه <code>Open</code> <code>folder</code> را انتخاب کنید و سپس پوشه <code>Web</code> را انتخاب کنید تا در مدت زمان کار روی پروژه محتوای پوشه در سمت چپ پنجره قابل مشاهده و در دسترس باشد.</p>
+<p><img alt="تصویر کتاب" src="../images/p102-01.png" /></p>
+<p>سپس روی دکمه <code>New</code> <code>file</code> کلیک کنید، نام فایل را مطابق تصویر بالا درون کادر متنی بنویسید و کلید <code>Enter</code> را بفشارید تا فایل ایجاد شود.</p>
+<p>کدهای اولیه <code>HTML</code> را به همراه یک متن ساده، مطابق تصویر زیر بنویسید و با فشردن کلید <code>Ctrl+S</code> آن را ذخیره کنید.</p>
+<p>نمایش صفحه وب در مرورگر:</p>
+<p>روش اول: برای مشاهده خروجی کدها این است که کلیدهای <code>Win+E</code> را بفشارید و پوشه <code>Web</code> را از مسیر مورد نظر خود باز کنید. سپس فایل <code>index.html</code> را با مرورگر دلخواه باز کنید. بعد از انجام هر تغییر در فایل <code>Html</code> لازم است که محتوای صفحه را در مرورگر تازه‌سازی (<code>Refresh</code>) کنید. این کار از طریق دکمه <code>F5</code> یا کلیک روی دکمه در بالای صفحه امکان‌پذیر است.</p>
+<p><img alt="تصویر کتاب" src="../images/p102-02.png" /></p>
+<p>فروشگاه لوازم رایانه‌ای</p>
+<hr />
+<p class="page-mark">صفحه ۹۷</p>
+<p>روش دوم: برای مشاهده خروجی استفاده از قابلیت <code>Go</code> <code>Live</code> در برنامه <code>VScode</code> است که در این حالت، مشاهده خروجی نیازی به تازه‌سازی صفحه ندارد. برای استفاده از قابلیت <code>Go</code> <code>Live</code> لازم است که افزونه <code>Live</code> <code>Server</code> را در برنامه <code>Vscode</code> نصب کنید.</p>
+<p>بدین منظور روی دکمه <code>Extensions</code> در سمت چپ پنجره برنامه کلیک کنید و سپس افزونه <code>live</code> <code>server</code> را جس‌توجو و نصب کنید.</p>
+<p><img alt="تصویر کتاب" src="../images/p103-01.png" /></p>
+<p>بعد از نصب افزونه، برای مشاهده خروجی برنامه کافیست رو دکمه <code>Go</code> <code>live</code> در پایین پنجره کلیک کنید.</p>
+<p><img alt="تصویر کتاب" src="../images/p103-02.png" /></p>
+<p>به این ترتیب صفحه مرورگر به شکل زیر ظاهر می‌گردد:</p>
+<p><img alt="تصویر کتاب" src="../images/p103-03.png" /></p>
+<p><img alt="تصویر کتاب" src="../images/p103-04.png" /></p>
+<p>خروجی</p>
+<p>بعد از انجام هر تغییر جدید در کد صفحه، فایل را توسط کلید <code>Ctrl+S</code> ذخیره کنید، سپس توسط کلید ترکیبی <code>Alt+Tab</code> به صفحه مرورگر مراجعه کنید. خروجی جدید بدون نیاز به تازه‌سازی ظاهر می‌شود.</p>
+<hr /></article><article class="lesson" lang="en" dir="ltr" data-lang-block="en" hidden><p class="page-mark">Page 93</p>
+<p>Designing page structure with <code>HTML</code> On a website, there are numerous web pages such as the following:</p>
+<p><img alt="Book image" src="../images/p099-01.png" /></p>
+<p>Home page (<code>index.html</code>) Products page (<code>products.html</code>) Shopping cart page (<code>cart.html</code>) Login/registration page (<code>login.html</code>)</p>
+<p><strong>Figure 3</strong></p>
+<p>The first step in designing these pages is creating the initial structure of the pages and placing the page elements inside them. This section introduces how to insert elements into web pages.</p>
+<p>Marking up elements in an <code>HTML</code> document: <code>HTML</code> stands for <code>Hypertext</code> <code>Markup</code> <code>Language</code>, meaning hypertext markup language. <code>HTML</code> is not a programming language; rather, it is a markup language for creating and structuring various elements on web pages. Laying out different parts of the page such as the header, menu, main content area, sidebar, and footer is done by <code>HTML</code>.</p>
+<p><img alt="Book image" src="../images/p099-02.png" /></p>
+<p>In addition, various elements such as text, image, video, audio, and so on are inserted into different parts of the page by <code>HTML</code> code.</p>
+<p><strong>Figure 4</strong></p>
+<p><img alt="Book image" src="../images/p099-03.png" /></p>
+<p>Introducing the tag (<code>Tag</code>): A web page includes various elements such as headings, paragraphs, links, images, lists, and so on. Each of the elements on web pages is created by tags defined in the <code>HTML</code> markup language. <code>HTML</code> tags can be used in various subjects.</p>
+<p><strong>Figure 5</strong></p>
+<hr />
+<p class="page-mark">Page 94</p>
+<p>The general form of a tag is as follows:</p>
+<div class="code-wrap" dir="ltr"><pre><code>&lt;TagName Attribute=&quot;&quot;&gt; Content &lt;/TagName&gt;
+</code></pre></div>
+<p>Most <code>HTML</code> tags come in pairs. That is, they have an opening tag and a closing tag. The closing tag begins with a slash (/). Some tags are also self-closing or <code>self-closing</code> and do not have a closing tag.</p>
+<h3 id="example">Example</h3>
+<p>For example the <code>p</code> tag is written as a pair and the <code>img</code> tag is self-closing:</p>
+<div class="code-wrap" dir="ltr"><pre><code>&lt;p&gt; This is a paragraph &lt;/p&gt;
+&lt;img src=&quot;./flower.jpg&quot; /&gt;
+</code></pre></div>
+<p>The word <code>Content</code> refers to the content inside the <code>HTML</code> tag. The set of opening tags, closing tags, and the content between them forms a web element.</p>
+<p>The word <code>Attribute</code> refers to a property of an element. For example the <code>&lt;img&gt;</code> tag has the attributes <code>width</code>, <code>height</code>, and <code>src</code> for setting the width, height, and address of the image:</p>
+<div class="code-wrap" dir="ltr"><pre><code>&lt;img src=&quot;flower.jpg&quot; width=&quot;200px&quot; height=&quot;150px&quot;&gt;
+</code></pre></div>
+<p>Creating a simple web page</p>
+<h3 id="workshop">Workshop</h3>
+<p>To create a web page, a standard structure must be used; otherwise various problems arise regarding display of the page by different browsers, accessibility of content for blind people, loading speed, and so on. The initial structure of a web page includes the tags (labels) in the figure opposite:</p>
+<div class="code-wrap" dir="ltr"><pre><code>&lt;DOCTYPE html!&gt;
+&lt;html lang=&quot;fa&quot;&gt;
+</code></pre></div>
+<p><img alt="Book image" src="../images/p100-01.png" /></p>
+<div class="code-wrap" dir="ltr"><pre><code>&lt;head&gt;
+&lt;meta charset=&quot;UTF-8&quot;&gt;
+&lt;/title&gt; عنوان صفحه &lt;title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre></div>
+<hr />
+<p class="page-mark">Page 95</p>
+<p>The <code>&lt;!DOCTYPE html&gt;</code> tag: At the beginning of a web page the `&lt;!DOCTYPE</p>
+<p><img alt="Book image" src="../images/p101-01.png" /></p>
+<p>html&gt;<code>tag is used. This tag announces to browsers and search engines that this document is of type</code>html5`.</p>
+<p><strong>Figure 6</strong></p>
+<p>The <code>&lt;html&gt;</code> tag: <code>&lt;html&gt;</code> is the root tag of the <code>HTML</code> document. All content of a web page is placed inside this tag. This tag has an important attribute named <code>lang</code> that specifies the language of the page for the browser, screen-reader tools, and search engines. The <code>&lt;html&gt;</code> tag has another attribute named <code>dir</code> that specifies the direction of content display and has two values <code>rtl</code> and <code>ltr</code> meaning right to left and left to right.</p>
+<figure class="shot"><img alt="Figure 7" src="../images/p101-02.png" /><figcaption>Figure 7</figcaption></figure>
+<p>The <code>&lt;head&gt;</code> tag: This tag must be written before the <code>&lt;body&gt;</code> tag. In this section meta information, the page title, linking <code>CSS</code> files, and other non-display resources are placed. This information is important for the browser and search engines.</p>
+<p>The <code>&lt;title&gt;</code> tag: This tag specifies the title of the page, which is displayed in the browser’s title bar and in search results.</p>
+<p><code>&lt;meta&gt;</code> tags: These tags provide information about the web page. Some of the most common meta tags are:</p>
+<p>The <code>Charset</code> meta tag: Specifies the character encoding type of the web page for the browser. This tag tells browsers how to interpret the page’s characters so that the page content is displayed correctly.</p>
+<p>The <code>viewport</code> meta tag: Is used to optimize the display of the web page on mobile and tablet devices:</p>
+<div class="code-wrap" dir="ltr"><pre><code>&lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;
+</code></pre></div>
+<h3 id="try-this">Try this</h3>
+<p>Research this meta tag and present the result with several images about the effect of using this tag on the layout of page elements on different devices.</p>
+<p><img alt="Book image" src="../images/p101-03.png" /></p>
+<p>The <code>&lt;body&gt;</code> tag: Includes the content visible to users.</p>
+<p>All display elements such as text, images, videos, and so on are placed in this section.</p>
+<p><strong>Figure 8</strong></p>
+<hr />
+<p class="page-mark">Page 96</p>
+<p>Creating a simple web page</p>
+<h3 id="workshop_1">Workshop</h3>
+<p><code>HTML</code> code is stored inside a text file with the <code>html</code> extension. To write this code you can use simple text editors such as <code>Notepad</code> or professional editors such as <code>VScode</code>.</p>
+<p>Among the capabilities of the <code>VScode</code> program one can mention colored display of code, automatic code completion, the possibility of quickly running program code, and adding various extensions.</p>
+<p>Creating an <code>HTML</code> file For the set of exercises create a folder named <code>Web</code> in the <code>Document</code> path or on one of the drives so that the <code>HTML</code> files are stored inside that folder. In the <code>VScode</code> program from the <code>file</code> menu choose the <code>Open</code> <code>folder</code> option and then select the <code>Web</code> folder so that while you work on the project the folder contents are visible and accessible on the left side of the window.</p>
+<p><img alt="Book image" src="../images/p102-01.png" /></p>
+<p>Then click the <code>New</code> <code>file</code> button, type the file name according to the image above in the text box, and press the <code>Enter</code> key so that the file is created.</p>
+<p>Write the initial <code>HTML</code> code together with a simple text according to the image below and save it by pressing the <code>Ctrl+S</code> keys.</p>
+<p>Displaying the web page in the browser:</p>
+<p>First method: To see the output of the code, press the <code>Win+E</code> keys and open the <code>Web</code> folder from your desired path. Then open the <code>index.html</code> file with your preferred browser. After making any change in the <code>Html</code> file you need to refresh (<code>Refresh</code>) the page content in the browser. This can be done with the <code>F5</code> key or by clicking the button at the top of the page.</p>
+<p><img alt="Book image" src="../images/p102-02.png" /></p>
+<p>Computer accessories store</p>
+<hr />
+<p class="page-mark">Page 97</p>
+<p>Second method: To see the output, use the <code>Go</code> <code>Live</code> capability in the <code>VScode</code> program; in this mode, viewing the output does not require refreshing the page. To use the <code>Go</code> <code>Live</code> capability you need to install the <code>Live</code> <code>Server</code> extension in the <code>Vscode</code> program.</p>
+<p>For this purpose click the <code>Extensions</code> button on the left side of the program window and then search for and install the <code>live</code> <code>server</code> extension.</p>
+<p><img alt="Book image" src="../images/p103-01.png" /></p>
+<p>After installing the extension, to see the program output it is enough to click the <code>Go</code> <code>live</code> button at the bottom of the window.</p>
+<p><img alt="Book image" src="../images/p103-02.png" /></p>
+<p>In this way the browser page appears as follows:</p>
+<p><img alt="Book image" src="../images/p103-03.png" /></p>
+<p><img alt="Book image" src="../images/p103-04.png" /></p>
+<p>Output</p>
+<p>After making any new change in the page code, save the file with the <code>Ctrl+S</code> keys, then go to the browser page with the <code>Alt+Tab</code> key combination. The new output appears without needing a refresh.</p>
+<hr /></article>
+      <aside class="extra">
+        <h2 data-fa="تمرین این بخش" data-en="Exercises for this section">تمرین این بخش</h2>
+        <p class="extra-note" data-fa="این تمرین‌ها و پیوندها اضافه بر متن کتاب‌اند." data-en="These exercises and links are in addition to the book.">این تمرین‌ها و پیوندها اضافه بر متن کتاب‌اند.</p>
+        <ol><li data-fa="صفحه اول سایت را با doctype، title زبانه، و یک h1 متفاوت از title بساز و در مرورگر باز کن." data-en="Build the first page with a doctype, a tab title, and an h1 that is not the same text as the title. Open it in the browser.">صفحه اول سایت را با doctype، title زبانه، و یک h1 متفاوت از title بساز و در مرورگر باز کن.</li><li data-fa="همان صفحه را در فایل index.html ذخیره کن و یک پاراگراف دوم به آن اضافه کن بدون اینکه ساختار اصلی را از نو بنویسی." data-en="Save that page as index.html and add a second paragraph without rewriting the whole structure.">همان صفحه را در فایل index.html ذخیره کن و یک پاراگراف دوم به آن اضافه کن بدون اینکه ساختار اصلی را از نو بنویسی.</li></ol>
+        <h2 data-fa="پیوند مفید" data-en="Useful link">پیوند مفید</h2><ul><li><a href="https://developer.mozilla.org/en-US/docs/Learn/HTML/Introduction_to_HTML/Getting_started" data-fa="شروع HTML" data-en="Getting started with HTML">شروع HTML</a></li></ul>
+      </aside>
+    <nav class="pager"><a rel="prev" class="prev" href="p2-concepts.html"><span class="pager-word" data-fa="قبلی" data-en="Previous">قبلی</span><span class="pager-name" data-fa="مفاهیم طراحی وب و نقشه سایت" data-en="Web-design concepts and the site map">مفاهیم طراحی وب و نقشه سایت</span></a><a rel="next" class="next" href="p2-text.html"><span class="pager-word" data-fa="بعدی" data-en="Next">بعدی</span><span class="pager-name" data-fa="متن، لیست و پیوند" data-en="Text, lists, and links">متن، لیست و پیوند</span></a></nav>
+    </div>
+  </div>
+  <script src="../assets/search-index.js?v=4"></script>
+  <script src="../assets/app.js?v=4"></script>
+</body>
+</html>

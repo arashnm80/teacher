@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title data-fa="صفحه، رویداد و اعتبار فرم" data-en="The page, events, and form validation">صفحه، رویداد و اعتبار فرم</title>
+  <link rel="icon" href="../assets/favicon.svg">
+  <link rel="stylesheet" href="../assets/style.css?v=4">
+</head>
+<body data-root="../">
+  <header class="top">
+    <a class="brand" href="../index.html">
+      <span data-fa="طراح سایت" data-en="Site Design">طراح سایت</span>
+      <small data-fa="پایه یازدهم" data-en="Grade 11">پایه یازدهم</small>
+    </a>
+    <div class="search-wrap">
+      <input id="q" type="search" autocomplete="off"
+        data-fa-placeholder="جستجو در درس‌ها" data-en-placeholder="Search lessons"
+        placeholder="جستجو در درس‌ها">
+      <div id="results" class="results" hidden></div>
+    </div>
+    <a class="download" href="../grade11-offline.zip?v=2" data-fa="دانلود کل سایت" data-en="Download the whole site">دانلود کل سایت</a>
+    <button type="button" id="lang-toggle" class="lang-toggle" dir="ltr" data-lang="fa"
+      aria-label="تغییر زبان">
+      <span data-opt="fa">فا</span>
+      <span data-opt="en">EN</span>
+    </button>
+  </header>
+  <div class="layout">
+    <details class="toc" open><summary><span data-fa="فهرست درس‌ها" data-en="Lesson list">فهرست درس‌ها</span></summary><nav class="side" aria-label="lessons"><p class="mod" data-fa="شروع کتاب" data-en="Opening">شروع کتاب</p><p class="unit" data-fa="فهرست" data-en="Contents">فهرست</p><a class="" href="toc.html" data-fa="فهرست" data-en="Contents">فهرست</a><p class="mod" data-fa="پودمان ۱: برنامه‌نویسی پایتون" data-en="Module 1: Python programming">پودمان ۱: برنامه‌نویسی پایتون</p><p class="unit" data-fa="معرفی پودمان" data-en="Module introduction">معرفی پودمان</p><a class="" href="p1-intro.html" data-fa="معرفی پودمان پایتون" data-en="Introducing the Python module">معرفی پودمان پایتون</a><p class="unit" data-fa="مدل‌سازی داده" data-en="Data modeling">مدل‌سازی داده</p><a class="" href="p1-python.html" data-fa="پایتون و محیط برنامه‌نویسی" data-en="Python and the programming environment">پایتون و محیط برنامه‌نویسی</a><a class="" href="p1-vars.html" data-fa="متغیرها، نوع داده و عملگرها" data-en="Variables, types, and operators">متغیرها، نوع داده و عملگرها</a><a class="" href="p1-cast.html" data-fa="ورودی و تبدیل نوع" data-en="Input and type casting">ورودی و تبدیل نوع</a><a class="" href="p1-lists.html" data-fa="لیست‌ها" data-en="Lists">لیست‌ها</a><a class="" href="p1-if.html" data-fa="شرط‌های ساده" data-en="Simple conditions">شرط‌های ساده</a><a class="" href="p1-elif.html" data-fa="if، elif و else" data-en="if, elif, and else">if، elif و else</a><a class="" href="p1-for.html" data-fa="حلقه for و range" data-en="The for loop and range">حلقه for و range</a><a class="" href="p1-while.html" data-fa="حلقه while و کنترل حلقه" data-en="The while loop and loop control">حلقه while و کنترل حلقه</a><a class="" href="p1-assess-data.html" data-fa="ارزشیابی مدل‌سازی داده" data-en="Data-modeling assessment">ارزشیابی مدل‌سازی داده</a><p class="unit" data-fa="توابع و ماژول‌ها" data-en="Functions and modules">توابع و ماژول‌ها</p><a class="" href="p1-sets.html" data-fa="مجموعه (set)" data-en="Sets">مجموعه (set)</a><a class="" href="p1-dict.html" data-fa="دیکشنری" data-en="Dictionaries">دیکشنری</a><a class="" href="p1-quiz.html" data-fa="پروژه بازی Quiz" data-en="Quiz game project">پروژه بازی Quiz</a><a class="" href="p1-tuple.html" data-fa="تاپل" data-en="Tuples">تاپل</a><a class="" href="p1-func.html" data-fa="تعریف تابع، پارامتر و return" data-en="Defining functions, parameters, and return">تعریف تابع، پارامتر و return</a><a class="" href="p1-func-more.html" data-fa="تمرین تابع و مرتب‌سازی" data-en="Function practice and sorting">تمرین تابع و مرتب‌سازی</a><a class="" href="p1-modules.html" data-fa="ماژول‌ها و تفاوت تابع و متد" data-en="Modules, and functions versus methods">ماژول‌ها و تفاوت تابع و متد</a><a class="" href="p1-assess-func.html" data-fa="ارزشیابی توابع و ماژول‌ها" data-en="Functions and modules assessment">ارزشیابی توابع و ماژول‌ها</a><p class="mod" data-fa="پودمان ۲: صفحات وب ایستا" data-en="Module 2: Static web pages">پودمان ۲: صفحات وب ایستا</p><p class="unit" data-fa="معرفی پودمان" data-en="Module introduction">معرفی پودمان</p><a class="" href="p2-intro.html" data-fa="معرفی پودمان صفحات ایستا" data-en="Introducing static web pages">معرفی پودمان صفحات ایستا</a><p class="unit" data-fa="ساختار با HTML" data-en="Structure with HTML">ساختار با HTML</p><a class="" href="p2-web.html" data-fa="وب چگونه کار می‌کند" data-en="How the web works">وب چگونه کار می‌کند</a><a class="" href="p2-concepts.html" data-fa="مفاهیم طراحی وب و نقشه سایت" data-en="Web-design concepts and the site map">مفاهیم طراحی وب و نقشه سایت</a><a class="" href="p2-tags.html" data-fa="اولین صفحه HTML" data-en="A first HTML page">اولین صفحه HTML</a><a class="" href="p2-text.html" data-fa="متن، لیست و پیوند" data-en="Text, lists, and links">متن، لیست و پیوند</a><a class="" href="p2-img.html" data-fa="تصویر در صفحه" data-en="Images on the page">تصویر در صفحه</a><a class="" href="p2-forms.html" data-fa="فرم‌ها" data-en="Forms">فرم‌ها</a><a class="" href="p2-semantic.html" data-fa="عناصر معنایی" data-en="Semantic elements">عناصر معنایی</a><a class="" href="p2-assess-html.html" data-fa="ارزشیابی HTML" data-en="HTML assessment">ارزشیابی HTML</a><p class="unit" data-fa="ظاهر با CSS" data-en="Appearance with CSS">ظاهر با CSS</p><a class="" href="p2-css-start.html" data-fa="نوشتن CSS" data-en="Writing CSS">نوشتن CSS</a><a class="" href="p2-css-look.html" data-fa="رنگ، پس‌زمینه و انتخاب‌گر" data-en="Color, background, and selectors">رنگ، پس‌زمینه و انتخاب‌گر</a><a class="" href="p2-box.html" data-fa="مدل جعبه‌ای و display" data-en="The box model and display">مدل جعبه‌ای و display</a><a class="" href="p2-flex.html" data-fa="چیدمان با Flexbox" data-en="Layout with Flexbox">چیدمان با Flexbox</a><a class="" href="p2-flex-work.html" data-fa="کارگاه چیدمان صفحه" data-en="Page-layout workshop">کارگاه چیدمان صفحه</a><a class="" href="p2-media.html" data-fa="مدیا کوئری و ارزشیابی CSS" data-en="Media queries and the CSS assessment">مدیا کوئری و ارزشیابی CSS</a><p class="mod" data-fa="پودمان ۳: صفحات وب تعاملی" data-en="Module 3: Interactive web pages">پودمان ۳: صفحات وب تعاملی</p><p class="unit" data-fa="معرفی پودمان" data-en="Module introduction">معرفی پودمان</p><a class="" href="p3-intro.html" data-fa="معرفی پودمان تعاملی" data-en="Introducing the interactive module">معرفی پودمان تعاملی</a><p class="unit" data-fa="بوت‌استرپ" data-en="Bootstrap">بوت‌استرپ</p><a class="" href="p3-bs-start.html" data-fa="فریم‌ورک و شروع بوت‌استرپ" data-en="Frameworks and starting Bootstrap">فریم‌ورک و شروع بوت‌استرپ</a><a class="" href="p3-bs-util.html" data-fa="فاصله، گردی و لیست" data-en="Spacing, rounding, and lists">فاصله، گردی و لیست</a><a class="" href="p3-bs-header.html" data-fa="سرصفحه فروشگاه" data-en="The shop header">سرصفحه فروشگاه</a><a class="" href="p3-bs-grid.html" data-fa="شبکه Grid" data-en="The grid">شبکه Grid</a><a class="" href="p3-bs-rwd.html" data-fa="کلاس‌های واکنش‌گرا" data-en="Responsive classes">کلاس‌های واکنش‌گرا</a><a class="" href="p3-bs-nav.html" data-fa="نوار ناوبری و جزئیات محصول" data-en="Navbar and product details">نوار ناوبری و جزئیات محصول</a><a class="" href="p3-bs-form.html" data-fa="فرم و پنجره Modal" data-en="Forms and modals">فرم و پنجره Modal</a><a class="" href="p3-bs-show.html" data-fa="کاروسل و آکاردئون" data-en="Carousel and accordion">کاروسل و آکاردئون</a><a class="" href="p3-bs-assess.html" data-fa="ارزشیابی بوت‌استرپ" data-en="Bootstrap assessment">ارزشیابی بوت‌استرپ</a><p class="unit" data-fa="جاوااسکریپت" data-en="JavaScript">جاوااسکریپت</p><a class="" href="p3-js-start.html" data-fa="جاوااسکریپت در صفحه وب" data-en="JavaScript on the page">جاوااسکریپت در صفحه وب</a><a class="" href="p3-js-vars.html" data-fa="متغیر و نوع داده" data-en="Variables and data types">متغیر و نوع داده</a><a class="" href="p3-js-ops.html" data-fa="عملگرها" data-en="Operators">عملگرها</a><a class="" href="p3-js-data.html" data-fa="آرایه و شیء" data-en="Arrays and objects">آرایه و شیء</a><a class="" href="p3-js-if.html" data-fa="شرط در جاوااسکریپت" data-en="Conditions in JavaScript">شرط در جاوااسکریپت</a><a class="" href="p3-js-loops.html" data-fa="حلقه‌ها" data-en="Loops">حلقه‌ها</a><a class="" href="p3-js-func.html" data-fa="تابع‌ها" data-en="Functions">تابع‌ها</a><a class="current" href="p3-js-dom.html" data-fa="صفحه، رویداد و اعتبار فرم" data-en="The page, events, and form validation">صفحه، رویداد و اعتبار فرم</a><a class="" href="p3-js-assess.html" data-fa="ارزشیابی جاوااسکریپت" data-en="JavaScript assessment">ارزشیابی جاوااسکریپت</a><p class="mod" data-fa="پودمان ۴: توسعه وب پایتون" data-en="Module 4: Python for the web">پودمان ۴: توسعه وب پایتون</p><p class="unit" data-fa="معرفی پودمان" data-en="Module introduction">معرفی پودمان</p><a class="" href="p4-intro.html" data-fa="معرفی پودمان شیءگرایی" data-en="Introducing the object-oriented module">معرفی پودمان شیءگرایی</a><p class="unit" data-fa="شیءگرایی" data-en="Object-oriented programming">شیءگرایی</p><a class="" href="p4-idea.html" data-fa="ایده شیء و کلاس" data-en="The idea of objects and classes">ایده شیء و کلاس</a><a class="" href="p4-class.html" data-fa="ساخت کلاس و متد" data-en="Writing a class and methods">ساخت کلاس و متد</a><a class="" href="p4-inherit.html" data-fa="وراثت" data-en="Inheritance">وراثت</a><a class="" href="p4-protect.html" data-fa="داده معتبر و استفاده داخلی" data-en="Valid data and internal use">داده معتبر و استفاده داخلی</a><a class="" href="p4-assess-oop.html" data-fa="ارزشیابی برنامه شیءگرا" data-en="Object-oriented assessment">ارزشیابی برنامه شیءگرا</a><p class="unit" data-fa="فایل و توسعه" data-en="Files and development">فایل و توسعه</p><a class="" href="p4-files.html" data-fa="خواندن و نوشتن فایل متنی" data-en="Reading and writing text files">خواندن و نوشتن فایل متنی</a><a class="" href="p4-errors.html" data-fa="پیمایش فایل و مدیریت خطا" data-en="Walking a file and handling errors">پیمایش فایل و مدیریت خطا</a><a class="" href="p4-json.html" data-fa="چند فایل و JSON" data-en="Several files and JSON">چند فایل و JSON</a><a class="" href="p4-assess-files.html" data-fa="ارزشیابی کار با فایل" data-en="Files assessment">ارزشیابی کار با فایل</a><p class="mod" data-fa="پودمان ۵: برنامه‌نویسی جنگو" data-en="Module 5: Django">پودمان ۵: برنامه‌نویسی جنگو</p><p class="unit" data-fa="معرفی پودمان" data-en="Module introduction">معرفی پودمان</p><a class="" href="p5-intro.html" data-fa="معرفی پودمان جنگو" data-en="Introducing the Django module">معرفی پودمان جنگو</a><p class="unit" data-fa="ایجاد وب‌اپلیکیشن" data-en="Creating the web app">ایجاد وب‌اپلیکیشن</p><a class="" href="p5-what.html" data-fa="جنگو چیست و نصب" data-en="What Django is, and installing it">جنگو چیست و نصب</a><a class="" href="p5-project.html" data-fa="پروژه، اپ و اولین view" data-en="Project, app, and the first view">پروژه، اپ و اولین view</a><a class="" href="p5-template.html" data-fa="قالب و دمای واقعی" data-en="Templates and a real temperature">قالب و دمای واقعی</a><a class="" href="p5-assess-create.html" data-fa="ارزشیابی ایجاد وب‌اپلیکیشن" data-en="Creating-the-app assessment">ارزشیابی ایجاد وب‌اپلیکیشن</a><p class="unit" data-fa="توسعه وب‌اپلیکیشن" data-en="Developing the web app">توسعه وب‌اپلیکیشن</p><a class="" href="p5-model.html" data-fa="مدل شهر و پنل ادمین" data-en="The city model and the admin">مدل شهر و پنل ادمین</a><a class="" href="p5-list.html" data-fa="خواندن شهرها و نمایش فهرست" data-en="Reading cities and showing the list">خواندن شهرها و نمایش فهرست</a><a class="" href="p5-auth.html" data-fa="ورود و خروج" data-en="Sign-in and sign-out">ورود و خروج</a><a class="" href="p5-crud.html" data-fa="افزودن و حذف شهر" data-en="Adding and deleting a city">افزودن و حذف شهر</a><a class="" href="p5-bugs.html" data-fa="باگ و امنیت" data-en="Bugs and security">باگ و امنیت</a><p class="mod" data-fa="پایان کتاب" data-en="Back of the book">پایان کتاب</p><p class="unit" data-fa="منابع" data-en="References">منابع</p><a class="" href="refs.html" data-fa="منابع کتاب" data-en="Book references">منابع کتاب</a></nav></details>
+    <div class="main">
+      <h1 class="section-title" data-fa="صفحه، رویداد و اعتبار فرم" data-en="The page, events, and form validation">صفحه، رویداد و اعتبار فرم</h1><article class="lesson" lang="fa" dir="rtl" data-lang-block="fa"><p class="page-mark">صفحه ۲۲۵</p>
+<h3 id="_1">کنجکاوی</h3>
+<p>تحقیق کنید چرا استفاده از توابع <code>prompt</code>() و <code>confirm</code>() برای عملیات ورودی می‌تواند باعث مختل شدن تجربه کاربری شود؟</p>
+<p>کلا‌سها و اشیا در زبان‌های برنام‌هنویسی، کلاس به معنای الگویی برای ایجاد اشیا است. یک کلاس حاوی مجموعه‌ای از ویژگ‌یها و متدهاست. شیئی که از روی یک کلاس تعریف م‌یشود، دارای ویژگ‌یها و متدهای تعریف شده در آن کلاس خواهد بود.</p>
+<h3 id="_2">بیشتر بدانید</h3>
+<p>در مثال زیر یک کلاس با عنوان <code>Person</code> ایجاد شده است که حاوی ویژگی‌های <code>name</code> و <code>age</code> است:</p>
+<p><img alt="تصویر کتاب" src="../images/p231-01.png" /></p>
+<p><img alt="تصویر کتاب" src="../images/p231-02.png" /></p>
+<p>متد <code>constructor</code> برای تعریف و مقداردهی ویژگی‌های یک شیء استفاده می‌شود. زمانی که یک شیء جدید از یک کلاس ایجاد می‌شود، متد<code>constructor</code> به طور خودکار فراخوانی شده و مقادیر اولیه را به ویژگی‌های آن شیء اختصاص می‌دهد. در مثال فوق متد <code>constructor</code> دو پارامتر <code>name</code> و <code>age</code> را می‌پذیرد و آنها را به ویژگی‌های متناظر در شیء نسبت می‌دهد.</p>
+<p>کلاس <code>person</code> دارای یک متد بنام <code>greet</code> است که یک پیغام را در کنسول مرورگر نمایش می‌دهد.</p>
+<p>متغیر <code>person1</code> یک شیء از نوع کلاس <code>person</code> است که مقدار ویژگی‌های آن برابر <code>amin</code> و 47 است. این مثال نشان می‌دهد که برای ایجاد یک شیء از روی یک کلاس باید از کلمه کلیدی <code>new</code> استفاده شود. با توجه به اینکه کلاس <code>person</code> دارای متدی بنام <code>greet</code> است، شیء <code>person1</code> نیز امکان استفاده از این متد را دارد. متد <code>greet</code> باعث نمایش عبارت <code>"My</code> <code>name</code> <code>is</code> <code>amin</code> <code>and</code> <code>I</code> <code>am</code> 47 <code>years</code> <code>old"</code> در کنسول خواهد شد.</p>
+<p>ایجاد کلاس و شیء فایل جدیدی با نام <code>object.html</code> ایجاد کنید و درون آن کلاس جدیدی با نام <code>Car</code> با ویژگی‌های</p>
+<div class="code-wrap" dir="ltr"><pre><code>auto_maker، model وyear ایجاد کنید.
+</code></pre></div>
+<p>یک متد با نام <code>print_Details</code> برای چاپ ویژگی‌های خودرو بنویسید. نحوه چاپ به‌صورت زیر باشد:</p>
+<div class="code-wrap" dir="ltr"><pre><code>Auto maker: Toyota , Model: Camry , Year: 2020
+</code></pre></div>
+<hr />
+<p class="page-mark">صفحه ۲۲۶</p>
+<p>یک شیء با مقادیر <code>Toyota</code>، <code>Camry</code>، 2020 ایجاد کنید و متد <code>print_details</code> را برای شیء جدید مورد استفاده قرار دهید.</p>
+<p><img alt="تصویر کتاب" src="../images/p232-01.png" /></p>
+<p><img alt="تصویر کتاب" src="../images/p232-02.png" /></p>
+<p>دسترسی به عناصر <code>DOM</code> جاوا‌اسکریپت برای انجام عملیات مختلف بر روی عناصر صفحه، به دسترسی به آن عناصر نیاز دارد. به همین دلیل جاوا‌اسکریپت دارای متدهایی برای دسترسی به عناصر است. به‌عنوان مثال برای دسترسی به عنصری با شناسه <code>demo</code> از متد <code>getElementById</code> به‌شکل زیر استفاده می‌شود:</p>
+<p>در این اسکریپت مقدار جدید عنصر <code>para</code> توسط ویژگی <code>textContent</code> مشخص شده است.</p>
+<p>برای انتخاب و دسترسی به هر یک از عناصر صفحه روش‌های مختلفی وجود دارد که در این بخش به آنها اشاره می‌شود.</p>
+<p>انتخاب براساس <code>ID:</code> عناصر صفحه براساس شناسه (<code>id</code>) آنها انتخاب می‌شوند.</p>
+<p>انتخاب براساس کلاس: مجموعه‌ای از عناصر با نام کلاس مشخص انتخاب می‌شوند.</p>
+<p>انتخاب براساس نام تگ: مجموعه‌ای از عناصر با نام تگ یکسان انتخاب می‌شوند.</p>
+<figure class="shot"><img alt="شکل 12" src="../images/p232-03.png" /><figcaption>شکل 12</figcaption></figure>
+<figure class="shot"><img alt="شکل 13" src="../images/p232-04.png" /><figcaption>شکل 13</figcaption></figure>
+<hr />
+<p class="page-mark">صفحه ۲۲۷</p>
+<h3 id="_3">کنجکاوی</h3>
+<p>برای مطالعه درباره سایر متدهای دسترسی به عناصر، عبارت «<code>how</code> <code>to</code> <code>get</code> <code>elements</code> <code>by</code> <code>JavaScript</code>» را در گوگل جست‌وجو کنید و از لیست نتایج سایت <code>w3schools.com</code> را باز کنید.</p>
+<p>در ادامه تمرین‌هایی برای کار روی عناصر مختلف صفحه توسط جاوا‌اسکریپت ارائه می‌گردد.</p>
+<p>مدیریت عناصر صفحه توسط جاوا‌اسکریپت</p>
+<h3 id="_4">کار کارگاهی</h3>
+<p>دسترسی به محتوای عناصر، تغییر محتوا و سبک عناصر: اسکریپتی بنویسید که محتوا و سبک یک دکمه و عنصر متنی را توسط جاوا‌اسکریپت تغییر دهد. این تغییرات باید در هنگام کلیک روی دکمه رخ دهد.</p>
+<p>یک فایل به نام <code>product.html</code> ایجاد کنید و کد زیر را در بخش <code>&lt;body&gt;</code> وارد کنید:</p>
+<p><img alt="تصویر کتاب" src="../images/p233-01.png" /></p>
+<p><img alt="تصویر کتاب" src="../images/p233-03.png" /></p>
+<p><img alt="تصویر کتاب" src="../images/p233-02.png" /></p>
+<p>در خطوط 6 تا 13 اسکریپت فوق یک تابع با نام <code>change</code>() تعریف شده است که دسترسی به عناصر <code>addToCart</code> و <code>para</code> و سپس تغییر محتوا و سبک آنها را انجام می‌دهد. تابع <code>change</code>() هنگام کلیک روی دکمه فراخوانی می‌شود.</p>
+<p>در خطوط 7 و 8 دسترسی به عناصر پاراگراف و دکمه انجام شده است. در خطوط 9 و 10 تغییر محتوای عناصر پاراگراف و دکمه، توسط ویژگی‌های <code>innerHTML</code> و <code>textContent</code> صورت گرفته است. در خطوط 11 و 12 تغییر سبک عناصر توسط ویژگی <code>style</code> انجام شده است. فایل را ذخیره کنید و نتیجه را در مرورگر بررسی کنید.</p>
+<h3 id="_5">بیشتر بدانید</h3>
+<p>دسترسی به عناصر و تغییر ویژگی آنها: اسکریپتی بنویسید که ویژگی <code>src</code> یک تصویر را هنگام قرار گرفتن ماوس روی آن تغییر دهد.</p>
+<hr />
+<p class="page-mark">صفحه ۲۲۸</p>
+<p>در فایل <code>products.html</code> تصویر یک محصول را به قسمت <code>&lt;body&gt;</code> اضافه کنید. سپس اسکریپت زیر را برای تغییر مقدار ویژگی <code>src</code> تصویر استفاده کنید.</p>
+<p><img alt="تصویر کتاب" src="../images/p234-01.png" /></p>
+<p>فایل را ذخیره کنید و نتیجه را در مرورگر بررسی کنید.</p>
+<p>با انتقال اشار‌هگر ماوس روی تصویر، رویداد <code>onmouseover</code> فعال شده و در نتیجه تابع <code>changeImage</code>() برای تغییر تصویر فراخوانی می‌شود. با کنار رفتن ماوس از روی تصویر، رویداد <code>onmouseleave</code> فعال شده و بنابراین تابع <code>resetImage</code>() فراخوانی می‌شود. این تابع تصویر اولیه را برمی‌گرداند.</p>
+<p><img alt="تصویر کتاب" src="../images/p234-02.png" /></p>
+<p><img alt="تصویر کتاب" src="../images/p234-03.png" /></p>
+<p>در هر دو تابع فوق از متد <code>setAttribute</code>() برای تغییر تصویر استفاده شده است.</p>
+<p><img alt="تصویر کتاب" src="../images/p234-04.png" /></p>
+<p>اضافه و حذف کردن عناصر توسط جاوا‌اسکریپت:</p>
+<p>اسکریپتی بنویسید که با کلیک روی یک دکمه با عنوان مشاوره، پانلی را برای راهنمایی کاربر به صفحه اضافه کند و بعد از چند ثانیه آن را ببندید.</p>
+<p>یک فایل جدید با نام <code>open-panel.html</code> ایجاد کنید و اسکریپت را طبق شکل روبه‌رو درون آن بنویسید.</p>
+<hr />
+<p class="page-mark">صفحه ۲۲۹</p>
+<p>استایل عناصر را به بخش <code>&lt;head&gt;</code> اضافه کنید. سپس فایل را ذخیره کنید و نتیجه را در مرورگر مشاهده کنید.</p>
+<p>با کلیک روی دکمه «مشاوره با کارشناس فروش» تابع <code>openPanel</code>() فراخوانی می‌شود. این تابع در خط 3 تا 12 نوشته شده است.</p>
+<p>در خط 4 یک عنصر <code>div</code> جدید توسط متد <code>createElement</code> ایجاد می‌شود.</p>
+<p>در خط 5 محتوای عنصر توسط ویژگی <code>InnerHTML</code> تعیین می‌گردد.</p>
+<p>عنصر جدید نیازمند تعیین استایل است. این استایل توسط کلاس <code>consultpanel</code> مشخص می‌شود.</p>
+<p>در خط 6 نام کلاس عنصر جدید تعیین می‌شود.</p>
+<p>در خط 7 عنصر جدید توسط متد <code>appendChild</code> به صفحه اضافه می‌گردد.</p>
+<p>پانل مشاوره (عنصر <code>div</code>) به‌صورت پیش‌فرض مخفی است. در خط 8 وضعیت نمایش پانل به <code>block</code> تغییر می‌کند.</p>
+<p>در خط 9 متد <code>setTimeout</code> برای تعیین زمان حذف پانل مشاوره استفاده می‌شود.</p>
+<p>در خط 9 پانل مشاوره بعد از 5 ثانیه توسط متد <code>remove</code> حذف می‌شود.</p>
+<p>دسترسی به اطلاعات فرم و اعتبارسنجی داده‌های کاربر: یک اسکریپت ساده برای اعتبارسنجی داده‌های ورودی کاربر بنویسید. در این اعتبارسنجی پر بودن فیلدهای متنی را بررسی کنید، به‌طور‌یکه اگر یک فیلد متنی خالی باشد، پیغام هشداری را نمایش می‌دهد.</p>
+<p>یک فایل به‌نام <code>sign-in.html</code> ایجاد کنید و کد شکل زیر را درون آن وارد کنید:</p>
+<p><img alt="تصویر کتاب" src="../images/p235-01.png" /></p>
+<p><img alt="تصویر کتاب" src="../images/p235-02.png" /></p>
+<p>این فرم حاوی سه فیلد برای دریافت نام کاربری، کلمه عبور و ایمیل است.</p>
+<hr />
+<p class="page-mark">صفحه ۲۳۰</p>
+<p>برای اعتبارسنجی فرم از اسکریپت شکل زیر استفاده کنید. این اسکریپت حاوی تابع <code>validateForm</code>() است که مقدار ورودی فیلدهای متنی را بررسی می‌کند. این تابع در رویداد <code>onsubmit</code> فرم صفحه قبل فراخوانی می‌شود.</p>
+<p><img alt="تصویر کتاب" src="../images/p236-01.png" /></p>
+<p><img alt="تصویر کتاب" src="../images/p236-02.png" /></p>
+<p>تابع <code>validateForm</code>() نام کاربری و کلمه عبور را در خط 2 و 3 دریافت می‌کند و مقدار آنها را درون دو متغیر <code>username</code> و <code>password</code> قرار می‌دهد. در خط 4 تا 7 خالی بودن <code>username</code> بررسی می‌شود، در صورت خالی بودن این متغیر، پیغام هشدار ظاهر می‌شود و دستور <code>return</code> <code>false</code> از ارسال محتوای فرم به سرور جلوگیری می‌کند. به‌طور مشابه در خط 8 تا 11 خالی بودن متغیر <code>password</code> بررسی می‌گردد. در صورت‌یکه شرط <code>if</code>های خط 4 و 8 برقرار نباشد، دستور خط 12 اجرا می‌شود و اطلاعات فرم به سرور ارسال می‌شود.</p>
+<p>در ادامه طول نام کاربری و کلمه عبور را بررسی کرده؛ به‌طوری‌که اگر طول هر یک از این دو فیلد کمتر از 6 کاراکتر باشد، پیغام هشدار نمایش داده شود. برای این‌کار شرط زیر را بعد از خط 11 بنویسید.</p>
+<p><img alt="تصویر کتاب" src="../images/p236-03.png" /></p>
+<p><img alt="تصویر کتاب" src="../images/p236-05.png" /></p>
+<p><img alt="تصویر کتاب" src="../images/p236-04.png" /></p>
+<h3 id="_6">نکته</h3>
+<p><code>DOM</code> پایه تمام وب‌سایت‌های تعاملی است؛ تسلط بر آن یعنی قدم گذاشتن به دنیای حرفه‌ای طراحی وب.</p>
+<hr /></article><article class="lesson" lang="en" dir="ltr" data-lang-block="en" hidden><p class="page-mark">Page 225</p>
+<h3 id="try-this">Try this</h3>
+<p>Research why using the <code>prompt</code>() and <code>confirm</code>() functions for input operations can disrupt the user experience.</p>
+<p>Classes and objects: In programming languages, a class means a pattern for creating objects. A class contains a set of properties and methods. An object that is defined from a class will have the properties and methods defined in that class.</p>
+<h3 id="learn-more">Learn more</h3>
+<p>In the example below, a class titled <code>Person</code> has been created that contains the properties <code>name</code> and <code>age</code>:</p>
+<p><img alt="Book image" src="../images/p231-01.png" /></p>
+<p><img alt="Book image" src="../images/p231-02.png" /></p>
+<p>The <code>constructor</code> method is used to define and initialize the properties of an object. When a new object is created from a class, the <code>constructor</code> method is called automatically and assigns the initial values to that object’s properties. In the example above, the <code>constructor</code> method accepts two parameters <code>name</code> and <code>age</code> and assigns them to the corresponding properties in the object.</p>
+<p>The <code>person</code> class has a method named <code>greet</code> that displays a message in the browser console.</p>
+<p>The variable <code>person1</code> is an object of the <code>person</code> class type whose property values are <code>amin</code> and 47. This example shows that to create an object from a class you must use the keyword <code>new</code>. Given that the <code>person</code> class has a method named <code>greet</code>, the object <code>person1</code> can also use this method. The <code>greet</code> method will display the phrase <code>"My</code> <code>name</code> <code>is</code> <code>amin</code> <code>and</code> <code>I</code> <code>am</code> 47 <code>years</code> <code>old"</code> in the console.</p>
+<p>Creating a class and an object: Create a new file named <code>object.html</code> and inside it create a new class named <code>Car</code> with the properties</p>
+<div class="code-wrap" dir="ltr"><pre><code>auto_maker، model وyear ایجاد کنید.
+</code></pre></div>
+<p>Write a method named <code>print_Details</code> to print the car’s properties. The print format should be as follows:</p>
+<div class="code-wrap" dir="ltr"><pre><code>Auto maker: Toyota , Model: Camry , Year: 2020
+</code></pre></div>
+<hr />
+<p class="page-mark">Page 226</p>
+<p>Create an object with the values <code>Toyota</code>, <code>Camry</code>, 2020 and use the <code>print_details</code> method for the new object.</p>
+<p><img alt="Book image" src="../images/p232-01.png" /></p>
+<p><img alt="Book image" src="../images/p232-02.png" /></p>
+<p>Accessing <code>DOM</code> elements: To perform various operations on page elements, JavaScript needs access to those elements. For this reason, JavaScript has methods for accessing elements. For example, to access an element with the identifier <code>demo</code>, the <code>getElementById</code> method is used as follows:</p>
+<p>In this script, the new value of the <code>para</code> element is specified by the <code>textContent</code> property.</p>
+<p>There are various methods for selecting and accessing each of the page elements, which are referred to in this section.</p>
+<p>Selection based on <code>ID:</code> Page elements are selected based on their identifier (<code>id</code>).</p>
+<p>Selection based on class: A set of elements with a specified class name is selected.</p>
+<p>Selection based on tag name: A set of elements with the same tag name is selected.</p>
+<figure class="shot"><img alt="Figure 12" src="../images/p232-03.png" /><figcaption>Figure 12</figcaption></figure>
+<figure class="shot"><img alt="Figure 13" src="../images/p232-04.png" /><figcaption>Figure 13</figcaption></figure>
+<hr />
+<p class="page-mark">Page 227</p>
+<h3 id="try-this_1">Try this</h3>
+<p>To study other methods for accessing elements, search for the phrase «<code>how</code> <code>to</code> <code>get</code> <code>elements</code> <code>by</code> <code>JavaScript</code>» in Google and from the results list open the site <code>w3schools.com</code>.</p>
+<p>In the following, exercises are presented for working on various page elements with JavaScript.</p>
+<p>Managing page elements with JavaScript</p>
+<h3 id="workshop">Workshop</h3>
+<p>Accessing element content, changing content and element style: Write a script that changes the content and style of a button and a text element with JavaScript. These changes should occur when the button is clicked.</p>
+<p>Create a file named <code>product.html</code> and enter the code below in the <code>&lt;body&gt;</code> section:</p>
+<p><img alt="Book image" src="../images/p233-01.png" /></p>
+<p><img alt="Book image" src="../images/p233-03.png" /></p>
+<p><img alt="Book image" src="../images/p233-02.png" /></p>
+<p>In lines 6 through 13 of the script above, a function named <code>change</code>() is defined that accesses the elements <code>addToCart</code> and <code>para</code> and then changes their content and style. The function <code>change</code>() is called when the button is clicked.</p>
+<p>In lines 7 and 8, access to the paragraph and button elements is performed. In lines 9 and 10, the content of the paragraph and button elements is changed using the <code>innerHTML</code> and <code>textContent</code> properties. In lines 11 and 12, the style of the elements is changed using the <code>style</code> property. Save the file and check the result in the browser.</p>
+<h3 id="learn-more_1">Learn more</h3>
+<p>Accessing elements and changing their attributes: Write a script that changes the <code>src</code> attribute of an image when the mouse is placed over it.</p>
+<hr />
+<p class="page-mark">Page 228</p>
+<p>In the file <code>products.html</code>, add a product image to the <code>&lt;body&gt;</code> section. Then use the script below to change the value of the image’s <code>src</code> attribute.</p>
+<p><img alt="Book image" src="../images/p234-01.png" /></p>
+<p>Save the file and check the result in the browser.</p>
+<p>When the mouse pointer is moved onto the image, the <code>onmouseover</code> event is activated and as a result the function <code>changeImage</code>() is called to change the image. When the mouse moves away from the image, the <code>onmouseleave</code> event is activated and therefore the function <code>resetImage</code>() is called. This function restores the original image.</p>
+<p><img alt="Book image" src="../images/p234-02.png" /></p>
+<p><img alt="Book image" src="../images/p234-03.png" /></p>
+<p>In both functions above, the <code>setAttribute</code>() method is used to change the image.</p>
+<p><img alt="Book image" src="../images/p234-04.png" /></p>
+<p>Adding and removing elements with JavaScript:</p>
+<p>Write a script that, when a button titled Consultation is clicked, adds a panel to the page to guide the user and closes it after a few seconds.</p>
+<p>Create a new file named <code>open-panel.html</code> and write the script inside it according to the figure opposite.</p>
+<hr />
+<p class="page-mark">Page 229</p>
+<p>Add the element styles to the <code>&lt;head&gt;</code> section. Then save the file and observe the result in the browser.</p>
+<p>When the button “Consultation with a sales expert” is clicked, the function <code>openPanel</code>() is called. This function is written in lines 3 through 12.</p>
+<p>In line 4, a new <code>div</code> element is created by the <code>createElement</code> method.</p>
+<p>In line 5, the element’s content is set by the <code>InnerHTML</code> property.</p>
+<p>The new element needs a style to be set. This style is specified by the class <code>consultpanel</code>.</p>
+<p>In line 6, the class name of the new element is set.</p>
+<p>In line 7, the new element is added to the page by the <code>appendChild</code> method.</p>
+<p>The consultation panel (the <code>div</code> element) is hidden by default. In line 8, the panel’s display status is changed to <code>block</code>.</p>
+<p>In line 9, the <code>setTimeout</code> method is used to set the time for removing the consultation panel.</p>
+<p>In line 9, the consultation panel is removed after 5 seconds by the <code>remove</code> method.</p>
+<p>Accessing form information and validating user data: Write a simple script to validate user input data. In this validation, check that the text fields are filled so that if a text field is empty, a warning message is displayed.</p>
+<p>Create a file named <code>sign-in.html</code> and enter the code from the figure below into it:</p>
+<p><img alt="Book image" src="../images/p235-01.png" /></p>
+<p><img alt="Book image" src="../images/p235-02.png" /></p>
+<p>This form contains three fields for receiving a username, a password, and an email.</p>
+<hr />
+<p class="page-mark">Page 230</p>
+<p>To validate the form, use the script from the figure below. This script contains the function <code>validateForm</code>(), which checks the input values of the text fields. This function is called in the <code>onsubmit</code> event of the form on the previous page.</p>
+<p><img alt="Book image" src="../images/p236-01.png" /></p>
+<p><img alt="Book image" src="../images/p236-02.png" /></p>
+<p>The function <code>validateForm</code>() receives the username and password in lines 2 and 3 and places their values in the two variables <code>username</code> and <code>password</code>. In lines 4 through 7, whether <code>username</code> is empty is checked; if this variable is empty, a warning message appears and the statement <code>return</code> <code>false</code> prevents the form content from being sent to the server. Similarly, in lines 8 through 11, whether the variable <code>password</code> is empty is checked. If the conditions of the <code>if</code> statements in lines 4 and 8 are not true, the statement in line 12 is executed and the form information is sent to the server.</p>
+<p>Next, check the length of the username and password so that if the length of either of these two fields is less than 6 characters, a warning message is displayed. To do this, write the condition below after line 11.</p>
+<p><img alt="Book image" src="../images/p236-03.png" /></p>
+<p><img alt="Book image" src="../images/p236-05.png" /></p>
+<p><img alt="Book image" src="../images/p236-04.png" /></p>
+<h3 id="note">Note</h3>
+<p><code>DOM</code> is the foundation of all interactive websites; mastering it means taking a step into the professional world of web design.</p></article>
+      <aside class="extra">
+        <h2 data-fa="تمرین این بخش" data-en="Exercises for this section">تمرین این بخش</h2>
+        <p class="extra-note" data-fa="این تمرین‌ها و پیوندها اضافه بر متن کتاب‌اند." data-en="These exercises and links are in addition to the book.">این تمرین‌ها و پیوندها اضافه بر متن کتاب‌اند.</p>
+        <ol><li data-fa="دکمه‌ای بساز که متن یک پاراگراف را عوض کند. کد باید بعد از ساخته شدن عنصر در صفحه اجرا شود." data-en="Build a button that changes a paragraph&#x27;s text. The code must run only after the element exists on the page.">دکمه‌ای بساز که متن یک پاراگراف را عوض کند. کد باید بعد از ساخته شدن عنصر در صفحه اجرا شود.</li><li data-fa="فرم دو فیلدی بساز که اگر یکی خالی بود، ارسال انجام نشود و پیام خطا در خود صفحه، زیر همان فیلد، دیده شود." data-en="Build a two-field form that does not submit when one field is empty, and shows the error on the page under that field.">فرم دو فیلدی بساز که اگر یکی خالی بود، ارسال انجام نشود و پیام خطا در خود صفحه، زیر همان فیلد، دیده شود.</li></ol>
+        <h2 data-fa="پیوند مفید" data-en="Useful link">پیوند مفید</h2><ul><li><a href="https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Client-side_web_APIs/Manipulating_documents" data-fa="تغییر سند" data-en="Manipulating documents">تغییر سند</a></li></ul>
+      </aside>
+    <nav class="pager"><a rel="prev" class="prev" href="p3-js-func.html"><span class="pager-word" data-fa="قبلی" data-en="Previous">قبلی</span><span class="pager-name" data-fa="تابع‌ها" data-en="Functions">تابع‌ها</span></a><a rel="next" class="next" href="p3-js-assess.html"><span class="pager-word" data-fa="بعدی" data-en="Next">بعدی</span><span class="pager-name" data-fa="ارزشیابی جاوااسکریپت" data-en="JavaScript assessment">ارزشیابی جاوااسکریپت</span></a></nav>
+    </div>
+  </div>
+  <script src="../assets/search-index.js?v=4"></script>
+  <script src="../assets/app.js?v=4"></script>
+</body>
+</html>
