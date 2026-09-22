@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>طراح سایت</title>
+  <link rel="icon" href="assets/favicon.svg">
+  <link rel="stylesheet" href="assets/style.css">
+</head>
+<body data-root="">
+  <header class="top">
+    <a class="brand" href="index.html">
+      <span data-fa="طراح سایت" data-en="Site Design">طراح سایت</span>
+      <small data-fa="پایه یازدهم" data-en="Grade 11">پایه یازدهم</small>
+    </a>
+    <div class="search-wrap">
+      <input id="q" type="search" autocomplete="off"
+        data-fa-placeholder="جستجو در درس‌ها" data-en-placeholder="Search lessons"
+        placeholder="جستجو در درس‌ها">
+      <div id="results" class="results" hidden></div>
+    </div>
+    <div class="lang" role="group" aria-label="language">
+      <button type="button" data-set-lang="fa" aria-pressed="true">فا</button>
+      <button type="button" data-set-lang="en" aria-pressed="false">EN</button>
+    </div>
+  </header>
+  <div class="layout">
+    <nav class="side" aria-label="lessons"><p class="mod" data-fa="شروع کتاب" data-en="Opening">شروع کتاب</p><a class="" href="book/00-front-matter.html" data-fa="شناسنامه و مقدمه" data-en="Cover and license">شناسنامه و مقدمه</a><a class="" href="book/00-toc.html" data-fa="فهرست" data-en="Contents">فهرست</a><p class="mod" data-fa="پودمان ۱: برنامه‌نویسی پایتون" data-en="Module 1: Python programming">پودمان ۱: برنامه‌نویسی پایتون</p><a class="" href="book/01-poodman-1-python/00-intro.html" data-fa="معرفی پودمان" data-en="Module introduction">معرفی پودمان</a><a class="" href="book/01-poodman-1-python/01-data-modeling.html" data-fa="مدل‌سازی داده" data-en="Data modeling">مدل‌سازی داده</a><a class="" href="book/01-poodman-1-python/02-functions-and-modules.html" data-fa="توابع و ماژول‌ها" data-en="Functions and modules">توابع و ماژول‌ها</a><p class="mod" data-fa="پودمان ۲: صفحات وب ایستا" data-en="Module 2: Static web pages">پودمان ۲: صفحات وب ایستا</p><a class="" href="book/02-poodman-2-static-web/00-intro.html" data-fa="معرفی پودمان" data-en="Module introduction">معرفی پودمان</a><a class="" href="book/02-poodman-2-static-web/01-html.html" data-fa="ساختار صفحات با HTML" data-en="Page structure with HTML">ساختار صفحات با HTML</a><a class="" href="book/02-poodman-2-static-web/02-css.html" data-fa="ظاهر صفحات با CSS" data-en="Page appearance with CSS">ظاهر صفحات با CSS</a><p class="mod" data-fa="پودمان ۳: صفحات وب تعاملی" data-en="Module 3: Interactive web pages">پودمان ۳: صفحات وب تعاملی</p><a class="" href="book/03-poodman-3-interactive-web/00-intro.html" data-fa="معرفی پودمان" data-en="Module introduction">معرفی پودمان</a><a class="" href="book/03-poodman-3-interactive-web/01-bootstrap.html" data-fa="صفحات تعاملی با بوت‌استرپ" data-en="Interactive pages with Bootstrap">صفحات تعاملی با بوت‌استرپ</a><a class="" href="book/03-poodman-3-interactive-web/02-javascript.html" data-fa="صفحات تعاملی با جاوااسکریپت" data-en="Interactive pages with JavaScript">صفحات تعاملی با جاوااسکریپت</a><p class="mod" data-fa="پودمان ۴: توسعه وب پایتون" data-en="Module 4: Python for the web">پودمان ۴: توسعه وب پایتون</p><a class="" href="book/04-poodman-4-python-oop/00-intro.html" data-fa="معرفی پودمان" data-en="Module introduction">معرفی پودمان</a><a class="" href="book/04-poodman-4-python-oop/01-object-oriented.html" data-fa="تولید برنامه شیءگرا" data-en="Object-oriented programs">تولید برنامه شیءگرا</a><a class="" href="book/04-poodman-4-python-oop/02-object-oriented-development.html" data-fa="توسعه برنامه شیءگرا" data-en="Extending object-oriented programs">توسعه برنامه شیءگرا</a><p class="mod" data-fa="پودمان ۵: برنامه‌نویسی جنگو" data-en="Module 5: Django">پودمان ۵: برنامه‌نویسی جنگو</p><a class="" href="book/05-poodman-5-django/00-intro.html" data-fa="معرفی پودمان" data-en="Module introduction">معرفی پودمان</a><a class="" href="book/05-poodman-5-django/01-create-web-app.html" data-fa="ایجاد وب‌اپلیکیشن" data-en="Creating a web app">ایجاد وب‌اپلیکیشن</a><a class="" href="book/05-poodman-5-django/02-develop-web-app.html" data-fa="توسعه وب‌اپلیکیشن" data-en="Developing a web app">توسعه وب‌اپلیکیشن</a><p class="mod" data-fa="پایان کتاب" data-en="Back of the book">پایان کتاب</p><a class="" href="book/06-references.html" data-fa="منابع" data-en="References">منابع</a></nav>
+    <div class="main">
+      
+      <section class="hero">
+        <div data-lang-block="fa">
+      <p class="kicker">کتاب درسی هنرستان</p>
+      <h1>طراح سایت</h1>
+      <p class="lede">پایه یازدهم، رشته شبکه و نرم‌افزار رایانه. این پوشه را در رایانه کلاس کپی کنید و همین صفحه را باز کنید. اینترنت لازم نیست.</p>
+      <div class="steps">
+        <div><strong>۱. کپی</strong>کل پوشه سایت را به رایانه ببرید.</div>
+        <div><strong>۲. باز کردن</strong>فایل index.html را با دوبار کلیک باز کنید.</div>
+        <div><strong>۳. زبان</strong>از بالای صفحه فارسی یا انگلیسی را انتخاب کنید. متن درس همان کتاب فارسی است.</div>
+      </div>
+    </div>
+        <div data-lang-block="en" hidden>
+      <p class="kicker">Vocational textbook</p>
+      <h1>Site Design</h1>
+      <p class="lede">Grade 11, computer networking and software. Copy this folder onto a lab computer and open this page. No internet is required.</p>
+      <div class="steps">
+        <div><strong>1. Copy</strong>Take the whole site folder to the computer.</div>
+        <div><strong>2. Open</strong>Double-click index.html.</div>
+        <div><strong>3. Language</strong>Choose Persian or English at the top. Lesson text stays the official Persian book.</div>
+      </div>
+    </div>
+        <div class="grid"><a class="card" href="book/01-poodman-1-python/00-intro.html">
+              <span class="num">1</span>
+              <h2 data-fa="پودمان ۱: برنامه‌نویسی پایتون" data-en="Module 1: Python programming">پودمان ۱: برنامه‌نویسی پایتون</h2>
+              <p data-fa="مدل‌سازی داده، توابع و ماژول‌ها." data-en="Data modeling, functions, and modules.">مدل‌سازی داده، توابع و ماژول‌ها.</p>
+            </a><a class="card" href="book/02-poodman-2-static-web/00-intro.html">
+              <span class="num">2</span>
+              <h2 data-fa="پودمان ۲: صفحات وب ایستا" data-en="Module 2: Static web pages">پودمان ۲: صفحات وب ایستا</h2>
+              <p data-fa="ساختار صفحه با HTML و ظاهر با CSS." data-en="Page structure with HTML and appearance with CSS.">ساختار صفحه با HTML و ظاهر با CSS.</p>
+            </a><a class="card" href="book/03-poodman-3-interactive-web/00-intro.html">
+              <span class="num">3</span>
+              <h2 data-fa="پودمان ۳: صفحات وب تعاملی" data-en="Module 3: Interactive web pages">پودمان ۳: صفحات وب تعاملی</h2>
+              <p data-fa="بوت‌استرپ و جاوااسکریپت." data-en="Bootstrap and JavaScript.">بوت‌استرپ و جاوااسکریپت.</p>
+            </a><a class="card" href="book/04-poodman-4-python-oop/00-intro.html">
+              <span class="num">4</span>
+              <h2 data-fa="پودمان ۴: توسعه وب پایتون" data-en="Module 4: Python for the web">پودمان ۴: توسعه وب پایتون</h2>
+              <p data-fa="تولید و توسعه برنامه شی‌ءگرا." data-en="Building and extending object-oriented programs.">تولید و توسعه برنامه شی‌ءگرا.</p>
+            </a><a class="card" href="book/05-poodman-5-django/00-intro.html">
+              <span class="num">5</span>
+              <h2 data-fa="پودمان ۵: برنامه‌نویسی جنگو" data-en="Module 5: Django">پودمان ۵: برنامه‌نویسی جنگو</h2>
+              <p data-fa="ایجاد و توسعه وب‌اپلیکیشن." data-en="Creating and developing a web application.">ایجاد و توسعه وب‌اپلیکیشن.</p>
+            </a></div>
+      </section>
+    
+    </div>
+  </div>
+  <script src="assets/search-index.js"></script>
+  <script src="assets/app.js"></script>
+</body>
+</html>
