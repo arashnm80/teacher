@@ -6,19 +6,11 @@ Performance standard: The student must be able to design a responsive, standard 
 
 Score
 
-Conditions for performing the work (tools, materials, equipment,
-
-Tools
-
-Results
-
-Row
+Conditions for performing the work (tools, materials, equipment, Tools Results Row
 
 ### Steps
 
-Standard (indicators / judgment / scoring)
-
-Earned
+Standard (indicators / judgment / scoring) Earned
 
 time, place, and so on)
 
@@ -50,7 +42,7 @@ Observation
 
 2
 
-`Bootstrap` Computer, browser, `vs` `code`, 25 minutes
+`Bootstrap` Computer, browser, `vs code`, 25 minutes
 
 Correct use of color classes Applying standard `spacing` Using `Flex` practically to align elements Customizing one color class 2 Performing the steps incompletely 1 Creating a multi-column structure with `rows` and `cols` Correct use of `row` and `cols` Designing the footer with `Grid` Completing the try-this items Performing the steps in several ways 3
 
@@ -60,13 +52,11 @@ Observation
 
 3
 
-Computer, browser, `vs` `code`, 25 minutes
+Computer, browser, `vs code`, 25 minutes
 
-Creating a multi-column structure with `rows` and `cols`
+Creating a multi-column structure with `rows` and `cols` Page structure
 
-Page structure
-
-Practical Correct use of `row` and `cols` Designing the footer with `Grid` 2 Performing the steps incompletely 1 Defining `Responsive` `Design` Completing the try-this items Using responsive
+Practical Correct use of `row` and `cols` Designing the footer with `Grid` 2 Performing the steps incompletely 1 Defining `Responsive Design` Completing the try-this items Using responsive
 
 Creating a multi-column structure with
 
@@ -76,17 +66,15 @@ classes Changing the number of columns at different sizes Creating a responsive 
 
 Observation
 
-```
-rows و cols
-```
+rows cols
 
-with `img` `fluid` Performing the steps in several ways Practical
+with `img fluid` Performing the steps in several ways Practical
 
 4
 
 Correct use of `row` and
 
-Computer, browser, `vs` `code`, 25 minutes
+Computer, browser, `vs code`, 25 minutes
 
 Test Creating an interactive menu Adding links and submenus 2
 
@@ -104,12 +92,9 @@ Observation Observing appropriate spacing and alignment Performing the steps wit
 
 5
 
-Computer, browser, `vs` `code`, 25 minutes
-
-of the store
+Computer, browser, `vs code`, 25 minutes of the store
 
 Practical Designing a toolbar including: logo search sign-in/sign-up shopping cart Designing product cards Designing the product detail page 2 Designing a toolbar including: logo search 1
-
 
 ---
 
@@ -127,11 +112,9 @@ Observation
 
 6
 
-```
-(UI Components) و
-```
+(UI Components)
 
-Computer, browser, `vs` `code`, 30 minutes
+Computer, browser, `vs code`, 30 minutes
 
 Designing a responsive `Navbar` Building a valid sign-up form Practical implementation
 
@@ -149,9 +132,7 @@ hygiene, environmental considerations, and attitude:
 
 Not confirming any of the non-technical competencies 1 Yes
 
-Work assessment (competence in performing the work)
-
-No
+Work assessment (competence in performing the work) No
 
 ### Explanation:
 

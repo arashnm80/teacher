@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title data-fa="متغیر و نوع داده" data-en="Variables and data types">متغیر و نوع داده</title>
   <link rel="icon" href="../assets/favicon.svg">
-  <link rel="stylesheet" href="../assets/style.css?v=4">
+  <link rel="stylesheet" href="../assets/style.css?v=6">
 </head>
 <body data-root="../">
   <header class="top">
@@ -39,27 +39,26 @@
 <p>ثابت‌ها (<code>constants</code>): ثابت‌ها (<code>const</code>) دارای مقدار ثابتی در طول اجرای برنامه هستند. ثابت‌ها یک‌بار تعریف و مقداردهی می‌شوند و بعد از آن امکان مقداردهی مجدد ندارند.</p>
 <h3 id="_3">مثال</h3>
 <p>در مثال زیر، ثابت <code>PI</code> با مقدار 3.141592 تعریف شده است. تغییر مقدار <code>PI</code> در خط دوم و سوم باعث رخداد خطا می‌گردد.</p>
-<div class="code-wrap" dir="ltr"><pre><code>;const PI = 3.141592
+<div class="code-wrap" dir="ltr"><pre><code>const PI = 3.141592;
 </code></pre></div>
 <p>;<code>PI</code> = 3.14</p>
-<div class="code-wrap" dir="ltr"><pre><code>;PI = PI + 10
+<div class="code-wrap" dir="ltr"><pre><code>PI = PI + 10;
 </code></pre></div>
 <p>اصول نام‌گذاری متغیرها نام متغیر می‌تواند حاوی حروف الفبای انگلیسی، اعداد، علامت $ و زیرخط (_) باشد، اما در ابتدای نام متغیر نباید از اعداد استفاده شود.</p>
 <p>جاوا‌اسکریپت نسبت به کوچکی و بزرگی حروف حساس است، بنابراین اسامی <code>price</code> و <code>Price</code> و <code>PRICE</code> سه متغیر متفاوت هستند.</p>
 <p>کلمات رزرو شدۀ جاوا‌اسکریپت (که معنای خاصی دارند)، نباید ب‌هعنوان نام متغیر استفاده شوند، مانند</p>
-<div class="code-wrap" dir="ltr"><pre><code>let و var، if، for و...
-</code></pre></div>
+<p><bdi dir="ltr">let</bdi> و <bdi dir="ltr">var</bdi>، <bdi dir="ltr">if</bdi>، <bdi dir="ltr">for</bdi> و...</p>
 <p>جاوا‌اسکریپت امکان تعریف متغیرها را در یک خط نیز فراهم می‌کند، اما در پایان هر تعریف متغیر، باید از علامت کاما برای جداسازی استفاده شود.</p>
-<div class="code-wrap" dir="ltr"><pre><code>;&quot;let firstName = &quot;Sara&quot;, lastName = &quot;Jones&quot;, studentId = &quot;1234567
+<div class="code-wrap" dir="ltr"><pre><code>;&quot;let firstName = &quot;Sara&quot;, lastName = &quot;Jones&quot;, studentId = &quot;1234567;
 </code></pre></div>
 <p>مقداردهی به متغیرها توسط عملگر انتساب (=) انجام می‌شود. در صورتی‌که مقداردهی متغیر انجام نشود، مقدار آن تعریف نشده یا )<code>Undefined</code>) خواهد بود.</p>
-<h3 id="_4">فعالیت</h3>
+<aside class="callout activity"><h3 id="_4">فعالیت</h3>
 <p>مشخص کنید که تعریف متغیرهای زیر به‌درستی صورت گرفته است یا خیر.</p>
 <p>..……...… ; <code>myVar</code> = 2 ..………… ;<code>2x</code> = 10</p>
 <div class="code-wrap" dir="ltr"><pre><code>..………… ;&quot;user-name =&quot;Safa
 </code></pre></div>
 <p>..………… ;<code>var</code> = 20</p>
-<hr />
+</aside><hr />
 <p class="page-mark">صفحه ۱۹۹</p>
 <p>نمایش مقدار متغیرها و رشته‌ها برای نمایش مقدار یک متغیر در کنسول مرورگر از دستور <code>console</code> به شکل ٥ استفاده می‌شود:</p>
 <p><img alt="تصویر کتاب" src="../images/p205-02.png" /></p>
@@ -76,7 +75,7 @@
 <p><img alt="تصویر کتاب" src="../images/p205-06.png" /></p>
 <p><img alt="تصویر کتاب" src="../images/p205-07.png" /></p>
 <p>یک متغیر به‌صورت زیر ایجاد کنید و سپس مقدار آن را در کنسول نمایش دهید.</p>
-<div class="code-wrap" dir="ltr"><pre><code>;let test
+<div class="code-wrap" dir="ltr"><pre><code>let test;
 </code></pre></div>
 <p>با توجه به اینکه متغیر <code>test</code> مقدار دهی نشده است، درصورتی که از دستور <code>console.log</code>(<code>test</code>) استفاده شود، پیغام ……………… ظاهر می‌شود.</p>
 <hr />
@@ -87,29 +86,28 @@
 <p>نوع داده</p>
 <p>توضیح</p>
 <h3 id="_6">مثال</h3>
-<p>شامل مقادیر عددی صحیح و اعشاری;<code>let</code> <code>x</code> = 20 , <code>y</code> = 10.75</p>
+<p>شامل مقادیر عددی صحیح و اعشاری;<code>let x</code> = 20 , <code>y</code> = 10.75</p>
 <p>1</p>
-<div class="code-wrap" dir="ltr"><pre><code>عددی (Number)
-</code></pre></div>
+<p>عددی <bdi dir="ltr">(Number)</bdi></p>
 <p>عباراتی که داخل علامت نقل قول تکی</p>
-<div class="code-wrap" dir="ltr"><pre><code>;&quot;let family = &quot;Smith
+<div class="code-wrap" dir="ltr"><pre><code>;&quot;let family = &quot;Smith;
 </code></pre></div>
 <p>2</p>
 <p>رشته‌ای (<code>String</code>)</p>
 <p>یا دو تایی قرار می‌گیرند، رشته تلقی</p>
-<div class="code-wrap" dir="ltr"><pre><code>;&quot;let color = &quot;Orange
+<div class="code-wrap" dir="ltr"><pre><code>;&quot;let color = &quot;Orange;
 </code></pre></div>
 <p>می‌شوند.</p>
-<div class="code-wrap" dir="ltr"><pre><code>;let a = true , b = false
+<div class="code-wrap" dir="ltr"><pre><code>let a = true , b = false;
 </code></pre></div>
 <p>3</p>
 <p>منطقی (<code>Boolean</code>)شامل مقادیر <code>true</code> و <code>false</code></p>
-<div class="code-wrap" dir="ltr"><pre><code>;&quot;let c = x&gt;y , d = &quot;amin&quot; &lt; &quot;Amin
-;]let numbers = [10,20,30,40,50
+<div class="code-wrap" dir="ltr"><pre><code>;&quot;let c = x&gt;y , d = &quot;amin&quot; &lt; &quot;Amin;
+;]let numbers = [10,20,30,40,50;
 ,&quot;let names = [&quot;sara&quot;, &quot;mahdi
 </code></pre></div>
 <p>متغیرهایی از نوع آرایه می‌توانند انواع</p>
-<div class="code-wrap" dir="ltr"><pre><code>;]&quot;amir&quot;
+<div class="code-wrap" dir="ltr"><pre><code>;]&quot;amir&quot;;
 </code></pre></div>
 <p>4</p>
 <p>آرایه‌ها (<code>Array</code>)</p>
@@ -117,15 +115,15 @@
 <div class="code-wrap" dir="ltr"><pre><code>,&quot;let data = [100, 5.75, &quot;javascript
 </code></pre></div>
 <p>کنند.</p>
-<div class="code-wrap" dir="ltr"><pre><code>;]true
+<div class="code-wrap" dir="ltr"><pre><code>;]true;
 </code></pre></div>
 <p>اشیای جاوا‌اسکریپت به‌صورت جفت‌های</p>
 <div class="code-wrap" dir="ltr"><pre><code>, &quot;let obj = {username: &quot;Alfred
-شیء (object)
 </code></pre></div>
+<p>شیء <bdi dir="ltr">(object)</bdi></p>
 <p>5</p>
 <p>ویژگی: مقدار درون آکولاد مشخص</p>
-<div class="code-wrap" dir="ltr"><pre><code>;} &quot;password: &quot;admin
+<div class="code-wrap" dir="ltr"><pre><code>;} &quot;password: &quot;admin;
 </code></pre></div>
 <p>می‌شوند.</p>
 <div class="code-wrap" dir="ltr"><pre><code>-2022-03&quot;(const date = new Date
@@ -137,7 +135,7 @@
 <p>کار با انواع داده‌ها</p>
 <h3 id="_7">کار کارگاهی</h3>
 <p>1 یک سند <code>HTML</code> با نام <code>workshop2.html</code> ایجاد کنید و در بخش <code>&lt;body&gt;</code> برچسب <code>&lt;script&gt;</code> را بنویسید. متغیرهای <code>x</code>، <code>Family</code>، <code>d</code> و <code>names</code> را مطابق مثال‌های جدول فوق درون تگ <code>&lt;script&gt;</code> تعریف کنید و سپس مقادیر آنها را مانند دستور زیر در کنسول نمایش دهید:</p>
-<div class="code-wrap" dir="ltr"><pre><code>;)The value of x is: &quot;+ x&quot;(console.log
+<div class="code-wrap" dir="ltr"><pre><code>;)The value of x is: &quot;+ x&quot;(console.log;
 </code></pre></div>
 <hr />
 <p class="page-mark">صفحه ۲۰۱</p>
@@ -145,47 +143,46 @@
 <div class="code-wrap" dir="ltr"><pre><code>…… :x: number Family: ……. d: ……. names ;)(x)x: &quot;+ typeof&quot;(console.log
 </code></pre></div>
 <p>3 رفتار مرورگر را در تفسیر کدهای زیر بررسی کنید و جای خالی را بر اساس نتیجه‌گیری خود تکمیل کنید.</p>
-<div class="code-wrap" dir="ltr"><pre><code>;&quot;let a = 10 + 20 + &quot;Blue
-;let b = &quot;Blue&quot; + 10 + 20
+<div class="code-wrap" dir="ltr"><pre><code>;&quot;let a = 10 + 20 + &quot;Blue;
+let b = &quot;Blue&quot; + 10 + 20;
 </code></pre></div>
 <p>در خط اول، عملوندهای 10 و 20 در ابتدای عبارت محاسباتی قرار گرفته‌اند، پس جاوا‌اسکریپت اعداد</p>
 <p>10 و 20 را نوع داده <code>number</code> تلقی می‌کند، در نتیجه مقدار ........................ درون متغیر <code>a</code> ذخیره می‌شود. در خط دوم به علت قرار گرفتن رشته <code>Blue</code> در ابتدای عبارت محاسباتی، عملوندهای بعدی، از نوع داده .......................... تلقی می‌شوند و بنابراین مقدار .......................... درون متغیر<code>b</code> ذخیره می‌گردد.</p>
 <p>4 نوع داده متغیر می‌تواند در طول برنامه تغییر نماید. در اسکریپت زیر متغیر <code>x</code> ابتدا به‌صورت تعریف‌نشده (<code>Undefined</code>) ایجاد شده است. نوع داده متغیر <code>x</code> در خط 2 با دریافت مقدار 10 به نوع ............................ و در خط 3 با دریافت مقدار <code>sara1980</code> به نوع ....................... تغییر می‌کند.</p>
-<div class="code-wrap" dir="ltr"><pre><code>;1 let x
+<div class="code-wrap" dir="ltr"><pre><code>;1 let x;
 </code></pre></div>
 <p>;2 <code>x</code> = 10</p>
-<div class="code-wrap" dir="ltr"><pre><code>;&quot;3 x = &quot;sara1980
+<div class="code-wrap" dir="ltr"><pre><code>;&quot;3 x = &quot;sara1980;
 </code></pre></div>
 <p>تبدیل نوع داده‌ها جاوا‌اسکریپت امکان تبدیل نوع داده متغیرها را به دو روش امکان‌پذیر می‌سازد: تبدیل ضمنی (<code>Implicit</code>) و صریح (<code>Explicit</code>). وقتی تبدیل نوع داده متغیر به‌صورت خودکار انجام شود، تبدیل ضمنی صورت گرفته است.</p>
 <h3 id="_8">مثال</h3>
 <p>مثال زیر نمونه‌ای از تبدیل نوع ضمنی را نمایش می‌دهد:</p>
 <p><img alt="تصویر کتاب" src="../images/p207-02.png" /></p>
 <p><img alt="تصویر کتاب" src="../images/p207-01.png" /></p>
-<p>در خط اول، متغیر <code>s</code> از نوع عددی تعریف شده است. در خط چهارم نتیجه جمع متغیر <code>w</code> و رشته 100، عبارت 10100 است که درون متغیر <code>s</code> قرار می‌گیرد. در نتیجۀ نوع داده متغیر <code>s</code> به رشته تبدیل می‌شود. به‌کارگیری عملگر <code>typeof</code>() در خط 2 و 6 باعث نمایش نوع داده متغیر <code>s</code> می‌شود.</p>
+<p>در خط اول، متغیر <code>s</code> از نوع عددی تعریف شده است. در خط چهارم نتیجه جمع متغیر <code>w</code> و رشته 100، عبارت 10100 است که درون متغیر <code>s</code> قرار می‌گیرد. در نتیجۀ نوع داده متغیر <code>s</code> به رشته تبدیل می‌شود. به‌کارگیری عملگر <code>typeof()</code> در خط 2 و 6 باعث نمایش نوع داده متغیر <code>s</code> می‌شود.</p>
 <hr />
 <p class="page-mark">صفحه ۲۰۲</p>
-<p>تبدیل صریح نوع داده توسط توابع داخلی جاوا‌اسکریپت انجام می‌پذیرد. توابع مربوط به تبدیل داده شامل <code>parseInt</code>()، <code>parseFloat</code>()، <code>Number</code>()، <code>String</code>() و <code>Boolean</code>() است که نوع داده آرگومان ورودی را به نوع داده صحیح، اعشاری، عددی، رشته‌ای و منطقی تبدیل می‌کنند.</p>
+<p>تبدیل صریح نوع داده توسط توابع داخلی جاوا‌اسکریپت انجام می‌پذیرد. توابع مربوط به تبدیل داده شامل <code>parseInt()</code>، <code>parseFloat()</code>، <code>Number()</code>، <code>String()</code> و <code>Boolean()</code> است که نوع داده آرگومان ورودی را به نوع داده صحیح، اعشاری، عددی، رشته‌ای و منطقی تبدیل می‌کنند.</p>
 <p>کار با توابع تبدیل نوع</p>
 <h3 id="_9">کار کارگاهی</h3>
 <p>متغیرهای زیر را در انتهای اسکریپت فایل <code>workshop2.html</code> ایجاد کنید.</p>
 <p>;<code>x</code> = "15.25" , <code>y</code> = 123 , <code>z</code> = 1</p>
 <div class="code-wrap" dir="ltr"><pre><code>...15... …number… ;(x)1 let num1 = parseInt
 </code></pre></div>
-<p>....………… ...…… (<code>y</code>)2 <code>let</code> <code>num2</code> = <code>parseFloat</code></p>
-<p>....………… ...…… ;(<code>x</code>)3 <code>let</code> <code>num3</code> = <code>Number</code></p>
-<p>....………… ...…… ;(<code>true</code>)4 <code>let</code> <code>num4</code> = <code>Number</code></p>
-<p>....………… ...…… ;(<code>y</code>)5 <code>str</code> = <code>String</code> ...………… ...…… ;(<code>z</code>)6 <code>let</code> <code>bool</code> = <code>Boolean</code></p>
+<p>....………… ...…… (<code>y</code>)2 <code>let num2</code> = <code>parseFloat</code></p>
+<p>....………… ...…… ;(<code>x</code>)3 <code>let num3</code> = <code>Number</code></p>
+<p>....………… ...…… ;(<code>true</code>)4 <code>let num4</code> = <code>Number</code></p>
+<p>....………… ...…… ;(<code>y</code>)5 <code>str</code> = <code>String</code> ...………… ...…… ;(<code>z</code>)6 <code>let bool</code> = <code>Boolean</code></p>
 <p>سپس مقدار و نوع داده متغیرهای ایجاد شده در خطوط 2 تا 7 را توسط تابع()<code>typeof</code> بررسی کنید و نتیجه را مانند مثال در جای خالی بنویسید. برای بررسی مقادیر و نوع متغیرها مانند الگوی زیر عمل کنید:</p>
-<div class="code-wrap" dir="ltr"><pre><code>;)(num1)num1 +&quot;: &quot;+ typeof(console.log
+<div class="code-wrap" dir="ltr"><pre><code>;)(num1)num1 +&quot;: &quot;+ typeof(console.log;
 </code></pre></div>
-<h3 id="_10">نکته</h3>
+<aside class="callout note"><h3 id="_10">نکته</h3>
 <p>علت عدم استفاده از کلمه کلیدی <code>let</code> در متغیرهای <code>x</code>، <code>y</code>، <code>z</code> و <code>str</code> این است که این متغیرها در کارگاه‌های قبلی ایجاد شده‌اند. بنابراین استفاده مجدد از کلمه <code>let</code> باعث ایجاد خطا می‌شود.</p>
-<div class="code-wrap" dir="ltr"><pre><code>عملگرها (Operators)
-</code></pre></div>
+<p>عملگرها <bdi dir="ltr">(Operators)</bdi></p>
 <p><img alt="تصویر کتاب" src="../images/p208-01.png" /></p>
 <p>در زبان‌های برنامه‌نویسی عملگرها برای انجام عملیات روی متغیرها و مقادیر به‌کار می‌روند مقادیری که یک عملگر روی آنها عمل می‌کند، عملوند (<code>Operand</code>) نامیده می‌شوند. در عبارت <code>z</code> = <code>x</code> + <code>y</code> علائم + و = عملگر هستند و حروف <code>x</code>، <code>y</code> و <code>z</code> عملوند محسوب می‌شوند. در این بخش به شرح عملگرهای جاوا‌اسکریپت پرداخته می‌شود.</p>
 <p>شکل ٨</p>
-<hr /></article><article class="lesson" lang="en" dir="ltr" data-lang-block="en" hidden><p class="page-mark">Page 198</p>
+</aside><hr /></article><article class="lesson" lang="en" dir="ltr" data-lang-block="en" hidden><p class="page-mark">Page 198</p>
 <p>Variables can also be defined automatically. Automatic definition of a variable happens when a variable is assigned a value.</p>
 <h3 id="example">Example</h3>
 <p>In the following example, the two variables <code>x</code> and <code>z</code> have been defined automatically:</p>
@@ -195,27 +192,26 @@
 <p>Constants (<code>constants</code>): Constants (<code>const</code>) have a fixed value throughout the program’s run. Constants are defined and assigned a value once, and after that they cannot be assigned a new value.</p>
 <h3 id="example_1">Example</h3>
 <p>In the following example, the constant <code>PI</code> is defined with the value 3.141592. Changing the value of <code>PI</code> on the second and third lines causes an error.</p>
-<div class="code-wrap" dir="ltr"><pre><code>;const PI = 3.141592
+<div class="code-wrap" dir="ltr"><pre><code>const PI = 3.141592;
 </code></pre></div>
 <p>;<code>PI</code> = 3.14</p>
-<div class="code-wrap" dir="ltr"><pre><code>;PI = PI + 10
+<div class="code-wrap" dir="ltr"><pre><code>PI = PI + 10;
 </code></pre></div>
 <p>Rules for naming variables A variable name can contain English letters, digits, the $ sign, and the underscore (_), but digits must not be used at the beginning of the variable name.</p>
 <p>JavaScript is case-sensitive, so the names <code>price</code>, <code>Price</code>, and <code>PRICE</code> are three different variables.</p>
 <p>JavaScript reserved words (which have a special meaning) must not be used as variable names, such as</p>
-<div class="code-wrap" dir="ltr"><pre><code>let و var، if، for و...
-</code></pre></div>
+<p>let var if for ...</p>
 <p>JavaScript also lets you define variables on one line, but at the end of each variable definition you must use a comma to separate them.</p>
-<div class="code-wrap" dir="ltr"><pre><code>;&quot;let firstName = &quot;Sara&quot;, lastName = &quot;Jones&quot;, studentId = &quot;1234567
+<div class="code-wrap" dir="ltr"><pre><code>;&quot;let firstName = &quot;Sara&quot;, lastName = &quot;Jones&quot;, studentId = &quot;1234567;
 </code></pre></div>
 <p>Assigning values to variables is done with the assignment operator (=). If a variable is not assigned a value, its value will be undefined (<code>Undefined</code>).</p>
-<h3 id="activity">Activity</h3>
+<aside class="callout activity"><h3 id="activity">Activity</h3>
 <p>Determine whether the following variable definitions are done correctly or not.</p>
 <p>..……...… ; <code>myVar</code> = 2 ..………… ;<code>2x</code> = 10</p>
 <div class="code-wrap" dir="ltr"><pre><code>..………… ;&quot;user-name =&quot;Safa
 </code></pre></div>
 <p>..………… ;<code>var</code> = 20</p>
-<hr />
+</aside><hr />
 <p class="page-mark">Page 199</p>
 <p>Displaying the values of variables and strings To display the value of a variable in the browser console, the <code>console</code> statement is used as in Figure 5:</p>
 <p><img alt="Book image" src="../images/p205-02.png" /></p>
@@ -232,7 +228,7 @@
 <p><img alt="Book image" src="../images/p205-06.png" /></p>
 <p><img alt="Book image" src="../images/p205-07.png" /></p>
 <p>Create a variable as follows and then display its value in the console.</p>
-<div class="code-wrap" dir="ltr"><pre><code>;let test
+<div class="code-wrap" dir="ltr"><pre><code>let test;
 </code></pre></div>
 <p>Because the variable <code>test</code> has not been assigned a value, if the statement <code>console.log</code>(<code>test</code>) is used, the message ……………… appears.</p>
 <hr />
@@ -243,44 +239,43 @@
 <p>Data type</p>
 <p>Explanation</p>
 <h3 id="example_2">Example</h3>
-<p>Includes integer and decimal numeric values;<code>let</code> <code>x</code> = 20 , <code>y</code> = 10.75</p>
+<p>Includes integer and decimal numeric values;<code>let x</code> = 20 , <code>y</code> = 10.75</p>
 <p>1</p>
-<div class="code-wrap" dir="ltr"><pre><code>عددی (Number)
-</code></pre></div>
+<p>(Number)</p>
 <p>Phrases that are placed inside single</p>
-<div class="code-wrap" dir="ltr"><pre><code>;&quot;let family = &quot;Smith
+<div class="code-wrap" dir="ltr"><pre><code>;&quot;let family = &quot;Smith;
 </code></pre></div>
 <p>2</p>
 <p>String (<code>String</code>)</p>
 <p>or double quotation marks are treated</p>
-<div class="code-wrap" dir="ltr"><pre><code>;&quot;let color = &quot;Orange
+<div class="code-wrap" dir="ltr"><pre><code>;&quot;let color = &quot;Orange;
 </code></pre></div>
 <p>as strings.</p>
-<div class="code-wrap" dir="ltr"><pre><code>;let a = true , b = false
+<div class="code-wrap" dir="ltr"><pre><code>let a = true , b = false;
 </code></pre></div>
 <p>3</p>
 <p>Boolean (<code>Boolean</code>)Includes the values <code>true</code> and <code>false</code></p>
-<div class="code-wrap" dir="ltr"><pre><code>;&quot;let c = x&gt;y , d = &quot;amin&quot; &lt; &quot;Amin
-;]let numbers = [10,20,30,40,50
+<div class="code-wrap" dir="ltr"><pre><code>;&quot;let c = x&gt;y , d = &quot;amin&quot; &lt; &quot;Amin;
+;]let numbers = [10,20,30,40,50;
 ,&quot;let names = [&quot;sara&quot;, &quot;mahdi
 </code></pre></div>
 <p>Variables of array type can hold</p>
-<div class="code-wrap" dir="ltr"><pre><code>;]&quot;amir&quot;
+<div class="code-wrap" dir="ltr"><pre><code>;]&quot;amir&quot;;
 </code></pre></div>
 <p>4</p>
 <p>Arrays (<code>Array</code>)</p>
 <p>different data types inside them.</p>
 <div class="code-wrap" dir="ltr"><pre><code>,&quot;let data = [100, 5.75, &quot;javascript
 </code></pre></div>
-<div class="code-wrap" dir="ltr"><pre><code>;]true
+<div class="code-wrap" dir="ltr"><pre><code>;]true;
 </code></pre></div>
 <p>JavaScript objects are specified as</p>
 <div class="code-wrap" dir="ltr"><pre><code>, &quot;let obj = {username: &quot;Alfred
-Object (object)
 </code></pre></div>
+<p>Object (object)</p>
 <p>5</p>
 <p>property: value pairs inside braces.</p>
-<div class="code-wrap" dir="ltr"><pre><code>;} &quot;password: &quot;admin
+<div class="code-wrap" dir="ltr"><pre><code>;} &quot;password: &quot;admin;
 </code></pre></div>
 <div class="code-wrap" dir="ltr"><pre><code>-2022-03&quot;(const date = new Date
 </code></pre></div>
@@ -291,7 +286,7 @@ Object (object)
 <p>Working with data types</p>
 <h3 id="workshop_1">Workshop</h3>
 <p>1 Create an <code>HTML</code> document named <code>workshop2.html</code> and write the <code>&lt;script&gt;</code> tag in the <code>&lt;body&gt;</code> section. Define the variables <code>x</code>, <code>Family</code>, <code>d</code>, and <code>names</code> inside the <code>&lt;script&gt;</code> tag according to the examples in the table above, and then display their values in the console as in the statement below:</p>
-<div class="code-wrap" dir="ltr"><pre><code>;)The value of x is: &quot;+ x&quot;(console.log
+<div class="code-wrap" dir="ltr"><pre><code>;)The value of x is: &quot;+ x&quot;(console.log;
 </code></pre></div>
 <hr />
 <p class="page-mark">Page 201</p>
@@ -299,47 +294,46 @@ Object (object)
 <div class="code-wrap" dir="ltr"><pre><code>…… :x: number Family: ……. d: ……. names ;)(x)x: &quot;+ typeof&quot;(console.log
 </code></pre></div>
 <p>3 Examine how the browser interprets the following code and complete the blanks based on your conclusion.</p>
-<div class="code-wrap" dir="ltr"><pre><code>;&quot;let a = 10 + 20 + &quot;Blue
-;let b = &quot;Blue&quot; + 10 + 20
+<div class="code-wrap" dir="ltr"><pre><code>;&quot;let a = 10 + 20 + &quot;Blue;
+let b = &quot;Blue&quot; + 10 + 20;
 </code></pre></div>
 <p>In the first line, the operands 10 and 20 are at the beginning of the expression, so JavaScript treats</p>
 <p>10 and 20 as the <code>number</code> data type; as a result, the value ........................ is stored in the variable <code>a</code>. In the second line, because the string <code>Blue</code> is at the beginning of the expression, the following operands are treated as the .......................... data type, and therefore the value .......................... is stored in the variable <code>b</code>.</p>
 <p>4 A variable’s data type can change during the program. In the script below, the variable <code>x</code> is first created as undefined (<code>Undefined</code>). The data type of the variable <code>x</code> changes on line 2, when it receives the value 10, to the ............................ type, and on line 3, when it receives the value <code>sara1980</code>, to the ....................... type.</p>
-<div class="code-wrap" dir="ltr"><pre><code>;1 let x
+<div class="code-wrap" dir="ltr"><pre><code>;1 let x;
 </code></pre></div>
 <p>;2 <code>x</code> = 10</p>
-<div class="code-wrap" dir="ltr"><pre><code>;&quot;3 x = &quot;sara1980
+<div class="code-wrap" dir="ltr"><pre><code>;&quot;3 x = &quot;sara1980;
 </code></pre></div>
 <p>Type conversion JavaScript makes it possible to convert the data type of variables in two ways: implicit (<code>Implicit</code>) and explicit (<code>Explicit</code>). When the conversion of a variable’s data type is done automatically, an implicit conversion has taken place.</p>
 <h3 id="example_3">Example</h3>
 <p>The following example shows a sample of implicit type conversion:</p>
 <p><img alt="Book image" src="../images/p207-02.png" /></p>
 <p><img alt="Book image" src="../images/p207-01.png" /></p>
-<p>On the first line, the variable <code>s</code> is defined as a numeric type. On the fourth line, the result of adding the variable <code>w</code> and the string 100 is the phrase 10100, which is placed in the variable <code>s</code>. As a result, the data type of the variable <code>s</code> is converted to string. Using the <code>typeof</code>() operator on lines 2 and 6 causes the data type of the variable <code>s</code> to be displayed.</p>
+<p>On the first line, the variable <code>s</code> is defined as a numeric type. On the fourth line, the result of adding the variable <code>w</code> and the string 100 is the phrase 10100, which is placed in the variable <code>s</code>. As a result, the data type of the variable <code>s</code> is converted to string. Using the <code>typeof()</code> operator on lines 2 and 6 causes the data type of the variable <code>s</code> to be displayed.</p>
 <hr />
 <p class="page-mark">Page 202</p>
-<p>Explicit type conversion is done by JavaScript’s built-in functions. The functions related to data conversion include <code>parseInt</code>(), <code>parseFloat</code>(), <code>Number</code>(), <code>String</code>(), and <code>Boolean</code>(), which convert the data type of the input argument to integer, floating-point, numeric, string, and Boolean types.</p>
+<p>Explicit type conversion is done by JavaScript’s built-in functions. The functions related to data conversion include <code>parseInt()</code>, <code>parseFloat()</code>, <code>Number()</code>, <code>String()</code>, and <code>Boolean()</code>, which convert the data type of the input argument to integer, floating-point, numeric, string, and Boolean types.</p>
 <p>Working with type-conversion functions</p>
 <h3 id="workshop_2">Workshop</h3>
 <p>Create the following variables at the end of the script in the <code>workshop2.html</code> file.</p>
 <p>;<code>x</code> = "15.25" , <code>y</code> = 123 , <code>z</code> = 1</p>
 <div class="code-wrap" dir="ltr"><pre><code>...15... …number… ;(x)1 let num1 = parseInt
 </code></pre></div>
-<p>....………… ...…… (<code>y</code>)2 <code>let</code> <code>num2</code> = <code>parseFloat</code></p>
-<p>....………… ...…… ;(<code>x</code>)3 <code>let</code> <code>num3</code> = <code>Number</code></p>
-<p>....………… ...…… ;(<code>true</code>)4 <code>let</code> <code>num4</code> = <code>Number</code></p>
-<p>....………… ...…… ;(<code>y</code>)5 <code>str</code> = <code>String</code> ...………… ...…… ;(<code>z</code>)6 <code>let</code> <code>bool</code> = <code>Boolean</code></p>
-<p>Then check the value and data type of the variables created on lines 2 through 7 using the <code>typeof</code>() function and write the result in the blanks as in the example. To check the values and types of the variables, follow a pattern like this:</p>
-<div class="code-wrap" dir="ltr"><pre><code>;)(num1)num1 +&quot;: &quot;+ typeof(console.log
+<p>....………… ...…… (<code>y</code>)2 <code>let num2</code> = <code>parseFloat</code></p>
+<p>....………… ...…… ;(<code>x</code>)3 <code>let num3</code> = <code>Number</code></p>
+<p>....………… ...…… ;(<code>true</code>)4 <code>let num4</code> = <code>Number</code></p>
+<p>....………… ...…… ;(<code>y</code>)5 <code>str</code> = <code>String</code> ...………… ...…… ;(<code>z</code>)6 <code>let bool</code> = <code>Boolean</code></p>
+<p>Then check the value and data type of the variables created on lines 2 through 7 using the <code>typeof()</code> function and write the result in the blanks as in the example. To check the values and types of the variables, follow a pattern like this:</p>
+<div class="code-wrap" dir="ltr"><pre><code>;)(num1)num1 +&quot;: &quot;+ typeof(console.log;
 </code></pre></div>
-<h3 id="note">Note</h3>
+<aside class="callout note"><h3 id="note">Note</h3>
 <p>The reason the keyword <code>let</code> is not used for the variables <code>x</code>, <code>y</code>, <code>z</code>, and <code>str</code> is that these variables were created in previous workshops. Therefore, using the word <code>let</code> again causes an error.</p>
-<div class="code-wrap" dir="ltr"><pre><code>عملگرها (Operators)
-</code></pre></div>
+<p>(Operators)</p>
 <p><img alt="Book image" src="../images/p208-01.png" /></p>
 <p>In programming languages, operators are used to perform operations on variables and values. The values that an operator acts on are called operands (<code>Operand</code>). In the expression <code>z</code> = <code>x</code> + <code>y</code>, the + and = signs are operators and the letters <code>x</code>, <code>y</code>, and <code>z</code> are considered operands. This section describes JavaScript’s operators.</p>
 <p>Figure 8</p>
-<hr /></article>
+</aside><hr /></article>
       <aside class="extra">
         <h2 data-fa="تمرین این بخش" data-en="Exercises for this section">تمرین این بخش</h2>
         <p class="extra-note" data-fa="این تمرین‌ها و پیوندها اضافه بر متن کتاب‌اند." data-en="These exercises and links are in addition to the book.">این تمرین‌ها و پیوندها اضافه بر متن کتاب‌اند.</p>
@@ -349,7 +343,7 @@ Object (object)
     <nav class="pager"><a rel="prev" class="prev" href="p3-js-start.html"><span class="pager-word" data-fa="قبلی" data-en="Previous">قبلی</span><span class="pager-name" data-fa="جاوااسکریپت در صفحه وب" data-en="JavaScript on the page">جاوااسکریپت در صفحه وب</span></a><a rel="next" class="next" href="p3-js-ops.html"><span class="pager-word" data-fa="بعدی" data-en="Next">بعدی</span><span class="pager-name" data-fa="عملگرها" data-en="Operators">عملگرها</span></a></nav>
     </div>
   </div>
-  <script src="../assets/search-index.js?v=4"></script>
-  <script src="../assets/app.js?v=4"></script>
+  <script src="../assets/search-index.js?v=6"></script>
+  <script src="../assets/app.js?v=6"></script>
 </body>
 </html>

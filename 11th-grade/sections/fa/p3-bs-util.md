@@ -8,10 +8,7 @@
 
 مفهوم
 
-```
-m-size
-```
-
+`m-size`
 `p-size` در تمام جهات
 
 ```
@@ -31,7 +28,9 @@ p{e}-size
 ```
 m{b}-size
 p{b}-size
+```
 پایین(bottom)
+```
 m{s}-size
 p{s}-size
 ```
@@ -59,27 +58,21 @@ p{y}-size
 اندازه بر حسب `Sizepx`
 
 `4px`
-
 1
 
 `8px`
-
 2
 
 `16px`
-
 3
 
 `24px`
-
 4
 
 `48px`
-
 5
 
 پارامتر `size` می‌تواند دارای مقدار `auto` نیز باشد. عبارت `auto` به معنای تنظیم خودکار است. استفاده از `mx-auto` باعث تنظیم فاصله چپ و راست عنصر با مقادیر مساوی می‌گردد، به‌طوری‌که عنصر در وسط عنصر والد خود قرار گیرد.
-
 
 ---
 
@@ -97,106 +90,31 @@ p{y}-size
 
 در کد فوق مقدار فاصله عنصر `<div>` از عنصر بالایی برابر `24px` یا (`mt-4`) و مقدار فاصله چپ و راست آن به‌صورت خودکار (`mx-auto`) تنظیم شده است. همچنین فضای اضافی داخل عنصر از همه جهات برابر با `16px` (`p-3`) تعیین شده است.
 
-```
 کلاس‌های border، rounded و shadow
-```
 
 بوت‌استرپ حاوی مجموعه‌ای از کلاس‌ها درباره خط دور، گردی گوشه‌ها و سایر عناصر است. کلاس‌های `border`، برای ایجاد خط دور، تعیین رنگ و ضخامت آن مورد استفاده قرار می‌گیرند. کلاس‌های `rounded` برای گردکردن گوشه‌ها و کلاس‌های `shadow` برای ایجاد سایر عناصر کاربرد دارند. جدول ٤ به معرفی انواع کلاس‌های `border`، `rounded` و `shadow` می‌پردازد.
 
-جدول 4 انواع کلاس‌های `border`، `rounded` و `shadow`
+جدول 4 انواع کلاس‌های `border`، `rounded` و `shadow` سایه و اندازه آن گردی گوشه‌ها رنگ خط دور خط دور و ضخامت آن
 
-سایه و اندازه آن
+border-primary rounded border-secondary border rounded-circle -shadow-none shadow border-success border-1 rounded-pill
 
-گردی گوشه‌ها
-
-رنگ خط دور
-
-خط دور و ضخامت آن
-
-```
-border-primary
-rounded
-border-secondary
-border
-rounded-circle
--shadow-none shadow
-border-success
-border-1
-rounded-pill
-```
-
-`sm`
-
-```
-danger-danger
-border-2
-rounded-top
-shadow
-border-info
-border-3
-rounded-bottom
-shadow-lg
-border-warning
-border-4
-rounded-start
-border-light
-border-5
-rounded-end
-border-dark
-```
-
-جدول 5 کلاس‌های بوت‌استرپ برای تعیین اندازه گردی گوشه‌ها و ضخامت خط دور
-
-اندازه
-
-مقدار گردی گوشه‌ها
-
-ضخامت خط دور
-
-خط دور
+`sm`، `danger-danger`، `border-2`، `rounded-top`، `shadow`، `border-info`، `border-3`، `rounded-bottom`، `shadow-lg`، `border-warning`، `border-4`، `rounded-start`، `border-light`، `border-5`، `rounded-end`، `border-dark`
+جدول 5 کلاس‌های بوت‌استرپ برای تعیین اندازه گردی گوشه‌ها و ضخامت خط دور اندازه مقدار گردی گوشه‌ها ضخامت خط دور خط دور
 
 `1px`
+0px (no rounding) 1 rounded 1 border
 
-```
-0px (no rounding)
-1 rounded
-1 border
-```
+`2px`، `2px`
+2 rounded 2 border
 
-`2px`
+`4px`، `3px`
+3 rounded 3 border
 
-`2px`
-
-```
-2 rounded
-2 border
-```
-
-`4px`
-
-`3px`
-
-```
-3 rounded
-3 border
-```
-
-`6px`
-
-`4px`
-
-```
-4 rounded
-4 border
-```
+`6px`، `4px`
+4 rounded 4 border
 
 `5px`
-
-```
-5 rounded
-5 border
-```
-
+5 rounded 5 border
 
 ---
 
@@ -222,9 +140,7 @@ border-dark
 
 ![تصویر کتاب](../images/p159-02.png)
 
-```
 کلاس‌هایtypography
-```
 
 کلاس‌های متنی بوت‌استرپ برای تنظیم اندازه و وزن فونت، تراز، استایل لیست‌ها و موارد دیگر استفاده می‌شود. جدول ٦ به برخی از کلاس‌های متنی اشاره دارد.
 
@@ -240,33 +156,17 @@ border-dark
 
 آرایش متن
 
-```
-fs-1 … fs-6
-fw-bold
-text-start
-list-unstyled
-text-decoration-none
-```
+fs-1 … fs-6 fw-bold text-start list-unstyled text-decoration-none
 
 `h1` … `h6`
 
-```
-fw-light
-text-center
-list-inline
-text-capitalize
-display-1 … display-4
-fw-lighter
-text-end
-text-uppercase
-```
+fw-light text-center list-inline text-capitalize display-1 … display-4 fw-lighter text-end text-uppercase
 
 کلاس‌های `*-fs` برای تنظیم اندازه فونت عناصر متنی از کوچک (`fs-6`) به بزرگ (`fs-1`) کاربرد دارد.
 
 کلاس‌های `h1` تا `h6` برای تنظیم اندازه برچسب‌های عنوان استفاده می‌شود.
 
 کلاس‌های `*-display` برای ایجاد عناوین بزرگ و جلب توجه کاربر استفاده می‌شوند و مفهوم خاصی را منتقل نمی‌کنند.
-
 
 ---
 
@@ -276,9 +176,9 @@ text-uppercase
 
 کلاس `list-unstyled` استایل پیش فرض لیست را حذف می‌کند؛ به این معنی که علائم یا شماره‌های کنار عنصر ناپدید شده و مقدار `padding-left` برابر صفر می‌گردد.
 
-کلاس `list-inline` عناصر لیست را آماده چیدمان افقی می‌کند، به‌شرطی که عناصر لیست دارای کلاس `-list` `inline-item` باشند. این نوع لیست برای منوهای ساده و ناوبری‌های کوچک کاربرد دارد.
+کلاس `list-inline` عناصر لیست را آماده چیدمان افقی می‌کند، به‌شرطی که عناصر لیست دارای کلاس `-list inline-item` باشند. این نوع لیست برای منوهای ساده و ناوبری‌های کوچک کاربرد دارد.
 
-کلاس‌های `felx` بوت‌استرپ دارای کلاس‌های مختلفی در زمینه طراحی عناصر صفحه با تکنیک `Flexbox` است. سیستم فلکس دارای دو کلاس پایه با اسامی `d-flex` و `d-inline-flex` است که برای عناصر نگهدارنده استفاده می‌شوند. به‌طور مثال بخش معرفی محصولات نیازمند یک عنصر نگهدارنده است که محصولات درون آن به‌صورت انعطاف‌پذیر کنار هم قرار گیرند. جدول زیر برخی از کلاس‌های فلکس را بر‌اساس موضوعات مختلف معرفی می‌کند.
+کلاس‌های `flex` بوت‌استرپ دارای کلاس‌های مختلفی در زمینه طراحی عناصر صفحه با تکنیک `Flexbox` است. سیستم فلکس دارای دو کلاس پایه با اسامی `d-flex` و `d-inline-flex` است که برای عناصر نگهدارنده استفاده می‌شوند. به‌طور مثال بخش معرفی محصولات نیازمند یک عنصر نگهدارنده است که محصولات درون آن به‌صورت انعطاف‌پذیر کنار هم قرار گیرند. جدول زیر برخی از کلاس‌های فلکس را بر‌اساس موضوعات مختلف معرفی می‌کند.
 
 جدول 7 کلاس‌های `Flexbox`
 
@@ -290,26 +190,7 @@ text-uppercase
 
 انتقال به سطر بعد
 
-```
-justify-content-start
-align-items-start
-flex-row
-flex-wrap
-justify-content-center
-align-items-center
-flex-row-reverse
-flex-nowrap
-justify-content-end
-align-items-end
-flex-column
-flex-wrap-reverse
-justify-content-between
-align-items-baseline
-flex-column-reverse
-justify-content-around
-justify-content-evenly
-```
-
+`justify-content-start`، `align-items-start`، `flex-row`، `flex-wrap`، `justify-content-center`، `align-items-center`، `flex-row-reverse`، `flex-nowrap`، `justify-content-end`، `align-items-end`، `flex-column`، `flex-wrap-reverse`، `justify-content-between`، `align-items-baseline`، `flex-column-reverse`، `justify-content-around`، `justify-content-evenly`
 کلاس‌های `*-justify-content` برای تعیین تراز افقی محتوا در یک عنصر نگهدارنده استفاده می‌شوند. سه کلاس اول، محتوای یک عنصر را در سمت چپ (`start`)، وسط (`center`) و راست (`end`) تراز می‌کنند. سه کلاس بعدی نحوه توزیع عناصر را بر اساس فاصله بین آنها مشخص می‌کنند.
 
 کلاس‌های `*-align-items` برای تعیین تراز عناصر در راستای عمودی استفاده می‌شوند.
@@ -326,16 +207,13 @@ justify-content-evenly
 
 ![تصویر کتاب](../images/p160-01.png)
 
-
 ---
 
 <!-- pdf-page: 161 | book-page: 155 -->
 
 **صفحه ۱۵۵**
 
-```
 3 استایل‌های مربوط به .products-section h2، .products و ویژگی margin در .products-section را
-```
 
 از فایل `styles.css` حذف کنید.
 
@@ -360,7 +238,6 @@ justify-content-evenly
 بوت‌استرپ نسخه ۳ دارای کلاسی به نام `text-justify` بود که برای تراز کردن دوطرفه متن (`justify`) به‌کار می‌رفت. این کلاس در بوت‌استرپ نسخه ۵ موجود نیست. بنابراین، برای ایجاد تراز دوطرفه متن در پاراگراف‌ها، لازم است کلاس سفارشی `text-justify` را با استفاده از کد زیر به فایل `styles.css` اضافه نمایید:
 
 ![تصویر کتاب](../images/p161-03.png)
-
 
 ---
 

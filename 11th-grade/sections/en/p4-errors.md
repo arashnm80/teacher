@@ -12,13 +12,13 @@ Traversing the lines of a file with a `for` loop
 
 Change the program code so that a separator is placed after the name of each brand.
 
-Writing to a file: Writing one line After you set the path, you can write to a text file using the `write_text`() method. To see how this function works, write a simple message and store it in a text file instead of printing it on the screen (Figure 72):
+Writing to a file: Writing one line After you set the path, you can write to a text file using the `write_text()` method. To see how this function works, write a simple message and store it in a text file instead of printing it on the screen (Figure 72):
 
 After writing the program and running it, you do not see output in the terminal. Now open the file `mobile_brands.txt`. You see that your text has been written in the file and its previous contents have been erased.
 
-If the file already exists, `write_text`() clears the current contents of the file and writes the new content in the file.
+If the file already exists, `write_text()` clears the current contents of the file and writes the new content in the file.
 
-The `write_text`() method does several things behind the scenes. If the file that the path points to does not exist, it creates that file.
+The `write_text()` method does several things behind the scenes. If the file that the path points to does not exist, it creates that file.
 
 Also, after writing the string to the file, it makes sure the file is closed correctly. Files that are not closed correctly can lead to data being lost or corrupted.
 
@@ -30,12 +30,11 @@ Also, after writing the string to the file, it makes sure the file is closed cor
 
 The two methods `read_text` and `write_text` handle closing the file internally. In these cases, `pathlib` itself guarantees that the file is opened and then closed safely.
 
-
 ---
 
 **Page 261**
 
-Adding a new brand To write more than one line to a file, you must build a string that includes the entire contents of the file and then call `write_text`() with that string.
+Adding a new brand To write more than one line to a file, you must build a string that includes the entire contents of the file and then call `write_text()` with that string.
 
 ![Book image](../images/p267-01.png)
 
@@ -60,7 +59,6 @@ Whenever Python faces a problem while running the program and does not know what
 If the programmer has written code to manage that exception, the program continues without stopping. But if the exception has not been managed, execution of the program stops and a message is displayed that includes the type of error and its location; this is called a traceback (`Traceback`).
 
 **Figure 30**
-
 
 ---
 
@@ -98,7 +96,6 @@ The `except` section specifies how the program should react if an error occurs.
 
 Using this method, you can write programs that show understandable messages to the user instead of displaying complex and confusing messages.
 
-
 ---
 
 **Page 263**
@@ -125,7 +122,6 @@ This program asks the user to enter the first number and, if the user does not e
 
 **Figure 36**
 
-
 ---
 
 **Page 264**
@@ -149,7 +145,6 @@ Using The else Block: When you use `try` and `except` statements in Python, you 
 `else` means: “Do this action if and only if the `try` block was completely successful, without any error.”
 
 **Figure 38**
-
 
 ---
 
@@ -177,7 +172,6 @@ In the example the program tries to read a file that does not exist at all.
 
 **Figure 41**
 
-
 ---
 
 **Page 266**
@@ -186,7 +180,7 @@ In the example the program tries to read a file that does not exist at all.
 
 **Figure 42**
 
-Note that the `read_text`() method is used a little differently from what you saw before. The `encoding` argument is necessary when your system’s default encoding does not match the encoding of the file you are reading. This situation is most likely to occur when reading a file that was not created on your system.
+Note that the `read_text()` method is used a little differently from what you saw before. The `encoding` argument is necessary when your system’s default encoding does not match the encoding of the file you are reading. This situation is most likely to occur when reading a file that was not created on your system.
 
 Python cannot read from a file that does not exist, so it creates an exception (`Exception`) (in other words, it raises an error).
 
@@ -196,13 +190,12 @@ So to manage the error that is created, the `try` block begins with the line tha
 
 **Figure 43**
 
-In the example code, line 4, which includes `read_text`(), causes the error.
+In the example code, line 4, which includes `read_text()`, causes the error.
 
 In this example, the code in the `try` block produces a `FileNotFoundError`, so an `except` block that matches the error must be written. Then Python runs the code in that block when the file is not found, and the result, instead of a `traceback`, is a user-friendly error message:
 
 ![Figure 44](../images/p272-03.png)
 
 **Figure 44**
-
 
 ---

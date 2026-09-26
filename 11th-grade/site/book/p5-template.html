@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title data-fa="قالب و دمای واقعی" data-en="Templates and a real temperature">قالب و دمای واقعی</title>
   <link rel="icon" href="../assets/favicon.svg">
-  <link rel="stylesheet" href="../assets/style.css?v=4">
+  <link rel="stylesheet" href="../assets/style.css?v=6">
 </head>
 <body data-root="../">
   <header class="top">
@@ -36,20 +36,20 @@
 <p>خط 5: یک <code>path</code> اضافه شده است. این <code>path</code> به این معنی است که اگر کاربر صفحه اصلی سایت را باز کرد، <code>show_temp_view</code> از درون فایل <code>views.py</code> اجرا شود. به این <code>path</code> پارامتر <code>name</code> اضافه شده است.</p>
 <p>در جنگو هر آدرس (<code>URL</code>) می‌تواند یک نام داشته باشد تا در هر جایی دیگر، راحت‌تر به آن ارجاع داده شود.</p>
 <p>این اسم هیچ تأثیری روی خود آدرس <code>URL</code> ندارد و فقط برای ارجاع‌دادن استفاده می‌شود.</p>
-<p>پارامتر <code>name</code> در مسیرهای جنگو مانند یک اسم مستعار برای آن آدرس است که به آن <code>URL</code> <code>name</code> هم می‌گویند.</p>
+<p>پارامتر <code>name</code> در مسیرهای جنگو مانند یک اسم مستعار برای آن آدرس است که به آن <code>URL name</code> هم می‌گویند.</p>
 <p><img alt="تصویر کتاب" src="../images/p293-01.png" /></p>
 <p>فایل را ذخیره نمایید و با <code>runserver</code> سرور جنگو را راه‌اندازی کنید.</p>
 <p>صفحه اصلی سایت را در مرورگر باز کنید.</p>
 <p>تبریک، شما اولین <code>view</code> جنگو خود را با موفقیت ایجاد کردید (شکل 16).</p>
 <p>شکل 16 خروجی اولین <code>view</code> جنگو</p>
-<h3 id="_2">فعالیت</h3>
+<aside class="callout activity"><h3 id="_2">فعالیت</h3>
 <p>با تکمیل <code>view</code> و فایل <code>urls.py</code> اطلاعات دمای تهران را نمایش دهید.</p>
 <p>آشنایی با تابع <code>render</code> در جنگو برای نمایش بهتر <code>view</code> از فایل‌های <code>html</code> استفاده می‌شود. هر <code>app</code> در جنگو، می‌تواند فایل‌های <code>html</code> مخصوص به خود را به‌صورت جداگانه داشته باشد، برای انجام این کار یک‌پوشه به اسم <code>templates</code> در <code>app</code> ایجاد کنید و فایل‌های <code>html</code> را در آن ذخیره کنید. به این فایل‌های <code>html</code> در جنگو <code>template</code> گفته می‌شود.</p>
 <p>شکل 17 را مشاهده کنید، مسیر طی شدۀ <code>request</code> (درخواست وب) در جنگو قابل‌مشاهده است.</p>
 <p>طبق تصویر، درخواست ارسالی کاربر، ابتدا به سرور جنگو منتقل شده، سپس با استفاده از <code>url</code> به <code>view</code> مناسب ارسال می‌شود، هر <code>view</code> با کمک فایل <code>html</code> یا همان <code>template</code> اطلاعات قابل نمایش را آماده کرده و برای کاربر ارسال می‌کند.</p>
 <p><img alt="شکل 17 مسیر طی شده یک request در جنگو" src="../images/p293-02.png" /></p>
 <p>شکل 17 مسیر طی شده یک <code>request</code> در جنگو</p>
-<hr />
+</aside><hr />
 <p class="page-mark">صفحه ۲۸۸</p>
 <p>همان‌طور‌که در شکل 17 اشاره شده است، تابع <code>render</code> در <code>view</code> می‌تواند اطلاعات را به فایل <code>html</code> ارسال کند تا به کمک قابلیت‌های جنگو، اطلاعات ارسالی به فایلِ <code>html</code> با آن ترکیب شده و به کاربر نمایش داده شود.</p>
 <p>در ادامه، در دو مرحله می‌توانید یک عدد تصادفی را به‌عنوان دمای هوای شهر همدان، با کمک تابع <code>render</code> به یک فایل <code>html</code> ارسال کرده و به کاربر نمایش دهید.</p>
@@ -62,14 +62,13 @@
 <p>خط 5: یک عدد تصادفی به‌عنوان دمای هوا برای شهر همدان انتخاب می‌شود، این اطلاعات در صفحه اصلی سایت نمایش داده خواهد شد.</p>
 <p>خط 6: یک دیکشنری شامل نام شهر (<code>city</code>) و دمای شهر (<code>temp</code>) ایجاد شده و در متغیری با نام <code>context</code> ذخیره شده است.</p>
 <p>خط 7: از تابع <code>render</code> استفاده شده است. برای این تابع سه آرگومان ارسال شده است. آرگومان اول <code>request</code> است که از ورودی <code>view</code> دریافت شده است. آرگومان دوم نام فایل <code>html</code> موجود در پوشه <code>templates</code> و آرگومان سوم یک دیکشنری است که برای <code>html</code> ارسال شده است.</p>
-<p>مرحله دوم: یک‌پوشه با نام <code>templates</code> در <code>weather</code> <code>app</code> بسازید و یک فایل <code>html</code> با نام <code>show_temp.html</code> درون آن ایجاد کنید.</p>
+<p>مرحله دوم: یک‌پوشه با نام <code>templates</code> در <code>weather app</code> بسازید و یک فایل <code>html</code> با نام <code>show_temp.html</code> درون آن ایجاد کنید.</p>
 <p>فایل <code>show_temp.html</code> و هر فایل <code>html</code> دیگری که در این پوشه قرار بگیرد، به‌اصطلاح یک <code>template</code> است.</p>
 <hr />
 <p class="page-mark">صفحه ۲۸۹</p>
 <p>فایل <code>show_temp.html</code> و محتوای آن را همانند شکل 19 ایجاد کنید.</p>
 <p><img alt="شکل 19 محتویات show_temp.html" src="../images/p295-01.png" /></p>
-<div class="code-wrap" dir="ltr"><pre><code>شکل 19 محتویات show_temp.html
-</code></pre></div>
+<p>شکل 19 محتویات <bdi dir="ltr">show_temp.html</bdi></p>
 <h3 id="_4">توضیحات کدها:</h3>
 <p>خط 10: از {{<code>city</code>}} و {{<code>temp</code>}} جهت‌نمایش نام شهر و دمای شهر استفاده شده است. علامت {{}} جهت‌نمایش متغیرها در <code>template</code> به‌کار می‌رود.</p>
 <p>این متغیرها، کلیدهای دیکشنری <code>context</code> هستند که تابع <code>render</code> آن را برای <code>show_temp.html</code> ارسال کرده است.</p>
@@ -83,9 +82,9 @@
 <p>شکل 21 روند نمایش دمای هوا</p>
 <hr />
 <p class="page-mark">صفحه ۲۹۰</p>
-<h3 id="_5">فعالیت</h3>
+<aside class="callout activity"><h3 id="_5">فعالیت</h3>
 <p>با استفاده از تابع <code>render</code> و ایجاد یک <code>template</code> مناسب برای <code>view</code>، دمای هوای شهر خودتان را با اعداد تصادفی نمایش دهید.</p>
-<h3 id="_6">نمایش دمای هوای واقعی</h3>
+</aside><h3 id="_6">نمایش دمای هوای واقعی</h3>
 <p>جهت‌نمایش دمای هوای لحظه‌ای شهرها می‌توانید از سایت‌هایی مثل <code>https://open-meteo.com</code> استفاده کنید. این سایت ابزاری در اختیار برنامه‌نویس قرار می‌دهد تا بتواند دمای هوای شهرهای مختلف را نمایش دهد.</p>
 <p>سایت <code>open-meteo</code> یک <code>API</code> رایگان دارد که با دریافت طول و عرض جغرافیایی، اطلاعات آب‌وهوای منطقه موردنظر را در قالب <code>JSON</code> ارائه می‌دهد.</p>
 <p>به‌عنوان‌مثال، اگر آدرس زیر را برای دریافت وضعیت آب‌وهوای شهر همدان در مرورگر باز کنید، نتیجه با قالب <code>JSON</code> نمایش داده خواهد شد (شکل 22).</p>
@@ -104,8 +103,7 @@ weather=true
 <p>شکل 23 تغییر در <code>view</code> جهت دریافت اطلاعات از <code>API</code></p>
 <h3 id="_7">توضیحات کدها:</h3>
 <p>خط 2: کتابخانه <code>requests</code> وارد (<code>import</code>) شده است. این کتابخانه باید از قبل نصب شده باشد. با دستور</p>
-<div class="code-wrap" dir="ltr"><pre><code>(pip install requests)
-</code></pre></div>
+<p><bdi dir="ltr">(pip install requests)</bdi></p>
 <p>خط 5: مقادیر <code>latitude</code> و <code>longitude</code> همان طول و عرض جغرافیایی هستند که برای شهر همدان مشخص شده و در متغیرهای <code>lat</code> و <code>lon</code> ذخیره شده‌اند.</p>
 <p>خط 6 و 7: متن درخواست به‌صورت <code>get</code> و با استفاده از <code>lat</code> و <code>lon</code> آماده شده است.</p>
 <p>خط 8: با استفاده از <code>try</code> خطای احتمالی مدیریت شده است، به‌عنوان‌مثال اگر اینترنت وصل نباشد، <code>except</code> در خط 11 مقدار <code>temp</code> را برابر <code>None</code> خواهد کرد و سایت با مشکل مواجه نمی‌شود.</p>
@@ -125,29 +123,29 @@ weather=true
 <p><img alt="تصویر کتاب" src="../images/p298-02.png" /></p>
 <p>درصورتی‌که ارتباط با سایت برقرار نشود، خروجی همانند شکل 26 خواهد بود.</p>
 <p>شکل 26 نمایش خطای مناسب به کاربر</p>
-<h3 id="_9">فعالیت</h3>
+<aside class="callout activity"><h3 id="_9">فعالیت</h3>
 <p>با استفاده از سایت <code>open-meteo.com</code> دمای هوای شهر خود را در صفحه اول سایت نمایش دهید.</p>
-<hr /></article><article class="lesson" lang="en" dir="ltr" data-lang-block="en" hidden><p class="page-mark">Page 287</p>
+</aside><hr /></article><article class="lesson" lang="en" dir="ltr" data-lang-block="en" hidden><p class="page-mark">Page 287</p>
 <h3 id="code-notes">Code notes:</h3>
 <p>Line 1: the <code>path</code> function has been imported.</p>
 <p>Line 2: the <code>show_temp_view</code> function has been imported from <code>views.py</code>.</p>
 <p>Line 5: a <code>path</code> has been added. This <code>path</code> means that if the user opens the site’s home page, <code>show_temp_view</code> from inside the <code>views.py</code> file is run. The <code>name</code> parameter has been added to this <code>path</code>.</p>
 <p>In Django, every address (<code>URL</code>) can have a name so that it can be referred to more easily anywhere else.</p>
 <p>This name has no effect on the <code>URL</code> address itself and is used only for referring to it.</p>
-<p>The <code>name</code> parameter in Django paths is like an alias for that address, which is also called a <code>URL</code> <code>name</code>.</p>
+<p>The <code>name</code> parameter in Django paths is like an alias for that address, which is also called a <code>URL name</code>.</p>
 <p><img alt="book image" src="../images/p293-01.png" /></p>
 <p>Save the file and start the Django server with <code>runserver</code>.</p>
 <p>Open the site’s home page in the browser.</p>
 <p>Congratulations, you have successfully created your first Django <code>view</code> (Figure 16).</p>
 <p>Figure 16 output of the first Django <code>view</code></p>
-<h3 id="activity">Activity</h3>
+<aside class="callout activity"><h3 id="activity">Activity</h3>
 <p>By completing the <code>view</code> and the <code>urls.py</code> file, display Tehran’s temperature information.</p>
 <p>Getting to know the <code>render</code> function in Django: to display a <code>view</code> better, <code>html</code> files are used. Each <code>app</code> in Django can have its own <code>html</code> files separately. To do this, create a folder named <code>templates</code> in the <code>app</code> and store the <code>html</code> files in it. These <code>html</code> files are called a <code>template</code> in Django.</p>
 <p>Look at Figure 17; the path a <code>request</code> (web request) takes in Django can be seen.</p>
 <p>According to the image, the request sent by the user is first transferred to the Django server, then using the <code>url</code> it is sent to the appropriate <code>view</code>. Each <code>view</code>, with the help of an <code>html</code> file or the same <code>template</code>, prepares the displayable information and sends it to the user.</p>
 <p><img alt="Figure 17 the path a request takes in Django" src="../images/p293-02.png" /></p>
 <p>Figure 17 the path a <code>request</code> takes in Django</p>
-<hr />
+</aside><hr />
 <p class="page-mark">Page 288</p>
 <p>As noted in Figure 17, the <code>render</code> function in the <code>view</code> can send information to the <code>html</code> file so that, with Django’s features, the information sent to the <code>html</code> file is combined with it and shown to the user.</p>
 <p>Next, in two steps you can send a random number as the air temperature of the city of Hamedan, with the help of the <code>render</code> function, to an <code>html</code> file and show it to the user.</p>
@@ -160,14 +158,13 @@ weather=true
 <p>Line 5: a random number is chosen as the air temperature for the city of Hamedan; this information will be displayed on the site’s home page.</p>
 <p>Line 6: a dictionary including the city name (<code>city</code>) and the city temperature (<code>temp</code>) has been created and stored in a variable named <code>context</code>.</p>
 <p>Line 7: the <code>render</code> function has been used. Three arguments have been sent to this function. The first argument is <code>request</code>, which was received from the <code>view</code> input. The second argument is the name of the <code>html</code> file in the <code>templates</code> folder, and the third argument is a dictionary that has been sent for the <code>html</code>.</p>
-<p>Step two: create a folder named <code>templates</code> in the <code>weather</code> <code>app</code> and create an <code>html</code> file named <code>show_temp.html</code> inside it.</p>
+<p>Step two: create a folder named <code>templates</code> in the <code>weather app</code> and create an <code>html</code> file named <code>show_temp.html</code> inside it.</p>
 <p>The <code>show_temp.html</code> file and any other <code>html</code> file that is placed in this folder is, in other words, a <code>template</code>.</p>
 <hr />
 <p class="page-mark">Page 289</p>
 <p>Create the <code>show_temp.html</code> file and its content as shown in Figure 19.</p>
 <p><img alt="Figure 19 contents of show_temp.html" src="../images/p295-01.png" /></p>
-<div class="code-wrap" dir="ltr"><pre><code>شکل 19 محتویات show_temp.html
-</code></pre></div>
+<p>19 show_temp.html</p>
 <h3 id="code-notes_2">Code notes:</h3>
 <p>Line 10: {{<code>city</code>}} and {{<code>temp</code>}} have been used to display the city name and the city temperature. The {{}} marks are used to display variables in the <code>template</code>.</p>
 <p>These variables are the keys of the <code>context</code> dictionary that the <code>render</code> function sent for <code>show_temp.html</code>.</p>
@@ -181,9 +178,9 @@ weather=true
 <p>Figure 21 the process of displaying the air temperature</p>
 <hr />
 <p class="page-mark">Page 290</p>
-<h3 id="activity_1">Activity</h3>
+<aside class="callout activity"><h3 id="activity_1">Activity</h3>
 <p>Using the <code>render</code> function and creating a suitable <code>template</code> for the <code>view</code>, display the air temperature of your own city with random numbers.</p>
-<h3 id="displaying-the-real-air-temperature">Displaying the real air temperature</h3>
+</aside><h3 id="displaying-the-real-air-temperature">Displaying the real air temperature</h3>
 <p>To display the live air temperature of cities, you can use sites such as <code>https://open-meteo.com</code>. This site provides a tool for the programmer so they can display the air temperature of different cities.</p>
 <p>The <code>open-meteo</code> site has a free <code>API</code> that, by receiving latitude and longitude, provides the weather information for the desired region in <code>JSON</code> format.</p>
 <p>For example, if you open the following address in the browser to receive the weather status of the city of Hamedan, the result will be displayed in <code>JSON</code> format (Figure 22).</p>
@@ -202,8 +199,7 @@ weather=true
 <p>Figure 23 changing the <code>view</code> to receive information from the <code>API</code></p>
 <h3 id="code-notes_3">Code notes:</h3>
 <p>Line 2: the <code>requests</code> library has been imported. This library must already be installed. With the command</p>
-<div class="code-wrap" dir="ltr"><pre><code>(pip install requests)
-</code></pre></div>
+<p>(pip install requests)</p>
 <p>Line 5: the <code>latitude</code> and <code>longitude</code> values are the same geographic latitude and longitude that have been specified for the city of Hamedan and stored in the variables <code>lat</code> and <code>lon</code>.</p>
 <p>Lines 6 and 7: the request text has been prepared as <code>get</code> and using <code>lat</code> and <code>lon</code>.</p>
 <p>Line 8: with <code>try</code>, possible errors have been handled; for example, if the internet is not connected, <code>except</code> on line 11 will set the value of <code>temp</code> to <code>None</code> and the site will not face a problem.</p>
@@ -223,9 +219,9 @@ weather=true
 <p><img alt="book image" src="../images/p298-02.png" /></p>
 <p>If the connection with the site is not established, the output will be like Figure 26.</p>
 <p>Figure 26 displaying an appropriate error to the user</p>
-<h3 id="activity_2">Activity</h3>
+<aside class="callout activity"><h3 id="activity_2">Activity</h3>
 <p>Using the <code>open-meteo.com</code> site, display the air temperature of your city on the first page of the site.</p>
-<hr /></article>
+</aside><hr /></article>
       <aside class="extra">
         <h2 data-fa="تمرین این بخش" data-en="Exercises for this section">تمرین این بخش</h2>
         <p class="extra-note" data-fa="این تمرین‌ها و پیوندها اضافه بر متن کتاب‌اند." data-en="These exercises and links are in addition to the book.">این تمرین‌ها و پیوندها اضافه بر متن کتاب‌اند.</p>
@@ -235,7 +231,7 @@ weather=true
     <nav class="pager"><a rel="prev" class="prev" href="p5-project.html"><span class="pager-word" data-fa="قبلی" data-en="Previous">قبلی</span><span class="pager-name" data-fa="پروژه، اپ و اولین view" data-en="Project, app, and the first view">پروژه، اپ و اولین view</span></a><a rel="next" class="next" href="p5-assess-create.html"><span class="pager-word" data-fa="بعدی" data-en="Next">بعدی</span><span class="pager-name" data-fa="ارزشیابی ایجاد وب‌اپلیکیشن" data-en="Creating-the-app assessment">ارزشیابی ایجاد وب‌اپلیکیشن</span></a></nav>
     </div>
   </div>
-  <script src="../assets/search-index.js?v=4"></script>
-  <script src="../assets/app.js?v=4"></script>
+  <script src="../assets/search-index.js?v=6"></script>
+  <script src="../assets/app.js?v=6"></script>
 </body>
 </html>

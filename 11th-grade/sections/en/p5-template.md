@@ -12,7 +12,7 @@ In Django, every address (`URL`) can have a name so that it can be referred to m
 
 This name has no effect on the `URL` address itself and is used only for referring to it.
 
-The `name` parameter in Django paths is like an alias for that address, which is also called a `URL` `name`.
+The `name` parameter in Django paths is like an alias for that address, which is also called a `URL name`.
 
 ![book image](../images/p293-01.png)
 
@@ -37,7 +37,6 @@ According to the image, the request sent by the user is first transferred to the
 ![Figure 17 the path a request takes in Django](../images/p293-02.png)
 
 Figure 17 the path a `request` takes in Django
-
 
 ---
 
@@ -65,10 +64,9 @@ Line 6: a dictionary including the city name (`city`) and the city temperature (
 
 Line 7: the `render` function has been used. Three arguments have been sent to this function. The first argument is `request`, which was received from the `view` input. The second argument is the name of the `html` file in the `templates` folder, and the third argument is a dictionary that has been sent for the `html`.
 
-Step two: create a folder named `templates` in the `weather` `app` and create an `html` file named `show_temp.html` inside it.
+Step two: create a folder named `templates` in the `weather app` and create an `html` file named `show_temp.html` inside it.
 
 The `show_temp.html` file and any other `html` file that is placed in this folder is, in other words, a `template`.
-
 
 ---
 
@@ -78,9 +76,7 @@ Create the `show_temp.html` file and its content as shown in Figure 19.
 
 ![Figure 19 contents of show_temp.html](../images/p295-01.png)
 
-```
-شکل 19 محتویات show_temp.html
-```
+19 show_temp.html
 
 ### Code notes:
 
@@ -103,7 +99,6 @@ The process of displaying the air temperature, from the moment the user’s requ
 ![Figure 21 the process of displaying the air temperature](../images/p295-03.png)
 
 Figure 21 the process of displaying the air temperature
-
 
 ---
 
@@ -134,7 +129,6 @@ An `API` is like a bridge between two programs. That is, when a program (for exa
 
 In this project, weather information is received using the `open-meteo` service `API`. `open-meteo` returns this information as organized data in (`Json`) format, then the Django project displays it.
 
-
 ---
 
 **Page 291**
@@ -151,9 +145,7 @@ Figure 23 changing the `view` to receive information from the `API`
 
 Line 2: the `requests` library has been imported. This library must already be installed. With the command
 
-```
 (pip install requests)
-```
 
 Line 5: the `latitude` and `longitude` values are the same geographic latitude and longitude that have been specified for the city of Hamedan and stored in the variables `lat` and `lon`.
 
@@ -170,7 +162,6 @@ In the `show_temp.html` file, apply changes for error handling as shown in Figur
 ![Figure 24 changes in the template for handling possible errors](../images/p297-02.png)
 
 Figure 24 changes in the `template` for handling possible errors
-
 
 ---
 
@@ -197,6 +188,5 @@ Figure 26 displaying an appropriate error to the user
 ### Activity
 
 Using the `open-meteo.com` site, display the air temperature of your city on the first page of the site.
-
 
 ---

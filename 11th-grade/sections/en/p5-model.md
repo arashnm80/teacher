@@ -1,6 +1,5 @@
 # Developing a web application
 
-
 ---
 
 **Page 295**
@@ -35,7 +34,6 @@ How can a programmer prevent errors from occurring on the site?
 
 The student should be able, by building a `Model` in Django and using `HTML` forms, to implement communication with the database and store and retrieve the information that users enter in tables.
 
-
 ---
 
 **Page 296**
@@ -50,7 +48,7 @@ To implement this capability you must create a table (`table`) in the database.
 
 Each `app` has a file named `models.py`. Django uses models (`model`) to build tables. Each model in Django corresponds to a table with the same name in the database. As a first step, inside the `models.py` file the class needed to define the table and the table columns must be created.
 
-Open the `models.py` file in the `weather` `app`. Then change the content of this file as shown in Figure 27.
+Open the `models.py` file in the `weather app`. Then change the content of this file as shown in Figure 27.
 
 ![Figure 27 creating the City model](../images/p302-01.png)
 
@@ -58,14 +56,13 @@ Figure 27 creating the `City` model
 
 ### Code notes:
 
-Line 1: the `models` module has been imported from the `django.db` module. In fact with this line, the tools and classes needed to define database models (`Database` `Models`) are imported.
+Line 1: the `models` module has been imported from the `django.db` module. In fact with this line, the tools and classes needed to define database models (`Database Models`) are imported.
 
 Line 3: the `City` class has been created to build the cities table by inheriting from `Model`. `Model` is Django’s base class for building models (database tables) and provides the facilities needed to communicate with the database.
 
 Line 4: this command builds a field in the table for holding the city name as text, with a maximum length of 50 characters. For `CharField`, setting `max_length` is required.
 
 Line 5: `FloatField` has been used to hold decimal numbers. Geographic latitude (`Latitude`) and geographic longitude (`Longitude`) are both decimal numbers.
-
 
 ---
 
@@ -79,7 +76,7 @@ In the terminal run the `makemigrations` command as shown in Figure 28.
 
 Figure 28 running the `makemigrations` command
 
-When you run `makemigrations`, inside the `weather` `app`, a file named `0001_initial.py` is created in the `migrations` folder. This file prepares the code needed to turn the model into a real table.
+When you run `makemigrations`, inside the `weather app`, a file named `0001_initial.py` is created in the `migrations` folder. This file prepares the code needed to turn the model into a real table.
 
 In the next step run the `migrate` command in the terminal as shown in Figure 29.
 
@@ -87,18 +84,17 @@ In the next step run the `migrate` command in the terminal as shown in Figure 29
 
 Figure 29 running the `migrate` command
 
-
 ---
 
 **Page 298**
 
 After running `migrate`, Django’s default tables and the `city` table are created in the `db.sqlite3` database.
 
-Viewing database tables: to view the structure and content of the tables inside the database, you can install the `SQLite` `Viewer` extension as a helper tool. To install this extension make sure the internet is connected (Figure 30).
+Viewing database tables: to view the structure and content of the tables inside the database, you can install the `SQLite Viewer` extension as a helper tool. To install this extension make sure the internet is connected (Figure 30).
 
 ![Figure 30 searching for the SQLite Viewer extension](../images/p304-01.png)
 
-Figure 30 searching for the `SQLite` `Viewer` extension
+Figure 30 searching for the `SQLite Viewer` extension
 
 After installing the mentioned extension, by clicking on the `db.sqlite3` file you will see Django’s default tables and the `city` table (Figure 31).
 
@@ -106,22 +102,19 @@ After installing the mentioned extension, by clicking on the `db.sqlite3` file y
 
 Figure 31 database tables
 
-
 ---
 
 **Page 299**
 
 As is clear in Figure 31, the `city` table has been created with the `weather` prefix. By clicking on the `weather_city` table, the list of fields is displayed on the right. At present there is no record in the `city` table.
 
-With the `SQLite` `Viewer` extension you can only view the content and structure of the tables and there is no possibility of storing information.
+With the `SQLite Viewer` extension you can only view the content and structure of the tables and there is no possibility of storing information.
 
 To change the content of the `city` table or to add new city names to the table, you need to enter Django’s admin panel. Of course you still cannot enter city-related data into the database through the `admin` panel, because the `admin` user has not been defined yet; so in the next step it is time to define the `admin` user.
 
 Django management panel: to enter the admin panel, a username and password are needed. Enter the following command in the terminal:
 
-```
 python manage.py createsuperuser
-```
 
 Django asks you for a username (Figure 32).
 
@@ -137,7 +130,6 @@ You can enter the username `admin` or any other username of your choice, then en
 
 Figure 33 successfully creating the admin user
 
-
 ---
 
 **Page 300**
@@ -150,12 +142,11 @@ You can leave the email empty; also if you enter a simple password, as in Figure
 
 Figure 34 warning that the admin password is simple
 
-After creating the admin user, with the `SQLite` `Viewer` extension you can see the created user in the `auth_user` table as in Figure 35.
+After creating the admin user, with the `SQLite Viewer` extension you can see the created user in the `auth_user` table as in Figure 35.
 
 ![Figure 35 displaying the created admin user in the database](../images/p306-02.png)
 
 Figure 35 displaying the created `admin` user in the database
-
 
 ---
 
@@ -163,10 +154,7 @@ Figure 35 displaying the created `admin` user in the database
 
 Now to enter Django’s admin management panel, turn on the Django server and open the admin page by typing the following address in the browser’s address bar:
 
-```
-http://127.0.0.1:8000/admin/
-```
-
+`http://127.0.0.1:8000/admin/`
 Then log in with the username and password you created.
 
 The admin panel will be displayed as in Figure 36.
@@ -175,7 +163,7 @@ The admin panel will be displayed as in Figure 36.
 
 Figure 36 successfully logging into the Django admin panel
 
-In the `1Authentication` `and` `Authorization` section, using `Users` you can view and manage the site’s users.
+In the `1Authentication and Authorization` section, using `Users` you can view and manage the site’s users.
 
 Using the `add` button you can create a new user. To create a new user, you need to enter the username, password, and password confirmation fields and press the `save` button (Figure 37).
 
@@ -184,7 +172,6 @@ Using the `add` button you can create a new user. To create a new user, you need
 Figure 37 the form for creating a new user
 
 1- Authentication and authorization
-
 
 ---
 
@@ -208,12 +195,11 @@ With your instructor’s help, create another user. Then `login` to the admin pa
 
 Adding the city table to the admin panel: if you have paid attention, in Figure 36 the cities table was not seen in the admin panel. By carrying out the steps that follow, you can add the `City` table to the admin panel.
 
-
 ---
 
 **Page 303**
 
-Each `app` in Django has an `admin.py` file. Open the `admin.py` file in the `weather` `app` and introduce the `City` model to Django admin as shown in Figure 40.
+Each `app` in Django has an `admin.py` file. Open the `admin.py` file in the `weather app` and introduce the `City` model to Django admin as shown in Figure 40.
 
 ![Figure 40 introducing the City model to the Django admin panel](../images/p309-01.png)
 
@@ -233,30 +219,21 @@ Now save the file, then `refresh` the browser; the `city` table has been added t
 
 Figure 41 `City` being added to the admin panel
 
-
 ---
 
 **Page 304**
 
-Entering city information: in the admin panel, click the `Add` button (next to `Citys`); you will see the city registration form (`Add` `city`) (Figure 42).
+Entering city information: in the admin panel, click the `Add` button (next to `Citys`); you will see the city registration form (`Add city`) (Figure 42).
 
 ![Figure 42 the Add city form](../images/p310-01.png)
 
-Figure 42 the `Add` `city` form
+Figure 42 the `Add city` form
 
 ### Activity
 
-Using the information in Table 2, store a few cities in the database with the `Add` `city` form.
+Using the information in Table 2, store a few cities in the database with the `Add city` form.
 
-Table 2 latitude and longitude of a few cities
-
-City name
-
-Latitude (`lat`)
-
-Longitude (`lon`)
-
-Minab27.1478
+Table 2 latitude and longitude of a few cities City name Latitude (`lat`) Longitude (`lon`) Minab27.1478
 
 57.0738
 
@@ -291,6 +268,5 @@ Tabriz.079238
 Sabzevar36.2152
 
 .667857
-
 
 ---

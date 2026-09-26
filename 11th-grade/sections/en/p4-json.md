@@ -8,7 +8,7 @@ Enter the text of Alice in Wonderland; Python treats the file text as one long s
 
 To produce a list of all the words in the book, use the string method that by default splits a string wherever it finds a space.
 
-To count the number of these words, use `len`().
+To count the number of these words, use `len()`.
 
 ![Book image](../images/p273-02.png)
 
@@ -17,7 +17,6 @@ To count the number of these words, use `len`().
 ![Figure 45](../images/p273-03.png)
 
 **Figure 45**
-
 
 ---
 
@@ -33,7 +32,7 @@ To do this, add more books for analysis.
 
 To make running the analysis on several different books simpler and more organized, it is better to move the main part of the program into a function named `count_word`. If you compare the code with the previous program, you notice that the changes include fixing indentation and moving it into the body of the function.
 
-Line 2: The function `def` `count_words`(`path`) takes one input named `path`, which is the path of a text file.
+Line 2: The function `def count_words`(`path`) takes one input named `path`, which is the path of a text file.
 
 Line 11: This line of code stores the file names as text strings (`String`) in a list named `filenames`.
 
@@ -54,7 +53,6 @@ And if a file does not exist, the program does not give an error and displays an
 ![Figure 46](../images/p274-02.png)
 
 **Figure 46**
-
 
 ---
 
@@ -90,12 +88,11 @@ Storing data In most programs, such as a user’s preferred settings for a game 
 
 **Figure 49**
 
-
 ---
 
 **Page 270**
 
-`json.dump`() converts data to the `JSON` format, and `json.loads`() turns the stored data back into Python structures.
+`json.dump()` converts data to the `JSON` format, and `json.loads()` turns the stored data back into Python structures.
 
 `JSON` files, because of their simplicity, readability, and wide use, are one of the important methods of storing data in programming.
 
@@ -127,7 +124,6 @@ Reading data from a `JSON` file To bring the information stored in a `JSON` file
 
 **Figure 52**
 
-
 ---
 
 **Page 271**
@@ -138,7 +134,7 @@ Line 2 First the `json` module has been imported into the program.
 
 Line 3 Then the contents of the `JSON` file have been read and stored as a text string.
 
-Line 4 Since a `JSON` file is essentially a text file with a specific format, it has been read using the `read_text`() method.
+Line 4 Since a `JSON` file is essentially a text file with a specific format, it has been read using the `read_text()` method.
 
 Line 5 Next, using the `loads` function, this text string has been converted to an appropriate data structure in Python. In this program, the data is stored in memory again as a list of numbers.
 
@@ -148,9 +144,7 @@ Example: Write a program that defines the technical specifications of a smartpho
 
 using the `json` library and the `Path` class from the `pathlib` library, store this dictionary in a file named
 
-```
-mobile_specs.json ذخیره کند.
-```
+mobile_specs.json .
 
 Next, open the file, read the content, and print only the “model” and “amount of RAM” of the phone in the output.
 
@@ -161,7 +155,6 @@ Explain the lines of the program code with the help of your teacher.
 ![Book image](../images/p277-01.png)
 
 ![Book image](../images/p277-02.png)
-
 
 ---
 
@@ -174,6 +167,5 @@ In the written code, the weather information of a city is to be stored in a file
 Fill in the parts of the code marked with _________ with the correct statements.
 
 ![Book image](../images/p278-01.png)
-
 
 ---

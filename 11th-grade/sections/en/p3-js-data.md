@@ -7,25 +7,17 @@ Arrays (`Arrays`) Array variables can hold several elements with different data 
 In the following example, three arrays with string, numeric, and mixed values are defined:
 
 ```
-;]"let cars = ["Opel", "Saab", "Volvo", "BMW", "Hyundai
-;]let numbers = [1, 20 , 5 , 25 , 1000 , 10 , 1 , 5
-;]let data = [123, "Opel", false , 12 , 35
+;]"let cars = ["Opel", "Saab", "Volvo", "BMW", "Hyundai;
+;]let numbers = [1, 20 , 5 , 25 , 1000 , 10 , 1 , 5;
+;]let data = [123, "Opel", false , 12 , 35;
 ```
 
 Each of the array elements has an index. Array element indexes start at zero, so if an array has 5 elements, the index of the first element is zero and the index of the last element is 4. To access array elements, the element indexes are used. The figure below shows a view of the elements of the `cars` array and their values:
 
-```
-Hyundai
-```
-
-`Volvo`
-
-`Saab`
-
+`Hyundai`, `Volvo`, `Saab`
 `Opel`Element values
 
 `BMW`
-
 0Element indexes
 
 4
@@ -57,7 +49,6 @@ When you define an array with the keyword `const`, you can still change the elem
 ```
 ]"cars = ["Tara", "Shahin", "Dena"," Lamari Eama
 ```
-
 
 ---
 
@@ -93,12 +84,9 @@ Working with two-dimensional arrays In the `workshop4.html` file, write the cont
 
 1 Enter the following statements after introducing the array and check the output of each statement in the browser console. Note the result next to each statement.
 
-……………………………………… ;(`users`)`console.log` ……………………………………… ;)`]users[1`(`console.log` ……………………………………… ;)`]users[2][3`(`console.log`
+……………………………………… ;(`users`)`console.log` ……………………………………… ;)`]users[1`(`console.log` ……………………………………… ;)`]users[2][3`(`console.log` ………………………………….
 
 2 Write a statement that causes the element `Rose` to be displayed.
-
-………………………………….
-
 
 ---
 
@@ -141,8 +129,7 @@ Old method
 
 }
 
-On lines 13 through 15 of the code on the next page, the method `displayInfo`() is defined for the object `person`, and on line 17 it is called.
-
+On lines 13 through 15 of the code on the next page, the method `displayInfo()` is defined for the object `person`, and on line 17 it is called.
 
 ---
 
@@ -156,7 +143,7 @@ In the definition above, the keyword `this` refers to the current object (`perso
 
 To call an object’s method, first the object name (`Person`) and then the method name (`displayInfo`) are written together with the () marks.
 
-The string that the method `displayInfo`() returns (`return`) to the place where it is called must be placed inside a `backtick` mark. This mark is at the top corner of the keyboard, below the `esc` key.
+The string that the method `displayInfo()` returns (`return`) to the place where it is called must be placed inside a `backtick` mark. This mark is at the top corner of the keyboard, below the `esc` key.
 
 Creating an object in JavaScript
 
@@ -164,7 +151,7 @@ Creating an object in JavaScript
 
 1 Create a new file named `workshop5.html`.
 
-2 Create an object named `book` with the properties `title`, `author`, and `year` and the values `"JavaScript"`, `"Douglas` `Crockford"`, and 2008.
+2 Create an object named `book` with the properties `title`, `author`, and `year` and the values `"JavaScript"`, `"Douglas Crockford"`, and 2008.
 
 ……………………………………………………………
 
@@ -181,7 +168,6 @@ The following example creates an array of objects:
 ![Book image](../images/p215-02.png)
 
 ![Book image](../images/p215-01.png)
-
 
 ---
 
@@ -207,19 +193,19 @@ Conditional `If` statements A conditional statement makes it possible to run a s
 
 Depending on what the program needs, the `if` statement can be written in three forms. Table 20 shows the general form of the `if` conditional structure in three different cases.
 
-Table 20 Types of `if` conditional structures
+Table 20 Types of `if` conditional structures else-if ifif-else
 
 ```
-else-if
-ifif-else ساده
 { (condition1) if
+```
 statement1
+```
 {(condition) if
 {(condition) if
 { (condition2) else if }
-Statement1
-statements
-statement2
+```
+Statement1 statements statement2
+```
 {else}
 ```
 
@@ -227,13 +213,11 @@ statement2
 
 ```
 { else }
-Statement2
-statement3
 ```
+Statement2 statement3
 
 }
 
 }
-
 
 ---

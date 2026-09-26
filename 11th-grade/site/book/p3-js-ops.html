@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title data-fa="عملگرها" data-en="Operators">عملگرها</title>
   <link rel="icon" href="../assets/favicon.svg">
-  <link rel="stylesheet" href="../assets/style.css?v=4">
+  <link rel="stylesheet" href="../assets/style.css?v=6">
 </head>
 <body data-root="../">
   <header class="top">
@@ -44,38 +44,46 @@
 <h3 id="_4">مثال</h3>
 <p>عبارت معادل</p>
 <p>مقدار عملوند سمت راست (<code>y</code>)، درون عملوند سمت چپ (<code>x</code>) قرار</p>
-<p><code>x</code> = <code>y</code></p>
-<p><code>x</code> = <code>y</code></p>
+<div class="code-wrap" dir="ltr"><pre><code>x = `y`
+</code></pre></div>
+<div class="code-wrap" dir="ltr"><pre><code>x = `y`
+</code></pre></div>
 <p>=</p>
 <p>می‌گیرد.</p>
 <p>حاصل جمع عملوندهای <code>x</code> و <code>y</code> درون عملوند سمت چپ (<code>x</code>) قرار</p>
 <p><code>x</code> += <code>y</code></p>
-<p><code>x</code> = <code>x</code> + <code>y</code></p>
+<div class="code-wrap" dir="ltr"><pre><code>x = `x` + `y`
+</code></pre></div>
 <p>=+</p>
 <p>می‌گیرد.</p>
 <p>حاصل تفریق عملوندهای <code>x</code> و <code>y</code> درون عملوند سمت چپ (<code>x</code>) قرار</p>
 <p><code>x</code> -= <code>y</code></p>
-<p><code>x</code> = <code>x</code> – <code>y</code></p>
+<div class="code-wrap" dir="ltr"><pre><code>x = `x` – `y`
+</code></pre></div>
 <p>=-</p>
 <p>می‌گیرد.</p>
 <p>حاصل ضرب عملوندهای <code>x</code> و <code>y</code> درون عملوند سمت چپ (<code>x</code>) قرار</p>
 <p><code>x</code> *= <code>y</code></p>
-<p><code>x</code> = <code>x</code> * <code>y</code></p>
+<div class="code-wrap" dir="ltr"><pre><code>x = `x` * `y`
+</code></pre></div>
 <p>=*</p>
 <p>می‌گیرد.</p>
 <p>خارج قسمت تقسیم عملوند <code>x</code> بر عملوند <code>y</code> درون متغیر سمت چپ</p>
 <p><code>x</code> /= <code>y</code></p>
-<p><code>x</code> = <code>x</code> / <code>y</code></p>
+<div class="code-wrap" dir="ltr"><pre><code>x = `x` / `y`
+</code></pre></div>
 <p>=/</p>
 <p>(<code>x</code>) قرار می‌گیرد.</p>
 <p>باقیمانده تقسیم عملوند <code>x</code> بر عملوند <code>y</code> درون متغیر سمت چپ (<code>x</code>)</p>
 <p><code>x</code> %= <code>y</code></p>
-<p><code>x</code> = <code>x</code> % <code>y</code></p>
+<div class="code-wrap" dir="ltr"><pre><code>x = `x` % `y`
+</code></pre></div>
 <p>=%</p>
 <p>قرار می‌گیرد.</p>
 <p>عملوند <code>x</code> را به توان عملوند <code>y</code> می‌رساند و نتیجه را درون متغیر <code>x</code></p>
 <p><code>x</code> **= <code>y</code></p>
-<p><code>x</code> = <code>x</code> ** <code>y</code></p>
+<div class="code-wrap" dir="ltr"><pre><code>x = `x` ** `y`
+</code></pre></div>
 <p>=**</p>
 <p>قرار می‌دهد.</p>
 <hr />
@@ -94,8 +102,7 @@
 <p>, &lt;</p>
 </blockquote>
 <p>کوچک‌تر یا بزرگ‌تر بودن عملوند اول نسبت به عملوند دوم</p>
-<p>=&lt; , =&gt;کوچک‌تر یا مساوی، بزرگ‌تر یا مساوی</p>
-<p>?</p>
+<p>=&lt; , =&gt;کوچک‌تر یا مساوی، بزرگ‌تر یا مساوی ?</p>
 <p>عملگر شرطی سه‌تایی که برای انتخاب بین دو مقدار بر اساس یک شرط استفاده می‌شود.</p>
 <p>عملگرهای منطقی (<code>Boolean</code>): از عملگرهای منطقی برای ترکیب یا معکوس کردن شرایط استفاده می‌شود. این عملگرها امکان ترکیب عبارات منطقی را در شرایط مختلف فراهم می‌کنند. جدول ٩١ عملگرهای منطقی جاوا‌اسکریپت را معرفی می‌کند:</p>
 <p>جدول ٩١ عملگرهای منطقی</p>
@@ -112,7 +119,7 @@
 <p>کار با انواع عملگرهای جاوا‌اسکریپت</p>
 <h3 id="_7">کار کارگاهی</h3>
 <p>فایل جدیدی با نام <code>workshop3.html</code> ایجاد کنید و تگ <code>&lt;script&gt;</code> را در بخش <code>body</code> بنویسید. سپس اسکریپت زیر را درون آن وارد کنید و نتایج به‌دست آمده را در جاهای خالی بنویسید.</p>
-<div class="code-wrap" dir="ltr"><pre><code>;&quot;1 let x = 10, y = 2, z= 3, w=20, s=&quot;10&quot;, n = &quot;sara&quot;, m=&quot;sina
+<div class="code-wrap" dir="ltr"><pre><code>;&quot;1 let x = 10, y = 2, z= 3, w=20, s=&quot;10&quot;, n = &quot;sara&quot;, m=&quot;sina;
 </code></pre></div>
 <p>;++2 <code>x</code></p>
 <p>.………………</p>
@@ -128,67 +135,73 @@
 <p>.………………</p>
 <div class="code-wrap" dir="ltr"><pre><code>……………………………… ;)x: &quot;+x + &quot; , y:&quot; + y + &quot; , z:&quot; + z , &quot; , w:&quot; + w&quot;(8 console.log
 </code></pre></div>
-<p>.……………… ;)<code>x</code> &lt; <code>y</code>( = 9 <code>let</code> <code>a</code></p>
+<p>.……………… ;)<code>x</code> &lt; <code>y</code>( = 9 <code>let a</code></p>
 <div class="code-wrap" dir="ltr"><pre><code>.……………… ;)y == z( &amp;&amp; )x &gt; y( = 10 Let b
 .……………… ;)x === s( = 11 Let c
 </code></pre></div>
-<p>.……………… ;)<code>y</code> != <code>z</code>( || 12 <code>Let</code> <code>d</code> = <code>c</code> .……………… ;)<code>n</code> &lt; <code>m</code>( = 13 <code>Let</code> <code>e</code></p>
-<div class="code-wrap" dir="ltr"><pre><code>;)a: &quot;+a + &quot; , b:&quot; + b + &quot; , c:&quot; + c , &quot; , d:&quot; + d + &quot; , e: &quot;+e&quot;(14 console.log
+<p>.……………… ;)<code>y</code> != <code>z</code>( || 12 <code>Let d</code> = <code>c</code> .……………… ;)<code>n</code> &lt; <code>m</code>( = 13 <code>Let e</code></p>
+<div class="code-wrap" dir="ltr"><pre><code>;)a: &quot;+a + &quot; , b:&quot; + b + &quot; , c:&quot; + c , &quot; , d:&quot; + d + &quot; , e: &quot;+e&quot;(14 console.log;
 .……………… ;&quot;x is equal to s&quot;: &quot;x is not equal to s&quot; ?)x === s( = 15 result
-;(result)16 console.log
+;(result)16 console.log;
 </code></pre></div>
 <p>.………………</p>
-<h3 id="_8">نکته</h3>
+<aside class="callout note"><h3 id="_8">نکته</h3>
 <p>در هنگام مقایسه دو عملوند توسط عملگرهای == و =! نوع داده عملوندها اهمیتی ندارد و فقط مقادیر آنها بررسی می‌شود؛ درحال‌یکه عملگر === و ==! نوع داده عملوندها را نیز مد نظر دارد.</p>
-<h3 id="_9">نکته</h3>
+</aside><aside class="callout note"><h3 id="_9">نکته</h3>
 <p>عبارت ?(<code>x===s</code>) تساوی دو متغیر <code>x</code> و <code>s</code> را بررسی می‌کند. اگر نتیجه مقایسه <code>true</code> (درست) باشد، عبارت قبل از علامت ? و اگر نتیجه <code>false</code> (غلط) باشد، عبارت بعد از علامت : در متغیر <code>result</code> ذخیره می‌گردد.</p>
-<hr /></article><article class="lesson" lang="en" dir="ltr" data-lang-block="en" hidden><p class="page-mark">Page 203</p>
+</aside><hr /></article><article class="lesson" lang="en" dir="ltr" data-lang-block="en" hidden><p class="page-mark">Page 203</p>
 <p>Arithmetic operators (<code>Arithmetic</code>): These operators are used to perform various mathematical calculations. These operators are described in Table 16:</p>
-<p>Table 16 JavaScript arithmetic operators</p>
-<p>Operator</p>
+<p>Table 16 JavaScript arithmetic operators Operator</p>
 <h3 id="explanation">Explanation</h3>
 <h3 id="example">Example</h3>
 <p>Addition, subtraction, multiplication, division, and remainder <code>x</code> = <code>y+z</code> , <code>a</code> = <code>a*2</code>, <code>n</code> = <code>n/10</code></p>
 <p>% , / , * , - , + --,++Increment and decrement by one unit<code>x++</code>, <code>y--</code>, <code>++z</code>, <code>--w</code> **Exponentiation<code>x</code> = <code>y**2</code></p>
 <p>Assignment operators (<code>Assignment</code>): These operators are used to assign a value to a variable. Some of these operators are simple and some are compound; that is, in addition to assignment, they also perform another operation on the operands. Table 17 shows this set of operators.</p>
-<p>Table 17 Assignment operators in JavaScript</p>
-<p>Operator</p>
+<p>Table 17 Assignment operators in JavaScript Operator</p>
 <h3 id="explanation_1">Explanation</h3>
 <h3 id="example_1">Example</h3>
 <p>Equivalent expression</p>
 <p>The value of the right-hand operand (<code>y</code>) is placed in the left-hand</p>
-<p><code>x</code> = <code>y</code></p>
-<p><code>x</code> = <code>y</code></p>
+<div class="code-wrap" dir="ltr"><pre><code>x = `y`
+</code></pre></div>
+<div class="code-wrap" dir="ltr"><pre><code>x = `y`
+</code></pre></div>
 <p>=</p>
 <p>operand (<code>x</code>).</p>
 <p>The sum of the operands <code>x</code> and <code>y</code> is placed in the left-hand</p>
 <p><code>x</code> += <code>y</code></p>
-<p><code>x</code> = <code>x</code> + <code>y</code></p>
+<div class="code-wrap" dir="ltr"><pre><code>x = `x` + `y`
+</code></pre></div>
 <p>+=</p>
 <p>operand (<code>x</code>).</p>
 <p>The difference of the operands <code>x</code> and <code>y</code> is placed in the left-hand</p>
 <p><code>x</code> -= <code>y</code></p>
-<p><code>x</code> = <code>x</code> – <code>y</code></p>
+<div class="code-wrap" dir="ltr"><pre><code>x = `x` – `y`
+</code></pre></div>
 <p>-=</p>
 <p>operand (<code>x</code>).</p>
 <p>The product of the operands <code>x</code> and <code>y</code> is placed in the left-hand</p>
 <p><code>x</code> *= <code>y</code></p>
-<p><code>x</code> = <code>x</code> * <code>y</code></p>
+<div class="code-wrap" dir="ltr"><pre><code>x = `x` * `y`
+</code></pre></div>
 <p>*=</p>
 <p>operand (<code>x</code>).</p>
 <p>The quotient of dividing operand <code>x</code> by operand <code>y</code> is placed in the</p>
 <p><code>x</code> /= <code>y</code></p>
-<p><code>x</code> = <code>x</code> / <code>y</code></p>
+<div class="code-wrap" dir="ltr"><pre><code>x = `x` / `y`
+</code></pre></div>
 <p>/=</p>
 <p>left-hand variable (<code>x</code>).</p>
 <p>The remainder of dividing operand <code>x</code> by operand <code>y</code> is placed in</p>
 <p><code>x</code> %= <code>y</code></p>
-<p><code>x</code> = <code>x</code> % <code>y</code></p>
+<div class="code-wrap" dir="ltr"><pre><code>x = `x` % `y`
+</code></pre></div>
 <p>%=</p>
 <p>the left-hand variable (<code>x</code>).</p>
 <p>Raises operand <code>x</code> to the power of operand <code>y</code> and places the result</p>
 <p><code>x</code> **= <code>y</code></p>
-<p><code>x</code> = <code>x</code> ** <code>y</code></p>
+<div class="code-wrap" dir="ltr"><pre><code>x = `x` ** `y`
+</code></pre></div>
 <p>**=</p>
 <p>in the variable <code>x</code>.</p>
 <hr />
@@ -207,8 +220,7 @@
 <p>, &lt;</p>
 </blockquote>
 <p>Whether the first operand is less than or greater than the second operand</p>
-<p>&lt;= , &gt;=Less than or equal to, greater than or equal to</p>
-<p>?</p>
+<p>&lt;= , &gt;=Less than or equal to, greater than or equal to ?</p>
 <p>The ternary conditional operator, used to choose between two values based on a condition.</p>
 <p>Boolean operators (<code>Boolean</code>): Logical operators are used to combine or reverse conditions. These operators make it possible to combine logical expressions in different situations. Table 19 introduces JavaScript’s logical operators:</p>
 <p>Table 19 Logical operators</p>
@@ -225,7 +237,7 @@
 <p>Working with JavaScript’s different kinds of operators</p>
 <h3 id="workshop">Workshop</h3>
 <p>Create a new file named <code>workshop3.html</code> and write the <code>&lt;script&gt;</code> tag in the <code>body</code> section. Then enter the following script in it and write the results you get in the blanks.</p>
-<div class="code-wrap" dir="ltr"><pre><code>;&quot;1 let x = 10, y = 2, z= 3, w=20, s=&quot;10&quot;, n = &quot;sara&quot;, m=&quot;sina
+<div class="code-wrap" dir="ltr"><pre><code>;&quot;1 let x = 10, y = 2, z= 3, w=20, s=&quot;10&quot;, n = &quot;sara&quot;, m=&quot;sina;
 </code></pre></div>
 <p>;++2 <code>x</code></p>
 <p>.………………</p>
@@ -241,21 +253,21 @@
 <p>.………………</p>
 <div class="code-wrap" dir="ltr"><pre><code>……………………………… ;)x: &quot;+x + &quot; , y:&quot; + y + &quot; , z:&quot; + z , &quot; , w:&quot; + w&quot;(8 console.log
 </code></pre></div>
-<p>.……………… ;)<code>x</code> &lt; <code>y</code>( = 9 <code>let</code> <code>a</code></p>
+<p>.……………… ;)<code>x</code> &lt; <code>y</code>( = 9 <code>let a</code></p>
 <div class="code-wrap" dir="ltr"><pre><code>.……………… ;)y == z( &amp;&amp; )x &gt; y( = 10 Let b
 .……………… ;)x === s( = 11 Let c
 </code></pre></div>
-<p>.……………… ;)<code>y</code> != <code>z</code>( || 12 <code>Let</code> <code>d</code> = <code>c</code> .……………… ;)<code>n</code> &lt; <code>m</code>( = 13 <code>Let</code> <code>e</code></p>
-<div class="code-wrap" dir="ltr"><pre><code>;)a: &quot;+a + &quot; , b:&quot; + b + &quot; , c:&quot; + c , &quot; , d:&quot; + d + &quot; , e: &quot;+e&quot;(14 console.log
+<p>.……………… ;)<code>y</code> != <code>z</code>( || 12 <code>Let d</code> = <code>c</code> .……………… ;)<code>n</code> &lt; <code>m</code>( = 13 <code>Let e</code></p>
+<div class="code-wrap" dir="ltr"><pre><code>;)a: &quot;+a + &quot; , b:&quot; + b + &quot; , c:&quot; + c , &quot; , d:&quot; + d + &quot; , e: &quot;+e&quot;(14 console.log;
 .……………… ;&quot;x is equal to s&quot;: &quot;x is not equal to s&quot; ?)x === s( = 15 result
-;(result)16 console.log
+;(result)16 console.log;
 </code></pre></div>
 <p>.………………</p>
-<h3 id="note">Note</h3>
+<aside class="callout note"><h3 id="note">Note</h3>
 <p>When comparing two operands with the == and != operators, the data type of the operands does not matter and only their values are checked; whereas the === and !== operators also take the data type of the operands into account.</p>
-<h3 id="note_1">Note</h3>
+</aside><aside class="callout note"><h3 id="note_1">Note</h3>
 <p>The expression ?(<code>x===s</code>) checks whether the two variables <code>x</code> and <code>s</code> are equal. If the result of the comparison is <code>true</code>, the phrase before the ? mark is stored in the variable <code>result</code>, and if the result is <code>false</code>, the phrase after the : mark is stored.</p>
-<hr /></article>
+</aside><hr /></article>
       <aside class="extra">
         <h2 data-fa="تمرین این بخش" data-en="Exercises for this section">تمرین این بخش</h2>
         <p class="extra-note" data-fa="این تمرین‌ها و پیوندها اضافه بر متن کتاب‌اند." data-en="These exercises and links are in addition to the book.">این تمرین‌ها و پیوندها اضافه بر متن کتاب‌اند.</p>
@@ -265,7 +277,7 @@
     <nav class="pager"><a rel="prev" class="prev" href="p3-js-vars.html"><span class="pager-word" data-fa="قبلی" data-en="Previous">قبلی</span><span class="pager-name" data-fa="متغیر و نوع داده" data-en="Variables and data types">متغیر و نوع داده</span></a><a rel="next" class="next" href="p3-js-data.html"><span class="pager-word" data-fa="بعدی" data-en="Next">بعدی</span><span class="pager-name" data-fa="آرایه و شیء" data-en="Arrays and objects">آرایه و شیء</span></a></nav>
     </div>
   </div>
-  <script src="../assets/search-index.js?v=4"></script>
-  <script src="../assets/app.js?v=4"></script>
+  <script src="../assets/search-index.js?v=6"></script>
+  <script src="../assets/app.js?v=6"></script>
 </body>
 </html>

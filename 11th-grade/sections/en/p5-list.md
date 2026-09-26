@@ -10,12 +10,11 @@ After registering the cities, by clicking on `Citys`, the list of registered cit
 
 Figure 43 list of registered cities
 
-In Figure 43, `City` `object` has been used to display the title of each city. To display the city titles properly, open the `models.py` file and apply changes as shown in Figure 44 for the `City` model and save the file.
+In Figure 43, `City object` has been used to display the title of each city. To display the city titles properly, open the `models.py` file and apply changes as shown in Figure 44 for the `City` model and save the file.
 
 ![Figure 44 adding the str method to the city model](../images/p311-02.png)
 
 Figure 44 adding the `str` method to the city model
-
 
 ---
 
@@ -39,25 +38,19 @@ For this you first need to get to know Django’s `ORM` tool.
 
 To work with the database the `SQL` language is used; for example the `SELECT` command is one of the main commands of the `SQL` language.
 
-
 ---
 
 **Page 307**
 
 With the `SELECT` command as follows you can retrieve all cities of the `City` table from the database:
 
-```
 SELECT id, title, lat, lon FROM weather_city
-```
 
 But in Django there is a useful tool named `ORM` that makes working with the database easier. `ORM` is like a translator. It receives database-related operations in the Python language and behind the scenes translates them into `SQL` commands.
 
 For example the equivalent of the previous query in Django’s `ORM` is as follows:
 
-```
-City.objects.all()
-```
-
+`City.objects.all()`
 In this Python code, `City` is the model name.
 
 Now change the `show_temp_view` code using Django’s `ORM` as shown in Figure 46.
@@ -77,7 +70,6 @@ Line 7: the `lat` and `lon` values from the city fetched from the table have bee
 Line 17: the city name has also been received from the database and stored inside the `context` dictionary.
 
 Save the file and open the site’s home page. Hamedan’s temperature is displayed.
-
 
 ---
 
@@ -99,9 +91,7 @@ To display the list of cities on the site’s home page you can carry out four s
 
 1 Creating a function named `city_list_view` in `Views.py`
 
-```
-2 ساختن یک template با نام city_list.html
-```
+2 template city_list.html
 
 3 Changing and configuring the `urls.py` file
 
@@ -109,10 +99,7 @@ To display the list of cities on the site’s home page you can carry out four s
 
 ![Figure 48 adding city_list_view](../images/p314-02.png)
 
-```
-شکل 48 افزودن city_list_view
-```
-
+48 city_list_view
 
 ---
 
@@ -128,9 +115,7 @@ Step two: now create an `html` file named `city_list.html` inside the `templates
 
 ![Figure 49 adding city_list.html](../images/p315-01.png)
 
-```
-شکل 49 افزودن city_list.html
-```
+49 city_list.html
 
 ### Code notes:
 
@@ -142,12 +127,11 @@ Line 11: using {{ }} you can access the fields of each `item`. `title` is the fi
 
 Line 12: you must definitely end the `for` loop with `endfor`; otherwise you will face an error in the browser.
 
-
 ---
 
 **Page 310**
 
-Step three: change the `urls.py` file in the `weather` `app` as shown in Figure 50.
+Step three: change the `urls.py` file in the `weather app` as shown in Figure 50.
 
 ![Figure 50 adding the cities list path to urls.py](../images/p316-01.png)
 
@@ -157,9 +141,7 @@ Figure 50 adding the cities list `path` to `urls.py`
 
 Line 6: a new `path` has been added for using `city_list_view` and it means that the list of cities
 
-```
-در آدرس /listhttp://127.0.0.1:8000/city نمایش داده می‌شود.
-```
+/listhttp://127.0.0.1:8000/city ‌.
 
 Step four: change the `show_temp.html` code to add a link to the cities list page, as shown in Figure 51.
 
@@ -167,16 +149,15 @@ Step four: change the `show_temp.html` code to add a link to the cities list pag
 
 Figure 51 adding a link to the cities list
 
-
 ---
 
 **Page 311**
 
 ### Code notes:
 
-Line 15: on this line an `a` tag has been added and its `href` value equals the expression {% `'url` `'city_list` %}.
+Line 15: on this line an `a` tag has been added and its `href` value equals the expression {% `'url 'city_list` %}.
 
-In this expression {% `'url` `'city_list` %} is a `Template` `Tag`. The `url` tag has been used and `city_list` is its argument. This line, using the path name `city_list`, automatically generates the address of the cities list link (Figure 52).
+In this expression {% `'url 'city_list` %} is a `Template Tag`. The `url` tag has been used and `city_list` is its argument. This line, using the path name `city_list`, automatically generates the address of the cities list link (Figure 52).
 
 ![Figure 52 how the url tag works in Django](../images/p317-01.png)
 
@@ -187,7 +168,6 @@ Now save the file and `refresh` the site’s home page; you will see the added l
 ![Figure 53 displaying the cities list link](../images/p317-02.png)
 
 Figure 53 displaying the cities list link
-
 
 ---
 
@@ -206,6 +186,5 @@ First open the `city_list.html` file and apply the desired changes as shown in F
 ![Figure 55 adding a link to each city](../images/p318-02.png)
 
 Figure 55 adding a link to each city
-
 
 ---

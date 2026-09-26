@@ -6,9 +6,7 @@ The `while` loop This loop executes a set of statements as long as the loop cond
 
 **Figure 87**
 
-```
-: while condition یا : شرط حلقه while
-```
+: while condition : while
 
 `statements` → loop body statements
 
@@ -29,7 +27,6 @@ In the next two lines the guest's name is asked and the welcome message will be 
 Given that there is no end for the program's execution, to stop the program you must either use the key combination `Ctrl` + `C` or close the window of the running program.
 
 Example: Can the program above be written so that after the groom enters, the welcoming task ends?
-
 
 ---
 
@@ -60,7 +57,6 @@ Although this program works well, this structure, because of the presence of `Tr
 Example: The welcoming attendant has been told to continue this work until the groom has not arrived; the code changes as follows.
 
 Note that in this example the condition for continuing the loop is in front of the `while` statement and you do not need to control anything inside the loop.
-
 
 ---
 
@@ -96,7 +92,6 @@ Inside the loop first the welcome is printed and in the next line another name w
 
 The examples above all help the programmer learn how to use the `while` loop in different situations. By rewriting the code and thinking about the process of each of the programs above, the programmer learns the material more precisely. For better learning, pay attention to the examples on the next page.
 
-
 ---
 
 **Page 43**
@@ -130,7 +125,6 @@ This continues as long as the user enters the word `exit`. After the loop ends, 
 ![Figure 94](../images/p049-04.png)
 
 **Figure 94**
-
 
 ---
 
@@ -184,7 +178,6 @@ The end of the work is determined by the user or a specific event. So the loop c
 
 To control the loop and prevent infinite execution, before the loop starts, the loop variable must be initialized.
 
-
 ---
 
 **Page 45**
@@ -205,7 +198,6 @@ In the previous example and at the end of the program above, with the help of a 
 
 Write a program so that the user can repeatedly order food, until they enter `"done"`.
 
-Each time a new food is taken from the user, the message `".Your` `order` `for` `<food>` `has` `been` `added"` should be displayed and the new food should be added (`append`) to the food order list. When the user enters `"done"`, the program should display all the orders.
-
+Each time a new food is taken from the user, the message `".Your order for <food> has been added"` should be displayed and the new food should be added (`append`) to the food order list. When the user enters `"done"`, the program should display all the orders.
 
 ---

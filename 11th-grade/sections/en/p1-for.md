@@ -12,8 +12,8 @@ The overall structure of the `for` loop in Python is as follows:
 
 ```
 :for variable in sequence
-statements
 ```
+statements
 
 In this structure:
 
@@ -42,7 +42,6 @@ Run the program and observe the result (Figure 74).
 ![Figure 74](../images/p039-03.png)
 
 **Figure 74**
-
 
 ---
 
@@ -87,7 +86,6 @@ count = count + 1
 
 In the final line, the final value of `count` is printed. Note that this line is outside the loop.
 
-
 ---
 
 **Page 35**
@@ -110,19 +108,17 @@ If the above condition is met, one is added to the variable `count`.
 
 Lists have a method for doing the code above; research it.
 
-Using the `range`() function: So far, the `for` loop has been used to traverse the elements in lists and strings.
+Using the `range()` function: So far, the `for` loop has been used to traverse the elements in lists and strings.
 
 In some cases, a statement needs to be repeated a specific number of times, without a list of values being available in advance.
 
 In such situations, the `range` function is used.
 
-The `range`() function produces a sequence of numbers that starts from the value `start` and, with steps specified in `step`, continues up to but not including the value `stop`.
+The `range()` function produces a sequence of numbers that starts from the value `start` and, with steps specified in `step`, continues up to but not including the value `stop`.
 
 `Start:` (optional and default)
 
-```
 :)start, stop, step( for counter in range
-```
 
 `Stop:` (required) and that value itself is not included.
 
@@ -132,12 +128,11 @@ Loop body statements
 
 **Figure 78**
 
-
 ---
 
 **Page 36**
 
-First form: In the simplest form, the `range`() function receives only one number, written as `range`(`stop`). Consider the example below:
+First form: In the simplest form, the `range()` function receives only one number, written as `range`(`stop`). Consider the example below:
 
 ![Book image](../images/p042-04.png)
 
@@ -177,7 +172,6 @@ Example: A loop to print even numbers less than 10 (Figure 81).
 
 **Figure 81**
 
-
 ---
 
 **Page 37**
@@ -198,17 +192,13 @@ Write a program that receives the waiting time to get food as a number (in minut
 
 At each step, the message below is printed:
 
-```
 Time remaining: X minutes
-```
 
 in which, instead of `X`, the remaining time value is displayed.
 
 After the count reaches zero, the message below is displayed.
 
-```
 !Your food is ready
-```
 
 ### Activity
 
@@ -227,7 +217,6 @@ In this example, the loop counter variable is not used in the loop body; therefo
 ### Try this
 
 Investigate what advantages using _ instead of using a variable name has.
-
 
 ---
 
@@ -253,12 +242,11 @@ Now if you want, when printing, the name of a particular food (for example, `sou
 
 **Figure 84**
 
-Code explanation: In the line `"soup"` == `if` `item`, it is checked whether the value of the variable `item` equals the value `soup` or not.
+Code explanation: In the line `"soup"` == `if item`, it is checked whether the value of the variable `item` equals the value `soup` or not.
 
 If the `if` condition is met, the `continue` statement is executed and causes the loop to immediately go to the next element, which is `"ash"`. For that reason, the name `soup` is not printed in the program output.
 
 In general, using the `continue` statement, the loop skips executing part of the code inside the loop for particular repetitions and goes directly to the beginning of the next repetition.
-
 
 ---
 
@@ -291,6 +279,5 @@ Now write and run the two programs below.
 ### Try this
 
 Given the output of the programs above, state the use of the words `break` and `continue` for each of the programs.
-
 
 ---

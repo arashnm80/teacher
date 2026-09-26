@@ -6,19 +6,11 @@ Work performance standard: The student should be able, by applying object-orient
 
 Score
 
-Conditions for performing the work (tools, materials, equipment,
-
-Tools
-
-Results
-
-Row
+Conditions for performing the work (tools, materials, equipment, Tools Results Row
 
 ### Steps
 
-Standard (indicators / judgment / scoring)
-
-Earned
+Standard (indicators / judgment / scoring) Earned
 
 Time, place, and ...)
 
@@ -42,9 +34,7 @@ A working computer or laptop, `Python` installed (version `x.3`), running
 
 1Creating and working with a base class
 
-A code editor (such as `IDLE` or `VS` `Code`) Time
-
-Practical program
+A code editor (such as `IDLE` or `VS Code`) Time Practical program
 
 2 Creating an instance without a runtime error3 Correctly changing attribute values4 Running
 
@@ -72,23 +62,15 @@ Practical,
 
 2
 
-Various attributes, time 15 minutes, environment
-
-Levels
-
-Code analysis
+Various attributes, time 15 minutes, environment Levels Code analysis Standard workshop.
 
 1 Defining an attribute with a default value 2 Correct use of _ and _ _ 3 Understanding
-
-Standard workshop.
 
 Access restrictions and analyzing errors4 Observing naming conventions2 Student Incomplete completion of steps1
 
 1 Correct definition of the child class2 Correct use of 3 `super` Correct transfer of parent attributes 4 Completing Try this items 5 Completing the steps in other ways3
 
-A computer with a `Python` runtime environment, including a class
-
-Observation
+A computer with a `Python` runtime environment, including a class Observation
 
 1 Correct definition of the child class2 Correct use of 3 `super` Correct transfer of
 
@@ -130,10 +112,7 @@ Incomplete completion of steps1
 
 Other statements
 
-```
-type()
-```
-
+`type()`
 A computer equipped with `Python`, time 15 minutes, environment and analysis
 
 5Examining class type and structure
@@ -143,7 +122,6 @@ A computer equipped with `Python`, time 15 minutes, environment and analysis
 Practical class.
 
 Output, output conceptually2 Analytical oral questioning Incomplete completion of each step1
-
 
 ---
 
@@ -161,9 +139,7 @@ And attitude:
 
 Yes
 
-Work assessment (competence in performing the work)
-
-No
+Work assessment (competence in performing the work) No
 
 ### Explanation:
 

@@ -26,7 +26,6 @@ Line 13: If `city_id` has a value, using Django’s `ORM`, the city selected by 
 
 Line 15: If `city_id` is equal to `None` (`id` is not in the address bar), the first city is fetched from the database.
 
-
 ---
 
 **Page 314**
@@ -53,7 +52,6 @@ Stage one: Change the project’s main `urls.py` file as in Figure 58.
 
 Figure 58 adding a new `path` for `login` and `logout`
 
-
 ---
 
 **Page 315**
@@ -66,7 +64,7 @@ By adding this line of code to the `urls.py` file, the ability to log in, log ou
 
 All of these features are managed by the `django.contrib.auth` module, and you do not need to define another `path` by hand.
 
-Stage two: In the `templates` folder of the `weather` `app`, create a new folder named `registration`, then inside it create a file named `login.html` as in Figure 59.
+Stage two: In the `templates` folder of the `weather app`, create a new folder named `registration`, then inside it create a file named `login.html` as in Figure 59.
 
 ![Figure 59 adding the login.html file](../images/p321-01.png)
 
@@ -78,7 +76,7 @@ Line 10: A form with a method of type `post` has been created.
 
 Line 11: The `csrf_token` field has been added to the form. In Django, `csrf_token` is a security value that is placed inside forms so that it can be sure the submitted request really came from the same site and from an authorized user.
 
-This token prevents a `Cross-Site` `Request` `Forgery` attack.
+This token prevents a `Cross-Site Request Forgery` attack.
 
 Line 12: It displays the form fields as `<p>` tags in `HTML`.
 
@@ -86,8 +84,7 @@ Line 13: A button of type `submit` has been added to send the information to the
 
 ### Try this
 
-Research and study `csrf_token` and the `Cross-Site` `Request` `Forgery` attack.
-
+Research and study `csrf_token` and the `Cross-Site Request Forgery` attack.
 
 ---
 
@@ -110,7 +107,6 @@ Stage four: In the `show_temp.html` file, add the login and logout buttons as in
 ![Figure 61 adding login and logout buttons to the home page](../images/p322-02.png)
 
 Figure 61 adding login and logout buttons to the home page
-
 
 ---
 
@@ -138,7 +134,6 @@ By clicking the site login button, the user is taken to the `login` page (Figure
 
 Figure 63 site login form
 
-
 ---
 
 **Page 318**
@@ -165,7 +160,6 @@ To do this, you can add this feature to the site by using Django forms and carry
 
 Figure 64 creating `CityForm`
 
-
 ---
 
 **Page 319**
@@ -188,13 +182,10 @@ Stage two: Create the `add_city.html` file as in Figure 65.
 
 ![Figure 65 adding add_city.html](../images/p325-01.png)
 
-```
-شکل 65 افزودن add_city.html
-```
+65 add_city.html
 
 ### Code notes:
 
 A form with a method of type `post` has been created. This form takes the latitude and longitude as well as the city name from the user and sends them to the Django server to be stored in the database.
-
 
 ---

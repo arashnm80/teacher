@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title data-fa="ایده شیء و کلاس" data-en="The idea of objects and classes">ایده شیء و کلاس</title>
   <link rel="icon" href="../assets/favicon.svg">
-  <link rel="stylesheet" href="../assets/style.css?v=4">
+  <link rel="stylesheet" href="../assets/style.css?v=6">
 </head>
 <body data-root="../">
   <header class="top">
@@ -56,7 +56,7 @@
 <p><img alt="تصویر کتاب" src="../images/p241-01.png" /></p>
 <p>به این چیزها در برنامه‌نویسی، شیء (<code>Object</code>) و به این شیوۀ برنامه‌نویسی، شیءگرایی یا به اختصار (<code>.O.O.P</code>) گفته می‌شود.</p>
 <p><strong>شکل 1</strong></p>
-<p>در این رویکرد، هدف اصلی، بازآفرینی منطق و ساختار دنیای واقعی در محیط برنامه‌نویسی است. برای درک بهتر این مفهوم، می‌توان به بازی‌های استراتژیک رایج همچون <code>Age</code> <code>of</code> <code>Empires</code> یا <code>Clash</code> <code>of</code> <code>Clans</code> اشاره کرد. در این بازی‌ها، شخصیت‌ها و موجودیت‌ها به گروه‌های گوناگون تقسیم می‌شوند؛ از کارگران و سربازان گرفته تا وسایل نقلیه و ماشین‌آلات جنگی. برنامه‌نویسی شیءگرا با معرفی مفهومی به نام کلاس (<code>Class</code>)، به شما کمک می‌کند موجودیت‌های مشابه را در قالب یک گروه قرار دهید. به این ترتیب، می‌توانید هر گروه را به‌صورت یک کلاس در نظر بگیرید و ویژگی‌ها و کارهای مربوط به آن را در برنامه مشخص کنید.</p>
+<p>در این رویکرد، هدف اصلی، بازآفرینی منطق و ساختار دنیای واقعی در محیط برنامه‌نویسی است. برای درک بهتر این مفهوم، می‌توان به بازی‌های استراتژیک رایج همچون <code>Age of Empires</code> یا <code>Clash of Clans</code> اشاره کرد. در این بازی‌ها، شخصیت‌ها و موجودیت‌ها به گروه‌های گوناگون تقسیم می‌شوند؛ از کارگران و سربازان گرفته تا وسایل نقلیه و ماشین‌آلات جنگی. برنامه‌نویسی شیءگرا با معرفی مفهومی به نام کلاس (<code>Class</code>)، به شما کمک می‌کند موجودیت‌های مشابه را در قالب یک گروه قرار دهید. به این ترتیب، می‌توانید هر گروه را به‌صورت یک کلاس در نظر بگیرید و ویژگی‌ها و کارهای مربوط به آن را در برنامه مشخص کنید.</p>
 <figure class="shot"><img alt="شکل 2" src="../images/p241-02.png" /><figcaption>شکل 2</figcaption></figure>
 <p>فعًلا از دنیای بازی‌ها فاصله گرفته و یک مثال کامًلا واقعی بررسی می‌شود. یک تلفن همراه قدیمی را در نظر بگیرید. این تلفن همراه صرفًا یک وسیلۀ ساده نیست، بلکه دارای مجموعه‌ای از ویژگی‌هاست و قادر است وظایف و عملیات مختلفی را انجام دهد.</p>
 <p><img alt="تصویر کتاب" src="../images/p241-03.png" /></p>
@@ -68,18 +68,15 @@
 <p><strong>شکل 3</strong></p>
 <hr />
 <p class="page-mark">صفحه ۲۳۶</p>
-<h3 id="_7">نکته</h3>
+<aside class="callout note"><h3 id="_7">نکته</h3>
 <p>فعلاً با مثال‌هایی از گوشی‌های قدیمی شروع کرده و در ادامه درس به گوشی‌های هوشمند و گوشی‌های مخصوص بازی هم پرداخته خواهد شد.</p>
-<h3 id="_8">فعالیت</h3>
+</aside><aside class="callout activity"><h3 id="_8">فعالیت</h3>
 <p>بر اساس اطلاعات گوشی خودتان یا یک گوشی دلخواه، اطلاعات جدول زیر را تکمیل نمایید. (جدول ویژگی‌ها) در جدول زیر، نمونه‌هایی از تلفن همراه و ویژگی‌های آنها را مشاهده می‌کنید:</p>
 <p>نمونه‌ها / ویژگی‌ها<code>color</code></p>
-<p><code>brand</code></p>
-<p><code>model</code></p>
-<div class="code-wrap" dir="ltr"><pre><code>battery
-</code></pre></div>
-<p>گوشی من<code>gray</code></p>
-<p><code>nokia</code></p>
-<p>1100</p>
+<p><code>brand</code>، <code>model</code>، <code>battery</code>
+گوشی من<code>gray</code></p>
+<p><code>nokia</code>
+1100</p>
 <p>32%</p>
 <p>گوشی شما گوشی دوستتان</p>
 <p>اگر دو گوشی هم‌مدل داشته باشید، ویژگی‌های آنها مشابه است، اما میزان باتری یا رنگ می‌تواند متفاوت باشد. هرکدام از این گوشی‌ها یک شیء جداگانه محسوب می‌شوند. به مشخصاتی که یک شیء دارد، ویژگی (<code>Attribute</code>) گفته می‌شود. این ویژگی‌ها مشخص می‌کنند که هر شیء چه چیزهایی دارد.</p>
@@ -87,23 +84,22 @@
 <p>روشن و خاموش شود.</p>
 <p>تماس بگیرد.</p>
 <p>پیام ارسال کند.</p>
-<h3 id="_9">فعالیت</h3>
+</aside><aside class="callout activity"><h3 id="_9">فعالیت</h3>
 <p>به‌جز کار‌های فوق، با گوشی شخصی خودتان چه کارهای دیگری می‌توانید انجام دهید. جدول زیر را کامل کنید.</p>
 <p>1-</p>
 <p>3-</p>
 <p>2-</p>
 <p>4-</p>
 <p>متد کارهایی که یک شیء می‌تواند انجام دهد، متد (<code>Method</code>) نامیده می‌شود. در حقیقت متد‌ها مانند دستورالعمل‌هایی هستند که به شیء می‌گویند چه کاری انجام دهد.</p>
-<hr />
+</aside><hr />
 <p class="page-mark">صفحه ۲۳۷</p>
 <p>در دنیای واقعی، این تلفن همراه یک «شیء» می‌باشد و در برنامه‌نویسی شیءگرا نیز دقیقًا با همین نگاه، اشیا مدل‌سازی می‌شوند.</p>
 <p>شیء شیء (<code>Object</code>) به هر چیزی گفته می‌شود که:</p>
 <p>دارای ویژگی (<code>Attribute</code>) باشد.</p>
 <p>بتواند کار یا کارهایی (<code>Method</code>) انجام دهد.</p>
-<div class="code-wrap" dir="ltr"><pre><code>نمونه (Instance)
-</code></pre></div>
+<p>نمونه <bdi dir="ltr">(Instance)</bdi></p>
 <p>در پایتون، شیءهایی که با استفاده از یک کلاس ساخته می‌شوند، نمونه (<code>Instance</code>) آن کلاس نامیده می‌شوند. بنابراین یک تلفن همراه مشخص (مثًًلا موبایل شخصی شما)، یک نمونه (<code>Instance</code>) از کلاس تلفن همراه محسوب می‌شود.</p>
-<h3 id="_10">نکته</h3>
+<aside class="callout note"><h3 id="_10">نکته</h3>
 <p>در این کتاب از این به بعد به جای استفاده از عبارت شیء (<code>Object</code>) از اصطلاح نمونه (<code>Instance</code>) استفاده می‌شود.</p>
 <p>تعریف کلاس (<code>Class</code>) حال اگر بخواهید چندین تلفن همراه مختلف بسازید، نوشتن ویژگی‌ها و متدها برای هر کدام به‌صورت جداگانه کار درستی نیست.</p>
 <p>برای این کار، به یک قالب کلی نیاز داریم که مشخص کند:</p>
@@ -114,19 +110,15 @@
 <p>جدول ١</p>
 <p>اصطلاحات</p>
 <p>معنی</p>
-<div class="code-wrap" dir="ltr"><pre><code>کلاس (Class)
-</code></pre></div>
+<p>کلاس <bdi dir="ltr">(Class)</bdi></p>
 <p>قالب کلی یا نقشه ساخت</p>
-<div class="code-wrap" dir="ltr"><pre><code>نمونه (Instance)
-</code></pre></div>
+<p>نمونه <bdi dir="ltr">(Instance)</bdi></p>
 <p>موجود ساخته‌شده از روی یک کلاس</p>
-<div class="code-wrap" dir="ltr"><pre><code>ویژگی (Attribute)
-</code></pre></div>
+<p>ویژگی <bdi dir="ltr">(Attribute)</bdi></p>
 <p>چه چیزی دارد؟</p>
-<div class="code-wrap" dir="ltr"><pre><code>متد (Method)
-</code></pre></div>
+<p>متد <bdi dir="ltr">(Method)</bdi></p>
 <p>چه کاری انجام می‌دهد؟</p>
-<hr /></article><article class="lesson" lang="en" dir="ltr" data-lang-block="en" hidden><h1 id="writing-an-object-oriented-program">Writing an Object-Oriented Program</h1>
+</aside><hr /></article><article class="lesson" lang="en" dir="ltr" data-lang-block="en" hidden><h1 id="writing-an-object-oriented-program">Writing an Object-Oriented Program</h1>
 <hr />
 <p class="page-mark">Page 234</p>
 <h2 id="learning-unit-1">Learning Unit 1</h2>
@@ -153,7 +145,7 @@
 <p><img alt="Book illustration" src="../images/p241-01.png" /></p>
 <p>In programming, these things are called objects (<code>Object</code>), and this style of programming is called object orientation, or for short (<code>.O.O.P</code>).</p>
 <p><strong>Figure 1</strong></p>
-<p>In this approach, the main goal is to recreate the logic and structure of the real world in the programming environment. To understand this idea better, you can look at popular strategy games such as <code>Age</code> <code>of</code> <code>Empires</code> or <code>Clash</code> <code>of</code> <code>Clans</code>. In these games, characters and entities are divided into various groups—from workers and soldiers to vehicles and war machines. Object-oriented programming, by introducing a concept called a class (<code>Class</code>), helps you place similar entities into one group. In this way, you can treat each group as a class and specify its attributes and related actions in the program.</p>
+<p>In this approach, the main goal is to recreate the logic and structure of the real world in the programming environment. To understand this idea better, you can look at popular strategy games such as <code>Age of Empires</code> or <code>Clash of Clans</code>. In these games, characters and entities are divided into various groups—from workers and soldiers to vehicles and war machines. Object-oriented programming, by introducing a concept called a class (<code>Class</code>), helps you place similar entities into one group. In this way, you can treat each group as a class and specify its attributes and related actions in the program.</p>
 <figure class="shot"><img alt="Figure 2" src="../images/p241-02.png" /><figcaption>Figure 2</figcaption></figure>
 <p>For now, set games aside and look at a completely real example. Consider an older mobile phone. This phone is not merely a simple device; it has a set of attributes and can perform various tasks and operations.</p>
 <p><img alt="Book illustration" src="../images/p241-03.png" /></p>
@@ -165,18 +157,15 @@
 <p><strong>Figure 3</strong></p>
 <hr />
 <p class="page-mark">Page 236</p>
-<h3 id="note">Note</h3>
+<aside class="callout note"><h3 id="note">Note</h3>
 <p>For now, the examples start with older phones, and later in the lesson smart phones and gaming phones will also be covered.</p>
-<h3 id="activity">Activity</h3>
+</aside><aside class="callout activity"><h3 id="activity">Activity</h3>
 <p>Based on information about your own phone or a phone of your choice, complete the table below. (Attributes table) In the table below, you see examples of mobile phones and their attributes:</p>
 <p>Samples / Attributes<code>color</code></p>
-<p><code>brand</code></p>
-<p><code>model</code></p>
-<div class="code-wrap" dir="ltr"><pre><code>battery
-</code></pre></div>
-<p>My phone<code>gray</code></p>
-<p><code>nokia</code></p>
-<p>1100</p>
+<p><code>brand</code>, <code>model</code>, <code>battery</code>
+My phone<code>gray</code></p>
+<p><code>nokia</code>
+1100</p>
 <p>32%</p>
 <p>Your phone Your friend’s phone</p>
 <p>If you have two phones of the same model, their attributes are similar, but the battery level or color may differ. Each of these phones is considered a separate object. The characteristics an object has are called attributes (<code>Attribute</code>). These attributes specify what each object has.</p>
@@ -184,23 +173,22 @@
 <p>Turn on and off.</p>
 <p>Make a call.</p>
 <p>Send a message.</p>
-<h3 id="activity_1">Activity</h3>
+</aside><aside class="callout activity"><h3 id="activity_1">Activity</h3>
 <p>Besides the actions above, what other things can you do with your own phone? Complete the table below.</p>
 <p>1-</p>
 <p>3-</p>
 <p>2-</p>
 <p>4-</p>
 <p>A method is the name for the actions an object can perform; it is called a method (<code>Method</code>). In fact, methods are like instructions that tell the object what to do.</p>
-<hr />
+</aside><hr />
 <p class="page-mark">Page 237</p>
 <p>In the real world, this mobile phone is an “object,” and in object-oriented programming, objects are modeled with exactly the same view.</p>
 <p>An object (<code>Object</code>) is anything that:</p>
 <p>Has attributes (<code>Attribute</code>).</p>
 <p>Can perform one or more actions (<code>Method</code>).</p>
-<div class="code-wrap" dir="ltr"><pre><code>نمونه (Instance)
-</code></pre></div>
+<p>(Instance)</p>
 <p>In Python, objects created using a class are called instances (<code>Instance</code>) of that class. Therefore, a specific mobile phone (for example, your personal phone) is considered an instance (<code>Instance</code>) of the mobile phone class.</p>
-<h3 id="note_1">Note</h3>
+<aside class="callout note"><h3 id="note_1">Note</h3>
 <p>From this point on in this book, the term instance (<code>Instance</code>) is used instead of the phrase object (<code>Object</code>).</p>
 <p>Defining a class (<code>Class</code>) Now, if you want to create several different mobile phones, writing the attributes and methods separately for each one is not the right approach.</p>
 <p>For this, you need a general template that specifies:</p>
@@ -211,19 +199,14 @@
 <p>Table 1</p>
 <p>Terms</p>
 <p>Meaning</p>
-<div class="code-wrap" dir="ltr"><pre><code>کلاس (Class)
-</code></pre></div>
-<p>General template or construction blueprint</p>
-<div class="code-wrap" dir="ltr"><pre><code>نمونه (Instance)
-</code></pre></div>
+<p>(Class)</p>
+<p>General template or construction blueprint (Instance)</p>
 <p>An entity created from a class</p>
-<div class="code-wrap" dir="ltr"><pre><code>ویژگی (Attribute)
-</code></pre></div>
+<p>(Attribute)</p>
 <p>What does it have?</p>
-<div class="code-wrap" dir="ltr"><pre><code>متد (Method)
-</code></pre></div>
+<p>(Method)</p>
 <p>What does it do?</p>
-<hr /></article>
+</aside><hr /></article>
       <aside class="extra">
         <h2 data-fa="تمرین این بخش" data-en="Exercises for this section">تمرین این بخش</h2>
         <p class="extra-note" data-fa="این تمرین‌ها و پیوندها اضافه بر متن کتاب‌اند." data-en="These exercises and links are in addition to the book.">این تمرین‌ها و پیوندها اضافه بر متن کتاب‌اند.</p>
@@ -233,7 +216,7 @@
     <nav class="pager"><a rel="prev" class="prev" href="p4-intro.html"><span class="pager-word" data-fa="قبلی" data-en="Previous">قبلی</span><span class="pager-name" data-fa="معرفی پودمان شیءگرایی" data-en="Introducing the object-oriented module">معرفی پودمان شیءگرایی</span></a><a rel="next" class="next" href="p4-class.html"><span class="pager-word" data-fa="بعدی" data-en="Next">بعدی</span><span class="pager-name" data-fa="ساخت کلاس و متد" data-en="Writing a class and methods">ساخت کلاس و متد</span></a></nav>
     </div>
   </div>
-  <script src="../assets/search-index.js?v=4"></script>
-  <script src="../assets/app.js?v=4"></script>
+  <script src="../assets/search-index.js?v=6"></script>
+  <script src="../assets/app.js?v=6"></script>
 </body>
 </html>

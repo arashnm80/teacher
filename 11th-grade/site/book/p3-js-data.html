@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title data-fa="آرایه و شیء" data-en="Arrays and objects">آرایه و شیء</title>
   <link rel="icon" href="../assets/favicon.svg">
-  <link rel="stylesheet" href="../assets/style.css?v=4">
+  <link rel="stylesheet" href="../assets/style.css?v=6">
 </head>
 <body data-root="../">
   <header class="top">
@@ -33,18 +33,15 @@
 <p>آرایه‌ها (<code>Arrays</code>) متغیرهای آرایه امکان نگهداری چند عنصر با انواع داده‌های مختلف را دارند. در هنگام تعریف یک متغیر از نوع آرایه، مقادیر آرایه درون علامت کروشه نوشته می‌شوند. یک آرایه می‌تواند دارای عناصری با نوع داده یکسان یا متفاوت باشد.</p>
 <h3 id="_1">مثال</h3>
 <p>در مثال زیر سه آرایه با مقادیر رشته‌ای، عددی و ترکیبی تعریف شده است:</p>
-<div class="code-wrap" dir="ltr"><pre><code>;]&quot;let cars = [&quot;Opel&quot;, &quot;Saab&quot;, &quot;Volvo&quot;, &quot;BMW&quot;, &quot;Hyundai
-;]let numbers = [1, 20 , 5 , 25 , 1000 , 10 , 1 , 5
-;]let data = [123, &quot;Opel&quot;, false , 12 , 35
+<div class="code-wrap" dir="ltr"><pre><code>;]&quot;let cars = [&quot;Opel&quot;, &quot;Saab&quot;, &quot;Volvo&quot;, &quot;BMW&quot;, &quot;Hyundai;
+;]let numbers = [1, 20 , 5 , 25 , 1000 , 10 , 1 , 5;
+;]let data = [123, &quot;Opel&quot;, false , 12 , 35;
 </code></pre></div>
 <p>هر یک از عناصر آرایه دارای اندیس هستند. اندیس عناصر آرایه از صفر شروع می‌شود، بنابراین اگر یک آرایه دارای 5 عنصر باشد، اندیس عنصر اول صفر و اندیس عنصر آخر 4 خواهد بود. برای دسترسی به عناصر آرایه از اندیس عناصر استفاده می‌شود. شکل زیر نمایی از عناصر آرایه <code>cars</code> و مقادیر آنها را نمایش می‌دهد:</p>
-<div class="code-wrap" dir="ltr"><pre><code>Hyundai
-</code></pre></div>
-<p><code>Volvo</code></p>
-<p><code>Saab</code></p>
-<p><code>Opel</code>مقدار عناصر</p>
-<p><code>BMW</code></p>
-<p>0اندیس عناصر</p>
+<p><code>Hyundai</code>، <code>Volvo</code>، <code>Saab</code>
+<code>Opel</code>مقدار عناصر</p>
+<p><code>BMW</code>
+0اندیس عناصر</p>
 <p>4</p>
 <p>3</p>
 <p>2</p>
@@ -56,11 +53,11 @@
 <p><img alt="تصویر کتاب" src="../images/p212-02.png" /></p>
 <p><img alt="تصویر کتاب" src="../images/p212-01.png" /></p>
 <p>چنانچه اندیس عنصر آرایه مشخص نشود، کل عناصر آرایه روی صفحه چاپ می‌شود.</p>
-<h3 id="_3">نکته</h3>
+<aside class="callout note"><h3 id="_3">نکته</h3>
 <p>با تعریف آرایه توسط کلمه کلیدی <code>const</code> امکان تغییر عناصر آرایه موجود است؛ اما متغیر آرایه نمی‌تواند به آرایه دیگری نسبت داده شود. به‌عنوان مثال نوشتن عبارت زیر با خطا مواجه می‌شود:</p>
 <div class="code-wrap" dir="ltr"><pre><code>]&quot;cars = [&quot;Tara&quot;, &quot;Shahin&quot;, &quot;Dena&quot;,&quot; Lamari Eama
 </code></pre></div>
-<hr />
+</aside><hr />
 <p class="page-mark">صفحه ۲۰۷</p>
 <p>ایجاد آرایه و چاپ مقادیر</p>
 <h3 id="_4">کار کارگاهی</h3>
@@ -77,9 +74,8 @@
 <p>برای دسترسی به عنصر اول آرایۀ اول (<code>Arash</code>) باید از عبارت <code>]users[0][0</code> استفاده شود و برای دسترسی به عنصر چهارم آرایۀ دوم (<code>Doctor</code>) از عبارت <code>].users[1][3</code> تصویر سمت راست، اندیس عناصر آرایۀ دوبعدی <code>users</code> را نمایش می‌دهد.</p>
 <p>کار با آرایه‌های دو بعدی در فایل <code>workshop4.html</code> محتوای آرایۀ <code>users</code> (مثال قبل) را بنویسید.</p>
 <p>1 دستورات زیر را بعد از معرفی آرایه وارد کنید و خروجی هر‌یک از دستورات را در کنسول مرورگر بررسی کنید. نتیجه را مقابل هر دستور یادداشت کنید.</p>
-<p>……………………………………… ;(<code>users</code>)<code>console.log</code> ……………………………………… ;)<code>]users[1</code>(<code>console.log</code> ……………………………………… ;)<code>]users[2][3</code>(<code>console.log</code></p>
+<p>……………………………………… ;(<code>users</code>)<code>console.log</code> ……………………………………… ;)<code>]users[1</code>(<code>console.log</code> ……………………………………… ;)<code>]users[2][3</code>(<code>console.log</code> ………………………………….</p>
 <p>2 دستوری بنویسید که باعث نمایش عنصر <code>Rose</code> شود.</p>
-<p>………………………………….</p>
 <hr />
 <p class="page-mark">صفحه ۲۰۸</p>
 <p>اشیا در جاوا‌اسکریپت شیء (<code>Object</code>) یک ساختار داده است که برای ذخیرۀ مجموعه‌ای از داده‌های مرتبط، به‌صورت جفت‌های کلید: مقدار استفاده می‌شود، در ساختار داده شیء، مجموعه‌ای از کلیدها (<code>keys</code>) به مقادیر (<code>values</code>) متناظر خود اشاره می‌کنند. اشیا برای ذخیره و سازماندهی داده‌ها و رفتارهای یک موجودیت استفاده می‌شوند. که ساختاری شبیه به دیکشنری در پاتیون دارد.</p>
@@ -101,18 +97,18 @@
 <p>دستوراتی که متد انجام می‌دهد //</p>
 <p>}</p>
 <p>}</p>
-<p>در خطوط 13 تا 15 کد صفحه بعد متد <code>displayInfo</code>() برای شیء <code>person</code> تعریف شده و در خط 17 فراخوانی آن انجام شده است.</p>
+<p>در خطوط 13 تا 15 کد صفحه بعد متد <code>displayInfo()</code> برای شیء <code>person</code> تعریف شده و در خط 17 فراخوانی آن انجام شده است.</p>
 <hr />
 <p class="page-mark">صفحه ۲۰۹</p>
 <h3 id="_8">بیشتر بدانید</h3>
 <p><img alt="تصویر کتاب" src="../images/p215-03.png" /></p>
 <p>در تعریف فوق، کلمه کلیدی <code>this</code> به شیء جاری (<code>person</code>) اشاره می‌کند و برای دسترسی به ویژگی‌های شیء جاری به‌کار می‌رود. این متد اطلاعات شیء <code>person</code> را به محل فراخوانی برمی‌گرداند.</p>
 <p>برای فراخوانی متد شیء، ابتدا نام شیء (<code>Person</code>) و سپس نام متد(<code>displayInfo</code>) به همراه علائم () نوشته می‌شود.</p>
-<p>رشته‌ای که توسط متد <code>displayInfo</code>() به محل فراخوانی برگردانده (<code>return</code>) می‌شود، باید درون علامت <code>backtick</code> قرار گیرد. این علامت در گوشه بالای صفحه کلید، زیر دکمه <code>esc</code> واقع شده است.</p>
+<p>رشته‌ای که توسط متد <code>displayInfo()</code> به محل فراخوانی برگردانده (<code>return</code>) می‌شود، باید درون علامت <code>backtick</code> قرار گیرد. این علامت در گوشه بالای صفحه کلید، زیر دکمه <code>esc</code> واقع شده است.</p>
 <p>ایجاد شیء در جاوا‌اسکریپت</p>
 <h3 id="_9">کار کارگاهی</h3>
 <p>1 فایل جدیدی با نام <code>workshop5.html</code> ایجاد کنید.</p>
-<p>2 یک شیء با نام <code>book</code> با ویژگی‌های <code>title</code>، <code>author</code> و <code>year</code> و مقادیر <code>"JavaScript"</code>، <code>"Douglas</code> <code>Crockford"</code> و 2008 ایجاد کنید.</p>
+<p>2 یک شیء با نام <code>book</code> با ویژگی‌های <code>title</code>، <code>author</code> و <code>year</code> و مقادیر <code>"JavaScript"</code>، <code>"Douglas Crockford"</code> و 2008 ایجاد کنید.</p>
 <p>……………………………………………………………</p>
 <p>3 دستوری بنویسید که مقدار ویژگی <code>author</code> در شیء <code>book</code> را چاپ نماید. ..………………....</p>
 <h3 id="_10">بیشتر بدانید</h3>
@@ -127,48 +123,43 @@
 <p>در مثال زیر شیء <code>school</code> حاوی آرایه <code>students</code> است:</p>
 <p><img alt="تصویر کتاب" src="../images/p216-01.png" /></p>
 <p><img alt="تصویر کتاب" src="../images/p216-02.png" /></p>
-<h3 id="_13">فعالیت</h3>
+<aside class="callout activity"><h3 id="_13">فعالیت</h3>
 <p>کار با اشیا و آرایه‌ها در فایل <code>workshop5.html</code> آرایه <code>students</code> و <code>school</code> را مطابق مثال فوق تعریف کنید و نتایج را در کنسول مرورگر بررسی کنید دستوری بنویسید که نام و سن خانم <code>mona</code> را در کنسول نمایش دهد.</p>
 <p>…………………………………………………</p>
 <p>ساختارهای شرطی و حلقه در جاوا‌اسکریپت ساختارهای شرطی و حلقه از اجزای اساسی زبان‌های برنامه‌نویسی، از جمله جاوا‌اسکریپت هستند. ساختارهای شرطی منطق برنامه را بر اساس شرایط خاص کنترل می‌کنند و ساختارهای حلقه عملیات خاصی را به‌صورت تکراری انجام می‌دهند. این بخش به معرفی این ساختارها می‌پردازد.</p>
 <p>دستورات شرطی <code>If</code> یک دستور شرطی امکان اجرای مجموعه‌ای از دستورات را به ازای برقراری یک شرط خاص فراهم می‌کند.</p>
 <p>بسته به نیاز برنامه، دستور <code>if</code> می‌تواند به سه صورت نوشته شود. جدول 20 شکل کلی ساختار شرطی <code>if</code> را در سه حالت مختلف نمایش می‌دهد.</p>
 <p>جدول 20 انواع ساختارهای شرطی <code>if</code></p>
-<div class="code-wrap" dir="ltr"><pre><code>else-if
-ifif-else ساده
-{ (condition1) if
-statement1
-{(condition) if
+<p><bdi dir="ltr">else-if</bdi> <bdi dir="ltr">ifif-else</bdi> ساده</p>
+<div class="code-wrap" dir="ltr"><pre><code>{ (condition1) if
+</code></pre></div>
+<p><bdi dir="ltr">statement1</bdi></p>
+<div class="code-wrap" dir="ltr"><pre><code>{(condition) if
 {(condition) if
 { (condition2) else if }
-Statement1
-statements
-statement2
-{else}
+</code></pre></div>
+<p><bdi dir="ltr">Statement1</bdi> <bdi dir="ltr">statements</bdi> <bdi dir="ltr">statement2</bdi></p>
+<div class="code-wrap" dir="ltr"><pre><code>{else}
 </code></pre></div>
 <p>}</p>
 <div class="code-wrap" dir="ltr"><pre><code>{ else }
-Statement2
-statement3
 </code></pre></div>
+<p><bdi dir="ltr">Statement2</bdi> <bdi dir="ltr">statement3</bdi></p>
 <p>}</p>
 <p>}</p>
-<hr /></article><article class="lesson" lang="en" dir="ltr" data-lang-block="en" hidden><p class="page-mark">Page 206</p>
+</aside><hr /></article><article class="lesson" lang="en" dir="ltr" data-lang-block="en" hidden><p class="page-mark">Page 206</p>
 <p>Arrays (<code>Arrays</code>) Array variables can hold several elements with different data types. When you define a variable of array type, the array values are written inside square brackets. An array can have elements of the same data type or of different types.</p>
 <h3 id="example">Example</h3>
 <p>In the following example, three arrays with string, numeric, and mixed values are defined:</p>
-<div class="code-wrap" dir="ltr"><pre><code>;]&quot;let cars = [&quot;Opel&quot;, &quot;Saab&quot;, &quot;Volvo&quot;, &quot;BMW&quot;, &quot;Hyundai
-;]let numbers = [1, 20 , 5 , 25 , 1000 , 10 , 1 , 5
-;]let data = [123, &quot;Opel&quot;, false , 12 , 35
+<div class="code-wrap" dir="ltr"><pre><code>;]&quot;let cars = [&quot;Opel&quot;, &quot;Saab&quot;, &quot;Volvo&quot;, &quot;BMW&quot;, &quot;Hyundai;
+;]let numbers = [1, 20 , 5 , 25 , 1000 , 10 , 1 , 5;
+;]let data = [123, &quot;Opel&quot;, false , 12 , 35;
 </code></pre></div>
 <p>Each of the array elements has an index. Array element indexes start at zero, so if an array has 5 elements, the index of the first element is zero and the index of the last element is 4. To access array elements, the element indexes are used. The figure below shows a view of the elements of the <code>cars</code> array and their values:</p>
-<div class="code-wrap" dir="ltr"><pre><code>Hyundai
-</code></pre></div>
-<p><code>Volvo</code></p>
-<p><code>Saab</code></p>
-<p><code>Opel</code>Element values</p>
-<p><code>BMW</code></p>
-<p>0Element indexes</p>
+<p><code>Hyundai</code>, <code>Volvo</code>, <code>Saab</code>
+<code>Opel</code>Element values</p>
+<p><code>BMW</code>
+0Element indexes</p>
 <p>4</p>
 <p>3</p>
 <p>2</p>
@@ -180,11 +171,11 @@ statement3
 <p><img alt="Book image" src="../images/p212-02.png" /></p>
 <p><img alt="Book image" src="../images/p212-01.png" /></p>
 <p>If the index of an array element is not specified, all elements of the array are printed on the page.</p>
-<h3 id="note">Note</h3>
+<aside class="callout note"><h3 id="note">Note</h3>
 <p>When you define an array with the keyword <code>const</code>, you can still change the elements of the existing array; but the array variable cannot be assigned to another array. For example, writing the following expression causes an error:</p>
 <div class="code-wrap" dir="ltr"><pre><code>]&quot;cars = [&quot;Tara&quot;, &quot;Shahin&quot;, &quot;Dena&quot;,&quot; Lamari Eama
 </code></pre></div>
-<hr />
+</aside><hr />
 <p class="page-mark">Page 207</p>
 <p>Creating an array and printing values</p>
 <h3 id="workshop">Workshop</h3>
@@ -201,9 +192,8 @@ statement3
 <p>To access the first element of the first array (<code>Arash</code>), the expression <code>]users[0][0</code> must be used, and to access the fourth element of the second array (<code>Doctor</code>), the expression <code>].users[1][3</code> The image on the right shows the indexes of the elements of the two-dimensional array <code>users</code>.</p>
 <p>Working with two-dimensional arrays In the <code>workshop4.html</code> file, write the contents of the <code>users</code> array (the previous example).</p>
 <p>1 Enter the following statements after introducing the array and check the output of each statement in the browser console. Note the result next to each statement.</p>
-<p>……………………………………… ;(<code>users</code>)<code>console.log</code> ……………………………………… ;)<code>]users[1</code>(<code>console.log</code> ……………………………………… ;)<code>]users[2][3</code>(<code>console.log</code></p>
+<p>……………………………………… ;(<code>users</code>)<code>console.log</code> ……………………………………… ;)<code>]users[1</code>(<code>console.log</code> ……………………………………… ;)<code>]users[2][3</code>(<code>console.log</code> ………………………………….</p>
 <p>2 Write a statement that causes the element <code>Rose</code> to be displayed.</p>
-<p>………………………………….</p>
 <hr />
 <p class="page-mark">Page 208</p>
 <p>Objects in JavaScript An object (<code>Object</code>) is a data structure used to store a set of related data as key: value pairs; in an object data structure, a set of keys (<code>keys</code>) point to their corresponding values (<code>values</code>). Objects are used to store and organize the data and behaviors of an entity. which has a structure similar to a dictionary in Python.</p>
@@ -225,18 +215,18 @@ statement3
 <p>// Statements that the method performs</p>
 <p>}</p>
 <p>}</p>
-<p>On lines 13 through 15 of the code on the next page, the method <code>displayInfo</code>() is defined for the object <code>person</code>, and on line 17 it is called.</p>
+<p>On lines 13 through 15 of the code on the next page, the method <code>displayInfo()</code> is defined for the object <code>person</code>, and on line 17 it is called.</p>
 <hr />
 <p class="page-mark">Page 209</p>
 <h3 id="learn-more_2">Learn more</h3>
 <p><img alt="Book image" src="../images/p215-03.png" /></p>
 <p>In the definition above, the keyword <code>this</code> refers to the current object (<code>person</code>) and is used to access the properties of the current object. This method returns the information of the object <code>person</code> to the place where it is called.</p>
 <p>To call an object’s method, first the object name (<code>Person</code>) and then the method name (<code>displayInfo</code>) are written together with the () marks.</p>
-<p>The string that the method <code>displayInfo</code>() returns (<code>return</code>) to the place where it is called must be placed inside a <code>backtick</code> mark. This mark is at the top corner of the keyboard, below the <code>esc</code> key.</p>
+<p>The string that the method <code>displayInfo()</code> returns (<code>return</code>) to the place where it is called must be placed inside a <code>backtick</code> mark. This mark is at the top corner of the keyboard, below the <code>esc</code> key.</p>
 <p>Creating an object in JavaScript</p>
 <h3 id="workshop_1">Workshop</h3>
 <p>1 Create a new file named <code>workshop5.html</code>.</p>
-<p>2 Create an object named <code>book</code> with the properties <code>title</code>, <code>author</code>, and <code>year</code> and the values <code>"JavaScript"</code>, <code>"Douglas</code> <code>Crockford"</code>, and 2008.</p>
+<p>2 Create an object named <code>book</code> with the properties <code>title</code>, <code>author</code>, and <code>year</code> and the values <code>"JavaScript"</code>, <code>"Douglas Crockford"</code>, and 2008.</p>
 <p>……………………………………………………………</p>
 <p>3 Write a statement that prints the value of the <code>author</code> property in the object <code>book</code>. ..………………....</p>
 <h3 id="learn-more_3">Learn more</h3>
@@ -251,33 +241,30 @@ statement3
 <p>In the following example, the object <code>school</code> contains the array <code>students</code>:</p>
 <p><img alt="Book image" src="../images/p216-01.png" /></p>
 <p><img alt="Book image" src="../images/p216-02.png" /></p>
-<h3 id="activity">Activity</h3>
+<aside class="callout activity"><h3 id="activity">Activity</h3>
 <p>Working with objects and arrays In the <code>workshop5.html</code> file, define the array <code>students</code> and <code>school</code> according to the example above and check the results in the browser console. Write a statement that displays Ms. <code>mona</code>’s name and age in the console.</p>
 <p>…………………………………………………</p>
 <p>Conditional and loop structures in JavaScript Conditional and loop structures are essential parts of programming languages, including JavaScript. Conditional structures control the program’s logic based on specific conditions, and loop structures perform particular operations repeatedly. This section introduces these structures.</p>
 <p>Conditional <code>If</code> statements A conditional statement makes it possible to run a set of statements when a particular condition is met.</p>
 <p>Depending on what the program needs, the <code>if</code> statement can be written in three forms. Table 20 shows the general form of the <code>if</code> conditional structure in three different cases.</p>
-<p>Table 20 Types of <code>if</code> conditional structures</p>
-<div class="code-wrap" dir="ltr"><pre><code>else-if
-ifif-else ساده
-{ (condition1) if
-statement1
-{(condition) if
+<p>Table 20 Types of <code>if</code> conditional structures else-if ifif-else</p>
+<div class="code-wrap" dir="ltr"><pre><code>{ (condition1) if
+</code></pre></div>
+<p>statement1</p>
+<div class="code-wrap" dir="ltr"><pre><code>{(condition) if
 {(condition) if
 { (condition2) else if }
-Statement1
-statements
-statement2
-{else}
+</code></pre></div>
+<p>Statement1 statements statement2</p>
+<div class="code-wrap" dir="ltr"><pre><code>{else}
 </code></pre></div>
 <p>}</p>
 <div class="code-wrap" dir="ltr"><pre><code>{ else }
-Statement2
-statement3
 </code></pre></div>
+<p>Statement2 statement3</p>
 <p>}</p>
 <p>}</p>
-<hr /></article>
+</aside><hr /></article>
       <aside class="extra">
         <h2 data-fa="تمرین این بخش" data-en="Exercises for this section">تمرین این بخش</h2>
         <p class="extra-note" data-fa="این تمرین‌ها و پیوندها اضافه بر متن کتاب‌اند." data-en="These exercises and links are in addition to the book.">این تمرین‌ها و پیوندها اضافه بر متن کتاب‌اند.</p>
@@ -287,7 +274,7 @@ statement3
     <nav class="pager"><a rel="prev" class="prev" href="p3-js-ops.html"><span class="pager-word" data-fa="قبلی" data-en="Previous">قبلی</span><span class="pager-name" data-fa="عملگرها" data-en="Operators">عملگرها</span></a><a rel="next" class="next" href="p3-js-if.html"><span class="pager-word" data-fa="بعدی" data-en="Next">بعدی</span><span class="pager-name" data-fa="شرط در جاوااسکریپت" data-en="Conditions in JavaScript">شرط در جاوااسکریپت</span></a></nav>
     </div>
   </div>
-  <script src="../assets/search-index.js?v=4"></script>
-  <script src="../assets/app.js?v=4"></script>
+  <script src="../assets/search-index.js?v=6"></script>
+  <script src="../assets/app.js?v=6"></script>
 </body>
 </html>

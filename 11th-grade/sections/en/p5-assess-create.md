@@ -6,19 +6,11 @@ Performance standard for the work: the student, with a correct understanding of 
 
 Score
 
-Conditions for performing the work (tools, materials, equipment,
-
-Tools
-
-Results
-
-Row
+Conditions for performing the work (tools, materials, equipment, Tools Results Row
 
 ### Steps
 
-Standard (indicators / judgment / scoring)
-
-Obtained
+Standard (indicators / judgment / scoring) Obtained
 
 time, place, and ...)
 
@@ -40,15 +32,13 @@ Final tools: computer time: 10 minutes; place: workshop
 
 Written Django with pure Python 2 Short, carrying out incomplete performance of any of the steps 1 Practical
 
-1 Running the `pip` `install` `django` command without error 2 Checking the Django version Test
+1 Running the `pip install django` command without error 2 Checking the Django version Test
 
 3
 
 3 Preparing the project folder 4 Doing the work another way 5 Doing the Try this activities
 
-Tools: computer with operating system installed,
-
-Written
+Tools: computer with operating system installed, Written
 
 Installing Django and setting up
 
@@ -56,7 +46,7 @@ Installing Django and setting up
 
 `Django`, `Python` internet (or offline package),
 
-1 Running the `pip` `install` `django` command without error 2 Checking the Django version Short,
+1 Running the `pip install django` command without error 2 Checking the Django version Short,
 
 development environment
 
@@ -90,7 +80,7 @@ Django
 
 default running page 3 Describing the project’s main files 2 Practical incomplete performance of any of the steps 1
 
-1 Running the command 2 `startapp` `weather2` Changing `settings.py` and testing the run test 3 Stating the relationship of the project with `app`s 4 Doing the work another way 5 Doing
+1 Running the command 2 `startapp weather2` Changing `settings.py` and testing the run test 3 Stating the relationship of the project with `app`s 4 Doing the work another way 5 Doing
 
 3
 
@@ -104,7 +94,7 @@ Tools: computer, terminal, `Django`, time: 15 minutes;
 
 Short,
 
-1 Running the command 2 `startapp` `weather2` Changing `settings.py` testing
+1 Running the command 2 `startapp weather2` Changing `settings.py` testing
 
 in the project
 
@@ -116,7 +106,7 @@ Running the run 3 Stating the relationship of the project with `app`s 2 Practica
 
 Creating the first `view` and
 
-Tools: code editor (`VS` `Code`) terminal, browser;
+Tools: code editor (`VS Code`) terminal, browser;
 
 5
 
@@ -144,7 +134,7 @@ Written
 
 Displaying the real temperature in
 
-Tools: code editor (`VS` `Code`) and terminal,
+Tools: code editor (`VS Code`) and terminal,
 
 6
 
@@ -155,7 +145,6 @@ the web application
 browser; time: 35 minutes
 
 1 Running the `view` with `context` temperature data 2 Viewing and analyzing the output in the browser run 3 Examining the overall performance of the web application 2 Practical incomplete performance of any of the steps 1
-
 
 ---
 
@@ -173,9 +162,7 @@ and attitude:
 
 Yes
 
-Work assessment (competency in performing the work)
-
-No
+Work assessment (competency in performing the work) No
 
 ### Explanation:
 

@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title data-fa="حلقه‌ها" data-en="Loops">حلقه‌ها</title>
   <link rel="icon" href="../assets/favicon.svg">
-  <link rel="stylesheet" href="../assets/style.css?v=4">
+  <link rel="stylesheet" href="../assets/style.css?v=6">
 </head>
 <body data-root="../">
   <header class="top">
@@ -31,7 +31,7 @@
     <div class="main">
       <h1 class="section-title" data-fa="حلقه‌ها" data-en="Loops">حلقه‌ها</h1><article class="lesson" lang="fa" dir="rtl" data-lang-block="fa"><p class="page-mark">صفحه ۲۱۳</p>
 <p>دستورات حلقه در زبان‌های برنام‌هنویسی برای تکرار اجرای یک بخش از برنامه از دستورات حلقه استفاده می‌شود. حلقه‌های تکرار باعث کاهش حجم برنامه، خوانایی کد، بهینه‌سازی الگوریتم برنامه و افزایش کارایی برنامه می‌شوند.</p>
-<p>حلقه‌های تکرار انواع مختلفی دارند. در زبان جاوا‌اسکریپت این حلقه‌ها شامل <code>for</code>، <code>while</code>، <code>do</code> <code>while</code>، <code>for</code>…<code>of</code> و <code>for</code>…<code>in</code> است.</p>
+<p>حلقه‌های تکرار انواع مختلفی دارند. در زبان جاوا‌اسکریپت این حلقه‌ها شامل <code>for</code>، <code>while</code>، <code>do while</code>، <code>for</code>…<code>of</code> و <code>for</code>…<code>in</code> است.</p>
 <p>حلقۀ <code>for</code> زمانی که تعداد دفعات تکرار یک کار مشخص باشد، از حلقۀ <code>for</code> استفاده می‌شود. شکل کلی حلقۀ <code>for</code> به‌صورت زیر است:</p>
 <div class="code-wrap" dir="ltr"><pre><code>{ )Initialization; Condition; Increment/Decrement( for
 </code></pre></div>
@@ -45,19 +45,17 @@
 <h3 id="_1">کار کارگاهی</h3>
 <p><img alt="تصویر کتاب" src="../images/p219-02.png" /></p>
 <p>یک فایل جدید با نام <code>workshop7.html</code> ایجاد کنید و اسکریپت روبه‌رو را برای چاپ اعداد 0 تا 4 بنویسید.</p>
-<h3 id="_2">نکته</h3>
+<aside class="callout note"><h3 id="_2">نکته</h3>
 <p>چنانچه شمارنده حلقه توسط کلمه کلیدی <code>let</code> تعریف شود، دسترسی به مقدار متغیر شمارنده فقط در داخل بلوک <code>for</code> امکان پذیر خواهد بود.</p>
 <p>با توجه به این توضیحات درصورتی که بعد از علامت آکولاد بسته، دستور <code>console.log</code>(<code>i</code>) نوشته شود، پیغام خطا صادر می‌شود.</p>
-<hr />
+</aside><hr />
 <p class="page-mark">صفحه ۲۱۴</p>
 <h3 id="_3">بیشتر بدانید</h3>
 <p><strong>جدول 21</strong></p>
-<div class="code-wrap" dir="ltr"><pre><code>حلقه while و do while
-</code></pre></div>
-<p><code>while</code></p>
-<p>این حلقه‌ها مجموعه‌ای از دستورات را</p>
-<div class="code-wrap" dir="ltr"><pre><code>do while
-</code></pre></div>
+<p>حلقه <bdi dir="ltr">while</bdi> و <bdi dir="ltr">do</bdi> <bdi dir="ltr">while</bdi></p>
+<p><code>while</code>
+این حلقه‌ها مجموعه‌ای از دستورات را</p>
+<p><bdi dir="ltr">do</bdi> <bdi dir="ltr">while</bdi></p>
 <p>تا زمان نقض شدن یک شرط، تکرار</p>
 <p>{ <code>do</code></p>
 <div class="code-wrap" dir="ltr"><pre><code>{(condition) while
@@ -65,18 +63,18 @@
 <p>می‌کنند. شکل کلی این حلقه‌ها</p>
 <p>کدی که باید تکرار اجرا شود</p>
 <p>کدی که باید تکرار شود</p>
-<div class="code-wrap" dir="ltr"><pre><code>;(condition) while }
+<div class="code-wrap" dir="ltr"><pre><code>;(condition) while };
 </code></pre></div>
 <p>}</p>
 <p>به‌صورت مقابل است:</p>
 <p>در حلقه <code>while</code>، ابتدا شرط داخل پرانتز بررسی می‌شود، اگر شرط برقرار باشد دستورات داخل حلقه اجرا می‌شود، اگر شرط حلقه از ابتدا غلط باشد بنابراین محتوای حلقه اصلاً اجرا نمی‌شود.</p>
-<p>محتوای حلقه <code>do</code> <code>while</code> یک بار اجرا می‌شود، سپس شرط حلقه بررسی می‌شود. در صورت برقرار نبودن شرط، خروج از حلقه صورت می‌پذیرد.</p>
-<p>در صورتی‌که شرط حلقه نقض نشود، دستورات حلقه به‌طور مداوم تکرار می‌شوند. این وضعیت با عنوان حلقه بی‌نهایت (<code>Infinite</code> <code>loop</code>) شناخته می‌شود. حلقه بی‌نهایت می‌تواند منابع سیستم (مانند <code>CPU</code> و <code>RAM</code>) را به‌صورت بی‌رویه مصرف کند که همین مسئله موجب اختلال در عملکرد مرورگر خواهد شد.</p>
-<p>به‌کارگیری حلقه <code>while</code> و <code>do</code> <code>while</code> در فایل <code>workshop7.html</code> اسکریپت زیر را برای چاپ عناصر آرایه <code>colors</code> با استفاده از حلقه <code>while</code> بنویسید.</p>
+<p>محتوای حلقه <code>do while</code> یک بار اجرا می‌شود، سپس شرط حلقه بررسی می‌شود. در صورت برقرار نبودن شرط، خروج از حلقه صورت می‌پذیرد.</p>
+<p>در صورتی‌که شرط حلقه نقض نشود، دستورات حلقه به‌طور مداوم تکرار می‌شوند. این وضعیت با عنوان حلقه بی‌نهایت (<code>Infinite loop</code>) شناخته می‌شود. حلقه بی‌نهایت می‌تواند منابع سیستم (مانند <code>CPU</code> و <code>RAM</code>) را به‌صورت بی‌رویه مصرف کند که همین مسئله موجب اختلال در عملکرد مرورگر خواهد شد.</p>
+<p>به‌کارگیری حلقه <code>while</code> و <code>do while</code> در فایل <code>workshop7.html</code> اسکریپت زیر را برای چاپ عناصر آرایه <code>colors</code> با استفاده از حلقه <code>while</code> بنویسید.</p>
 <p><img alt="تصویر کتاب" src="../images/p220-02.png" /></p>
 <p><img alt="تصویر کتاب" src="../images/p220-01.png" /></p>
 <p>فایل را ذخیره کنید و خروجی آن را در مرورگر به نمایش بگذارید.</p>
-<p>حاصل جمع عناصر آرایه <code>numbers</code> را به کمک یک حلقه <code>do</code> <code>while</code> محاسبه کنید و نتیجه را در کنسول نمایش دهید.</p>
+<p>حاصل جمع عناصر آرایه <code>numbers</code> را به کمک یک حلقه <code>do while</code> محاسبه کنید و نتیجه را در کنسول نمایش دهید.</p>
 <p><img alt="تصویر کتاب" src="../images/p220-03.png" /></p>
 <p><img alt="تصویر کتاب" src="../images/p220-04.png" /></p>
 <hr />
@@ -103,27 +101,26 @@ for … of
 <p><img alt="تصویر کتاب" src="../images/p221-02.png" /></p>
 <p><img alt="تصویر کتاب" src="../images/p221-01.png" /></p>
 <p>متغیر <code>name</code> به عناصر آرایه <code>firstName</code> اشاره دارد؛ در هر بار اجرای حلقه، متغیر <code>name</code> به عنصر جدیدی از آرایه اشاره می‌کند.</p>
-<h3 id="_5">کنجکاوی</h3>
-<p>در عبارت ( <code>const</code> <code>name</code> <code>of</code> <code>firstNames</code>( <code>for</code> چرا از کلمه کلیدی <code>const</code> استفاده شده است؟</p>
+<aside class="callout curiosity"><h3 id="_5">کنجکاوی</h3>
+<p>در عبارت ( <code>const name of firstNames</code>( <code>for</code> چرا از کلمه کلیدی <code>const</code> استفاده شده است؟</p>
 <p>2 برای بررسی عملکرد حلقه <code>for</code> … <code>in</code> در پیمایش عناصر اشیا، اسکریپت زیر را بنویسید و نتیجه را در کنسول مرورگر بررسی کنید.</p>
 <p><img alt="تصویر کتاب" src="../images/p221-03.png" /></p>
-<hr />
+</aside><hr />
 <p class="page-mark">صفحه ۲۱۶</p>
 <p>در کد فوق متغیر <code>languages</code> یک شیء حاوی اسامی زبان‌هاست. در این شیء واژه‌های مخفف (مانند <code>en</code>، <code>fa</code> و...) به عنوان کلید عنصر و عبارت فارسی متناظر آن (مانند انگلیسی، فارسی و...) به عنوان مقدار عنصر مشخص شده است.</p>
-<p>در این کد، حلقه <code>for</code>…<code>in</code> عناصر شیء <code>languages</code> را یک‌به‌یک پیمایش می‌کند و کلید هر عنصر را درون متغیر <code>lang</code> قرار می‌دهد. سپس دستور <code>console.log</code>() نام کلید و مقدار متناظر با آن را در کنسول نمایش می‌دهد.</p>
+<p>در این کد، حلقه <code>for</code>…<code>in</code> عناصر شیء <code>languages</code> را یک‌به‌یک پیمایش می‌کند و کلید هر عنصر را درون متغیر <code>lang</code> قرار می‌دهد. سپس دستور <code>console.log()</code> نام کلید و مقدار متناظر با آن را در کنسول نمایش می‌دهد.</p>
 <p>دستور <code>break</code> این دستور برای خروج از حلقه یا ساختار <code>Switch</code> به‌کار می‌رود. اگر دستور <code>break</code> درون حلقه استفاده شود، اجرای تمام دستورات بعد از آن متوقف شده و خروج از حلقه صورت می‌گیرد.</p>
-<h3 id="_6">نکته</h3>
+<aside class="callout note"><h3 id="_6">نکته</h3>
 <p>اگر این دستور درون ساختار <code>switch</code> استفاده شود، <code>Case</code>های بعدی بررسی نخواهند شد و کنترل برنامه به بعد از آکولاد بسته منتقل می‌شود.</p>
 <p>به‌کارگیری دستور <code>Break</code></p>
-<h3 id="_7">کار کارگاهی</h3>
+</aside><h3 id="_7">کار کارگاهی</h3>
 <p>اسکریپتی بنویسید که اعداد دو رقمی آرایه زیر را در کنسول مرورگر نمایش دهد.</p>
-<div class="code-wrap" dir="ltr"><pre><code>;]let data = [10,21,37,43,76,83,98,356,200,353,444,1000
+<div class="code-wrap" dir="ltr"><pre><code>;]let data = [10,21,37,43,76,83,98,356,200,353,444,1000;
 </code></pre></div>
 <p>برای این‌کار در انتهای فایل <code>workshop7.html</code>، اسکریپت زیر را وارد کنید. سپس فایل را ذخیره کرده و خروجی آن را در کنسول به نمایش بگذارید.</p>
 <p><img alt="تصویر کتاب" src="../images/p222-02.png" /></p>
 <p><img alt="تصویر کتاب" src="../images/p222-01.png" /></p>
-<div class="code-wrap" dir="ltr"><pre><code>دستور continue
-</code></pre></div>
+<p>دستور <bdi dir="ltr">continue</bdi></p>
 <p>به‌کارگیری دستور <code>continue</code> در یک حلقه باعث می‌شود که اجرای فعلی حلقه متوقف و دور بعدی حلقه اجرا شود. به این معنی که بعد از اجرای دستور <code>continue</code> کنترل برنامه به ابتدای حلقه منتقل می‌شود و دور بعدی حلقه (در صورت امکان) اجرا می‌شود.</p>
 <hr />
 <p class="page-mark">صفحه ۲۱۷</p>
@@ -134,7 +131,7 @@ for … of
 <p><img alt="تصویر کتاب" src="../images/p223-01.png" /></p>
 <p><img alt="تصویر کتاب" src="../images/p223-02.png" /></p>
 <p>برای حذف خط فاصلۀ آخر (-)، دستور زیر را قبل از دستور <code>console.log</code> بنویسید:</p>
-<div class="code-wrap" dir="ltr"><pre><code>;)0, -3(evenNumbers = evenNumbers.slice
+<div class="code-wrap" dir="ltr"><pre><code>;)0, -3(evenNumbers = evenNumbers.slice;
 </code></pre></div>
 <h3 id="_9">بیشتر بدانید</h3>
 <p>حلقه‌های تو در تو حلقه‌هایی که تاکنون معرفی شد، امکان پیمایش عناصر تک‌بعدی را فراهم می‌کنند. برای پیمایش عناصری همچون آرایه دوبعدی نیاز به استفاده از حلقه‌های تودرتو است. این نوع حلقه زمانی ایجاد می‌شود که درون یک حلقه، حلقه دیگری قرار گیرد. در یک حلقۀ تودرتو، حلقۀ داخلی به تعداد دفعات اجرای حلقه خارجی تکرار می‌شود.</p>
@@ -147,15 +144,14 @@ for … of
 <p>علامت <code>t\</code> به معنای <code>tab</code> است و برای تنظیم فاصله بین مقادیر استفاده شده است.</p>
 <hr />
 <p class="page-mark">صفحه ۲۱۸</p>
-<h3 id="_11">فعالیت</h3>
+<aside class="callout activity"><h3 id="_11">فعالیت</h3>
 <p>ب‌هجای دستور <code>console.log</code> از دستور <code>document.write</code> برای نمایش مقادیر در صفحه مرورگر استفاده کنید.</p>
 <p>پیمایش آرایه دوبعدی با استفاده از حلقه <code>for</code></p>
-<h3 id="_12">کار کارگاهی</h3>
+</aside><h3 id="_12">کار کارگاهی</h3>
 <p>فایل <code>product.html</code> را باز کنید و کدهای جاوا‌اسکریپت زیر را به آن اضافه کنید.</p>
 <p><img alt="تصویر کتاب" src="../images/p224-02.png" /></p>
 <p><img alt="تصویر کتاب" src="../images/p224-01.png" /></p>
-<div class="code-wrap" dir="ltr"><pre><code>توابع(Functions)
-</code></pre></div>
+<p>توابع(<bdi dir="ltr">Functions</bdi>)</p>
 <p>در زبان‌های برنامه‌نویسی به بلوک‌های کدی که یک کار مشخص را انجام می‌دهند، تابع گفته می‌شود.</p>
 <p>برنامه‌نویس می‌تواند مجموعه‌ای از دستورالعمل‌ها را در قالب یک تابع گروه‌بندی کند و سپس آن را به عنوان یک واحد مجزا مورد استفاده قرار دهد. این واحدهای مجزا می‌توانند بارها مورد استفاده قرار گیرند.</p>
 <p>استفاده از توابع در برنامه‌نویسی ن‌هتنها سرعت توسعه را افزایش می‌دهد، بلکه خوانایی و قابلیت نگهداری کد را نیز افزایش می‌دهد. مجموعه دستورات نوشته‌شده برای ایجاد یک تابع، تحت یک نام مشخص قابل فراخوانی هستند. یک تابع می‌تواند مقادیری را ب‌هعنوان ورودی دریافت کند و بعد از اجرای دستورات داخل تابع، مقداری را ب‌هعنوان خروجی برگرداند.</p>
@@ -164,7 +160,7 @@ for … of
 <figure class="shot"><img alt="شکل 12" src="../images/p224-04.png" /><figcaption>شکل 12</figcaption></figure>
 <hr /></article><article class="lesson" lang="en" dir="ltr" data-lang-block="en" hidden><p class="page-mark">Page 213</p>
 <p>Loop statements in programming languages are used to repeat the execution of a section of a program. Repetition loops reduce program size, improve code readability, optimize the program algorithm, and increase program efficiency.</p>
-<p>There are different types of repetition loops. In JavaScript, these loops include <code>for</code>, <code>while</code>, <code>do</code> <code>while</code>, <code>for</code>…<code>of</code>, and <code>for</code>…<code>in</code>.</p>
+<p>There are different types of repetition loops. In JavaScript, these loops include <code>for</code>, <code>while</code>, <code>do while</code>, <code>for</code>…<code>of</code>, and <code>for</code>…<code>in</code>.</p>
 <p>The <code>for</code> loop is used when the number of times a task should be repeated is known. The general form of the <code>for</code> loop is as follows:</p>
 <div class="code-wrap" dir="ltr"><pre><code>    10|{ )Initialization; Condition; Increment/Decrement( for
 </code></pre></div>
@@ -178,19 +174,17 @@ for … of
 <h3 id="workshop">Workshop</h3>
 <p><img alt="Book image" src="../images/p219-02.png" /></p>
 <p>Create a new file named <code>workshop7.html</code> and write the script shown opposite to print the numbers 0 through 4.</p>
-<h3 id="note">Note</h3>
+<aside class="callout note"><h3 id="note">Note</h3>
 <p>If the loop counter is defined with the keyword <code>let</code>, access to the counter variable’s value will be possible only inside the <code>for</code> block.</p>
 <p>Based on these explanations, if after the closing brace the statement <code>console.log</code>(<code>i</code>) is written, an error message is issued.</p>
-<hr />
+</aside><hr />
 <p class="page-mark">Page 214</p>
 <h3 id="learn-more">Learn more</h3>
 <p><strong>Table 21</strong></p>
-<div class="code-wrap" dir="ltr"><pre><code>حلقه while و do while
-</code></pre></div>
-<p><code>while</code></p>
-<p>These loops repeat a set of statements</p>
-<div class="code-wrap" dir="ltr"><pre><code>do while
-</code></pre></div>
+<p>while do while</p>
+<p><code>while</code>
+These loops repeat a set of statements</p>
+<p>do while</p>
 <p>until a condition is violated.</p>
 <p>{ <code>do</code></p>
 <div class="code-wrap" dir="ltr"><pre><code>{(condition) while
@@ -198,18 +192,18 @@ for … of
 <p>Their general form</p>
 <p>The code that should be executed repeatedly</p>
 <p>The code that should be repeated</p>
-<div class="code-wrap" dir="ltr"><pre><code>;(condition) while }
+<div class="code-wrap" dir="ltr"><pre><code>;(condition) while };
 </code></pre></div>
 <p>}</p>
 <p>is as shown opposite:</p>
 <p>In the <code>while</code> loop, first the condition inside the parentheses is checked; if the condition is true, the statements inside the loop are executed. If the loop condition is false from the start, the loop body is not executed at all.</p>
-<p>The body of the <code>do</code> <code>while</code> loop is executed once, then the loop condition is checked. If the condition is not true, the loop is exited.</p>
-<p>If the loop condition is never violated, the loop statements repeat continuously. This situation is known as an infinite loop (<code>Infinite</code> <code>loop</code>). An infinite loop can consume system resources (such as <code>CPU</code> and <code>RAM</code>) excessively, which will disrupt the browser’s performance.</p>
-<p>Using the <code>while</code> and <code>do</code> <code>while</code> loops: In the file <code>workshop7.html</code>, write the script below to print the elements of the <code>colors</code> array using a <code>while</code> loop.</p>
+<p>The body of the <code>do while</code> loop is executed once, then the loop condition is checked. If the condition is not true, the loop is exited.</p>
+<p>If the loop condition is never violated, the loop statements repeat continuously. This situation is known as an infinite loop (<code>Infinite loop</code>). An infinite loop can consume system resources (such as <code>CPU</code> and <code>RAM</code>) excessively, which will disrupt the browser’s performance.</p>
+<p>Using the <code>while</code> and <code>do while</code> loops: In the file <code>workshop7.html</code>, write the script below to print the elements of the <code>colors</code> array using a <code>while</code> loop.</p>
 <p><img alt="Book image" src="../images/p220-02.png" /></p>
 <p><img alt="Book image" src="../images/p220-01.png" /></p>
 <p>Save the file and display its output in the browser.</p>
-<p>Calculate the sum of the elements of the <code>numbers</code> array using a <code>do</code> <code>while</code> loop and display the result in the console.</p>
+<p>Calculate the sum of the elements of the <code>numbers</code> array using a <code>do while</code> loop and display the result in the console.</p>
 <p><img alt="Book image" src="../images/p220-03.png" /></p>
 <p><img alt="Book image" src="../images/p220-04.png" /></p>
 <hr />
@@ -236,27 +230,26 @@ for … of
 <p><img alt="Book image" src="../images/p221-02.png" /></p>
 <p><img alt="Book image" src="../images/p221-01.png" /></p>
 <p>The variable <code>name</code> refers to the elements of the <code>firstName</code> array; on each execution of the loop, the variable <code>name</code> refers to a new element of the array.</p>
-<h3 id="try-this">Try this</h3>
-<p>In the expression ( <code>const</code> <code>name</code> <code>of</code> <code>firstNames</code>( <code>for</code>, why is the keyword <code>const</code> used?</p>
+<aside class="callout curiosity"><h3 id="try-this">Try this</h3>
+<p>In the expression ( <code>const name of firstNames</code>( <code>for</code>, why is the keyword <code>const</code> used?</p>
 <p>2 To examine how the <code>for</code> … <code>in</code> loop works when iterating over object elements, write the script below and check the result in the browser console.</p>
 <p><img alt="Book image" src="../images/p221-03.png" /></p>
-<hr />
+</aside><hr />
 <p class="page-mark">Page 216</p>
 <p>In the code above, the variable <code>languages</code> is an object containing the names of languages. In this object, abbreviations (such as <code>en</code>, <code>fa</code>, and so on) are specified as element keys, and the corresponding Persian phrase (such as English, Persian, and so on) is specified as the element value.</p>
-<p>In this code, the <code>for</code>…<code>in</code> loop iterates over the elements of the <code>languages</code> object one by one and places the key of each element in the variable <code>lang</code>. Then the <code>console.log</code>() statement displays the key name and its corresponding value in the console.</p>
+<p>In this code, the <code>for</code>…<code>in</code> loop iterates over the elements of the <code>languages</code> object one by one and places the key of each element in the variable <code>lang</code>. Then the <code>console.log()</code> statement displays the key name and its corresponding value in the console.</p>
 <p>The <code>break</code> statement: This statement is used to exit a loop or a <code>Switch</code> structure. If the <code>break</code> statement is used inside a loop, execution of all statements after it stops and the loop is exited.</p>
-<h3 id="note_1">Note</h3>
+<aside class="callout note"><h3 id="note_1">Note</h3>
 <p>If this statement is used inside a <code>switch</code> structure, the later <code>Case</code>s will not be checked and program control moves to after the closing brace.</p>
 <p>Using the <code>Break</code> statement</p>
-<h3 id="workshop_2">Workshop</h3>
+</aside><h3 id="workshop_2">Workshop</h3>
 <p>Write a script that displays the two-digit numbers of the array below in the browser console.</p>
-<div class="code-wrap" dir="ltr"><pre><code>;]let data = [10,21,37,43,76,83,98,356,200,353,444,1000
+<div class="code-wrap" dir="ltr"><pre><code>;]let data = [10,21,37,43,76,83,98,356,200,353,444,1000;
 </code></pre></div>
 <p>To do this, at the end of the file <code>workshop7.html</code>, enter the script below. Then save the file and display its output in the console.</p>
 <p><img alt="Book image" src="../images/p222-02.png" /></p>
 <p><img alt="Book image" src="../images/p222-01.png" /></p>
-<div class="code-wrap" dir="ltr"><pre><code>دستور continue
-</code></pre></div>
+<p>continue</p>
 <p>Using the <code>continue</code> statement in a loop causes the current execution of the loop to stop and the next iteration of the loop to run. That means after the <code>continue</code> statement runs, program control moves to the beginning of the loop and the next iteration of the loop (if possible) is executed.</p>
 <hr />
 <p class="page-mark">Page 217</p>
@@ -267,28 +260,27 @@ for … of
 <p><img alt="Book image" src="../images/p223-01.png" /></p>
 <p><img alt="Book image" src="../images/p223-02.png" /></p>
 <p>To remove the final hyphen (-), write the statement below before the <code>console.log</code> statement:</p>
-<div class="code-wrap" dir="ltr"><pre><code>;)0, -3(evenNumbers = evenNumbers.slice
+<div class="code-wrap" dir="ltr"><pre><code>;)0, -3(evenNumbers = evenNumbers.slice;
 </code></pre></div>
 <h3 id="learn-more_1">Learn more</h3>
 <p>Nested loops: The loops introduced so far make it possible to iterate over one-dimensional elements. To iterate over elements such as a two-dimensional array, you need to use nested loops. This type of loop is created when another loop is placed inside a loop. In a nested loop, the inner loop repeats as many times as the outer loop runs.</p>
 <h3 id="learn-more_2">Learn more</h3>
 <p>Using a nested loop</p>
-<p>١ Display a 5×5 multiplication table using a nested loop.</p>
-<p>٢ Write the script below at the end of the script in the file <code>workshop7.html</code> and check the result in the console.</p>
+<p>1 Display a 5×5 multiplication table using a nested loop.</p>
+<p>2 Write the script below at the end of the script in the file <code>workshop7.html</code> and check the result in the console.</p>
 <p><img alt="Book image" src="../images/p223-03.png" /></p>
 <p><img alt="Book image" src="../images/p223-04.png" /></p>
 <p>The <code>\t</code> symbol means <code>tab</code> and is used to set the spacing between values.</p>
 <hr />
 <p class="page-mark">Page 218</p>
-<h3 id="activity">Activity</h3>
+<aside class="callout activity"><h3 id="activity">Activity</h3>
 <p>Instead of the <code>console.log</code> statement, use the <code>document.write</code> statement to display the values on the browser page.</p>
 <p>Iterating over a two-dimensional array using a <code>for</code> loop</p>
-<h3 id="workshop_4">Workshop</h3>
+</aside><h3 id="workshop_4">Workshop</h3>
 <p>Open the file <code>product.html</code> and add the JavaScript code below to it.</p>
 <p><img alt="Book image" src="../images/p224-02.png" /></p>
 <p><img alt="Book image" src="../images/p224-01.png" /></p>
-<div class="code-wrap" dir="ltr"><pre><code>توابع(Functions)
-</code></pre></div>
+<p>(Functions)</p>
 <p>In programming languages, blocks of code that perform a specific task are called functions.</p>
 <p>A programmer can group a set of instructions in the form of a function and then use it as a separate unit. These separate units can be used many times.</p>
 <p>Using functions in programming not only increases development speed but also increases the readability and maintainability of the code. The set of statements written to create a function can be called under a specific name. A function can receive values as input and, after executing the statements inside the function, return a value as output.</p>
@@ -304,7 +296,7 @@ for … of
     <nav class="pager"><a rel="prev" class="prev" href="p3-js-if.html"><span class="pager-word" data-fa="قبلی" data-en="Previous">قبلی</span><span class="pager-name" data-fa="شرط در جاوااسکریپت" data-en="Conditions in JavaScript">شرط در جاوااسکریپت</span></a><a rel="next" class="next" href="p3-js-func.html"><span class="pager-word" data-fa="بعدی" data-en="Next">بعدی</span><span class="pager-name" data-fa="تابع‌ها" data-en="Functions">تابع‌ها</span></a></nav>
     </div>
   </div>
-  <script src="../assets/search-index.js?v=4"></script>
-  <script src="../assets/app.js?v=4"></script>
+  <script src="../assets/search-index.js?v=6"></script>
+  <script src="../assets/app.js?v=6"></script>
 </body>
 </html>

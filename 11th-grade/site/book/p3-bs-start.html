@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title data-fa="فریم‌ورک و شروع بوت‌استرپ" data-en="Frameworks and starting Bootstrap">فریم‌ورک و شروع بوت‌استرپ</title>
   <link rel="icon" href="../assets/favicon.svg">
-  <link rel="stylesheet" href="../assets/style.css?v=4">
+  <link rel="stylesheet" href="../assets/style.css?v=6">
 </head>
 <body data-root="../">
   <header class="top">
@@ -41,8 +41,8 @@
 <p>چگونه می‌توان با بوت‌استرپ، فرم‌های ورود اطلاعات را با سرعت بالا و به شکل مدرن طراحی کرد؟</p>
 <p>چگونه می‌توان طراحی صفحات وب را با استفاده از بوت‌استرپ بهینه کرد تا در تمام دستگاه‌ها به بهترین نحو نمایش داده شوند؟</p>
 <h3 id="_5">در پایان از هنرجو انتظار می‌رود</h3>
-<p>1 طراحی کامل ساختار یک صفحه وب (شامل هدر، بدنه و فوتر) با استفاده از سیستم شبکه‌بندی (<code>Grid</code> <code>System</code>) بوت‌استرپ، به‌طوری‌که طرح‌بندی در اندازه‌های مختلف صفحه نمایش (موبایل، تبلت، دسکتاپ) به‌درستی واکنش نشان دهد.</p>
-<p>2 انتخاب و به‌کارگیری کلاس‌های کمکی (<code>Utility</code> <code>Classes</code>) مانند کلاس‌های رنگ، فاصله (<code>Margin/Padding</code>)، سایه‌ها و تایپوگرافی برای استایل‌دهی سریع و استاندارد به عناصر بدون نیاز به نوشتن <code>CSS</code> دستی برای موارد متداول.</p>
+<p>1 طراحی کامل ساختار یک صفحه وب (شامل هدر، بدنه و فوتر) با استفاده از سیستم شبکه‌بندی (<code>Grid System</code>) بوت‌استرپ، به‌طوری‌که طرح‌بندی در اندازه‌های مختلف صفحه نمایش (موبایل، تبلت، دسکتاپ) به‌درستی واکنش نشان دهد.</p>
+<p>2 انتخاب و به‌کارگیری کلاس‌های کمکی (<code>Utility Classes</code>) مانند کلاس‌های رنگ، فاصله (<code>Margin/Padding</code>)، سایه‌ها و تایپوگرافی برای استایل‌دهی سریع و استاندارد به عناصر بدون نیاز به نوشتن <code>CSS</code> دستی برای موارد متداول.</p>
 <p>3 ساخت یک نوار ناوبری (<code>Navbar</code>) کاربردی و زیبا که شامل لینک‌ها، دکمه‌ها و قابلیت‌های واکنش‌گرا باشد و همچنین طراحی یک فوتر ساختاریافته.</p>
 <p>4 مهارت در پیاده‌سازی اجزای رابط کاربری مانند کروسل (تصاویر اسلایدی) و آکاردئون‌ها برای ارائه اطلاعات به شیوه‌ای جذاب و پویا.</p>
 <p>5 ساخت فرم‌های ثبت‌نام یا تماس با استایل‌دهی کامل بوت‌استرپ.</p>
@@ -53,83 +53,116 @@
 <p class="page-mark">صفحه ۱۴۷</p>
 <h3 id="_7">تعریف فریم ورک</h3>
 <p>فریم‌ورک (<code>Framework</code>) یک چارچوب نرم‌افزاری از پیش طراحی‌شده است که به منظور سرعت بخشیدن به فرایند طراحی و توسعه وب‌سایت‌ها و اپلیکیشن‌های وب به‌کار می‌رود. یک فریم ورک با ارائۀ مجموعه‌ای از ابزارها، کتابخانه‌ها و الگوهای آماده، به توسعه‌دهندگان امکان می‌دهد که تنها روی ویژگی‌ها و عملکردهای خاص پروژه تمرکز کنند و از کارهای تکراری و ابتدایی دوری کنند.</p>
-<div class="code-wrap" dir="ltr"><pre><code>Bootstrap چیست؟
-</code></pre></div>
-<p>بوت‌استرپ یک فریم‌ورک متن باز برای طراحی ظاهر سایت است که شامل مجموعه‌ای از کدهای آماده نوشت‌هشده با زبان‌های <code>Css</code>،<code>Html</code> و <code>Java</code> <code>Script</code> است. توسعه‌دهندگان به‌جای اینکه از صفر همه چیز را بنویسند از این کدهای آماده استفاده می‌کنند.</p>
+<p><bdi dir="ltr">Bootstrap</bdi> چیست؟</p>
+<p>بوت‌استرپ یک فریم‌ورک متن باز برای طراحی ظاهر سایت است که شامل مجموعه‌ای از کدهای آماده نوشت‌هشده با زبان‌های <code>Css</code>،<code>Html</code> و <code>Java Script</code> است. توسعه‌دهندگان به‌جای اینکه از صفر همه چیز را بنویسند از این کدهای آماده استفاده می‌کنند.</p>
 <p>ویژگی‌های <code>Bootstrap:</code> بوت‌استرپ دارای ویژگی‌های متعددی در زمینه طراحی صفحات وب است که باعث محبوبیت آن در میان توسعه‌دهندگان و طراحان وب شده است. این ویژگی‌ها به شرح زیر است:</p>
-<p>طراحی واکنش‌گرا (<code>Responsive</code> <code>Design</code>): بوت‌استرپ دارای یک سیستم گرید 12 ستونی است که امکان طراحی واکنش‌گرا را برای دستگاه‌های مختلف فراهم می‌کند.</p>
+<p>طراحی واکنش‌گرا (<code>Responsive Design</code>): بوت‌استرپ دارای یک سیستم گرید 12 ستونی است که امکان طراحی واکنش‌گرا را برای دستگاه‌های مختلف فراهم می‌کند.</p>
 <p>اجزای از پیش طراحی‌شده (<code>Components</code>): بوت‌استرپ شامل اجزای مختلفی مانند دکمه‌ها، فرم‌ها، منوی ناوبری، کاردها، مدال‌ها و نوار جست‌وجو است که به‌صورت آماده قابل استفاده هستند.</p>
 <p>پشتیبانی از جاوا‌اسکریپت: بوت‌استرپ حاوی کتابخانه‌های جاوا‌اسکریپت برای ایجاد تعاملات و انیمیشن‌ها در بخش‌های مختلف صفحه است.</p>
 <p>پشتیبانی از مرورگرها: بوت‌استرپ با اکثر مرورگرهای مدرن مانند <code>Chrome</code>، <code>Firefox</code>، <code>Safari</code> و <code>Edge</code> سازگار است.</p>
 <p>مستندات جامع: سایت رسمی بوت‌استرپ (<code>getbootstrap.com</code>) دارای مستندات کامل برای آموزش نحوۀ استفاده از اجزا و کلاس‌های بوت‌استرپ است.</p>
 <p>کاربردهای <code>Bootstrap</code> طراحی وب‌سایت‌های واکنش‌گرا: طراحی و توسعه وب‌سایت‌های شرکتی، فروشگاهی، وبلاگ‌ها و غیره.</p>
 <p>ایجاد رابط‌های کاربری جذاب: طراحی رابط‌های کاربری زیبا و مدرن برای وب‌سایت‌ها و اپلیکیشن‌های وب.</p>
-<p>پروژه‌های <code>minimum</code> <code>viable</code> <code>product</code> )<code>MVP</code>): ساخت نمونه‌های اولیه وب‌سایت‌ها (<code>MVP</code>) و ارزیابی ایده‌های طراحی.</p>
+<p>پروژه‌های <code>minimum viable product</code> )<code>MVP</code>): ساخت نمونه‌های اولیه وب‌سایت‌ها (<code>MVP</code>) و ارزیابی ایده‌های طراحی.</p>
 <p>طراحی فرم‌ها: طراحی فرم‌های زیبا و واکنش‌گرا توسط کلاس‌های آماده بوت‌استرپ.</p>
 <hr />
 <p class="page-mark">صفحه ۱۴۸</p>
 <p>به‌کارگیری بوت‌استرپ در صفحه وب برای استفاده از امکانات بوت‌استرپ در یک صفحه وب، ابتدا باید فایل <code>HTML</code> پایه ایجاد شود و سپس فایل‌های <code>CSS</code> و جاوا‌اسکریپت بوت‌استرپ به آن الحاق شود. فایل پایه شامل برچسب‌های <code>&lt;DOCTYPE</code>!&gt;،</p>
-<div class="code-wrap" dir="ltr"><pre><code>&lt;html&gt;، &lt;head&gt;، متاتگ‌های viewport، &lt;title&gt; و &lt;body&gt; است.
-</code></pre></div>
-<p>استفاده از <code>CDN1</code> در صفحه وب</p>
-<h3 id="_8">کار کارگاهی</h3>
-<p>یک صفحه وب با نام <code>test-bs.html</code> ایجاد کنید و برچسب‌های اولیه آن را بنویسید. سپس سایت <code>getbootstrap.com</code> را باز کنید. صفحه را تا بخش <code>Include</code> <code>via</code> <code>CDN</code> پیمایش کنید تا کدهای آماده <code>&lt;Link&gt;</code> و <code>&lt;script&gt;</code> را مشاهده کنید. کد <code>&lt;link&gt;</code> را در بخش <code>&lt;head&gt;</code> و کد <code>&lt;script&gt;</code> را قبل از <code>&lt;body/&gt;</code> کپی کنید. این دو کد فایل‌های <code>CSS</code> و جاوا‌اسکریپت بوت استرپ را به صفحه وب الحاق می‌کنند.</p>
-<p>کد لینک و اسکریپت بوت‌استرپ حاوی یک ویژگی به‌نام <code>Integrity</code> است که برای حفظ امنیت فایل دریافت شده از <code>CDN</code> استفاده می‌شود. با این حال امکان استفاده از کلاس‌های بوت‌استرپ بدون <code>Integrity</code> هم فراهم است. به همین دلیل در کد فوق ویژگی <code>Integrity</code> حذف شده است تا خوانایی کد افزایش یابد ولی استفاده از این ویژگی در پروژه‌های واقعی ضروری است.</p>
-<p><img alt="تصویر کتاب" src="../images/p154-01.png" /></p>
-<p>کلاس‌ها و کامپوننت‌های بوت‌استرپ کلاس‌های بوت‌استرپ مجموعه‌ای از استایل‌های از پیش تعریف شده هستند که امکان طراحی سریع و راحت اجزای رابط کاربری صفحات وب را فراهم می‌کنند. این کلاس‌ها که با استفاده از <code>CSS</code> ایجاد شده‌اند، به توسعه‌دهنده وب کمک می‌کنند که با نوشتن کدهای <code>CSS</code> کمتر، عناصری کاربرپسند و واکنش‌گرا را به صفحه وب اضافه کند.</p>
-<div class="code-wrap" dir="ltr"><pre><code>)شبکه توزیع محتوا( CDN: Content Delivery Network١
-</code></pre></div>
-<hr />
-<p class="page-mark">صفحه ۱۴۹</p>
-<p>کامپوننت‌های بوت‌استرپ عناصر از پیش طراحی شده‌ای هستند که امکان طراحی سریع و آسان رابط کاربری وب‌سایت‌ها را فراهم می‌کنند. توسع‌هدهندۀ وب می‌تواند به کمک این عناصر آماده، بدون نوشتن کدهای <code>CSS</code> و <code>JavaScript</code>، عناصر کاربرپسند و واکنش‌گرا را به صفحه وب اضافه کند. از جمله کامپوننت‌های بوت‌استرپ می‌توان به دکمه، نوار ناوبری1، کروسل2، آکاردئون3 و مُدال4 اشاره نمود. این بخش به معرفی کلاس‌ها و کامپوننت‌های بوت‌استرپ می‌پردازد.</p>
-<p>کلاس‌های <code>Utility</code> : کلاس‌های <code>Utility</code> در بوت‌استرپ، به‌طور ویژه برای استایل‌دهی عناصر صفحه استفاده می‌شوند و به‌طور مستقیم با <code>HTML</code> و <code>CSS</code> کار می‌کنند. برای استفاده از این کلاس‌ها نیازی به جاوا‌اسکریپت نیست. کلاس‌های آماده بوت‌استرپ برای تعیین رنگ، اندازه عناصر، فواصل، خط دور، سایه و غیره قابل استفاده هستند.</p>
-<p>کلاس‌های رنگ: کلاس‌های رنگ بوت‌استرپ به دو دستۀ رنگ‌های زمینه و رنگ متن تقسیم می‌شوند.</p>
-<p>هر یک از کلاس‌های رنگ دارای مفهوم و رنگ مشخصی هستند. کلاس‌های رنگ زمینه و متن به ترتیب دارای پیشوند <code>bg</code> و <code>text</code> هستند. برخی از این کلاس‌ها در جدول زیر گردآوری شده است:</p>
-<p>جدول 1 کلاس‌های رنگ <code>Bootstrap</code></p>
-<p>کلاس رنگ زمینه</p>
-<p>کلاس رنگ متن</p>
-<p>مفهوم</p>
-<div class="code-wrap" dir="ltr"><pre><code>bg-primary
-text-primaryرنگ اصلی
-bg-secondary
-text-secondaryرنگ ثانویه
-bg-success
-</code></pre></div>
-<p><code>text-success</code>رنگ موفقیت</p>
-<div class="code-wrap" dir="ltr"><pre><code>bg-danger
-text-dangerرنگ خطر
-bg-warning
-text-warningرنگ هشدار
-bg-info
-</code></pre></div>
-<p><code>text-info</code>رنگ اطلاعات</p>
-<div class="code-wrap" dir="ltr"><pre><code>bg-light
-text-lightرنگ روشن
-bg-dark
-</code></pre></div>
-<p><code>text-dark</code>رنگ تیره</p>
-<p>1- نوار ناوبری (<code>Navbar</code>): نوار بالاتری صفحه که معمولاً شامل لوگو، لین‌کها و منوهاست.</p>
-<p>2- کروسل (<code>Carousel</code>): یک عنصر تعاملی که مجموعه‌ای از تصاویر یا محتوا را به صورت پشت سرهم در یک فضای مشخص نمایش م‌یدهد و کاربر م‌یتواند بین آنها جابه‌جا شود.</p>
-<p>3- آکاردئون (<code>Accordion</code>): یک بخش قابل باز و بسته شدن برای نمایش محتوا.</p>
-<p>4- مُدال (<code>Modal</code>): پنجره یا کادر محاوره‌ای که روی محتوای صفحه ظاهر م‌یشود.</p>
-<hr />
-<p class="page-mark">صفحه ۱۵۰</p>
-<h3 id="_9">کنجکاوی</h3>
-<p>برای کسب اطلاعات بیشتر دربارۀ سایر کلاس‌های رنگ، عبارت <code>Bootstrap5.3</code> <code>background</code> و <code>Bootstrap5.3</code> <code>colors</code> را در گوگل جست‌وجو کنید.</p>
-<p>استفاده از کلاس‌های رنگ بوت استرپ</p>
-<h3 id="_10">کار کارگاهی</h3>
-<p>فایل <code>test-bs.html</code> را باز کنید، سپس یک عنصر <code>&lt;div&gt;</code> با مشخصات زیر بعد از برچسب <code>body</code> درج کنید.</p>
-<p><img alt="تصویر کتاب" src="../images/p156-03.png" /></p>
-<p>فایل را ذخیره کنید و نتیجه را در مرورگر بررسی کنید.</p>
-<p>به انتهای کلاس رنگ، عبارت <code>subtle</code> را اضافه کنید (<code>bg-primary-subtle</code>) و نتیجه را در مرورگر مشاهده کنید.</p>
-<p>کلاس‌های تعیین اندازه (<code>Sizing</code>) بوت‌استرپ دارای دو مجموعه کلاس <code>*-w</code> و <code>*-h</code> برای تعیین پهنا و ارتفاع عناصر است. پارامتر * می‌تواند جایگزین اعداد 25،50، 75 و 100 و عبارت <code>auto</code> شود. اختصاص کلاس <code>w-75</code> برای یک عنصر باعث می‌شود که پهنای عنصر برابر 75% پهنای عنصر والد باشد. کلاس‌های <code>w-auto</code> و <code>h-auto</code> پهنا و ارتفاع یک عنصر را به اندازۀ محتوای آن تنظیم می‌نمایند.</p>
-<p>استفاده از کلاس‌های <code>Sizing</code></p>
-<h3 id="_11">کار کارگاهی</h3>
-<p>در فایل <code>test-bs.html</code> یک عنصر <code>div</code> دیگری به شکل زیر به صفحه وب اضافه کنید. این عنصر حاوی یک عنصر پاراگراف است که پهنا و ارتفاع پاراگراف، 75% پهنا و ارتفاع عنصر <code>div</code> خواهد بود.</p>
-<p><img alt="تصویر کتاب" src="../images/p156-01.png" /></p>
-<p>در کد فوق پهنا و ارتفاع عنصر پاراگراف توسط کلاس‌های <code>w-75</code> و <code>h-75</code> مشخص شده است. فایل را ذخیره کنید و نتیجه را در مرورگر بررسی کنید.</p>
-<p><img alt="تصویر کتاب" src="../images/p156-02.png" /></p>
-<hr /></article><article class="lesson" lang="en" dir="ltr" data-lang-block="en" hidden><h1 id="developing-interactive-web-pages-with-bootstrap">Developing interactive web pages with Bootstrap</h1>
+<html>، <head>، متاتگ‌های <bdi dir="ltr">viewport</bdi>، <title> و <body> است.
+
+استفاده از `<bdi dir="ltr">CDN1</bdi>` در صفحه وب
+
+### کار کارگاهی
+
+یک صفحه وب با نام `<bdi dir="ltr">test-bs.html</bdi>` ایجاد کنید و برچسب‌های اولیه آن را بنویسید. سپس سایت `<bdi dir="ltr">getbootstrap.com</bdi>` را باز کنید. صفحه را تا بخش `<bdi dir="ltr">Include</bdi> <bdi dir="ltr">via</bdi> <bdi dir="ltr">CDN</bdi>` پیمایش کنید تا کدهای آماده `<Link>` و `<script>` را مشاهده کنید. کد `<link>` را در بخش `<head>` و کد `<script>` را قبل از `<body/>` کپی کنید. این دو کد فایل‌های `CSS` و جاوا‌اسکریپت بوت استرپ را به صفحه وب الحاق می‌کنند.
+
+کد لینک و اسکریپت بوت‌استرپ حاوی یک ویژگی به‌نام `Integrity` است که برای حفظ امنیت فایل دریافت شده از `CDN` استفاده می‌شود. با این حال امکان استفاده از کلاس‌های بوت‌استرپ بدون `Integrity` هم فراهم است. به همین دلیل در کد فوق ویژگی `Integrity` حذف شده است تا خوانایی کد افزایش یابد ولی استفاده از این ویژگی در پروژه‌های واقعی ضروری است.
+
+![تصویر کتاب](../images/p154-01.png)
+
+کلاس‌ها و کامپوننت‌های بوت‌استرپ کلاس‌های بوت‌استرپ مجموعه‌ای از استایل‌های از پیش تعریف شده هستند که امکان طراحی سریع و راحت اجزای رابط کاربری صفحات وب را فراهم می‌کنند. این کلاس‌ها که با استفاده از `CSS` ایجاد شده‌اند، به توسعه‌دهنده وب کمک می‌کنند که با نوشتن کدهای `CSS` کمتر، عناصری کاربرپسند و واکنش‌گرا را به صفحه وب اضافه کند.
+
+)شبکه توزیع محتوا( CDN: Content Delivery Network١
+
+---
+
+
+
+**صفحه ۱۴۹**
+
+کامپوننت‌های بوت‌استرپ عناصر از پیش طراحی شده‌ای هستند که امکان طراحی سریع و آسان رابط کاربری وب‌سایت‌ها را فراهم می‌کنند. توسع‌هدهندۀ وب می‌تواند به کمک این عناصر آماده، بدون نوشتن کدهای `CSS` و `JavaScript`، عناصر کاربرپسند و واکنش‌گرا را به صفحه وب اضافه کند. از جمله کامپوننت‌های بوت‌استرپ می‌توان به دکمه، نوار ناوبری1، کروسل2، آکاردئون3 و مُدال4 اشاره نمود. این بخش به معرفی کلاس‌ها و کامپوننت‌های بوت‌استرپ می‌پردازد.
+
+کلاس‌های `Utility` : کلاس‌های `Utility` در بوت‌استرپ، به‌طور ویژه برای استایل‌دهی عناصر صفحه استفاده می‌شوند و به‌طور مستقیم با `HTML` و `CSS` کار می‌کنند. برای استفاده از این کلاس‌ها نیازی به جاوا‌اسکریپت نیست. کلاس‌های آماده بوت‌استرپ برای تعیین رنگ، اندازه عناصر، فواصل، خط دور، سایه و غیره قابل استفاده هستند.
+
+کلاس‌های رنگ: کلاس‌های رنگ بوت‌استرپ به دو دستۀ رنگ‌های زمینه و رنگ متن تقسیم می‌شوند.
+
+هر یک از کلاس‌های رنگ دارای مفهوم و رنگ مشخصی هستند. کلاس‌های رنگ زمینه و متن به ترتیب دارای پیشوند `bg` و `text` هستند. برخی از این کلاس‌ها در جدول زیر گردآوری شده است:
+
+جدول 1 کلاس‌های رنگ `Bootstrap`
+
+کلاس رنگ زمینه
+
+کلاس رنگ متن
+
+مفهوم
+
+bg-primary text-primaryرنگ اصلی bg-secondary text-secondaryرنگ ثانویه bg-success
+
+`text-success`رنگ موفقیت
+
+bg-danger text-dangerرنگ خطر bg-warning text-warningرنگ هشدار bg-info
+
+`text-info`رنگ اطلاعات
+
+bg-light text-lightرنگ روشن bg-dark
+
+`text-dark`رنگ تیره
+
+1- نوار ناوبری (`Navbar`): نوار بالاتری صفحه که معمولاً شامل لوگو، لین‌کها و منوهاست.
+
+2- کروسل (`Carousel`): یک عنصر تعاملی که مجموعه‌ای از تصاویر یا محتوا را به صورت پشت سرهم در یک فضای مشخص نمایش م‌یدهد و کاربر م‌یتواند بین آنها جابه‌جا شود.
+
+3- آکاردئون (`Accordion`): یک بخش قابل باز و بسته شدن برای نمایش محتوا.
+
+4- مُدال (`Modal`): پنجره یا کادر محاوره‌ای که روی محتوای صفحه ظاهر م‌یشود.
+
+---
+
+
+
+**صفحه ۱۵۰**
+
+### کنجکاوی
+
+برای کسب اطلاعات بیشتر دربارۀ سایر کلاس‌های رنگ، عبارت `Bootstrap5.3 background` و `Bootstrap5.3 colors` را در گوگل جست‌وجو کنید.
+
+استفاده از کلاس‌های رنگ بوت استرپ
+
+### کار کارگاهی
+
+فایل `test-bs.html` را باز کنید، سپس یک عنصر `<div>` با مشخصات زیر بعد از برچسب `body` درج کنید.
+
+![تصویر کتاب](../images/p156-03.png)
+
+فایل را ذخیره کنید و نتیجه را در مرورگر بررسی کنید.
+
+به انتهای کلاس رنگ، عبارت `subtle` را اضافه کنید (`bg-primary-subtle`) و نتیجه را در مرورگر مشاهده کنید.
+
+کلاس‌های تعیین اندازه (`Sizing`) بوت‌استرپ دارای دو مجموعه کلاس `*-w` و `*-h` برای تعیین پهنا و ارتفاع عناصر است. پارامتر * می‌تواند جایگزین اعداد 25،50، 75 و 100 و عبارت `auto` شود. اختصاص کلاس `w-75` برای یک عنصر باعث می‌شود که پهنای عنصر برابر 75% پهنای عنصر والد باشد. کلاس‌های `w-auto` و `h-auto` پهنا و ارتفاع یک عنصر را به اندازۀ محتوای آن تنظیم می‌نمایند.
+
+استفاده از کلاس‌های `Sizing`
+
+### کار کارگاهی
+
+در فایل `test-bs.html` یک عنصر `div` دیگری به شکل زیر به صفحه وب اضافه کنید. این عنصر حاوی یک عنصر پاراگراف است که پهنا و ارتفاع پاراگراف، 75% پهنا و ارتفاع عنصر `div` خواهد بود.
+
+![تصویر کتاب](../images/p156-01.png)
+
+در کد فوق پهنا و ارتفاع عنصر پاراگراف توسط کلاس‌های `w-75` و `h-75` مشخص شده است. فایل را ذخیره کنید و نتیجه را در مرورگر بررسی کنید.
+
+![تصویر کتاب](../images/p156-02.png)
+
+---</article><article class="lesson" lang="en" dir="ltr" data-lang-block="en" hidden><h1 id="developing-interactive-web-pages-with-bootstrap">Developing interactive web pages with Bootstrap</h1>
 <hr />
 <p class="page-mark">Page 146</p>
 <h2 id="learning-unit-1">Learning unit 1</h2>
@@ -141,8 +174,8 @@ bg-dark
 <p>How can you use Bootstrap to design data-entry forms quickly and in a modern style?</p>
 <p>How can you optimize web page design with Bootstrap so that pages display in the best way on all devices?</p>
 <h3 id="at-the-end-the-student-is-expected-to">At the end, the student is expected to</h3>
-<p>1 Fully design the structure of a web page (including header, body, and footer) using Bootstrap’s grid system (<code>Grid</code> <code>System</code>), so that the layout responds correctly on different screen sizes (mobile, tablet, desktop).</p>
-<p>2 Select and use utility classes (<code>Utility</code> <code>Classes</code>) such as color, spacing (<code>Margin/Padding</code>), shadow, and typography classes for fast, standard styling of elements without writing manual <code>CSS</code> for common cases.</p>
+<p>1 Fully design the structure of a web page (including header, body, and footer) using Bootstrap’s grid system (<code>Grid System</code>), so that the layout responds correctly on different screen sizes (mobile, tablet, desktop).</p>
+<p>2 Select and use utility classes (<code>Utility Classes</code>) such as color, spacing (<code>Margin/Padding</code>), shadow, and typography classes for fast, standard styling of elements without writing manual <code>CSS</code> for common cases.</p>
 <p>3 Build a practical and attractive navigation bar (<code>Navbar</code>) that includes links, buttons, and responsive features, and also design a structured footer.</p>
 <p>4 Gain skill in implementing user-interface components such as carousels (sliding images) and accordions to present information in an engaging and dynamic way.</p>
 <p>5 Build registration or contact forms with complete Bootstrap styling.</p>
@@ -153,83 +186,112 @@ bg-dark
 <p class="page-mark">Page 147</p>
 <h3 id="definition-of-a-framework">Definition of a framework</h3>
 <p>A framework (<code>Framework</code>) is a pre-designed software framework used to speed up the process of designing and developing websites and web applications. By providing a set of tools, libraries, and ready-made patterns, a framework lets developers focus only on the specific features and functions of the project and avoid repetitive, basic work.</p>
-<div class="code-wrap" dir="ltr"><pre><code>Bootstrap چیست؟
-</code></pre></div>
-<p>Bootstrap is an open-source framework for designing a site’s appearance that includes a set of ready-made code written in the languages <code>Css</code>, <code>Html</code>, and <code>Java</code> <code>Script</code>. Instead of writing everything from scratch, developers use this ready-made code.</p>
+<p>Bootstrap</p>
+<p>Bootstrap is an open-source framework for designing a site’s appearance that includes a set of ready-made code written in the languages <code>Css</code>, <code>Html</code>, and <code>Java Script</code>. Instead of writing everything from scratch, developers use this ready-made code.</p>
 <p>Features of <code>Bootstrap:</code> Bootstrap has many features for designing web pages that have made it popular among web developers and designers. These features are as follows:</p>
-<p>Responsive design (<code>Responsive</code> <code>Design</code>): Bootstrap has a 12-column grid system that makes responsive design possible for different devices.</p>
+<p>Responsive design (<code>Responsive Design</code>): Bootstrap has a 12-column grid system that makes responsive design possible for different devices.</p>
 <p>Pre-designed components (<code>Components</code>): Bootstrap includes various components such as buttons, forms, navigation menus, cards, modals, and search bars that are ready to use.</p>
 <p>JavaScript support: Bootstrap contains JavaScript libraries for creating interactions and animations in different parts of the page.</p>
 <p>Browser support: Bootstrap is compatible with most modern browsers such as <code>Chrome</code>, <code>Firefox</code>, <code>Safari</code>, and <code>Edge</code>.</p>
 <p>Comprehensive documentation: The official Bootstrap site (<code>getbootstrap.com</code>) has complete documentation for learning how to use Bootstrap’s components and classes.</p>
 <p>Uses of <code>Bootstrap</code> Designing responsive websites: Designing and developing corporate sites, stores, blogs, and so on.</p>
 <p>Creating attractive user interfaces: Designing beautiful, modern user interfaces for websites and web applications.</p>
-<p><code>minimum</code> <code>viable</code> <code>product</code> (<code>MVP</code>) projects: Building website prototypes (<code>MVP</code>) and evaluating design ideas.</p>
+<p><code>minimum viable product</code> (<code>MVP</code>) projects: Building website prototypes (<code>MVP</code>) and evaluating design ideas.</p>
 <p>Designing forms: Designing beautiful, responsive forms using Bootstrap’s ready-made classes.</p>
 <hr />
 <p class="page-mark">Page 148</p>
 <p>Using Bootstrap on a web page To use Bootstrap’s features on a web page, you must first create a basic <code>HTML</code> file and then attach Bootstrap’s <code>CSS</code> and JavaScript files to it. The basic file includes the <code>&lt;DOCTYPE</code>!&gt;,</p>
-<div class="code-wrap" dir="ltr"><pre><code>&lt;html&gt;، &lt;head&gt;، متاتگ‌های viewport، &lt;title&gt; و &lt;body&gt; است.
-</code></pre></div>
-<p>Using <code>CDN1</code> on a web page</p>
-<h3 id="workshop">Workshop</h3>
-<p>Create a web page named <code>test-bs.html</code> and write its initial tags. Then open the site <code>getbootstrap.com</code>. Scroll the page to the <code>Include</code> <code>via</code> <code>CDN</code> section so you can see the ready-made <code>&lt;Link&gt;</code> and <code>&lt;script&gt;</code> codes. Copy the <code>&lt;link&gt;</code> code into the <code>&lt;head&gt;</code> section and the <code>&lt;script&gt;</code> code before <code>&lt;body/&gt;</code>. These two codes attach Bootstrap’s <code>CSS</code> and JavaScript files to the web page.</p>
-<p>The Bootstrap link and script code contains an attribute called <code>Integrity</code> that is used to keep the file received from the <code>CDN</code> secure. However, it is also possible to use Bootstrap classes without <code>Integrity</code>. For that reason, in the code above the <code>Integrity</code> attribute has been removed to make the code more readable, but using this attribute is essential in real projects.</p>
-<p><img alt="Book image" src="../images/p154-01.png" /></p>
-<p>Bootstrap classes and components Bootstrap classes are a set of predefined styles that make it possible to design user-interface parts of web pages quickly and easily. These classes, which were created using <code>CSS</code>, help the web developer add user-friendly, responsive elements to the web page while writing less <code>CSS</code> code.</p>
-<div class="code-wrap" dir="ltr"><pre><code>)شبکه توزیع محتوا( CDN: Content Delivery Network١
-</code></pre></div>
-<hr />
-<p class="page-mark">Page 149</p>
-<p>Bootstrap components are pre-designed elements that make it possible to design website user interfaces quickly and easily. With these ready-made elements, the web developer can add user-friendly, responsive elements to the web page without writing <code>CSS</code> and <code>JavaScript</code> code. Among Bootstrap’s components are the button, navigation bar1, carousel2, accordion3, and modal4. This section introduces Bootstrap’s classes and components.</p>
-<p><code>Utility</code> classes: <code>Utility</code> classes in Bootstrap are used especially for styling page elements and work directly with <code>HTML</code> and <code>CSS</code>. You do not need JavaScript to use these classes. Bootstrap’s ready-made classes can be used to set color, element size, spacing, border, shadow, and so on.</p>
-<p>Color classes: Bootstrap’s color classes are divided into two groups: background colors and text colors.</p>
-<p>Each color class has a specific meaning and color. Background and text color classes have the prefixes <code>bg</code> and <code>text</code>, respectively. Some of these classes are collected in the table below:</p>
-<p>Table 1 Bootstrap color classes</p>
-<p>Background color class</p>
-<p>Text color class</p>
-<p>Meaning</p>
-<div class="code-wrap" dir="ltr"><pre><code>bg-primary
-text-primaryرنگ اصلی
-bg-secondary
-text-secondaryرنگ ثانویه
-bg-success
-</code></pre></div>
-<p><code>text-success</code> Success color</p>
-<div class="code-wrap" dir="ltr"><pre><code>bg-danger
-text-dangerرنگ خطر
-bg-warning
-text-warningرنگ هشدار
-bg-info
-</code></pre></div>
-<p><code>text-info</code> Information color</p>
-<div class="code-wrap" dir="ltr"><pre><code>bg-light
-text-lightرنگ روشن
-bg-dark
-</code></pre></div>
-<p><code>text-dark</code> Dark color</p>
-<p>1- Navigation bar (<code>Navbar</code>): The top bar of the page that usually includes the logo, links, and menus.</p>
-<p>2- Carousel (<code>Carousel</code>): An interactive element that displays a set of images or content one after another in a defined space, and the user can move between them.</p>
-<p>3- Accordion (<code>Accordion</code>): A section that can open and close to display content.</p>
-<p>4- Modal (<code>Modal</code>): A window or dialog box that appears over the page content.</p>
-<hr />
-<p class="page-mark">Page 150</p>
-<h3 id="try-this">Try this</h3>
-<p>For more information about other color classes, search for the phrases <code>Bootstrap5.3</code> <code>background</code> and <code>Bootstrap5.3</code> <code>colors</code> on Google.</p>
-<p>Using Bootstrap color classes</p>
-<h3 id="workshop_1">Workshop</h3>
-<p>Open the file <code>test-bs.html</code>, then insert a <code>&lt;div&gt;</code> element with the following settings after the <code>body</code> tag.</p>
-<p><img alt="Book image" src="../images/p156-03.png" /></p>
-<p>Save the file and check the result in the browser.</p>
-<p>Add the word <code>subtle</code> to the end of the color class (<code>bg-primary-subtle</code>) and view the result in the browser.</p>
-<p>Sizing classes (<code>Sizing</code>) Bootstrap has two sets of classes, <code>*-w</code> and <code>*-h</code>, for setting the width and height of elements. The * parameter can be replaced with the numbers 25, 50, 75, and 100 and the word <code>auto</code>. Assigning the class <code>w-75</code> to an element makes the element’s width equal to 75% of the parent element’s width. The classes <code>w-auto</code> and <code>h-auto</code> set an element’s width and height to the size of its content.</p>
-<p>Using <code>Sizing</code> classes</p>
-<h3 id="workshop_2">Workshop</h3>
-<p>In the file <code>test-bs.html</code>, add another <code>div</code> element to the web page as shown below. This element contains a paragraph element whose width and height will be 75% of the width and height of the <code>div</code> element.</p>
-<p><img alt="Book image" src="../images/p156-01.png" /></p>
-<p>In the code above, the width and height of the paragraph element are set by the classes <code>w-75</code> and <code>h-75</code>. Save the file and check the result in the browser.</p>
-<p><img alt="Book image" src="../images/p156-02.png" /></p>
-<hr /></article>
+<html> <head> ‌ viewport <title> <body> .
+
+Using `CDN1` on a web page
+
+### Workshop
+
+Create a web page named `test-bs.html` and write its initial tags. Then open the site `getbootstrap.com`. Scroll the page to the `Include via CDN` section so you can see the ready-made `<Link>` and `<script>` codes. Copy the `<link>` code into the `<head>` section and the `<script>` code before `<body/>`. These two codes attach Bootstrap’s `CSS` and JavaScript files to the web page.
+
+The Bootstrap link and script code contains an attribute called `Integrity` that is used to keep the file received from the `CDN` secure. However, it is also possible to use Bootstrap classes without `Integrity`. For that reason, in the code above the `Integrity` attribute has been removed to make the code more readable, but using this attribute is essential in real projects.
+
+![Book image](../images/p154-01.png)
+
+Bootstrap classes and components Bootstrap classes are a set of predefined styles that make it possible to design user-interface parts of web pages quickly and easily. These classes, which were created using `CSS`, help the web developer add user-friendly, responsive elements to the web page while writing less `CSS` code.
+
+) ( CDN: Content Delivery Network
+
+---
+
+**Page 149**
+
+Bootstrap components are pre-designed elements that make it possible to design website user interfaces quickly and easily. With these ready-made elements, the web developer can add user-friendly, responsive elements to the web page without writing `CSS` and `JavaScript` code. Among Bootstrap’s components are the button, navigation bar1, carousel2, accordion3, and modal4. This section introduces Bootstrap’s classes and components.
+
+`Utility` classes: `Utility` classes in Bootstrap are used especially for styling page elements and work directly with `HTML` and `CSS`. You do not need JavaScript to use these classes. Bootstrap’s ready-made classes can be used to set color, element size, spacing, border, shadow, and so on.
+
+Color classes: Bootstrap’s color classes are divided into two groups: background colors and text colors.
+
+Each color class has a specific meaning and color. Background and text color classes have the prefixes `bg` and `text`, respectively. Some of these classes are collected in the table below:
+
+Table 1 Bootstrap color classes
+
+Background color class
+
+Text color class
+
+Meaning
+
+bg-primary text-primary bg-secondary text-secondary bg-success
+
+`text-success` Success color
+
+bg-danger text-danger bg-warning text-warning bg-info
+
+`text-info` Information color
+
+bg-light text-light bg-dark
+
+`text-dark` Dark color
+
+1- Navigation bar (`Navbar`): The top bar of the page that usually includes the logo, links, and menus.
+
+2- Carousel (`Carousel`): An interactive element that displays a set of images or content one after another in a defined space, and the user can move between them.
+
+3- Accordion (`Accordion`): A section that can open and close to display content.
+
+4- Modal (`Modal`): A window or dialog box that appears over the page content.
+
+---
+
+**Page 150**
+
+### Try this
+
+For more information about other color classes, search for the phrases `Bootstrap5.3 background` and `Bootstrap5.3 colors` on Google.
+
+Using Bootstrap color classes
+
+### Workshop
+
+Open the file `test-bs.html`, then insert a `<div>` element with the following settings after the `body` tag.
+
+![Book image](../images/p156-03.png)
+
+Save the file and check the result in the browser.
+
+Add the word `subtle` to the end of the color class (`bg-primary-subtle`) and view the result in the browser.
+
+Sizing classes (`Sizing`) Bootstrap has two sets of classes, `*-w` and `*-h`, for setting the width and height of elements. The * parameter can be replaced with the numbers 25, 50, 75, and 100 and the word `auto`. Assigning the class `w-75` to an element makes the element’s width equal to 75% of the parent element’s width. The classes `w-auto` and `h-auto` set an element’s width and height to the size of its content.
+
+Using `Sizing` classes
+
+### Workshop
+
+In the file `test-bs.html`, add another `div` element to the web page as shown below. This element contains a paragraph element whose width and height will be 75% of the width and height of the `div` element.
+
+![Book image](../images/p156-01.png)
+
+In the code above, the width and height of the paragraph element are set by the classes `w-75` and `h-75`. Save the file and check the result in the browser.
+
+![Book image](../images/p156-02.png)
+
+---</article>
       <aside class="extra">
         <h2 data-fa="تمرین این بخش" data-en="Exercises for this section">تمرین این بخش</h2>
         <p class="extra-note" data-fa="این تمرین‌ها و پیوندها اضافه بر متن کتاب‌اند." data-en="These exercises and links are in addition to the book.">این تمرین‌ها و پیوندها اضافه بر متن کتاب‌اند.</p>
@@ -239,7 +301,7 @@ bg-dark
     <nav class="pager"><a rel="prev" class="prev" href="p3-intro.html"><span class="pager-word" data-fa="قبلی" data-en="Previous">قبلی</span><span class="pager-name" data-fa="معرفی پودمان تعاملی" data-en="Introducing the interactive module">معرفی پودمان تعاملی</span></a><a rel="next" class="next" href="p3-bs-util.html"><span class="pager-word" data-fa="بعدی" data-en="Next">بعدی</span><span class="pager-name" data-fa="فاصله، گردی و لیست" data-en="Spacing, rounding, and lists">فاصله، گردی و لیست</span></a></nav>
     </div>
   </div>
-  <script src="../assets/search-index.js?v=4"></script>
-  <script src="../assets/app.js?v=4"></script>
+  <script src="../assets/search-index.js?v=6"></script>
+  <script src="../assets/app.js?v=6"></script>
 </body>
 </html>

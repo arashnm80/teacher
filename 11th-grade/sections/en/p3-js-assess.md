@@ -6,19 +6,11 @@ Performance standard: The student must be able to use `JavaScript` optimally and
 
 Score
 
-Conditions for performing the work (tools, materials, equipment,
-
-Tools
-
-Results
-
-Row
+Conditions for performing the work (tools, materials, equipment, Tools Results Row
 
 ### Steps
 
-Standard (indicators / judgment / scoring)
-
-Obtained
+Standard (indicators / judgment / scoring) Obtained
 
 time, place, and so on)
 
@@ -26,33 +18,25 @@ time, place, and so on)
 
 Enabled
 
-Correct definition of JavaScript and its application on the web; recognizing the difference between `JavaScript` and `HTML` and `CSS`; explaining methods of adding (`JS` `inline`, internal, external); creating a `js` file and connecting it correctly to `HTML`
+Correct definition of JavaScript and its application on the web; recognizing the difference between `JavaScript` and `HTML` and `CSS`; explaining methods of adding (`JS inline`, internal, external); creating a `js` file and connecting it correctly to `HTML`
 
 3
 
 Using `console.log` without error; running the script in the browser; doing the Try this activities; performing the steps with other methods; observation
 
-Familiarization, setup, and getting started
-
-Practical
+Familiarization, setup, and getting started Practical
 
 1
 
 Computer, `IDE`, browser, 30 minutes, workshop
 
-Creating a `js` file and connecting it correctly to `HTML`; using `console.log` without
-
-Coding
+Creating a `js` file and connecting it correctly to `HTML`; using `console.log` without Coding
 
 Oral questioning; error; running the script in the browser 2
 
 Only defining JavaScript and its application on the web; recognizing the difference between `JavaScript` and `HTML` and `CSS`; explaining methods of adding (`inline.Js`, internal, external 1)
 
-Defining a variable with `let`; recognizing data types; explaining the difference between == and ===; recognizing logical and arithmetic operators; type conversion
-
-```
-(Number, String)
-```
+Defining a variable with `let`; recognizing data types; explaining the difference between == and ===; recognizing logical and arithmetic operators; type conversion (Number, String)
 
 3
 
@@ -102,32 +86,28 @@ Oral questioning: explaining the use of `if`; explaining the use of `for` and `w
 
 Incomplete performance of the steps 1
 
-
 ---
 
 **Page 232**
 
-Defining a function; difference between a parameter and an argument; recognizing the built-in functions `Math` and `String` and `Array`; creating a function with a parameter; calling a function; using the methods `Math.random`() `toUpperCase`()
+Defining a function; difference between a parameter and an argument; recognizing the built-in functions `Math` and `String` and `Array`; creating a function with a parameter; calling a function; using the methods `Math.random() toUpperCase()`
 
 3
 
-`pop` ,)(`push`(); writing a function to calculate the average; using a function for observation of input validation; using array methods in a practical example; practical performance, Try this activities; performing the steps with other methods
+`pop` ,)(`push()`; writing a function to calculate the average; using a function for observation of input validation; using array methods in a practical example; practical performance, Try this activities; performing the steps with other methods
 
 5 Functions and built-in functions
 
 Computer, `IDE`, browser, 15 minutes
 
-Oral questioning: defining a function; using mathematical and string functions 2 Incomplete performance of the steps or knowledge limited to definition 1 Defining the concept of `DOM`; explaining the structure of `document`; defining a class and an object; creating a class and instantiating; selecting elements with: `getElementById` `quer`
+Oral questioning: defining a function; using mathematical and string functions 2 Incomplete performance of the steps or knowledge limited to definition 1 Defining the concept of `DOM`; explaining the structure of `document`; defining a class and an object; creating a class and instantiating; selecting elements with: `getElementById quer`
 
-```
-ySelector
-```
-
+`ySelector`
 Changing the content and style of elements; creating a button that when clicked
 
 3
 
-changes the page text; creating a simple form and receiving the input value; managing events (`event` `handling`) without error; observation; doing the Try this activities; performing the steps with other methods
+changes the page text; creating a simple form and receiving the input value; managing events (`event handling`) without error; observation; doing the Try this activities; performing the steps with other methods
 
 Classes and `DOM`; interacting with
 
@@ -139,23 +119,18 @@ Computer, `IDE`, browser, 15 minutes
 
 the web page
 
-Oral questioning: defining the concept of `DOM`; explaining the structure of `document`; defining a class and an object; creating a class and instantiating; selecting elements with: `getElementById` `quer`
+Oral questioning: defining the concept of `DOM`; explaining the structure of `document`; defining a class and an object; creating a class and instantiating; selecting elements with: `getElementById quer`
 
 2
 
-```
-ySelector
-```
-
-Defining the concept of `DOM`; explaining the structure of `document`; defining a class and an object; incomplete performance of the steps 1 Achieving all non-technical competencies ٢
+`ySelector`
+Defining the concept of `DOM`; explaining the structure of `document`; defining a class and an object; incomplete performance of the steps 1 Achieving all non-technical competencies 2
 
 Non-technical competencies, safety, health, environmental considerations, and attitude:
 
-Failure to achieve any of the non-technical competencies ١ Yes
+Failure to achieve any of the non-technical competencies 1 Yes
 
-Work assessment (competency in performing the work)
-
-No
+Work assessment (competency in performing the work) No
 
 ### Explanation:
 

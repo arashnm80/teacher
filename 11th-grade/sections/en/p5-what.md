@@ -1,6 +1,5 @@
 # Creating a web application
 
-
 ---
 
 **Page 276**
@@ -33,32 +32,25 @@ How does a web application interact with the user?
 
 The student, with a correct understanding of Django’s structure, should be able to implement a simple web application on their own computer.
 
-
 ---
 
 **Page 277**
 
 What is Django?
 
-Django (`Django`) is an open-source (`open` `source`) `framework` written in the `Python` programming language and used to build and implement the `backend` of websites (`Website`) and web applications (`Web` `Application`).
+Django (`Django`) is an open-source (`open source`) `framework` written in the `Python` programming language and used to build and implement the `backend` of websites (`Website`) and web applications (`Web Application`).
 
-Table 1 Comparison of a website and a web application
-
-Criterion
+Table 1 Comparison of a website and a web application Criterion
 
 Website (`Website`)
 
-```
-وب اپلیکیشن (Web Application)
-```
+(Web Application)
 
 Main purpose
 
 Informing and displaying content
 
-Carrying out operations and processing data
-
-User interaction
+Carrying out operations and processing data User interaction
 
 Little or almost one-way
 
@@ -90,9 +82,7 @@ Has
 
 Examples
 
-News site, company site, blog User panel, online store, educational
-
-system
+News site, company site, blog User panel, online store, educational system
 
 Advantages of Django Django is a secure and fast `framework` that puts many ready-made capabilities at the programmer’s disposal.
 
@@ -108,10 +98,7 @@ Another important advantage of Django is the many job opportunities in the field
 
 Large companies in the world and in Iran have
 
-Figure 1 Companies that have used Django
-
-used Django.
-
+Figure 1 Companies that have used Django used Django.
 
 ---
 
@@ -133,10 +120,9 @@ The project helps you learn how Django works in practice and how a website is bu
 
 Figure 2 Parts of the final project
 
-Installing Django First make sure the latest version of Python is installed on your computer and that the computer is connected to the internet. To do this, enter the `Vscode` program; if a file or folder was already open, close it with the `Close` `Folder` command from the `File` menu, then from the `terminal` menu open a new terminal.
+Installing Django First make sure the latest version of Python is installed on your computer and that the computer is connected to the internet. To do this, enter the `Vscode` program; if a file or folder was already open, close it with the `Close Folder` command from the `File` menu, then from the `terminal` menu open a new terminal.
 
 Then, as in Figure 3, run the commands in order in the terminal section.
-
 
 ---
 
@@ -146,21 +132,18 @@ Then, as in Figure 3, run the commands in order in the terminal section.
 
 Figure 3 Installing Django version 5.2.9
 
-Displaying the message `Successfully` `installed` `Django-5.2.9` indicates that Django has been installed successfully.
+Displaying the message `Successfully installed Django-5.2.9` indicates that Django has been installed successfully.
 
 If you do not see the message that Django was installed successfully, get guidance from your teacher.
 
 You can also install the latest released version of Django; you only need to find the compatible Python version on the `pypi.org` site and the Django page.
 
-```
-وارد آدرس https://pypi.org/project/Django شوید و در بخش Programming Language نسخه‌های
-```
+https://pypi.org/project/Django Programming Language ‌
 
 Observe the Python versions supported by Django (Figure 4).
 
 ![Figure 4 Suitable Python versions for Django](../images/p285-02.png)
 
 Figure 4 Suitable Python versions for Django
-
 
 ---

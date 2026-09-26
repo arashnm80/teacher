@@ -1,6 +1,5 @@
 # Styling web page appearance with CSS
 
-
 ---
 
 **Page 116**
@@ -43,7 +42,6 @@ What effect does the visual appeal of a web page have on the user experience?
 
 Using `CSS` features, implement and adjust the appearance and layout of web page elements according to modern web design principles and standards.
 
-
 ---
 
 **Page 117**
@@ -54,7 +52,7 @@ In the previous work unit, you learned how to design the structure of web pages 
 
 Pages created with `HTML` alone have plain text, a white background, and default spacing and layout, so they lack visual appeal. To create a beautiful, user-friendly look, you need `CSS` to style the elements. This tool lets web developers manage the appearance and layout of page elements simply and flexibly.
 
-`CSS` stands for `Cascading` `Style` `Sheets` and is a language for styling and controlling the appearance of web pages.
+`CSS` stands for `Cascading Style Sheets` and is a language for styling and controlling the appearance of web pages.
 
 This language lets web developers manage the appearance and layout of elements completely separately from the main page structure. That makes it easier to maintain and update the site. With `CSS` you can set many styles for different website elements—for example text and background colors, shadows, borders, appearance changes when the mouse is over elements, and more.
 
@@ -70,13 +68,12 @@ Page output without
 
 ```
 { selector
-;property: value
+property: value;
 ```
 
 }
 
 The word `Selector` means the selector and is used to choose page elements. For example, to style paragraph elements you use the `p` selector, and to select all page elements you use the * symbol. `Property` refers to the assignable properties in `CSS`, such as `color`, `font-size`, and `.border`. `Value` refers to the value of the element property.
-
 
 ---
 
@@ -89,7 +86,7 @@ In the example below, the background color of the `h1` element is set to `orange
 { `h1`
 
 ```
-;background-color: orange
+background-color: orange;
 ```
 
 }
@@ -104,10 +101,11 @@ In the example below, the text color and background of the `h1` element are set 
 
 ![Book image](../images/p124-01.png)
 
+</h1> ! >”h1
 ```
-</h1> سلام دنیا! >”h1 style=”color:blue; background-color:orange<
-CSS 2 داخلی (Internal):
+style=”color:blue; background-color:orange<
 ```
+CSS 2 (Internal):
 
 Element styles are written inside a `<style>` tag in the `<head>` section.
 
@@ -125,8 +123,8 @@ The example below is a sample of internal `CSS` for setting `h1` element propert
 { `h1`
 
 ```
-;color: blue
-;background-color: pink
+color: blue;
+background-color: pink;
 ```
 
 }
@@ -134,8 +132,8 @@ The example below is a sample of internal `CSS` for setting `h1` element propert
 ```
 </style>
 </head>
-CSS 3 خارجی (External):
 ```
+CSS 3 (External):
 
 In the external `CSS` method, element styles go in a file with a `CSS` extension. The content of this file does not need a `<style>` tag; only the styles of the elements are defined in it. The `CSS` file must be attached to the web page with a `<link>` tag so that the rules in this file apply to the page elements. Attaching the `CSS` file to the `HTML` file is done in the `<head>` section:
 
@@ -144,7 +142,6 @@ In the external `CSS` method, element styles go in a file with a `CSS` extension
 <link rel=”stylesheet” href=”./styles.css”>
 </head>
 ```
-
 
 ---
 
@@ -186,14 +183,11 @@ The background color is set only in the internal style, so the yellow background
 
 ![Book image](../images/p125-02.png)
 
-The element width is only in the external style
-
-Output
+The element width is only in the external style Output
 
 specified, so the width of the `h1` element will be 200 pixels.
 
 ![Book image](../images/p125-03.png)
-
 
 ---
 
@@ -201,13 +195,11 @@ specified, so the width of the `h1` element will be 200 pixels.
 
 Comments (`Comment`) in `CSS` To add single-line or multi-line comments in `CSS`, use the /* */ symbols as in Figure 23.
 
-```
 /* this is a comment */
-```
 
 **Figure 23**
 
-How to format text in `CSS` `CSS` has a set of properties for formatting text. These properties let you set the font, font size, line height, text decorations, and more. Text element properties are as follows:
+How to format text in `CSS CSS` has a set of properties for formatting text. These properties let you set the font, font size, line height, text decorations, and more. Text element properties are as follows:
 
 `font-family` and `font-size:` set the font type and size
 
@@ -216,7 +208,7 @@ How to format text in `CSS` `CSS` has a set of properties for formatting text. T
 `text-shadow:` create a shadow with the color and size you want. The general structure of this property is as follows:
 
 ```
-;text-shadow: offset-x offset-y blur-radius color
+text-shadow: offset-x offset-y blur-radius color;
 ```
 
 **Figure 24**
@@ -225,21 +217,16 @@ The values of this property are, in order, the horizontal and vertical shadow of
 
 `text-transform:` change letter case to uppercase, lowercase, and so on, with values `lowercase`, `upper`
 
-```
-cas، capitalize none،…
-```
+cas capitalize none…
 
 `direction:` set the text display direction, with values `ltr` and `rtl` for left-to-right and right-to-left
 
 `line-height:` set the vertical spacing between text lines. This property sets the vertical spacing of the text line. The value of this property includes the height of the letters plus the empty space before and after them. It includes the height of the letters (font) plus the empty space before and after them.
 
-```
-text-decoration: تعیین تزیینات متن، شامل مقادیر none، underline، overline، .line-through
-```
+text-decoration: none underline overline .line-through
 
 The `text-decoration` property with the value `none` removes the underline from a link.
 
 `vertical-align:` vertical text alignment, with values `top`, `bottom`, `baseline`, and so on.
-
 
 ---

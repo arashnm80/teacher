@@ -6,15 +6,7 @@ Performance standard: The student should be able to create and use functions and
 
 Score
 
-Conditions for carrying out the work (tools, materials, equipment,
-
-Tools
-
-Results
-
-Row
-
-Steps
+Conditions for carrying out the work (tools, materials, equipment, Tools Results Row Steps
 
 Standard (indicators/judgment/scoring)
 
@@ -34,7 +26,7 @@ Remove an element from the `set` (both an element that exists and an element tha
 
 `list` or `tuple` (for example, lack of order and duplicate elements).
 
-Know the use of a `set` when you need to remove duplicates. Explain the key–value (`key` `value`) feature in a `dictionary`. Carry out Try this activities by observation, practical,
+Know the use of a `set` when you need to remove duplicates. Explain the key–value (`key value`) feature in a `dictionary`. Carry out Try this activities by observation, practical,
 
 1
 
@@ -56,9 +48,7 @@ Familiarity with definitions at the level of explaining concepts Incomplete comp
 
 `dictionary`. Explain the importance of keys being unique in a `dictionary`. Describe methods of accessing values in a `dictionary` (using the key). Carry out Try this activities by observation
 
-Computer, `vscode` installed, practice file,
-
-Practical,
+Computer, `vscode` installed, practice file, Practical,
 
 2
 
@@ -94,7 +84,6 @@ Know the main feature of a `tuple` that distinguishes it from a `list`.
 
 Familiarity with definitions at the level of explaining Incomplete completion of steps 1
 
-
 ---
 
 **Page 81**
@@ -103,13 +92,7 @@ Write a simple function that only prints a welcome message. Write a function tha
 
 3
 
-Know why functions are used in programming? Explain the difference between a “parameter” (function definition) and an “argument” (the value passed when calling). Observation Carry out Try this activities
-
-```
-توابع (Functions)
-```
-
-Practical,
+Know why functions are used in programming? Explain the difference between a “parameter” (function definition) and an “argument” (the value passed when calling). Observation Carry out Try this activities (Functions) Practical,
 
 4
 
@@ -129,13 +112,7 @@ Familiarity with definitions at the level of explaining Incomplete completion of
 
 3
 
-a loop, calculates and returns the sum of the list elements. Use the `sorted` function to sort a list and see the result. Explain the difference between a function that `print`s a value and a function that `return`s a value, observation Explain the role of the `return` statement in functions. Carry out Try this activities
-
-```
-توابع (Functions)
-```
-
-Practical,
+a loop, calculates and returns the sum of the list elements. Use the `sorted` function to sort a list and see the result. Explain the difference between a function that `print`s a value and a function that `return`s a value, observation Explain the role of the `return` statement in functions. Carry out Try this activities (Functions) Practical,
 
 5
 
@@ -147,7 +124,7 @@ Question Write a function that takes two numbers as input, calculates their prod
 
 2
 
-input and, using a loop, calculates and returns the sum of the list elements. Use the `sorted` function to sort a list and see the result. Familiarity with definitions at the level of explaining Incomplete completion of steps 1 Create a simple module (for example, a Python file with several functions) in the same folder. Run the main file and call the function defined in the local module using `import`. Use a standard Python module such as `math` (for example `import` `math` and then `math` `.sqrt`() or `math.pi`). (Optional)
+input and, using a loop, calculates and returns the sum of the list elements. Use the `sorted` function to sort a list and see the result. Familiarity with definitions at the level of explaining Incomplete completion of steps 1 Create a simple module (for example, a Python file with several functions) in the same folder. Run the main file and call the function defined in the local module using `import`. Use a standard Python module such as `math` (for example `import math` and then `math.sqrt()` or `math.pi`). (Optional)
 
 3
 
@@ -159,11 +136,7 @@ Practical,
 
 6
 
-Computer, `vscode` installed, 20 minutes
-
-Differences
-
-Question
+Computer, `vscode` installed, 20 minutes Differences Question
 
 1 Create a simple module (for example, a Python file with several functions) oral in the same folder. Run the main file and call the function defined in the local module
 
@@ -181,9 +154,7 @@ hygiene, environmental considerations, and attitude:
 
 Failure to verify any of the non-technical competencies 1 Yes
 
-Work assessment (competence in performing the work)
-
-No
+Work assessment (competence in performing the work) No
 
 ### Explanation:
 
@@ -194,7 +165,6 @@ Earning at least a score of 2 from steps 1, 2, 3, 4, 5, and 6 (critical steps) E
 2 Definition of competence levels: Regardless of the level of professional qualification at which a work task is performed, in every workplace a specific quality of work may be expected. The level of competence in performing the work is the basic criterion for assessment.
 
 Skill (level three): Skilled and able to train and guide others, ability to plan and analyze, accountability for one’s own work, dealing with a wide range of tasks and activities Mastery (level four): Expertise in performing the work and training others, creating innovation, adaptability, troubleshooting, leading and guiding others.
-
 
 ---
 

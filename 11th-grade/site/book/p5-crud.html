@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title data-fa="افزودن و حذف شهر" data-en="Adding and deleting a city">افزودن و حذف شهر</title>
   <link rel="icon" href="../assets/favicon.svg">
-  <link rel="stylesheet" href="../assets/style.css?v=4">
+  <link rel="stylesheet" href="../assets/style.css?v=6">
 </head>
 <body data-root="../">
   <header class="top">
@@ -45,7 +45,7 @@
 <hr />
 <p class="page-mark">صفحه ۳۲۱</p>
 <p>خط 41: فرم ساخته شده، در دیکشنری <code>context</code> قرار گرفته و در خط بعد به <code>add_city.html</code> ارسال شده است.</p>
-<p>مرحله چهارم: در فایل <code>urls.py</code> مربوط به <code>weather</code> <code>app</code> یک <code>path</code> جدید همانند شکل 67 اضافه کنید.</p>
+<p>مرحله چهارم: در فایل <code>urls.py</code> مربوط به <code>weather app</code> یک <code>path</code> جدید همانند شکل 67 اضافه کنید.</p>
 <p><img alt="شکل 67 اضافه‌کردن path جدید برای افزودن شهر" src="../images/p327-01.png" /></p>
 <p>شکل 67 اضافه‌کردن <code>path</code> جدید برای افزودن شهر</p>
 <h3 id="_2">توضیحات کدها:</h3>
@@ -82,7 +82,7 @@
 <p><img alt="تصویر کتاب" src="../images/p330-02.png" /></p>
 <h3 id="_4">توضیحات کدها:</h3>
 <p>خط 13: این دستور باعث می‌شود دکمه حذف شهر فقط برای کاربر <code>login</code> شده نمایش داده شود.</p>
-<p>خط 14: یک فرم با متد از نوع <code>POST</code> ایجاد شده است. در <code>action</code> این فرم، به <code>_delete</code> <code>city</code> اشاره شده است، یعنی درخواست حذف به <code>view</code> حذف شهر ارسال خواهد شد.</p>
+<p>خط 14: یک فرم با متد از نوع <code>POST</code> ایجاد شده است. در <code>action</code> این فرم، به <code>_delete city</code> اشاره شده است، یعنی درخواست حذف به <code>view</code> حذف شهر ارسال خواهد شد.</p>
 <p>خط 17: آیدی شهر به‌صورت یک فیلد مخفی (<code>hidden</code>) اضافه شده است. آیدی شهر در خروجی نمایش داده نخواهد شد.</p>
 <p>فایل‌ها را ذخیره کنید، صفحه لیست شهرها را باز کنید. خروجی همانند شکل 74 خواهد بود.</p>
 <p>شکل 74 دکمه حذف در لیست شهرها</p>
@@ -90,9 +90,9 @@
 <p class="page-mark">صفحه ۳۲۵</p>
 <p>با کلیک روی لینک حذف مقابل هر شهر، شهر موردنظر حذف شده و لیست شهرها به‌روزرسانی می‌شود.</p>
 <p>درصورتی‌که کاربر مهمان باشد، لینک حذف را مشاهده نخواهد کرد.</p>
-<h3 id="_5">فعالیت</h3>
+<aside class="callout activity"><h3 id="_5">فعالیت</h3>
 <p>با دانشی که از پودمان‌های قبل کسب کرده‌اید، ظاهر سایت را با <code>html</code> و <code>css</code> و <code>bootstrap</code> زیبا کنید.</p>
-<h3 id="_6">بهینه‌سازی و امن کردن پروژه</h3>
+</aside><h3 id="_6">بهینه‌سازی و امن کردن پروژه</h3>
 <p>در این مرحله، برای بهینه‌سازی پروژه، ایرادها و باگ‌های امنیتی پروژه بررسی می‌شوند.</p>
 <p>باگ کدنویسی شماره یک:</p>
 <p>اگر هیچ شهری در جدول <code>City</code> وجود نداشته باشد یا همه شهرها حذف شده باشند، در صفحه اصلی سایت خطایی همانند شکل 75 مشاهده خواهد شد.</p>
@@ -114,7 +114,7 @@
 <hr />
 <p class="page-mark">Page 321</p>
 <p>Line 41: The form that was built is placed in the <code>context</code> dictionary and on the next line is sent to <code>add_city.html</code>.</p>
-<p>Stage four: In the <code>urls.py</code> file for the <code>weather</code> <code>app</code>, add a new <code>path</code> as in Figure 67.</p>
+<p>Stage four: In the <code>urls.py</code> file for the <code>weather app</code>, add a new <code>path</code> as in Figure 67.</p>
 <p><img alt="Figure 67 adding a new path for adding a city" src="../images/p327-01.png" /></p>
 <p>Figure 67 adding a new <code>path</code> for adding a city</p>
 <h3 id="code-notes_1">Code notes:</h3>
@@ -159,9 +159,9 @@
 <p class="page-mark">Page 325</p>
 <p>By clicking the delete link next to each city, the chosen city is deleted and the city list is updated.</p>
 <p>If the user is a guest, they will not see the delete link.</p>
-<h3 id="activity">Activity</h3>
+<aside class="callout activity"><h3 id="activity">Activity</h3>
 <p>With the knowledge you gained from the previous modules, make the site’s appearance attractive with <code>html</code> and <code>css</code> and <code>bootstrap</code>.</p>
-<h3 id="optimizing-and-securing-the-project">Optimizing and securing the project</h3>
+</aside><h3 id="optimizing-and-securing-the-project">Optimizing and securing the project</h3>
 <p>In this stage, to optimize the project, the project’s flaws and security bugs are reviewed.</p>
 <p>Coding bug number one:</p>
 <p>If no city exists in the <code>City</code> table or all cities have been deleted, an error like Figure 75 will be seen on the site’s home page.</p>
@@ -177,7 +177,7 @@
     <nav class="pager"><a rel="prev" class="prev" href="p5-auth.html"><span class="pager-word" data-fa="قبلی" data-en="Previous">قبلی</span><span class="pager-name" data-fa="ورود و خروج" data-en="Sign-in and sign-out">ورود و خروج</span></a><a rel="next" class="next" href="p5-bugs.html"><span class="pager-word" data-fa="بعدی" data-en="Next">بعدی</span><span class="pager-name" data-fa="باگ و امنیت" data-en="Bugs and security">باگ و امنیت</span></a></nav>
     </div>
   </div>
-  <script src="../assets/search-index.js?v=4"></script>
-  <script src="../assets/app.js?v=4"></script>
+  <script src="../assets/search-index.js?v=6"></script>
+  <script src="../assets/app.js?v=6"></script>
 </body>
 </html>

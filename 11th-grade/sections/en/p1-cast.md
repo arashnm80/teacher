@@ -14,7 +14,7 @@ Define the variables `food`, `weighe`, and `avg` in order for your favorite food
 
 ### Type casting in Python
 
-In Python programming, sometimes you need to convert one data type to another. This is called type casting or `Type` `Casting`.
+In Python programming, sometimes you need to convert one data type to another. This is called type casting or `Type Casting`.
 
 ![Figure 26](../images/p019-01.png)
 
@@ -24,8 +24,7 @@ For example, when you receive input with the ()`input` function, the entered val
 
 Python provides the programmer with ready-made functions for type casting, such as:
 
-Convert to integer → )(`int` Convert to floating-point number → )(`float` Convert to string → )(`str` Convert to a logical value (true/false `bool`() → )
-
+Convert to integer → `int()` Convert to floating-point number → `float()` Convert to string → `str()` Convert to a logical value (true/false `bool()` → )
 
 ---
 
@@ -55,14 +54,13 @@ To fix this error, you need to convert the numeric data type to the string data 
 
 **Figure 29**
 
-Example: On line 1 of the code opposite, the user's year of birth is received; the `int` function converts it to an integer type and stores it in the `year` variable. On line 2 the difference between the current year and the year of birth is calculated and stored in the `age` variable. On line 3, with the `print` statement, the user's age is displayed with the message "`your` `age` :" (Figure 30).
+Example: On line 1 of the code opposite, the user's year of birth is received; the `int` function converts it to an integer type and stores it in the `year` variable. On line 2 the difference between the current year and the year of birth is calculated and stored in the `age` variable. On line 3, with the `print` statement, the user's age is displayed with the message "`your age` :" (Figure 30).
 
 ![Book image](../images/p020-05.png)
 
 ![Figure 30](../images/p020-06.png)
 
 **Figure 30**
-
 
 ---
 
@@ -96,15 +94,12 @@ Example: Calculating the price of a product after applying 9 percent value-added
 
 Get the user's height as a floating-point number and display a message similar to the one below.
 
-```
 .Your height: 1.75 meters
-```
 
 ### Activity
 
 To set up a smart store, carry out the following steps.
 
 Receive the store manager's name from input Receive the year the store started operating Convert the type of the inputs Display a welcome message
-
 
 ---

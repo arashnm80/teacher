@@ -6,9 +6,9 @@
 
 Write a function that calculates the difference between two students’ scores and returns that value. With guidance from your teacher, explain the code of the program opposite.
 
-Types of functions in Python `User-Defined` `Function` (functions that the programmer defines): The functions you have defined so far belong in this category.
+Types of functions in Python `User-Defined Function` (functions that the programmer defines): The functions you have defined so far belong in this category.
 
-`Built-in` `functions` (or Python’s internal functions): Functions that are already defined in Python and that the programmer uses in their programs. They perform common and repeated tasks quickly, simply, and without writing long code. With built-in functions, programs become more readable, shorter, and less error-prone.
+`Built-in functions` (or Python’s internal functions): Functions that are already defined in Python and that the programmer uses in their programs. They perform common and repeated tasks quickly, simply, and without writing long code. With built-in functions, programs become more readable, shorter, and less error-prone.
 
 In earlier sections you became familiar with some of these functions; below you will also learn the use of some others.
 
@@ -24,7 +24,9 @@ Function name
 
 Output
 
-`abs`()calculates the absolute value of a number`print`(`abs`(-12))
+`abs()` — calculates the absolute value of a number
+
+`print(abs(-12))`
 
 12
 
@@ -34,44 +36,48 @@ print(round(3.6))
 
 4
 
+`round()` — rounds a decimal number
 ```
-round()گرد کردن عدد اعشاریprint(round(3.1415, 2))
+print(round(3.1415, 2))
 ```
 
 3.14
 
+`pow()` — calculates a power
 ```
-pow()محاسبه توانprint(pow(2, 3))
+print(pow(2, 3))
 ```
 
 8
 
-`int`()converts to an integer`print`(`int`(4.8))
+`int()` — converts to an integer
+
+`print(int(4.8))`
 
 4
 
-`float`()converts to a floating-point number`print`(`float`(5))
+`float()` — converts to a floating-point number
+
+`print(float(5))`
 
 50
 
-```
-max()بزرگ‌ترین عددPrint(max(3, 9, 5))
-```
+`max()` — the largest number
+Print(max(3, 9, 5))
 
 9
 
-```
-min()کوچک‌ترین عددPrint(min(3, 9, 5))
-```
+`min()` — the smallest number
+Print(min(3, 9, 5))
 
 3
 
+`sum()` — the sum of several numbers
 ```
-sum()جمع چند عددPrint(sum([2, 4, 6]))
+Print(sum([2, 4, 6]))
 ```
 
 12
-
 
 ---
 
@@ -84,7 +90,6 @@ Create a calculator using math functions. Parts of the code related to this prog
 ![Book image](../images/p077-01.png)
 
 ![Book image](../images/p077-02.png)
-
 
 ---
 
@@ -107,7 +112,6 @@ sorted(iterable, reverse=false)
 ```
 
 `iterable:` the data you want to sort (list, string, tuple, set, dictionary, and so on) `reverse:` if `true`, the order becomes descending. Default (`false` ascending)
-
 
 ---
 
@@ -137,7 +141,7 @@ Types of modules in Python:
 
 Standard module (`standard`) There are modules in Python that the programmer only imports into their own program and does not need to define. Such as `time`, `date`, `random`, `math`, and so on. There are two ways to use standard modules.
 
-First method: importing the whole module (`import` `mojvle`):
+First method: importing the whole module (`import mojvle`):
 
 This is the safest way, because it prevents name conflicts. In this method you must put the module name before the function.
 
@@ -146,6 +150,5 @@ This is the safest way, because it prevents name conflicts. In this method you m
 Example: `Sqrt` is a ready-made function in Python’s `math` module, which is used to calculate the square root of numbers (Figure 151).
 
 **Figure 151**
-
 
 ---

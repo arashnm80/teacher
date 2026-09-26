@@ -42,16 +42,11 @@ Access level
 
 How to write
 
-Explanation Public (`Public`)`battery`Free access from everywhere `_battery` _Access only inside the same class
-
-```
-خصوصی (Private)
-```
+Explanation Public (`Public`)`battery`Free access from everywhere `_battery` _Access only inside the same class (Private)
 
 `_status`Access from inside the class and child classes
 
 Protected (`Protected`)
-
 
 ---
 
@@ -68,6 +63,5 @@ So far you have become familiar with three levels of access to a class’s attri
 The different access levels, including public, private, and protected attributes, help you control access to a class’s data. For that reason, the internal details of classes need to be hidden and access to data needs to be done in a controlled way. This concept in object-oriented programming is known as encapsulation (`Encapsulation`). Encapsulation means:
 
 Hiding the internal details of a class and controlling how its data and behaviors are accessed, and it is considered one of the main concepts of object-oriented programming.
-
 
 ---

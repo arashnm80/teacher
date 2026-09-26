@@ -1,6 +1,5 @@
 # Writing an Object-Oriented Program
 
-
 ---
 
 **Page 234**
@@ -39,7 +38,6 @@ Does a “class” in programming more closely resemble a building’s blueprint
 
 Using object-oriented programming concepts in Python, model simple practical problems, design an appropriate class, and by creating and using instances, produce a readable, runnable, and extensible program.
 
-
 ---
 
 **Page 235**
@@ -54,7 +52,7 @@ In programming, these things are called objects (`Object`), and this style of pr
 
 **Figure 1**
 
-In this approach, the main goal is to recreate the logic and structure of the real world in the programming environment. To understand this idea better, you can look at popular strategy games such as `Age` `of` `Empires` or `Clash` `of` `Clans`. In these games, characters and entities are divided into various groups—from workers and soldiers to vehicles and war machines. Object-oriented programming, by introducing a concept called a class (`Class`), helps you place similar entities into one group. In this way, you can treat each group as a class and specify its attributes and related actions in the program.
+In this approach, the main goal is to recreate the logic and structure of the real world in the programming environment. To understand this idea better, you can look at popular strategy games such as `Age of Empires` or `Clash of Clans`. In these games, characters and entities are divided into various groups—from workers and soldiers to vehicles and war machines. Object-oriented programming, by introducing a concept called a class (`Class`), helps you place similar entities into one group. In this way, you can treat each group as a class and specify its attributes and related actions in the program.
 
 ![Figure 2](../images/p241-02.png)
 
@@ -76,7 +74,6 @@ Its battery charge level is known at any moment.
 
 **Figure 3**
 
-
 ---
 
 **Page 236**
@@ -91,18 +88,10 @@ Based on information about your own phone or a phone of your choice, complete th
 
 Samples / Attributes`color`
 
-`brand`
-
-`model`
-
-```
-battery
-```
-
+`brand`, `model`, `battery`
 My phone`gray`
 
 `nokia`
-
 1100
 
 32%
@@ -133,7 +122,6 @@ Besides the actions above, what other things can you do with your own phone? Com
 
 A method is the name for the actions an object can perform; it is called a method (`Method`). In fact, methods are like instructions that tell the object what to do.
 
-
 ---
 
 **Page 237**
@@ -146,9 +134,7 @@ Has attributes (`Attribute`).
 
 Can perform one or more actions (`Method`).
 
-```
-نمونه (Instance)
-```
+(Instance)
 
 In Python, objects created using a class are called instances (`Instance`) of that class. Therefore, a specific mobile phone (for example, your personal phone) is considered an instance (`Instance`) of the mobile phone class.
 
@@ -174,29 +160,18 @@ Terms
 
 Meaning
 
-```
-کلاس (Class)
-```
+(Class)
 
-General template or construction blueprint
-
-```
-نمونه (Instance)
-```
+General template or construction blueprint (Instance)
 
 An entity created from a class
 
-```
-ویژگی (Attribute)
-```
+(Attribute)
 
 What does it have?
 
-```
-متد (Method)
-```
+(Method)
 
 What does it do?
-
 
 ---

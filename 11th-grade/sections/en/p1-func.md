@@ -28,22 +28,17 @@ The general form of defining a function with an input parameter is as follows:
 
 return value
 
-statement or statements of the function body
-
-function
-
-inputs
+statement or statements of the function body function inputs
 
 `return` value or values
 
 **Figure 130**
 
-
 ---
 
 **Page 63**
 
-Example: In this program a function named `show_store_name` is defined and a `print` (`"Digital` `Online` `Store"`) statement is written in it (Figure 131).
+Example: In this program a function named `show_store_name` is defined and a `print` (`"Digital Online Store"`) statement is written in it (Figure 131).
 
 ![Figure 131](../images/p069-01.png)
 
@@ -55,7 +50,7 @@ Example: In this program also a function named `greet` is defined and the statem
 
 **Figure 132**
 
-Example: In this program the function `greet`() is defined without a parameter, so when calling it there is no need to send an argument (Figure 133).
+Example: In this program the function `greet()` is defined without a parameter, so when calling it there is no need to send an argument (Figure 133).
 
 ![Book image](../images/p069-03.png)
 
@@ -70,7 +65,6 @@ Example: In this program also the function is defined without a parameter. When 
 ![Figure 134](../images/p069-05.png)
 
 **Figure 134**
-
 
 ---
 
@@ -108,7 +102,6 @@ Output
 
 **Figure 136**
 
-
 ---
 
 **Page 65**
@@ -121,7 +114,7 @@ If the order and type of sending arguments are not observed, incorrect output is
 
 but the program logic is wrong.
 
-The solution is to use keyword arguments (`keyword` `arguments`), or named arguments; that is, when calling the function, you can write the parameter name together with the assignment operator.
+The solution is to use keyword arguments (`keyword arguments`), or named arguments; that is, when calling the function, you can write the parameter name together with the assignment operator.
 
 Example: Look carefully at the code in Figure 137. Check the outputs. Calling without observing the order of the arguments has caused the price to be printed first and then the product name, and this is incorrect logic.
 
@@ -145,14 +138,11 @@ Example: In the example in Figure 138, to prevent incorrect output when sending 
 
 When arguments are given to the function without the parameter name, the order in which they are sent is important, because each argument is assigned in turn to the function’s parameters. These arguments are called positional arguments
 
-```
-(positional arguments) گفته می‌شود.
-```
+(positional arguments) ‌.
 
 ### Activity
 
 Write a function named `square` that takes a number and prints its square.
-
 
 ---
 
@@ -190,7 +180,6 @@ Example: In the first line of the code in Figure 140, the function is defined wi
 
 **Figure 140**
 
-
 ---
 
 **Page 67**
@@ -203,7 +192,7 @@ Example: In this example the function is defined with two parameters that have d
 
 **Figure 141**
 
-Function return value (`Return` `Value`) A function can calculate a value and return it to the program so that it can be used later; that is called a return value (`Return` `Value`). Without `return`, the function does its own work (for example, it prints) but returns no value outward, and if you want to store the function’s result in a variable, its value becomes `None` (Figure 142).
+Function return value (`Return Value`) A function can calculate a value and return it to the program so that it can be used later; that is called a return value (`Return Value`). Without `return`, the function does its own work (for example, it prints) but returns no value outward, and if you want to store the function’s result in a variable, its value becomes `None` (Figure 142).
 
 ![Figure 142](../images/p073-03.png)
 
@@ -219,14 +208,11 @@ This time: the function returns the number 8 and the return value is stored in t
 
 **Figure 143**
 
-Example: Without using `return`, only (`price` * `count`) is calculated and no value is returned to the program, so by calling the function `total_` `price`(200000, 2) in the variable `x` the value `None` is stored and by running the program the value `None` is also printed
+Example: Without using `return`, only (`price` * `count`) is calculated and no value is returned to the program, so by calling the function `total_ price`(200000, 2) in the variable `x` the value `None` is stored and by running the program the value `None` is also printed (Figure 144).
 
 ![Book image](../images/p073-05.png)
 
-(Figure 144).
-
 **Figure 144**
-
 
 ---
 
@@ -266,7 +252,6 @@ Example: In this example, the defined function prints the natural numbers smalle
 
 **Figure 147**
 
-
 ---
 
 **Page 69**
@@ -302,6 +287,5 @@ The written function that calculates and displays the length of the user’s inp
 ![Book image](../images/p075-03.png)
 
 The code opposite calculates and displays the largest value among the numbers in a list. Run the code and explain its lines.
-
 
 ---

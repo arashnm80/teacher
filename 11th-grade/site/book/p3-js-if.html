@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title data-fa="شرط در جاوااسکریپت" data-en="Conditions in JavaScript">شرط در جاوااسکریپت</title>
   <link rel="icon" href="../assets/favicon.svg">
-  <link rel="stylesheet" href="../assets/style.css?v=4">
+  <link rel="stylesheet" href="../assets/style.css?v=6">
 </head>
 <body data-root="../">
   <header class="top">
@@ -35,7 +35,7 @@
 <h3 id="_1">کار کارگاهی</h3>
 <p>توسط ساختار شرطی <code>if</code>، زوج یا فرد بودن عدد <code>n</code> را بررسی کنید.</p>
 <p>بدین منظور یک فایل جدید با نام <code>workshop6.html</code> ایجاد کنید و اسکریپت زیر را درون آن بنویسید:</p>
-<p>فایل را ذخیره کنید و نتیجه را در کنسول مرور‌گر مشاهده نمایید. در این اسکریپت، باقی‌ماندۀ تقسیم عدد <code>n</code> بر 2 درون متغیر <code>r</code> ذخیره می‌شود. چنانچه مقدار باقی‌مانده صفر باشد (یعنی <code>n</code> بر 2 بخ‌شپذیر است)، عبارت <code>"Even</code> <code>number"</code> و در غیراین‌صورت عبارت <code>"Odd</code> <code>number"</code> روی صفحه ظاهر می‌شود.</p>
+<p>فایل را ذخیره کنید و نتیجه را در کنسول مرور‌گر مشاهده نمایید. در این اسکریپت، باقی‌ماندۀ تقسیم عدد <code>n</code> بر 2 درون متغیر <code>r</code> ذخیره می‌شود. چنانچه مقدار باقی‌مانده صفر باشد (یعنی <code>n</code> بر 2 بخ‌شپذیر است)، عبارت <code>"Even number"</code> و در غیراین‌صورت عبارت <code>"Odd number"</code> روی صفحه ظاهر می‌شود.</p>
 <p><img alt="تصویر کتاب" src="../images/p217-03.png" /></p>
 <p>کلمه <code>Even</code> به‌معنای زوج و کلمه <code>Odd</code> به معنای فرد است.</p>
 <p>اسکریپت تشخیص زوج یا فرد بودن یک عدد می‌تواند توسط ساختار <code>if-else</code> نیز نوشته شود. اسکریپت قبل را طبق شکل زیر تغییر دهید و نتیجه را در کنسول مرور‌گر بررسی کنید.</p>
@@ -47,7 +47,7 @@
 <p><strong>شکل 10</strong></p>
 <hr />
 <p class="page-mark">صفحه ۲۱۲</p>
-<p>مقدار هر دو شرط نادرست است، بنابراین دستور <code>console.log</code>() در خطوط 3 و 5 اجرا نمی‌شود. سپس شرط <code>score&gt;=70</code> بررسی می‌شود. با توجه به برقرار بودن شرط، دستور شماره 7 اجرا شده و عبارت <code>Grade:</code> <code>C</code> روی صفحه چاپ می‌شود. بعد از اجرای دستور 7 شرط‌های بعدی بررسی نمی‌شود و کنترل برنامه به خط 13 منتقل می‌شود.</p>
+<p>مقدار هر دو شرط نادرست است، بنابراین دستور <code>console.log()</code> در خطوط 3 و 5 اجرا نمی‌شود. سپس شرط <code>score&gt;=70</code> بررسی می‌شود. با توجه به برقرار بودن شرط، دستور شماره 7 اجرا شده و عبارت <code>Grade: C</code> روی صفحه چاپ می‌شود. بعد از اجرای دستور 7 شرط‌های بعدی بررسی نمی‌شود و کنترل برنامه به خط 13 منتقل می‌شود.</p>
 <h3 id="_2">بیشتر بدانید</h3>
 <p>ساختار <code>Switch</code> ساختار <code>switch</code> برای انتخاب از بین چندین بلوک کد، بر اساس مقدار یک متغیر به‌کار می‌رود. درصورتی‌که شرایط مسئله فقط به مقایسه یک متغیر با مقادیر مشخص محدود شود، می‌توان از ساختار <code>switch</code> به‌جای <code>else-if</code>های متعدد استفاده نمود.</p>
 <p>استفاده از ساختار شرطی <code>switch</code></p>
@@ -56,17 +56,17 @@
 <p>اسکریپتی بنویسید که رتبۀ یک دانش‌آموز را از متغیر <code>grade</code> دریافت کند و بر اساس مقدار رتبه، پیغام مناسبی را برای کاربر نمایش دهد.</p>
 <p>بدین منظور اسکریپت موجود در فایل <code>workshop6.html</code> را درون علائم کامنت قرار دهید و در ادامه، کد روب‌هرو را برای بررسی رتبه بنویسید.</p>
 <p>در این مثال ساختار شرطی <code>switch</code> مقدار متغیر <code>grade</code> را توسط <code>case</code>های مختلف بررسی می‌کند، به محض اینکه مقدار مقابل <code>case</code> با مقدار متغیر <code>grade</code> یکسان شود، دستور بعد از علامت: اجرا شده و سپس خروج از ساختار <code>switch</code> توسط دستور <code>break</code> انجام می‌شود. اگر مقدار متغیر <code>grade</code> با هیچ یک از مقادیر نوشته شده در مقابل <code>case</code>ها یکسان نباشد، دستور مربوط به حالت <code>default</code> اجرا می‌گردد.</p>
-<h3 id="_4">نکته</h3>
+<aside class="callout note"><h3 id="_4">نکته</h3>
 <p>اگر شرط یک <code>case</code> برقرار شود ولی دستور <code>break</code> در آن موجود نباشد، <code>case</code> بعدی هم توسط برنامه بررسی می‌شود.</p>
-<h3 id="_5">فعالیت</h3>
-<p>در <code>case</code> <code>A</code> دستور <code>break</code> را حذف کنید و خروجی برنامه را در مرورگر بررسی کنید. سپس دستور <code>break</code> را از مقابل <code>case</code>های بعدی حذف کنید و نتیجۀ آن را تحلیل نمایید.</p>
-<hr /></article><article class="lesson" lang="en" dir="ltr" data-lang-block="en" hidden><p class="page-mark">Page 211</p>
+</aside><aside class="callout activity"><h3 id="_5">فعالیت</h3>
+<p>در <code>case A</code> دستور <code>break</code> را حذف کنید و خروجی برنامه را در مرورگر بررسی کنید. سپس دستور <code>break</code> را از مقابل <code>case</code>های بعدی حذف کنید و نتیجۀ آن را تحلیل نمایید.</p>
+</aside><hr /></article><article class="lesson" lang="en" dir="ltr" data-lang-block="en" hidden><p class="page-mark">Page 211</p>
 <p>The word <code>Condition</code> means the condition, and the word <code>statement</code> refers to the statement or statements that run when the condition is met. A condition being met means that the value of the <code>Condition</code> expression equals <code>True</code>. The word <code>else</code> means “otherwise.” The content of <code>else</code> runs when the <code>if</code> condition is not met—that is, when the value of the <code>condition</code> expression equals <code>False</code>.</p>
 <p>Working with <code>if</code> conditional structures</p>
 <h3 id="workshop">Workshop</h3>
 <p>Using an <code>if</code> conditional structure, check whether the number <code>n</code> is even or odd.</p>
 <p>For this purpose, create a new file named <code>workshop6.html</code> and write the following script in it:</p>
-<p>Save the file and view the result in the browser console. In this script, the remainder of dividing the number <code>n</code> by 2 is stored in the variable <code>r</code>. If the remainder is zero (that is, <code>n</code> is divisible by 2), the phrase <code>"Even</code> <code>number"</code> appears on the page; otherwise the phrase <code>"Odd</code> <code>number"</code> appears.</p>
+<p>Save the file and view the result in the browser console. In this script, the remainder of dividing the number <code>n</code> by 2 is stored in the variable <code>r</code>. If the remainder is zero (that is, <code>n</code> is divisible by 2), the phrase <code>"Even number"</code> appears on the page; otherwise the phrase <code>"Odd number"</code> appears.</p>
 <p><img alt="Book image" src="../images/p217-03.png" /></p>
 <p>The word <code>Even</code> means even and the word <code>Odd</code> means odd.</p>
 <p>The script that detects whether a number is even or odd can also be written with an <code>if-else</code> structure. Change the previous script according to the figure below and check the result in the browser console.</p>
@@ -78,7 +78,7 @@
 <p><strong>Figure 10</strong></p>
 <hr />
 <p class="page-mark">Page 212</p>
-<p>the value of both conditions is false, the <code>console.log</code>() statement on lines 3 and 5 is not executed. Then the condition <code>score&gt;=70</code> is checked. Because the condition is met, statement number 7 runs and the phrase <code>Grade:</code> <code>C</code> is printed on the page. After statement 7 runs, the later conditions are not checked and program control moves to line 13.</p>
+<p>the value of both conditions is false, the <code>console.log()</code> statement on lines 3 and 5 is not executed. Then the condition <code>score&gt;=70</code> is checked. Because the condition is met, statement number 7 runs and the phrase <code>Grade: C</code> is printed on the page. After statement 7 runs, the later conditions are not checked and program control moves to line 13.</p>
 <h3 id="learn-more">Learn more</h3>
 <p>The <code>Switch</code> structure The <code>switch</code> structure is used to choose among several blocks of code based on the value of a variable. If the problem conditions are limited only to comparing one variable with specific values, you can use a <code>switch</code> structure instead of many <code>else-if</code>s.</p>
 <p>Using the <code>switch</code> conditional structure</p>
@@ -87,11 +87,11 @@
 <p>Write a script that receives a student’s rank from the variable <code>grade</code> and, based on the rank value, displays an appropriate message for the user.</p>
 <p>For this purpose, place the existing script in the <code>workshop6.html</code> file inside comment marks and then write the code on the right to check the rank.</p>
 <p>In this example, the <code>switch</code> conditional structure checks the value of the variable <code>grade</code> with different <code>case</code>s; as soon as the value next to a <code>case</code> matches the value of the variable <code>grade</code>, the statement after the : mark runs, and then exiting the <code>switch</code> structure is done with the <code>break</code> statement. If the value of the variable <code>grade</code> does not match any of the values written next to the <code>case</code>s, the statement for the <code>default</code> case runs.</p>
-<h3 id="note">Note</h3>
+<aside class="callout note"><h3 id="note">Note</h3>
 <p>If a <code>case</code> condition is met but there is no <code>break</code> statement in it, the next <code>case</code> is also checked by the program.</p>
-<h3 id="activity">Activity</h3>
-<p>In <code>case</code> <code>A</code>, remove the <code>break</code> statement and check the program output in the browser. Then remove the <code>break</code> statement from the later <code>case</code>s and analyze the result.</p>
-<hr /></article>
+</aside><aside class="callout activity"><h3 id="activity">Activity</h3>
+<p>In <code>case A</code>, remove the <code>break</code> statement and check the program output in the browser. Then remove the <code>break</code> statement from the later <code>case</code>s and analyze the result.</p>
+</aside><hr /></article>
       <aside class="extra">
         <h2 data-fa="تمرین این بخش" data-en="Exercises for this section">تمرین این بخش</h2>
         <p class="extra-note" data-fa="این تمرین‌ها و پیوندها اضافه بر متن کتاب‌اند." data-en="These exercises and links are in addition to the book.">این تمرین‌ها و پیوندها اضافه بر متن کتاب‌اند.</p>
@@ -101,7 +101,7 @@
     <nav class="pager"><a rel="prev" class="prev" href="p3-js-data.html"><span class="pager-word" data-fa="قبلی" data-en="Previous">قبلی</span><span class="pager-name" data-fa="آرایه و شیء" data-en="Arrays and objects">آرایه و شیء</span></a><a rel="next" class="next" href="p3-js-loops.html"><span class="pager-word" data-fa="بعدی" data-en="Next">بعدی</span><span class="pager-name" data-fa="حلقه‌ها" data-en="Loops">حلقه‌ها</span></a></nav>
     </div>
   </div>
-  <script src="../assets/search-index.js?v=4"></script>
-  <script src="../assets/app.js?v=4"></script>
+  <script src="../assets/search-index.js?v=6"></script>
+  <script src="../assets/app.js?v=6"></script>
 </body>
 </html>

@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title data-fa="فاصله، گردی و لیست" data-en="Spacing, rounding, and lists">فاصله، گردی و لیست</title>
   <link rel="icon" href="../assets/favicon.svg">
-  <link rel="stylesheet" href="../assets/style.css?v=4">
+  <link rel="stylesheet" href="../assets/style.css?v=6">
 </head>
 <body data-root="../">
   <header class="top">
@@ -34,9 +34,8 @@
 <p>جدول 2- کلاس‌های <code>margin</code> و <code>padding</code> در بوت‌استرپ</p>
 <p>کلاس‌های <code>margin</code>کلاس‌های <code>padding</code></p>
 <p>مفهوم</p>
-<div class="code-wrap" dir="ltr"><pre><code>m-size
-</code></pre></div>
-<p><code>p-size</code> در تمام جهات</p>
+<p><code>m-size</code>
+<code>p-size</code> در تمام جهات</p>
 <div class="code-wrap" dir="ltr"><pre><code>m{t}-size
 p{t}-size
 </code></pre></div>
@@ -47,8 +46,9 @@ p{e}-size
 <p>سمت راست در <code>ltr</code> (<code>end</code>)</p>
 <div class="code-wrap" dir="ltr"><pre><code>m{b}-size
 p{b}-size
-پایین(bottom)
-m{s}-size
+</code></pre></div>
+<p>پایین(<bdi dir="ltr">bottom</bdi>)</p>
+<div class="code-wrap" dir="ltr"><pre><code>m{s}-size
 p{s}-size
 </code></pre></div>
 <p>سمت چپ در <code>ltr</code> (<code>start</code>)</p>
@@ -63,16 +63,16 @@ p{y}-size
 <p>مقدار <code>size</code> عددی بین صفر تا پنج است. هر یک از اعداد این محدوده بیانگر فاصله مشخصی بر حسب <code>px</code> است.</p>
 <p>جدول 3 مقادیر پارامتر <code>size</code> بر حسب واحد اندازه گیری <code>px</code></p>
 <p>اندازه بر حسب <code>Sizepx</code></p>
-<p><code>4px</code></p>
-<p>1</p>
-<p><code>8px</code></p>
-<p>2</p>
-<p><code>16px</code></p>
-<p>3</p>
-<p><code>24px</code></p>
-<p>4</p>
-<p><code>48px</code></p>
-<p>5</p>
+<p><code>4px</code>
+1</p>
+<p><code>8px</code>
+2</p>
+<p><code>16px</code>
+3</p>
+<p><code>24px</code>
+4</p>
+<p><code>48px</code>
+5</p>
 <p>پارامتر <code>size</code> می‌تواند دارای مقدار <code>auto</code> نیز باشد. عبارت <code>auto</code> به معنای تنظیم خودکار است. استفاده از <code>mx-auto</code> باعث تنظیم فاصله چپ و راست عنصر با مقادیر مساوی می‌گردد، به‌طوری‌که عنصر در وسط عنصر والد خود قرار گیرد.</p>
 <hr />
 <p class="page-mark">صفحه ۱۵۲</p>
@@ -81,70 +81,22 @@ p{y}-size
 <p>در ادامه کارگاه قبل یک عنصر <code>div</code> با مشخصات زیر به صفحه وب اضافه کنید:</p>
 <p><img alt="تصویر کتاب" src="../images/p158-01.png" /></p>
 <p>در کد فوق مقدار فاصله عنصر <code>&lt;div&gt;</code> از عنصر بالایی برابر <code>24px</code> یا (<code>mt-4</code>) و مقدار فاصله چپ و راست آن به‌صورت خودکار (<code>mx-auto</code>) تنظیم شده است. همچنین فضای اضافی داخل عنصر از همه جهات برابر با <code>16px</code> (<code>p-3</code>) تعیین شده است.</p>
-<div class="code-wrap" dir="ltr"><pre><code>کلاس‌های border، rounded و shadow
-</code></pre></div>
+<p>کلاس‌های <bdi dir="ltr">border</bdi>، <bdi dir="ltr">rounded</bdi> و <bdi dir="ltr">shadow</bdi></p>
 <p>بوت‌استرپ حاوی مجموعه‌ای از کلاس‌ها درباره خط دور، گردی گوشه‌ها و سایر عناصر است. کلاس‌های <code>border</code>، برای ایجاد خط دور، تعیین رنگ و ضخامت آن مورد استفاده قرار می‌گیرند. کلاس‌های <code>rounded</code> برای گردکردن گوشه‌ها و کلاس‌های <code>shadow</code> برای ایجاد سایر عناصر کاربرد دارند. جدول ٤ به معرفی انواع کلاس‌های <code>border</code>، <code>rounded</code> و <code>shadow</code> می‌پردازد.</p>
-<p>جدول 4 انواع کلاس‌های <code>border</code>، <code>rounded</code> و <code>shadow</code></p>
-<p>سایه و اندازه آن</p>
-<p>گردی گوشه‌ها</p>
-<p>رنگ خط دور</p>
-<p>خط دور و ضخامت آن</p>
-<div class="code-wrap" dir="ltr"><pre><code>border-primary
-rounded
-border-secondary
-border
-rounded-circle
--shadow-none shadow
-border-success
-border-1
-rounded-pill
-</code></pre></div>
-<p><code>sm</code></p>
-<div class="code-wrap" dir="ltr"><pre><code>danger-danger
-border-2
-rounded-top
-shadow
-border-info
-border-3
-rounded-bottom
-shadow-lg
-border-warning
-border-4
-rounded-start
-border-light
-border-5
-rounded-end
-border-dark
-</code></pre></div>
-<p>جدول 5 کلاس‌های بوت‌استرپ برای تعیین اندازه گردی گوشه‌ها و ضخامت خط دور</p>
-<p>اندازه</p>
-<p>مقدار گردی گوشه‌ها</p>
-<p>ضخامت خط دور</p>
-<p>خط دور</p>
-<p><code>1px</code></p>
-<div class="code-wrap" dir="ltr"><pre><code>0px (no rounding)
-1 rounded
-1 border
-</code></pre></div>
-<p><code>2px</code></p>
-<p><code>2px</code></p>
-<div class="code-wrap" dir="ltr"><pre><code>2 rounded
-2 border
-</code></pre></div>
-<p><code>4px</code></p>
-<p><code>3px</code></p>
-<div class="code-wrap" dir="ltr"><pre><code>3 rounded
-3 border
-</code></pre></div>
-<p><code>6px</code></p>
-<p><code>4px</code></p>
-<div class="code-wrap" dir="ltr"><pre><code>4 rounded
-4 border
-</code></pre></div>
-<p><code>5px</code></p>
-<div class="code-wrap" dir="ltr"><pre><code>5 rounded
-5 border
-</code></pre></div>
+<p>جدول 4 انواع کلاس‌های <code>border</code>، <code>rounded</code> و <code>shadow</code> سایه و اندازه آن گردی گوشه‌ها رنگ خط دور خط دور و ضخامت آن</p>
+<p><bdi dir="ltr">border-primary</bdi> <bdi dir="ltr">rounded</bdi> <bdi dir="ltr">border-secondary</bdi> <bdi dir="ltr">border</bdi> <bdi dir="ltr">rounded-circle</bdi> -<bdi dir="ltr">shadow-none</bdi> <bdi dir="ltr">shadow</bdi> <bdi dir="ltr">border-success</bdi> <bdi dir="ltr">border-1</bdi> <bdi dir="ltr">rounded-pill</bdi></p>
+<p><code>sm</code>، <code>danger-danger</code>، <code>border-2</code>، <code>rounded-top</code>، <code>shadow</code>، <code>border-info</code>، <code>border-3</code>، <code>rounded-bottom</code>، <code>shadow-lg</code>، <code>border-warning</code>، <code>border-4</code>، <code>rounded-start</code>، <code>border-light</code>، <code>border-5</code>، <code>rounded-end</code>، <code>border-dark</code>
+جدول 5 کلاس‌های بوت‌استرپ برای تعیین اندازه گردی گوشه‌ها و ضخامت خط دور اندازه مقدار گردی گوشه‌ها ضخامت خط دور خط دور</p>
+<p><code>1px</code>
+0px <bdi dir="ltr">(no rounding)</bdi> 1 <bdi dir="ltr">rounded</bdi> 1 <bdi dir="ltr">border</bdi></p>
+<p><code>2px</code>، <code>2px</code>
+2 <bdi dir="ltr">rounded</bdi> 2 <bdi dir="ltr">border</bdi></p>
+<p><code>4px</code>، <code>3px</code>
+3 <bdi dir="ltr">rounded</bdi> 3 <bdi dir="ltr">border</bdi></p>
+<p><code>6px</code>، <code>4px</code>
+4 <bdi dir="ltr">rounded</bdi> 4 <bdi dir="ltr">border</bdi></p>
+<p><code>5px</code>
+5 <bdi dir="ltr">rounded</bdi> 5 <bdi dir="ltr">border</bdi></p>
 <hr />
 <p class="page-mark">صفحه ۱۵۳</p>
 <p>در مجموعه کلاس‌های <code>rounded</code>، کلاس <code>rounded-circle</code> برای گرد شدن کامل یک عنصر به‌کار می‌رود.</p>
@@ -156,8 +108,7 @@ border-dark
 <p><img alt="تصویر کتاب" src="../images/p159-01.png" /></p>
 <p>برای ایجاد تصویر مدور، تصویر یک محصول را با ابعاد یکسان به صفحه اضافه کنید و تنظیمات آن را به شکل زیر انجام دهید:</p>
 <p><img alt="تصویر کتاب" src="../images/p159-02.png" /></p>
-<div class="code-wrap" dir="ltr"><pre><code>کلاس‌هایtypography
-</code></pre></div>
+<p>کلاس‌هایtypography</p>
 <p>کلاس‌های متنی بوت‌استرپ برای تنظیم اندازه و وزن فونت، تراز، استایل لیست‌ها و موارد دیگر استفاده می‌شود. جدول ٦ به برخی از کلاس‌های متنی اشاره دارد.</p>
 <p>جدول 6 کلاس‌های متنی <code>Bootstrap</code></p>
 <p>اندازه متن</p>
@@ -165,54 +116,24 @@ border-dark
 <p>تراز متن</p>
 <p>استایل لیست</p>
 <p>آرایش متن</p>
-<div class="code-wrap" dir="ltr"><pre><code>fs-1 … fs-6
-fw-bold
-text-start
-list-unstyled
-text-decoration-none
-</code></pre></div>
+<p><bdi dir="ltr">fs-1</bdi> … <bdi dir="ltr">fs-6</bdi> <bdi dir="ltr">fw-bold</bdi> <bdi dir="ltr">text-start</bdi> <bdi dir="ltr">list-unstyled</bdi> <bdi dir="ltr">text-decoration-none</bdi></p>
 <p><code>h1</code> … <code>h6</code></p>
-<div class="code-wrap" dir="ltr"><pre><code>fw-light
-text-center
-list-inline
-text-capitalize
-display-1 … display-4
-fw-lighter
-text-end
-text-uppercase
-</code></pre></div>
+<p><bdi dir="ltr">fw-light</bdi> <bdi dir="ltr">text-center</bdi> <bdi dir="ltr">list-inline</bdi> <bdi dir="ltr">text-capitalize</bdi> <bdi dir="ltr">display-1</bdi> … <bdi dir="ltr">display-4</bdi> <bdi dir="ltr">fw-lighter</bdi> <bdi dir="ltr">text-end</bdi> <bdi dir="ltr">text-uppercase</bdi></p>
 <p>کلاس‌های <code>*-fs</code> برای تنظیم اندازه فونت عناصر متنی از کوچک (<code>fs-6</code>) به بزرگ (<code>fs-1</code>) کاربرد دارد.</p>
 <p>کلاس‌های <code>h1</code> تا <code>h6</code> برای تنظیم اندازه برچسب‌های عنوان استفاده می‌شود.</p>
 <p>کلاس‌های <code>*-display</code> برای ایجاد عناوین بزرگ و جلب توجه کاربر استفاده می‌شوند و مفهوم خاصی را منتقل نمی‌کنند.</p>
 <hr />
 <p class="page-mark">صفحه ۱۵۴</p>
 <p>کلاس <code>list-unstyled</code> استایل پیش فرض لیست را حذف می‌کند؛ به این معنی که علائم یا شماره‌های کنار عنصر ناپدید شده و مقدار <code>padding-left</code> برابر صفر می‌گردد.</p>
-<p>کلاس <code>list-inline</code> عناصر لیست را آماده چیدمان افقی می‌کند، به‌شرطی که عناصر لیست دارای کلاس <code>-list</code> <code>inline-item</code> باشند. این نوع لیست برای منوهای ساده و ناوبری‌های کوچک کاربرد دارد.</p>
-<p>کلاس‌های <code>felx</code> بوت‌استرپ دارای کلاس‌های مختلفی در زمینه طراحی عناصر صفحه با تکنیک <code>Flexbox</code> است. سیستم فلکس دارای دو کلاس پایه با اسامی <code>d-flex</code> و <code>d-inline-flex</code> است که برای عناصر نگهدارنده استفاده می‌شوند. به‌طور مثال بخش معرفی محصولات نیازمند یک عنصر نگهدارنده است که محصولات درون آن به‌صورت انعطاف‌پذیر کنار هم قرار گیرند. جدول زیر برخی از کلاس‌های فلکس را بر‌اساس موضوعات مختلف معرفی می‌کند.</p>
+<p>کلاس <code>list-inline</code> عناصر لیست را آماده چیدمان افقی می‌کند، به‌شرطی که عناصر لیست دارای کلاس <code>-list inline-item</code> باشند. این نوع لیست برای منوهای ساده و ناوبری‌های کوچک کاربرد دارد.</p>
+<p>کلاس‌های <code>flex</code> بوت‌استرپ دارای کلاس‌های مختلفی در زمینه طراحی عناصر صفحه با تکنیک <code>Flexbox</code> است. سیستم فلکس دارای دو کلاس پایه با اسامی <code>d-flex</code> و <code>d-inline-flex</code> است که برای عناصر نگهدارنده استفاده می‌شوند. به‌طور مثال بخش معرفی محصولات نیازمند یک عنصر نگهدارنده است که محصولات درون آن به‌صورت انعطاف‌پذیر کنار هم قرار گیرند. جدول زیر برخی از کلاس‌های فلکس را بر‌اساس موضوعات مختلف معرفی می‌کند.</p>
 <p>جدول 7 کلاس‌های <code>Flexbox</code></p>
 <p>تراز افقی عناصر</p>
 <p>تراز عمودی عناصر</p>
 <p>جهت چیدمان</p>
 <p>انتقال به سطر بعد</p>
-<div class="code-wrap" dir="ltr"><pre><code>justify-content-start
-align-items-start
-flex-row
-flex-wrap
-justify-content-center
-align-items-center
-flex-row-reverse
-flex-nowrap
-justify-content-end
-align-items-end
-flex-column
-flex-wrap-reverse
-justify-content-between
-align-items-baseline
-flex-column-reverse
-justify-content-around
-justify-content-evenly
-</code></pre></div>
-<p>کلاس‌های <code>*-justify-content</code> برای تعیین تراز افقی محتوا در یک عنصر نگهدارنده استفاده می‌شوند. سه کلاس اول، محتوای یک عنصر را در سمت چپ (<code>start</code>)، وسط (<code>center</code>) و راست (<code>end</code>) تراز می‌کنند. سه کلاس بعدی نحوه توزیع عناصر را بر اساس فاصله بین آنها مشخص می‌کنند.</p>
+<p><code>justify-content-start</code>، <code>align-items-start</code>، <code>flex-row</code>، <code>flex-wrap</code>، <code>justify-content-center</code>، <code>align-items-center</code>، <code>flex-row-reverse</code>، <code>flex-nowrap</code>، <code>justify-content-end</code>، <code>align-items-end</code>، <code>flex-column</code>، <code>flex-wrap-reverse</code>، <code>justify-content-between</code>، <code>align-items-baseline</code>، <code>flex-column-reverse</code>، <code>justify-content-around</code>، <code>justify-content-evenly</code>
+کلاس‌های <code>*-justify-content</code> برای تعیین تراز افقی محتوا در یک عنصر نگهدارنده استفاده می‌شوند. سه کلاس اول، محتوای یک عنصر را در سمت چپ (<code>start</code>)، وسط (<code>center</code>) و راست (<code>end</code>) تراز می‌کنند. سه کلاس بعدی نحوه توزیع عناصر را بر اساس فاصله بین آنها مشخص می‌کنند.</p>
 <p>کلاس‌های <code>*-align-items</code> برای تعیین تراز عناصر در راستای عمودی استفاده می‌شوند.</p>
 <p>به‌کارگیری کلاس‌های مختلف در لایه تصاویر محصولات</p>
 <h3 id="_3">کار کارگاهی</h3>
@@ -222,8 +143,7 @@ justify-content-evenly
 <p><img alt="تصویر کتاب" src="../images/p160-01.png" /></p>
 <hr />
 <p class="page-mark">صفحه ۱۵۵</p>
-<div class="code-wrap" dir="ltr"><pre><code>3 استایل‌های مربوط به .products-section h2، .products و ویژگی margin در .products-section را
-</code></pre></div>
+<p>3 استایل‌های مربوط به .<bdi dir="ltr">products-section</bdi> <bdi dir="ltr">h2</bdi>، .<bdi dir="ltr">products</bdi> و ویژگی <bdi dir="ltr">margin</bdi> در .<bdi dir="ltr">products-section</bdi> را</p>
 <p>از فایل <code>styles.css</code> حذف کنید.</p>
 <p><img alt="تصویر کتاب" src="../images/p161-04.png" /></p>
 <p>طراحی بخش معرفی فروشگاه</p>
@@ -241,9 +161,8 @@ justify-content-evenly
 <p>Table 2- <code>margin</code> and <code>padding</code> classes in Bootstrap</p>
 <p><code>margin</code> classes <code>padding</code> classes</p>
 <p>Meaning</p>
-<div class="code-wrap" dir="ltr"><pre><code>m-size
-</code></pre></div>
-<p><code>p-size</code> in all directions</p>
+<p><code>m-size</code>
+<code>p-size</code> in all directions</p>
 <div class="code-wrap" dir="ltr"><pre><code>m{t}-size
 p{t}-size
 </code></pre></div>
@@ -254,8 +173,9 @@ p{e}-size
 <p>right side in <code>ltr</code> (<code>end</code>)</p>
 <div class="code-wrap" dir="ltr"><pre><code>m{b}-size
 p{b}-size
-پایین(bottom)
-m{s}-size
+</code></pre></div>
+<p>(bottom)</p>
+<div class="code-wrap" dir="ltr"><pre><code>m{s}-size
 p{s}-size
 </code></pre></div>
 <p>left side in <code>ltr</code> (<code>start</code>)</p>
@@ -268,18 +188,17 @@ p{y}-size
 </code></pre></div>
 <p>top and bottom (<code>y</code> axis)</p>
 <p>The value of <code>size</code> is a number from zero to five. Each number in this range represents a specific distance in <code>px</code>.</p>
-<p>Table 3 Values of the <code>size</code> parameter in the measurement unit <code>px</code></p>
-<p>Size in <code>Sizepx</code></p>
-<p><code>4px</code></p>
-<p>1</p>
-<p><code>8px</code></p>
-<p>2</p>
-<p><code>16px</code></p>
-<p>3</p>
-<p><code>24px</code></p>
-<p>4</p>
-<p><code>48px</code></p>
-<p>5</p>
+<p>Table 3 Values of the <code>size</code> parameter in the measurement unit <code>px</code> Size in <code>Sizepx</code></p>
+<p><code>4px</code>
+1</p>
+<p><code>8px</code>
+2</p>
+<p><code>16px</code>
+3</p>
+<p><code>24px</code>
+4</p>
+<p><code>48px</code>
+5</p>
 <p>The <code>size</code> parameter can also have the value <code>auto</code>. The word <code>auto</code> means automatic adjustment. Using <code>mx-auto</code> sets the left and right spacing of the element to equal values, so that the element is placed in the middle of its parent element.</p>
 <hr />
 <p class="page-mark">Page 152</p>
@@ -288,70 +207,29 @@ p{y}-size
 <p>Continuing the previous workshop, add a <code>div</code> element with the following settings to the web page:</p>
 <p><img alt="Book image" src="../images/p158-01.png" /></p>
 <p>In the code above, the distance of the <code>&lt;div&gt;</code> element from the element above it is set to <code>24px</code> or (<code>mt-4</code>), and its left and right spacing is set automatically (<code>mx-auto</code>). Also, the extra space inside the element in all directions is set to <code>16px</code> (<code>p-3</code>).</p>
-<div class="code-wrap" dir="ltr"><pre><code>کلاس‌های border، rounded و shadow
-</code></pre></div>
+<p>‌ border rounded shadow</p>
 <p>Bootstrap contains a set of classes about borders, corner rounding, and other elements. The <code>border</code> classes are used to create a border and set its color and thickness. The <code>rounded</code> classes are used to round corners, and the <code>shadow</code> classes are used to create shadows on elements. Table 4 introduces the types of <code>border</code>, <code>rounded</code>, and <code>shadow</code> classes.</p>
 <p>Table 4 Types of <code>border</code>, <code>rounded</code>, and <code>shadow</code> classes</p>
 <p>Shadow and its size</p>
 <p>Corner rounding</p>
 <p>Border color</p>
 <p>Border and its thickness</p>
-<div class="code-wrap" dir="ltr"><pre><code>border-primary
-rounded
-border-secondary
-border
-rounded-circle
--shadow-none shadow
-border-success
-border-1
-rounded-pill
-</code></pre></div>
-<p><code>sm</code></p>
-<div class="code-wrap" dir="ltr"><pre><code>danger-danger
-border-2
-rounded-top
-shadow
-border-info
-border-3
-rounded-bottom
-shadow-lg
-border-warning
-border-4
-rounded-start
-border-light
-border-5
-rounded-end
-border-dark
-</code></pre></div>
-<p>Table 5 Bootstrap classes for setting corner rounding size and border thickness</p>
-<p>Size</p>
+<p>border-primary rounded border-secondary border rounded-circle -shadow-none shadow border-success border-1 rounded-pill</p>
+<p><code>sm</code>, <code>danger-danger</code>, <code>border-2</code>, <code>rounded-top</code>, <code>shadow</code>, <code>border-info</code>, <code>border-3</code>, <code>rounded-bottom</code>, <code>shadow-lg</code>, <code>border-warning</code>, <code>border-4</code>, <code>rounded-start</code>, <code>border-light</code>, <code>border-5</code>, <code>rounded-end</code>, <code>border-dark</code>
+Table 5 Bootstrap classes for setting corner rounding size and border thickness Size</p>
 <p>Corner rounding amount</p>
 <p>Border thickness</p>
 <p>Border</p>
-<p><code>1px</code></p>
-<div class="code-wrap" dir="ltr"><pre><code>0px (no rounding)
-1 rounded
-1 border
-</code></pre></div>
-<p><code>2px</code></p>
-<p><code>2px</code></p>
-<div class="code-wrap" dir="ltr"><pre><code>2 rounded
-2 border
-</code></pre></div>
-<p><code>4px</code></p>
-<p><code>3px</code></p>
-<div class="code-wrap" dir="ltr"><pre><code>3 rounded
-3 border
-</code></pre></div>
-<p><code>6px</code></p>
-<p><code>4px</code></p>
-<div class="code-wrap" dir="ltr"><pre><code>4 rounded
-4 border
-</code></pre></div>
-<p><code>5px</code></p>
-<div class="code-wrap" dir="ltr"><pre><code>5 rounded
-5 border
-</code></pre></div>
+<p><code>1px</code>
+0px (no rounding) 1 rounded 1 border</p>
+<p><code>2px</code>, <code>2px</code>
+2 rounded 2 border</p>
+<p><code>4px</code>, <code>3px</code>
+3 rounded 3 border</p>
+<p><code>6px</code>, <code>4px</code>
+4 rounded 4 border</p>
+<p><code>5px</code>
+5 rounded 5 border</p>
 <hr />
 <p class="page-mark">Page 153</p>
 <p>In the set of <code>rounded</code> classes, the class <code>rounded-circle</code> is used to make an element fully round.</p>
@@ -363,8 +241,7 @@ border-dark
 <p><img alt="Book image" src="../images/p159-01.png" /></p>
 <p>To create a circular image, add a product image with equal dimensions to the page and set it as follows:</p>
 <p><img alt="Book image" src="../images/p159-02.png" /></p>
-<div class="code-wrap" dir="ltr"><pre><code>کلاس‌هایtypography
-</code></pre></div>
+<p>‌typography</p>
 <p>Bootstrap’s text classes are used to set font size and weight, alignment, list styles, and other items. Table 6 refers to some of the text classes.</p>
 <p>Table 6 Bootstrap text classes</p>
 <p>Text size</p>
@@ -372,54 +249,24 @@ border-dark
 <p>Text alignment</p>
 <p>List style</p>
 <p>Text decoration</p>
-<div class="code-wrap" dir="ltr"><pre><code>fs-1 … fs-6
-fw-bold
-text-start
-list-unstyled
-text-decoration-none
-</code></pre></div>
+<p>fs-1 … fs-6 fw-bold text-start list-unstyled text-decoration-none</p>
 <p><code>h1</code> … <code>h6</code></p>
-<div class="code-wrap" dir="ltr"><pre><code>fw-light
-text-center
-list-inline
-text-capitalize
-display-1 … display-4
-fw-lighter
-text-end
-text-uppercase
-</code></pre></div>
+<p>fw-light text-center list-inline text-capitalize display-1 … display-4 fw-lighter text-end text-uppercase</p>
 <p>The <code>*-fs</code> classes are used to set the font size of text elements from small (<code>fs-6</code>) to large (<code>fs-1</code>).</p>
 <p>The classes <code>h1</code> through <code>h6</code> are used to set the size of heading tags.</p>
 <p>The <code>*-display</code> classes are used to create large headings and attract the user’s attention and do not convey a special meaning.</p>
 <hr />
 <p class="page-mark">Page 154</p>
 <p>The class <code>list-unstyled</code> removes the default list style; that means the markers or numbers next to the item disappear and the value of <code>padding-left</code> becomes zero.</p>
-<p>The class <code>list-inline</code> prepares list items for horizontal layout, provided that the list items have the class <code>-list</code> <code>inline-item</code>. This type of list is useful for simple menus and small navigations.</p>
-<p><code>felx</code> classes Bootstrap has various classes for designing page elements with the <code>Flexbox</code> technique. The flex system has two base classes named <code>d-flex</code> and <code>d-inline-flex</code> that are used for container elements. For example, a product introduction section needs a container element in which the products are placed flexibly next to each other. The table below introduces some flex classes based on different topics.</p>
+<p>The class <code>list-inline</code> prepares list items for horizontal layout, provided that the list items have the class <code>-list inline-item</code>. This type of list is useful for simple menus and small navigations.</p>
+<p><code>flex</code> classes Bootstrap has various classes for designing page elements with the <code>Flexbox</code> technique. The flex system has two base classes named <code>d-flex</code> and <code>d-inline-flex</code> that are used for container elements. For example, a product introduction section needs a container element in which the products are placed flexibly next to each other. The table below introduces some flex classes based on different topics.</p>
 <p>Table 7 <code>Flexbox</code> classes</p>
 <p>Horizontal alignment of elements</p>
 <p>Vertical alignment of elements</p>
 <p>Layout direction</p>
 <p>Wrapping to the next row</p>
-<div class="code-wrap" dir="ltr"><pre><code>justify-content-start
-align-items-start
-flex-row
-flex-wrap
-justify-content-center
-align-items-center
-flex-row-reverse
-flex-nowrap
-justify-content-end
-align-items-end
-flex-column
-flex-wrap-reverse
-justify-content-between
-align-items-baseline
-flex-column-reverse
-justify-content-around
-justify-content-evenly
-</code></pre></div>
-<p>The <code>*-justify-content</code> classes are used to set the horizontal alignment of content in a container element. The first three classes align an element’s content to the left (<code>start</code>), center (<code>center</code>), and right (<code>end</code>). The next three classes determine how elements are distributed based on the space between them.</p>
+<p><code>justify-content-start</code>, <code>align-items-start</code>, <code>flex-row</code>, <code>flex-wrap</code>, <code>justify-content-center</code>, <code>align-items-center</code>, <code>flex-row-reverse</code>, <code>flex-nowrap</code>, <code>justify-content-end</code>, <code>align-items-end</code>, <code>flex-column</code>, <code>flex-wrap-reverse</code>, <code>justify-content-between</code>, <code>align-items-baseline</code>, <code>flex-column-reverse</code>, <code>justify-content-around</code>, <code>justify-content-evenly</code>
+The <code>*-justify-content</code> classes are used to set the horizontal alignment of content in a container element. The first three classes align an element’s content to the left (<code>start</code>), center (<code>center</code>), and right (<code>end</code>). The next three classes determine how elements are distributed based on the space between them.</p>
 <p>The <code>*-align-items</code> classes are used to set the alignment of elements along the vertical axis.</p>
 <p>Using different classes in the product images layer</p>
 <h3 id="workshop_2">Workshop</h3>
@@ -429,8 +276,7 @@ justify-content-evenly
 <p><img alt="Book image" src="../images/p160-01.png" /></p>
 <hr />
 <p class="page-mark">Page 155</p>
-<div class="code-wrap" dir="ltr"><pre><code>3 استایل‌های مربوط به .products-section h2، .products و ویژگی margin در .products-section را
-</code></pre></div>
+<p>3 ‌ .products-section h2 .products margin .products-section</p>
 <p>Remove them from the file <code>styles.css</code>.</p>
 <p><img alt="Book image" src="../images/p161-04.png" /></p>
 <p>Designing the store introduction section</p>
@@ -453,7 +299,7 @@ justify-content-evenly
     <nav class="pager"><a rel="prev" class="prev" href="p3-bs-start.html"><span class="pager-word" data-fa="قبلی" data-en="Previous">قبلی</span><span class="pager-name" data-fa="فریم‌ورک و شروع بوت‌استرپ" data-en="Frameworks and starting Bootstrap">فریم‌ورک و شروع بوت‌استرپ</span></a><a rel="next" class="next" href="p3-bs-header.html"><span class="pager-word" data-fa="بعدی" data-en="Next">بعدی</span><span class="pager-name" data-fa="سرصفحه فروشگاه" data-en="The shop header">سرصفحه فروشگاه</span></a></nav>
     </div>
   </div>
-  <script src="../assets/search-index.js?v=4"></script>
-  <script src="../assets/app.js?v=4"></script>
+  <script src="../assets/search-index.js?v=6"></script>
+  <script src="../assets/app.js?v=6"></script>
 </body>
 </html>

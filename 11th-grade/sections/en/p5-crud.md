@@ -24,14 +24,13 @@ Line 37: After the city information is saved successfully, the user will be take
 
 Line 39: When the user enters this page’s address in the browser, a request of type `GET` has occurred; in this case, the type of `request` is something other than `POST`, so a new form from `CityForm` is created and stored in the variable `form` so that the add-city form can be shown to the user.
 
-
 ---
 
 **Page 321**
 
 Line 41: The form that was built is placed in the `context` dictionary and on the next line is sent to `add_city.html`.
 
-Stage four: In the `urls.py` file for the `weather` `app`, add a new `path` as in Figure 67.
+Stage four: In the `urls.py` file for the `weather app`, add a new `path` as in Figure 67.
 
 ![Figure 67 adding a new path for adding a city](../images/p327-01.png)
 
@@ -46,7 +45,6 @@ Stage five: In the `show_temp.html` file, add a link for adding a city on line 1
 ![Figure 68 creating a link to the add-city page](../images/p327-02.png)
 
 Figure 68 creating a link to the add-city page
-
 
 ---
 
@@ -67,7 +65,6 @@ Click the “Add city” link, then as in Figure 70 enter the information for yo
 Figure 70 form for adding a new city
 
 Deleting a city with a site member user In this project you can give member users of the site the ability to delete cities; you can do this in three stages.
-
 
 ---
 
@@ -90,7 +87,6 @@ Stage two: Add a new `path` for `delete_city_view` in `urls.py` as in Figure 72.
 ![Figure 72 adding a new path for deleting cities](../images/p329-02.png)
 
 Figure 72 adding a new `path` for deleting cities
-
 
 ---
 
@@ -116,7 +112,6 @@ Save the files and open the city list page. The output will be as in Figure 74.
 
 Figure 74 delete button in the city list
 
-
 ---
 
 **Page 325**
@@ -140,6 +135,5 @@ If no city exists in the `City` table or all cities have been deleted, an error 
 ![Figure 75 error when the cities table is empty](../images/p331-01.png)
 
 Figure 75 error when the cities table is empty
-
 
 ---

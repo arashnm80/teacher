@@ -1,6 +1,5 @@
 # منابع
 
-
 ---
 
 <!-- pdf-page: 336 | book-page: 330 -->
@@ -13,8 +12,4 @@
 
 2 منبع جنگو: سایت مستندات رسمی جنگو `https://docs.djangoproject.com/`
 
-```
-3 https://getbootstrap.com/
-4 https://developer.mozilla.org
-5 https://www.w3schools.com/
-```
+3 https://getbootstrap.com/ 4 https://developer.mozilla.org 5 https://www.w3schools.com/

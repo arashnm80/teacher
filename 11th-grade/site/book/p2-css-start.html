@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title data-fa="نوشتن CSS" data-en="Writing CSS">نوشتن CSS</title>
   <link rel="icon" href="../assets/favicon.svg">
-  <link rel="stylesheet" href="../assets/style.css?v=4">
+  <link rel="stylesheet" href="../assets/style.css?v=6">
 </head>
 <body data-root="../">
   <header class="top">
@@ -56,15 +56,15 @@
 <h3 id="css_2">زیباسازی صفحه با <bdi dir="ltr">CSS</bdi></h3>
 <p>در واحدکار قبل نحوه طراحی ساختار صفحات وب با استفاده از برچسب‌های <code>HTML</code> آموزش داده شد.</p>
 <p>صفحاتی که صرفاً توسط <code>HTML</code> ایجاد شده باشند، دارای متون ساده، پس زمینه سفید، فواصل و چیدمان پی‌شفرض می‌باشند و در نتیجه فاقد جذابیت بصری هستند. برای ایجاد ظاهری زیبا و کاربرپسند استفاده از <code>CSS</code> جهت استای‌لدهی به عناصر ضروری است. این ابزار به توسعه‌دهندگان وب امکان می‌دهد که ظاهر و چیدمان عناصر صفحه را به سادگی و با انعطاف بالا مدیریت کنند.</p>
-<p><code>CSS</code> مخفف عبارت <code>Cascading</code> <code>Style</code> <code>Sheets</code> و زبانی برای استایل‌دهی و کنترل ظاهر صفحات وب است.</p>
+<p><code>CSS</code> مخفف عبارت <code>Cascading Style Sheets</code> و زبانی برای استایل‌دهی و کنترل ظاهر صفحات وب است.</p>
 <p>این زبان به توسعه‌دهندگان وب امکان می‌دهد که ظاهر و چیدمان عناصر را کاملاً جدا از ساختار اصلی صفحه مدیریت کنند. این موضوع باعث آسان‌تر شدن نگهداری و به‌روزرسانی سایت می‌شود. با استفاده از <code>CSS</code> می‌توان استایل‌های متنوعی را برای عناصر مختلف وب‌سایت تنظیم نمود؛ مانند تعیین رنگ متن و زمینه عناصر، ایجاد سایه، خط دور، تغییرات ظاهری در هنگام قرارگیری ماوس روی عناصر و ...</p>
 <p><img alt="تصویر کتاب" src="../images/p123-01.png" /></p>
 <p>خروجی صفحه با</p>
 <p>خروجی صفحه بدون</p>
 <p><strong>شکل 22</strong></p>
-<p>ساختار <code>CSS</code> <code>CSS</code> ب‌هشکل مجموعه‌ای از قوانین است که توسط انتخاب‌گرها (<code>selectors</code>) و ویژگی‌ها (<code>properties</code>) ایجاد می‌شوند. هر قانون معمولاً به صورت زیر نوشته می‌شود:</p>
+<p>ساختار <code>CSS CSS</code> ب‌هشکل مجموعه‌ای از قوانین است که توسط انتخاب‌گرها (<code>selectors</code>) و ویژگی‌ها (<code>properties</code>) ایجاد می‌شوند. هر قانون معمولاً به صورت زیر نوشته می‌شود:</p>
 <div class="code-wrap" dir="ltr"><pre><code>{ selector
-;property: value
+property: value;
 </code></pre></div>
 <p>}</p>
 <p>عبارت <code>Selector</code> به معنای انتخاب‌گر است و برای انتخاب عناصر صفحه استفاده می‌شود. به عنوان مثال برای تعیین استایل عناصر پاراگراف، از انتخاب‌گر <code>p</code> و برای انتخاب همه عناصر صفحه از علامت * استفاده می‌شود. عبارت <code>Property</code> به ویژگی‌های قابل مقداردهی در <code>CSS</code> گفته می‌شود، مانند <code>color</code>، <code>font-size</code> و <code>.border</code> عبارت <code>Value</code> به مقدار ویژگی عنصر اشاره دارد.</p>
@@ -73,7 +73,7 @@
 <h3 id="_4">مثال</h3>
 <p>در مثال زیر رنگ زمینه عنصر <code>h1</code> با مقدار <code>orange</code> تنظیم شده است.</p>
 <p>{ <code>h1</code></p>
-<div class="code-wrap" dir="ltr"><pre><code>;background-color: orange
+<div class="code-wrap" dir="ltr"><pre><code>background-color: orange;
 </code></pre></div>
 <p>}</p>
 <p>نحوه به‌کارگیری <code>CSS</code> در صفحات برای ایجاد و به‌کارگیری استایل‌های سفارشی روی عناصر صفحه از سه روش به شرح زیر استفاده می‌شود:</p>
@@ -81,9 +81,10 @@
 <h3 id="_5">مثال</h3>
 <p>در مثال زیر رنگ متن و پس زمینه عنصر <code>h1</code> به‌صورت درون خطی تعیین شده است:</p>
 <p><img alt="تصویر کتاب" src="../images/p124-01.png" /></p>
-<div class="code-wrap" dir="ltr"><pre><code>&lt;/h1&gt; سلام دنیا! &gt;”h1 style=”color:blue; background-color:orange&lt;
-CSS 2 داخلی (Internal):
+<p></h1> سلام دنیا! &gt;”<bdi dir="ltr">h1</bdi></p>
+<div class="code-wrap" dir="ltr"><pre><code>style=”color:blue; background-color:orange&lt;
 </code></pre></div>
+<p><bdi dir="ltr">CSS</bdi> 2 داخلی <bdi dir="ltr">(Internal)</bdi>:</p>
 <p>استایل عناصر درون تگ <code>&lt;style&gt;</code> در بخش <code>&lt;head&gt;</code> نوشته می‌شود.</p>
 <p>در سبک درون خطی در صورتی‌که تعداد ویژگی‌های اختصاص داده شده به عنصر زیاد باشد، کد عنصر شلوغ و ناخوانا می‌شود. بنابراین از <code>CSS</code> داخلی یا خارجی برای مدیریت بهتر استایل‌ها استفاده می‌شود.</p>
 <h3 id="_6">مثال</h3>
@@ -92,14 +93,14 @@ CSS 2 داخلی (Internal):
 &lt;style&gt;
 </code></pre></div>
 <p>{ <code>h1</code></p>
-<div class="code-wrap" dir="ltr"><pre><code>;color: blue
-;background-color: pink
+<div class="code-wrap" dir="ltr"><pre><code>color: blue;
+background-color: pink;
 </code></pre></div>
 <p>}</p>
 <div class="code-wrap" dir="ltr"><pre><code>&lt;/style&gt;
 &lt;/head&gt;
-CSS 3 خارجی (External):
 </code></pre></div>
+<p><bdi dir="ltr">CSS</bdi> 3 خارجی <bdi dir="ltr">(External)</bdi>:</p>
 <p>در روش <code>CSS</code> خارجی، استایل عناصر، درون فایلی با پسوند <code>CSS</code> قرار می‌گیرد. محتوای این فایل نیازی به تگ <code>&lt;style&gt;</code> ندارد و صرفًا سبک عناصر درون آن تعیین می‌شود. فایل <code>CSS</code> باید توسط تگ <code>&lt;link&gt;</code> به صفحه وب الحاق شود تا قوانین این فایل روی عناصر صفحه وب اعمال شود. الحاق فایل <code>CSS</code> به فایل <code>HTML</code> در بخش <code>&lt;head&gt;</code> انجام می‌شود:</p>
 <div class="code-wrap" dir="ltr"><pre><code>&lt;head&gt;
 &lt;link rel=”stylesheet” href=”./styles.css”&gt;
@@ -132,24 +133,21 @@ CSS 3 خارجی (External):
 <hr />
 <p class="page-mark">صفحه ۱۲۰</p>
 <p>توضیحات (<code>Comment</code>) در <code>CSS</code> برای افزودن توضیحات در <code>CSS</code> به صورت تک‌خطی یا چند‌خطی از علائم /<em> </em>/ از شکل ٣٢ استفاده می‌شود.</p>
-<div class="code-wrap" dir="ltr"><pre><code>/* this is a comment */
-</code></pre></div>
+<p>/<em> <bdi dir="ltr">this</bdi> <bdi dir="ltr">is</bdi> <bdi dir="ltr">a</bdi> <bdi dir="ltr">comment</bdi> </em>/</p>
 <p><strong>شکل23</strong></p>
-<p>نحوه قالب‌بندی متن در <code>CSS</code> <code>CSS</code> دارای مجموعه‌ای از ویژگی‌ها برای قالب‌بندی متون است. این ویژگی‌ها امکان تعیین فونت، اندازه فونت، ارتفاع خطوط، تزئینات متن و ... را فراهم می‌کنند. ویژگی‌های عناصر متنی به شرح زیر است:</p>
+<p>نحوه قالب‌بندی متن در <code>CSS CSS</code> دارای مجموعه‌ای از ویژگی‌ها برای قالب‌بندی متون است. این ویژگی‌ها امکان تعیین فونت، اندازه فونت، ارتفاع خطوط، تزئینات متن و ... را فراهم می‌کنند. ویژگی‌های عناصر متنی به شرح زیر است:</p>
 <p><code>font-family</code> و <code>font-size:</code> تعیین نوع و اندازه فونت</p>
 <p><code>text-align:</code> تعیین تراز متن شامل مقادیر <code>left</code>، <code>right</code>، <code>center</code> و <code>justify</code></p>
 <p><code>text-shadow:</code> ایجاد سایه با رنگ و اندازه دلخواه. ساختار کلی این ویژگی به شکل زیر است:</p>
-<div class="code-wrap" dir="ltr"><pre><code>;text-shadow: offset-x offset-y blur-radius color
+<div class="code-wrap" dir="ltr"><pre><code>text-shadow: offset-x offset-y blur-radius color;
 </code></pre></div>
 <p><strong>شکل24</strong></p>
 <p>مقادیر این ویژگی به ترتیب مقدار جابه‌جایی افقی و عمودی سایه، میزان محو شدگی و رنگ سایه است.</p>
 <p><code>text-transform:</code> تغییر شکل حروف به صورت بزرگ،کوچک و... شامل مقادیر <code>lowercase</code>، �<code>upper</code></p>
-<div class="code-wrap" dir="ltr"><pre><code>cas، capitalize none،…
-</code></pre></div>
+<p><bdi dir="ltr">cas</bdi>، <bdi dir="ltr">capitalize</bdi> <bdi dir="ltr">none</bdi>،…</p>
 <p><code>direction:</code> تعیین جهت نمایش متن، شامل مقادیر <code>ltr</code> و <code>rtl</code> برای چپ به راست و راست به چپ</p>
 <p><code>line-height:</code> تعیین فاصلۀ عمودی بین خطوط متنی. این ویژگی فاصلۀ عمودی خط متن را تعیین می‌کند. مقدار این ویژگی شامل ارتفاع حروف به‌علاوه فضای خالی قبل و بعد آنهاست. شامل ارتفاع حروف (فونت) به‌اضافه فضای خالی قبل و بعد از آنهاست.</p>
-<div class="code-wrap" dir="ltr"><pre><code>text-decoration: تعیین تزیینات متن، شامل مقادیر none، underline، overline، .line-through
-</code></pre></div>
+<p><bdi dir="ltr">text-decoration:</bdi> تعیین تزیینات متن، شامل مقادیر <bdi dir="ltr">none</bdi>، <bdi dir="ltr">underline</bdi>، <bdi dir="ltr">overline</bdi>، .<bdi dir="ltr">line-through</bdi></p>
 <p>ویژگی <code>text-decoration</code> با مقدار <code>none</code> موجب حذف زیرخط لینک می‌شود.</p>
 <p><code>vertical-align:</code> تراز متن در راستای عمودی، شامل مقادیر <code>top</code>، <code>bottom</code>، <code>baseline</code> و...</p>
 <hr /></article><article class="lesson" lang="en" dir="ltr" data-lang-block="en" hidden><h1 id="styling-web-page-appearance-with-css">Styling web page appearance with CSS</h1>
@@ -179,7 +177,7 @@ CSS 3 خارجی (External):
 <h3 id="beautifying-a-page-with-css">Beautifying a page with CSS</h3>
 <p>In the previous work unit, you learned how to design the structure of web pages using <code>HTML</code> tags.</p>
 <p>Pages created with <code>HTML</code> alone have plain text, a white background, and default spacing and layout, so they lack visual appeal. To create a beautiful, user-friendly look, you need <code>CSS</code> to style the elements. This tool lets web developers manage the appearance and layout of page elements simply and flexibly.</p>
-<p><code>CSS</code> stands for <code>Cascading</code> <code>Style</code> <code>Sheets</code> and is a language for styling and controlling the appearance of web pages.</p>
+<p><code>CSS</code> stands for <code>Cascading Style Sheets</code> and is a language for styling and controlling the appearance of web pages.</p>
 <p>This language lets web developers manage the appearance and layout of elements completely separately from the main page structure. That makes it easier to maintain and update the site. With <code>CSS</code> you can set many styles for different website elements—for example text and background colors, shadows, borders, appearance changes when the mouse is over elements, and more.</p>
 <p><img alt="Book image" src="../images/p123-01.png" /></p>
 <p>Page output with</p>
@@ -187,7 +185,7 @@ CSS 3 خارجی (External):
 <p><strong>Figure 22</strong></p>
 <p><code>CSS</code> structure <code>CSS</code> is a set of rules made of selectors (<code>selectors</code>) and properties (<code>properties</code>). Each rule is usually written as follows:</p>
 <div class="code-wrap" dir="ltr"><pre><code>{ selector
-;property: value
+property: value;
 </code></pre></div>
 <p>}</p>
 <p>The word <code>Selector</code> means the selector and is used to choose page elements. For example, to style paragraph elements you use the <code>p</code> selector, and to select all page elements you use the * symbol. <code>Property</code> refers to the assignable properties in <code>CSS</code>, such as <code>color</code>, <code>font-size</code>, and <code>.border</code>. <code>Value</code> refers to the value of the element property.</p>
@@ -196,7 +194,7 @@ CSS 3 خارجی (External):
 <h3 id="example">Example</h3>
 <p>In the example below, the background color of the <code>h1</code> element is set to <code>orange</code>.</p>
 <p>{ <code>h1</code></p>
-<div class="code-wrap" dir="ltr"><pre><code>;background-color: orange
+<div class="code-wrap" dir="ltr"><pre><code>background-color: orange;
 </code></pre></div>
 <p>}</p>
 <p>How to use <code>CSS</code> in pages To create and apply custom styles to page elements, you use three methods as follows:</p>
@@ -204,9 +202,10 @@ CSS 3 خارجی (External):
 <h3 id="example_1">Example</h3>
 <p>In the example below, the text color and background of the <code>h1</code> element are set inline:</p>
 <p><img alt="Book image" src="../images/p124-01.png" /></p>
-<div class="code-wrap" dir="ltr"><pre><code>&lt;/h1&gt; سلام دنیا! &gt;”h1 style=”color:blue; background-color:orange&lt;
-CSS 2 داخلی (Internal):
+<p></h1> ! &gt;”h1</p>
+<div class="code-wrap" dir="ltr"><pre><code>style=”color:blue; background-color:orange&lt;
 </code></pre></div>
+<p>CSS 2 (Internal):</p>
 <p>Element styles are written inside a <code>&lt;style&gt;</code> tag in the <code>&lt;head&gt;</code> section.</p>
 <p>With inline style, if you assign many properties to an element, the element code becomes crowded and hard to read. So internal or external <code>CSS</code> is used for better style management.</p>
 <h3 id="example_2">Example</h3>
@@ -215,14 +214,14 @@ CSS 2 داخلی (Internal):
 &lt;style&gt;
 </code></pre></div>
 <p>{ <code>h1</code></p>
-<div class="code-wrap" dir="ltr"><pre><code>;color: blue
-;background-color: pink
+<div class="code-wrap" dir="ltr"><pre><code>color: blue;
+background-color: pink;
 </code></pre></div>
 <p>}</p>
 <div class="code-wrap" dir="ltr"><pre><code>&lt;/style&gt;
 &lt;/head&gt;
-CSS 3 خارجی (External):
 </code></pre></div>
+<p>CSS 3 (External):</p>
 <p>In the external <code>CSS</code> method, element styles go in a file with a <code>CSS</code> extension. The content of this file does not need a <code>&lt;style&gt;</code> tag; only the styles of the elements are defined in it. The <code>CSS</code> file must be attached to the web page with a <code>&lt;link&gt;</code> tag so that the rules in this file apply to the page elements. Attaching the <code>CSS</code> file to the <code>HTML</code> file is done in the <code>&lt;head&gt;</code> section:</p>
 <div class="code-wrap" dir="ltr"><pre><code>&lt;head&gt;
 &lt;link rel=”stylesheet” href=”./styles.css”&gt;
@@ -248,31 +247,27 @@ CSS 3 خارجی (External):
 <p>In all three styles the text color is specified, but the inline style color (green) is applied to the text.</p>
 <p>The background color is set only in the internal style, so the yellow background color is applied to the <code>h1</code> element.</p>
 <p><img alt="Book image" src="../images/p125-02.png" /></p>
-<p>The element width is only in the external style</p>
-<p>Output</p>
+<p>The element width is only in the external style Output</p>
 <p>specified, so the width of the <code>h1</code> element will be 200 pixels.</p>
 <p><img alt="Book image" src="../images/p125-03.png" /></p>
 <hr />
 <p class="page-mark">Page 120</p>
 <p>Comments (<code>Comment</code>) in <code>CSS</code> To add single-line or multi-line comments in <code>CSS</code>, use the /<em> </em>/ symbols as in Figure 23.</p>
-<div class="code-wrap" dir="ltr"><pre><code>/* this is a comment */
-</code></pre></div>
+<p>/<em> this is a comment </em>/</p>
 <p><strong>Figure 23</strong></p>
-<p>How to format text in <code>CSS</code> <code>CSS</code> has a set of properties for formatting text. These properties let you set the font, font size, line height, text decorations, and more. Text element properties are as follows:</p>
+<p>How to format text in <code>CSS CSS</code> has a set of properties for formatting text. These properties let you set the font, font size, line height, text decorations, and more. Text element properties are as follows:</p>
 <p><code>font-family</code> and <code>font-size:</code> set the font type and size</p>
 <p><code>text-align:</code> set text alignment with values <code>left</code>, <code>right</code>, <code>center</code>, and <code>justify</code></p>
 <p><code>text-shadow:</code> create a shadow with the color and size you want. The general structure of this property is as follows:</p>
-<div class="code-wrap" dir="ltr"><pre><code>;text-shadow: offset-x offset-y blur-radius color
+<div class="code-wrap" dir="ltr"><pre><code>text-shadow: offset-x offset-y blur-radius color;
 </code></pre></div>
 <p><strong>Figure 24</strong></p>
 <p>The values of this property are, in order, the horizontal and vertical shadow offset, the blur amount, and the shadow color.</p>
 <p><code>text-transform:</code> change letter case to uppercase, lowercase, and so on, with values <code>lowercase</code>, <code>upper</code></p>
-<div class="code-wrap" dir="ltr"><pre><code>cas، capitalize none،…
-</code></pre></div>
+<p>cas capitalize none…</p>
 <p><code>direction:</code> set the text display direction, with values <code>ltr</code> and <code>rtl</code> for left-to-right and right-to-left</p>
 <p><code>line-height:</code> set the vertical spacing between text lines. This property sets the vertical spacing of the text line. The value of this property includes the height of the letters plus the empty space before and after them. It includes the height of the letters (font) plus the empty space before and after them.</p>
-<div class="code-wrap" dir="ltr"><pre><code>text-decoration: تعیین تزیینات متن، شامل مقادیر none، underline، overline، .line-through
-</code></pre></div>
+<p>text-decoration: none underline overline .line-through</p>
 <p>The <code>text-decoration</code> property with the value <code>none</code> removes the underline from a link.</p>
 <p><code>vertical-align:</code> vertical text alignment, with values <code>top</code>, <code>bottom</code>, <code>baseline</code>, and so on.</p>
 <hr /></article>
@@ -285,7 +280,7 @@ CSS 3 خارجی (External):
     <nav class="pager"><a rel="prev" class="prev" href="p2-assess-html.html"><span class="pager-word" data-fa="قبلی" data-en="Previous">قبلی</span><span class="pager-name" data-fa="ارزشیابی HTML" data-en="HTML assessment">ارزشیابی HTML</span></a><a rel="next" class="next" href="p2-css-look.html"><span class="pager-word" data-fa="بعدی" data-en="Next">بعدی</span><span class="pager-name" data-fa="رنگ، پس‌زمینه و انتخاب‌گر" data-en="Color, background, and selectors">رنگ، پس‌زمینه و انتخاب‌گر</span></a></nav>
     </div>
   </div>
-  <script src="../assets/search-index.js?v=4"></script>
-  <script src="../assets/app.js?v=4"></script>
+  <script src="../assets/search-index.js?v=6"></script>
+  <script src="../assets/app.js?v=6"></script>
 </body>
 </html>

@@ -38,7 +38,6 @@ Example: Only the `sqrt` and `pow` functions from the `math` module are imported
 
 **Figure 153**
 
-
 ---
 
 **Page 75**
@@ -53,7 +52,7 @@ Module
 
 `math` mathematical functions `random` generating random numbers `turtle` drawing shapes and graphics `datetime` date and time `os` working with the operating system
 
-Example: Displaying the current date and time: In this example only the `now`() function is used (Figure 154).
+Example: Displaying the current date and time: In this example only the `now()` function is used (Figure 154).
 
 ![Figure 154](../images/p081-01.png)
 
@@ -66,7 +65,6 @@ Example: In this example, only displaying the hour of the current time is needed
 ![Figure 155](../images/p081-02.png)
 
 **Figure 155**
-
 
 ---
 
@@ -112,7 +110,6 @@ Example: First create a file named `math_module.py` and write the following func
 
 **Figure 158**
 
-
 ---
 
 **Page 77**
@@ -139,11 +136,11 @@ Then in the main program `import` the module you created and use it.
 
 Run the program and explain the lines of code.
 
-Third-party modules (`3rd` `party`): Modules that are installed with the `pip` `install` command and are `import`ed into the program. For example `Django` ,`Flask`, `PyGame`, and so on.
+Third-party modules (`3rd party`): Modules that are installed with the `pip install` command and are `import`ed into the program. For example `Django` ,`Flask`, `PyGame`, and so on.
 
 ### Difference between a function and a method
 
-In earlier material, you used statements such as ,`split`() `append`() and `len`() without a formal definition of them being given.
+In earlier material, you used statements such as ,`split() append()` and `len()` without a formal definition of them being given.
 
 ![Book image](../images/p083-05.png)
 
@@ -151,14 +148,13 @@ This is completely natural and very common in programming; many concepts are fir
 
 **Figure 160**
 
-
 ---
 
 **Page 78**
 
 Function:(`function`) An independent statement used to perform a specific task and not tied to a particular data type.
 
-Example: Counting the number of users: The `len`() function returns the number of characters in a string (Figure 161).
+Example: Counting the number of users: The `len()` function returns the number of characters in a string (Figure 161).
 
 ![Figure 161](../images/p084-01.png)
 
@@ -186,7 +182,6 @@ With guidance from your instructor, explain the lines of code opposite.
 
 ![Book image](../images/p084-05.png)
 
-
 ---
 
 **Page 79**
@@ -200,6 +195,5 @@ The `split` method breaks a string into a list of words (Figure 163).
 ### Activity
 
 Write a function that receives a string from input and displays the count of its uppercase letters, lowercase letters, and digits.
-
 
 ---

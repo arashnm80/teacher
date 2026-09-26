@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title data-fa="تابع‌ها" data-en="Functions">تابع‌ها</title>
   <link rel="icon" href="../assets/favicon.svg">
-  <link rel="stylesheet" href="../assets/style.css?v=4">
+  <link rel="stylesheet" href="../assets/style.css?v=6">
 </head>
 <body data-root="../">
   <header class="top">
@@ -38,15 +38,14 @@
 <p>خروجی تابع معمولاً توسط تابع <code>return</code> به محل فراخوانی برگردانده می‌شود.</p>
 <p>دستورات درون تابع زمانی اجرا می‌شوند که تابع فراخوانی شود.</p>
 <p>برای فراخوانی تابع باید از نام تابع به همراه آرگومان‌های ورودی استفاده شود. شکل کلی فراخوانی تابع به‌صورت زیر است:</p>
-<div class="code-wrap" dir="ltr"><pre><code>functionName(Arguments)
-</code></pre></div>
+<p><code>functionName(Arguments)</code></p>
 <h3 id="_1">مثال</h3>
 <p>در مثال زیر تابعی به نام <code>calculateCartTotal</code> با سه پارامتر ورودی <code>price3</code>, <code>price2</code>, <code>price1</code> ایجاد شده است. تابع <code>calculateCartTotal</code> مجموع مقادیر این سه پارامتر را محاسبه و درون متغیر <code>total</code> ذخیره می‌کند. دستور <code>return</code> مقدار متغیر <code>total</code> را به محل فراخوانی بازمی‌گرداند.</p>
 <p><img alt="تصویر کتاب" src="../images/p225-01.png" /></p>
 <p><img alt="تصویر کتاب" src="../images/p225-02.png" /></p>
-<h3 id="_2">نکته</h3>
+<aside class="callout note"><h3 id="_2">نکته</h3>
 <p>پارامترها متغیرهایی هستند که در هنگام تعریف تابع استفاده می‌شوند. در مثال فوق متغیرهای <code>price3</code>, <code>price2</code>, <code>price1</code> پارامتر ورودی تابع هستند. آرگومان به مقادیری گفته می‌شود که هنگام فراخوانی برای تابع ارسال می‌شوند. به عبارت دیگر آرگومان‌ها مقادیری هستند که به پارامترهای تابع نسبت داده می‌شوند.</p>
-<hr />
+</aside><hr />
 <p class="page-mark">صفحه ۲۲۰</p>
 <p>ایجاد تابع و فراخوانی آن</p>
 <h3 id="_3">کار کارگاهی</h3>
@@ -55,7 +54,7 @@
 <p>یک تابع لزوماً دارای مقدار بازگشتی نیست. یک تابع می‌تواند با هدف اجرای مجموعه‌ای از دستورالعمل‌ها نوشته شود، بدون اینکه مقداری را به محل فراخوانی بازگرداند. در این‌صورت نیازی به استفاده از دستور <code>return</code> نخواهد بود. در مثال زیر تابع <code>showCartTotal</code> سه مقدار را ب‌هعنوان پارامتر ورودی دریافت می‌کند، حاصل جمع آنها را محاسبه کرده و نتیجه را در کنسول مرورگر نمایش می‌دهد؛ اما هیچ مقداری را به محل فراخوانی برنمی‌گرداند.</p>
 <p><img alt="تصویر کتاب" src="../images/p226-01.png" /></p>
 <p><img alt="تصویر کتاب" src="../images/p226-02.png" /></p>
-<p>توابع آماده جاوا‌اسکریپت (<code>Built-in</code> <code>Functions</code>) جاوا‌اسکریپت دارای مجموعه‌ای از توابع آماده است که برای انجام عملیات مختلف به‌کار می‌روند. توابع آماده جاوا‌اسکریپت به برنامه‌نویسان امکان می‌دهند که ب‌هراحتی داده‌ها را مدیریت کرده و وظایف پیچیده را به سادگی پیاده‌سازی کنند. این توابع شامل توابع ریاضی، رشته‌ای، آرایه، اشیا، ورودی-خروجی و تاریخ و زمان است که در این بخش به معرفی آنها پرداخته می‌شود.</p>
+<p>توابع آماده جاوا‌اسکریپت (<code>Built-in Functions</code>) جاوا‌اسکریپت دارای مجموعه‌ای از توابع آماده است که برای انجام عملیات مختلف به‌کار می‌روند. توابع آماده جاوا‌اسکریپت به برنامه‌نویسان امکان می‌دهند که ب‌هراحتی داده‌ها را مدیریت کرده و وظایف پیچیده را به سادگی پیاده‌سازی کنند. این توابع شامل توابع ریاضی، رشته‌ای، آرایه، اشیا، ورودی-خروجی و تاریخ و زمان است که در این بخش به معرفی آنها پرداخته می‌شود.</p>
 <p>به کارگیری توابع ریاضی جاوا‌اسکریپت</p>
 <h3 id="_4">کار کارگاهی</h3>
 <p>توابع ریاضی جاوا‌اسکریپت که درون شیء<code>Math</code> سازماندهی شده‌اند، مجموعه‌ای از ابزارهای قدرتمند و کارآمد برای انجام محاسبات پیچیده ریاضی هستند. دسترسی به توابع ریاضی به‌صورت نقطه‌ای <code>.Math</code>( <code>functionName</code>) امکان‌پذیر است و استفاده از آنها نه‌تنها کدنویسی را کوتاه‌تر و خواناتر می‌کند، بلکه از خطاهای احتمالی در پیاده‌سازی دستی الگوریتم‌ها نیز جلوگیری کرده و عملکرد بهینه‌تری در برنامه‌های کاربردی ایجاد می‌نماید. چند نمونه از توابع پر کاربرد ریاضی در جاوا‌اسکریپت به شرح زیر است:</p>
@@ -82,7 +81,7 @@
 <p><code>:replace</code>() دو رشته را به عنوان ورودی دریافت کرده و رشتۀ دوم (/) را به‌جای رشتۀ اول (-) در رشته اصلی قرار می‌دهد. این تابع در اولین موقعیت یافتن رشتۀ مورد نظر(-)، جایگزینی رشته را انجام می‌دهد.</p>
 <p><code>:startsWith</code>() وجود یک حرف یا رشته را در ابتدای یک متغیر رشته‌ای بررسی می‌کند.</p>
 <p>شیء <code>string</code> دارای یک ویژگی به‌نام <code>length</code> است که طول یک رشته را تعیین می‌کند. بر این اساس، دستور زیر مقدار 11 را نمایش می‌دهد.</p>
-<div class="code-wrap" dir="ltr"><pre><code>;(str1.length)console.log
+<div class="code-wrap" dir="ltr"><pre><code>;(str1.length)console.log;
 </code></pre></div>
 <p>فایلی به نام <code>user-info.html</code> ایجاد کنید و اسکریپت زیر را برای آشنایی با عملکرد توابع رشته‌ای بنویسید:</p>
 <p><img alt="تصویر کتاب" src="../images/p228-01.png" /></p>
@@ -109,9 +108,7 @@
 <p><img alt="تصویر کتاب" src="../images/p230-06.png" /></p>
 <p><code>:console.log</code>() نمایش مقادیر را در کنسول مرورگر به عهده دارد.</p>
 <p><code>:prompt</code>() نمایش یک کادر محاوره‌ای برای دریافت داده از کاربر. مقدار دریافتی به محل فراخوانی ارسال می‌شود.</p>
-<p><code>:alert</code>() نمایش پنجره هشدار با یک پیام و دکمه <code>.OK</code> <code>:confrim</code>() نمایش یک پنجره تأیید شامل دکمه <code>OK</code> و <code>.Cancel</code> مقدار بازگشتی تابع <code>True</code> یا</p>
-<div class="code-wrap" dir="ltr"><pre><code>False است.
-</code></pre></div>
+<p><code>:alert</code>() نمایش پنجره هشدار با یک پیام و دکمه <code>.OK :confrim</code>() نمایش یک پنجره تأیید شامل دکمه <code>OK</code> و <code>.Cancel</code> مقدار بازگشتی تابع <code>True</code> یا <bdi dir="ltr">False</bdi> است.</p>
 <p><img alt="تصویر کتاب" src="../images/p230-02.png" /></p>
 <p><img alt="تصویر کتاب" src="../images/p230-03.png" /></p>
 <p>پنجره <code>alert</code> و <code>prompt</code></p>
@@ -128,15 +125,14 @@
 <p>The function’s output is usually returned to the call site by the <code>return</code> statement.</p>
 <p>The statements inside a function are executed when the function is called.</p>
 <p>To call a function, you must use the function name together with the input arguments. The general form of calling a function is as follows:</p>
-<div class="code-wrap" dir="ltr"><pre><code>functionName(Arguments)
-</code></pre></div>
+<p><code>functionName(Arguments)</code></p>
 <h3 id="example">Example</h3>
 <p>In the example below, a function named <code>calculateCartTotal</code> has been created with three input parameters <code>price3</code>, <code>price2</code>, <code>price1</code>. The function <code>calculateCartTotal</code> calculates the sum of these three parameters’ values and stores it in the variable <code>total</code>. The <code>return</code> statement returns the value of the variable <code>total</code> to the call site.</p>
 <p><img alt="Book image" src="../images/p225-01.png" /></p>
 <p><img alt="Book image" src="../images/p225-02.png" /></p>
-<h3 id="note">Note</h3>
+<aside class="callout note"><h3 id="note">Note</h3>
 <p>Parameters are variables that are used when the function is defined. In the example above, the variables <code>price3</code>, <code>price2</code>, <code>price1</code> are the function’s input parameters. An argument refers to the values that are sent to the function when it is called. In other words, arguments are the values that are assigned to the function’s parameters.</p>
-<hr />
+</aside><hr />
 <p class="page-mark">Page 220</p>
 <p>Creating a function and calling it</p>
 <h3 id="workshop">Workshop</h3>
@@ -145,7 +141,7 @@
 <p>A function does not necessarily have a return value. A function can be written with the goal of executing a set of instructions without returning a value to the call site. In that case, there will be no need to use the <code>return</code> statement. In the example below, the function <code>showCartTotal</code> receives three values as input parameters, calculates their sum, and displays the result in the browser console; but it does not return any value to the call site.</p>
 <p><img alt="Book image" src="../images/p226-01.png" /></p>
 <p><img alt="Book image" src="../images/p226-02.png" /></p>
-<p>JavaScript built-in functions (<code>Built-in</code> <code>Functions</code>): JavaScript has a set of built-in functions that are used to perform various operations. JavaScript’s built-in functions allow programmers to manage data easily and implement complex tasks simply. These functions include mathematical, string, array, object, input–output, and date and time functions, which are introduced in this section.</p>
+<p>JavaScript built-in functions (<code>Built-in Functions</code>): JavaScript has a set of built-in functions that are used to perform various operations. JavaScript’s built-in functions allow programmers to manage data easily and implement complex tasks simply. These functions include mathematical, string, array, object, input–output, and date and time functions, which are introduced in this section.</p>
 <p>Using JavaScript’s mathematical functions</p>
 <h3 id="workshop_1">Workshop</h3>
 <p>JavaScript’s mathematical functions, which are organized inside the <code>Math</code> object, are a set of powerful and efficient tools for performing complex mathematical calculations. Access to mathematical functions is possible in dotted form as <code>Math.functionName</code>, and using them not only makes coding shorter and more readable but also prevents possible errors in manually implementing algorithms and creates more optimal performance in applications. A few examples of commonly used mathematical functions in JavaScript are as follows:</p>
@@ -172,7 +168,7 @@
 <p><code>:replace</code>(): Receives two strings as input and places the second string (/) in place of the first string (-) in the main string. This function performs the string replacement at the first position where the desired string (-) is found.</p>
 <p><code>:startsWith</code>(): Checks for the presence of a letter or string at the beginning of a string variable.</p>
 <p>The <code>string</code> object has a property named <code>length</code> that determines the length of a string. Based on this, the statement below displays the value 11.</p>
-<div class="code-wrap" dir="ltr"><pre><code>;(str1.length)console.log
+<div class="code-wrap" dir="ltr"><pre><code>;(str1.length)console.log;
 </code></pre></div>
 <p>Create a file named <code>user-info.html</code> and write the script below to become familiar with how string functions work:</p>
 <p><img alt="Book image" src="../images/p228-01.png" /></p>
@@ -199,9 +195,7 @@
 <p><img alt="Book image" src="../images/p230-06.png" /></p>
 <p><code>:console.log</code>(): Is responsible for displaying values in the browser console.</p>
 <p><code>:prompt</code>(): Displays a dialog box to receive data from the user. The received value is sent to the call site.</p>
-<p><code>:alert</code>(): Displays a warning window with a message and an <code>.OK</code> button. <code>:confrim</code>(): Displays a confirmation window that includes an <code>OK</code> button and <code>.Cancel</code>. The return value of the function is <code>True</code> or</p>
-<div class="code-wrap" dir="ltr"><pre><code>False است.
-</code></pre></div>
+<p><code>:alert</code>(): Displays a warning window with a message and an <code>.OK</code> button. <code>:confrim</code>(): Displays a confirmation window that includes an <code>OK</code> button and <code>.Cancel</code>. The return value of the function is <code>True</code> or False .</p>
 <p><img alt="Book image" src="../images/p230-02.png" /></p>
 <p><img alt="Book image" src="../images/p230-03.png" /></p>
 <p>The <code>alert</code> and <code>prompt</code> windows</p>
@@ -218,7 +212,7 @@
     <nav class="pager"><a rel="prev" class="prev" href="p3-js-loops.html"><span class="pager-word" data-fa="قبلی" data-en="Previous">قبلی</span><span class="pager-name" data-fa="حلقه‌ها" data-en="Loops">حلقه‌ها</span></a><a rel="next" class="next" href="p3-js-dom.html"><span class="pager-word" data-fa="بعدی" data-en="Next">بعدی</span><span class="pager-name" data-fa="صفحه، رویداد و اعتبار فرم" data-en="The page, events, and form validation">صفحه، رویداد و اعتبار فرم</span></a></nav>
     </div>
   </div>
-  <script src="../assets/search-index.js?v=4"></script>
-  <script src="../assets/app.js?v=4"></script>
+  <script src="../assets/search-index.js?v=6"></script>
+  <script src="../assets/app.js?v=6"></script>
 </body>
 </html>

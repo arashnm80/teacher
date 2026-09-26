@@ -20,7 +20,6 @@ Step 2: Write the questions related to each question type. Two dictionaries, `ma
 
 **Figure 119**
 
-
 ---
 
 **Page 58**
@@ -38,7 +37,6 @@ After displaying the welcome message and displaying the title `:menu`, for each 
 Step 4: In this step write the statements related to menu selection (Figure 121).
 
 **Figure 121**
-
 
 ---
 
@@ -68,9 +66,7 @@ Add the ability to choose several sections one after another.
 
 By referring to reference dictionaries, learn the exact pronunciation of words.
 
-```
 https://dictionary.cambridge.org/dictionary/english/tuple
-```
 
 ### Tuple (Tuple)
 
@@ -85,6 +81,5 @@ Creating a `Tuple:`
 ```
 tuple_name = (data1, data2, data3,…)
 ```
-
 
 ---

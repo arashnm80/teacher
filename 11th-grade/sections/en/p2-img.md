@@ -30,7 +30,6 @@ Turn each image into a link. Since the destination pages of the links do not exi
 
 4 Technical competency courses
 
-
 ---
 
 **Page 105**
@@ -49,7 +48,7 @@ To create a table in `HTML`, the `<table>` tag and its child tags are used as fo
 
 `<th>:` Used to create a header cell (`Header`) in the header row. This tag improves the user experience.
 
-`<td>:` Used to define a data cell (`Data` `Cell`) in the table.
+`<td>:` Used to define a data cell (`Data Cell`) in the table.
 
 The `<table>` tag has various attributes for setting the appearance of the table, which are mentioned below.
 
@@ -66,6 +65,5 @@ Research the `rowspan` and `colspan` attributes and their use in a table, and pr
 ### Note
 
 In `HTML5`, using the `border` attribute on the `<table>` tag is not allowed, and setting the style of the table lines must be done with `CSS`. Since the `CSS` topic is covered in the second competency unit, the `border` attribute is used only for temporary display of the lines.
-
 
 ---

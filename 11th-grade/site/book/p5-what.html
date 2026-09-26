@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title data-fa="جنگو چیست و نصب" data-en="What Django is, and installing it">جنگو چیست و نصب</title>
   <link rel="icon" href="../assets/favicon.svg">
-  <link rel="stylesheet" href="../assets/style.css?v=4">
+  <link rel="stylesheet" href="../assets/style.css?v=6">
 </head>
 <body data-root="../">
   <header class="top">
@@ -49,12 +49,11 @@
 <hr />
 <p class="page-mark">صفحه ۲۷۷</p>
 <p>جنگو چیست؟</p>
-<p>جنگو (<code>Django</code>) یک <code>framework</code> منبع‌باز (<code>open</code> <code>source</code>) است که با زبان برنامه‌نویسی <code>Python</code> نوشته و برای ساخت و پیاده‌سازی بخش <code>backend</code> وب‌سایت‌ها (<code>Website</code>) و وب اپلیکیشن‌ها (<code>Web</code> <code>Application</code>) استفاده می‌شود.</p>
+<p>جنگو (<code>Django</code>) یک <code>framework</code> منبع‌باز (<code>open source</code>) است که با زبان برنامه‌نویسی <code>Python</code> نوشته و برای ساخت و پیاده‌سازی بخش <code>backend</code> وب‌سایت‌ها (<code>Website</code>) و وب اپلیکیشن‌ها (<code>Web Application</code>) استفاده می‌شود.</p>
 <p>جدول 1 مقایسه وب‌سایت و وب اپلیکیشن</p>
 <p>معیار</p>
 <p>وب‌سایت (<code>Website</code>)</p>
-<div class="code-wrap" dir="ltr"><pre><code>وب اپلیکیشن (Web Application)
-</code></pre></div>
+<p>وب اپلیکیشن <bdi dir="ltr">(Web Application)</bdi></p>
 <p>هدف اصلی</p>
 <p>اطلاع‌رسانی و نمایش محتوا</p>
 <p>انجام عملیات و پردازش داده</p>
@@ -74,8 +73,7 @@
 <p>معموًلا ندارد</p>
 <p>دارد</p>
 <p>مثال‌ها</p>
-<p>سایت خبری، سایت شرکتی، بلاگپنل کاربری، فروشگاه آنلاین، سامانه</p>
-<p>آموزشی</p>
+<p>سایت خبری، سایت شرکتی، بلاگپنل کاربری، فروشگاه آنلاین، سامانه آموزشی</p>
 <p>مزایای جنگو جنگو یک <code>framework</code> امن و سریع است که قابلیت‌های آمادۀ زیادی را در اختیار برنامه‌نویس قرار می‌دهد.</p>
 <p>به همین دلیل، سرعت توسعۀ نرم‌افزار در جنگو بسیار بالاست.</p>
 <p>در پروژه‌های جنگو، با افزایش تعداد کاربران نیز می‌توان تنها با اعمال تغییراتی اندک، همچنان یک وب‌سایت سریع و امن داشت.</p>
@@ -87,7 +85,7 @@
 <p>جنگو استفاده کرده‌اند.</p>
 <hr />
 <p class="page-mark">صفحه ۲۷۸</p>
-<h3 id="_7">کنجکاوی</h3>
+<aside class="callout curiosity"><h3 id="_7">کنجکاوی</h3>
 <p>در مورد شرکت‌های ذکر شده تحقیق کنید.</p>
 <p>پروژه نهایی این کتاب در پایان این کتاب، با استفاده از جنگو یک وب اپلیکیشن واقعی نمایش وضعیت آب‌وهوا طراحی خواهد شد (شکل 2).</p>
 <p>در این پروژه کاربر می‌تواند نام یک شهر را جهت نمایش وضعیت آب‌وهوا انتخاب و مشاهده نماید.</p>
@@ -95,17 +93,16 @@
 <p>پروژه به شما کمک می‌کند یاد بگیرید جنگو در عمل چگونه کار می‌کند و یک وب‌سایت چگونه ساخته می‌شود.</p>
 <p><img alt="شکل 2 بخش‌هایی از پروژه نهایی" src="../images/p284-01.png" /></p>
 <p>شکل 2 بخش‌هایی از پروژه نهایی</p>
-<p>نصب جنگو ابتدا مطمئن شوید آخرین نسخه پایتون روی رایانه شما نصب باشد و رایانه به اینترنت متصل باشد. برای این کار وارد برنامه <code>Vscode</code> شده اگر از قبل فایل یا پوشه‌ای باز بود با دستور <code>Close</code> <code>Folder</code> از منوی <code>File</code> آن را ببندید سپس از منوی <code>terminal</code>، یک ترمینال جدید باز کنید.</p>
+<p>نصب جنگو ابتدا مطمئن شوید آخرین نسخه پایتون روی رایانه شما نصب باشد و رایانه به اینترنت متصل باشد. برای این کار وارد برنامه <code>Vscode</code> شده اگر از قبل فایل یا پوشه‌ای باز بود با دستور <code>Close Folder</code> از منوی <code>File</code> آن را ببندید سپس از منوی <code>terminal</code>، یک ترمینال جدید باز کنید.</p>
 <p>در ادامه همانند شکل 3 درون قسمت ترمینال دستورات را به‌ترتیب اجرا نمایید.</p>
-<hr />
+</aside><hr />
 <p class="page-mark">صفحه ۲۷۹</p>
 <p><img alt="شکل 3 نصب جنگو نسخه5.2.9" src="../images/p285-01.png" /></p>
 <p>شکل 3 نصب جنگو نسخه5.2.9</p>
-<p>نمایش پیام <code>Successfully</code> <code>installed</code> <code>Django-5.2.9</code> نشان‌دهنده نصب موفقیت‌آمیز جنگو است.</p>
+<p>نمایش پیام <code>Successfully installed Django-5.2.9</code> نشان‌دهنده نصب موفقیت‌آمیز جنگو است.</p>
 <p>درصورتی‌که پیغام نصب موفقیت‌آمیز جنگو را مشاهده نکردید، از هنرآموز خود راهنمایی بگیرید.</p>
 <p>می‌توانید آخرین نسخه منتشر شده جنگو را هم نصب کنید، فقط باید در سایت <code>pypi.org</code> و صفحه جنگو، نسخه پایتون سازگار را به‌دست آورید.</p>
-<div class="code-wrap" dir="ltr"><pre><code>وارد آدرس https://pypi.org/project/Django شوید و در بخش Programming Language نسخه‌های
-</code></pre></div>
+<p>وارد آدرس <bdi dir="ltr">https://pypi.org/project/Django</bdi> شوید و در بخش <bdi dir="ltr">Programming</bdi> <bdi dir="ltr">Language</bdi> نسخه‌های</p>
 <p>پایتون پشتیبانی شده جنگو را مشاهده کنید (شکل 4).</p>
 <p><img alt="شکل 4 نسخه‌های پایتون مناسب برای جنگو" src="../images/p285-02.png" /></p>
 <p>شکل 4 نسخه‌های پایتون مناسب برای جنگو</p>
@@ -129,16 +126,13 @@
 <hr />
 <p class="page-mark">Page 277</p>
 <p>What is Django?</p>
-<p>Django (<code>Django</code>) is an open-source (<code>open</code> <code>source</code>) <code>framework</code> written in the <code>Python</code> programming language and used to build and implement the <code>backend</code> of websites (<code>Website</code>) and web applications (<code>Web</code> <code>Application</code>).</p>
-<p>Table 1 Comparison of a website and a web application</p>
-<p>Criterion</p>
+<p>Django (<code>Django</code>) is an open-source (<code>open source</code>) <code>framework</code> written in the <code>Python</code> programming language and used to build and implement the <code>backend</code> of websites (<code>Website</code>) and web applications (<code>Web Application</code>).</p>
+<p>Table 1 Comparison of a website and a web application Criterion</p>
 <p>Website (<code>Website</code>)</p>
-<div class="code-wrap" dir="ltr"><pre><code>وب اپلیکیشن (Web Application)
-</code></pre></div>
+<p>(Web Application)</p>
 <p>Main purpose</p>
 <p>Informing and displaying content</p>
-<p>Carrying out operations and processing data</p>
-<p>User interaction</p>
+<p>Carrying out operations and processing data User interaction</p>
 <p>Little or almost one-way</p>
 <p>Much and two-way</p>
 <p>Need for login</p>
@@ -154,8 +148,7 @@
 <p>Usually does not have</p>
 <p>Has</p>
 <p>Examples</p>
-<p>News site, company site, blog User panel, online store, educational</p>
-<p>system</p>
+<p>News site, company site, blog User panel, online store, educational system</p>
 <p>Advantages of Django Django is a secure and fast <code>framework</code> that puts many ready-made capabilities at the programmer’s disposal.</p>
 <p>For this reason, the speed of software development in Django is very high.</p>
 <p>In Django projects, as the number of users increases, you can still have a fast and secure website by making only a few changes.</p>
@@ -163,11 +156,10 @@
 <p><img alt="Book image" src="../images/p283-01.png" /></p>
 <p>Another important advantage of Django is the many job opportunities in the field of Python and the Django <code>framework</code>, which makes it a suitable option for learning and entering the job market.</p>
 <p>Large companies in the world and in Iran have</p>
-<p>Figure 1 Companies that have used Django</p>
-<p>used Django.</p>
+<p>Figure 1 Companies that have used Django used Django.</p>
 <hr />
 <p class="page-mark">Page 278</p>
-<h3 id="try-this">Try this</h3>
+<aside class="callout curiosity"><h3 id="try-this">Try this</h3>
 <p>Research the companies mentioned.</p>
 <p>Final project of this book At the end of this book, using Django, a real web application for displaying weather status will be designed (Figure 2).</p>
 <p>In this project the user can select the name of a city to display the weather status and view it.</p>
@@ -175,17 +167,16 @@
 <p>The project helps you learn how Django works in practice and how a website is built.</p>
 <p><img alt="Figure 2 Parts of the final project" src="../images/p284-01.png" /></p>
 <p>Figure 2 Parts of the final project</p>
-<p>Installing Django First make sure the latest version of Python is installed on your computer and that the computer is connected to the internet. To do this, enter the <code>Vscode</code> program; if a file or folder was already open, close it with the <code>Close</code> <code>Folder</code> command from the <code>File</code> menu, then from the <code>terminal</code> menu open a new terminal.</p>
+<p>Installing Django First make sure the latest version of Python is installed on your computer and that the computer is connected to the internet. To do this, enter the <code>Vscode</code> program; if a file or folder was already open, close it with the <code>Close Folder</code> command from the <code>File</code> menu, then from the <code>terminal</code> menu open a new terminal.</p>
 <p>Then, as in Figure 3, run the commands in order in the terminal section.</p>
-<hr />
+</aside><hr />
 <p class="page-mark">Page 279</p>
 <p><img alt="Figure 3 Installing Django version 5.2.9" src="../images/p285-01.png" /></p>
 <p>Figure 3 Installing Django version 5.2.9</p>
-<p>Displaying the message <code>Successfully</code> <code>installed</code> <code>Django-5.2.9</code> indicates that Django has been installed successfully.</p>
+<p>Displaying the message <code>Successfully installed Django-5.2.9</code> indicates that Django has been installed successfully.</p>
 <p>If you do not see the message that Django was installed successfully, get guidance from your teacher.</p>
 <p>You can also install the latest released version of Django; you only need to find the compatible Python version on the <code>pypi.org</code> site and the Django page.</p>
-<div class="code-wrap" dir="ltr"><pre><code>وارد آدرس https://pypi.org/project/Django شوید و در بخش Programming Language نسخه‌های
-</code></pre></div>
+<p>https://pypi.org/project/Django Programming Language ‌</p>
 <p>Observe the Python versions supported by Django (Figure 4).</p>
 <p><img alt="Figure 4 Suitable Python versions for Django" src="../images/p285-02.png" /></p>
 <p>Figure 4 Suitable Python versions for Django</p>
@@ -199,7 +190,7 @@
     <nav class="pager"><a rel="prev" class="prev" href="p5-intro.html"><span class="pager-word" data-fa="قبلی" data-en="Previous">قبلی</span><span class="pager-name" data-fa="معرفی پودمان جنگو" data-en="Introducing the Django module">معرفی پودمان جنگو</span></a><a rel="next" class="next" href="p5-project.html"><span class="pager-word" data-fa="بعدی" data-en="Next">بعدی</span><span class="pager-name" data-fa="پروژه، اپ و اولین view" data-en="Project, app, and the first view">پروژه، اپ و اولین view</span></a></nav>
     </div>
   </div>
-  <script src="../assets/search-index.js?v=4"></script>
-  <script src="../assets/app.js?v=4"></script>
+  <script src="../assets/search-index.js?v=6"></script>
+  <script src="../assets/app.js?v=6"></script>
 </body>
 </html>

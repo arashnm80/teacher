@@ -1,6 +1,5 @@
 # Working with functions and modules
 
-
 ---
 
 **Page 48**
@@ -39,7 +38,6 @@ How can you use ready-made code written by others? What is the difference betwee
 
 The student can create and use functions and modules, manage data and repeated operations with functions, benefit from local modules, and recognize the difference between a function and a method.
 
-
 ---
 
 **Page 49**
@@ -73,7 +71,6 @@ That is, a `set` does not guarantee the display order of elements and is `Unorde
 3
 
 **Figure 98**
-
 
 ---
 
@@ -113,7 +110,6 @@ If the member does not exist, an error message is shown at run time (Figure 101)
 
 Research the other methods related to `set` on the site `www.w3schools.com` and present them in class.
 
-
 ---
 
 **Page 51**
@@ -145,6 +141,5 @@ There is a set of fruits:
 ```
 
 Write a program in which the user enters a fruit name and, if it is in the `set`, displays a message that the fruit exists in the set, and print the final `set`.
-
 
 ---

@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title data-fa="پروژه، اپ و اولین view" data-en="Project, app, and the first view">پروژه، اپ و اولین view</title>
   <link rel="icon" href="../assets/favicon.svg">
-  <link rel="stylesheet" href="../assets/style.css?v=4">
+  <link rel="stylesheet" href="../assets/style.css?v=6">
 </head>
 <body data-root="../">
   <header class="top">
@@ -31,12 +31,11 @@
     <div class="main">
       <h1 class="section-title" data-fa="پروژه، اپ و اولین view" data-en="Project, app, and the first view">پروژه، اپ و اولین view</h1><article class="lesson" lang="fa" dir="rtl" data-lang-block="fa"><p class="page-mark">صفحه ۲۸۰</p>
 <h3 id="_1">ایجاد پروژه آب‌وهوا</h3>
-<p>در <code>Vscode</code> از منو <code>File</code> گزینه <code>Open</code> <code>Folder</code> را کلیک کنید. سپس یک‌پوشه جدید با نام <code>meteo</code> در مسیر دلخواه ایجاد کرده و پوشه <code>meteo</code> ساخته شده را باز کنید (شکل 5):</p>
+<p>در <code>Vscode</code> از منو <code>File</code> گزینه <code>Open Folder</code> را کلیک کنید. سپس یک‌پوشه جدید با نام <code>meteo</code> در مسیر دلخواه ایجاد کرده و پوشه <code>meteo</code> ساخته شده را باز کنید (شکل 5):</p>
 <p><img alt="شکل 5 باز کردن پوشه meteo" src="../images/p286-01.png" /></p>
 <p>شکل 5 باز کردن پوشه <code>meteo</code></p>
 <p>دوباره ترمینال را باز و دستور زیر را اجرا کنید (شکل 6):</p>
-<div class="code-wrap" dir="ltr"><pre><code>.django-admin startproject config
-</code></pre></div>
+<p>.<bdi dir="ltr">django-admin</bdi> <bdi dir="ltr">startproject</bdi> <bdi dir="ltr">config</bdi></p>
 <p><img alt="شکل 6 ایجاد پروژه" src="../images/p286-02.png" /></p>
 <p>شکل 6 ایجاد پروژه</p>
 <hr />
@@ -44,15 +43,14 @@
 <p>دستور قبل، پوشه پروژه را با نام <code>Config</code> در مسیر جاری ایجاد می‌کند که حاوی فایل تنظیمات <code>settings.py</code> و فایل‌های اصلی پروژه است. حرف نقطه در انتهای دستور فوق به معنی مسیر جاری است.</p>
 <p>آشنایی با برخی فایل‌های اصلی پروژه فایل<code>settings.py:</code> تنظیمات اصلی پروژه در این فایل قرار می‌گیرند.</p>
 <p>فایل<code>urls.py:</code> هرگاه کاربر وارد یک آدرس (<code>URL</code>) شود، این فایل تعیین می‌کند که سایت کدام صفحه یا بخش را نمایش دهد.</p>
-<h3 id="_2">کنجکاوی</h3>
+<aside class="callout curiosity"><h3 id="_2">کنجکاوی</h3>
 <p>در مورد کاربرد فایل‌های دیگر موجود در پروژه تحقیق کنید.</p>
 <p>اجرای پروژه جنگو دستور زیر را در ترمینال اجرا نمایید.</p>
-<div class="code-wrap" dir="ltr"><pre><code>python manage.py runserver
-</code></pre></div>
-<p>دستور <code>runserver</code> یک وب سرور (<code>web</code> <code>server</code>) مجازی کوچک برای پروژه جنگو راه‌اندازی می‌کند، این وب سرور فقط مخصوص برنامه‌نویس جنگو است تا بتواند پروژه جنگو را در رایانه خودش اجرا کند (شکل 7).</p>
+<p><bdi dir="ltr">python</bdi> <bdi dir="ltr">manage.py</bdi> <bdi dir="ltr">runserver</bdi></p>
+<p>دستور <code>runserver</code> یک وب سرور (<code>web server</code>) مجازی کوچک برای پروژه جنگو راه‌اندازی می‌کند، این وب سرور فقط مخصوص برنامه‌نویس جنگو است تا بتواند پروژه جنگو را در رایانه خودش اجرا کند (شکل 7).</p>
 <p><img alt="شکل 7 راه‌اندازی موفق وب سرور جنگو" src="../images/p287-01.png" /></p>
 <p>شکل 7 راه‌اندازی موفق وب سرور جنگو</p>
-<hr />
+</aside><hr />
 <p class="page-mark">صفحه ۲۸۲</p>
 <p>بعد از اجرای دستور، یک فایل با نام <code>db.sqlite3</code> کنار فایل <code>manage.py</code> ساخته می‌شود. این فایل، پایگاه‌داده پیش‌فرض جنگو است. جنگو از این فایل برای مدیریت پایگاه‌داده و جداول استفاده می‌کند.</p>
 <p>همان‌طوری که در شکل 7 مشخص شده است، می‌توانید سایت خود را در آدرس <code>http://127.0.0.1:8000</code> مشاهده کنید.</p>
@@ -60,20 +58,19 @@
 <p><img alt="شکل 8 اجرای موفقیت‌آمیز سایت" src="../images/p288-01.png" /></p>
 <p>شکل 8 اجرای موفقیت‌آمیز سایت</p>
 <p>آدرس <code>ip</code> که جنگو روی آن اجرا می‌شود، 127.0.0.1 است. این آدرس به آدرس <code>local</code> معروف است. این <code>ip</code> به رایانه جاری اشاره می‌کند، یعنی همین رایانه‌ای که سرور جنگو را روی آن اجرا کرده‌اید. اگر رایانه شما در یک شبکه قرار داشته باشد، رایانه‌های دیگر نمی‌توانند با این آدرس، به رایانه شما متصل شوند.</p>
-<h3 id="_3">کنجکاوی</h3>
+<aside class="callout curiosity"><h3 id="_3">کنجکاوی</h3>
 <p>بررسی کنید، برای پروژه‌هایی که در بستر اینترنت در حال استفاده هستند، از چه وب‌سرورها و چه پایگاه داده‌هایی استفاده می‌شود؟</p>
 <p>ساخت اولین <code>app</code> در جنگو یک پروژه جنگو می‌تواند شامل یک یا چندین <code>app</code> (اپلیکیشن) باشد. پروژه‌ای که با دستور <code>startproject</code> ایجاد کردید، هنوز <code>app</code> ندارد. در جنگو می‌توانید برای وظایف مستقل یک <code>app</code> ایجاد کنید.</p>
 <p>فرض کنید پروژه شما یک کارخانه در دنیای واقعی است، واحدهای تولید کارخانه هر‌کدام می‌توانند مانند یک <code>app</code> باشند. به‌عنوان‌مثال، واحدی که وظیفه رنگ‌کردن خودرو را بر‌عهده دارد، مستقل از واحدهای دیگر می‌تواند عمل کند. کافی است یک خودرو به این واحد تحویل شود و رنگ درخواستی مشخص شود. این واحد کار خود را انجام داده و خودرو را رنگ شده تحویل می‌دهد.</p>
 <p>هر <code>app</code> وظیفه خاصی انجام می‌دهد و باید به‌صورتی ایجاد گردد که قابلیت استفاده مجدد داشته باشد، یعنی یک <code>app</code> را بتوان در پروژه دیگری استفاده کرد و همان وظیفه را به‌خوبی انجام دهد.</p>
-<hr />
+</aside><hr />
 <p class="page-mark">صفحه ۲۸۳</p>
 <p>برای ساخت <code>app</code> از دستور <code>startapp</code> استفاده می‌شود، ابتدا سرور جنگو را متوقف کرده (با <code>ctrl</code> + <code>c</code>) و سپس دستور زیر را اجرا کنید.</p>
-<div class="code-wrap" dir="ltr"><pre><code>python manage.py startapp weather
-</code></pre></div>
+<p><bdi dir="ltr">python</bdi> <bdi dir="ltr">manage.py</bdi> <bdi dir="ltr">startapp</bdi> <bdi dir="ltr">weather</bdi></p>
 <p>یک‌پوشه با نام <code>weather</code> ساخته می‌شود. پوشه <code>weather</code> در حقیقت یک <code>app</code> جنگویی است که وظیفه نمایش وضعیت آب‌وهوای شهر موردنظر را برعهده دارد.</p>
-<p>پس از ساخت <code>weather</code> <code>app</code> ساختار پروژه همانند شکل 9 خواهد بود.</p>
+<p>پس از ساخت <code>weather app</code> ساختار پروژه همانند شکل 9 خواهد بود.</p>
 <p><img alt="شکل 9 محتوای weather app" src="../images/p289-01.png" /></p>
-<p>شکل 9 محتوای <code>weather</code> <code>app</code></p>
+<p>شکل 9 محتوای <code>weather app</code></p>
 <p>معرفی <code>app</code> ایجاد شده به جنگو در <code>settings.py</code> در این مرحله، لازم است <code>app</code> ساخته شده به جنگو معرفی شود. برای این کار فایل <code>settings.py</code> را باز کنید و <code>weather</code> را مطابق شکل 10 به انتهای لیست <code>INSTALLED_APPS</code> اضافه کنید.</p>
 <p><img alt="شکل 10 اضافه‌کردن weather به installed_apps" src="../images/p289-02.png" /></p>
 <p>شکل 10 اضافه‌کردن <code>weather</code> به <code>installed_apps</code></p>
@@ -89,7 +86,7 @@
 <p>خط 3: یک تابع با نام <code>show_temp_view</code> ایجاد شده است. هر <code>view</code> در جنگو، تابعی است که باید پارامتر <code>request</code> را داشته باشد.</p>
 <p>خط 4: یک <code>object</code> از نوع <code>HttpResponse</code> ایجاد شده است. <code>HttpResponse</code> محتوای نهاییِ ارسال‌شده به مرورگر را در خود نگهداری می‌کند و مشخص می‌کند کاربر چه چیزی از سرور دریافت کند.</p>
 <p>تابع <code>show_temp_view</code> در فایل <code>views.py</code> فقط یک متن ساده، نمایش خواهد داد.</p>
-<p>فایل را ذخیره نمایید و سرور جنگو را با <code>python</code> <code>manage.py</code> <code>runserver</code> راه‌اندازی کنید.</p>
+<p>فایل را ذخیره نمایید و سرور جنگو را با <code>python manage.py runserver</code> راه‌اندازی کنید.</p>
 <p>آدرس صفحه اصلی را وارد کنید، باز هم صفحه خوشامدگویی را می‌بینید. پس لازم است تغییراتی اعمال کنید تا در صفحه اصلی سایت، به‌جای خوشامدگویی متن «همدان 27 درجه سانتی‌گراد» نمایش داده شود.</p>
 <p>فایل <code>urls.py</code> در پوشه <code>config</code> را باز کنید (شکل 12).</p>
 <hr />
@@ -110,19 +107,18 @@
 <p>شکل 14 اضافه‌کردن <code>path</code> جدید</p>
 <h3 id="_6">توضیحات کدها:</h3>
 <p>خط 2: ماژول <code>include</code> وارد (<code>import</code>) شده است.</p>
-<p>خط 6: یک <code>path</code> جدید اضافه شده است. اولین آرگومان تابع <code>path</code> در این دستور فقط یک‌رشته خالی است و به این معناست که اگر در آدرس (<code>URL</code>) رسیده به سرور جنگو، جلوی آدرس سایت هیچ عبارتی درج نشده بود، با استفاده از ماژول <code>include</code> به سراغ فایل <code>urls.py</code> در <code>weather</code> <code>app</code> بروید و کار را از آنجا ادامه دهید. در واقع این خط، درخواست‌های صفحۀ اصلی را به <code>weather</code> <code>app</code> ارسال می‌کند.</p>
-<p>مرحله سوم: وارد پوشه <code>weather</code> شده و برای <code>weather</code> <code>app</code> یک <code>urls.py</code> همانند شکل 15 ایجاد کنید.</p>
+<p>خط 6: یک <code>path</code> جدید اضافه شده است. اولین آرگومان تابع <code>path</code> در این دستور فقط یک‌رشته خالی است و به این معناست که اگر در آدرس (<code>URL</code>) رسیده به سرور جنگو، جلوی آدرس سایت هیچ عبارتی درج نشده بود، با استفاده از ماژول <code>include</code> به سراغ فایل <code>urls.py</code> در <code>weather app</code> بروید و کار را از آنجا ادامه دهید. در واقع این خط، درخواست‌های صفحۀ اصلی را به <code>weather app</code> ارسال می‌کند.</p>
+<p>مرحله سوم: وارد پوشه <code>weather</code> شده و برای <code>weather app</code> یک <code>urls.py</code> همانند شکل 15 ایجاد کنید.</p>
 <p>هر <code>app</code> می‌تواند یک <code>urls.py</code> اختصاصی داشته باشد.</p>
 <p><img alt="شکل 15 ایجاد فایل urls.py برای app" src="../images/p292-02.png" /></p>
 <p>شکل 15 ایجاد فایل <code>urls.py</code> برای <code>app</code></p>
 <hr /></article><article class="lesson" lang="en" dir="ltr" data-lang-block="en" hidden><p class="page-mark">Page 280</p>
 <h3 id="creating-the-weather-project">Creating the weather project</h3>
-<p>In <code>Vscode</code>, from the <code>File</code> menu, click <code>Open</code> <code>Folder</code>. Then create a new folder named <code>meteo</code> in a path of your choice and open the <code>meteo</code> folder you created (Figure 5):</p>
+<p>In <code>Vscode</code>, from the <code>File</code> menu, click <code>Open Folder</code>. Then create a new folder named <code>meteo</code> in a path of your choice and open the <code>meteo</code> folder you created (Figure 5):</p>
 <p><img alt="Figure 5 opening the meteo folder" src="../images/p286-01.png" /></p>
 <p>Figure 5 opening the <code>meteo</code> folder</p>
 <p>Open the terminal again and run the following command (Figure 6):</p>
-<div class="code-wrap" dir="ltr"><pre><code>.django-admin startproject config
-</code></pre></div>
+<p>.django-admin startproject config</p>
 <p><img alt="Figure 6 creating the project" src="../images/p286-02.png" /></p>
 <p>Figure 6 creating the project</p>
 <hr />
@@ -130,15 +126,14 @@
 <p>The previous command creates a project folder named <code>Config</code> in the current path, which contains the <code>settings.py</code> settings file and the project’s main files. The period at the end of the command above means the current path.</p>
 <p>Getting to know some of the project’s main files: the <code>settings.py</code> file: the project’s main settings are placed in this file.</p>
 <p>The <code>urls.py</code> file: whenever the user goes to an address (<code>URL</code>), this file decides which page or section of the site to display.</p>
-<h3 id="try-this">Try this</h3>
+<aside class="callout curiosity"><h3 id="try-this">Try this</h3>
 <p>Research the purpose of the other files in the project.</p>
 <p>Running the Django project: run the following command in the terminal.</p>
-<div class="code-wrap" dir="ltr"><pre><code>python manage.py runserver
-</code></pre></div>
-<p>The <code>runserver</code> command starts a small virtual web server (<code>web</code> <code>server</code>) for the Django project. This web server is only for the Django programmer so they can run the Django project on their own computer (Figure 7).</p>
+<p>python manage.py runserver</p>
+<p>The <code>runserver</code> command starts a small virtual web server (<code>web server</code>) for the Django project. This web server is only for the Django programmer so they can run the Django project on their own computer (Figure 7).</p>
 <p><img alt="Figure 7 successfully starting the Django web server" src="../images/p287-01.png" /></p>
 <p>Figure 7 successfully starting the Django web server</p>
-<hr />
+</aside><hr />
 <p class="page-mark">Page 282</p>
 <p>After you run the command, a file named <code>db.sqlite3</code> is created next to the <code>manage.py</code> file. This file is Django’s default database. Django uses this file to manage the database and tables.</p>
 <p>As shown in Figure 7, you can view your site at the address <code>http://127.0.0.1:8000</code>.</p>
@@ -146,20 +141,19 @@
 <p><img alt="Figure 8 successfully running the site" src="../images/p288-01.png" /></p>
 <p>Figure 8 successfully running the site</p>
 <p>The <code>ip</code> address that Django runs on is 127.0.0.1. This address is known as the <code>local</code> address. This <code>ip</code> points to the current computer, meaning the same computer on which you have run the Django server. If your computer is on a network, other computers cannot connect to your computer with this address.</p>
-<h3 id="try-this_1">Try this</h3>
+<aside class="callout curiosity"><h3 id="try-this_1">Try this</h3>
 <p>Investigate which web servers and which databases are used for projects that are in use on the internet.</p>
 <p>Creating the first <code>app</code> in Django: a Django project can include one or more <code>app</code>s (applications). The project you created with the <code>startproject</code> command still has no <code>app</code>. In Django you can create an <code>app</code> for independent tasks.</p>
 <p>Suppose your project is a factory in the real world. Each of the factory’s production units can be like an <code>app</code>. For example, the unit responsible for painting cars can operate independently of the other units. It is enough to deliver a car to this unit and specify the requested color. This unit does its work and delivers the painted car.</p>
 <p>Each <code>app</code> performs a specific task and should be created so that it is reusable, meaning you can use an <code>app</code> in another project and it performs the same task well.</p>
-<hr />
+</aside><hr />
 <p class="page-mark">Page 283</p>
 <p>To create an <code>app</code>, the <code>startapp</code> command is used. First stop the Django server (with <code>ctrl</code> + <code>c</code>) and then run the following command.</p>
-<div class="code-wrap" dir="ltr"><pre><code>python manage.py startapp weather
-</code></pre></div>
+<p>python manage.py startapp weather</p>
 <p>A folder named <code>weather</code> is created. The <code>weather</code> folder is in fact a Django <code>app</code> whose task is to display the weather for the desired city.</p>
-<p>After creating the <code>weather</code> <code>app</code>, the project structure will be like Figure 9.</p>
+<p>After creating the <code>weather app</code>, the project structure will be like Figure 9.</p>
 <p><img alt="Figure 9 contents of the weather app" src="../images/p289-01.png" /></p>
-<p>Figure 9 contents of the <code>weather</code> <code>app</code></p>
+<p>Figure 9 contents of the <code>weather app</code></p>
 <p>Introducing the created <code>app</code> to Django in <code>settings.py</code>: at this stage, you need to introduce the created <code>app</code> to Django. To do this, open the <code>settings.py</code> file and add <code>weather</code> to the end of the <code>INSTALLED_APPS</code> list as shown in Figure 10.</p>
 <p><img alt="Figure 10 adding weather to installed_apps" src="../images/p289-02.png" /></p>
 <p>Figure 10 adding <code>weather</code> to <code>installed_apps</code></p>
@@ -175,7 +169,7 @@
 <p>Line 3: a function named <code>show_temp_view</code> has been created. Every <code>view</code> in Django is a function that must have the <code>request</code> parameter.</p>
 <p>Line 4: an <code>object</code> of type <code>HttpResponse</code> has been created. <code>HttpResponse</code> holds the final content sent to the browser and determines what the user receives from the server.</p>
 <p>The <code>show_temp_view</code> function in the <code>views.py</code> file will display only a simple text.</p>
-<p>Save the file and start the Django server with <code>python</code> <code>manage.py</code> <code>runserver</code>.</p>
+<p>Save the file and start the Django server with <code>python manage.py runserver</code>.</p>
 <p>Enter the home page address; you still see the welcome page. So you need to make changes so that on the site’s home page, instead of the welcome message, the text “Hamedan 27 degrees Celsius” is displayed.</p>
 <p>Open the <code>urls.py</code> file in the <code>config</code> folder (Figure 12).</p>
 <hr />
@@ -196,8 +190,8 @@
 <p>Figure 14 adding a new <code>path</code></p>
 <h3 id="code-notes_2">Code notes:</h3>
 <p>Line 2: the <code>include</code> module has been imported.</p>
-<p>Line 6: a new <code>path</code> has been added. The first argument of the <code>path</code> function in this command is only an empty string, and it means that if in the address (<code>URL</code>) that reaches the Django server, no expression was entered after the site address, use the <code>include</code> module to go to the <code>urls.py</code> file in the <code>weather</code> <code>app</code> and continue from there. In fact this line sends home page requests to the <code>weather</code> <code>app</code>.</p>
-<p>Step three: go into the <code>weather</code> folder and create a <code>urls.py</code> for the <code>weather</code> <code>app</code> as shown in Figure 15.</p>
+<p>Line 6: a new <code>path</code> has been added. The first argument of the <code>path</code> function in this command is only an empty string, and it means that if in the address (<code>URL</code>) that reaches the Django server, no expression was entered after the site address, use the <code>include</code> module to go to the <code>urls.py</code> file in the <code>weather app</code> and continue from there. In fact this line sends home page requests to the <code>weather app</code>.</p>
+<p>Step three: go into the <code>weather</code> folder and create a <code>urls.py</code> for the <code>weather app</code> as shown in Figure 15.</p>
 <p>Each <code>app</code> can have its own <code>urls.py</code>.</p>
 <p><img alt="Figure 15 creating the urls.py file for the app" src="../images/p292-02.png" /></p>
 <p>Figure 15 creating the <code>urls.py</code> file for the <code>app</code></p>
@@ -211,7 +205,7 @@
     <nav class="pager"><a rel="prev" class="prev" href="p5-what.html"><span class="pager-word" data-fa="قبلی" data-en="Previous">قبلی</span><span class="pager-name" data-fa="جنگو چیست و نصب" data-en="What Django is, and installing it">جنگو چیست و نصب</span></a><a rel="next" class="next" href="p5-template.html"><span class="pager-word" data-fa="بعدی" data-en="Next">بعدی</span><span class="pager-name" data-fa="قالب و دمای واقعی" data-en="Templates and a real temperature">قالب و دمای واقعی</span></a></nav>
     </div>
   </div>
-  <script src="../assets/search-index.js?v=4"></script>
-  <script src="../assets/app.js?v=4"></script>
+  <script src="../assets/search-index.js?v=6"></script>
+  <script src="../assets/app.js?v=6"></script>
 </body>
 </html>

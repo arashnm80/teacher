@@ -1,6 +1,5 @@
 # Data modeling
 
-
 ---
 
 **Page 2**
@@ -39,7 +38,6 @@ How can you prepare a number that the user entered as a string so it is ready fo
 
 The student should be able to define and manage data in Python, perform basic operations on data, use conditional structures and loops, and process data in an organized way.
 
-
 ---
 
 **Page 3**
@@ -56,9 +54,9 @@ You can create Python programs as files with the `.py` extension in any text edi
 
 **Figure 1**
 
-To start coding with Python (after installing the latest version of Python) using the `IDLE` environment, first open the `Start` menu, then type `IDLE` or `Python` `IDLE`, and click `IDLE` (`Python` `3.x`).
+To start coding with Python (after installing the latest version of Python) using the `IDLE` environment, first open the `Start` menu, then type `IDLE` or `Python IDLE`, and click `IDLE` (`Python 3.x`).
 
-The interactive environment window (the `IDLE` `Shell` window) opens. In this window, from the `file` menu, create a new file. The Python text editor environment opens and you can enter your statements in it (Figure 2).
+The interactive environment window (the `IDLE Shell` window) opens. In this window, from the `file` menu, create a new file. The Python text editor environment opens and you can enter your statements in it (Figure 2).
 
 ![Book image](../images/p009-02.png)
 
@@ -74,7 +72,6 @@ The interactive environment window (the `IDLE` `Shell` window) opens. In this wi
 
 **Figure 2**
 
-
 ---
 
 **Page 4**
@@ -83,16 +80,10 @@ To get started, enter the code shown in Figure 3 into the Python text editor and
 
 It is better to save file names with a pattern of your choice. For example, the name of the first file that prints the word `hello` can be as follows:
 
-```
-prog01_hello.py
-```
-
+`prog01_hello.py`
 and the second file, which is for working with variables, can be as follows.
 
-```
-prog02_variable
-```
-
+`prog02_variable`
 ### Note
 
 Never use Persian letters in file and folder names, because you will face many problems later.
@@ -107,7 +98,7 @@ For example, this name is completely wrong: salam `.py`
 
 Python supports the Persian language; but the letters are shown jumbled. It is better to use English characters in all cases.
 
-Using the `Run` menu, choose the `Run` `Module` command, or press the `F5` key, to run the first program you created.
+Using the `Run` menu, choose the `Run Module` command, or press the `F5` key, to run the first program you created.
 
 On some laptops, to run the program you need to press the key combination `Fn+F5`. (Figure 4)
 
@@ -115,12 +106,11 @@ On some laptops, to run the program you need to press the key combination `Fn+F5
 
 **Figure 4**
 
-
 ---
 
 **Page 5**
 
-As you can see in Figure 4, the result of running this code is displayed in the `IDLE` `Shell` window. You can type simple codes in the `IDLE` `Shell` environment and run them by pressing the `Enter` key (Figure 5). To leave this environment, type `exit`() or `Ctrl+d`, or simply close the window by clicking the `Close` button at the top.
+As you can see in Figure 4, the result of running this code is displayed in the `IDLE Shell` window. You can type simple codes in the `IDLE Shell` environment and run them by pressing the `Enter` key (Figure 5). To leave this environment, type `exit()` or `Ctrl+d`, or simply close the window by clicking the `Close` button at the top.
 
 The command structure for writing code (`syntax`) in Python:
 
@@ -138,7 +128,6 @@ If you skip indentation, Python gives you an error. The number of spaces is up t
 
 **Figure 6**
 
-
 ---
 
 **Page 6**
@@ -153,7 +142,7 @@ In the code below you can see the correct way to space (Figure 7).
 
 Statements in Python:
 
-Every computer program is made up of a set of instructions that must be executed by the computer. In programming languages, these instructions are called a statement or `Statement`. For example, the following statement prints the text “`learning` `python` `is` `fun` ” on the screen:
+Every computer program is made up of a set of instructions that must be executed by the computer. In programming languages, these instructions are called a statement or `Statement`. For example, the following statement prints the text “`learning python is fun` ” on the screen:
 
 ```
 print(“learning python is fun! “)
@@ -175,12 +164,11 @@ Printing text strings in Python: Earlier you saw that to display text in the pro
 
 **Figure 9**
 
-
 ---
 
 **Page 7**
 
-In Python, triple quotes `Triple` `Quotes` (' ' ') or (" " ") are used to print multi-line text or text that includes quotation marks.
+In Python, triple quotes `Triple Quotes` (' ' ') or (" " ") are used to print multi-line text or text that includes quotation marks.
 
 ![Book image](../images/p013-01.png)
 
@@ -209,6 +197,5 @@ Also, in the `print` statement you can combine numbers and text (Figure 13).
 ![Figure 13](../images/p013-03.png)
 
 **Figure 13**
-
 
 ---

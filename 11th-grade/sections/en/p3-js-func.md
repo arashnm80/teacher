@@ -16,10 +16,7 @@ The statements inside a function are executed when the function is called.
 
 To call a function, you must use the function name together with the input arguments. The general form of calling a function is as follows:
 
-```
-functionName(Arguments)
-```
-
+`functionName(Arguments)`
 ### Example
 
 In the example below, a function named `calculateCartTotal` has been created with three input parameters `price3`, `price2`, `price1`. The function `calculateCartTotal` calculates the sum of these three parameters’ values and stores it in the variable `total`. The `return` statement returns the value of the variable `total` to the call site.
@@ -31,7 +28,6 @@ In the example below, a function named `calculateCartTotal` has been created wit
 ### Note
 
 Parameters are variables that are used when the function is defined. In the example above, the variables `price3`, `price2`, `price1` are the function’s input parameters. An argument refers to the values that are sent to the function when it is called. In other words, arguments are the values that are assigned to the function’s parameters.
-
 
 ---
 
@@ -51,7 +47,7 @@ A function does not necessarily have a return value. A function can be written w
 
 ![Book image](../images/p226-02.png)
 
-JavaScript built-in functions (`Built-in` `Functions`): JavaScript has a set of built-in functions that are used to perform various operations. JavaScript’s built-in functions allow programmers to manage data easily and implement complex tasks simply. These functions include mathematical, string, array, object, input–output, and date and time functions, which are introduced in this section.
+JavaScript built-in functions (`Built-in Functions`): JavaScript has a set of built-in functions that are used to perform various operations. JavaScript’s built-in functions allow programmers to manage data easily and implement complex tasks simply. These functions include mathematical, string, array, object, input–output, and date and time functions, which are introduced in this section.
 
 Using JavaScript’s mathematical functions
 
@@ -69,7 +65,6 @@ JavaScript’s mathematical functions, which are organized inside the `Math` obj
 
 `:Math.min`(): Returns the smallest number among the input arguments.
 
-
 ---
 
 **Page 221**
@@ -81,7 +76,6 @@ Then examine and analyze the results obtained in class.
 ![Book image](../images/p227-01.png)
 
 ![Book image](../images/p227-02.png)
-
 
 ---
 
@@ -108,7 +102,7 @@ JavaScript’s string functions and properties are essential tools for processin
 The `string` object has a property named `length` that determines the length of a string. Based on this, the statement below displays the value 11.
 
 ```
-;(str1.length)console.log
+;(str1.length)console.log;
 ```
 
 Create a file named `user-info.html` and write the script below to become familiar with how string functions work:
@@ -116,7 +110,6 @@ Create a file named `user-info.html` and write the script below to become famili
 ![Book image](../images/p228-01.png)
 
 ![Book image](../images/p228-02.png)
-
 
 ---
 
@@ -142,7 +135,6 @@ Create a file named `customer-list.html` and write the script below to become fa
 
 ![Book image](../images/p229-02.png)
 
-
 ---
 
 **Page 224**
@@ -163,11 +155,7 @@ Save the file and observe the result in the browser.
 
 `:prompt`(): Displays a dialog box to receive data from the user. The received value is sent to the call site.
 
-`:alert`(): Displays a warning window with a message and an `.OK` button. `:confrim`(): Displays a confirmation window that includes an `OK` button and `.Cancel`. The return value of the function is `True` or
-
-```
-False است.
-```
+`:alert`(): Displays a warning window with a message and an `.OK` button. `:confrim`(): Displays a confirmation window that includes an `OK` button and `.Cancel`. The return value of the function is `True` or False .
 
 ![Book image](../images/p230-02.png)
 

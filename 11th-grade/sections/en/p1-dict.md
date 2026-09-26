@@ -30,7 +30,6 @@ Example: In the code in Figure 106, a dictionary named `person` with 3 items (ke
 
 **Figure 106**
 
-
 ---
 
 **Page 53**
@@ -43,11 +42,7 @@ If each element has a clear label (such as a student’s name and score), using 
 
 Build a dictionary named `book` that holds information about a book:
 
-```
-"title": "python Basic"
-"author: "Fatemeh
-250:pages
-```
+"title": "python Basic" "author: "Fatemeh 250:pages
 
 Print the author’s name (`author`) and the number of pages (`pages`).
 
@@ -55,9 +50,7 @@ Different keys can have the same values.
 
 Example: The `status` dictionary has two items (Figure 107).
 
-```
-آیتم اول: "user1":"active"
-```
+: "user1":"active"
 
 Second item: `"user2":"active"` The keys are the same, but the values of each of them are different.
 
@@ -76,7 +69,6 @@ In the example in Figure 108, the `car_dic` dictionary has five items, two of wh
 ![Figure 108](../images/p059-04.png)
 
 **Figure 108**
-
 
 ---
 
@@ -106,7 +98,7 @@ To add a new member to a `dictionary` in Python, it is enough to assign a value 
 
 ### Activity
 
-Build a `dictionary` named `product` with the keys `name` `price` . Change the product’s price inside the `dictionary` and then print the `dictionary`.
+Build a `dictionary` named `product` with the keys `name price` . Change the product’s price inside the `dictionary` and then print the `dictionary`.
 
 Example: Build an empty `dictionary` named `student`. Then, using input, add `name` and `grade` to the `dictionary` and finally print the dictionary (Figure 111).
 
@@ -119,7 +111,6 @@ Example: Build an empty `dictionary` named `student`. Then, using input, add `na
 ### Activity
 
 Build an empty `dictionary` named `user`. Take values for the keys `username` and `password` and `Age` from input, store them inside the `dictionary`, and finally print all of the user’s information.
-
 
 ---
 
@@ -153,12 +144,11 @@ Enter the program and observe the result (Figure 114).
 
 **Figure 114**
 
-
 ---
 
 **Page 56**
 
-To remove an element from a `dictionary`, you can also use the `pop`() method. The `pop`() method removes the element that has the specified key name. (`key`)`dictionary.pop` Example: In the code (Figure 115), the element `"price` " has been removed from the `product` dictionary using the statement `product.pop`(`"price"`).
+To remove an element from a `dictionary`, you can also use the `pop()` method. The `pop()` method removes the element that has the specified key name. (`key`)`dictionary.pop` Example: In the code (Figure 115), the element `"price` " has been removed from the `product` dictionary using the statement `product.pop`(`"price"`).
 
 ![Book image](../images/p062-03.png)
 
@@ -190,6 +180,5 @@ Print the removed value.
 If the item did not exist, display a message stating that it does not exist.
 
 Then print the new `dictionary`.
-
 
 ---

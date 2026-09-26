@@ -6,19 +6,11 @@ Work performance standard: The student should be able, by analyzing requirements
 
 Score
 
-Conditions for performing the work (tools, materials, equipment,
-
-Tools
-
-Results
-
-Row
+Conditions for performing the work (tools, materials, equipment, Tools Results Row
 
 ### Steps
 
-Standards (indicators / judgment / scoring)
-
-Possible
+Standards (indicators / judgment / scoring) Possible
 
 time, place, and ...)
 
@@ -32,11 +24,7 @@ Design a simple site map for a hypothetical website (for example, a small store 
 
 3
 
-Prepare a list of key requirements (for example: product display, contact form, about us) for the same hypothetical website. A brief explanation of the importance of setting the project goal at the start of design. Completing the Try this activities
-
-Computer or laptop
-
-Oral question and
+Prepare a list of key requirements (for example: product display, contact form, about us) for the same hypothetical website. A brief explanation of the importance of setting the project goal at the start of design. Completing the Try this activities Computer or laptop Oral question and
 
 Requirements analysis and
 
@@ -64,25 +52,21 @@ Prepare a list of key requirements (for example: product display, contact form, 
 
 Incomplete explanation of any of the work description items 1
 
-Creating a basic `HTML` file using a text editor (such as `Note` `pad` or `VS` `Code`) that includes the main tags `<!,``>DOCTYPE` `html`
+Creating a basic `HTML` file using a text editor (such as `Note pad` or `VS Code`) that includes the main tags `<!,``>DOCTYPE html`
 
-```
-html>`, `<head<`>`, و `<body>` باشد.
-```
+html>`,`<head<`>`, `<body>` .
 
-Adding a title (``<title>``) to the ``<head>`` section and a simple text
+Adding a title (``<title>``) to the``<head>`` section and a simple text
 
 3
 
-in the ``<body>`` section. Show how to run the `HTML` file in the browser.
+in the ``<body>``section. Show how to run the`HTML` file in the browser.
 
-Explain the role of each of the main tags (``html``, ``head``, ``body``, ``title``) in an `.HTML` document. Completing the Try this activities
-
-Computer or laptop
+Explain the role of each of the main tags (``html``,``head``,``body``,``title``) in an`.HTML` document. Completing the Try this activities Computer or laptop
 
 Performing the work with other methods
 
-Text editor (`++VS` `Code`, `Notepad`)
+Text editor (`++VS Code`, `Notepad`)
 
 Short test
 
@@ -95,7 +79,6 @@ Practical for
 2
 
 `HTML`
-
 Sample `HTML` file
 
 Creating the skeleton
@@ -107,27 +90,21 @@ Creating a basic `HTML` file using a text editor (such as `Notepad` or
 15 minutes
 
 `HTML`
-
-```
-VS Code) که شامل تگ‌های اصلی `<!,`>DOCTYPE html>`, `<html
-head<`>`, و `<body>` باشد.
-```
+VS Code) ‌ `<!,`>DOCTYPE html>`,`<html head<`>`, `<body>` .
 
 2
 
-Adding a title (``<title>``) to the ``<head>`` section and a simple text in the ``<body>`` section. Show how to run the `HTML` file in the browser.
+Adding a title (``<title>``) to the``<head>``section and a simple text in the``<body>``section. Show how to run the`HTML` file in the browser.
 
 Incomplete performance of any of the practical steps; only explaining the role of each of the
 
-```
-اصلی (`html`, `head`, `body`, `title`) در یک سند 1.HTML
-```
+(`html`, `head`, `body`, `title`) 1.HTML
 
-Creating an `HTML` page that includes: a main heading (``<h1>``), subheadings `<h2>` through `<h6>`, and a paragraph (``<p>``) an unordered list (``<ul>``) including 3–4 items a link (``<a>``) that points to another website (for example `.oerp`
+Creating an `HTML` page that includes: a main heading (``<h1>``), subheadings`<h2>`through`<h6>`, and a paragraph (``<p>``) an unordered list (``<ul>``) including 3–4 items a link (``<a>``) that points to another website (for example`.oerp`
 
 3
 
-`ir`). Explain the difference between the ``<strong>`` and ``<b>`` tags and the use of each. Explain the difference between an ordered list (``<ol>``) and an unordered list (``<ul>``). Completing the Try this activities Performing the work with other methods
+`ir`). Explain the difference between the ``<strong>``and``<b>``tags and the use of each. Explain the difference between an ordered list (``<ol>``) and an unordered list (``<ul>``). Completing the Try this activities Performing the work with other methods
 
 Same tools as the previous step
 
@@ -140,7 +117,6 @@ Question and Creating an `HTML` page that includes: a main heading (``<h1>``) an
 3
 
 `HTML`
-
 Web browser
 
 Practical answer
@@ -149,25 +125,19 @@ paragraph (``<p>``) an unordered list (``<ul>``) including 3–4 items a link
 
 2
 
-(``<a>``) that points to another website (for example `oerp.ir`).
+(``<a>``) that points to another website (for example`oerp.ir`).
 
-Explain the difference between the ``<strong>`` and ``<b>`` tags and the use of each.
+Explain the difference between the ``<strong>``and``<b>`` tags and the use of each.
 
-Explain the difference between an ordered list (``<ol>``) and an unordered list (``<ul>``) Creating an `HTML` page that includes: a main heading (``<h1>``) and a paragraph (``<p>``) an unordered list (``<ul>``) including 3–4 items1
-
+Explain the difference between an ordered list (``<ol>``) and an unordered list (``<ul>``) Creating an`HTML`page that includes: a main heading (``<h1>``) and a paragraph (``<p>``) an unordered list (``<ul>``) including 3–4 items1 Checking the file
 
 ---
 
 **Page 115**
 
-Checking the file
-
-```
-عناصر معنایی (header, main, footer, section, article, nav) درست
-```
+(header, main, footer, section, article, nav)
 
 `HTML`
-
 have been used correctly; the page should have a standard `HTML5` structure.
 
 3
@@ -180,19 +150,13 @@ Using structures
 
 Observation
 
-```
-عناصر معنایی (header, main, footer, section, article, nav) درست
-```
+(header, main, footer, section, article, nav)
 
 4
 
 `HTML5` documentation resources
 
-have been used correctly2; the page should have a standard `HTML5` structure.2
-
-main semantic
-
-Performance and
+have been used correctly2; the page should have a standard `HTML5` structure.2 main semantic Performance and
 
 20 minutes
 
@@ -260,9 +224,7 @@ health, environmental considerations, and attitude:
 
 Failure to confirm any of the non-technical competencies1 Yes
 
-Work assessment (work performance competency)
-
-No
+Work assessment (work performance competency) No
 
 ### Explanation:
 

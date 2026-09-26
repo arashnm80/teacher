@@ -24,7 +24,6 @@ The color of the navigation bar is set by `bg-primary`. If you wish, you can use
 
 The `collapse` class makes the content inside the `div` collapsed, and it opens/closes with the `toggle` button. (This class enables the ability to open and close the content.) The `navbar-collapse` class makes the links stack vertically (one under another) when the menu opens, and makes the menu’s inner space (`padding`) standard and coordinated with the other navigation components. If you use only `collapse`, the menu links will look untidy.
 
-
 ---
 
 **Page 174**
@@ -50,7 +49,6 @@ The first option on most shopping sites is “Product categories,” which conta
 ![Book image](../images/p180-02.png)
 
 `nav-item:` Used for each of the menu options.
-
 
 ---
 
@@ -93,7 +91,6 @@ input< 2>
 
 `a<` 3>
 
-
 ---
 
 **Page 176**
@@ -110,15 +107,11 @@ Class names
 
 Color
 
-```
-btn-primary، btn-secondary، btn-danger، btn-light، btn-dark، btn-link و...
-```
+btn-primary btn-secondary btn-danger btn-light btn-dark btn-link ...
 
 Button borders
 
-```
-btn-outline-primary، btn-outline-secondary و....
-```
+btn-outline-primary btn-outline-secondary ....
 
 Button sizes `btn-sm`, `btn-lg` Disabled state `disabled`
 
@@ -132,8 +125,7 @@ In the example below, six buttons with different labels and classes have been cr
 
 ### Learn more
 
-Layout of the product detail page. In this workshop you will design the product information page in three columns containing the product image, product features, and product price. On this page the `header` and `footer` sections are the same as in the `index.html` file; only the `main` section has different content. To speed up the design work, create a copy of the `index.html` file. To do this, open the `index.html` file in a text editor. From the `File` menu choose `Save` `As` and then type `product-details.html` as the page name.
-
+Layout of the product detail page. In this workshop you will design the product information page in three columns containing the product image, product features, and product price. On this page the `header` and `footer` sections are the same as in the `index.html` file; only the `main` section has different content. To speed up the design work, create a copy of the `index.html` file. To do this, open the `index.html` file in a text editor. From the `File` menu choose `Save As` and then type `product-details.html` as the page name.
 
 ---
 
@@ -145,15 +137,7 @@ Write the code in the figure below inside the `<main>` tag for the product page 
 
 ![Book image](../images/p183-01.png)
 
-In this layout the `Grid` system is used. The column shares on devices 992 pixels and
-
-larger are 4/12,
-
-5/12,
-
-and 3/12. At widths from 768 to 992 pixels each column’s share is 4/12,
-
-and on
+In this layout the `Grid` system is used. The column shares on devices 992 pixels and larger are 4/12, 5/12, and 3/12. At widths from 768 to 992 pixels each column’s share is 4/12, and on
 
 smaller devices the column contents stack on top of each other.
 
@@ -172,7 +156,6 @@ So that the product image is centered in the column on all devices, add the `d-f
 So that the image size is controlled on devices smaller than 768 pixels, add the style below to the `styles.css` file:
 
 ![Book image](../images/p183-05.png)
-
 
 ---
 
@@ -196,7 +179,6 @@ Enter the code written in the figure below into the third column:
 
 ![Book image](../images/p184-04.png)
 
-
 ---
 
 **Page 179**
@@ -214,6 +196,5 @@ You are expected that the result on devices 992 pixels and larger looks like the
 In the `index.html` file, link the product “Basic Technical Knowledge” to the `product-details.html` page.
 
 Forms. Data-entry forms are tools for user interaction with the page and for collecting information. The appearance of entry forms plays a vital role in the user experience and the success of a website. Attractive and user-friendly forms increase user interaction and create a sense of trust and satisfaction. In contrast, messy and confusing forms can lead to user confusion, a higher bounce rate, and ultimately lower credibility for the website.
-
 
 ---

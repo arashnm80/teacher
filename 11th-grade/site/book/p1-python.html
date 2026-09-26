@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title data-fa="پایتون و محیط برنامه‌نویسی" data-en="Python and the programming environment">پایتون و محیط برنامه‌نویسی</title>
   <link rel="icon" href="../assets/favicon.svg">
-  <link rel="stylesheet" href="../assets/style.css?v=4">
+  <link rel="stylesheet" href="../assets/style.css?v=6">
 </head>
 <body data-root="../">
   <header class="top">
@@ -57,8 +57,8 @@
 <p>پایتون یک زبان برنامه‌نویسی مفسری است؛ به این معنا که کدها خط‌به‌خط توسط مفسر ترجمه و اجرا می‌شوند. این زبان از شیوه‌های برنامه‌نویسی رویه‌ای، شیءگرا و تابعی پشتیبانی می‌کند؛</p>
 <p>می‌توان برنامه‌های پایتون را در قالب فایل‌هایی با پسوند <code>.py</code> در هر ویرایشگر متنی ایجاد کرد و سپس آنها را برای اجرا به مفسر پایتون ارسال نمود.</p>
 <p><strong>شکل ۱</strong></p>
-<p>برای شروع کدنویسی با پایتون (بعد از نصب پایتون آخرین نسخه) با استفاده از محیط <code>IDLE</code>، ابتدا منوی <code>Start</code> را باز کنید، سپس تایپ کنید <code>IDLE</code> یا <code>Python</code> <code>IDLE</code> و روی <code>IDLE</code> (<code>Python</code> <code>3.x</code>) کلیک کنید.</p>
-<p>پنجره محیط تعاملی (پنجره <code>IDLE</code> <code>Shell</code>) باز می‌شود. در این پنجره از منوی <code>file</code>، یک فایل جدید ایجاد کنید. محیط ویرایشگر متنی پایتون باز شده و می‌توانید دستورات خود را در آن وارد کنید (شکل 2).</p>
+<p>برای شروع کدنویسی با پایتون (بعد از نصب پایتون آخرین نسخه) با استفاده از محیط <code>IDLE</code>، ابتدا منوی <code>Start</code> را باز کنید، سپس تایپ کنید <code>IDLE</code> یا <code>Python IDLE</code> و روی <code>IDLE</code> (<code>Python 3.x</code>) کلیک کنید.</p>
+<p>پنجره محیط تعاملی (پنجره <code>IDLE Shell</code>) باز می‌شود. در این پنجره از منوی <code>file</code>، یک فایل جدید ایجاد کنید. محیط ویرایشگر متنی پایتون باز شده و می‌توانید دستورات خود را در آن وارد کنید (شکل 2).</p>
 <p><img alt="تصویر کتاب" src="../images/p009-02.png" /></p>
 <p>1</p>
 <p><img alt="تصویر کتاب" src="../images/p009-03.png" /></p>
@@ -70,23 +70,21 @@
 <p class="page-mark">صفحه ۴</p>
 <p>برای شروع کار، کد نوشته در شکل 3 را در ویرایشگر متنی پایتون وارد کنید و فایل را با کمک کلید ترکیبی <code>ctrl</code> + <code>s</code> با نام <code>hello.py</code> _ <code>prog01</code> در یک‌پوشه ذخیره کنید. در مرحله ذخیره‌سازی دقت کنید علاوه بر نام فایل باید مسیر ذخیره‌سازی فایل نیز با دقت تعیین شوند. توصیه می‌شود از قبل یک پوشه در یکی از درایو‌های <code>D:</code> یا <code>E:</code> با نام <code>PyProg</code> ایجاد و فایل‌های خود را در این پوشه ذخیره نمایید.</p>
 <p>بهتر است نام فایل‌ها را با یک الگوی دلخواه ذخیره کنید. مثلاًً نام فایل اول که کلمه <code>hello</code> را چاپ می‌کند به‌صورت زیر باشد:</p>
-<div class="code-wrap" dir="ltr"><pre><code>prog01_hello.py
-</code></pre></div>
-<p>و فایل دوم که برای کار با متغیر هاست به‌صورت زیر باشد.</p>
-<div class="code-wrap" dir="ltr"><pre><code>prog02_variable
-</code></pre></div>
-<h3 id="_8">نکته</h3>
+<p><code>prog01_hello.py</code>
+و فایل دوم که برای کار با متغیر هاست به‌صورت زیر باشد.</p>
+<p><code>prog02_variable</code></p>
+<aside class="callout note"><h3 id="_8">نکته</h3>
 <p>به هیچ عنوان در نام فایل‌ها و پوشه‌ها از حروف فارسی استفاده نشود چرا که در آینده به مشکلات زیادی بر خواهید خورد.</p>
 <p>مثلاً این نام کاملاً اشتباه است: سلام <code>.py</code></p>
 <figure class="shot"><img alt="شکل 3" src="../images/p010-01.png" /><figcaption>شکل 3</figcaption></figure>
-<h3 id="_9">نکته</h3>
+</aside><aside class="callout note"><h3 id="_9">نکته</h3>
 <p>پایتون از زبان فارسی پشتیبانی می‌کند؛ ولی حروف در آن به‌هم‌ریخته نشان داده می‌شوند. بهتر است از کاراکترهای انگلیسی در همه موارد استفاده کنید.</p>
-<p>با استفاده از منوی <code>Run</code> دستور <code>Run</code> <code>Module</code> و یا با زدن کلید <code>F5</code> اولین برنامه ایجاد شده را اجرا کنید.</p>
+<p>با استفاده از منوی <code>Run</code> دستور <code>Run Module</code> و یا با زدن کلید <code>F5</code> اولین برنامه ایجاد شده را اجرا کنید.</p>
 <p>در برخی از لپ‌تاپ‌ها برای اجرای برنامه لازم است کلید ترکیبی <code>Fn+F5</code> را فشار دهید. (شکل 4)</p>
 <figure class="shot"><img alt="شکل 4" src="../images/p010-02.png" /><figcaption>شکل 4</figcaption></figure>
-<hr />
+</aside><hr />
 <p class="page-mark">صفحه ۵</p>
-<p>همان‌طور که در شکل 4 مشاهده می‌کنید، نتیجۀ اجرای این کد در پنجره <code>IDLE</code> <code>Shell</code> نمایش داده می‌شود. کدهای ساده را می‌توانید در محیط <code>IDLE</code> <code>Shell</code> تایپ کرده و با زدن کلید <code>Enter</code> آن را اجرا نمایید (شکل5). برای خروج از این محیط <code>exit</code>() و یا <code>Ctrl+d</code> را تایپ کنید و یا به سادگی پنجره را با زدن دکمه <code>Close</code> در بالای آن ببندید.</p>
+<p>همان‌طور که در شکل 4 مشاهده می‌کنید، نتیجۀ اجرای این کد در پنجره <code>IDLE Shell</code> نمایش داده می‌شود. کدهای ساده را می‌توانید در محیط <code>IDLE Shell</code> تایپ کرده و با زدن کلید <code>Enter</code> آن را اجرا نمایید (شکل5). برای خروج از این محیط <code>exit()</code> و یا <code>Ctrl+d</code> را تایپ کنید و یا به سادگی پنجره را با زدن دکمه <code>Close</code> در بالای آن ببندید.</p>
 <p>ساختار دستوری نوشتن کد (<code>syntax</code>) در پایتون:</p>
 <figure class="shot"><img alt="شکل 5" src="../images/p011-01.png" /><figcaption>شکل 5</figcaption></figure>
 <p>پایتون با هدف خوانایی بیشتر طراحی شده است و شباهت‌هایی با زبان انگلیسی دارد. همچنین از مفاهیم ریاضی نیز تأثیر پذیرفته است. برخلاف بسیاری از زبان‌های برنامه‌نویسی که برای پایان هر دستور از نقطه‌ویرگول (;) و پرانتز استفاده می‌کنند، پایتون از خطوط جدید برای تکمیل و جداسازی دستورات بهره می‌برد.</p>
@@ -99,7 +97,7 @@
 <p><img alt="تصویر کتاب" src="../images/p012-01.png" /></p>
 <figure class="shot"><img alt="شکل 7" src="../images/p012-02.png" /><figcaption>شکل 7</figcaption></figure>
 <p>دستورات (<code>Statements</code>) در پایتون:</p>
-<p>هر برنامۀ رایانه‌ای از مجموعه‌ای از دستورالعمل‌ها تشکیل شده است که باید توسط رایانه اجرا شوند. در زبان‌های برنامه‌نویسی، به این دستورالعمل‌ها، دستور یا <code>Statement</code> گفته می‌شود. به‌عنوان‌مثال، دستور زیر متن «<code>learning</code> <code>python</code> <code>is</code> <code>fun</code> » را روی صفحه‌نمایش چاپ می‌کند:</p>
+<p>هر برنامۀ رایانه‌ای از مجموعه‌ای از دستورالعمل‌ها تشکیل شده است که باید توسط رایانه اجرا شوند. در زبان‌های برنامه‌نویسی، به این دستورالعمل‌ها، دستور یا <code>Statement</code> گفته می‌شود. به‌عنوان‌مثال، دستور زیر متن «<code>learning python is fun</code> » را روی صفحه‌نمایش چاپ می‌کند:</p>
 <div class="code-wrap" dir="ltr"><pre><code>print(“learning python is fun! “)
 </code></pre></div>
 <p>وجود چندین دستور در برنامه: بیشتر برنامه‌های پایتون از چندین دستور پشت‌سرهم تشکیل می‌شوند.</p>
@@ -110,7 +108,7 @@
 <figure class="shot"><img alt="شکل 9" src="../images/p012-04.png" /><figcaption>شکل 9</figcaption></figure>
 <hr />
 <p class="page-mark">صفحه ۷</p>
-<p>در پایتون از سه کوتیشن <code>Triple</code> <code>Quotes</code> (' ' ') یا (" " ") برای چاپ متن‌های چندخطی یا متنی که شامل کوتیشن است، استفاده می‌شود.</p>
+<p>در پایتون از سه کوتیشن <code>Triple Quotes</code> (' ' ') یا (" " ") برای چاپ متن‌های چندخطی یا متنی که شامل کوتیشن است، استفاده می‌شود.</p>
 <p><img alt="تصویر کتاب" src="../images/p013-01.png" /></p>
 <p>اگر فراموش کنید متن را داخل علامت نقل‌قول قرار دهید، پایتون خطایی صادر می‌کند (شکل 10).</p>
 <p><strong>شکل10</strong></p>
@@ -150,8 +148,8 @@
 <p>Python is an interpreted programming language; that means the codes are translated and run line by line by the interpreter. This language supports procedural, object-oriented, and functional programming styles;</p>
 <p>You can create Python programs as files with the <code>.py</code> extension in any text editor and then send them to the Python interpreter to run.</p>
 <p><strong>Figure 1</strong></p>
-<p>To start coding with Python (after installing the latest version of Python) using the <code>IDLE</code> environment, first open the <code>Start</code> menu, then type <code>IDLE</code> or <code>Python</code> <code>IDLE</code>, and click <code>IDLE</code> (<code>Python</code> <code>3.x</code>).</p>
-<p>The interactive environment window (the <code>IDLE</code> <code>Shell</code> window) opens. In this window, from the <code>file</code> menu, create a new file. The Python text editor environment opens and you can enter your statements in it (Figure 2).</p>
+<p>To start coding with Python (after installing the latest version of Python) using the <code>IDLE</code> environment, first open the <code>Start</code> menu, then type <code>IDLE</code> or <code>Python IDLE</code>, and click <code>IDLE</code> (<code>Python 3.x</code>).</p>
+<p>The interactive environment window (the <code>IDLE Shell</code> window) opens. In this window, from the <code>file</code> menu, create a new file. The Python text editor environment opens and you can enter your statements in it (Figure 2).</p>
 <p><img alt="Book image" src="../images/p009-02.png" /></p>
 <p>1</p>
 <p><img alt="Book image" src="../images/p009-03.png" /></p>
@@ -163,23 +161,21 @@
 <p class="page-mark">Page 4</p>
 <p>To get started, enter the code shown in Figure 3 into the Python text editor and save the file with the key combination <code>ctrl</code> + <code>s</code> under the name <code>prog01</code>_<code>hello.py</code> in a folder. When saving, be careful that in addition to the file name, the save path must also be chosen carefully. It is recommended that you create a folder named <code>PyProg</code> in advance on one of the drives <code>D:</code> or <code>E:</code> and save your files in this folder.</p>
 <p>It is better to save file names with a pattern of your choice. For example, the name of the first file that prints the word <code>hello</code> can be as follows:</p>
-<div class="code-wrap" dir="ltr"><pre><code>prog01_hello.py
-</code></pre></div>
-<p>and the second file, which is for working with variables, can be as follows.</p>
-<div class="code-wrap" dir="ltr"><pre><code>prog02_variable
-</code></pre></div>
-<h3 id="note">Note</h3>
+<p><code>prog01_hello.py</code>
+and the second file, which is for working with variables, can be as follows.</p>
+<p><code>prog02_variable</code></p>
+<aside class="callout note"><h3 id="note">Note</h3>
 <p>Never use Persian letters in file and folder names, because you will face many problems later.</p>
 <p>For example, this name is completely wrong: salam <code>.py</code></p>
 <figure class="shot"><img alt="Figure 3" src="../images/p010-01.png" /><figcaption>Figure 3</figcaption></figure>
-<h3 id="note_1">Note</h3>
+</aside><aside class="callout note"><h3 id="note_1">Note</h3>
 <p>Python supports the Persian language; but the letters are shown jumbled. It is better to use English characters in all cases.</p>
-<p>Using the <code>Run</code> menu, choose the <code>Run</code> <code>Module</code> command, or press the <code>F5</code> key, to run the first program you created.</p>
+<p>Using the <code>Run</code> menu, choose the <code>Run Module</code> command, or press the <code>F5</code> key, to run the first program you created.</p>
 <p>On some laptops, to run the program you need to press the key combination <code>Fn+F5</code>. (Figure 4)</p>
 <figure class="shot"><img alt="Figure 4" src="../images/p010-02.png" /><figcaption>Figure 4</figcaption></figure>
-<hr />
+</aside><hr />
 <p class="page-mark">Page 5</p>
-<p>As you can see in Figure 4, the result of running this code is displayed in the <code>IDLE</code> <code>Shell</code> window. You can type simple codes in the <code>IDLE</code> <code>Shell</code> environment and run them by pressing the <code>Enter</code> key (Figure 5). To leave this environment, type <code>exit</code>() or <code>Ctrl+d</code>, or simply close the window by clicking the <code>Close</code> button at the top.</p>
+<p>As you can see in Figure 4, the result of running this code is displayed in the <code>IDLE Shell</code> window. You can type simple codes in the <code>IDLE Shell</code> environment and run them by pressing the <code>Enter</code> key (Figure 5). To leave this environment, type <code>exit()</code> or <code>Ctrl+d</code>, or simply close the window by clicking the <code>Close</code> button at the top.</p>
 <p>The command structure for writing code (<code>syntax</code>) in Python:</p>
 <figure class="shot"><img alt="Figure 5" src="../images/p011-01.png" /><figcaption>Figure 5</figcaption></figure>
 <p>Python was designed for greater readability and has similarities to English. It has also been influenced by mathematical ideas. Unlike many programming languages that use a semicolon (;) and parentheses to end each statement, Python uses new lines to complete and separate statements.</p>
@@ -192,7 +188,7 @@
 <p><img alt="Book image" src="../images/p012-01.png" /></p>
 <figure class="shot"><img alt="Figure 7" src="../images/p012-02.png" /><figcaption>Figure 7</figcaption></figure>
 <p>Statements in Python:</p>
-<p>Every computer program is made up of a set of instructions that must be executed by the computer. In programming languages, these instructions are called a statement or <code>Statement</code>. For example, the following statement prints the text “<code>learning</code> <code>python</code> <code>is</code> <code>fun</code> ” on the screen:</p>
+<p>Every computer program is made up of a set of instructions that must be executed by the computer. In programming languages, these instructions are called a statement or <code>Statement</code>. For example, the following statement prints the text “<code>learning python is fun</code> ” on the screen:</p>
 <div class="code-wrap" dir="ltr"><pre><code>print(“learning python is fun! “)
 </code></pre></div>
 <p>Having several statements in a program: Most Python programs are made up of several statements one after another.</p>
@@ -203,7 +199,7 @@
 <figure class="shot"><img alt="Figure 9" src="../images/p012-04.png" /><figcaption>Figure 9</figcaption></figure>
 <hr />
 <p class="page-mark">Page 7</p>
-<p>In Python, triple quotes <code>Triple</code> <code>Quotes</code> (' ' ') or (" " ") are used to print multi-line text or text that includes quotation marks.</p>
+<p>In Python, triple quotes <code>Triple Quotes</code> (' ' ') or (" " ") are used to print multi-line text or text that includes quotation marks.</p>
 <p><img alt="Book image" src="../images/p013-01.png" /></p>
 <p>If you forget to place the text inside quotation marks, Python raises an error (Figure 10).</p>
 <p><strong>Figure 10</strong></p>
@@ -225,7 +221,7 @@
     <nav class="pager"><a rel="prev" class="prev" href="p1-intro.html"><span class="pager-word" data-fa="قبلی" data-en="Previous">قبلی</span><span class="pager-name" data-fa="معرفی پودمان پایتون" data-en="Introducing the Python module">معرفی پودمان پایتون</span></a><a rel="next" class="next" href="p1-vars.html"><span class="pager-word" data-fa="بعدی" data-en="Next">بعدی</span><span class="pager-name" data-fa="متغیرها، نوع داده و عملگرها" data-en="Variables, types, and operators">متغیرها، نوع داده و عملگرها</span></a></nav>
     </div>
   </div>
-  <script src="../assets/search-index.js?v=4"></script>
-  <script src="../assets/app.js?v=4"></script>
+  <script src="../assets/search-index.js?v=6"></script>
+  <script src="../assets/app.js?v=6"></script>
 </body>
 </html>

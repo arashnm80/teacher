@@ -1,8 +1,6 @@
 **Page 16**
 
-```
-لیست (list):
-```
+(list):
 
 ![Book image](../images/p022-01.png)
 
@@ -10,9 +8,7 @@ Lists are one of the 4 data types in Python that are used to store a collection 
 
 Creating a list: Lists are created using
 
-```
-کروشه‌ها (Square brackets)"[]" ایجاد
-```
+‌ (Square brackets)"[]"
 
 .
 
@@ -20,7 +16,7 @@ Creating a list: Lists are created using
 
 In the code opposite, a list containing a string of fruit names has been created. `fruits` = `["apple"`, `"banana"`, `"cherry"]` The opposite statement stores a list containing the numbers 1, 2, 3, 4, and 5. `numbers` = [1, 2, 3, 4, 5]
 
-List features: `Mixed` `data` A list can hold different kinds of data. In the code below, a list has been created that stores different data types—numeric, string, Boolean, and floating-point, and even another list (Figure 35).
+List features: `Mixed data` A list can hold different kinds of data. In the code below, a list has been created that stores different data types—numeric, string, Boolean, and floating-point, and even another list (Figure 35).
 
 ![Figure 35](../images/p022-02.png)
 
@@ -31,7 +27,6 @@ List features: `Mixed` `data` A list can hold different kinds of data. In the co
 ![Figure 36](../images/p022-03.png)
 
 **Figure 36**
-
 
 ---
 
@@ -71,7 +66,6 @@ b The effect of order on displaying list elements: If the order changes, the ind
 
 **Figure 40**
 
-
 ---
 
 **Page 18**
@@ -94,7 +88,7 @@ d Comparing two lists with different order: In this example, although the elemen
 
 1 Create a list with 5 elements "`headset`, `book`, `mouse`, `phone`, `book`" and display it.
 
-Then replace element number 4 with an element named "`External` `HDD`" and display the result.
+Then replace element number 4 with an element named "`External HDD`" and display the result.
 
 2 Create a list with 4 numeric elements of your choice and then display its first element.
 
@@ -110,24 +104,19 @@ Adding a new element to a list: Using the ()`append` method you can add a new el
 
 **Figure 43**
 
-
 ---
 
 **Page 19**
 
 In Python, to add an element after a specific element in a list, use the ()`insert` method.
 
-```
 list_name. insert (index, value)
-```
 
 ### Note
 
 To hear the correct pronunciation of this word, go to the address below.
 
-```
 https://dictionary.cambridge.org/dictionary/english/insert
-```
 
 Example: Consider the following list of tasks:
 
@@ -155,17 +144,13 @@ In Python there are different methods for removing elements from a list (`list`)
 
 **Figure 45**
 
-
 ---
 
 **Page 20**
 
 1 Removing an element by value: The ()`remove` method is for removing the value of an element from a list. The first element that has the same value is removed.
 
-```
-list_name.remove(value)
-```
-
+`list_name.remove(value)`
 Example 1: This program has used the ()`remove` method to remove the value 12 from the `scores` list (Figure 46).
 
 ![Book image](../images/p026-01.png)
@@ -184,10 +169,7 @@ Example 2: This program has used the ()`remove` method to remove the first value
 
 2 Removing an element by index (`index`): The ()`pop` method is used to remove an element with a specified index.
 
-```
-list_name.pop(index)
-```
-
+`list_name.pop(index)`
 Example: In this program the index with number one, that is the second element of the list, has been removed (Figure 48).
 
 ### Note
@@ -199,7 +181,6 @@ Note that the first member of the list has index zero.
 ![Figure 48](../images/p026-06.png)
 
 **Figure 48**
-
 
 ---
 
@@ -227,10 +208,7 @@ Research what happens if the number -1 is placed inside the `pop` method—which
 
 For example:
 
-```
-(1-)food.pop
-```
-
+`(1-)food.pop`
 ### Try this
 
 The ()`clear` method and the `del` statement are also used for removing list elements. Research how they are used and present them in class.
@@ -244,6 +222,5 @@ A conditional structure lets the program make a decision based on whether a cond
 In this structure, first a condition is checked, and then, if it is true, a set of statements is executed.
 
 **Figure 50**
-
 
 ---

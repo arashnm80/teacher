@@ -1,12 +1,6 @@
 """Build-it exercises. These are not in the printed book."""
 
 PRACTICAL = {
-    "toc": (
-        ["یک صفحه HTML بساز که پنج پودمان را به صورت فهرست نشان بدهد و هر مورد به یک تیتر در همان صفحه پیوند داشته باشد.",
-         "در پایتون برنامه‌ای بنویس که نام پنج پودمان را چاپ کند و از کاربر بپرسد شماره پودمان این هفته چند است، بعد فقط همان نام را دوباره چاپ کند."],
-        ["Build an HTML page that lists the five modules, each linking to a heading on the same page.",
-         "Write a Python program that prints the five module names, asks which number you will study this week, and prints only that name again."],
-    ),
     "p1-intro": (
         ["برنامه‌ای بساز که نام، پایه و یک جمله خوشامد را در سه خط چاپ کند و آن را در فایل welcome.py ذخیره و اجرا کن.",
          "خروجی همان برنامه را طوری عوض کن که اگر نام خالی وارد شد، به جای آن «هنرجو» چاپ شود."],

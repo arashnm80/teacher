@@ -10,7 +10,7 @@ Home page (`index.html`) Products page (`products.html`) Shopping cart page (`ca
 
 The first step in designing these pages is creating the initial structure of the pages and placing the page elements inside them. This section introduces how to insert elements into web pages.
 
-Marking up elements in an `HTML` document: `HTML` stands for `Hypertext` `Markup` `Language`, meaning hypertext markup language. `HTML` is not a programming language; rather, it is a markup language for creating and structuring various elements on web pages. Laying out different parts of the page such as the header, menu, main content area, sidebar, and footer is done by `HTML`.
+Marking up elements in an `HTML` document: `HTML` stands for `Hypertext Markup Language`, meaning hypertext markup language. `HTML` is not a programming language; rather, it is a markup language for creating and structuring various elements on web pages. Laying out different parts of the page such as the header, menu, main content area, sidebar, and footer is done by `HTML`.
 
 ![Book image](../images/p099-02.png)
 
@@ -23,7 +23,6 @@ In addition, various elements such as text, image, video, audio, and so on are i
 Introducing the tag (`Tag`): A web page includes various elements such as headings, paragraphs, links, images, lists, and so on. Each of the elements on web pages is created by tags defined in the `HTML` markup language. `HTML` tags can be used in various subjects.
 
 **Figure 5**
-
 
 ---
 
@@ -70,13 +69,14 @@ To create a web page, a standard structure must be used; otherwise various probl
 ```
 <head>
 <meta charset="UTF-8">
-</title> عنوان صفحه <title>
+```
+</title> <title>
+```
 </head>
 <body>
 </body>
 </html>
 ```
-
 
 ---
 
@@ -86,7 +86,7 @@ The `<!DOCTYPE html>` tag: At the beginning of a web page the `<!DOCTYPE
 
 ![Book image](../images/p101-01.png)
 
-html>` tag is used. This tag announces to browsers and search engines that this document is of type `html5`.
+html>`tag is used. This tag announces to browsers and search engines that this document is of type`html5`.
 
 **Figure 6**
 
@@ -122,7 +122,6 @@ All display elements such as text, images, videos, and so on are placed in this 
 
 **Figure 8**
 
-
 ---
 
 **Page 96**
@@ -135,11 +134,11 @@ Creating a simple web page
 
 Among the capabilities of the `VScode` program one can mention colored display of code, automatic code completion, the possibility of quickly running program code, and adding various extensions.
 
-Creating an `HTML` file For the set of exercises create a folder named `Web` in the `Document` path or on one of the drives so that the `HTML` files are stored inside that folder. In the `VScode` program from the `file` menu choose the `Open` `folder` option and then select the `Web` folder so that while you work on the project the folder contents are visible and accessible on the left side of the window.
+Creating an `HTML` file For the set of exercises create a folder named `Web` in the `Document` path or on one of the drives so that the `HTML` files are stored inside that folder. In the `VScode` program from the `file` menu choose the `Open folder` option and then select the `Web` folder so that while you work on the project the folder contents are visible and accessible on the left side of the window.
 
 ![Book image](../images/p102-01.png)
 
-Then click the `New` `file` button, type the file name according to the image above in the text box, and press the `Enter` key so that the file is created.
+Then click the `New file` button, type the file name according to the image above in the text box, and press the `Enter` key so that the file is created.
 
 Write the initial `HTML` code together with a simple text according to the image below and save it by pressing the `Ctrl+S` keys.
 
@@ -151,18 +150,17 @@ First method: To see the output of the code, press the `Win+E` keys and open the
 
 Computer accessories store
 
-
 ---
 
 **Page 97**
 
-Second method: To see the output, use the `Go` `Live` capability in the `VScode` program; in this mode, viewing the output does not require refreshing the page. To use the `Go` `Live` capability you need to install the `Live` `Server` extension in the `Vscode` program.
+Second method: To see the output, use the `Go Live` capability in the `VScode` program; in this mode, viewing the output does not require refreshing the page. To use the `Go Live` capability you need to install the `Live Server` extension in the `Vscode` program.
 
-For this purpose click the `Extensions` button on the left side of the program window and then search for and install the `live` `server` extension.
+For this purpose click the `Extensions` button on the left side of the program window and then search for and install the `live server` extension.
 
 ![Book image](../images/p103-01.png)
 
-After installing the extension, to see the program output it is enough to click the `Go` `live` button at the bottom of the window.
+After installing the extension, to see the program output it is enough to click the `Go live` button at the bottom of the window.
 
 ![Book image](../images/p103-02.png)
 
@@ -175,6 +173,5 @@ In this way the browser page appears as follows:
 Output
 
 After making any new change in the page code, save the file with the `Ctrl+S` keys, then go to the browser page with the `Alt+Tab` key combination. The new output appears without needing a refresh.
-
 
 ---

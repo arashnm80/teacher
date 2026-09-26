@@ -30,7 +30,6 @@ These items are placed next to each other in several columns using the grid mode
 
 ![Book image](../images/p145-01.png)
 
-
 ---
 
 **Page 140**
@@ -43,20 +42,15 @@ These items are placed next to each other in several columns using the grid mode
 
 5 Gradually add element styles to the page and view the result in the browser.
 
-```
-ویژگی display: grid عنصر services-grid را
-```
+display: grid services-grid
 
 turns it into a grid container. As a result, all of its direct children (`service-item`) become grid items and can be distributed in rows and columns.
 
-```
-ویژگی grid-template-columns با پنج
-```
+grid-template-columns
 
 `auto` values creates five columns whose width depends on the content of each column. With this property the logo images appear in five columns.
 
 The `gap:20px` property sets the spacing between columns to 20 pixels.
-
 
 ---
 
@@ -87,6 +81,5 @@ Set the image style like the code opposite.
 This button image will be shown in the bottom-right corner of the page.
 
 ![Book image](../images/p147-04.png)
-
 
 ---

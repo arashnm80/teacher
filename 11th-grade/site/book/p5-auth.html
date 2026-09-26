@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title data-fa="ورود و خروج" data-en="Sign-in and sign-out">ورود و خروج</title>
   <link rel="icon" href="../assets/favicon.svg">
-  <link rel="stylesheet" href="../assets/style.css?v=4">
+  <link rel="stylesheet" href="../assets/style.css?v=6">
 </head>
 <body data-root="../">
   <header class="top">
@@ -62,18 +62,18 @@
 <p>خط 7: یک <code>path</code> جدید اضافه شده است و در ادامه منجر به این خواهد شد که <code>App</code> مدیریت کاربران جنگو (<code>auth</code>) به کمک <code>urls</code> و <code>views</code> پیش‌فرض، فایل <code>login.html</code> را نمایش دهد. برای مدیریت احراز هویت کاربر در پروژه جنگو، از ماژول <code>django.contrib.auth</code> استفاده شده است.</p>
 <p>با اضافه‌کردن این خط کد به فایل <code>urls.py</code>، امکان ورود، خروج و تغییر رمز عبور به سایت اضافه می‌شود.</p>
 <p>همه این قابلیت‌ها توسط ماژول <code>django.contrib.auth</code> مدیریت می‌شوند و نیازی به تعریف دستی <code>path</code> دیگری ندارید.</p>
-<p>مرحله دوم: در پوشه <code>templates</code> از <code>weather</code> <code>app</code>، یک‌پوشه جدید با نام <code>registration</code> ایجاد کنید، سپس درون آن یک فایل با نام <code>login.html</code> همانند شکل 59 بسازید.</p>
+<p>مرحله دوم: در پوشه <code>templates</code> از <code>weather app</code>، یک‌پوشه جدید با نام <code>registration</code> ایجاد کنید، سپس درون آن یک فایل با نام <code>login.html</code> همانند شکل 59 بسازید.</p>
 <p><img alt="شکل 59 افزودن فایل login.html" src="../images/p321-01.png" /></p>
 <p>شکل 59 افزودن فایل <code>login.html</code></p>
 <h3 id="_4">توضیحات کدها:</h3>
 <p>خط 10: یک فرم با متدی از نوع <code>post</code> ایجاد شده است.</p>
 <p>خط 11: فیلد <code>csrf_token</code> به فرم اضافه شده است. <code>csrf_token</code> در جنگو یک مقدار امنیتی است که داخل فرم‌ها قرار می‌گیرد تا مطمئن شود درخواست ارسال‌شده واقعًا از همان سایت و توسط کاربر مجاز آمده است.</p>
-<p>این توکن از حملۀ <code>Cross-Site</code> <code>Request</code> <code>Forgery</code> جلوگیری می‌کند.</p>
+<p>این توکن از حملۀ <code>Cross-Site Request Forgery</code> جلوگیری می‌کند.</p>
 <p>خط 12: فیلدهای فرم را به‌صورت تگ‌های<code>&lt;p&gt;</code> در <code>HTML</code> نمایش می‌دهد.</p>
 <p>خط 13: یک دکمه از نوع <code>submit</code> برای ارسال اطلاعات به سرور جنگو اضافه شده است.</p>
-<h3 id="_5">کنجکاوی</h3>
-<p>در مورد <code>csrf_token</code> و حمله <code>Cross-Site</code> <code>Request</code> <code>Forgery</code> تحقیق و بررسی کنید.</p>
-<hr />
+<aside class="callout curiosity"><h3 id="_5">کنجکاوی</h3>
+<p>در مورد <code>csrf_token</code> و حمله <code>Cross-Site Request Forgery</code> تحقیق و بررسی کنید.</p>
+</aside><hr />
 <p class="page-mark">صفحه ۳۱۶</p>
 <p>مرحله سوم: در فایل <code>settings.py</code>، تنظیمات لازم را برای بعد از اتمام عملیات <code>login</code> و <code>logout</code> همانند شکل60 انجام دهید.</p>
 <p><img alt="شکل 60 تنظیمات login و logout در settings.py" src="../images/p322-01.png" /></p>
@@ -121,8 +121,7 @@
 <p>خط 7: لیست فیلدهایی که می‌خواهید نمایش داده شود، تعیین شده است.</p>
 <p>مرحله دوم: فایل <code>add_city.html</code> را همانند شکل 65 ایجاد کنید.</p>
 <p><img alt="شکل 65 افزودن add_city.html" src="../images/p325-01.png" /></p>
-<div class="code-wrap" dir="ltr"><pre><code>شکل 65 افزودن add_city.html
-</code></pre></div>
+<p>شکل 65 افزودن <bdi dir="ltr">add_city.html</bdi></p>
 <h3 id="_9">توضیحات کدها:</h3>
 <p>یک فرم با متد از نوع <code>post</code> ایجاد شده است. این فرم طول و عرض جغرافیایی و همچنین نام شهر را از کاربر گرفته و برای سرور جنگو ارسال می‌کند تا در دیتابیس ذخیره شود.</p>
 <hr /></article><article class="lesson" lang="en" dir="ltr" data-lang-block="en" hidden><p class="page-mark">Page 313</p>
@@ -158,18 +157,18 @@
 <p>Line 7: A new <code>path</code> has been added, and as a result Django’s user-management <code>App</code> (<code>auth</code>) will display the <code>login.html</code> file with the help of the default <code>urls</code> and <code>views</code>. To manage user authentication in a Django project, the <code>django.contrib.auth</code> module is used.</p>
 <p>By adding this line of code to the <code>urls.py</code> file, the ability to log in, log out, and change the password on the site is added.</p>
 <p>All of these features are managed by the <code>django.contrib.auth</code> module, and you do not need to define another <code>path</code> by hand.</p>
-<p>Stage two: In the <code>templates</code> folder of the <code>weather</code> <code>app</code>, create a new folder named <code>registration</code>, then inside it create a file named <code>login.html</code> as in Figure 59.</p>
+<p>Stage two: In the <code>templates</code> folder of the <code>weather app</code>, create a new folder named <code>registration</code>, then inside it create a file named <code>login.html</code> as in Figure 59.</p>
 <p><img alt="Figure 59 adding the login.html file" src="../images/p321-01.png" /></p>
 <p>Figure 59 adding the <code>login.html</code> file</p>
 <h3 id="code-notes_3">Code notes:</h3>
 <p>Line 10: A form with a method of type <code>post</code> has been created.</p>
 <p>Line 11: The <code>csrf_token</code> field has been added to the form. In Django, <code>csrf_token</code> is a security value that is placed inside forms so that it can be sure the submitted request really came from the same site and from an authorized user.</p>
-<p>This token prevents a <code>Cross-Site</code> <code>Request</code> <code>Forgery</code> attack.</p>
+<p>This token prevents a <code>Cross-Site Request Forgery</code> attack.</p>
 <p>Line 12: It displays the form fields as <code>&lt;p&gt;</code> tags in <code>HTML</code>.</p>
 <p>Line 13: A button of type <code>submit</code> has been added to send the information to the Django server.</p>
-<h3 id="try-this">Try this</h3>
-<p>Research and study <code>csrf_token</code> and the <code>Cross-Site</code> <code>Request</code> <code>Forgery</code> attack.</p>
-<hr />
+<aside class="callout curiosity"><h3 id="try-this">Try this</h3>
+<p>Research and study <code>csrf_token</code> and the <code>Cross-Site Request Forgery</code> attack.</p>
+</aside><hr />
 <p class="page-mark">Page 316</p>
 <p>Stage three: In the <code>settings.py</code> file, make the needed settings for after the <code>login</code> and <code>logout</code> operations finish, as in Figure 60.</p>
 <p><img alt="Figure 60 login and logout settings in settings.py" src="../images/p322-01.png" /></p>
@@ -217,8 +216,7 @@
 <p>Line 7: The list of fields you want to display has been set.</p>
 <p>Stage two: Create the <code>add_city.html</code> file as in Figure 65.</p>
 <p><img alt="Figure 65 adding add_city.html" src="../images/p325-01.png" /></p>
-<div class="code-wrap" dir="ltr"><pre><code>شکل 65 افزودن add_city.html
-</code></pre></div>
+<p>65 add_city.html</p>
 <h3 id="code-notes_7">Code notes:</h3>
 <p>A form with a method of type <code>post</code> has been created. This form takes the latitude and longitude as well as the city name from the user and sends them to the Django server to be stored in the database.</p>
 <hr /></article>
@@ -231,7 +229,7 @@
     <nav class="pager"><a rel="prev" class="prev" href="p5-list.html"><span class="pager-word" data-fa="قبلی" data-en="Previous">قبلی</span><span class="pager-name" data-fa="خواندن شهرها و نمایش فهرست" data-en="Reading cities and showing the list">خواندن شهرها و نمایش فهرست</span></a><a rel="next" class="next" href="p5-crud.html"><span class="pager-word" data-fa="بعدی" data-en="Next">بعدی</span><span class="pager-name" data-fa="افزودن و حذف شهر" data-en="Adding and deleting a city">افزودن و حذف شهر</span></a></nav>
     </div>
   </div>
-  <script src="../assets/search-index.js?v=4"></script>
-  <script src="../assets/app.js?v=4"></script>
+  <script src="../assets/search-index.js?v=6"></script>
+  <script src="../assets/app.js?v=6"></script>
 </body>
 </html>

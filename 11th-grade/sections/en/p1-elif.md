@@ -28,7 +28,6 @@ Example: In this program the operator > is used to check the age limit under 18 
 
 **Figure 62**
 
-
 ---
 
 **Page 28**
@@ -47,18 +46,13 @@ Run the program and check the result with different data (Figure 64).
 
 **Figure 64**
 
-Example: In this program the condition for entering the second stage of the contest is a minimum age of 18 and a minimum score of 70. The program is written with the comparison operators >= meaning greater than or equal and the logical operator `and` meaning "and". The result of the operator `and` is `True` when both expressions
-
-and
-
-both
+Example: In this program the condition for entering the second stage of the contest is a minimum age of 18 and a minimum score of 70. The program is written with the comparison operators >= meaning greater than or equal and the logical operator `and` meaning "and". The result of the operator `and` is `True` when both expressions and both
 
 are `True`. Run the program and check the result with different data (Figure 65).
 
 ![Figure 65](../images/p034-03.png)
 
 **Figure 65**
-
 
 ---
 
@@ -76,24 +70,22 @@ Write a program that receives the user's age and country name and, if the age is
 
 Third type of the conditional structure `if` – `elif`– `else`:
 
-This structure is used when there are several different conditions and the program must choose one of them. `elif` checks a new condition if the previous conditions were not met; that is, if one of the `if` or `elif` conditions is met and its statement is executed, the other `elif` conditions will not be checked. `elif` is short for `else` `if` and is used to check later conditions. The difference between `else` and `elif` is that after `else` no condition is written.
+This structure is used when there are several different conditions and the program must choose one of them. `elif` checks a new condition if the previous conditions were not met; that is, if one of the `if` or `elif` conditions is met and its statement is executed, the other `elif` conditions will not be checked. `elif` is short for `else if` and is used to check later conditions. The difference between `else` and `elif` is that after `else` no condition is written.
 
 Overall structure of `if` – `elif` – `else:`
 
 ```
 :if condition1
-statements1
-:elif condition2
-statements2
 ```
+statements1
+```
+:elif condition2
+```
+statements2
 
 `:else`
 
-```
-statements_else
-```
-
-
+`statements_else`
 ---
 
 **Page 30**
@@ -108,7 +100,7 @@ Write the program, run it, and check the result with different data (Figure 67).
 
 Example: Write a program that, after receiving the type of food and drink from the user, checks the following:
 
-If pizza and a drink are selected → price 140000 If pizza without a drink → price 120000 otherwise → print the message «`Other` `option`». In this example the logical operator `and` is used in the condition. Write and run the program (Figure 68).
+If pizza and a drink are selected → price 140000 If pizza without a drink → price 120000 otherwise → print the message «`Other option`». In this example the logical operator `and` is used in the condition. Write and run the program (Figure 68).
 
 ![Figure 68](../images/p036-02.png)
 
@@ -126,7 +118,6 @@ Output
 
 **Figure 69**
 
-
 ---
 
 **Page 31**
@@ -135,28 +126,25 @@ The advantage of using the `if-elif-else` structure instead of several separate 
 
 ### Activity
 
-The seller has put a discount on apple fruit for buyers. Write a program that gets the fruit name and the purchase quantity from the user: if the fruit is `apple` and the quantity is at least 5, display the message `"Discount` `applied"`.
+The seller has put a discount on apple fruit for buyers. Write a program that gets the fruit name and the purchase quantity from the user: if the fruit is `apple` and the quantity is at least 5, display the message `"Discount applied"`.
 
-Otherwise display the message `"No` `discount"`.
+Otherwise display the message `"No discount"`.
 
 ### Activity
 
 Write a program in which the user enters their age. The program must check the following:
 
-If the user's age is between 18 and 25 years, display the message `"Welcome`, `young` `adult"`.
+If the user's age is between 18 and 25 years, display the message `"Welcome`, `young adult"`.
 
 If the user's age is greater than or equal to 26, display the message `"Welcome`, `adult"`.
 
-If the user's age is less than 18, display the message `"You` `are` `underage"`.
+If the user's age is less than 18, display the message `"You are underage"`.
 
 ### Activity
 
-Write a program that uses the `if` , `elif` statements by receiving the order status from the seller and, based on the order status (`Delivered` `/Sent` `/Registered`) in an online store, announces how the product is shipped with appropriate messages:
+Write a program that uses the `if` , `elif` statements by receiving the order status from the seller and, based on the order status (`Delivered/Sent/Registered`) in an online store, announces how the product is shipped with appropriate messages:
 
-```
-Your order has been successfully delivered - Your order is on the way - Your order
-.is being processed - Status unknown
-```
+Your order has been successfully delivered - Your order is on the way - Your order. is being processed - Status unknown
 
 ### Activity
 
@@ -164,22 +152,16 @@ Write a program that receives a student's score as an integer between 1 and 100.
 
 If score ≥ 90 → message `"exelent"` If score between 69 and 90 → message `"good"` If score between 50 and 69 → message `"pass"` If score < 50 → display the message `"fail"`.
 
-Example: Write a program that if the value of `choice` is one of the options below, prints an appropriate message and otherwise displays the message `Food` `not` `available` (Figure 70).
+Example: Write a program that if the value of `choice` is one of the options below, prints an appropriate message and otherwise displays the message `Food not available` (Figure 70).
 
 a) The food menu includes the two options below:
 
 ![Book image](../images/p037-01.png)
 
-`Pizza`
-
-```
-burger
-```
-
+`Pizza`, `burger`
 ![Figure 70](../images/p037-02.png)
 
 **Figure 70**
-
 
 ---
 
@@ -187,14 +169,7 @@ burger
 
 b) Extend the program so that if the food menu includes the three options below: (Figure 71)
 
-`pizza`
-
-```
-burger
-```
-
-`pasta`
-
+`pizza`, `burger`, `pasta`
 ![Book image](../images/p038-01.png)
 
 ![Figure 71](../images/p038-02.png)
@@ -212,6 +187,5 @@ When coding, if a statement or a set of statements needs to be executed several 
 For example, if you need to write a program that prints the word `python` 10 times, instead of writing the statement print('python') ten times separately, you can put this statement only once inside a loop so that its execution is automatically repeated ten times.
 
 **Figure 72**
-
 
 ---

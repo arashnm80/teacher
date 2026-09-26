@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title data-fa="نوار ناوبری و جزئیات محصول" data-en="Navbar and product details">نوار ناوبری و جزئیات محصول</title>
   <link rel="icon" href="../assets/favicon.svg">
-  <link rel="stylesheet" href="../assets/style.css?v=4">
+  <link rel="stylesheet" href="../assets/style.css?v=6">
 </head>
 <body data-root="../">
   <header class="top">
@@ -36,8 +36,8 @@
 <p>عملکرد صحیح نوار ناوبری نیازمند فایل <code>bootstrap.bundle.min.js</code> است. اگر این فایل در بخش <code>&lt;head&gt;</code> یا قبل از <code>&lt;body/&gt;</code> موجود نیست، آن را مطابق توضیحات استفاده از <code>CDN</code> در صفحه وب به صفحه اضافه کنید و گرنه با کلیک روی دکمه همبرگری (☰)، محتوای آن نمایش داده نخواهد شد.</p>
 <p>کدهای شکل زیر را جایگزین عنصر <code>top-menu</code> نمایید:</p>
 <p><img alt="تصویر کتاب" src="../images/p179-01.png" /></p>
-<p>کد بالا شامل دو عنصر «دکمه» و «ناحیه قابل جمع شدن» است. برای ایجاد دکمه از برچسب <code>&lt;button&gt;</code> استفاده شده است. درون این برچسب یک عنصر <code>&lt;span&gt;</code> با کلاس <code>-navbar-toggler</code> <code>icon</code> قرار دارد که موجب نمایش یک آیکن سه خطی می‌گردد.</p>
-<p>محتوای لیست درون یک عنصر نگهدارنده با شناسه <code>navbar</code> <code>Collapse</code> قرار گرفته است. انتظار می‌رود که با کلیک روی دکمه منو، ناحیه حاوی لیست باز شود. بدین منظور از ویژگی <code>data-bs-target</code> با مقدار <code>navbarCollapse#</code> استفاده شده است.</p>
+<p>کد بالا شامل دو عنصر «دکمه» و «ناحیه قابل جمع شدن» است. برای ایجاد دکمه از برچسب <code>&lt;button&gt;</code> استفاده شده است. درون این برچسب یک عنصر <code>&lt;span&gt;</code> با کلاس <code>-navbar-toggler icon</code> قرار دارد که موجب نمایش یک آیکن سه خطی می‌گردد.</p>
+<p>محتوای لیست درون یک عنصر نگهدارنده با شناسه <code>navbar Collapse</code> قرار گرفته است. انتظار می‌رود که با کلیک روی دکمه منو، ناحیه حاوی لیست باز شود. بدین منظور از ویژگی <code>data-bs-target</code> با مقدار <code>navbarCollapse#</code> استفاده شده است.</p>
 <p><code>"data-bs-target="#navbarCollapse</code> شناسه (<code>ID</code>) منویی را مشخص می‌کند که باید باز یا بسته شود.</p>
 <p>ویژگی <code>"data-bs-toggle="collapse</code> باعث می‌شود که با کلیک روی دکمه، عمل باز و بسته شدن منو انجام شود.</p>
 <p>رنگ نوار ناوبری توسط <code>bg-primary</code> تعیین شده است در صورت تمایل می‌توانید از سایر کلاس‌های رنگ زمینه استفاده نمایید.</p>
@@ -50,12 +50,12 @@
 <p>فایل را ذخیره کنید و نتیجه را در مرورگر بررسی کنید.</p>
 <p>کلاس <code>navbar-expand-lg</code> باعث می‌شود که نوار منو در پهنای بالاتر از 992 پیکسل به‌صورت افقی ظاهر گردد. پارامتر <code>lg</code> را به <code>md</code> تبدیل کنید و نتیجه تغییر را بررسی کنید.</p>
 <p>در سایت‌های فروشگاهی، منوی ناوبری در نمای موبایل و تبلت پنهان می‌شود، کلاس‌های <code>d-none</code> و <code>d-md-block</code> را به عنصر <code>nav</code> اضافه کنید و نتیجه را در نمای موبایل و تبلت بررسی کنید.</p>
-<h3 id="_2">کنجکاوی</h3>
+<aside class="callout curiosity"><h3 id="_2">کنجکاوی</h3>
 <p>کلاس <code>active</code> که فقط روی گزینه اول اعمال شده است چه تأثیری در ظاهر گزینه دارد؟</p>
 <p>گزینه اول اغلب سایت‌های فروشگاهی «دسته‌بندی محصولات» است که حاوی لیستی از طبقه‌بندی محصولات می‌باشد. برای ایجاد این گزینه، کد شکل زیر را قبل از اولین عنصر لیست فوق (باشگاه مشتریان) اضافه کنید:</p>
 <p><img alt="تصویر کتاب" src="../images/p180-02.png" /></p>
 <p><code>nav-item:</code> برای هر یک از گزینه‌های منو به‌کار می‌رود.</p>
-<hr />
+</aside><hr />
 <p class="page-mark">صفحه ۱۷۵</p>
 <p><code>dropdown:</code> این کلاس برای عنصر حاوی زیرمنو به‌کار می‌رود.</p>
 <p><code>nav-link:</code> برای استایل‌دهی به لینک‌های نوار ناوبری (<code>Navbar</code>) استفاده می‌شود و لینک را مطابق استایل <code>Navbar</code> نمایش می‌دهد.</p>
@@ -69,14 +69,14 @@
 <p><img alt="تصویر کتاب" src="../images/p181-01.png" /></p>
 <p>همان‌طور‌که گفته شد، کلاس <code>dropdown-toggle</code> باعث نمایش فلش رو به پایین می‌شود. در صورت تمایل می‌توانید آن را حذف کنید، اما لازم است که با افزودن استایل زیر، نمایش زیرمنو را در حالت <code>hover</code> فعال کنید:</p>
 <p><img alt="تصویر کتاب" src="../images/p181-02.png" /></p>
-<h3 id="_3">نکته</h3>
+<aside class="callout note"><h3 id="_3">نکته</h3>
 <p>با توجه به اینکه رویداد <code>hover</code> در نمای موبایل اتفاق نمی‌افتد، پس این کد فقط در نمای دسکتاپ عمل می‌کند.</p>
 <p>دکمه‌ها دکمه یکی از عناصر تعاملی صفحه است که امکان انجام یک عملیات را با کلیک کاربر فراهم می‌کند. ایجاد دکمه در صفحه وب از طریق سه برچسب زیر امکان پذیر است:</p>
 <div class="code-wrap" dir="ltr"><pre><code>button&lt; 1&gt;
 input&lt; 2&gt;
 </code></pre></div>
 <p><code>a&lt;</code> 3&gt;</p>
-<hr />
+</aside><hr />
 <p class="page-mark">صفحه ۱۷۶</p>
 <p>در بوت‌استرپ، کلاس‌های مختلفی برای استایل‌دهی به دکمه‌ها وجود دارد. این کلاس‌ها به شما امکان می‌دهند تا ظاهر دکمه‌ها را از نظر رنگ، اندازه، و سایر ویژگی‌ها سفارشی کنید. برای تعیین ظاهر دکمه توسط کلاس‌های بوت‌استرپ، استفاده از کلاس <code>btn</code> ضروری است. برای انتخاب رنگ و اندازه دکمه می‌توان کلاس‌های دیگر مربوط به دکمه را نیز به کلاس <code>btn</code> اضافه نمود.</p>
 <p>این کلاس به‌صورت خلاصه در جدول ١١ آمده است:</p>
@@ -84,36 +84,29 @@ input&lt; 2&gt;
 <p>نوع کلاس</p>
 <p>نام کلاس‌ها</p>
 <p>رنگ</p>
-<div class="code-wrap" dir="ltr"><pre><code>btn-primary، btn-secondary، btn-danger، btn-light، btn-dark، btn-link و...
-</code></pre></div>
+<p><bdi dir="ltr">btn-primary</bdi>، <bdi dir="ltr">btn-secondary</bdi>، <bdi dir="ltr">btn-danger</bdi>، <bdi dir="ltr">btn-light</bdi>، <bdi dir="ltr">btn-dark</bdi>، <bdi dir="ltr">btn-link</bdi> و...</p>
 <p>خط دور دکمه‌ها</p>
-<div class="code-wrap" dir="ltr"><pre><code>btn-outline-primary، btn-outline-secondary و....
-</code></pre></div>
+<p><bdi dir="ltr">btn-outline-primary</bdi>، <bdi dir="ltr">btn-outline-secondary</bdi> و....</p>
 <p>اندازه دکمه‌ها<code>btn-sm</code>، <code>btn-lg</code> وضعیت غیر‌فعال<code>disabled</code></p>
 <h3 id="_4">مثال</h3>
 <p>در مثال زیر شش دکمه با برچسب‌ها و کلاس‌های مختلف ایجاد شده است:</p>
 <p><img alt="تصویر کتاب" src="../images/p182-01.png" /></p>
 <p><img alt="تصویر کتاب" src="../images/p182-02.png" /></p>
 <h3 id="_5">بیشتر بدانید</h3>
-<p>طرح‌بندی صفحه اختصاصی محصول در این کارگاه، صفحه نمایش اطلاعات محصول را در سه ستون حاوی تصویر محصول، ویژگی‌های محصول و قیمت محصول طراحی خواهید کرد. در این صفحه بخش <code>header</code> و <code>footer</code> مشابه فایل <code>index.html</code> است، فقط در بخش <code>main</code> دارای محتوای متفاوت است. جهت سرعت گرفتن کار طراحی، یک کپی از فایل <code>index.html</code> ایجاد کنید. برای این کار فایل <code>index.html</code> را در ویرایشگر متنی باز کنید. از منوی <code>File</code> گزینه <code>Save</code> <code>As</code> را انتخاب کنید و سپس عبارت <code>product-details.html</code> را به‌عنوان نام صفحه بنویسید.</p>
+<p>طرح‌بندی صفحه اختصاصی محصول در این کارگاه، صفحه نمایش اطلاعات محصول را در سه ستون حاوی تصویر محصول، ویژگی‌های محصول و قیمت محصول طراحی خواهید کرد. در این صفحه بخش <code>header</code> و <code>footer</code> مشابه فایل <code>index.html</code> است، فقط در بخش <code>main</code> دارای محتوای متفاوت است. جهت سرعت گرفتن کار طراحی، یک کپی از فایل <code>index.html</code> ایجاد کنید. برای این کار فایل <code>index.html</code> را در ویرایشگر متنی باز کنید. از منوی <code>File</code> گزینه <code>Save As</code> را انتخاب کنید و سپس عبارت <code>product-details.html</code> را به‌عنوان نام صفحه بنویسید.</p>
 <hr />
 <p class="page-mark">صفحه ۱۷۷</p>
 <p>محتوای برچسب <code>&lt;main&gt;</code> را به‌طور کامل پاک کنید. فایل را ذخیره کنید و صفحه <code>product-details</code> را در مرور‌گر به نمایش بگذارید تا از درستی عملکرد خود اطمینان حاصل کنید. در این مرحله صفحه <code>product-details</code> باید حاوی نوار بنر بالای صفحه، نوار لوگو، نوار ناوبری و فوتر باشد.</p>
 <p>کد شکل زیر را برای طر‌حبندی صفحۀ محصول درون برچسب <code>&lt;main&gt;</code> بنویسید:</p>
 <p><img alt="تصویر کتاب" src="../images/p183-01.png" /></p>
-<p>در این طرح‌بندی از سیستم <code>Grid</code> استفاده شده است. سهم ستون‌ها در دستگاه‌های 992 پیکسل و</p>
-<p>__4 ، 12</p>
-<p>__5</p>
-<p>__3 است. در پهنای 768 تا 992 پیکسل سهم هر ستون برابر 12</p>
-<p>__4 است و در</p>
-<p>بزرگ‌تر برابر 12</p>
-<p>و 12</p>
+<p>در این طرح‌بندی از سیستم <code>Grid</code> استفاده شده است. سهم ستون‌ها در دستگاه‌های 992 پیکسل و __4 ، 12 __5</p>
+<p>__3 است. در پهنای 768 تا 992 پیکسل سهم هر ستون برابر 12 __4 است و در بزرگ‌تر برابر 12 و 12</p>
 <p>دستگاه‌های کوچک‌تر محتوای ستون‌ها روی هم قرار می‌گیرند.</p>
 <p>پهنای عنصر <code>product-information</code> را به شکل زیر در فایل <code>styles.css</code> تعریف کنید:</p>
 <p><img alt="تصویر کتاب" src="../images/p183-02.png" /></p>
 <p>تصویر کتاب «دانش فنی پایه» را به شکل زیر به ستون اول اضافه کنید:</p>
 <p><img alt="تصویر کتاب" src="../images/p183-03.png" /></p>
-<p>برای اینکه تصویر محصول در تمام دستگاه‌ها در وسط ستون قرار گیرد، کلاس‌های <code>d-flex</code>، <code>-justify</code> <code>content-center</code> و <code>align-items-center</code> را به ستون اول، بعد از کلاس <code>col-lg-4</code> اضافه کنید:</p>
+<p>برای اینکه تصویر محصول در تمام دستگاه‌ها در وسط ستون قرار گیرد، کلاس‌های <code>d-flex</code>، <code>-justify content-center</code> و <code>align-items-center</code> را به ستون اول، بعد از کلاس <code>col-lg-4</code> اضافه کنید:</p>
 <p><img alt="تصویر کتاب" src="../images/p183-04.png" /></p>
 <p>برای اینکه اندازۀ تصویر در دستگاه‌های کوچک‌تر از 768 پیکسل کنترل شود، استایل زیر را به فایل <code>styles.css</code> اضافه کنید:</p>
 <p><img alt="تصویر کتاب" src="../images/p183-05.png" /></p>
@@ -134,10 +127,10 @@ input&lt; 2&gt;
 <p><img alt="تصویر کتاب" src="../images/p185-01.png" /></p>
 <p>انتظار می‌رود که نتیجۀ کار در دستگاه‌های 992 پیکسل و بزرگ‌تر به شکل زیر باشد:</p>
 <p><img alt="تصویر کتاب" src="../images/p185-02.png" /></p>
-<h3 id="_6">فعالیت</h3>
+<aside class="callout activity"><h3 id="_6">فعالیت</h3>
 <p>در فایل <code>index.html</code> محصول «دانش فنی پایه» را به صفحۀ <code>product-details.html</code> پیوند دهید.</p>
 <p>فرم‌ها فرم‌های ورود اطلاعات، ابزارهایی برای تعامل کاربر با صفحه و جمع‌آوری اطلاعات هستند. ظاهر فرم‌های ورود، نقشی حیاتی در تجربۀ کاربری و موفقیت یک وب‌سایت دارد. فرم‌های جذاب و کاربرپسند، باعث افزایش تعامل کاربران و ایجاد حس اعتماد و رضایت می‌شوند. در مقابل، فرم‌های نامرتب و گیج‌کننده می‌توانند منجر به سردرگمی کاربران، افزایش نرخ خروج از صفحه و در نهایت کاهش اعتبار وب‌سایت شوند.</p>
-<hr /></article><article class="lesson" lang="en" dir="ltr" data-lang-block="en" hidden><p class="page-mark">Page 173</p>
+</aside><hr /></article><article class="lesson" lang="en" dir="ltr" data-lang-block="en" hidden><p class="page-mark">Page 173</p>
 <p>Designing the navigation bar</p>
 <h3 id="workshop">Workshop</h3>
 <p>In this workshop you will add a Bootstrap navigation bar with a collapse feature to the <code>index.html</code> page. Before you do this, delete the code related to <code>top-menu</code>, or place it completely inside &lt;-- --!&gt; marks so the browser does not interpret its content.</p>
@@ -158,12 +151,12 @@ input&lt; 2&gt;
 <p>Save the file and check the result in the browser.</p>
 <p>The <code>navbar-expand-lg</code> class makes the menu bar appear horizontally at widths above 992 pixels. Change the <code>lg</code> parameter to <code>md</code> and check the result of the change.</p>
 <p>On shopping sites, the navigation menu is hidden in the mobile and tablet views. Add the <code>d-none</code> and <code>d-md-block</code> classes to the <code>nav</code> element and check the result in the mobile and tablet views.</p>
-<h3 id="try-this">Try this</h3>
+<aside class="callout curiosity"><h3 id="try-this">Try this</h3>
 <p>What effect does the <code>active</code> class, which is applied only to the first option, have on the appearance of that option?</p>
 <p>The first option on most shopping sites is “Product categories,” which contains a list of product classifications. To create this option, add the code in the figure below before the first list item above (Customers club):</p>
 <p><img alt="Book image" src="../images/p180-02.png" /></p>
 <p><code>nav-item:</code> Used for each of the menu options.</p>
-<hr />
+</aside><hr />
 <p class="page-mark">Page 175</p>
 <p><code>dropdown:</code> This class is used for the element that contains the submenu.</p>
 <p><code>nav-link:</code> Used to style the links in the navigation bar (<code>Navbar</code>) and displays the link according to the <code>Navbar</code> style.</p>
@@ -177,14 +170,14 @@ input&lt; 2&gt;
 <p><img alt="Book image" src="../images/p181-01.png" /></p>
 <p>As stated, the <code>dropdown-toggle</code> class displays a downward arrow. If you wish you can remove it, but you need to enable showing the submenu on <code>hover</code> by adding the style below:</p>
 <p><img alt="Book image" src="../images/p181-02.png" /></p>
-<h3 id="note">Note</h3>
+<aside class="callout note"><h3 id="note">Note</h3>
 <p>Because the <code>hover</code> event does not occur in the mobile view, this code works only in the desktop view.</p>
 <p>Buttons. A button is one of the interactive elements of a page that lets the user perform an action with a click. Creating a button on a web page is possible with the three tags below:</p>
 <div class="code-wrap" dir="ltr"><pre><code>button&lt; 1&gt;
 input&lt; 2&gt;
 </code></pre></div>
 <p><code>a&lt;</code> 3&gt;</p>
-<hr />
+</aside><hr />
 <p class="page-mark">Page 176</p>
 <p>In Bootstrap there are various classes for styling buttons. These classes let you customize the appearance of buttons in terms of color, size, and other properties. To set the appearance of a button with Bootstrap classes, using the <code>btn</code> class is required. To choose the color and size of the button you can also add other button-related classes to the <code>btn</code> class.</p>
 <p>These classes are summarized in Table 11:</p>
@@ -192,28 +185,22 @@ input&lt; 2&gt;
 <p>Class type</p>
 <p>Class names</p>
 <p>Color</p>
-<div class="code-wrap" dir="ltr"><pre><code>btn-primary، btn-secondary، btn-danger، btn-light، btn-dark، btn-link و...
-</code></pre></div>
+<p>btn-primary btn-secondary btn-danger btn-light btn-dark btn-link ...</p>
 <p>Button borders</p>
-<div class="code-wrap" dir="ltr"><pre><code>btn-outline-primary، btn-outline-secondary و....
-</code></pre></div>
+<p>btn-outline-primary btn-outline-secondary ....</p>
 <p>Button sizes <code>btn-sm</code>, <code>btn-lg</code> Disabled state <code>disabled</code></p>
 <h3 id="example">Example</h3>
 <p>In the example below, six buttons with different labels and classes have been created:</p>
 <p><img alt="Book image" src="../images/p182-01.png" /></p>
 <p><img alt="Book image" src="../images/p182-02.png" /></p>
 <h3 id="learn-more">Learn more</h3>
-<p>Layout of the product detail page. In this workshop you will design the product information page in three columns containing the product image, product features, and product price. On this page the <code>header</code> and <code>footer</code> sections are the same as in the <code>index.html</code> file; only the <code>main</code> section has different content. To speed up the design work, create a copy of the <code>index.html</code> file. To do this, open the <code>index.html</code> file in a text editor. From the <code>File</code> menu choose <code>Save</code> <code>As</code> and then type <code>product-details.html</code> as the page name.</p>
+<p>Layout of the product detail page. In this workshop you will design the product information page in three columns containing the product image, product features, and product price. On this page the <code>header</code> and <code>footer</code> sections are the same as in the <code>index.html</code> file; only the <code>main</code> section has different content. To speed up the design work, create a copy of the <code>index.html</code> file. To do this, open the <code>index.html</code> file in a text editor. From the <code>File</code> menu choose <code>Save As</code> and then type <code>product-details.html</code> as the page name.</p>
 <hr />
 <p class="page-mark">Page 177</p>
 <p>Clear the content of the <code>&lt;main&gt;</code> tag completely. Save the file and display the <code>product-details</code> page in the browser to make sure you have done this correctly. At this stage the <code>product-details</code> page should contain the banner bar at the top of the page, the logo bar, the navigation bar, and the footer.</p>
 <p>Write the code in the figure below inside the <code>&lt;main&gt;</code> tag for the product page layout:</p>
 <p><img alt="Book image" src="../images/p183-01.png" /></p>
-<p>In this layout the <code>Grid</code> system is used. The column shares on devices 992 pixels and</p>
-<p>larger are 4/12,</p>
-<p>5/12,</p>
-<p>and 3/12. At widths from 768 to 992 pixels each column’s share is 4/12,</p>
-<p>and on</p>
+<p>In this layout the <code>Grid</code> system is used. The column shares on devices 992 pixels and larger are 4/12, 5/12, and 3/12. At widths from 768 to 992 pixels each column’s share is 4/12, and on</p>
 <p>smaller devices the column contents stack on top of each other.</p>
 <p>Define the width of the <code>product-information</code> element as shown below in the <code>styles.css</code> file:</p>
 <p><img alt="Book image" src="../images/p183-02.png" /></p>
@@ -240,10 +227,10 @@ input&lt; 2&gt;
 <p><img alt="Book image" src="../images/p185-01.png" /></p>
 <p>You are expected that the result on devices 992 pixels and larger looks like the figure below:</p>
 <p><img alt="Book image" src="../images/p185-02.png" /></p>
-<h3 id="activity">Activity</h3>
+<aside class="callout activity"><h3 id="activity">Activity</h3>
 <p>In the <code>index.html</code> file, link the product “Basic Technical Knowledge” to the <code>product-details.html</code> page.</p>
 <p>Forms. Data-entry forms are tools for user interaction with the page and for collecting information. The appearance of entry forms plays a vital role in the user experience and the success of a website. Attractive and user-friendly forms increase user interaction and create a sense of trust and satisfaction. In contrast, messy and confusing forms can lead to user confusion, a higher bounce rate, and ultimately lower credibility for the website.</p>
-<hr /></article>
+</aside><hr /></article>
       <aside class="extra">
         <h2 data-fa="تمرین این بخش" data-en="Exercises for this section">تمرین این بخش</h2>
         <p class="extra-note" data-fa="این تمرین‌ها و پیوندها اضافه بر متن کتاب‌اند." data-en="These exercises and links are in addition to the book.">این تمرین‌ها و پیوندها اضافه بر متن کتاب‌اند.</p>
@@ -253,7 +240,7 @@ input&lt; 2&gt;
     <nav class="pager"><a rel="prev" class="prev" href="p3-bs-rwd.html"><span class="pager-word" data-fa="قبلی" data-en="Previous">قبلی</span><span class="pager-name" data-fa="کلاس‌های واکنش‌گرا" data-en="Responsive classes">کلاس‌های واکنش‌گرا</span></a><a rel="next" class="next" href="p3-bs-form.html"><span class="pager-word" data-fa="بعدی" data-en="Next">بعدی</span><span class="pager-name" data-fa="فرم و پنجره Modal" data-en="Forms and modals">فرم و پنجره Modal</span></a></nav>
     </div>
   </div>
-  <script src="../assets/search-index.js?v=4"></script>
-  <script src="../assets/app.js?v=4"></script>
+  <script src="../assets/search-index.js?v=6"></script>
+  <script src="../assets/app.js?v=6"></script>
 </body>
 </html>

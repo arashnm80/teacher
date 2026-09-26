@@ -14,7 +14,6 @@ Solution for bugs one and two: To fix this flaw, change the `show_temp_view` cod
 
 Figure 77 fixing the code flaw
 
-
 ---
 
 **Page 327**
@@ -45,7 +44,6 @@ With these changes, if the user is not `login` but enters the add-city and delet
 
 Examine what other things could improve this project.
 
-
 ---
 
 **Page 328**
@@ -56,19 +54,11 @@ Performance standard for the work: The student should be able, by building a `Mo
 
 Score
 
-Conditions for doing the work (tools, materials, equipment,
-
-Tools
-
-Results
-
-Row
+Conditions for doing the work (tools, materials, equipment, Tools Results Row
 
 ### Steps
 
-Standard (indicators / judging / scoring)
-
-Earned
+Standard (indicators / judging / scoring) Earned
 
 time, place, and …)
 
@@ -82,15 +72,13 @@ Recognize the main parts of the Django admin panel and their use. Success in cor
 
 3
 
-simple queries with `ORM` to read data (for example `City.objects.all`()).
+simple queries with `ORM` to read data (for example `City.objects.all()`).
 
 Success in registering `City` in the admin panel and being able to view, add, and edit data through it Entering a few sample records (a few cities) into the table through the admin panel.
 
 Observation Carry out the Try this tasks Do the work with several practical methods
 
-```
-DE: VS Code PostgreSQL فریم‌ورک
-```
+DE: VS Code PostgreSQL ‌
 
 Database, `ORM`, and admin
 
@@ -100,9 +88,7 @@ Question
 
 Success in correctly defining the `City` model with the needed fields (such as city name, temperature, and
 
-Django Personal computer or laptop with operating system
-
-panel
+Django Personal computer or laptop with operating system panel
 
 Written …). Working with `ORM:` writing simple queries with `ORM` to read (for example
 
@@ -110,9 +96,7 @@ Time 25 minutes Place computer site
 
 Test
 
-```
-City.objects.all()) داده‌ها.
-```
+City.objects.all()) ‌.
 
 Oral
 
@@ -132,9 +116,7 @@ a city-selection mechanism (for example with a link or a form). Create a `view` 
 
 Observation Define suitable `URL`s for access to these features.
 
-```
 DE: VS Code PostgreSQL
-```
 
 Practical
 
@@ -144,15 +126,11 @@ Django framework Personal computer or laptop with Question
 
 2
 
-Create a `view` and a `template` to display a list of city names that have been
-
-information
+Create a `view` and a `template` to display a list of city names that have been information
 
 operating system Time 25 minutes Place computer site Written
 
-read from the database. Implement a city-selection mechanism (for example with a link or
-
-computer
+read from the database. Implement a city-selection mechanism (for example with a link or computer
 
 Test form). Create a `view` that receives the selected city.
 
@@ -172,9 +150,7 @@ Explain the authentication process (`Login/Logout`) in Django Explain the idea o
 
 Make sure that the add-city and delete-city pages are accessible only for signed-in users (site members) Success in implementing the ability to add a new city Observation and delete an existing city, only by signed-in users Carry out the Try this tasks Practical
 
-```
-DE: VS Code PostgreSQL فریم‌ورک
-```
+DE: VS Code PostgreSQL ‌
 
 Authentication and managing
 
@@ -182,11 +158,7 @@ Question
 
 3
 
-Django Personal computer or laptop with operating system
-
-access
-
-Written
+Django Personal computer or laptop with operating system access Written
 
 Time 25 minutes Place computer site
 
@@ -201,7 +173,6 @@ Explain the authentication process (`Login/Logout`) in Django. Explain the idea 
 1
 
 risks and unauthorized access Correctly set up the user login system.
-
 
 ---
 
@@ -221,9 +192,7 @@ Fix the security bug (unauthorized access): Make completely sure that no user wi
 
 Practical
 
-```
-DE: VS Code PostgreSQL فریم‌ورک
-```
+DE: VS Code PostgreSQL ‌
 
 Present cleaner and more efficient code (if possible, depending on the two level
 
@@ -233,9 +202,7 @@ Question
 
 4
 
-Django Personal computer or laptop with operating system
-
-security
+Django Personal computer or laptop with operating system security
 
 Written Fix bug 1 (empty table): Implement correct logic in the `view` or `template`
 
@@ -263,9 +230,7 @@ hygiene, environmental considerations, and attitude:
 
 Failing to achieve any of the non-technical competencies1 Yes
 
-Work assessment (competency in doing the work)
-
-No
+Work assessment (competency in doing the work) No
 
 ### Explanation:
 

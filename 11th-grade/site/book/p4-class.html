@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title data-fa="ساخت کلاس و متد" data-en="Writing a class and methods">ساخت کلاس و متد</title>
   <link rel="icon" href="../assets/favicon.svg">
-  <link rel="stylesheet" href="../assets/style.css?v=4">
+  <link rel="stylesheet" href="../assets/style.css?v=6">
 </head>
 <body data-root="../">
   <header class="top">
@@ -67,28 +67,26 @@
 <p>1 آرگومان‌های <code>"nokia"</code> و <code>"gray"</code> به متد <code>___init_</code> فرستاده و درون پارامترهای <code>brand</code> و <code>color</code> قرار می‌گیرند.</p>
 <p>2 مقدار پارامتر <code>brand</code> درون <code>self.brand</code> و مقدار پارامتر <code>color</code> درون <code>self.color</code> ریخته می‌شوند.</p>
 <p>3 در این مرحله نمونه مورد نظر ساخته خواهد شد.</p>
-<h3 id="_1">فعالیت</h3>
+<aside class="callout activity"><h3 id="_1">فعالیت</h3>
 <p>در انتهای برنامه دستوری اضافه کنید که رنگ موبایل را چاپ نماید.</p>
-<h3 id="_2">فعالیت</h3>
+</aside><aside class="callout activity"><h3 id="_2">فعالیت</h3>
 <p>داخل متد <code>___init_</code> دستوری اضافه کنید که مدل گوشی شما را نیز به عنوان ویژگی در نظر بگیرد.</p>
 <p>فراموش نکنید که در خط 7 نیز باید مدل گوشی خودتان را اضافه کنید. سعی کنید خودتان این فعالیت را انجام دهید ولی اگر هنوز ابهام داشتید در ادامه پاسخ این کد را می‌بینید و می‌توانید با کد خودتان مقایسه کنید.</p>
 <p>در ادامه بر اساس کلاسی که تعریف کرده‌اید یک نمونه دیگر به عنوان موبایلی برای دوستتان بسازید. کد شکل 7 را به دقت بنویسید.</p>
 <p><img alt="شکل 7 ساختن یک نمونه به عنوان گوشی برای دوستتان" src="../images/p246-01.png" /></p>
 <p>شکل 7 ساختن یک نمونه به عنوان گوشی برای دوستتان</p>
-<hr />
+</aside><hr />
 <p class="page-mark">صفحه ۲۴۱</p>
 <p>خط 4: یک ویژگی جدید برای مدل گوشی همراه تعریف و مقداردهی شده است.</p>
 <p>خط 9: یک نمونه جدید با نام <code>friend_mobile</code> با ویژگی‌هایی متفاوت از <code>my_mobile</code> ایجاد شده است.</p>
 <figure class="shot"><img alt="شکل 8" src="../images/p247-01.png" /><figcaption>شکل 8</figcaption></figure>
 <p>خطوط 15 تا 17: در این خطوط ویژگی‌های نمونه دوم چاپ شده است.</p>
-<h3 id="_3">نکته</h3>
+<aside class="callout note"><h3 id="_3">نکته</h3>
 <p>دقت کنید <code>my_mobile</code> و <code>friend_mobile</code> هر دو نمونه‌هایی مجزا هستند که از روی کلاس <code>Mobile</code> ساخته شده‌اند.</p>
 <p>در ادامه یک متد به کلاس <code>Mobile</code> اضافه کنید تا مقدار تمام ویژگی‌های نمونه‌ای که ساخته‌اید را چاپ کند. کد قبلی را مانند شکل 9 تغییر دهید.</p>
 <p><img alt="شکل 9 افزودن متد" src="../images/p247-02.png" /></p>
 <p>شکل 9 افزودن متد</p>
-<div class="code-wrap" dir="ltr"><pre><code>show_info
-</code></pre></div>
-<hr />
+</aside><h2 id="show_info"><code>show_info</code></h2>
 <p class="page-mark">صفحه ۲۴۲</p>
 <p>خط 7: این خط، تعریف یک متد (<code>method</code>) به نام <code>show_info</code> را در داخل کلاس <code>Mobile</code> انجام می‌دهد.</p>
 <p>متدها، توابعی هستند که به یک کلاس مرتبط هستند و می‌توانند به ویژگی‌های (<code>Attributes</code>) آن کلاس دسترسی داشته باشند.</p>
@@ -98,19 +96,17 @@
 <p>به همین ترتیب می‌توانید متدهای بیشتری برای این کلاس تعریف کنید. به عنوان مثال متد <code>incoming_call</code> برای نمایش پیام هنگام تماس دریافتی می‌باشد. کدهای این متد را در زیِر متِد <code>show_info</code> براساس شکل 10 بنویسید.</p>
 <p><img alt="شکل 10 افزودن متد" src="../images/p248-01.png" /></p>
 <p>شکل 10 افزودن متد</p>
-<div class="code-wrap" dir="ltr"><pre><code>incoming_call
-</code></pre></div>
-<p>اولین خط، تعریف متدی به نام <code>incoming_call</code> را در داخل کلاس <code>Mobile</code> انجام می‌دهد. این متد یک پارامتر به نام <code>phone_number</code> را دریافت می‌کند که نشان‌دهنده شماره تلفن تماس‌گیرنده است.</p>
+<p><code>incoming_call</code>
+اولین خط، تعریف متدی به نام <code>incoming_call</code> را در داخل کلاس <code>Mobile</code> انجام می‌دهد. این متد یک پارامتر به نام <code>phone_number</code> را دریافت می‌کند که نشان‌دهنده شماره تلفن تماس‌گیرنده است.</p>
 <p>دستورات داخل متد، پیام ‌"تماس ورودی" و شماره تلفن تماس‌گیرنده را در خروجی نمایش می‌دهند.</p>
 <p>دقت کنید این متد باید درون کلاس <code>Mobile</code> و هم‌سطح متد <code>___init_</code> تعریف شود، بنابراین یک <code>tab</code> جلوتر از بدنه کلاس قرار می‌گیرد.</p>
 <p>در آخرین خط برنامه متد <code>incoming_call</code>  را بر روی نمونه <code>my_mobile</code>  فراخوانی می‌کند.</p>
 <p>آرگومان "0912-345-6789" به عنوان پارامتر <code>phone_number</code>  ارسال می‌شود که نشان‌دهنده شماره تلفن تماس‌گیرنده است. سپس متد اجرا می‌شود و پیام‌های مشخص شده و شماره تلفن ارائه شده را نمایش می‌دهد.</p>
 <hr />
 <p class="page-mark">صفحه ۲۴۳</p>
-<h3 id="_4">فعالیت</h3>
+<aside class="callout activity"><h3 id="_4">فعالیت</h3>
 <p>در کلاس <code>Mobile</code> متدی با نام <code>make_call</code> ایجاد کنید. این متد باید یک پارامتر به نام <code>phone_number</code> دریافت کند که شماره تلفنی که می‌خواهید با آن تماس بگیرید را در خود نگه دارد. متد باید با چاپ پیام‌هایی مناسب، شروع عملیات شماره‌گیری را اعلام کند. به عنوان مثال، می‌توانید پیام‌هایی مانند</p>
-<div class="code-wrap" dir="ltr"><pre><code>&quot;...Calling&quot; یا &quot;...Dialing&quot; را چاپ کنید.
-</code></pre></div>
+<p>"...<bdi dir="ltr">Calling</bdi>" یا "...<bdi dir="ltr">Dialing</bdi>" را چاپ کنید.</p>
 <p>تعیین مقدار پیش فرض برای ویژگی‌ها برای جذابیت و کارایی بیشتر در ادامه، یک ویژگی تعریف خواهد شد که بعد از اجرای برنامه مقدار آنها قابل تغییر باشند. از این رو درون کلاس، ویژگی وضعیت روشن و خاموش بودن (<code>status</code>) و یک مقدار پیش فرض هم برای آن تعریف خواهد شد. کافیست در متد <code>___init_</code> یک ویژگی جدید مانند کد زیر تعریف کنید.</p>
 <div class="code-wrap" dir="ltr"><pre><code>&quot;self.status = &quot;on
 </code></pre></div>
@@ -120,13 +116,12 @@
 &quot; my_mobile.status = &quot;off
 </code></pre></div>
 <p>در این دستور از نشانه <code>dot</code> یا همان نقطه برای دسترسی به ویژگی یک نمونه استفاده شده است. این خط از پایتون می‌خواهد برای نمونه <code>my_mobile</code> ویژگی <code>status</code> مرتبط با آن را پیدا کند و در ادامه مقدار "‌ <code>off"</code> را درون آن قرار دهد.</p>
-<div class="code-wrap" dir="ltr"><pre><code>ارث‌بری (Inheritance)
-</code></pre></div>
+<p>ارث‌بری <bdi dir="ltr">(Inheritance)</bdi></p>
 <p>فرض کنید در یک شرکت تولیدکنندۀ گوشی همراه، تاکنون تنها نسخه‌های پایۀ تلفن همراه تولید می‌شده است؛ گوشی‌هایی که امکانات آنها به ویژگی‌هایی مانند برند، مدل، رنگ و وضعیت محدود بوده و فاقد سیستم‌عامل و دوربین هستند. مهم ترین کاری که با این گوشی‌های همراه می‌توان انجام داد، تماس تلفنی و ارسال پیامک است. در این شرکت، یک کلاس اصلی به نام <code>Mobile</code> وجود دارد که این ویژگی‌های پایه را مدل‌سازی می‌کند.</p>
-<p>حالا شرکت تصمیم گرفته است نسل جدیدی از گوشی‌های همراه را طراحی کند؛ گوشی‌های هوشمند (<code>Smartphone</code>) که در کنار ویژگی‌های پایۀ گوشی همراه، قابلیت‌هایی مانند سیستم‌عامل و دوربین را ارائه می‌دهند و همچنین مدل‌هایی تخصصی‌تر، مانند گوشی‌های مناسب بازی (<code>Gaming</code> <code>phone</code>)، که برای اجرای بهتر بازی‌ها با امکانات سخت‌افزاری قوی‌تر طراحی شده‌اند.</p>
-<p>1 <code>Smartphone:</code> تلفن هوشمند نوعی تلفن همراه است که با بهره‌گیری از سیستم‌عامل (<code>Operating</code> <code>System</code>)، امکان اجرای برنامه‌ها و ارائۀ قابلیت‌های پیشرفته، فراتر از تماس و پیامک را فراهم می‌کند.</p>
+<p>حالا شرکت تصمیم گرفته است نسل جدیدی از گوشی‌های همراه را طراحی کند؛ گوشی‌های هوشمند (<code>Smartphone</code>) که در کنار ویژگی‌های پایۀ گوشی همراه، قابلیت‌هایی مانند سیستم‌عامل و دوربین را ارائه می‌دهند و همچنین مدل‌هایی تخصصی‌تر، مانند گوشی‌های مناسب بازی (<code>Gaming phone</code>)، که برای اجرای بهتر بازی‌ها با امکانات سخت‌افزاری قوی‌تر طراحی شده‌اند.</p>
+<p>1 <code>Smartphone:</code> تلفن هوشمند نوعی تلفن همراه است که با بهره‌گیری از سیستم‌عامل (<code>Operating System</code>)، امکان اجرای برنامه‌ها و ارائۀ قابلیت‌های پیشرفته، فراتر از تماس و پیامک را فراهم می‌کند.</p>
 <p>دارای ویژگی دوربین پیشرفته دارای ویژگی سیستم عامل قابل نصب و ارتقا</p>
-<hr /></article><article class="lesson" lang="en" dir="ltr" data-lang-block="en" hidden><p class="page-mark">Page 238</p>
+</aside><hr /></article><article class="lesson" lang="en" dir="ltr" data-lang-block="en" hidden><p class="page-mark">Page 238</p>
 <p>Now it is time, in the programming environment, to create your first class (<code>class</code>) and then use that class to build an instance (<code>Instance</code>). Carefully type the code of Figure 4 into a new file.</p>
 <p><img alt="Figure 4 First code for defining a class and creating an instance" src="../images/p244-01.png" /></p>
 <p>Figure 4 First code for defining a class and creating an instance</p>
@@ -164,28 +159,26 @@
 <p>1 The arguments <code>"nokia"</code> and <code>"gray"</code> are sent to the <code>__init__</code> method and placed in the <code>brand</code> and <code>color</code> parameters.</p>
 <p>2 The value of the <code>brand</code> parameter is assigned to <code>self.brand</code> and the value of the <code>color</code> parameter to <code>self.color</code>.</p>
 <p>3 At this stage the desired instance will be created.</p>
-<h3 id="activity">Activity</h3>
+<aside class="callout activity"><h3 id="activity">Activity</h3>
 <p>At the end of the program, add a statement that prints the mobile’s color.</p>
-<h3 id="activity_1">Activity</h3>
+</aside><aside class="callout activity"><h3 id="activity_1">Activity</h3>
 <p>Inside the <code>__init__</code> method, add a statement that also treats your phone’s model as an attribute.</p>
 <p>Do not forget that on line 7 you must also add your phone’s model. Try to do this activity yourself, but if you still have questions, later you will see the answer to this code and can compare it with your own code.</p>
 <p>Next, based on the class you defined, create another instance as a mobile for your friend. Carefully write the code of Figure 7.</p>
 <p><img alt="Figure 7 Creating an instance as a phone for your friend" src="../images/p246-01.png" /></p>
 <p>Figure 7 Creating an instance as a phone for your friend</p>
-<hr />
+</aside><hr />
 <p class="page-mark">Page 241</p>
 <p>Line 4: A new attribute for the mobile phone’s model has been defined and assigned a value.</p>
 <p>Line 9: A new instance named <code>friend_mobile</code> has been created with attributes different from <code>my_mobile</code>.</p>
 <figure class="shot"><img alt="Figure 8" src="../images/p247-01.png" /><figcaption>Figure 8</figcaption></figure>
 <p>Lines 15 to 17: On these lines the attributes of the second instance have been printed.</p>
-<h3 id="note">Note</h3>
+<aside class="callout note"><h3 id="note">Note</h3>
 <p>Note that <code>my_mobile</code> and <code>friend_mobile</code> are both separate instances created from the <code>Mobile</code> class.</p>
 <p>Next, add a method to the <code>Mobile</code> class that prints the values of all attributes of the instance you have created. Change the previous code as in Figure 9.</p>
 <p><img alt="Figure 9 Adding a method" src="../images/p247-02.png" /></p>
 <p>Figure 9 Adding a method</p>
-<div class="code-wrap" dir="ltr"><pre><code>show_info
-</code></pre></div>
-<hr />
+</aside><h2 id="show_info"><code>show_info</code></h2>
 <p class="page-mark">Page 242</p>
 <p>Line 7: This line defines a method (<code>method</code>) named <code>show_info</code> inside the <code>Mobile</code> class.</p>
 <p>Methods are functions that are associated with a class and can access that class’s attributes (<code>Attributes</code>).</p>
@@ -195,19 +188,17 @@
 <p>In the same way, you can define more methods for this class. For example, the <code>incoming_call</code> method is for displaying a message on an incoming call. Write the code for this method below the <code>show_info</code> method according to Figure 10.</p>
 <p><img alt="Figure 10 Adding a method" src="../images/p248-01.png" /></p>
 <p>Figure 10 Adding a method</p>
-<div class="code-wrap" dir="ltr"><pre><code>incoming_call
-</code></pre></div>
-<p>The first line defines a method named <code>incoming_call</code> inside the <code>Mobile</code> class. This method receives a parameter named <code>phone_number</code> that represents the caller’s phone number.</p>
+<p><code>incoming_call</code>
+The first line defines a method named <code>incoming_call</code> inside the <code>Mobile</code> class. This method receives a parameter named <code>phone_number</code> that represents the caller’s phone number.</p>
 <p>The statements inside the method display the message "incoming call" and the caller’s phone number in the output.</p>
 <p>Note that this method must be defined inside the <code>Mobile</code> class and at the same level as the <code>__init__</code> method, so it is placed one <code>tab</code> further in than the class body.</p>
 <p>On the last line of the program, the <code>incoming_call</code> method is called on the <code>my_mobile</code> instance.</p>
 <p>The argument "0912-345-6789" is sent as the <code>phone_number</code> parameter, which represents the caller’s phone number. Then the method runs and displays the specified messages and the provided phone number.</p>
 <hr />
 <p class="page-mark">Page 243</p>
-<h3 id="activity_2">Activity</h3>
+<aside class="callout activity"><h3 id="activity_2">Activity</h3>
 <p>In the <code>Mobile</code> class, create a method named <code>make_call</code>. This method should receive a parameter named <code>phone_number</code> that holds the phone number you want to call. The method should announce the start of the dialing operation by printing appropriate messages. For example, you can print messages such as</p>
-<div class="code-wrap" dir="ltr"><pre><code>&quot;...Calling&quot; یا &quot;...Dialing&quot; را چاپ کنید.
-</code></pre></div>
+<p>"...Calling" "...Dialing" .</p>
 <p>Setting default values for attributes For greater appeal and usefulness, next an attribute will be defined whose value can be changed after the program runs. Therefore, inside the class, an on/off status attribute (<code>status</code>) and a default value for it will also be defined. It is enough to define a new attribute in the <code>__init__</code> method as in the code below.</p>
 <div class="code-wrap" dir="ltr"><pre><code>&quot;self.status = &quot;on
 </code></pre></div>
@@ -217,13 +208,12 @@
 &quot; my_mobile.status = &quot;off
 </code></pre></div>
 <p>In this statement, the <code>dot</code> symbol, or period, is used to access an instance attribute. This line asks Python to find the <code>status</code> attribute associated with the <code>my_mobile</code> instance and then place the value "<code>off"</code> into it.</p>
-<div class="code-wrap" dir="ltr"><pre><code>ارث‌بری (Inheritance)
-</code></pre></div>
+<p>‌ (Inheritance)</p>
 <p>Suppose that in a mobile phone manufacturing company, until now only basic versions of mobile phones have been produced—phones whose capabilities have been limited to attributes such as brand, model, color, and status, and that lack an operating system and a camera. The most important things you can do with these mobile phones are make phone calls and send text messages. In this company, there is a main class named <code>Mobile</code> that models these basic attributes.</p>
-<p>Now the company has decided to design a new generation of mobile phones: smart phones (<code>Smartphone</code>) that, alongside the basic attributes of a mobile phone, offer capabilities such as an operating system and a camera, and also more specialized models, such as phones suitable for gaming (<code>Gaming</code> <code>phone</code>), designed with stronger hardware features for better game performance.</p>
-<p>1 <code>Smartphone:</code> A smart phone is a type of mobile phone that, by using an operating system (<code>Operating</code> <code>System</code>), makes it possible to run apps and provide advanced capabilities beyond calling and texting.</p>
+<p>Now the company has decided to design a new generation of mobile phones: smart phones (<code>Smartphone</code>) that, alongside the basic attributes of a mobile phone, offer capabilities such as an operating system and a camera, and also more specialized models, such as phones suitable for gaming (<code>Gaming phone</code>), designed with stronger hardware features for better game performance.</p>
+<p>1 <code>Smartphone:</code> A smart phone is a type of mobile phone that, by using an operating system (<code>Operating System</code>), makes it possible to run apps and provide advanced capabilities beyond calling and texting.</p>
 <p>Has an advanced camera attribute Has an installable and upgradable operating system attribute</p>
-<hr /></article>
+</aside><hr /></article>
       <aside class="extra">
         <h2 data-fa="تمرین این بخش" data-en="Exercises for this section">تمرین این بخش</h2>
         <p class="extra-note" data-fa="این تمرین‌ها و پیوندها اضافه بر متن کتاب‌اند." data-en="These exercises and links are in addition to the book.">این تمرین‌ها و پیوندها اضافه بر متن کتاب‌اند.</p>
@@ -233,7 +223,7 @@
     <nav class="pager"><a rel="prev" class="prev" href="p4-idea.html"><span class="pager-word" data-fa="قبلی" data-en="Previous">قبلی</span><span class="pager-name" data-fa="ایده شیء و کلاس" data-en="The idea of objects and classes">ایده شیء و کلاس</span></a><a rel="next" class="next" href="p4-inherit.html"><span class="pager-word" data-fa="بعدی" data-en="Next">بعدی</span><span class="pager-name" data-fa="وراثت" data-en="Inheritance">وراثت</span></a></nav>
     </div>
   </div>
-  <script src="../assets/search-index.js?v=4"></script>
-  <script src="../assets/app.js?v=4"></script>
+  <script src="../assets/search-index.js?v=6"></script>
+  <script src="../assets/app.js?v=6"></script>
 </body>
 </html>

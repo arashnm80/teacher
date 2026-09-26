@@ -336,6 +336,45 @@ a { color: var(--teal); }
 
 .lesson p { margin: 0.4rem 0; }
 
+.contents {
+  list-style: none;
+  margin: 0.2rem 0 0;
+  padding: 0;
+}
+
+.contents a {
+  display: flex;
+  align-items: baseline;
+  gap: 0.75rem;
+  padding: 0.55rem 0.15rem;
+  border-bottom: 1px solid var(--line);
+  text-decoration: none;
+  color: inherit;
+}
+
+.contents a:hover { background: var(--chip); }
+
+.contents .label {
+  flex: 1;
+  min-width: 0;
+  text-align: start;
+  line-height: 1.45;
+}
+
+.contents .page {
+  flex: none;
+  direction: ltr;
+  unicode-bidi: isolate;
+  color: var(--muted);
+  font-size: 0.92rem;
+  min-width: 2.4rem;
+  text-align: end;
+}
+
+.contents .module .label { font-weight: 700; color: var(--deep); }
+
+.contents .unit .label { padding-inline-start: 0.9rem; }
+
 .page-mark {
   display: inline-block;
   margin: 0.8rem 0 0.2rem;
@@ -464,6 +503,41 @@ a { color: var(--teal); }
 .extra li { margin: 0.35rem 0; }
 
 .extra a { font-weight: 700; }
+
+.callout {
+  margin: 0.9rem 0;
+  padding: 0.85rem 1.1rem 1rem;
+  border-radius: 14px;
+  border: 1px solid var(--line);
+  border-inline-start: 5px solid var(--teal);
+  box-shadow: var(--shadow);
+}
+
+.callout h3 {
+  margin: 0 0 0.35rem;
+  padding: 0;
+  border: 0;
+  font-size: 1.02rem;
+}
+
+.callout.curiosity { background: #fdf3e0; border-color: #ecd3a3; border-inline-start-color: #d99a26; }
+.callout.curiosity h3 { color: #96690f; }
+
+.callout.project { background: #e9f1fc; border-color: #bcd4f0; border-inline-start-color: #2f6cb5; }
+.callout.project h3 { color: #1f4e8c; }
+
+.callout.note { background: #f0ebfa; border-color: #d3c8ee; border-inline-start-color: #6f5bb5; }
+.callout.note h3 { color: #4e3f96; }
+
+.callout.activity { background: #e3f4f0; border-color: #b5e0d6; border-inline-start-color: #1f8a76; }
+.callout.activity h3 { color: #0f5c56; }
+
+.callout .code-wrap { margin: 0.6rem 0; }
+
+.callout figure:last-child,
+.callout p:last-child,
+.callout ol:last-child,
+.callout ul:last-child { margin-bottom: 0.1rem; }
 
 .pager {
   display: flex;

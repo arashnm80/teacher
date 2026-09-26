@@ -20,7 +20,6 @@
 
 **شکل 119**
 
-
 ---
 
 <!-- pdf-page: 64 | book-page: 58 -->
@@ -40,7 +39,6 @@
 مرحله ۴: در این مرحله دستورات مربوط به انتخاب منو را بنویسید (شکل121).
 
 **شکل 121**
-
 
 ---
 
@@ -72,9 +70,7 @@
 
 با مراجعه به دیکشنری‌های مرجع تلفظ لغات را دقیق یاد بگیرید.
 
-```
 https://dictionary.cambridge.org/dictionary/english/tuple
-```
 
 ### توِپل (Tuple)
 
@@ -89,7 +85,6 @@ https://dictionary.cambridge.org/dictionary/english/tuple
 ```
 tuple_name = (data1, data2, data3,…)
 ```
-
 
 ---
 

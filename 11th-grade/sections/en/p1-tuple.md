@@ -28,7 +28,6 @@ Example: In this program, first a tuple named `port_name` is created to hold the
 
 The elements of a tuple are unchangeable (`immutable`). That is, if you want to change them after the initial assignment, the program displays an error message.
 
-
 ---
 
 **Page 61**
@@ -54,6 +53,5 @@ Example: In this program, the `days` tuple is deleted with the `del` statement. 
 ![Figure 128](../images/p067-02.png)
 
 **Figure 128**
-
 
 ---

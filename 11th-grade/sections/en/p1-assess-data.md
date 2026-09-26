@@ -6,27 +6,13 @@ Performance standard: The student should be able to define and manage data in Py
 
 Score
 
-Conditions for performing the work (tools, materials, equipment,
+Conditions for performing the work (tools, materials, equipment, Tools Results Row Steps
 
-Tools
-
-Results
-
-Row
-
-Steps
-
-Standard (indicators / judgment / scoring)
-
-Earned
-
-time, place, etc.)
+Standard (indicators / judgment / scoring) Earned time, place, etc.) Enabled
 
 ### Assessment
 
-Enabled
-
-Installing Python and a suitable development environment (`IDE`) on a personal computer or using online environments. Running simple programs in the `IDLE` environment Writing the first `print`() statement Understanding the difference between the command line and running a file.
+Installing Python and a suitable development environment (`IDE`) on a personal computer or using online environments. Running simple programs in the `IDLE` environment Writing the first `print()` statement Understanding the difference between the command line and running a file.
 
 3
 
@@ -48,7 +34,7 @@ Workshop
 
 Practical
 
-2 Writing the first `print`() statement
+2 Writing the first `print()` statement
 
 3 Understanding the difference between the command line and running a file.
 
@@ -64,9 +50,7 @@ Answering multiple-choice or open-ended questions about correct variable naming,
 
 Variables, data types and
 
-Computer, `vscode` installed, practice file,
-
-Observation
+Computer, `vscode` installed, practice file, Observation
 
 2
 
@@ -102,7 +86,6 @@ that requires combining input, processing with operators, and displaying output 
 
 Not doing or incompletely doing work step 1
 
-
 ---
 
 **Page 47**
@@ -135,7 +118,7 @@ Combining conditions using `and`, `or`, `not` to implement more complex logic.
 
 Building a simple program that combines a list and a condition.
 
-Not doing or incompletely doing work step 1 Writing code that traverses the elements of a list or the characters of a string and prints each one. Using the `range`() function in a `for` loop to run a statement a specific number of times or to traverse numbers in a range.
+Not doing or incompletely doing work step 1 Writing code that traverses the elements of a list or the characters of a string and prints each one. Using the `range()` function in a `for` loop to run a statement a specific number of times or to traverse numbers in a range.
 
 3
 
@@ -147,7 +130,7 @@ Repetition loops: `for`
 
 Computer, `vscode` installed, 25 minutes
 
-Practical Writing code that traverses the elements of a list or the characters of a string and prints each one. Using the `range`() function in a `for` loop to
+Practical Writing code that traverses the elements of a list or the characters of a string and prints each one. Using the `range()` function in a `for` loop to
 
 2
 
@@ -165,11 +148,7 @@ Observation
 
 6
 
-Computer, `vscode` installed, 25 minutes
-
-statements `while`
-
-Practical
+Computer, `vscode` installed, 25 minutes statements `while` Practical
 
 1 Writing a program that continues as long as a condition is met Writing code in which `break` is used to exit the loop and `continue` is used to skip
 
@@ -187,9 +166,7 @@ hygiene, environmental considerations and attitude:
 
 Not meeting any of the non-technical competencies 1 Yes
 
-Work assessment (competency in performing the work)
-
-No
+Work assessment (competency in performing the work) No
 
 ### Explanation:
 

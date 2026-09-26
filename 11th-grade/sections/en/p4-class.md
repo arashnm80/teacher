@@ -30,7 +30,6 @@ In the given code, `self.brand` and `self.color` are both recognized as attribut
 
 The word `self` refers to the same instance that is being created, and `brand` and `color` are the names of attributes that belong to that instance.
 
-
 ---
 
 **Page 239**
@@ -63,7 +62,6 @@ Now the program’s execution flow is explained with a diagram. Observe Figure 6
 
 Figure 6 Program execution flow
 
-
 ---
 
 **Page 240**
@@ -92,7 +90,6 @@ Next, based on the class you defined, create another instance as a mobile for yo
 
 Figure 7 Creating an instance as a phone for your friend
 
-
 ---
 
 **Page 241**
@@ -117,11 +114,7 @@ Next, add a method to the `Mobile` class that prints the values of all attribute
 
 Figure 9 Adding a method
 
-```
-show_info
-```
-
-
+`show_info`
 ---
 
 **Page 242**
@@ -142,10 +135,7 @@ In the same way, you can define more methods for this class. For example, the `i
 
 Figure 10 Adding a method
 
-```
-incoming_call
-```
-
+`incoming_call`
 The first line defines a method named `incoming_call` inside the `Mobile` class. This method receives a parameter named `phone_number` that represents the caller’s phone number.
 
 The statements inside the method display the message "incoming call" and the caller’s phone number in the output.
@@ -156,7 +146,6 @@ On the last line of the program, the `incoming_call` method is called on the `my
 
 The argument "0912-345-6789" is sent as the `phone_number` parameter, which represents the caller’s phone number. Then the method runs and displays the specified messages and the provided phone number.
 
-
 ---
 
 **Page 243**
@@ -165,9 +154,7 @@ The argument "0912-345-6789" is sent as the `phone_number` parameter, which repr
 
 In the `Mobile` class, create a method named `make_call`. This method should receive a parameter named `phone_number` that holds the phone number you want to call. The method should announce the start of the dialing operation by printing appropriate messages. For example, you can print messages such as
 
-```
-"...Calling" یا "...Dialing" را چاپ کنید.
-```
+"...Calling" "...Dialing" .
 
 Setting default values for attributes For greater appeal and usefulness, next an attribute will be defined whose value can be changed after the program runs. Therefore, inside the class, an on/off status attribute (`status`) and a default value for it will also be defined. It is enough to define a new attribute in the `__init__` method as in the code below.
 
@@ -186,17 +173,14 @@ my_mobile = Mobile("nokia", "1100", "gray")
 
 In this statement, the `dot` symbol, or period, is used to access an instance attribute. This line asks Python to find the `status` attribute associated with the `my_mobile` instance and then place the value "`off"` into it.
 
-```
-ارث‌بری (Inheritance)
-```
+‌ (Inheritance)
 
 Suppose that in a mobile phone manufacturing company, until now only basic versions of mobile phones have been produced—phones whose capabilities have been limited to attributes such as brand, model, color, and status, and that lack an operating system and a camera. The most important things you can do with these mobile phones are make phone calls and send text messages. In this company, there is a main class named `Mobile` that models these basic attributes.
 
-Now the company has decided to design a new generation of mobile phones: smart phones (`Smartphone`) that, alongside the basic attributes of a mobile phone, offer capabilities such as an operating system and a camera, and also more specialized models, such as phones suitable for gaming (`Gaming` `phone`), designed with stronger hardware features for better game performance.
+Now the company has decided to design a new generation of mobile phones: smart phones (`Smartphone`) that, alongside the basic attributes of a mobile phone, offer capabilities such as an operating system and a camera, and also more specialized models, such as phones suitable for gaming (`Gaming phone`), designed with stronger hardware features for better game performance.
 
-1 `Smartphone:` A smart phone is a type of mobile phone that, by using an operating system (`Operating` `System`), makes it possible to run apps and provide advanced capabilities beyond calling and texting.
+1 `Smartphone:` A smart phone is a type of mobile phone that, by using an operating system (`Operating System`), makes it possible to run apps and provide advanced capabilities beyond calling and texting.
 
 Has an advanced camera attribute Has an installable and upgradable operating system attribute
-
 
 ---

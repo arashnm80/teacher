@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title data-fa="خواندن و نوشتن فایل متنی" data-en="Reading and writing text files">خواندن و نوشتن فایل متنی</title>
   <link rel="icon" href="../assets/favicon.svg">
-  <link rel="stylesheet" href="../assets/style.css?v=4">
+  <link rel="stylesheet" href="../assets/style.css?v=6">
 </head>
 <body data-root="../">
   <header class="top">
@@ -42,11 +42,11 @@
 <p>اگر مسیر فایل اشتباه باشد، برنامه چگونه باید رفتار کند؟</p>
 <p>اگر قرار باشد یک برنامه فروشگاهی طراحی کنید، چه اطلاعاتی باید در فایل ذخیره شود و چرا؟</p>
 <h3 id="_4">در پایان از هنرجو انتظار می‌رود</h3>
-<p>1 از کلاس <code>"Path"</code> و ماژول <code>"pathlib"</code> برای مدیریت مسیرها (<code>Path</code> <code>Objects</code>) استفاده کند.</p>
+<p>1 از کلاس <code>"Path"</code> و ماژول <code>"pathlib"</code> برای مدیریت مسیرها (<code>Path Objects</code>) استفاده کند.</p>
 <p>2 محتوای فایل‌های متنی را بخواند و داده‌ها را در آنها بنویسد، اضافه کند و فایل‌ها را ایمن ببندد.</p>
 <p>3 داده‌ها را از چندین فایل بخواند، محتوای آنها را ترکیب کند و با استفاده از حلقه‌ها، مجموعه‌ای از فایل‌ها را پردازش نماید.</p>
 <p>4 خطاهای رایج مانند <code>"FileNotFoundError"</code> و <code>"ZeroDivisionError"</code> را تشخیص داده و با استفاده از <code>"try/except"</code> از توقف برنامه جلوگیری کند و پیام‌های خطای مناسب نمایش دهد.</p>
-<p>5 ساختار <code>"JSON"</code> را درک کرده و داده‌ها را با استفاده از <code>json.loads</code>() بخواند و با <code>json.dump</code>() در فایل بنویسد.</p>
+<p>5 ساختار <code>"JSON"</code> را درک کرده و داده‌ها را با استفاده از <code>json.loads()</code> بخواند و با <code>json.dump()</code> در فایل بنویسد.</p>
 <h3 id="_5">استاندارد عملکرد</h3>
 <p>هنرجو باید بتواند با استفاده از شیء <code>Path</code> به‌صورت ایمن و دقیق عملیات ایجاد، خواندن، نوشتن و مدیریت فایل‌های متنی و <code>JSON</code> را انجام دهد و خطاها و استثناهای احتمالی را به‌درستی کنترل کند.</p>
 <hr />
@@ -77,7 +77,7 @@
 <div class="code-wrap" dir="ltr"><pre><code>path = Path('mobile_brands.txt')
 </code></pre></div>
 <p>یک نمونه (<code>object</code>) از کلاس <code>Path</code> ساخته می‌شود. این نمونه می‌داند که فایل <code>mobile_brands.txt</code> کجاست، ولی هنوز خود فایل باز نشده یا خوانده نشده به عبارت ساده: <code>path</code> فقط نشانی فایل روی رایانه را نگه می‌دارد.</p>
-<p>وقتی می‌نویسید <code>path.read_text</code>() آن وقت فایل باز و خوانده می‌شود، یک <code>Path</code> <code>object</code> ساخته شده است که به فایل <code>mobile_brands.txt</code> اشاره می‌کند. چون این فایل در همان پوشه‌ای است که فایل پایتون (<code>.py</code>) قرار دارد، فقط نام فایل کافی است. اگر فایل در پوشه‌ای دیگر بود، باید مسیر کامل یا نسبی آن را بدهید.</p>
+<p>وقتی می‌نویسید <code>path.read_text()</code> آن وقت فایل باز و خوانده می‌شود، یک <code>Path object</code> ساخته شده است که به فایل <code>mobile_brands.txt</code> اشاره می‌کند. چون این فایل در همان پوشه‌ای است که فایل پایتون (<code>.py</code>) قرار دارد، فقط نام فایل کافی است. اگر فایل در پوشه‌ای دیگر بود، باید مسیر کامل یا نسبی آن را بدهید.</p>
 <div class="code-wrap" dir="ltr"><pre><code>brnds = path.read_text()
 </code></pre></div>
 <p>با متد <code>read_text</code> کل محتوای فایل خوانده می‌شود. نتیجه به‌صورت یک رشته (<code>string</code>) در متغیر <code>contents</code> ذخیره می‌شود. هر خط فایل در رشته با کاراکتر <code>\n</code> جدا شده است.</p>
@@ -88,7 +88,7 @@
 </code></pre></div>
 <p>خروجی مثال:</p>
 <figure class="shot"><img alt="شکل 21" src="../images/p263-01.png" /><figcaption>شکل 21</figcaption></figure>
-<p>حذف خط خالی اضافی: گاهی <code>read_text</code>() یک خط خالی اضافی در انتهای فایل ایجاد می‌کند. برای حذف آن می‌توانید از متد <code>rstrip</code> استفاده کنید.</p>
+<p>حذف خط خالی اضافی: گاهی <code>read_text()</code> یک خط خالی اضافی در انتهای فایل ایجاد می‌کند. برای حذف آن می‌توانید از متد <code>rstrip</code> استفاده کنید.</p>
 <div class="code-wrap" dir="ltr"><pre><code>brands = brands.rstrip()
 </code></pre></div>
 <p>حالا خروجی تمیز و بدون خط خالی نمایش داده می‌شود.</p>
@@ -98,34 +98,34 @@
 <hr />
 <p class="page-mark">صفحه ۲۵۸</p>
 <p>دو راه برای مشخص کردن مسیر فایل‌ها در برنامه‌نویسی وجود دارد:</p>
-<p>1 آدرس نسبی (<code>Relative</code> <code>File</code> <code>Path</code>): این آدرس به پایتون می‌گوید که مکان مورد نظر را نسبت به پوشه برنامه در حال اجرا پیدا کند. از آنجایی که <code>text_files</code> داخل <code>py_progs</code> است، باید مسیری بسازید که با پوشه <code>text_files</code> شروع شود و به نام فایل ختم شود. نحوه ساخت این مسیر این‌گونه است:</p>
+<p>1 آدرس نسبی (<code>Relative File Path</code>): این آدرس به پایتون می‌گوید که مکان مورد نظر را نسبت به پوشه برنامه در حال اجرا پیدا کند. از آنجایی که <code>text_files</code> داخل <code>py_progs</code> است، باید مسیری بسازید که با پوشه <code>text_files</code> شروع شود و به نام فایل ختم شود. نحوه ساخت این مسیر این‌گونه است:</p>
 <div class="code-wrap" dir="ltr"><pre><code>path = Path('text_files/filename.txt')
 </code></pre></div>
-<p>2 آدرس مطلق (<code>Absolute</code> <code>File</code> <code>Path</code>): در این نوع آدرس دهی شما می‌توانید دقیقاً به پایتون بگویید فایل در کجای رایانه شما قرار دارد، صرف نظر از اینکه برنامه در حال اجرا کجاست. اگر آدرس نسبی کار نکرد، می‌توانید از آدرس مطلق استفاده کنید. مثلاًً، اگر <code>text_files</code> را در پوشه‌ای غیر از <code>py_progs</code> قرار داده‌اید، دادن آدرس <code>'text_files/filename.txt'</code> کافی نیست؛ چون پایتون آن را فقط داخل <code>python_work</code> جست‌وجو می‌کند. در این حالت، باید آدرس مطلق را بنویسید تا مشخص شود پایتون کجا را جست‌وجو کند. آدرس‌های مطلق معمولاً بلندتر هستند، چون از پوشه ریشه سیستم عامل شروع می‌شوند:</p>
+<p>2 آدرس مطلق (<code>Absolute File Path</code>): در این نوع آدرس دهی شما می‌توانید دقیقاً به پایتون بگویید فایل در کجای رایانه شما قرار دارد، صرف نظر از اینکه برنامه در حال اجرا کجاست. اگر آدرس نسبی کار نکرد، می‌توانید از آدرس مطلق استفاده کنید. مثلاًً، اگر <code>text_files</code> را در پوشه‌ای غیر از <code>py_progs</code> قرار داده‌اید، دادن آدرس <code>'text_files/filename.txt'</code> کافی نیست؛ چون پایتون آن را فقط داخل <code>python_work</code> جست‌وجو می‌کند. در این حالت، باید آدرس مطلق را بنویسید تا مشخص شود پایتون کجا را جست‌وجو کند. آدرس‌های مطلق معمولاً بلندتر هستند، چون از پوشه ریشه سیستم عامل شروع می‌شوند:</p>
 <div class="code-wrap" dir="ltr"><pre><code>path = Path('/home/eric/py_progs/text_files/filename.txt')
 </code></pre></div>
 <p>با استفاده از آدرس‌های مطلق، می‌توانید فایل‌ها را از هر نقطه‌ای در سیستم خود بخوانید. برای شروع، ساده‌ترین کار این است که فایل‌ها را در همان پوشه برنامه خودتان یا در پوشه‌ای مانند <code>text_files</code> درون پوشه برنامه نگهداری کنید.</p>
-<h3 id="_7">نکته</h3>
+<aside class="callout note"><h3 id="_7">نکته</h3>
 <p>سیستم‌های ویندوز هنگام نمایش مسیر فایل‌ها از بک‌اسلش () به جای اسلش (/) استفاده می‌کنند، اما شما همیشه در کد خود از اسلش (/ ) استفاده کنید، حتی در ویندوز. کتابخانه <code>pathlib</code> به طور خودکار هنگام تعامل با سیستم عامل شما، نمایش صحیح مسیر را به کار می‌گیرد.</p>
 <p>کار با محتویات فایل بعد از خواندن فایل متنی، محتوای آن در برنامه به‌صورت یک رشته (<code>string</code>) در اختیارشما قرار می‌گیرد.</p>
 <p>تبدیل محتوا به لیست: برای اینکه بتوانید روی هر برند تلفن همراه جداگانه کارکنید، لازم است متن فایل را به لیستی از خطوط تبدیل کنید.</p>
 <p>حالا هر برند یک عضو از لیست است و می‌توانید با آن کارکنید.</p>
-<p>-)(<code>splitlines</code> رشته متنی را به لیستی از خطوط تقسیم می‌کند.</p>
+<p>-<code>splitlines()</code> رشته متنی را به لیستی از خطوط تقسیم می‌کند.</p>
 <p><img alt="تصویر کتاب" src="../images/p264-01.png" /></p>
 <figure class="shot"><img alt="شکل 23" src="../images/p264-02.png" /><figcaption>شکل 23</figcaption></figure>
-<hr />
+</aside><hr />
 <p class="page-mark">صفحه ۲۵۹</p>
 <p><img alt="تصویر کتاب" src="../images/p265-01.png" /></p>
 <figure class="shot"><img alt="شکل 24" src="../images/p265-02.png" /><figcaption>شکل 24</figcaption></figure>
 <p>شمارش داده‌ها: مثلاً تعداد برندهای موجود در فایل:</p>
 <p><img alt="تصویر کتاب" src="../images/p265-03.png" /></p>
 <figure class="shot"><img alt="شکل 25" src="../images/p265-04.png" /><figcaption>شکل 25</figcaption></figure>
-<h3 id="_8">فعالیت</h3>
+<aside class="callout activity"><h3 id="_8">فعالیت</h3>
 <p>برنامه را به نحوی تغییر دهید که بتوانید تعداد کاراکترهای هر برند را مشاهده کنید.</p>
 <p>جست‌وجو در محتویات فایل بررسی اینکه آیا یک برند خاص در فایل وجود دارد یا نه:</p>
 <p><img alt="تصویر کتاب" src="../images/p265-05.png" /></p>
 <figure class="shot"><img alt="شکل 26" src="../images/p265-06.png" /><figcaption>شکل 26</figcaption></figure>
-<hr /></article><article class="lesson" lang="en" dir="ltr" data-lang-block="en" hidden><h1 id="object-oriented-program-development">Object-oriented program development</h1>
+</aside><hr /></article><article class="lesson" lang="en" dir="ltr" data-lang-block="en" hidden><h1 id="object-oriented-program-development">Object-oriented program development</h1>
 <hr />
 <p class="page-mark">Page 254</p>
 <h2 id="learning-unit-2">Learning unit 2</h2>
@@ -138,11 +138,11 @@
 <p>If the file path is wrong, how should the program behave?</p>
 <p>If you are going to design a store program, what information should be stored in a file, and why?</p>
 <h3 id="by-the-end-the-student-is-expected-to">By the end, the student is expected to</h3>
-<p>1 Use the <code>"Path"</code> class and the <code>"pathlib"</code> module to manage paths (<code>Path</code> <code>Objects</code>).</p>
+<p>1 Use the <code>"Path"</code> class and the <code>"pathlib"</code> module to manage paths (<code>Path Objects</code>).</p>
 <p>2 Read the contents of text files and write data to them, append data, and close files safely.</p>
 <p>3 Read data from several files, combine their contents, and process a set of files using loops.</p>
 <p>4 Recognize common errors such as <code>"FileNotFoundError"</code> and <code>"ZeroDivisionError"</code> and, using <code>"try/except"</code>, prevent the program from stopping and display appropriate error messages.</p>
-<p>5 Understand the <code>"JSON"</code> structure and read data using <code>json.loads</code>() and write it to a file with <code>json.dump</code>().</p>
+<p>5 Understand the <code>"JSON"</code> structure and read data using <code>json.loads()</code> and write it to a file with <code>json.dump()</code>.</p>
 <h3 id="performance-standard">Performance standard</h3>
 <p>The student should be able to use a <code>Path</code> object to create, read, write, and manage text and <code>JSON</code> files safely and accurately, and to handle possible errors and exceptions correctly.</p>
 <hr />
@@ -173,7 +173,7 @@
 <div class="code-wrap" dir="ltr"><pre><code>path = Path('mobile_brands.txt')
 </code></pre></div>
 <p>an instance (<code>object</code>) of the <code>Path</code> class is created. This instance knows where the file <code>mobile_brands.txt</code> is, but the file itself has not yet been opened or read. In simple terms: <code>path</code> only holds the address of the file on the computer.</p>
-<p>When you write <code>path.read_text</code>(), then the file is opened and read; a <code>Path</code> <code>object</code> has been created that points to the file <code>mobile_brands.txt</code>. Because this file is in the same folder as the Python file (<code>.py</code>), only the file name is enough. If the file were in another folder, you would have to give its full or relative path.</p>
+<p>When you write <code>path.read_text()</code>, then the file is opened and read; a <code>Path object</code> has been created that points to the file <code>mobile_brands.txt</code>. Because this file is in the same folder as the Python file (<code>.py</code>), only the file name is enough. If the file were in another folder, you would have to give its full or relative path.</p>
 <div class="code-wrap" dir="ltr"><pre><code>brnds = path.read_text()
 </code></pre></div>
 <p>With the <code>read_text</code> method, the entire contents of the file are read. The result is stored as a string (<code>string</code>) in the variable <code>contents</code>. Each line of the file in the string is separated by the character <code>\n</code>.</p>
@@ -184,7 +184,7 @@
 </code></pre></div>
 <p>Example output:</p>
 <figure class="shot"><img alt="Figure 21" src="../images/p263-01.png" /><figcaption>Figure 21</figcaption></figure>
-<p>Removing an extra blank line: Sometimes <code>read_text</code>() creates an extra blank line at the end of the file. To remove it you can use the <code>rstrip</code> method.</p>
+<p>Removing an extra blank line: Sometimes <code>read_text()</code> creates an extra blank line at the end of the file. To remove it you can use the <code>rstrip</code> method.</p>
 <div class="code-wrap" dir="ltr"><pre><code>brands = brands.rstrip()
 </code></pre></div>
 <p>Now the output is displayed clean and without a blank line.</p>
@@ -194,34 +194,34 @@
 <hr />
 <p class="page-mark">Page 258</p>
 <p>There are two ways to specify file paths in programming:</p>
-<p>1 Relative address (<code>Relative</code> <code>File</code> <code>Path</code>): This address tells Python to find the desired location relative to the folder of the program that is running. Since <code>text_files</code> is inside <code>py_progs</code>, you must build a path that starts with the <code>text_files</code> folder and ends with the file name. You build this path like this:</p>
+<p>1 Relative address (<code>Relative File Path</code>): This address tells Python to find the desired location relative to the folder of the program that is running. Since <code>text_files</code> is inside <code>py_progs</code>, you must build a path that starts with the <code>text_files</code> folder and ends with the file name. You build this path like this:</p>
 <div class="code-wrap" dir="ltr"><pre><code>path = Path('text_files/filename.txt')
 </code></pre></div>
-<p>2 Absolute address (<code>Absolute</code> <code>File</code> <code>Path</code>): In this kind of addressing you can tell Python exactly where the file is on your computer, regardless of where the program that is running is. If a relative address does not work, you can use an absolute address. For example, if you have placed <code>text_files</code> in a folder other than <code>py_progs</code>, giving the address <code>'text_files/filename.txt'</code> is not enough; because Python searches for it only inside <code>python_work</code>. In this case, you must write the absolute address so that it is clear where Python should search. Absolute addresses are usually longer, because they start from the root folder of the operating system:</p>
+<p>2 Absolute address (<code>Absolute File Path</code>): In this kind of addressing you can tell Python exactly where the file is on your computer, regardless of where the program that is running is. If a relative address does not work, you can use an absolute address. For example, if you have placed <code>text_files</code> in a folder other than <code>py_progs</code>, giving the address <code>'text_files/filename.txt'</code> is not enough; because Python searches for it only inside <code>python_work</code>. In this case, you must write the absolute address so that it is clear where Python should search. Absolute addresses are usually longer, because they start from the root folder of the operating system:</p>
 <div class="code-wrap" dir="ltr"><pre><code>path = Path('/home/eric/py_progs/text_files/filename.txt')
 </code></pre></div>
 <p>Using absolute addresses, you can read files from any point on your system. To start, the simplest thing is to keep the files in the same folder as your program, or in a folder such as <code>text_files</code> inside the program folder.</p>
-<h3 id="note">Note</h3>
+<aside class="callout note"><h3 id="note">Note</h3>
 <p>Windows systems use a backslash () instead of a slash (/) when displaying file paths, but you should always use a slash (/) in your code, even on Windows. The <code>pathlib</code> library automatically uses the correct path display when interacting with your operating system.</p>
 <p>Working with file contents After reading a text file, its contents are available to the program as a string (<code>string</code>).</p>
 <p>Converting the content to a list: So that you can work with each mobile phone brand separately, you need to turn the file text into a list of lines.</p>
 <p>Now each brand is one member of the list and you can work with it.</p>
-<p><code>splitlines</code>() splits the text string into a list of lines.</p>
+<p><code>splitlines()</code> — splits the text string into a list of lines</p>
 <p><img alt="Book image" src="../images/p264-01.png" /></p>
 <figure class="shot"><img alt="Figure 23" src="../images/p264-02.png" /><figcaption>Figure 23</figcaption></figure>
-<hr />
+</aside><hr />
 <p class="page-mark">Page 259</p>
 <p><img alt="Book image" src="../images/p265-01.png" /></p>
 <figure class="shot"><img alt="Figure 24" src="../images/p265-02.png" /><figcaption>Figure 24</figcaption></figure>
 <p>Counting data: for example, the number of brands in the file:</p>
 <p><img alt="Book image" src="../images/p265-03.png" /></p>
 <figure class="shot"><img alt="Figure 25" src="../images/p265-04.png" /><figcaption>Figure 25</figcaption></figure>
-<h3 id="activity">Activity</h3>
+<aside class="callout activity"><h3 id="activity">Activity</h3>
 <p>Change the program so that you can see the number of characters in each brand.</p>
 <p>Searching in the file contents Checking whether a particular brand exists in the file or not:</p>
 <p><img alt="Book image" src="../images/p265-05.png" /></p>
 <figure class="shot"><img alt="Figure 26" src="../images/p265-06.png" /><figcaption>Figure 26</figcaption></figure>
-<hr /></article>
+</aside><hr /></article>
       <aside class="extra">
         <h2 data-fa="تمرین این بخش" data-en="Exercises for this section">تمرین این بخش</h2>
         <p class="extra-note" data-fa="این تمرین‌ها و پیوندها اضافه بر متن کتاب‌اند." data-en="These exercises and links are in addition to the book.">این تمرین‌ها و پیوندها اضافه بر متن کتاب‌اند.</p>
@@ -231,7 +231,7 @@
     <nav class="pager"><a rel="prev" class="prev" href="p4-assess-oop.html"><span class="pager-word" data-fa="قبلی" data-en="Previous">قبلی</span><span class="pager-name" data-fa="ارزشیابی برنامه شیءگرا" data-en="Object-oriented assessment">ارزشیابی برنامه شیءگرا</span></a><a rel="next" class="next" href="p4-errors.html"><span class="pager-word" data-fa="بعدی" data-en="Next">بعدی</span><span class="pager-name" data-fa="پیمایش فایل و مدیریت خطا" data-en="Walking a file and handling errors">پیمایش فایل و مدیریت خطا</span></a></nav>
     </div>
   </div>
-  <script src="../assets/search-index.js?v=4"></script>
-  <script src="../assets/app.js?v=4"></script>
+  <script src="../assets/search-index.js?v=6"></script>
+  <script src="../assets/app.js?v=6"></script>
 </body>
 </html>

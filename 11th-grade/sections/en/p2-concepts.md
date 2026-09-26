@@ -2,9 +2,9 @@
 
 ### Some main concepts of web design
 
-The web has various key concepts that awareness of them is essential for every web developer (`Web` `developer`). In the following, these concepts are explained:
+The web has various key concepts that awareness of them is essential for every web developer (`Web developer`). In the following, these concepts are explained:
 
-Web designer (`Web` `designer`): The person or team responsible for designing the visual appearance of the website. This profession is a combination of graphic design, user experience (`UX`) design and user interface (`UI`) design, creating a `wire` `frame` and a prototype.
+Web designer (`Web designer`): The person or team responsible for designing the visual appearance of the website. This profession is a combination of graphic design, user experience (`UX`) design and user interface (`UI`) design, creating a `wire frame` and a prototype.
 
 User experience (`UX`): The experience the user gains after visiting the website to access information, products, and services.
 
@@ -14,7 +14,7 @@ User interface (`UI`): Interactive elements of the page such as buttons, forms, 
 
 `Back-end:` The behind-the-scenes part of the website or application that includes the main program logic, data processing, and connection to the database, and with which the user has no direct interaction.
 
-Web developer (`Web` `developer`): The person or team that turns the initial design of the website into usable web pages using programming languages. The web developer can also have the role of web designer. The main duties of a web developer include the following:
+Web developer (`Web developer`): The person or team that turns the initial design of the website into usable web pages using programming languages. The web developer can also have the role of web designer. The main duties of a web developer include the following:
 
 1 Client-side developer (`Front-end-developer`): Focuses on the appearance of the site and the elements that the user deals with directly.
 
@@ -22,8 +22,7 @@ Web developer (`Web` `developer`): The person or team that turns the initial des
 
 Domain (`Domain`): A unique name used to access a website, such as `.google.com` Users enter a site using the domain name. The domain name is an understandable substitute for numeric `IP` addresses that makes remembering the site address easier for users.
 
-`URL:` A unique address used to find and identify a particular resource (such as a web page, photo, video, or file) on the Internet. `URL` stands for `Uniform` `Resource` `Locator` (Figure 2).
-
+`URL:` A unique address used to find and identify a particular resource (such as a web page, photo, video, or file) on the Internet. `URL` stands for `Uniform Resource Locator` (Figure 2).
 
 ---
 
@@ -45,12 +44,11 @@ Shared host:
 
 Hosting companies have various plans for offering their services, and each plan (`Plan`) has different hardware features and bandwidth. Among these plans one can mention shared host, virtual server, dedicated server, and cloud server. In a shared-host plan, the host’s hardware features such as disk space, bandwidth, `CPU`, and `RAM` memory are divided among several websites. In this way, the entire hardware power of the web server is not spent responding to the requests of the users of one site. For this reason such hosts are suitable for small sites with limited traffic.
 
-
 ---
 
 **Page 88**
 
-Responsive design (`Responsive` `Design`): A method of page design that provides automatic adaptability of the page based on the size of the display (different devices such as mobile, tablet, and desktop).
+Responsive design (`Responsive Design`): A method of page design that provides automatic adaptability of the page based on the size of the display (different devices such as mobile, tablet, and desktop).
 
 SEO (`SEO`): A set of techniques for improving a website’s ranking in search engine results. SEO includes optimizing content, `URL` structure, and the use of meta tags, and so on.
 
@@ -70,8 +68,7 @@ The process of site design Designing and implementing a website is a step-by-ste
 
 Overall stages of site design The process of site design, in summary, includes the following stages:
 
-Defining the goal and requirements Designing the site map (`site` `map`) Creating a wireframe (`wire` `frame`) Creating the structure of pages with `HTML` Designing the appearance of pages with `CSS` Adding user interactions with `JavaScript` Designing the database (such as tables for users, products, and orders) Creating a connection between the pages and the database Adding user login and registration Implementing a shopping cart and payment Testing the site’s performance Fixing errors and optimizing Publishing the site on the server
-
+Defining the goal and requirements Designing the site map (`site map`) Creating a wireframe (`wire frame`) Creating the structure of pages with `HTML` Designing the appearance of pages with `CSS` Adding user interactions with `JavaScript` Designing the database (such as tables for users, products, and orders) Creating a connection between the pages and the database Adding user login and registration Implementing a shopping cart and payment Testing the site’s performance Fixing errors and optimizing Publishing the site on the server
 
 ---
 
@@ -97,7 +94,7 @@ Most users of this site are instructors and students. Required features include 
 
 Analyzing requirements: In this stage, the site’s needs are examined from two aspects:
 
-a) User requirements (`User` `Requirements`): These requirements include the features and capabilities that users need when using the site (Table 1).
+a) User requirements (`User Requirements`): These requirements include the features and capabilities that users need when using the site (Table 1).
 
 **Table 1**
 
@@ -125,12 +122,11 @@ The user should be able to view their previous orders.
 
 Viewing orders
 
-
 ---
 
 **Page 90**
 
-b) Technical requirements (`Technical` `Requirements`): These requirements include markup and programming languages, the database management system, and attention to the security and extensibility of the website (Table 2).
+b) Technical requirements (`Technical Requirements`): These requirements include markup and programming languages, the database management system, and attention to the security and extensibility of the website (Table 2).
 
 **Table 2**
 
@@ -138,11 +134,9 @@ Explanation
 
 Item `Python` (`Django`) programming language `SQLite` or `MySQL` database `HTML`, `CSS`, `Bootstrap` appearance design Encrypting users’ passwords security
 
-The possibility of adding new products and features in the future
+The possibility of adding new products and features in the future Extensibility
 
-Extensibility
-
-Designing the site map (`Site` `Map`): After the goal and needs of the website have been specified, designing the site map is essential. The site map specifies the structure of the pages, the connections among them, and the path of the user’s movement within the site. Correct design of the site map leads to a better understanding of the site’s structure and simplifies the process of designing and implementing it.
+Designing the site map (`Site Map`): After the goal and needs of the website have been specified, designing the site map is essential. The site map specifies the structure of the pages, the connections among them, and the path of the user’s movement within the site. Correct design of the site map leads to a better understanding of the site’s structure and simplifies the process of designing and implementing it.
 
 Stages of designing the site map
 
@@ -159,52 +153,30 @@ Stage 2: Identifying the main pages of the site In this stage, you need to ident
 Examples of common pages in an online store are:
 
 `Home`
-
-```
-Products
-Product Details
-```
+Products Product Details
 
 `Cart`
-
-```
-Login / Register
-User Profile
-About / Contact
-```
-
+Login / Register User Profile About / Contact
 
 ---
 
 **Page 91**
 
-Stage 3: Drawing the site map (`Site` `Map`) In this stage design the site map in written or graphic form
+Stage 3: Drawing the site map (`Site Map`) In this stage design the site map in written or graphic form
 
 `Home`
-
 . A simple method for drawing the map is that the home page is at the top of the map and the other pages
 
-```
-Products details
-Products
-```
+Products details Products
 
 are placed as sub-branches under the home page.
 
 `Cart`
-
-```
-User proflie
-Login/Register
-```
+User proflie Login/Register
 
 The figure opposite is considered a written map:
 
-In addition to the written method, the site map can be
-
-```
-Contact us
-```
+In addition to the written method, the site map can be Contact us
 
 displayed graphically using boxes and arrows.
 
@@ -224,15 +196,11 @@ Designing the appearance of pages
 
 After the goal and requirements have been specified, it is time
 
-Tools for designing the appearance of the site (front-end)
+Tools for designing the appearance of the site (front-end) to design the appearance of the website pages.
 
-to design the appearance of the website pages.
-
-The more beautiful and orderly the appearance of the site is, the more users
+The more beautiful and orderly the appearance of the site is, the more users Language
 
 ### In practice
-
-Language
 
 will be attracted to the site. On a store
 
@@ -241,7 +209,6 @@ Structure and elements of the page (such as text,
 site, the beauty of the site can lead to attracting
 
 `HTML`
-
 image, table, button)
 
 customers and more sales.
@@ -251,15 +218,11 @@ Beautifying and controlling the appearance of elements including
 To create elements inside web pages the markup language
 
 `CSS`
-
 setting colors, fonts, sizes,
 
-`HTML` is used, and to style the page elements the
-
-layout, and so on
+`HTML` is used, and to style the page elements the layout, and so on
 
 descriptive language `CSS` is used (Table 3).
-
 
 ---
 
@@ -269,17 +232,17 @@ Designing a site as a team: The process of site design includes numerous stages,
 
 Main roles in the site design team
 
-1 User experience designer (`UX` `Designer`): Analyzing users’ needs and optimizing the experience of using the site
+1 User experience designer (`UX Designer`): Analyzing users’ needs and optimizing the experience of using the site
 
-2 User interface designer (`UI` `Designer`): Designing visual elements such as colors, fonts, buttons, and forms
+2 User interface designer (`UI Designer`): Designing visual elements such as colors, fonts, buttons, and forms
 
-3 Front-end developer (`Front-End` `Developer`): Implementing the visual and interactive part of the site
+3 Front-end developer (`Front-End Developer`): Implementing the visual and interactive part of the site
 
-4 Back-end developer (`Back-End` `Developer`): Server-side programming, database management, and security
+4 Back-end developer (`Back-End Developer`): Server-side programming, database management, and security
 
-5 Content specialist (`Content` `Specialist`): Researching keywords and producing attractive text content
+5 Content specialist (`Content Specialist`): Researching keywords and producing attractive text content
 
-6 SEO specialist (`SEO` `Specialist`): Optimizing the site for search engines
+6 SEO specialist (`SEO Specialist`): Optimizing the site for search engines
 
 Depending on the volume of project work, the budget, and the number of people on the website design and development team, each role can be assigned to one or more people. In small projects one person may take on several roles. In Table 4 the common tools used by each of the roles on the site design team are introduced. These tools help improve the quality of the project and facilitate collaboration among team members.
 
@@ -289,39 +252,22 @@ Role
 
 Tools
 
-```
-Photoshop ،InVision ،Sketch ،Adobe XD ،Figma
-```
+Photoshop InVision Sketch Adobe XD Figma
 
-`UX` and `UI` designer Front-end developer `Bootstrap` ،`JavaScript` ،`CSS` ،`HTML`
+`UX` and `UI` designer Front-end developer `Bootstrap` ,`JavaScript` ,`CSS` ,`HTML`
 
-```
-توسعه‌دهندۀ بک‌اندDjango) ،Python ،Flask( ،JavaScript (Node.js)
-ویرایشگر کدAtom ،Sublime Text ،Visual Studio Code
-مرورگر و ابزار توسعهMicrosoft Edge ،Mozilla Firefox ،Google Chrome
-```
+‌ ‌Django) Python Flask( JavaScript (Node.js) Atom Sublime Text Visual Studio Code Microsoft Edge Mozilla Firefox Google Chrome
 
 Content management platforms and producing
 
-```
-Grammarly ،Google Docs ،WordPress
-```
+Grammarly Google Docs WordPress
 
 web-based content
 
-```
-Yoast SEO ،Moz ،SEMrush ،Google Analytics
-```
+Yoast SEO Moz SEMrush Google Analytics
 
 SEO specialist
 
-Other tools used by the design team `Cyberduck` ،`FileZilla`
-
-```
-GitHub ،Git
-```
-
-Version control
-
+Other tools used by the design team `Cyberduck` ,`FileZilla` GitHub Git Version control
 
 ---

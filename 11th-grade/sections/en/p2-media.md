@@ -8,8 +8,8 @@ Media queries are written with the `media@` directive in `CSS` and have the foll
 
 ```
 { (condition) media media-type and@
-CSS rules
 ```
+CSS rules
 
 }
 
@@ -32,19 +32,19 @@ Add the following styles to the end of the styles in the `index.html` file. Save
 Change the menu element layout from horizontal to
 
 ```
-;flex-direction: column
+flex-direction: column;
 ```
 
 vertical
 
 ```
-;%width: 100
+;%width: 100;
 ```
 
 Take the full width for each list item
 
 ```
-;text-align: center
+text-align: center;
 ```
 
 Center the option text
@@ -58,7 +58,7 @@ Center the option text
 ![Book image](../images/p148-02.png)
 
 ```
-;margin-bottom: 10px
+margin-bottom: 10px;
 ```
 
 Set the vertical spacing between menu options
@@ -74,7 +74,7 @@ Set the vertical spacing between menu options
 Hide the `user-action` area
 
 ```
-;display: none
+display: none;
 ```
 
 }
@@ -86,13 +86,13 @@ Hide the `user-action` area
 ![Book image](../images/p148-04.png)
 
 ```
-;grid-template-columns: 1fr
+grid-template-columns: 1fr;
 ```
 
 Create a single column
 
 ```
-;gap: 30px
+gap: 30px;
 ```
 
 Increase the vertical spacing between options
@@ -106,13 +106,13 @@ Increase the vertical spacing between options
 ![Book image](../images/p148-05.png)
 
 ```
-;max-width: 300px
+max-width: 300px;
 ```
 
 Place the service items in the middle of the row
 
 ```
-;margin: 0 auto
+margin: 0 auto;
 ```
 
 }
@@ -124,7 +124,7 @@ Place the service items in the middle of the row
 ![Book image](../images/p148-06.png)
 
 ```
-;display: none
+display: none;
 ```
 
 Hide the chat widget logo
@@ -139,7 +139,6 @@ To check how the media query works, move the right edge of the browser as far le
 
 When the window width gets smaller, the menu options are arranged vertically. The `user-actions` area disappears and the special service images are arranged in a column.
 
-
 ---
 
 **Page 143**
@@ -150,15 +149,7 @@ Work performance standard: Using `CSS` methods, implement the appearance and com
 
 Score
 
-Work conditions (tools, materials, equipment,
-
-Tools
-
-Results
-
-Row
-
-Steps
+Work conditions (tools, materials, equipment, Tools Results Row Steps
 
 Standard (indicators/judgment/scoring)
 
@@ -178,7 +169,7 @@ style conflicts following the standard order and priority correctly applying app
 
 Familiarity with methods of adding
 
-a working computer or laptop, a code editor (`VS` `Code` or the student,
+a working computer or laptop, a code editor (`VS Code` or the student,
 
 Correct use of all three methods (`External`, `Internal`, `Inline`) diagnosing and
 
@@ -186,9 +177,7 @@ Correct use of all three methods (`External`, `Internal`, `Inline`) diagnosing a
 
 `CSS`, managing them
 
-similar), an up-to-date web browser, time 25 minutes,
-
-Practical exercise
+similar), an up-to-date web browser, time 25 minutes, Practical exercise
 
 correcting style conflicts following the standard order and priority correctly applying appearance
 
@@ -208,9 +197,7 @@ Observing the written
 
 2 Text formatting
 
-code (`VS` `Code` or similar), an up-to-date web browser,
-
-code
+code (`VS Code` or similar), an up-to-date web browser, code
 
 Correctly perform text formatting using the related property.
 
@@ -246,31 +233,23 @@ Setting page element styles based on the parent–child relationship between the
 
 states and properties using pseudo-class selectors ability to select elements based on their properties using a combined selector using simple selectors1
 
-```
-عناصر معنایی (header, main, footer, section, article, nav) درست
-```
+(header, main, footer, section, article, nav)
 
 be used correctly have a standard `HTML5` page do Try this activities do the work with other methods3 observing
 
-Computer, browser for testing time 30 minutes, performance
+Computer, browser for testing time 30 minutes, performance run
 
 4 Working with box models
 
-run
-
 Work in a practical class or computer lab.
 
-```
-عناصر معنایی (header, main, footer, section, article, nav) درست
-```
+(header, main, footer, section, article, nav)
 
-template be used correctly have a standard `HTML5` page.2 incomplete performance of any of the steps1 side elements (`aside` `caption`) be added correctly images with captions be displayed correctly create a table with 2 rows and 2
+template be used correctly have a standard `HTML5` page.2 incomplete performance of any of the steps1 side elements (`aside caption`) be added correctly images with captions be displayed correctly create a table with 2 rows and 2
 
 3
 
-columns create data-entry forms do Try this activities do the work by asking about other
-
-methods
+columns create data-entry forms do Try this activities do the work by asking about other methods
 
 Element display models
 
@@ -278,26 +257,17 @@ Written
 
 on the page
 
-Computer browser for testing time 30 minutes,
-
-Practical test
+Computer browser for testing time 30 minutes, Practical test
 
 5
 
-```
 Flexbox-gride model
-```
 
 Work in a practical class or computer lab.
 
-Observing side elements (`aside` `caption`) be added correctly images with captions be displayed correctly create data-entry forms 2
-
-```
-disply -
-```
+Observing side elements (`aside caption`) be added correctly images with captions be displayed correctly create data-entry forms 2 disply -
 
 Instructor performance incomplete performance of any of the steps1
-
 
 ---
 
@@ -307,21 +277,11 @@ Appropriate use of `div` and `span` for structuring explanations and documentati
 
 3
 
-for SEO and accessibility do Try this activities do the work
-
-Documentation
-
-with other methods
-
-Computer browser
-
-and explanations
+for SEO and accessibility do Try this activities do the work Documentation with other methods Computer browser and explanations
 
 Completing the structure with
 
-reference resources for code documentation
-
-written
+reference resources for code documentation written
 
 6
 
@@ -343,9 +303,7 @@ Non-technical competencies, safety, health, environmental considerations, and at
 
 Failure to meet any of the non-technical competencies1 Yes
 
-Work assessment (competency to perform the work)
-
-No
+Work assessment (competency to perform the work) No
 
 ### Explanation:
 

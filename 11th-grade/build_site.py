@@ -20,6 +20,7 @@ from pathlib import Path
 import markdown
 
 from outline import MODULES, SECTIONS
+from repair_markdown import repair_markdown
 
 ROOT = Path(__file__).resolve().parent
 BOOK = ROOT / "converted-markdown-book"
@@ -108,9 +109,47 @@ def render_markdown(text: str, image_prefix: str) -> str:
         r'<figure class="shot">\1<figcaption>\2</figcaption></figure>',
         body,
     )
-    return body.replace("<pre>", '<div class="code-wrap" dir="ltr"><pre>').replace(
+    body = body.replace("<pre>", '<div class="code-wrap" dir="ltr"><pre>').replace(
         "</pre>", "</pre></div>"
     )
+    return box_callouts(body)
+
+
+# The book prints کنجکاوی / پروژه / نکته / فعالیت as tinted side boxes.
+# Their markdown is an h3 followed by the box content, so wrap that range
+# in an aside with its own background color.
+CALLOUT_KINDS = (
+    ("curiosity", ("کنجکاوی", "try this")),
+    ("project", ("پروژه", "project")),
+    ("note", ("نکته", "note")),
+    ("activity", ("فعالیت", "activity")),
+)
+# "Quiz game project" is a book callout even though the keyword comes last.
+CALLOUT_TAIL = {"quiz game project"}
+CALLOUT_END_RE = re.compile(r"<(?:h[123][ >]|hr[ >])", re.I)
+
+
+def box_callouts(body: str) -> str:
+    out: list[str] = []
+    pos = 0
+    for match in re.finditer(r"<h3\b[^>]*>(.*?)</h3>", body, re.S):
+        title = re.sub(r"<[^>]+>", "", match.group(1)).strip().lower()
+        kind = ""
+        for name, keys in CALLOUT_KINDS:
+            if title.startswith(keys) or (name == "project" and title in CALLOUT_TAIL):
+                kind = name
+                break
+        if not kind:
+            continue
+        end = CALLOUT_END_RE.search(body, match.end())
+        stop = end.start() if end else len(body)
+        out.append(body[pos : match.start()])
+        out.append(
+            f'<aside class="callout {kind}">{body[match.start() : stop]}</aside>'
+        )
+        pos = stop
+    out.append(body[pos:])
+    return "".join(out)
 
 
 def isolate_bidi(fragment: str, lang: str) -> str:
@@ -170,9 +209,9 @@ def flatten() -> list[dict]:
 
 
 def chrome(page_path: Path, title_fa: str, title_en: str, pages: list[dict], body: str) -> str:
-    assets = rel(page_path, SITE / "assets" / "style.css") + "?v=4"
-    script = rel(page_path, SITE / "assets" / "app.js") + "?v=4"
-    search = rel(page_path, SITE / "assets" / "search-index.js") + "?v=4"
+    assets = rel(page_path, SITE / "assets" / "style.css") + "?v=6"
+    script = rel(page_path, SITE / "assets" / "app.js") + "?v=6"
+    search = rel(page_path, SITE / "assets" / "search-index.js") + "?v=6"
     home = rel(page_path, SITE / "index.html")
     favicon = rel(page_path, SITE / "assets" / "favicon.svg")
     package = rel(page_path, SITE / "grade11-offline.zip") + "?v=2"
@@ -322,12 +361,48 @@ def pager(page_path: Path, pages: list[dict], index: int) -> str:
     return "".join(parts)
 
 
+# The printed contents page is a dotted leader line. Those lines fall apart
+# once Persian, English, and the page number share one paragraph.
+CONTENTS = [
+    ("module", "پودمان اول: برنامه‌نویسی پایتون", "Module 1: Python programming", "1", "p1-intro"),
+    ("unit", "واحد یادگیری ۱. مدل‌سازی داده", "Unit 1. Data modeling", "2", "p1-python"),
+    ("unit", "واحد یادگیری ۲. کار با توابع و ماژول‌ها", "Unit 2. Working with functions and modules", "48", "p1-sets"),
+    ("module", "پودمان دوم: طراحی صفحات وب ایستا", "Module 2: Designing static web pages", "83", "p2-intro"),
+    ("unit", "واحد یادگیری ۱. طراحی ساختار صفحات وب با HTML", "Unit 1. Designing web page structure with HTML", "84", "p2-web"),
+    ("unit", "واحد یادگیری ۲. طراحی ظاهر صفحات وب با CSS", "Unit 2. Designing web page appearance with CSS", "116", "p2-css-start"),
+    ("module", "پودمان سوم: تولید صفحات وب تعاملی", "Module 3: Producing interactive web pages", "145", "p3-intro"),
+    ("unit", "واحد یادگیری ۱. توسعه صفحات وب تعاملی با بوت‌استرپ", "Unit 1. Developing interactive pages with Bootstrap", "146", "p3-bs-start"),
+    ("unit", "واحد یادگیری ۲. طراحی صفحات وب تعاملی با جاوااسکریپت", "Unit 2. Designing interactive pages with JavaScript", "192", "p3-js-start"),
+    ("module", "پودمان چهارم: توسعه وب پایتون", "Module 4: Python web development", "233", "p4-intro"),
+    ("unit", "واحد یادگیری ۱. تولید برنامه شیءگرا", "Unit 1. Producing an object-oriented program", "234", "p4-idea"),
+    ("unit", "واحد یادگیری ۲. توسعه برنامه شیءگرا", "Unit 2. Developing an object-oriented program", "254", "p4-files"),
+    ("module", "پودمان پنجم: برنامه‌نویسی جنگو", "Module 5: Django programming", "275", "p5-intro"),
+    ("unit", "واحد یادگیری ۱. ایجاد وب‌اپلیکیشن", "Unit 1. Creating a web application", "276", "p5-what"),
+    ("unit", "واحد یادگیری ۲. توسعه وب‌اپلیکیشن", "Unit 2. Developing a web application", "295", "p5-model"),
+    ("module", "منابع", "References", "330", "refs"),
+]
+
+
+def contents_html() -> str:
+    rows = []
+    for kind, fa, en, page, target in CONTENTS:
+        rows.append(
+            f'<li class="{kind}"><a href="{esc(target)}.html">'
+            f'<span class="label" data-fa="{esc(fa)}" data-en="{esc(en)}">{esc(fa)}</span>'
+            f'<span class="page">{esc(page)}</span>'
+            f"</a></li>"
+        )
+    return f'<ol class="contents">{"".join(rows)}</ol>'
+
+
 def extra_block(section: dict) -> str:
     items = []
     for fa, en in zip(section["ex_fa"], section["ex_en"]):
         items.append(
             f'<li data-fa="{esc(fa)}" data-en="{esc(en)}">{esc(fa)}</li>'
         )
+    if not items and not section["link"]:
+        return ""
     links = ""
     if section["link"]:
         href, label_fa, label_en = section["link"]
@@ -428,8 +503,11 @@ def main() -> None:
     search = []
     for index, item in enumerate(pages):
         prefix = rel(item["out"], SITE / "images")
-        fa_html = isolate_bidi(render_markdown(section_markdown(item), prefix), "fa")
-        en_html = isolate_bidi(render_markdown(english_markdown(item), prefix), "en")
+        if item["id"] == "toc":
+            fa_html = en_html = contents_html()
+        else:
+            fa_html = isolate_bidi(render_markdown(repair_markdown(section_markdown(item), "fa"), prefix), "fa")
+            en_html = isolate_bidi(render_markdown(repair_markdown(english_markdown(item), "en"), prefix), "en")
         title = (
             f'<h1 class="section-title" data-fa="{esc(item["fa"])}" data-en="{esc(item["en"])}">'
             f"{esc(item['fa'])}</h1>"
@@ -451,8 +529,8 @@ def main() -> None:
                 "href": rel(SITE / "index.html", item["out"]),
                 "titleFa": item["fa"],
                 "titleEn": item["en"],
-                "textFa": plain_text(fa_html),
-                "textEn": plain_text(en_html),
+                "textFa": " ".join(row[1] for row in CONTENTS) if item["id"] == "toc" else plain_text(fa_html),
+                "textEn": " ".join(row[2] for row in CONTENTS) if item["id"] == "toc" else plain_text(en_html),
             }
         )
         guard(item["out"])

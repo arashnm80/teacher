@@ -8,60 +8,35 @@ Class name
 
 Used for the main carousel container. The main container holds all the carousel
 
-```
-Carousel
-```
-
+`Carousel`
 components.
 
 `Slide`
-
 Enables the slide animation when the slides change.
 
-```
-carousel-inner
-```
-
+`carousel-inner`
 Used for the container of the slide elements.
 
 Used for each slide in the carousel. An element that has the `carousel-item`
 
-```
-carousel-item
-```
-
+`carousel-item`
 class holds the slide content (images, text, and so on).
 
-```
-active
-```
-
+`active`
 Specifies which slide is currently being displayed.
 
-```
-carousel-control-prev
-```
-
+`carousel-control-prev`
 Used for the button that moves to the previous slide.
 
-```
-carousel-control-next
-```
-
+`carousel-control-next`
 Used for the button that moves to the next slide.
 
 Used to create indicators on the slide; small circles that show
 
-```
-carousel-indicators
-```
-
+`carousel-indicators`
 how many slides there are and which slide is currently being displayed.
 
-```
-carousel-caption
-```
-
+`carousel-caption`
 Used to add text or captions to the carousel slides.
 
 Designing the carousel at the top of the store page
@@ -75,7 +50,6 @@ Save the advertising banner images with the names `slide1`, `slide2`, and `slide
 Enter the code in the figure below in the `index.html` file at the beginning of the `<main>` tag:
 
 ![Book image](../images/p191-01.png)
-
 
 ---
 
@@ -109,7 +83,6 @@ Accordion. The accordion is one of the useful Bootstrap components that lets the
 
 An accordion can be used in designing various sections, such as a navigation and drop-down menu, showing extra information for a section, creating a frequently asked questions section, and so on.
 
-
 ---
 
 **Page 187**
@@ -124,58 +97,35 @@ Class name
 
 This class is used to create the main accordion container and holds all the accordion
 
-```
-Accordion
-```
-
+`Accordion`
 elements.
 
 An accordion has several sections (`Item`), and each separate section uses this class.
 
-```
-Accordion-item
-```
-
+`Accordion-item`
 Each section includes a `header` and collapsible content.
 
 This class is used to create the `header` in each section and usually includes a button or
 
-```
-Accordion-header
-```
-
+`Accordion-header`
 link that, when clicked, shows or hides the content related to that section.
 
-```
-Accordion-button
-```
-
+`Accordion-button`
 Sets the style of the button that is clicked.
 
-```
-Accordion-collapse
-```
-
+`Accordion-collapse`
 This class is used to set the style of the element that has collapsible content.
 
-```
-Accordion-body
-```
-
+`Accordion-body`
 This class is used to create the displayable content in each section (`Item`).
 
-```
-Collapse
-```
-
+`Collapse`
 Used for opening and closing the content.
 
 `show`
-
 This class makes the content of an element display in the open state.
 
 The `<div>` element with the `accordion-item` class must be used once for each accordion section.
-
 
 ---
 
@@ -187,11 +137,9 @@ Designing the frequently asked questions section
 
 In the footer design workshop, the frequently asked questions option was placed in the first column. In this workshop you will design the page for this option.
 
-1 Open the `index.html` file and from the `File` menu choose `Save` `As`. Set the name of the new file to
+1 Open the `index.html` file and from the `File` menu choose `Save As`. Set the name of the new file to
 
-```
-faq.html قرار دهید. کلمه faq مخفف Frequently Asked Questions است.
-```
+faq.html . faq Frequently Asked Questions .
 
 2 Clear the content of the `main` element completely and write the accordion code inside it according to the code below:
 
@@ -206,7 +154,6 @@ To fix this, use the style below in the `styles.css` file:
 ![Book image](../images/p194-02.png)
 
 The `accordion-button::after` selector selects the element after the button title (the arrow icon).
-
 
 ---
 
@@ -225,6 +172,5 @@ You are expected to get the output below at the end:
 ### Activity
 
 Link the frequently asked questions in the site footer section to the `faq.html` file.
-
 
 ---

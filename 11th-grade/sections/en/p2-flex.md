@@ -7,73 +7,28 @@ Setting parent element properties for horizontal or vertical arrangement of chil
 To enable `Flexbox`, it is enough to add the following property to the parent element:
 
 ```
-;display: flex
+display: flex;
 ```
 
 `felx-direction:` this property is used to set the direction of arranging elements, horizontally or vertically.
 
 The values of this property are shown in Table 10.
 
-Table 10 Values of the `flex-direction` property and their effect on how elements are arranged
+Table 10 Values of the `flex-direction` property and their effect on how elements are arranged Value`row`
 
-Value`row`
-
-```
-Row-reverse
-```
-
+`Row-reverse`
 Horizontal (default)
 
 Horizontal (right to left)
 
-```
-flex-direction:row
-flex-direction:row-reverse
-```
+`flex-direction:row`, `flex-direction:row-reverse` Explanation Value`column`
 
-Explanation
-
-`box3`
-
-`box2`
-
-`box1`
-
-`box1`
-
-`box2`
-
-`box3`
-
-Value`column`
-
-```
-Column-reverse
-```
-
+`Column-reverse`
 Vertical from top to bottom
 
 Vertical from bottom to top
 
-```
-flex-direction:column
-flex-direction:column-reverse
-```
-
-`box1`
-
-`box3`
-
-Explanation
-
-`box2`
-
-`box2`
-
-`box3`
-
-`box1`
-
+`flex-direction:column`, `flex-direction:column-reverse`, `box1`, `box3` Explanation
 
 ---
 
@@ -81,14 +36,9 @@ Explanation
 
 `felx-wrap:` sometimes the page width is not enough for all elements to sit next to each other. The `flex-wrap` property specifies whether extra elements move to the next row or all are squeezed into the same row (Table 11).
 
-Table 11 Values of the `felx-wrap` property
+Table 11 Values of the `flex-wrap` property Value`wrap`
 
-Value`wrap`
-
-```
-nowrap
-```
-
+`nowrap`
 Explanation
 
 Move to the next row
@@ -99,20 +49,16 @@ Do not move to the next row
 
 ```
 {.container
-;flex-flow: row wrap
+flex-flow: row wrap;
 ```
 
 }
 
 `justify-content:` this property controls the alignment of elements and how empty space is distributed between elements along the main axis (Table 12).
 
-Table 12 Values of the `justify-content` property
-
-Value
+Table 12 Values of the `justify-content` property Value Value
 
 ### Explanation
-
-Value
 
 ### Explanation
 
@@ -120,11 +66,7 @@ Arrange elements on the
 
 Create equal empty space around each
 
-```
-Flex-start
-Space-around
-```
-
+`Flex-start`, `Space-around`
 left
 
 element
@@ -133,25 +75,17 @@ Arrange elements on the
 
 Equal empty space between elements (the first and last
 
-```
-Flex-end
-Space-between
-```
-
+`Flex-end`, `Space-between`
 right
 
 elements stick to the edges)
 
 Equal empty space between elements and also between
 
-```
-Center
-```
-
+`Center`
 Arrange elements in the center `Space-evenly`
 
 elements and the edges
-
 
 ---
 
@@ -161,40 +95,11 @@ elements and the edges
 
 ![Book image](../images/p140-01.png)
 
-`box1`
-
-`box2`
-
-`box3`
-
-`box1`
-
-`box2`
-
-`box3`
-
-`box3`
-
-`box2`
-
-`box1`
-
-`box1`
-
-`box2`
-
-`box3`
-
 **Figure 26**
 
 Table 13 Values of the `align-items` property
 
-```
-مقدارStretch
-flex-start
-flex-end
-center
-```
+Stretch flex-start flex-end center
 
 Stretched inside
 
@@ -216,7 +121,6 @@ element.
 
 (default)
 
-
 ---
 
 **Page 135**
@@ -231,7 +135,7 @@ Open the `index.html` file and make the following changes in it:
 
 ![Book image](../images/p141-01.png)
 
-To get a shopping cart icon, go to the site `svgrepo.com` and search for `shopping-cart`. Choose a shopping cart you like, then click `Edit` `vector` to edit the image. Set the icon size to the minimum value. Then click the `Export` button. An `svg` file is downloaded. Save this file as `shopping-cart.svg` in the images folder.
+To get a shopping cart icon, go to the site `svgrepo.com` and search for `shopping-cart`. Choose a shopping cart you like, then click `Edit vector` to edit the image. Set the icon size to the minimum value. Then click the `Export` button. An `svg` file is downloaded. Save this file as `shopping-cart.svg` in the images folder.
 
 2 Set the style of the navigation bar (`.top-menu`) as in the figure below:
 
@@ -239,18 +143,17 @@ To get a shopping cart icon, go to the site `svgrepo.com` and search for `shoppi
 
 ![Book image](../images/p141-03.png)
 
-The `flex:` `display` property turns the navigation bar into a flex container so that the items inside it (the menu list on the right and the `user-action` section on the left) are arranged horizontally.
+The `flex: display` property turns the navigation bar into a flex container so that the items inside it (the menu list on the right and the `user-action` section on the left) are arranged horizontally.
 
-The ;`space-between:` `justify-content` property places the menu list and the `user-actions` section horizontally at the two ends of the container.
+The ;`space-between: justify-content` property places the menu list and the `user-actions` section horizontally at the two ends of the container.
 
-The `align-items:` `center` property makes the elements inside the flex container centered vertically.
+The `align-items: center` property makes the elements inside the flex container centered vertically.
 
-The `max-width:` `1200px` property sets the maximum width of the navigation bar to 1200 pixels.
+The `max-width: 1200px` property sets the maximum width of the navigation bar to 1200 pixels.
 
 This setting keeps the navigation bar from stretching too much on large displays.
 
-The `margin:0` `auto` property is used to center the menu bar area on the page.
-
+The `margin:0 auto` property is used to center the menu bar area on the page.
 
 ---
 
@@ -276,7 +179,6 @@ The shopping cart image width should be 25 pixels and its left margin (`margin-l
 
 ![Book image](../images/p142-04.png)
 
-
 ---
 
 **Page 137**
@@ -291,7 +193,7 @@ To design the main section of the page, use the `<main>` tag. This tag must be p
 
 The content of the “Newest products” and “Special services” areas must be inside the `<main>` element.
 
-Designing the “Newest products” section using `Flexbox`
+Designing the “Newest products” section using `Flexbox` Product card
 
 ### Workshop
 
@@ -305,9 +207,6 @@ Designing the “Newest products” section using `Flexbox`
 
 ![Book image](../images/p143-03.png)
 
-Product card
-
-
 ---
 
 **Page 138**
@@ -318,7 +217,7 @@ Also write the content of three other cards like the code on the previous page. 
 
 The `max-width` property sets the maximum width of the container area.
 
-The `margin:20px` `auto` property centers the container element horizontally on the page.
+The `margin:20px auto` property centers the container element horizontally on the page.
 
 The `display:flex` property distributes the cards in the `products` element using the flex technique.
 
@@ -328,13 +227,12 @@ The `flex-wrap:wrap` property changes the layout of elements when the device wid
 
 The `gap` property sets the spacing between product cards.
 
-Because the set “product image, title, and price” is inside the `<a>` element, the column layout of these elements is set with the selector `.product-card` `a`.
+Because the set “product image, title, and price” is inside the `<a>` element, the column layout of these elements is set with the selector `.product-card a`.
 
 The `flex-direction:column` property lays out the elements in a column.
 
 The `align-items:center` property sets the alignment of elements along the vertical axis.
 
 ![Book image](../images/p144-02.png)
-
 
 ---

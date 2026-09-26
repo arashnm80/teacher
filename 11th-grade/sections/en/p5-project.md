@@ -2,7 +2,7 @@
 
 ### Creating the weather project
 
-In `Vscode`, from the `File` menu, click `Open` `Folder`. Then create a new folder named `meteo` in a path of your choice and open the `meteo` folder you created (Figure 5):
+In `Vscode`, from the `File` menu, click `Open Folder`. Then create a new folder named `meteo` in a path of your choice and open the `meteo` folder you created (Figure 5):
 
 ![Figure 5 opening the meteo folder](../images/p286-01.png)
 
@@ -10,14 +10,11 @@ Figure 5 opening the `meteo` folder
 
 Open the terminal again and run the following command (Figure 6):
 
-```
 .django-admin startproject config
-```
 
 ![Figure 6 creating the project](../images/p286-02.png)
 
 Figure 6 creating the project
-
 
 ---
 
@@ -35,16 +32,13 @@ Research the purpose of the other files in the project.
 
 Running the Django project: run the following command in the terminal.
 
-```
 python manage.py runserver
-```
 
-The `runserver` command starts a small virtual web server (`web` `server`) for the Django project. This web server is only for the Django programmer so they can run the Django project on their own computer (Figure 7).
+The `runserver` command starts a small virtual web server (`web server`) for the Django project. This web server is only for the Django programmer so they can run the Django project on their own computer (Figure 7).
 
 ![Figure 7 successfully starting the Django web server](../images/p287-01.png)
 
 Figure 7 successfully starting the Django web server
-
 
 ---
 
@@ -72,31 +66,27 @@ Suppose your project is a factory in the real world. Each of the factory’s pro
 
 Each `app` performs a specific task and should be created so that it is reusable, meaning you can use an `app` in another project and it performs the same task well.
 
-
 ---
 
 **Page 283**
 
 To create an `app`, the `startapp` command is used. First stop the Django server (with `ctrl` + `c`) and then run the following command.
 
-```
 python manage.py startapp weather
-```
 
 A folder named `weather` is created. The `weather` folder is in fact a Django `app` whose task is to display the weather for the desired city.
 
-After creating the `weather` `app`, the project structure will be like Figure 9.
+After creating the `weather app`, the project structure will be like Figure 9.
 
 ![Figure 9 contents of the weather app](../images/p289-01.png)
 
-Figure 9 contents of the `weather` `app`
+Figure 9 contents of the `weather app`
 
 Introducing the created `app` to Django in `settings.py`: at this stage, you need to introduce the created `app` to Django. To do this, open the `settings.py` file and add `weather` to the end of the `INSTALLED_APPS` list as shown in Figure 10.
 
 ![Figure 10 adding weather to installed_apps](../images/p289-02.png)
 
 Figure 10 adding `weather` to `installed_apps`
-
 
 ---
 
@@ -122,12 +112,11 @@ Line 4: an `object` of type `HttpResponse` has been created. `HttpResponse` hold
 
 The `show_temp_view` function in the `views.py` file will display only a simple text.
 
-Save the file and start the Django server with `python` `manage.py` `runserver`.
+Save the file and start the Django server with `python manage.py runserver`.
 
 Enter the home page address; you still see the welcome page. So you need to make changes so that on the site’s home page, instead of the welcome message, the text “Hamedan 27 degrees Celsius” is displayed.
 
 Open the `urls.py` file in the `config` folder (Figure 12).
-
 
 ---
 
@@ -151,7 +140,6 @@ Open the address `http://127.0.0.1:8000/admin` in the browser. The admin panel l
 
 Figure 13 the admin panel login page
 
-
 ---
 
 **Page 286**
@@ -166,15 +154,14 @@ Figure 14 adding a new `path`
 
 Line 2: the `include` module has been imported.
 
-Line 6: a new `path` has been added. The first argument of the `path` function in this command is only an empty string, and it means that if in the address (`URL`) that reaches the Django server, no expression was entered after the site address, use the `include` module to go to the `urls.py` file in the `weather` `app` and continue from there. In fact this line sends home page requests to the `weather` `app`.
+Line 6: a new `path` has been added. The first argument of the `path` function in this command is only an empty string, and it means that if in the address (`URL`) that reaches the Django server, no expression was entered after the site address, use the `include` module to go to the `urls.py` file in the `weather app` and continue from there. In fact this line sends home page requests to the `weather app`.
 
-Step three: go into the `weather` folder and create a `urls.py` for the `weather` `app` as shown in Figure 15.
+Step three: go into the `weather` folder and create a `urls.py` for the `weather app` as shown in Figure 15.
 
 Each `app` can have its own `urls.py`.
 
 ![Figure 15 creating the urls.py file for the app](../images/p292-02.png)
 
 Figure 15 creating the `urls.py` file for the `app`
-
 
 ---

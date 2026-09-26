@@ -1,6 +1,5 @@
 # Designing Interactive Web Pages with JavaScript
 
-
 ---
 
 **Page 192**
@@ -37,8 +36,7 @@ Validate user inputs in forms and, if there is an error, display an appropriate 
 
 ### Performance standard
 
-Be able to use `Java` `Script` optimally and securely to add dynamic, interactive behaviors to web pages and run the final output in different browsers.
-
+Be able to use `Java Script` optimally and securely to add dynamic, interactive behaviors to web pages and run the final output in different browsers.
 
 ---
 
@@ -68,7 +66,6 @@ Dynamic shopping cart: Adding, removing, or changing the quantity of products in
 
 Form validation: Checking that information entered in a registration or purchase form (such as phone number, postal code, and email) is correct before final submission.
 
-
 ---
 
 **Page 194**
@@ -79,26 +76,23 @@ Image slider and gallery: Creating automatic or manual movement of product image
 
 Responsive menu (`Responsive`): Opening and closing the mobile menu with a user click and displaying it appropriately on different devices.
 
-Sending a message (`Notifciation`): Showing success messages (such as “Product added to cart”) or errors as a pop-up (`pop` `up`) Date and time: Displaying the solar (Persian) calendar date or the current time to inform the user.
+Sending a message (`Notifciation`): Showing success messages (such as “Product added to cart”) or errors as a pop-up (`pop up`) Date and time: Displaying the solar (Persian) calendar date or the current time to inform the user.
 
 Temporary storage: Keeping login information or user settings in the browser (cookies) for an easier shopping experience on later visits.
 
-```
-محیط توسعه (Development Environment)
-```
+(Development Environment)
 
 To start programming with JavaScript, you need a suitable development environment that lets you write, test, and debug code. The steps for preparing a JavaScript development environment are as follows:
 
-Choosing and installing an editor: For coding with JavaScript you can use various editors such as `VSCode`, `Sublime` `Text`, `Atom`, and `++Notepad`. These editors have features such as syntax highlighting, code completion, and debugging (`Debug`) tools that help improve efficiency and the programming experience.
+Choosing and installing an editor: For coding with JavaScript you can use various editors such as `VSCode`, `Sublime Text`, `Atom`, and `++Notepad`. These editors have features such as syntax highlighting, code completion, and debugging (`Debug`) tools that help improve efficiency and the programming experience.
 
-Choosing and installing a web browser: All modern browsers today, such as `Google` `Chrome`, `Mozilla` `Firefox`, `Microsoft` `Edge`, and `Safari`, can run JavaScript code by default.
+Choosing and installing a web browser: All modern browsers today, such as `Google Chrome`, `Mozilla Firefox`, `Microsoft Edge`, and `Safari`, can run JavaScript code by default.
 
-In addition, these browsers have developer tools (`Developer` `tools`) that give the web programmer more capabilities. These tools, which are activated with the `F12` key, include the console, the `Element` section (containing `HTML` elements and element styles), `Sources` (project resources), and more (Figure 2).
+In addition, these browsers have developer tools (`Developer tools`) that give the web programmer more capabilities. These tools, which are activated with the `F12` key, include the console, the `Element` section (containing `HTML` elements and element styles), `Sources` (project resources), and more (Figure 2).
 
 ![Figure 2](../images/p200-01.png)
 
 **Figure 2**
-
 
 ---
 
@@ -110,7 +104,7 @@ Adding JavaScript to a web page To insert JavaScript code into a web page, the `
 
 **Figure 3**
 
-Writing JavaScript code A piece of JavaScript code contains a set of instructions. Each instruction defines a separate operation and is separated from the next instruction by a semicolon (;). One of the simplest and most widely used JavaScript statements is the `console.log`() method, which is used to display the code’s output in the browser console. The correct way to use this statement is as follows:
+Writing JavaScript code A piece of JavaScript code contains a set of instructions. Each instruction defines a separate operation and is separated from the next instruction by a semicolon (;). One of the simplest and most widely used JavaScript statements is the `console.log()` method, which is used to display the code’s output in the browser console. The correct way to use this statement is as follows:
 
 `console.log`(literal string or variable);
 
@@ -130,8 +124,7 @@ Coding in the JavaScript language
 
 ![Book image](../images/p201-03.png)
 
-3 Run the `workshop1.html` file and, to see the code output, press the `F12` key in the browser so the developer tools (`Developer` `Tools`) appear. Then, to see the script result, click the `Console` button.
-
+3 Run the `workshop1.html` file and, to see the code output, press the `F12` key in the browser so the developer tools (`Developer Tools`) appear. Then, to see the script result, click the `Console` button.
 
 ---
 
@@ -143,7 +136,7 @@ Coding in the JavaScript language
 
 ![Book image](../images/p202-02.png)
 
-The web browser runs the script in the `<head>` section first and then the script in the `<body>` section. That is why the phrase `Second` `Statement` appears earlier.
+The web browser runs the script in the `<head>` section first and then the script in the `<body>` section. That is why the phrase `Second Statement` appears earlier.
 
 5 Create a file named `script.js` inside the `JavaScript` folder and write the following statement in it:
 
@@ -153,9 +146,7 @@ The web browser runs the script in the `<head>` section first and then the scrip
 
 6 Then save the file contents.
 
-```
-7 در بخش <head> فایل workshop1.html،
-```
+7 <head> workshop1.html
 
 Attach the `script.js` file to the web page. Place the attach statement exactly before the `<head/>` tag:
 
@@ -169,7 +160,6 @@ Attach the `script.js` file to the web page. Place the attach statement exactly 
 
 ............................................................................................................................................
 
-
 ---
 
 **Page 197**
@@ -180,13 +170,11 @@ Attach the `script.js` file to the web page. Place the attach statement exactly 
 
 ![Book image](../images/p203-02.png)
 
-```
-workshop1.html اضافه کنید:
-```
+workshop1.html :
 
-Save the `HTML` file and display the result on the browser’s main page. The phrase `Enjoy` `JavaScript` appears on the browser page at size `h2`.
+Save the `HTML` file and display the result on the browser’s main page. The phrase `Enjoy JavaScript` appears on the browser page at size `h2`.
 
-If the web page already has content, the `document.write`() statement causes the current content to disappear and be replaced by the content inside the parentheses. Accordingly, using this statement for some small exercises is fine, but you should be careful when using it in a project.
+If the web page already has content, the `document.write()` statement causes the current content to disappear and be replaced by the content inside the parentheses. Accordingly, using this statement for some small exercises is fine, but you should be careful when using it in a project.
 
 ### Try this
 
@@ -205,9 +193,8 @@ Variables (`Variables`): JavaScript has two keywords, `let` and `var`, for defin
 The following example shows how to define the variables `x` and `y` with different values:
 
 ```
-;let x = 10
-;var y = 15.75
+let x = 10;
+var y = 15.75;
 ```
-
 
 ---

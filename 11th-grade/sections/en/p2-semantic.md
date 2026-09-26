@@ -8,9 +8,7 @@
 
 About us We are a trusted online store in the field of supplying textbooks.
 
-Our services Reasonable prices, special discounts, fast nationwide shipping, free home delivery Contact us
-
-Output
+Our services Reasonable prices, special discounts, fast nationwide shipping, free home delivery Contact us Output
 
 **Figure 18**
 
@@ -23,7 +21,6 @@ Output
 Output
 
 **Figure 19**
-
 
 ---
 
@@ -57,7 +54,6 @@ The `<span>` tag creates an `inline` element and its content is not placed on a 
 
 The `<div>` and `<span>` tags have no visual effect, and `CSS` is used for their appearance settings.
 
-
 ---
 
 **Page 113**
@@ -76,17 +72,13 @@ New Reference
 
 Save the file and observe the result in the browser
 
-Provider of the latest edition of textbooks
-
-.
+Provider of the latest edition of textbooks .
 
 Most visited products
 
 * All material and intellectual rights of this site belong to My Store
 
-```
-توضیحات (Comments)
-```
+(Comments)
 
 Comments or explanations in `HTML` are a useful tool for documentation and note-taking in `HTML` code. Comments make it possible to add explanations, notes, or extra information for the developer. Explanations are not interpreted by the browser; as a result, users do not see the content of the explanations.
 
@@ -98,6 +90,5 @@ To create a comment in `HTML`, the `<!-- -->` mark is used:
 <!-- this is a comment -->
 <p> This is a paragraph </p>
 ```
-
 
 ---

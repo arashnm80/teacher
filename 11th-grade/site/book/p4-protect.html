@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title data-fa="داده معتبر و استفاده داخلی" data-en="Valid data and internal use">داده معتبر و استفاده داخلی</title>
   <link rel="icon" href="../assets/favicon.svg">
-  <link rel="stylesheet" href="../assets/style.css?v=4">
+  <link rel="stylesheet" href="../assets/style.css?v=6">
 </head>
 <body data-root="../">
   <header class="top">
@@ -51,20 +51,18 @@
 <p>جدول ٣</p>
 <p>سطح دسترسی</p>
 <p>نحوه نوشتن</p>
-<p>توضیح عمومی (<code>Public</code>)<code>battery</code>دسترسی آزاد از همه‌جا <code>_battery</code> _دسترسی فقط داخل همان کلاس</p>
-<div class="code-wrap" dir="ltr"><pre><code>خصوصی (Private)
-</code></pre></div>
+<p>توضیح عمومی (<code>Public</code>)<code>battery</code>دسترسی آزاد از همه‌جا <code>_battery</code> _دسترسی فقط داخل همان کلاس خصوصی <bdi dir="ltr">(Private)</bdi></p>
 <p><code>_status</code>دسترسی از درون کلاس و کلاس‌های فرزند</p>
 <p>محافظت‌شده (<code>Protected</code>)</p>
 <hr />
 <p class="page-mark">صفحه ۲۵۱</p>
 <p>این نوع نام‌گذاری نشان می‌دهد که ویژگی برای استفادۀ داخلی کلاس و کلاس‌های فرزند طراحی شده است و نباید مستقیمًا از بیرون کلاس تغییر داده شود.</p>
-<h3 id="_1">نکته</h3>
+<aside class="callout note"><h3 id="_1">نکته</h3>
 <p><code>Protected</code> در پایتون یک قرارداد برنامه‌نویسی است، نه یک محدودیت اجباری. یعنی پایتون جلوی دسترسی مستقیم را نمی‌گیرد، اما به برنامه‌نویس هشدار می‌دهد که این ویژگی نباید مستقیمًا از بیرون کلاس تغییر داده شود.</p>
 <p>تا اینجا با سه سطح دسترسی به ویژگی‌های یک کلاس آشنا شدید:</p>
 <p>سطوح دسترسی مختلف شامل ویژگی‌های عمومی، خصوصی و محافظت‌شده، به شما کمک می‌کنند تا دسترسی به داده‌های یک کلاس را کنترل کنید. به همین دلیل لازم است جزئیات داخلی کلاس‌ها پنهان شوند و دسترسی به داده‌ها به‌صورت کنترل‌شده انجام گیرد. این مفهوم در برنامه‌نویسی شیءگرا با عنوان کپسوله‌سازی (<code>Encapsulation</code>) شناخته می‌شود. کپسوله‌سازی به معنای:</p>
 <p>پنهان‌سازی جزئیات داخلی یک کلاس و کنترل نحوۀ دسترسی به داده‌ها و رفتارهای آن می‌باشد و یکی از مفاهیم اصلی برنامه‌نویسی شیءگرا محسوب می‌شود.</p>
-<hr /></article><article class="lesson" lang="en" dir="ltr" data-lang-block="en" hidden><p class="page-mark">Page 250</p>
+</aside><hr /></article><article class="lesson" lang="en" dir="ltr" data-lang-block="en" hidden><p class="page-mark">Page 250</p>
 <p>These statements run without error from Python’s point of view; but logically they are invalid values. A mobile phone’s battery charge cannot be more than 100 percent or a negative value.</p>
 <p>The problem is that the class attributes are freely available and there is no control over how they are changed. This can cause logic errors in the program and, in large programs, make maintenance and development difficult.</p>
 <p>To solve this problem, you can define some attributes so that direct access to them from outside the class is restricted and changing them is done only through specified methods. These kinds of attributes are called private attributes (<code>Private</code>).</p>
@@ -86,20 +84,18 @@
 <p>Table 3</p>
 <p>Access level</p>
 <p>How to write</p>
-<p>Explanation Public (<code>Public</code>)<code>battery</code>Free access from everywhere <code>_battery</code> _Access only inside the same class</p>
-<div class="code-wrap" dir="ltr"><pre><code>خصوصی (Private)
-</code></pre></div>
+<p>Explanation Public (<code>Public</code>)<code>battery</code>Free access from everywhere <code>_battery</code> _Access only inside the same class (Private)</p>
 <p><code>_status</code>Access from inside the class and child classes</p>
 <p>Protected (<code>Protected</code>)</p>
 <hr />
 <p class="page-mark">Page 251</p>
 <p>This kind of naming shows that the attribute is designed for internal use by the class and child classes and should not be changed directly from outside the class.</p>
-<h3 id="note">Note</h3>
+<aside class="callout note"><h3 id="note">Note</h3>
 <p><code>Protected</code> in Python is a programming convention, not a forced restriction. That is, Python does not prevent direct access, but it warns the programmer that this attribute should not be changed directly from outside the class.</p>
 <p>So far you have become familiar with three levels of access to a class’s attributes:</p>
 <p>The different access levels, including public, private, and protected attributes, help you control access to a class’s data. For that reason, the internal details of classes need to be hidden and access to data needs to be done in a controlled way. This concept in object-oriented programming is known as encapsulation (<code>Encapsulation</code>). Encapsulation means:</p>
 <p>Hiding the internal details of a class and controlling how its data and behaviors are accessed, and it is considered one of the main concepts of object-oriented programming.</p>
-<hr /></article>
+</aside><hr /></article>
       <aside class="extra">
         <h2 data-fa="تمرین این بخش" data-en="Exercises for this section">تمرین این بخش</h2>
         <p class="extra-note" data-fa="این تمرین‌ها و پیوندها اضافه بر متن کتاب‌اند." data-en="These exercises and links are in addition to the book.">این تمرین‌ها و پیوندها اضافه بر متن کتاب‌اند.</p>
@@ -109,7 +105,7 @@
     <nav class="pager"><a rel="prev" class="prev" href="p4-inherit.html"><span class="pager-word" data-fa="قبلی" data-en="Previous">قبلی</span><span class="pager-name" data-fa="وراثت" data-en="Inheritance">وراثت</span></a><a rel="next" class="next" href="p4-assess-oop.html"><span class="pager-word" data-fa="بعدی" data-en="Next">بعدی</span><span class="pager-name" data-fa="ارزشیابی برنامه شیءگرا" data-en="Object-oriented assessment">ارزشیابی برنامه شیءگرا</span></a></nav>
     </div>
   </div>
-  <script src="../assets/search-index.js?v=4"></script>
-  <script src="../assets/app.js?v=4"></script>
+  <script src="../assets/search-index.js?v=6"></script>
+  <script src="../assets/app.js?v=6"></script>
 </body>
 </html>

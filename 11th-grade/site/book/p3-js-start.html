@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title data-fa="جاوااسکریپت در صفحه وب" data-en="JavaScript on the page">جاوااسکریپت در صفحه وب</title>
   <link rel="icon" href="../assets/favicon.svg">
-  <link rel="stylesheet" href="../assets/style.css?v=4">
+  <link rel="stylesheet" href="../assets/style.css?v=6">
 </head>
 <body data-root="../">
   <header class="top">
@@ -48,7 +48,7 @@
 <p>با استفاده از انتخابگرهای <code>DOM</code>، محتوا و ویژگی‌های عناصر <code>HTML</code> را در پاسخ به رویدادها‌یکاربر تغییر دهد.</p>
 <p>ورود‌یهای کاربر را در فر‌مها اعتبارسنجی کرده و در صورت وجود خطا، پیام مناسب نمایش دهد.</p>
 <h3 id="_5">استاندارد عملکرد</h3>
-<p>بتواند با استفاده از <code>Java</code> <code>Script</code> به‌صورت بهینه و امن، رفتارهای پویا و تعاملی را به صفحات وب اضافه کند و خروجی نهایی را در مرورگرهای مختلف اجرا کند.</p>
+<p>بتواند با استفاده از <code>Java Script</code> به‌صورت بهینه و امن، رفتارهای پویا و تعاملی را به صفحات وب اضافه کند و خروجی نهایی را در مرورگرهای مختلف اجرا کند.</p>
 <hr />
 <p class="page-mark">صفحه ۱۹۳</p>
 <h3 id="_6">تعریف جاوا‌اسکریپت</h3>
@@ -68,42 +68,40 @@
 <p>نمایش محصولات به‌صورت پویا: فیلتر کردن محصولات بر اساس دسته‌بندی، قیمت یا برند و مرتب‌سازی لیست محصولات در لحظه.</p>
 <p>اسلایدر و گالری تصاویر: ایجاد حرکت خودکار یا دستی تصاویر محصولات برای نمایش زوایای مختلف یک محصول.</p>
 <p>منوی واکنش‌گرا (<code>Responsive</code>): باز و بسته شدن منوی موبایل با کلیک کاربر و نمایش مناسب در دستگاه‌های مختلف.</p>
-<p>ارسال پیام (<code>Notifciation</code>): نمایش پیام‌های موفقیت (مانند «محصول به سبد اضافه شد») یا خطا به‌صورت پاپ‌آپ (<code>pop</code> <code>up</code>) تاریخ و ساعت: نمایش تاریخ شمسی یا ساعت جاری برای اطلاع‌رسانی به کاربر.</p>
+<p>ارسال پیام (<code>Notifciation</code>): نمایش پیام‌های موفقیت (مانند «محصول به سبد اضافه شد») یا خطا به‌صورت پاپ‌آپ (<code>pop up</code>) تاریخ و ساعت: نمایش تاریخ شمسی یا ساعت جاری برای اطلاع‌رسانی به کاربر.</p>
 <p>ذخیره‌سازی موقت: نگهداری اطلاعات ورود یا تنظیمات کاربر در مرورگر (کوکی‌ها) برای تجربه خرید آسان‌تر در بازدیدهای بعدی.</p>
-<div class="code-wrap" dir="ltr"><pre><code>محیط توسعه (Development Environment)
-</code></pre></div>
+<p>محیط توسعه <bdi dir="ltr">(Development Environment)</bdi></p>
 <p>برای شروع برنامه‌نویسی با جاوا‌اسکریپت، نیاز به یک محیط توسعه مناسب است که امکان نوشتن کد، تست و اشکال‌زدایی آن را فراهم کند. مراحل آماده‌سازی محیط توسعه جاوا‌اسکریپت به شرح زیر است:</p>
-<p>انتخاب و نصب ویرایشگر: برای کد‌نویسی با جاوا‌اسکریپت می‌توان از ویرایشگرهای مختلفی مانند <code>VSCode</code>،<code>Sublime</code> <code>Text</code> و <code>Atom</code> و <code>++Notepad</code> استفاده نمود. این ویرایشگرها دارای امکاناتی نظیر رنگ‌آمیزی کد، تکمیل خودکار کد و ابزارهای خطایابی (<code>Debug</code>) هستند که به بهبود کارایی و تجربه برنامه‌نویسی کمک می‌کنند.</p>
-<p>انتخاب و نصب مرورگر وب: تمامی مرورگرهای مدرن امروزی همچون <code>Google</code> <code>Chrome</code>، <code>Mozilla</code> <code>Firefox</code>، <code>Microsoft</code> <code>Edge</code> و <code>Safari</code> امکان اجرای کدهای جاوا‌اسکریپت را به‌صورت پیش‌فرض دارند.</p>
-<p>به علاوه، این مرورگرها دارای ابزارهای توسعه‌دهنده (<code>Developer</code> <code>tools</code>) هستند که امکانات بیشتری را برای برنامه‌نویس وب فراهم می‌کنند. این ابزارها که توسط کلید <code>F12</code> فعال می‌شوند، شامل کنسول، بخش <code>Element</code> (حاوی عناصر <code>HTML</code> و استایل عناصر)، <code>Sources</code> (منابع پروژه) و... هستند (شکل2).</p>
+<p>انتخاب و نصب ویرایشگر: برای کد‌نویسی با جاوا‌اسکریپت می‌توان از ویرایشگرهای مختلفی مانند <code>VSCode</code>،<code>Sublime Text</code> و <code>Atom</code> و <code>++Notepad</code> استفاده نمود. این ویرایشگرها دارای امکاناتی نظیر رنگ‌آمیزی کد، تکمیل خودکار کد و ابزارهای خطایابی (<code>Debug</code>) هستند که به بهبود کارایی و تجربه برنامه‌نویسی کمک می‌کنند.</p>
+<p>انتخاب و نصب مرورگر وب: تمامی مرورگرهای مدرن امروزی همچون <code>Google Chrome</code>، <code>Mozilla Firefox</code>، <code>Microsoft Edge</code> و <code>Safari</code> امکان اجرای کدهای جاوا‌اسکریپت را به‌صورت پیش‌فرض دارند.</p>
+<p>به علاوه، این مرورگرها دارای ابزارهای توسعه‌دهنده (<code>Developer tools</code>) هستند که امکانات بیشتری را برای برنامه‌نویس وب فراهم می‌کنند. این ابزارها که توسط کلید <code>F12</code> فعال می‌شوند، شامل کنسول، بخش <code>Element</code> (حاوی عناصر <code>HTML</code> و استایل عناصر)، <code>Sources</code> (منابع پروژه) و... هستند (شکل2).</p>
 <figure class="shot"><img alt="شکل 2" src="../images/p200-01.png" /><figcaption>شکل 2</figcaption></figure>
 <hr />
 <p class="page-mark">صفحه ۱۹۵</p>
 <p>افزودن جاوا اسکرپیت به یک صفحه وب برای درج کدهای جاوا‌اسکریپت در صفحه وب، از تگ <code>&lt;script&gt;&lt;/script&gt;</code> استفاده می‌شود. این تگ می‌تواند در بخش <code>&lt;head&gt;</code>، <code>&lt;body&gt;</code> مورد استفاده قرار گیرد. محل نوشتن کد جاوا‌اسکریپت وابسته به نوع کد و نیازهای خاص پروژه است. با این‌حال توصیه می‌شود که تا حد امکان این کدها قبل از تگ <code>&lt;body/&gt;</code> نوشته شود. با انجام این کار ابتدا محتوای صفحه به‌طور کامل بارگذاری شده و در معرض دید کاربر قرار می‌گیرد، سپس اسکریپت‌ها اجرا می‌شوند، در نتیجه زمان بارگذاری صفحه کوتاه‌تر می‌شود. کدهای جاوا‌اسکریپت می‌توانند در یک فایل خارجی با پسوند <code>js</code> نوشته شوند. در این صورت فایل <code>js</code> باید به فایل <code>html</code> الحاق شود. در بخش بعد توضیحات بیشتری درباره روش‌های فوق ارائه می‌شود.</p>
 <figure class="shot"><img alt="شکل 3" src="../images/p201-01.png" /><figcaption>شکل 3</figcaption></figure>
-<p>نوشتن کد جاوا‌اسکریپت یک کد جاوا‌اسکریپت حاوی مجموعه‌ای از دستورالعمل‌هاست. هر دستورالعمل یک عملیات مجزا را تعریف می‌کند و با نقطه‌ویرگول (;) از دستور بعدی جدا می‌شود. یکی از ساده‌ترین و پرکاربردترین دستورات جاوا‌اسکریپت، متد<code>console.log</code>() است که برای نمایش خروجی کد در کنسول مرورگر مورد استفاده قرار می‌گیرد. نحوه صحیح به‌کارگیری این دستور به شکل زیر است:</p>
+<p>نوشتن کد جاوا‌اسکریپت یک کد جاوا‌اسکریپت حاوی مجموعه‌ای از دستورالعمل‌هاست. هر دستورالعمل یک عملیات مجزا را تعریف می‌کند و با نقطه‌ویرگول (;) از دستور بعدی جدا می‌شود. یکی از ساده‌ترین و پرکاربردترین دستورات جاوا‌اسکریپت، متد<code>console.log()</code> است که برای نمایش خروجی کد در کنسول مرورگر مورد استفاده قرار می‌گیرد. نحوه صحیح به‌کارگیری این دستور به شکل زیر است:</p>
 <p>;)رشته ثابت یا متغیر( <code>console.log</code></p>
-<h3 id="_7">نکته</h3>
+<aside class="callout note"><h3 id="_7">نکته</h3>
 <p>توصیه می‌شود که در انتهای دستورات جاوا‌اسکریپت از علامت سمی‌کالن (;) برای اعلام خاتمه دستور استفاده شود، اما استفاده از آن اجباری نیست.</p>
 <p>کدنویسی با زبان جاوا‌اسکریپت</p>
-<h3 id="_8">کار کارگاهی</h3>
+</aside><h3 id="_8">کار کارگاهی</h3>
 <p><img alt="تصویر کتاب" src="../images/p201-02.png" /></p>
 <p>1 برای شروع کار پوشه جدیدی با عنوان <code>JavaScript</code> ایجاد کنید و فایل کارگاه‌ها را درون آن ایجاد کنید.</p>
 <p>2 در پوشه <code>JavaScript</code>، یک فایل با نام<code>workshop1.html</code> ایجاد کنید و اسکریپتی مشابه تصویر روبه‌رو درون بخش <code>&lt;body&gt;</code> بنویسید.</p>
 <p><img alt="تصویر کتاب" src="../images/p201-03.png" /></p>
-<p>3 فایل <code>html.workshop1</code> را اجرا کنید و برای مشاهده خروجی کد، کلید <code>F12</code> را در مرورگر بفشارید تا ابزارهای توسعه‌دهنده (<code>Developer</code> <code>Tools</code>) ظاهر شوند. سپس برای مشاهده نتیجه اسکریپت روی دکمه <code>Console</code> کلیک کنید.</p>
+<p>3 فایل <code>html.workshop1</code> را اجرا کنید و برای مشاهده خروجی کد، کلید <code>F12</code> را در مرورگر بفشارید تا ابزارهای توسعه‌دهنده (<code>Developer Tools</code>) ظاهر شوند. سپس برای مشاهده نتیجه اسکریپت روی دکمه <code>Console</code> کلیک کنید.</p>
 <hr />
 <p class="page-mark">صفحه ۱۹۶</p>
 <p><img alt="تصویر کتاب" src="../images/p202-01.png" /></p>
 <p>4 اسکریپت مشابهی را به بخش <code>&lt;head&gt;</code> اضافه کنید و فایل را ذخیره کنید. انتظار می‌رود که نتیجه کار در کنسول مشابه تصویر روبه‌رو باشد:</p>
 <p><img alt="تصویر کتاب" src="../images/p202-02.png" /></p>
-<p>مرور‌گر وب ابتدا اسکریپت بخش <code>&lt;head&gt;</code> و سپس اسکریپت بخش <code>&lt;body&gt;</code> را اجرا می‌کند. به همین دلیل عبارت <code>Second</code> <code>Statement</code> جلوتر نمایش داده شده است.</p>
+<p>مرور‌گر وب ابتدا اسکریپت بخش <code>&lt;head&gt;</code> و سپس اسکریپت بخش <code>&lt;body&gt;</code> را اجرا می‌کند. به همین دلیل عبارت <code>Second Statement</code> جلوتر نمایش داده شده است.</p>
 <p>5 یک فایل با نام <code>script.js</code> درون پوشه <code>JavaScript</code> ایجاد کنید و دستور زیر را درون آن بنویسید:</p>
 <p><img alt="تصویر کتاب" src="../images/p202-03.png" /></p>
 <p><img alt="تصویر کتاب" src="../images/p202-04.png" /></p>
 <p>6 سپس محتوای فایل را ذخیره کنید.</p>
-<div class="code-wrap" dir="ltr"><pre><code>7 در بخش &lt;head&gt; فایل workshop1.html،
-</code></pre></div>
+<p>7 در بخش <head> فایل <bdi dir="ltr">workshop1.html</bdi>،</p>
 <p>فایل <code>script.js</code> را به صفحه وب الحاق کنید. دستور الحاق را دقیقًا قبل از تگ <code>&lt;head/&gt;</code> قرار دهید:</p>
 <p><img alt="تصویر کتاب" src="../images/p202-05.png" /></p>
 <p>8 خروجی کد را در کنسول مرورگر مشاهده کنید و نتایج حاصل را به ترتیب نمایش عبارات در جای خالی بنویسید.</p>
@@ -115,19 +113,18 @@
 <p>10 برای نمایش یک عبارت در مرورگر (نه در بخش <code>console</code>) می‌توان از دستور <code>document.Write</code> استفاده کرد. این دستور عبارت داخل پرانتز را جایگزین محتوای فعلی صفحه می‌کند. دستور روبه‌رو را به فایل</p>
 <p><img alt="تصویر کتاب" src="../images/p203-01.png" /></p>
 <p><img alt="تصویر کتاب" src="../images/p203-02.png" /></p>
-<div class="code-wrap" dir="ltr"><pre><code>workshop1.html اضافه کنید:
-</code></pre></div>
-<p>فایل <code>HTML</code> را ذخیره کنید و نتیجه را در صفحه اصلی مرورگر به نمایش بگذارید. عبارت <code>Enjoy</code> <code>JavaScript</code> در اندازه <code>h2</code> درون صفحه مرورگر ظاهر می‌شود.</p>
-<p>در صورتی که صفحه وب دارای محتوا باشد، دستور <code>document.write</code>() باعث ناپدید شدن محتوای جاری و جایگزین شدن آن با محتوای درون پرانتز می‌گردد. بر این اساس به‌کارگیری این دستور برای انجام برخی تمرین‌های کوچک اشکالی ندارد، اما برای استفاده از آن در پروژه باید با احتیاط رفتار شود.</p>
-<h3 id="_9">کنجکاوی</h3>
+<p><bdi dir="ltr">workshop1.html</bdi> اضافه کنید:</p>
+<p>فایل <code>HTML</code> را ذخیره کنید و نتیجه را در صفحه اصلی مرورگر به نمایش بگذارید. عبارت <code>Enjoy JavaScript</code> در اندازه <code>h2</code> درون صفحه مرورگر ظاهر می‌شود.</p>
+<p>در صورتی که صفحه وب دارای محتوا باشد، دستور <code>document.write()</code> باعث ناپدید شدن محتوای جاری و جایگزین شدن آن با محتوای درون پرانتز می‌گردد. بر این اساس به‌کارگیری این دستور برای انجام برخی تمرین‌های کوچک اشکالی ندارد، اما برای استفاده از آن در پروژه باید با احتیاط رفتار شود.</p>
+<aside class="callout curiosity"><h3 id="_9">کنجکاوی</h3>
 <p>درباره مزایای اسکریپت نویسی در فایل خارجی تحقیق کنید و نتایج را در کلاس ارائه کنید.</p>
 <p>توضیحات (<code>comments</code>): جاوا‌اسکریپت امکان ایجاد توضیحات تک خطی و چند خطی را توسط علائم // و /<em> </em>/ فراهم می‌کند. نوشتن توضیحات برای روشن کردن هدف، عملکرد و منطق کد ضروری است. از علائم کامنت برای لغو اجرای موقت برخی کدها به منظور اشکال‌زدایی برنامه نیز استفاده می‌شود.</p>
 <figure class="shot"><img alt="شکل 4" src="../images/p203-03.png" /><figcaption>شکل 4</figcaption></figure>
 <p>متغیرها (<code>Variables</code>): جاوا‌اسکریپت دارای دو کلمه کلیدی <code>let</code> و <code>var</code> برای تعریف متغیرها است. کلمه کلیدی <code>var</code> زمانی استفاده می‌شود که پشتیبانی از مرورگرهای قدیمی ضرورت داشته باشد. این کلمه تا سال 2015 برای تعریف متغیر استفاده می‌شد. از سال 2015 کلمه کلیدی <code>let</code> برای ایجاد متغیر معرفی شد.</p>
-<h3 id="_10">مثال</h3>
+</aside><h3 id="_10">مثال</h3>
 <p>مثال زیر نحوه تعریف متغیرهای <code>x</code> و <code>y</code> را با مقادیر مختلف نمایش می‌دهد:</p>
-<div class="code-wrap" dir="ltr"><pre><code>;let x = 10
-;var y = 15.75
+<div class="code-wrap" dir="ltr"><pre><code>let x = 10;
+var y = 15.75;
 </code></pre></div>
 <hr /></article><article class="lesson" lang="en" dir="ltr" data-lang-block="en" hidden><h1 id="designing-interactive-web-pages-with-javascript">Designing Interactive Web Pages with JavaScript</h1>
 <hr />
@@ -148,7 +145,7 @@
 <p>Using <code>DOM</code> selectors, change the content and properties of <code>HTML</code> elements in response to user events.</p>
 <p>Validate user inputs in forms and, if there is an error, display an appropriate message.</p>
 <h3 id="performance-standard">Performance standard</h3>
-<p>Be able to use <code>Java</code> <code>Script</code> optimally and securely to add dynamic, interactive behaviors to web pages and run the final output in different browsers.</p>
+<p>Be able to use <code>Java Script</code> optimally and securely to add dynamic, interactive behaviors to web pages and run the final output in different browsers.</p>
 <hr />
 <p class="page-mark">Page 193</p>
 <h3 id="defining-javascript">Defining JavaScript</h3>
@@ -168,42 +165,40 @@
 <p>Dynamic product display: Filtering products by category, price, or brand and sorting the product list in real time.</p>
 <p>Image slider and gallery: Creating automatic or manual movement of product images to show different angles of a product.</p>
 <p>Responsive menu (<code>Responsive</code>): Opening and closing the mobile menu with a user click and displaying it appropriately on different devices.</p>
-<p>Sending a message (<code>Notifciation</code>): Showing success messages (such as “Product added to cart”) or errors as a pop-up (<code>pop</code> <code>up</code>) Date and time: Displaying the solar (Persian) calendar date or the current time to inform the user.</p>
+<p>Sending a message (<code>Notifciation</code>): Showing success messages (such as “Product added to cart”) or errors as a pop-up (<code>pop up</code>) Date and time: Displaying the solar (Persian) calendar date or the current time to inform the user.</p>
 <p>Temporary storage: Keeping login information or user settings in the browser (cookies) for an easier shopping experience on later visits.</p>
-<div class="code-wrap" dir="ltr"><pre><code>محیط توسعه (Development Environment)
-</code></pre></div>
+<p>(Development Environment)</p>
 <p>To start programming with JavaScript, you need a suitable development environment that lets you write, test, and debug code. The steps for preparing a JavaScript development environment are as follows:</p>
-<p>Choosing and installing an editor: For coding with JavaScript you can use various editors such as <code>VSCode</code>, <code>Sublime</code> <code>Text</code>, <code>Atom</code>, and <code>++Notepad</code>. These editors have features such as syntax highlighting, code completion, and debugging (<code>Debug</code>) tools that help improve efficiency and the programming experience.</p>
-<p>Choosing and installing a web browser: All modern browsers today, such as <code>Google</code> <code>Chrome</code>, <code>Mozilla</code> <code>Firefox</code>, <code>Microsoft</code> <code>Edge</code>, and <code>Safari</code>, can run JavaScript code by default.</p>
-<p>In addition, these browsers have developer tools (<code>Developer</code> <code>tools</code>) that give the web programmer more capabilities. These tools, which are activated with the <code>F12</code> key, include the console, the <code>Element</code> section (containing <code>HTML</code> elements and element styles), <code>Sources</code> (project resources), and more (Figure 2).</p>
+<p>Choosing and installing an editor: For coding with JavaScript you can use various editors such as <code>VSCode</code>, <code>Sublime Text</code>, <code>Atom</code>, and <code>++Notepad</code>. These editors have features such as syntax highlighting, code completion, and debugging (<code>Debug</code>) tools that help improve efficiency and the programming experience.</p>
+<p>Choosing and installing a web browser: All modern browsers today, such as <code>Google Chrome</code>, <code>Mozilla Firefox</code>, <code>Microsoft Edge</code>, and <code>Safari</code>, can run JavaScript code by default.</p>
+<p>In addition, these browsers have developer tools (<code>Developer tools</code>) that give the web programmer more capabilities. These tools, which are activated with the <code>F12</code> key, include the console, the <code>Element</code> section (containing <code>HTML</code> elements and element styles), <code>Sources</code> (project resources), and more (Figure 2).</p>
 <figure class="shot"><img alt="Figure 2" src="../images/p200-01.png" /><figcaption>Figure 2</figcaption></figure>
 <hr />
 <p class="page-mark">Page 195</p>
 <p>Adding JavaScript to a web page To insert JavaScript code into a web page, the <code>&lt;script&gt;&lt;/script&gt;</code> tag is used. This tag can be used in the <code>&lt;head&gt;</code> or <code>&lt;body&gt;</code> section. Where you write the JavaScript code depends on the type of code and the specific needs of the project. However, it is recommended that, as much as possible, this code be written before the <code>&lt;body/&gt;</code> tag. By doing this, the page content is fully loaded and shown to the user first, and then the scripts run, so the page load time is shorter. JavaScript code can also be written in an external file with the <code>js</code> extension. In that case, the <code>js</code> file must be attached to the <code>html</code> file. More explanation of the methods above is given in the next section.</p>
 <figure class="shot"><img alt="Figure 3" src="../images/p201-01.png" /><figcaption>Figure 3</figcaption></figure>
-<p>Writing JavaScript code A piece of JavaScript code contains a set of instructions. Each instruction defines a separate operation and is separated from the next instruction by a semicolon (;). One of the simplest and most widely used JavaScript statements is the <code>console.log</code>() method, which is used to display the code’s output in the browser console. The correct way to use this statement is as follows:</p>
+<p>Writing JavaScript code A piece of JavaScript code contains a set of instructions. Each instruction defines a separate operation and is separated from the next instruction by a semicolon (;). One of the simplest and most widely used JavaScript statements is the <code>console.log()</code> method, which is used to display the code’s output in the browser console. The correct way to use this statement is as follows:</p>
 <p><code>console.log</code>(literal string or variable);</p>
-<h3 id="note">Note</h3>
+<aside class="callout note"><h3 id="note">Note</h3>
 <p>It is recommended that you use a semicolon (;) at the end of JavaScript statements to mark the end of the statement, but using it is not required.</p>
 <p>Coding in the JavaScript language</p>
-<h3 id="workshop">Workshop</h3>
+</aside><h3 id="workshop">Workshop</h3>
 <p><img alt="Book image" src="../images/p201-02.png" /></p>
 <p>1 To get started, create a new folder named <code>JavaScript</code> and create the workshop files inside it.</p>
 <p>2 In the <code>JavaScript</code> folder, create a file named <code>workshop1.html</code> and write a script similar to the image on the right inside the <code>&lt;body&gt;</code> section.</p>
 <p><img alt="Book image" src="../images/p201-03.png" /></p>
-<p>3 Run the <code>workshop1.html</code> file and, to see the code output, press the <code>F12</code> key in the browser so the developer tools (<code>Developer</code> <code>Tools</code>) appear. Then, to see the script result, click the <code>Console</code> button.</p>
+<p>3 Run the <code>workshop1.html</code> file and, to see the code output, press the <code>F12</code> key in the browser so the developer tools (<code>Developer Tools</code>) appear. Then, to see the script result, click the <code>Console</code> button.</p>
 <hr />
 <p class="page-mark">Page 196</p>
 <p><img alt="Book image" src="../images/p202-01.png" /></p>
 <p>4 Add a similar script to the <code>&lt;head&gt;</code> section and save the file. The result in the console is expected to look like the image on the right:</p>
 <p><img alt="Book image" src="../images/p202-02.png" /></p>
-<p>The web browser runs the script in the <code>&lt;head&gt;</code> section first and then the script in the <code>&lt;body&gt;</code> section. That is why the phrase <code>Second</code> <code>Statement</code> appears earlier.</p>
+<p>The web browser runs the script in the <code>&lt;head&gt;</code> section first and then the script in the <code>&lt;body&gt;</code> section. That is why the phrase <code>Second Statement</code> appears earlier.</p>
 <p>5 Create a file named <code>script.js</code> inside the <code>JavaScript</code> folder and write the following statement in it:</p>
 <p><img alt="Book image" src="../images/p202-03.png" /></p>
 <p><img alt="Book image" src="../images/p202-04.png" /></p>
 <p>6 Then save the file contents.</p>
-<div class="code-wrap" dir="ltr"><pre><code>7 در بخش &lt;head&gt; فایل workshop1.html،
-</code></pre></div>
+<p>7 <head> workshop1.html</p>
 <p>Attach the <code>script.js</code> file to the web page. Place the attach statement exactly before the <code>&lt;head/&gt;</code> tag:</p>
 <p><img alt="Book image" src="../images/p202-05.png" /></p>
 <p>8 View the code output in the browser console and write the results in the blank in the order the phrases are displayed.</p>
@@ -215,19 +210,18 @@
 <p>10 To display a phrase in the browser (not in the <code>console</code> section), you can use the <code>document.Write</code> statement. This statement replaces the current page content with the phrase inside the parentheses. Add the statement on the right to the file</p>
 <p><img alt="Book image" src="../images/p203-01.png" /></p>
 <p><img alt="Book image" src="../images/p203-02.png" /></p>
-<div class="code-wrap" dir="ltr"><pre><code>workshop1.html اضافه کنید:
-</code></pre></div>
-<p>Save the <code>HTML</code> file and display the result on the browser’s main page. The phrase <code>Enjoy</code> <code>JavaScript</code> appears on the browser page at size <code>h2</code>.</p>
-<p>If the web page already has content, the <code>document.write</code>() statement causes the current content to disappear and be replaced by the content inside the parentheses. Accordingly, using this statement for some small exercises is fine, but you should be careful when using it in a project.</p>
-<h3 id="try-this">Try this</h3>
+<p>workshop1.html :</p>
+<p>Save the <code>HTML</code> file and display the result on the browser’s main page. The phrase <code>Enjoy JavaScript</code> appears on the browser page at size <code>h2</code>.</p>
+<p>If the web page already has content, the <code>document.write()</code> statement causes the current content to disappear and be replaced by the content inside the parentheses. Accordingly, using this statement for some small exercises is fine, but you should be careful when using it in a project.</p>
+<aside class="callout curiosity"><h3 id="try-this">Try this</h3>
 <p>Research the advantages of writing scripts in an external file and present the results in class.</p>
 <p>Comments (<code>comments</code>): JavaScript lets you create single-line and multi-line comments with the // and /<em> </em>/ marks. Writing comments is necessary to clarify the purpose, behavior, and logic of the code. Comment marks are also used to temporarily cancel the execution of some code for debugging the program.</p>
 <figure class="shot"><img alt="Figure 4" src="../images/p203-03.png" /><figcaption>Figure 4</figcaption></figure>
 <p>Variables (<code>Variables</code>): JavaScript has two keywords, <code>let</code> and <code>var</code>, for defining variables. The <code>var</code> keyword is used when support for older browsers is necessary. This keyword was used to define variables until 2015. From 2015, the <code>let</code> keyword was introduced for creating variables.</p>
-<h3 id="example">Example</h3>
+</aside><h3 id="example">Example</h3>
 <p>The following example shows how to define the variables <code>x</code> and <code>y</code> with different values:</p>
-<div class="code-wrap" dir="ltr"><pre><code>;let x = 10
-;var y = 15.75
+<div class="code-wrap" dir="ltr"><pre><code>let x = 10;
+var y = 15.75;
 </code></pre></div>
 <hr /></article>
       <aside class="extra">
@@ -239,7 +233,7 @@
     <nav class="pager"><a rel="prev" class="prev" href="p3-bs-assess.html"><span class="pager-word" data-fa="قبلی" data-en="Previous">قبلی</span><span class="pager-name" data-fa="ارزشیابی بوت‌استرپ" data-en="Bootstrap assessment">ارزشیابی بوت‌استرپ</span></a><a rel="next" class="next" href="p3-js-vars.html"><span class="pager-word" data-fa="بعدی" data-en="Next">بعدی</span><span class="pager-name" data-fa="متغیر و نوع داده" data-en="Variables and data types">متغیر و نوع داده</span></a></nav>
     </div>
   </div>
-  <script src="../assets/search-index.js?v=4"></script>
-  <script src="../assets/app.js?v=4"></script>
+  <script src="../assets/search-index.js?v=6"></script>
+  <script src="../assets/app.js?v=6"></script>
 </body>
 </html>

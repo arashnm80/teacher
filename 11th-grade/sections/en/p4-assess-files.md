@@ -6,13 +6,7 @@ Performance standard for the work: The student should be able to use a `Path` ob
 
 Score
 
-Conditions for carrying out the work (tools, materials, equipment,
-
-Tools
-
-Results
-
-Row
+Conditions for carrying out the work (tools, materials, equipment, Tools Results Row
 
 ### Steps
 
@@ -28,7 +22,7 @@ made possible
 
 Observe understanding of the concept of a file and the `Path` object Create a file and write content Carry out Try this activities Carry out the steps with other methods 3 Installation by Understanding of the concept of a file and the `Path` object Create a file and write content 2 the student, practical practice
 
-Computer with `Python` `3.x`, code editor (`VS` `Code/`
+Computer with `Python 3.x`, code editor (`VS Code/`
 
 Create and read a file with
 
@@ -37,10 +31,9 @@ Create and read a file with
 Check the code
 
 `Path`
-
 15 minutes
 
-and run the program, incomplete completion of steps 1 Observe the output, short question Read the lines of a file with `splitlines` Remove blank lines Carry out Try this activities Running Carry out the steps with other methods 3 the program and check Reading a file without error Reading the lines of a file with `splitlines`() Remove blank lines 2
+and run the program, incomplete completion of steps 1 Observe the output, short question Read the lines of a file with `splitlines` Remove blank lines Carry out Try this activities Running Carry out the steps with other methods 3 the program and check Reading a file without error Reading the lines of a file with `splitlines()` Remove blank lines 2
 
 Process and traverse the lines
 
@@ -60,26 +53,20 @@ Extract words from lines Append content to a file 2 Extract and append Incomplet
 
 Search in a file Write a conditional processing function 2 lines matching Incomplete completion of steps 1 the condition
 
-```
-درک try except و else مدیریت FileNotFoundError و Fail
-```
+try except else FileNotFoundError Fail
 
 Running Safe Carry out Try this activities Carry out the steps with other methods 3 the program, check
 
-```
-درک try except و else مدیریت FileNotFoundError و Fail
-```
+try except else FileNotFoundError Fail
 
 Exception management and security
 
 5
 
 `2Safe`
-
 file operations Same as step 1
 
 Error control and Incomplete completion of steps 1 error messages
-
 
 ---
 
@@ -98,7 +85,6 @@ Working with `JSON` and `Path` Same as step 1
 Correctness of converting data to `JSON` and storing in a file Reading a `JSON` file and converting store and again to a list 2 retrieve
 
 `JSON`
-
 Incomplete completion of steps 1
 
 Non-technical competences, safety,
@@ -113,9 +99,7 @@ and attitude:
 
 Yes
 
-Assessment of the work (competence in carrying out the work)
-
-No
+Assessment of the work (competence in carrying out the work) No
 
 ### Explanation:
 

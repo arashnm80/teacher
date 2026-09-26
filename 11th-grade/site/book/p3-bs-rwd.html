@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title data-fa="کلاس‌های واکنش‌گرا" data-en="Responsive classes">کلاس‌های واکنش‌گرا</title>
   <link rel="icon" href="../assets/favicon.svg">
-  <link rel="stylesheet" href="../assets/style.css?v=4">
+  <link rel="stylesheet" href="../assets/style.css?v=6">
 </head>
 <body data-root="../">
   <header class="top">
@@ -39,19 +39,12 @@
 <h3 id="_2">توضیحات</h3>
 <p><img alt="تصویر کتاب" src="../images/p172-01.png" /></p>
 <p>تعیین اندازۀ ستون در</p>
-<p>این کد یک سطر (<code>row</code>) با دو ستون (<code>col-6</code>) ایجاد می‌کند. هر ستون نیمی از</p>
-<p>عناصر <code>col</code></p>
+<p>این کد یک سطر (<code>row</code>) با دو ستون (<code>col-6</code>) ایجاد می‌کند. هر ستون نیمی از عناصر <code>col</code> __ پهنای سطر (٢١</p>
 <p>٦ ) را اشغال می‌نماید.</p>
-<p>__</p>
-<p>پهنای سطر (٢١</p>
-<p><code>B</code></p>
-<p><code>A</code></p>
-<p><img alt="تصویر کتاب" src="../images/p172-02.png" /></p>
-<p><code>B</code></p>
-<p><code>A</code></p>
-<p><code>D</code></p>
-<p><code>C</code></p>
-<p>تعیین اندازه ستون در عناصر <code>row</code></p>
+<p><code>B</code>، <code>A</code>
+<img alt="تصویر کتاب" src="../images/p172-02.png" /></p>
+<p><code>B</code>، <code>A</code>، <code>D</code>، <code>C</code>
+تعیین اندازه ستون در عناصر <code>row</code></p>
 <p>کلاس <code>row-cols-2</code> باعث ایجاد 2 ستون در هر سطر می‌گردد. در کد فوق 4 عنصر <code>col</code> وجود دارد؛ بنابراین دو سطر، هر یک حاوی دو ستون تولید می‌شود.</p>
 <p>در صورت افزودن تعداد بیشتری از <code>col</code>، ستون‌ها به ردیف بعدی منتقل می‌شوند.</p>
 <p><code>Bootstrap</code> به‌طور خودکار عرض ستون‌ها را تنظیم می‌کند؛ بنابراین نیازی به تعیین اندازه دستی برای هر ستون ندارید.</p>
@@ -72,7 +65,7 @@
 <p class="page-mark">صفحه ۱۶۸</p>
 <p>انتظار می‌رود که بعد از سرانجام مراحل قبل خروجی زیر در نمای دسکتاپ حاصل شود.</p>
 <p><img alt="تصویر کتاب" src="../images/p174-01.png" /></p>
-<p>6 برای مشاهده وضعیت تصاویر در دستگاه‌های مختلف، کلید <code>f12</code> را بفشارید. در پاسخ به پنجره پیغام، دکمه <code>Open</code> <code>Dev</code> <code>tools</code> را انتخاب کنید. مطابق تصویر زیر از نوار ابزار بالای صفحه دکمه <code>Toggle</code> <code>Device</code> را انتخاب کنید:</p>
+<p>6 برای مشاهده وضعیت تصاویر در دستگاه‌های مختلف، کلید <code>f12</code> را بفشارید. در پاسخ به پنجره پیغام، دکمه <code>Open Dev tools</code> را انتخاب کنید. مطابق تصویر زیر از نوار ابزار بالای صفحه دکمه <code>Toggle Device</code> را انتخاب کنید:</p>
 <p><img alt="تصویر کتاب" src="../images/p174-02.png" /></p>
 <p>7 از کشوی <code>Dimension</code> نوع دستگاه را انتخاب کنید و سپس وضعیت تصاویر را مشاهده کنید.</p>
 <p><img alt="تصویر کتاب" src="../images/p174-03.png" /></p>
@@ -84,78 +77,37 @@
 <hr />
 <p class="page-mark">صفحه ۱۶۹</p>
 <p>کلاس‌های <code>container</code> و پهنای آنها در دستگاه‌های مختلف</p>
-<div class="code-wrap" dir="ltr"><pre><code>XX-Large
-X-large
-</code></pre></div>
-<p><code>Large</code></p>
-<div class="code-wrap" dir="ltr"><pre><code>Medium
-</code></pre></div>
-<p><code>Small</code></p>
-<div class="code-wrap" dir="ltr"><pre><code>Extra small
-</code></pre></div>
+<p><code>XX-Large</code>، <code>X-large</code>، <code>Large</code>، <code>Medium</code>، <code>Small</code> <bdi dir="ltr">Extra</bdi> <bdi dir="ltr">small</bdi></p>
 <p><code>1400px</code>≤</p>
 <p><code>1200px</code>≤</p>
 <p><code>992px</code>≤</p>
 <p><code>768px</code>≤</p>
 <p><code>576px</code>≤</p>
 <p><code>576px&lt;</code></p>
-<p><code>1320px</code></p>
-<p><code>1140px</code></p>
-<p><code>960px</code></p>
-<p><code>720px</code></p>
-<p><code>540px</code></p>
-<p>%100</p>
-<div class="code-wrap" dir="ltr"><pre><code>.Container
-</code></pre></div>
-<p><code>1320px</code></p>
-<p><code>1140px</code></p>
-<p><code>960px</code></p>
-<p><code>720px</code></p>
-<p><code>540px</code></p>
-<p>%100</p>
-<div class="code-wrap" dir="ltr"><pre><code>.Container-sm
-</code></pre></div>
-<p><code>1320px</code></p>
-<p><code>1140px</code></p>
-<p><code>960px</code></p>
-<p><code>720px</code></p>
-<p>%100</p>
-<p>%100</p>
-<div class="code-wrap" dir="ltr"><pre><code>.Container-md
-</code></pre></div>
-<p><code>1320px</code></p>
-<p><code>1140px</code></p>
-<p><code>960px</code></p>
+<p><code>1320px</code>، <code>1140px</code>، <code>960px</code>، <code>720px</code>، <code>540px</code> %100</p>
+<p><code>.Container</code>، <code>1320px</code>، <code>1140px</code>، <code>960px</code>، <code>720px</code>، <code>540px</code> %100</p>
+<p><code>.Container-sm</code>، <code>1320px</code>، <code>1140px</code>، <code>960px</code>، <code>720px</code> %100 %100</p>
+<p><code>.Container-md</code>، <code>1320px</code>، <code>1140px</code>، <code>960px</code> %100 %100 %100</p>
+<p><code>.Container-lg</code>، <code>1320px</code>، <code>1140px</code>
+%100</p>
 <p>%100</p>
 <p>%100</p>
 <p>%100</p>
-<div class="code-wrap" dir="ltr"><pre><code>.Container-lg
-</code></pre></div>
-<p><code>1320px</code></p>
-<p><code>1140px</code></p>
+<p><code>.Container-xl</code>، <code>1320px</code>
+%100</p>
 <p>%100</p>
 <p>%100</p>
 <p>%100</p>
 <p>%100</p>
-<div class="code-wrap" dir="ltr"><pre><code>.Container-xl
-</code></pre></div>
-<p><code>1320px</code></p>
+<p><code>.Container-xxl</code>
+%100</p>
 <p>%100</p>
 <p>%100</p>
 <p>%100</p>
 <p>%100</p>
 <p>%100</p>
-<div class="code-wrap" dir="ltr"><pre><code>.Container-xxl
-</code></pre></div>
-<p>%100</p>
-<p>%100</p>
-<p>%100</p>
-<p>%100</p>
-<p>%100</p>
-<p>%100</p>
-<div class="code-wrap" dir="ltr"><pre><code>.Container-fluid
-</code></pre></div>
-<p>در کارگاه «طراحی بخش معرفی فروشگاه» پهنای عنصر <code>article</code> در دستگاه دسکتاپ و موبایل به ترتیب 75% و 90% تعیین شد. در اینجا قصد داریم به‌جای استفاده از کدهای <code>CSS</code> از کلاس‌های واکنش‌گرای <code>container</code> استفاده کنیم. بدین منظور مراحل زیر را دنبال کنید:</p>
+<p><code>.Container-fluid</code>
+در کارگاه «طراحی بخش معرفی فروشگاه» پهنای عنصر <code>article</code> در دستگاه دسکتاپ و موبایل به ترتیب 75% و 90% تعیین شد. در اینجا قصد داریم به‌جای استفاده از کدهای <code>CSS</code> از کلاس‌های واکنش‌گرای <code>container</code> استفاده کنیم. بدین منظور مراحل زیر را دنبال کنید:</p>
 <p>در عنصر <code>article</code> از کلاس <code>container-sm</code> استفاده کنید:</p>
 <p><img alt="تصویر کتاب" src="../images/p175-01.png" /></p>
 <p>هر دو استایل عنصر <code>article</code> را از فایل <code>styles.css</code> حذف کنید.</p>
@@ -183,23 +135,21 @@ X-large
 <p>البته ایجاد تصویر واکنش‌گرا به استفاده از کلاس <code>img-fluid</code> خلاصه نمی‌شود. بهتر است در خصوص تصاویری که تمام پهنا را اشغال می‌کنند، نسخۀ دیگری از تصویر برای دستگاه‌های کوچک‌تر طراحی شود. در مثال زیر سه نسخه از تصویر بنر برای موبایل، تبلت و دسکتاپ استفاده شده است. مرورگر با توجه به پهنای صفحه، تصویر مناسب را برای نمایش انتخاب می‌کند:</p>
 <p><img alt="تصویر کتاب" src="../images/p177-01.png" /></p>
 <p>اکثر مرور‌گرهای مدرن امروزی از برچسب <code>picture</code> پشتیبانی می‌کنند؛ بنابراین در مرورگرهای مدرن، تصاویری که در برچسب‌های <code>&lt;source&gt;</code> تعیین شده است، نمایش داده می‌شوند. در مرورگرهای قدیمی مانند اینترنت اکسپلورر 11 و قدیمی‌تر، تصویر پیش‌فرض ظاهر می‌شود. در کد شکل بالا، تصویر پیش‌فرض در برچسب <code>&lt;img&gt;</code> مشخص شده است.</p>
-<h3 id="_3">فعالیت</h3>
+<aside class="callout activity"><h3 id="_3">فعالیت</h3>
 <p>سه تصویر بنر در سه اندازه مختلف، برای نمایش در موبایل، تبلت و دسکتاپ طراحی‌کنید و کدنویسی نمایش آنها را مطابق با کد فوق انجام دهید. انتظار می‌رود خروجی به صورت شکل زیر حاصل گردد.</p>
 <p><img alt="تصویر کتاب" src="../images/p177-02.png" /></p>
 <p>توجه</p>
 <p>چنانچه لبه‌های بنر مماس با لبه‌های مرورگر نیست، مقدار <code>padding</code> و <code>margin</code> را برای عنصر <code>header</code> برابر صفر قرار دهید.</p>
-<div class="code-wrap" dir="ltr"><pre><code>اجزای رابط کاربری (User Interface Components)
-</code></pre></div>
+<p>اجزای رابط کاربری <bdi dir="ltr">(User Interface Components)</bdi></p>
 <p>کاربران صفحات وب توسط اجزای مختلفی با صفحه وب تعامل و ارتباط دارند. این اجزا شامل دکمه‌ها، منوها، نوار جست‌وجو، آیکن‌ها، فرم‌ها، تصاویر، رنگ‌ها، فونت‌ها و سایر عناصر بصری هستند که تجربه کاربری را شکل می‌دهند. بوت‌استرپ دارای مجموعه‌ای از کلاس‌های آماده برای اجزای رابط کاربری مختلف مانند نوارناوبری، فرم، دکمه، منوی آکاردئون و... است که در این بخش به آنها پرداخته می‌شود.</p>
-<hr />
+</aside><hr />
 <p class="page-mark">صفحه ۱۷۲</p>
-<div class="code-wrap" dir="ltr"><pre><code>Navbar
-</code></pre></div>
-<p>کلاس <code>navbar</code> برای ایجاد نوار ناوبری (<code>Navigation</code> <code>Bar</code>) یا منوی بالای صفحه استفاده می‌شود. این کلاس ب‌ههمراه کلاس‌های دیگری همچون <code>*-navbar-expand</code> برای تعیین رفتار و ظاهر نوار ناوبری در اندازه‌های مختلف صفحه نمایش به کار می‌رود. مجموعۀ کلاس‌های <code>Navbar</code> به شرح زیر است:</p>
+<p><code>Navbar</code>
+کلاس <code>navbar</code> برای ایجاد نوار ناوبری (<code>Navigation Bar</code>) یا منوی بالای صفحه استفاده می‌شود. این کلاس ب‌ههمراه کلاس‌های دیگری همچون <code>*-navbar-expand</code> برای تعیین رفتار و ظاهر نوار ناوبری در اندازه‌های مختلف صفحه نمایش به کار می‌رود. مجموعۀ کلاس‌های <code>Navbar</code> به شرح زیر است:</p>
 <p><code>navbar:</code> کلاس اصلی برای ایجاد نوار ناوبری است.</p>
 <p><code>*-navbar-expand:</code> این کلاس‌ها تعیین می‌کنند که نوار ناوبری در چه پهنایی به صورت افقی ظاهر شود و در چه پهنایی جمع شود. کاراکتر * می‌تواند جایگزین عبارات <code>sm</code>، <code>md</code>، <code>lg</code> یا <code>xl</code> شود. به‌طور مثال استفاده از <code>navbar-expand-sm</code> باعث می‌شود که نوار ناوبری در دستگاه‌هایی با عرض 576 پیکسل و بیشتر، به‌صورت افقی ظاهر شود و در دستگاه‌های کوچک‌تر جمع شده و به شکل دکمه همبرگری (☰) نمایش داده شود.</p>
 <p><code>navbar-brand:</code> برای نمایش لوگو یا نام برند در نوار ناوبری استفاده می‌شود.</p>
-<p><code>navbar-nav:</code> برای ایجاد لیست ناوبری (<code>Navigation</code> <code>list</code>) در نوار ناوبری استفاده می‌شود.</p>
+<p><code>navbar-nav:</code> برای ایجاد لیست ناوبری (<code>Navigation list</code>) در نوار ناوبری استفاده می‌شود.</p>
 <p><code>nav-link:</code> برای لینک‌های موجود در لیست ناوبری استفاده می‌شود.</p>
 <p><code>navbar-toggler:</code> برای دکمۀ کوچک منو استفاده می‌شود. این دکمه در نمای موبایل ظاهر می‌شود تا کاربر با کلیک روی آن، محتوای منو را مشاهده نماید و با کلیک مجدد منو را ببندد. (دکمه‌ای برای کنترل باز و بسته شدن منو ایجاد می‌کند) <code>navbar-toggler-icon:</code> به منظور نمایش آیکن همبرگر (☰) برای دکمه منو در حالت جمع‌شده به‌کار می‌رود.</p>
 <p><code>navbar-collapse:</code> برای گروه‌بندی و مخفی کردن گزینه‌های منو در دستگاه‌های کوچک استفاده می‌شود.</p>
@@ -216,19 +166,13 @@ X-large
 <h3 id="explanation">Explanation</h3>
 <p><img alt="Book image" src="../images/p172-01.png" /></p>
 <p>Setting column size on</p>
-<p>This code creates a row (<code>row</code>) with two columns (<code>col-6</code>). Each column occupies half of</p>
-<p>the <code>col</code> elements</p>
-<p>6).</p>
+<p>This code creates a row (<code>row</code>) with two columns (<code>col-6</code>). Each column occupies half of the <code>col</code> elements 6).</p>
 <p>__</p>
 <p>the row width (12</p>
-<p><code>B</code></p>
-<p><code>A</code></p>
-<p><img alt="Book image" src="../images/p172-02.png" /></p>
-<p><code>B</code></p>
-<p><code>A</code></p>
-<p><code>D</code></p>
-<p><code>C</code></p>
-<p>Setting column size on <code>row</code> elements</p>
+<p><code>B</code>, <code>A</code>
+<img alt="Book image" src="../images/p172-02.png" /></p>
+<p><code>B</code>, <code>A</code>, <code>D</code>, <code>C</code>
+Setting column size on <code>row</code> elements</p>
 <p>The <code>row-cols-2</code> class creates 2 columns in each row. In the code above there are 4 <code>col</code> elements; therefore two rows are produced, each containing two columns.</p>
 <p>If you add more <code>col</code> elements, the columns move to the next row.</p>
 <p><code>Bootstrap</code> automatically adjusts the column widths; therefore you do not need to set the size of each column by hand.</p>
@@ -261,78 +205,37 @@ X-large
 <hr />
 <p class="page-mark">Page 169</p>
 <p><code>container</code> classes and their widths on different devices</p>
-<div class="code-wrap" dir="ltr"><pre><code>XX-Large
-X-large
-</code></pre></div>
-<p><code>Large</code></p>
-<div class="code-wrap" dir="ltr"><pre><code>Medium
-</code></pre></div>
-<p><code>Small</code></p>
-<div class="code-wrap" dir="ltr"><pre><code>Extra small
-</code></pre></div>
+<p><code>XX-Large</code>, <code>X-large</code>, <code>Large</code>, <code>Medium</code>, <code>Small</code> Extra small</p>
 <p><code>1400px</code>≤</p>
 <p><code>1200px</code>≤</p>
 <p><code>992px</code>≤</p>
 <p><code>768px</code>≤</p>
 <p><code>576px</code>≤</p>
 <p><code>576px&lt;</code></p>
-<p><code>1320px</code></p>
-<p><code>1140px</code></p>
-<p><code>960px</code></p>
-<p><code>720px</code></p>
-<p><code>540px</code></p>
-<p>100%</p>
-<div class="code-wrap" dir="ltr"><pre><code>.Container
-</code></pre></div>
-<p><code>1320px</code></p>
-<p><code>1140px</code></p>
-<p><code>960px</code></p>
-<p><code>720px</code></p>
-<p><code>540px</code></p>
-<p>100%</p>
-<div class="code-wrap" dir="ltr"><pre><code>.Container-sm
-</code></pre></div>
-<p><code>1320px</code></p>
-<p><code>1140px</code></p>
-<p><code>960px</code></p>
-<p><code>720px</code></p>
-<p>100%</p>
-<p>100%</p>
-<div class="code-wrap" dir="ltr"><pre><code>.Container-md
-</code></pre></div>
-<p><code>1320px</code></p>
-<p><code>1140px</code></p>
-<p><code>960px</code></p>
+<p><code>1320px</code>, <code>1140px</code>, <code>960px</code>, <code>720px</code>, <code>540px</code> 100%</p>
+<p><code>.Container</code>, <code>1320px</code>, <code>1140px</code>, <code>960px</code>, <code>720px</code>, <code>540px</code> 100%</p>
+<p><code>.Container-sm</code>, <code>1320px</code>, <code>1140px</code>, <code>960px</code>, <code>720px</code> 100% 100%</p>
+<p><code>.Container-md</code>, <code>1320px</code>, <code>1140px</code>, <code>960px</code> 100% 100% 100%</p>
+<p><code>.Container-lg</code>, <code>1320px</code>, <code>1140px</code>
+100%</p>
 <p>100%</p>
 <p>100%</p>
 <p>100%</p>
-<div class="code-wrap" dir="ltr"><pre><code>.Container-lg
-</code></pre></div>
-<p><code>1320px</code></p>
-<p><code>1140px</code></p>
+<p><code>.Container-xl</code>, <code>1320px</code>
+100%</p>
 <p>100%</p>
 <p>100%</p>
 <p>100%</p>
 <p>100%</p>
-<div class="code-wrap" dir="ltr"><pre><code>.Container-xl
-</code></pre></div>
-<p><code>1320px</code></p>
+<p><code>.Container-xxl</code>
+100%</p>
 <p>100%</p>
 <p>100%</p>
 <p>100%</p>
 <p>100%</p>
 <p>100%</p>
-<div class="code-wrap" dir="ltr"><pre><code>.Container-xxl
-</code></pre></div>
-<p>100%</p>
-<p>100%</p>
-<p>100%</p>
-<p>100%</p>
-<p>100%</p>
-<p>100%</p>
-<div class="code-wrap" dir="ltr"><pre><code>.Container-fluid
-</code></pre></div>
-<p>In the “Designing the store introduction section” workshop, the width of the <code>article</code> element was set to 75% and 90% on desktop and mobile devices, respectively. Here you will use responsive <code>container</code> classes instead of <code>CSS</code> code. Follow the steps below:</p>
+<p><code>.Container-fluid</code>
+In the “Designing the store introduction section” workshop, the width of the <code>article</code> element was set to 75% and 90% on desktop and mobile devices, respectively. Here you will use responsive <code>container</code> classes instead of <code>CSS</code> code. Follow the steps below:</p>
 <p>On the <code>article</code> element use the <code>container-sm</code> class:</p>
 <p><img alt="Book image" src="../images/p175-01.png" /></p>
 <p>Remove both styles for the <code>article</code> element from the <code>styles.css</code> file.</p>
@@ -360,23 +263,21 @@ X-large
 <p>Of course, creating a responsive image is not limited to using the <code>img-fluid</code> class. For images that fill the full width, it is better to design another version of the image for smaller devices. In the example below, three versions of the banner image are used for mobile, tablet, and desktop. Based on the page width, the browser chooses the appropriate image to display:</p>
 <p><img alt="Book image" src="../images/p177-01.png" /></p>
 <p>Most modern browsers today support the <code>picture</code> tag; therefore in modern browsers, the images set in the <code>&lt;source&gt;</code> tags are displayed. In older browsers such as Internet Explorer 11 and earlier, the default image appears. In the code in the figure above, the default image is specified in the <code>&lt;img&gt;</code> tag.</p>
-<h3 id="activity">Activity</h3>
+<aside class="callout activity"><h3 id="activity">Activity</h3>
 <p>Design three banner images in three different sizes for display on mobile, tablet, and desktop, and write the display code for them according to the code above. You are expected to get an output like the figure below.</p>
 <p><img alt="Book image" src="../images/p177-02.png" /></p>
 <p>Attention</p>
 <p>If the edges of the banner are not flush with the edges of the browser, set the <code>padding</code> and <code>margin</code> values for the <code>header</code> element to zero.</p>
-<div class="code-wrap" dir="ltr"><pre><code>اجزای رابط کاربری (User Interface Components)
-</code></pre></div>
+<p>(User Interface Components)</p>
 <p>Users of web pages interact with the page through various components. These components include buttons, menus, search bars, icons, forms, images, colors, fonts, and other visual elements that shape the user experience. Bootstrap has a set of ready-made classes for various user interface components such as the navbar, form, button, accordion menu, and so on, which are covered in this section.</p>
-<hr />
+</aside><hr />
 <p class="page-mark">Page 172</p>
-<div class="code-wrap" dir="ltr"><pre><code>Navbar
-</code></pre></div>
-<p>The <code>navbar</code> class is used to create a navigation bar (<code>Navigation</code> <code>Bar</code>) or the menu at the top of the page. This class is used together with other classes such as <code>navbar-expand-*</code> to set the behavior and appearance of the navigation bar at different screen sizes. The set of <code>Navbar</code> classes is as follows:</p>
+<p><code>Navbar</code>
+The <code>navbar</code> class is used to create a navigation bar (<code>Navigation Bar</code>) or the menu at the top of the page. This class is used together with other classes such as <code>navbar-expand-*</code> to set the behavior and appearance of the navigation bar at different screen sizes. The set of <code>Navbar</code> classes is as follows:</p>
 <p><code>navbar:</code> The main class for creating a navigation bar.</p>
 <p><code>navbar-expand-*:</code> These classes determine at what width the navigation bar appears horizontally and at what width it collapses. The * character can be replaced with <code>sm</code>, <code>md</code>, <code>lg</code>, or <code>xl</code>. For example, using <code>navbar-expand-sm</code> makes the navigation bar appear horizontally on devices with a width of 576 pixels and more, and on smaller devices it collapses and is shown as a hamburger button (☰).</p>
 <p><code>navbar-brand:</code> Used to display a logo or brand name in the navigation bar.</p>
-<p><code>navbar-nav:</code> Used to create a navigation list (<code>Navigation</code> <code>list</code>) in the navigation bar.</p>
+<p><code>navbar-nav:</code> Used to create a navigation list (<code>Navigation list</code>) in the navigation bar.</p>
 <p><code>nav-link:</code> Used for the links in the navigation list.</p>
 <p><code>navbar-toggler:</code> Used for the small menu button. This button appears in the mobile view so the user can click it to see the menu content and click again to close the menu. (It creates a button to control opening and closing the menu.) <code>navbar-toggler-icon:</code> Used to show the hamburger icon (☰) for the menu button in the collapsed state.</p>
 <p><code>navbar-collapse:</code> Used to group and hide the menu options on small devices.</p>
@@ -393,7 +294,7 @@ X-large
     <nav class="pager"><a rel="prev" class="prev" href="p3-bs-grid.html"><span class="pager-word" data-fa="قبلی" data-en="Previous">قبلی</span><span class="pager-name" data-fa="شبکه Grid" data-en="The grid">شبکه Grid</span></a><a rel="next" class="next" href="p3-bs-nav.html"><span class="pager-word" data-fa="بعدی" data-en="Next">بعدی</span><span class="pager-name" data-fa="نوار ناوبری و جزئیات محصول" data-en="Navbar and product details">نوار ناوبری و جزئیات محصول</span></a></nav>
     </div>
   </div>
-  <script src="../assets/search-index.js?v=4"></script>
-  <script src="../assets/app.js?v=4"></script>
+  <script src="../assets/search-index.js?v=6"></script>
+  <script src="../assets/app.js?v=6"></script>
 </body>
 </html>

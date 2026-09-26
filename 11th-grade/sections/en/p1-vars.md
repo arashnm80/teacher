@@ -6,12 +6,15 @@ A variable is a location in `RAM` memory that is used for temporary storage of d
 
 ![Book image](../images/p014-04.png)
 
-`num` = 55
+```
+num = 55
+```
 
-It is enough that on the left side of the assignment operator, that is "=", you write the variable name and on the right side its value
+It is enough that on the left side of the assignment operator, that is "=", you write the variable name and on the right side its value.
 
 ```
-بنویسید. name="baran" , num = 55
+name="baran"
+num = 55
 ```
 
 **Figure 14**
@@ -20,31 +23,9 @@ It is enough that on the left side of the assignment operator, that is "=", you 
 
 Python supports different kinds of variables (Figure 15).
 
-`list`
+Python recognizes the type of a variable from the value assigned to it.
 
-`str`
-
-Python recognizes the type of a variable from the value assigned
-
-`int`
-
-`set`
-
-to it.
-
-```
-f loat
-```
-
-`tuple`
-
-Example: `num1=15` In this example Python sets the variable type to integer, and there is no need to state the type
-
-`dict`
-
-`bool`
-
-of the variable either.
+Example: `num1=15` In this example Python sets the variable type to integer, and there is no need to state the type of the variable either.
 
 **Figure 15**
 
@@ -52,11 +33,9 @@ Common data types in Python String data type (`str`): Anything that is text—su
 
 ![Book image](../images/p014-01.png)
 
-The `str` data type, which is short for the word `string`, can be defined using single, double,
+The `str` data type, which is short for the word `string`, can be defined using single, double, or triple quotation marks (Figure 16).
 
 **Figure 16**
-
-or triple quotation marks (Figure 16).
 
 Integer data type (`int`): Numbers that you calculate with and that have no decimal part are integers (`int`), or `integer` (Figure 17).
 
@@ -64,43 +43,39 @@ Integer data type (`int`): Numbers that you calculate with and that have no deci
 
 **Figure 17**
 
-
 ---
 
 **Page 9**
 
-Floating-point data type (`folat`): These data are numeric and are used in mathematical calculations and have a decimal value. For example:
+Floating-point data type (`float`): These data are numeric and are used in mathematical calculations and have a decimal value. For example:
 
 ```
 height = 1.75
 ```
 
-The ()`type` function: The output of the `type`() function is the data type of each variable (Figure 18).
+The ()`type` function: The output of the `type()` function is the data type of each variable (Figure 18).
 
 ![Figure 18](../images/p015-01.png)
 
 **Figure 18**
 
-From this stage on, write the codes in the `VS` `Code` environment. To do this, run the `VS` `Code` program and then, from the File menu, use the `new` `folder` command to create a new folder named `PyProg`, and then in that folder, from the File menu by choosing the `New` `File` option,
+From this stage on, write the codes in the `VS Code` environment. To do this, run the `VS Code` program and then, from the File menu, use the `new folder` command to create a new folder named `PyProg`, and then in that folder, from the File menu by choosing the `New File` option,
 
 ![Figure 19](../images/p015-02.png)
 
 **Figure 19**
 
-in the `EXPLORER` pane choose the `New` `File` button or the key combination `Ctrl+` `N` to create a new file named `prog01.py` in this folder (Figure 19). Now the code editor page opens and you can write your statements in it.
+in the `EXPLORER` pane choose the `New File` button or the key combination `Ctrl+N` to create a new file named `prog01.py` in this folder (Figure 19). Now the code editor page opens and you can write your statements in it.
 
 To run the statements, use the button
 
-at the top right of the program window or the `Run` menu. The result
-
-of running the program will be displayed at the bottom of the page (Figure 20).
+at the top right of the program window or the `Run` menu. The result of running the program will be displayed at the bottom of the page (Figure 20).
 
 ![Figure 20](../images/p015-03.png)
 
 **Figure 20**
 
 The Python style guide (`PEP`) presents how to write Python code and coding conventions, and makes the codes more readable and cleaner (`clean`). To view it you can go to `pep8.ir`.
-
 
 ---
 
@@ -116,9 +91,9 @@ After viewing the principles of `pep8`, answer the following questions:
 
 3 Can you use a space character at the beginning of a line?
 
-In `VSCode`, after coding, pressing the keys `Alt+Shift+F` automatically fixes most code formatting problems based on `pep8`, provided that one of the extensions `autopep8`, `Black` `formatter`, `Ruff`, or `yapf` is installed.
+In `VSCode`, after coding, pressing the keys `Alt+Shift+F` automatically fixes most code formatting problems based on `pep8`, provided that one of the extensions `autopep8`, `Black formatter`, `Ruff`, or `yapf` is installed.
 
-Rules for naming variables in Python A variable name cannot include a space character. For example, you cannot define a variable named `is` `valid`.
+Rules for naming variables in Python A variable name cannot include a space character. For example, you cannot define a variable named `is valid`.
 
 Naming variables in Python must begin with a letter or an underscore. For example (`_num` , `personl` ) A variable name can include letters, numbers, and underscores.
 
@@ -138,8 +113,7 @@ Operator (`operator`): Special symbols that perform a particular operation on va
 
 In the expressions `a` + `b` or `c` * `d` or 4/2, +, *, and / are called operators (`operator`).
 
-Operand (`operand`): The value or values that operators work on. For example, in the expression `b+` `a`, the "+" sign is the operator and `a` and `b` are the operands.
-
+Operand (`operand`): The value or values that operators work on. For example, in the expression `b+a`, the "+" sign is the operator and `a` and `b` are the operands.
 
 ---
 
@@ -156,10 +130,7 @@ The operands of the "+" operator in Python can both be numeric or both be string
 ### Try this
 
 If in the + operator one of the operands is numeric and the other is a string, what happens?
-
-Project
-
-Ashpazbashi project:
+### Project: Ashpazbashi
 
 Write a program that randomly chooses one item from a list of foods.
 
@@ -178,7 +149,6 @@ In your opinion, what change can you make to the code so that one food has a gre
 Answer: In the code below, by repeating the name ash, the chance of choosing ash has increased.
 
 ![Book image](../images/p017-02.png)
-
 
 ---
 
@@ -229,6 +199,5 @@ The ()`input` statement: To receive data from the user and store it in a variabl
 ![Figure 24](../images/p018-04.png)
 
 **Figure 24**
-
 
 ---

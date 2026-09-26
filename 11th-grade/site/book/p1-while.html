@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title data-fa="حلقه while و کنترل حلقه" data-en="The while loop and loop control">حلقه while و کنترل حلقه</title>
   <link rel="icon" href="../assets/favicon.svg">
-  <link rel="stylesheet" href="../assets/style.css?v=4">
+  <link rel="stylesheet" href="../assets/style.css?v=6">
 </head>
 <body data-root="../">
   <header class="top">
@@ -32,8 +32,7 @@
       <h1 class="section-title" data-fa="حلقه while و کنترل حلقه" data-en="The while loop and loop control">حلقه while و کنترل حلقه</h1><article class="lesson" lang="fa" dir="rtl" data-lang-block="fa"><p class="page-mark">صفحه ۴۰</p>
 <p>حلقه <code>while</code> این حلقه مجموعه‌ای از دستورات را تا زمانی که شرط حلقه <code>True</code> باشد، اجرا می‌کند و هر زمان که شرط حلقه <code>False</code> شود، دیگر حلقه اجرا نمی‌شود و اجرای حلقه پایان می‌یابد. از این نوع حلقه معمولاً زمانی استفاده می‌شود که تعداد دفعات تکرار حلقه از قبل مشخص و معین نباشد.</p>
 <figure class="shot"><img alt="شکل 87" src="../images/p046-01.png" /><figcaption>شکل 87</figcaption></figure>
-<div class="code-wrap" dir="ltr"><pre><code>: while condition یا : شرط حلقه while
-</code></pre></div>
+<p>: <bdi dir="ltr">while</bdi> <bdi dir="ltr">condition</bdi> یا : شرط حلقه <bdi dir="ltr">while</bdi></p>
 <p><code>statements</code> → دستورات بدنه حلقه</p>
 <p>مثال: شخصی در ابتدای یک تالار غذاخوری به میهمانان یک مراسم عروسی خوشامد می‌گوید. به او گفته شده که آنجا بایستد و بعد از پرسیدن نام آنها به میهمان وارد شده خوشامد بگوید و برای پایان کار او محدودیتی در نظر گرفته نشده است. برنامه زیر به کمک حلقه <code>while</code> این کار را انجام می‌دهد (شکل88).</p>
 <p><img alt="تصویر کتاب" src="../images/p046-03.png" /></p>
@@ -69,9 +68,9 @@
 <p><img alt="تصویر کتاب" src="../images/p048-03.png" /></p>
 <figure class="shot"><img alt="شکل 92" src="../images/p048-04.png" /><figcaption>شکل 92</figcaption></figure>
 <p>درون حلقه ابتدا خوشامدگویی چاپ شده است و در خط بعدی نامی دیگر دریافت خواهد شد تا در دور بعدی این نام درون شرط حلقه بررسی شود.</p>
-<h3 id="_1">نکته</h3>
+<aside class="callout note"><h3 id="_1">نکته</h3>
 <p>مثال‌های بالا همگی برای یادگیری نحوه استفاده از حلقه <code>while</code> در شرایط مختلف به برنامه‌نویس کمک می‌کند. با نوشتن مجدد کدها و فکرکردن به روند هر یک از برنامه‌های فوق، برنامه‌نویس مطالب آن را دقیق‌تر یاد می‌گیرد. برای یادگیری بهتر به مثال‌های صفحه بعد توجه کنید.</p>
-<hr />
+</aside><hr />
 <p class="page-mark">صفحه ۴۳</p>
 <p>مثال: برنامه‌ای بنویسید که از کاربر یک عدد صحیح دریافت و مربع آن عدد را چاپ کند این کار تا زمانی ادامه یابد که کاربر عددی بزرگ‌تر از صفر وارد کند (شکل93).</p>
 <p><img alt="تصویر کتاب" src="../images/p049-01.png" /></p>
@@ -80,13 +79,13 @@
 <p>مفهوم شرط <code>while:</code> یعنی تا زمانی که مقدار متغیر <code>number</code> بزرگ‌تر از صفر است دستورات حلقه، تکرار خواهد شد.</p>
 <p>داخل حلقه ابتدا با یک پیغام مناسب، عدد گرفته شده و مربع (یعنی توان دو) آن چاپ خواهد شد و در ادامه یک عدد دیگر از کاربر گرفته می‌شود.</p>
 <p>اگر در اولین خط برنامه مقداری کوچک‌تر یا مساوی صفر وارد شود، شرط حلقه <code>False</code> شده و دستورات بدنه حلقه دیگر اجرا نخواهند شد و برنامه پایان می‌یابد. دقت شود که در این مثال، مربع عددِ صفر و یا عدِد منفی چاپ نمی‌شود.</p>
-<h3 id="_2">فعالیت</h3>
+<aside class="callout activity"><h3 id="_2">فعالیت</h3>
 <p>برنامه بالا را طوری تغییر دهید که علاوه بر مربع عدد، مکعب (<code>Cube</code>) عدد (یعنی توان ۳ عدد) نیز چاپ شود.</p>
 <p>مثال: برنامه‌ای بنویسید که نام تعدادی غذا را از کاربر گرفته و به یک لیست خالی اضافه (<code>append</code>) کند.</p>
 <p>این کار تا زمانی ادامه می‌یابد که کاربر کلمه <code>exit</code> را وارد کند. پس از اتمام حلقه محتوای لیست به‌صورت یک‌جا چاپ خواهد شد (شکل94).</p>
 <p><img alt="تصویر کتاب" src="../images/p049-03.png" /></p>
 <figure class="shot"><img alt="شکل 94" src="../images/p049-04.png" /><figcaption>شکل 94</figcaption></figure>
-<hr />
+</aside><hr />
 <p class="page-mark">صفحه ۴۴</p>
 <p>توضیح کد: در اولین خط، یک لیست خالی ایجاد شده است.</p>
 <p>همانند مثال‌های قبلی ابتدا نام یک غذا را بگیرید درون متغیر <code>food</code> ذخیره کنید.</p>
@@ -118,16 +117,15 @@
 <p>درون حلقه می‌توان از <code>continue</code> برای بازگشت به ابتدای حلقه و اجرای دوباره آن استفاده کرد.</p>
 <p>دستورات <code>break</code> و <code>continue</code> باید به همراه یک شرط <code>if</code> درون حلقه‌ها استفاده شوند.</p>
 <p>برای پیاده‌سازی حلقه‌های با تعداد معین می‌توان از حلقه‌های <code>while</code> نیز استفاده نمود؛ اما این کار توصیه نمی‌شود؛ چرا که نوشتن این‌گونه برنامه‌ها با حلقه <code>for</code> ساده‌تر و منطقی‌تر است.</p>
-<h3 id="_3">فعالیت</h3>
+<aside class="callout activity"><h3 id="_3">فعالیت</h3>
 <p>در مثال قبلی و در انتهای برنامۀ بالا به کمک حلقۀ <code>for</code> تک‌تک غذاهای لیست را زیر هم چاپ کنید.</p>
-<h3 id="_4">فعالیت</h3>
+</aside><aside class="callout activity"><h3 id="_4">فعالیت</h3>
 <p>برنامه‌ای بنویسید که کاربر بتواند به‌صورت مکرر سفارش غذا دهد، تا زمانی که <code>"done"</code> را وارد کند.</p>
-<p>هر بار که غذای جدیدی از کاربر گرفته شد پیام <code>".Your</code> <code>order</code> <code>for</code> <code>&lt;food&gt;</code> <code>has</code> <code>been</code> <code>added"</code> نمایش داده شود و غذای جدید به لیست سفارش غذا اضافه (<code>append</code>) شود. وقتی کاربر <code>"done"</code> را وارد نمود، برنامه تمام سفارش‌ها را نمایش دهد.</p>
-<hr /></article><article class="lesson" lang="en" dir="ltr" data-lang-block="en" hidden><p class="page-mark">Page 40</p>
+<p>هر بار که غذای جدیدی از کاربر گرفته شد پیام <code>".Your order for &lt;food&gt; has been added"</code> نمایش داده شود و غذای جدید به لیست سفارش غذا اضافه (<code>append</code>) شود. وقتی کاربر <code>"done"</code> را وارد نمود، برنامه تمام سفارش‌ها را نمایش دهد.</p>
+</aside><hr /></article><article class="lesson" lang="en" dir="ltr" data-lang-block="en" hidden><p class="page-mark">Page 40</p>
 <p>The <code>while</code> loop This loop executes a set of statements as long as the loop condition is <code>True</code>, and whenever the loop condition becomes <code>False</code>, the loop is no longer executed and the loop's execution ends. This type of loop is usually used when the number of loop repetitions is not known and determined in advance.</p>
 <figure class="shot"><img alt="Figure 87" src="../images/p046-01.png" /><figcaption>Figure 87</figcaption></figure>
-<div class="code-wrap" dir="ltr"><pre><code>: while condition یا : شرط حلقه while
-</code></pre></div>
+<p>: while condition : while</p>
 <p><code>statements</code> → loop body statements</p>
 <p>Example: A person at the entrance of a dining hall welcomes the guests of a wedding ceremony. They have been told to stand there and, after asking their names, welcome each guest who enters, and no limit has been set for when their work ends. The program below does this with the help of a <code>while</code> loop (Figure 88).</p>
 <p><img alt="Book image" src="../images/p046-03.png" /></p>
@@ -163,9 +161,9 @@
 <p><img alt="Book image" src="../images/p048-03.png" /></p>
 <figure class="shot"><img alt="Figure 92" src="../images/p048-04.png" /><figcaption>Figure 92</figcaption></figure>
 <p>Inside the loop first the welcome is printed and in the next line another name will be received so that in the next round this name is checked in the loop condition.</p>
-<h3 id="note">Note</h3>
+<aside class="callout note"><h3 id="note">Note</h3>
 <p>The examples above all help the programmer learn how to use the <code>while</code> loop in different situations. By rewriting the code and thinking about the process of each of the programs above, the programmer learns the material more precisely. For better learning, pay attention to the examples on the next page.</p>
-<hr />
+</aside><hr />
 <p class="page-mark">Page 43</p>
 <p>Example: Write a program that receives an integer from the user and prints the square of that number; this continues as long as the user enters a number greater than zero (Figure 93).</p>
 <p><img alt="Book image" src="../images/p049-01.png" /></p>
@@ -174,13 +172,13 @@
 <p>The meaning of the <code>while</code> condition: that is, as long as the value of the variable <code>number</code> is greater than zero, the loop statements will be repeated.</p>
 <p>Inside the loop first, with an appropriate message, the number taken and its square (that is, to the power of two) will be printed, and then another number is taken from the user.</p>
 <p>If in the first line of the program a value less than or equal to zero is entered, the loop condition becomes <code>False</code> and the loop body statements will no longer be executed and the program ends. Note that in this example, the square of the number zero or a negative number is not printed.</p>
-<h3 id="activity">Activity</h3>
+<aside class="callout activity"><h3 id="activity">Activity</h3>
 <p>Change the program above so that in addition to the square of the number, the cube (<code>Cube</code>) of the number (that is, the number to the power of 3) is also printed.</p>
 <p>Example: Write a program that takes the names of several foods from the user and adds (<code>append</code>) them to an empty list.</p>
 <p>This continues as long as the user enters the word <code>exit</code>. After the loop ends, the contents of the list will be printed all at once (Figure 94).</p>
 <p><img alt="Book image" src="../images/p049-03.png" /></p>
 <figure class="shot"><img alt="Figure 94" src="../images/p049-04.png" /><figcaption>Figure 94</figcaption></figure>
-<hr />
+</aside><hr />
 <p class="page-mark">Page 44</p>
 <p>Code explanation: In the first line, an empty list is created.</p>
 <p>As in the previous examples, first take the name of a food and store it in the variable <code>food</code>.</p>
@@ -212,12 +210,12 @@
 <p>Inside the loop you can use <code>continue</code> to return to the beginning of the loop and run it again.</p>
 <p>The <code>break</code> and <code>continue</code> statements must be used together with an <code>if</code> condition inside loops.</p>
 <p>To implement loops with a known count you can also use <code>while</code> loops; but this is not recommended, because writing such programs with a <code>for</code> loop is simpler and more logical.</p>
-<h3 id="activity_1">Activity</h3>
+<aside class="callout activity"><h3 id="activity_1">Activity</h3>
 <p>In the previous example and at the end of the program above, with the help of a <code>for</code> loop print each of the foods in the list one under another.</p>
-<h3 id="activity_2">Activity</h3>
+</aside><aside class="callout activity"><h3 id="activity_2">Activity</h3>
 <p>Write a program so that the user can repeatedly order food, until they enter <code>"done"</code>.</p>
-<p>Each time a new food is taken from the user, the message <code>".Your</code> <code>order</code> <code>for</code> <code>&lt;food&gt;</code> <code>has</code> <code>been</code> <code>added"</code> should be displayed and the new food should be added (<code>append</code>) to the food order list. When the user enters <code>"done"</code>, the program should display all the orders.</p>
-<hr /></article>
+<p>Each time a new food is taken from the user, the message <code>".Your order for &lt;food&gt; has been added"</code> should be displayed and the new food should be added (<code>append</code>) to the food order list. When the user enters <code>"done"</code>, the program should display all the orders.</p>
+</aside><hr /></article>
       <aside class="extra">
         <h2 data-fa="تمرین این بخش" data-en="Exercises for this section">تمرین این بخش</h2>
         <p class="extra-note" data-fa="این تمرین‌ها و پیوندها اضافه بر متن کتاب‌اند." data-en="These exercises and links are in addition to the book.">این تمرین‌ها و پیوندها اضافه بر متن کتاب‌اند.</p>
@@ -227,7 +225,7 @@
     <nav class="pager"><a rel="prev" class="prev" href="p1-for.html"><span class="pager-word" data-fa="قبلی" data-en="Previous">قبلی</span><span class="pager-name" data-fa="حلقه for و range" data-en="The for loop and range">حلقه for و range</span></a><a rel="next" class="next" href="p1-assess-data.html"><span class="pager-word" data-fa="بعدی" data-en="Next">بعدی</span><span class="pager-name" data-fa="ارزشیابی مدل‌سازی داده" data-en="Data-modeling assessment">ارزشیابی مدل‌سازی داده</span></a></nav>
     </div>
   </div>
-  <script src="../assets/search-index.js?v=4"></script>
-  <script src="../assets/app.js?v=4"></script>
+  <script src="../assets/search-index.js?v=6"></script>
+  <script src="../assets/app.js?v=6"></script>
 </body>
 </html>

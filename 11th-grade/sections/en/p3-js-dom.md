@@ -2,7 +2,7 @@
 
 ### Try this
 
-Research why using the `prompt`() and `confirm`() functions for input operations can disrupt the user experience.
+Research why using the `prompt()` and `confirm()` functions for input operations can disrupt the user experience.
 
 Classes and objects: In programming languages, a class means a pattern for creating objects. A class contains a set of properties and methods. An object that is defined from a class will have the properties and methods defined in that class.
 
@@ -18,20 +18,15 @@ The `constructor` method is used to define and initialize the properties of an o
 
 The `person` class has a method named `greet` that displays a message in the browser console.
 
-The variable `person1` is an object of the `person` class type whose property values are `amin` and 47. This example shows that to create an object from a class you must use the keyword `new`. Given that the `person` class has a method named `greet`, the object `person1` can also use this method. The `greet` method will display the phrase `"My` `name` `is` `amin` `and` `I` `am` 47 `years` `old"` in the console.
+The variable `person1` is an object of the `person` class type whose property values are `amin` and 47. This example shows that to create an object from a class you must use the keyword `new`. Given that the `person` class has a method named `greet`, the object `person1` can also use this method. The `greet` method will display the phrase `"My name is amin and I am` 47 `years old"` in the console.
 
 Creating a class and an object: Create a new file named `object.html` and inside it create a new class named `Car` with the properties
 
-```
-auto_maker، model وyear ایجاد کنید.
-```
+auto_maker model year .
 
 Write a method named `print_Details` to print the car’s properties. The print format should be as follows:
 
-```
 Auto maker: Toyota , Model: Camry , Year: 2020
-```
-
 
 ---
 
@@ -63,14 +58,13 @@ Selection based on tag name: A set of elements with the same tag name is selecte
 
 **Figure 13**
 
-
 ---
 
 **Page 227**
 
 ### Try this
 
-To study other methods for accessing elements, search for the phrase «`how` `to` `get` `elements` `by` `JavaScript`» in Google and from the results list open the site `w3schools.com`.
+To study other methods for accessing elements, search for the phrase «`how to get elements by JavaScript`» in Google and from the results list open the site `w3schools.com`.
 
 In the following, exercises are presented for working on various page elements with JavaScript.
 
@@ -88,14 +82,13 @@ Create a file named `product.html` and enter the code below in the `<body>` sect
 
 ![Book image](../images/p233-02.png)
 
-In lines 6 through 13 of the script above, a function named `change`() is defined that accesses the elements `addToCart` and `para` and then changes their content and style. The function `change`() is called when the button is clicked.
+In lines 6 through 13 of the script above, a function named `change()` is defined that accesses the elements `addToCart` and `para` and then changes their content and style. The function `change()` is called when the button is clicked.
 
 In lines 7 and 8, access to the paragraph and button elements is performed. In lines 9 and 10, the content of the paragraph and button elements is changed using the `innerHTML` and `textContent` properties. In lines 11 and 12, the style of the elements is changed using the `style` property. Save the file and check the result in the browser.
 
 ### Learn more
 
 Accessing elements and changing their attributes: Write a script that changes the `src` attribute of an image when the mouse is placed over it.
-
 
 ---
 
@@ -107,13 +100,13 @@ In the file `products.html`, add a product image to the `<body>` section. Then u
 
 Save the file and check the result in the browser.
 
-When the mouse pointer is moved onto the image, the `onmouseover` event is activated and as a result the function `changeImage`() is called to change the image. When the mouse moves away from the image, the `onmouseleave` event is activated and therefore the function `resetImage`() is called. This function restores the original image.
+When the mouse pointer is moved onto the image, the `onmouseover` event is activated and as a result the function `changeImage()` is called to change the image. When the mouse moves away from the image, the `onmouseleave` event is activated and therefore the function `resetImage()` is called. This function restores the original image.
 
 ![Book image](../images/p234-02.png)
 
 ![Book image](../images/p234-03.png)
 
-In both functions above, the `setAttribute`() method is used to change the image.
+In both functions above, the `setAttribute()` method is used to change the image.
 
 ![Book image](../images/p234-04.png)
 
@@ -123,14 +116,13 @@ Write a script that, when a button titled Consultation is clicked, adds a panel 
 
 Create a new file named `open-panel.html` and write the script inside it according to the figure opposite.
 
-
 ---
 
 **Page 229**
 
 Add the element styles to the `<head>` section. Then save the file and observe the result in the browser.
 
-When the button “Consultation with a sales expert” is clicked, the function `openPanel`() is called. This function is written in lines 3 through 12.
+When the button “Consultation with a sales expert” is clicked, the function `openPanel()` is called. This function is written in lines 3 through 12.
 
 In line 4, a new `div` element is created by the `createElement` method.
 
@@ -158,18 +150,17 @@ Create a file named `sign-in.html` and enter the code from the figure below into
 
 This form contains three fields for receiving a username, a password, and an email.
 
-
 ---
 
 **Page 230**
 
-To validate the form, use the script from the figure below. This script contains the function `validateForm`(), which checks the input values of the text fields. This function is called in the `onsubmit` event of the form on the previous page.
+To validate the form, use the script from the figure below. This script contains the function `validateForm()`, which checks the input values of the text fields. This function is called in the `onsubmit` event of the form on the previous page.
 
 ![Book image](../images/p236-01.png)
 
 ![Book image](../images/p236-02.png)
 
-The function `validateForm`() receives the username and password in lines 2 and 3 and places their values in the two variables `username` and `password`. In lines 4 through 7, whether `username` is empty is checked; if this variable is empty, a warning message appears and the statement `return` `false` prevents the form content from being sent to the server. Similarly, in lines 8 through 11, whether the variable `password` is empty is checked. If the conditions of the `if` statements in lines 4 and 8 are not true, the statement in line 12 is executed and the form information is sent to the server.
+The function `validateForm()` receives the username and password in lines 2 and 3 and places their values in the two variables `username` and `password`. In lines 4 through 7, whether `username` is empty is checked; if this variable is empty, a warning message appears and the statement `return false` prevents the form content from being sent to the server. Similarly, in lines 8 through 11, whether the variable `password` is empty is checked. If the conditions of the `if` statements in lines 4 and 8 are not true, the statement in line 12 is executed and the form information is sent to the server.
 
 Next, check the length of the username and password so that if the length of either of these two fields is less than 6 characters, a warning message is displayed. To do this, write the condition below after line 11.
 

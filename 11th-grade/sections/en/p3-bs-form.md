@@ -8,26 +8,17 @@ Class name
 
 ### Use
 
-```
-form-control
-```
-
+`form-control`
 Sets the style of input fields such as `input`, `textarea`, and `select`
 
 `form-label` Sets the style of form labels `form-check` Styles checkboxes and radio buttons
 
-```
-form-check-label
-```
-
+`form-check-label`
 This class is used for the text next to a checkbox or radio button.
 
 `form-check-input` For styling a checkbox and radio button
 
-```
-form-text
-```
-
+`form-text`
 This class is used to show helpful text under a form field.
 
 ### Learn more
@@ -40,7 +31,6 @@ Designing the sign-up form. In this workshop you will design a sign-up form like
 
 ![Book image](../images/p186-01.png)
 
-
 ---
 
 **Page 181**
@@ -49,7 +39,7 @@ Designing the sign-up form. In this workshop you will design a sign-up form like
 
 ![Book image](../images/p187-01.png)
 
-`vh` is a unit of measurement in `CSS` that stands for `Viewport` `Height`. The word `viewport` refers to the part of the page that is in the user’s view. `1vh` equals 1% of the `viewport` height. Therefore, `height:100vh` means that the height of the `<body>` element should equal 100% of the `viewport` height.
+`vh` is a unit of measurement in `CSS` that stands for `Viewport Height`. The word `viewport` refers to the part of the page that is in the user’s view. `1vh` equals 1% of the `viewport` height. Therefore, `height:100vh` means that the height of the `<body>` element should equal 100% of the `viewport` height.
 
 In other words, this element should occupy the full height of the page.
 
@@ -64,7 +54,6 @@ Using the `d-flex` and `align-items-center` classes makes the content of the `bo
 The `justify-content-center` class centers the content of the container element on the page.
 
 The `col-10`, `col-md-6`, and `col-lg-5` classes set the width of the `grid` column on mobile, tablet, and desktop devices.
-
 
 ---
 
@@ -83,7 +72,6 @@ Save the file and check the result in the browser.
 ### Learn more
 
 `Modal`
-
 A modal is a user interface that appears as a floating dialog box on top of the page and requires the user to interact with it before returning to the web page. This element is usually used to show extra information, get user confirmation, forms, or other interactions with the user.
 
 Pressing the `Esc` key, clicking the `close` button, or clicking an area outside the modal window closes the dialog box.
@@ -93,7 +81,6 @@ A modal window has three sections: `header`, `body`, and `footer`. These section
 A modal depends on JavaScript, so adding the Bootstrap JavaScript file before `</body>` is required.
 
 To show the dialog box you need an activating element such as a button.
-
 
 ---
 
@@ -125,7 +112,6 @@ Add the modal code to the page after the `</button>` tag:
 
 ![Book image](../images/p189-02.png)
 
-
 ---
 
 **Page 184**
@@ -146,9 +132,7 @@ After clicking the “View cart” button, the `shopping-cart.html` page should 
 
 ![Book image](../images/p190-02.png)
 
-```
-کروسل (Carousel)
-```
+(Carousel)
 
 A carousel is a JavaScript-based tool used to create a set of slides or a horizontal image gallery. A carousel lets you show several pieces of content or images in a limited space so that users can see the next items with control buttons or by swiping (`swipe`).
 
@@ -157,6 +141,5 @@ On a shopping site, carousels or sliders let you show a set of products or promo
 To create a Bootstrap carousel, the `carousel` class and its related classes are used.
 
 Table 13 describes the class names and their uses:
-
 
 ---

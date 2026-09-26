@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title data-fa="فرم‌ها" data-en="Forms">فرم‌ها</title>
   <link rel="icon" href="../assets/favicon.svg">
-  <link rel="stylesheet" href="../assets/style.css?v=4">
+  <link rel="stylesheet" href="../assets/style.css?v=6">
 </head>
 <body data-root="../">
   <header class="top">
@@ -50,32 +50,26 @@
 <p class="page-mark">صفحه ۱۰۷</p>
 <p>جدول 5 مقایسه دو روش ارسال اطلاعات به در فرم‌ها</p>
 <p>عملیاتروش <code>GET</code>روش <code>POST</code></p>
-<p>داده‌ها در بدنه درخواست <code>HTTP</code> ارسال می‌شوند و</p>
-<p>نحوه ارسال</p>
+<p>داده‌ها در بدنه درخواست <code>HTTP</code> ارسال می‌شوند و نحوه ارسال</p>
 <p>داده‌ها از طریق نوار آدرس مرورگر ارسال می‌شوند و در</p>
 <p>در <code>URL</code> مشاهده نمی‌شوند.</p>
 <p>داده‌ها</p>
 <p>نتیجه توسط کاربر مشاهده می‌شوند.</p>
-<p>مرورگرها در هنگام ارسال درخواست توسط روش <code>GET</code></p>
-<p>محدودیت</p>
+<p>مرورگرها در هنگام ارسال درخواست توسط روش <code>GET</code> محدودیت</p>
 <p>دارای محدودیت هستند. بسته به نوع مرورگر و تنظیمات</p>
-<p>محدودیت کمی دارد و می‌تواند برای ارسال فایل و</p>
-<p>حجم داده</p>
+<p>محدودیت کمی دارد و می‌تواند برای ارسال فایل و حجم داده</p>
 <p>سرور، طول رشته قابل ارسال از طریق نوار آدرس بین</p>
 <p>متن‌های طولانی استفاده شود.</p>
 <p>2000 تا 8000 کاراکتر است.</p>
 <p>امنیت پایینی دارد، علاوه بر نمایش داده‌های کاربران</p>
-<p>امن‌تر از روش <code>GET</code> است اما امنیت کامل ندارد،</p>
-<p>امنیت</p>
+<p>امن‌تر از روش <code>GET</code> است اما امنیت کامل ندارد، امنیت</p>
 <p>در نوار آدرس، امکان ذخیره شدن محتوای آدرس (کش</p>
 <p>مگر اینکه از پروتکل <code>HTTPS</code> استفاده شود.</p>
 <p>شدن) در حافظه مرورگر موجود است.</p>
 <p>برای دریافت اطلاعات از سرور (مانند جس‌توجو و فیلتر</p>
-<p>برای ارسال اطلاعات به سرور جهت پردازش یا</p>
-<p>کاربردها</p>
+<p>برای ارسال اطلاعات به سرور جهت پردازش یا کاربردها</p>
 <p>کردن). در این حالت کاربر قصد تغییر داده‌های سرور</p>
-<p>ذخیره‌سازی (مانند ثبت‌نام، ورود، آپلود فایل)</p>
-<p>را ندارد.</p>
+<p>ذخیره‌سازی (مانند ثبت‌نام، ورود، آپلود فایل) را ندارد.</p>
 <h3 id="_3">مثال</h3>
 <p>مثالی از به‌کارگیری متد <code>GET</code></p>
 <p><img alt="تصویر کتاب" src="../images/p113-03.png" /></p>
@@ -116,34 +110,33 @@
 &lt;/select&gt;
 </code></pre></div>
 <p>ویژگی <code>type</code> در عنصر <code>&lt;input&gt;</code> نوع داده ورودی کاربر را تعیین می‌کند. مقدار این ویژگی در جدول 7 تشریح شده است:</p>
-<p>جدول 7 مقادیر ویژگی <code>type</code> در عنصر <code>&lt;input&gt;</code></p>
-<p>مقدار ویژگی <code>type</code></p>
+<p>جدول 7 مقادیر ویژگی <code>type</code> در عنصر <code>&lt;input&gt;</code> مقدار ویژگی <code>type</code></p>
 <h3 id="_5">کاربرد</h3>
-<div class="code-wrap" dir="ltr"><pre><code>text, password, email
-</code></pre></div>
+<p><bdi dir="ltr">text</bdi>, <bdi dir="ltr">password</bdi>, <bdi dir="ltr">email</bdi></p>
 <p>دریافت مقادیر متنی کوتاه مانند نام کاربری، کلمه عبور و ایمیل.</p>
-<div class="code-wrap" dir="ltr"><pre><code>tel, number
-</code></pre></div>
+<p><bdi dir="ltr">tel</bdi>, <bdi dir="ltr">number</bdi></p>
 <p>دریافت شماره تلفن و مقادیر عددی.</p>
-<p><code>radio</code></p>
-<p>ایجاد لیستی از گزینه‌ها که کاربر تنها مجاز به انتخاب یک گزینه باشد.</p>
+<p><code>radio</code>
+ایجاد لیستی از گزینه‌ها که کاربر تنها مجاز به انتخاب یک گزینه باشد.</p>
 <p>ایجاد لیستی از گزینه‌ها به‌کار می‌رود که کاربر امکان انتخاب صفر، یک یا چند گزینه</p>
-<div class="code-wrap" dir="ltr"><pre><code>checkbox
-</code></pre></div>
-<p>را دارد.</p>
-<p><code>file</code></p>
-<p>دریافت فایل از کاربران (آپلود).</p>
+<p><code>checkbox</code>
+را دارد.</p>
+<p><code>file</code>
+دریافت فایل از کاربران (آپلود).</p>
 <p><code>submit</code>ایجاد دکمه ارسال اطلاعات</p>
-<p><code>reset</code></p>
-<p>محتوای فرم را پاک می‌کند.</p>
+<p><code>reset</code>
+محتوای فرم را پاک می‌کند.</p>
 <hr />
 <p class="page-mark">صفحه ۱۰۹</p>
 <p>برای ایجاد یک گروه دکمه رادیویی باید ویژگی <code>name</code> برای تمام دکمه‌های رادیویی گروه یکسان باشد، در غیراین‌صورت امکان انتخاب چند عنصر وجود دارد. دکمه‌های رادیویی معمولاً زمانی به کار می‌روند که انتخاب یک گزینه از میان چند گزینه مطرح باشد.</p>
 <h3 id="_6">مثال</h3>
 <h3 id="_7">مثال:</h3>
 <p><img alt="تصویر کتاب" src="../images/p115-01.png" /></p>
-<div class="code-wrap" dir="ltr"><pre><code>مرد&lt;input type=&quot;radio&quot; name=&quot;gender&quot; value=&quot;male&quot;&gt;
-زن&lt;input type=&quot;radio&quot; name=&quot;gender&quot; value=&quot;female&quot;&gt;
+<p>مرد&lt;<bdi dir="ltr">input</bdi></p>
+<div class="code-wrap" dir="ltr"><pre><code>type=&quot;radio&quot; name=&quot;gender&quot; value=&quot;male&quot;&gt;
+</code></pre></div>
+<p>زن&lt;<bdi dir="ltr">input</bdi></p>
+<div class="code-wrap" dir="ltr"><pre><code>type=&quot;radio&quot; name=&quot;gender&quot; value=&quot;female&quot;&gt;
 </code></pre></div>
 <p>ایجاد فرم ثبت سفارش</p>
 <h3 id="_8">کار کارگاهی</h3>
@@ -157,16 +150,16 @@
 <p><code>id:</code> شناسه عنصر فرم را تعیین می‌کند که باید مقداری منحصر به‌فرد باشد.</p>
 <p><code>value:</code> مقدار پیش‌فرض عنصر فرم را تعیین می‌کند.</p>
 <p><code>required:</code> استفاده از این ویژگی در عناصر فرم باعث می‌شود که در صورت خالی رها شدن یک فیلد پیغام خطا ظاهر شود.</p>
-<h3 id="_9">فعالیت</h3>
+<aside class="callout activity"><h3 id="_9">فعالیت</h3>
 <p>یک فرم بازگشت کالا حاوی نام و نام خانوادگی، شماره سفارش، نام کالا، علت مرجوع کالا و تصویر کالا ایجاد کنید.</p>
-<h3 id="semantic-elements">ساختاردهی به صفحه با عناصر معنایی <bdi dir="ltr">(Semantic Elements)</bdi></h3>
+</aside><h3 id="semantic-elements">ساختاردهی به صفحه با عناصر معنایی <bdi dir="ltr">(Semantic Elements)</bdi></h3>
 <p>عناصر معنایی در <code>HTML</code> به عناصری اطلاق می‌شود که محتوای درون خود را به وضوح توصیف می‌کنند.</p>
 <p>استفاده از این عناصر باعث می‌شود که ابزارهای صفح‌هخوان و موتورهای جس‌توجو درک بهتری از ساختار و محتوای صفحه داشته باشند. عناصر معنایی نه تنها سئوی صفحه را بهبود می‌دهند، بلکه سازمان‌دهی و نگهداری کد را ساده‌تر می‌کنند. این عناصر به شرح زیر هستند:</p>
 <p><code>&lt;main&gt;:</code> برای نمایش محتوای اصلی صفحه به‌کار می‌رود. هر صفحه باید تنها یک عنصر <code>&lt;main&gt;</code> داشته باشد.</p>
 <p><code>&lt;header&gt;:</code> برای تعریف سرصفحه یک سند استفاده می‌شود. درون این تگ امکان استفاده از تگ‌های مختلفی مانند <code>&lt;h1&gt;</code>، <code>&lt;p&gt;</code>، <code>&lt;nav&gt;</code>، <code>&lt;ul&gt;</code>، <code>&lt;img&gt;</code> و <code>&lt;form&gt;</code> وجود دارد.</p>
 <p><code>&lt;nav&gt;:</code> در هنگام ایجاد منوهای ناوبری1 استفاده می‌شود (شکل17).</p>
 <figure class="shot"><img alt="شکل 17" src="../images/p116-01.png" /><figcaption>شکل 17</figcaption></figure>
-<p>1 منوی ناوبری (<code>Navigation</code> <code>Menu</code>) شامل مجموعه‌ای از پیوندهاست که به کاربران اجازه می‌دهد در صفحات یا بخش‌های مختلف داخل یک وب‌سایت حرکت کنند. منوی ناوبری سایت معمولاً در بالا یا کنار یک صفحه وب قرار می‌گیرد.</p>
+<p>1 منوی ناوبری (<code>Navigation Menu</code>) شامل مجموعه‌ای از پیوندهاست که به کاربران اجازه می‌دهد در صفحات یا بخش‌های مختلف داخل یک وب‌سایت حرکت کنند. منوی ناوبری سایت معمولاً در بالا یا کنار یک صفحه وب قرار می‌گیرد.</p>
 <hr /></article><article class="lesson" lang="en" dir="ltr" data-lang-block="en" hidden><p class="page-mark">Page 106</p>
 <p>Using the table tag</p>
 <h3 id="workshop">Workshop</h3>
@@ -198,8 +191,7 @@
 <p>method. Depending on the browser type and server</p>
 <p>settings, the length of the string that can be sent through the address bar is between</p>
 <p>2000 and 8000 characters.</p>
-<p>Has little limit and can be used for sending files and</p>
-<p>long texts.</p>
+<p>Has little limit and can be used for sending files and long texts.</p>
 <p>Security</p>
 <p>Has low security; in addition to displaying user data</p>
 <p>in the address bar, it is possible for the address content to be stored (cached)</p>
@@ -254,31 +246,31 @@
 <p>Table 7 Values of the <code>type</code> attribute on the <code>&lt;input&gt;</code> element</p>
 <p>Value of the <code>type</code> attribute</p>
 <h3 id="use">Use</h3>
-<div class="code-wrap" dir="ltr"><pre><code>text, password, email
-</code></pre></div>
+<p>text, password, email</p>
 <p>Receiving short text values such as username, password, and email.</p>
-<div class="code-wrap" dir="ltr"><pre><code>tel, number
-</code></pre></div>
+<p>tel, number</p>
 <p>Receiving a phone number and numeric values.</p>
-<p><code>radio</code></p>
-<p>Creating a list of options where the user is allowed to select only one option.</p>
+<p><code>radio</code>
+Creating a list of options where the user is allowed to select only one option.</p>
 <p>Used to create a list of options where the user can select zero, one, or more options</p>
-<div class="code-wrap" dir="ltr"><pre><code>checkbox
-</code></pre></div>
-<p>.</p>
-<p><code>file</code></p>
-<p>Receiving a file from users (upload).</p>
+<p><code>checkbox</code>
+.</p>
+<p><code>file</code>
+Receiving a file from users (upload).</p>
 <p><code>submit</code> Creating a button to send information</p>
-<p><code>reset</code></p>
-<p>Clears the form content.</p>
+<p><code>reset</code>
+Clears the form content.</p>
 <hr />
 <p class="page-mark">Page 109</p>
 <p>To create a group of radio buttons, the <code>name</code> attribute must be the same for all radio buttons in the group; otherwise it is possible to select more than one element. Radio buttons are usually used when choosing one option from among several options is involved.</p>
 <h3 id="example_2">Example</h3>
 <h3 id="example_3">Example:</h3>
 <p><img alt="Book image" src="../images/p115-01.png" /></p>
-<div class="code-wrap" dir="ltr"><pre><code>مرد&lt;input type=&quot;radio&quot; name=&quot;gender&quot; value=&quot;male&quot;&gt;
-زن&lt;input type=&quot;radio&quot; name=&quot;gender&quot; value=&quot;female&quot;&gt;
+<p>&lt;input</p>
+<div class="code-wrap" dir="ltr"><pre><code>type=&quot;radio&quot; name=&quot;gender&quot; value=&quot;male&quot;&gt;
+</code></pre></div>
+<p>&lt;input</p>
+<div class="code-wrap" dir="ltr"><pre><code>type=&quot;radio&quot; name=&quot;gender&quot; value=&quot;female&quot;&gt;
 </code></pre></div>
 <p>Creating an order form</p>
 <h3 id="workshop_1">Workshop</h3>
@@ -292,16 +284,16 @@
 <p><code>id:</code> Sets the identifier of the form element, which must be a unique value.</p>
 <p><code>value:</code> Sets the default value of the form element.</p>
 <p><code>required:</code> Using this attribute on form elements causes an error message to appear if a field is left empty.</p>
-<h3 id="activity">Activity</h3>
+<aside class="callout activity"><h3 id="activity">Activity</h3>
 <p>Create a product return form containing first and last name, order number, product name, reason for return, and product image.</p>
-<h3 id="structuring-the-page-with-semantic-elements-semantic-elements">Structuring the page with semantic elements (Semantic Elements)</h3>
+</aside><h3 id="structuring-the-page-with-semantic-elements-semantic-elements">Structuring the page with semantic elements (Semantic Elements)</h3>
 <p>Semantic elements in <code>HTML</code> are elements that clearly describe the content inside them.</p>
 <p>Using these elements helps screen readers and search engines better understand the structure and content of the page. Semantic elements not only improve the page’s SEO, but also make organizing and maintaining the code easier. These elements are as follows:</p>
 <p><code>&lt;main&gt;:</code> Used to display the main content of the page. Each page should have only one <code>&lt;main&gt;</code> element.</p>
 <p><code>&lt;header&gt;:</code> Used to define the header of a document. Inside this tag it is possible to use various tags such as <code>&lt;h1&gt;</code>, <code>&lt;p&gt;</code>, <code>&lt;nav&gt;</code>, <code>&lt;ul&gt;</code>, <code>&lt;img&gt;</code>, and <code>&lt;form&gt;</code>.</p>
 <p><code>&lt;nav&gt;:</code> Used when creating navigation menus1 (Figure 17).</p>
 <figure class="shot"><img alt="Figure 17" src="../images/p116-01.png" /><figcaption>Figure 17</figcaption></figure>
-<p>1 A navigation menu (<code>Navigation</code> <code>Menu</code>) includes a set of links that allow users to move through different pages or sections inside a website. The site navigation menu is usually placed at the top or side of a web page.</p>
+<p>1 A navigation menu (<code>Navigation Menu</code>) includes a set of links that allow users to move through different pages or sections inside a website. The site navigation menu is usually placed at the top or side of a web page.</p>
 <hr /></article>
       <aside class="extra">
         <h2 data-fa="تمرین این بخش" data-en="Exercises for this section">تمرین این بخش</h2>
@@ -312,7 +304,7 @@
     <nav class="pager"><a rel="prev" class="prev" href="p2-img.html"><span class="pager-word" data-fa="قبلی" data-en="Previous">قبلی</span><span class="pager-name" data-fa="تصویر در صفحه" data-en="Images on the page">تصویر در صفحه</span></a><a rel="next" class="next" href="p2-semantic.html"><span class="pager-word" data-fa="بعدی" data-en="Next">بعدی</span><span class="pager-name" data-fa="عناصر معنایی" data-en="Semantic elements">عناصر معنایی</span></a></nav>
     </div>
   </div>
-  <script src="../assets/search-index.js?v=4"></script>
-  <script src="../assets/app.js?v=4"></script>
+  <script src="../assets/search-index.js?v=6"></script>
+  <script src="../assets/app.js?v=6"></script>
 </body>
 </html>

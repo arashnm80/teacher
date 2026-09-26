@@ -93,10 +93,7 @@ DJ = "https://docs.djangoproject.com/en/stable/intro/tutorial01/"
 SECTIONS = [
     S("toc", "open", "فهرست", "Contents", "00-toc.md", 4, 6,
       "فهرست", "Contents",
-      ["از فهرست، شماره صفحه شروع هر پنج پودمان را بنویس.",
-       "برای هفته آینده یک پودمان را انتخاب کن و بگو کدام واحد یادگیری‌اش را اول می‌خوانی و چرا."],
-      ["From the contents, write the starting page of each of the five modules.",
-       "Pick one module for next week. Which learning unit will you read first, and why?"],
+      [], [],
       None),
 
     S("p1-intro", "p1", "معرفی پودمان", "Module introduction",

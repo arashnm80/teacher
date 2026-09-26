@@ -18,30 +18,16 @@ Method of setting column size
 
 Setting column size on
 
-This code creates a row (`row`) with two columns (`col-6`). Each column occupies half of
-
-the `col` elements
-
-6).
+This code creates a row (`row`) with two columns (`col-6`). Each column occupies half of the `col` elements 6).
 
 __
 
 the row width (12
 
-`B`
-
-`A`
-
+`B`, `A`
 ![Book image](../images/p172-02.png)
 
-`B`
-
-`A`
-
-`D`
-
-`C`
-
+`B`, `A`, `D`, `C`
 Setting column size on `row` elements
 
 The `row-cols-2` class creates 2 columns in each row. In the code above there are 4 `col` elements; therefore two rows are produced, each containing two columns.
@@ -49,7 +35,6 @@ The `row-cols-2` class creates 2 columns in each row. In the code above there ar
 If you add more `col` elements, the columns move to the next row.
 
 `Bootstrap` automatically adjusts the column widths; therefore you do not need to set the size of each column by hand.
-
 
 ---
 
@@ -77,7 +62,6 @@ Place each product title inside an `<h3>` tag:
 
 ![Book image](../images/p173-04.png)
 
-
 ---
 
 **Page 168**
@@ -104,29 +88,13 @@ How the `row-cols` classes work in the workshop above is as follows:
 
 Part two: using the `container` classes. The `container` classes are responsive and create different widths for the container element on different devices.
 
-
 ---
 
 **Page 169**
 
 `container` classes and their widths on different devices
 
-```
-XX-Large
-X-large
-```
-
-`Large`
-
-```
-Medium
-```
-
-`Small`
-
-```
-Extra small
-```
+`XX-Large`, `X-large`, `Large`, `Medium`, `Small` Extra small
 
 `1400px`≤
 
@@ -140,74 +108,15 @@ Extra small
 
 `576px<`
 
-`1320px`
+`1320px`, `1140px`, `960px`, `720px`, `540px` 100%
 
-`1140px`
+`.Container`, `1320px`, `1140px`, `960px`, `720px`, `540px` 100%
 
-`960px`
+`.Container-sm`, `1320px`, `1140px`, `960px`, `720px` 100% 100%
 
-`720px`
+`.Container-md`, `1320px`, `1140px`, `960px` 100% 100% 100%
 
-`540px`
-
-100%
-
-```
-.Container
-```
-
-`1320px`
-
-`1140px`
-
-`960px`
-
-`720px`
-
-`540px`
-
-100%
-
-```
-.Container-sm
-```
-
-`1320px`
-
-`1140px`
-
-`960px`
-
-`720px`
-
-100%
-
-100%
-
-```
-.Container-md
-```
-
-`1320px`
-
-`1140px`
-
-`960px`
-
-100%
-
-100%
-
-100%
-
-```
-.Container-lg
-```
-
-`1320px`
-
-`1140px`
-
+`.Container-lg`, `1320px`, `1140px`
 100%
 
 100%
@@ -216,12 +125,7 @@ Extra small
 
 100%
 
-```
-.Container-xl
-```
-
-`1320px`
-
+`.Container-xl`, `1320px`
 100%
 
 100%
@@ -232,10 +136,7 @@ Extra small
 
 100%
 
-```
-.Container-xxl
-```
-
+`.Container-xxl`
 100%
 
 100%
@@ -248,10 +149,7 @@ Extra small
 
 100%
 
-```
-.Container-fluid
-```
-
+`.Container-fluid`
 In the “Designing the store introduction section” workshop, the width of the `article` element was set to 75% and 90% on desktop and mobile devices, respectively. Here you will use responsive `container` classes instead of `CSS` code. Follow the steps below:
 
 On the `article` element use the `container-sm` class:
@@ -263,7 +161,6 @@ Remove both styles for the `article` element from the `styles.css` file.
 Save the `HTML` and `CSS` files and check the result in the browser. With this change, the width of the `article` element for devices with a page width of 576 pixels and larger is set by the `container` class, and for smaller devices the element width will be 100%.
 
 Part three: working with the `display` classes. In the “Designing the `Toolbar`” workshop, a toolbar was designed at the top of the page. The “Sign up|Sign in” options and its logo were hidden in the mobile view and placed at the bottom of the page inside a new layer named `bottom-toolbar`. The goal of this workshop is to hand control of showing/hiding the elements of the `toolbar` and `bottom-toolbar` layers over to the `d-*` classes and remove the related `CSS` code.
-
 
 ---
 
@@ -299,7 +196,6 @@ Part four: creating a responsive image. The goal of this part is to add a banner
 
 The `img-fluid` class is one of the important `Bootstrap` classes for making images responsive; it makes the image resize to match its parent, not become wider than the `container`, and display correctly on mobile, tablet, and desktop.
 
-
 ---
 
 **Page 171**
@@ -320,22 +216,16 @@ Attention
 
 If the edges of the banner are not flush with the edges of the browser, set the `padding` and `margin` values for the `header` element to zero.
 
-```
-اجزای رابط کاربری (User Interface Components)
-```
+(User Interface Components)
 
 Users of web pages interact with the page through various components. These components include buttons, menus, search bars, icons, forms, images, colors, fonts, and other visual elements that shape the user experience. Bootstrap has a set of ready-made classes for various user interface components such as the navbar, form, button, accordion menu, and so on, which are covered in this section.
-
 
 ---
 
 **Page 172**
 
-```
-Navbar
-```
-
-The `navbar` class is used to create a navigation bar (`Navigation` `Bar`) or the menu at the top of the page. This class is used together with other classes such as `navbar-expand-*` to set the behavior and appearance of the navigation bar at different screen sizes. The set of `Navbar` classes is as follows:
+`Navbar`
+The `navbar` class is used to create a navigation bar (`Navigation Bar`) or the menu at the top of the page. This class is used together with other classes such as `navbar-expand-*` to set the behavior and appearance of the navigation bar at different screen sizes. The set of `Navbar` classes is as follows:
 
 `navbar:` The main class for creating a navigation bar.
 
@@ -343,7 +233,7 @@ The `navbar` class is used to create a navigation bar (`Navigation` `Bar`) or th
 
 `navbar-brand:` Used to display a logo or brand name in the navigation bar.
 
-`navbar-nav:` Used to create a navigation list (`Navigation` `list`) in the navigation bar.
+`navbar-nav:` Used to create a navigation list (`Navigation list`) in the navigation bar.
 
 `nav-link:` Used for the links in the navigation list.
 
@@ -356,6 +246,5 @@ The `navbar` class is used to create a navigation bar (`Navigation` `Bar`) or th
 `navbar-light` and `navbar-dark:` Used to set the color of the navigation bar content so that the readability of the elements inside it is preserved. The `navbar-light` class creates a navigation bar with a light background and dark text color, and the `navbar-dark` class creates a navigation bar with a dark background and light text.
 
 Choosing these classes correctly increases readability and improves the user experience.
-
 
 ---

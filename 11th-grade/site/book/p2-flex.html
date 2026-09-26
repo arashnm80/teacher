@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title data-fa="چیدمان با Flexbox" data-en="Layout with Flexbox">چیدمان با Flexbox</title>
   <link rel="icon" href="../assets/favicon.svg">
-  <link rel="stylesheet" href="../assets/style.css?v=4">
+  <link rel="stylesheet" href="../assets/style.css?v=6">
 </head>
 <body data-root="../">
   <header class="top">
@@ -33,54 +33,31 @@
 <p>چیدمان <code>Flexbox</code> فلکس یک مدل طرح‌بندی در <code>CSS</code> است که برای ایجاد طرح‌های منعطف، واکنش‌گرا و یک بعدی استفاده می‌شود. فلکس توانایی ایجاد یک چیدمان افقی یا عمودی را برای عناصر صفحه دارد؛ به‌علاوه امکان تراز کردن عناصر و توزیع خودکار فضا را به توسعه‌دهنده می‌دهد. طرح‌هایی که توسط <code>flexbox</code> ایجاد می‌شوند، با اندازه‌های مختلف صفحه نمایش سازگاری خواهند داشت (جدول 10).</p>
 <p>تنظیم ویژگی‌های عنصر والد برای چینش افقی یا عمودی عناصر فرزند در یک عنصر مشخص، از مدل فلکس استفاده می‌شود. بدین منظور ویژگی <code>display</code> با مقدار <code>Flex</code> برای عنصر والد به‌کار می‌رود. در حالت پیش‌فرض این کار باعث ایجاد چیدمان افقی برای فرزندان عنصر والد می‌گردد.</p>
 <p>برای فعال‌کردن <code>Flexbox</code> کافی است ویژگی زیر را به عنصر والد اضافه کنید:</p>
-<div class="code-wrap" dir="ltr"><pre><code>;display: flex
+<div class="code-wrap" dir="ltr"><pre><code>display: flex;
 </code></pre></div>
 <p><code>felx-direction:</code> این ویژگی برای تعیین جهت چینش عناصر، به‌صورت افقی یا عمودی استفاده می‌شود.</p>
 <p>مقادیر این ویژگی در جدول 10 مشخص شده است.</p>
-<p>جدول 10 مقادیر ویژگی <code>flex-direction</code> و تأثیر آنها روی نحوه چینش عناصر</p>
-<p>مقدار<code>row</code></p>
-<div class="code-wrap" dir="ltr"><pre><code>Row-reverse
-</code></pre></div>
-<p>افقی (پیش فرض)</p>
+<p>جدول 10 مقادیر ویژگی <code>flex-direction</code> و تأثیر آنها روی نحوه چینش عناصر مقدار<code>row</code></p>
+<p><code>Row-reverse</code>
+افقی (پیش فرض)</p>
 <p>افقی (راست به چپ)</p>
-<div class="code-wrap" dir="ltr"><pre><code>flex-direction:row
-flex-direction:row-reverse
-</code></pre></div>
-<p>توضیح</p>
-<p><code>box3</code></p>
-<p><code>box2</code></p>
-<p><code>box1</code></p>
-<p><code>box1</code></p>
-<p><code>box2</code></p>
-<p><code>box3</code></p>
-<p>مقدار<code>column</code></p>
-<div class="code-wrap" dir="ltr"><pre><code>Column-reverse
-</code></pre></div>
-<p>عمودی از بالا به پایین</p>
+<p><code>flex-direction:row</code>، <code>flex-direction:row-reverse</code> توضیح مقدار<code>column</code></p>
+<p><code>Column-reverse</code>
+عمودی از بالا به پایین</p>
 <p>عمودی از پایین به بالا</p>
-<div class="code-wrap" dir="ltr"><pre><code>flex-direction:column
-flex-direction:column-reverse
-</code></pre></div>
-<p><code>box1</code></p>
-<p><code>box3</code></p>
-<p>توضیح</p>
-<p><code>box2</code></p>
-<p><code>box2</code></p>
-<p><code>box3</code></p>
-<p><code>box1</code></p>
+<p><code>flex-direction:column</code>، <code>flex-direction:column-reverse</code>، <code>box1</code>، <code>box3</code> توضیح</p>
 <hr />
 <p class="page-mark">صفحه ۱۳۳</p>
 <p><code>felx-wrap:</code> گاهی پهنای صفحه به اندازه‌ای نیست که همه عناصر در کنار یکدیگر قرار بگیرند. ویژگی <code>flex-wrap</code> مشخص می‌کند که عناصر اضافی به سطر بعد منتقل شوند یا همگی در همان سطر فشرده شوند (جدول11).</p>
-<p>جدول 11 مقادیر ویژگی <code>felx-wrap</code></p>
+<p>جدول 11 مقادیر ویژگی <code>flex-wrap</code></p>
 <p>مقدار<code>wrap</code></p>
-<div class="code-wrap" dir="ltr"><pre><code>nowrap
-</code></pre></div>
-<p>توضیح</p>
+<p><code>nowrap</code>
+توضیح</p>
 <p>انتقال به سطر بعد</p>
 <p>عدم انتقال به سطر بعد</p>
 <p><code>felx-folw:</code> ویژگی <code>flex-flow</code> ترکیب <code>flex-direction</code> و <code>flex-wrap</code> است. به‌جای نوشتن دو خط کد می‌توان هر دو ویژگی را در یک خط تنظیم نمود. مانند زیر:</p>
 <div class="code-wrap" dir="ltr"><pre><code>{.container
-;flex-flow: row wrap
+flex-flow: row wrap;
 </code></pre></div>
 <p>}</p>
 <p><code>justify-content:</code> این ویژگی تراز عناصر و نحوه توزیع فضای خالی بین عناصر را در راستای محور اصلی کنترل می‌کند (جدول 12).</p>
@@ -91,46 +68,24 @@ flex-direction:column-reverse
 <h3 id="_2">توضیحات</h3>
 <p>چینش عناصر در سمت</p>
 <p>ایجاد فضای خالی به میزان برابر در اطراف هر</p>
-<div class="code-wrap" dir="ltr"><pre><code>Flex-start
-Space-around
-</code></pre></div>
-<p>چپ</p>
+<p><code>Flex-start</code>، <code>Space-around</code>
+چپ</p>
 <p>عنصر</p>
 <p>چینش عناصر در سمت</p>
 <p>فضای خالی برابر بین عناصر (عنصر اول و آخر</p>
-<div class="code-wrap" dir="ltr"><pre><code>Flex-end
-Space-between
-</code></pre></div>
-<p>راست</p>
+<p><code>Flex-end</code>، <code>Space-between</code>
+راست</p>
 <p>به لبه‌ها می‌چسبند)</p>
 <p>فضای خالی برابر در بین عناصر و همچنین بین</p>
-<div class="code-wrap" dir="ltr"><pre><code>Center
-</code></pre></div>
-<p>چینش عناصر در مرکز <code>Space-evenly</code></p>
+<p><code>Center</code>
+چینش عناصر در مرکز <code>Space-evenly</code></p>
 <p>عناصر و لبه‌ها</p>
 <hr />
 <p class="page-mark">صفحه ۱۳۴</p>
 <p><code>align-items:</code> ویژگی<code>align-items</code> در <code>Flexbox</code> برای تراز‌کردن عناصر در راستای محور متقاطع (عمود بر محور اصلی) استفاده می‌شود. به کمک این ویژگی می‌توان عناصر را در بالا، پایین و وسط یک سطر قرار داد (شکل 26).</p>
-<p><img alt="تصویر کتاب" src="../images/p140-01.png" /></p>
-<p><code>box1</code></p>
-<p><code>box2</code></p>
-<p><code>box3</code></p>
-<p><code>box1</code></p>
-<p><code>box2</code></p>
-<p><code>box3</code></p>
-<p><code>box3</code></p>
-<p><code>box2</code></p>
-<p><code>box1</code></p>
-<p><code>box1</code></p>
-<p><code>box2</code></p>
-<p><code>box3</code></p>
-<p><strong>شکل 26</strong></p>
+<figure class="shot"><img alt="تصویر کتاب" src="../images/p140-01.png" /><figcaption>شکل 26</figcaption></figure>
 <p>جدول 13 مقادیر ویژگی <code>align-items</code></p>
-<div class="code-wrap" dir="ltr"><pre><code>مقدارStretch
-flex-start
-flex-end
-center
-</code></pre></div>
+<p>مقدارStretch <bdi dir="ltr">flex-start</bdi> <bdi dir="ltr">flex-end</bdi> <bdi dir="ltr">center</bdi></p>
 <p>به‌صورت کشیده درون</p>
 <p>در بالای عنصر والد قرار</p>
 <p>در پایین عنصر والد قرار</p>
@@ -148,16 +103,16 @@ center
 <p>فایل <code>index.html</code> را باز کنید و تغییرات زیر را درون آن انجام دهید:</p>
 <p>1 عناصر زیر را درون برچسب <code>&lt;nav&gt;</code> بعد از برچسب <code>&lt;ul/&gt;</code> اضافه کنید و درون آن آیکن سبد خرید و عبارت «ورود | ثبت نام» را قرار دهید:</p>
 <p><img alt="تصویر کتاب" src="../images/p141-01.png" /></p>
-<p>برای تهیه آیکن سبد خرید به سایت <code>svgrepo.com</code> مراجعه کنید و عبارت <code>shopping-cart</code> را جست‌وجو کنید. یک سبد خرید دلخواه را انتخاب کرده و سپس با کلیک روی گزینه <code>Edit</code> <code>vector</code>، تصویر را ویرایش نمایید. اندازه آیکن را روی مقدار حداقل تنظیم کنید. سپس روی دکمه <code>Export</code> کلیک کنید. یک فایل <code>svg</code> دانلود می‌شود. این فایل را با نام <code>shopping-cart.svg</code> در پوشه تصاویر ذخیره کنید.</p>
+<p>برای تهیه آیکن سبد خرید به سایت <code>svgrepo.com</code> مراجعه کنید و عبارت <code>shopping-cart</code> را جست‌وجو کنید. یک سبد خرید دلخواه را انتخاب کرده و سپس با کلیک روی گزینه <code>Edit vector</code>، تصویر را ویرایش نمایید. اندازه آیکن را روی مقدار حداقل تنظیم کنید. سپس روی دکمه <code>Export</code> کلیک کنید. یک فایل <code>svg</code> دانلود می‌شود. این فایل را با نام <code>shopping-cart.svg</code> در پوشه تصاویر ذخیره کنید.</p>
 <p>2 استایل نوار ناوبری (<code>.top-menu</code>) را به‌صورت شکل زیر تنظیم کنید:</p>
 <p><img alt="تصویر کتاب" src="../images/p141-02.png" /></p>
 <p><img alt="تصویر کتاب" src="../images/p141-03.png" /></p>
-<p>ویژگی <code>flex:</code> <code>display</code>، نوار ناوبری را به یک نگهدارنده فلکس تبدیل می‌کند تا آیتم‌های درون آن (لیست منو در سمت راست و بخش <code>user-action</code> در سمت چپ) به صورت افقی چیده شوند.</p>
-<p>ویژگی ;<code>space-between:</code> <code>justify-content</code>، لیست منو و بخش <code>user-actions</code> را به صورت افقی در دو انتهای نگهدارنده قرار می‌دهد.</p>
-<p>ویژگی <code>align-items:</code> <code>center</code> باعث می‌شود که عناصر درون نگهدارنده فلکس در راستای عمودی در مرکز قرار گیرند.</p>
-<p>ویژگی <code>max-width:</code> <code>1200px</code>، حداکثر پهنای نوار ناوبری را برابر ۱۲۰۰ پیکسل قرار می‌دهد.</p>
+<p>ویژگی <code>flex: display</code>، نوار ناوبری را به یک نگهدارنده فلکس تبدیل می‌کند تا آیتم‌های درون آن (لیست منو در سمت راست و بخش <code>user-action</code> در سمت چپ) به صورت افقی چیده شوند.</p>
+<p>ویژگی ;<code>space-between: justify-content</code>، لیست منو و بخش <code>user-actions</code> را به صورت افقی در دو انتهای نگهدارنده قرار می‌دهد.</p>
+<p>ویژگی <code>align-items: center</code> باعث می‌شود که عناصر درون نگهدارنده فلکس در راستای عمودی در مرکز قرار گیرند.</p>
+<p>ویژگی <code>max-width: 1200px</code>، حداکثر پهنای نوار ناوبری را برابر ۱۲۰۰ پیکسل قرار می‌دهد.</p>
 <p>این مقداردهی باعث می‌شود که نوار ناوبری در صفحه نمایش‌های بزرگ، بیش از حد کشیده نشود.</p>
-<p>ویژگی <code>margin:0</code> <code>auto</code> برای قرار گرفتن محدوده نوار منو در وسط صفحه استفاده می‌شود.</p>
+<p>ویژگی <code>margin:0 auto</code> برای قرار گرفتن محدوده نوار منو در وسط صفحه استفاده می‌شود.</p>
 <hr />
 <p class="page-mark">صفحه ۱۳۶</p>
 <p>3 استایل عناصر درون برچسب <code>&lt;ul&gt;</code> را به شکل زیر تنظیم کنید:</p>
@@ -177,25 +132,24 @@ center
 <p>ایجاد بخش اصلی صفحه بعد از طراحی بخش هدر سایت، نوبت به طراحی محتوای اصلی صفحه، شامل بخش‌های «جدیدترین محصولات» و «خدمات ویژه» می‌رسد.</p>
 <p>برای طراحی بخش اصلی صفحه از برچسب <code>&lt;main&gt;</code> استفاده می‌شود. این برچسب باید بعد از برچسب <code>&lt;header/&gt;</code> و قبل از <code>&lt;body/&gt;</code> قرار گیرد.</p>
 <p>محتوای نواحی «جدیدترین محصولات» و «خدمات ویژه» باید درون عنصر <code>&lt;main&gt;</code> واقع شود.</p>
-<p>طراحی بخش «جدیدترین محصولات» با استفاده از <code>Flexbox</code></p>
+<p>طراحی بخش «جدیدترین محصولات» با استفاده از <code>Flexbox</code> کارت محصول</p>
 <h3 id="_4">کار کارگاهی</h3>
 <p>1 یک برچسب <code>&lt;main&gt;</code> بعد از برچسب <code>&lt;header/&gt;</code> درج کنید و درون آن یک عنصر <code>&lt;section&gt;</code> قرار دهید. یک عنصر <code>&lt;section&gt;</code> با کلاس <code>container</code> درون عنصر <code>&lt;main&gt;</code> ایجاد کنید. این عنصر باید حاوی یک عنوان (<code>h2</code>) و یک عنصر نگهدارنده (<code>div</code>) برای نگهداری کارت محصولات باشد. عنوان «جدیدترین محصولات» را درون تگ <code>&lt;h2&gt;</code> بنویسید.</p>
 <p>2 یک کلاس با عنوان <code>products</code> به عنصر <code>&lt;div&gt;</code> اختصاص دهید و درون عنصر <code>products</code> کارت محصولات را قرار دهید. کارت محصول را توسط یک عنصر با کلاس <code>product-card</code> ایجاد کنید. هر کارت حاوی تصویر، عنوان و قیمت محصول است.</p>
 <p><img alt="تصویر کتاب" src="../images/p143-02.png" /></p>
 <p>3 برای آنکه مجموعه تصویر، عنوان و قیمت قابل کلیک باشد، کل محتوای کارت را درون برچسب <code>&lt;a&gt;</code> قرار دهید. تصمیم‌گیری در خصوص چیدمان ستونی تصویر، عنوان و قیمت محصول در تنظیمات عنصر <code>&lt;a&gt;</code> انجام می‌شود.</p>
 <p><img alt="تصویر کتاب" src="../images/p143-03.png" /></p>
-<p>کارت محصول</p>
 <hr />
 <p class="page-mark">صفحه ۱۳۸</p>
 <p><img alt="تصویر کتاب" src="../images/p144-01.png" /></p>
 <p>محتوای سه کارت دیگر را نیز مشابه کد صفحه قبل بنویسید. ویژگی عناصر را به‌صورت تدریجی به صفحه اضافه کنید و نتیجه هر تغییر را در مرورگر بررسی کنید.</p>
 <p>ویژگی <code>max-width</code> حداکثر پهنای ناحیه نگهدارنده را مشخص می‌کند.</p>
-<p>ویژگی <code>margin:20px</code> <code>auto</code> عنصر نگهدارنده را در راستای افقی در وسط صفحه قرار می‌دهد.</p>
+<p>ویژگی <code>margin:20px auto</code> عنصر نگهدارنده را در راستای افقی در وسط صفحه قرار می‌دهد.</p>
 <p>ویژگی <code>display:flex</code> توزیع کارت‌های موجود در عنصر <code>products</code> را توسط تکنیک فلکس انجام می‌دهد.</p>
 <p>ویژگی <code>justify-content:center</code> کارت‌ها را در وسط ناحیۀ نگهدارنده توزیع می‌کند.</p>
 <p>ویژگی <code>flex-wrap:wrap</code> باعث تغییر چیدمان عناصر در هنگام کوچک‌تر شدن پهنای دستگاه می‌گردد. به‌طوری‌که کارت محصولات به سطر بعدی منتقل شوند.</p>
 <p>ویژگی <code>gap</code> فاصله بین کارت محصولات را مشخص می‌کند.</p>
-<p>با توجه به اینکه مجموعه «تصویر، عنوان و قیمت محصول» درون عنصر <code>&lt;a&gt;</code> قرار گرفته است، پس تنظیم چیدمان ستونی این عناصر توسط انتخاب‌گر <code>.product-card</code> <code>a</code> انجام می‌شود.</p>
+<p>با توجه به اینکه مجموعه «تصویر، عنوان و قیمت محصول» درون عنصر <code>&lt;a&gt;</code> قرار گرفته است، پس تنظیم چیدمان ستونی این عناصر توسط انتخاب‌گر <code>.product-card a</code> انجام می‌شود.</p>
 <p>ویژگی <code>flex-direction:column</code> چیدمان عناصر را به‌صورت ستونی انجام می‌دهد.</p>
 <p>ویژگی <code>align-items:center</code> تراز عناصر را در راستای محور عمودی تنظیم می‌کند.</p>
 <p><img alt="تصویر کتاب" src="../images/p144-02.png" /></p>
@@ -203,104 +157,56 @@ center
 <p><code>Flexbox</code> layout Flex is a layout model in <code>CSS</code> used to create flexible, responsive, one-dimensional designs. Flex can create a horizontal or vertical layout for page elements; it also lets the developer align elements and distribute space automatically. Designs created with <code>flexbox</code> will adapt to different screen sizes (Table 10).</p>
 <p>Setting parent element properties for horizontal or vertical arrangement of child elements In a given element, the flex model is used. To do this, the <code>display</code> property with the value <code>Flex</code> is applied to the parent element. By default this creates a horizontal layout for the children of the parent element.</p>
 <p>To enable <code>Flexbox</code>, it is enough to add the following property to the parent element:</p>
-<div class="code-wrap" dir="ltr"><pre><code>;display: flex
+<div class="code-wrap" dir="ltr"><pre><code>display: flex;
 </code></pre></div>
 <p><code>felx-direction:</code> this property is used to set the direction of arranging elements, horizontally or vertically.</p>
 <p>The values of this property are shown in Table 10.</p>
-<p>Table 10 Values of the <code>flex-direction</code> property and their effect on how elements are arranged</p>
-<p>Value<code>row</code></p>
-<div class="code-wrap" dir="ltr"><pre><code>Row-reverse
-</code></pre></div>
-<p>Horizontal (default)</p>
+<p>Table 10 Values of the <code>flex-direction</code> property and their effect on how elements are arranged Value<code>row</code></p>
+<p><code>Row-reverse</code>
+Horizontal (default)</p>
 <p>Horizontal (right to left)</p>
-<div class="code-wrap" dir="ltr"><pre><code>flex-direction:row
-flex-direction:row-reverse
-</code></pre></div>
-<p>Explanation</p>
-<p><code>box3</code></p>
-<p><code>box2</code></p>
-<p><code>box1</code></p>
-<p><code>box1</code></p>
-<p><code>box2</code></p>
-<p><code>box3</code></p>
-<p>Value<code>column</code></p>
-<div class="code-wrap" dir="ltr"><pre><code>Column-reverse
-</code></pre></div>
-<p>Vertical from top to bottom</p>
+<p><code>flex-direction:row</code>, <code>flex-direction:row-reverse</code> Explanation Value<code>column</code></p>
+<p><code>Column-reverse</code>
+Vertical from top to bottom</p>
 <p>Vertical from bottom to top</p>
-<div class="code-wrap" dir="ltr"><pre><code>flex-direction:column
-flex-direction:column-reverse
-</code></pre></div>
-<p><code>box1</code></p>
-<p><code>box3</code></p>
-<p>Explanation</p>
-<p><code>box2</code></p>
-<p><code>box2</code></p>
-<p><code>box3</code></p>
-<p><code>box1</code></p>
+<p><code>flex-direction:column</code>, <code>flex-direction:column-reverse</code>, <code>box1</code>, <code>box3</code> Explanation</p>
 <hr />
 <p class="page-mark">Page 133</p>
 <p><code>felx-wrap:</code> sometimes the page width is not enough for all elements to sit next to each other. The <code>flex-wrap</code> property specifies whether extra elements move to the next row or all are squeezed into the same row (Table 11).</p>
-<p>Table 11 Values of the <code>felx-wrap</code> property</p>
-<p>Value<code>wrap</code></p>
-<div class="code-wrap" dir="ltr"><pre><code>nowrap
-</code></pre></div>
-<p>Explanation</p>
+<p>Table 11 Values of the <code>flex-wrap</code> property Value<code>wrap</code></p>
+<p><code>nowrap</code>
+Explanation</p>
 <p>Move to the next row</p>
 <p>Do not move to the next row</p>
 <p><code>felx-folw:</code> the <code>flex-flow</code> property combines <code>flex-direction</code> and <code>flex-wrap</code>. Instead of writing two lines of code, you can set both properties in one line. As below:</p>
 <div class="code-wrap" dir="ltr"><pre><code>{.container
-;flex-flow: row wrap
+flex-flow: row wrap;
 </code></pre></div>
 <p>}</p>
 <p><code>justify-content:</code> this property controls the alignment of elements and how empty space is distributed between elements along the main axis (Table 12).</p>
-<p>Table 12 Values of the <code>justify-content</code> property</p>
-<p>Value</p>
+<p>Table 12 Values of the <code>justify-content</code> property Value Value</p>
 <h3 id="explanation">Explanation</h3>
-<p>Value</p>
 <h3 id="explanation_1">Explanation</h3>
 <p>Arrange elements on the</p>
 <p>Create equal empty space around each</p>
-<div class="code-wrap" dir="ltr"><pre><code>Flex-start
-Space-around
-</code></pre></div>
-<p>left</p>
+<p><code>Flex-start</code>, <code>Space-around</code>
+left</p>
 <p>element</p>
 <p>Arrange elements on the</p>
 <p>Equal empty space between elements (the first and last</p>
-<div class="code-wrap" dir="ltr"><pre><code>Flex-end
-Space-between
-</code></pre></div>
-<p>right</p>
+<p><code>Flex-end</code>, <code>Space-between</code>
+right</p>
 <p>elements stick to the edges)</p>
 <p>Equal empty space between elements and also between</p>
-<div class="code-wrap" dir="ltr"><pre><code>Center
-</code></pre></div>
-<p>Arrange elements in the center <code>Space-evenly</code></p>
+<p><code>Center</code>
+Arrange elements in the center <code>Space-evenly</code></p>
 <p>elements and the edges</p>
 <hr />
 <p class="page-mark">Page 134</p>
 <p><code>align-items:</code> the <code>align-items</code> property in <code>Flexbox</code> is used to align elements along the cross axis (perpendicular to the main axis). With this property you can place elements at the top, bottom, and middle of a row (Figure 26).</p>
-<p><img alt="Book image" src="../images/p140-01.png" /></p>
-<p><code>box1</code></p>
-<p><code>box2</code></p>
-<p><code>box3</code></p>
-<p><code>box1</code></p>
-<p><code>box2</code></p>
-<p><code>box3</code></p>
-<p><code>box3</code></p>
-<p><code>box2</code></p>
-<p><code>box1</code></p>
-<p><code>box1</code></p>
-<p><code>box2</code></p>
-<p><code>box3</code></p>
-<p><strong>Figure 26</strong></p>
+<figure class="shot"><img alt="Book image" src="../images/p140-01.png" /><figcaption>Figure 26</figcaption></figure>
 <p>Table 13 Values of the <code>align-items</code> property</p>
-<div class="code-wrap" dir="ltr"><pre><code>مقدارStretch
-flex-start
-flex-end
-center
-</code></pre></div>
+<p>Stretch flex-start flex-end center</p>
 <p>Stretched inside</p>
 <p>Placed at the top of the parent</p>
 <p>Placed at the bottom of the parent</p>
@@ -318,16 +224,16 @@ center
 <p>Open the <code>index.html</code> file and make the following changes in it:</p>
 <p>1 Add the following elements inside the <code>&lt;nav&gt;</code> tag after the <code>&lt;ul/&gt;</code> tag and place the shopping cart icon and the phrase “Login | Sign up” inside it:</p>
 <p><img alt="Book image" src="../images/p141-01.png" /></p>
-<p>To get a shopping cart icon, go to the site <code>svgrepo.com</code> and search for <code>shopping-cart</code>. Choose a shopping cart you like, then click <code>Edit</code> <code>vector</code> to edit the image. Set the icon size to the minimum value. Then click the <code>Export</code> button. An <code>svg</code> file is downloaded. Save this file as <code>shopping-cart.svg</code> in the images folder.</p>
+<p>To get a shopping cart icon, go to the site <code>svgrepo.com</code> and search for <code>shopping-cart</code>. Choose a shopping cart you like, then click <code>Edit vector</code> to edit the image. Set the icon size to the minimum value. Then click the <code>Export</code> button. An <code>svg</code> file is downloaded. Save this file as <code>shopping-cart.svg</code> in the images folder.</p>
 <p>2 Set the style of the navigation bar (<code>.top-menu</code>) as in the figure below:</p>
 <p><img alt="Book image" src="../images/p141-02.png" /></p>
 <p><img alt="Book image" src="../images/p141-03.png" /></p>
-<p>The <code>flex:</code> <code>display</code> property turns the navigation bar into a flex container so that the items inside it (the menu list on the right and the <code>user-action</code> section on the left) are arranged horizontally.</p>
-<p>The ;<code>space-between:</code> <code>justify-content</code> property places the menu list and the <code>user-actions</code> section horizontally at the two ends of the container.</p>
-<p>The <code>align-items:</code> <code>center</code> property makes the elements inside the flex container centered vertically.</p>
-<p>The <code>max-width:</code> <code>1200px</code> property sets the maximum width of the navigation bar to 1200 pixels.</p>
+<p>The <code>flex: display</code> property turns the navigation bar into a flex container so that the items inside it (the menu list on the right and the <code>user-action</code> section on the left) are arranged horizontally.</p>
+<p>The ;<code>space-between: justify-content</code> property places the menu list and the <code>user-actions</code> section horizontally at the two ends of the container.</p>
+<p>The <code>align-items: center</code> property makes the elements inside the flex container centered vertically.</p>
+<p>The <code>max-width: 1200px</code> property sets the maximum width of the navigation bar to 1200 pixels.</p>
 <p>This setting keeps the navigation bar from stretching too much on large displays.</p>
-<p>The <code>margin:0</code> <code>auto</code> property is used to center the menu bar area on the page.</p>
+<p>The <code>margin:0 auto</code> property is used to center the menu bar area on the page.</p>
 <hr />
 <p class="page-mark">Page 136</p>
 <p>3 Set the style of the elements inside the <code>&lt;ul&gt;</code> tag as follows:</p>
@@ -347,25 +253,24 @@ center
 <p>Creating the main section of the page After designing the site header section, it is time to design the main page content, including the “Newest products” and “Special services” sections.</p>
 <p>To design the main section of the page, use the <code>&lt;main&gt;</code> tag. This tag must be placed after the <code>&lt;header/&gt;</code> tag and before <code>&lt;body/&gt;</code>.</p>
 <p>The content of the “Newest products” and “Special services” areas must be inside the <code>&lt;main&gt;</code> element.</p>
-<p>Designing the “Newest products” section using <code>Flexbox</code></p>
+<p>Designing the “Newest products” section using <code>Flexbox</code> Product card</p>
 <h3 id="workshop_1">Workshop</h3>
 <p>1 Insert a <code>&lt;main&gt;</code> tag after the <code>&lt;header/&gt;</code> tag and place a <code>&lt;section&gt;</code> element inside it. Create a <code>&lt;section&gt;</code> element with the class <code>container</code> inside the <code>&lt;main&gt;</code> element. This element should contain a heading (<code>h2</code>) and a container element (<code>div</code>) to hold the product cards. Write the title “Newest products” inside the <code>&lt;h2&gt;</code> tag.</p>
 <p>2 Assign a class named <code>products</code> to the <code>&lt;div&gt;</code> element and place the product cards inside the <code>products</code> element. Create the product card with an element that has the class <code>product-card</code>. Each card contains the product image, title, and price.</p>
 <p><img alt="Book image" src="../images/p143-02.png" /></p>
 <p>3 So that the set of image, title, and price is clickable, place the entire card content inside an <code>&lt;a&gt;</code> tag. Decisions about the column layout of the product image, title, and price are made in the settings of the <code>&lt;a&gt;</code> element.</p>
 <p><img alt="Book image" src="../images/p143-03.png" /></p>
-<p>Product card</p>
 <hr />
 <p class="page-mark">Page 138</p>
 <p><img alt="Book image" src="../images/p144-01.png" /></p>
 <p>Also write the content of three other cards like the code on the previous page. Gradually add element properties to the page and check the result of each change in the browser.</p>
 <p>The <code>max-width</code> property sets the maximum width of the container area.</p>
-<p>The <code>margin:20px</code> <code>auto</code> property centers the container element horizontally on the page.</p>
+<p>The <code>margin:20px auto</code> property centers the container element horizontally on the page.</p>
 <p>The <code>display:flex</code> property distributes the cards in the <code>products</code> element using the flex technique.</p>
 <p>The <code>justify-content:center</code> property distributes the cards in the center of the container area.</p>
 <p>The <code>flex-wrap:wrap</code> property changes the layout of elements when the device width gets smaller, so that product cards move to the next row.</p>
 <p>The <code>gap</code> property sets the spacing between product cards.</p>
-<p>Because the set “product image, title, and price” is inside the <code>&lt;a&gt;</code> element, the column layout of these elements is set with the selector <code>.product-card</code> <code>a</code>.</p>
+<p>Because the set “product image, title, and price” is inside the <code>&lt;a&gt;</code> element, the column layout of these elements is set with the selector <code>.product-card a</code>.</p>
 <p>The <code>flex-direction:column</code> property lays out the elements in a column.</p>
 <p>The <code>align-items:center</code> property sets the alignment of elements along the vertical axis.</p>
 <p><img alt="Book image" src="../images/p144-02.png" /></p>
@@ -379,7 +284,7 @@ center
     <nav class="pager"><a rel="prev" class="prev" href="p2-box.html"><span class="pager-word" data-fa="قبلی" data-en="Previous">قبلی</span><span class="pager-name" data-fa="مدل جعبه‌ای و display" data-en="The box model and display">مدل جعبه‌ای و display</span></a><a rel="next" class="next" href="p2-flex-work.html"><span class="pager-word" data-fa="بعدی" data-en="Next">بعدی</span><span class="pager-name" data-fa="کارگاه چیدمان صفحه" data-en="Page-layout workshop">کارگاه چیدمان صفحه</span></a></nav>
     </div>
   </div>
-  <script src="../assets/search-index.js?v=4"></script>
-  <script src="../assets/app.js?v=4"></script>
+  <script src="../assets/search-index.js?v=6"></script>
+  <script src="../assets/app.js?v=6"></script>
 </body>
 </html>

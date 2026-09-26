@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title data-fa="باگ و امنیت" data-en="Bugs and security">باگ و امنیت</title>
   <link rel="icon" href="../assets/favicon.svg">
-  <link rel="stylesheet" href="../assets/style.css?v=4">
+  <link rel="stylesheet" href="../assets/style.css?v=6">
 </head>
 <body data-root="../">
   <header class="top">
@@ -50,9 +50,9 @@
 <h3 id="_2">توضیحات کدها:</h3>
 <p>خط 36: درصورتی‌که کاربر <code>login</code> نکرده باشد، در خط بعدی به صفحه <code>login</code> منتقل خواهد شد. همین کد را می‌توانید برای <code>delete_city_view</code> هم استفاده کنید.</p>
 <p>با این تغییرات، اگر کاربر <code>login</code> نباشد؛ ولی آدرس افزودن شهر و حذف شهر را در مرورگر وارد کند، به صفحه <code>login</code> منتقل خواهد شد.</p>
-<h3 id="_3">کنجکاوی</h3>
+<aside class="callout curiosity"><h3 id="_3">کنجکاوی</h3>
 <p>بررسی کنید چه موارد دیگری می‌تواند این پروژه را بهبود دهد.</p>
-<hr />
+</aside><hr />
 <p class="page-mark">صفحه ۳۲۸</p>
 <h3 id="_4">ارزشیابی شایستگی توسعه وب اپلیکیشن</h3>
 <p>استاندارد عملکرد کار: هنرجو بتواند با ساخت <code>Model</code> در جنگو و استفاده از فرم های <code>HTML</code> ارتباط با پایگاه داده را پیاده‌سازی کند و اطلاعاتی که کاربران وارد م‌یکنند را در جداول ذخیره و بازیابی نماید.</p>
@@ -70,22 +70,19 @@
 <p>توضیح تفاوت بین ساختار پایگاه‌داده و جداول آن. شرح وظیفه و اهمیت <code>ORM</code> در جنگو.</p>
 <p>شناخت اجزای اصلی پنل مدیریت جنگو و کاربرد آن. موفقیت در تعریف صحیح مدل <code>City</code> با فیلدهای لازم (مانند نام شهر، دما و …). کار با <code>ORM:</code> نوشتن</p>
 <p>3</p>
-<p>کوئری‌های ساده با <code>ORM</code> برای خواندن (مثًلا <code>City.objects.all</code>()) داده‌ها.</p>
+<p>کوئری‌های ساده با <code>ORM</code> برای خواندن (مثًلا <code>City.objects.all()</code>) داده‌ها.</p>
 <p>موفقیت در ثبت <code>City</code> در پنل ادمین و امکان مشاهده، افزودن و ویرایش داده‌ها از طریق آن وارد کردن چند رکورد نمونه (چند شهر) به جدول از طریق پنل ادمین.</p>
 <p>مشاهده انجام کنجکاو‌یها انجام کار با چند روش عملی</p>
-<div class="code-wrap" dir="ltr"><pre><code>DE: VS Code PostgreSQL فریم‌ورک
-</code></pre></div>
+<p><bdi dir="ltr">DE:</bdi> <bdi dir="ltr">VS</bdi> <bdi dir="ltr">Code</bdi> <bdi dir="ltr">PostgreSQL</bdi> فریم‌ورک</p>
 <p>پایگاه‌داده، <code>ORM</code> و پنل</p>
 <p>پرسش</p>
 <p>1</p>
 <p>موفقیت در تعریف صحیح مدل <code>City</code> با فیلدهای لازم (مانند نام شهر، دما و</p>
-<p>جنگو رایانه شخصی یا لپ‌تاپ با سیستم عامل</p>
-<p>مدیریت</p>
+<p>جنگو رایانه شخصی یا لپ‌تاپ با سیستم عامل مدیریت</p>
 <p>کتبی …). کار با <code>ORM:</code> نوشتن کوئری‌های ساده با <code>ORM</code> برای خواندن (مثًلا</p>
 <p>زمان 25 دقیقه مکان سایت رایانه</p>
 <p>آزمون</p>
-<div class="code-wrap" dir="ltr"><pre><code>City.objects.all()) داده‌ها.
-</code></pre></div>
+<p><bdi dir="ltr">City.objects.all</bdi>()) داده‌ها.</p>
 <p>شفاهی</p>
 <p>2</p>
 <p>موفقیت در ثبت <code>City</code> در پنل ادمین و امکان مشاهده، افزودن و ویرایش داده‌ها از طریق آن وارد کردن چند رکورد نمونه (چند شهر) به جدول از طریق پنل ادمین.</p>
@@ -95,17 +92,14 @@
 <p>3</p>
 <p>مکانیزم انتخاب شهر (مثلاً با لینک یا فرم). ایجاد یک <code>view</code> که شهر انتخاب شده را دریافت کند. نمایش دمای مربوط به شهر انتخاب شده در صفحه.</p>
 <p>مشاهده تعریف <code>URL</code>های مناسب برای دسترسی به این قابلیت‌ها.</p>
-<div class="code-wrap" dir="ltr"><pre><code>DE: VS Code PostgreSQL
-</code></pre></div>
+<p><bdi dir="ltr">DE:</bdi> <bdi dir="ltr">VS</bdi> <bdi dir="ltr">Code</bdi> <bdi dir="ltr">PostgreSQL</bdi></p>
 <p>عملی</p>
 <p>کار با داده‌ها و نمایش</p>
 <p>فریم‌ورک جنگو رایانه شخصی یا لپ‌تاپ با پرسش</p>
 <p>2</p>
-<p>ایجاد یک <code>view</code> و <code>template</code> برای نمایش لیستی از نام شهرها که از</p>
-<p>اطلاعات</p>
+<p>ایجاد یک <code>view</code> و <code>template</code> برای نمایش لیستی از نام شهرها که از اطلاعات</p>
 <p>سیستم عامل زمان 25 دقیقه مکان سایت کتبی</p>
-<p>پایگاه‌داده خوانده شده‌اند. پیاده‌سازی مکانیزم انتخاب شهر (مثلاً با لینک یا</p>
-<p>رایانه</p>
+<p>پایگاه‌داده خوانده شده‌اند. پیاده‌سازی مکانیزم انتخاب شهر (مثلاً با لینک یا رایانه</p>
 <p>آزمون فرم). ایجاد یک <code>view</code> که شهر انتخاب شده را دریافت کند.</p>
 <p>2</p>
 <p>شفاهی نمایش دمای مربوط به شهر انتخاب شده در صفحه. تعریف <code>URL</code>های مناسب برای دسترسی به این قابلیت‌ها.</p>
@@ -115,15 +109,12 @@
 <p>توضیح با فرایند احراز هویت (<code>Login/Logout</code>) در جنگو توضیح مفهوم سطوح دسترسی (<code>Permissions</code>) و چگونگی اعمال آن‌ها شناخت مخاطرات امنیتی دسترسی‌های غیرمجاز راه‌اندازی صحیح سیستم ورود کاربران.</p>
 <p>3</p>
 <p>اطمینان از اینکه صفحات افزودن و حذف شهر فقط برای کاربران وارد شده (عضو سایت) قابل دسترسی باشند موفقیت در پیاده‌سازی قابلیت افزودن شهر مشاهده جدید و حذف شهر موجود، فقط توسط کاربران وارد شده انجام کنجکاوی ها عملی</p>
-<div class="code-wrap" dir="ltr"><pre><code>DE: VS Code PostgreSQL فریم‌ورک
-</code></pre></div>
+<p><bdi dir="ltr">DE:</bdi> <bdi dir="ltr">VS</bdi> <bdi dir="ltr">Code</bdi> <bdi dir="ltr">PostgreSQL</bdi> فریم‌ورک</p>
 <p>احراز هویت و مدیریت</p>
 <p>پرسش</p>
 <p>3</p>
 <p>جنگو رایانه شخصی یا لپ‌تاپ با سیستم عامل</p>
-<p>راه‌اندازی صحیح سیستم ورود کاربران. اطمینان از اینکه صفحات افزودن و</p>
-<p>دسترسی‌ها</p>
-<p>کتبی</p>
+<p>راه‌اندازی صحیح سیستم ورود کاربران. اطمینان از اینکه صفحات افزودن و دسترسی‌ها کتبی</p>
 <p>زمان 25 دقیقه مکان سایت رایانه</p>
 <p>حذف شهر فقط برای کاربران وارد شده (عضو سایت) قابل دسترسی باشند آزمون</p>
 <p>2</p>
@@ -140,14 +131,12 @@
 <p>در <code>view</code> قبل از تلاش برای نمایش اطلاعات آن، جهت جلوگیری از خطا یا نمایش اطلاعات نادرست.</p>
 <p>رفع باگ امنیتی (دسترسی غیرمجاز): اطمینان کامل از اینکه هیچ کاربری بدون <code>Login</code> نمی‌تواند به صفحات افزودن/حذف شهر دسترسی پیدا کند و مشاهده عملیات را انجام دهد.</p>
 <p>عملی</p>
-<div class="code-wrap" dir="ltr"><pre><code>DE: VS Code PostgreSQL فریم‌ورک
-</code></pre></div>
+<p><bdi dir="ltr">DE:</bdi> <bdi dir="ltr">VS</bdi> <bdi dir="ltr">Code</bdi> <bdi dir="ltr">PostgreSQL</bdi> فریم‌ورک</p>
 <p>ارائه کد تمیزتر و کارآمدتر (در صورت امکان، بسته به سطح دو</p>
 <p>رفع اشکالات و بهینه‌سازی</p>
 <p>پرسش</p>
 <p>4</p>
-<p>جنگو رایانه شخصی یا لپ‌تاپ با سیستم عامل</p>
-<p>امنیتی</p>
+<p>جنگو رایانه شخصی یا لپ‌تاپ با سیستم عامل امنیتی</p>
 <p>کتبی رفع باگ ۱ (جدول خالی): پیاده‌سازی منطق صحیح در <code>view</code> یا <code>template</code></p>
 <p>زمان 30دقیقه مکان سایت رایانه</p>
 <p>آزمون برای مدیریت حالتی که جدول <code>City</code> خالی است، بدون ایجاد خطا رفع شفاهی باگ ۲ (تغییر <code>ID</code> در <code>URL</code>): پیاده‌سازی بررسی صحت <code>id</code> شهر در <code>view</code> قبل از تلاش برای نمایش اطلاعات آن، جهت جلوگیری از خطا یا نمایش</p>
@@ -188,42 +177,35 @@
 <h3 id="code-notes_1">Code notes:</h3>
 <p>Line 36: If the user has not <code>login</code>, on the next line they will be taken to the <code>login</code> page. You can use the same code for <code>delete_city_view</code> as well.</p>
 <p>With these changes, if the user is not <code>login</code> but enters the add-city and delete-city addresses in the browser, they will be taken to the <code>login</code> page.</p>
-<h3 id="try-this">Try this</h3>
+<aside class="callout curiosity"><h3 id="try-this">Try this</h3>
 <p>Examine what other things could improve this project.</p>
-<hr />
+</aside><hr />
 <p class="page-mark">Page 328</p>
 <h3 id="assessment-of-web-application-development-competency">Assessment of web application development competency</h3>
 <p>Performance standard for the work: The student should be able, by building a <code>Model</code> in Django and using <code>HTML</code> forms, to implement connection with the database and store and retrieve the information that users enter in the tables.</p>
 <p>Score</p>
-<p>Conditions for doing the work (tools, materials, equipment,</p>
-<p>Tools</p>
-<p>Results</p>
-<p>Row</p>
+<p>Conditions for doing the work (tools, materials, equipment, Tools Results Row</p>
 <h3 id="steps">Steps</h3>
-<p>Standard (indicators / judging / scoring)</p>
-<p>Earned</p>
+<p>Standard (indicators / judging / scoring) Earned</p>
 <p>time, place, and …)</p>
 <h3 id="assessment">Assessment</h3>
 <p>Made possible</p>
 <p>Explain the difference between the structure of a database and its tables. Describe the role and importance of <code>ORM</code> in Django.</p>
 <p>Recognize the main parts of the Django admin panel and their use. Success in correctly defining the <code>City</code> model with the needed fields (such as city name, temperature, and …). Working with <code>ORM:</code> writing</p>
 <p>3</p>
-<p>simple queries with <code>ORM</code> to read data (for example <code>City.objects.all</code>()).</p>
+<p>simple queries with <code>ORM</code> to read data (for example <code>City.objects.all()</code>).</p>
 <p>Success in registering <code>City</code> in the admin panel and being able to view, add, and edit data through it Entering a few sample records (a few cities) into the table through the admin panel.</p>
 <p>Observation Carry out the Try this tasks Do the work with several practical methods</p>
-<div class="code-wrap" dir="ltr"><pre><code>DE: VS Code PostgreSQL فریم‌ورک
-</code></pre></div>
+<p>DE: VS Code PostgreSQL ‌</p>
 <p>Database, <code>ORM</code>, and admin</p>
 <p>Question</p>
 <p>1</p>
 <p>Success in correctly defining the <code>City</code> model with the needed fields (such as city name, temperature, and</p>
-<p>Django Personal computer or laptop with operating system</p>
-<p>panel</p>
+<p>Django Personal computer or laptop with operating system panel</p>
 <p>Written …). Working with <code>ORM:</code> writing simple queries with <code>ORM</code> to read (for example</p>
 <p>Time 25 minutes Place computer site</p>
 <p>Test</p>
-<div class="code-wrap" dir="ltr"><pre><code>City.objects.all()) داده‌ها.
-</code></pre></div>
+<p>City.objects.all()) ‌.</p>
 <p>Oral</p>
 <p>2</p>
 <p>Success in registering <code>City</code> in the admin panel and being able to view, add, and edit data through it Entering a few sample records (a few cities) into the table through the admin panel.</p>
@@ -233,17 +215,14 @@
 <p>3</p>
 <p>a city-selection mechanism (for example with a link or a form). Create a <code>view</code> that receives the selected city. Display the temperature related to the selected city on the page.</p>
 <p>Observation Define suitable <code>URL</code>s for access to these features.</p>
-<div class="code-wrap" dir="ltr"><pre><code>DE: VS Code PostgreSQL
-</code></pre></div>
+<p>DE: VS Code PostgreSQL</p>
 <p>Practical</p>
 <p>Working with data and displaying</p>
 <p>Django framework Personal computer or laptop with Question</p>
 <p>2</p>
-<p>Create a <code>view</code> and a <code>template</code> to display a list of city names that have been</p>
-<p>information</p>
+<p>Create a <code>view</code> and a <code>template</code> to display a list of city names that have been information</p>
 <p>operating system Time 25 minutes Place computer site Written</p>
-<p>read from the database. Implement a city-selection mechanism (for example with a link or</p>
-<p>computer</p>
+<p>read from the database. Implement a city-selection mechanism (for example with a link or computer</p>
 <p>Test form). Create a <code>view</code> that receives the selected city.</p>
 <p>2</p>
 <p>Oral Display the temperature related to the selected city on the page. Define suitable <code>URL</code>s for access to these features.</p>
@@ -253,14 +232,11 @@
 <p>Explain the authentication process (<code>Login/Logout</code>) in Django Explain the idea of access levels (<code>Permissions</code>) and how to apply them Recognize the security risks of unauthorized access Correctly set up the user login system.</p>
 <p>3</p>
 <p>Make sure that the add-city and delete-city pages are accessible only for signed-in users (site members) Success in implementing the ability to add a new city Observation and delete an existing city, only by signed-in users Carry out the Try this tasks Practical</p>
-<div class="code-wrap" dir="ltr"><pre><code>DE: VS Code PostgreSQL فریم‌ورک
-</code></pre></div>
+<p>DE: VS Code PostgreSQL ‌</p>
 <p>Authentication and managing</p>
 <p>Question</p>
 <p>3</p>
-<p>Django Personal computer or laptop with operating system</p>
-<p>access</p>
-<p>Written</p>
+<p>Django Personal computer or laptop with operating system access Written</p>
 <p>Time 25 minutes Place computer site</p>
 <p>Make sure that the add-city and delete-city pages are accessible only for signed-in users (site members) Test</p>
 <p>2</p>
@@ -277,14 +253,12 @@
 <p>in the <code>view</code> before trying to display its information, in order to prevent an error or showing incorrect information.</p>
 <p>Fix the security bug (unauthorized access): Make completely sure that no user without a <code>Login</code> can gain access to the add/delete city pages and Observation carry out the operations.</p>
 <p>Practical</p>
-<div class="code-wrap" dir="ltr"><pre><code>DE: VS Code PostgreSQL فریم‌ورک
-</code></pre></div>
+<p>DE: VS Code PostgreSQL ‌</p>
 <p>Present cleaner and more efficient code (if possible, depending on the two level</p>
 <p>Fixing flaws and optimization</p>
 <p>Question</p>
 <p>4</p>
-<p>Django Personal computer or laptop with operating system</p>
-<p>security</p>
+<p>Django Personal computer or laptop with operating system security</p>
 <p>Written Fix bug 1 (empty table): Implement correct logic in the <code>view</code> or <code>template</code></p>
 <p>Time 30 minutes Place computer site</p>
 <p>Test to handle the case when the <code>City</code> table is empty, without causing an error Fix Oral bug 2 (changing the <code>ID</code> in the <code>URL</code>): Implement checking that the city’s <code>id</code> is valid in the <code>view</code> before trying to display its information, in order to prevent an error or showing</p>
@@ -298,8 +272,7 @@
 <p>Achieve all non-technical competencies2</p>
 <p>hygiene, environmental considerations, and attitude:</p>
 <p>Failing to achieve any of the non-technical competencies1 Yes</p>
-<p>Work assessment (competency in doing the work)</p>
-<p>No</p>
+<p>Work assessment (competency in doing the work) No</p>
 <h3 id="explanation">Explanation:</h3>
 <p>1 Criterion for competency in doing the work:</p>
 <p>Earn at least score 2 from stages 2 and 3 (critical stages) Earn at least score 2 from the non-technical competencies, safety, hygiene, environmental considerations, and attitude section Earn at least an average of 2 from the work stages</p>
@@ -314,7 +287,7 @@
     <nav class="pager"><a rel="prev" class="prev" href="p5-crud.html"><span class="pager-word" data-fa="قبلی" data-en="Previous">قبلی</span><span class="pager-name" data-fa="افزودن و حذف شهر" data-en="Adding and deleting a city">افزودن و حذف شهر</span></a><a rel="next" class="next" href="refs.html"><span class="pager-word" data-fa="بعدی" data-en="Next">بعدی</span><span class="pager-name" data-fa="منابع کتاب" data-en="Book references">منابع کتاب</span></a></nav>
     </div>
   </div>
-  <script src="../assets/search-index.js?v=4"></script>
-  <script src="../assets/app.js?v=4"></script>
+  <script src="../assets/search-index.js?v=6"></script>
+  <script src="../assets/app.js?v=6"></script>
 </body>
 </html>

@@ -34,7 +34,6 @@ The attributes of the form element are as follows:
 
 `method:` Specifies the method of sending the form data to the server. This attribute has two values, `get` and `post`. In the `get` method, the form data are sent to the server as `URL` parameters. This method is not suitable for sending sensitive user data. In the `post` method, the form information is sent to the server in a hidden way; this method is suitable for sending sensitive data. In the table on the next page, see the comparison of the two methods of sending information in forms (Table 5).
 
-
 ---
 
 **Page 107**
@@ -63,9 +62,7 @@ settings, the length of the string that can be sent through the address bar is b
 
 2000 and 8000 characters.
 
-Has little limit and can be used for sending files and
-
-long texts.
+Has little limit and can be used for sending files and long texts.
 
 Security
 
@@ -89,7 +86,6 @@ For sending information to the server for processing or
 
 storage (such as registration, login, file upload)
 
-
 ### Example
 
 An example of using the `GET` method
@@ -109,7 +105,6 @@ An example of using the `POST` method
 ![Book image](../images/p113-01.png)
 
 ![Book image](../images/p113-02.png)
-
 
 ---
 
@@ -169,40 +164,29 @@ Value of the `type` attribute
 
 ### Use
 
-```
 text, password, email
-```
 
 Receiving short text values such as username, password, and email.
 
-```
 tel, number
-```
 
 Receiving a phone number and numeric values.
 
 `radio`
-
 Creating a list of options where the user is allowed to select only one option.
 
 Used to create a list of options where the user can select zero, one, or more options
 
-```
-checkbox
-```
-
+`checkbox`
 .
 
 `file`
-
 Receiving a file from users (upload).
 
 `submit` Creating a button to send information
 
 `reset`
-
 Clears the form content.
-
 
 ---
 
@@ -216,9 +200,13 @@ To create a group of radio buttons, the `name` attribute must be the same for al
 
 ![Book image](../images/p115-01.png)
 
+<input
 ```
-مرد<input type="radio" name="gender" value="male">
-زن<input type="radio" name="gender" value="female">
+type="radio" name="gender" value="male">
+```
+<input
+```
+type="radio" name="gender" value="female">
 ```
 
 Creating an order form
@@ -232,7 +220,6 @@ Create a new page named `order_form.html` and write the order form inside it as 
 ![Book image](../images/p115-03.png)
 
 Output
-
 
 ---
 
@@ -266,7 +253,6 @@ Using these elements helps screen readers and search engines better understand t
 
 **Figure 17**
 
-1 A navigation menu (`Navigation` `Menu`) includes a set of links that allow users to move through different pages or sections inside a website. The site navigation menu is usually placed at the top or side of a web page.
-
+1 A navigation menu (`Navigation Menu`) includes a set of links that allow users to move through different pages or sections inside a website. The site navigation menu is usually placed at the top or side of a web page.
 
 ---

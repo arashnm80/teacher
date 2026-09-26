@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title data-fa="مدیا کوئری و ارزشیابی CSS" data-en="Media queries and the CSS assessment">مدیا کوئری و ارزشیابی CSS</title>
   <link rel="icon" href="../assets/favicon.svg">
-  <link rel="stylesheet" href="../assets/style.css?v=4">
+  <link rel="stylesheet" href="../assets/style.css?v=6">
 </head>
 <body data-root="../">
   <header class="top">
@@ -34,8 +34,8 @@
 <p>مدیا کوئری یک تکنیک <code>CSS</code> است که امکان تعیین ویژگی‌های عناصر را بر اساس ویژگی‌های مختلف دستگاه‌ها (مانند اندازه صفحه‌نمایش، وضوح، جهت‌گیری و غیره) فراهم می‌کند. این قابلیت شرایطی را فراهم می‌کند که توسعه دهنده بتواند وب‌سایت‌ها و اپلیکیشن‌های وب خود را برای انواع دستگاه‌ها (مانند موبایل، تبلت و دسکتاپ) بهینه‌سازی نماید.</p>
 <p>مدیا کوئری‌ها با استفاده از دستور <code>media@</code> در <code>CSS</code> نوشته می‌شوند و دارای ساختار زیر هستند:</p>
 <div class="code-wrap" dir="ltr"><pre><code>{ (condition) media media-type and@
-CSS rules
 </code></pre></div>
+<p><bdi dir="ltr">CSS</bdi> <bdi dir="ltr">rules</bdi></p>
 <p>}</p>
 <p>استفاده از مدیاکوئری برای تغییر وضعیت عناصر در نمای موبایل</p>
 <h3 id="_1">کار کارگاهی</h3>
@@ -46,20 +46,20 @@ CSS rules
 <div class="code-wrap" dir="ltr"><pre><code>{ .top-menu ul
 </code></pre></div>
 <p>تغییر چیدمان عناصر منو از حالت افقی به</p>
-<div class="code-wrap" dir="ltr"><pre><code>;flex-direction: column
+<div class="code-wrap" dir="ltr"><pre><code>flex-direction: column;
 </code></pre></div>
 <p>حالت عمودی</p>
-<div class="code-wrap" dir="ltr"><pre><code>;%width: 100
+<div class="code-wrap" dir="ltr"><pre><code>;%width: 100;
 </code></pre></div>
 <p>اشغال پهنای کامل برای هر عنصر لیست</p>
-<div class="code-wrap" dir="ltr"><pre><code>;text-align: center
+<div class="code-wrap" dir="ltr"><pre><code>text-align: center;
 </code></pre></div>
 <p>وسط چین کردن متن گزینه‌ها</p>
 <p>}</p>
 <div class="code-wrap" dir="ltr"><pre><code>{ .top-menu ul li
 </code></pre></div>
 <p><img alt="تصویر کتاب" src="../images/p148-02.png" /></p>
-<div class="code-wrap" dir="ltr"><pre><code>;margin-bottom: 10px
+<div class="code-wrap" dir="ltr"><pre><code>margin-bottom: 10px;
 </code></pre></div>
 <p>تنظیم فاصلۀ عمودی بین گزینه‌های منو</p>
 <p>}</p>
@@ -67,40 +67,40 @@ CSS rules
 <div class="code-wrap" dir="ltr"><pre><code>{ .user-actions
 </code></pre></div>
 <p>مخفی کردن ناحیه <code>user-action</code></p>
-<div class="code-wrap" dir="ltr"><pre><code>;display: none
+<div class="code-wrap" dir="ltr"><pre><code>display: none;
 </code></pre></div>
 <p>}</p>
 <div class="code-wrap" dir="ltr"><pre><code>{ .services-grid
 </code></pre></div>
 <p><img alt="تصویر کتاب" src="../images/p148-04.png" /></p>
-<div class="code-wrap" dir="ltr"><pre><code>;grid-template-columns: 1fr
+<div class="code-wrap" dir="ltr"><pre><code>grid-template-columns: 1fr;
 </code></pre></div>
 <p>ایجاد یک ستون واحد</p>
-<div class="code-wrap" dir="ltr"><pre><code>;gap: 30px
+<div class="code-wrap" dir="ltr"><pre><code>gap: 30px;
 </code></pre></div>
 <p>افزایش فاصله عمودی بین گزینه‌ها</p>
 <p>}</p>
 <div class="code-wrap" dir="ltr"><pre><code>{ .service-item
 </code></pre></div>
 <p><img alt="تصویر کتاب" src="../images/p148-05.png" /></p>
-<div class="code-wrap" dir="ltr"><pre><code>;max-width: 300px
+<div class="code-wrap" dir="ltr"><pre><code>max-width: 300px;
 </code></pre></div>
 <p>قرار دادن آیتم‌های خدمات در وسط سطر</p>
-<div class="code-wrap" dir="ltr"><pre><code>;margin: 0 auto
+<div class="code-wrap" dir="ltr"><pre><code>margin: 0 auto;
 </code></pre></div>
 <p>}</p>
 <div class="code-wrap" dir="ltr"><pre><code>{.chat-widget
 </code></pre></div>
 <p><img alt="تصویر کتاب" src="../images/p148-06.png" /></p>
-<div class="code-wrap" dir="ltr"><pre><code>;display: none
+<div class="code-wrap" dir="ltr"><pre><code>display: none;
 </code></pre></div>
 <p>پنهان‌سازی لوگوی چت ویجت</p>
 <p>}</p>
 <p>{</p>
-<h3 id="_2">فعالیت</h3>
+<aside class="callout activity"><h3 id="_2">فعالیت</h3>
 <p>برای بررسی عملکرد مدیا کوئری، لبۀ سمت راست مرورگر را تا حد امکان به سمت چپ جابه‌جا کنید.</p>
 <p>با کوچک شدن پهنای پنجره، گزینه‌های منو به‌صورت عمودی چیده می‌شوند. ناحیۀ <code>user-actions</code> ناپدید می‌گردد و تصاویر خدمت ویژه به‌صورت ستونی چیده می‌شوند.</p>
-<hr />
+</aside><hr />
 <p class="page-mark">صفحه ۱۴۳</p>
 <p>ارزشیابی شایستگی طراحی ظاهر صفحات وب با <code>CSS</code></p>
 <p>استاندارد عملکرد کار: با استفاده از شیوه‌های <code>CSS</code>، ظاهر و چیدمان‌های پیچیده وب‌سایت‌ها را مطابق با استانداردها و طراحی‌های بصری مشخص پیاده‌سازی نماید.</p>
@@ -119,23 +119,19 @@ CSS rules
 <p>3</p>
 <p>تداخل استایل‌ها رعایت ترتیب و اولویت استاندارد اعمال صحیح تغییر ظاهری روی عنصر مورد نظر اجرای کارها به چند روش اجرای کنجکاوی‌ها مشاهده نصب توسط</p>
 <p>آشنایی با روش‌های افزودن</p>
-<p>رایانه یا لپ‌تاپ سالم، ویرایشگر کد (<code>VS</code> <code>Code</code> یا هنرجو،</p>
+<p>رایانه یا لپ‌تاپ سالم، ویرایشگر کد (<code>VS Code</code> یا هنرجو،</p>
 <p>استفاده صحیح از هر سه روش (<code>External</code> ،<code>Internal</code> ،<code>Inline</code> تشخیص و</p>
 <p>1</p>
 <p><code>CSS</code>، مدیریت آنها</p>
-<p>مشابه)، مرورگر وب به‌روز، زمان 25 دقیقه،</p>
-<p>تمرین عملی</p>
+<p>مشابه)، مرورگر وب به‌روز، زمان 25 دقیقه، تمرین عملی</p>
 <p>اصلاح تداخل استایل‌ها رعایت ترتیب و اولویت استاندارد اعمال صحیح تغییر</p>
 <p>2</p>
 <p>مشاهده ظاهری روی عنصر موردنظر کدنویسی انجام نادرست یا ناقص هر یک از مراحل کاری1 با استفاده از ویژگی مربوط به قالب‌بندی متن را به درستی انجام دهد.</p>
 <p>از ویژگی‌های مربوط به تعیین ظاهر عناصر برای تعیین رنگ متن، رنگ</p>
 <p>3</p>
 <p>زمینه، تصویر پس‌زمینه، کنترل تصویر پس‌زمینه، شفافیت و خط دور عناصر به‌درستی استفاده کند اجرای کارها با چند روش اجرای کنجکاوی‌ها</p>
-<p>رایانه یا لپ‌تاپرایانه یا لپ‌تاپ سالم، ویرایشگر</p>
-<p>مشاهده کد</p>
-<p>2قالب‌دهی به متن</p>
-<p>کد (<code>VS</code> <code>Code</code> یا مشابه)، مرورگر وب به‌روز،</p>
-<p>نوشته شده</p>
+<p>رایانه یا لپ‌تاپرایانه یا لپ‌تاپ سالم، ویرایشگر مشاهده کد 2قالب‌دهی به متن</p>
+<p>کد (<code>VS Code</code> یا مشابه)، مرورگر وب به‌روز، نوشته شده</p>
 <p>با استفاده از ویژگی مربوط به قالب‌بندی متن را به‌درستی انجام دهد.</p>
 <p>زمان 25 دقیقه</p>
 <p>کد نویسی</p>
@@ -153,41 +149,31 @@ CSS rules
 <p>تعیین استایل عناصر صفحه براساس رابطۀ والد و فرزندی بین آنها با گروهی استفاده درست از انتخاب‌گرهای ساده تعیین استایل عناصر براساس حالات</p>
 <p>2</p>
 <p>و ویژگی‌های خاص آنها با استفاده از انتخاب‌گرهای شبه کلاس امکان انتخاب عناصر براساس ویژگی‌های آنها با استفاده از انتخاب‌گر ترکیبی به کارگیری انتخا‌بگ‌رهای ساده1</p>
-<div class="code-wrap" dir="ltr"><pre><code>عناصر معنایی (header, main, footer, section, article, nav) درست
-</code></pre></div>
+<p>عناصر معنایی <bdi dir="ltr">(header, main, footer, section, article, nav)</bdi> درست</p>
 <p>استفاده شده باشند صفحه استاندارد <code>HTML5</code> داشته باشد انجام کنجکاوی‌ها انجام کار با روش‌های دیگ   ر3 مشاهده</p>
 <p>رایانه، مرورگر برای تست زمان 30 دقیقه، اجرای</p>
 <p>4کار با مدل های جعبه‌ای</p>
 <p>عملکرد</p>
 <p>کار در کلاس عملی یا آزمایشگاه رایانه.</p>
-<div class="code-wrap" dir="ltr"><pre><code>عناصر معنایی (header, main, footer, section, article, nav) درست
-</code></pre></div>
-<p>قالب استفاده شده باشند صفحه استاندارد <code>HTML5</code> داشته باشد.2 انجام ناقص هریک ازمراحل1 عناصر جانبی (<code>aside</code> <code>caption</code>) به‌درستی اضافه شده باشند تصاویر همراه با توضیحات درست نمایش داده شوند ایجاد جدول با 2 سطر و 2</p>
+<p>عناصر معنایی <bdi dir="ltr">(header, main, footer, section, article, nav)</bdi> درست</p>
+<p>قالب استفاده شده باشند صفحه استاندارد <code>HTML5</code> داشته باشد.2 انجام ناقص هریک ازمراحل1 عناصر جانبی (<code>aside caption</code>) به‌درستی اضافه شده باشند تصاویر همراه با توضیحات درست نمایش داده شوند ایجاد جدول با 2 سطر و 2</p>
 <p>3</p>
-<p>ستون ایجاد فرم‌های ورود اطلاعات انجام کنجکاوی‌ها انجام کار با پرسش روش‌ها‌ی</p>
-<p>دیگر</p>
+<p>ستون ایجاد فرم‌های ورود اطلاعات انجام کنجکاوی‌ها انجام کار با پرسش روش‌ها‌ی دیگر</p>
 <p>مدل‌های نمایش عناصر</p>
 <p>کتبی</p>
 <p>در صفحه</p>
 <p>رایانه مرورگر برای تست زمان ٠٣ دقیقه،</p>
 <p>آزمون عملی</p>
 <p>5</p>
-<div class="code-wrap" dir="ltr"><pre><code>Flexbox-gride model
-</code></pre></div>
+<p><bdi dir="ltr">Flexbox-gride</bdi> <bdi dir="ltr">model</bdi></p>
 <p>کار در کلاس عملی یا آزمایشگاه رایانه.</p>
-<p>مشاهده عناصر جانبی (<code>aside</code> <code>caption</code>) به‌درستی اضافه شده باشند تصاویر همراه با توضیحات درست نمایش داده شوند ایجاد فرم‌های ورود اطلاعات 2</p>
-<div class="code-wrap" dir="ltr"><pre><code>disply -
-</code></pre></div>
+<p>مشاهده عناصر جانبی (<code>aside caption</code>) به‌درستی اضافه شده باشند تصاویر همراه با توضیحات درست نمایش داده شوند ایجاد فرم‌های ورود اطلاعات 2 <bdi dir="ltr">disply</bdi> -</p>
 <p>عملکرد هنرآموز انجام ناقص هریک از مراحل1</p>
 <hr />
 <p class="page-mark">صفحه ۱۴۴</p>
 <p>استفاده مناسب از <code>div</code> و <code>span</code> برای ساختاردهی توضیحات و مستندسازی کد کامل باشد مزایای استفاده از تگ‌های معنایی (مانند <code>article</code>, <code>section</code>) مشاهده</p>
 <p>3</p>
-<p>را برای سئو و دسترسی‌پذیری توضیح دهند انجام کنجکاوی‌ها انجام کار</p>
-<p>مستندسازی</p>
-<p>با روش‌های دیگر</p>
-<p>رایانه مرورگر</p>
-<p>و توضیحات</p>
+<p>را برای سئو و دسترسی‌پذیری توضیح دهند انجام کنجکاوی‌ها انجام کار مستندسازی با روش‌های دیگر رایانه مرورگر و توضیحات</p>
 <p>تکمیل ساختار با عناصر</p>
 <p>منابع راهنما برای مستندسازی کد</p>
 <p>نوشته‌شده</p>
@@ -212,8 +198,8 @@ CSS rules
 <p>A media query is a <code>CSS</code> technique that lets you set element properties based on various device features (such as screen size, resolution, orientation, and so on). This capability lets the developer optimize websites and web applications for different devices (such as mobile, tablet, and desktop).</p>
 <p>Media queries are written with the <code>media@</code> directive in <code>CSS</code> and have the following structure:</p>
 <div class="code-wrap" dir="ltr"><pre><code>{ (condition) media media-type and@
-CSS rules
 </code></pre></div>
+<p>CSS rules</p>
 <p>}</p>
 <p>Using a media query to change the state of elements in the mobile view</p>
 <h3 id="workshop">Workshop</h3>
@@ -224,20 +210,20 @@ CSS rules
 <div class="code-wrap" dir="ltr"><pre><code>{ .top-menu ul
 </code></pre></div>
 <p>Change the menu element layout from horizontal to</p>
-<div class="code-wrap" dir="ltr"><pre><code>;flex-direction: column
+<div class="code-wrap" dir="ltr"><pre><code>flex-direction: column;
 </code></pre></div>
 <p>vertical</p>
-<div class="code-wrap" dir="ltr"><pre><code>;%width: 100
+<div class="code-wrap" dir="ltr"><pre><code>;%width: 100;
 </code></pre></div>
 <p>Take the full width for each list item</p>
-<div class="code-wrap" dir="ltr"><pre><code>;text-align: center
+<div class="code-wrap" dir="ltr"><pre><code>text-align: center;
 </code></pre></div>
 <p>Center the option text</p>
 <p>}</p>
 <div class="code-wrap" dir="ltr"><pre><code>{ .top-menu ul li
 </code></pre></div>
 <p><img alt="Book image" src="../images/p148-02.png" /></p>
-<div class="code-wrap" dir="ltr"><pre><code>;margin-bottom: 10px
+<div class="code-wrap" dir="ltr"><pre><code>margin-bottom: 10px;
 </code></pre></div>
 <p>Set the vertical spacing between menu options</p>
 <p>}</p>
@@ -245,49 +231,45 @@ CSS rules
 <div class="code-wrap" dir="ltr"><pre><code>{ .user-actions
 </code></pre></div>
 <p>Hide the <code>user-action</code> area</p>
-<div class="code-wrap" dir="ltr"><pre><code>;display: none
+<div class="code-wrap" dir="ltr"><pre><code>display: none;
 </code></pre></div>
 <p>}</p>
 <div class="code-wrap" dir="ltr"><pre><code>{ .services-grid
 </code></pre></div>
 <p><img alt="Book image" src="../images/p148-04.png" /></p>
-<div class="code-wrap" dir="ltr"><pre><code>;grid-template-columns: 1fr
+<div class="code-wrap" dir="ltr"><pre><code>grid-template-columns: 1fr;
 </code></pre></div>
 <p>Create a single column</p>
-<div class="code-wrap" dir="ltr"><pre><code>;gap: 30px
+<div class="code-wrap" dir="ltr"><pre><code>gap: 30px;
 </code></pre></div>
 <p>Increase the vertical spacing between options</p>
 <p>}</p>
 <div class="code-wrap" dir="ltr"><pre><code>{ .service-item
 </code></pre></div>
 <p><img alt="Book image" src="../images/p148-05.png" /></p>
-<div class="code-wrap" dir="ltr"><pre><code>;max-width: 300px
+<div class="code-wrap" dir="ltr"><pre><code>max-width: 300px;
 </code></pre></div>
 <p>Place the service items in the middle of the row</p>
-<div class="code-wrap" dir="ltr"><pre><code>;margin: 0 auto
+<div class="code-wrap" dir="ltr"><pre><code>margin: 0 auto;
 </code></pre></div>
 <p>}</p>
 <div class="code-wrap" dir="ltr"><pre><code>{.chat-widget
 </code></pre></div>
 <p><img alt="Book image" src="../images/p148-06.png" /></p>
-<div class="code-wrap" dir="ltr"><pre><code>;display: none
+<div class="code-wrap" dir="ltr"><pre><code>display: none;
 </code></pre></div>
 <p>Hide the chat widget logo</p>
 <p>}</p>
 <p>{</p>
-<h3 id="activity">Activity</h3>
+<aside class="callout activity"><h3 id="activity">Activity</h3>
 <p>To check how the media query works, move the right edge of the browser as far left as possible.</p>
 <p>When the window width gets smaller, the menu options are arranged vertically. The <code>user-actions</code> area disappears and the special service images are arranged in a column.</p>
-<hr />
+</aside><hr />
 <p class="page-mark">Page 143</p>
 <p>Competency assessment for styling web page appearance with <code>CSS</code></p>
 <p>Work performance standard: Using <code>CSS</code> methods, implement the appearance and complex layouts of websites according to standards and specified visual designs.</p>
 <p>Score</p>
-<p>Work conditions (tools, materials, equipment,</p>
-<p>Tools</p>
-<p>Results</p>
-<p>Row</p>
-<p>Steps</p>
+<p>Work conditions (tools, materials, equipment, Tools Results Row Steps</p>
 <p>Standard (indicators/judgment/scoring)</p>
 <p>Earned</p>
 <p>time, place, and so on)</p>
@@ -297,12 +279,11 @@ CSS rules
 <p>3</p>
 <p>style conflicts following the standard order and priority correctly applying appearance changes to the intended element doing the work in several ways doing Try this activities observing installation by</p>
 <p>Familiarity with methods of adding</p>
-<p>a working computer or laptop, a code editor (<code>VS</code> <code>Code</code> or the student,</p>
+<p>a working computer or laptop, a code editor (<code>VS Code</code> or the student,</p>
 <p>Correct use of all three methods (<code>External</code>, <code>Internal</code>, <code>Inline</code>) diagnosing and</p>
 <p>1</p>
 <p><code>CSS</code>, managing them</p>
-<p>similar), an up-to-date web browser, time 25 minutes,</p>
-<p>Practical exercise</p>
+<p>similar), an up-to-date web browser, time 25 minutes, Practical exercise</p>
 <p>correcting style conflicts following the standard order and priority correctly applying appearance</p>
 <p>2</p>
 <p>visual observation on the intended element coding incomplete or incorrect performance of any of the work steps1 correctly perform text formatting using the related property.</p>
@@ -312,8 +293,7 @@ CSS rules
 <p>a working computer or laptop, a code editor</p>
 <p>Observing the written</p>
 <p>2 Text formatting</p>
-<p>code (<code>VS</code> <code>Code</code> or similar), an up-to-date web browser,</p>
-<p>code</p>
+<p>code (<code>VS Code</code> or similar), an up-to-date web browser, code</p>
 <p>Correctly perform text formatting using the related property.</p>
 <p>time 25 minutes</p>
 <p>Coding</p>
@@ -331,44 +311,31 @@ CSS rules
 <p>Setting page element styles based on the parent–child relationship between them as a group using simple selectors correctly setting element styles based on special</p>
 <p>2</p>
 <p>states and properties using pseudo-class selectors ability to select elements based on their properties using a combined selector using simple selectors1</p>
-<div class="code-wrap" dir="ltr"><pre><code>عناصر معنایی (header, main, footer, section, article, nav) درست
-</code></pre></div>
+<p>(header, main, footer, section, article, nav)</p>
 <p>be used correctly have a standard <code>HTML5</code> page do Try this activities do the work with other methods3 observing</p>
-<p>Computer, browser for testing time 30 minutes, performance</p>
+<p>Computer, browser for testing time 30 minutes, performance run</p>
 <p>4 Working with box models</p>
-<p>run</p>
 <p>Work in a practical class or computer lab.</p>
-<div class="code-wrap" dir="ltr"><pre><code>عناصر معنایی (header, main, footer, section, article, nav) درست
-</code></pre></div>
-<p>template be used correctly have a standard <code>HTML5</code> page.2 incomplete performance of any of the steps1 side elements (<code>aside</code> <code>caption</code>) be added correctly images with captions be displayed correctly create a table with 2 rows and 2</p>
+<p>(header, main, footer, section, article, nav)</p>
+<p>template be used correctly have a standard <code>HTML5</code> page.2 incomplete performance of any of the steps1 side elements (<code>aside caption</code>) be added correctly images with captions be displayed correctly create a table with 2 rows and 2</p>
 <p>3</p>
-<p>columns create data-entry forms do Try this activities do the work by asking about other</p>
-<p>methods</p>
+<p>columns create data-entry forms do Try this activities do the work by asking about other methods</p>
 <p>Element display models</p>
 <p>Written</p>
 <p>on the page</p>
-<p>Computer browser for testing time 30 minutes,</p>
-<p>Practical test</p>
+<p>Computer browser for testing time 30 minutes, Practical test</p>
 <p>5</p>
-<div class="code-wrap" dir="ltr"><pre><code>Flexbox-gride model
-</code></pre></div>
+<p>Flexbox-gride model</p>
 <p>Work in a practical class or computer lab.</p>
-<p>Observing side elements (<code>aside</code> <code>caption</code>) be added correctly images with captions be displayed correctly create data-entry forms 2</p>
-<div class="code-wrap" dir="ltr"><pre><code>disply -
-</code></pre></div>
+<p>Observing side elements (<code>aside caption</code>) be added correctly images with captions be displayed correctly create data-entry forms 2 disply -</p>
 <p>Instructor performance incomplete performance of any of the steps1</p>
 <hr />
 <p class="page-mark">Page 144</p>
 <p>Appropriate use of <code>div</code> and <code>span</code> for structuring explanations and documentation the code be complete explain the advantages of using semantic tags (such as <code>article</code>, <code>section</code>) observing</p>
 <p>3</p>
-<p>for SEO and accessibility do Try this activities do the work</p>
-<p>Documentation</p>
-<p>with other methods</p>
-<p>Computer browser</p>
-<p>and explanations</p>
+<p>for SEO and accessibility do Try this activities do the work Documentation with other methods Computer browser and explanations</p>
 <p>Completing the structure with</p>
-<p>reference resources for code documentation</p>
-<p>written</p>
+<p>reference resources for code documentation written</p>
 <p>6</p>
 <p>Appropriate use of <code>div</code> and <code>span</code> for structuring comments and documentation</p>
 <p>non-semantic elements and documentation</p>
@@ -379,8 +346,7 @@ CSS rules
 <p>Meeting all non-technical competencies2</p>
 <p>Non-technical competencies, safety, health, environmental considerations, and attitude:</p>
 <p>Failure to meet any of the non-technical competencies1 Yes</p>
-<p>Work assessment (competency to perform the work)</p>
-<p>No</p>
+<p>Work assessment (competency to perform the work) No</p>
 <h3 id="explanation">Explanation:</h3>
 <p>1 Criterion for competency to perform the work:</p>
 <p>Earn at least a score of 2 from steps 1, 2, 3, 4, and 5 (critical steps) Earn at least a score of 2 from the non-technical competencies, safety, health, environmental considerations, and attitude section Earn at least an average of 2 from the work steps</p>
@@ -395,7 +361,7 @@ CSS rules
     <nav class="pager"><a rel="prev" class="prev" href="p2-flex-work.html"><span class="pager-word" data-fa="قبلی" data-en="Previous">قبلی</span><span class="pager-name" data-fa="کارگاه چیدمان صفحه" data-en="Page-layout workshop">کارگاه چیدمان صفحه</span></a><a rel="next" class="next" href="p3-intro.html"><span class="pager-word" data-fa="بعدی" data-en="Next">بعدی</span><span class="pager-name" data-fa="معرفی پودمان تعاملی" data-en="Introducing the interactive module">معرفی پودمان تعاملی</span></a></nav>
     </div>
   </div>
-  <script src="../assets/search-index.js?v=4"></script>
-  <script src="../assets/app.js?v=4"></script>
+  <script src="../assets/search-index.js?v=6"></script>
+  <script src="../assets/app.js?v=6"></script>
 </body>
 </html>

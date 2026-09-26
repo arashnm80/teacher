@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title data-fa="ورودی و تبدیل نوع" data-en="Input and type casting">ورودی و تبدیل نوع</title>
   <link rel="icon" href="../assets/favicon.svg">
-  <link rel="stylesheet" href="../assets/style.css?v=4">
+  <link rel="stylesheet" href="../assets/style.css?v=6">
 </head>
 <body data-root="../">
   <header class="top">
@@ -31,16 +31,16 @@
     <div class="main">
       <h1 class="section-title" data-fa="ورودی و تبدیل نوع" data-en="Input and type casting">ورودی و تبدیل نوع</h1><article class="lesson" lang="fa" dir="rtl" data-lang-block="fa"><p class="page-mark">صفحه ۱۳</p>
 <p>این دستور مقدار وارد شده از طریق صفحه‌کلید را به‌صورت رشته‌ای (<code>string</code>) دریافت می‌کند و خروجی آن یک مقدار رشته‌ای است (حتی اگر "عدد" وارد کرده باشید.) (شکل 25).</p>
-<h3 id="_1">فعالیت</h3>
+<aside class="callout activity"><h3 id="_1">فعالیت</h3>
 <p>متغیرهای <code>food</code>، <code>weighe</code> و <code>avg</code> را به ترتیب برای غذای موردعلاقه‌تان، وزن و معدل خود تعریف کنید. از ورودی برای هریک مقداری را دریافت کرده و سپس مقادیر را نمایش دهید و نوع هر یک را تعیین نمایید.</p>
 <p><img alt="تصویر کتاب" src="../images/p019-02.png" /></p>
 <figure class="shot"><img alt="شکل 25" src="../images/p019-03.png" /><figcaption>شکل 25</figcaption></figure>
-<h3 id="type-casting">تبدیل نوع داده <bdi dir="ltr">(Type Casting)</bdi> در پایتون</h3>
-<p>در برنامه‌نویسی پایتون گاهی لازم است نوع یک داده را به نوع دیگری تبدیل کنیم. به این کار تبدیل نوع داده یا <code>Type</code> <code>Casting</code> گفته می‌شود.</p>
+</aside><h3 id="type-casting">تبدیل نوع داده <bdi dir="ltr">(Type Casting)</bdi> در پایتون</h3>
+<p>در برنامه‌نویسی پایتون گاهی لازم است نوع یک داده را به نوع دیگری تبدیل کنیم. به این کار تبدیل نوع داده یا <code>Type Casting</code> گفته می‌شود.</p>
 <figure class="shot"><img alt="شکل 26" src="../images/p019-01.png" /><figcaption>شکل 26</figcaption></figure>
 <p>برای مثال، وقتی ورودی را با تابع ()<code>input</code> دریافت می‌کنید، مقدار واردشده به‌صورت رشته (<code>str</code>) ذخیره می‌شود. اگر بخواهید با آن محاسبات ریاضی انجام دهید، لازم است آن را به عدد تبدیل کنید.</p>
 <p>پایتون برای تبدیل نوع داده، توابع آماده‌ای در اختیار برنامه نویس قرار داده است، مانند:</p>
-<p>تبدیل به عدد صحیح → )(<code>int</code> تبدیل به عدد اعشاری → )(<code>float</code> تبدیل به رشته → )(<code>str</code> تبدیل به مقدار منطقی (درست/ نادرست<code>bool</code>() → )</p>
+<p>تبدیل به عدد صحیح → <code>int()</code> تبدیل به عدد اعشاری → <code>float()</code> تبدیل به رشته → <code>str()</code> تبدیل به مقدار منطقی (درست/ نادرست<code>bool()</code> → )</p>
 <hr />
 <p class="page-mark">صفحه ۱۴</p>
 <p>مطابق شکل27 برای اینکه نوع داده را به نوع عددی تبدیل کنید می‌توانید به این صورت عمل کنید:</p>
@@ -52,7 +52,7 @@
 <figure class="shot"><img alt="شکل 28" src="../images/p020-03.png" /><figcaption>شکل 28</figcaption></figure>
 <p>برای رفع این خطا لازم است، تبدیل نوع داده عددی به نوع داده رشته‌ای را به صورت زیر انجام دهید. پس از اجرا، کد خطایی مشاهده نخواهید کرد (شکل29).</p>
 <figure class="shot"><img alt="شکل 29" src="../images/p020-04.png" /><figcaption>شکل 29</figcaption></figure>
-<p>مثال: در خط1 کد مقابل سال تولد کاربر دریافت می‌شود، تابع <code>int</code> آن را به نوع عددی صحیح تبدیل و در متغیر <code>year</code> ذخیره می‌کند. در خط2 تفاضل عدد سال فعلی از سال تولد محاسبه و در متغیر <code>age</code> ذخیره می‌شود. در خط 3 با دستور <code>print</code> سن کاربر با پیغام <code>":your</code> <code>age</code> " نمایش داده می‌شود (شکل30).</p>
+<p>مثال: در خط1 کد مقابل سال تولد کاربر دریافت می‌شود، تابع <code>int</code> آن را به نوع عددی صحیح تبدیل و در متغیر <code>year</code> ذخیره می‌کند. در خط2 تفاضل عدد سال فعلی از سال تولد محاسبه و در متغیر <code>age</code> ذخیره می‌شود. در خط 3 با دستور <code>print</code> سن کاربر با پیغام <code>":your age</code> " نمایش داده می‌شود (شکل30).</p>
 <p><img alt="تصویر کتاب" src="../images/p020-05.png" /></p>
 <figure class="shot"><img alt="شکل 30" src="../images/p020-06.png" /><figcaption>شکل 30</figcaption></figure>
 <hr />
@@ -66,25 +66,24 @@
 <p>مثال: محاسبه قیمت کالا پس از اعمال ۹درصد مالیات بر ارزش افزوده (شکل33).</p>
 <p><img alt="تصویر کتاب" src="../images/p021-05.png" /></p>
 <figure class="shot"><img alt="شکل 33" src="../images/p021-04.png" /><figcaption>شکل 33</figcaption></figure>
-<h3 id="_2">فعالیت</h3>
+<aside class="callout activity"><h3 id="_2">فعالیت</h3>
 <p>اندازه قد کاربر را به‌صورت یک عدد اعشاری گرفته و مشابه پیام زیر را نمایش دهید.</p>
-<div class="code-wrap" dir="ltr"><pre><code>.Your height: 1.75 meters
-</code></pre></div>
-<h3 id="_3">فعالیت</h3>
+<p>.<bdi dir="ltr">Your</bdi> <bdi dir="ltr">height:</bdi> 1.75 <bdi dir="ltr">meters</bdi></p>
+</aside><aside class="callout activity"><h3 id="_3">فعالیت</h3>
 <p>برای راه‌اندازی یک فروشگاه هوشمند، مراحل زیر را انجام دهید.</p>
 <p>دریافت نام مدیر فروشگاه از ورودی دریافت سال شروع فعالیت فروشگاه تبدیل نوع داده ورودی‌ها نمایش پیام خوشامدگویی</p>
-<hr /></article><article class="lesson" lang="en" dir="ltr" data-lang-block="en" hidden><p class="page-mark">Page 13</p>
+</aside><hr /></article><article class="lesson" lang="en" dir="ltr" data-lang-block="en" hidden><p class="page-mark">Page 13</p>
 <p>This statement receives the value entered through the keyboard as a string (<code>string</code>), and its output is a string value (even if you entered a "number") (Figure 25).</p>
-<h3 id="activity">Activity</h3>
+<aside class="callout activity"><h3 id="activity">Activity</h3>
 <p>Define the variables <code>food</code>, <code>weighe</code>, and <code>avg</code> in order for your favorite food, your weight, and your grade average. Receive a value from input for each one, then display the values and determine the type of each one.</p>
 <p><img alt="Book image" src="../images/p019-02.png" /></p>
 <figure class="shot"><img alt="Figure 25" src="../images/p019-03.png" /><figcaption>Figure 25</figcaption></figure>
-<h3 id="type-casting-in-python">Type casting in Python</h3>
-<p>In Python programming, sometimes you need to convert one data type to another. This is called type casting or <code>Type</code> <code>Casting</code>.</p>
+</aside><h3 id="type-casting-in-python">Type casting in Python</h3>
+<p>In Python programming, sometimes you need to convert one data type to another. This is called type casting or <code>Type Casting</code>.</p>
 <figure class="shot"><img alt="Figure 26" src="../images/p019-01.png" /><figcaption>Figure 26</figcaption></figure>
 <p>For example, when you receive input with the ()<code>input</code> function, the entered value is stored as a string (<code>str</code>). If you want to perform mathematical calculations with it, you need to convert it to a number.</p>
 <p>Python provides the programmer with ready-made functions for type casting, such as:</p>
-<p>Convert to integer → )(<code>int</code> Convert to floating-point number → )(<code>float</code> Convert to string → )(<code>str</code> Convert to a logical value (true/false <code>bool</code>() → )</p>
+<p>Convert to integer → <code>int()</code> Convert to floating-point number → <code>float()</code> Convert to string → <code>str()</code> Convert to a logical value (true/false <code>bool()</code> → )</p>
 <hr />
 <p class="page-mark">Page 14</p>
 <p>According to Figure 27, to convert a data type to a numeric type you can do it like this:</p>
@@ -96,7 +95,7 @@
 <figure class="shot"><img alt="Figure 28" src="../images/p020-03.png" /><figcaption>Figure 28</figcaption></figure>
 <p>To fix this error, you need to convert the numeric data type to the string data type as follows. After running, you will not see an error code (Figure 29).</p>
 <figure class="shot"><img alt="Figure 29" src="../images/p020-04.png" /><figcaption>Figure 29</figcaption></figure>
-<p>Example: On line 1 of the code opposite, the user's year of birth is received; the <code>int</code> function converts it to an integer type and stores it in the <code>year</code> variable. On line 2 the difference between the current year and the year of birth is calculated and stored in the <code>age</code> variable. On line 3, with the <code>print</code> statement, the user's age is displayed with the message "<code>your</code> <code>age</code> :" (Figure 30).</p>
+<p>Example: On line 1 of the code opposite, the user's year of birth is received; the <code>int</code> function converts it to an integer type and stores it in the <code>year</code> variable. On line 2 the difference between the current year and the year of birth is calculated and stored in the <code>age</code> variable. On line 3, with the <code>print</code> statement, the user's age is displayed with the message "<code>your age</code> :" (Figure 30).</p>
 <p><img alt="Book image" src="../images/p020-05.png" /></p>
 <figure class="shot"><img alt="Figure 30" src="../images/p020-06.png" /><figcaption>Figure 30</figcaption></figure>
 <hr />
@@ -110,14 +109,13 @@
 <p>Example: Calculating the price of a product after applying 9 percent value-added tax (Figure 33).</p>
 <p><img alt="Book image" src="../images/p021-05.png" /></p>
 <figure class="shot"><img alt="Figure 33" src="../images/p021-04.png" /><figcaption>Figure 33</figcaption></figure>
-<h3 id="activity_1">Activity</h3>
+<aside class="callout activity"><h3 id="activity_1">Activity</h3>
 <p>Get the user's height as a floating-point number and display a message similar to the one below.</p>
-<div class="code-wrap" dir="ltr"><pre><code>.Your height: 1.75 meters
-</code></pre></div>
-<h3 id="activity_2">Activity</h3>
+<p>.Your height: 1.75 meters</p>
+</aside><aside class="callout activity"><h3 id="activity_2">Activity</h3>
 <p>To set up a smart store, carry out the following steps.</p>
 <p>Receive the store manager's name from input Receive the year the store started operating Convert the type of the inputs Display a welcome message</p>
-<hr /></article>
+</aside><hr /></article>
       <aside class="extra">
         <h2 data-fa="تمرین این بخش" data-en="Exercises for this section">تمرین این بخش</h2>
         <p class="extra-note" data-fa="این تمرین‌ها و پیوندها اضافه بر متن کتاب‌اند." data-en="These exercises and links are in addition to the book.">این تمرین‌ها و پیوندها اضافه بر متن کتاب‌اند.</p>
@@ -127,7 +125,7 @@
     <nav class="pager"><a rel="prev" class="prev" href="p1-vars.html"><span class="pager-word" data-fa="قبلی" data-en="Previous">قبلی</span><span class="pager-name" data-fa="متغیرها، نوع داده و عملگرها" data-en="Variables, types, and operators">متغیرها، نوع داده و عملگرها</span></a><a rel="next" class="next" href="p1-lists.html"><span class="pager-word" data-fa="بعدی" data-en="Next">بعدی</span><span class="pager-name" data-fa="لیست‌ها" data-en="Lists">لیست‌ها</span></a></nav>
     </div>
   </div>
-  <script src="../assets/search-index.js?v=4"></script>
-  <script src="../assets/app.js?v=4"></script>
+  <script src="../assets/search-index.js?v=6"></script>
+  <script src="../assets/app.js?v=6"></script>
 </body>
 </html>

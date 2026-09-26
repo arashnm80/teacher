@@ -20,12 +20,11 @@ To mark up headings on a web page, the tags `<h1>` through `<h6>` are used. The 
 
 General form of the heading tags
 
-`</h1>` main page heading `<h1>` `</h2>` level `h2>` 2< heading `</h3>` level `h3>` 3< heading The `<h1>` heading is very important for search engines because it tells them the topic of the page. This heading should contain the keywords of the page topic. It is recommended that this heading be used only once on the page.
+`</h1>` main page heading `<h1> </h2>` level `h2>` 2< heading `</h3>` level `h3>` 3< heading The `<h1>` heading is very important for search engines because it tells them the topic of the page. This heading should contain the keywords of the page topic. It is recommended that this heading be used only once on the page.
 
 In general, the tags `<h1>` through `<h6>` define the hierarchy of topics on the page. By using these elements correctly, users can read the page content more easily and find the topics they want among the available content. In addition, search engines can more easily recognize the topics covered on the page and can store the web page information better in their database.
 
 Proper heading of content has a significant effect on the web page’s ranking in search results.
-
 
 ---
 
@@ -43,20 +42,17 @@ observe the result in the browser.
 
 Network and software textbooks grade 10 textbooks computer systems maintenance computer services provider foundational technical knowledge computer technical drafting
 
-The `<p>:` tag This tag is used to mark up paragraphs. Content placed between `<p>` and `<p/>` is separated from the content before and after it and is displayed on a new line. Inside `<p>` you can use plain text, a link `<a>`, bold `<b>` or `<strong>`
+The `<p>:` tag This tag is used to mark up paragraphs. Content placed between `<p>` and `<p/>` is separated from the content before and after it and is displayed on a new line. Inside `<p>` you can use plain text, a link `<a>`, bold `<b>` or `<strong>` and so on.
 
 ![Figure 10](../images/p105-03.png)
 
 **Figure 10**
 
-and so on.
-
-The `<strong>` and `<b>:` tags To display a word in bold, you can use the two tags `<b>` and `<strong>`. The web browser displays the content of these two tags the same way, but search engines interpret them differently. If a phrase is marked up with the `<strong>` tag, it means that the content of this element is highly important and is related to the topic of the page. Screen reader tools (`Screen` `reader`) also read the content of the `<strong>` tag in a louder voice, whereas with the `<b>` tag they do not change their tone, because the `<b>` tag does not convey a particular meaning.
+The `<strong>` and `<b>:` tags To display a word in bold, you can use the two tags `<b>` and `<strong>`. The web browser displays the content of these two tags the same way, but search engines interpret them differently. If a phrase is marked up with the `<strong>` tag, it means that the content of this element is highly important and is related to the topic of the page. Screen reader tools (`Screen reader`) also read the content of the `<strong>` tag in a louder voice, whereas with the `<b>` tag they do not change their tone, because the `<b>` tag does not convey a particular meaning.
 
 The `<em>` and `<i>:` tags To display a word in italics, the two tags `<em>` and `<i>` are used.
 
 Although web browsers display the content of these two tags in a similar way, their meaning in `HTML` and their effect on search engines and content accessibility are different.
-
 
 ---
 
@@ -72,14 +68,13 @@ Using the `<i>` and `<em>:` tags
 
 Figure 11
 
-The expression `"dir` `="trl` in the `<html>` tag is used to set the content display direction from right to left.
+The expression `"dir ="trl` in the `<html>` tag is used to set the content display direction from right to left.
 
 The code output will be as in Figure 12:
 
 ![Book image](../images/p106-02.png)
 
 Figure 12
-
 
 ---
 
@@ -95,7 +90,7 @@ Three types of list can be marked up in `HTML`: ordered, unordered, and descript
 
 These lists are created with the tags `<ul>`, `<ol>`, and `<dl>`.
 
-The `<ul>:` tag is short for `Unordered` `list`. This tag is used to create a bulleted list.
+The `<ul>:` tag is short for `Unordered list`. This tag is used to create a bulleted list.
 
 To mark up list items, the `<li>` tag is used.
 
@@ -115,8 +110,7 @@ Our services
 
 Fast order shipping the most up-to-date bookstore shipping nationwide 24-hour support
 
-The `<ol>:` tag is short for `Ordered` `list`. The `<ol>` tag is used to create numbered lists.
-
+The `<ol>:` tag is short for `Ordered list`. The `<ol>` tag is used to create numbered lists.
 
 ---
 
@@ -152,9 +146,9 @@ To create a link, the following general structure is used:
 <a href="Resource address" target="target" title=" description"> anchor Text </a>
 ```
 
-In the `href` attribute, the address of the destination page or file is written. The expression `href` is short for `Hypertext` `reference`.
+In the `href` attribute, the address of the destination page or file is written. The expression `href` is short for `Hypertext reference`.
 
-The expression `anchor` `text` refers to the link text—what the user sees and clicks on.
+The expression `anchor text` refers to the link text—what the user sees and clicks on.
 
 If the user clicks the link text, they are guided to the resource address specified in the `href` attribute.
 
@@ -170,14 +164,14 @@ The `title` attribute contains a description about the link. This attribute is o
 
 The following examples are samples of links to different resources:
 
-`</a>` Ministry of Education website `<a` `href` = `"https://medu.ir">`
+`</a>` Ministry of Education website `<a href` = `"https://medu.ir">`
 
+>"
 ```
-دانلود کتاب طراحی صفحات >"target="_blank "a href = "./pdfs/books/web-design.pdf<
+target="_blank "a href = "./pdfs/books/web-design.pdf<
 ```
 
 `</a>` Web
-
 
 ---
 
@@ -213,9 +207,8 @@ To display an image on a web page, the `<img>` tag is used. The general form of 
 
 `src:` This attribute sets the address of the image.
 
-`alt:` The word `alt` is short for `Alternative` `text`. The value of this attribute specifies the alternative text for the image.
+`alt:` The word `alt` is short for `Alternative text`. The value of this attribute specifies the alternative text for the image.
 
 This text is displayed if the image fails to load. In addition, the `Alt` value conveys the meaning and content of the image for the user and for search engines.
-
 
 ---

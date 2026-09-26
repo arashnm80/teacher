@@ -15,9 +15,9 @@ Apply the text formatting properties to the elements in the `test.html` file and
 In the example opposite, all three methods of setting a color value are used.
 
 ```
-;color: blue
-;background-color: #0000FF
-;)0,0,255(background-color: rgb
+color: blue;
+background-color: #0000FF;
+;)0,0,255(background-color: rgb;
 ```
 
 `opacity:` element opacity is set with this property. The `opacity` value is a number between 0 and 1.
@@ -31,19 +31,14 @@ Low values of this property reduce the opacity of the element, and values near 1
 As in the example opposite:
 
 ```
-;)images/background.jpg/.(background-image:url
+;)images/background.jpg/.(background-image:url;
 ```
 
-`background-repeat:` images that do not cover the width of the page are repeated. Use this property to set how the image is repeated or not repeated; it has various values such as `no-repeat`, `repeat-x`,
-
-```
-repeat-y و ... است.
-```
+`background-repeat:` images that do not cover the width of the page are repeated. Use this property to set how the image is repeated or not repeated; it has various values such as `no-repeat`, `repeat-x`, repeat-y ... .
 
 `background-size:` sets the size of the background image. This property specifies at what dimensions the background image is shown inside the element. To cover the width of the page without repeating the image, use this property with the value `cover`.
 
-`background-position:` used to set where the background image is shown, with various values such as `center`, `left`, `right`, `left` `top`, `right` `bottom`, and so on.
-
+`background-position:` used to set where the background image is shown, with various values such as `center`, `left`, `right`, `left top`, `right bottom`, and so on.
 
 ---
 
@@ -54,13 +49,13 @@ repeat-y و ... است.
 `border:` page elements can be shown with a border. Creating a border is done with the `border` property. The values of this property set, in order, the border thickness, border type, and its color.
 
 ```
-;border: 1px solid gray
+border: 1px solid gray;
 ```
 
 `border-radius:` use this property to round the corners; its value can be in pixels or percent:
 
 ```
-;border-radius:10px
+border-radius:10px;
 ```
 
 Styling element appearance (colors, backgrounds, opacity, and border)
@@ -74,7 +69,6 @@ In the `test.html` file, write the `HTML` code below and view the result in the 
 ![Book image](../images/p128-01.png)
 
 ![Book image](../images/p128-03.png)
-
 
 ---
 
@@ -98,16 +92,11 @@ Selector type
 
 Function
 
-Select page elements by tag name, such as `h2`, `p`, `table`, `body`, and so on
+Select page elements by tag name, such as `h2`, `p`, `table`, `body`, and so on (Element)
 
 ![Book image](../images/p129-02.png)
 
-```
-عنصر (Element)
-```
-
 ![Book image](../images/p129-03.png)
-
 
 ---
 
@@ -125,12 +114,9 @@ Select page elements by class name: class selectors start with the . symbol. The
 
 ![Book image](../images/p130-03.png)
 
-```
-کلاس (Class)
-```
+(Class)
 
 ![Book image](../images/p130-04.png)
-
 
 ---
 
@@ -140,9 +126,7 @@ Selecting a group of elements: group selectors assign a set of `CSS` rules to se
 
 ![Book image](../images/p131-01.png)
 
-```
-گروهی(Group)
-```
+(Group)
 
 The rules above are applied to the `<h2<`, `>h1>`, and `<p>` tags. As a result, all of them become blue and centered.
 
@@ -152,9 +136,7 @@ Selecting all page elements with the * symbol:
 
 In the example below, the outer margin (`margin`) and inner spacing (`padding`) on all page elements are set to zero.
 
-```
-سراسری (universal)
-```
+(universal)
 
 ![Book image](../images/p131-03.png)
 
@@ -162,8 +144,7 @@ Combined selector (`Combinator`):
 
 Combined selectors in `CSS` are used to define a structural and positional relationship between two or more selectors. For example, the child selector with the < symbol and the descendant selector using a space; elements written nested have a parent–child relationship. For example, the `li` element is a child of the `ul` element.
 
-So to select `li` elements you use `ul` `li` or `ul` > `li`. Using the < symbol limits the effect to the direct children of an element.
-
+So to select `li` elements you use `ul li` or `ul` > `li`. Using the < symbol limits the effect to the direct children of an element.
 
 ---
 
@@ -179,7 +160,7 @@ The image below shows an example of using a combined selector.
 
 Output
 
-Pseudo-class selectors (`Pseudo-class` `Selectors`) Pseudo-class selectors let you set element styles based on their state, position, or dynamic properties. Some of these selectors are activated by user actions. Pseudo-classes are written with the : symbol after the element name. Pseudo-class selectors are as follows:
+Pseudo-class selectors (`Pseudo-class Selectors`) Pseudo-class selectors let you set element styles based on their state, position, or dynamic properties. Some of these selectors are activated by user actions. Pseudo-classes are written with the : symbol after the element name. Pseudo-class selectors are as follows:
 
 `hover:` becomes active when the user moves the mouse pointer over an element.
 
@@ -193,12 +174,11 @@ Pseudo-class selectors (`Pseudo-class` `Selectors`) Pseudo-class selectors let y
 
 `:last-child`() is used to select the last child of an element.
 
-
 ---
 
 **Page 127**
 
-Attribute selector (`Attribute` `selector`) The attribute selector selects elements based on their attributes. For example, to select text form elements use the selector `]"input[type="text`, and to select elements that have the `href` attribute use the selector `[href]`.
+Attribute selector (`Attribute selector`) The attribute selector selects elements based on their attributes. For example, to select text form elements use the selector `]"input[type="text`, and to select elements that have the `href` attribute use the selector `[href]`.
 
 Working with types of `CSS` selectors (designing a menu)
 
@@ -219,6 +199,5 @@ Output
 1 Next to each selector, write its type as a `comment`. Put the comment content inside the /* */ symbols.
 
 2 What is the result of the `list-style` property with the value `none`?
-
 
 ---

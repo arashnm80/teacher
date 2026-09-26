@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title data-fa="چند فایل و JSON" data-en="Several files and JSON">چند فایل و JSON</title>
   <link rel="icon" href="../assets/favicon.svg">
-  <link rel="stylesheet" href="../assets/style.css?v=4">
+  <link rel="stylesheet" href="../assets/style.css?v=6">
 </head>
 <body data-root="../">
   <header class="top">
@@ -34,7 +34,7 @@
 <p>برنامه فایل را پیدا می‌کند و وارد بلوک <code>else</code> می‌شود.</p>
 <p>متن آلیس در سرزمین عجایب را واردکنید، پایتون متن فایل را به‌عنوان یک رشته طولانی درنظر می‌گیرد.</p>
 <p>برای تولید لیستی از تمام کلمات موجود در کتاب، از متد رشته‌ای استفاده کنیدکه به طور پیش‌فرض یک رشته را در هر جایی که فضای خالی پیدا کند، تقسیم می‌کند.</p>
-<p>برای شمارش تعداد این کلمات از )(<code>len</code> استفاده کنید.</p>
+<p>برای شمارش تعداد این کلمات از <code>len()</code> استفاده کنید.</p>
 <p><img alt="تصویر کتاب" src="../images/p273-02.png" /></p>
 <p><img alt="تصویر کتاب" src="../images/p273-01.png" /></p>
 <figure class="shot"><img alt="شکل 45" src="../images/p273-03.png" /><figcaption>شکل 45</figcaption></figure>
@@ -45,7 +45,7 @@
 <p>چندین فایل را پشت هم بخواند و روی همه آنها یک عملیات مشابه انجام دهد. پس لازم است یک تابع تعریف کنید و همچنین خطاها هم مدیریت و سپس نتایج ذخیره شوند.</p>
 <p>برای انجام این کارکتاب‌های بیشتری را برای تحلیل اضافه کنید.</p>
 <p>برای اینکه اجرای تحلیل روی چندین کتاب مختلف ساده‌تر و منظم‌تر شود بهتر است، بخش اصلی برنامه را به یک تابع به نام <code>count_word</code> منتقل کنید. اگر کدها را با برنامه قبل مقایسه کنید، متوجه می‌شوید تغییرات شامل اصلاح تو رفتگی و انتقال به بدنه تابع است.</p>
-<p>خط 2: تابع <code>def</code> <code>count_words</code>(<code>path</code>) یک ورودی به نام <code>path</code> می‌گیرد که مسیر یک فایل متنی است.</p>
+<p>خط 2: تابع <code>def count_words</code>(<code>path</code>) یک ورودی به نام <code>path</code> می‌گیرد که مسیر یک فایل متنی است.</p>
 <p>خط 11: این خط از کد نام فایل‌ها به‌صورت رشته‌های متنی (<code>String</code>) در یک لیست به نام<code>filenames</code> ذخیره می‌کند.</p>
 <div class="code-wrap" dir="ltr"><pre><code>]'filenames = ['alice.txt','moby_dick.txt','little_women.txt
 </code></pre></div>
@@ -57,7 +57,7 @@
 <figure class="shot"><img alt="شکل 46" src="../images/p274-02.png" /><figcaption>شکل 46</figcaption></figure>
 <hr />
 <p class="page-mark">صفحه ۲۶۹</p>
-<p>نادیده گرفتن خطا (<code>Failing</code> <code>Silently</code>) در مثال قبلی، به کاربر اطلاع داده می‌شد که یکی از فایل‌ها در دسترس نیست. با این وجود، در همه برنامه‌ها نیازی نیست تمام خطاهای رخ‌داده به کاربر نمایش داده شود.</p>
+<p>نادیده گرفتن خطا (<code>Failing Silently</code>) در مثال قبلی، به کاربر اطلاع داده می‌شد که یکی از فایل‌ها در دسترس نیست. با این وجود، در همه برنامه‌ها نیازی نیست تمام خطاهای رخ‌داده به کاربر نمایش داده شود.</p>
 <p><img alt="تصویر کتاب" src="../images/p275-01.png" /></p>
 <p>در این حالت، خطا رخ می‌دهد، اما هیچ‌گونه پیامی به کاربر نمایش داده نمی‌شود و روند اجرای برنامه بدون وقفه ادامه می‌یابد.</p>
 <p>برای پیاده‌سازی این حالت، از ساختار <code>try-except</code> استفاده می‌شود. با این تفاوت که در بخش <code>except</code> به‌صورت صریح به مفسر پایتون دستور داده می‌شود هیچ عملی انجام ندهد. پس دستور<code>print</code> بعد از <code>except</code> را حذف کنید تاپیام خطا نمایش داده نشود و به جای آن دستور <code>pass</code> را اضافه کنید.</p>
@@ -67,13 +67,13 @@
 <p><img alt="تصویر کتاب" src="../images/p275-03.png" /></p>
 <p>اگر فایل وجود نداشته باشد، خطا رخ می‌دهد، اما هیچ پیامی نمایش داده نمی‌شود، برنامه متوقف نمی‌شود و اجرای برنامه ادامه پیدا می‌کند.</p>
 <p><strong>شکل 48</strong></p>
-<h3 id="_1">فعالیت</h3>
+<aside class="callout activity"><h3 id="_1">فعالیت</h3>
 <p>همان‌طور که در برنامه تقسیم عدد بر صفر دیدید با یک پیام خطا کاربر از خطای تقسیم بر صفر آگاه می‌شد. این برنامه را به نحوی تغییر دهید که هرگاه مخرج یک تقسیم صفر بود بدون توقف برنامه، پیامی هم نمایش داده نشود.</p>
 <p>ذخیره‌سازی داده‌ها در بیشتربرنامه‌ها، مثل تنظیمات دلخواه کاربری برای یک بازی یا داده‌هایی برای نمایش نمودار، اطلاعاتی از کاربران دریافت می‌شود. صرف نظر از نوع آنها، اطلاعات وارد شده در ساختارهای داده‌ای مانند لیست‌ها و دیکشنری‌ها ذخیره می‌شوند. اما وقتی برنامه بسته می‌شود، این داده‌ها از بین می‌روند. برای حفظ اطلاعات برای دفعات بعد اجرای برنامه‌ها می‌توانید آنها را در فایل ذخیره کنید. یکی از ساده‌ترین روش‌ها برای این‌کار، استفاده از فایل‌های <code>JSON</code> است که کمک می‌کنند داده‌های پایتون به‌صورت متنی ذخیره و در اجرای بعدی برنامه دوباره خوانده‌شوند. این قالب مخصوص پایتون نیست و در زبان‌های برنامه‌نویسی دیگر نیز کاربرد دارد. در پایتون برای کار با <code>JSON</code> از ماژول<code>json</code> استفاده می‌شود.</p>
 <figure class="shot"><img alt="شکل 49" src="../images/p275-04.png" /><figcaption>شکل 49</figcaption></figure>
-<hr />
+</aside><hr />
 <p class="page-mark">صفحه ۲۷۰</p>
-<p><code>json.dump</code>() داده‌ها را به قالب <code>JSON</code> تبدیل می‌کند و <code>json.loads</code>() داده‌های ذخیره شده را دوباره به ساختارهای پایتون برمی‌گرداند.</p>
+<p><code>json.dump()</code> داده‌ها را به قالب <code>JSON</code> تبدیل می‌کند و <code>json.loads()</code> داده‌های ذخیره شده را دوباره به ساختارهای پایتون برمی‌گرداند.</p>
 <p>فایل‌های<code>JSON</code> به دلیل سادگی، خوانایی و کاربردگسترده یکی از روش‌های مهم ذخیره‌سازی داده‌ها در برنامه‌نویسی هستند.</p>
 <p>ذخیره یک لیست در فایل <code>JSON</code> توضیح کد:</p>
 <p>خط 2 ماژول <code>json</code> وارد برنامه شده‌است.</p>
@@ -91,30 +91,29 @@
 <p>توضیح کد:</p>
 <p>خط 2 ابتدا ماژول <code>json</code> وارد برنامه شده است.</p>
 <p>خط3 سپس محتوای فایل <code>JSON</code> را خوانده و به‌صورت یک رشته متنی ذخیره شده است.</p>
-<p>خط 4 از آنجا که فایل <code>JSON</code> در اصل یک فایل متنی با قالب مشخص است، با استفاده از متد <code>read_text</code>() خوانده شده است.</p>
+<p>خط 4 از آنجا که فایل <code>JSON</code> در اصل یک فایل متنی با قالب مشخص است، با استفاده از متد <code>read_text()</code> خوانده شده است.</p>
 <p>خط 5 در مرحله بعد با استفاده از تابع <code>loads</code>، این رشته متنی به ساختار داده‌ای مناسب در پایتون تبدیل شده است. در این برنامه، داده‌ها دوباره به‌صورت یک لیست از اعداد در حافظه ذخیره می‌شوند.</p>
 <p>پس از این مرحله، می‌توانید از داده‌ها مانند سایر لیست‌های پایتون استفاده کنید. به این ترتیب اطلاعاتی که قبلاً در فایل <code>JSON</code> ذخیره شده بودند، در اجرای بعدی برنامه دوباره قابل استفاده خواهند بود.</p>
 <p>مثال: برنامه‌ای بنویسید که مشخصات فنی یک گوشی هوشمند (شامل برند، مدل، مقدار رم و وضعیت گارانتی) را در قالب یک دیکشنری تعریف کند. سپس این برنامه باید:</p>
 <p>با استفاده از کتابخانه <code>json</code> و کلاس <code>Path</code> از کتابخانه <code>pathlib</code> این دیکشنری را در فایلی به‌نام</p>
-<div class="code-wrap" dir="ltr"><pre><code>mobile_specs.json ذخیره کند.
-</code></pre></div>
+<p><bdi dir="ltr">mobile_specs.json</bdi> ذخیره کند.</p>
 <p>در مرحله بعد، فایل را باز کرده، محتوا را خوانده و فقط «مدل» و «مقدار رم» گوشی را در خروجی چاپ کند.</p>
-<h3 id="_2">فعالیت</h3>
+<aside class="callout activity"><h3 id="_2">فعالیت</h3>
 <p>خطوط کد برنامه را با کمک هنرآموز محترم خود توضیح دهید.</p>
 <p><img alt="تصویر کتاب" src="../images/p277-01.png" /></p>
 <p><img alt="تصویر کتاب" src="../images/p277-02.png" /></p>
-<hr />
+</aside><hr />
 <p class="page-mark">صفحه ۲۷۲</p>
-<h3 id="_3">فعالیت</h3>
+<aside class="callout activity"><h3 id="_3">فعالیت</h3>
 <p>در کد نوشته شده قرار است اطلاعات آب‌وهوای یک شهر را در فایل ذخیره و سپس آن را بازخوانی کند.</p>
 <p>بخش‌هایی از کد که با علامت <strong><em>_</em></strong>__ مشخص شده است را با دستورات صحیح پر کنید.</p>
 <p><img alt="تصویر کتاب" src="../images/p278-01.png" /></p>
-<hr /></article><article class="lesson" lang="en" dir="ltr" data-lang-block="en" hidden><p class="page-mark">Page 267</p>
+</aside><hr /></article><article class="lesson" lang="en" dir="ltr" data-lang-block="en" hidden><p class="page-mark">Page 267</p>
 <p>Now if you create the file <code>alice.txt</code> and place it in the appropriate folder, this time the <code>try</code> block will run.</p>
 <p>The program finds the file and enters the <code>else</code> block.</p>
 <p>Enter the text of Alice in Wonderland; Python treats the file text as one long string.</p>
 <p>To produce a list of all the words in the book, use the string method that by default splits a string wherever it finds a space.</p>
-<p>To count the number of these words, use <code>len</code>().</p>
+<p>To count the number of these words, use <code>len()</code>.</p>
 <p><img alt="Book image" src="../images/p273-02.png" /></p>
 <p><img alt="Book image" src="../images/p273-01.png" /></p>
 <figure class="shot"><img alt="Figure 45" src="../images/p273-03.png" /><figcaption>Figure 45</figcaption></figure>
@@ -125,7 +124,7 @@
 <p>read several files one after another and perform a similar operation on all of them. So you need to define a function, and errors must also be managed and then the results stored.</p>
 <p>To do this, add more books for analysis.</p>
 <p>To make running the analysis on several different books simpler and more organized, it is better to move the main part of the program into a function named <code>count_word</code>. If you compare the code with the previous program, you notice that the changes include fixing indentation and moving it into the body of the function.</p>
-<p>Line 2: The function <code>def</code> <code>count_words</code>(<code>path</code>) takes one input named <code>path</code>, which is the path of a text file.</p>
+<p>Line 2: The function <code>def count_words</code>(<code>path</code>) takes one input named <code>path</code>, which is the path of a text file.</p>
 <p>Line 11: This line of code stores the file names as text strings (<code>String</code>) in a list named <code>filenames</code>.</p>
 <div class="code-wrap" dir="ltr"><pre><code>]'filenames = ['alice.txt','moby_dick.txt','little_women.txt
 </code></pre></div>
@@ -147,13 +146,13 @@
 <p><img alt="Book image" src="../images/p275-03.png" /></p>
 <p>If the file does not exist, an error occurs, but no message is displayed, the program does not stop, and execution of the program continues.</p>
 <p><strong>Figure 48</strong></p>
-<h3 id="activity">Activity</h3>
+<aside class="callout activity"><h3 id="activity">Activity</h3>
 <p>As you saw in the division-by-zero program, an error message informed the user of the division-by-zero error. Change this program so that whenever the denominator of a division is zero, without stopping the program, no message is displayed either.</p>
 <p>Storing data In most programs, such as a user’s preferred settings for a game or data for displaying a chart, information is received from users. Regardless of their type, the entered information is stored in data structures such as lists and dictionaries. But when the program is closed, this data is lost. To keep the information for later runs of the programs, you can store it in a file. One of the simplest methods for this is to use <code>JSON</code> files, which help store Python data as text and read it again in the next run of the program. This format is not specific to Python and is also used in other programming languages. In Python, the <code>json</code> module is used to work with <code>JSON</code>.</p>
 <figure class="shot"><img alt="Figure 49" src="../images/p275-04.png" /><figcaption>Figure 49</figcaption></figure>
-<hr />
+</aside><hr />
 <p class="page-mark">Page 270</p>
-<p><code>json.dump</code>() converts data to the <code>JSON</code> format, and <code>json.loads</code>() turns the stored data back into Python structures.</p>
+<p><code>json.dump()</code> converts data to the <code>JSON</code> format, and <code>json.loads()</code> turns the stored data back into Python structures.</p>
 <p><code>JSON</code> files, because of their simplicity, readability, and wide use, are one of the important methods of storing data in programming.</p>
 <p>Storing a list in a <code>JSON</code> file Code explanation:</p>
 <p>Line 2 The <code>json</code> module has been imported into the program.</p>
@@ -171,25 +170,24 @@
 <p>Code explanation:</p>
 <p>Line 2 First the <code>json</code> module has been imported into the program.</p>
 <p>Line 3 Then the contents of the <code>JSON</code> file have been read and stored as a text string.</p>
-<p>Line 4 Since a <code>JSON</code> file is essentially a text file with a specific format, it has been read using the <code>read_text</code>() method.</p>
+<p>Line 4 Since a <code>JSON</code> file is essentially a text file with a specific format, it has been read using the <code>read_text()</code> method.</p>
 <p>Line 5 Next, using the <code>loads</code> function, this text string has been converted to an appropriate data structure in Python. In this program, the data is stored in memory again as a list of numbers.</p>
 <p>After this step, you can use the data like other Python lists. In this way, information that was previously stored in a <code>JSON</code> file will be usable again in the next run of the program.</p>
 <p>Example: Write a program that defines the technical specifications of a smartphone (including brand, model, amount of RAM, and warranty status) in the form of a dictionary. Then this program must:</p>
 <p>using the <code>json</code> library and the <code>Path</code> class from the <code>pathlib</code> library, store this dictionary in a file named</p>
-<div class="code-wrap" dir="ltr"><pre><code>mobile_specs.json ذخیره کند.
-</code></pre></div>
+<p>mobile_specs.json .</p>
 <p>Next, open the file, read the content, and print only the “model” and “amount of RAM” of the phone in the output.</p>
-<h3 id="activity_1">Activity</h3>
+<aside class="callout activity"><h3 id="activity_1">Activity</h3>
 <p>Explain the lines of the program code with the help of your teacher.</p>
 <p><img alt="Book image" src="../images/p277-01.png" /></p>
 <p><img alt="Book image" src="../images/p277-02.png" /></p>
-<hr />
+</aside><hr />
 <p class="page-mark">Page 272</p>
-<h3 id="activity_2">Activity</h3>
+<aside class="callout activity"><h3 id="activity_2">Activity</h3>
 <p>In the written code, the weather information of a city is to be stored in a file and then read back.</p>
 <p>Fill in the parts of the code marked with <strong><em>_</em></strong>__ with the correct statements.</p>
 <p><img alt="Book image" src="../images/p278-01.png" /></p>
-<hr /></article>
+</aside><hr /></article>
       <aside class="extra">
         <h2 data-fa="تمرین این بخش" data-en="Exercises for this section">تمرین این بخش</h2>
         <p class="extra-note" data-fa="این تمرین‌ها و پیوندها اضافه بر متن کتاب‌اند." data-en="These exercises and links are in addition to the book.">این تمرین‌ها و پیوندها اضافه بر متن کتاب‌اند.</p>
@@ -199,7 +197,7 @@
     <nav class="pager"><a rel="prev" class="prev" href="p4-errors.html"><span class="pager-word" data-fa="قبلی" data-en="Previous">قبلی</span><span class="pager-name" data-fa="پیمایش فایل و مدیریت خطا" data-en="Walking a file and handling errors">پیمایش فایل و مدیریت خطا</span></a><a rel="next" class="next" href="p4-assess-files.html"><span class="pager-word" data-fa="بعدی" data-en="Next">بعدی</span><span class="pager-name" data-fa="ارزشیابی کار با فایل" data-en="Files assessment">ارزشیابی کار با فایل</span></a></nav>
     </div>
   </div>
-  <script src="../assets/search-index.js?v=4"></script>
-  <script src="../assets/app.js?v=4"></script>
+  <script src="../assets/search-index.js?v=6"></script>
+  <script src="../assets/app.js?v=6"></script>
 </body>
 </html>

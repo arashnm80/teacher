@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title data-fa="مدل شهر و پنل ادمین" data-en="The city model and the admin">مدل شهر و پنل ادمین</title>
   <link rel="icon" href="../assets/favicon.svg">
-  <link rel="stylesheet" href="../assets/style.css?v=4">
+  <link rel="stylesheet" href="../assets/style.css?v=6">
 </head>
 <body data-root="../">
   <header class="top">
@@ -54,11 +54,11 @@
 <p>جهت پیاده‌سازی این قابلیت، نیاز است، اطلاعات شهرها را به همراه طول و عرض جغرافیایی هر شهر، در پایگاه داده ذخیره کنید، سپس وقتی کاربر وارد سایت شد، لیستی از شهرها را مشاهده کرده و با کلیک روی نام شهر، دمای شهر موردنظر خود را ببیند.</p>
 <p>برای پیاده‌سازی این قابلیت باید یک جدول (<code>table</code>) در پایگاه‌داده ایجاد کنید.</p>
 <p>هر <code>app</code> یک فایل با نام <code>models.py</code> دارد. جنگو برای ساخت جداول از مدل‌ها (<code>model</code>) استفاده می‌کند. هر مدل در جنگو معادل یک جدول، با همان نام، در پایگاه‌داده است. در اولین قدم باید درون فایل <code>models.py</code> کلاس لازم برای تعریف جدول و ستون‌های جدول ایجاد شود.</p>
-<p>فایل <code>models.py</code> در <code>weather</code> <code>app</code> را باز کنید. سپس محتوای این فایل را همانند شکل 27 تغییر دهید.</p>
+<p>فایل <code>models.py</code> در <code>weather app</code> را باز کنید. سپس محتوای این فایل را همانند شکل 27 تغییر دهید.</p>
 <p><img alt="شکل 27 ساخت مدل City" src="../images/p302-01.png" /></p>
 <p>شکل 27 ساخت مدل <code>City</code></p>
 <h3 id="_8">توضیحات کدها:</h3>
-<p>خط 1: ماژول <code>models</code> از ماژول <code>django.db</code>، وارد (<code>import</code>) شده است. در واقع با این خط، ابزارها و کلاس‌های لازم برای تعریف مدل‌های پایگاه‌داده (<code>Database</code> <code>Models</code>) وارد (<code>import</code>) می‌شوند.</p>
+<p>خط 1: ماژول <code>models</code> از ماژول <code>django.db</code>، وارد (<code>import</code>) شده است. در واقع با این خط، ابزارها و کلاس‌های لازم برای تعریف مدل‌های پایگاه‌داده (<code>Database Models</code>) وارد (<code>import</code>) می‌شوند.</p>
 <p>خط 3: کلاس <code>City</code> جهت ساخت جدول شهرها با ارث‌بری از <code>Model</code> ایجاد شده است. <code>Model</code> کلاس پایه جنگو برای ساخت مدل‌ها (جدول‌های پایگاه‌داده) است و امکانات لازم برای ارتباط با پایگاه‌داده را فراهم می‌کند.</p>
 <p>خط 4: این دستور یک فیلد برای نگهداری نام شهر به‌صورت متن، در جدول می‌سازد که حداکثر 50 کاراکتر طول دارد. برای <code>CharField</code> تعیین‌کردن <code>max_length</code> اجباری است.</p>
 <p>خط 5: از <code>FloatField</code> جهت نگهداری اعداد اعشاری استفاده شده است. عرض جغرافیایی (<code>Latitude</code>) و طول جغرافیایی (<code>Longitude</code>) هر دو عدد اعشاری هستند.</p>
@@ -68,27 +68,26 @@
 <p>در ترمینال دستور <code>makemigrations</code> را همانند شکل 28 اجرا کنید.</p>
 <p><img alt="شکل 28 اجرای دستور makemigrations" src="../images/p303-01.png" /></p>
 <p>شکل 28 اجرای دستور <code>makemigrations</code></p>
-<p>وقتی <code>makemigrations</code> را اجرا می‌کنید، درون <code>weather</code> <code>app</code>، فایلی با نام <code>0001_initial.py</code> در پوشه <code>migrations</code> ایجاد می‌شود. این فایل کدهای لازم جهت تبدیل مدل به جدول واقعی را آماده‌سازی می‌کند.</p>
+<p>وقتی <code>makemigrations</code> را اجرا می‌کنید، درون <code>weather app</code>، فایلی با نام <code>0001_initial.py</code> در پوشه <code>migrations</code> ایجاد می‌شود. این فایل کدهای لازم جهت تبدیل مدل به جدول واقعی را آماده‌سازی می‌کند.</p>
 <p>در مرحله بعد دستور <code>migrate</code> را همانند شکل 29 در ترمینال اجرا کنید.</p>
 <p><img alt="شکل 29 اجرای دستور migrate" src="../images/p303-02.png" /></p>
 <p>شکل 29 اجرای دستور <code>migrate</code></p>
 <hr />
 <p class="page-mark">صفحه ۲۹۸</p>
 <p>پس از اجرای <code>migrate</code>، جدول‌های پیش‌فرض جنگو و جدول <code>city</code> در پایگاه‌داده <code>db.sqlite3</code> ساخته می‌شوند.</p>
-<p>مشاهده جداول پایگاه‌داده برای مشاهده ساختار و محتوای جداول درون پایگاه‌داده، می‌توانید افزونه <code>SQLite</code> <code>Viewer</code> را به‌عنوان یک ابزار کمکی نصب کنید. برای نصب این افزونه مطمئن شوید که اینترنت متصل باشد (شکل 30).</p>
+<p>مشاهده جداول پایگاه‌داده برای مشاهده ساختار و محتوای جداول درون پایگاه‌داده، می‌توانید افزونه <code>SQLite Viewer</code> را به‌عنوان یک ابزار کمکی نصب کنید. برای نصب این افزونه مطمئن شوید که اینترنت متصل باشد (شکل 30).</p>
 <p><img alt="شکل 30 جست‌وجوی افزونه SQLite Viewer" src="../images/p304-01.png" /></p>
-<p>شکل 30 جست‌وجوی افزونه <code>SQLite</code> <code>Viewer</code></p>
+<p>شکل 30 جست‌وجوی افزونه <code>SQLite Viewer</code></p>
 <p>پس از نصب افزونه ذکر شده، با کلیک بر روی فایل <code>db.sqlite3</code> جدول‌های پیش‌فرض جنگو و جدول <code>city</code> را مشاهده خواهید کرد (شکل 31).</p>
 <p><img alt="شکل 31 جداول پایگاه‌داده" src="../images/p304-02.png" /></p>
 <p>شکل 31 جداول پایگاه‌داده</p>
 <hr />
 <p class="page-mark">صفحه ۲۹۹</p>
 <p>همان‌طور‌که در‌شکل 31 مشخص است، جدول <code>city</code> با پیشوند <code>weather</code> ساخته شده است. با کلیک روی جدول <code>weather_city</code>، لیست فیلدها در سمت راست نمایش داده می‌شود. در حال حاضر هیچ رکوردی در جدول <code>city</code> وجود ندارد.</p>
-<p>با افزونه <code>SQLite</code> <code>Viewer</code> فقط می‌توانید محتوا و ساختار جداول را مشاهده کنید و امکان ذخیره اطلاعات وجود ندارد.</p>
+<p>با افزونه <code>SQLite Viewer</code> فقط می‌توانید محتوا و ساختار جداول را مشاهده کنید و امکان ذخیره اطلاعات وجود ندارد.</p>
 <p>برای تغییر محتوای جدول <code>city</code> و یا افزودن نام شهرهایی جدید به جدول لازم است وارد پنل ادمین جنگو شوید. البته هنوز نمی‌توانید از طریق پنل <code>admin</code> داده‌های مربوط به شهر‌ها را وارد دیتابیس کنید، چرا که هنوز کاربر <code>admin</code> تعریف نشده است؛ بنابراین در مرحله بعد نوبت تعریف کاربر <code>admin</code> است.</p>
 <p>پنل مدیریت جنگو برای ورود به پنل ادمین، نیاز به نام کاربری و رمز عبور است. دستور زیر را در ترمینال وارد کنید:</p>
-<div class="code-wrap" dir="ltr"><pre><code>python manage.py createsuperuser
-</code></pre></div>
+<p><bdi dir="ltr">python</bdi> <bdi dir="ltr">manage.py</bdi> <bdi dir="ltr">createsuperuser</bdi></p>
 <p>جنگو از شما نام کاربری درخواست می‌کند (شکل 32).</p>
 <p><img alt="شکل 32 اجرای دستور createsuperuser" src="../images/p305-01.png" /></p>
 <p>شکل 32 اجرای دستور <code>createsuperuser</code></p>
@@ -98,23 +97,22 @@
 <p>شکل 33 ایجاد موفق کاربر ادمین</p>
 <hr />
 <p class="page-mark">صفحه ۳۰۰</p>
-<h3 id="_9">نکته</h3>
+<aside class="callout note"><h3 id="_9">نکته</h3>
 <p>می‌توانید ایمیل را خالی وارد کنید، همچنین اگر رمز عبور ساده‌ای وارد کنید، همانند شکل 34 به شما اخطار خواهد داد.</p>
 <p><img alt="شکل 34 اخطار ساده‌بودن رمز ادمین" src="../images/p306-01.png" /></p>
 <p>شکل 34 اخطار ساده‌بودن رمز ادمین</p>
-<p>پس از ایجاد کاربر ادمین، با افزونه <code>SQLite</code> <code>Viewer</code> می‌توانید، کاربر ایجاد شده را در جدول <code>auth_user</code> همانند شکل 35 مشاهده کنید.</p>
+<p>پس از ایجاد کاربر ادمین، با افزونه <code>SQLite Viewer</code> می‌توانید، کاربر ایجاد شده را در جدول <code>auth_user</code> همانند شکل 35 مشاهده کنید.</p>
 <p><img alt="شکل 35 نمایش کاربر admin ایجاد شده در دیتابیس" src="../images/p306-02.png" /></p>
 <p>شکل 35 نمایش کاربر <code>admin</code> ایجاد شده در دیتابیس</p>
-<hr />
+</aside><hr />
 <p class="page-mark">صفحه ۳۰۱</p>
 <p>اکنون جهت ورود به پنل مدیریت ادمین جنگو، سرور جنگو را روشن کرده و صفحه ادمین را با تایپ آدرس زیر در نوار آدرس مرورگر، باز کنید:</p>
-<div class="code-wrap" dir="ltr"><pre><code>http://127.0.0.1:8000/admin/
-</code></pre></div>
-<p>سپس با نام کاربری و رمز عبوری که ساخته‌اید، وارد شوید.</p>
+<p><code>http://127.0.0.1:8000/admin/</code>
+سپس با نام کاربری و رمز عبوری که ساخته‌اید، وارد شوید.</p>
 <p>پنل ادمین همانند شکل 36 نمایش داده خواهد شد.</p>
 <p><img alt="شکل 36 ورود موفق به پنل ادمین جنگو" src="../images/p307-01.png" /></p>
 <p>شکل 36 ورود موفق به پنل ادمین جنگو</p>
-<p>در قسمت <code>1Authentication</code> <code>and</code> <code>Authorization</code> با استفاده از <code>Users</code> می‌توان کاربران سایت را مشاهده و مدیریت کرد.</p>
+<p>در قسمت <code>1Authentication and Authorization</code> با استفاده از <code>Users</code> می‌توان کاربران سایت را مشاهده و مدیریت کرد.</p>
 <p>با استفاده از دکمه <code>add</code> می‌توان کاربر جدید ایجاد کرد. برای ایجاد کاربر جدید، لازم است فیلدهای نام کاربری، رمز عبور و تکرار رمز عبور را وارد کرده و دکمه <code>save</code> را بزنید (شکل 37).</p>
 <p><img alt="شکل 37 فرم ساخت کاربر جدید" src="../images/p307-02.png" /></p>
 <p>شکل 37 فرم ساخت کاربر جدید</p>
@@ -127,12 +125,12 @@
 <p>برای مشاهده لیست کاربران ایجاد شده، روی <code>Users</code> کلیک کنید (شکل 39).</p>
 <p><img alt="شکل 39 مشاهده لیست کاربران" src="../images/p308-02.png" /></p>
 <p>شکل 39 مشاهده لیست کاربران</p>
-<h3 id="_10">فعالیت</h3>
+<aside class="callout activity"><h3 id="_10">فعالیت</h3>
 <p>با کمک هنرآموز خود، کاربر دیگری ایجاد کنید. سپس با کاربرهای مختلف در پنل ادمین <code>login</code> کرده و تفاوت کاربرهای مختلف را بررسی کنید.</p>
 <p>افزودن جدول شهر به پنل ادمین اگر دقت کرده باشد در شکل 36، در پنل ادمین جدول شهرها مشاهده نشد، با انجام مراحلی که در ادامه آمده است، می‌توانید جدول <code>City</code> را به پنل ادمین اضافه کنید.</p>
-<hr />
+</aside><hr />
 <p class="page-mark">صفحه ۳۰۳</p>
-<p>هر <code>app</code> در جنگو یک فایل <code>admin.py</code> دارد. فایل <code>admin.py</code> در <code>weather</code> <code>app</code> را باز کنید و همانند شکل 40، مدل <code>City</code> را به ادمین جنگو معرفی کنید.</p>
+<p>هر <code>app</code> در جنگو یک فایل <code>admin.py</code> دارد. فایل <code>admin.py</code> در <code>weather app</code> را باز کنید و همانند شکل 40، مدل <code>City</code> را به ادمین جنگو معرفی کنید.</p>
 <p><img alt="شکل 40 معرفی مدل City به پنل ادمین جنگو" src="../images/p309-01.png" /></p>
 <p>شکل 40 معرفی مدل <code>City</code> به پنل ادمین جنگو</p>
 <h3 id="_11">توضیحات کدها:</h3>
@@ -144,11 +142,11 @@
 <p>شکل 41 اضافه شدن <code>City</code> به پنل ادمین</p>
 <hr />
 <p class="page-mark">صفحه ۳۰۴</p>
-<p>وارد کردن اطلاعات شهرها در پنل ادمین، روی دکمه <code>Add</code> (مقابل <code>Citys</code>) کلیک کنید، فرم ثبت شهر (<code>Add</code> <code>city</code>) را مشاهده خواهید کرد (شکل 42) .</p>
+<p>وارد کردن اطلاعات شهرها در پنل ادمین، روی دکمه <code>Add</code> (مقابل <code>Citys</code>) کلیک کنید، فرم ثبت شهر (<code>Add city</code>) را مشاهده خواهید کرد (شکل 42) .</p>
 <p><img alt="شکل 42 فرم Add city" src="../images/p310-01.png" /></p>
-<p>شکل 42 فرم <code>Add</code> <code>city</code></p>
-<h3 id="_12">فعالیت</h3>
-<p>با استفاده از اطلاعات جدول 2، چند شهر را با فرم <code>Add</code> <code>city</code> در پایگاه داده ذخیره کنید.</p>
+<p>شکل 42 فرم <code>Add city</code></p>
+<aside class="callout activity"><h3 id="_12">فعالیت</h3>
+<p>با استفاده از اطلاعات جدول 2، چند شهر را با فرم <code>Add city</code> در پایگاه داده ذخیره کنید.</p>
 <p>جدول 2 طول و عرض جغرافیایی چند شهر</p>
 <p>نام شهر</p>
 <p>عرض جغرافیایی (<code>lat</code>)</p>
@@ -171,7 +169,7 @@
 <p>46.2887</p>
 <p>سبزوار36.2152</p>
 <p>.667857</p>
-<hr /></article><article class="lesson" lang="en" dir="ltr" data-lang-block="en" hidden><h1 id="developing-a-web-application">Developing a web application</h1>
+</aside><hr /></article><article class="lesson" lang="en" dir="ltr" data-lang-block="en" hidden><h1 id="developing-a-web-application">Developing a web application</h1>
 <hr />
 <p class="page-mark">Page 295</p>
 <h2 id="learning-unit-2">Learning unit 2</h2>
@@ -196,11 +194,11 @@
 <p>To implement this capability, you need to store city information together with the latitude and longitude of each city in the database, then when the user enters the site, they see a list of cities and by clicking on the city name see the temperature of their desired city.</p>
 <p>To implement this capability you must create a table (<code>table</code>) in the database.</p>
 <p>Each <code>app</code> has a file named <code>models.py</code>. Django uses models (<code>model</code>) to build tables. Each model in Django corresponds to a table with the same name in the database. As a first step, inside the <code>models.py</code> file the class needed to define the table and the table columns must be created.</p>
-<p>Open the <code>models.py</code> file in the <code>weather</code> <code>app</code>. Then change the content of this file as shown in Figure 27.</p>
+<p>Open the <code>models.py</code> file in the <code>weather app</code>. Then change the content of this file as shown in Figure 27.</p>
 <p><img alt="Figure 27 creating the City model" src="../images/p302-01.png" /></p>
 <p>Figure 27 creating the <code>City</code> model</p>
 <h3 id="code-notes">Code notes:</h3>
-<p>Line 1: the <code>models</code> module has been imported from the <code>django.db</code> module. In fact with this line, the tools and classes needed to define database models (<code>Database</code> <code>Models</code>) are imported.</p>
+<p>Line 1: the <code>models</code> module has been imported from the <code>django.db</code> module. In fact with this line, the tools and classes needed to define database models (<code>Database Models</code>) are imported.</p>
 <p>Line 3: the <code>City</code> class has been created to build the cities table by inheriting from <code>Model</code>. <code>Model</code> is Django’s base class for building models (database tables) and provides the facilities needed to communicate with the database.</p>
 <p>Line 4: this command builds a field in the table for holding the city name as text, with a maximum length of 50 characters. For <code>CharField</code>, setting <code>max_length</code> is required.</p>
 <p>Line 5: <code>FloatField</code> has been used to hold decimal numbers. Geographic latitude (<code>Latitude</code>) and geographic longitude (<code>Longitude</code>) are both decimal numbers.</p>
@@ -210,27 +208,26 @@
 <p>In the terminal run the <code>makemigrations</code> command as shown in Figure 28.</p>
 <p><img alt="Figure 28 running the makemigrations command" src="../images/p303-01.png" /></p>
 <p>Figure 28 running the <code>makemigrations</code> command</p>
-<p>When you run <code>makemigrations</code>, inside the <code>weather</code> <code>app</code>, a file named <code>0001_initial.py</code> is created in the <code>migrations</code> folder. This file prepares the code needed to turn the model into a real table.</p>
+<p>When you run <code>makemigrations</code>, inside the <code>weather app</code>, a file named <code>0001_initial.py</code> is created in the <code>migrations</code> folder. This file prepares the code needed to turn the model into a real table.</p>
 <p>In the next step run the <code>migrate</code> command in the terminal as shown in Figure 29.</p>
 <p><img alt="Figure 29 running the migrate command" src="../images/p303-02.png" /></p>
 <p>Figure 29 running the <code>migrate</code> command</p>
 <hr />
 <p class="page-mark">Page 298</p>
 <p>After running <code>migrate</code>, Django’s default tables and the <code>city</code> table are created in the <code>db.sqlite3</code> database.</p>
-<p>Viewing database tables: to view the structure and content of the tables inside the database, you can install the <code>SQLite</code> <code>Viewer</code> extension as a helper tool. To install this extension make sure the internet is connected (Figure 30).</p>
+<p>Viewing database tables: to view the structure and content of the tables inside the database, you can install the <code>SQLite Viewer</code> extension as a helper tool. To install this extension make sure the internet is connected (Figure 30).</p>
 <p><img alt="Figure 30 searching for the SQLite Viewer extension" src="../images/p304-01.png" /></p>
-<p>Figure 30 searching for the <code>SQLite</code> <code>Viewer</code> extension</p>
+<p>Figure 30 searching for the <code>SQLite Viewer</code> extension</p>
 <p>After installing the mentioned extension, by clicking on the <code>db.sqlite3</code> file you will see Django’s default tables and the <code>city</code> table (Figure 31).</p>
 <p><img alt="Figure 31 database tables" src="../images/p304-02.png" /></p>
 <p>Figure 31 database tables</p>
 <hr />
 <p class="page-mark">Page 299</p>
 <p>As is clear in Figure 31, the <code>city</code> table has been created with the <code>weather</code> prefix. By clicking on the <code>weather_city</code> table, the list of fields is displayed on the right. At present there is no record in the <code>city</code> table.</p>
-<p>With the <code>SQLite</code> <code>Viewer</code> extension you can only view the content and structure of the tables and there is no possibility of storing information.</p>
+<p>With the <code>SQLite Viewer</code> extension you can only view the content and structure of the tables and there is no possibility of storing information.</p>
 <p>To change the content of the <code>city</code> table or to add new city names to the table, you need to enter Django’s admin panel. Of course you still cannot enter city-related data into the database through the <code>admin</code> panel, because the <code>admin</code> user has not been defined yet; so in the next step it is time to define the <code>admin</code> user.</p>
 <p>Django management panel: to enter the admin panel, a username and password are needed. Enter the following command in the terminal:</p>
-<div class="code-wrap" dir="ltr"><pre><code>python manage.py createsuperuser
-</code></pre></div>
+<p>python manage.py createsuperuser</p>
 <p>Django asks you for a username (Figure 32).</p>
 <p><img alt="Figure 32 running the createsuperuser command" src="../images/p305-01.png" /></p>
 <p>Figure 32 running the <code>createsuperuser</code> command</p>
@@ -240,23 +237,22 @@
 <p>Figure 33 successfully creating the admin user</p>
 <hr />
 <p class="page-mark">Page 300</p>
-<h3 id="note">Note</h3>
+<aside class="callout note"><h3 id="note">Note</h3>
 <p>You can leave the email empty; also if you enter a simple password, as in Figure 34 it will warn you.</p>
 <p><img alt="Figure 34 warning that the admin password is simple" src="../images/p306-01.png" /></p>
 <p>Figure 34 warning that the admin password is simple</p>
-<p>After creating the admin user, with the <code>SQLite</code> <code>Viewer</code> extension you can see the created user in the <code>auth_user</code> table as in Figure 35.</p>
+<p>After creating the admin user, with the <code>SQLite Viewer</code> extension you can see the created user in the <code>auth_user</code> table as in Figure 35.</p>
 <p><img alt="Figure 35 displaying the created admin user in the database" src="../images/p306-02.png" /></p>
 <p>Figure 35 displaying the created <code>admin</code> user in the database</p>
-<hr />
+</aside><hr />
 <p class="page-mark">Page 301</p>
 <p>Now to enter Django’s admin management panel, turn on the Django server and open the admin page by typing the following address in the browser’s address bar:</p>
-<div class="code-wrap" dir="ltr"><pre><code>http://127.0.0.1:8000/admin/
-</code></pre></div>
-<p>Then log in with the username and password you created.</p>
+<p><code>http://127.0.0.1:8000/admin/</code>
+Then log in with the username and password you created.</p>
 <p>The admin panel will be displayed as in Figure 36.</p>
 <p><img alt="Figure 36 successfully logging into the Django admin panel" src="../images/p307-01.png" /></p>
 <p>Figure 36 successfully logging into the Django admin panel</p>
-<p>In the <code>1Authentication</code> <code>and</code> <code>Authorization</code> section, using <code>Users</code> you can view and manage the site’s users.</p>
+<p>In the <code>1Authentication and Authorization</code> section, using <code>Users</code> you can view and manage the site’s users.</p>
 <p>Using the <code>add</code> button you can create a new user. To create a new user, you need to enter the username, password, and password confirmation fields and press the <code>save</code> button (Figure 37).</p>
 <p><img alt="Figure 37 the form for creating a new user" src="../images/p307-02.png" /></p>
 <p>Figure 37 the form for creating a new user</p>
@@ -269,12 +265,12 @@
 <p>To view the list of created users, click on <code>Users</code> (Figure 39).</p>
 <p><img alt="Figure 39 viewing the list of users" src="../images/p308-02.png" /></p>
 <p>Figure 39 viewing the list of users</p>
-<h3 id="activity">Activity</h3>
+<aside class="callout activity"><h3 id="activity">Activity</h3>
 <p>With your instructor’s help, create another user. Then <code>login</code> to the admin panel with different users and examine the differences between different users.</p>
 <p>Adding the city table to the admin panel: if you have paid attention, in Figure 36 the cities table was not seen in the admin panel. By carrying out the steps that follow, you can add the <code>City</code> table to the admin panel.</p>
-<hr />
+</aside><hr />
 <p class="page-mark">Page 303</p>
-<p>Each <code>app</code> in Django has an <code>admin.py</code> file. Open the <code>admin.py</code> file in the <code>weather</code> <code>app</code> and introduce the <code>City</code> model to Django admin as shown in Figure 40.</p>
+<p>Each <code>app</code> in Django has an <code>admin.py</code> file. Open the <code>admin.py</code> file in the <code>weather app</code> and introduce the <code>City</code> model to Django admin as shown in Figure 40.</p>
 <p><img alt="Figure 40 introducing the City model to the Django admin panel" src="../images/p309-01.png" /></p>
 <p>Figure 40 introducing the <code>City</code> model to the Django admin panel</p>
 <h3 id="code-notes_1">Code notes:</h3>
@@ -286,16 +282,12 @@
 <p>Figure 41 <code>City</code> being added to the admin panel</p>
 <hr />
 <p class="page-mark">Page 304</p>
-<p>Entering city information: in the admin panel, click the <code>Add</code> button (next to <code>Citys</code>); you will see the city registration form (<code>Add</code> <code>city</code>) (Figure 42).</p>
+<p>Entering city information: in the admin panel, click the <code>Add</code> button (next to <code>Citys</code>); you will see the city registration form (<code>Add city</code>) (Figure 42).</p>
 <p><img alt="Figure 42 the Add city form" src="../images/p310-01.png" /></p>
-<p>Figure 42 the <code>Add</code> <code>city</code> form</p>
-<h3 id="activity_1">Activity</h3>
-<p>Using the information in Table 2, store a few cities in the database with the <code>Add</code> <code>city</code> form.</p>
-<p>Table 2 latitude and longitude of a few cities</p>
-<p>City name</p>
-<p>Latitude (<code>lat</code>)</p>
-<p>Longitude (<code>lon</code>)</p>
-<p>Minab27.1478</p>
+<p>Figure 42 the <code>Add city</code> form</p>
+<aside class="callout activity"><h3 id="activity_1">Activity</h3>
+<p>Using the information in Table 2, store a few cities in the database with the <code>Add city</code> form.</p>
+<p>Table 2 latitude and longitude of a few cities City name Latitude (<code>lat</code>) Longitude (<code>lon</code>) Minab27.1478</p>
 <p>57.0738</p>
 <p>Hamedan.798137</p>
 <p>.514648</p>
@@ -313,7 +305,7 @@
 <p>46.2887</p>
 <p>Sabzevar36.2152</p>
 <p>.667857</p>
-<hr /></article>
+</aside><hr /></article>
       <aside class="extra">
         <h2 data-fa="تمرین این بخش" data-en="Exercises for this section">تمرین این بخش</h2>
         <p class="extra-note" data-fa="این تمرین‌ها و پیوندها اضافه بر متن کتاب‌اند." data-en="These exercises and links are in addition to the book.">این تمرین‌ها و پیوندها اضافه بر متن کتاب‌اند.</p>
@@ -323,7 +315,7 @@
     <nav class="pager"><a rel="prev" class="prev" href="p5-assess-create.html"><span class="pager-word" data-fa="قبلی" data-en="Previous">قبلی</span><span class="pager-name" data-fa="ارزشیابی ایجاد وب‌اپلیکیشن" data-en="Creating-the-app assessment">ارزشیابی ایجاد وب‌اپلیکیشن</span></a><a rel="next" class="next" href="p5-list.html"><span class="pager-word" data-fa="بعدی" data-en="Next">بعدی</span><span class="pager-name" data-fa="خواندن شهرها و نمایش فهرست" data-en="Reading cities and showing the list">خواندن شهرها و نمایش فهرست</span></a></nav>
     </div>
   </div>
-  <script src="../assets/search-index.js?v=4"></script>
-  <script src="../assets/app.js?v=4"></script>
+  <script src="../assets/search-index.js?v=6"></script>
+  <script src="../assets/app.js?v=6"></script>
 </body>
 </html>

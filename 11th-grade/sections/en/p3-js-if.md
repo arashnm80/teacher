@@ -10,7 +10,7 @@ Using an `if` conditional structure, check whether the number `n` is even or odd
 
 For this purpose, create a new file named `workshop6.html` and write the following script in it:
 
-Save the file and view the result in the browser console. In this script, the remainder of dividing the number `n` by 2 is stored in the variable `r`. If the remainder is zero (that is, `n` is divisible by 2), the phrase `"Even` `number"` appears on the page; otherwise the phrase `"Odd` `number"` appears.
+Save the file and view the result in the browser console. In this script, the remainder of dividing the number `n` by 2 is stored in the variable `r`. If the remainder is zero (that is, `n` is divisible by 2), the phrase `"Even number"` appears on the page; otherwise the phrase `"Odd number"` appears.
 
 ![Book image](../images/p217-03.png)
 
@@ -30,12 +30,11 @@ In this script, the variable `score` with the value 70 is defined to hold the st
 
 **Figure 10**
 
-
 ---
 
 **Page 212**
 
-the value of both conditions is false, the `console.log`() statement on lines 3 and 5 is not executed. Then the condition `score>=70` is checked. Because the condition is met, statement number 7 runs and the phrase `Grade:` `C` is printed on the page. After statement 7 runs, the later conditions are not checked and program control moves to line 13.
+the value of both conditions is false, the `console.log()` statement on lines 3 and 5 is not executed. Then the condition `score>=70` is checked. Because the condition is met, statement number 7 runs and the phrase `Grade: C` is printed on the page. After statement 7 runs, the later conditions are not checked and program control moves to line 13.
 
 ### Learn more
 
@@ -59,7 +58,6 @@ If a `case` condition is met but there is no `break` statement in it, the next `
 
 ### Activity
 
-In `case` `A`, remove the `break` statement and check the program output in the browser. Then remove the `break` statement from the later `case`s and analyze the result.
-
+In `case A`, remove the `break` statement and check the program output in the browser. Then remove the `break` statement from the later `case`s and analyze the result.
 
 ---

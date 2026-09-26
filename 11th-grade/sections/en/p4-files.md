@@ -1,6 +1,5 @@
 # Object-oriented program development
 
-
 ---
 
 **Page 254**
@@ -25,7 +24,7 @@ If you are going to design a store program, what information should be stored in
 
 ### By the end, the student is expected to
 
-1 Use the `"Path"` class and the `"pathlib"` module to manage paths (`Path` `Objects`).
+1 Use the `"Path"` class and the `"pathlib"` module to manage paths (`Path Objects`).
 
 2 Read the contents of text files and write data to them, append data, and close files safely.
 
@@ -33,12 +32,11 @@ If you are going to design a store program, what information should be stored in
 
 4 Recognize common errors such as `"FileNotFoundError"` and `"ZeroDivisionError"` and, using `"try/except"`, prevent the program from stopping and display appropriate error messages.
 
-5 Understand the `"JSON"` structure and read data using `json.loads`() and write it to a file with `json.dump`().
+5 Understand the `"JSON"` structure and read data using `json.loads()` and write it to a file with `json.dump()`.
 
 ### Performance standard
 
 The student should be able to use a `Path` object to create, read, write, and manage text and `JSON` files safely and accurately, and to handle possible errors and exceptions correctly.
-
 
 ---
 
@@ -65,7 +63,6 @@ Working with files A great deal of information is stored in text files; for exam
 ![Figure 19](../images/p261-01.png)
 
 **Figure 19**
-
 
 ---
 
@@ -101,14 +98,13 @@ path = Path('mobile_brands.txt')
 
 an instance (`object`) of the `Path` class is created. This instance knows where the file `mobile_brands.txt` is, but the file itself has not yet been opened or read. In simple terms: `path` only holds the address of the file on the computer.
 
-When you write `path.read_text`(), then the file is opened and read; a `Path` `object` has been created that points to the file `mobile_brands.txt`. Because this file is in the same folder as the Python file (`.py`), only the file name is enough. If the file were in another folder, you would have to give its full or relative path.
+When you write `path.read_text()`, then the file is opened and read; a `Path object` has been created that points to the file `mobile_brands.txt`. Because this file is in the same folder as the Python file (`.py`), only the file name is enough. If the file were in another folder, you would have to give its full or relative path.
 
 ```
 brnds = path.read_text()
 ```
 
 With the `read_text` method, the entire contents of the file are read. The result is stored as a string (`string`) in the variable `contents`. Each line of the file in the string is separated by the character `\n`.
-
 
 ---
 
@@ -126,7 +122,7 @@ Example output:
 
 **Figure 21**
 
-Removing an extra blank line: Sometimes `read_text`() creates an extra blank line at the end of the file. To remove it you can use the `rstrip` method.
+Removing an extra blank line: Sometimes `read_text()` creates an extra blank line at the end of the file. To remove it you can use the `rstrip` method.
 
 ```
 brands = brands.rstrip()
@@ -142,20 +138,19 @@ When you give a file name such as `mobile_brands.txt` to `Path`, Python searches
 
 **Figure 22**
 
-
 ---
 
 **Page 258**
 
 There are two ways to specify file paths in programming:
 
-1 Relative address (`Relative` `File` `Path`): This address tells Python to find the desired location relative to the folder of the program that is running. Since `text_files` is inside `py_progs`, you must build a path that starts with the `text_files` folder and ends with the file name. You build this path like this:
+1 Relative address (`Relative File Path`): This address tells Python to find the desired location relative to the folder of the program that is running. Since `text_files` is inside `py_progs`, you must build a path that starts with the `text_files` folder and ends with the file name. You build this path like this:
 
 ```
 path = Path('text_files/filename.txt')
 ```
 
-2 Absolute address (`Absolute` `File` `Path`): In this kind of addressing you can tell Python exactly where the file is on your computer, regardless of where the program that is running is. If a relative address does not work, you can use an absolute address. For example, if you have placed `text_files` in a folder other than `py_progs`, giving the address `'text_files/filename.txt'` is not enough; because Python searches for it only inside `python_work`. In this case, you must write the absolute address so that it is clear where Python should search. Absolute addresses are usually longer, because they start from the root folder of the operating system:
+2 Absolute address (`Absolute File Path`): In this kind of addressing you can tell Python exactly where the file is on your computer, regardless of where the program that is running is. If a relative address does not work, you can use an absolute address. For example, if you have placed `text_files` in a folder other than `py_progs`, giving the address `'text_files/filename.txt'` is not enough; because Python searches for it only inside `python_work`. In this case, you must write the absolute address so that it is clear where Python should search. Absolute addresses are usually longer, because they start from the root folder of the operating system:
 
 ```
 path = Path('/home/eric/py_progs/text_files/filename.txt')
@@ -173,14 +168,13 @@ Converting the content to a list: So that you can work with each mobile phone br
 
 Now each brand is one member of the list and you can work with it.
 
-`splitlines`() splits the text string into a list of lines.
+`splitlines()` — splits the text string into a list of lines
 
 ![Book image](../images/p264-01.png)
 
 ![Figure 23](../images/p264-02.png)
 
 **Figure 23**
-
 
 ---
 
@@ -211,6 +205,5 @@ Searching in the file contents Checking whether a particular brand exists in the
 ![Figure 26](../images/p265-06.png)
 
 **Figure 26**
-
 
 ---
