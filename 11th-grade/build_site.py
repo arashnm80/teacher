@@ -89,6 +89,8 @@ def section_markdown(section: dict) -> str:
 def export_fa() -> None:
     FA_DIR.mkdir(parents=True, exist_ok=True)
     for section in SECTIONS:
+        if section.get("custom"):
+            continue
         (FA_DIR / f"{section['id']}.md").write_text(
             section_markdown(section), encoding="utf-8"
         )
@@ -126,7 +128,13 @@ CALLOUT_KINDS = (
 )
 # "Quiz game project" is a book callout even though the keyword comes last.
 CALLOUT_TAIL = {"quiz game project"}
-CALLOUT_END_RE = re.compile(r"<(?:h[123][ >]|hr[ >])", re.I)
+CALLOUT_END_RE = re.compile(
+    r"<(?:h[123][ >]|hr[ >]|p class=\"page-mark\")",
+    re.I,
+)
+# Book callouts are short side boxes. Without a following heading they used to
+# swallow the rest of the lesson until the next page break.
+CALLOUT_MAX_CHARS = 1400
 
 
 def box_callouts(body: str) -> str:
@@ -143,6 +151,18 @@ def box_callouts(body: str) -> str:
             continue
         end = CALLOUT_END_RE.search(body, match.end())
         stop = end.start() if end else len(body)
+        chunk = body[match.end() : stop]
+        if len(chunk) > CALLOUT_MAX_CHARS:
+            # Prefer cutting after a block close near the budget.
+            cut_at = None
+            for closer in ("</p>", "</figure>", "</div>", "</pre>"):
+                idx = chunk.rfind(closer, 0, CALLOUT_MAX_CHARS)
+                if idx != -1:
+                    candidate = idx + len(closer)
+                    if cut_at is None or candidate > cut_at:
+                        cut_at = candidate
+            if cut_at is not None:
+                stop = match.end() + cut_at
         out.append(body[pos : match.start()])
         out.append(
             f'<aside class="callout {kind}">{body[match.start() : stop]}</aside>'
@@ -152,17 +172,47 @@ def box_callouts(body: str) -> str:
     return "".join(out)
 
 
+# Adjacent LTR <code> islands reverse in RTL. Glue a run of codes and the
+# punctuation between them into one isolate so show_product(name, price) and
+# name, price stay in source order.
+CODE_RUN_RE = re.compile(
+    r"(?:<code\b[^>]*>[^<]*</code>)(?:(?:&nbsp;|&#160;|\s)*[,.()\[\]{}:;=+\-*/%]+(?:&nbsp;|&#160;|\s)*(?:<code\b[^>]*>[^<]*</code>))+(?:(?:&nbsp;|&#160;|\s)*[)\]]+)?",
+    re.I,
+)
+
+
+def group_code_runs(fragment: str, lang: str) -> str:
+    if lang != "fa":
+        return fragment
+
+    def wrap(match: re.Match[str]) -> str:
+        chunk = match.group(0)
+        if chunk.startswith("<bdi"):
+            return chunk
+        return f'<bdi dir="ltr">{chunk}</bdi>'
+
+    parts = re.split(r"(<pre\b.*?</pre>|<script\b.*?</script>)", fragment, flags=re.I | re.S)
+    out: list[str] = []
+    for part in parts:
+        if part.lower().startswith(("<pre", "<script")):
+            out.append(part)
+        else:
+            out.append(CODE_RUN_RE.sub(wrap, part))
+    return "".join(out)
+
+
 def isolate_bidi(fragment: str, lang: str) -> str:
     """Keep mixed Persian/English lines in reading order."""
+    fragment = group_code_runs(fragment, lang)
     parts = TAG_RE.split(fragment)
     out: list[str] = []
     skip = 0
     for part in parts:
         if part.startswith("<"):
             low = part.lower()
-            if low.startswith(("<pre", "<code", "<script")):
+            if low.startswith(("<pre", "<code", "<script", "<bdi")):
                 skip += 1
-            elif low.startswith(("</pre", "</code", "</script")):
+            elif low.startswith(("</pre", "</code", "</script", "</bdi")):
                 skip = max(0, skip - 1)
             out.append(part)
             continue
@@ -209,19 +259,22 @@ def flatten() -> list[dict]:
 
 
 def chrome(page_path: Path, title_fa: str, title_en: str, pages: list[dict], body: str) -> str:
-    assets = rel(page_path, SITE / "assets" / "style.css") + "?v=6"
-    script = rel(page_path, SITE / "assets" / "app.js") + "?v=6"
-    search = rel(page_path, SITE / "assets" / "search-index.js") + "?v=6"
+    assets = rel(page_path, SITE / "assets" / "style.css") + "?v=16"
+    script = rel(page_path, SITE / "assets" / "app.js") + "?v=16"
+    search = rel(page_path, SITE / "assets" / "search-index.js") + "?v=16"
     home = rel(page_path, SITE / "index.html")
     favicon = rel(page_path, SITE / "assets" / "favicon.svg")
-    package = rel(page_path, SITE / "grade11-offline.zip") + "?v=2"
+    package = rel(page_path, SITE / "grade11-offline.zip") + "?v=4"
     to_home = rel(page_path, SITE / "index.html")
     root = "" if to_home == "index.html" else to_home[: -len("index.html")]
 
     nav = [
         '<details class="toc" open>',
-        '<summary><span data-fa="فهرست درس‌ها" data-en="Lesson list">فهرست درس‌ها</span></summary>',
-        '<nav class="side" aria-label="lessons">',
+        '<summary class="nav-toggle" aria-label="فهرست درس‌ها">'
+        '<span class="burger" aria-hidden="true"></span>'
+        '<span class="label" data-fa="فهرست درس‌ها" data-en="Lessons">فهرست درس‌ها</span>'
+        '</summary>',
+        '<nav id="lesson-nav" class="side" aria-label="lessons">',
     ]
     last_module = None
     last_unit = None
@@ -276,6 +329,7 @@ def chrome(page_path: Path, title_fa: str, title_en: str, pages: list[dict], bod
       <span data-opt="en">EN</span>
     </button>
   </header>
+  <div id="nav-backdrop" class="nav-backdrop" hidden></div>
   <div class="layout">
     {''.join(nav)}
     <div class="main">
@@ -290,7 +344,7 @@ def chrome(page_path: Path, title_fa: str, title_en: str, pages: list[dict], bod
 
 
 def home_body(pages: list[dict], here: Path) -> str:
-    package = rel(here, SITE / "grade11-offline.zip") + "?v=2"
+    package = rel(here, SITE / "grade11-offline.zip") + "?v=4"
     cards = []
     seen = set()
     number = 0
@@ -395,6 +449,111 @@ def contents_html() -> str:
     return f'<ol class="contents">{"".join(rows)}</ol>'
 
 
+# A living page of tools and videos, not book text. Thumbnails are
+# downloaded once into extra-images/ so the page works offline.
+LINK_SOFTWARE = [
+    ("Py", "دانلود پایتون", "Download Python",
+     "نصب‌کننده رسمی پایتون برای ویندوز و مک.",
+     "Official Python installer for Windows and Mac.",
+     "https://www.python.org/downloads/"),
+    ("VS", "دانلود وی‌اس‌کد", "Download VS Code",
+     "ویرایشگر کدی که در کتاب با آن کار می‌کنیم.",
+     "The code editor used in the book.",
+     "https://code.visualstudio.com/"),
+    ("Pd", "پایدروید ۳ برای اندروید", "Pydroid 3 for Android",
+     "پایتون روی گوشی؛ برای تمرین بدون رایانه.",
+     "Python on your phone; practice without a computer.",
+     "https://play.google.com/store/apps/details?id=ru.iiec.pydroid3"),
+]
+LINK_VIDEOS = [
+    ("yt_qQXXI5QFUfw.jpg", "https://www.youtube.com/watch?v=qQXXI5QFUfw",
+     "پرکاربردترین زبان‌های برنامه‌نویسی از ۱۹۶۵ تا ۲۰۲۲",
+     "Most-used programming languages, 1965 to 2022"),
+    ("yt_3PcIJKd1PKU.jpg", "https://www.youtube.com/watch?v=3PcIJKd1PKU",
+     "مقایسه تعداد خطوط، مدت ساخت و مدت اجرای یک کار یکسان با ۳ زبان مختلف",
+     "Same task in 3 languages: lines, build time, and run time compared"),
+    ("yt__-KjEgCLQFw.jpg", "https://www.youtube.com/watch?v=_-KjEgCLQFw",
+     "بازی مار در ۶۰ خط و ۵ دقیقه با پایتون",
+     "Snake game in 60 lines and 5 minutes with Python"),
+    ("yt_7kGNs5R-AM8.jpg", "https://www.youtube.com/watch?v=7kGNs5R-AM8",
+     "بازی تتریس (خانه‌سازی) در ۱۸۰ خط و ۹ دقیقه با پایتون",
+     "Tetris in 180 lines and 9 minutes with Python"),
+    ("", "https://www.youtube.com/watch?v=DEFmxPMdBqmU",
+     "این پیوند در یوتیوب باز نشد؛ شاید حذف یا خصوصی شده باشد",
+     "This link did not open on YouTube; it may be deleted or private"),
+]
+
+
+def links_html(prefix: str) -> str:
+    cards = []
+    for badge, fa, en, dfa, den, href in LINK_SOFTWARE:
+        cards.append(
+            f'<div class="link-card"><span class="badge">{esc(badge)}</span>'
+            f'<div><h3 data-fa="{esc(fa)}" data-en="{esc(en)}">{esc(fa)}</h3>'
+            f'<p data-fa="{esc(dfa)}" data-en="{esc(den)}">{esc(dfa)}</p>'
+            f'<a href="{esc(href)}" data-fa="دانلود" data-en="Download">دانلود</a>'
+            "</div></div>"
+        )
+    videos = []
+    for thumb, href, fa, en in LINK_VIDEOS:
+        if thumb:
+            shot = f'<img src="{prefix}/{thumb}" alt="" loading="lazy">'
+        else:
+            shot = '<span class="no-thumb" aria-hidden="true">▶</span>'
+        videos.append(
+            f'<div class="link-card video"><a class="shot-link" href="{esc(href)}">{shot}</a>'
+            f'<div><p class="video-title" data-fa="{esc(fa)}" data-en="{esc(en)}">{esc(fa)}</p>'
+            f'<a href="{esc(href)}" data-fa="تماشا در یوتیوب" data-en="Watch on YouTube">تماشا در یوتیوب</a>'
+            "</div></div>"
+        )
+    return (
+        '<h2 data-fa="نرم‌افزارهای لازم" data-en="Get the software">نرم‌افزارهای لازم</h2>'
+        f'<div class="link-grid">{"".join(cards)}</div>'
+        '<h2 data-fa="ویدیوهای جالب درباره پایتون" data-en="Fun Python videos">ویدیوهای جالب درباره پایتون</h2>'
+        f'<p class="link-note" data-fa="تماشای ویدیوها اینترنت می‌خواهد؛ خود صفحه بدون اینترنت هم باز می‌شود." data-en="Watching the videos needs internet; the page itself opens offline too.">تماشای ویدیوها اینترنت می‌خواهد؛ خود صفحه بدون اینترنت هم باز می‌شود.</p>'
+        f'<div class="link-grid">{"".join(videos)}</div>'
+        '<h2 data-fa="برای زنگ چهارم" data-en="For the last period">برای زنگ چهارم</h2>'
+        '<div class="link-grid">'
+        '<div class="link-card"><span class="badge">تمرین</span><div>'
+        '<h3 data-fa="زمین بازی پایتون" data-en="Python playground">زمین بازی پایتون</h3>'
+        '<p data-fa="تمرین آفلاین پودمان ۱ با تست، راهنمایی و مقایسه خروجی. فایل را باز کنید و شروع.bat را اجرا کنید." '
+        'data-en="Offline Module 1 practice with tests, hints, and diffs. Unzip it and run شروع.bat.">'
+        'تمرین آفلاین پودمان ۱ با تست، راهنمایی و مقایسه خروجی. فایل را باز کنید و شروع.bat را اجرا کنید.</p>'
+        f'<a href="{esc(playground_zip_href(prefix))}" data-fa="دانلود نسخه آفلاین" data-en="Download the offline copy">دانلود نسخه آفلاین</a>'
+        '</div></div>'
+        '<div class="link-card"><span class="badge">بازی</span><div>'
+        '<h3 data-fa="تکامل اعتماد" data-en="The Evolution of Trust">تکامل اعتماد</h3>'
+        '<p data-fa="نظریه بازی. فایل فشرده را باز کنید و index.html را اجرا کنید. خود بازی اینترنت نمی‌خواهد." '
+        'data-en="Game theory. Unzip it and open index.html. The game itself needs no internet.">'
+        'نظریه بازی. فایل فشرده را باز کنید و index.html را اجرا کنید. خود بازی اینترنت نمی‌خواهد.</p>'
+        f'<a href="{esc(trust_zip_href(prefix))}" data-fa="دانلود نسخه آفلاین" data-en="Download the offline copy">دانلود نسخه آفلاین</a>'
+        '</div></div></div>'
+        '<p class="link-note" data-fa="این فهرست در طول ترم بیشتر می‌شود." data-en="This list grows during the term.">این فهرست در طول ترم بیشتر می‌شود.</p>'
+    )
+
+
+def trust_zip_href(prefix: str) -> str:
+    root = prefix[: -len("images")] if prefix.endswith("images") else ""
+    return root + "evolution-of-trust-offline.zip?v=4"
+
+
+def playground_zip_href(prefix: str) -> str:
+    root = prefix[: -len("images")] if prefix.endswith("images") else ""
+    return root + "teacher-playground-offline.zip?v=1"
+
+
+def links_text(lang: str) -> str:
+    if lang == "fa":
+        bits = [row[1] for row in LINK_SOFTWARE] + [row[2] for row in LINK_VIDEOS]
+        bits.append("زمین بازی پایتون")
+        bits.append("تکامل اعتماد")
+    else:
+        bits = [row[2] for row in LINK_SOFTWARE] + [row[3] for row in LINK_VIDEOS]
+        bits.append("Python playground")
+        bits.append("The Evolution of Trust")
+    return " ".join(bits)
+
+
 def extra_block(section: dict) -> str:
     items = []
     for fa, en in zip(section["ex_fa"], section["ex_en"]):
@@ -426,20 +585,25 @@ def plain_text(fragment: str) -> str:
     return re.sub(r"\s+", " ", text).strip()
 
 
+EXTRA_IMAGES = ROOT / "extra-images"
+
+
 def link_images() -> int:
-    source = BOOK / "images"
     target = SITE / "images"
     target.mkdir(parents=True, exist_ok=True)
     count = 0
-    for src in sorted(source.iterdir()):
-        if not src.is_file():
+    for source in (BOOK / "images", EXTRA_IMAGES):
+        if not source.is_dir():
             continue
-        dest = target / src.name
-        try:
-            os.link(src, dest)
-        except OSError:
-            shutil.copy2(src, dest)
-        count += 1
+        for src in sorted(source.iterdir()):
+            if not src.is_file():
+                continue
+            dest = target / src.name
+            try:
+                os.link(src, dest)
+            except OSError:
+                shutil.copy2(src, dest)
+            count += 1
     return count
 
 
@@ -505,6 +669,8 @@ def main() -> None:
         prefix = rel(item["out"], SITE / "images")
         if item["id"] == "toc":
             fa_html = en_html = contents_html()
+        elif item.get("custom") == "links":
+            fa_html = en_html = links_html(prefix)
         else:
             fa_html = isolate_bidi(render_markdown(repair_markdown(section_markdown(item), "fa"), prefix), "fa")
             en_html = isolate_bidi(render_markdown(repair_markdown(english_markdown(item), "en"), prefix), "en")
@@ -529,8 +695,8 @@ def main() -> None:
                 "href": rel(SITE / "index.html", item["out"]),
                 "titleFa": item["fa"],
                 "titleEn": item["en"],
-                "textFa": " ".join(row[1] for row in CONTENTS) if item["id"] == "toc" else plain_text(fa_html),
-                "textEn": " ".join(row[2] for row in CONTENTS) if item["id"] == "toc" else plain_text(en_html),
+                "textFa": links_text("fa") if item.get("custom") == "links" else (" ".join(row[1] for row in CONTENTS) if item["id"] == "toc" else plain_text(fa_html)),
+                "textEn": links_text("en") if item.get("custom") == "links" else (" ".join(row[2] for row in CONTENTS) if item["id"] == "toc" else plain_text(en_html)),
             }
         )
         guard(item["out"])
@@ -562,6 +728,12 @@ Copy this whole folder onto a lab PC and double-click `index.html`. No internet 
 """,
         encoding="utf-8",
     )
+    trust_zip = ROOT / "extras" / "evolution-of-trust-offline.zip"
+    if trust_zip.is_file():
+        shutil.copy2(trust_zip, SITE / "evolution-of-trust-offline.zip")
+    playground_zip = ROOT / "extras" / "teacher-playground-offline.zip"
+    if playground_zip.is_file():
+        shutil.copy2(playground_zip, SITE / "teacher-playground-offline.zip")
     write_zip()
     print(f"pages {len(pages) + 1} images {images}")
 
