@@ -516,9 +516,10 @@ def links_html(prefix: str) -> str:
         '<div class="link-grid">'
         '<div class="link-card"><span class="badge">تمرین</span><div>'
         '<h3 data-fa="زمین بازی پایتون" data-en="Python playground">زمین بازی پایتون</h3>'
-        '<p data-fa="تمرین آفلاین پودمان ۱ با تست، راهنمایی و مقایسه خروجی. فایل را باز کنید و شروع.bat را اجرا کنید." '
-        'data-en="Offline Module 1 practice with tests, hints, and diffs. Unzip it and run شروع.bat.">'
-        'تمرین آفلاین پودمان ۱ با تست، راهنمایی و مقایسه خروجی. فایل را باز کنید و شروع.bat را اجرا کنید.</p>'
+        '<p data-fa="تمرین پودمان ۱ با تست، راهنمایی و مقایسه خروجی. آنلاین باز کنید؛ در کلاس بدون اینترنت zip را بگیرید و شروع.bat را اجرا کنید." '
+        'data-en="Module 1 practice with tests, hints, and diffs. Open it online; in the lab with no internet, unzip and run شروع.bat.">'
+        'تمرین پودمان ۱ با تست، راهنمایی و مقایسه خروجی. آنلاین باز کنید؛ در کلاس بدون اینترنت zip را بگیرید و شروع.bat را اجرا کنید.</p>'
+        f'<a href="{esc(playground_online_href(prefix))}" data-fa="باز کردن آنلاین" data-en="Open online">باز کردن آنلاین</a> '
         f'<a href="{esc(playground_zip_href(prefix))}" data-fa="دانلود نسخه آفلاین" data-en="Download the offline copy">دانلود نسخه آفلاین</a>'
         '</div></div>'
         '<div class="link-card"><span class="badge">بازی</span><div>'
@@ -537,9 +538,14 @@ def trust_zip_href(prefix: str) -> str:
     return root + "evolution-of-trust-offline.zip?v=4"
 
 
+def playground_online_href(prefix: str) -> str:
+    root = prefix[: -len("images")] if prefix.endswith("images") else ""
+    return root + "playground/"
+
+
 def playground_zip_href(prefix: str) -> str:
     root = prefix[: -len("images")] if prefix.endswith("images") else ""
-    return root + "teacher-playground-offline.zip?v=1"
+    return root + "teacher-playground-offline.zip?v=2"
 
 
 def links_text(lang: str) -> str:
@@ -633,9 +639,23 @@ def write_zip() -> None:
         for path in sorted(SITE.rglob("*")):
             if not path.is_file() or path.suffix == ".zip":
                 continue
-            arcname = Path("grade11-site") / path.relative_to(SITE)
+            rel = path.relative_to(SITE)
+            # Keep the textbook zip small; playground ships as its own zip /online path.
+            if rel.parts and rel.parts[0] == "playground":
+                continue
+            arcname = Path("grade11-site") / rel
             archive.write(path, arcname.as_posix())
     shutil.move(temporary, target)
+
+
+def publish_playground() -> None:
+    src = ROOT / "playground" / "app"
+    dst = SITE / "playground"
+    if not src.is_dir():
+        return
+    if dst.exists():
+        shutil.rmtree(dst)
+    shutil.copytree(src, dst)
 
 
 def english_markdown(section: dict) -> str:
@@ -720,7 +740,7 @@ def main() -> None:
 
 فایل `grade11-offline.zip` برای دانلود از سایت است. داخل خودِ فایل فشرده نیست، تا دانش‌آموز بعد از باز کردن، یک پوشه ساده داشته باشد.
 
-تمرین‌ها و بازی‌های جدا (`teacher-playground-offline.zip`، `evolution-of-trust-offline.zip`) هم روی سایت عمومی در صفحه «پیوندهای مفید» هستند؛ داخل این zip کتاب نیستند.
+تمرین‌ها و بازی‌های جدا (`/playground/` آنلاین، `teacher-playground-offline.zip`، `evolution-of-trust-offline.zip`) هم روی سایت عمومی در صفحه «پیوندهای مفید» هستند؛ داخل این zip کتاب نیستند.
 
 # Site Design — offline classroom copy
 
@@ -728,7 +748,7 @@ Copy this whole folder onto a lab PC and double-click `index.html`. No internet 
 
 `grade11-offline.zip` is the download offered on the public site. It is not packed inside itself.
 
-Separate lab zips (`teacher-playground-offline.zip`, `evolution-of-trust-offline.zip`) are on the public Useful-links page; they are not inside this textbook zip.
+The online playground (`/playground/`) and separate lab zips (`teacher-playground-offline.zip`, `evolution-of-trust-offline.zip`) are on the public Useful-links page; they are not inside this textbook zip.
 """,
         encoding="utf-8",
     )
@@ -738,6 +758,7 @@ Separate lab zips (`teacher-playground-offline.zip`, `evolution-of-trust-offline
     playground_zip = ROOT / "extras" / "teacher-playground-offline.zip"
     if playground_zip.is_file():
         shutil.copy2(playground_zip, SITE / "teacher-playground-offline.zip")
+    publish_playground()
     write_zip()
     print(f"pages {len(pages) + 1} images {images}")
 

@@ -1,0 +1,732 @@
+[
+  {
+    "id": "p01",
+    "number": 1,
+    "topic": "ورودی و خروجی",
+    "conceptId": "print-input",
+    "difficulty": 1,
+    "mode": "stdio",
+    "title": "سلام ساده",
+    "statement": "یک نام از ورودی بخوانید و دقیقاً به این شکل چاپ کنید:\n\n`Hello, NAME`\n\nبه‌جای `NAME` همان نام ورودی می‌آید. بین ویرگول و نام دقیقاً یک فاصله باشد.",
+    "starter": "name = input()\n",
+    "hints": [
+      "با `input()` نام را بخوانید و در یک متغیر بریزید.",
+      "با `print` و چند آرگومان چاپ کنید؛ بین آرگومان‌ها خود `print` یک فاصله می‌گذارد.",
+      "نمونه: `print(\"Hello,\", name)`"
+    ],
+    "samples": [{ "stdin": "Ali\n", "stdout": "Hello, Ali\n" }],
+    "tests": [
+      { "stdin": "Ali\n", "stdout": "Hello, Ali\n" },
+      { "stdin": "Sara\n", "stdout": "Hello, Sara\n" },
+      { "stdin": "a\n", "stdout": "Hello, a\n" }
+    ]
+  },
+  {
+    "id": "p02",
+    "number": 2,
+    "topic": "ورودی و خروجی",
+    "conceptId": "print-input",
+    "difficulty": 1,
+    "mode": "stdio",
+    "title": "سه خط پشت‌سرهم",
+    "statement": "سه خط ورودی بخوانید و همان سه خط را دقیقاً به‌همان ترتیب چاپ کنید (هر خط در یک سطر).",
+    "starter": "",
+    "hints": [
+      "سه بار `input()` صدا بزنید.",
+      "هر مقدار خوانده‌شده را جداگانه `print` کنید.",
+      "نیازی به پیام داخل `input` نیست."
+    ],
+    "samples": [{ "stdin": "one\ntwo\nthree\n", "stdout": "one\ntwo\nthree\n" }],
+    "tests": [
+      { "stdin": "one\ntwo\nthree\n", "stdout": "one\ntwo\nthree\n" },
+      { "stdin": "a\nb\nc\n", "stdout": "a\nb\nc\n" }
+    ]
+  },
+  {
+    "id": "p03",
+    "number": 3,
+    "topic": "نوع داده و عملگر",
+    "conceptId": "types-ops",
+    "difficulty": 1,
+    "mode": "stdio",
+    "title": "جمع دو عدد",
+    "statement": "دو عدد صحیح در دو خط جدا بخوانید و حاصل‌جمع آن‌ها را در یک خط چاپ کنید.",
+    "starter": "",
+    "hints": [
+      "`input` رشته برمی‌گرداند؛ با `int` تبدیل کنید.",
+      "هر عدد را در یک خط جدا بخوانید.",
+      "```\na = int(input())\nb = int(input())\nprint(a + b)\n```"
+    ],
+    "samples": [{ "stdin": "3\n5\n", "stdout": "8\n" }],
+    "tests": [
+      { "stdin": "3\n5\n", "stdout": "8\n" },
+      { "stdin": "0\n0\n", "stdout": "0\n" },
+      { "stdin": "-2\n7\n", "stdout": "5\n" }
+    ]
+  },
+  {
+    "id": "p04",
+    "number": 4,
+    "topic": "نوع داده و عملگر",
+    "conceptId": "types-ops",
+    "difficulty": 1,
+    "mode": "stdio",
+    "title": "باقی‌مانده تقسیم",
+    "statement": "دو عدد صحیح مثبت `a` و `b` را در یک خط (با فاصله) بخوانید و باقی‌مانده‌ی `a` بر `b` را چاپ کنید.",
+    "starter": "",
+    "hints": [
+      "یک خط را بخوانید و با `split` جدا کنید.",
+      "عملگر باقی‌مانده `%` است.",
+      "```\na, b = map(int, input().split())\nprint(a % b)\n```"
+    ],
+    "samples": [{ "stdin": "17 5\n", "stdout": "2\n" }],
+    "tests": [
+      { "stdin": "17 5\n", "stdout": "2\n" },
+      { "stdin": "10 2\n", "stdout": "0\n" },
+      { "stdin": "9 7\n", "stdout": "2\n" }
+    ]
+  },
+  {
+    "id": "p05",
+    "number": 5,
+    "topic": "نوع داده و عملگر",
+    "conceptId": "types-ops",
+    "difficulty": 2,
+    "mode": "stdio",
+    "title": "مساحت و محیط مستطیل",
+    "statement": "طول و عرض یک مستطیل را به‌صورت دو عدد صحیح مثبت در دو خط بخوانید.\n\nدر خط اول مساحت (`طول * عرض`) و در خط دوم محیط (`2 * (طول + عرض)`) را چاپ کنید.",
+    "starter": "",
+    "hints": [
+      "هر مقدار را با `int(input())` بخوانید.",
+      "مساحت ضرب دو ضلع است؛ محیط دو برابر مجموع دو ضلع.",
+      "```\nlength = int(input())\nwidth = int(input())\nprint(length * width)\nprint(2 * (length + width))\n```"
+    ],
+    "samples": [{ "stdin": "4\n3\n", "stdout": "12\n14\n" }],
+    "tests": [
+      { "stdin": "4\n3\n", "stdout": "12\n14\n" },
+      { "stdin": "1\n1\n", "stdout": "1\n4\n" },
+      { "stdin": "10\n5\n", "stdout": "50\n30\n" }
+    ]
+  },
+  {
+    "id": "p06",
+    "number": 6,
+    "topic": "شرط‌ها",
+    "conceptId": "if-else",
+    "difficulty": 1,
+    "mode": "stdio",
+    "title": "زوج یا فرد",
+    "statement": "یک عدد صحیح بخوانید. اگر زوج بود دقیقاً `even` و اگر فرد بود دقیقاً `odd` چاپ کنید (حروف کوچک انگلیسی).",
+    "starter": "",
+    "hints": [
+      "زوج بودن یعنی باقی‌مانده بر ۲ صفر باشد.",
+      "از `if` / `else` استفاده کنید.",
+      "خروجی فقط همان یک کلمه است؛ فاصله یا حرف اضافه نگذارید."
+    ],
+    "samples": [{ "stdin": "4\n", "stdout": "even\n" }],
+    "tests": [
+      { "stdin": "4\n", "stdout": "even\n" },
+      { "stdin": "7\n", "stdout": "odd\n" },
+      { "stdin": "0\n", "stdout": "even\n" }
+    ]
+  },
+  {
+    "id": "p07",
+    "number": 7,
+    "topic": "شرط‌ها",
+    "conceptId": "if-else",
+    "difficulty": 2,
+    "mode": "stdio",
+    "title": "حداکثر سه عدد",
+    "statement": "سه عدد صحیح در یک خط بخوانید و بزرگ‌ترین را چاپ کنید.\n\nاز فراخوانی `max(...)` و `sorted(...)` داخلی پایتون **استفاده نکنید**؛ فقط با `if` مقایسه کنید. نام‌گذاری متغیر (مثلاً `best` یا حتی `max`) آزاد است؛ خودِ فراخوانی ممنوع است.",
+    "constraints": { "forbid": ["max", "sorted"] },
+    "starter": "",
+    "hints": [
+      "اول دو تا را مقایسه کنید، بعد با سومی.",
+      "می‌توانید یک متغیر `best` داشته باشید و قدم‌به‌قدم به‌روز کنید.",
+      "مراقب اعداد منفی باشید. `max = ...` به‌عنوان نام متغیر اشکالی ندارد؛ `max(...)` و `sorted(...)` ممنوع‌اند."
+    ],
+    "samples": [{ "stdin": "3 9 2\n", "stdout": "9\n" }],
+    "tests": [
+      { "stdin": "3 9 2\n", "stdout": "9\n" },
+      { "stdin": "-1 -5 -2\n", "stdout": "-1\n" },
+      { "stdin": "7 7 7\n", "stdout": "7\n" }
+    ]
+  },
+  {
+    "id": "p08",
+    "number": 8,
+    "topic": "شرط‌ها",
+    "conceptId": "if-else",
+    "difficulty": 2,
+    "mode": "stdio",
+    "title": "نمره به حرف",
+    "statement": "یک نمره صحیح از ۰ تا ۲۰ بخوانید و حرف معادل را چاپ کنید:\n\n- ۱۷ تا ۲۰: `A`\n- ۱۴ تا ۱۶: `B`\n- ۱۰ تا ۱۳: `C`\n- کمتر از ۱۰: `F`",
+    "starter": "",
+    "hints": [
+      "از `if / elif / else` استفاده کنید.",
+      "مرزها را دقیق چک کنید (۱۷ شامل A است).",
+      "خروجی فقط یک حرف بزرگ انگلیسی است."
+    ],
+    "samples": [{ "stdin": "18\n", "stdout": "A\n" }],
+    "tests": [
+      { "stdin": "18\n", "stdout": "A\n" },
+      { "stdin": "14\n", "stdout": "B\n" },
+      { "stdin": "10\n", "stdout": "C\n" },
+      { "stdin": "9\n", "stdout": "F\n" },
+      { "stdin": "20\n", "stdout": "A\n" }
+    ]
+  },
+  {
+    "id": "p09",
+    "number": 9,
+    "topic": "حلقه for",
+    "conceptId": "for-loop",
+    "difficulty": 1,
+    "mode": "stdio",
+    "title": "شمارش با for",
+    "statement": "عدد طبیعی `n` را بخوانید و اعداد `1` تا `n` را هر کدام در یک خط چاپ کنید.\n\n**حتماً از حلقه `for` استفاده کنید و از `while` استفاده نکنید.**",
+    "constraints": { "require": ["for"], "forbid": ["while"] },
+    "starter": "",
+    "hints": [
+      "`range(1, n + 1)` را به خاطر بسپارید.",
+      "بدنه حلقه فقط یک `print` است.",
+      "اگر `while` بنویسید برنامه قبول نمی‌شود حتی اگر خروجی درست باشد."
+    ],
+    "samples": [{ "stdin": "3\n", "stdout": "1\n2\n3\n" }],
+    "tests": [
+      { "stdin": "3\n", "stdout": "1\n2\n3\n" },
+      { "stdin": "1\n", "stdout": "1\n" },
+      { "stdin": "5\n", "stdout": "1\n2\n3\n4\n5\n" }
+    ]
+  },
+  {
+    "id": "p10",
+    "number": 10,
+    "topic": "حلقه for",
+    "conceptId": "for-loop",
+    "difficulty": 2,
+    "mode": "stdio",
+    "title": "جمع با for",
+    "statement": "عدد `n` و سپس `n` عدد صحیح (هر کدام در یک خط) بخوانید و مجموع آن‌ها را چاپ کنید.\n\n**فقط با `for`** (بدون `while`). از فراخوانی `sum(...)` استفاده نکنید؛ جمع را خودتان در حلقه حساب کنید. نام متغیر مثل `total` یا حتی `sum` آزاد است.",
+    "constraints": { "require": ["for"], "forbid": ["while", "sum"] },
+    "starter": "",
+    "hints": [
+      "یک متغیر مجموع از صفر شروع کنید.",
+      "داخل حلقه هر عدد را بخوانید و به مجموع اضافه کنید.",
+      "```\nn = int(input())\ntotal = 0\nfor _ in range(n):\n    total += int(input())\nprint(total)\n```\n`sum = 0` به‌عنوان نام متغیر مجاز است؛ `sum(...)` ممنوع است."
+    ],
+    "samples": [{ "stdin": "3\n1\n2\n3\n", "stdout": "6\n" }],
+    "tests": [
+      { "stdin": "3\n1\n2\n3\n", "stdout": "6\n" },
+      { "stdin": "1\n10\n", "stdout": "10\n" },
+      { "stdin": "4\n-1\n-2\n3\n0\n", "stdout": "0\n" }
+    ]
+  },
+  {
+    "id": "p11",
+    "number": 11,
+    "topic": "حلقه for",
+    "conceptId": "for-loop",
+    "difficulty": 2,
+    "mode": "stdio",
+    "title": "جدول ضرب یک عدد",
+    "statement": "عدد `k` (۱ تا ۹) را بخوانید و جدول ضرب آن از ۱ تا ۱۰ را به این شکل چاپ کنید:\n\n`k x i = result`\n\nبین‌ها دقیقاً یک فاصله و علامت‌ها همین‌طور باشند.\n\n**فقط با `for`.**",
+    "constraints": { "require": ["for"], "forbid": ["while"] },
+    "starter": "",
+    "hints": [
+      "حلقه روی `i` از ۱ تا ۱۰.",
+      "با چند آرگومان در `print` بنویسید؛ مثلاً `print(k, \"x\", i, \"=\", k * i)`.",
+      "نمونه برای ۲ و i=۳: `2 x 3 = 6`"
+    ],
+    "samples": [
+      {
+        "stdin": "2\n",
+        "stdout": "2 x 1 = 2\n2 x 2 = 4\n2 x 3 = 6\n2 x 4 = 8\n2 x 5 = 10\n2 x 6 = 12\n2 x 7 = 14\n2 x 8 = 16\n2 x 9 = 18\n2 x 10 = 20\n"
+      }
+    ],
+    "tests": [
+      {
+        "stdin": "2\n",
+        "stdout": "2 x 1 = 2\n2 x 2 = 4\n2 x 3 = 6\n2 x 4 = 8\n2 x 5 = 10\n2 x 6 = 12\n2 x 7 = 14\n2 x 8 = 16\n2 x 9 = 18\n2 x 10 = 20\n"
+      },
+      {
+        "stdin": "1\n",
+        "stdout": "1 x 1 = 1\n1 x 2 = 2\n1 x 3 = 3\n1 x 4 = 4\n1 x 5 = 5\n1 x 6 = 6\n1 x 7 = 7\n1 x 8 = 8\n1 x 9 = 9\n1 x 10 = 10\n"
+      }
+    ]
+  },
+  {
+    "id": "p12",
+    "number": 12,
+    "topic": "حلقه for",
+    "conceptId": "for-loop",
+    "difficulty": 2,
+    "mode": "stdio",
+    "title": "شمارش معکوس غذایی",
+    "statement": "عدد `m` را بخوانید. از `m` تا `1` این خط را چاپ کنید:\n\n`Time remaining: X minutes`\n\nسپس دقیقاً این خط را چاپ کنید:\n\n`Your food is ready!`\n\n**فقط با `for`.** فاصله‌ها و علامت‌ها باید دقیق باشند.",
+    "constraints": { "require": ["for"], "forbid": ["while"] },
+    "starter": "",
+    "hints": [
+      "`range(m, 0, -1)` برای شمارش معکوس مناسب است.",
+      "متن انگلیسی را کپی کنید تا غلط املایی نیاید.",
+      "بعد از حلقه یک `print` جدا برای خط آخر."
+    ],
+    "samples": [
+      {
+        "stdin": "3\n",
+        "stdout": "Time remaining: 3 minutes\nTime remaining: 2 minutes\nTime remaining: 1 minutes\nYour food is ready!\n"
+      }
+    ],
+    "tests": [
+      {
+        "stdin": "3\n",
+        "stdout": "Time remaining: 3 minutes\nTime remaining: 2 minutes\nTime remaining: 1 minutes\nYour food is ready!\n"
+      },
+      {
+        "stdin": "1\n",
+        "stdout": "Time remaining: 1 minutes\nYour food is ready!\n"
+      }
+    ]
+  },
+  {
+    "id": "p13",
+    "number": 13,
+    "topic": "حلقه while",
+    "conceptId": "while-loop",
+    "difficulty": 1,
+    "mode": "stdio",
+    "title": "شمارش با while",
+    "statement": "عدد طبیعی `n` را بخوانید و اعداد `1` تا `n` را هر کدام در یک خط چاپ کنید.\n\n**حتماً از `while` استفاده کنید و از `for` استفاده نکنید.**",
+    "constraints": { "require": ["while"], "forbid": ["for"] },
+    "starter": "",
+    "hints": [
+      "یک شمارنده از ۱ شروع کنید.",
+      "تا وقتی شمارنده <= n است چاپ کنید و یکی زیاد کنید.",
+      "استفاده از `for` باعث رد شدن محدودیت می‌شود."
+    ],
+    "samples": [{ "stdin": "3\n", "stdout": "1\n2\n3\n" }],
+    "tests": [
+      { "stdin": "3\n", "stdout": "1\n2\n3\n" },
+      { "stdin": "1\n", "stdout": "1\n" }
+    ]
+  },
+  {
+    "id": "p14",
+    "number": 14,
+    "topic": "حلقه while",
+    "conceptId": "while-loop",
+    "difficulty": 2,
+    "mode": "stdio",
+    "title": "جمع تا صفر",
+    "statement": "اعداد صحیح را یکی‌یکی از ورودی بخوانید تا وقتی که عدد `0` بیاید. مجموع اعداد قبل از صفر را چاپ کنید (خود صفر جزو مجموع نیست).\n\n**فقط با `while`** (بدون `for`). از فراخوانی `sum(...)` استفاده نکنید. نام متغیر مجموع آزاد است.",
+    "constraints": { "require": ["while"], "forbid": ["for", "sum"] },
+    "starter": "",
+    "hints": [
+      "اولین عدد را قبل از حلقه یا داخل حلقه با شرط بخوانید.",
+      "تا وقتی عدد صفر نشده جمع کنید.",
+      "خروجی فقط یک عدد است. `sum = 0` مجاز است؛ `sum(...)` ممنوع است."
+    ],
+    "samples": [{ "stdin": "4\n-1\n10\n0\n", "stdout": "13\n" }],
+    "tests": [
+      { "stdin": "4\n-1\n10\n0\n", "stdout": "13\n" },
+      { "stdin": "0\n", "stdout": "0\n" },
+      { "stdin": "5\n5\n0\n", "stdout": "10\n" }
+    ]
+  },
+  {
+    "id": "p15",
+    "number": 15,
+    "topic": "حلقه while",
+    "conceptId": "while-loop",
+    "difficulty": 2,
+    "mode": "stdio",
+    "title": "تعداد ارقام",
+    "statement": "یک عدد صحیح غیرمنفی `n` بخوانید و تعداد ارقام آن را چاپ کنید. برای `0` پاسخ `1` است.\n\n**فقط با `while`** (بدون `for`). از فراخوانی `str(...)` برای تبدیل به رشته **استفاده نکنید**؛ با تقسیم بر ۱۰ بشمارید.",
+    "constraints": { "require": ["while"], "forbid": ["for", "str"] },
+    "starter": "",
+    "hints": [
+      "اگر n صفر است همان اول ۱ چاپ کنید.",
+      "در غیر این صورت مدام بر ۱۰ تقسیم صحیح کنید و بشمارید.",
+      "از `//= 10` استفاده کنید. `len(str(n))` قبول نمی‌شود؛ خودِ `str(...)` ممنوع است."
+    ],
+    "samples": [{ "stdin": "12345\n", "stdout": "5\n" }],
+    "tests": [
+      { "stdin": "12345\n", "stdout": "5\n" },
+      { "stdin": "0\n", "stdout": "1\n" },
+      { "stdin": "7\n", "stdout": "1\n" },
+      { "stdin": "1000\n", "stdout": "4\n" }
+    ]
+  },
+  {
+    "id": "p16",
+    "number": 16,
+    "topic": "حلقه while",
+    "conceptId": "while-loop",
+    "difficulty": 3,
+    "mode": "stdio",
+    "title": "حدس تا درست شود",
+    "statement": "عدد مخفی `secret` در خط اول می‌آید. سپس حدس‌های کاربر می‌آید (هر حدس یک خط). برای هر حدس:\n\n- اگر کوچکتر بود: `up`\n- اگر بزرگتر بود: `down`\n- اگر برابر بود: `correct` و برنامه تمام\n\n**فقط با `while`.**",
+    "constraints": { "require": ["while"], "forbid": ["for"] },
+    "starter": "",
+    "hints": [
+      "بعد از خواندن secret، در حلقه حدس بخوانید.",
+      "با `break` وقتی درست شد خارج شوید.",
+      "خروجی‌ها دقیقاً همان سه کلمه‌ی انگلیسی کوچک‌اند."
+    ],
+    "samples": [
+      { "stdin": "10\n5\n12\n10\n", "stdout": "up\ndown\ncorrect\n" }
+    ],
+    "tests": [
+      { "stdin": "10\n5\n12\n10\n", "stdout": "up\ndown\ncorrect\n" },
+      { "stdin": "3\n3\n", "stdout": "correct\n" },
+      { "stdin": "8\n9\n7\n8\n", "stdout": "down\nup\ncorrect\n" }
+    ]
+  },
+  {
+    "id": "p17",
+    "number": 17,
+    "topic": "لیست‌ها",
+    "conceptId": "lists",
+    "difficulty": 1,
+    "mode": "stdio",
+    "title": "معکوس لیست",
+    "statement": "در خط اول `n` و در خط بعد `n` عدد با فاصله بیاید. اعداد را از آخر به اول با فاصله در یک خط چاپ کنید.",
+    "starter": "",
+    "hints": [
+      "اعداد را در لیست بریزید.",
+      "می‌توانید با برش `[::-1]` معکوس کنید.",
+      "`print(*reversed_list)` فاصله‌ها را درست می‌گذارد."
+    ],
+    "samples": [{ "stdin": "4\n1 2 3 4\n", "stdout": "4 3 2 1\n" }],
+    "tests": [
+      { "stdin": "4\n1 2 3 4\n", "stdout": "4 3 2 1\n" },
+      { "stdin": "1\n9\n", "stdout": "9\n" },
+      { "stdin": "3\n0 -1 5\n", "stdout": "5 -1 0\n" }
+    ]
+  },
+  {
+    "id": "p18",
+    "number": 18,
+    "topic": "لیست‌ها",
+    "conceptId": "lists",
+    "difficulty": 2,
+    "mode": "stdio",
+    "title": "حذف منفی‌ها",
+    "statement": "خط اول `n` و خط بعد `n` عدد است. فقط عددهای **نامنفی** را با فاصله در یک خط چاپ کنید (ترتیب حفظ شود). اگر هیچکدام نبود، یک خط خالی چاپ کنید.",
+    "starter": "",
+    "hints": [
+      "لیست جدید بسازید یا همان‌جا فیلتر کنید.",
+      "شرط: `x >= 0`.",
+      "برای خط خالی: `print()` بدون آرگومان یا `print(\"\".join(...))` با لیست خالی و فاصله."
+    ],
+    "samples": [{ "stdin": "5\n3 -1 0 8 -4\n", "stdout": "3 0 8\n" }],
+    "tests": [
+      { "stdin": "5\n3 -1 0 8 -4\n", "stdout": "3 0 8\n" },
+      { "stdin": "3\n-1 -2 -3\n", "stdout": "\n" },
+      { "stdin": "2\n4 5\n", "stdout": "4 5\n" }
+    ]
+  },
+  {
+    "id": "p19",
+    "number": 19,
+    "topic": "لیست‌ها",
+    "conceptId": "lists",
+    "difficulty": 2,
+    "mode": "function",
+    "functionName": "second_max",
+    "title": "دومین بزرگ‌ترین",
+    "statement": "تابعی به نام `second_max(nums)` بنویسید که یک لیست از اعداد متمایز می‌گیرد و دومین بزرگ‌ترین را برمی‌گرداند.\n\nفرض کنید حداقل دو عدد وجود دارد.",
+    "starter": "def second_max(nums):\n    pass\n",
+    "hints": [
+      "می‌توانید کپی مرتب‌شده بسازید: `sorted(nums)`.",
+      "دومین بزرگ‌ترین، عنصر یکی‌مانده به آخر لیست صعودی است.",
+      "بدون تغییر دادن لیست ورودی اصلی بهتر است."
+    ],
+    "samples": [{ "call": { "args": [[1, 5, 3, 9]], "expected": 5 } }],
+    "tests": [
+      { "call": { "args": [[1, 5, 3, 9]], "expected": 5 } },
+      { "call": { "args": [[10, 9]], "expected": 9 } },
+      { "call": { "args": [[-1, -5, -2]], "expected": -2 } }
+    ]
+  },
+  {
+    "id": "p20",
+    "number": 20,
+    "topic": "مجموعه‌ها",
+    "conceptId": "sets",
+    "difficulty": 1,
+    "mode": "stdio",
+    "title": "یکتا کردن",
+    "statement": "خط اول `n` و خط بعد `n` عدد است. تعداد مقادیر **یکتا** را چاپ کنید.",
+    "starter": "",
+    "hints": [
+      "اعداد را در `set` بریزید.",
+      "`len(set(...))` پاسخ است.",
+      "ترتیب مهم نیست؛ فقط تعداد یکتا."
+    ],
+    "samples": [{ "stdin": "6\n1 2 2 3 1 4\n", "stdout": "4\n" }],
+    "tests": [
+      { "stdin": "6\n1 2 2 3 1 4\n", "stdout": "4\n" },
+      { "stdin": "3\n5 5 5\n", "stdout": "1\n" },
+      { "stdin": "1\n0\n", "stdout": "1\n" }
+    ]
+  },
+  {
+    "id": "p21",
+    "number": 21,
+    "topic": "مجموعه‌ها",
+    "conceptId": "sets",
+    "difficulty": 2,
+    "mode": "stdio",
+    "title": "اشتراک دو خط",
+    "statement": "دو خط ورودی دارید؛ هر خط چند عدد با فاصله. اعداد مشترک را به صورت **صعودی** و با فاصله در یک خط چاپ کنید. اگر اشتراکی نبود خط خالی چاپ کنید.",
+    "starter": "",
+    "hints": [
+      "هر خط را به `set` تبدیل کنید.",
+      "اشتراک: `a & b`.",
+      "قبل از چاپ `sorted` کنید."
+    ],
+    "samples": [{ "stdin": "1 2 3 4\n3 4 5\n", "stdout": "3 4\n" }],
+    "tests": [
+      { "stdin": "1 2 3 4\n3 4 5\n", "stdout": "3 4\n" },
+      { "stdin": "1 2\n3 4\n", "stdout": "\n" },
+      { "stdin": "9 1 2\n2 9 8 1\n", "stdout": "1 2 9\n" }
+    ]
+  },
+  {
+    "id": "p22",
+    "number": 22,
+    "topic": "دیکشنری",
+    "conceptId": "dicts",
+    "difficulty": 2,
+    "mode": "stdio",
+    "title": "شمارش کلمات",
+    "statement": "یک خط متن انگلیسی با کلمات جدا‌شده با فاصله بخوانید. برای هر کلمه‌ی یکتا، تعداد تکرار را چاپ کنید به شکل:\n\n`word count`\n\nترتیب خروجی: به ترتیب **اولین ظاهر شدن** کلمه در متن.",
+    "starter": "",
+    "hints": [
+      "از دیکشنری برای شمارش استفاده کنید.",
+      "وقتی کلمه جدید دیدید به دیکشنری اضافه کنید.",
+      "در پایان روی کلیدها به همان ترتیب درج پیمایش کنید (پایتون ۳.۷+ ترتیب را حفظ می‌کند)."
+    ],
+    "samples": [
+      { "stdin": "hi bye hi hi\n", "stdout": "hi 3\nbye 1\n" }
+    ],
+    "tests": [
+      { "stdin": "hi bye hi hi\n", "stdout": "hi 3\nbye 1\n" },
+      { "stdin": "a a a\n", "stdout": "a 3\n" },
+      { "stdin": "one two\n", "stdout": "one 1\ntwo 1\n" }
+    ]
+  },
+  {
+    "id": "p23",
+    "number": 23,
+    "topic": "دیکشنری",
+    "conceptId": "dicts",
+    "difficulty": 2,
+    "mode": "function",
+    "functionName": "grade_book",
+    "title": "دفتر نمره",
+    "statement": "تابعی به نام `grade_book(scores)` بنویسید که دیکشنری `{نام: نمره}` می‌گیرد و دیکشنری جدیدی برمی‌گرداند که فقط کسانی را دارد که نمره‌شان **حداقل ۱۰** است.",
+    "starter": "def grade_book(scores):\n    pass\n",
+    "hints": [
+      "یک دیکشنری خالی بسازید.",
+      "روی `scores.items()` حلقه بزنید.",
+      "شرط: `score >= 10`."
+    ],
+    "samples": [
+      {
+        "call": {
+          "args": [{ "Ali": 18, "Sara": 9, "Reza": 10 }],
+          "expected": { "Ali": 18, "Reza": 10 }
+        }
+      }
+    ],
+    "tests": [
+      {
+        "call": {
+          "args": [{ "Ali": 18, "Sara": 9, "Reza": 10 }],
+          "expected": { "Ali": 18, "Reza": 10 }
+        }
+      },
+      { "call": { "args": [{ "A": 0 }], "expected": {} } },
+      {
+        "call": {
+          "args": [{ "X": 20, "Y": 15 }],
+          "expected": { "X": 20, "Y": 15 }
+        }
+      }
+    ]
+  },
+  {
+    "id": "p24",
+    "number": 24,
+    "topic": "تاپل",
+    "conceptId": "tuples",
+    "difficulty": 1,
+    "mode": "function",
+    "functionName": "swap_pair",
+    "title": "جابه‌جایی تاپل",
+    "statement": "تابعی به نام `swap_pair(pair)` بنویسید که یک تاپل دو عضوی می‌گیرد و تاپل جابه‌جا‌شده را برمی‌گرداند.\n\nمثال: `(1, 2)` → `(2, 1)`",
+    "starter": "def swap_pair(pair):\n    pass\n",
+    "hints": [
+      "می‌توانید `return (pair[1], pair[0])`.",
+      "یا `a, b = pair` سپس `return (b, a)`.",
+      "لیست برنگردانید؛ تاپل برگردانید."
+    ],
+    "samples": [{ "call": { "args": [[1, 2]], "expected": [2, 1] } }],
+    "tests": [
+      { "call": { "args": [[1, 2]], "expected": [2, 1] } },
+      { "call": { "args": [["a", "b"]], "expected": ["b", "a"] } },
+      { "call": { "args": [[0, 0]], "expected": [0, 0] } }
+    ]
+  },
+  {
+    "id": "p25",
+    "number": 25,
+    "topic": "توابع",
+    "conceptId": "functions",
+    "difficulty": 1,
+    "mode": "function",
+    "functionName": "is_leap",
+    "title": "سال کبیسه",
+    "statement": "تابعی به نام `is_leap(year)` بنویسید که سال میلادی را می‌گیرد و اگر کبیسه باشد `True` وگرنه `False` برمی‌گرداند.\n\nقانون: سالی کبیسه است که بر ۴ بخش‌پذیر باشد، مگر اینکه بر ۱۰۰ بخش‌پذیر باشد؛ مگر اینکه بر ۴۰۰ بخش‌پذیر باشد.",
+    "starter": "def is_leap(year):\n    pass\n",
+    "hints": [
+      "اول شرط ۴۰۰ را چک کنید.",
+      "بعد ۱۰۰، بعد ۴.",
+      "خروجی باید بولین باشد نه رشته."
+    ],
+    "samples": [{ "call": { "args": [2000], "expected": true } }],
+    "tests": [
+      { "call": { "args": [2000], "expected": true } },
+      { "call": { "args": [1900], "expected": false } },
+      { "call": { "args": [2024], "expected": true } },
+      { "call": { "args": [2023], "expected": false } }
+    ]
+  },
+  {
+    "id": "p26",
+    "number": 26,
+    "topic": "توابع",
+    "conceptId": "functions",
+    "difficulty": 2,
+    "mode": "function",
+    "functionName": "factorial",
+    "title": "فاکتوریل",
+    "statement": "تابعی به نام `factorial(n)` بنویسید که برای `n >= 0` مقدار `n!` را برمی‌گرداند. `0! = 1`.\n\n**با حلقه `for` بنویسید و از `while` استفاده نکنید.**",
+    "constraints": { "require": ["for", "def"], "forbid": ["while"] },
+    "starter": "def factorial(n):\n    pass\n",
+    "hints": [
+      "یک متغیر نتیجه از ۱ شروع کنید.",
+      "از ۱ تا n ضرب کنید.",
+      "برای صفر حلقه اجرا نمی‌شود و ۱ می‌ماند."
+    ],
+    "samples": [{ "call": { "args": [5], "expected": 120 } }],
+    "tests": [
+      { "call": { "args": [5], "expected": 120 } },
+      { "call": { "args": [0], "expected": 1 } },
+      { "call": { "args": [1], "expected": 1 } },
+      { "call": { "args": [7], "expected": 5040 } }
+    ]
+  },
+  {
+    "id": "p27",
+    "number": 27,
+    "topic": "توابع",
+    "conceptId": "functions",
+    "difficulty": 2,
+    "mode": "function",
+    "functionName": "count_vowels",
+    "title": "شمارش مصوت‌ها",
+    "statement": "تابعی به نام `count_vowels(text)` بنویسید که تعداد حروف مصوت انگلیسی در رشته را برمی‌گرداند.\n\nمصوت‌ها: `a e i o u` (بزرگ و کوچک فرقی ندارد).",
+    "starter": "def count_vowels(text):\n    pass\n",
+    "hints": [
+      "رشته را `lower` کنید.",
+      "یک مجموعه از مصوت‌ها بسازید.",
+      "روی کاراکترها حلقه بزنید و بشمارید."
+    ],
+    "samples": [{ "call": { "args": ["Beautiful"], "expected": 5 } }],
+    "tests": [
+      { "call": { "args": ["Beautiful"], "expected": 5 } },
+      { "call": { "args": ["sky"], "expected": 0 } },
+      { "call": { "args": ["AEIOU"], "expected": 5 } },
+      { "call": { "args": [""], "expected": 0 } }
+    ]
+  },
+  {
+    "id": "p28",
+    "number": 28,
+    "topic": "توابع",
+    "conceptId": "functions",
+    "difficulty": 3,
+    "mode": "stdio",
+    "title": "ماشین‌حساب کوچک",
+    "statement": "در هر خط یک عبارت به شکل `عدد عملگر عدد` می‌آید؛ مثلاً `12 + 5`. عملگر یکی از `+ - * /` است.\n\nتا وقتی خط `exit` نرسیده محاسبه کنید و نتیجه را چاپ کنید. برای `/` نتیجه را به صورت عدد اعشاری معمولی چاپ کنید (مثلاً `2.5`).\n\n**حتماً حداقل یک تابع `def` برای انجام عملیات بنویسید و حلقه اصلی با `while` باشد.**",
+    "constraints": { "require": ["def", "while"], "forbid": ["for"] },
+    "starter": "def calc(a, op, b):\n    pass\n\n",
+    "hints": [
+      "تابع `calc` سه پارامتر بگیرد و نتیجه را return کند.",
+      "حلقه `while` تا وقتی ورودی `exit` نباشد.",
+      "اعداد را با `float` بخوانید تا تقسیم درست کار کند؛ اگر خواستید برای جمع صحیح‌تر چاپ کنید، همین خروجی `float` هم پذیرفته است اگر دقیقاً مطابق نمونه باشد."
+    ],
+    "samples": [
+      {
+        "stdin": "3 + 4\n10 / 4\nexit\n",
+        "stdout": "7.0\n2.5\n"
+      }
+    ],
+    "tests": [
+      { "stdin": "3 + 4\n10 / 4\nexit\n", "stdout": "7.0\n2.5\n" },
+      { "stdin": "9 - 2\nexit\n", "stdout": "7.0\n" },
+      { "stdin": "3 * 3\nexit\n", "stdout": "9.0\n" }
+    ]
+  },
+  {
+    "id": "p29",
+    "number": 29,
+    "topic": "ماژول‌ها",
+    "conceptId": "modules",
+    "difficulty": 1,
+    "mode": "stdio",
+    "title": "کف و سقف با math",
+    "statement": "یک عدد اعشاری بخوانید.\n\nدر خط اول مقدار `math.floor` (بزرگ‌ترین صحیح ≤ عدد) و در خط دوم مقدار `math.ceil` (کوچک‌ترین صحیح ≥ عدد) را چاپ کنید.\n\n**باید از ماژول `math` و `import` استفاده کنید.** خروجی‌ها عدد صحیح هستند؛ نیازی به قالب‌بندی اعشار نیست.",
+    "constraints": { "require": ["import"] },
+    "starter": "import math\n",
+    "hints": [
+      "عدد را با `float(input())` بخوانید.",
+      "`print(math.floor(x))` و سپس `print(math.ceil(x))`.",
+      "حتماً `import math` کنید وگرنه محدودیت رد می‌شود."
+    ],
+    "samples": [{ "stdin": "3.2\n", "stdout": "3\n4\n" }],
+    "tests": [
+      { "stdin": "3.2\n", "stdout": "3\n4\n" },
+      { "stdin": "5.0\n", "stdout": "5\n5\n" },
+      { "stdin": "-1.5\n", "stdout": "-2\n-1\n" }
+    ]
+  },
+  {
+    "id": "p30",
+    "number": 30,
+    "topic": "ماژول‌ها",
+    "conceptId": "modules",
+    "difficulty": 2,
+    "mode": "function",
+    "functionName": "circle_area",
+    "title": "مساحت دایره",
+    "statement": "تابعی به نام `circle_area(r)` بنویسید که شعاع را می‌گیرد و مساحت را با `math.pi * r * r` برمی‌گرداند.\n\n**باید از ماژول `math` استفاده کنید.** نتیجه را گرد نکنید؛ همان عدد اعشاری را برگردانید.",
+    "constraints": { "require": ["import", "def"] },
+    "starter": "import math\n\ndef circle_area(r):\n    pass\n",
+    "hints": [
+      "`import math` بالای فایل.",
+      "`return math.pi * r * r`",
+      "خروجی عدد است نه رشته."
+    ],
+    "samples": [{ "call": { "args": [1], "expected": 3.141592653589793 } }],
+    "tests": [
+      { "call": { "args": [1], "expected": 3.141592653589793 } },
+      { "call": { "args": [0], "expected": 0.0 } },
+      { "call": { "args": [2], "expected": 12.566370614359172 } }
+    ]
+  }
+]

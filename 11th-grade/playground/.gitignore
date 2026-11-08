@@ -1,0 +1,5 @@
+app/vendor/_tmp_pyodide/
+*.tar.bz2
+.DS_Store
+__pycache__/
+*.pyc

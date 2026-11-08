@@ -1,0 +1,3 @@
+CodeMirror 5.65.16 (https://codemirror.net/)
+License: MIT
+Vendored offline for the teacher-playground lab app (no CDN at runtime).

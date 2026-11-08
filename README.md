@@ -20,7 +20,22 @@ Requirements for later changes: [11th-grade/REQUIREMENTS.md](11th-grade/REQUIREM
 | `teacher-playground-offline.zip` | Offline Python practice app for module 1 — [پیوندهای مفید](https://teacher.arashnm80.ir/book/links.html) |
 | `evolution-of-trust-offline.zip` | Trust-game lab for period 4 — same links page |
 
-Source for the practice app: [arashnm80/teacher-playground](https://github.com/arashnm80/teacher-playground). Keep a copy under `/root/Storage/teacher-playground` on the class server in sync with that GitHub repo. Rebuild the zip from that tree, put it in `11th-grade/extras/teacher-playground-offline.zip`, then `python3 build_site.py` and `bash deploy.sh`.
+### Python playground (online + offline)
+
+Source lives in this repo at [11th-grade/playground/](11th-grade/playground/).
+
+- Online for home / phone: [teacher.arashnm80.ir/playground](https://teacher.arashnm80.ir/playground/)
+- Lab PCs without internet: unzip `teacher-playground-offline.zip` and run `شروع.bat`
+
+After changing the playground, rebuild the offline zip into `11th-grade/extras/teacher-playground-offline.zip`, then:
+
+```bash
+cd 11th-grade
+python3 build_site.py
+bash deploy.sh
+```
+
+`build_site.py` copies `playground/app/` into `site/playground/` for the public URL.
 
 ### Rebuild / publish
 

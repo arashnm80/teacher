@@ -8,4 +8,4 @@
 
 بازی «تکامل اعتماد» برای زنگ چهارم، نسخه بدون اینترنت، با `extras/make_trust_offline.py` ساخته می‌شود. خروجی‌اش `extras/evolution-of-trust-offline.zip` است. دانش‌آموز پوشه را باز می‌کند و `index.html` را اجرا می‌کند. همان فایل از صفحه پیوندهای مفید سایت هم دانلود می‌شود.
 
-تمرین آفلاین پایتون پودمان ۱ («زمین بازی پایتون» / teacher-playground) هم از همان صفحه پیوندهای مفید با `teacher-playground-offline.zip` دانلود می‌شود. سورس جدا در مخزن [arashnm80/teacher-playground](https://github.com/arashnm80/teacher-playground) است؛ کپی سرور در `/root/Storage/teacher-playground` باید با GitHub یکی باشد. بعد از به‌روزرسانی آن مخزن، zip را بسازید، در `extras/` بگذارید، سایت را دوباره `build_site.py` و `deploy.sh` کنید.
+تمرین پایتون پودمان ۱ («زمین بازی پایتون») هم آنلاین است ([teacher.arashnm80.ir/playground](https://teacher.arashnm80.ir/playground/)) و هم از صفحه پیوندهای مفید با `teacher-playground-offline.zip` دانلود می‌شود. سورس داخل همین مخزن در `11th-grade/playground/` است. بعد از تغییر آن، zip را در `extras/` تازه کنید، سپس `build_site.py` و `deploy.sh`.

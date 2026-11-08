@@ -1,0 +1,57 @@
+[
+  {
+    "id": "print-input",
+    "title": "ورودی و خروجی",
+    "body": "با `print` چیزی را چاپ می‌کنید و با `input` یک خط از ورودی می‌خوانید.\n\n```\nname = input()\nprint(\"Hello\", name)\n```\n\nاگر داخل `input(\"پیام\")` پیام بگذارید، همان پیام هم چاپ می‌شود و معمولاً آزمون را خراب می‌کند. فقط بنویسید: `input()`."
+  },
+  {
+    "id": "types-ops",
+    "title": "نوع داده و عملگرها",
+    "body": "ورودی همیشه رشته است. برای عدد صحیح از `int(...)` و برای اعشار از `float(...)` استفاده کنید.\n\n```\na = int(input())\nb = int(input())\nprint(a + b)\n```\n\nعملگرهای مقایسه‌ای: `==` `!=` `<` `>` `<=` `>=`"
+  },
+  {
+    "id": "if-else",
+    "title": "شرط‌ها",
+    "body": "```\nif condition:\n    ...\nelif other:\n    ...\nelse:\n    ...\n```\n\nتورفتگی (فاصله اول خط) اجباری است. شرط‌ها را با `and` و `or` ترکیب کنید."
+  },
+  {
+    "id": "for-loop",
+    "title": "حلقه for و range",
+    "body": "```\nfor i in range(5):\n    print(i)\n```\n\n`range(n)` اعداد `0` تا `n-1` را می‌سازد. `range(a, b)` از `a` تا قبل از `b` است. `range(a, b, step)` با گام دلخواه."
+  },
+  {
+    "id": "while-loop",
+    "title": "حلقه while",
+    "body": "```\nn = int(input())\nwhile n > 0:\n    print(n)\n    n -= 1\n```\n\nبا `break` حلقه را قطع و با `continue` به دور بعد می‌روید. مراقب حلقهٔ بی‌نهایت باشید."
+  },
+  {
+    "id": "lists",
+    "title": "لیست‌ها",
+    "body": "```\nnums = [1, 2, 3]\nnums.append(4)\nprint(nums[0], len(nums))\n```\n\nایندکس از صفر شروع می‌شود. برش: `nums[1:3]`."
+  },
+  {
+    "id": "sets",
+    "title": "مجموعه‌ها",
+    "body": "```\ns = {1, 2, 2, 3}\nprint(s)  # تکراری‌ها حذف می‌شوند\n```\n\nعضویت: `x in s`. اجتماع و اشتراک: `s | t` و `s & t`."
+  },
+  {
+    "id": "dicts",
+    "title": "دیکشنری",
+    "body": "```\nd = {\"a\": 1, \"b\": 2}\nprint(d[\"a\"])\nd[\"c\"] = 3\n```\n\nکلیدها یکتا هستند. پیمایش: `for key in d:` یا `for k, v in d.items():`."
+  },
+  {
+    "id": "tuples",
+    "title": "تاپل",
+    "body": "تاپل شبیه لیست است ولی تغییرناپذیر:\n\n```\nt = (10, 20, 30)\nprint(t[1])\n```\n\nمعمولاً برای بسته‌بندی چند مقدار ثابت یا برگرداندن چند خروجی از تابع استفاده می‌شود."
+  },
+  {
+    "id": "functions",
+    "title": "توابع",
+    "body": "```\ndef add(a, b):\n    return a + b\n\nprint(add(2, 3))\n```\n\nپارامترها ورودی تابع‌اند و `return` مقدار خروجی را مشخص می‌کند. بدون `return` مقدار `None` برمی‌گردد."
+  },
+  {
+    "id": "modules",
+    "title": "ماژول‌ها",
+    "body": "```\nimport math\nprint(math.floor(3.7))\nprint(math.ceil(3.2))\nprint(math.pi)\n```\n\nماژول، جعبه‌ابزار آماده است. فقط وقتی مسئله اجازه می‌دهد `import` کنید."
+  }
+]

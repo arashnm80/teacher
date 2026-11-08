@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" href="data:,">
+  <title>تمرین پایتون — پودمان ۱</title>
+  <link rel="stylesheet" href="vendor/codemirror/codemirror.min.css">
+  <link rel="stylesheet" href="vendor/codemirror/theme/material-darker.min.css">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <div id="boot" class="boot">
+    <div class="boot-card">
+      <p class="boot-brand">تمرین پایتون</p>
+      <p class="boot-msg" id="boot-msg">در حال آماده‌سازی موتور پایتون…</p>
+      <div class="boot-bar"><span id="boot-bar"></span></div>
+      <button type="button" id="boot-retry" class="secondary boot-retry" hidden>تلاش دوباره</button>
+      <details id="boot-details" class="boot-details" hidden>
+        <summary>جزئیات فنی (برای معلم)</summary>
+        <pre id="boot-tech" class="ltr" dir="ltr"></pre>
+      </details>
+    </div>
+  </div>
+
+  <header class="top">
+    <div class="brand">
+      <strong>تمرین پایتون</strong>
+      <span>پودمان ۱ · آفلاین</span>
+    </div>
+    <div class="top-actions">
+      <button type="button" id="btn-progress" class="ghost">پیشرفت من</button>
+    </div>
+  </header>
+
+  <div class="layout">
+    <aside class="side" id="side">
+      <label class="filter">
+        <span>موضوع</span>
+        <select id="topic-filter">
+          <option value="">همه موضوع‌ها</option>
+        </select>
+      </label>
+      <nav id="problem-list" class="problem-list" aria-label="فهرست مسئله‌ها"></nav>
+    </aside>
+
+    <main class="main" id="main">
+      <section class="panel statement-panel">
+        <div class="panel-head">
+          <div>
+            <p class="eyebrow" id="problem-topic"></p>
+            <h1 id="problem-title">یک مسئله را انتخاب کنید</h1>
+          </div>
+          <span class="pill" id="problem-mode"></span>
+        </div>
+        <article id="statement" class="statement prose"></article>
+        <div class="constraint-note" id="constraint-note" hidden></div>
+      </section>
+
+      <section class="panel editor-panel">
+        <div class="panel-head">
+          <h2>کد شما</h2>
+          <div class="row-actions">
+            <button type="button" id="btn-reset" class="ghost">بازنشانی</button>
+            <button type="button" id="btn-run" class="primary" disabled>اجرا و آزمون</button>
+          </div>
+        </div>
+        <div class="editor-shell ltr" dir="ltr">
+          <textarea id="editor" spellcheck="false" aria-label="ویرایشگر کد"></textarea>
+        </div>
+        <p class="hint-inline">نکته: داخل <code class="ltr" dir="ltr">input()</code> پیام نگذارید؛ فقط داده را بخوانید.</p>
+      </section>
+
+      <section class="panel help-panel">
+        <div class="tabs" role="tablist">
+          <button type="button" class="tab active" data-tab="results">نتایج</button>
+          <button type="button" class="tab" data-tab="hints">راهنما</button>
+          <button type="button" class="tab" data-tab="concept">آموزش</button>
+        </div>
+        <div class="tab-panels">
+          <div id="tab-results" class="tab-panel active">
+            <div id="results" class="results empty">هنوز آزمونی اجرا نشده است.</div>
+          </div>
+          <div id="tab-hints" class="tab-panel">
+            <div id="hints" class="hints">
+              <p class="muted">برای این مسئله هنوز راهنمایی باز نکرده‌اید.</p>
+              <button type="button" id="btn-hint" class="secondary" disabled>نمایش راهنمای بعدی</button>
+              <div id="hint-list"></div>
+            </div>
+          </div>
+          <div id="tab-concept" class="tab-panel">
+            <div id="concept" class="prose muted">پس از انتخاب مسئله، آموزش مرتبط اینجا می‌آید.</div>
+          </div>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <dialog id="progress-dialog" dir="rtl" lang="fa">
+    <form method="dialog" class="progress-card">
+      <h2>پیشرفت شما</h2>
+      <p id="progress-summary"></p>
+      <ul id="progress-list"></ul>
+      <div class="row-actions">
+        <button type="button" id="btn-clear-progress" class="ghost danger">پاک کردن پیشرفت این مرورگر</button>
+        <button value="close" class="primary">بستن</button>
+      </div>
+    </form>
+  </dialog>
+
+  <script src="vendor/codemirror/codemirror.min.js"></script>
+  <script src="vendor/codemirror/mode/python/python.min.js"></script>
+  <script src="vendor/codemirror/addon/edit/closebrackets.min.js"></script>
+  <script src="vendor/codemirror/addon/edit/matchbrackets.min.js"></script>
+  <script src="vendor/codemirror/addon/edit/trailingspace.min.js"></script>
+  <script src="vendor/codemirror/addon/selection/active-line.min.js"></script>
+  <script src="vendor/codemirror/addon/comment/comment.min.js"></script>
+  <!-- Pyodide loads dynamically (modern engine, legacy fallback) via js/compat.js -->
+  <script type="module" src="js/app.js"></script>
+</body>
+</html>
