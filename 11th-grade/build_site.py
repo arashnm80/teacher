@@ -259,9 +259,9 @@ def flatten() -> list[dict]:
 
 
 def chrome(page_path: Path, title_fa: str, title_en: str, pages: list[dict], body: str) -> str:
-    assets = rel(page_path, SITE / "assets" / "style.css") + "?v=16"
-    script = rel(page_path, SITE / "assets" / "app.js") + "?v=16"
-    search = rel(page_path, SITE / "assets" / "search-index.js") + "?v=16"
+    assets = rel(page_path, SITE / "assets" / "style.css") + "?v=19"
+    script = rel(page_path, SITE / "assets" / "app.js") + "?v=19"
+    search = rel(page_path, SITE / "assets" / "search-index.js") + "?v=19"
     home = rel(page_path, SITE / "index.html")
     favicon = rel(page_path, SITE / "assets" / "favicon.svg")
     package = rel(page_path, SITE / "grade11-offline.zip") + "?v=4"
@@ -545,7 +545,7 @@ def playground_online_href(prefix: str) -> str:
 
 def playground_zip_href(prefix: str) -> str:
     root = prefix[: -len("images")] if prefix.endswith("images") else ""
-    return root + "teacher-playground-offline.zip?v=2"
+    return root + "teacher-playground-offline.zip?v=4"
 
 
 def links_text(lang: str) -> str:
@@ -673,6 +673,9 @@ def main() -> None:
     (SITE / "assets").mkdir(parents=True)
     shutil.copy2(WEB / "style.css", SITE / "assets" / "style.css")
     shutil.copy2(WEB / "app.js", SITE / "assets" / "app.js")
+    fonts_src = WEB / "fonts"
+    if fonts_src.is_dir():
+        shutil.copytree(fonts_src, SITE / "assets" / "fonts")
     (SITE / "assets" / "favicon.svg").write_text(
         """<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
   <rect width="32" height="32" rx="6" fill="#0c2f2c"/>

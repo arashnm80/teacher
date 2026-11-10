@@ -33,7 +33,9 @@
         "stdin": "a\n",
         "stdout": "Hello, a\n"
       }
-    ]
+    ],
+    "guideTitle": "سلام ساده — print و input",
+    "guide": "این مسئله فقط یک خط ورودی دارد و یک خط خروجی.\n\n```\nname = input()\nprint(\"Hello,\", name)\n```\n\nنکتهٔ مهم قالب: باید `Hello, NAME` شود. ویرگول را داخل رشته بگذارید (`\"Hello,\"`) تا بعد از آن فاصلهٔ خودکارِ `print` بیاید.\n\n- پیام داخل `input(\"...\")` نگذارید؛ فقط `input()`\n- نام را به عدد تبدیل نکنید؛ همان رشته را چاپ کنید\n"
   },
   {
     "id": "p02",
@@ -65,7 +67,9 @@
         "stdin": "a\nb\nc\n",
         "stdout": "a\nb\nc\n"
       }
-    ]
+    ],
+    "guideTitle": "سه خط پشت‌سرهم — چندبار input/print",
+    "guide": "سه خط جدا می‌آید؛ سه خط جدا باید برود. برای هر خط یک `input` و یک `print`:\n\n```\na = input()\nb = input()\nc = input()\nprint(a)\nprint(b)\nprint(c)\n```\n\nترتیب را عوض نکنید و چیزی بین خطوط اضافه نکنید. پیام داخل `input` نگذارید.\n\nاین مسئله با «Hello, NAME» فرق دارد؛ اینجا فقط echo کردن سه خط است.\n"
   },
   {
     "id": "p03",
@@ -101,7 +105,9 @@
         "stdin": "-2\n7\n",
         "stdout": "5\n"
       }
-    ]
+    ],
+    "guideTitle": "جمع دو عدد — int و +",
+    "guide": "هر خط ورودی یک عدد صحیح است. `input()` رشته می‌دهد، پس قبل از جمع تبدیل کنید:\n\n```\na = int(input())\nb = int(input())\nprint(a + b)\n```\n\nخروجی فقط یک عدد در یک خط است.\n"
   },
   {
     "id": "p04",
@@ -137,7 +143,9 @@
         "stdin": "9\n7\n",
         "stdout": "2\n"
       }
-    ]
+    ],
+    "guideTitle": "باقی‌مانده — عملگر %",
+    "guide": "باقی‌ماندهٔ تقسیم صحیح با `%` است:\n\n```\na = int(input())\nb = int(input())\nprint(a % b)\n```\n\nمثال: `17 % 5` می‌شود `2`. اعداد مثبت‌اند؛ نیازی به مدیریت علامت منفی نیست.\n"
   },
   {
     "id": "p05",
@@ -173,7 +181,9 @@
         "stdin": "10\n5\n",
         "stdout": "50\n30\n"
       }
-    ]
+    ],
+    "guideTitle": "مساحت و محیط مستطیل",
+    "guide": "دو عدد صحیح مثبت بخوانید (طول، عرض) و **دو خط** چاپ کنید:\n\n```\nlength = int(input())\nwidth = int(input())\nprint(length * width)\nprint(2 * (length + width))\n```\n\nخط اول مساحت، خط دوم محیط. ترتیب خروجی را عوض نکنید.\n"
   },
   {
     "id": "p06",
@@ -209,7 +219,9 @@
         "stdin": "0\n",
         "stdout": "even\n"
       }
-    ]
+    ],
+    "guideTitle": "زوج یا فرد — if و %",
+    "guide": "زوج بودن یعنی باقی‌مانده بر ۲ صفر باشد:\n\n```\nn = int(input())\nif n % 2 == 0:\n    print(\"even\")\nelse:\n    print(\"odd\")\n```\n\nفقط همان کلمه‌های انگلیسی کوچک. صفر زوج است.\n"
   },
   {
     "id": "p07",
@@ -251,7 +263,9 @@
         "stdin": "7\n7\n7\n",
         "stdout": "7\n"
       }
-    ]
+    ],
+    "guideTitle": "حداکثر سه عدد — فقط با if",
+    "guide": "سه عدد در سه خط. بزرگ‌ترین را پیدا کنید **بدون** فراخوانی `max(...)` و `sorted(...)`:\n\n```\na = int(input())\nb = int(input())\nc = int(input())\nbest = a\nif b > best:\n    best = b\nif c > best:\n    best = c\nprint(best)\n```\n\nنام متغیر آزاد است؛ ممنوعیت مربوط به فراخوانی توابع آماده است.\n"
   },
   {
     "id": "p08",
@@ -295,7 +309,9 @@
         "stdin": "20\n",
         "stdout": "A\n"
       }
-    ]
+    ],
+    "guideTitle": "نمره به حرف — زنجیره elif",
+    "guide": "نمره ۰ تا ۲۰ را به حرف تبدیل کنید. مرزها شامل دو سر بازه‌اند:\n\n```\nscore = int(input())\nif score >= 17:\n    print(\"A\")\nelif score >= 14:\n    print(\"B\")\nelif score >= 10:\n    print(\"C\")\nelse:\n    print(\"F\")\n```\n\nترتیب `if` مهم است: اول بازهٔ بالاتر را چک کنید. خروجی فقط یک حرف بزرگ است.\n"
   },
   {
     "id": "p09",
@@ -339,7 +355,9 @@
         "stdin": "5\n",
         "stdout": "1\n2\n3\n4\n5\n"
       }
-    ]
+    ],
+    "guideTitle": "شمارش ۱ تا n با for",
+    "guide": "باید از `for` استفاده کنید و `while` ممنوع است:\n\n```\nn = int(input())\nfor i in range(1, n + 1):\n    print(i)\n```\n\n`range(1, n + 1)` اعداد ۱ تا n را می‌دهد. هر عدد در یک خط جدا.\n"
   },
   {
     "id": "p10",
@@ -384,7 +402,9 @@
         "stdin": "4\n-1\n-2\n3\n0\n",
         "stdout": "0\n"
       }
-    ]
+    ],
+    "guideTitle": "جمع n عدد با for",
+    "guide": "خط اول تعداد است؛ بعد همان تعداد عدد. جمع را خودتان در حلقه حساب کنید (`sum(...)` و `while` ممنوع):\n\n```\nn = int(input())\ntotal = 0\nfor _ in range(n):\n    total += int(input())\nprint(total)\n```\n"
   },
   {
     "id": "p11",
@@ -424,7 +444,9 @@
         "stdin": "1\n",
         "stdout": "1 x 1 = 1\n1 x 2 = 2\n1 x 3 = 3\n1 x 4 = 4\n1 x 5 = 5\n1 x 6 = 6\n1 x 7 = 7\n1 x 8 = 8\n1 x 9 = 9\n1 x 10 = 10\n"
       }
-    ]
+    ],
+    "guideTitle": "جدول ضرب — قالب رشته در for",
+    "guide": "`k` را بخوانید و برای `i` از ۱ تا ۱۰ این قالب را چاپ کنید: `k x i = result`\n\n```\nk = int(input())\nfor i in range(1, 11):\n    print(k, \"x\", i, \"=\", k * i)\n```\n\nحرف `x` انگلیسی کوچک است و فاصله‌ها مثل نمونه باشند. فقط با `for` (بدون `while`).\n"
   },
   {
     "id": "p12",
@@ -464,7 +486,9 @@
         "stdin": "1\n",
         "stdout": "Time remaining: 1 minutes\nYour food is ready!\n"
       }
-    ]
+    ],
+    "guideTitle": "شمارش معکوس غذایی — range معکوس",
+    "guide": "از `m` تا ۱ بروید و متن ثابت چاپ کنید، بعد پیام پایانی:\n\n```\nm = int(input())\nfor x in range(m, 0, -1):\n    print(\"Time remaining:\", x, \"minutes\")\nprint(\"Your food is ready!\")\n```\n\nحتی برای `1` هم بنویسید `minutes` (نه `minute`). فقط با `for`.\n"
   },
   {
     "id": "p13",
@@ -504,7 +528,9 @@
         "stdin": "1\n",
         "stdout": "1\n"
       }
-    ]
+    ],
+    "guideTitle": "شمارش ۱ تا n با while",
+    "guide": "این‌بار `while` اجباری است و `for` ممنوع:\n\n```\nn = int(input())\ni = 1\nwhile i <= n:\n    print(i)\n    i += 1\n```\n\nشمارنده را خودتان زیاد کنید وگرنه حلقه بی‌نهایت می‌شود.\n"
   },
   {
     "id": "p14",
@@ -549,7 +575,9 @@
         "stdin": "5\n5\n0\n",
         "stdout": "10\n"
       }
-    ]
+    ],
+    "guideTitle": "جمع تا صفر — sentinel در while",
+    "guide": "اعداد را یکی‌یکی بخوانید تا `0` برسد؛ خود صفر داخل جمع نیست:\n\n```\ntotal = 0\nwhile True:\n    x = int(input())\n    if x == 0:\n        break\n    total += x\nprint(total)\n```\n\nاگر همان اول `0` آمد خروجی `0` است. `for` و `sum(...)` ممنوع‌اند.\n"
   },
   {
     "id": "p15",
@@ -598,7 +626,9 @@
         "stdin": "1000\n",
         "stdout": "4\n"
       }
-    ]
+    ],
+    "guideTitle": "تعداد ارقام — تقسیم بر ۱۰ در while",
+    "guide": "بدون `str` و بدون `for`، رقم‌ها را با `//= 10` بشمارید:\n\n```\nn = int(input())\nif n == 0:\n    print(1)\nelse:\n    count = 0\n    while n > 0:\n        count += 1\n        n //= 10\n    print(count)\n```\n\nبرای صفر جداگانه `1` برگردانید.\n"
   },
   {
     "id": "p16",
@@ -642,7 +672,9 @@
         "stdin": "8\n9\n7\n8\n",
         "stdout": "down\nup\ncorrect\n"
       }
-    ]
+    ],
+    "guideTitle": "حدس عدد — while تا correct",
+    "guide": "اول secret، بعد حدس‌ها. برای هر حدس یکی از `up` / `down` / `correct`:\n\n```\nsecret = int(input())\nwhile True:\n    guess = int(input())\n    if guess < secret:\n        print(\"up\")\n    elif guess > secret:\n        print(\"down\")\n    else:\n        print(\"correct\")\n        break\n```\n\nفقط با `while` (بدون `for`). فرض کنید بالاخره حدس درست می‌آید.\n"
   },
   {
     "id": "p17",
@@ -678,7 +710,9 @@
         "stdin": "3\n0\n-1\n5\n",
         "stdout": "5 -1 0\n"
       }
-    ]
+    ],
+    "guideTitle": "معکوس لیست — برش [::-1]",
+    "guide": "اعداد را در لیست بریزید و معکوس چاپ کنید (همه در یک خط با فاصله):\n\n```\nn = int(input())\nnums = []\nfor _ in range(n):\n    nums.append(int(input()))\nprint(*nums[::-1])\n```\n\n`nums[::-1]` لیست را از آخر به اول می‌دهد. `print(*...)` اعضا را با فاصله در یک خط می‌چیند.\n"
   },
   {
     "id": "p18",
@@ -714,7 +748,9 @@
         "stdin": "2\n4\n5\n",
         "stdout": "4 5\n"
       }
-    ]
+    ],
+    "guideTitle": "حذف منفی‌ها — فیلتر لیست",
+    "guide": "فقط مقادیر `>= 0` را نگه دارید و ترتیب ورودی را حفظ کنید:\n\n```\nn = int(input())\nkept = []\nfor _ in range(n):\n    x = int(input())\n    if x >= 0:\n        kept.append(x)\nprint(*kept)\n```\n\nاگر لیست خالی شد، `print()` بدون آرگومان یک خط خالی می‌دهد.\n"
   },
   {
     "id": "p19",
@@ -784,7 +820,9 @@
           "expected": -2
         }
       }
-    ]
+    ],
+    "guideTitle": "دومین بزرگ‌ترین — آزمون تابع",
+    "guide": "فقط تابع بنویسید؛ بیرون تابع `input`/`print` نگذارید:\n\n```\ndef second_max(nums):\n    first = second = None\n    for x in nums:\n        if first is None or x > first:\n            second = first\n            first = x\n        elif second is None or x > second:\n            second = x\n    return second\n```\n\nاعداد متمایزند و حداقل دو عضو دارند. خروجی با `return` است نه `print`.\n"
   },
   {
     "id": "p20",
@@ -820,7 +858,9 @@
         "stdin": "1\n0\n",
         "stdout": "1\n"
       }
-    ]
+    ],
+    "guideTitle": "مقادیر یکتا — set و len",
+    "guide": "مجموعه عضو تکراری نگه نمی‌دارد:\n\n```\nn = int(input())\ns = set()\nfor _ in range(n):\n    s.add(int(input()))\nprint(len(s))\n```\n\nیا بعد از خواندن همه: `print(len(set(nums)))`.\n"
   },
   {
     "id": "p21",
@@ -856,7 +896,9 @@
         "stdin": "3\n9\n1\n2\n4\n2\n9\n8\n1\n",
         "stdout": "1 2 9\n"
       }
-    ]
+    ],
+    "guideTitle": "اشتراک دو گروه — & و sorted",
+    "guide": "دو مجموعه بسازید و اشتراک را مرتب چاپ کنید:\n\n```\nn = int(input())\na = {int(input()) for _ in range(n)}\nm = int(input())\nb = {int(input()) for _ in range(m)}\ncommon = sorted(a & b)\nprint(*common)\n```\n\nاگر اشتراکی نبود، `print()` یک خط خالی می‌دهد. ترتیب خروجی باید صعودی باشد.\n"
   },
   {
     "id": "p22",
@@ -892,7 +934,9 @@
         "stdin": "2\none\ntwo\n",
         "stdout": "one 1\ntwo 1\n"
       }
-    ]
+    ],
+    "guideTitle": "شمارش کلمات — دیکشنری و ترتیب درج",
+    "guide": "تعداد تکرار هر کلمه را بشمارید و به ترتیب **اولین ظهور** چاپ کنید:\n\n```\nn = int(input())\ncounts = {}\nfor _ in range(n):\n    word = input()\n    if word in counts:\n        counts[word] += 1\n    else:\n        counts[word] = 1\nfor word in counts:\n    print(word, counts[word])\n```\n\n`Hi` با `hi` فرق دارد. در پایتون ۳.۷+ ترتیب کلیدها همان ترتیب درج است.\n"
   },
   {
     "id": "p23",
@@ -967,7 +1011,9 @@
           }
         }
       }
-    ]
+    ],
+    "guideTitle": "دفتر نمره — فیلتر دیکشنری در تابع",
+    "guide": "آزمون تابع: دیکشنری جدید فقط با نمره‌های `>= 10`:\n\n```\ndef grade_book(scores):\n    result = {}\n    for name, score in scores.items():\n        if score >= 10:\n            result[name] = score\n    return result\n```\n\nکسانی که زیر ۱۰ هستند نباید در خروجی باشند. `return` کنید، `print` نکنید.\n"
   },
   {
     "id": "p24",
@@ -1044,7 +1090,9 @@
           ]
         }
       }
-    ]
+    ],
+    "guideTitle": "جابه‌جایی تاپل — return یک tuple",
+    "guide": "تاپل دو عضوی را جابه‌جا کنید و **تاپل** برگردانید (نه لیست):\n\n```\ndef swap_pair(pair):\n    return (pair[1], pair[0])\n```\n\nیا: `a, b = pair` سپس `return (b, a)`.\n"
   },
   {
     "id": "p25",
@@ -1105,7 +1153,9 @@
           "expected": false
         }
       }
-    ]
+    ],
+    "guideTitle": "سال کبیسه — منطق if در تابع",
+    "guide": "قانون را به همان ترتیب چک کنید و `True`/`False` برگردانید:\n\n```\ndef is_leap(year):\n    if year % 400 == 0:\n        return True\n    if year % 100 == 0:\n        return False\n    if year % 4 == 0:\n        return True\n    return False\n```\n\nخروجی بولین است نه رشته. مثال‌ها: `2000`→True ، `1900`→False ، `2024`→True.\n"
   },
   {
     "id": "p26",
@@ -1175,7 +1225,9 @@
           "expected": 5040
         }
       }
-    ]
+    ],
+    "guideTitle": "فاکتوریل با for",
+    "guide": "با حلقهٔ `for` ضرب کنید؛ `while` ممنوع است. `0! = 1`:\n\n```\ndef factorial(n):\n    result = 1\n    for i in range(1, n + 1):\n        result *= i\n    return result\n```\n\nفقط تابع را بنویسید و با `return` جواب بدهید.\n"
   },
   {
     "id": "p27",
@@ -1236,7 +1288,9 @@
           "expected": 0
         }
       }
-    ]
+    ],
+    "guideTitle": "شمارش مصوت‌ها — پیمایش رشته",
+    "guide": "مصوت‌ها: `aeiouAEIOU` (حرف `y` نیست):\n\n```\ndef count_vowels(text):\n    vowels = \"aeiouAEIOU\"\n    count = 0\n    for ch in text:\n        if ch in vowels:\n            count += 1\n    return count\n```\n\nفاصله و رقم شمرده نمی‌شوند. خروجی عدد صحیح است.\n"
   },
   {
     "id": "p28",
@@ -1281,7 +1335,9 @@
         "stdin": "3\n*\n3\nexit\n",
         "stdout": "9.0\n"
       }
-    ]
+    ],
+    "guideTitle": "ماشین‌حساب — while + تابع calc",
+    "guide": "حلقهٔ اصلی با `while` (بدون `for`) و حداقل یک `def` برای عملیات:\n\n```\ndef calc(a, op, b):\n    if op == \"+\":\n        return a + b\n    if op == \"-\":\n        return a - b\n    if op == \"*\":\n        return a * b\n    return a / b\n\nwhile True:\n    first = input()\n    if first == \"exit\":\n        break\n    op = input()\n    second = input()\n    print(calc(float(first), op, float(second)))\n```\n\nهمه با `float`؛ مثلاً `3+4` باید `7.0` چاپ شود.\n"
   },
   {
     "id": "p29",
@@ -1322,7 +1378,9 @@
         "stdin": "-1.5\n",
         "stdout": "-2\n-1\n"
       }
-    ]
+    ],
+    "guideTitle": "کف و سقف — import math",
+    "guide": "حتماً `import math` کنید؛ برای منفی هم درست کار می‌کند:\n\n```\nimport math\nx = float(input())\nprint(math.floor(x))\nprint(math.ceil(x))\n```\n\nمثال `-1.5` → خط اول `-2`، خط دوم `-1`.\n"
   },
   {
     "id": "p30",
@@ -1381,6 +1439,8 @@
           "expected": 12.566370614359172
         }
       }
-    ]
+    ],
+    "guideTitle": "مساحت دایره — math.pi در تابع",
+    "guide": "تابع + ماژول `math`؛ نتیجه را گرد نکنید:\n\n```\nimport math\n\ndef circle_area(r):\n    return math.pi * r * r\n```\n\nفقط تابع را کامل کنید و با `return` برگردانید؛ `input`/`print` بیرون تابع لازم نیست.\n"
   }
 ]

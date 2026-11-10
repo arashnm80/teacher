@@ -87,8 +87,8 @@ init().catch((err) => {
 async function init() {
   setBoot(12, "خواندن مسئله‌ها…");
   const [problems, concepts] = await Promise.all([
-    fetchJson("data/problems.json"),
-    fetchJson("data/concepts.json"),
+    fetchJson("data/problems.json?v=6"),
+    fetchJson("data/concepts.json?v=6"),
   ]);
   state.problems = problems;
   state.concepts = Object.fromEntries(concepts.map((c) => [c.id, c]));
@@ -427,15 +427,18 @@ function renderHints(problem) {
 }
 
 function renderConcept(problem) {
-  const concept = state.concepts[problem.conceptId];
-  if (!concept) {
+  // Prefer per-problem guide so siblings that share a topic (e.g. p01/p02)
+  // do not show the same آموزش text.
+  const title = problem.guideTitle || state.concepts[problem.conceptId]?.title;
+  const body = problem.guide || state.concepts[problem.conceptId]?.body;
+  if (!title || !body) {
     el.concept.className = "prose muted";
     el.concept.textContent = "آموزش مرتبطی تعریف نشده است.";
     return;
   }
   el.concept.className = "prose";
-  el.concept.innerHTML = `<h3 style="margin-top:0">${bidiMixHtml(concept.title)}</h3>${mdLite(
-    concept.body
+  el.concept.innerHTML = `<h3 style="margin-top:0">${bidiMixHtml(title)}</h3>${mdLite(
+    body
   )}`;
 }
 

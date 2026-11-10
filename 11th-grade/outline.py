@@ -63,11 +63,19 @@ MODULES = [
         "blurb_en": "Sources listed in the book.",
         "home": False,
     },
+    {
+        "id": "more",
+        "fa": "فراتر از کتاب",
+        "en": "Beyond the book",
+        "blurb_fa": "نرم‌افزار، ویدیو، زمین بازی و بازی‌های کلاس.",
+        "blurb_en": "Software, videos, the playground, and class games.",
+        "home": False,
+    },
 ]
 
 
-def S(id, module, unit_fa, unit_en, file, start, end, fa, en, ex_fa, ex_en, link=None):
-    return {
+def S(id, module, unit_fa, unit_en, file, start, end, fa, en, ex_fa, ex_en, link=None, custom=None):
+    row = {
         "id": id,
         "module": module,
         "unit_fa": unit_fa,
@@ -81,6 +89,9 @@ def S(id, module, unit_fa, unit_en, file, start, end, fa, en, ex_fa, ex_en, link
         "ex_en": ex_en,
         "link": link,
     }
+    if custom:
+        row["custom"] = custom
+    return row
 
 
 PY = "https://docs.python.org/3/tutorial/"
@@ -769,6 +780,12 @@ SECTIONS = [
       ["Pick three sources from this chapter and write which module each one supports.",
        "Open one link and write two lines about something the book did not say. If you are offline, keep the address in your notes instead."],
       None),
+
+    # Living tools page (not book text). Built by links_html() in build_site.py.
+    S("links", "more", "پیوندهای مفید", "Useful links", "", 0, 0,
+      "پیوندهای مفید", "Useful links",
+      [], [],
+      None, custom="links"),
 ]
 
 from practical import PRACTICAL

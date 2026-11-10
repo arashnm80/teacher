@@ -1,20 +1,84 @@
+/* Self-hosted Vazirmatn so offline classroom zips keep Persian UI readable. */
+@font-face {
+  font-family: "Vazirmatn";
+  src: url("fonts/Vazirmatn-Variable.woff2") format("woff2-variations"),
+       url("fonts/Vazirmatn-Variable.woff2") format("woff2 supports variations");
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Vazirmatn";
+  src: url("fonts/Vazirmatn-Regular.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Vazirmatn";
+  src: url("fonts/Vazirmatn-Medium.woff2") format("woff2");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Vazirmatn";
+  src: url("fonts/Vazirmatn-Bold.woff2") format("woff2");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+/*
+  Shared grade-11 theme (Refactoring UI habits):
+  - constrained spacing / type scales
+  - hierarchy via weight + tinted color, not only size
+  - soft two-part shadows; fewer hard borders
+  - readable measure for long lesson prose
+*/
 :root {
   --paper: #eef3f1;
+  --paper-2: #e3ece8;
   --card: #fffcf8;
-  --ink: #1c2422;
-  --muted: #5c675f;
+  --ink: #14201d;
+  --ink-soft: #3d4a45;
+  --muted: #6b756f;
   --line: #d5e0da;
+  --line-soft: #e4ebe7;
   --teal: #0f5c56;
   --teal-2: #14756c;
+  --teal-soft: #d8f0ea;
   --deep: #0c2f2c;
   --clay: #b85c38;
   --chip: #e4f0ec;
   --extra: #e5f6ea;
   --extra-line: #b7dcc3;
   --extra-ink: #1d5c32;
-  --shadow: 0 8px 24px rgba(12, 47, 44, 0.06);
-  --font: Tahoma, "Segoe UI", "Noto Naskh Arabic", sans-serif;
+  --shadow-sm: 0 1px 2px rgba(12, 47, 44, 0.05);
+  --shadow: 0 1px 2px rgba(12, 47, 44, 0.04), 0 10px 28px rgba(12, 47, 44, 0.07);
+  --shadow-lg: 0 2px 4px rgba(12, 47, 44, 0.04), 0 18px 44px rgba(12, 47, 44, 0.1);
+  --radius: 14px;
+  --radius-sm: 10px;
+  --space-1: 0.25rem;
+  --space-2: 0.5rem;
+  --space-3: 0.75rem;
+  --space-4: 1rem;
+  --space-5: 1.5rem;
+  --space-6: 2.25rem;
+  --text-xs: 0.75rem;
+  --text-sm: 0.875rem;
+  --text-base: 1.0625rem;
+  --text-lg: 1.25rem;
+  --text-xl: 1.5rem;
+  --text-2xl: 1.9rem;
+  --measure: 42rem;
+  --font: "Vazirmatn", Tahoma, "Segoe UI", "Noto Naskh Arabic", sans-serif;
   --mono: Consolas, "Courier New", monospace;
+  --focus: 0 0 0 3px color-mix(in srgb, var(--teal) 35%, white);
+  --ease: 160ms ease;
 }
 
 * { box-sizing: border-box; }
@@ -26,14 +90,34 @@ html { scroll-behavior: smooth; }
 body {
   margin: 0;
   background:
+    radial-gradient(900px 420px at 100% -8%, #d7efe8 0, transparent 55%),
     linear-gradient(180deg, #e7f2ef 0, var(--paper) 220px);
   color: var(--ink);
   font-family: var(--font);
-  font-size: 17px;
-  line-height: 1.75;
+  font-size: var(--text-base);
+  line-height: 1.7;
+  font-weight: 400;
+  -webkit-font-smoothing: antialiased;
 }
 
-a { color: var(--teal); }
+a {
+  color: var(--teal);
+  text-underline-offset: 0.15em;
+}
+
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+select:focus-visible,
+.card:focus-visible,
+.side a:focus-visible,
+.pager a:focus-visible,
+.download:focus-visible,
+.lang-toggle:focus-visible,
+.results a:focus-visible {
+  outline: none;
+  box-shadow: var(--focus);
+}
 
 .top {
   position: sticky;
@@ -42,11 +126,12 @@ a { color: var(--teal); }
   display: flex;
   flex-wrap: wrap;
   align-items: center;
-  gap: 0.7rem;
-  padding: 0.65rem 1rem;
-  background: var(--deep);
+  gap: 0.75rem;
+  padding: 0.7rem 1.1rem;
+  background: linear-gradient(180deg, #103833 0%, var(--deep) 100%);
   color: #f4faf8;
-  box-shadow: 0 1px 0 rgba(0, 0, 0, 0.18);
+  border-bottom: 3px solid var(--teal-2);
+  box-shadow: var(--shadow-sm);
 }
 
 .brand {
@@ -54,13 +139,15 @@ a { color: var(--teal); }
   text-decoration: none;
   font-weight: 700;
   white-space: nowrap;
+  letter-spacing: -0.01em;
 }
 
 .brand small {
   display: block;
-  font-weight: 400;
-  opacity: 0.78;
-  font-size: 0.72rem;
+  font-weight: 500;
+  color: color-mix(in srgb, #f4faf8 72%, var(--teal-2));
+  font-size: var(--text-xs);
+  margin-top: 0.05rem;
 }
 
 .search-wrap {
@@ -74,11 +161,18 @@ a { color: var(--teal); }
   width: 100%;
   border: 0;
   border-radius: 999px;
-  padding: 0.48rem 0.9rem;
+  padding: 0.55rem 0.95rem;
   font: inherit;
-  font-size: 0.92rem;
+  font-size: var(--text-sm);
   background: #f4faf8;
   color: var(--ink);
+  box-shadow: inset 0 0 0 1px transparent;
+  transition: box-shadow var(--ease);
+}
+
+.search-wrap input:focus {
+  outline: none;
+  box-shadow: var(--focus);
 }
 
 .results {
@@ -87,9 +181,9 @@ a { color: var(--teal); }
   top: calc(100% + 0.35rem);
   background: var(--card);
   color: var(--ink);
-  border: 1px solid var(--line);
-  border-radius: 12px;
-  box-shadow: var(--shadow);
+  border: 1px solid var(--line-soft);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-lg);
   max-height: 22rem;
   overflow: auto;
   padding: 0.35rem;
@@ -172,13 +266,61 @@ a { color: var(--teal); }
   display: none;
 }
 
+.nav-toggle {
+  align-items: center;
+  gap: 0.45rem;
+  border: 0;
+  border-radius: 999px;
+  background: #f4faf8;
+  color: var(--deep);
+  font: inherit;
+  font-weight: 700;
+  padding: 0.45rem 0.8rem;
+  cursor: pointer;
+  list-style: none;
+}
+
+.nav-toggle::-webkit-details-marker { display: none; }
+
+.burger {
+  position: relative;
+  width: 1rem;
+  height: 2px;
+  background: currentColor;
+}
+
+.burger::before,
+.burger::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  width: 1rem;
+  height: 2px;
+  background: currentColor;
+}
+
+.burger::before { top: -5px; }
+.burger::after { top: 5px; }
+
+.nav-backdrop {
+  display: none;
+  position: fixed;
+  inset: 0;
+  z-index: 25;
+  background: rgba(12, 47, 44, 0.45);
+}
+
+body.nav-open .nav-backdrop { display: block; }
+
+body.nav-open .top { z-index: 45; }
+
 .side {
   max-height: calc(100vh - 5.2rem);
   overflow: auto;
   background: var(--card);
-  border: 1px solid var(--line);
-  border-radius: 16px;
-  padding: 0.45rem 0.35rem 0.8rem;
+  border: 1px solid var(--line-soft);
+  border-radius: var(--radius);
+  padding: 0.55rem 0.4rem 0.9rem;
   box-shadow: var(--shadow);
   text-align: start;
 }
@@ -190,62 +332,84 @@ a { color: var(--teal); }
 }
 
 .side .mod {
-  margin: 0.85rem 0.35rem 0.2rem;
+  margin: 0.95rem 0.35rem 0.25rem;
   padding: 0.15rem 0.55rem 0;
   color: var(--clay);
-  font-size: 0.78rem;
+  font-size: var(--text-xs);
   font-weight: 700;
+  letter-spacing: 0.02em;
   line-height: 1.4;
+  text-transform: none;
 }
 
 .side .unit {
-  margin: 0.55rem 0.35rem 0.05rem;
-  padding: 0.35rem 0.55rem 0.1rem;
-  border-top: 1px solid var(--line);
+  margin: 0.65rem 0.35rem 0.1rem;
+  padding: 0.4rem 0.55rem 0.1rem;
+  border-top: 1px solid var(--line-soft);
   color: var(--muted);
-  font-size: 0.75rem;
+  font-size: var(--text-xs);
+  font-weight: 500;
   line-height: 1.4;
 }
 
 .side a {
   display: block;
   text-decoration: none;
-  color: var(--ink);
+  color: var(--ink-soft);
   margin: 0.08rem 0.3rem;
-  padding: 0.32rem 0.6rem;
-  border-radius: 8px;
-  font-size: 0.9rem;
+  padding: 0.38rem 0.65rem;
+  border-radius: var(--radius-sm);
+  font-size: var(--text-sm);
+  font-weight: 500;
   line-height: 1.45;
+  border-inline-start: 3px solid transparent;
+  transition: background var(--ease), color var(--ease), border-color var(--ease);
 }
 
-.side a:hover { background: var(--chip); }
+.side a:hover {
+  background: var(--chip);
+  color: var(--ink);
+}
 
 .side a.current {
-  background: var(--teal);
-  color: #f4faf8;
+  background: var(--teal-soft);
+  color: var(--deep);
+  font-weight: 700;
+  border-inline-start-color: var(--teal);
 }
 
 .main { flex: 1; min-width: 0; }
 
 .hero, .panel, .lesson, .pager, .extra {
   background: var(--card);
-  border: 1px solid var(--line);
-  border-radius: 16px;
+  border: 1px solid var(--line-soft);
+  border-radius: var(--radius);
   box-shadow: var(--shadow);
 }
 
-.hero { padding: 1.35rem 1.45rem 1.15rem; }
+.hero { padding: 1.5rem 1.55rem 1.3rem; }
 
 .kicker {
   margin: 0;
   color: var(--clay);
   font-weight: 700;
-  font-size: 0.85rem;
+  font-size: var(--text-sm);
 }
 
-.hero h1 { margin: 0.15rem 0 0.35rem; font-size: 1.9rem; line-height: 1.3; }
+.hero h1 {
+  margin: 0.2rem 0 0.4rem;
+  font-size: var(--text-2xl);
+  line-height: 1.25;
+  letter-spacing: -0.02em;
+  color: var(--deep);
+}
 
-.lede { margin: 0; color: var(--muted); max-width: 42rem; }
+.lede {
+  margin: 0;
+  color: var(--ink-soft);
+  max-width: var(--measure);
+  font-size: 1.02rem;
+}
 
 .steps {
   display: grid;
@@ -274,14 +438,18 @@ a { color: var(--teal); }
   text-decoration: none;
   color: inherit;
   background: var(--card);
-  border: 1px solid var(--line);
+  border: 1px solid var(--line-soft);
   border-inline-start: 4px solid var(--teal);
-  border-radius: 14px;
-  padding: 0.9rem 1rem 1rem;
-  box-shadow: var(--shadow);
+  border-radius: var(--radius);
+  padding: 1rem 1.05rem 1.1rem;
+  box-shadow: var(--shadow-sm);
+  transition: box-shadow var(--ease), border-color var(--ease);
 }
 
-.card:hover { border-color: var(--teal); }
+.card:hover {
+  border-color: color-mix(in srgb, var(--teal) 40%, var(--line));
+  box-shadow: var(--shadow);
+}
 
 .num {
   display: inline-block;
@@ -299,29 +467,42 @@ a { color: var(--teal); }
 .card p { margin: 0; color: var(--muted); font-size: 0.92rem; }
 
 .section-title {
-  margin: 0 0 0.7rem;
-  font-size: 1.35rem;
-  line-height: 1.35;
+  margin: 0 0 0.85rem;
+  font-size: var(--text-xl);
+  line-height: 1.3;
+  letter-spacing: -0.015em;
   color: var(--deep);
 }
 
 .lesson {
-  padding: 0.4rem 1.35rem 1.4rem;
+  padding: 0.55rem 1.45rem 1.55rem;
   border-inline-start: 4px solid var(--teal);
 }
 
-.lesson :is(h1, h2, h3, h4) { line-height: 1.35; margin: 1.2rem 0 0.4rem; }
-
-.lesson h1 { font-size: 1.45rem; }
-
-.lesson h2 {
-  font-size: 1.2rem;
-  color: var(--deep);
-  padding-bottom: 0.15rem;
-  border-bottom: 1px solid var(--line);
+.lesson :is(h1, h2, h3, h4) {
+  line-height: 1.3;
+  margin: 1.35rem 0 0.45rem;
+  letter-spacing: -0.01em;
 }
 
-.lesson h3 { font-size: 1.05rem; color: var(--clay); }
+.lesson h1 { font-size: 1.4rem; color: var(--deep); }
+
+.lesson h2 {
+  font-size: var(--text-lg);
+  font-weight: 700;
+  color: var(--deep);
+  padding-bottom: 0.2rem;
+  border-bottom: 1px solid var(--line-soft);
+}
+
+.lesson h3 {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--clay);
+}
+
+/* Do not put max-width on .lesson p/li — that squeezes callouts,
+   link cards, nested lists, and figures next to full-width media. */
 
 .lesson p,
 .lesson li,
@@ -406,11 +587,11 @@ a { color: var(--teal); }
 .shot img { margin-bottom: 0; }
 
 .shot figcaption {
-  margin: 0.28rem 0 0;
-  color: #8a938e;
-  font-size: 0.75rem;
-  font-weight: 400;
-  line-height: 1.4;
+  margin: 0.35rem 0 0;
+  color: var(--muted);
+  font-size: var(--text-xs);
+  font-weight: 500;
+  line-height: 1.45;
   text-align: center;
 }
 
@@ -539,6 +720,88 @@ a { color: var(--teal); }
 .callout ol:last-child,
 .callout ul:last-child { margin-bottom: 0.1rem; }
 
+.link-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 0.9rem;
+  margin: 0.7rem 0 1.35rem;
+}
+
+.link-card {
+  display: flex;
+  gap: 0.85rem;
+  align-items: flex-start;
+  background: var(--card);
+  border: 1px solid var(--line-soft);
+  border-radius: var(--radius);
+  padding: 0.95rem 1.05rem;
+  box-shadow: var(--shadow-sm);
+  transition: box-shadow var(--ease);
+}
+
+.link-card:hover {
+  box-shadow: var(--shadow);
+}
+
+.link-card h3 { margin: 0 0 0.25rem; font-size: 1rem; color: var(--deep); }
+
+.link-card p { margin: 0 0 0.55rem; font-size: var(--text-sm); color: var(--ink-soft); }
+
+.link-card .video-title { color: var(--ink); font-weight: 700; }
+
+.link-card a {
+  font-weight: 700;
+  text-decoration: none;
+  border-bottom: 2px solid color-mix(in srgb, var(--teal) 35%, transparent);
+}
+
+.link-card a:hover {
+  border-bottom-color: var(--teal);
+}
+
+.link-card .badge {
+  flex: none;
+  width: 2.6rem;
+  height: 2.6rem;
+  border-radius: 12px;
+  background: var(--teal);
+  color: #f4faf8;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.95rem;
+  direction: ltr;
+}
+
+.link-card.video { flex-direction: column; }
+
+.link-card .shot-link { display: block; width: 100%; }
+
+.link-card .shot-link img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  border: 1px solid var(--line);
+  background: #fff;
+}
+
+.link-card .no-thumb {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  min-height: 120px;
+  aspect-ratio: 16 / 9;
+  border-radius: 10px;
+  background: var(--chip);
+  color: var(--teal);
+  font-size: 2rem;
+}
+
+.link-note { color: var(--muted); font-size: 0.9rem; }
+
 .pager {
   display: flex;
   justify-content: space-between;
@@ -572,10 +835,6 @@ a { color: var(--teal); }
 
 .pager a:hover { background: #d5ebe4; }
 
-@media (min-width: 861px) {
-  .toc .side { display: block !important; }
-}
-
 .download-banner {
   display: flex;
   flex-direction: column;
@@ -590,31 +849,49 @@ a { color: var(--teal); }
 
 .download-banner span { color: #e7f6f2; font-size: 0.92rem; }
 
-@media (max-width: 860px) {
-  .top { align-items: stretch; }
+@media (min-width: 700px) {
+  /* New Chrome hides a closed details list even if the inner nav is
+     display:block. Force the list itself open on a normal window. */
+  .toc::details-content { display: block !important; }
+  .toc > .side { display: block !important; }
+}
+
+/* Any narrow window gets the phone treatment: the sidebar collapses into
+   a hamburger. A PC whose display scaling or browser zoom makes the CSS
+   width narrow gets the hamburger too — it is a visible button in place
+   of the list, so the sidebar is never a silent empty column. */
+@media (max-width: 699px) {
+  .top { align-items: stretch; padding-inline-start: 3.6rem; }
   .brand { flex: 1; }
   .search-wrap { flex: 1 1 100%; max-width: none; margin: 0; order: 3; }
   .download, .lang-toggle { order: 2; }
   .layout { flex-direction: column; width: min(100% - 1rem, 1180px); }
-  .toc { width: 100%; position: static; }
+  .toc { width: auto; position: static; }
   .toc > summary {
-    display: flex;
+    display: inline-flex;
+    position: fixed;
+    z-index: 60;
+    top: 0.45rem;
+    inset-inline-start: 0.45rem;
+    width: 2.75rem;
+    height: 2.75rem;
+    padding: 0;
+    justify-content: center;
     align-items: center;
-    min-height: 2.7rem;
-    padding: 0.55rem 0.9rem;
-    background: var(--card);
-    border: 1px solid var(--line);
-    border-radius: 12px;
-    font-weight: 700;
-    cursor: pointer;
-    list-style: none;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
   }
-  .toc > summary::-webkit-details-marker { display: none; }
-  .toc[open] > summary { border-end-end-radius: 0; border-end-start-radius: 0; }
-  .side {
-    max-height: 50vh;
-    border-start-start-radius: 0;
-    border-start-end-radius: 0;
+  /* Icon-only toggle: the label text would cover the site title. */
+  .toc > summary .label { display: none; }
+  .toc:not([open]) > .side { display: none; }
+  .toc[open] > .side {
+    display: block;
+    position: fixed;
+    z-index: 50;
+    top: var(--header-h, 4.2rem);
+    inset-inline: 0.45rem;
+    width: auto;
+    max-height: 70vh;
+    overflow: auto;
   }
   .steps { grid-template-columns: 1fr; }
   .brand small { display: none; }
