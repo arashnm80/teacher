@@ -10,7 +10,8 @@ Last updated: 2026-11-16 (Monday).
    - Done: 37 questions restored from the earlier teacher-playground version. Their statements and tests are unchanged, and the checker accepts every solution. Every defined solution is now shown (no hidden picks).
    - Done since: 24 more questions now have two commented answers each (batches 2 to 4: p03, p04, p09, p47, p51, p52, p53, p54, p55, p56, p57, p58, p59, p60, p61, p76, p77, p78, p79, p80, p81, p87, p95, p96). In total 61 of 100 are done.
    - Also done (batch 5): p64, p65, p66, p67, p68, p69, p70, p91. In total 69 of 100 are done.
-   - Left: 31 questions (the list is in the commit history; they include the ten whose statement changed since the earlier version). Each needs new commented answers and a fuller explanation, and the checker must accept them.
+   - Also done (batch 6): p24, p48, p83, p84, p85, p86, p88, p97. In total 77 of 100 are done.
+   - Left: 23 questions (the list is in the commit history; they include the ten whose statement changed since the earlier version). Each needs new commented answers and a fuller explanation, and the checker must accept them.
 2. [ ] **Not-cheating protocol: students must not break deadlines, and must not copy or paste answers from the AI assistant or the آموزش; they write the code by hand.** (Owner, 2026-11-16.)
    - Done: copy, cut and drag are blocked on the page, and paste into the editor is blocked (guard.js, loaded by the playground). The آموزش and the assistant open from the first question. Deadlines are decided by the server's clock.
    - Left: check the protection end to end in the browser, and write down its limits for the owner (a determined student can still use developer tools or take a screenshot; the offline copy still contains every solution).
