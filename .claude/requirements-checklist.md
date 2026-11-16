@@ -7,12 +7,13 @@ Last updated: 2026-11-16 (Monday).
 ## Open, in priority order
 
 0. [x] **HIGH PRIORITY, top of the list: show a countdown of the remaining time for each problem. (Owner, 2026-11-16.)** Shown on the problem itself (ticking) and as a compact remaining time next to each problem in the list. It uses the server's clock, not the computer's, and also works in the offline copy from its last synced schedule. Online: done and published on 2026-11-16 (browser check 7 of 7). Offline: comes with the offline sync work (item 1).
-1. [ ] **Offline copy = online copy, with sync and self-update. (Owner, 2026-11-16.)** The offline copy must work like the online version, but with all files downloaded and usable without internet.
+1. [x] **Offline copy = online copy, with sync and self-update. (Owner, 2026-11-16.)** Done and published on 2026-11-16 (29 browser checks, 12 updater checks, 61 server tests, a live update rehearsal and the live smoke test). The offline copy must work like the online version, but with all files downloaded and usable without internet.
    - Same features as online: sign-up and sign-in, progress, series and deadlines, the assistant, the tutorials.
    - Students can sign up and sign in inside the offline copy, and their progress is sent to the teacher whenever there is internet (the same teacher panel and reports).
    - The student must see clearly which problems were solved correctly on their device, and which of those have already reached the teacher (synced).
    - The offline copy knows the latest online version. When the teacher updates the website, the offline copy shows an update notice and can update itself.
    - Deadlines stay decided by the server's clock (a result counts when it reaches the server before the deadline); the student is told this clearly.
+   - Notes for the owner: students who already have the old zip must download the new one once; after that updates come from inside (the update notice, through شروع.bat). The offline files no longer contain the tutorials or hidden expected outputs: the tutorials arrive after the first sign-in (with internet) and stay on the device. A result counts for the score when it reaches the server before the deadline.
 2. [ ] **Lowest priority, do last: the whole website bilingual, Persian by default. (Owner, 2026-11-16: "do that".)** The lesson site is already bilingual. Still open: the playground and admin text, English content for the 100 questions and their tutorials, and book sections E1 to E5.
 
 ## Done

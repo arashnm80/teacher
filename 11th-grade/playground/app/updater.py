@@ -26,7 +26,8 @@ SITE_URL = "https://teacher.arashnm80.ir/"
 MANIFEST_NAME = "offline-manifest.json"
 STAGING = ".update-staging"
 TIMEOUT = 20
-USER_AGENT = "offline-copy-updater"
+# The website sits behind Cloudflare, which refuses the default Python user agent (403).
+USER_AGENT = "Mozilla/5.0 (compatible; OfflineCopyUpdater/1)"
 
 
 class UpdateError(Exception):

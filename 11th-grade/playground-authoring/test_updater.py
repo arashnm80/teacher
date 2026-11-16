@@ -155,5 +155,79 @@ class UpdaterTests(unittest.TestCase):
         self.assertEqual((self.copy / "a").read_bytes(), b"2")
 
 
+
+class LauncherHandlerTests(unittest.TestCase):
+    """The launcher's local server (tkinter stubbed: there is no display here) with a fake website behind it."""
+
+    def setUp(self):
+        import types
+        for name in ("tkinter", "tkinter.messagebox", "tkinter.ttk", "tk_bidi"):
+            sys.modules.setdefault(name, types.ModuleType(name))
+        sys.modules["tkinter"].messagebox = sys.modules["tkinter.messagebox"]
+        sys.modules["tkinter"].ttk = sys.modules["tkinter.ttk"]
+        sys.modules["tk_bidi"].ltr = sys.modules["tk_bidi"].rtl = lambda text: text
+        sys.modules.pop("launcher", None)
+        import launcher
+        self.launcher = launcher
+        self.tmp = Path(tempfile.mkdtemp(prefix="launcher-"))
+        (self.tmp / "web").mkdir()
+        (self.tmp / "copy").mkdir()
+        (self.tmp / "copy" / "index.html").write_text("old", encoding="utf-8")
+        (self.tmp / "copy" / updater.MANIFEST_NAME).write_text(json.dumps(
+            {"format": 1, "version": "v1", "files": {"index.html": entry(b"old")}}), encoding="utf-8")
+        (self.tmp / "web" / "index.html").write_bytes(b"new")
+        (self.tmp / "web" / updater.MANIFEST_NAME).write_text(json.dumps(
+            {"format": 1, "version": "v2", "built": "x", "files": {"index.html": entry(b"new")}}), encoding="utf-8")
+        site = http.server.ThreadingHTTPServer(("127.0.0.1", 0), partial(QuietHandler, directory=str(self.tmp / "web")))
+        threading.Thread(target=site.serve_forever, daemon=True).start()
+        self.site = site
+        launcher.QuietHandler.updater = updater.Updater(self.tmp / "copy", f"http://127.0.0.1:{site.server_address[1]}/")
+        self.local = http.server.ThreadingHTTPServer(("127.0.0.1", 0), partial(launcher.QuietHandler, directory=str(self.tmp / "copy")))
+        threading.Thread(target=self.local.serve_forever, daemon=True).start()
+        self.port = self.local.server_address[1]
+
+    def tearDown(self):
+        self.local.shutdown()
+        self.site.shutdown()
+        self.launcher.QuietHandler.updater = None
+        shutil.rmtree(self.tmp, ignore_errors=True)
+
+    def request(self, method, path, headers=None):
+        import http.client
+        conn = http.client.HTTPConnection("127.0.0.1", self.port, timeout=10)
+        conn.request(method, path, headers=headers or {})
+        resp = conn.getresponse()
+        body = resp.read()
+        conn.close()
+        return resp, body
+
+    def test_files_are_served_and_always_revalidated(self):
+        resp, body = self.request("GET", "/index.html")
+        self.assertEqual((resp.status, body), (200, b"old"))
+        self.assertEqual(resp.getheader("Cache-Control"), "no-cache")
+
+    def test_check_apply_and_status_work_through_the_real_handler(self):
+        resp, body = self.request("GET", "/__update/check")
+        data = json.loads(body)
+        self.assertEqual((resp.status, data["update"], data["latest"]), (200, True, "v2"))
+        resp, _ = self.request("POST", "/__update/apply")
+        self.assertEqual(resp.status, 403, "starting an update needs the custom header")
+        resp, body = self.request("POST", "/__update/apply", {"X-Teacher-Update": "1"})
+        self.assertEqual(resp.status, 200)
+        for _ in range(200):
+            snap = json.loads(self.request("GET", "/__update/status")[1])
+            if snap["state"] != "running":
+                break
+            threading.Event().wait(0.05)
+        self.assertEqual(snap["state"], "done")
+        self.assertEqual((self.tmp / "copy" / "index.html").read_bytes(), b"new")
+        self.assertEqual(self.request("GET", "/index.html")[1], b"new")
+
+    def test_another_host_name_is_refused_and_other_posts_are_not_allowed(self):
+        resp, _ = self.request("GET", "/__update/check", {"Host": "evil.example"})
+        self.assertEqual(resp.status, 403)
+        self.assertEqual(self.request("POST", "/index.html")[0].status, 405)
+
+
 if __name__ == "__main__":
     unittest.main(verbosity=2)

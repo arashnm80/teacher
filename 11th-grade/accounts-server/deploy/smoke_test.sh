@@ -62,5 +62,17 @@ print('yes' if ok else 'no')
 rm -f /tmp/ta-smoke-offline.zip
 check "offline zip has the questions, the offline mode and no panel" yes "${offline:-no}"
 
+# The offline copy: its API answers other origins, and the update files are published.
+pre=$(curl -s -i -X OPTIONS "$BASE/api/offline/sync" -H 'Origin: http://127.0.0.1:8765' \
+  -H 'Access-Control-Request-Method: POST' -H 'Access-Control-Request-Headers: authorization,content-type')
+check "offline sync answers the preflight with CORS" yes "$(grep -qi '^HTTP/[0-9.]* 204' <<<"$pre" && grep -qi '^access-control-allow-origin: \*' <<<"$pre" && echo yes || echo no)"
+me=$(curl -s -i "$BASE/api/offline/me" -H 'Origin: http://127.0.0.1:8765')
+check "offline routes refuse a request without a token (401, with CORS)" yes "$(grep -qi '^HTTP/[0-9.]* 401' <<<"$me" && grep -qi '^access-control-allow-origin: \*' <<<"$me" && echo yes || echo no)"
+manifest=$(curl -s -A 'Mozilla/5.0 (compatible; OfflineCopyUpdater/1)' "$BASE/offline-manifest.json" | python3 -c "
+import json, sys
+m = json.load(sys.stdin)
+print('yes' if m.get('format') == 1 and m.get('version') and len(m.get('files', {})) > 100 else 'no')" 2>/dev/null)
+check "the update manifest is published" yes "${manifest:-no}"
+
 if [[ $fail -eq 0 ]]; then echo "all live checks passed"; else echo "some live checks failed"; fi
 exit $fail
