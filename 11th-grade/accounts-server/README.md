@@ -12,7 +12,7 @@ progress in the browser.
 | Part | Where | What it does |
 | --- | --- | --- |
 | Accounts service | `accounts-server/app.py` | Students, sessions, progress, guides, the admin API. Python standard library only; SQLite database. |
-| Playground (online) | `playground/app/js/account.js`, `app.js` | Sign-in dialog, progress sync, the guide after a pass, the assistant from the start. |
+| Playground (online) | `playground/app/js/account.js`, `app.js` | Sign-in dialog, progress sync, the guide and the assistant from the start. |
 | Teacher's panel | `web/admin/` | Login, student list and search, progress and attempts with code, reset password, enable/disable, CSV, report of actions. |
 | Questions and revisions | `playground-authoring/build.py`, `revisions.json` | Each question has an id and a revision. Progress belongs to the id. |
 | Server setup | `accounts-server/deploy/` | systemd unit, Nginx rules, installer. |

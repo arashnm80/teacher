@@ -482,17 +482,15 @@ class RevisionTests(Base):
         use_problems(base_fixture())
         self.assertTrue(self.progress()["p02"]["solved"], "and it counts again when the question returns")
 
-    def test_guide_is_released_only_after_a_pass_and_locked_again_after_a_major_edit(self):
+    def test_guide_is_open_to_a_signed_in_student_from_the_start_and_not_in_the_question_list(self):
         status, raw, _, _ = call(self.port, "GET", "/api/student/problems", cookie=self.cookie)
         self.assertNotIn(b"SECRET", json.dumps(raw).encode("utf-8"))
         status, body, _, _ = call(self.port, "GET", "/api/student/problems", cookie=self.cookie)
         self.assertFalse(any("guide" in p or "solutions" in p or "mistakes" in p for p in body))
+        status, body, _, _ = call(self.port, "GET", "/api/student/guide?problemId=p01")
+        self.assertEqual(status, 401, "the guide needs a signed-in student")
         status, body, _, _ = call(self.port, "GET", "/api/student/guide?problemId=p01", cookie=self.cookie)
-        self.assertEqual(status, 403)
-        self.assertEqual(body["error"], "locked")
-        self.solve("p01", 2, 1)
-        status, body, _, _ = call(self.port, "GET", "/api/student/guide?problemId=p01", cookie=self.cookie)
-        self.assertEqual(status, 200)
+        self.assertEqual(status, 200, "the guide is open before any pass")
         self.assertEqual(body["guide"], "SECRET-GUIDE-TEXT")
         self.assertEqual(body["solutions"], [{"code": "SECRET-SOLUTION"}])
         problems = base_fixture()
@@ -500,7 +498,7 @@ class RevisionTests(Base):
         problems[0]["revision"] = 2
         use_problems(problems)
         status, body, _, _ = call(self.port, "GET", "/api/student/guide?problemId=p01", cookie=self.cookie)
-        self.assertEqual(status, 403, "after a major edit the guide waits for a new pass")
+        self.assertEqual(status, 200, "after a major edit the guide is still open")
 
 
 class TransportTests(Base):

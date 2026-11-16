@@ -729,14 +729,10 @@ def student_problems(req: "Request"):
 
 
 def student_guide(req: "Request"):
-    student = req.require_student()
+    """The آموزش of a question: open to every signed-in student from the start. Students write
+    the code themselves from it; copying and pasting are blocked in the browser."""
+    req.require_student()
     pid = clean_problem(req.query.get("problemId", [""])[0])
-    with transaction(req.db):
-        sync_revisions(req.db, student["id"])
-        row = req.db.execute("SELECT solved FROM progress WHERE student_id = ? AND problem_id = ?",
-                             (student["id"], pid)).fetchone()
-    if row is None or not row["solved"]:
-        raise ApiError(403, "locked", "راهنمای حل بعد از قبول شدن این مسئله نمایش داده می‌شود.")
     return 200, GUIDES.get(pid, {}), []
 
 

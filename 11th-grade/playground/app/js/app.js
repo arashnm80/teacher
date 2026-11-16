@@ -515,7 +515,7 @@ function selectProblem(id) {
   renderHints(problem);
   renderConcept(problem);
   renderList();
-  if (ONLINE && state.progress[id]?.solved) ensureGuide(problem);
+  if (ONLINE) ensureGuide(problem); // the آموزش of a question opens from the start
   renderDeadline(problem);
 }
 
@@ -628,13 +628,10 @@ function renderHints(problem) {
 function renderConcept(problem) {
   // Prefer per-problem guide so siblings that share a topic (e.g. p01/p02)
   // do not show the same آموزش text.
-  // Online, the guide of a question arrives after a pass: until then the lesson text shows.
+  // Online, the guide is fetched when the question opens; until it arrives the lesson text shows.
   const lockedGuide = ONLINE && problem.guide === undefined;
   const title = (!lockedGuide && problem.guideTitle) || state.concepts[problem.conceptId]?.title;
   const body = (!lockedGuide && problem.guide) || state.concepts[problem.conceptId]?.body;
-  const note = lockedGuide
-    ? `<p class="muted">راهنمای حل این مسئله بعد از قبول شدن آن نمایش داده می‌شود.</p>`
-    : "";
   if (!title || !body) {
     el.concept.className = "prose muted";
     el.concept.textContent = "آموزش مرتبطی تعریف نشده است.";
@@ -644,7 +641,7 @@ function renderConcept(problem) {
   const key = !lockedGuide && problem.guide
     ? `<p class="diff-legend-intro">وقتی آزمونی رد می‌شود، در بخش «نتایج» این رنگ‌ها را می‌بینید:</p>${colourLegendHtml()}`
     : "";
-  el.concept.innerHTML = `<h3 style="margin-top:0">${bidiMixHtml(title)}</h3>${note}${key}${mdLite(
+  el.concept.innerHTML = `<h3 style="margin-top:0">${bidiMixHtml(title)}</h3>${key}${mdLite(
     body
   )}`;
 }

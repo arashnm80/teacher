@@ -1,4 +1,4 @@
-"""End-to-end checks: sign-up, progress across reloads, hidden tests, guides after a pass, the assistant from the start,
+"""End-to-end checks: sign-up, progress across reloads, hidden tests, the guides and the assistant from the start,
 single session, the teacher's reset, the CSV export, and the offline copy (no sign-in, progress in the browser).
 
 The online server and the offline copy must already be running (see the run notes in the scratchpad).
@@ -102,8 +102,8 @@ with sync_playwright() as p:
 
     pick(page_a, multi["title"])
     concept = page_a.inner_text("#concept")
-    check("the guide is locked before a pass", "بعد از قبول شدن" in concept)
-    check("the guide text is not in the page before a pass", "قدم ۱" not in concept)
+    page_a.wait_for_function("document.getElementById('concept').innerText.includes('قدم ۱')", timeout=60000)
+    check("the guide is open before a pass", "قدم ۱" in page_a.inner_text("#concept"))
 
     set_code(page_a, "print('wrong answer')")
     run_code(page_a)
@@ -120,7 +120,7 @@ with sync_playwright() as p:
     stored = page_a.evaluate("async () => (await (await fetch('/api/student/progress')).json()).progress")
     check("the server stored the pass", stored.get(multi["id"], {}).get("solved") is True)
     page_a.wait_for_function("document.getElementById('concept').innerText.includes('قدم ۱')", timeout=60000)
-    check("the guide opens after the pass", True)
+    check("the guide stays open after the pass", "قدم ۱" in page_a.inner_text("#concept"))
 
     page_a.reload(wait_until="domcontentloaded")
     page_a.wait_for_selector(".problem-link", timeout=240000)
