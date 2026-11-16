@@ -149,129 +149,131 @@
 <h2>Have you ever thought about this</h2>
 <ul>
 <li>
-<p><bdi dir="rtl">چرا نمی‌توان همیشه از متغیرها برای نگهداری اطلاعات استفاده کرد؟</bdi></p>
+<p>Why can't variables always be used to keep information?</p>
 </li>
 <li>
-<p><bdi dir="rtl">چه تفاوتی بین</bdi> «<bdi dir="rtl">ذخیره موقت اطلاعات در حافظه</bdi> (RAM)» و «<bdi dir="rtl">ذخیره در فایل</bdi>» <bdi dir="rtl">وجود دارد؟</bdi></p>
+<p>What is the difference between "temporarily storing information in memory (RAM)" and "storing in a file"?</p>
 </li>
 <li>
-<p><bdi dir="rtl">اگر چند بار برنامه را اجرا کنید و هر بار در فایل بنویسید، چه اتفاقی برای محتوای قبلی می‌افتد؟</bdi></p>
+<p>If you run the program several times and write to a file each time, what happens to the earlier content?</p>
 </li>
 <li>
-<p><bdi dir="rtl">چه زمانی استفاده از فایل متنی ساده کافی است و چه زمانی بهتر است از</bdi> JSON <bdi dir="rtl">استفاده کنید؟</bdi></p>
+<p>When is a simple text file enough and when is it better to use JSON?</p>
 </li>
 <li>
-<p><bdi dir="rtl">اگر مسیر فایل اشتباه باشد، برنامه چگونه باید رفتار کند؟</bdi></p>
+<p>If the file path is wrong, how should the program behave?</p>
 </li>
 <li>
-<p><bdi dir="rtl">اگر قرار باشد یک برنامه فروشگاهی طراحی کنید، چه اطلاعاتی باید در فایل ذخیره شود و چرا؟</bdi></p>
+<p>If you were to design a shop program, what information would need to be stored in a file and why?</p>
 </li>
 </ul>
 <h2>By the end, the student is expected to</h2>
 <ol>
 <li>
-<p><bdi dir="rtl">از کلاس</bdi> "Path" <bdi dir="rtl">و ماژول</bdi> "pathlib" <bdi dir="rtl">برای مدیریت مسیرها</bdi> (Path Objects) <bdi dir="rtl">استفاده کند</bdi>.</p>
+<p>Use the class "Path" and the module "pathlib" to manage paths (Path Objects).</p>
 </li>
 <li>
-<p><bdi dir="rtl">محتوای فایل‌های متنی را بخواند و داده‌ها را در آنها بنویسد، اضافه کند و فایل‌ها را ایمن ببندد</bdi>.</p>
+<p>Read the content of text files and write data to them, append, and close the files safely.</p>
 </li>
 <li>
-<p><bdi dir="rtl">داده‌ها را از چندین فایل بخواند، محتوای آنها را ترکیب کند و با استفاده از حلقه‌ها، مجموعه‌ای از فایل‌ها را پردازش نماید</bdi>.</p>
+<p>Read data from several files, combine their content and process a set of files using loops.</p>
 </li>
 <li>
-<p><bdi dir="rtl">خطاهای رایج مانند</bdi> "FileNotFoundError" و "ZeroDivisionError" <bdi dir="rtl">را تشخیص داده و با استفاده از</bdi> "<code>try/except</code>" <bdi dir="rtl">از توقف برنامه جلوگیری کند و پیام‌های خطای مناسب نمایش دهد</bdi>.</p>
+<p>Recognise common errors such as "FileNotFoundError" and "ZeroDivisionError" and, using "<code>try/except</code>", prevent the program from stopping and show suitable error messages.</p>
 </li>
 <li>
-<p><bdi dir="rtl">ساختار</bdi> "JSON" <bdi dir="rtl">را درک کرده و داده‌ها را با استفاده از</bdi> <code>json.loads()</code> <bdi dir="rtl">بخواند و با</bdi> <code>json.dump()</code> <bdi dir="rtl">در فایل بنویسد</bdi>.</p>
+<p>Understand the structure of "JSON" and read data with <code>json.loads()</code> and write it to a file with <code>json.dump()</code>.</p>
 </li>
 </ol>
 <h2>Performance standard</h2>
-<p><bdi dir="rtl">هنرجو باید بتواند با استفاده از شیء</bdi> Path <bdi dir="rtl">به‌صورت ایمن و دقیق عملیات ایجاد، خواندن، نوشتن و مدیریت فایل‌های متنی و</bdi> JSON <bdi dir="rtl">را انجام دهد و خطاها و استثناهای احتمالی را به‌درستی کنترل کند</bdi>.</p>
+<p>The student must be able, using the Path object, to safely and exactly create, read, write and manage text and JSON files and to correctly control possible errors and exceptions.</p>
 <p class="page-mark">Page 255</p>
 
-<h2><bdi dir="rtl">آشنایی با فایل در پایتون</bdi></h2>
-<p><bdi dir="rtl">در این واحد یادگیری با کار با فایل‌ها و ذخیره‌سازی داده‌ها آشنا می‌شوید تا برنامه‌های شما کاربردی‌تر و پایدارتر شوند</bdi>. <bdi dir="rtl">می‌آموزید چگونه داده‌ها را ذخیره و بازیابی کنید و با استفاده از مدیریت استثناها از توقف برنامه در شرایط غیرمنتظره جلوگیری نمایید</bdi>.</p>
-<p><bdi dir="rtl">همچنین با ماژول</bdi> json <bdi dir="rtl">آشنا خواهید شد که امکان نگهداری اطلاعات کاربران را فراهم می‌کند</bdi>.</p>
-<p><bdi dir="rtl">فرض کنید برنامه‌ای برای ثبت مخاطبین یک تلفن همراه نوشته‌اید</bdi>. <bdi dir="rtl">اگر برنامه را اجرا کنید و چند مخاطب وارد کنید، تا زمانی که برنامه باز است اطلاعات در حافظه نگهداری می‌شوند</bdi>. <bdi dir="rtl">اما اگر برنامه بسته شود، تمام اطلاعات از بین می‌روند</bdi>. <bdi dir="rtl">برای اینکه اطلاعات به‌صورت دائمی ذخیره شوند و بعداً بتوانید دوباره به آنها دسترسی داشته باشید، لازم است از فایل‌ها استفاده کنید</bdi>. <bdi dir="rtl">فایل‌ها امکان ذخیره اطلاعات روی حافظه جانبی</bdi> (<bdi dir="rtl">مانند هارد دیسک</bdi>) <bdi dir="rtl">را فراهم می‌کنند</bdi>.</p>
+<h2>Getting to know files in Python</h2>
+<p>In this learning unit you get to know working with files and storing data so that your programs become more practical and more stable. You learn how to store and retrieve data and, using exception handling, prevent the program from stopping in unexpected situations.</p>
+<p>You will also get to know the json module, which makes it possible to keep the users' information.</p>
+<p>Suppose you have written a program for recording the contacts of a mobile phone. If you run the program and enter some contacts, the information is kept in memory as long as the program is open. But if the program is closed, all the information is lost. For the information to be stored permanently and for you to be able to reach it again later, files must be used. Files make it possible to store information on secondary storage (such as a hard disk).</p>
 <figure class="shot"><img alt="Figure 18" src="../images/p261-02.png" loading="lazy" /><figcaption>Figure 18</figcaption></figure>
-<h3><bdi dir="rtl">کار با فایل</bdi></h3>
-<p><bdi dir="rtl">اطلاعات زیادی در فایل‌های متنی ذخیره می‌شوند؛ مثل نمرات دانش‌آموزان، لیست قیمت‌ها، داده‌های آب و هوا، ترافیک، یا متن یک داستان</bdi>. <bdi dir="rtl">برای اینکه یک برنامه بتواند از این اطلاعات استفاده کند، باید فایل را بخواند</bdi>. <bdi dir="rtl">اولین گام برای استفاده از یک فایل متنی، این است که فایل را وارد حافظه برنامه کنید، بعد از آن می‌توانیدکل فایل را یک‌جا بخوانید یا آن را خط‌به‌خط بررسی کنید</bdi>. <bdi dir="rtl">خواندن فایل به برنامه کمک می‌کند تا اطلاعات را تحلیل، نمایش یا تغییر دهد</bdi>.</p>
+<h3>Working with a file</h3>
+<p>A lot of information is stored in text files; such as students' scores, price lists, weather data, traffic, or the text of a story. For a program to be able to use this information, it must read the file. The first step in using a text file is to bring the file into the program's memory; after that you can read the whole file at once or go through it line by line. Reading a file helps the program analyse, show or change the information.</p>
 <figure class="shot"><img alt="Figure 19" src="../images/p261-01.png" loading="lazy" /><figcaption>Figure 19</figcaption></figure>
 <p class="page-mark">Page 256</p>
 
-<h3><bdi dir="rtl">ایجاد فایل متنی</bdi></h3>
-<p><bdi dir="rtl">ابتدا یک فایل متنی به نام</bdi> <code>mobile_bransd.txt</code> <bdi dir="rtl">بسازید و برندها را در آن بنویسید</bdi> (<bdi dir="rtl">هر برند دریک خط</bdi>):</p>
-<h3><bdi dir="rtl">خواندن کل فایل در پایتون</bdi></h3>
-<p><bdi dir="rtl">برای خواندن کل محتویات فایل از کتابخانه</bdi> pathlib <bdi dir="rtl">استفاده کنید</bdi>.</p>
+<h3>Creating a text file</h3>
+<p>First make a text file named <code>mobile_bransd.txt</code> and write the brands in it (each brand on one line):</p>
+<h3>Reading the whole file in Python</h3>
+<p>To read the whole content of the file, use the pathlib library.</p>
 <figure class="shot"><img alt="Figure 20" src="../images/p262-01.png" loading="lazy" /><figcaption>Figure 20</figcaption></figure>
-<p><strong><bdi dir="rtl">توضیح کد</bdi></strong>:</p>
+<p><strong>Explanation of the code</strong>:</p>
 <div class="code-wrap" dir="ltr"><pre><code>from pathlib import Path
 </code></pre></div>
 <ul>
-<li><bdi dir="rtl">این خط کلاس</bdi> Path <bdi dir="rtl">را از کتابخانۀ</bdi> pathlib <bdi dir="rtl">وارد می‌کند</bdi>. Path <bdi dir="rtl">ابزاری برای کار با مسیر فایل‌ها و پوشه‌ها است و استفاده از آن ساده‌تر و امن‌تر از</bdi> open <bdi dir="rtl">معمولی است</bdi>.</li>
+<li>This line brings the class Path in from the pathlib library. Path is a tool for working with the paths of files and folders, and using it is simpler and safer than the ordinary open.</li>
 </ul>
 <div class="code-wrap" dir="ltr"><pre><code>path = Path('mobile_brands.txt')
 </code></pre></div>
-<p><bdi dir="rtl">در اینجا</bdi> path <bdi dir="rtl">یک کلاس است که برای مدیریت مسیر فایل‌ها ساخته شده است</bdi>. <bdi dir="rtl">با نوشتن</bdi>:</p>
+<p>Here path is a class that was made for managing the paths of files. By writing:</p>
 <div class="code-wrap" dir="ltr"><pre><code>path = Path('mobile_brands.txt')
 </code></pre></div>
-<p><bdi dir="rtl">یک نمونه</bdi> (object) <bdi dir="rtl">از کلاس</bdi> Path <bdi dir="rtl">ساخته می‌شود</bdi>. <bdi dir="rtl">این نمونه می‌داند که فایل</bdi> <code>mobile_brands.txt</code> <bdi dir="rtl">کجاست، ولی هنوز خود فایل باز نشده یا خوانده نشده به عبارت ساده</bdi>: path <bdi dir="rtl">فقط نشانی فایل روی رایانه را نگه می‌دارد</bdi>.</p>
-<p><bdi dir="rtl">وقتی می‌نویسید</bdi> <code>path.read_text()</code> <bdi dir="rtl">آن وقت فایل باز و خوانده می‌شود، یک</bdi> Path object <bdi dir="rtl">ساخته شده است که به فایل</bdi> <code>mobile_brands.txt</code> <bdi dir="rtl">اشاره می‌کند</bdi>. <bdi dir="rtl">چون این فایل در همان پوشه‌ای است که فایل پایتون</bdi> (py.) <bdi dir="rtl">قرار دارد، فقط نام فایل کافی است</bdi>. <bdi dir="rtl">اگر فایل در پوشه‌ای دیگر بود، باید مسیر کامل یا نسبی آن را بدهید</bdi>.</p>
+<p>an instance (object) of the class Path is made. This instance knows where the file <code>mobile_brands.txt</code> is, but the file itself has not yet been opened or read. In simple words: path only holds the address of the file on the computer.</p>
+<p>When you write <code>path.read_text()</code>, then the file is opened and read; a Path object has been made that points to the file <code>mobile_brands.txt</code>. Since this file is in the same folder as the Python file (.py), only the file name is enough. If the file were in another folder, you would have to give its full or relative path.</p>
 <div class="code-wrap" dir="ltr"><pre><code>brnds = path.read_text()
 </code></pre></div>
 <ul>
-<li><bdi dir="rtl">با متد</bdi> <code>read_text</code> <bdi dir="rtl">کل محتوای فایل خوانده می‌شود</bdi>. <bdi dir="rtl">نتیجه به‌صورت یک رشته</bdi> (string) <bdi dir="rtl">در متغیر</bdi> contents <bdi dir="rtl">ذخیره می‌شود</bdi>. <bdi dir="rtl">هر خط فایل در رشته با کاراکتر</bdi> \n <bdi dir="rtl">جدا شده است</bdi>.</li>
+<li>With the method <code>read_text</code> the whole content of the file is read. The result is stored as a string in the variable contents. Each line of the file is separated in the string by the character \n.</li>
 </ul>
 <p class="page-mark">Page 257</p>
 
 <ul>
-<li><bdi dir="rtl">محتویات</bdi> brands <bdi dir="rtl">درخروجی چاپ می‌شود</bdi>.</li>
+<li>The content of brands is printed in the output.</li>
 </ul>
 <div class="code-wrap" dir="ltr"><pre><code>print(brands)
 </code></pre></div>
-<p><bdi dir="rtl">خروجی مثال</bdi>:</p>
+<p>Example output:</p>
 <figure class="shot"><img alt="Figure 21" src="../images/p263-01.png" loading="lazy" /><figcaption>Figure 21</figcaption></figure>
-<p><strong><bdi dir="rtl">حذف خط خالی اضافی</bdi></strong>: <bdi dir="rtl">گاهی</bdi> <code>read_text()</code> <bdi dir="rtl">یک خط خالی اضافی در انتهای فایل ایجاد می‌کند</bdi>. <bdi dir="rtl">برای حذف آن می‌توانید از متد</bdi> rstrip <bdi dir="rtl">استفاده کنید</bdi>.</p>
+<p><strong>Removing the extra empty line</strong>: sometimes <code>read_text()</code> makes an extra empty line at the end of the file. To remove it you can use the method rstrip.</p>
 <div class="code-wrap" dir="ltr"><pre><code>brands = brands.rstrip()
 </code></pre></div>
-<p><bdi dir="rtl">حالا خروجی تمیز و بدون خط خالی نمایش داده می‌شود</bdi>.</p>
-<h3><bdi dir="rtl">مسیرهای نسبی و مطلق فایل‌ها</bdi></h3>
-<p><bdi dir="rtl">آدرس نسبی و مطلق مانند داشتن یک نقشه دقیق برای دسترسی به فایل‌های شماست</bdi>. <bdi dir="rtl">آدرس مطلق تضمین می‌کند که برنامه شما روی هر سیستمی، دقیقاً همان فایل را پیدا کند؛ اما آدرس نسبی به شما کمک می‌کند کدی بنویسید که بدون تغییر، در هر پوشه‌ای جابجا شود و باز هم فایل‌های مورد نیازش را بیابد</bdi>.</p>
-<p><bdi dir="rtl">وقتی نام فایلی مثل</bdi> <code>mobile_brands.txt</code> <bdi dir="rtl">را به</bdi> Path <bdi dir="rtl">می‌دهید، پایتون در پوشه‌ای که فایل در حال اجرا</bdi> (<bdi dir="rtl">یعنی برنامه</bdi> <code>.py</code> <bdi dir="rtl">شما</bdi>) <bdi dir="rtl">در آن قرار دارد، جستجو می‌کند</bdi>. <bdi dir="rtl">گاهی اوقات، بسته به نحوه سازماندهی کارهایتان، فایلی که می‌خواهید باز کنید ممکن است در همان پوشه برنامه شما نباشد</bdi>. <bdi dir="rtl">مثلا، ً شاید برنامه‌هایتان را در پوشه‌ای به نام</bdi> <code>py_progs</code> <bdi dir="rtl">و داخل آن پوشه‌ای به نام</bdi> <code>text_files</code> <bdi dir="rtl">برای جدا کردن فایل‌های متنی از برنامه‌ها نگهداری کنید</bdi>. <bdi dir="rtl">با اینکه</bdi> <code>text_files</code> <bdi dir="rtl">داخل</bdi> <code>py_progs</code> <bdi dir="rtl">است، اگر فقط نام فایلی را در</bdi> <code>text_files</code> <bdi dir="rtl">به</bdi> Path <bdi dir="rtl">بدهید، کار نمی‌کند؛ چون پایتون فقط در</bdi> <code>py_progs</code> <bdi dir="rtl">جستجو می‌کند و متوقف می‌شود؛ به</bdi> <code>text_files</code> <bdi dir="rtl">نگاه نمی‌کند</bdi>. <bdi dir="rtl">برای اینکه پایتون بتواند فایل‌ها را از پوشه‌ای غیر از پوشه برنامه شما باز کند، نیاز به مسیر صحیح دارید</bdi>.</p>
+<p>Now the output is shown clean and without the empty line.</p>
+<h3>Relative and absolute paths of files</h3>
+<p>A relative and an absolute address are like having an exact map for reaching your files. An absolute address guarantees that your program finds exactly the same file on any system; but a relative address helps you write code that, without change, moves into any folder and still finds the files it needs.</p>
+<p>When you give the name of a file like <code>mobile_brands.txt</code> to Path, Python searches in the folder where the running file (that is, your <code>.py</code> program) is. Sometimes, depending on how you organise your work, the file you want to open may not be in the same folder as your program. For example, you might keep your programs in a folder named <code>py_progs</code> and inside it a folder named <code>text_files</code> to separate the text files from the programs. Even though <code>text_files</code> is inside <code>py_progs</code>, if you give Path only the name of a file in <code>text_files</code>, it does not work; because Python searches only in <code>py_progs</code> and stops; it does not look at <code>text_files</code>. For Python to be able to open files from a folder other than your program's folder, you need the correct path.</p>
 <figure class="shot"><img alt="Figure 22" src="../images/p263-02.png" loading="lazy" /><figcaption>Figure 22</figcaption></figure>
 <p class="page-mark">Page 258</p>
 
-<p><bdi dir="rtl">دو راه برای مشخص کردن مسیر فایل‌ها در برنامه‌نویسی وجود دارد</bdi>:</p>
+<p>There are two ways to specify the path of files in programming:</p>
 <ol>
-<li><strong><bdi dir="rtl">آدرس نسبی</bdi> (Relative File Path)</strong>: <bdi dir="rtl">این آدرس به پایتون می‌گوید که مکان مورد نظر را نسبت به پوشه برنامه در حال اجرا پیدا کند</bdi>. <bdi dir="rtl">از آنجایی که</bdi> <code>text_files</code> <bdi dir="rtl">داخل</bdi> <code>py_progs</code> <bdi dir="rtl">است، باید مسیری بسازید که با پوشه</bdi> <code>text_files</code> <bdi dir="rtl">شروع شود و به نام فایل ختم شود</bdi>. <bdi dir="rtl">نحوه ساخت این مسیر این‌گونه است</bdi>:</li>
+<li><strong>Relative File Path</strong>: this address tells Python to find the wanted place relative to the folder of the running program. Since <code>text_files</code> is inside <code>py_progs</code>, you must build a path that starts with the folder <code>text_files</code> and ends with the file name. The way to build this path is as follows:</li>
 </ol>
 <div class="code-wrap" dir="ltr"><pre><code>       path = Path('text_files/filename.txt')
 </code></pre></div>
 <ol start="2">
-<li><strong><bdi dir="rtl">آدرس مطلق</bdi> (Absolute File Path)</strong>: <bdi dir="rtl">در این نوع آدرس دهی شما می‌توانید دقیقاً به پایتون بگویید فایل در کجای رایانه شما قرار دارد، صرف نظر از اینکه برنامه در حال اجرا کجاست</bdi>. <bdi dir="rtl">اگر آدرس نسبی کار نکرد، می‌توانید از آدرس مطلق استفاده کنید</bdi>. <bdi dir="rtl">مثلا، ً اگر</bdi> <code>text_files</code> <bdi dir="rtl">را در پوشه‌ای غیر از</bdi> <code>py_progs</code> <bdi dir="rtl">قرار داده‌اید، دادن آدرس</bdi> '<code>text_files/filename.txt</code>' <bdi dir="rtl">کافی نیست؛ چون پایتون آن را فقط داخل</bdi> <code>python_work</code> <bdi dir="rtl">جست‌وجو می‌کند</bdi>. <bdi dir="rtl">در این حالت، باید آدرس مطلق را بنویسید تا مشخص شود پایتون کجا را جست‌وجو کند</bdi>. <bdi dir="rtl">آدرس‌های مطلق معمولاً بلندتر هستند، چون از پوشه ریشه سیستم عامل شروع می‌شوند</bdi>:</li>
+<li><strong>Absolute File Path</strong>: in this kind of addressing you can tell Python exactly where on your computer the file is, no matter where the program is running. If the relative address did not work, you can use an absolute address. For example, if you have put <code>text_files</code> in a folder other than <code>py_progs</code>, giving the address '<code>text_files/filename.txt</code>' is not enough; because Python searches for it only inside <code>python_work</code>. In this case you must write the absolute address so that it is clear where Python should search. Absolute addresses are usually longer, because they start from the root folder of the operating system:</li>
 </ol>
 <div class="code-wrap" dir="ltr"><pre><code>  path = Path('/home/eric/py_progs/text_files/filename.txt')
 </code></pre></div>
-<p><bdi dir="rtl">با استفاده از آدرس‌های مطلق، می‌توانید فایل‌ها را از هر نقطه‌ای در سیستم خود بخوانید</bdi>. <bdi dir="rtl">برای شروع، ساده‌ترین کار این است که فایل‌ها را در همان پوشه برنامه خودتان یا در پوشه‌ای مانند</bdi> <code>text_files</code> <bdi dir="rtl">درون پوشه برنامه نگهداری کنید</bdi>.</p>
+<p>With absolute addresses you can read files from any point of your system. To start, the simplest thing is to keep the files in the same folder as your own program or in a folder such as <code>text_files</code> inside the program's folder.</p>
 <aside class="callout note"><p class="callout-label">Note</p>
-<p><bdi dir="rtl">سیستم‌های ویندوز هنگام نمایش مسیر فایل‌ها از بک‌اسلش</bdi> (\) <bdi dir="rtl">به جای اسلش</bdi> (/) <bdi dir="rtl">استفاده می‌کنند، اما شما همیشه در کد خود از اسلش</bdi> (/ ) <bdi dir="rtl">استفاده کنید، حتی در ویندوز</bdi>. <bdi dir="rtl">کتابخانه</bdi> pathlib <bdi dir="rtl">به طور خودکار هنگام تعامل با سیستم عامل شما، نمایش صحیح مسیر را به کار می‌گیرد</bdi>.</p>
+<p>Windows systems use the backslash (\) instead of the slash (/) when showing file paths, but in your code always use the slash (/), even on Windows. The pathlib library automatically applies the correct display of the path when it interacts with your operating system.</p>
 </aside>
-<h3><bdi dir="rtl">کار با محتویات فایل</bdi></h3>
-<p><bdi dir="rtl">بعد از خواندن فایل متنی، محتوای آن در برنامه به‌صورت یک رشته</bdi> (string) <bdi dir="rtl">در اختیارشما قرار می‌گیرد</bdi>.</p>
-<p><strong><bdi dir="rtl">تبدیل محتوا به لیست</bdi></strong>: <bdi dir="rtl">برای اینکه بتوانید روی هر برند تلفن همراه جداگانه کارکنید، لازم است متن فایل را به لیستی از خطوط تبدیل کنید</bdi>.</p>
-<p><bdi dir="rtl">حالا هر برند یک عضو از لیست است و می‌توانید با آن کارکنید</bdi>.</p>
-<p>-<code>splitlines()</code> <bdi dir="rtl">رشته متنی را به لیستی از خطوط تقسیم می‌کند</bdi>.</p>
+<h3>Working with the content of a file</h3>
+<p>After reading a text file, its content is given to you in the program as a string.</p>
+<p><strong>Converting the content to a list</strong>: to be able to work on each mobile brand separately, you need to convert the text of the file into a list of lines.</p>
+<p>Now each brand is a member of the list and you can work with it.</p>
+<ul>
+<li><code>splitlines()</code> splits the text string into a list of lines.</li>
+</ul>
 <figure class="shot"><img alt="Figure 23" src="../images/p264-01.png" loading="lazy" /><figcaption>Figure 23</figcaption></figure>
 <p class="page-mark">Page 259</p>
 
 <figure class="shot"><img alt="Figure 24" src="../images/p265-01.png" loading="lazy" /><figcaption>Figure 24</figcaption></figure>
-<p><bdi dir="rtl">شمارش داده‌ها</bdi>: <bdi dir="rtl">مثلاً تعداد برندهای موجود در فایل</bdi>:</p>
+<p>Counting data: for example the number of brands in the file:</p>
 <figure class="shot"><img alt="Figure 25" src="../images/p265-02.png" loading="lazy" /><figcaption>Figure 25</figcaption></figure>
 <aside class="callout activity"><p class="callout-label">Activity</p>
-<p><bdi dir="rtl">برنامه را به نحوی تغییر دهید که بتوانید تعداد کاراکترهای هر برند را مشاهده کنید</bdi>.</p>
+<p>Change the program so that you can see the number of characters of each brand.</p>
 </aside>
-<h3><bdi dir="rtl">جست‌وجو در محتویات فایل</bdi></h3>
-<p><bdi dir="rtl">بررسی اینکه آیا یک برند خاص در فایل وجود دارد یا نه</bdi>:</p>
+<h3>Searching in the content of the file</h3>
+<p>Checking whether a specific brand exists in the file or not:</p>
 <figure class="shot"><img alt="Figure 26" src="../images/p265-03.png" loading="lazy" /><figcaption>Figure 26</figcaption></figure></article>
       <aside class="card extra">
         <h2 data-fa="تمرین این بخش" data-en="Exercises for this section">تمرین این بخش</h2>

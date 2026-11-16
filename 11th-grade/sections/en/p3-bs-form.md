@@ -117,6 +117,6 @@ Bootstrap has a set of ready-made classes for laying out all kinds of forms. Wit
 >
 > ![Book image](../images/p190-02.png)
 
-### کروسل (Carousel)
+### Carousel
 
 A carousel is a JavaScript-based tool used to create a set of slides or a horizontal image gallery. It lets several pieces of content or images be shown in a limited space, and users can see the next ones with the control buttons or by swiping (swipe). In a shopping site, carousels or sliders show a set of products or promotional content in rotation. Carousels give users a better experience. To create a Bootstrap carousel, the carousel class and its child classes are used. Table 13 lists the class names and what they do:

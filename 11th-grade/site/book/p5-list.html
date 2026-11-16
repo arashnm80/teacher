@@ -114,101 +114,101 @@
 <figure class="shot"><img alt="شکل ۵۵: افزودن لینک به هر شهر" src="../images/p318-02.png" loading="lazy" /><figcaption>شکل ۵۵: افزودن لینک به هر شهر</figcaption></figure></article><article class="card lesson no-copy" lang="en" dir="ltr" data-lang-block="en" hidden><p class="page-mark">Page 305</p>
 
 <aside class="callout activity"><p class="callout-label">Activity</p>
-<p><bdi dir="rtl">با کمک هنرآموز خود، مقدار طول و عرض جغرافیایی چند شهر دیگر را یافته و در پایگاه داده ذخیره کنید</bdi>.</p>
+<p>With the help of your teacher, find the longitude and latitude values of some other cities and save them in the database.</p>
 </aside>
-<p><bdi dir="rtl">پس از ثبت شهرها، با کلیک روی</bdi> Citys<bdi dir="rtl">، لیست شهرهای ثبت شده نمایش داده می‌شود</bdi> (<bdi dir="rtl">شکل</bdi> 43).</p>
-<figure class="shot"><img alt="Figure 43: لیست شهرهای ثبت شده" src="../images/p311-01.png" loading="lazy" /><figcaption>Figure 43: <bdi dir="rtl">لیست شهرهای ثبت شده</bdi></figcaption></figure>
-<p><bdi dir="rtl">در شکل</bdi> 43 <bdi dir="rtl">از</bdi> City object <bdi dir="rtl">برای نمایش عنوان هر شهر استفاده شده است</bdi>. <bdi dir="rtl">جهت نمایش مناسب عنوان شهرها، فایل</bdi> <code>models.py</code> <bdi dir="rtl">را باز کنید و تغییراتی همانند شکل</bdi> 44 <bdi dir="rtl">برای مدل</bdi> City <bdi dir="rtl">اعمال کنید و فایل را ذخیره کنید</bdi>.</p>
-<figure class="shot"><img alt="Figure 44: افزودن متد str به مدل شهر" src="../images/p311-02.png" loading="lazy" /><figcaption>Figure 44: <bdi dir="rtl">افزودن متد</bdi> str <bdi dir="rtl">به مدل شهر</bdi></figcaption></figure>
+<p>After the cities are registered, by clicking on Citys the list of registered cities is shown (Figure 43).</p>
+<figure class="shot"><img alt="Figure 43: The list of registered cities" src="../images/p311-01.png" loading="lazy" /><figcaption>Figure 43: The list of registered cities</figcaption></figure>
+<p>In Figure 43, City object is used to show the title of each city. To show the titles of the cities suitably, open the file <code>models.py</code>, make changes like Figure 44 for the model City and save the file.</p>
+<figure class="shot"><img alt="Figure 44: Adding the str method to the city model" src="../images/p311-02.png" loading="lazy" /><figcaption>Figure 44: Adding the str method to the city model</figcaption></figure>
 <p class="page-mark">Page 306</p>
 
-<p><bdi dir="rtl">اگر پنل ادمین را</bdi> refresh <bdi dir="rtl">کنید، نتیجه به‌صورت شکل</bdi> 45 <bdi dir="rtl">خواهد بود</bdi>.</p>
-<figure class="shot"><img alt="Figure 45: نمایش مناسب عنوان شهرها در پنل ادمین" src="../images/p312-01.png" loading="lazy" /><figcaption>Figure 45: <bdi dir="rtl">نمایش مناسب عنوان شهرها در پنل ادمین</bdi></figcaption></figure>
+<p>If you refresh the admin panel, the result will be as in Figure 45.</p>
+<figure class="shot"><img alt="Figure 45: Suitable display of the titles of the cities in the admin panel" src="../images/p312-01.png" loading="lazy" /><figcaption>Figure 45: Suitable display of the titles of the cities in the admin panel</figcaption></figure>
 <aside class="callout curiosity"><p class="callout-label">Curiosity</p>
-<p><bdi dir="rtl">در زبان انگلیسی جمع</bdi> City <bdi dir="rtl">برابر با</bdi> Cities <bdi dir="rtl">است، اما در پنل ادمین جنگو عنوان جدول به‌صورت اشتباه</bdi> Citys <bdi dir="rtl">نمایش داده می‌شود</bdi>. <bdi dir="rtl">بررسی کنید چطور می‌توان این عنوان را در بخش ادمین جنگو تغییر داد</bdi>.</p>
+<p>In English the plural of City is Cities, but in Django's admin panel the title of the table is wrongly shown as Citys. Check how this title can be changed in Django's admin section.</p>
 </aside>
-<h2><bdi dir="rtl">آشنایی با ابزار</bdi> ORM <bdi dir="rtl">جنگو</bdi></h2>
-<p><bdi dir="rtl">اکنون که چند رکورد حاوی نام چند شهر و مختصاتشان را به جدول شهر‌ها اضافه کردید، می‌توانید از داخل فایل</bdi> <code>views.py</code> <bdi dir="rtl">یکی از رکوردها</bdi> (<bdi dir="rtl">مثلاً اولین رکورد</bdi>) <bdi dir="rtl">را بخوانید، وضعیت آب و هوای آن شهر را به‌دست آوردید و جهت نمایش به فایل</bdi> <code>index.html</code> <bdi dir="rtl">ارسال کنید</bdi>.</p>
-<p><bdi dir="rtl">برای این‌کار لازم است ابتدا ابزار</bdi> ORM <bdi dir="rtl">جنگو را بشناسید</bdi>.</p>
-<p><bdi dir="rtl">برای کار با پایگاه داده از زبان</bdi> SQL <bdi dir="rtl">استفاده می‌شود، مثلاً دستور</bdi> SELECT <bdi dir="rtl">یکی از دستورات اصلی زبان</bdi> SQL <bdi dir="rtl">است</bdi>.</p>
+<h2>Getting to know Django's ORM tool</h2>
+<p>Now that you have added several records containing the names of some cities and their coordinates to the table of cities, you can read one of the records (for example the first record) from inside the file <code>views.py</code>, get the weather of that city and send it to the file <code>index.html</code> for display.</p>
+<p>For this you first need to know Django's ORM tool.</p>
+<p>To work with the database the SQL language is used; for example the SELECT statement is one of the main statements of the SQL language.</p>
 <p class="page-mark">Page 307</p>
 
-<p><bdi dir="rtl">با دستور</bdi> SELECT <bdi dir="rtl">به‌صورت زیر می‌توانید، همه شهرهای جدول</bdi> City <bdi dir="rtl">را از پایگاه داده دریافت کنید</bdi>:</p>
-<p><code>SELECT id, title, lat, lon FROM weather_city</code> <bdi dir="rtl">اما در جنگو یک ابزار مفید با نام</bdi> ORM <bdi dir="rtl">وجود دارد که کار با پایگاه داده را راحت‌تر می‌کند</bdi>. ORM <bdi dir="rtl">مثل یک مترجم است</bdi>. <bdi dir="rtl">عملیات مربوط به ارتباط با پایگاه داده را با زبان پایتون دریافت و در پشت صحنه، به دستورات</bdi> SQL <bdi dir="rtl">ترجمه می‌کند</bdi>.</p>
-<p><bdi dir="rtl">به‌عنوان مثال دستور معادل پرس و جوی قبلی در</bdi> ORM <bdi dir="rtl">جنگو به‌صورت زیر است</bdi>:</p>
+<p>With the SELECT statement you can get all the cities of the table City from the database as follows:</p>
+<p><code>SELECT id, title, lat, lon FROM weather_city</code> But in Django there is a useful tool named ORM that makes working with the database easier. ORM is like a translator. It receives the operations related to communicating with the database in the Python language and, behind the scenes, translates them into SQL statements.</p>
+<p>For example the statement equivalent to the previous query in Django's ORM is as follows:</p>
 <div class="code-wrap" dir="ltr"><pre><code>City.objects.all()
 </code></pre></div>
-<p><bdi dir="rtl">در این کد پایتونی،</bdi> City <bdi dir="rtl">نام مدل است</bdi>.</p>
-<p><bdi dir="rtl">اکنون کد</bdi> <code>show_temp_view</code> <bdi dir="rtl">را با استفاده از</bdi> ORM <bdi dir="rtl">جنگو همانند شکل</bdi> 46 <bdi dir="rtl">تغییر دهید</bdi>.</p>
-<figure class="shot"><img alt="Figure 46: استفاده از ORM جنگو" src="../images/p313-01.png" loading="lazy" /><figcaption>Figure 46: <bdi dir="rtl">استفاده از</bdi> ORM <bdi dir="rtl">جنگو</bdi></figcaption></figure>
-<p><strong><bdi dir="rtl">توضیحات کدها</bdi></strong>:</p>
-<p><strong><bdi dir="rtl">خط</bdi> 3</strong>: <bdi dir="rtl">مدل</bdi> City <bdi dir="rtl">از</bdi> <code>models.py</code> <bdi dir="rtl">در این فایل</bdi> import <bdi dir="rtl">شده است</bdi>.</p>
-<p><strong><bdi dir="rtl">خط</bdi> 6</strong>: <bdi dir="rtl">با استفاده از</bdi> ORM <bdi dir="rtl">جنگو، اولین شهر ذخیره شده در جدول شهر، در متغیر</bdi> city <bdi dir="rtl">ذخیره شده است</bdi>.</p>
-<p><strong><bdi dir="rtl">خط</bdi> 7</strong>: <bdi dir="rtl">مقدار</bdi> lat و lon <bdi dir="rtl">از شهرِ واکشی شده از جدول، دریافت و در متغیرهای</bdi> lat و lon <bdi dir="rtl">ذخیره شده است</bdi>.</p>
-<p><strong><bdi dir="rtl">خط</bdi> 17</strong>: <bdi dir="rtl">نام شهر نیز از پایگاه داده دریافت شده و درون دیکشنری</bdi> context <bdi dir="rtl">ذخیره شده است</bdi>.</p>
-<p><bdi dir="rtl">فایل را ذخیره و صفحه اصلی سایت را باز کنید</bdi>. <bdi dir="rtl">دمای شهر همدان نمایش داده می‌شود</bdi>.</p>
+<p>In this Python code, City is the name of the model.</p>
+<p>Now change the code of <code>show_temp_view</code> using Django's ORM as in Figure 46.</p>
+<figure class="shot"><img alt="Figure 46: Using Django's ORM" src="../images/p313-01.png" loading="lazy" /><figcaption>Figure 46: Using Django's ORM</figcaption></figure>
+<p><strong>Explanation of the code</strong>:</p>
+<p><strong>Line 3</strong>: the model City is imported from <code>models.py</code> in this file.</p>
+<p><strong>Line 6</strong>: using Django's ORM, the first city saved in the table of cities is stored in the variable city.</p>
+<p><strong>Line 7</strong>: the values lat and lon are taken from the city fetched from the table and stored in the variables lat and lon.</p>
+<p><strong>Line 17</strong>: the name of the city is also taken from the database and stored in the dictionary context.</p>
+<p>Save the file and open the main page of the site. The temperature of the city of Hamedan is shown.</p>
 <p class="page-mark">Page 308</p>
 
-<h3><bdi dir="rtl">نمایش لیست شهرها</bdi></h3>
-<p><bdi dir="rtl">تا اینجا توانستید چند شهر را ذخیره‌سازی کنید</bdi>. <bdi dir="rtl">قرار است که این شهرها را از پایگاه داده بخوانید و درون سایت به‌صورت یک لیست نمایش دهید تا کاربر بتواند با کلیک بر روی شهر دلخواهش، وضعیت دمای آن شهر را مشاهده کند</bdi>.</p>
-<p><bdi dir="rtl">این‌کار به کمک</bdi> view و template <bdi dir="rtl">صورت خواهد گرفت</bdi>.</p>
-<p><bdi dir="rtl">در جنگو،</bdi> view <bdi dir="rtl">می‌تواند اطلاعات را از دیتابیس دریافت کرده و سند</bdi> html <bdi dir="rtl">را جهت نمایش به کاربر آماده کند</bdi>. <bdi dir="rtl">شکل</bdi> 47 <bdi dir="rtl">را مشاهده کنید،</bdi> request <bdi dir="rtl">از</bdi> url <bdi dir="rtl">به</bdi> view <bdi dir="rtl">ارسال شده و</bdi> view <bdi dir="rtl">با استفاده از</bdi> model و template<bdi dir="rtl">، اطلاعات را جهت نمایش به کاربر آماده می‌کند</bdi>.</p>
-<figure class="shot"><img alt="Figure 47: دریافت اطلاعات از مدل توسط View" src="../images/p314-01.png" loading="lazy" /><figcaption>Figure 47: <bdi dir="rtl">دریافت اطلاعات از مدل توسط</bdi> View</figcaption></figure>
-<p><bdi dir="rtl">جهت نمایش لیست شهرها در صفحه اصلی سایت می‌توانید چهار مرحله را به‌صورت زیر انجام دهید</bdi>:</p>
+<h3>Showing the list of cities</h3>
+<p>So far you were able to save some cities. These cities are to be read from the database and shown inside the site as a list so that the user, by clicking on the city they like, can see the temperature of that city.</p>
+<p>This will be done with the help of a view and a template.</p>
+<p>In Django, a view can get information from the database and prepare the html document for showing it to the user. Look at Figure 47: the request is sent from the url to the view and the view, using the model and the template, prepares the information for display to the user.</p>
+<figure class="shot"><img alt="Figure 47: Getting information from the model by the View" src="../images/p314-01.png" loading="lazy" /><figcaption>Figure 47: Getting information from the model by the View</figcaption></figure>
+<p>To show the list of cities on the main page of the site you can do four steps as follows:</p>
 <ol>
 <li>
-<p><bdi dir="rtl">ساختن یک تابع با نام</bdi> <code>city_list_view</code> <bdi dir="rtl">در</bdi> <code>Views.py</code></p>
+<p>Making a function named <code>city_list_view</code> in <code>Views.py</code></p>
 </li>
 <li>
-<p><bdi dir="rtl">ساختن یک</bdi> template <bdi dir="rtl">با نام</bdi> <code>city_list.html</code></p>
+<p>Making a template named <code>city_list.html</code></p>
 </li>
 <li>
-<p><bdi dir="rtl">تغییر و تنظیم فایل</bdi><code>urls.py</code></p>
+<p>Changing and setting the file <code>urls.py</code></p>
 </li>
 <li>
-<p><bdi dir="rtl">قرار دادن لینک</bdi> «<bdi dir="rtl">لیست شهرها</bdi>» <bdi dir="rtl">در صفحه اصلی</bdi></p>
+<p>Putting the link "List of cities" on the main page</p>
 </li>
 </ol>
-<p><strong><bdi dir="rtl">مرحله اول</bdi></strong>: <bdi dir="rtl">یک</bdi> view <bdi dir="rtl">با نام</bdi> <code>city_list_view</code> <bdi dir="rtl">همانند شکل</bdi> 48 <bdi dir="rtl">ایجاد کنید</bdi>.</p>
-<p><img alt="Figure 48: افزودن city_list_view" src="../images/p314-02.png" loading="lazy" />
-<em>Figure 48: <bdi dir="rtl">افزودن</bdi> <code>city_list_view</code></em></p>
+<p><strong>First step</strong>: create a view named <code>city_list_view</code> as in Figure 48.</p>
+<p><img alt="Figure 48: Adding city_list_view" src="../images/p314-02.png" loading="lazy" />
+<em>Figure 48: Adding <code>city_list_view</code></em></p>
 <p class="page-mark">Page 309</p>
 
-<p><strong><bdi dir="rtl">توضیحات کدها</bdi></strong>:</p>
-<p><strong><bdi dir="rtl">خط</bdi> 6</strong>: <bdi dir="rtl">با استفاده از</bdi> ORM <bdi dir="rtl">جنگو یک</bdi> Query <bdi dir="rtl">اجرا شده و لیست همه شهرها از جدول</bdi> City <bdi dir="rtl">واکشی شده است</bdi>. ORM <bdi dir="rtl">جنگو دستورات مختص به خود را دارد و این دستورات به کدهای</bdi> SQL <bdi dir="rtl">تبدیل شده و توسط پایگاه داده اجرا می‌شوند</bdi>. <bdi dir="rtl">سپس نتیجه دستور در متغیری با نام</bdi> cities <bdi dir="rtl">ذخیره شده است</bdi>.</p>
-<p><strong><bdi dir="rtl">خط</bdi> 8</strong>: <bdi dir="rtl">دیکشنری</bdi> context <bdi dir="rtl">برای</bdi> <code>city_list.html</code> <bdi dir="rtl">ارسال شده است، مقدار</bdi> value <bdi dir="rtl">این دیکشنری یعنی</bdi> cities <bdi dir="rtl">در خط</bdi> 6 <bdi dir="rtl">مقداردهی شده است</bdi>.</p>
-<p><strong><bdi dir="rtl">مرحله دوم</bdi></strong>: <bdi dir="rtl">اکنون یک فایل</bdi> html <bdi dir="rtl">با نام</bdi> <code>city_list.html</code> <bdi dir="rtl">درون پوشه</bdi> templates <bdi dir="rtl">ایجاد کنید، کد این فایل را همانند شکل</bdi> 49 <bdi dir="rtl">وارد کنید</bdi>.</p>
-<p><img alt="Figure 49: افزودن city_list.html" src="../images/p315-01.png" loading="lazy" />
-<em>Figure 49: <bdi dir="rtl">افزودن</bdi> <code>city_list.html</code></em></p>
-<p><strong><bdi dir="rtl">توضیحات کدها</bdi></strong>:</p>
-<p><strong><bdi dir="rtl">خط</bdi> 10</strong>: <bdi dir="rtl">یک حلقه روی</bdi> cities <bdi dir="rtl">اجرا شده است تا لیست شهرها را به‌صورت تگ</bdi> p <bdi dir="rtl">در مرورگر نمایش دهد</bdi>. cities <bdi dir="rtl">قبلاً در فایل</bdi> <code>views.py</code> <bdi dir="rtl">درون یک دیکشنری تعریف شده است</bdi>.</p>
-<p><strong><bdi dir="rtl">خط</bdi> 11</strong>: <bdi dir="rtl">با استفاده از</bdi> {{ }} <bdi dir="rtl">می‌توانید به فیلدهای هر</bdi> item <bdi dir="rtl">دسترسی داشته باشید</bdi>. title <bdi dir="rtl">فیلدی است که برای عنوان شهر، در مدل</bdi> City <bdi dir="rtl">تعریف کردید</bdi>.</p>
-<p><strong><bdi dir="rtl">خط</bdi> 12</strong>: <bdi dir="rtl">حتماً باید حلقه</bdi> for <bdi dir="rtl">را با</bdi> endfor <bdi dir="rtl">خاتمه دهید، در غیر این‌صورت در مرورگر با خطا مواجه خواهید شد</bdi>.</p>
+<p><strong>Explanation of the code</strong>:</p>
+<p><strong>Line 6</strong>: using Django's ORM a Query is run and the list of all the cities is fetched from the table City. Django's ORM has its own statements, and these statements are turned into SQL code and run by the database. Then the result of the statement is stored in a variable named cities.</p>
+<p><strong>Line 8</strong>: the dictionary context is sent for <code>city_list.html</code>; the value of this dictionary, that is cities, was given its value in line 6.</p>
+<p><strong>Second step</strong>: now create an html file named <code>city_list.html</code> inside the templates folder and enter the code of this file as in Figure 49.</p>
+<p><img alt="Figure 49: Adding city_list.html" src="../images/p315-01.png" loading="lazy" />
+<em>Figure 49: Adding <code>city_list.html</code></em></p>
+<p><strong>Explanation of the code</strong>:</p>
+<p><strong>Line 10</strong>: a loop is run over cities to show the list of cities as p tags in the browser. cities was defined earlier in the file <code>views.py</code> inside a dictionary.</p>
+<p><strong>Line 11</strong>: using {{ }} you can reach the fields of each item. title is the field you defined in the model City for the title of the city.</p>
+<p><strong>Line 12</strong>: you must end the for loop with endfor; otherwise you will meet an error in the browser.</p>
 <p class="page-mark">Page 310</p>
 
-<p><strong><bdi dir="rtl">مرحله سوم</bdi></strong>: <bdi dir="rtl">فایل</bdi> <code>urls.py</code> <bdi dir="rtl">در</bdi> weather app <bdi dir="rtl">را همانند شکل</bdi> 50 <bdi dir="rtl">تغییر دهید</bdi>.</p>
-<p><img alt="Figure 50: افزودن path لیست شهرها به urls.py" src="../images/p316-01.png" loading="lazy" />
-<em>Figure 50: <bdi dir="rtl">افزودن</bdi> path <bdi dir="rtl">لیست شهرها به</bdi> <code>urls.py</code></em></p>
-<p><strong><bdi dir="rtl">توضیحات کدها</bdi></strong>:</p>
-<p><strong><bdi dir="rtl">خط</bdi> 6</strong>: <bdi dir="rtl">یک</bdi> path <bdi dir="rtl">جدید جهت استفاده از</bdi> <code>city_list_view</code> <bdi dir="rtl">اضافه شده و به این معنی است که لیست شهرها در آدرس</bdi> /listـ http://127.0.0.1:8000/city <bdi dir="rtl">نمایش داده می‌شود</bdi>.</p>
-<p><strong><bdi dir="rtl">مرحله چهارم</bdi></strong>: <bdi dir="rtl">کد</bdi> <code>show_temp.html</code> <bdi dir="rtl">را جهت اضافه کردن لینک به صفحه لیست شهرها، همانند شکل</bdi> 51 <bdi dir="rtl">تغییر دهید</bdi>.</p>
-<figure class="shot"><img alt="Figure 51: اضافه کردن لینک به لیست شهرها" src="../images/p316-02.png" loading="lazy" /><figcaption>Figure 51: <bdi dir="rtl">اضافه کردن لینک به لیست شهرها</bdi></figcaption></figure>
+<p><strong>Third step</strong>: change the file <code>urls.py</code> in the weather app as in Figure 50.</p>
+<p><img alt="Figure 50: Adding the city list path to urls.py" src="../images/p316-01.png" loading="lazy" />
+<em>Figure 50: Adding the city list path to <code>urls.py</code></em></p>
+<p><strong>Explanation of the code</strong>:</p>
+<p><strong>Line 6</strong>: a new path is added to use <code>city_list_view</code>, and it means that the list of cities is shown at the address http://127.0.0.1:8000/city/list.</p>
+<p><strong>Fourth step</strong>: change the code of <code>show_temp.html</code> to add a link to the page of the list of cities, as in Figure 51.</p>
+<figure class="shot"><img alt="Figure 51: Adding a link to the list of cities" src="../images/p316-02.png" loading="lazy" /><figcaption>Figure 51: Adding a link to the list of cities</figcaption></figure>
 <p class="page-mark">Page 311</p>
 
-<p><strong><bdi dir="rtl">توضیحات کدها</bdi></strong>:</p>
-<p><strong><bdi dir="rtl">خط</bdi> 15</strong>: <bdi dir="rtl">در این خط تگ</bdi> a <bdi dir="rtl">اضافه شده و مقدار</bdi> href <bdi dir="rtl">آن برابر عبارت</bdi> }% <code>url 'city_list'</code> %{ <bdi dir="rtl">است</bdi>.</p>
-<p><bdi dir="rtl">در این عبارت</bdi> }% <code>url 'city_list'</code> %{ <bdi dir="rtl">یک</bdi> Template Tag <bdi dir="rtl">است</bdi>. <bdi dir="rtl">از تگ</bdi> url <bdi dir="rtl">استفاده شده است و</bdi> <code>city_list</code> <bdi dir="rtl">آرگومان آن است</bdi>. <bdi dir="rtl">این خط با استفاده از نام مسیر</bdi> <code>city_list</code><bdi dir="rtl">، آدرس لینک لیست شهرها را به صورت خودکار تولید می‌کند</bdi> (<bdi dir="rtl">شکل</bdi> 52).</p>
-<figure class="shot"><img alt="Figure 52: روند کار تگ url در جنگو" src="../images/p317-01.png" loading="lazy" /><figcaption>Figure 52: <bdi dir="rtl">روند کار تگ</bdi> url <bdi dir="rtl">در جنگو</bdi></figcaption></figure>
-<p><bdi dir="rtl">اکنون فایل را ذخیره کرده و صفحه اصلی سایت را</bdi> refresh <bdi dir="rtl">کنید، لینک اضافه شده را همانند شکل</bdi> 53 <bdi dir="rtl">مشاهده خواهید کرد</bdi>.</p>
-<figure class="shot"><img alt="Figure 53: نمایش لینک لیست شهرها" src="../images/p317-02.png" loading="lazy" /><figcaption>Figure 53: <bdi dir="rtl">نمایش لینک لیست شهرها</bdi></figcaption></figure>
+<p><strong>Explanation of the code</strong>:</p>
+<p><strong>Line 15</strong>: in this line the a tag is added and its href value equals the expression {% <code>url 'city_list'</code> %}.</p>
+<p>The expression {% <code>url 'city_list'</code> %} is a Template Tag. The url tag is used and <code>city_list</code> is its argument. This line, using the name of the path <code>city_list</code>, automatically makes the address of the link to the list of cities (Figure 52).</p>
+<figure class="shot"><img alt="Figure 52: How the url tag works in Django" src="../images/p317-01.png" loading="lazy" /><figcaption>Figure 52: How the url tag works in Django</figcaption></figure>
+<p>Now save the file and refresh the main page of the site; you will see the added link as in Figure 53.</p>
+<figure class="shot"><img alt="Figure 53: Showing the link to the list of cities" src="../images/p317-02.png" loading="lazy" /><figcaption>Figure 53: Showing the link to the list of cities</figcaption></figure>
 <p class="page-mark">Page 312</p>
 
-<p><bdi dir="rtl">اکنون روی لینک اِضافه شده</bdi> (<bdi dir="rtl">لیست شهرها</bdi>) <bdi dir="rtl">کلیک کنید، همانند شکل</bdi> 54<bdi dir="rtl">، لیست شهرها را مشاهده خواهید کرد</bdi>.</p>
-<figure class="shot"><img alt="Figure 54: نمایش لیست شهرها" src="../images/p318-01.png" loading="lazy" /><figcaption>Figure 54: <bdi dir="rtl">نمایش لیست شهرها</bdi></figcaption></figure>
-<h3><bdi dir="rtl">نمایش دمای شهر انتخاب شده توسط کاربر</bdi></h3>
-<p><bdi dir="rtl">شهرهایی که در لیست شهرها نمایش داده می‌شوند، قابلیت کلیک ندارند، لازم است تغییراتی اعمال کنید تا کاربر امکان کلیک کردن روی شهر مورد نظر خود را داشته باشد، تا دمای شهر انتخاب شده، نمایش داده شود</bdi>.</p>
-<p><bdi dir="rtl">ابتدا فایل</bdi> <code>city_list.html</code> <bdi dir="rtl">را باز کرده و همانند شکل</bdi> 55<bdi dir="rtl">، تغییرات مورد نظر را اعمال کنید</bdi>.</p>
-<figure class="shot"><img alt="Figure 55: افزودن لینک به هر شهر" src="../images/p318-02.png" loading="lazy" /><figcaption>Figure 55: <bdi dir="rtl">افزودن لینک به هر شهر</bdi></figcaption></figure></article>
+<p>Now click on the added link (the list of cities); as in Figure 54, you will see the list of cities.</p>
+<figure class="shot"><img alt="Figure 54: Showing the list of cities" src="../images/p318-01.png" loading="lazy" /><figcaption>Figure 54: Showing the list of cities</figcaption></figure>
+<h3>Showing the temperature of the city chosen by the user</h3>
+<p>The cities shown in the list of cities cannot be clicked; you must make changes so that the user can click on the city they want, so that the temperature of the chosen city is shown.</p>
+<p>First open the file <code>city_list.html</code> and make the wanted changes as in Figure 55.</p>
+<figure class="shot"><img alt="Figure 55: Adding a link to each city" src="../images/p318-02.png" loading="lazy" /><figcaption>Figure 55: Adding a link to each city</figcaption></figure></article>
       <aside class="card extra">
         <h2 data-fa="تمرین این بخش" data-en="Exercises for this section">تمرین این بخش</h2>
         <p class="extra-note" data-fa="این تمرین‌ها و پیوندها اضافه بر متن کتاب‌اند." data-en="These exercises and links are in addition to the book.">این تمرین‌ها و پیوندها اضافه بر متن کتاب‌اند.</p>

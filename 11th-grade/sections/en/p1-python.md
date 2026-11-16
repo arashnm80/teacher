@@ -41,7 +41,7 @@ Python runs on different platforms (Windows, Mac, Linux, and so on). Its syntax 
 ![Figure 1](../images/p009-01.png)
 *Figure 1*
 
-برای شروع کدنویسی با پایتون (بعد از نصب پایتون آخرین نسخه) با استفاده از محیط IDLE، ابتدا منوی Start را باز کنید، سپس تایپ کنید IDLE یا Python IDLE و روی `IDLE (Python 3.x)` کلیک کنید. پنجره محیط تعاملی (پنجره IDLE Shell) باز می‌شود. در این پنجره از منوی file، یک فایل جدید ایجاد کنید. محیط ویرایشگر متنی پایتون باز شده و می‌توانید دستورات خود را در آن وارد کنید (شکل 2).
+To start coding with Python (after installing the latest version of Python) using the IDLE environment, first open the Start menu, then type IDLE or Python IDLE and click `IDLE (Python 3.x)`. The interactive window (the IDLE Shell window) opens. In this window, create a new file from the File menu. The Python text editor opens and you can enter your statements in it (Figure 2).
 
 ![Figure 2](../images/p009-02.png)
 *Figure 2*

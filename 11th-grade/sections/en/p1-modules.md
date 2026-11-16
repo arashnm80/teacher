@@ -11,7 +11,7 @@ Run the program and check the result.
 >
 > Write a program that:
 >
-> یک عدد تصادفی بین ۱ تا 10 تولید کند. از کاربر بخواهد عدد را حدس بزند. اگر حدس درست بود، پیام شما موفق شدید چاپ کند؛ در غیر این صورت دوباره از کاربر ورودی بگیرد. ضمناً تعداد دفعات تلاش کاربر را هم چاپ کند.
+> It should generate a random number between 1 and 10. It should ask the user to guess the number. If the guess is right, it should print the message you succeeded; otherwise it should take input from the user again. It should also print the number of the user's attempts.
 
 > **Activity**
 >
@@ -27,7 +27,7 @@ Run the program and check the result.
 >
 > - Otherwise: show a game-over message.
 
-### روش دوم: وارد کردن بخش‌های خاص (from ... import)
+### The second way: importing specific parts (from ... import)
 
 **from** module name **import** function name. In this method only the functions or variables needed are imported from a module. The code is shorter and simpler to write.
 
@@ -78,7 +78,7 @@ After this statement there is no need to write `math.sqrt`; you write sqrt (25) 
 >
 > - Use this module in the main program.
 
-### ماژول محلی (local)
+### The local module
 
 Modules written by the programmer and imported into the program.
 
@@ -120,18 +120,18 @@ Then use it in the main program (Figure 159).
 >
 > - Run the program and explain the lines of code.
 
-**ماژول‌های شخص ثالث (3rd party)**: ماژول‌هایی که توسط دستور pip install نصب می‌شوند و در برنامه import می‌شوند. مثل Django، Flask, PyGame و...
+**Third-party modules**: modules that are installed with the command pip install and imported in the program. Like Django, Flask, PyGame and so on.
 
 ## The difference between a function and a method
 
-در مطالب قبل، از دستوراتی مانند، `split()`، `append()` و `len()` استفاده کرده‌اید، بدون آنکه تعریف رسمی آنها بیان شود. این موضوع کاملاً طبیعی است و در برنامه‌نویسی بسیار رایج است؛ زیرا بسیاری از مفاهیم ابتدا با استفاده عملی و سپس با تعریف دقیق معرفی می‌شوند.
+In the earlier material you used statements such as `split()`, `append()` and `len()` without their formal definition being given. This is completely natural and very common in programming, because many concepts are first introduced through practical use and then with an exact definition.
 
 ![Figure 160](../images/p083-04.png)
 *Figure 160*
 
 <!-- page 78 -->
 
-**تابع:(function)** دستوری مستقل است که برای انجام یک کار مشخص به کار می‌رود و به نوع داده خاصی وابسته نیست.
+**Function:** an independent statement that is used to do one specific job and does not depend on a specific data type.
 
 **Example**: counting users: the `len()` function returns the number of characters in a string (Figure 161).
 
@@ -143,7 +143,7 @@ Then use it in the main program (Figure 159).
 ![Figure 162](../images/p084-02.png)
 *Figure 162*
 
-**متد (Method)**: نوعی تابع است که به یک کلاس یا شیء مشخص تعلق دارد و برای انجام عملیات روی داده‌های همان شیء استفاده می‌شود.
+**Method**: a kind of function that belongs to a specific class or object and is used to do operations on the data of that same object.
 
 **The main difference** between a function and a method is how they are **used** and what they **depend on**: functions are **called independently**, but methods run through **an object** or **a data type** **using a dot** (.), and usually **have access to that object's internal data**.
 

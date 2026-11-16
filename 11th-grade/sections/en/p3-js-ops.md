@@ -1,62 +1,62 @@
 <!-- page 203 -->
 
-**عملگرهای ریاضی (Arithmetic)** : این عملگرها برای انجام انواع عملیات محاسباتی ریاضی مورد استفاده قرار می‌گیرند. شرح این عملگرها در جدول ۱۶ آمده است:
+**Arithmetic operators**: these operators are used to do all kinds of mathematical calculation operations. The description of these operators is given in Table 16:
 
-*Table 16: عملگرهای ریاضی جاوا‌اسکریپت*
+*Table 16: JavaScript arithmetic operators*
 
 | Operator | Description | Example |
 | --- | --- | --- |
-| + , - , \* , / , % | جمع، تفریق، ضرب و تقسیم و باقی‌مانده | `x = y+z , a = a*2, n = n/10` |
-| ++,-- | افزایش و کاهش به میزان یک واحد | `x++, y--, ++z, --w` |
-| \*\* | توان | `x = y**2` |
+| + , - , \* , / , % | Addition, subtraction, multiplication, division and remainder | `x = y+z , a = a*2, n = n/10` |
+| ++,-- | Increasing and decreasing by one unit | `x++, y--, ++z, --w` |
+| \*\* | Power | `x = y**2` |
 
-**عملگرهای انتساب (Assignment)**: برای اختصاص یک مقدار به یک متغیر از این عملگرها استفاده می‌شود. برخی از این عملگرها ساده و برخی ترکیبی هستند؛ یعنی علاوه بر انتساب، عمل دیگری را نیز روی عملوندها انجام می‌دهند. جدول ۱۷ مجموعه این عملگرها را نمایش می‌دهد.
+**Assignment operators**: these operators are used to assign a value to a variable. Some of these operators are simple and some are compound; that is, besides assignment they do another operation on the operands too. Table 17 shows the set of these operators.
 
-*Table 17: عملگرهای انتساب در جاوا‌اسکریپت*
+*Table 17: Assignment operators in JavaScript*
 
-| Operator | Description | Example | عبارت معادل |
+| Operator | Description | Example | Equivalent expression |
 | --- | --- | --- | --- |
-| `=` | مقدار عملوند سمت راست (y)، درون عملوند سمت چپ (x) قرار می‌گیرد. | `x = y` | `x = y` |
-| `+=` | حاصل جمع عملوندهای x و y درون عملوند سمت چپ (x) قرار می‌گیرد. | `x += y` | `x = x + y` |
-| `-=` | حاصل تفریق عملوندهای x و y درون عملوند سمت چپ (x) قرار می‌گیرد. | `x -= y` | `x = x – y` |
-| `*=` | حاصل ضرب عملوندهای x و y درون عملوند سمت چپ (x) قرار می‌گیرد. | `x *= y` | `x = x * y` |
-| `/=` | خارج قسمت تقسیم عملوند x بر عملوند y درون متغیر سمت چپ (x) قرار می‌گیرد. | `x /= y` | `x = x / y` |
-| `% =` | باقیمانده تقسیم عملوند x بر عملوند y درون متغیر سمت چپ (x) قرار می‌گیرد. | `x %= y` | `x = x % y` |
-| `**=` | عملوند x را به توان عملوند y می‌رساند و نتیجه را درون متغیر x قرار می‌دهد. | `x **= y` | `x = x ** y` |
+| `=` | The value of the right operand (y) is put in the left operand (x). | `x = y` | `x = y` |
+| `+=` | The sum of the operands x and y is put in the left operand (x). | `x += y` | `x = x + y` |
+| `-=` | The difference of the operands x and y is put in the left operand (x). | `x -= y` | `x = x – y` |
+| `*=` | The product of the operands x and y is put in the left operand (x). | `x *= y` | `x = x * y` |
+| `/=` | The quotient of dividing the operand x by the operand y is put in the left variable (x). | `x /= y` | `x = x / y` |
+| `% =` | The remainder of dividing the operand x by the operand y is put in the left variable (x). | `x %= y` | `x = x % y` |
+| `**=` | Raises the operand x to the power of the operand y and puts the result in the variable x. | `x **= y` | `x = x ** y` |
 
 <!-- page 204 -->
 
-**عملگرهای مقایسه‌ای (Comparison)**: این عملگرها برای مقایسه دو عملوند به‌کار می‌روند.
+**Comparison operators**: these operators are used to compare two operands.
 
-مجموعه این عملگرها در جدول ۱۸ آمده است:
+The set of these operators is given in Table 18:
 
-*Table 18: عملگرهای مقایسه‌ای*
-
-| Operator | Description |
-| --- | --- |
-| `==` و `===` | `==` برای بررسی تساوی دو عملوند از لحاظ مقدار و `===` برای تساوی دو عملوند از لحاظ مقدار و نوع |
-| `!=` و `!==` | `!=` برای بررسی عدم تساوی مقدار دو عملوند و `!==` برای بررسی عدم تساوی مقدار و نوع دو عملوند |
-| `< , >` | کوچک‌تر یا بزرگ‌تر بودن عملوند اول نسبت به عملوند دوم |
-| `>= , <=` | کوچک‌تر یا مساوی، بزرگ‌تر یا مساوی |
-| ? | عملگر شرطی سه‌تایی که برای انتخاب بین دو مقدار بر اساس یک شرط استفاده می‌شود. |
-
-**عملگرهای منطقی (Boolean)**: از عملگرهای منطقی برای ترکیب یا معکوس کردن شرایط استفاده می‌شود. این عملگرها امکان ترکیب عبارات منطقی را در شرایط مختلف فراهم می‌کنند. جدول ۱۹ عملگرهای منطقی جاوا‌اسکریپت را معرفی می‌کند:
-
-*Table 19: عملگرهای منطقی*
+*Table 18: Comparison operators*
 
 | Operator | Description |
 | --- | --- |
-| && | عملگر AND بررسی می‌کند که آیا هر دو عملوند صحیح هستند یا خیر. |
-| \|\| | عملگر OR بررسی می‌کند که آیا حداقل یکی از شرط‌ها درست است یا خیر. |
-| `!` | عملگر NOT وضعیت درست یا غلط بودن یک شرط را معکوس می‌کند. |
+| `==` and `===` | `==` checks the equality of two operands in terms of value and `===` checks the equality of two operands in terms of value and type |
+| `!=` and `!==` | `!=` checks that the values of two operands are not equal and `!==` checks that the value and the type of two operands are not equal |
+| `< , >` | Whether the first operand is smaller or larger than the second operand |
+| `>= , <=` | Smaller than or equal, larger than or equal |
+| ? | The ternary conditional operator, used to choose between two values based on a condition. |
+
+**Logical operators (Boolean)**: logical operators are used to combine or reverse conditions. These operators make it possible to combine logical expressions in different conditions. Table 19 introduces JavaScript's logical operators:
+
+*Table 19: Logical operators*
+
+| Operator | Description |
+| --- | --- |
+| && | The AND operator checks whether both operands are true or not. |
+| \|\| | The OR operator checks whether at least one of the conditions is true or not. |
+| `!` | The NOT operator reverses the true or false state of a condition. |
 
 <!-- page 205 -->
 
 > **Workshop**
 >
-> **کار با انواع عملگرهای جاوا‌اسکریپت**
+> **Working with the types of JavaScript operators**
 >
-> فایل جدیدی با نام `workshop3.html` ایجاد کنید و تگ `<script>` را در بخش body بنویسید. سپس اسکریپت زیر را درون آن وارد کنید و نتایج به‌دست آمده را در جاهای خالی بنویسید.
+> Create a new file named `workshop3.html` and write the `<script>` tag in the body section. Then enter the following script in it and write the results you get in the blanks.
 >
 > ```
 > 1 let x = 10, y = 2, z= 3, w=20, s="10", n = "sara", m="sina";
@@ -86,8 +86,8 @@
 
 > **Note**
 >
-> در هنگام مقایسه دو عملوند توسط عملگرهای `==` و `!=` نوع داده عملوندها اهمیتی ندارد و فقط مقادیر آنها بررسی می‌شود؛ درحالی‌که عملگر `===` و `!==` نوع داده عملوندها را نیز مد نظر دارد.
+> When two operands are compared with the operators `==` and `!=`, the data type of the operands does not matter and only their values are checked, whereas the operators `===` and `!==` take the data type of the operands into account too.
 
 > **Note**
 >
-> عبارت (`x===s`)? تساوی دو متغیر x و s را بررسی می‌کند. اگر نتیجه مقایسه true (درست) باشد، عبارت قبل از علامت ? و اگر نتیجه false (غلط) باشد، عبارت بعد از علامت : در متغیر result ذخیره می‌گردد.
+> The expression (`x===s`)? checks the equality of the two variables x and s. If the result of the comparison is true, the expression before the ? sign is stored in the variable result, and if it is false, the expression after the : sign is stored.

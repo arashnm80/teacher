@@ -1,18 +1,18 @@
 <!-- page 211 -->
 
-کلمه Condition به‌معنای شرط و کلمه statement به دستور یا دستوراتی اشاره دارد که به‌ازای برقرار شدن شرط اجرا می‌شوند. منظور از برقرار بودن شرط این است که مقدار عبارت Condition برابر True باشد. کلمه else به‌معنای «درغیراین‌صورت» است. محتوای else زمانی اجرا می‌شود که شرط if برقرار نباشد. یعنی مقدار عبارت condition برابر False باشد.
+The word Condition means the condition and the word statement points to the statement or statements that run when the condition holds. The condition holding means that the value of the Condition expression is True. The word else means "otherwise". The content of else runs when the condition of the if does not hold, that is, the value of the condition expression is False.
 
 > **Workshop**
 >
-> **کار با ساختارهای شرطی if**
+> **Working with the if conditional structures**
 >
-> توسط ساختار شرطی **if**، زوج یا فرد بودن عدد n را بررسی کنید.
+> With the **if** conditional structure, check whether the number n is even or odd.
 >
-> بدین منظور یک فایل جدید با نام `workshop6.html` ایجاد کنید و اسکریپت زیر را درون آن بنویسید: فایل را ذخیره کنید و نتیجه را در کنسول مرور‌گر مشاهده نمایید. در این اسکریپت، باقی‌ماندۀ تقسیم عدد n بر 2 درون متغیر r ذخیره می‌شود. چنانچه مقدار باقی‌مانده صفر باشد (یعنی n بر 2 بخش‌پذیر است)، عبارت "Even number" و در غیراین‌صورت عبارت "Odd number" روی صفحه ظاهر می‌شود. کلمه Even به‌معنای زوج و کلمه Odd به معنای فرد است.
+> For this purpose create a new file named `workshop6.html` and write the following script in it: save the file and see the result in the browser console. In this script, the remainder of dividing the number n by 2 is stored in the variable r. If the value of the remainder is zero (that is, n is divisible by 2), the phrase "Even number" appears on the page, and otherwise the phrase "Odd number". The word Even means even (zugh) and the word Odd means odd.
 >
 > ![Book image](../images/p217-03.png)
 >
-> اسکریپت تشخیص زوج یا فرد بودن یک عدد می‌تواند توسط ساختار **if-else** نیز نوشته شود. اسکریپت قبل را طبق شکل زیر تغییر دهید و نتیجه را در کنسول مرور‌گر بررسی کنید.
+> The script for finding out whether a number is even or odd can also be written with the **if-else** structure. Change the previous script as in the following figure and check the result in the browser console.
 >
 > ![Book image](../images/p217-01.png)
 >
@@ -21,34 +21,34 @@
 ![Figure 10](../images/p217-04.png)
 *Figure 10*
 
-**ساختار else-if**: امکان بررسی چند شرط را به‌صورت پی‌در‌پی فراهم می‌کند. در این مرحله رتبه یک دانش‌آموز بر اساس نمره کسب‌شده مشخص می‌شود. در انتهای اسکریپت قبل، کد روبه‌رو را بنویسید.
+**The else-if structure**: makes it possible to check several conditions one after another. In this step the grade of a student is decided based on the score obtained. At the end of the previous script, write the code opposite.
 
-در این اسکریپت، متغیر score با مقدار 70 برای نگهداری نمره دانش‌آموز تعریف شده است. ابتدا شرط `score>=90` و سپس شرط `score>=80` بررسی می‌شود. با توجه به اینکه مقدار هر دو شرط نادرست است، بنابراین دستور `console.log()` در خطوط 3 و 5 اجرا نمی‌شود. سپس شرط `score>=70` بررسی می‌شود. با توجه به برقرار بودن شرط، دستور شماره 7 اجرا شده و عبارت Grade: C روی صفحه چاپ می‌شود. بعد از اجرای دستور 7 شرط‌های بعدی بررسی نمی‌شود و کنترل برنامه به خط 13 منتقل می‌شود.
+In this script, the variable score is defined with the value 70 to hold the student's score. First the condition `score>=90` and then the condition `score>=80` are checked. Since both conditions are false, the `console.log()` statements in lines 3 and 5 do not run. Then the condition `score>=70` is checked. Since this condition holds, statement number 7 runs and the phrase Grade: C is printed on the page. After statement 7 runs, the next conditions are not checked and the control of the program moves to line 13.
 
 <!-- page 212 -->
 
 > **Learn more**
 >
-> **ساختار Switch**
+> **The Switch structure**
 >
-> ساختار switch برای انتخاب از بین چندین بلوک کد، بر اساس مقدار یک متغیر به‌کار می‌رود. درصورتی‌که شرایط مسئله فقط به مقایسه یک متغیر با مقادیر مشخص محدود شود، می‌توان از ساختار switch به‌جای else-ifهای متعدد استفاده نمود.
+> The switch structure is used to choose among several blocks of code, based on the value of one variable. If the conditions of the problem are limited only to comparing one variable with certain values, the switch structure can be used instead of several else-ifs.
 
 > **Workshop**
 >
-> **استفاده از ساختار شرطی switch**
+> **Using the switch conditional structure**
 >
 > ![Book image](../images/p218-01.png)
 >
-> اسکریپتی بنویسید که رتبۀ یک دانش‌آموز را از متغیر grade دریافت کند و بر اساس مقدار رتبه، پیغام مناسبی را برای کاربر نمایش دهد.
+> Write a script that receives the grade of a student from the variable grade and, based on the value of the grade, shows a suitable message to the user.
 >
-> بدین منظور اسکریپت موجود در فایل `workshop6.html` را درون علائم کامنت قرار دهید و در ادامه، کد روبه‌رو را برای بررسی رتبه بنویسید.
+> For this purpose, put the script in the file `workshop6.html` inside comment signs and then write the code opposite to check the grade.
 >
-> در این مثال ساختار شرطی switch مقدار متغیر grade را توسط caseهای مختلف بررسی می‌کند، به محض اینکه مقدار مقابل case با مقدار متغیر grade یکسان شود، دستور بعد از علامت: اجرا شده و سپس خروج از ساختار switch توسط دستور break انجام می‌شود. اگر مقدار متغیر grade با هیچ یک از مقادیر نوشته شده در مقابل caseها یکسان نباشد، دستور مربوط به حالت default اجرا می‌گردد.
+> In this example the switch conditional structure checks the value of the variable grade with different cases; as soon as the value opposite a case is the same as the value of the variable grade, the statement after the : sign runs and then the exit from the switch structure is done by the break statement. If the value of the variable grade is not the same as any of the values written opposite the cases, the statement for the default case runs.
 
 > **Note**
 >
-> اگر شرط یک case برقرار شود ولی دستور break در آن موجود نباشد، case بعدی هم توسط برنامه بررسی می‌شود.
+> If the condition of a case holds but the break statement is not in it, the next case is checked by the program too.
 
 > **Activity**
 >
-> در case A دستور break را حذف کنید و خروجی برنامه را در مرورگر بررسی کنید. سپس دستور break را از مقابل caseهای بعدی حذف کنید و نتیجۀ آن را تحلیل نمایید.
+> Remove the break statement in case A and check the output of the program in the browser. Then remove the break statement from opposite the next cases and analyse the result.

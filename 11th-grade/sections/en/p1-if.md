@@ -8,7 +8,7 @@ In Python, the if statement is the simplest and most widely used tool for buildi
 >
 > The statements that belong to a conditional structure must be written one tab (a few equivalent spaces) further in than the if line. This indentation shows which statements belong to the condition.
 
-### نوع اول ساختارشرطی if
+### The first type of the if conditional structure
 
 ```
 if condition:
@@ -28,17 +28,17 @@ if condition:
 | `>=` | Greater than or equal to |
 | `<=` | Less than or equal to |
 
-**شرط (condition)**: عبارتی منطقی است که نتیجۀ آن True یا False است.
+**Condition**: a logical expression whose result is True or False.
 
-**دستورات (statements)**: دستوراتی هستند که فقط در صورت درست بودن شرط اجرا می‌شوند.
+**Statements**: statements that run only if the condition is true.
 
-**تورفتگی (Indentation)**: این دستورات باید با یک tab نسبت به دستور if جلوتر نوشته شوند.
+**Indentation**: these statements must be written one tab further in than the if statement.
 
 Comparison operators (Comparison Operators): these operators are used to **compare two values or two variables**, and their result is **always either True or False** (Table 2).
 
 **The equality operator** (`==`): used to compare two values or two variables to find out whether they are equal.
 
-**مثال**: برنامه‌ای بنویسید که **نام کاربر** را دریافت کند. اگر نام واردشده برابر با مقدار admin باشد، پیام "welcome admin!" را نمایش دهد (شکل 51).
+**Example**: write a program that receives the **user's name**. If the entered name equals the value admin, it displays the message "welcome admin!" (Figure 51).
 
 ![Figure 51](../images/p028-01.png)
 *Figure 51*
@@ -52,7 +52,7 @@ In the program below, `price = 120` at first, and the condition «its value is *
 ![Figure 52](../images/p029-01.png)
 *Figure 52*
 
-### عملگرهای منطقی (Logical Operators)
+### Logical operators
 
 *Table 2*
 
@@ -64,7 +64,7 @@ In the program below, `price = 120` at first, and the condition «its value is *
 | **or** | or |
 | **not** | not |
 
-در برنامه‌نویسی، برای بررسی هم‌زمان چند شرط و تصمیم‌گیری دقیق‌تر از **عملگرهای منطقی** استفاده می‌شود. این عملگرها امکان ترکیب چند عبارت شرطی را فراهم می‌کنند و نتیجۀ آنها معمولاً یکی از دو مقدار **درست (True)** یا **نادرست (False)** است (جدول3).
+In programming, **logical operators** are used to check several conditions at the same time and to make more exact decisions. These operators make it possible to combine several conditional expressions, and their result is usually one of two values: **true (True)** or **false (False)** (Table 3).
 
 Logical operators are usually used together with **conditional statements** such as if, and help the programmer check more complex conditions.
 
@@ -144,7 +144,7 @@ What do you think is wrong with the code in Figure 55? What message is printed i
 
 ![Book image](../images/p032-02.png)
 
-**مثال**: برنامه‌ای بنویسید که اگر کاربر مهمان "guest" نبود، پیام "Welcome!" نمایش داده شود و در این صورت پیام "Access denied" نمایش داده شود.
+**Example**: write a program that, if the user is not the guest "guest", displays the message "Welcome!", and otherwise displays the message "Access denied".
 
 **not** reverses the Boolean value of the condition (Figure 58).
 

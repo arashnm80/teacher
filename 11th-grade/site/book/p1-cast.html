@@ -80,7 +80,7 @@
 <h2>Type casting in Python</h2>
 <p>In Python programming you sometimes need to convert a piece of data from one type to another. This is called <strong>data type conversion</strong>, or <strong>Type Casting</strong>.</p>
 <figure class="shot"><img alt="Figure 26" src="../images/p019-01.png" loading="lazy" /><figcaption>Figure 26</figcaption></figure>
-<p><bdi dir="rtl">برای مثال، وقتی ورودی را با تابع</bdi> <code>input()</code> <bdi dir="rtl">دریافت می‌کنید، مقدار واردشده به‌صورت</bdi> <strong><bdi dir="rtl">رشته</bdi> (str)</strong> <bdi dir="rtl">ذخیره می‌شود</bdi>. <bdi dir="rtl">اگر بخواهید با آن محاسبات ریاضی انجام دهید، لازم است آن را به عدد تبدیل کنید</bdi>.</p>
+<p>For example, when you receive the input with the function <code>input()</code>, the entered value is stored as a <strong>string (str)</strong>. If you want to do mathematical calculations with it, you need to convert it to a number.</p>
 <p>For type conversion, Python gives the programmer ready-made functions, such as:</p>
 <ul>
 <li>
@@ -106,13 +106,13 @@
 <figure class="shot"><img alt="Figure 28" src="../images/p020-02.png" loading="lazy" /><figcaption>Figure 28</figcaption></figure>
 <p>To fix this error, convert the number to a string as shown below. After running it, you will see no error (Figure 29).</p>
 <figure class="shot"><img alt="Figure 29" src="../images/p020-03.png" loading="lazy" /><figcaption>Figure 29</figcaption></figure>
-<p><strong><bdi dir="rtl">مثال</bdi></strong>: <bdi dir="rtl">در خط</bdi>1 <bdi dir="rtl">کد مقابل سال تولد کاربر دریافت می‌شود، تابع</bdi> int <bdi dir="rtl">آن را به نوع عددی صحیح تبدیل و در متغیر</bdi> year <bdi dir="rtl">ذخیره می‌کند</bdi>. <bdi dir="rtl">در خط</bdi>2 <bdi dir="rtl">تفاضل عدد سال فعلی از سال تولد محاسبه و در متغیر</bdi> age <bdi dir="rtl">ذخیره می‌شود</bdi>. <bdi dir="rtl">در خط</bdi> 3 <bdi dir="rtl">با دستور</bdi> print <bdi dir="rtl">سن کاربر با پیغام</bdi> "your age:" <bdi dir="rtl">نمایش داده می‌شود</bdi> (<bdi dir="rtl">شکل</bdi>30).</p>
+<p><strong>Example</strong>: in line 1 of the code opposite, the user's birth year is received; the function int converts it to an integer and stores it in the variable year. In line 2 the difference between the current year and the birth year is calculated and stored in the variable age. In line 3, with the print statement, the user's age is shown with the message "your age:" (Figure 30).</p>
 <figure class="shot"><img alt="Figure 30" src="../images/p020-04.png" loading="lazy" /><figcaption>Figure 30</figcaption></figure>
 <p class="page-mark">Page 15</p>
 
 <p><strong>Example</strong>: the value of the price variable is an integer. On line 2, the float function is used to convert it to a decimal number (Figure 31).</p>
 <figure class="shot"><img alt="Figure 31" src="../images/p021-01.png" loading="lazy" /><figcaption>Figure 31</figcaption></figure>
-<p><strong><bdi dir="rtl">مثال</bdi></strong>: <bdi dir="rtl">تابع</bdi> input <bdi dir="rtl">وزن را به‌صورت یک مقدار عددی دریافت می‌کند و خروجی آن یک مقدار متنی است که تابع</bdi> float <bdi dir="rtl">آن را به نوع عدد اعشاری تبدیل و در متغیر</bdi> weight <bdi dir="rtl">ذخیره می‌کند</bdi>. <bdi dir="rtl">در خط بعد دستور</bdi> print <bdi dir="rtl">دو رشته را با عملگر</bdi> " + " <bdi dir="rtl">به هم الحاق می‌کند</bdi> (<bdi dir="rtl">شکل</bdi>32).</p>
+<p><strong>Example</strong>: the function input receives the weight as a numeric value and its output is a text value, which the function float converts to a decimal number and stores in the variable weight. In the next line, the print statement joins two strings with the operator " + " (Figure 32).</p>
 <figure class="shot"><img alt="Figure 32" src="../images/p021-02.png" loading="lazy" /><figcaption>Figure 32</figcaption></figure>
 <p>You can see that on this line the str function converts the weight variable back to text.</p>
 <p><strong>Example: the price of an item after adding 9 percent value-added tax</strong> (Figure 33).</p>

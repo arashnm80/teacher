@@ -123,111 +123,111 @@
 <p>در این مثال، کد موجود در بلوک <bdi dir="ltr">try</bdi> خطای <bdi dir="ltr">FileNotFoundError</bdi> تولید می‌کند، بنابراین یک بلوک <bdi dir="ltr">except</bdi> که با خطا مطابقت دارد، باید نوشته شود. سپس پایتون کد موجود در آن بلوک را زمانی که فایل پیدا نمی‌شود اجرا می‌کند و نتیجه به جای یک <bdi dir="ltr">traceback</bdi>، یک پیام خطای کاربرپسند است:</p>
 <figure class="shot"><img alt="شکل ۴۴" src="../images/p272-03.png" loading="lazy" /><figcaption>شکل ۴۴</figcaption></figure></article><article class="card lesson no-copy" lang="en" dir="ltr" data-lang-block="en" hidden><p class="page-mark">Page 260</p>
 
-<p><strong><bdi dir="rtl">پیمایش خطوط فایل با حلقه</bdi></strong> for</p>
+<p><strong>Going over the lines of the file with a for loop</strong></p>
 <figure class="shot"><img alt="Figure 27" src="../images/p266-01.png" loading="lazy" /><figcaption>Figure 27</figcaption></figure>
 <aside class="callout activity"><p class="callout-label">Activity</p>
-<p><bdi dir="rtl">کد‌های برنامه را به نحوی تغییردهید که بعد از نام هر برند یک جداکننده قرار گیرد</bdi>.</p>
+<p>Change the code of the program so that a separator is put after the name of each brand.</p>
 </aside>
-<h3><bdi dir="rtl">نوشتن در فایل</bdi>: <bdi dir="rtl">نوشتن یک خط</bdi></h3>
-<p><bdi dir="rtl">پس از تعیین مسیر، می‌توانید با استفاده از متد</bdi> <code>write_text()</code> <bdi dir="rtl">در یک فایل متنی بنویسید</bdi>. <bdi dir="rtl">برای دیدن نحوۀ کار این تابع، یک پیام ساده نوشته و آن را به جای چاپ روی صفحه، در فایل متنی ذخیره کنید</bdi> (<bdi dir="rtl">شکل ۲۷</bdi>):</p>
+<h3>Writing to a file: writing one line</h3>
+<p>After specifying the path, you can write in a text file with the method <code>write_text()</code>. To see how this function works, write a simple message and, instead of printing it on the screen, save it in the text file (Figure 27):</p>
 <ul>
 <li>
-<p><bdi dir="rtl">پس از نوشتن برنامه و اجرای آن، خروجی در ترمینال مشاهده نمی‌کنید</bdi>. <bdi dir="rtl">حالا فایل</bdi> <code>mobile_brands.txt</code> <bdi dir="rtl">را باز کنید</bdi>. <bdi dir="rtl">مشاهده می‌کنید متن شما در فایل نوشته و محتویات قبلی آن پاک شده است</bdi>.</p>
+<p>After writing the program and running it, you do not see the output in the terminal. Now open the file <code>mobile_brands.txt</code>. You see that your text has been written in the file and its earlier content has been erased.</p>
 </li>
 <li>
-<p><bdi dir="rtl">اگر فایل از قبل وجود داشته باشد،</bdi> <code>write_text()</code> <bdi dir="rtl">محتوای فعلی فایل را پاک کرده و محتوای جدید را در فایل می‌نویسد</bdi>.</p>
+<p>If the file already exists, <code>write_text()</code> erases the current content of the file and writes the new content in the file.</p>
 </li>
 <li>
-<p><bdi dir="rtl">متد</bdi> <code>write_text()</code> <bdi dir="rtl">چند کار را در پشت صحنه انجام می‌دهد</bdi>. <bdi dir="rtl">اگر فایلی که مسیر به آن اشاره می‌کند وجود نداشته باشد، آن فایل را ایجاد می‌کند</bdi>.</p>
+<p>The method <code>write_text()</code> does several jobs behind the scenes. If the file that the path points to does not exist, it creates that file.</p>
 </li>
 <li>
-<p><bdi dir="rtl">همچنین، پس از نوشتن رشته در فایل، مطمئن می‌شود که فایل به درستی بسته شده است</bdi>. <bdi dir="rtl">فایل‌هایی که به درستی بسته نشده‌اند می‌توانند منجر به از دست رفتن یا خراب شدن داده‌ها شوند</bdi>.</p>
+<p>Also, after writing the string to the file, it makes sure the file is closed correctly. Files that are not closed correctly can lead to loss or damage of data.</p>
 </li>
 </ul>
 <figure class="shot"><img alt="Figure 28" src="../images/p266-02.png" loading="lazy" /><figcaption>Figure 28</figcaption></figure>
 <aside class="callout note"><p class="callout-label">Note</p>
-<p><bdi dir="rtl">دو متد</bdi> <code>read_text</code> و <code>write_text</code> <bdi dir="rtl">به‌طور داخلی مدیریت بستن فایل را انجام می‌دهند</bdi>. <bdi dir="rtl">در این حالت‌ها،</bdi> pathlib <bdi dir="rtl">خودش تضمین می‌کند که فایل به‌طور ایمن باز و سپس بسته شود</bdi>.</p>
+<p>The two methods <code>read_text</code> and <code>write_text</code> handle closing the file internally. In these cases, pathlib itself guarantees that the file is opened and then closed safely.</p>
 </aside>
 <p class="page-mark">Page 261</p>
 
-<h3><bdi dir="rtl">اضافه کردن برند جدید</bdi></h3>
-<p><bdi dir="rtl">برای نوشتن بیش از یک خط در یک فایل، باید رشته‌ای بسازید که شامل کل محتوای فایل باشد و سپس</bdi> <code>write_text()</code> <bdi dir="rtl">را با آن رشته فراخوانی کنید</bdi>.</p>
+<h3>Adding a new brand</h3>
+<p>To write more than one line in a file, you must build a string that includes the whole content of the file and then call <code>write_text()</code> with that string.</p>
 <figure class="shot"><img alt="Figure 29" src="../images/p267-01.png" loading="lazy" /><figcaption>Figure 29</figcaption></figure>
 <aside class="callout activity"><p class="callout-label">Activity</p>
-<p><bdi dir="rtl">دو برند دیگر</bdi>"LG" و"Motorola" <bdi dir="rtl">را به فایل</bdi> "<code>mobile_brands.txt</code>" <bdi dir="rtl">اضافه کنید</bdi>.</p>
+<p>Add two more brands, "LG" and "Motorola", to the file "<code>mobile_brands.txt</code>".</p>
 <p><strong>Activity</strong></p>
-<p><bdi dir="rtl">برنامه‌ای بنویسیدکه در یک حلقه مدل تلفن‌های همراه را از کاربر بپرسد</bdi>. <bdi dir="rtl">وقتی پاسخ می‌دهد، آنها را در فایلی به نام</bdi> "<code>mobile_model.txt</code>" <bdi dir="rtl">بنویسد</bdi>. <bdi dir="rtl">هر مدل در یک خط از فایل ظاهر شود</bdi>.</p>
+<p>Write a program that in a loop asks the user for mobile phone models. When they answer, it writes them in a file named "<code>mobile_model.txt</code>". Each model must appear on one line of the file.</p>
 </aside>
-<h3><bdi dir="rtl">مدیریت استثناها</bdi> (Exceptions)</h3>
+<h3>Managing exceptions</h3>
 <figure class="shot"><img alt="Figure 30" src="../images/p267-02.png" loading="lazy" /><figcaption>Figure 30</figcaption></figure>
-<p><bdi dir="rtl">در هنگام اجرای برنامه، ممکن است خطاهایی رخ دهند که باعث توقف برنامه شوند</bdi>. <bdi dir="rtl">پایتون برای برخورد با این خطاها از سازوکاری به نام استثنا</bdi> (Exception) <bdi dir="rtl">استفاده می‌کند</bdi>.</p>
-<p><bdi dir="rtl">هر وقت پایتون در اجرای برنامه با مشکلی روبه‌رو شود و نداند چه باید بکند، یک</bdi> «<bdi dir="rtl">شیء استثنا</bdi>» <bdi dir="rtl">ایجاد می‌کند</bdi>. <bdi dir="rtl">اگر برنامه‌نویس کدی برای مدیریت آن استثنا نوشته باشد، برنامه بدون توقف به کار خود ادامه می‌دهد</bdi>. <bdi dir="rtl">اما اگر استثنا مدیریت نشده باشد، اجرای برنامه متوقف و پیغامی شامل نوع خطا و محل آن نمایش داده می‌شود که به آن ردیابی</bdi> (Traceback) <bdi dir="rtl">می‌گویند</bdi>.</p>
+<p>While a program runs, errors may happen that cause the program to stop. To deal with these errors, Python uses a mechanism called an exception.</p>
+<p>Whenever Python meets a problem while running the program and does not know what to do, it creates an "exception object". If the programmer has written code to manage that exception, the program goes on without stopping. But if the exception is not managed, the running of the program stops and a message including the type of the error and its place is shown, which is called a Traceback.</p>
 <p class="page-mark">Page 262</p>
 
-<p><strong><bdi dir="rtl">مدیریت خطای اشتباه درنوع داده</bdi></strong>: <bdi dir="rtl">گاهی برنامه‌نویس اشتباهاً داده‌ای از نوع نادرست وارد می‌کند</bdi>. <bdi dir="rtl">مثلاً وقتی می‌خواهد رشته‌ای</bdi> (<bdi dir="rtl">متن</bdi>) <bdi dir="rtl">را به عدد تبدیل کند اما مقدارش</bdi></p>
+<p><strong>Handling the error of a wrong data type</strong>: sometimes a programmer mistakenly enters data of the wrong type. For example when they want to convert a string (text) to a number but its value</p>
 <figure class="shot"><img alt="Figure 31" src="../images/p268-01.png" loading="lazy" /><figcaption>Figure 31</figcaption></figure>
-<p><bdi dir="rtl">فقط متن باشد، خطای</bdi> ValueError <bdi dir="rtl">پیش می‌آید</bdi>:</p>
+<p>is only text, a ValueError happens:</p>
 <figure class="shot"><img alt="Figure 32" src="../images/p268-02.png" loading="lazy" /><figcaption>Figure 32</figcaption></figure>
-<p><strong><bdi dir="rtl">مدیریت خطای تقسیم بر صفر</bdi></strong>: <bdi dir="rtl">یکی از خطاهای رایج در برنامه‌نویسی، تقسیم عدد بر صفر است</bdi>. <bdi dir="rtl">این کار از نظر ریاضی ممکن نیست و پایتون سعی می‌کند برنامه را ادامه دهد ولی این کار ممکن نیست، پس برنامه متوقف و پایتون چیزی به اسم ردیابی برگشتی یا همان</bdi> Traceback <bdi dir="rtl">نشان می‌دهد</bdi>.</p>
-<p><bdi dir="rtl">یعنی وقتی پایتون با چنین دستوری روبه‌رو می‌شود، استثنایی به نام</bdi> ZeroDivisionError <bdi dir="rtl">ایجاد می‌کند</bdi>. <bdi dir="rtl">یعنی</bdi>: <bdi dir="rtl">خطا دقیقاً در کدام خط پیش آمده است</bdi>. <bdi dir="rtl">چه نوع خطایی بوده است</bdi> (<bdi dir="rtl">مثلاً</bdi> ZeroDivisionError <bdi dir="rtl">یا</bdi> ValueError). <bdi dir="rtl">و تابع یا بخشی از کد که باعث خطا شده است را نشان می‌دهد</bdi>.</p>
+<p><strong>Handling the divide-by-zero error</strong>: one of the common errors in programming is dividing a number by zero. This is not possible mathematically and Python tries to continue the program but this is not possible, so the program stops and Python shows something called a traceback.</p>
+<p>That is, when Python meets such a statement, it creates an exception called ZeroDivisionError. That is: it shows exactly in which line the error happened, what kind of error it was (for example ZeroDivisionError or ValueError), and the function or part of the code that caused the error.</p>
 <figure class="shot"><img alt="Figure 33" src="../images/p268-03.png" loading="lazy" /><figcaption>Figure 33</figcaption></figure>
-<p><bdi dir="rtl">از این اطلاعات می‌توانید برای اصلاح برنامه استفاده کنید</bdi>. <bdi dir="rtl">به پایتون بگویید که هنگام وقوع این نوع استثنا چه کاری انجام دهد</bdi>. <bdi dir="rtl">به این ترتیب، اگر دوباره اتفاق بیفتد، آماده خواهید بود</bdi>.</p>
-<p><strong><bdi dir="rtl">مدیریت خطا با بلوک‌های</bdi> try-except</strong>: <bdi dir="rtl">برای مدیریت استثناها در پایتون از بلوک‌های</bdi> try و except <bdi dir="rtl">استفاده می‌شود</bdi>.</p>
+<p>You can use this information to fix the program. Tell Python what to do when this kind of exception happens. In this way, if it happens again, you will be ready.</p>
+<p><strong>Handling errors with try-except blocks</strong>: to manage exceptions in Python, try and except blocks are used.</p>
 <ul>
 <li>
-<p><bdi dir="rtl">بخش</bdi> try <bdi dir="rtl">شامل دستوری است که ممکن است خطا ایجاد کند</bdi>.</p>
+<p>The try part contains the statement that may cause an error.</p>
 </li>
 <li>
-<p><bdi dir="rtl">بخش</bdi> except <bdi dir="rtl">مشخص می‌کند اگر خطایی رخ داد، برنامه چه واکنشی نشان دهد</bdi>.</p>
+<p>The except part specifies how the program should react if an error happens.</p>
 </li>
 </ul>
-<p><bdi dir="rtl">با استفاده از این روش، می‌توانید برنامه‌هایی بنویسید که به جای نمایش پیام‌های پیچیده و گیج‌کننده، پیام‌های قابل فهم به کاربر نشان دهد</bdi>.</p>
+<p>Using this method, you can write programs that, instead of showing complex and confusing messages, show understandable messages to the user.</p>
 <p class="page-mark">Page 263</p>
 
-<p><strong><bdi dir="rtl">مدیریت خطای اشتباه درنوع داده</bdi></strong>: <bdi dir="rtl">در این‌جا پایتون نمی‌تواند کلمه</bdi> "Hello" <bdi dir="rtl">را به عدد تبدیل کند، پس استثنا تولید می‌شود، اما برنامه با استفاده از بلوک</bdi> try-except <bdi dir="rtl">کنترل خطا را در دست می‌گیرد</bdi>.</p>
+<p><strong>Handling the error of a wrong data type</strong>: here Python cannot convert the word "Hello" to a number, so an exception is produced, but the program takes control of the error with a try-except block.</p>
 <figure class="shot"><img alt="Figure 34" src="../images/p269-01.png" loading="lazy" /><figcaption>Figure 34</figcaption></figure>
-<p><bdi dir="rtl">در اینجا پایتون نمی‌تواند عدد</bdi> 5 <bdi dir="rtl">را بر عدد</bdi> 0 <bdi dir="rtl">تقسیم کند، پس استثنا تولید می‌شود، اما برنامه با استفاده از بلوک</bdi> try-except <bdi dir="rtl">کنترل خطا را در دست می‌گیرد</bdi>.</p>
+<p>Here Python cannot divide the number 5 by the number 0, so an exception is produced, but the program takes control of the error with a try-except block.</p>
 <figure class="shot"><img alt="Figure 35" src="../images/p269-02.png" loading="lazy" /><figcaption>Figure 35</figcaption></figure>
-<p><strong><bdi dir="rtl">استفاده از استثنائات برای جلوگیری از خطا</bdi></strong>: <bdi dir="rtl">مدیریت صحیح استثناها</bdi> (<bdi dir="rtl">خطاها</bdi>) <bdi dir="rtl">زمانی اهمیت حیاتی پیدا می‌کند که برنامه پس از وقوع خطا، همچنان کارهای دیگری برای انجام دادن داشته باشد</bdi>. <bdi dir="rtl">این موقعیت به‌ویژه در برنامه‌هایی که به طور مداوم از کاربر ورودی دریافت می‌کنند، رایج است</bdi>. <bdi dir="rtl">اگر برنامه بتواند به ورودی نامعتبر به شیوه‌ای مناسب پاسخ دهد، به‌جای متوقف شدن و از کار افتادن، می‌تواند به‌طور هوشمندانه ورودی‌های معتبرتری را از کاربر درخواست کند و به اجرای خود ادامه دهد</bdi>.</p>
-<p><bdi dir="rtl">برای یادگیری این موضوع توضیحاتی که در ادامه آمده است را با دقت بخوانید و انجام دهید</bdi>.</p>
+<p><strong>Using exceptions to prevent errors</strong>: correct management of exceptions (errors) becomes vitally important when the program still has other things to do after an error happens. This situation is especially common in programs that continuously take input from the user. If the program can respond to invalid input in a suitable way, instead of stopping and crashing, it can intelligently ask the user for more valid inputs and carry on running.</p>
+<p>To learn this topic, read and do the explanations that follow carefully.</p>
 <ul>
-<li><bdi dir="rtl">این برنامه از کاربر می‌خواهد که عدد اول را وارد کند و اگر کاربر برای خروج</bdi> q <bdi dir="rtl">را وارد نکند، عدد دوم را وارد می‌کند</bdi>.</li>
+<li>This program asks the user to enter the first number and, if the user does not enter q to quit, they enter the second number.</li>
 </ul>
 <figure class="shot"><img alt="Figure 36" src="../images/p269-03.png" loading="lazy" /><figcaption>Figure 36</figcaption></figure>
 <p class="page-mark">Page 264</p>
 
 <ul>
 <li>
-<p><bdi dir="rtl">سپس این دو عدد را بر هم تقسیم می‌کند تا به جواب برسد</bdi>.</p>
+<p>Then it divides these two numbers by each other to get the answer.</p>
 </li>
 <li>
-<p><bdi dir="rtl">این برنامه هیچ کاری برای مدیریت خطاها انجام نمی‌دهد، اگر کاربر عدد دوم را صفر واردکند، درخواست تقسیم بر صفر باعث از کار افتادن آن می‌شود</bdi>:</p>
+<p>This program does nothing to manage errors; if the user enters zero as the second number, the request to divide by zero makes it crash:</p>
 </li>
 </ul>
 <figure class="shot"><img alt="Figure 37" src="../images/p270-01.png" loading="lazy" /><figcaption>Figure 37</figcaption></figure>
 <aside class="callout note"><p class="callout-label">Note</p>
-<p><bdi dir="rtl">اگرچه توقف ناگهانی برنامه</bdi> (crash) <bdi dir="rtl">قطعاً بد است، اما نمایش جزئیات فنی خطا</bdi> (Traceback) <bdi dir="rtl">نیز ایده خوبی نیست</bdi>. <bdi dir="rtl">این جزئیات برای کاربران معمولی سردرگم‌کننده است و در محیط‌های مخرب، اطلاعات ارزشمندی را در اختیار مهاجمان قرار می‌دهد</bdi>. <bdi dir="rtl">مهاجم با دیدن</bdi> Traceback<bdi dir="rtl">، نه تنها نام برنامه شما را می‌فهمد، بلکه می‌تواند بخشی از منطق کد را که دچار نقص شده‌است، مشاهده‌کند</bdi>. <bdi dir="rtl">یک مهاجم حرفه‌ای می‌تواند از این اطلاعات برای فهمیدن اینکه دقیقاً چه نوع حملاتی را باید علیه کد شما به کار ببرد، استفاده کند</bdi>.</p>
+<p>Although a sudden stop of the program (crash) is certainly bad, showing the technical details of the error (Traceback) is not a good idea either. These details are confusing for ordinary users and, in malicious environments, give valuable information to attackers. By seeing a Traceback, an attacker not only learns the name of your program, but can see the part of the code's logic that has a flaw. A professional attacker can use this information to understand exactly what kind of attacks should be used against your code.</p>
 </aside>
-<p><strong><bdi dir="rtl">کاربرد</bdi> The else Block</strong>: <bdi dir="rtl">وقتی در پایتون از دستورات</bdi> try و except <bdi dir="rtl">استفاده کنید، در واقع به مفسر</bdi> (<bdi dir="rtl">رایانه</bdi>) <bdi dir="rtl">می‌گویید</bdi>: "<bdi dir="rtl">یک کار را امتحان کن، و اگر خراب شد، این کار جایگزین را انجام بده</bdi>." <bdi dir="rtl">حالا، بلوک</bdi> else <bdi dir="rtl">دقیقاً به چه دردی می‌خورد؟</bdi> else <bdi dir="rtl">یعنی</bdi>: "<bdi dir="rtl">فقط و فقط در صورتی این کار را انجام بده که بلوک</bdi> try <bdi dir="rtl">کاملا، ً بدون هیچ خطایی، موفقیت‌آمیز بود</bdi>."</p>
+<p><strong>The use of the else block</strong>: when you use the try and except statements in Python, you are in fact telling the interpreter (the computer): "try one job, and if it breaks, do this alternative job." Now, what exactly is the else block good for? else means: "do this only and only if the try block was completely successful, without any error."</p>
 <figure class="shot"><img alt="Figure 38" src="../images/p270-02.png" loading="lazy" /><figcaption>Figure 38</figcaption></figure>
 <p class="page-mark">Page 265</p>
 
-<p><bdi dir="rtl">اگر خطایی در بلوک</bdi> try (<bdi dir="rtl">مثلاً تقسیم عدد بر صفر</bdi>) <bdi dir="rtl">رخ دهد، پایتون مستقیم به بلوک</bdi> except <bdi dir="rtl">می‌رود و بلوک</bdi> else <bdi dir="rtl">کاملاً نادیده گرفته می‌شود</bdi>. <bdi dir="rtl">این قابلیت کمک می‌کند، کدی را که فقط پس از موفقیت کامل اجرا شود</bdi> (<bdi dir="rtl">مثلاً نمایش نتیجه نهایی یا ذخیره در فایل</bdi>)<bdi dir="rtl">، از کدی که فقط برای تست خطا نوشته شده جدا کنید</bdi>. <bdi dir="rtl">این کار برنامه را هم تمیزتر و هم منطقی‌تر می‌کند</bdi>.</p>
+<p>If an error happens in the try block (for example dividing a number by zero), Python goes directly to the except block and the else block is completely ignored. This feature helps you separate the code that must run only after complete success (for example showing the final result or saving to a file) from the code written only to test for errors. This makes the program both cleaner and more logical.</p>
 <figure class="shot"><img alt="Figure 39" src="../images/p271-01.png" loading="lazy" /><figcaption>Figure 39</figcaption></figure>
 <figure class="shot"><img alt="Figure 40" src="../images/p271-02.png" loading="lazy" /><figcaption>Figure 40</figcaption></figure>
-<p><strong><bdi dir="rtl">مدیریت خطای</bdi> File Not Found Error</strong>: <bdi dir="rtl">این خطا یکی از رایج‌ترین استثناهایی است که برنامه‌نویسان هنگام کار با فایل‌ها با آن روبه‌رو می‌شوند</bdi>. <bdi dir="rtl">دلایل متعددی برای این خطا وجود دارد</bdi>: <bdi dir="rtl">مسیر اشتباه، نام فایل غلط، یا حذف شدن فایل</bdi>.</p>
-<p><bdi dir="rtl">بلوک</bdi> try-except <bdi dir="rtl">اجازه می‌دهد که کد را اجرا کنید و در صورت بروز این مشکل خاص، به جای متوقف شدن برنامه، یک واکنش مناسب نشان دهید</bdi>.</p>
+<p><strong>Handling the File Not Found Error</strong>: this error is one of the most common exceptions that programmers meet when working with files. There are several reasons for this error: a wrong path, a wrong file name, or the file being deleted.</p>
+<p>The try-except block lets you run the code and, if this specific problem happens, show a suitable reaction instead of the program stopping.</p>
 <figure class="shot"><img alt="Figure 41" src="../images/p271-03.png" loading="lazy" /><figcaption>Figure 41</figcaption></figure>
-<p><bdi dir="rtl">در مثال برنامه تلاش می‌کند فایلی را که اصلاً وجود ندارد بخواند</bdi>.</p>
+<p>In the example, the program tries to read a file that does not exist at all.</p>
 <p class="page-mark">Page 266</p>
 
 <figure class="shot"><img alt="Figure 42" src="../images/p272-01.png" loading="lazy" /><figcaption>Figure 42</figcaption></figure>
-<p><bdi dir="rtl">توجه داشته باشید که از متد</bdi> <code>read_text()</code> <bdi dir="rtl">کمی متفاوت از آنچه قبلاً دیدید استفاده شده است</bdi>. <bdi dir="rtl">آرگومان</bdi> encoding <bdi dir="rtl">زمانی ضروری است که کدگذاری پیش‌فرض سیستم شما با کدگذاری فایلی که در حال خواندن آن هستید مطابقت نداشته باشد</bdi>. <bdi dir="rtl">این وضعیت به احتمال زیاد هنگام خواندن فایلی رخ می‌دهد که روی سیستم شما ایجاد نشده باشد</bdi>.</p>
-<p><bdi dir="rtl">پایتون نمی‌تواند از یک فایلی که وجود ندارد بخواند، بنابراین یک استثنا</bdi> (Exception) <bdi dir="rtl">ایجاد می‌کند</bdi> (<bdi dir="rtl">به عبارتی، خطا صادر می‌کند</bdi>).</p>
-<p><bdi dir="rtl">بنابراین برای مدیریت خطایی که ایجاد می‌شود، بلوک</bdi> try <bdi dir="rtl">با خطی که در</bdi> traceback <bdi dir="rtl">به عنوان مشکل‌ساز شناسایی شده است، آغاز می‌شود</bdi>.</p>
+<p>Note that the method <code>read_text()</code> is used a bit differently from what you saw before. The encoding argument is necessary when the default encoding of your system does not match the encoding of the file you are reading. This situation most probably happens when reading a file that was not created on your system.</p>
+<p>Python cannot read from a file that does not exist, so it creates an exception (in other words, it raises an error).</p>
+<p>So to manage the error that is created, the try block starts with the line that is identified in the traceback as the troublemaker.</p>
 <figure class="shot"><img alt="Figure 43" src="../images/p272-02.png" loading="lazy" /><figcaption>Figure 43</figcaption></figure>
-<p><bdi dir="rtl">در مثال کد خط ۴ که شامل</bdi> <code>read_text()</code> <bdi dir="rtl">است باعث بروز خطا شده است</bdi>.</p>
-<p><bdi dir="rtl">در این مثال، کد موجود در بلوک</bdi> try <bdi dir="rtl">خطای</bdi> FileNotFoundError <bdi dir="rtl">تولید می‌کند، بنابراین یک بلوک</bdi> except <bdi dir="rtl">که با خطا مطابقت دارد، باید نوشته شود</bdi>. <bdi dir="rtl">سپس پایتون کد موجود در آن بلوک را زمانی که فایل پیدا نمی‌شود اجرا می‌کند و نتیجه به جای یک</bdi> traceback<bdi dir="rtl">، یک پیام خطای کاربرپسند است</bdi>:</p>
+<p>In the code example, line 4, which contains <code>read_text()</code>, has caused the error.</p>
+<p>In this example, the code in the try block produces the error FileNotFoundError, so an except block that matches the error must be written. Then Python runs the code in that block when the file is not found, and the result, instead of a traceback, is a user-friendly error message:</p>
 <figure class="shot"><img alt="Figure 44" src="../images/p272-03.png" loading="lazy" /><figcaption>Figure 44</figcaption></figure></article>
       <aside class="card extra">
         <h2 data-fa="تمرین این بخش" data-en="Exercises for this section">تمرین این بخش</h2>

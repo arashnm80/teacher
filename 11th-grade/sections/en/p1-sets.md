@@ -88,7 +88,7 @@ If the member does not exist, an error message is shown when the program runs (F
 ![Figure 102](../images/p057-01.png)
 *Figure 102*
 
-**مثال**: در کد شکل 103 وجود عنصر"**grape**" در مجموعه **fruits** مورد بررسی قرار گرفته است. خروجی کد نشان می‌دهد این عنصر در مجموعه وجود ندارد.
+**Example**: in the code of Figure 103, the existence of the element "**grape**" in the set **fruits** is checked. The output of the code shows that this element does not exist in the set.
 
 ![Figure 103](../images/p057-02.png)
 *Figure 103*

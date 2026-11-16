@@ -4,144 +4,144 @@
 
 ## Have you ever thought about this
 
-- در دنیای واقعی، اشیای مشابه (مانند خودروها) با وجود تفاوت در مدل و رنگ، ویژگی‌ها و رفتارهای مشترکی دارند. این موضوع به کدام مفهوم در برنامه‌نویسی مرتبط است؟
+- In the real world, similar objects (such as cars) have common properties and behaviours despite differences in model and colour. Which concept in programming is this related to?
 
-- چرا با افزایش حجم برنامه‌ها، نگهداری و اصلاح آنها دشوارتر می‌شود؟ چگونه می‌توان ساختار برنامه را به‌گونه‌ای طراحی کرد که تغییرات، کمترین تأثیر را بر سایر بخش‌ها داشته باشند؟
+- Why does maintaining and fixing programs become harder as their size grows? How can the structure of a program be designed so that changes have the least effect on other parts?
 
-- اگر بخواهید در یک بازی رایانه‌ای، چند شخصیت با رفتارهای مشابه و ویژگی‌های متفاوت طراحی کنید، استفاده از چه روشی در برنامه‌نویسی مناسب‌تر است؟
+- If you want to design several characters with similar behaviours and different properties in a computer game, which programming method is more suitable?
 
-- به چه دلیل در طراحی بسیاری از نرم‌افزارها و برنامه‌های بزرگ، از شیوه برنامه‌نویسی شیءگرا استفاده می‌شود؟
+- For what reason is the object-oriented programming style used in designing many pieces of software and big programs?
 
-- «کلاس» در برنامه‌نویسی به چه چیزی شباهت بیشتری دارد: نقشه یک ساختمان یا خود ساختمان؟
+- What is a "class" in programming more like: the plan of a building or the building itself?
 
 ## By the end, the student is expected to
 
-1. کلاس‌های پایتون را با ویژگی‌ها و متدهای مناسب، همراه با تعیین مقادیر پیش‌فرض و مدیریت دسترسی (public, protected, private) طراحی و پیاده‌سازی کند.
+1. Design and implement Python classes with suitable properties and methods, together with setting default values and managing access (public, protected, private).
 
-2. از کلاس‌ها نمونه (Instance) بسازد و مقادیر و ویژگی‌های این نمونه‌ها را در طول اجرای برنامه به طور مؤثر تغییر دهد و مدیریت کند.
+2. Create instances from classes and effectively change and manage the values and properties of these instances while the program runs.
 
-3. با استفاده از ارث‌بری برای ایجاد سلسله مراتب کلاس‌ها، فراخوانی متدهای والد و بازنویسی آنها در کلاس‌های فرزند مطابق با نیازهای برنامه اقدام نماید.
+3. Using inheritance, create class hierarchies, call parent methods and override them in the child classes according to the needs of the program.
 
-4. با استفاده از اصول OOP، کدی ماژولار، قابل فهم و با قابلیت استفاده مجدد (reusable) بنویسد که از تکرار کد جلوگیری کند.
+4. Using the principles of OOP, write modular, understandable and reusable code that prevents repeating code.
 
-5. درک اولیه‌ای از نحوه عملکرد متاکلاس‌ها و نقش آنها در تعریف و ساختار کلاس‌ها پیدا کند.
+5. Gain a basic understanding of how metaclasses work and their role in defining and structuring classes.
 
-6. مسائل برنامه‌نویسی ساده تا متوسط را با استفاده از برنامه‌نویسی شیءگرا تحلیل کرده و راه‌حل‌های مبتنی بر شیء طراحی و پیاده‌سازی کند.
+6. Analyse simple to medium programming problems using object-oriented programming and design and implement object-based solutions.
 
 ## Performance standard
 
-با استفاده از مفاهیم برنامه‌نویسی شیءگرا در زبان پایتون، مسائل ساده و کاربردی را مدل‌سازی کند، کلاس مناسب طراحی نماید و با ایجاد و به‌کارگیری نمونه‌ها، برنامه‌ای خوانا، قابل اجرا و قابل توسعه تولید کند.
+Using the concepts of object-oriented programming in Python, model simple and practical problems, design a suitable class and, by creating and using instances, produce a readable, runnable and extensible program.
 
 <!-- page 235 -->
 
-**برنامه‌نویسی شیءگرا (Object-Oriented Programming)**
+**Object-Oriented Programming**
 
-برنامه‌نویسی شیءگرا روشی از برنامه‌نویسی است که در آن، اجزای برنامه به‌صورت موجودیت‌هایی شبیه به دنیای واقعی مدل‌سازی می‌شوند. در این روش، به‌جای آن‌که فقط به دستورات و توابع فکر کنید، ابتدا به چیزهایی فکرمی‌کنید که در دنیای واقعی وجود دارند، ویژگی دارند و می‌توانند کاری انجام دهند.
+Object-oriented programming is a way of programming in which the parts of the program are modelled as entities like the real world. In this method, instead of thinking only of statements and functions, you first think of things that exist in the real world, have properties and can do something.
 
 ![Figure 1](../images/p241-01.png)
 *Figure 1*
 
-به این چیزها در برنامه‌نویسی، شیء (Object) و به این شیوۀ برنامه‌نویسی، شیءگرایی یا به اختصار (`O.O.P.`) گفته می‌شود.
+These things are called objects in programming, and this style of programming is called object-orientation, or `O.O.P.` for short.
 
-در این رویکرد، هدف اصلی، بازآفرینی منطق و ساختار دنیای واقعی در محیط برنامه‌نویسی است. برای درک بهتر این مفهوم، می‌توان به بازی‌های استراتژیک رایج همچون Age of Empires یا Clash of Clans اشاره کرد. در این بازی‌ها، شخصیت‌ها و موجودیت‌ها به گروه‌های گوناگون تقسیم می‌شوند؛ از کارگران و سربازان گرفته تا وسایل نقلیه و ماشین‌آلات جنگی. برنامه‌نویسی شیءگرا با معرفی مفهومی به نام کلاس (Class)، به شما کمک می‌کند موجودیت‌های مشابه را در قالب یک گروه قرار دهید. به این ترتیب، می‌توانید هر گروه را به‌صورت یک کلاس در نظر بگیرید و ویژگی‌ها و کارهای مربوط به آن را در برنامه مشخص کنید.
+In this approach the main goal is to recreate the logic and structure of the real world in the programming environment. To understand this concept better, we can mention common strategy games such as Age of Empires or Clash of Clans. In these games, characters and entities are divided into various groups; from workers and soldiers to vehicles and war machines. By introducing a concept called class, object-oriented programming helps you put similar entities in one group. In this way you can consider each group as a class and specify the properties and jobs related to it in the program.
 
 ![Figure 2](../images/p241-02.png)
 *Figure 2*
 
-فعلاً از دنیای بازی‌ها فاصله گرفته و یک مثال کاملاً واقعی بررسی می‌شود. یک تلفن همراه قدیمی را در نظر بگیرید. این تلفن همراه صرفاً یک وسیلۀ ساده نیست، بلکه دارای مجموعه‌ای از ویژگی‌هاست و قادر است وظایف و عملیات مختلفی را انجام دهد.
+For now, let us move away from the world of games and look at a completely real example. Consider an old mobile phone. This mobile phone is not merely a simple device, but has a set of properties and can do different tasks and operations.
 
 ![Figure 3](../images/p241-03.png)
 *Figure 3*
 
-برای مثال هر تلفن همراه این ویژگی‌ها را دارد:
+For example every mobile phone has these properties:
 
-- دارای رنگ است.
+- It has a colour.
 
-- دارای برند است.
+- It has a brand.
 
-- دارای مدل است.
+- It has a model.
 
-- میزان شارژ باتری آن در هر لحظه مشخص است.
+- The level of its battery charge is known at every moment.
 
 <!-- page 236 -->
 
 > **Note**
 >
-> فعلاً با مثال‌هایی از گوشی‌های قدیمی شروع کرده و در ادامه درس به گوشی‌های هوشمند و گوشی‌های مخصوص بازی هم پرداخته خواهد شد.
+> For now we start with examples of old phones, and later in the lesson smartphones and gaming phones will be covered as well.
 
 > **Activity**
 >
-> بر اساس اطلاعات گوشی خودتان یا یک گوشی دلخواه، اطلاعات جدول زیر را تکمیل نمایید. (جدول ویژگی‌ها)
+> Based on the information of your own phone or any phone you like, complete the information of the following table. (The table of properties)
 >
-> در جدول زیر، نمونه‌هایی از تلفن همراه و ویژگی‌های آنها را مشاهده می‌کنید:
+> In the following table you see examples of mobile phones and their properties:
 >
-> | نمونه‌ها / ویژگی‌ها | color | brand | model | battery |
+> | Examples / properties | color | brand | model | battery |
 > | --- | --- | --- | --- | --- |
-> | گوشی من | gray | nokia | 1100 | %32 |
-> | گوشی شما |  |  |  |  |
-> | گوشی دوستتان |  |  |  |  |
+> | My phone | gray | nokia | 1100 | %32 |
+> | Your phone |  |  |  |  |
+> | Your friend's phone |  |  |  |  |
 
-اگر دو گوشی هم‌مدل داشته باشید، ویژگی‌های آنها مشابه است، اما میزان باتری یا رنگ می‌تواند متفاوت باشد. هرکدام از این گوشی‌ها یک شیء جداگانه محسوب می‌شوند. به مشخصاتی که یک شیء دارد، ویژگی (Attribute) گفته می‌شود. این ویژگی‌ها مشخص می‌کنند که هر شیء چه چیزهایی دارد.
+If you have two phones of the same model, their properties are similar, but the battery level or the colour can differ. Each of these phones counts as a separate object. The characteristics an object has are called properties (attributes). These properties specify what each object has.
 
-همچنین هر تلفن همراه کارهای مختلفی می‌تواند انجام دهد:
+Also each mobile phone can do different things:
 
-- روشن و خاموش شود.
+- Turn on and off.
 
-- تماس بگیرد.
+- Make a call.
 
-- پیام ارسال کند.
+- Send a message.
 
 > **Activity**
 >
-> به‌جز کار‌های فوق، با گوشی شخصی خودتان چه کارهای دیگری می‌توانید انجام دهید. جدول زیر را کامل کنید.
+> Besides the jobs above, what other things can you do with your own phone? Complete the following table.
 >
 > | -1 | -3 |
 > | --- | --- |
 > | -2 | -4 |
 
-### متد
+### Method
 
-کارهایی که یک شیء می‌تواند انجام دهد، متد (Method) نامیده می‌شود. در حقیقت متد‌ها مانند دستورالعمل‌هایی هستند که به شیء می‌گویند چه کاری انجام دهد.
+The things an object can do are called methods. In fact methods are like instructions that tell the object what to do.
 
 <!-- page 237 -->
 
-در دنیای واقعی، این تلفن همراه یک «شیء» می‌باشد و در برنامه‌نویسی شیءگرا نیز دقیقاً با همین نگاه، اشیا مدل‌سازی می‌شوند.
+In the real world this mobile phone is an "object", and in object-oriented programming too, objects are modelled with exactly this view.
 
-### شیء
+### Object
 
-شیء (Object) به هر چیزی گفته می‌شود که:
+An object is anything that:
 
-- دارای ویژگی (Attribute) باشد.
+- has properties (Attributes).
 
-- بتواند کار یا کارهایی (Method) انجام دهد.
+- can do one or more jobs (Methods).
 
-### نمونه (Instance)
+### Instance
 
-در پایتون، شیءهایی که با استفاده از یک کلاس ساخته می‌شوند، نمونه (Instance) آن کلاس نامیده می‌شوند. بنابراین یک تلفن همراه مشخص (مثلاً موبایل شخصی شما)، یک نمونه (Instance) از کلاس تلفن همراه محسوب می‌شود.
+In Python, objects that are made using a class are called instances of that class. So a specific mobile phone (for example your own mobile) counts as an instance of the mobile phone class.
 
 > **Note**
 >
-> در این کتاب از این به بعد به جای استفاده از عبارت شیء (Object) از اصطلاح نمونه (Instance) استفاده می‌شود.
+> From now on in this book, the term instance is used instead of the word object.
 
-### تعریف کلاس (Class)
+### Defining a class
 
-حال اگر بخواهید چندین تلفن همراه مختلف بسازید، نوشتن ویژگی‌ها و متدها برای هر کدام به‌صورت جداگانه کار درستی نیست.
+Now if you want to make several different mobile phones, it is not right to write the properties and methods separately for each one.
 
-برای این کار، به یک قالب کلی نیاز داریم که مشخص کند:
+For this we need a general template that specifies:
 
-1. هر تلفن همراه چه ویژگی‌هایی دارد.
+1. what properties each mobile phone has.
 
-2. چه کارهایی می‌تواند انجام دهد.
+2. what jobs it can do.
 
-به این قالب کلی، کلاس (Class) گفته می‌شود.
+This general template is called a class.
 
-کلاس مانند نقشۀ ساخت یک تلفن همراه است و هر تلفن همراهی که ساخته می‌شود، در واقع یک نمونه (Instance) از آن کلاس خواهد بود.
+A class is like the plan for building a mobile phone, and every mobile phone that is made is in fact an instance of that class.
 
 *Table 1*
 
-| اصطلاحات | معنی |
+| Terms | Meaning |
 | --- | --- |
-| کلاس (Class) | قالب کلی یا نقشه ساخت |
-| نمونه (Instance) | موجود ساخته‌شده از روی یک کلاس |
-| ویژگی (Attribute) | چه چیزی دارد؟ |
-| متد (Method) | چه کاری انجام می‌دهد؟ |
+| Class | A general template or a building plan |
+| Instance | A thing made from a class |
+| Attribute | What does it have? |
+| Method | What does it do? |

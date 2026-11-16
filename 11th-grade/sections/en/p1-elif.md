@@ -13,29 +13,29 @@
 
 ![Book image](../images/p033-02.png)
 
-**مثال**: در این برنامه عملگر `>` برای بررسی شرط بیشتر بودن نمره هنرجو در دروس پودمانی از عدد 12 استفاده شده است. برنامه را اجرا و نتیجه را با داده‌های مختلف بررسی کنید (شکل61).
+**Example**: in this program the operator `>` is used to check the condition that the student's score in the module lessons is greater than 12. Run the program and check the result with different data (Figure 61).
 
 ![Figure 61](../images/p033-03.png)
 *Figure 61*
 
-**مثال**: در این برنامه عملگر `<` برای بررسی محدودیت سنی زیر ۱۸ سال برای ورود به سایت استفاده شده است. برنامه را اجرا و نتیجه را با داده‌های مختلف بررسی کنید (شکل62).
+**Example**: in this program the operator `<` is used to check the age limit of under 18 years for entering a website. Run the program and check the result with different data (Figure 62).
 
 ![Figure 62](../images/p033-04.png)
 *Figure 62*
 
 <!-- page 28 -->
 
-**مثال**: در این برنامه محدودیت تعداد سفارش کالا با عملگر `<=` مورد بررسی قرار گرفته است که تنها به تعداد ۵ یا کمتر از ۵ را شامل می‌شود. برنامه را اجرا و نتیجه را با داده‌های مختلف بررسی کنید (شکل63).
+**Example**: in this program the limit on the number of ordered items is checked with the operator `<=`, which includes only 5 or fewer than 5. Run the program and check the result with different data (Figure 63).
 
 ![Figure 63](../images/p034-03.png)
 *Figure 63*
 
-**مثال**: در این برنامه محدودیت پایه تحصیلی 11 برای ورود به سیستم پیشرفته با عملگر `>=` برقرار شده است. برنامه را اجرا و نتیجه را با داده‌های مختلف بررسی کنید (شکل64).
+**Example**: in this program the limit of the 11th grade for entering the advanced system is set with the operator `>=`. Run the program and check the result with different data (Figure 64).
 
 ![Figure 64](../images/p034-04.png)
 *Figure 64*
 
-**مثال**: در این برنامه شرط ورود به مرحله دوم مسابقه سن حداقل ۱۸ و امتیاز حداقل 70 در نظر گرفته شده است. برنامه با عملگرهای مقایسه `>=` به معنی بزرگ‌تر مساوی و عملگر منطقی and به معنی " و " نوشته شده است. نتیجه عملگر and زمانی True است که هر دو عبارت و هر دو True باشند. برنامه را اجرا و نتیجه را با داده‌های مختلف بررسی کنید (شکل65).
+**Example**: in this program the condition for entering the second round of the competition is an age of at least 18 and a score of at least 70. The program is written with the comparison operator `>=` meaning greater than or equal and the logical operator and meaning " and ". The result of the operator and is True when both expressions are True. Run the program and check the result with different data (Figure 65).
 
 ![Book image](../images/p034-01.png)
 
@@ -159,7 +159,7 @@ B) Extend the program for a food menu with the three options below: (Figure 71)
 
 In the example above, what happens if the menu has 20 foods? Or if a new food is added tomorrow? The first solution that comes to mind is to use more if statements. But that makes the code longer and harder. The real solution is to use lists and loop statements properly.
 
-### حلقه‌های تکرار (Loop)
+### Loops
 
 When coding, if a statement or a group of statements must run several times, **loop structures** are used. They make code shorter, more readable, and easier to manage. For example, if you need a program that prints the word python 10 times, instead of writing the statement `print('python')` ten separate times, you can put it once inside a loop so that it runs ten times automatically.
 

@@ -1,5 +1,5 @@
 <!-- page 273 -->
 
-## ارزشیابی شایستگی توسعه برنامه شیء گرا
+## Competency assessment: developing an object-oriented program
 
-**استاندارد عملکرد کار**: هنرجو باید بتواند با استفاده از شیء Path به‌صورت ایمن و دقیق عملیات ایجاد، خواندن، نوشتن و مدیریت فایل‌های متنی و JSON را انجام دهد و خطاها و استثناهای احتمالی را به‌درستی کنترل کند.
+**Work performance standard**: the student must be able, using the Path object, to safely and exactly create, read, write and manage text and JSON files and to correctly control possible errors and exceptions.

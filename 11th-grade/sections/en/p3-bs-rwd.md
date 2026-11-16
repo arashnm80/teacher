@@ -89,7 +89,7 @@
 > | 1320px | 100% | 100% | 100% | 100% | 100% | `.Container-xxl` |
 > | 100% | 100% | 100% | 100% | 100% | 100% | `.Container-fluid` |
 >
-> در کارگاه «**طراحی بخش معرفی فروشگاه**» پهنای عنصر article در دستگاه دسکتاپ و موبایل به ترتیب 75% و 90% تعیین شد. در اینجا قصد داریم به‌جای استفاده از کدهای CSS از کلاس‌های واکنش‌گرای container استفاده کنیم. بدین منظور مراحل زیر را دنبال کنید:
+> In the workshop "**Designing the shop introduction section**", the width of the article element was set to 75% and 90% on desktop and mobile devices respectively. Here we want to use the responsive container classes instead of CSS code. To do this, follow the steps below:
 >
 > Use the container-sm class on the article element:
 >
@@ -159,7 +159,7 @@
 >
 > If the edges of the banner do not touch the edges of the browser, set the padding and margin of the header element to zero.
 
-### اجزای رابط کاربری (User Interface Components)
+### User Interface Components
 
 Users interact with a web page through different components. These include buttons, menus, search bars, icons, forms, images, colors, fonts, and other visual elements that shape the user experience. Bootstrap has a set of ready-made classes for user interface components such as the navigation bar, forms, buttons, the accordion menu, and so on, which this part covers.
 
@@ -185,4 +185,4 @@ Users interact with a web page through different components. These include butto
 
 **dropdown**: used to create drop-down menus in the navigation bar.
 
-**navbar-light و navbar-dark**: برای تعیین رنگ محتوای نوار ناوبری استفاده می‌شود تا خوانایی عناصر درون آن حفظ شود. کلاس navbar-light موجب ایجاد یک نوار ناوبری با پس زمینه روشن و رنگ متن تیره می‌گردد و کلاس navbar-dark یک نوار ناوبری با پس‌زمینۀ تیره و متن‌های روشن ایجاد می‌کند. انتخاب صحیح این کلاس‌ها باعث افزایش خوانایی و بهبود تجربه کاربری می‌شود.
+**navbar-light and navbar-dark**: used to set the colour of the content of the navigation bar so that the readability of the elements inside it is kept. The class navbar-light creates a navigation bar with a light background and dark text, and the class navbar-dark creates a navigation bar with a dark background and light text. Choosing these classes correctly increases readability and improves the user experience.

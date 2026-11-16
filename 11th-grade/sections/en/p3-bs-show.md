@@ -89,26 +89,26 @@ There must be one `<div>` element with the class accordion-item for each section
 >
 > ![Book image](../images/p194-01.png)
 >
-> این آکاردئون دارای دو بخش است. با توجه به اینکه کلاس show برای بخش اول استفاده شده است در نتیجه محتوای بخش اول در حال نمایش خواهد بود.
+> This accordion has two parts. Since the class show is used for the first part, the content of the first part will be shown.
 >
-> 3. در حالت پیش‌فرض فلش کنار هر دکمه به‌صورت رو به بالا و در کنار متن دکمه نمایش داده می‌شود. برای اصلاح این وضعیت از استایل زیر در فایل `styles.css` استفاده کنید:
+> 3. By default the arrow next to each button is shown pointing up and next to the text of the button. To fix this, use the following style in the file `styles.css`:
 >
 > ![Book image](../images/p194-02.png)
 >
-> انتخاب‌گر accordion-button::after عنصر بعد از عنوان دکمه (آیکن فلش) را انتخاب می‌کند.
+> The selector accordion-button::after selects the element after the title of the button (the arrow icon).
 
 <!-- page 189 -->
 
 > **Activity**
 >
-> بخش سوم را با محتوای زیر به آکاردئون اضافه کنید:
+> Add the third part to the accordion with the following content:
 >
-> درصورتی‌که کالا در فروش ویژه باشد، شامل محدودیت در تعداد خرید می‌شود. در غیر این صورت هیچ‌گونه محدودیتی وجود ندارد.
+> If the item is on special sale, it includes a limit on the number of purchases. Otherwise there is no limit at all.
 >
-> انتظار می‌رود که در پایان خروجی زیر را به‌دست آورید:
+> It is expected that at the end you get the following output:
 >
 > ![Book image](../images/p195-01.png)
 
 > **Activity**
 >
-> پرسش‌های متداول در بخش فوتر سایت را به فایل `faq.html` لینک کنید.
+> Link the frequently asked questions in the footer of the site to the file `faq.html`.

@@ -8,9 +8,9 @@
 
 ### Kinds of functions in Python
 
-**User-Defined Function (توابعی که برنامه‌نویس تعریف می‌کند)**: توابعی که تاکنون تعریف کردید در این دسته قرار دارند.
+**User-Defined Function (functions that the programmer defines)**: the functions you have defined so far are in this category.
 
-**Built-in functions (یا توابع داخلی پایتون)**: توابعی که در پایتون از قبل تعریف شده‌اند و برنامه‌نویس آنها را در برنامه‌های خود استفاده می‌کند. کارهای رایج و تکراری را سریع، ساده و بدون نوشتن کد طولانی انجام می‌دهد. به کمک توابع داخلی، برنامه‌ها خواناتر، کوتاه‌تر و کم‌خطا می‌شوند.
+**Built-in functions (or Python's internal functions)**: functions that are already defined in Python and that the programmer uses in their programs. They do common and repeated jobs quickly, simply and without writing long code. With the help of built-in functions, programs become more readable, shorter and less error-prone.
 
 You have met some of these functions in earlier sections, and you will learn others below. Math functions: these functions work only or mainly on numbers (Table 4).
 
@@ -75,11 +75,11 @@ A module is a file that can contain several functions, variables, and classes, a
 ![Figure 150](../images/p079-02.png)
 *Figure 150*
 
-### انواع ماژول در پایتون: ماژول استاندارد (standard)
+### Types of modules in Python: the standard module
 
 Python has modules that the programmer just brings into the program without defining them, such as time, date, random, math, and so on. Standard modules can be used in two ways.
 
-### روش اول: وارد کردن کل ماژول (import module)
+### The first way: importing the whole module (import module)
 
 This is the safest way, because it prevents name clashes. In this method you must write the module name before the function.
 

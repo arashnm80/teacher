@@ -122,110 +122,110 @@
 <p><strong><code>document.write()</code></strong>: نوشتن مستقیم در صفحه وب (استفاده از این روش در برنامه‌نویسی مدرن توصیه نمی‌شود).</p>
 </aside></article><article class="card lesson no-copy" lang="en" dir="ltr" data-lang-block="en" hidden><p class="page-mark">Page 219</p>
 
-<p><strong><bdi dir="rtl">اصول تعریف تابع در جاوا‌اسکریپت به شرح زیر است</bdi></strong>:</p>
+<p><strong>The principles of defining a function in JavaScript are as follows</strong>:</p>
 <ul>
 <li>
-<p><bdi dir="rtl">در تعریف تابع ابتدا عبارت کلیدی</bdi> function <bdi dir="rtl">و سپس نام آن نوشته می‌شود</bdi>.</p>
+<p>In defining a function, first the key phrase function and then its name are written.</p>
 </li>
 <li>
-<p><bdi dir="rtl">نام تابع باید با حرف کوچک شروع شود و هر کلمه جدید با حرف بزرگ آغاز شود</bdi>.</p>
+<p>The name of a function must start with a lowercase letter and each new word must start with a capital letter.</p>
 </li>
 <li>
-<p><bdi dir="rtl">پارامترهای ورودی تابع درون پرانتز مشخص می‌شود</bdi>.</p>
+<p>The input parameters of the function are specified inside the parentheses.</p>
 </li>
 <li>
-<p><bdi dir="rtl">تعداد پارامترها می‌تواند صفر، یک یا بیشتر باشد</bdi>. <bdi dir="rtl">مجموعه دستورات تابع درون آکولاد نوشته می‌شوند</bdi>.</p>
+<p>The number of parameters can be zero, one or more. The set of statements of the function is written inside braces.</p>
 </li>
 <li>
-<p><bdi dir="rtl">خروجی تابع معمولاً توسط تابع</bdi> return <bdi dir="rtl">به محل فراخوانی برگردانده می‌شود</bdi>.</p>
+<p>The output of the function is usually returned to the place of the call by the return statement.</p>
 </li>
 <li>
-<p><bdi dir="rtl">دستورات درون تابع زمانی اجرا می‌شوند که تابع فراخوانی شود</bdi>.</p>
+<p>The statements inside a function run when the function is called.</p>
 </li>
 <li>
-<p><bdi dir="rtl">برای فراخوانی تابع باید از نام تابع به همراه آرگومان‌های ورودی استفاده شود</bdi>. <bdi dir="rtl">شکل کلی فراخوانی تابع به‌صورت زیر است</bdi>:</p>
+<p>To call a function, the name of the function with the input arguments must be used. The general form of calling a function is as follows:</p>
 </li>
 </ul>
 <div class="code-wrap" dir="ltr"><pre><code>functionName(Arguments)
 </code></pre></div>
 <aside class="callout example"><p class="callout-label">Example</p>
-<p><bdi dir="rtl">در مثال زیر تابعی به نام</bdi> calculateCartTotal <bdi dir="rtl">با سه پارامتر ورودی</bdi> price3, price2, price1 <bdi dir="rtl">ایجاد شده است</bdi>. <bdi dir="rtl">تابع</bdi> calculateCartTotal <bdi dir="rtl">مجموع مقادیر این سه پارامتر را محاسبه و درون متغیر</bdi> total <bdi dir="rtl">ذخیره می‌کند</bdi>. <bdi dir="rtl">دستور</bdi> return <bdi dir="rtl">مقدار متغیر</bdi> total <bdi dir="rtl">را به محل فراخوانی بازمی‌گرداند</bdi>.</p>
+<p>In the following example a function named calculateCartTotal is created with three input parameters price1, price2, price3. The function calculateCartTotal calculates the sum of the values of these three parameters and stores it in the variable total. The return statement gives the value of the variable total back to the place of the call.</p>
 <figure class="shot"><img alt="Book image" src="../images/p225-01.png" loading="lazy" /></figure>
 <figure class="shot"><img alt="Book image" src="../images/p225-02.png" loading="lazy" /></figure>
 <p><strong>Note</strong></p>
-<p><bdi dir="rtl">پارامترها متغیرهایی هستند که در هنگام تعریف تابع استفاده می‌شوند</bdi>. <bdi dir="rtl">در مثال فوق متغیرهای</bdi> price3, price2, price1 <bdi dir="rtl">پارامتر ورودی تابع هستند</bdi>. <bdi dir="rtl">آرگومان به مقادیری گفته می‌شود که هنگام فراخوانی برای تابع ارسال می‌شوند</bdi>. <bdi dir="rtl">به عبارت دیگر آرگومان‌ها مقادیری هستند که به پارامترهای تابع نسبت داده می‌شوند</bdi>.</p>
+<p>Parameters are variables used when defining a function. In the example above the variables price1, price2, price3 are the input parameters of the function. Arguments are the values sent to the function when it is called. In other words, arguments are values that are assigned to the parameters of the function.</p>
 </aside>
 <p class="page-mark">Page 220</p>
 
 <aside class="callout workshop"><p class="callout-label">Workshop</p>
-<p><strong><bdi dir="rtl">ایجاد تابع و فراخوانی آن</bdi></strong></p>
-<p><bdi dir="rtl">فایل جدیدی با نام</bdi> <code>workshop8.html</code> <bdi dir="rtl">ایجاد کنید و تابع</bdi> calculateCartTotal <bdi dir="rtl">را درون آن بنویسید</bdi>. <bdi dir="rtl">سپس تابع را با آرگومان‌های ورودی دلخواه فراخوانی کنید</bdi>.</p>
-<p><bdi dir="rtl">یک تابع لزوماً دارای مقدار بازگشتی نیست</bdi>. <bdi dir="rtl">یک تابع می‌تواند با هدف اجرای مجموعه‌ای از دستورالعمل‌ها نوشته شود، بدون اینکه مقداری را به محل فراخوانی بازگرداند</bdi>. <bdi dir="rtl">در این‌صورت نیازی به استفاده از دستور</bdi> return <bdi dir="rtl">نخواهد بود</bdi>. <bdi dir="rtl">در مثال زیر تابع</bdi> showCartTotal <bdi dir="rtl">سه مقدار را به‌عنوان پارامتر ورودی دریافت می‌کند، حاصل جمع آنها را محاسبه کرده و نتیجه را در کنسول مرورگر نمایش می‌دهد؛ اما هیچ مقداری را به محل فراخوانی برنمی‌گرداند</bdi>.</p>
+<p><strong>Creating a function and calling it</strong></p>
+<p>Create a new file named <code>workshop8.html</code> and write the function calculateCartTotal in it. Then call the function with input arguments of your choice.</p>
+<p>A function does not necessarily have a return value. A function can be written with the aim of running a set of instructions without returning a value to the place of the call. In that case there is no need to use the return statement. In the following example the function showCartTotal receives three values as input parameters, calculates their sum and shows the result in the browser console; but it returns no value to the place of the call.</p>
 <figure class="shot"><img alt="Book image" src="../images/p226-01.png" loading="lazy" /></figure>
 </aside>
-<h3><bdi dir="rtl">توابع آماده جاوا‌اسکریپت</bdi> (Built-in Functions)</h3>
-<p><bdi dir="rtl">جاوا‌اسکریپت دارای مجموعه‌ای از توابع آماده است که برای انجام عملیات مختلف به‌کار می‌روند</bdi>. <bdi dir="rtl">توابع آماده جاوا‌اسکریپت به برنامه‌نویسان امکان می‌دهند که به‌راحتی داده‌ها را مدیریت کرده و وظایف پیچیده را به سادگی پیاده‌سازی کنند</bdi>. <bdi dir="rtl">این توابع شامل توابع ریاضی، رشته‌ای، آرایه، اشیا، ورودی</bdi>-<bdi dir="rtl">خروجی و تاریخ و زمان است که در این بخش به معرفی آنها پرداخته می‌شود</bdi>.</p>
+<h3>JavaScript's Built-in Functions</h3>
+<p>JavaScript has a set of ready-made functions used for different operations. JavaScript's ready-made functions let programmers manage data easily and implement complex tasks simply. These functions include mathematical, string, array, object, input-output and date and time functions, which are introduced in this section.</p>
 <aside class="callout workshop"><p class="callout-label">Workshop</p>
-<p><strong><bdi dir="rtl">به کارگیری توابع ریاضی جاوا‌اسکریپت</bdi></strong></p>
-<p><bdi dir="rtl">توابع ریاضی جاوا‌اسکریپت که درون شیء</bdi> Math <bdi dir="rtl">سازماندهی شده‌اند، مجموعه‌ای از ابزارهای قدرتمند و کارآمد برای انجام محاسبات پیچیده ریاضی هستند</bdi>. <bdi dir="rtl">دسترسی به توابع ریاضی به‌صورت نقطه‌ای</bdi> <code>Math.functionName()</code> <bdi dir="rtl">امکان‌پذیر است و استفاده از آنها نه‌تنها کدنویسی را کوتاه‌تر و خواناتر می‌کند، بلکه از خطاهای احتمالی در پیاده‌سازی دستی الگوریتم‌ها نیز جلوگیری کرده و عملکرد بهینه‌تری در برنامه‌های کاربردی ایجاد می‌نماید</bdi>. <bdi dir="rtl">چند نمونه از توابع پر کاربرد ریاضی در جاوا‌اسکریپت به شرح زیر است</bdi>:</p>
-<p><code>Math.abs()</code>: <bdi dir="rtl">قدرمطلق مقدار آرگومان ورودی را برمی‌گرداند</bdi>.</p>
-<p><code>Math.round()</code>: <bdi dir="rtl">مقدار آرگومان ورودی را گرد می‌کند</bdi>.</p>
-<p><code>Math.random()</code>: <bdi dir="rtl">یک عدد تصادفی بین</bdi> 0 (<bdi dir="rtl">شامل</bdi>) <bdi dir="rtl">تا</bdi> 1 (<bdi dir="rtl">غیرشامل</bdi>) <bdi dir="rtl">برمی‌گرداند</bdi>.</p>
-<p><code>Math.max()</code>: <bdi dir="rtl">بزرگ‌ترین عدد را از بین آرگومان‌های ورودی برمی‌گرداند</bdi>.</p>
-<p><code>Math.min()</code>: <bdi dir="rtl">کوچک‌ترین عدد را از بین آرگومان‌های ورودی برمی‌گرداند</bdi>.</p>
+<p><strong>Using JavaScript's mathematical functions</strong></p>
+<p>JavaScript's mathematical functions, which are organised inside the Math object, are a set of powerful and efficient tools for doing complex mathematical calculations. The mathematical functions can be reached with the dot form <code>Math.functionName()</code>, and using them not only makes the coding shorter and more readable, but also prevents possible errors in implementing algorithms by hand and creates more optimal performance in applications. Some commonly used mathematical functions in JavaScript are as follows:</p>
+<p><code>Math.abs()</code>: returns the absolute value of the input argument.</p>
+<p><code>Math.round()</code>: rounds the value of the input argument.</p>
+<p><code>Math.random()</code>: returns a random number from 0 (included) up to 1 (not included).</p>
+<p><code>Math.max()</code>: returns the largest number among the input arguments.</p>
+<p><code>Math.min()</code>: returns the smallest number among the input arguments.</p>
 </aside>
 <p class="page-mark">Page 221</p>
 
 <aside class="callout workshop continued"><p class="callout-label">Workshop (continued)</p>
-<p><bdi dir="rtl">در طراحی فروشگاه‌های اینترنتی، توابع ریاضی جاوا‌اسکریپت نقشی حیاتی ایفا می‌کنند، زیرا مدیریت عملیات اصلی مانند محاسبه قیمت نهایی پس از اعمال تخفیف، جمع‌بندی اقلام سبد خرید و تعیین هزینه‌های حمل‌ونقل مستلزم استفاده دقیق از این توابع است</bdi>. <bdi dir="rtl">به‌منظور آشنایی با نحوۀ فراخوانی و عملکرد این توابع، فایلی به‌نام</bdi> <code>shopping-cart.html</code> <bdi dir="rtl">ایجاد کنید و اسکریپت زیر را در آن بنویسید</bdi>. <bdi dir="rtl">سپس نتایج به‌دست‌آمده را در کلاس بررسی و تحلیل کنید</bdi>.</p>
+<p>In designing online shops, JavaScript's mathematical functions play a vital role, because managing the main operations, such as calculating the final price after applying a discount, totalling the items of the cart and deciding the shipping cost, needs the exact use of these functions. To get to know how these functions are called and how they work, create a file named <code>shopping-cart.html</code> and write the following script in it. Then check and analyse the results you get in class.</p>
 <figure class="shot"><img alt="Book image" src="../images/p227-01.png" loading="lazy" /></figure>
 </aside>
 <p class="page-mark">Page 222</p>
 
 <aside class="callout workshop"><p class="callout-label">Workshop</p>
-<p><strong><bdi dir="rtl">به کارگیری توابع رشته ای در جاوا‌اسکریپت</bdi></strong></p>
-<p><bdi dir="rtl">توابع و ویژگی‌های رشته‌ای جاوا‌اسکریپت، ابزارهای ضروری برای پردازش و مدیریت متن هستند که امکان قالب‌بندی و تغییر رشته‌ها را با دقت و کارایی بالا فراهم می‌کنند</bdi>. <bdi dir="rtl">این متدها امکان اعتبارسنجی داده‌های ورودی کاربران، بهینه‌سازی متن برای نمایش یا ارسال به سرور را فراهم می‌کنند</bdi>. <bdi dir="rtl">برخی از توابع رشته‌ای جاوا‌اسکریپت به شرح زیر است</bdi>:</p>
-<p><code>toUpperCase()</code>: <bdi dir="rtl">حروف رشته ورودی را به حالت بزرگ در می‌آورد</bdi>.</p>
-<p><code>indexOf()</code>: <bdi dir="rtl">اندیس موقعیت کاراکتر یا رشتۀ داخل پرانتز را در رشته اصلی برمی‌گرداند</bdi>.</p>
-<p><code>substring()</code>: <bdi dir="rtl">یک زیررشته را از رشته اصلی برمی‌گرداند</bdi>. <bdi dir="rtl">ورودی‌های این تابع اندیس ابتدا و انتهای زیر رشته است</bdi>.</p>
-<p><code>split()</code>: <bdi dir="rtl">رشته را بر اساس جداکننده داخل پرانتز</bdi> (<bdi dir="rtl">مانند کاما</bdi>) <bdi dir="rtl">تقسیم می‌کند و آرایه‌ای از رشته‌ها را برمی‌گرداند</bdi>.</p>
-<p><code>replace()</code>: <bdi dir="rtl">دو رشته را به عنوان ورودی دریافت کرده و رشتۀ دوم</bdi> (/) <bdi dir="rtl">را به‌جای رشتۀ اول</bdi> (-) <bdi dir="rtl">در رشته اصلی قرار می‌دهد</bdi>. <bdi dir="rtl">این تابع در اولین موقعیت یافتن رشتۀ مورد نظر</bdi>(-)<bdi dir="rtl">، جایگزینی رشته را انجام می‌دهد</bdi>. <code>startsWith()</code>: <bdi dir="rtl">وجود یک حرف یا رشته را در ابتدای یک متغیر رشته‌ای بررسی می‌کند</bdi>.</p>
-<p><bdi dir="rtl">شیء</bdi> string <bdi dir="rtl">دارای یک ویژگی به‌نام</bdi> <strong>length</strong> <bdi dir="rtl">است که طول یک رشته را تعیین می‌کند</bdi>. <bdi dir="rtl">بر این اساس، دستور زیر مقدار</bdi> 11 <bdi dir="rtl">را نمایش می‌دهد</bdi>.</p>
+<p><strong>Using string functions in JavaScript</strong></p>
+<p>JavaScript's string functions and properties are essential tools for processing and managing text, which make formatting and changing strings possible with high accuracy and efficiency. These methods make it possible to validate the users' input data and to optimise text for display or sending to the server. Some of JavaScript's string functions are as follows:</p>
+<p><code>toUpperCase()</code>: turns the letters of the input string into capital letters.</p>
+<p><code>indexOf()</code>: returns the index of the position of the character or string inside the parentheses in the main string.</p>
+<p><code>substring()</code>: returns a substring of the main string. The inputs of this function are the starting and ending index of the substring.</p>
+<p><code>split()</code>: splits the string based on the separator inside the parentheses (such as a comma) and returns an array of strings.</p>
+<p><code>replace()</code>: takes two strings as input and puts the second string (/) in place of the first string (-) in the main string. This function does the replacement at the first position where the wanted string (-) is found. <code>startsWith()</code>: checks for the existence of a letter or string at the start of a string variable.</p>
+<p>The string object has a property named <strong>length</strong>, which gives the length of a string. Based on this, the following statement shows the value 11.</p>
 <div class="code-wrap" dir="ltr"><pre><code>console.log(str1.length);
 </code></pre></div>
-<p><bdi dir="rtl">فایلی به نام</bdi> <code>user-info.html</code> <bdi dir="rtl">ایجاد کنید و اسکریپت زیر را برای آشنایی با عملکرد</bdi> <strong><bdi dir="rtl">توابع رشته‌ای</bdi></strong> <bdi dir="rtl">بنویسید</bdi>:</p>
+<p>Create a file named <code>user-info.html</code> and write the following script to get to know how the <strong>string functions</strong> work:</p>
 <figure class="shot"><img alt="Book image" src="../images/p228-01.png" loading="lazy" /></figure>
 </aside>
 <p class="page-mark">Page 223</p>
 
 <aside class="callout more"><p class="callout-label">Learn more</p>
-<p><strong><bdi dir="rtl">به‌کارگیری توابع آرایه در جاوا‌اسکریپت</bdi></strong></p>
-<p><bdi dir="rtl">توابع آرایه‌ای جاوا‌اسکریپت، ابزارهای مناسبی برای مدیریت، جست‌وجو، فیلتر و تبدیل داده‌های ساختاریافته هستند</bdi>. <bdi dir="rtl">به کمک این متدها می‌توان اعمال مختلفی همچون مرتب‌سازی</bdi> (sort)<bdi dir="rtl">، فیلتر کردن</bdi>(filter) <bdi dir="rtl">و استخراج اطلاعات، لیست‌ها را به سادگی و بدون نیاز به نوشتن حلقه‌های پیچیده، انجام داد</bdi>. <bdi dir="rtl">برخی از توابع آرایه به شرح زیر است</bdi>:</p>
-<p><code>push()</code>: <bdi dir="rtl">برای اضافه کردن یک یا چند عنصر به انتهای آرایه استفاده می‌شود</bdi>.</p>
-<p><code>slice()</code>: <bdi dir="rtl">برای استخراج بخشی از آرایه و ایجاد یک آرایه جدید به‌کار می‌رود</bdi>.</p>
-<p><code>filter()</code>: <bdi dir="rtl">آرایه جدیدی را با فیلتر کردن عناصر آرایه اصلی براساس یک شرط خاص ایجاد می‌کند</bdi>. <code>sort()</code>: <bdi dir="rtl">مرتب‌سازی عناصر آرایه را انجام می‌دهد</bdi>.</p>
-<p><bdi dir="rtl">ویژگی</bdi> length <bdi dir="rtl">تعداد عناصر موجود در آرایه را برمی‌گرداند</bdi>. <bdi dir="rtl">به‌طور مثال عبارت</bdi> <code>names.length</code> <bdi dir="rtl">عدد</bdi> 6 <bdi dir="rtl">را برمی‌گرداند</bdi>.</p>
-<p><bdi dir="rtl">فایلی به نام</bdi> <code>customer-list.html</code> <bdi dir="rtl">ایجاد کنید و اسکریپت زیر را برای آشنایی با عملکرد توابع آرایه بنویسید</bdi>. <bdi dir="rtl">نتایج اسکریپت را در کلاس بررسی و تحلیل کنید</bdi>.</p>
+<p><strong>Using array functions in JavaScript</strong></p>
+<p>JavaScript's array functions are suitable tools for managing, searching, filtering and converting structured data. With the help of these methods various operations such as sorting (sort), filtering (filter) and extracting information from lists can be done easily without needing to write complex loops. Some of the array functions are as follows:</p>
+<p><code>push()</code>: used to add one or more elements to the end of an array.</p>
+<p><code>slice()</code>: used to extract a part of an array and create a new array.</p>
+<p><code>filter()</code>: creates a new array by filtering the elements of the main array based on a certain condition. <code>sort()</code>: sorts the elements of the array.</p>
+<p>The length property returns the number of elements in the array. For example the expression <code>names.length</code> returns the number 6.</p>
+<p>Create a file named <code>customer-list.html</code> and write the following script to get to know how the array functions work. Check and analyse the results of the script in class.</p>
 <figure class="shot"><img alt="Book image" src="../images/p229-01.png" loading="lazy" /></figure>
 <figure class="shot"><img alt="Book image" src="../images/p229-02.png" loading="lazy" /></figure>
 </aside>
 <p class="page-mark">Page 224</p>
 
 <aside class="callout more"><p class="callout-label">Learn more</p>
-<p><strong><bdi dir="rtl">به کارگیری توابع و دستورات ورودی و خروجی جاوا‌اسکریپت</bdi></strong></p>
-<p><bdi dir="rtl">توابع ورودی و خروجی</bdi> (<code>I/O</code>) <bdi dir="rtl">در جاوا‌اسکریپت، پل ارتباطی بین برنامه و دنیای خارج از آن هستند و امکان ایجاد یک تجریه تعاملی و پویا را برای کاربران فراهم می‌کنند</bdi>. <bdi dir="rtl">در محیط مرورگر، این توابع برای دریافت ورودی از کاربر، نمایش جعبه پیغام، نمایش داده در کنسول و دریافت تأیید کاربر استفاده می‌شوند</bdi>.</p>
-<p><bdi dir="rtl">برای بررسی عملکرد توابع ورودی و خروجی، یک فایل جدید با نام</bdi> <code>user-interaction.html</code> <bdi dir="rtl">ایجاد کنید و کد زیر را در بخش</bdi> body <bdi dir="rtl">بنویسید</bdi>.</p>
+<p><strong>Using JavaScript's input and output functions and statements</strong></p>
+<p>Input and output (<code>I/O</code>) functions in JavaScript are the bridge between the program and the world outside it, and make an interactive and dynamic experience possible for users. In the browser environment, these functions are used to receive input from the user, show a message box, show data in the console and receive the user's confirmation.</p>
+<p>To check how the input and output functions work, create a new file named <code>user-interaction.html</code> and write the following code in the body section.</p>
 <figure class="shot"><img alt="Book image" src="../images/p230-01.png" loading="lazy" /></figure>
 <p>Save the file and see the result in the browser.</p>
 <figure class="shot"><img alt="Book image" src="../images/p230-05.png" loading="lazy" /></figure>
-<p><strong><code>console.log()</code></strong>: <bdi dir="rtl">نمایش مقادیر را در کنسول مرورگر به عهده دارد</bdi>.</p>
-<p><strong><code>prompt()</code></strong>: <bdi dir="rtl">نمایش یک کادر محاوره‌ای برای دریافت داده از کاربر</bdi>. <bdi dir="rtl">مقدار دریافتی به محل فراخوانی ارسال می‌شود</bdi>.</p>
-<p><strong><code>alert()</code></strong>: <bdi dir="rtl">نمایش پنجره هشدار با یک پیام و دکمه</bdi> OK.</p>
-<p><strong><code>confirm()</code></strong>: <bdi dir="rtl">نمایش یک پنجره تأیید شامل دکمه</bdi> OK و Cancel. <bdi dir="rtl">مقدار بازگشتی تابع</bdi> True <bdi dir="rtl">یا</bdi> False <bdi dir="rtl">است</bdi>.</p>
+<p><strong><code>console.log()</code></strong>: responsible for showing values in the browser console.</p>
+<p><strong><code>prompt()</code></strong>: shows a dialog box to receive data from the user. The value received is sent to the place of the call.</p>
+<p><strong><code>alert()</code></strong>: shows a warning window with a message and an OK button.</p>
+<p><strong><code>confirm()</code></strong>: shows a confirmation window with the buttons OK and Cancel. The returned value of the function is True or False.</p>
 <figure class="shot"><img alt="Book image" src="../images/p230-02.png" loading="lazy" /></figure>
 <figure class="shot"><img alt="Book image" src="../images/p230-04.png" loading="lazy" /></figure>
 <figure class="shot"><img alt="Book image" src="../images/p230-03.png" loading="lazy" /></figure>
-<p><strong><code>document.write()</code></strong>: <bdi dir="rtl">نوشتن مستقیم در صفحه وب</bdi> (<bdi dir="rtl">استفاده از این روش در برنامه‌نویسی مدرن توصیه نمی‌شود</bdi>).</p>
+<p><strong><code>document.write()</code></strong>: writing directly into the web page (using this method is not recommended in modern programming).</p>
 </aside></article>
       <aside class="card extra">
         <h2 data-fa="تمرین این بخش" data-en="Exercises for this section">تمرین این بخش</h2>

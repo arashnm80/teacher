@@ -146,132 +146,132 @@
 </aside></article><article class="card lesson no-copy" lang="en" dir="ltr" data-lang-block="en" hidden><p class="page-mark">Page 225</p>
 
 <aside class="callout curiosity"><p class="callout-label">Curiosity</p>
-<p><bdi dir="rtl">تحقیق کنید چرا استفاده از توابع</bdi> <code>prompt()</code> و <code>confirm()</code> <bdi dir="rtl">برای عملیات ورودی می‌تواند باعث مختل شدن تجربه کاربری شود؟</bdi></p>
+<p>Research why using the functions <code>prompt()</code> and <code>confirm()</code> for input operations can disturb the user experience.</p>
 </aside>
-<h3><bdi dir="rtl">کلاس‌ها و اشیا</bdi></h3>
-<p><bdi dir="rtl">در زبان‌های برنامه‌نویسی، کلاس به معنای الگویی برای ایجاد اشیا است</bdi>. <bdi dir="rtl">یک کلاس حاوی مجموعه‌ای از ویژگی‌ها و متدهاست</bdi>. <bdi dir="rtl">شیئی که از روی یک کلاس تعریف می‌شود، دارای ویژگی‌ها و متدهای تعریف شده در آن کلاس خواهد بود</bdi>.</p>
+<h3>Classes and objects</h3>
+<p>In programming languages, a class means a pattern for creating objects. A class contains a set of properties and methods. An object that is defined from a class will have the properties and methods defined in that class.</p>
 <aside class="callout more"><p class="callout-label">Learn more</p>
-<p><bdi dir="rtl">در مثال زیر یک کلاس با عنوان</bdi> Person <bdi dir="rtl">ایجاد شده است که حاوی ویژگی‌های</bdi> <strong>name</strong> و <strong>age</strong> <bdi dir="rtl">است</bdi>:</p>
+<p>In the following example a class titled Person is created that contains the properties <strong>name</strong> and <strong>age</strong>:</p>
 <figure class="shot"><img alt="Book image" src="../images/p231-01.png" loading="lazy" /></figure>
 <ul>
 <li>
-<p><strong><bdi dir="rtl">متد</bdi> constructor</strong> <bdi dir="rtl">برای تعریف و مقداردهی ویژگی‌های یک شیء استفاده می‌شود</bdi>. <bdi dir="rtl">زمانی که یک شیء جدید از یک کلاس ایجاد می‌شود، متد</bdi> constructor <bdi dir="rtl">به طور خودکار فراخوانی شده و مقادیر اولیه را به ویژگی‌های آن شیء اختصاص می‌دهد</bdi>. <bdi dir="rtl">در مثال فوق متد</bdi> constructor <bdi dir="rtl">دو پارامتر</bdi> name و age <bdi dir="rtl">را می‌پذیرد و آنها را به ویژگی‌های متناظر در شیء نسبت می‌دهد</bdi>.</p>
+<p><strong>The constructor method</strong> is used to define and give values to the properties of an object. When a new object is created from a class, the constructor method is called automatically and assigns the initial values to the properties of that object. In the example above the constructor method accepts the two parameters name and age and assigns them to the matching properties in the object.</p>
 </li>
 <li>
-<p><bdi dir="rtl">کلاس</bdi> person <bdi dir="rtl">دارای یک متد بنام</bdi> <strong>greet</strong> <bdi dir="rtl">است که یک پیغام را در کنسول مرورگر نمایش می‌دهد</bdi>.</p>
+<p>The class person has a method named <strong>greet</strong> that shows a message in the browser console.</p>
 </li>
 <li>
-<p><bdi dir="rtl">متغیر</bdi> person1 <bdi dir="rtl">یک شیء از نوع کلاس</bdi> person <bdi dir="rtl">است که مقدار ویژگی‌های آن برابر</bdi> amin و 47 <bdi dir="rtl">است</bdi>. <bdi dir="rtl">این مثال نشان می‌دهد که برای ایجاد یک شیء از روی یک کلاس باید از کلمه کلیدی</bdi> <strong>new</strong> <bdi dir="rtl">استفاده شود</bdi>. <bdi dir="rtl">با توجه به اینکه کلاس</bdi> person <bdi dir="rtl">دارای متدی بنام</bdi> greet <bdi dir="rtl">است، شیء</bdi> person1 <bdi dir="rtl">نیز امکان استفاده از این متد را دارد</bdi>. <bdi dir="rtl">متد</bdi> greet <bdi dir="rtl">باعث نمایش عبارت</bdi> "My name is amin and I am 47 years old" <bdi dir="rtl">در کنسول خواهد شد</bdi>.</p>
+<p>The variable person1 is an object of the class person whose property values are amin and 47. This example shows that to create an object from a class the keyword <strong>new</strong> must be used. Considering that the class person has a method named greet, the object person1 can use this method too. The method greet will show the phrase "My name is amin and I am 47 years old" in the console.</p>
 </li>
 </ul>
-<p><strong><bdi dir="rtl">ایجاد کلاس و شیء</bdi></strong></p>
-<p><bdi dir="rtl">فایل جدیدی با نام</bdi> <code>object.html</code> <bdi dir="rtl">ایجاد کنید و درون آن کلاس جدیدی با نام</bdi> Car <bdi dir="rtl">با ویژگی‌های</bdi> <code>auto_maker</code>، model و year <bdi dir="rtl">ایجاد کنید</bdi>.</p>
-<p><bdi dir="rtl">یک متد با نام</bdi> <code>print_Details</code> <bdi dir="rtl">برای چاپ ویژگی‌های خودرو بنویسید</bdi>. <bdi dir="rtl">نحوه چاپ به‌صورت زیر باشد</bdi>: Auto maker: Toyota, Model: Camry, Year: 2020</p>
+<p><strong>Creating a class and an object</strong></p>
+<p>Create a new file named <code>object.html</code> and in it create a new class named Car with the properties <code>auto_maker</code>, model and year.</p>
+<p>Write a method named <code>print_Details</code> to print the properties of the car. The printing form must be as follows: Auto maker: Toyota, Model: Camry, Year: 2020</p>
 </aside>
 <p class="page-mark">Page 226</p>
 
 <aside class="callout more continued"><p class="callout-label">Learn more (continued)</p>
 <ul>
-<li><bdi dir="rtl">یک شیء با مقادیر</bdi> Toyota، Camry، 2020 <bdi dir="rtl">ایجاد کنید و متد</bdi> <code>print_details</code> <bdi dir="rtl">را برای شیء جدید مورد استفاده قرار دهید</bdi>.</li>
+<li>Create an object with the values Toyota, Camry, 2020 and use the method <code>print_details</code> for the new object.</li>
 </ul>
 <figure class="shot"><img alt="Book image" src="../images/p232-01.png" loading="lazy" /></figure>
 </aside>
-<h2><bdi dir="rtl">دسترسی به عناصر</bdi> DOM</h2>
-<p><bdi dir="rtl">جاوا‌اسکریپت برای انجام عملیات مختلف بر روی عناصر صفحه، به دسترسی به آن عناصر نیاز دارد</bdi>. <bdi dir="rtl">به همین دلیل جاوا‌اسکریپت دارای متدهایی برای دسترسی به عناصر است</bdi>. <bdi dir="rtl">به‌عنوان مثال برای دسترسی به عنصری با شناسه</bdi> demo <bdi dir="rtl">از متد</bdi> getElementById <bdi dir="rtl">به‌شکل زیر استفاده می‌شود</bdi>:</p>
-<p><bdi dir="rtl">در این اسکریپت مقدار جدید عنصر</bdi> para <bdi dir="rtl">توسط ویژگی</bdi> textContent <bdi dir="rtl">مشخص شده است</bdi>.</p>
-<p><bdi dir="rtl">برای انتخاب و دسترسی به هر یک از عناصر صفحه روش‌های مختلفی وجود دارد که در این بخش به آنها اشاره می‌شود</bdi>.</p>
-<p><strong><bdi dir="rtl">انتخاب براساس</bdi> ID</strong>: <bdi dir="rtl">عناصر صفحه براساس شناسه</bdi> (id) <bdi dir="rtl">آنها انتخاب می‌شوند</bdi>.</p>
-<p><strong><bdi dir="rtl">انتخاب براساس کلاس</bdi></strong>: <bdi dir="rtl">مجموعه‌ای از عناصر با نام کلاس مشخص انتخاب می‌شوند</bdi>.</p>
-<p><strong><bdi dir="rtl">انتخاب براساس نام تگ</bdi></strong>: <bdi dir="rtl">مجموعه‌ای از عناصر با نام تگ یکسان انتخاب می‌شوند</bdi>.</p>
+<h2>Reaching DOM elements</h2>
+<p>To do various operations on the elements of a page, JavaScript needs to reach those elements. That is why JavaScript has methods for reaching elements. For example, to reach an element with the id demo, the method getElementById is used as follows:</p>
+<p>In this script the new value of the element para is given with the property textContent.</p>
+<p>There are different ways to select and reach each of the page's elements, which are mentioned in this section.</p>
+<p><strong>Selecting by ID</strong>: the elements of the page are selected by their identifier (id).</p>
+<p><strong>Selecting by class</strong>: a set of elements with a given class name are selected.</p>
+<p><strong>Selecting by tag name</strong>: a set of elements with the same tag name are selected.</p>
 <figure class="shot"><img alt="Figure 12" src="../images/p232-02.png" loading="lazy" /><figcaption>Figure 12</figcaption></figure>
 <figure class="shot"><img alt="Figure 13" src="../images/p232-03.png" loading="lazy" /><figcaption>Figure 13</figcaption></figure>
 <p class="page-mark">Page 227</p>
 
 <aside class="callout curiosity"><p class="callout-label">Curiosity</p>
-<p><bdi dir="rtl">برای مطالعه درباره سایر متدهای دسترسی به عناصر، عبارت</bdi> «how to get elements by JavaScript» <bdi dir="rtl">را در گوگل جست‌وجو کنید و از لیست نتایج سایت</bdi> <code>w3schools.com</code> <bdi dir="rtl">را باز کنید</bdi>.</p>
+<p>To read about the other methods of reaching elements, search the phrase "how to get elements by JavaScript" on Google and open the site <code>w3schools.com</code> from the list of results.</p>
 </aside>
-<p><bdi dir="rtl">در ادامه تمرین‌هایی برای کار روی عناصر مختلف صفحه توسط جاوا‌اسکریپت ارائه می‌گردد</bdi>.</p>
+<p>Next, exercises are given for working on different elements of the page with JavaScript.</p>
 <aside class="callout workshop"><p class="callout-label">Workshop</p>
-<p><strong><bdi dir="rtl">مدیریت عناصر صفحه توسط جاوا‌اسکریپت</bdi></strong></p>
-<p><strong><bdi dir="rtl">دسترسی به محتوای عناصر، تغییر محتوا و سبک عناصر</bdi></strong>: <bdi dir="rtl">اسکریپتی بنویسید که محتوا و سبک یک دکمه و عنصر متنی را توسط جاوا‌اسکریپت تغییر دهد</bdi>. <bdi dir="rtl">این تغییرات باید در هنگام کلیک روی دکمه رخ دهد</bdi>.</p>
+<p><strong>Managing page elements with JavaScript</strong></p>
+<p><strong>Reaching the content of elements, changing the content and the style of elements</strong>: write a script that changes the content and style of a button and a text element with JavaScript. These changes must happen when the button is clicked.</p>
 <ul>
-<li><bdi dir="rtl">یک فایل به نام</bdi> <code>product.html</code> <bdi dir="rtl">ایجاد کنید و کد زیر را در بخش</bdi> <code>&lt;body&gt;</code> <bdi dir="rtl">وارد کنید</bdi>:</li>
+<li>Create a file named <code>product.html</code> and enter the following code in the <code>&lt;body&gt;</code> section:</li>
 </ul>
 <figure class="shot"><img alt="Book image" src="../images/p233-01.png" loading="lazy" /></figure>
 <figure class="shot"><img alt="Book image" src="../images/p233-02.png" loading="lazy" /></figure>
 <figure class="shot"><img alt="Book image" src="../images/p233-03.png" loading="lazy" /></figure>
-<p><bdi dir="rtl">در خطوط</bdi> 6 <bdi dir="rtl">تا</bdi> 13 <bdi dir="rtl">اسکریپت فوق یک تابع با نام</bdi> <code>change()</code> <bdi dir="rtl">تعریف شده است که دسترسی به عناصر</bdi> addToCart و para <bdi dir="rtl">و سپس تغییر محتوا و سبک آنها را انجام می‌دهد</bdi>. <bdi dir="rtl">تابع</bdi> <code>change()</code> <bdi dir="rtl">هنگام کلیک روی دکمه فراخوانی می‌شود</bdi>.</p>
-<p><bdi dir="rtl">در خطوط</bdi> 7 و 8 <bdi dir="rtl">دسترسی به عناصر پاراگراف و دکمه انجام شده است</bdi>. <bdi dir="rtl">در خطوط</bdi> 9 و 10 <bdi dir="rtl">تغییر محتوای عناصر پاراگراف و دکمه، توسط ویژگی‌های</bdi> innerHTML و textContent <bdi dir="rtl">صورت گرفته است</bdi>. <bdi dir="rtl">در خطوط</bdi> 11 و 12 <bdi dir="rtl">تغییر سبک عناصر توسط ویژگی</bdi> style <bdi dir="rtl">انجام شده است</bdi>. <bdi dir="rtl">فایل را ذخیره کنید و نتیجه را در مرورگر بررسی کنید</bdi>.</p>
+<p>In lines 6 to 13 of the script above a function named <code>change()</code> is defined that reaches the elements addToCart and para and then changes their content and style. The function <code>change()</code> is called when the button is clicked.</p>
+<p>In lines 7 and 8 the paragraph and the button elements are reached. In lines 9 and 10 the content of the paragraph and button elements is changed with the properties innerHTML and textContent. In lines 11 and 12 the style of the elements is changed with the style property. Save the file and check the result in the browser.</p>
 <p><strong>Learn more</strong></p>
-<p><strong><bdi dir="rtl">دسترسی به عناصر و تغییر ویژگی آنها</bdi></strong>: <bdi dir="rtl">اسکریپتی بنویسید که ویژگی</bdi> src <bdi dir="rtl">یک تصویر را هنگام قرار گرفتن ماوس روی آن تغییر دهد</bdi>.</p>
+<p><strong>Reaching elements and changing their properties</strong>: write a script that changes the src property of an image when the mouse is placed over it.</p>
 </aside>
 <p class="page-mark">Page 228</p>
 
 <aside class="callout more continued"><p class="callout-label">Learn more (continued)</p>
 <ul>
-<li><bdi dir="rtl">در فایل</bdi> <code>products.html</code> <bdi dir="rtl">تصویر یک محصول را به قسمت</bdi> <code>&lt;body&gt;</code> <bdi dir="rtl">اضافه کنید</bdi>. <bdi dir="rtl">سپس اسکریپت زیر را برای تغییر مقدار ویژگی</bdi> src <bdi dir="rtl">تصویر استفاده کنید</bdi>.</li>
+<li>In the file <code>products.html</code> add the picture of a product to the <code>&lt;body&gt;</code> section. Then use the following script to change the value of the src property of the image.</li>
 </ul>
 <figure class="shot"><img alt="Book image" src="../images/p234-01.png" loading="lazy" /></figure>
 <p>Save the file and check the result in the browser.</p>
-<p><bdi dir="rtl">با انتقال اشاره‌گر ماوس روی تصویر، رویداد</bdi> onmouseover <bdi dir="rtl">فعال شده و در نتیجه تابع</bdi> <code>changeImage()</code> <bdi dir="rtl">برای تغییر تصویر فراخوانی می‌شود</bdi>. <bdi dir="rtl">با کنار رفتن ماوس از روی تصویر، رویداد</bdi> onmouseleave <bdi dir="rtl">فعال شده و بنابراین تابع</bdi> <code>resetImage()</code> <bdi dir="rtl">فراخوانی می‌شود</bdi>. <bdi dir="rtl">این تابع تصویر اولیه را برمی‌گرداند</bdi>.</p>
+<p>When the mouse pointer is moved over the image, the onmouseover event is activated and as a result the function <code>changeImage()</code> is called to change the image. When the mouse moves away from the image, the onmouseleave event is activated and so the function <code>resetImage()</code> is called. This function brings back the original image.</p>
 <figure class="shot"><img alt="Book image" src="../images/p234-02.png" loading="lazy" /></figure>
-<p><bdi dir="rtl">در هر دو تابع فوق از متد</bdi> <code>setAttribute()</code> <bdi dir="rtl">برای تغییر تصویر استفاده شده است</bdi>.</p>
+<p>In both functions above, the method <code>setAttribute()</code> is used to change the image.</p>
 <figure class="shot"><img alt="Book image" src="../images/p234-03.png" loading="lazy" /></figure>
-<p><strong><bdi dir="rtl">اضافه و حذف کردن عناصر توسط جاوا‌اسکریپت</bdi></strong>: <bdi dir="rtl">اسکریپتی بنویسید که با کلیک روی یک دکمه با عنوان مشاوره، پانلی را برای راهنمایی کاربر به صفحه اضافه کند و بعد از چند ثانیه آن را ببندید</bdi>.</p>
+<p><strong>Adding and removing elements with JavaScript</strong>: write a script that, when a button titled Consultation is clicked, adds a panel to the page to guide the user and closes it after a few seconds.</p>
 <ul>
-<li><bdi dir="rtl">یک فایل جدید با نام</bdi> <code>open-panel.html</code> <bdi dir="rtl">ایجاد کنید و اسکریپت را طبق شکل روبه‌رو درون آن بنویسید</bdi>.</li>
+<li>Create a new file named <code>open-panel.html</code> and write the script in it as in the figure opposite.</li>
 </ul>
 </aside>
 <p class="page-mark">Page 229</p>
 
 <aside class="callout more continued"><p class="callout-label">Learn more (continued)</p>
-<p><bdi dir="rtl">استایل عناصر را به بخش</bdi> <code>&lt;head&gt;</code> <bdi dir="rtl">اضافه کنید</bdi>. <bdi dir="rtl">سپس فایل را ذخیره کنید و نتیجه را در مرورگر مشاهده کنید</bdi>.</p>
-<p><bdi dir="rtl">با کلیک روی دکمه</bdi> «<bdi dir="rtl">مشاوره با کارشناس فروش</bdi>» <bdi dir="rtl">تابع</bdi> <code>openPanel()</code> <bdi dir="rtl">فراخوانی می‌شود</bdi>. <bdi dir="rtl">این تابع در خط</bdi> 3 <bdi dir="rtl">تا</bdi> 12 <bdi dir="rtl">نوشته شده است</bdi>.</p>
+<p>Add the style of the elements to the <code>&lt;head&gt;</code> section. Then save the file and see the result in the browser.</p>
+<p>When the button "Consultation with a sales expert" is clicked, the function <code>openPanel()</code> is called. This function is written in lines 3 to 12.</p>
 <ul>
 <li>
-<p><bdi dir="rtl">در خط</bdi> 4 <bdi dir="rtl">یک عنصر</bdi> div <bdi dir="rtl">جدید توسط متد</bdi> createElement <bdi dir="rtl">ایجاد می‌شود</bdi>.</p>
+<p>In line 4 a new div element is created with the method createElement.</p>
 </li>
 <li>
-<p><bdi dir="rtl">در خط</bdi> 5 <bdi dir="rtl">محتوای عنصر توسط ویژگی</bdi> InnerHTML <bdi dir="rtl">تعیین می‌گردد</bdi>.</p>
+<p>In line 5 the content of the element is set with the property InnerHTML.</p>
 </li>
 <li>
-<p><bdi dir="rtl">عنصر جدید نیازمند تعیین استایل است</bdi>. <bdi dir="rtl">این استایل توسط کلاس</bdi> consultpanel <bdi dir="rtl">مشخص می‌شود</bdi>.</p>
+<p>The new element needs a style. This style is specified by the class consultpanel.</p>
 </li>
 <li>
-<p><bdi dir="rtl">در خط</bdi> 6 <bdi dir="rtl">نام کلاس عنصر جدید تعیین می‌شود</bdi>.</p>
+<p>In line 6 the class name of the new element is set.</p>
 </li>
 <li>
-<p><bdi dir="rtl">در خط</bdi> 7 <bdi dir="rtl">عنصر جدید توسط متد</bdi> appendChild <bdi dir="rtl">به صفحه اضافه می‌گردد</bdi>.</p>
+<p>In line 7 the new element is added to the page with the method appendChild.</p>
 </li>
 <li>
-<p><bdi dir="rtl">پانل مشاوره</bdi> (<bdi dir="rtl">عنصر</bdi> div) <bdi dir="rtl">به‌صورت پیش‌فرض مخفی است</bdi>. <bdi dir="rtl">در خط</bdi> 8 <bdi dir="rtl">وضعیت نمایش پانل به</bdi> block <bdi dir="rtl">تغییر می‌کند</bdi>.</p>
+<p>The consultation panel (the div element) is hidden by default. In line 8 the display state of the panel is changed to block.</p>
 </li>
 <li>
-<p><bdi dir="rtl">در خط</bdi> 9 <bdi dir="rtl">متد</bdi> setTimeout <bdi dir="rtl">برای تعیین زمان حذف پانل مشاوره استفاده می‌شود</bdi>.</p>
+<p>In line 9 the method setTimeout is used to set the time for removing the consultation panel.</p>
 </li>
 <li>
-<p><bdi dir="rtl">در خط</bdi> 9 <bdi dir="rtl">پانل مشاوره بعد از</bdi> 5 <bdi dir="rtl">ثانیه توسط متد</bdi> remove <bdi dir="rtl">حذف می‌شود</bdi>.</p>
+<p>In line 9 the consultation panel is removed after 5 seconds by the method remove.</p>
 </li>
 </ul>
-<p><strong><bdi dir="rtl">دسترسی به اطلاعات فرم و اعتبارسنجی داده‌های کاربر</bdi></strong>: <bdi dir="rtl">یک اسکریپت ساده برای اعتبارسنجی داده‌های ورودی کاربر بنویسید</bdi>. <bdi dir="rtl">در این اعتبارسنجی پر بودن فیلدهای متنی را بررسی کنید، به‌طوری‌که اگر یک فیلد متنی خالی باشد، پیغام هشداری را نمایش می‌دهد</bdi>.</p>
+<p><strong>Reaching the form information and validating the user's data</strong>: write a simple script to validate the user's input data. In this validation, check that the text fields are filled, so that if a text field is empty, a warning message is shown.</p>
 <ul>
-<li><bdi dir="rtl">یک فایل به‌نام</bdi> <code>sign-in.html</code> <bdi dir="rtl">ایجاد کنید و کد شکل زیر را درون آن وارد کنید</bdi>:</li>
+<li>Create a file named <code>sign-in.html</code> and enter the code of the following figure in it:</li>
 </ul>
 <figure class="shot"><img alt="Book image" src="../images/p235-01.png" loading="lazy" /></figure>
 <figure class="shot"><img alt="Book image" src="../images/p235-02.png" loading="lazy" /></figure>
-<p><strong><bdi dir="rtl">این فرم حاوی سه فیلد برای دریافت نام کاربری، کلمه عبور و ایمیل است</bdi></strong>.</p>
+<p><strong>This form contains three fields to receive the username, the password and the email</strong>.</p>
 </aside>
 <p class="page-mark">Page 230</p>
 
 <aside class="callout more continued"><p class="callout-label">Learn more (continued)</p>
-<p><bdi dir="rtl">برای اعتبارسنجی فرم از اسکریپت شکل زیر استفاده کنید</bdi>. <bdi dir="rtl">این اسکریپت حاوی تابع</bdi> <code>validateForm()</code> <bdi dir="rtl">است که مقدار ورودی فیلدهای متنی را بررسی می‌کند</bdi>. <bdi dir="rtl">این تابع در رویداد</bdi> onsubmit <bdi dir="rtl">فرم صفحه قبل فراخوانی می‌شود</bdi>.</p>
+<p>To validate the form use the script of the following figure. This script contains the function <code>validateForm()</code>, which checks the input value of the text fields. This function is called in the onsubmit event of the form on the previous page.</p>
 <figure class="shot"><img alt="Book image" src="../images/p236-01.png" loading="lazy" /></figure>
-<p><bdi dir="rtl">تابع</bdi> <code>validateForm()</code> <bdi dir="rtl">نام کاربری و کلمه عبور را در خط</bdi> 2 و 3 <bdi dir="rtl">دریافت می‌کند و مقدار آنها را درون دو متغیر</bdi> username و password <bdi dir="rtl">قرار می‌دهد</bdi>. <bdi dir="rtl">در خط</bdi> 4 <bdi dir="rtl">تا</bdi> 7 <bdi dir="rtl">خالی بودن</bdi> username <bdi dir="rtl">بررسی می‌شود، در صورت خالی بودن این متغیر، پیغام هشدار ظاهر می‌شود و دستور</bdi> return false <bdi dir="rtl">از ارسال محتوای فرم به سرور جلوگیری می‌کند</bdi>. <bdi dir="rtl">به‌طور مشابه در خط</bdi> 8 <bdi dir="rtl">تا</bdi> 11 <bdi dir="rtl">خالی بودن متغیر</bdi> password <bdi dir="rtl">بررسی می‌گردد</bdi>. <bdi dir="rtl">در صورتی‌که شرط</bdi> if<bdi dir="rtl">های خط</bdi> 4 و 8 <bdi dir="rtl">برقرار نباشد، دستور خط</bdi> 12 <bdi dir="rtl">اجرا می‌شود و اطلاعات فرم به سرور ارسال می‌شود</bdi>.</p>
-<p><bdi dir="rtl">در ادامه طول نام کاربری و کلمه عبور را بررسی کرده؛ به‌طوری‌که اگر طول هر یک از این دو فیلد کمتر از</bdi> 6 <bdi dir="rtl">کاراکتر باشد، پیغام هشدار نمایش داده شود</bdi>. <bdi dir="rtl">برای این‌کار شرط زیر را بعد از خط</bdi> 11 <bdi dir="rtl">بنویسید</bdi>.</p>
+<p>The function <code>validateForm()</code> receives the username and password in lines 2 and 3 and puts their values in the two variables username and password. In lines 4 to 7 it is checked whether username is empty; if this variable is empty, a warning message appears and the statement return false prevents the form's content from being sent to the server. Similarly in lines 8 to 11 it is checked whether the variable password is empty. If the conditions of the ifs in lines 4 and 8 do not hold, the statement of line 12 runs and the form's information is sent to the server.</p>
+<p>Next, check the length of the username and the password; so that if the length of either of these two fields is less than 6 characters, a warning message is shown. For this write the following condition after line 11.</p>
 <figure class="shot"><img alt="Book image" src="../images/p236-03.png" loading="lazy" /></figure>
 <figure class="shot"><img alt="Book image" src="../images/p236-02.png" loading="lazy" /></figure>
 <p><strong>Note</strong></p>
-<p>DOM <bdi dir="rtl">پایه تمام وب‌سایت‌های تعاملی است؛ تسلط بر آن یعنی قدم گذاشتن به دنیای حرفه‌ای طراحی وب</bdi>.</p>
+<p>The DOM is the foundation of all interactive websites; mastering it means stepping into the professional world of web design.</p>
 </aside></article>
       <aside class="card extra">
         <h2 data-fa="تمرین این بخش" data-en="Exercises for this section">تمرین این بخش</h2>

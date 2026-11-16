@@ -87,76 +87,76 @@
 <p>سطوح دسترسی مختلف شامل ویژگی‌های عمومی، خصوصی و محافظت‌شده، به شما کمک می‌کنند تا دسترسی به داده‌های یک کلاس را کنترل کنید. به همین دلیل لازم است جزئیات داخلی کلاس‌ها پنهان شوند و دسترسی به داده‌ها به‌صورت کنترل‌شده انجام گیرد. این مفهوم در برنامه‌نویسی شیءگرا با عنوان کپسوله‌سازی (<bdi dir="ltr">Encapsulation</bdi>) شناخته می‌شود. کپسوله‌سازی به معنای:</p>
 <p><strong>پنهان‌سازی جزئیات داخلی یک کلاس و کنترل نحوۀ دسترسی به داده‌ها و رفتارهای آن</strong> می‌باشد و یکی از مفاهیم اصلی برنامه‌نویسی شیءگرا محسوب می‌شود.</p></article><article class="card lesson no-copy" lang="en" dir="ltr" data-lang-block="en" hidden><p class="page-mark">Page 250</p>
 
-<p><bdi dir="rtl">این دستورات از نظر پایتون بدون خطا اجرا می‌شوند؛ اما از نظر منطقی مقادیر نامعتبری هستند</bdi>. <bdi dir="rtl">شارژ باتری یک تلفن همراه نمی‌تواند بیشتر از</bdi> 100 <bdi dir="rtl">درصد یا مقدار منفی داشته باشد</bdi>.</p>
-<p><bdi dir="rtl">مشکل اینجاست که ویژگی‌های کلاس به‌صورت آزاد در دسترس هستند و هیچ کنترلی بر نحوۀ تغییر آنها وجود ندارد</bdi>. <bdi dir="rtl">این موضوع می‌تواند باعث بروز خطاهای منطقی در برنامه شود و در برنامه‌های بزرگ، نگهداری و توسعۀ آن را دشوار کند</bdi>.</p>
-<p><bdi dir="rtl">برای حل این مشکل، می‌توان برخی ویژگی‌ها را به‌گونه‌ای تعریف کرد که دسترسی مستقیم به آنها از بیرون کلاس محدود شود و تغییر آنها فقط از طریق متدهای مشخص انجام گیرد</bdi>. <bdi dir="rtl">به این نوع ویژگی‌ها، ویژگی خصوصی</bdi> (Private) <bdi dir="rtl">گفته می‌شود</bdi>.</p>
-<h3><bdi dir="rtl">ویژگی‌های خصوصی</bdi> (Private)</h3>
-<p><bdi dir="rtl">در پایتون، ویژگی‌های خصوصی با استفاده از دو زیرخط</bdi> (_ _) <bdi dir="rtl">در ابتدای نام آنها تعریف می‌شوند</bdi>.</p>
-<p><bdi dir="rtl">برای مثال، در کلاس</bdi> Mobile <bdi dir="rtl">می‌توان ویژگی باتری را به‌صورت زیر تعریف کرد</bdi>:</p>
+<p>These statements run without error as far as Python is concerned; but logically they are invalid values. The battery charge of a mobile phone cannot be more than 100 percent or have a negative value.</p>
+<p>The problem is that the properties of the class are freely available and there is no control over how they are changed. This can cause logical errors in the program and make its maintenance and development difficult in big programs.</p>
+<p>To solve this problem, some properties can be defined in a way that direct access to them from outside the class is limited and changing them is done only through specific methods. This kind of property is called a private property.</p>
+<h3>Private properties</h3>
+<p>In Python, private properties are defined with two underscores (_ _) at the start of their name.</p>
+<p>For example, in the class Mobile the battery property can be defined as follows:</p>
 <div class="code-wrap" dir="ltr"><pre><code>self._ _battery = 100
 </code></pre></div>
-<p><bdi dir="rtl">با این کار</bdi>:</p>
+<p>By doing this:</p>
 <ul>
 <li>
-<p><bdi dir="rtl">دسترسی مستقیم به ویژگی از بیرون کلاس محدود می‌شود</bdi>.</p>
+<p>Direct access to the property from outside the class is limited.</p>
 </li>
 <li>
-<p><bdi dir="rtl">تغییر مقدار آن فقط از طریق متدهای کلاس امکان‌پذیر است</bdi>.</p>
+<p>Changing its value is possible only through the methods of the class.</p>
 </li>
 <li>
-<p><bdi dir="rtl">کنترل منطقی روی داده‌ها برقرار می‌شود</bdi>.</p>
+<p>Logical control over the data is established.</p>
 </li>
 </ul>
-<h3><bdi dir="rtl">ویژگی‌های محافظت‌شده</bdi> (Protected)</h3>
-<p><bdi dir="rtl">در بخش‌های قبل دیدید که ویژگی‌های یک کلاس می‌توانند عمومی</bdi> (Public) <bdi dir="rtl">یا خصوصی</bdi> (Private) <bdi dir="rtl">باشند</bdi>.</p>
-<p><bdi dir="rtl">اما گاهی شرایطی وجود دارد که</bdi>:</p>
+<h3>Protected properties</h3>
+<p>In the earlier sections you saw that the properties of a class can be public or private.</p>
+<p>But sometimes there are conditions where:</p>
 <ul>
 <li>
-<p><bdi dir="rtl">نمی‌خواهید یک ویژگی از بیرون کلاس مستقیماً استفاده یا تغییر داده شود</bdi>.</p>
+<p>you do not want a property to be used or changed directly from outside the class.</p>
 </li>
 <li>
-<p><bdi dir="rtl">ولی می‌خواهید کلاس‌های فرزند بتوانند به آن ویژگی دسترسی داشته باشند</bdi>.</p>
+<p>but you want the child classes to be able to reach that property.</p>
 </li>
 </ul>
-<p><bdi dir="rtl">برای چنین حالتی از ویژگی‌های محافظت‌شده</bdi> (Protected) <bdi dir="rtl">استفاده می‌شود</bdi>. <bdi dir="rtl">در زبان پایتون، اگر نام یک ویژگی با یک زیرخط</bdi> (_) <bdi dir="rtl">شروع شود، آن ویژگی به‌عنوان</bdi> Protected <bdi dir="rtl">در نظر گرفته می‌شود</bdi>.</p>
+<p>For such a case protected properties are used. In Python, if the name of a property starts with one underscore (_), that property is considered Protected.</p>
 <div class="code-wrap" dir="ltr"><pre><code>self._status = &quot;on&quot;
 </code></pre></div>
 <p class="table-cap">Table 3</p>
 <div class="table-wrap"><table>
 <thead>
 <tr>
-<th><bdi dir="rtl">سطح دسترسی</bdi></th>
-<th><bdi dir="rtl">نحوه نوشتن</bdi></th>
+<th>Access level</th>
+<th>How to write it</th>
 <th>Description</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td><bdi dir="rtl">عمومی</bdi> (Public)</td>
+<td>Public</td>
 <td>battery</td>
-<td><bdi dir="rtl">دسترسی آزاد از همه‌جا</bdi></td>
+<td>Free access from everywhere</td>
 </tr>
 <tr>
-<td><bdi dir="rtl">خصوصی</bdi> (Private)</td>
+<td>Private</td>
 <td><code>_ _battery</code></td>
-<td><bdi dir="rtl">دسترسی فقط داخل همان کلاس</bdi></td>
+<td>Access only inside the same class</td>
 </tr>
 <tr>
-<td><bdi dir="rtl">محافظت‌شده</bdi> (Protected)</td>
+<td>Protected</td>
 <td><code>_status</code></td>
-<td><bdi dir="rtl">دسترسی از درون کلاس و کلاس‌های فرزند</bdi></td>
+<td>Access from inside the class and the child classes</td>
 </tr>
 </tbody>
 </table></div>
 <p class="page-mark">Page 251</p>
 
-<p><bdi dir="rtl">این نوع نام‌گذاری نشان می‌دهد که ویژگی برای استفادۀ داخلی کلاس و کلاس‌های فرزند طراحی شده است و نباید مستقیماً از بیرون کلاس تغییر داده شود</bdi>.</p>
+<p>This kind of naming shows that the property is designed for the internal use of the class and the child classes and must not be changed directly from outside the class.</p>
 <aside class="callout note"><p class="callout-label">Note</p>
-<p>Protected <bdi dir="rtl">در پایتون یک قرارداد برنامه‌نویسی است، نه یک محدودیت اجباری</bdi>. <bdi dir="rtl">یعنی پایتون جلوی دسترسی مستقیم را نمی‌گیرد، اما به برنامه‌نویس هشدار می‌دهد که این ویژگی نباید مستقیماً از بیرون کلاس تغییر داده شود</bdi>.</p>
+<p>Protected in Python is a programming convention, not a compulsory restriction. That is, Python does not stop direct access, but it warns the programmer that this property should not be changed directly from outside the class.</p>
 </aside>
-<p><bdi dir="rtl">تا اینجا با سه سطح دسترسی به ویژگی‌های یک کلاس آشنا شدید</bdi>:</p>
-<p><bdi dir="rtl">سطوح دسترسی مختلف شامل ویژگی‌های عمومی، خصوصی و محافظت‌شده، به شما کمک می‌کنند تا دسترسی به داده‌های یک کلاس را کنترل کنید</bdi>. <bdi dir="rtl">به همین دلیل لازم است جزئیات داخلی کلاس‌ها پنهان شوند و دسترسی به داده‌ها به‌صورت کنترل‌شده انجام گیرد</bdi>. <bdi dir="rtl">این مفهوم در برنامه‌نویسی شیءگرا با عنوان کپسوله‌سازی</bdi> (Encapsulation) <bdi dir="rtl">شناخته می‌شود</bdi>. <bdi dir="rtl">کپسوله‌سازی به معنای</bdi>:</p>
-<p><strong><bdi dir="rtl">پنهان‌سازی جزئیات داخلی یک کلاس و کنترل نحوۀ دسترسی به داده‌ها و رفتارهای آن</bdi></strong> <bdi dir="rtl">می‌باشد و یکی از مفاهیم اصلی برنامه‌نویسی شیءگرا محسوب می‌شود</bdi>.</p></article>
+<p>So far you have got to know three access levels for the properties of a class:</p>
+<p>The different access levels, including public, private and protected properties, help you control access to the data of a class. For this reason the internal details of classes need to be hidden and access to the data done in a controlled way. This concept is known in object-oriented programming as encapsulation. Encapsulation means:</p>
+<p><strong>hiding the internal details of a class and controlling how its data and behaviours are accessed</strong>, and it counts as one of the main concepts of object-oriented programming.</p></article>
       <aside class="card extra">
         <h2 data-fa="تمرین این بخش" data-en="Exercises for this section">تمرین این بخش</h2>
         <p class="extra-note" data-fa="این تمرین‌ها و پیوندها اضافه بر متن کتاب‌اند." data-en="These exercises and links are in addition to the book.">این تمرین‌ها و پیوندها اضافه بر متن کتاب‌اند.</p>

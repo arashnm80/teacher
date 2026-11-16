@@ -1,5 +1,5 @@
 <!-- page 231 -->
 
-## ارزشیابی شایستگی طراحی صفحات وب تعاملی با جاوااسکریپت
+## Competency assessment: designing interactive web pages with JavaScript
 
-**استاندارد عملکرد کار**: هنرجو باید بتواند با استفاده از JavaScript به‌صورت بهینه و امن، رفتار‌های پویا و تعاملی را به صفحات وب اضافه کند و خروجی نهایی را در مرورگر‌های مختلف بدون خطا اجرا نماید.
+**Work performance standard**: the student must be able to add dynamic and interactive behaviours to web pages with JavaScript in an optimised and safe way, and run the final output in different browsers without errors.

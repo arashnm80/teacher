@@ -147,39 +147,39 @@ var = 20;             …………..
 <figure class="shot"><img alt="شکل ۸" src="../images/p208-01.png" loading="lazy" /><figcaption>شکل ۸</figcaption></figure>
 <p>در زبان‌های برنامه‌نویسی عملگرها برای انجام عملیات روی متغیرها و مقادیر به‌کار می‌روند مقادیری که یک عملگر روی آنها عمل می‌کند، <strong>عملوند</strong> (<bdi dir="ltr">Operand</bdi>) نامیده می‌شوند. در عبارت <code>z = x + y</code> علائم + و <code>=</code> <strong>عملگر</strong> هستند و حروف <bdi dir="ltr">x</bdi>، <bdi dir="ltr">y</bdi> و <bdi dir="ltr">z</bdi> عملوند محسوب می‌شوند. در این بخش به شرح عملگرهای جاوا‌اسکریپت پرداخته می‌شود.</p></article><article class="card lesson no-copy" lang="en" dir="ltr" data-lang-block="en" hidden><p class="page-mark">Page 198</p>
 
-<p><bdi dir="rtl">تعریف متغیرها می‌تواند به‌صورت خودکار نیز انجام شود</bdi>. <bdi dir="rtl">تعریف خودکار متغیر زمانی انجام می‌شود که یک متغیر مقداردهی شود</bdi>.</p>
+<p>Defining variables can also be done automatically. Automatic variable definition happens when a variable is given a value.</p>
 <aside class="callout example"><p class="callout-label">Example</p>
-<p><bdi dir="rtl">در مثال زیر دو متغیر</bdi> x و z <bdi dir="rtl">به‌صورت خودکار تعریف شده‌اند</bdi>:</p>
+<p>In the following example the two variables x and z are defined automatically:</p>
 <div class="code-wrap" dir="ltr"><pre><code>x = 10;
 z = x + 10;
 </code></pre></div>
 <p><strong>Learn more</strong></p>
-<p><strong><bdi dir="rtl">ثابت‌ها</bdi> (constants)</strong>: <bdi dir="rtl">ثابت‌ها</bdi> (const) <bdi dir="rtl">دارای مقدار ثابتی در طول اجرای برنامه هستند</bdi>. <bdi dir="rtl">ثابت‌ها یک‌بار تعریف و مقداردهی می‌شوند و بعد از آن امکان مقداردهی مجدد ندارند</bdi>.</p>
+<p><strong>Constants</strong>: constants (const) have a fixed value during the running of the program. Constants are defined and given a value once and cannot be given a value again after that.</p>
 <p><strong>Example</strong></p>
-<p><bdi dir="rtl">در مثال زیر، ثابت</bdi> PI <bdi dir="rtl">با مقدار</bdi> 3.141592 <bdi dir="rtl">تعریف شده است</bdi>. <bdi dir="rtl">تغییر مقدار</bdi> PI <bdi dir="rtl">در خط دوم و سوم باعث رخداد خطا می‌گردد</bdi>.</p>
+<p>In the following example the constant PI is defined with the value 3.141592. Changing the value of PI in the second and third lines causes an error.</p>
 <div class="code-wrap" dir="ltr"><pre><code>const PI = 3.141592;
 PI = 3.14;
 PI = PI + 10;
 </code></pre></div>
 </aside>
-<h3><bdi dir="rtl">اصول نام‌گذاری متغیرها</bdi></h3>
+<h3>Principles of naming variables</h3>
 <ul>
 <li>
-<p><bdi dir="rtl">نام متغیر می‌تواند حاوی حروف الفبای انگلیسی، اعداد، علامت</bdi> $ <bdi dir="rtl">و زیرخط</bdi> (_) <bdi dir="rtl">باشد، اما در ابتدای نام متغیر نباید از اعداد استفاده شود</bdi>.</p>
+<p>The name of a variable can contain English letters, numbers, the $ sign and the underscore (_), but numbers must not be used at the start of the variable name.</p>
 </li>
 <li>
-<p><bdi dir="rtl">جاوا‌اسکریپت نسبت به کوچکی و بزرگی حروف حساس است، بنابراین اسامی</bdi> price و Price و PRICE <bdi dir="rtl">سه متغیر متفاوت هستند</bdi>.</p>
+<p>JavaScript is case-sensitive, so the names price, Price and PRICE are three different variables.</p>
 </li>
 <li>
-<p><bdi dir="rtl">کلمات رزرو شدۀ جاوا‌اسکریپت</bdi> (<bdi dir="rtl">که معنای خاصی دارند</bdi>)<bdi dir="rtl">، نباید به‌عنوان نام متغیر استفاده شوند، مانند</bdi> let و var، if، for و ...</p>
+<p>JavaScript's reserved words (which have a special meaning) must not be used as variable names, such as let and var, if, for and so on.</p>
 </li>
 </ul>
-<p><bdi dir="rtl">جاوا‌اسکریپت امکان تعریف متغیرها را در یک خط نیز فراهم می‌کند، اما در پایان هر تعریف متغیر، باید از علامت کاما برای جداسازی استفاده شود</bdi>.</p>
+<p>JavaScript also makes it possible to define variables in one line, but at the end of each variable definition a comma must be used to separate them.</p>
 <div class="code-wrap" dir="ltr"><pre><code>let firstName = &quot;Sara&quot;, lastName = &quot;Jones&quot;, studentId = &quot;1234567&quot;;
 </code></pre></div>
-<p><bdi dir="rtl">مقداردهی به متغیرها توسط عملگر انتساب</bdi> (<code>=</code>) <bdi dir="rtl">انجام می‌شود</bdi>. <bdi dir="rtl">در صورتی‌که مقداردهی متغیر انجام نشود، مقدار آن تعریف نشده یا</bdi> (Undefined) <bdi dir="rtl">خواهد بود</bdi>.</p>
+<p>Giving values to variables is done with the assignment operator (<code>=</code>). If a variable is not given a value, its value will be undefined (Undefined).</p>
 <aside class="callout activity"><p class="callout-label">Activity</p>
-<p><bdi dir="rtl">مشخص کنید که تعریف متغیرهای زیر به‌درستی صورت گرفته است یا خیر</bdi>.</p>
+<p>Specify whether the definitions of the following variables are correct or not.</p>
 <div class="code-wrap" dir="ltr"><pre><code>myVar = 2 ;           …...……..
 2x = 10;             …………..
 user-name ="Safa";     …………..
@@ -188,35 +188,35 @@ var = 20;             …………..
 </aside>
 <p class="page-mark">Page 199</p>
 
-<h3><bdi dir="rtl">نمایش مقدار متغیرها و رشته‌ها</bdi></h3>
-<p><bdi dir="rtl">برای نمایش مقدار یک متغیر در کنسول مرورگر از دستور</bdi> console <bdi dir="rtl">به شکل ۵ استفاده می‌شود</bdi>:</p>
+<h3>Showing the value of variables and strings</h3>
+<p>To show the value of a variable in the browser console, the console statement is used as in form 5:</p>
 <figure class="shot"><img alt="Figure 5" src="../images/p205-01.png" loading="lazy" /><figcaption>Figure 5</figcaption></figure>
-<p><bdi dir="rtl">با توجه به حساسیت جاوا‌اسکریپت نسبت به کوچکی و بزرگی حروف، نوشتن دستور</bdi> <code>console.log(X)</code> <bdi dir="rtl">باعث نمایش پیغام خطای زیر می‌شود</bdi>:</p>
+<p>Considering that JavaScript is case-sensitive, writing the statement <code>console.log(X)</code> causes the following error message to be shown:</p>
 <figure class="shot"><img alt="Figure 6" src="../images/p205-02.png" loading="lazy" /><figcaption>Figure 6</figcaption></figure>
-<p><bdi dir="rtl">برای نمایش یک رشته متنی در کنسول یا صفحه وب، از علائم نقل قول در اطراف متن استفاده می‌شود، اما متغیرها نیازی به این علائم ندارند</bdi>. <bdi dir="rtl">در مثال زیر یک عبارت متنی به‌همراه مقدار متغیر</bdi> x <bdi dir="rtl">درون کنسول نمایش داده شده است</bdi>.</p>
+<p>To show a text string in the console or on the web page, quotation marks are used around the text, but variables do not need these marks. In the following example a text phrase together with the value of the variable x is shown in the console.</p>
 <figure class="shot"><img alt="Figure 7" src="../images/p205-03.png" loading="lazy" /><figcaption>Figure 7</figcaption></figure>
-<p><bdi dir="rtl">در اینجا عملگر</bdi> + <bdi dir="rtl">برای چسباندن دو عبارت به یکدیگر استفاده شده است</bdi>. <bdi dir="rtl">بسته به نوع داده‌ها، این عملگر می‌تواند به عنوان عملگر محاسباتی جمع یا الحاق رشته‌ها عمل کند</bdi>.</p>
+<p>Here the + operator is used to stick two phrases to each other. Depending on the type of the data, this operator can act as the arithmetic addition operator or as string concatenation.</p>
 <aside class="callout workshop"><p class="callout-label">Workshop</p>
-<p><strong><bdi dir="rtl">تعریف متغیر و نمایش آن در جاوا‌اسکریپت</bdi></strong></p>
-<p><bdi dir="rtl">در ادامه اسکریپت فایل</bdi> <code>workshop1.html</code> <bdi dir="rtl">متغیرهای</bdi> x و y <bdi dir="rtl">را با مقادیر</bdi> 5 و 10 <bdi dir="rtl">تعریف کنید و سپس مقدار آنها را در کنسول مرورگر نمایش دهید</bdi>:</p>
+<p><strong>Defining a variable and showing it in JavaScript</strong></p>
+<p>In the rest of the script of the file <code>workshop1.html</code>, define the variables x and y with the values 5 and 10 and then show their values in the browser console:</p>
 <figure class="shot"><img alt="Book image" src="../images/p205-04.png" loading="lazy" /></figure>
 <figure class="shot"><img alt="Book image" src="../images/p205-05.png" loading="lazy" /></figure>
-<p><bdi dir="rtl">یک متغیر به‌صورت زیر ایجاد کنید و سپس مقدار آن را در کنسول نمایش دهید</bdi>.</p>
+<p>Create a variable as follows and then show its value in the console.</p>
 <div class="code-wrap" dir="ltr"><pre><code>let test;
 </code></pre></div>
-<p><bdi dir="rtl">با توجه به اینکه متغیر</bdi> test <bdi dir="rtl">مقدار دهی نشده است، درصورتی که از دستور</bdi> <code>console.log(test)</code> <bdi dir="rtl">استفاده شود، پیغام</bdi> ……………… <bdi dir="rtl">ظاهر می‌شود</bdi>.</p>
+<p>Considering that the variable test has not been given a value, if the statement <code>console.log(test)</code> is used, the message ……………… appears.</p>
 </aside>
 <p class="page-mark">Page 200</p>
 
-<h3><bdi dir="rtl">انواع داده</bdi></h3>
-<p><bdi dir="rtl">در یک زبان برنامه‌نویسی، متغیرها می‌توانند انواع داده‌های مختلفی را درون خود ذخیره کنند</bdi>. <bdi dir="rtl">برای ذخیره هر نوع داده میزان حافظه متفاوتی مورد نیاز است؛ انواع داده‌ها به زبان‌های برنامه‌نویسی امکان می‌دهند که از حافظه به‌صورت مؤثرتری استفاده کنند</bdi>. <bdi dir="rtl">همچنین برنامه‌نویسان می‌توانند داده‌ها را به شکلی منطقی‌تر و منسجم‌تر سازماندهی کنند</bdi>. <bdi dir="rtl">جدول ۱۵ انواع داده‌های قابل استفاده در جاوا‌اسکریپت را نمایش می‌دهد</bdi>.</p>
-<p class="table-cap">Table 15: <bdi dir="rtl">انواع داده در جاوا‌اسکریپت</bdi></p>
-<figure class="shot"><img alt="Table 15: انواع داده در جاوا‌اسکریپت" src="../images/p206-01.png" loading="lazy" /></figure>
+<h3>Data types</h3>
+<p>In a programming language, variables can store different data types inside them. Storing each data type needs a different amount of memory; data types let programming languages use memory more effectively. Programmers can also organise data in a more logical and coherent way. Table 15 shows the data types that can be used in JavaScript.</p>
+<p class="table-cap">Table 15: Data types in JavaScript</p>
+<figure class="shot"><img alt="Table 15: Data types in JavaScript" src="../images/p206-01.png" loading="lazy" /></figure>
 <aside class="callout workshop"><p class="callout-label">Workshop</p>
-<p><strong><bdi dir="rtl">کار با انواع داده‌ها</bdi></strong></p>
+<p><strong>Working with data types</strong></p>
 <ol>
 <li>
-<p><bdi dir="rtl">یک سند</bdi> HTML <bdi dir="rtl">با نام</bdi> <code>workshop2.html</code> <bdi dir="rtl">ایجاد کنید و در بخش</bdi> <code>&lt;body&gt;</code> <bdi dir="rtl">برچسب</bdi> <code>&lt;script&gt;</code> <bdi dir="rtl">را بنویسید</bdi>. <bdi dir="rtl">متغیرهای</bdi> x، Family، d و names <bdi dir="rtl">را مطابق مثال‌های جدول فوق درون تگ</bdi> <code>&lt;script&gt;</code> <bdi dir="rtl">تعریف کنید و سپس مقادیر آنها را مانند دستور زیر در کنسول نمایش دهید</bdi>:</p>
+<p>Create an HTML document named <code>workshop2.html</code> and in the <code>&lt;body&gt;</code> section write the tag <code>&lt;script&gt;</code>. Define the variables x, Family, d and names inside the <code>&lt;script&gt;</code> tag according to the examples of the table above and then show their values in the console like the following statement:</p>
 <p>console.log("The value of x is: "+ x);
 </p>
 </li>
@@ -227,18 +227,18 @@ var = 20;             …………..
 <aside class="callout workshop continued"><p class="callout-label">Workshop (continued)</p>
 <ol start="2">
 <li>
-<p><bdi dir="rtl">عملگر</bdi> <strong>typeof</strong> <bdi dir="rtl">در جاوا‌اسکریپت نوع داده یک متغیر را مشخص می‌کند</bdi>. <bdi dir="rtl">این عملگر می‌تواند همراه با پرانتز یا بدون آن استفاده شود</bdi>. <bdi dir="rtl">در انتهای اسکریپت فایل</bdi> <code>workshop2.html</code> <bdi dir="rtl">این عملگر را مطابق مثال زیر برای بررسی نوع داده متغیرهای</bdi> x، Family، d و names <bdi dir="rtl">به‌کار ببرید و نتایج را در جای خالی بنویسید</bdi>.</p>
+<p>The <strong>typeof</strong> operator in JavaScript specifies the data type of a variable. This operator can be used with or without parentheses. At the end of the script of the file <code>workshop2.html</code> use this operator, as in the following example, to check the data type of the variables x, Family, d and names, and write the results in the blank.</p>
 <p>console.log("x: "+ typeof(x));         x: number   Family: …….   d: …….    names: ……</p>
 </li>
 <li>
-<p><bdi dir="rtl">رفتار مرورگر را در تفسیر کدهای زیر بررسی کنید و جای خالی را بر اساس نتیجه‌گیری خود تکمیل کنید</bdi>. <code>let a = 10 + 20 + "Blue";</code></p>
+<p>Check the behaviour of the browser in interpreting the following code and complete the blank based on your conclusion. <code>let a = 10 + 20 + "Blue";</code></p>
 <p>let b = "Blue" + 10 + 20;</p>
 </li>
 </ol>
-<p><bdi dir="rtl">در خط اول، عملوندهای</bdi> 10 و 20 <bdi dir="rtl">در ابتدای عبارت محاسباتی قرار گرفته‌اند، پس جاوا‌اسکریپت اعداد</bdi> 10 و 20 <bdi dir="rtl">را نوع داده</bdi> number <bdi dir="rtl">تلقی می‌کند، در نتیجه مقدار</bdi> ........................ <bdi dir="rtl">درون متغیر</bdi> a <bdi dir="rtl">ذخیره می‌شود</bdi>. <bdi dir="rtl">در خط دوم به علت قرار گرفتن رشته</bdi> Blue <bdi dir="rtl">در ابتدای عبارت محاسباتی، عملوندهای بعدی، از نوع داده</bdi> .......................... <bdi dir="rtl">تلقی می‌شوند و بنابراین مقدار</bdi> .......................... <bdi dir="rtl">درون متغیر</bdi> b <bdi dir="rtl">ذخیره می‌گردد</bdi>.</p>
+<p>In the first line, the operands 10 and 20 are at the start of the arithmetic expression, so JavaScript regards the numbers 10 and 20 as the data type number, and as a result the value ........................ is stored in the variable a. In the second line, because the string Blue is at the start of the arithmetic expression, the next operands are regarded as the data type .......................... and so the value .......................... is stored in the variable b.</p>
 <ol start="4">
 <li>
-<p><bdi dir="rtl">نوع داده متغیر می‌تواند در طول برنامه تغییر نماید</bdi>. <bdi dir="rtl">در اسکریپت زیر متغیر</bdi> x <bdi dir="rtl">ابتدا به‌صورت تعریف‌نشده</bdi> (Undefined) <bdi dir="rtl">ایجاد شده است</bdi>. <bdi dir="rtl">نوع داده متغیر</bdi> x <bdi dir="rtl">در خط</bdi> 2 <bdi dir="rtl">با دریافت مقدار</bdi> 10 <bdi dir="rtl">به نوع</bdi> ............................ <bdi dir="rtl">و در خط</bdi> 3 <bdi dir="rtl">با دریافت مقدار</bdi> sara1980 <bdi dir="rtl">به نوع</bdi> ....................... <bdi dir="rtl">تغییر می‌کند</bdi>.</p>
+<p>The data type of a variable can change during the program. In the following script, the variable x is first created as undefined (Undefined). The data type of the variable x changes in line 2 to the type ............................ when it receives the value 10, and in line 3 to the type ....................... when it receives the value sara1980.</p>
 <p>1  let x;
 2  x = 10;
 3  x = "sara1980";
@@ -246,20 +246,20 @@ var = 20;             …………..
 </li>
 </ol>
 </aside>
-<h3><bdi dir="rtl">تبدیل نوع داده‌ها</bdi></h3>
-<p><bdi dir="rtl">جاوا‌اسکریپت امکان تبدیل نوع داده متغیرها را به دو روش امکان‌پذیر می‌سازد</bdi>: <bdi dir="rtl">تبدیل ضمنی</bdi> (Implicit) <bdi dir="rtl">و صریح</bdi> (Explicit). <bdi dir="rtl">وقتی تبدیل نوع داده متغیر به‌صورت خودکار انجام شود، تبدیل ضمنی صورت گرفته است</bdi>.</p>
+<h3>Converting data types</h3>
+<p>JavaScript makes converting the data type of variables possible in two ways: implicit and explicit conversion. When the data type of a variable is converted automatically, an implicit conversion has happened.</p>
 <aside class="callout example"><p class="callout-label">Example</p>
-<p><bdi dir="rtl">مثال زیر نمونه‌ای از تبدیل نوع ضمنی را نمایش می‌دهد</bdi>:</p>
+<p>The following example shows a case of implicit type conversion:</p>
 <figure class="shot"><img alt="Book image" src="../images/p207-02.png" loading="lazy" /></figure>
 <figure class="shot"><img alt="Book image" src="../images/p207-01.png" loading="lazy" /></figure>
-<p><bdi dir="rtl">در خط اول، متغیر</bdi> s <bdi dir="rtl">از نوع عددی تعریف شده است</bdi>. <bdi dir="rtl">در خط چهارم نتیجه جمع متغیر</bdi> w <bdi dir="rtl">و رشته</bdi> 100<bdi dir="rtl">، عبارت</bdi> 10100 <bdi dir="rtl">است که درون متغیر</bdi> s <bdi dir="rtl">قرار می‌گیرد</bdi>. <bdi dir="rtl">در نتیجۀ نوع داده متغیر</bdi> s <bdi dir="rtl">به رشته تبدیل می‌شود</bdi>. <bdi dir="rtl">به‌کارگیری عملگر</bdi> <code>typeof()</code> <bdi dir="rtl">در خط</bdi> 2 و 6 <bdi dir="rtl">باعث نمایش نوع داده متغیر</bdi> s <bdi dir="rtl">می‌شود</bdi>.</p>
+<p>In the first line, the variable s is defined as numeric. In the fourth line, the result of adding the variable w and the string 100 is the phrase 10100, which is put in the variable s. As a result the data type of the variable s becomes string. Using the operator <code>typeof()</code> in lines 2 and 6 shows the data type of the variable s.</p>
 </aside>
 <p class="page-mark">Page 202</p>
 
-<p><bdi dir="rtl">تبدیل صریح نوع داده توسط توابع داخلی جاوا‌اسکریپت انجام می‌پذیرد</bdi>. <bdi dir="rtl">توابع مربوط به تبدیل داده شامل</bdi> <code>parseInt()</code>، <code>parseFloat()</code>، <code>Number()</code>، <code>String()</code> و <code>Boolean()</code> <bdi dir="rtl">است که نوع داده آرگومان ورودی را به نوع داده صحیح، اعشاری، عددی، رشته‌ای و منطقی تبدیل می‌کنند</bdi>.</p>
+<p>Explicit conversion of the data type is done by JavaScript's built-in functions. The conversion functions include <code>parseInt()</code>, <code>parseFloat()</code>, <code>Number()</code>, <code>String()</code> and <code>Boolean()</code>, which convert the data type of the input argument to integer, decimal, numeric, string and logical types.</p>
 <aside class="callout workshop"><p class="callout-label">Workshop</p>
-<p><strong><bdi dir="rtl">کار با توابع تبدیل نوع</bdi></strong></p>
-<p><bdi dir="rtl">متغیرهای زیر را در انتهای اسکریپت فایل</bdi> <code>workshop2.html</code> <bdi dir="rtl">ایجاد کنید</bdi>.</p>
+<p><strong>Working with the type conversion functions</strong></p>
+<p>Create the following variables at the end of the script of the file <code>workshop2.html</code>.</p>
 <div class="code-wrap" dir="ltr"><pre><code>x = "15.25" , y = 123 , z = 1;
 1 let num1 = parseInt(x);            …15...     …number...
 2 let num2 = parseFloat(y)         ……...     …………....
@@ -268,15 +268,15 @@ var = 20;             …………..
 5 str = String(y);                          ……...     …………....
 6 let bool = Boolean(z);               ……...     …………...
 </code></pre></div>
-<p><bdi dir="rtl">سپس مقدار و نوع داده متغیرهای ایجاد شده در خطوط</bdi> 2 <bdi dir="rtl">تا</bdi> 7 <bdi dir="rtl">را توسط تابع</bdi><code>typeof()</code> <bdi dir="rtl">بررسی کنید و نتیجه را مانند مثال در جای خالی بنویسید</bdi>. <bdi dir="rtl">برای بررسی مقادیر و نوع متغیرها مانند الگوی زیر عمل کنید</bdi>:</p>
+<p>Then check the value and data type of the variables created in lines 2 to 7 with the function <code>typeof()</code> and write the result in the blank as in the example. To check the values and types of the variables, act as in the following pattern:</p>
 <div class="code-wrap" dir="ltr"><pre><code>console.log(num1 +": "+ typeof(num1));
 </code></pre></div>
 <p><strong>Note</strong></p>
-<p><bdi dir="rtl">علت عدم استفاده از کلمه کلیدی</bdi> let <bdi dir="rtl">در متغیرهای</bdi> x، y، z و str <bdi dir="rtl">این است که این متغیرها در کارگاه‌های قبلی ایجاد شده‌اند</bdi>. <bdi dir="rtl">بنابراین استفاده مجدد از کلمه</bdi> let <bdi dir="rtl">باعث ایجاد خطا می‌شود</bdi>.</p>
+<p>The reason for not using the keyword let for the variables x, y, z and str is that these variables were created in the earlier workshops. So using the keyword let again causes an error.</p>
 </aside>
-<h3><bdi dir="rtl">عملگرها</bdi> (Operators)</h3>
+<h3>Operators</h3>
 <figure class="shot"><img alt="Figure 8" src="../images/p208-01.png" loading="lazy" /><figcaption>Figure 8</figcaption></figure>
-<p><bdi dir="rtl">در زبان‌های برنامه‌نویسی عملگرها برای انجام عملیات روی متغیرها و مقادیر به‌کار می‌روند مقادیری که یک عملگر روی آنها عمل می‌کند،</bdi> <strong><bdi dir="rtl">عملوند</bdi></strong> (Operand) <bdi dir="rtl">نامیده می‌شوند</bdi>. <bdi dir="rtl">در عبارت</bdi> <code>z = x + y</code> <bdi dir="rtl">علائم</bdi> + و <code>=</code> <strong><bdi dir="rtl">عملگر</bdi></strong> <bdi dir="rtl">هستند و حروف</bdi> x، y و z <bdi dir="rtl">عملوند محسوب می‌شوند</bdi>. <bdi dir="rtl">در این بخش به شرح عملگرهای جاوا‌اسکریپت پرداخته می‌شود</bdi>.</p></article>
+<p>In programming languages, operators are used to do operations on variables and values; the values an operator works on are called <strong>operands</strong>. In the expression <code>z = x + y</code> the signs + and <code>=</code> are <strong>operators</strong> and the letters x, y and z are operands. In this section the JavaScript operators are described.</p></article>
       <aside class="card extra">
         <h2 data-fa="تمرین این بخش" data-en="Exercises for this section">تمرین این بخش</h2>
         <p class="extra-note" data-fa="این تمرین‌ها و پیوندها اضافه بر متن کتاب‌اند." data-en="These exercises and links are in addition to the book.">این تمرین‌ها و پیوندها اضافه بر متن کتاب‌اند.</p>

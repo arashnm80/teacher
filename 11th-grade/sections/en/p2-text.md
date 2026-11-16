@@ -93,7 +93,7 @@ These lists are created with the tags `<ul>`, `<ol>`, and `<dl>`.
 >
 > ![Book image](../images/p108-02.png)
 
-**پیوندها (links)**: پیوندها همانند پل ارتباطی میان صفحات هستند که کاربران را به صفحات و منابع مورد نظرشان هدایت می‌کنند.
+**Links**: links are like a bridge between pages, leading users to the pages and resources they want.
 
 ![Figure 14](../images/p108-01.png)
 *Figure 14*

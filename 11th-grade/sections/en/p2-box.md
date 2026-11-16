@@ -1,6 +1,6 @@
 <!-- page 128 -->
 
-### مدل جعبه‌ای (Box Model)
+### The Box Model
 
 The box model (Box Model) in CSS is used to design and lay out elements in web pages. Each HTML element is treated as a «box» with four parts: the content (content), the extra space inside the element (padding), the border (border), and the distance from neighboring elements (margin). These settings can be seen and examined in the example below: (Figure 25).
 
@@ -19,9 +19,9 @@ The width and height properties set only the width and height of the content are
 
 <!-- page 129 -->
 
-در فایل `index.html` (کارگاه قبل) ویژگی‌های مارجین و پدینگ عنصر ul را برابر صفر قرار دهید (`margin:0;padding:0(` و برای عنصر header مقداری پدینگ تنظیم کنید (`padding:10px 20px`) سپس تغییرات منو را در مرورگر بررسی کنید.
+In the file `index.html` (from the previous workshop), set the margin and padding properties of the ul element to zero (`margin:0;padding:0`), and set some padding for the header element (`padding:10px 20px`); then check the changes of the menu in the browser.
 
-### مدل نمایش (Display Model)
+### The Display Model
 
 The display model in CSS is about how elements are shown and behave in a web page. It decides how elements sit next to each other and interact. The display model is set with the display property and its different values, described below:
 
@@ -45,7 +45,7 @@ The display model in CSS is about how elements are shown and behave in a web pag
 
 > **Workshop**
 >
-> به‌کارگیری ویژگی display با مقادیر block، Inline و Inline-block .
+> Using the display property with the values block, inline and inline-block.
 >
 > ![Book image](../images/p136-01.png)
 >

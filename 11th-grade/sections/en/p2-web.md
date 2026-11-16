@@ -48,9 +48,9 @@ When a user enters a web address in their browser, the following steps happen:
 
 1. **Translating the domain name**: the browser connects to a DNS¹ system to turn the domain name (for example www.chap.sch.ir) into an IP address. The IP address it gets belongs to the web server² in question.
 
-2. **ارسال درخواست (HTTP Request)**: پس از دریافت آدرس IP، مرورگر یک درخواست HTTP به وب‌سرور مقصد ارسال می‌کند که شامل اطلاعاتی درباره نوع محتوا و درخواست کاربر است.
+2. **Sending a request (HTTP Request)**: after receiving the IP address, the browser sends an HTTP request to the destination web server, which includes information about the type of the content and the user's request.
 
-3. **پاسخ‌دهی سرور (HTTP Response)**: سرور درخواست را پردازش می‌کند، در صورت لزوم اطلاعاتی را از پایگاه داده (Database) دریافت می‌کند و سپس محتوا را به صورت یک پاسخ HTTP به مرورگر کاربر ارسال می‌کند. این محتوا می‌تواند شامل فایل‌های HTML، CSS، JavaScript و تصاویر باشد.
+3. **The server's response (HTTP Response)**: the server processes the request, if necessary gets information from the database, and then sends the content to the user's browser as an HTTP response. This content can include HTML, CSS and JavaScript files and images.
 
 4. **Showing the content**: the browser interprets the content it received and shows it to the user as a web page (Figure 1).
 

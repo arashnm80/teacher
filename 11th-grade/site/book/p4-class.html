@@ -173,162 +173,162 @@ my_mobile.status = &quot;off &quot;
 <p>دارای ویژگی دوربین پیشرفته</p>
 <p>دارای ویژگی سیستم عامل قابل نصب و ارتقا</p></article><article class="card lesson no-copy" lang="en" dir="ltr" data-lang-block="en" hidden><p class="page-mark">Page 238</p>
 
-<p><bdi dir="rtl">حالا نوبت آن است که در محیط برنامه‌نویسی، اولین کلاس</bdi> (class) <bdi dir="rtl">خود را ایجاد کنید و سپس با استفاده از آن کلاس، یک نمونه</bdi>(Instance) <bdi dir="rtl">بسازید</bdi>. <bdi dir="rtl">کد شکل</bdi> 4 <bdi dir="rtl">را درون یک فایل جدید به دقت تایپ کنید</bdi>.</p>
-<figure class="shot"><img alt="Figure 4: اولین کد برای تعریف" src="../images/p244-01.png" loading="lazy" /><figcaption>Figure 4: <bdi dir="rtl">اولین کد برای تعریف</bdi></figcaption></figure>
-<p><strong><bdi dir="rtl">کلاس و ساخت نمونه</bdi></strong></p>
-<p><strong><bdi dir="rtl">خط</bdi> 1</strong>: <bdi dir="rtl">یک کلاس به نام</bdi> Mobile <bdi dir="rtl">تعریف می‌شود</bdi>.</p>
+<p>Now it is time to create your first class in the programming environment and then, using that class, make an instance. Type the code of Figure 4 carefully into a new file.</p>
+<figure class="shot"><img alt="Figure 4: The first code for defining" src="../images/p244-01.png" loading="lazy" /><figcaption>Figure 4: The first code for defining</figcaption></figure>
+<p><strong>a class and making an instance</strong></p>
+<p><strong>Line 1</strong>: a class named Mobile is defined.</p>
 <ul>
 <li>
-<p><bdi dir="rtl">کلاس در واقع یک الگو یا نقشه برای ساختن موبایل‌هاست</bdi>.</p>
+<p>A class is in fact a pattern or a plan for making mobiles.</p>
 </li>
 <li>
-<p><bdi dir="rtl">دقت کنید کلاس، خود موبایل نیست بلکه الگویی برای ساخت موبایل‌هاست</bdi>.</p>
+<p>Note that the class is not the mobile itself but a pattern for making mobiles.</p>
 </li>
 <li>
-<p><bdi dir="rtl">بر اساس استانداردهای نام‌گذاری در پایتون</bdi> (PEP8)<bdi dir="rtl">، نام کلاس‌ها باید با استفاده از شیوۀ</bdi> PascalCase <bdi dir="rtl">نوشته شود؛ به این معنا که حرف اول نام کلاس و حرف اول تمام کلمات تشکیل‌دهندۀ آن بزرگ باشد</bdi>.</p>
+<p>According to the naming standards in Python (PEP8), class names must be written in the PascalCase style; that means the first letter of the class name and the first letter of all the words that make it up are capital.</p>
 </li>
 </ul>
-<p><strong><bdi dir="rtl">خط</bdi> 2</strong>: <bdi dir="rtl">این متد، نقش متدِ سازندۀ کلاس را در پایتون بر عهده دارد</bdi>. <bdi dir="rtl">به این متد اصطلاحاً</bdi> initializer <bdi dir="rtl">هم می‌گویند</bdi>.</p>
+<p><strong>Line 2</strong>: this method plays the role of the class's constructor method in Python. This method is also called the initializer.</p>
 <ul>
 <li>
-<p><bdi dir="rtl">هر زمان که از کلاس</bdi> Mobile <bdi dir="rtl">یک نمونه ساخته شود، یعنی با اجرای خط</bdi> 7<bdi dir="rtl">، این متد به‌طور خودکار اجرا می‌شود</bdi>.</p>
+<p>Whenever an instance is made from the class Mobile, that is, by running line 7, this method runs automatically.</p>
 </li>
 <li>
-<p><bdi dir="rtl">وظیفه اصلی این متد مقداردهی اولیه به ویژگی‌های نمونه</bdi> (Instance) <bdi dir="rtl">است</bdi>.</p>
+<p>The main job of this method is to give initial values to the properties of the instance.</p>
 </li>
 <li>
-<p><bdi dir="rtl">دقت کنید که</bdi> <code>__init__</code> <bdi dir="rtl">نامی قراردادی در پایتون است و نمی‌توان آن را تغییر داد</bdi>. <bdi dir="rtl">در سمت چپ و راست کلمه</bdi> init <bdi dir="rtl">دو بار کاراکتر زیرخط</bdi> (underscore) <bdi dir="rtl">تایپ شده است</bdi>.</p>
+<p>Note that <code>__init__</code> is a conventional name in Python and cannot be changed. On the left and the right of the word init, the underscore character is typed twice.</p>
 </li>
 </ul>
-<p><strong><bdi dir="rtl">خطوط</bdi> 3 و 4</strong>: <bdi dir="rtl">ویژگی‌های نمونه را مشخص می‌کنند</bdi>.</p>
+<p><strong>Lines 3 and 4</strong>: specify the properties of the instance.</p>
 <ul>
 <li>
-<p><bdi dir="rtl">هر موبایل یک برند و یک رنگ دارد</bdi>.</p>
+<p>Each mobile has a brand and a colour.</p>
 </li>
 <li>
-<p><bdi dir="rtl">در کد ارائه شده،</bdi> <code>self.brand</code> و <code>self.color</code> <bdi dir="rtl">هر دو به عنوان ویژگی</bdi> (attribute) <bdi dir="rtl">شناخته می‌شوند</bdi>.</p>
+<p>In the code given, <code>self.brand</code> and <code>self.color</code> are both known as attributes.</p>
 </li>
 <li>
-<p><bdi dir="rtl">کلمۀ</bdi> self <bdi dir="rtl">به همان نمونه‌ای اشاره می‌کند که در حال ساخته شدن است و</bdi> brand و color <bdi dir="rtl">نام ویژگی‌هایی هستند که به آن نمونه تعلق دارند</bdi>.</p>
+<p>The word self points to the very instance that is being made, and brand and color are the names of properties that belong to that instance.</p>
 </li>
 </ul>
 <p class="page-mark">Page 239</p>
 
-<p><strong><bdi dir="rtl">خطوط</bdi> 5 و 6</strong>: <bdi dir="rtl">خطوط خالی</bdi></p>
+<p><strong>Lines 5 and 6</strong>: empty lines</p>
 <ul>
-<li><bdi dir="rtl">بر اساس استانداردهای کدنویسی پایتون</bdi> (PEP8)<bdi dir="rtl">، لازم است پس از پایان تعریف کلاس، دو خطِ خالی قرار داده شود تا مرز بین کلاس و بخش کدهای سراسری</bdi> (Global) <bdi dir="rtl">به‌وضوح مشخص شود</bdi>.</li>
+<li>According to the Python coding standards (PEP8), after the end of the class definition two empty lines must be put so that the border between the class and the global code part is clearly marked.</li>
 </ul>
-<p><strong><bdi dir="rtl">خط</bdi> 7</strong>: <bdi dir="rtl">ساختن نمونه</bdi>(Instance)</p>
+<p><strong>Line 7</strong>: making an instance</p>
 <ul>
 <li>
-<p><bdi dir="rtl">در این خط، یک نمونه</bdi> (instance) <bdi dir="rtl">به نام</bdi> <code>my_mobile</code> <bdi dir="rtl">از روی کلاس</bdi> Mobile <bdi dir="rtl">ساخته‌اید</bdi>.</p>
+<p>In this line you have made an instance named <code>my_mobile</code> from the class Mobile.</p>
 </li>
 <li>
-<p><bdi dir="rtl">مقدار</bdi> "nokia" <bdi dir="rtl">برای ویژگیِ</bdi> brand <bdi dir="rtl">و مقدار</bdi> "gray" <bdi dir="rtl">برای ویژگیِ</bdi> color <bdi dir="rtl">در نظر گرفته شده‌اند</bdi>.</p>
+<p>The value "nokia" is given for the property brand and the value "gray" for the property color.</p>
 </li>
 </ul>
 <figure class="shot"><img alt="Figure 5" src="../images/p245-01.png" loading="lazy" /><figcaption>Figure 5</figcaption></figure>
-<p><strong><bdi dir="rtl">خط</bdi> 8</strong>: <bdi dir="rtl">دسترسی به ویژگی</bdi></p>
+<p><strong>Line 8</strong>: reaching a property</p>
 <ul>
 <li>
-<p><bdi dir="rtl">با استفاده از نام نمونه و علامت نقطه</bdi> (.)<bdi dir="rtl">، به ویژگی‌های آن دسترسی پیدا می‌کنید</bdi>.</p>
+<p>By using the name of the instance and the dot (.), you reach its properties.</p>
 </li>
 <li>
-<p><bdi dir="rtl">این دستور مقدار ویژگی</bdi> brand <bdi dir="rtl">را برای نمونه</bdi> <code>my_mobile</code> <bdi dir="rtl">چاپ می‌کند</bdi>.</p>
+<p>This statement prints the value of the property brand for the instance <code>my_mobile</code>.</p>
 </li>
 </ul>
-<p><strong><bdi dir="rtl">خط</bdi> 9</strong>: <bdi dir="rtl">خط خالی</bdi></p>
+<p><strong>Line 9</strong>: an empty line</p>
 <ul>
-<li><bdi dir="rtl">طبق استانداردهای</bdi> PEP8<bdi dir="rtl">، پس از پایان کدها نیز یک خط خالی قرار داده می‌شود تا انتهای فایل از کدها به‌صورت خوانا و استاندارد مشخص شود</bdi>.</li>
+<li>According to the PEP8 standards, after the end of the code an empty line is also put so that the end of the file is marked from the code in a readable and standard way.</li>
 </ul>
-<p><bdi dir="rtl">توجه داشته باشید که اگر در این مرحله همۀ جزئیات را به‌طور کامل متوجه نشدید، نگران نباشید؛ این یک مبحث جدید است و با ادامۀ آموزش و فعالیت‌های بیشتر، مرور کدها و ساخت برنامه‌های بیشتر، به مرور، مفاهیم برایتان روشن می‌شود و جا می‌افتد</bdi>.</p>
-<p><bdi dir="rtl">حالا برنامه را اجرا کنید، می‌بینید که مقدار ویژگی</bdi> brand <bdi dir="rtl">از موبایلی که ساخته‌اید یعنی</bdi> nokia <bdi dir="rtl">چاپ می‌شود</bdi>. <bdi dir="rtl">توجه داشته باشید در این مرحله، کلاس فقط شامل ویژگی‌ها</bdi> (Attributes) <bdi dir="rtl">است و فعلاً هیچ رفتار یا متدی</bdi> (Method) <bdi dir="rtl">به‌جز سازنده</bdi> (<code>__init__</code>) <bdi dir="rtl">برای نمونه‌ها تعریف نشده است</bdi>.</p>
-<p><bdi dir="rtl">حالا با یک تصویر روند اجرای برنامه را شرح داده شده است</bdi>. <bdi dir="rtl">شکل</bdi> 6 <bdi dir="rtl">را به دقت مشاهده کنید</bdi>.</p>
-<figure class="shot"><img alt="Figure 6: روند اجرای برنامه" src="../images/p245-02.png" loading="lazy" /><figcaption>Figure 6: <bdi dir="rtl">روند اجرای برنامه</bdi></figcaption></figure>
+<p>Note that if you did not fully understand all the details at this stage, do not worry; this is a new topic, and as the lessons continue, with more activities, reviewing the code and building more programs, the concepts will gradually become clear and settle in.</p>
+<p>Now run the program; you will see that the value of the property brand of the mobile you made, that is nokia, is printed. Note that at this stage the class contains only attributes and for now no behaviour or method other than the constructor (<code>__init__</code>) has been defined for the instances.</p>
+<p>Now the running process of the program is described with a picture. Look carefully at Figure 6.</p>
+<figure class="shot"><img alt="Figure 6: The running process of the program" src="../images/p245-02.png" loading="lazy" /><figcaption>Figure 6: The running process of the program</figcaption></figure>
 <p class="page-mark">Page 240</p>
 
-<p><bdi dir="rtl">همان‌طور که در شکل مشاهده می‌شود بعد از اجرای خط</bdi> 7 <bdi dir="rtl">که برای ساختن نمونه</bdi> <code>my_mobile</code> <bdi dir="rtl">است مراحل زیر اتفاق می‌افتد</bdi>:</p>
+<p>As seen in the figure, after line 7 runs, which is for making the instance <code>my_mobile</code>, the following steps happen:</p>
 <ol>
 <li>
-<p><bdi dir="rtl">آرگومان‌های</bdi> "nokia" و "gray" <bdi dir="rtl">به متد</bdi> <code>__init__</code> <bdi dir="rtl">فرستاده و درون پارامترهای</bdi> brand و color <bdi dir="rtl">قرار می‌گیرند</bdi>.</p>
+<p>The arguments "nokia" and "gray" are sent to the method <code>__init__</code> and put in the parameters brand and color.</p>
 </li>
 <li>
-<p><bdi dir="rtl">مقدار پارامتر</bdi> brand <bdi dir="rtl">درون</bdi> <code>self.brand</code> <bdi dir="rtl">و مقدار پارامتر</bdi> color <bdi dir="rtl">درون</bdi> <code>self.color</code> <bdi dir="rtl">ریخته می‌شوند</bdi>.</p>
+<p>The value of the parameter brand is put into <code>self.brand</code> and the value of the parameter color into <code>self.color</code>.</p>
 </li>
 <li>
-<p><bdi dir="rtl">در این مرحله نمونه مورد نظر ساخته خواهد شد</bdi>.</p>
+<p>At this stage the wanted instance will be made.</p>
 </li>
 </ol>
 <aside class="callout activity"><p class="callout-label">Activity</p>
-<p><bdi dir="rtl">در انتهای برنامه دستوری اضافه کنید که رنگ موبایل را چاپ نماید</bdi>.</p>
+<p>At the end of the program, add a statement that prints the colour of the mobile.</p>
 <p><strong>Activity</strong></p>
-<p><bdi dir="rtl">داخل متد</bdi> <code>__init__</code> <bdi dir="rtl">دستوری اضافه کنید که مدل گوشی شما را نیز به عنوان ویژگی در نظر بگیرد</bdi>. <bdi dir="rtl">فراموش نکنید که در خط</bdi> 7 <bdi dir="rtl">نیز باید مدل گوشی خودتان را اضافه کنید</bdi>. <bdi dir="rtl">سعی کنید خودتان این فعالیت را انجام دهید ولی اگر هنوز ابهام داشتید در ادامه پاسخ این کد را می‌بینید و می‌توانید با کد خودتان مقایسه کنید</bdi>.</p>
+<p>Inside the method <code>__init__</code>, add a statement that also considers the model of your phone as a property. Do not forget that in line 7 you must also add the model of your own phone. Try to do this activity yourself, but if you are still unsure, you will see the answer of this code next and can compare it with your own code.</p>
 </aside>
-<p><bdi dir="rtl">در ادامه بر اساس کلاسی که تعریف کرده‌اید یک نمونه دیگر به عنوان موبایلی برای دوستتان بسازید</bdi>. <bdi dir="rtl">کد شکل</bdi> 7 <bdi dir="rtl">را به دقت بنویسید</bdi>.</p>
-<figure class="shot"><img alt="Figure 7: ساختن یک نمونه" src="../images/p246-01.png" loading="lazy" /><figcaption>Figure 7: <bdi dir="rtl">ساختن یک نمونه</bdi></figcaption></figure>
+<p>Next, based on the class you defined, make another instance as a mobile for your friend. Write the code of Figure 7 carefully.</p>
+<figure class="shot"><img alt="Figure 7: Making an instance" src="../images/p246-01.png" loading="lazy" /><figcaption>Figure 7: Making an instance</figcaption></figure>
 <p class="page-mark">Page 241</p>
 
-<p><strong><bdi dir="rtl">خط</bdi> 4</strong>: <bdi dir="rtl">یک ویژگی جدید برای مدل گوشی همراه تعریف و مقداردهی شده است</bdi>.</p>
-<p><strong><bdi dir="rtl">خط</bdi> 9</strong>: <bdi dir="rtl">یک نمونه جدید با نام</bdi> <code>friend_mobile</code> <bdi dir="rtl">با ویژگی‌هایی متفاوت از</bdi> <code>my_mobile</code> <bdi dir="rtl">ایجاد شده است</bdi>.</p>
+<p><strong>Line 4</strong>: a new property for the phone's model is defined and given a value.</p>
+<p><strong>Line 9</strong>: a new instance named <code>friend_mobile</code> with properties different from <code>my_mobile</code> is created.</p>
 <figure class="shot"><img alt="Figure 8" src="../images/p247-01.png" loading="lazy" /><figcaption>Figure 8</figcaption></figure>
-<p><strong><bdi dir="rtl">خطوط</bdi> 15 <bdi dir="rtl">تا</bdi> 17</strong>: <bdi dir="rtl">در این خطوط ویژگی‌های نمونه دوم چاپ شده است</bdi>.</p>
+<p><strong>Lines 15 to 17</strong>: in these lines the properties of the second instance are printed.</p>
 <aside class="callout note"><p class="callout-label">Note</p>
-<p><bdi dir="rtl">دقت کنید</bdi> <code>my_mobile</code> و <code>friend_mobile</code> <bdi dir="rtl">هر دو نمونه‌هایی مجزا هستند که از روی کلاس</bdi> Mobile <bdi dir="rtl">ساخته شده‌اند</bdi>.</p>
+<p>Note that <code>my_mobile</code> and <code>friend_mobile</code> are both separate instances made from the class Mobile.</p>
 </aside>
-<p><bdi dir="rtl">در ادامه یک متد به کلاس</bdi> Mobile <bdi dir="rtl">اضافه کنید تا مقدار تمام ویژگی‌های نمونه‌ای که ساخته‌اید را چاپ کند</bdi>. <bdi dir="rtl">کد قبلی را مانند شکل</bdi> 9 <bdi dir="rtl">تغییر دهید</bdi>.</p>
-<figure class="shot"><img alt="Figure 9: افزودن متد" src="../images/p247-02.png" loading="lazy" /><figcaption>Figure 9: <bdi dir="rtl">افزودن متد</bdi></figcaption></figure>
+<p>Next, add a method to the class Mobile to print the values of all the properties of the instance you made. Change the previous code as in Figure 9.</p>
+<figure class="shot"><img alt="Figure 9: Adding a method" src="../images/p247-02.png" loading="lazy" /><figcaption>Figure 9: Adding a method</figcaption></figure>
 <p><strong><code>show_info</code></strong></p>
 <p class="page-mark">Page 242</p>
 
-<p><strong><bdi dir="rtl">خط</bdi> 7</strong>: <bdi dir="rtl">این خط، تعریف یک متد</bdi> (method) <bdi dir="rtl">به نام</bdi> <code>show_info</code> <bdi dir="rtl">را در داخل کلاس</bdi> Mobile <bdi dir="rtl">انجام می‌دهد</bdi>. <bdi dir="rtl">متدها، توابعی هستند که به یک کلاس مرتبط هستند و می‌توانند به ویژگی‌های</bdi> (Attributes) <bdi dir="rtl">آن کلاس دسترسی داشته باشند</bdi>.</p>
+<p><strong>Line 7</strong>: this line defines a method named <code>show_info</code> inside the class Mobile. Methods are functions that are related to a class and can reach the attributes of that class.</p>
 <ul>
-<li><bdi dir="rtl">پارامتر</bdi> self <bdi dir="rtl">در تعریف متد، به خودِ نمونه‌ای که متد روی آن فراخوانی می‌شود، اشاره می‌کند</bdi>. <bdi dir="rtl">به عبارت دیگر،</bdi> self <bdi dir="rtl">به کلاس</bdi> Mobile <bdi dir="rtl">اجازه می‌دهد تا به ویژگی‌های</bdi> (Attributes) <bdi dir="rtl">خاص هر نمونه از نوع</bdi> Mobile <bdi dir="rtl">دسترسی پیدا کند</bdi>.</li>
+<li>The parameter self in the definition of the method points to the very instance on which the method is called. In other words, self lets the class Mobile reach the attributes specific to each instance of type Mobile.</li>
 </ul>
-<p><strong><bdi dir="rtl">خطوط</bdi> 8 <bdi dir="rtl">تا</bdi> 10</strong>: <bdi dir="rtl">این دستور، مقادیر ویژگی‌های برند، مدل و رنگ نمونه را با استفاده از برچسب‌های مشخص، نمایش می‌دهد</bdi>.</p>
-<p><strong><bdi dir="rtl">خط</bdi> 14</strong>: <bdi dir="rtl">در این خط متد</bdi> <code>show_info</code> <bdi dir="rtl">از نمونه</bdi> <code>my_mobile</code> <bdi dir="rtl">فراخوانی و اجرا می‌شود</bdi>.</p>
-<p><bdi dir="rtl">به همین ترتیب می‌توانید متدهای بیشتری برای این کلاس تعریف کنید</bdi>. <bdi dir="rtl">به عنوان مثال متد</bdi> <code>incoming_call</code> <bdi dir="rtl">برای نمایش پیام هنگام تماس دریافتی می‌باشد</bdi>. <bdi dir="rtl">کدهای این متد را در زیرِ متدِ</bdi> <code>show_info</code> <bdi dir="rtl">براساس شکل</bdi> 10 <bdi dir="rtl">بنویسید</bdi>.</p>
-<figure class="shot"><img alt="Figure 10: افزودن متد" src="../images/p248-01.png" loading="lazy" /><figcaption>Figure 10: <bdi dir="rtl">افزودن متد</bdi></figcaption></figure>
+<p><strong>Lines 8 to 10</strong>: this statement shows the values of the brand, model and colour properties of the instance with clear labels.</p>
+<p><strong>Line 14</strong>: in this line the method <code>show_info</code> of the instance <code>my_mobile</code> is called and run.</p>
+<p>In the same way you can define more methods for this class. For example the method <code>incoming_call</code> is for showing a message when a call is received. Write the code of this method under the method <code>show_info</code> according to Figure 10.</p>
+<figure class="shot"><img alt="Figure 10: Adding a method" src="../images/p248-01.png" loading="lazy" /><figcaption>Figure 10: Adding a method</figcaption></figure>
 <p><strong><code>incoming_call</code></strong></p>
 <ul>
 <li>
-<p><bdi dir="rtl">اولین خط، تعریف متدی به نام</bdi> <code>incoming_call</code> <bdi dir="rtl">را در داخل کلاس</bdi> Mobile <bdi dir="rtl">انجام می‌دهد</bdi>. <bdi dir="rtl">این متد یک پارامتر به نام</bdi> <code>phone_number</code> <bdi dir="rtl">را دریافت می‌کند که نشان‌دهنده شماره تلفن تماس‌گیرنده است</bdi>.</p>
+<p>The first line defines a method named <code>incoming_call</code> inside the class Mobile. This method receives a parameter named <code>phone_number</code>, which shows the phone number of the caller.</p>
 </li>
 <li>
-<p><bdi dir="rtl">دستورات داخل متد، پیام</bdi> "‌<bdi dir="rtl">تماس ورودی</bdi>" <bdi dir="rtl">و شماره تلفن تماس‌گیرنده را در خروجی نمایش می‌دهند</bdi>.</p>
+<p>The statements inside the method show the message "Incoming call" and the caller's phone number in the output.</p>
 </li>
 <li>
-<p><bdi dir="rtl">دقت کنید این متد باید درون کلاس</bdi> Mobile <bdi dir="rtl">و هم‌سطح متد</bdi> <code>__init__</code> <bdi dir="rtl">تعریف شود، بنابراین یک</bdi> tab <bdi dir="rtl">جلوتر از بدنه کلاس قرار می‌گیرد</bdi>.</p>
+<p>Note that this method must be defined inside the class Mobile and at the same level as the method <code>__init__</code>, so it is placed one tab further in than the body of the class.</p>
 </li>
 <li>
-<p><bdi dir="rtl">در آخرین خط برنامه متد</bdi> <code>incoming_call</code> <bdi dir="rtl">را بر روی نمونه</bdi> <code>my_mobile</code> <bdi dir="rtl">فراخوانی می‌کند</bdi>.</p>
+<p>In the last line of the program, the method <code>incoming_call</code> is called on the instance <code>my_mobile</code>.</p>
 </li>
 <li>
-<p><bdi dir="rtl">آرگومان</bdi> "0912-345-6789" <bdi dir="rtl">به عنوان پارامتر</bdi> <code>phone_number</code> <bdi dir="rtl">ارسال می‌شود که نشان‌دهنده شماره تلفن تماس‌گیرنده است</bdi>. <bdi dir="rtl">سپس متد اجرا می‌شود و پیام‌های مشخص شده و شماره تلفن ارائه شده را نمایش می‌دهد</bdi>.</p>
+<p>The argument "0912-345-6789" is sent as the parameter <code>phone_number</code>, which shows the caller's phone number. Then the method runs and shows the specified messages and the given phone number.</p>
 </li>
 </ul>
 <p class="page-mark">Page 243</p>
 
 <aside class="callout activity"><p class="callout-label">Activity</p>
-<p><bdi dir="rtl">در کلاس</bdi> Mobile <bdi dir="rtl">متدی با نام</bdi> <code>make_call</code> <bdi dir="rtl">ایجاد کنید</bdi>. <bdi dir="rtl">این متد باید یک پارامتر به نام</bdi> <code>phone_number</code> <bdi dir="rtl">دریافت کند که شماره تلفنی که می‌خواهید با آن تماس بگیرید را در خود نگه دارد</bdi>. <bdi dir="rtl">متد باید با چاپ پیام‌هایی مناسب، شروع عملیات شماره‌گیری را اعلام کند</bdi>. <bdi dir="rtl">به عنوان مثال، می‌توانید پیام‌هایی مانند</bdi> "Calling..." <bdi dir="rtl">یا</bdi> "Dialing..." <bdi dir="rtl">را چاپ کنید</bdi>.</p>
+<p>In the class Mobile create a method named <code>make_call</code>. This method must receive a parameter named <code>phone_number</code> that holds the phone number you want to call. The method must announce the start of the dialling operation by printing suitable messages. For example, you can print messages such as "Calling..." or "Dialing...".</p>
 </aside>
-<h3><bdi dir="rtl">تعیین مقدار پیش فرض برای ویژگی‌ها</bdi></h3>
-<p><bdi dir="rtl">برای جذابیت و کارایی بیشتر در ادامه، یک ویژگی تعریف خواهد شد که بعد از اجرای برنامه مقدار آنها قابل تغییر باشند</bdi>. <bdi dir="rtl">از این رو درون کلاس، ویژگی وضعیت روشن و خاموش بودن</bdi> (status) <bdi dir="rtl">و یک مقدار پیش فرض هم برای آن تعریف خواهد شد</bdi>. <bdi dir="rtl">کافیست در متد</bdi> <code>__init__</code> <bdi dir="rtl">یک ویژگی جدید مانند کد زیر تعریف کنید</bdi>.</p>
+<h3>Setting a default value for properties</h3>
+<p>For more interest and efficiency, next a property will be defined whose value can be changed after the program runs. So inside the class, the property of the on and off state (status) will be defined and a default value for it too. It is enough to define a new property in the method <code>__init__</code> like the following code.</p>
 <div class="code-wrap" dir="ltr"><pre><code>self.status = &quot;on&quot;
 </code></pre></div>
-<p><bdi dir="rtl">توجه داشته باشید هنگام تعریف نمونه دیگر ضرورتی ندارد مقداری برای این ویژگی تعریف شود</bdi>.</p>
-<p><strong><bdi dir="rtl">تغییر مقدار ویژگی</bdi></strong>: <bdi dir="rtl">در این روش پس از ایجاد نمونه</bdi> <code>my_mobile</code> <bdi dir="rtl">به سادگی با نوشتن کد زیر، مقدار آن تغییر خواهد کرد</bdi>.</p>
+<p>Note that when defining another instance there is no need to give a value for this property.</p>
+<p><strong>Changing the value of a property</strong>: in this way, after creating the instance <code>my_mobile</code>, its value will be changed simply by writing the following code.</p>
 <div class="code-wrap" dir="ltr"><pre><code>my_mobile = Mobile(&quot;nokia&quot;, &quot;1100&quot;, &quot;gray&quot;)
 my_mobile.status = &quot;off &quot;
 </code></pre></div>
-<p><bdi dir="rtl">در این دستور از نشانه</bdi> dot <bdi dir="rtl">یا همان نقطه برای دسترسی به ویژگی یک نمونه استفاده شده است</bdi>. <bdi dir="rtl">این خط از پایتون می‌خواهد برای نمونه</bdi> <code>my_mobile</code> <bdi dir="rtl">ویژگی</bdi> status <bdi dir="rtl">مرتبط با آن را پیدا کند و در ادامه مقدار</bdi> " off" <bdi dir="rtl">را درون آن قرار دهد</bdi>.</p>
-<h3><bdi dir="rtl">ارث‌بری</bdi> (Inheritance)</h3>
-<p><bdi dir="rtl">فرض کنید در یک شرکت تولیدکنندۀ گوشی همراه، تاکنون تنها نسخه‌های پایۀ تلفن همراه تولید می‌شده است؛ گوشی‌هایی که امکانات آنها به ویژگی‌هایی مانند برند، مدل، رنگ و وضعیت محدود بوده و فاقد سیستم‌عامل و دوربین هستند</bdi>. <bdi dir="rtl">مهم ترین کاری که با این گوشی‌های همراه می‌توان انجام داد، تماس تلفنی و ارسال پیامک است</bdi>. <bdi dir="rtl">در این شرکت، یک کلاس اصلی به نام</bdi> Mobile <bdi dir="rtl">وجود دارد که این ویژگی‌های پایه را مدل‌سازی می‌کند</bdi>.</p>
-<p><bdi dir="rtl">حالا شرکت تصمیم گرفته است نسل جدیدی از گوشی‌های همراه را طراحی کند؛ گوشی‌های هوشمند</bdi> (Smartphone) <bdi dir="rtl">که در کنار ویژگی‌های پایۀ گوشی همراه، قابلیت‌هایی مانند سیستم‌عامل و دوربین را ارائه می‌دهند و همچنین مدل‌هایی تخصصی‌تر، مانند گوشی‌های مناسب بازی</bdi> (Gaming phone)<bdi dir="rtl">، که برای اجرای بهتر بازی‌ها با امکانات سخت‌افزاری قوی‌تر طراحی شده‌اند</bdi>.</p>
+<p>In this statement the dot sign is used to reach the property of an instance. This line asks Python to find the property status related to the instance <code>my_mobile</code> and then put the value "off" in it.</p>
+<h3>Inheritance</h3>
+<p>Suppose that in a mobile phone manufacturing company, until now only basic versions of the mobile phone have been produced; phones whose features are limited to properties such as brand, model, colour and status, and that have no operating system and no camera. The most important thing that can be done with these mobile phones is making phone calls and sending text messages. In this company there is one main class named Mobile that models these basic properties.</p>
+<p>Now the company has decided to design a new generation of mobile phones: smartphones (Smartphone), which, besides the basic features of a mobile phone, offer capabilities such as an operating system and a camera, and also more specialised models, such as gaming phones, which are designed to run games better with stronger hardware.</p>
 <ol>
-<li><strong>Smartphone</strong>: <bdi dir="rtl">تلفن هوشمند نوعی تلفن همراه است که با بهره‌گیری از سیستم‌عامل</bdi> (Operating System)<bdi dir="rtl">، امکان اجرای برنامه‌ها و ارائۀ قابلیت‌های پیشرفته، فراتر از تماس و پیامک را فراهم می‌کند</bdi>.</li>
+<li><strong>Smartphone</strong>: a smartphone is a kind of mobile phone that, by using an operating system, makes it possible to run applications and offers advanced capabilities beyond calls and text messages.</li>
 </ol>
-<p><bdi dir="rtl">دارای ویژگی دوربین پیشرفته</bdi></p>
-<p><bdi dir="rtl">دارای ویژگی سیستم عامل قابل نصب و ارتقا</bdi></p></article>
+<p>Has an advanced camera property</p>
+<p>Has an installable and upgradable operating system property</p></article>
       <aside class="card extra">
         <h2 data-fa="تمرین این بخش" data-en="Exercises for this section">تمرین این بخش</h2>
         <p class="extra-note" data-fa="این تمرین‌ها و پیوندها اضافه بر متن کتاب‌اند." data-en="These exercises and links are in addition to the book.">این تمرین‌ها و پیوندها اضافه بر متن کتاب‌اند.</p>

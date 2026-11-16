@@ -161,25 +161,25 @@
 <p>در جاوااسکریپت برای ایجاد یک تابع از شکل کلی زیر استفاده می‌شود:</p>
 <figure class="shot"><img alt="شکل ۱۲" src="../images/p224-03.png" loading="lazy" /><figcaption>شکل ۱۲</figcaption></figure></article><article class="card lesson no-copy" lang="en" dir="ltr" data-lang-block="en" hidden><p class="page-mark">Page 213</p>
 
-<h3><bdi dir="rtl">دستورات حلقه</bdi></h3>
-<p><bdi dir="rtl">در زبان‌های برنامه‌نویسی برای تکرار اجرای یک بخش از برنامه از دستورات حلقه استفاده می‌شود</bdi>. <bdi dir="rtl">حلقه‌های تکرار باعث کاهش حجم برنامه، خوانایی کد، بهینه‌سازی الگوریتم برنامه و افزایش کارایی برنامه می‌شوند</bdi>. <bdi dir="rtl">حلقه‌های تکرار انواع مختلفی دارند</bdi>. <bdi dir="rtl">در زبان جاوا‌اسکریپت این حلقه‌ها شامل</bdi> for، while، do while، for…of و for…in <bdi dir="rtl">است</bdi>.</p>
+<h3>Loop statements</h3>
+<p>In programming languages, loop statements are used to repeat the running of a part of the program. Loops reduce the size of the program, improve the readability of the code, optimise the algorithm of the program and increase the efficiency of the program. Loops have different types. In JavaScript these loops include for, while, do while, for…of and for…in.</p>
 <h3>The for loop</h3>
-<p><bdi dir="rtl">زمانی که تعداد دفعات تکرار یک کار مشخص باشد، از حلقۀ</bdi> for <bdi dir="rtl">استفاده می‌شود</bdi>. <bdi dir="rtl">شکل کلی حلقۀ</bdi> for <bdi dir="rtl">به‌صورت زیر است</bdi>:</p>
+<p>When the number of repeats of a job is known, the for loop is used. The general form of the for loop is as follows:</p>
 <div class="code-wrap" dir="ltr"><pre><code>for (Initialization; Condition; Increment/Decrement) {
 </code></pre></div>
-<p><bdi dir="rtl">کدی که باید تکرار شود</bdi></p>
+<p>The code that must be repeated</p>
 <div class="code-wrap" dir="ltr"><pre><code>}
 </code></pre></div>
-<p><bdi dir="rtl">حلقۀ</bdi> for <bdi dir="rtl">نیازمند یک شمارنده برای شمارش تعداد دفعات اجرای حلقه است</bdi>. <bdi dir="rtl">شمارنده حلقه یک متغیر است که دارای مقدار اولیه و پایانی است</bdi>. <bdi dir="rtl">عبارت</bdi> Initiliazation <bdi dir="rtl">به مقداردهی اولیه شمارنده حلقه اشاره دارد</bdi>. <bdi dir="rtl">در قسمت</bdi> Condition <bdi dir="rtl">شرط تکرار حلقه بررسی می‌شود</bdi>. <bdi dir="rtl">برای خروج از حلقه، شرط حلقه باید نقض شود</bdi>. <bdi dir="rtl">بدین منظور شمارنده حلقه باید در هر بار تکرار حلقه افزوده یا کاسته شود تا مقدار شمارنده از مقدار پایانی گذر کند</bdi>. <bdi dir="rtl">عبارات</bdi> Increment و Decrement <bdi dir="rtl">به‌معنای افزایش و کاهش مقدار شمارنده است</bdi>. <bdi dir="rtl">در صورت عدم استفاده از آکولاد برای تعیین محدوده بلوک حلقه، فقط اولین دستور جزء حلقه به شمار می‌آید</bdi>.</p>
+<p>The for loop needs a counter to count the number of times the loop runs. The loop counter is a variable that has a starting and an ending value. The phrase Initialization points to giving the loop counter its initial value. In the Condition part, the repeat condition of the loop is checked. To leave the loop, the loop condition must be violated. For this purpose the loop counter must be increased or decreased on every repeat of the loop so that the value of the counter passes the ending value. The phrases Increment and Decrement mean increasing and decreasing the value of the counter. If curly braces are not used to mark the range of the loop block, only the first statement counts as part of the loop.</p>
 <figure class="shot"><img alt="Figure 11" src="../images/p219-01.png" loading="lazy" /><figcaption>Figure 11</figcaption></figure>
 <aside class="callout workshop"><p class="callout-label">Workshop</p>
-<p><strong><bdi dir="rtl">به‌کارگیری حلقه</bdi> for</strong></p>
+<p><strong>Using the for loop</strong></p>
 <figure class="shot"><img alt="Book image" src="../images/p219-02.png" loading="lazy" /></figure>
-<p><bdi dir="rtl">یک فایل جدید با نام</bdi> <code>workshop7.html</code> <bdi dir="rtl">ایجاد کنید و اسکریپت روبه‌رو را برای چاپ اعداد</bdi> 0 <bdi dir="rtl">تا</bdi> 4 <bdi dir="rtl">بنویسید</bdi>.</p>
+<p>Create a new file named <code>workshop7.html</code> and write the script opposite to print the numbers 0 to 4.</p>
 <aside class="callout note"><p class="callout-label">Note</p>
-<p><bdi dir="rtl">چنانچه شمارنده حلقه توسط کلمه کلیدی</bdi> let <bdi dir="rtl">تعریف شود، دسترسی به مقدار متغیر شمارنده فقط در داخل بلوک</bdi> for <bdi dir="rtl">امکان پذیر خواهد بود</bdi>.</p>
+<p>If the loop counter is defined with the keyword let, the value of the counter variable can be reached only inside the for block.</p>
 </aside>
-<p><bdi dir="rtl">با توجه به این توضیحات درصورتی که بعد از علامت آکولاد بسته، دستور</bdi> <code>console.log(i)</code> <bdi dir="rtl">نوشته شود، پیغام خطا صادر می‌شود</bdi>.</p>
+<p>Considering these explanations, if the statement <code>console.log(i)</code> is written after the closing brace, an error message is given.</p>
 </aside>
 <p class="page-mark">Page 214</p>
 
@@ -195,27 +195,27 @@
 <tbody>
 <tr>
 <td><code>do {</code><br><code>} while (condition);</code></td>
-<td><code>while (condition){</code><br><bdi dir="rtl">کدی که باید تکرار شود</bdi><br><code>}</code></td>
+<td><code>while (condition){</code><br>The code that must be repeated<br><code>}</code></td>
 </tr>
 </tbody>
 </table></div>
-<p><strong><bdi dir="rtl">حلقه</bdi> while و do while</strong> <bdi dir="rtl">این حلقه‌ها مجموعه‌ای از دستورات را تا زمان نقض شدن یک شرط، تکرار می‌کنند</bdi>. <bdi dir="rtl">شکل کلی این حلقه‌ها کدی که باید تکرار اجرا شود به‌صورت مقابل است</bdi>:</p>
-<p><bdi dir="rtl">در حلقه</bdi> while<bdi dir="rtl">، ابتدا شرط داخل پرانتز بررسی می‌شود، اگر شرط برقرار باشد دستورات داخل حلقه اجرا می‌شود، اگر شرط حلقه از ابتدا غلط باشد بنابراین محتوای حلقه اصلاً اجرا نمی‌شود</bdi>.</p>
-<p><bdi dir="rtl">محتوای حلقه</bdi> do while <bdi dir="rtl">یک بار اجرا می‌شود، سپس شرط حلقه بررسی می‌شود</bdi>. <bdi dir="rtl">در صورت برقرار نبودن شرط، خروج از حلقه صورت می‌پذیرد</bdi>.</p>
-<p><bdi dir="rtl">در صورتی‌که شرط حلقه نقض نشود، دستورات حلقه به‌طور مداوم تکرار می‌شوند</bdi>. <bdi dir="rtl">این وضعیت با عنوان حلقه بی‌نهایت</bdi> (Infinite loop) <bdi dir="rtl">شناخته می‌شود</bdi>. <bdi dir="rtl">حلقه بی‌نهایت می‌تواند منابع سیستم</bdi> (<bdi dir="rtl">مانند</bdi> CPU و RAM) <bdi dir="rtl">را به‌صورت بی‌رویه مصرف کند که همین مسئله موجب اختلال در عملکرد مرورگر خواهد شد</bdi>.</p>
-<p><strong><bdi dir="rtl">به‌کارگیری حلقه</bdi> while و do while</strong></p>
-<p><bdi dir="rtl">در فایل</bdi> <code>workshop7.html</code> <bdi dir="rtl">اسکریپت زیر را برای چاپ عناصر آرایه</bdi> colors <bdi dir="rtl">با استفاده از حلقه</bdi> while <bdi dir="rtl">بنویسید</bdi>.</p>
+<p><strong>The while and do while loops</strong> These loops repeat a set of statements until a condition is violated. The general form of these loops, with the code that must be repeated, is as opposite:</p>
+<p>In the while loop, first the condition inside the parentheses is checked; if the condition holds, the statements inside the loop run; if the loop condition is false from the start, the content of the loop does not run at all.</p>
+<p>The content of the do while loop runs once, then the loop condition is checked. If the condition does not hold, the loop is left.</p>
+<p>If the loop condition is never violated, the statements of the loop are repeated continuously. This state is known as an infinite loop. An infinite loop can use up the system's resources (such as CPU and RAM) without limit, which disturbs the browser's performance.</p>
+<p><strong>Using the while and do while loops</strong></p>
+<p>In the file <code>workshop7.html</code> write the following script to print the elements of the array colors using the while loop.</p>
 <figure class="shot"><img alt="Book image" src="../images/p220-01.png" loading="lazy" /></figure>
 <figure class="shot"><img alt="Book image" src="../images/p220-02.png" loading="lazy" /></figure>
-<p><bdi dir="rtl">فایل را ذخیره کنید و خروجی آن را در مرورگر به نمایش بگذارید</bdi>.</p>
-<p><bdi dir="rtl">حاصل جمع عناصر آرایه</bdi> numbers <bdi dir="rtl">را به کمک یک حلقه</bdi> do while <bdi dir="rtl">محاسبه کنید و نتیجه را در کنسول نمایش دهید</bdi>.</p>
+<p>Save the file and show its output in the browser.</p>
+<p>Calculate the sum of the elements of the array numbers with a do while loop and show the result in the console.</p>
 <figure class="shot"><img alt="Book image" src="../images/p220-03.png" loading="lazy" /></figure>
 <figure class="shot"><img alt="Book image" src="../images/p220-04.png" loading="lazy" /></figure>
 </aside>
 <p class="page-mark">Page 215</p>
 
-<p><strong><bdi dir="rtl">حلقه</bdi> for…of</strong>: <bdi dir="rtl">این حلقه برای پیمایش عناصر یک مجموعه قابل تکرار مانند آرایه، رشته، مجموعه و</bdi> ... <bdi dir="rtl">استفاده می‌شود</bdi>. <bdi dir="rtl">حلقه</bdi> for…of <bdi dir="rtl">امکان دسترسی به مقادیر عناصر آرایه را فراهم می‌کند</bdi>.</p>
-<p><strong><bdi dir="rtl">حلقه</bdi> for … in</strong>: <bdi dir="rtl">این حلقه برای پیمایش کلیدهای اشیا</bdi> (Objects) <bdi dir="rtl">و اندیس آرایه‌ها استفاده می‌شود</bdi>. <bdi dir="rtl">شکل کلی ساختار</bdi> for … of و for … in <bdi dir="rtl">به‌صورت زیر است</bdi>:</p>
+<p><strong>The for…of loop</strong>: this loop is used to go over the elements of an iterable collection such as an array, a string, a set and so on. The for…of loop makes it possible to reach the values of the elements of an array.</p>
+<p><strong>The for … in loop</strong>: this loop is used to go over the keys of objects and the indexes of arrays. The general form of the for … of and for … in structures is as follows:</p>
 <p class="table-cap">Table 22</p>
 <div class="table-wrap"><table>
 <thead>
@@ -231,20 +231,20 @@
 </tr>
 </tbody>
 </table></div>
-<p><bdi dir="rtl">متغیر</bdi> element <bdi dir="rtl">به عناصر آرایه، مجموعه یا کاراکترهای یک رشته و</bdi> iterable <bdi dir="rtl">به شیء قابل تکرار اشاره دارد</bdi>. <bdi dir="rtl">متغیر</bdi> key <bdi dir="rtl">به کلید عناصر شیء و اندیس عناصر آرایه اشاره دارد</bdi>.</p>
+<p>The variable element points to the elements of the array, the set or the characters of a string, and iterable points to the iterable object. The variable key points to the key of the elements of the object and the index of the elements of the array.</p>
 <aside class="callout workshop"><p class="callout-label">Workshop</p>
-<p><strong><bdi dir="rtl">کار با ساختار حلقه</bdi> for … of و for … in</strong></p>
+<p><strong>Working with the for … of and for … in loop structures</strong></p>
 <ol>
-<li><bdi dir="rtl">در فایل</bdi> <code>workshop7.html</code> <bdi dir="rtl">اسکریپت زیر را بنویسید و نتیجه را در کنسول مرورگر مشاهده کنید</bdi>.</li>
+<li>In the file <code>workshop7.html</code> write the following script and see the result in the browser console.</li>
 </ol>
 <figure class="shot"><img alt="Book image" src="../images/p221-01.png" loading="lazy" /></figure>
 <figure class="shot"><img alt="Book image" src="../images/p221-02.png" loading="lazy" /></figure>
-<p><bdi dir="rtl">متغیر</bdi> name <bdi dir="rtl">به عناصر آرایه</bdi> firstName <bdi dir="rtl">اشاره دارد؛ در هر بار اجرای حلقه، متغیر</bdi> name <bdi dir="rtl">به عنصر جدیدی از آرایه اشاره می‌کند</bdi>.</p>
+<p>The variable name points to the elements of the array firstName; each time the loop runs, the variable name points to a new element of the array.</p>
 <aside class="callout curiosity"><p class="callout-label">Curiosity</p>
-<p><bdi dir="rtl">در عبارت</bdi> <code>for (const name of firstNames)</code> <bdi dir="rtl">چرا از کلمه کلیدی</bdi> const <bdi dir="rtl">استفاده شده است؟</bdi></p>
+<p>In the expression <code>for (const name of firstNames)</code>, why is the keyword const used?</p>
 </aside>
 <ol start="2">
-<li><bdi dir="rtl">برای بررسی عملکرد حلقه</bdi> for … in <bdi dir="rtl">در پیمایش عناصر اشیا، اسکریپت زیر را بنویسید و نتیجه را در کنسول مرورگر بررسی کنید</bdi>.</li>
+<li>To check how the for … in loop works in going over the elements of objects, write the following script and check the result in the browser console.</li>
 </ol>
 <figure class="shot"><img alt="Book image" src="../images/p221-03.png" loading="lazy" /></figure>
 <figure class="shot"><img alt="Book image" src="../images/p221-04.png" loading="lazy" /></figure>
@@ -252,58 +252,58 @@
 <p class="page-mark">Page 216</p>
 
 <aside class="callout workshop continued"><p class="callout-label">Workshop (continued)</p>
-<p><bdi dir="rtl">در کد فوق متغیر</bdi> languages <bdi dir="rtl">یک شیء حاوی اسامی زبان‌هاست</bdi>. <bdi dir="rtl">در این شیء واژه‌های مخفف</bdi> (<bdi dir="rtl">مانند</bdi> en، fa و ...) <bdi dir="rtl">به عنوان کلید عنصر و عبارت فارسی متناظر آن</bdi> (<bdi dir="rtl">مانند انگلیسی، فارسی و</bdi> ...) <bdi dir="rtl">به عنوان مقدار عنصر مشخص شده است</bdi>.</p>
-<p><bdi dir="rtl">در این کد، حلقه</bdi> for…in <bdi dir="rtl">عناصر شیء</bdi> languages <bdi dir="rtl">را یک‌به‌یک پیمایش می‌کند و کلید هر عنصر را درون متغیر</bdi> lang <bdi dir="rtl">قرار می‌دهد</bdi>. <bdi dir="rtl">سپس دستور</bdi> <code>console.log()</code> <bdi dir="rtl">نام کلید و مقدار متناظر با آن را در کنسول نمایش می‌دهد</bdi>.</p>
+<p>In the code above, the variable languages is an object containing the names of languages. In this object the abbreviations (such as en, fa and so on) are given as the keys of the elements and the matching phrases (such as English, Persian and so on) as the values of the elements.</p>
+<p>In this code, the for…in loop goes over the elements of the object languages one by one and puts the key of each element in the variable lang. Then the statement <code>console.log()</code> shows the name of the key and its matching value in the console.</p>
 </aside>
-<h3><bdi dir="rtl">دستور</bdi> break</h3>
-<p><bdi dir="rtl">این دستور برای خروج از حلقه یا ساختار</bdi> Switch <bdi dir="rtl">به‌کار می‌رود</bdi>. <bdi dir="rtl">اگر دستور</bdi> break <bdi dir="rtl">درون حلقه استفاده شود، اجرای تمام دستورات بعد از آن متوقف شده و خروج از حلقه صورت می‌گیرد</bdi>.</p>
+<h3>The break statement</h3>
+<p>This statement is used to leave a loop or a Switch structure. If the break statement is used inside a loop, the running of all the statements after it stops and the loop is left.</p>
 <aside class="callout note"><p class="callout-label">Note</p>
-<p><bdi dir="rtl">اگر این دستور درون ساختار</bdi> switch <bdi dir="rtl">استفاده شود،</bdi> Case<bdi dir="rtl">های بعدی بررسی نخواهند شد و کنترل برنامه به بعد از آکولاد بسته منتقل می‌شود</bdi>.</p>
+<p>If this statement is used inside a switch structure, the next cases will not be checked and the control of the program moves to after the closing brace.</p>
 <p><strong>Workshop</strong></p>
-<p><strong><bdi dir="rtl">به‌کارگیری دستور</bdi> Break</strong></p>
-<p><bdi dir="rtl">اسکریپتی بنویسید که اعداد دو رقمی آرایه زیر را در کنسول مرورگر نمایش دهد</bdi>.</p>
+<p><strong>Using the Break statement</strong></p>
+<p>Write a script that shows the two-digit numbers of the following array in the browser console.</p>
 <div class="code-wrap" dir="ltr"><pre><code>let data = [10,21,37,43,76,83,98,356,200,353,444,1000];
 </code></pre></div>
-<p><bdi dir="rtl">برای این‌کار در انتهای فایل</bdi> <code>workshop7.html</code><bdi dir="rtl">، اسکریپت زیر را وارد کنید</bdi>. <bdi dir="rtl">سپس فایل را ذخیره کرده و خروجی آن را در کنسول به نمایش بگذارید</bdi>.</p>
+<p>For this, at the end of the file <code>workshop7.html</code>, enter the following script. Then save the file and show its output in the console.</p>
 <figure class="shot"><img alt="Book image" src="../images/p222-02.png" loading="lazy" /></figure>
 <figure class="shot"><img alt="Book image" src="../images/p222-01.png" loading="lazy" /></figure>
 </aside>
-<h3><bdi dir="rtl">دستور</bdi> continue</h3>
-<p><bdi dir="rtl">به‌کارگیری دستور</bdi> continue <bdi dir="rtl">در یک حلقه باعث می‌شود که اجرای فعلی حلقه متوقف و دور بعدی حلقه اجرا شود</bdi>. <bdi dir="rtl">به این معنی که بعد از اجرای دستور</bdi> continue <bdi dir="rtl">کنترل برنامه به ابتدای حلقه منتقل می‌شود و دور بعدی حلقه</bdi> (<bdi dir="rtl">در صورت امکان</bdi>) <bdi dir="rtl">اجرا می‌شود</bdi>.</p>
+<h3>The continue statement</h3>
+<p>Using the continue statement in a loop makes the current run of the loop stop and the next round of the loop run. This means that after the continue statement runs, the control of the program moves to the start of the loop and the next round of the loop is run (if possible).</p>
 <p class="page-mark">Page 217</p>
 
 <aside class="callout workshop"><p class="callout-label">Workshop</p>
-<p><strong><bdi dir="rtl">به‌کارگیری دستور</bdi> Continue</strong></p>
-<p><bdi dir="rtl">اعداد زوج بین</bdi> 20 <bdi dir="rtl">تا</bdi> 35 <bdi dir="rtl">را در کنار هم با جداکنندۀ خط فاصله</bdi> (-) <bdi dir="rtl">نمایش دهید</bdi>.</p>
-<p><bdi dir="rtl">در انتهای اسکریپت فایل</bdi> <code>workshop7.html</code><bdi dir="rtl">، اسکریپت زیر را بنویسید و نتیجه را در کنسول بررسی کنید</bdi>.</p>
+<p><strong>Using the Continue statement</strong></p>
+<p>Show the even numbers between 20 and 35 side by side with the dash (-) as the separator.</p>
+<p>At the end of the script of the file <code>workshop7.html</code>, write the following script and check the result in the console.</p>
 <figure class="shot"><img alt="Book image" src="../images/p223-01.png" loading="lazy" /></figure>
 <figure class="shot"><img alt="Book image" src="../images/p223-02.png" loading="lazy" /></figure>
-<p><bdi dir="rtl">برای حذف خط فاصلۀ آخر</bdi> (-)<bdi dir="rtl">، دستور زیر را قبل از دستور</bdi> <code>console.log</code> <bdi dir="rtl">بنویسید</bdi>:</p>
+<p>To remove the last dash (-), write the following statement before the <code>console.log</code> statement:</p>
 <div class="code-wrap" dir="ltr"><pre><code>evenNumbers = evenNumbers.slice(0, -3);
 </code></pre></div>
 <p><strong>Learn more</strong></p>
-<p><strong><bdi dir="rtl">حلقه‌های تو در تو</bdi></strong></p>
-<p><bdi dir="rtl">حلقه‌هایی که تاکنون معرفی شد، امکان پیمایش عناصر تک‌بعدی را فراهم می‌کنند</bdi>. <bdi dir="rtl">برای پیمایش عناصری همچون آرایه دوبعدی نیاز به استفاده از حلقه‌های تودرتو است</bdi>. <bdi dir="rtl">این نوع حلقه زمانی ایجاد می‌شود که درون یک حلقه، حلقه دیگری قرار گیرد</bdi>. <bdi dir="rtl">در یک حلقۀ تودرتو، حلقۀ داخلی به تعداد دفعات اجرای حلقه خارجی تکرار می‌شود</bdi>.</p>
+<p><strong>Nested loops</strong></p>
+<p>The loops introduced so far make it possible to go over one-dimensional elements. To go over elements such as a two-dimensional array, nested loops must be used. This kind of loop is created when another loop is placed inside a loop. In a nested loop, the inner loop is repeated as many times as the outer loop runs.</p>
 <p><strong>Learn more</strong></p>
-<p><strong><bdi dir="rtl">به‌کارگیری حلقۀ تودرتو</bdi></strong></p>
-<p><bdi dir="rtl">۱ـ جدول ضرب</bdi> 5*5 <bdi dir="rtl">را با استفاده از یک حلقه تودرتو نمایش دهید</bdi>.</p>
-<p><bdi dir="rtl">۲ـ اسکریپت زیر را در انتهای اسکریپت فایل</bdi> <code>workshop7.html</code> <bdi dir="rtl">بنویسید و نتیجه را کنسول بررسی کنید</bdi>.</p>
+<p><strong>Using a nested loop</strong></p>
+<p>1- Show the 5*5 multiplication table using a nested loop.</p>
+<p>2- Write the following script at the end of the script of the file <code>workshop7.html</code> and check the result in the console.</p>
 <figure class="shot"><img alt="Book image" src="../images/p223-03.png" loading="lazy" /></figure>
 <figure class="shot"><img alt="Book image" src="../images/p223-04.png" loading="lazy" /></figure>
-<p><bdi dir="rtl">علامت</bdi> t\ <bdi dir="rtl">به معنای</bdi> tab <bdi dir="rtl">است و برای تنظیم فاصله بین مقادیر استفاده شده است</bdi>.</p>
+<p>The sign \t means tab and is used to adjust the space between the values used.</p>
 </aside>
 <p class="page-mark">Page 218</p>
 
 <aside class="callout activity"><p class="callout-label">Activity</p>
-<p><bdi dir="rtl">به‌جای دستور</bdi> <code>console.log</code> <bdi dir="rtl">از دستور</bdi> <code>document.write</code> <bdi dir="rtl">برای نمایش مقادیر در صفحه مرورگر استفاده کنید</bdi>.</p>
+<p>Instead of the <code>console.log</code> statement, use the <code>document.write</code> statement to show the values in the browser page.</p>
 <p><strong>Workshop</strong></p>
-<p><strong><bdi dir="rtl">پیمایش آرایه دوبعدی با استفاده از حلقه</bdi> for</strong></p>
-<p><bdi dir="rtl">فایل</bdi> <code>product.html</code> <bdi dir="rtl">را باز کنید و کدهای جاوا‌اسکریپت زیر را به آن اضافه کنید</bdi>.</p>
+<p><strong>Going over a two-dimensional array with the for loop</strong></p>
+<p>Open the file <code>product.html</code> and add the following JavaScript code to it.</p>
 <figure class="shot"><img alt="Book image" src="../images/p224-02.png" loading="lazy" /></figure>
 <figure class="shot"><img alt="Book image" src="../images/p224-01.png" loading="lazy" /></figure>
 </aside>
-<p><strong><bdi dir="rtl">توابع</bdi>(Functions)</strong> <bdi dir="rtl">در زبان‌های برنامه‌نویسی به بلوک‌های کدی که یک کار مشخص را انجام می‌دهند، تابع گفته می‌شود</bdi>. <bdi dir="rtl">برنامه‌نویس می‌تواند مجموعه‌ای از دستورالعمل‌ها را در قالب یک تابع گروه‌بندی کند و سپس آن را به عنوان یک واحد مجزا مورد استفاده قرار دهد</bdi>. <bdi dir="rtl">این واحدهای مجزا می‌توانند بارها مورد استفاده قرار گیرند</bdi>. <bdi dir="rtl">استفاده از توابع در برنامه‌نویسی نه‌تنها سرعت توسعه را افزایش می‌دهد، بلکه خوانایی و قابلیت نگهداری کد را نیز افزایش می‌دهد</bdi>. <bdi dir="rtl">مجموعه دستورات نوشته‌شده برای ایجاد یک تابع، تحت یک نام مشخص قابل فراخوانی هستند</bdi>. <bdi dir="rtl">یک تابع می‌تواند مقادیری را به‌عنوان ورودی دریافت کند و بعد از اجرای دستورات داخل تابع، مقداری را به‌عنوان خروجی برگرداند</bdi>.</p>
-<p><bdi dir="rtl">در جاوااسکریپت برای ایجاد یک تابع از شکل کلی زیر استفاده می‌شود</bdi>:</p>
+<p><strong>Functions</strong>: in programming languages, blocks of code that do one specific job are called functions. The programmer can group a set of instructions in the form of a function and then use it as a separate unit. These separate units can be used many times. Using functions in programming not only increases the speed of development, but also increases the readability and maintainability of the code. The set of statements written to create a function can be called under a specific name. A function can receive values as input and, after the statements inside the function run, return a value as output.</p>
+<p>In JavaScript the following general form is used to create a function:</p>
 <figure class="shot"><img alt="Figure 12" src="../images/p224-03.png" loading="lazy" /><figcaption>Figure 12</figcaption></figure></article>
       <aside class="card extra">
         <h2 data-fa="تمرین این بخش" data-en="Exercises for this section">تمرین این بخش</h2>

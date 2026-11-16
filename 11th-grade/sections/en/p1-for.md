@@ -110,7 +110,7 @@ Stop: (required), and it is not itself included. Step: (optional), default one.
 
 <!-- page 36 -->
 
-**اولین حالت**: در ساده‌ترین حالت، تابع `range()` تنها یک عدد دریافت می‌کند که به‌صورت `range(stop)` نوشته می‌شود. به مثال زیر توجه کنید:
+**The first form**: in the simplest form, the function `range()` receives only one number, written as `range(stop)`. Look at the following example:
 
 ![Figure 79](../images/p042-02.png)
 *Figure 79*
@@ -132,7 +132,7 @@ The end value of the loop (stop) is 7, but 7 itself is not included. The range f
 
 The step (step) is one by default.
 
-**در حالت سوم، ** تابع range سه عدد دریافت می‌کند که به‌صورت `range(start, stop, step)` نوشته می‌شود. به مثال زیر توجه کنید:
+**In the third form,** the function range receives three numbers, written as `range(start, stop, step)`. Look at the following example:
 
 Example: a loop that prints the even numbers less than 10 (Figure 81).
 

@@ -194,8 +194,8 @@
 <p>عبارت (<code>x===s</code>)? تساوی دو متغیر <bdi dir="ltr">x</bdi> و <bdi dir="ltr">s</bdi> را بررسی می‌کند. اگر نتیجه مقایسه <bdi dir="ltr">true</bdi> (درست) باشد، عبارت قبل از علامت ? و اگر نتیجه <bdi dir="ltr">false</bdi> (غلط) باشد، عبارت بعد از علامت : در متغیر <bdi dir="ltr">result</bdi> ذخیره می‌گردد.</p>
 </aside></article><article class="card lesson no-copy" lang="en" dir="ltr" data-lang-block="en" hidden><p class="page-mark">Page 203</p>
 
-<p><strong><bdi dir="rtl">عملگرهای ریاضی</bdi> (Arithmetic)</strong> : <bdi dir="rtl">این عملگرها برای انجام انواع عملیات محاسباتی ریاضی مورد استفاده قرار می‌گیرند</bdi>. <bdi dir="rtl">شرح این عملگرها در جدول ۱۶ آمده است</bdi>:</p>
-<p class="table-cap">Table 16: <bdi dir="rtl">عملگرهای ریاضی جاوا‌اسکریپت</bdi></p>
+<p><strong>Arithmetic operators</strong>: these operators are used to do all kinds of mathematical calculation operations. The description of these operators is given in Table 16:</p>
+<p class="table-cap">Table 16: JavaScript arithmetic operators</p>
 <div class="table-wrap"><table>
 <thead>
 <tr>
@@ -207,72 +207,72 @@
 <tbody>
 <tr>
 <td>+ , - , * , / , %</td>
-<td><bdi dir="rtl">جمع، تفریق، ضرب و تقسیم و باقی‌مانده</bdi></td>
+<td>Addition, subtraction, multiplication, division and remainder</td>
 <td><code>x = y+z , a = a*2, n = n/10</code></td>
 </tr>
 <tr>
 <td>++,--</td>
-<td><bdi dir="rtl">افزایش و کاهش به میزان یک واحد</bdi></td>
+<td>Increasing and decreasing by one unit</td>
 <td><code>x++, y--, ++z, --w</code></td>
 </tr>
 <tr>
 <td>**</td>
-<td><bdi dir="rtl">توان</bdi></td>
+<td>Power</td>
 <td><code>x = y**2</code></td>
 </tr>
 </tbody>
 </table></div>
-<p><strong><bdi dir="rtl">عملگرهای انتساب</bdi> (Assignment)</strong>: <bdi dir="rtl">برای اختصاص یک مقدار به یک متغیر از این عملگرها استفاده می‌شود</bdi>. <bdi dir="rtl">برخی از این عملگرها ساده و برخی ترکیبی هستند؛ یعنی علاوه بر انتساب، عمل دیگری را نیز روی عملوندها انجام می‌دهند</bdi>. <bdi dir="rtl">جدول ۱۷ مجموعه این عملگرها را نمایش می‌دهد</bdi>.</p>
-<p class="table-cap">Table 17: <bdi dir="rtl">عملگرهای انتساب در جاوا‌اسکریپت</bdi></p>
+<p><strong>Assignment operators</strong>: these operators are used to assign a value to a variable. Some of these operators are simple and some are compound; that is, besides assignment they do another operation on the operands too. Table 17 shows the set of these operators.</p>
+<p class="table-cap">Table 17: Assignment operators in JavaScript</p>
 <div class="table-wrap"><table>
 <thead>
 <tr>
 <th>Operator</th>
 <th>Description</th>
 <th>Example</th>
-<th><bdi dir="rtl">عبارت معادل</bdi></th>
+<th>Equivalent expression</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td><code>=</code></td>
-<td><bdi dir="rtl">مقدار عملوند سمت راست</bdi> (y)<bdi dir="rtl">، درون عملوند سمت چپ</bdi> (x) <bdi dir="rtl">قرار می‌گیرد</bdi>.</td>
+<td>The value of the right operand (y) is put in the left operand (x).</td>
 <td><code>x = y</code></td>
 <td><code>x = y</code></td>
 </tr>
 <tr>
 <td><code>+=</code></td>
-<td><bdi dir="rtl">حاصل جمع عملوندهای</bdi> x و y <bdi dir="rtl">درون عملوند سمت چپ</bdi> (x) <bdi dir="rtl">قرار می‌گیرد</bdi>.</td>
+<td>The sum of the operands x and y is put in the left operand (x).</td>
 <td><code>x += y</code></td>
 <td><code>x = x + y</code></td>
 </tr>
 <tr>
 <td><code>-=</code></td>
-<td><bdi dir="rtl">حاصل تفریق عملوندهای</bdi> x و y <bdi dir="rtl">درون عملوند سمت چپ</bdi> (x) <bdi dir="rtl">قرار می‌گیرد</bdi>.</td>
+<td>The difference of the operands x and y is put in the left operand (x).</td>
 <td><code>x -= y</code></td>
 <td><code>x = x – y</code></td>
 </tr>
 <tr>
 <td><code>*=</code></td>
-<td><bdi dir="rtl">حاصل ضرب عملوندهای</bdi> x و y <bdi dir="rtl">درون عملوند سمت چپ</bdi> (x) <bdi dir="rtl">قرار می‌گیرد</bdi>.</td>
+<td>The product of the operands x and y is put in the left operand (x).</td>
 <td><code>x *= y</code></td>
 <td><code>x = x * y</code></td>
 </tr>
 <tr>
 <td><code>/=</code></td>
-<td><bdi dir="rtl">خارج قسمت تقسیم عملوند</bdi> x <bdi dir="rtl">بر عملوند</bdi> y <bdi dir="rtl">درون متغیر سمت چپ</bdi> (x) <bdi dir="rtl">قرار می‌گیرد</bdi>.</td>
+<td>The quotient of dividing the operand x by the operand y is put in the left variable (x).</td>
 <td><code>x /= y</code></td>
 <td><code>x = x / y</code></td>
 </tr>
 <tr>
 <td><code>% =</code></td>
-<td><bdi dir="rtl">باقیمانده تقسیم عملوند</bdi> x <bdi dir="rtl">بر عملوند</bdi> y <bdi dir="rtl">درون متغیر سمت چپ</bdi> (x) <bdi dir="rtl">قرار می‌گیرد</bdi>.</td>
+<td>The remainder of dividing the operand x by the operand y is put in the left variable (x).</td>
 <td><code>x %= y</code></td>
 <td><code>x = x % y</code></td>
 </tr>
 <tr>
 <td><code>**=</code></td>
-<td><bdi dir="rtl">عملوند</bdi> x <bdi dir="rtl">را به توان عملوند</bdi> y <bdi dir="rtl">می‌رساند و نتیجه را درون متغیر</bdi> x <bdi dir="rtl">قرار می‌دهد</bdi>.</td>
+<td>Raises the operand x to the power of the operand y and puts the result in the variable x.</td>
 <td><code>x **= y</code></td>
 <td><code>x = x ** y</code></td>
 </tr>
@@ -280,9 +280,9 @@
 </table></div>
 <p class="page-mark">Page 204</p>
 
-<p><strong><bdi dir="rtl">عملگرهای مقایسه‌ای</bdi> (Comparison)</strong>: <bdi dir="rtl">این عملگرها برای مقایسه دو عملوند به‌کار می‌روند</bdi>.</p>
-<p><bdi dir="rtl">مجموعه این عملگرها در جدول ۱۸ آمده است</bdi>:</p>
-<p class="table-cap">Table 18: <bdi dir="rtl">عملگرهای مقایسه‌ای</bdi></p>
+<p><strong>Comparison operators</strong>: these operators are used to compare two operands.</p>
+<p>The set of these operators is given in Table 18:</p>
+<p class="table-cap">Table 18: Comparison operators</p>
 <div class="table-wrap"><table>
 <thead>
 <tr>
@@ -292,29 +292,29 @@
 </thead>
 <tbody>
 <tr>
-<td><code>==</code> و <code>===</code></td>
-<td><code>==</code> <bdi dir="rtl">برای بررسی تساوی دو عملوند از لحاظ مقدار و</bdi> <code>===</code> <bdi dir="rtl">برای تساوی دو عملوند از لحاظ مقدار و نوع</bdi></td>
+<td><code>==</code> and <code>===</code></td>
+<td><code>==</code> checks the equality of two operands in terms of value and <code>===</code> checks the equality of two operands in terms of value and type</td>
 </tr>
 <tr>
-<td><code>!=</code> و <code>!==</code></td>
-<td><code>!=</code> <bdi dir="rtl">برای بررسی عدم تساوی مقدار دو عملوند و</bdi> <code>!==</code> <bdi dir="rtl">برای بررسی عدم تساوی مقدار و نوع دو عملوند</bdi></td>
+<td><code>!=</code> and <code>!==</code></td>
+<td><code>!=</code> checks that the values of two operands are not equal and <code>!==</code> checks that the value and the type of two operands are not equal</td>
 </tr>
 <tr>
 <td><code>&lt; , &gt;</code></td>
-<td><bdi dir="rtl">کوچک‌تر یا بزرگ‌تر بودن عملوند اول نسبت به عملوند دوم</bdi></td>
+<td>Whether the first operand is smaller or larger than the second operand</td>
 </tr>
 <tr>
 <td><code>&gt;= , &lt;=</code></td>
-<td><bdi dir="rtl">کوچک‌تر یا مساوی، بزرگ‌تر یا مساوی</bdi></td>
+<td>Smaller than or equal, larger than or equal</td>
 </tr>
 <tr>
 <td>?</td>
-<td><bdi dir="rtl">عملگر شرطی سه‌تایی که برای انتخاب بین دو مقدار بر اساس یک شرط استفاده می‌شود</bdi>.</td>
+<td>The ternary conditional operator, used to choose between two values based on a condition.</td>
 </tr>
 </tbody>
 </table></div>
-<p><strong><bdi dir="rtl">عملگرهای منطقی</bdi> (Boolean)</strong>: <bdi dir="rtl">از عملگرهای منطقی برای ترکیب یا معکوس کردن شرایط استفاده می‌شود</bdi>. <bdi dir="rtl">این عملگرها امکان ترکیب عبارات منطقی را در شرایط مختلف فراهم می‌کنند</bdi>. <bdi dir="rtl">جدول ۱۹ عملگرهای منطقی جاوا‌اسکریپت را معرفی می‌کند</bdi>:</p>
-<p class="table-cap">Table 19: <bdi dir="rtl">عملگرهای منطقی</bdi></p>
+<p><strong>Logical operators (Boolean)</strong>: logical operators are used to combine or reverse conditions. These operators make it possible to combine logical expressions in different conditions. Table 19 introduces JavaScript's logical operators:</p>
+<p class="table-cap">Table 19: Logical operators</p>
 <div class="table-wrap"><table>
 <thead>
 <tr>
@@ -325,23 +325,23 @@
 <tbody>
 <tr>
 <td>&amp;&amp;</td>
-<td><bdi dir="rtl">عملگر</bdi> AND <bdi dir="rtl">بررسی می‌کند که آیا هر دو عملوند صحیح هستند یا خیر</bdi>.</td>
+<td>The AND operator checks whether both operands are true or not.</td>
 </tr>
 <tr>
 <td>||</td>
-<td><bdi dir="rtl">عملگر</bdi> OR <bdi dir="rtl">بررسی می‌کند که آیا حداقل یکی از شرط‌ها درست است یا خیر</bdi>.</td>
+<td>The OR operator checks whether at least one of the conditions is true or not.</td>
 </tr>
 <tr>
 <td><code>!</code></td>
-<td><bdi dir="rtl">عملگر</bdi> NOT <bdi dir="rtl">وضعیت درست یا غلط بودن یک شرط را معکوس می‌کند</bdi>.</td>
+<td>The NOT operator reverses the true or false state of a condition.</td>
 </tr>
 </tbody>
 </table></div>
 <p class="page-mark">Page 205</p>
 
 <aside class="callout workshop"><p class="callout-label">Workshop</p>
-<p><strong><bdi dir="rtl">کار با انواع عملگرهای جاوا‌اسکریپت</bdi></strong></p>
-<p><bdi dir="rtl">فایل جدیدی با نام</bdi> <code>workshop3.html</code> <bdi dir="rtl">ایجاد کنید و تگ</bdi> <code>&lt;script&gt;</code> <bdi dir="rtl">را در بخش</bdi> body <bdi dir="rtl">بنویسید</bdi>. <bdi dir="rtl">سپس اسکریپت زیر را درون آن وارد کنید و نتایج به‌دست آمده را در جاهای خالی بنویسید</bdi>.</p>
+<p><strong>Working with the types of JavaScript operators</strong></p>
+<p>Create a new file named <code>workshop3.html</code> and write the <code>&lt;script&gt;</code> tag in the body section. Then enter the following script in it and write the results you get in the blanks.</p>
 <div class="code-wrap" dir="ltr"><pre><code>1 let x = 10, y = 2, z= 3, w=20, s="10", n = "sara", m="sina";
 2 x++;
                                  ……………….
@@ -367,9 +367,9 @@
                              ……………….
 </code></pre></div>
 <p><strong>Note</strong></p>
-<p><bdi dir="rtl">در هنگام مقایسه دو عملوند توسط عملگرهای</bdi> <code>==</code> و <code>!=</code> <bdi dir="rtl">نوع داده عملوندها اهمیتی ندارد و فقط مقادیر آنها بررسی می‌شود؛ درحالی‌که عملگر</bdi> <code>===</code> و <code>!==</code> <bdi dir="rtl">نوع داده عملوندها را نیز مد نظر دارد</bdi>.</p>
+<p>When two operands are compared with the operators <code>==</code> and <code>!=</code>, the data type of the operands does not matter and only their values are checked, whereas the operators <code>===</code> and <code>!==</code> take the data type of the operands into account too.</p>
 <p><strong>Note</strong></p>
-<p><bdi dir="rtl">عبارت</bdi> (<code>x===s</code>)? <bdi dir="rtl">تساوی دو متغیر</bdi> x و s <bdi dir="rtl">را بررسی می‌کند</bdi>. <bdi dir="rtl">اگر نتیجه مقایسه</bdi> true (<bdi dir="rtl">درست</bdi>) <bdi dir="rtl">باشد، عبارت قبل از علامت</bdi> ? <bdi dir="rtl">و اگر نتیجه</bdi> false (<bdi dir="rtl">غلط</bdi>) <bdi dir="rtl">باشد، عبارت بعد از علامت</bdi> : <bdi dir="rtl">در متغیر</bdi> result <bdi dir="rtl">ذخیره می‌گردد</bdi>.</p>
+<p>The expression (<code>x===s</code>)? checks the equality of the two variables x and s. If the result of the comparison is true, the expression before the ? sign is stored in the variable result, and if it is false, the expression after the : sign is stored.</p>
 </aside></article>
       <aside class="card extra">
         <h2 data-fa="تمرین این بخش" data-en="Exercises for this section">تمرین این بخش</h2>

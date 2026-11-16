@@ -12,7 +12,7 @@
 
 > **Learn more**
 >
-> **طرح‌بندی صفحه با چیدمان شبکه‌ای (Grid)**
+> **Page layout with the grid layout (Grid)**
 >
 > Unlike flex, which works in only one dimension (a row or a column), Grid lets you create rows and columns of content at the same time. With the grid system you have precise control over spacing and sizes. It is flexible and very useful for building orderly, responsive grid structures. To create a grid layout, the display property is used with the value grid. The number of columns is set with grid-template-columns, and the space between columns with gap.
 

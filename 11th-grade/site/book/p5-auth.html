@@ -116,105 +116,105 @@
 <p><strong>توضیحات کدها</strong>:</p>
 <p>یک فرم با متد از نوع <bdi dir="ltr">post</bdi> ایجاد شده است. این فرم طول و عرض جغرافیایی و همچنین نام شهر را از کاربر گرفته و برای سرور جنگو ارسال می‌کند تا در دیتابیس ذخیره شود.</p></article><article class="card lesson no-copy" lang="en" dir="ltr" data-lang-block="en" hidden><p class="page-mark">Page 313</p>
 
-<p><strong><bdi dir="rtl">توضیحات کدها</bdi></strong>:</p>
-<p><strong><bdi dir="rtl">خط</bdi> 10</strong>: <bdi dir="rtl">برای اینکه نام شهرها قابلیت کلیک شدن داشته باشند، یک تگ</bdi> a <bdi dir="rtl">درون تگ</bdi> p <bdi dir="rtl">ایجاد شده و جهت نمایش عنوان لینک، از متغیر</bdi> {{ <code>item.title</code> }} <bdi dir="rtl">استفاده شده است</bdi>. <bdi dir="rtl">آدرس لینک</bdi> (href) <bdi dir="rtl">به صفحه اصلی اشاره کرده و متغیر</bdi> {{ <code>item.id</code> }} <bdi dir="rtl">به پارامتر</bdi> id <bdi dir="rtl">مقدار داده است</bdi>.</p>
-<p><bdi dir="rtl">این کد</bdi> id <bdi dir="rtl">را به درخواست</bdi> GET <bdi dir="rtl">اضافه و به صفحه اصلی ارسال می‌کند</bdi>. <bdi dir="rtl">به عنوان مثال اگر آیدی شهر انتخاب شده</bdi> 11 <bdi dir="rtl">باشد، کاربر به آدرس زیر منتقل می‌شود</bdi>:</p>
+<p><strong>Explanation of the code</strong>:</p>
+<p><strong>Line 10</strong>: so that the city names can be clicked, an a tag is created inside the p tag and, to show the title of the link, the variable {{ <code>item.title</code> }} is used. The address of the link (href) points to the main page and the variable {{ <code>item.id</code> }} gives a value to the parameter id.</p>
+<p>This code adds the id to the GET request and sends it to the main page. For example, if the id of the chosen city is 11, the user is taken to the following address:</p>
 <div class="code-wrap" dir="ltr"><pre><code>http://127.0.0.1:8000/?id=11
 </code></pre></div>
-<p><bdi dir="rtl">در گام بعد،</bdi> <code>views.py</code> <bdi dir="rtl">را باز کنید و</bdi> <code>show_temp_view</code> <bdi dir="rtl">را همانند شکل</bdi> 56 <bdi dir="rtl">تغییر دهید</bdi>.</p>
-<figure class="shot"><img alt="Figure 56: استفاده از id جهت انتخاب شهر" src="../images/p319-01.png" loading="lazy" /><figcaption>Figure 56: <bdi dir="rtl">استفاده از</bdi> id <bdi dir="rtl">جهت انتخاب شهر</bdi></figcaption></figure>
-<p><strong><bdi dir="rtl">توضیحات کدها</bdi></strong>:</p>
-<p><strong><bdi dir="rtl">خط</bdi> 11</strong>: <bdi dir="rtl">مقدار پارامتر</bdi> id <bdi dir="rtl">که از طریق متد</bdi> GET <bdi dir="rtl">در نوار آدرس ارسال شده است، در متغیر</bdi> <code>city_id</code> <bdi dir="rtl">ذخیره می‌شود</bdi>.</p>
-<p><bdi dir="rtl">درصورتی‌که پارامتر</bdi> id <bdi dir="rtl">در نوار آدرس وجود نداشته باشد، تابع</bdi> <code>get('id')</code> <bdi dir="rtl">که بعد از</bdi> GET <bdi dir="rtl">استفاده شده است، مقدار</bdi> <code>city_id</code> <bdi dir="rtl">را برابر</bdi> None <bdi dir="rtl">ذخیره خواهد کرد</bdi>.</p>
-<p><strong><bdi dir="rtl">خط</bdi> 13</strong>: <bdi dir="rtl">اگر</bdi> <code>city_id</code> <bdi dir="rtl">مقدار داشته باشد، با استفاده از</bdi> ORM <bdi dir="rtl">جنگو، شهر انتخاب شده توسط کاربر، به‌صورت یک شیء</bdi> (object)<bdi dir="rtl">، در متغیر</bdi> city <bdi dir="rtl">ذخیره می‌شود</bdi>.</p>
-<p><strong><bdi dir="rtl">خط</bdi> 15</strong>: <bdi dir="rtl">اگر</bdi> <code>city_id</code> <bdi dir="rtl">برابر</bdi> None <bdi dir="rtl">باشد</bdi> (id <bdi dir="rtl">در نوار آدرس وجود نداشته باشد</bdi>)<bdi dir="rtl">، اولین شهر از پایگاه داده واکشی می‌شود</bdi>.</p>
+<p>In the next step, open <code>views.py</code> and change <code>show_temp_view</code> as in Figure 56.</p>
+<figure class="shot"><img alt="Figure 56: Using id to choose the city" src="../images/p319-01.png" loading="lazy" /><figcaption>Figure 56: Using id to choose the city</figcaption></figure>
+<p><strong>Explanation of the code</strong>:</p>
+<p><strong>Line 11</strong>: the value of the parameter id that was sent through the GET method in the address bar is stored in the variable <code>city_id</code>.</p>
+<p>If the parameter id is not in the address bar, the function <code>get('id')</code> used after GET will store the value of <code>city_id</code> as None.</p>
+<p><strong>Line 13</strong>: if <code>city_id</code> has a value, using Django's ORM, the city chosen by the user is stored as an object in the variable city.</p>
+<p><strong>Line 15</strong>: if <code>city_id</code> is None (id is not in the address bar), the first city is fetched from the database.</p>
 <p class="page-mark">Page 314</p>
 
-<p><bdi dir="rtl">اکنون تمام فایل‌ها را ذخیره نموده، صفحه لیست شهرها را</bdi> refresh <bdi dir="rtl">کنید</bdi>. <bdi dir="rtl">همه شهرها لینک دارند</bdi>.</p>
-<p><bdi dir="rtl">روی هر شهری که کلیک کنید، در صفحه جدید دمای هوای آن شهر مشاهده می‌شود</bdi> (<bdi dir="rtl">شکل</bdi> 57).</p>
-<figure class="shot"><img alt="Figure 57: نمایش دمای یک شهر کلیک شده" src="../images/p320-01.png" loading="lazy" /><figcaption>Figure 57: <bdi dir="rtl">نمایش دمای یک شهر کلیک شده</bdi></figcaption></figure>
-<h3><bdi dir="rtl">ورود به سایت</bdi> (login)</h3>
-<p><bdi dir="rtl">در حال حاضر، صفحه اصلی و صفحه لیست شهرها توسط کاربر مهمان و کاربر ادمین قابل مشاهده هستند</bdi>. <bdi dir="rtl">اما هر سایت می‌تواند صفحه‌هایی داشته باشد که برای دیده شدن نیاز به</bdi> login (<bdi dir="rtl">ورود به سایت</bdi>) <bdi dir="rtl">داشته باشند</bdi>. <bdi dir="rtl">به‌عنوان مثال برای دیدن پنل ادمین جنگو، باید با نام کاربری و رمز عبور ادمین</bdi> login <bdi dir="rtl">کنید</bdi>. <bdi dir="rtl">شما می‌توانید، امکان دسترسی به قسمت افزودن نام شهرها را فقط به کاربرانی اعطا کنید که با نام کاربری و رمز عبور خودشان وارد سایت می‌شوند</bdi>.</p>
-<p><bdi dir="rtl">جنگو خودش به‌طور پیش‌فرض امکاناتی برای مدیریت کاربران دارد تا بتوانید عملیات</bdi> login و logout <bdi dir="rtl">را درون سایت اجرا نمایید</bdi>. <bdi dir="rtl">فقط کافیست فایل</bdi> template <bdi dir="rtl">لازم یعنی</bdi> <code>login.html</code> <bdi dir="rtl">را در پوشه مناسب ساخته و در فایل</bdi> urls <bdi dir="rtl">اصلی پروژه</bdi> (<bdi dir="rtl">موجود در پوشه</bdi> config) <bdi dir="rtl">یک</bdi> path <bdi dir="rtl">جدید اضافه کنید</bdi>.</p>
-<p><strong><bdi dir="rtl">مرحله اول</bdi></strong>: <bdi dir="rtl">فایل</bdi> <code>urls.py</code> <bdi dir="rtl">اصلی پروژه را همانند شکل</bdi> 58 <bdi dir="rtl">تغییر دهید</bdi>.</p>
-<figure class="shot"><img alt="Figure 58: افزودن path جدید جهت login و logout" src="../images/p320-02.png" loading="lazy" /><figcaption>Figure 58: <bdi dir="rtl">افزودن</bdi> path <bdi dir="rtl">جدید جهت</bdi> login و logout</figcaption></figure>
+<p>Now save all the files and refresh the page of the list of cities. All the cities have a link.</p>
+<p>Whichever city you click on, the air temperature of that city is seen on the new page (Figure 57).</p>
+<figure class="shot"><img alt="Figure 57: Showing the temperature of a clicked city" src="../images/p320-01.png" loading="lazy" /><figcaption>Figure 57: Showing the temperature of a clicked city</figcaption></figure>
+<h3>Signing in to the site (login)</h3>
+<p>At the moment, the main page and the page of the list of cities can be seen by the guest user and the admin user. But every site can have pages that need login (signing in to the site) to be seen. For example, to see Django's admin panel, you must log in with the admin's username and password. You can give the ability to reach the part for adding the names of cities only to users who enter the site with their own username and password.</p>
+<p>By default Django itself has facilities for managing users so that you can do the login and logout operations inside the site. It is enough to make the needed template file, that is <code>login.html</code>, in a suitable folder and add a new path in the main urls file of the project (in the config folder).</p>
+<p><strong>First step</strong>: change the main <code>urls.py</code> file of the project as in Figure 58.</p>
+<figure class="shot"><img alt="Figure 58: Adding a new path for login and logout" src="../images/p320-02.png" loading="lazy" /><figcaption>Figure 58: Adding a new path for login and logout</figcaption></figure>
 <p class="page-mark">Page 315</p>
 
-<p><strong><bdi dir="rtl">توضیحات کدها</bdi></strong>:</p>
-<p><strong><bdi dir="rtl">خط</bdi> 7</strong>: <bdi dir="rtl">یک</bdi> path <bdi dir="rtl">جدید اضافه شده است و در ادامه منجر به این خواهد شد که</bdi> App <bdi dir="rtl">مدیریت کاربران جنگو</bdi> (auth) <bdi dir="rtl">به کمک</bdi> urls و views <bdi dir="rtl">پیش‌فرض، فایل</bdi> <code>login.html</code> <bdi dir="rtl">را نمایش دهد</bdi>. <bdi dir="rtl">برای مدیریت احراز هویت کاربر در پروژه جنگو، از ماژول</bdi> <code>django.contrib.auth</code> <bdi dir="rtl">استفاده شده است</bdi>.</p>
-<p><bdi dir="rtl">با اضافه‌کردن این خط کد به فایل</bdi> <code>urls.py</code><bdi dir="rtl">، امکان ورود، خروج و تغییر رمز عبور به سایت اضافه می‌شود</bdi>. <bdi dir="rtl">همه این قابلیت‌ها توسط ماژول</bdi> <code>django.contrib.auth</code> <bdi dir="rtl">مدیریت می‌شوند و نیازی به تعریف دستی</bdi> path <bdi dir="rtl">دیگری ندارید</bdi>.</p>
-<p><strong><bdi dir="rtl">مرحله دوم</bdi></strong>: <bdi dir="rtl">در پوشه</bdi> templates <bdi dir="rtl">از</bdi> weather app<bdi dir="rtl">، یک‌پوشه جدید با نام</bdi> registration <bdi dir="rtl">ایجاد کنید، سپس درون آن یک فایل با نام</bdi> <code>login.html</code> <bdi dir="rtl">همانند شکل</bdi> 59 <bdi dir="rtl">بسازید</bdi>.</p>
-<p><img alt="Figure 59: افزودن فایل login.html" src="../images/p321-01.png" loading="lazy" />
-<em>Figure 59: <bdi dir="rtl">افزودن فایل</bdi> <code>login.html</code></em></p>
-<p><strong><bdi dir="rtl">توضیحات کدها</bdi></strong>:</p>
-<p><strong><bdi dir="rtl">خط</bdi> 10</strong>: <bdi dir="rtl">یک فرم با متدی از نوع</bdi> post <bdi dir="rtl">ایجاد شده است</bdi>.</p>
-<p><strong><bdi dir="rtl">خط</bdi> 11</strong>: <bdi dir="rtl">فیلد</bdi> <code>csrf_token</code> <bdi dir="rtl">به فرم اضافه شده است</bdi>. <code>csrf_token</code> <bdi dir="rtl">در جنگو یک مقدار امنیتی است که داخل فرم‌ها قرار می‌گیرد تا مطمئن شود درخواست ارسال‌شده واقعاً از همان سایت و توسط کاربر مجاز آمده است</bdi>. <bdi dir="rtl">این توکن از حملۀ</bdi> Cross-Site Request Forgery <bdi dir="rtl">جلوگیری می‌کند</bdi>.</p>
-<p><strong><bdi dir="rtl">خط</bdi> 12</strong>: <bdi dir="rtl">فیلدهای فرم را به‌صورت تگ‌های</bdi><code>&lt;p&gt;</code> <bdi dir="rtl">در</bdi> HTML <bdi dir="rtl">نمایش می‌دهد</bdi>.</p>
-<p><strong><bdi dir="rtl">خط</bdi> 13</strong>: <bdi dir="rtl">یک دکمه از نوع</bdi> submit <bdi dir="rtl">برای ارسال اطلاعات به سرور جنگو اضافه شده است</bdi>.</p>
+<p><strong>Explanation of the code</strong>:</p>
+<p><strong>Line 7</strong>: a new path is added and, as a result, it will make Django's user management App (auth), with the help of the default urls and views, show the file <code>login.html</code>. To manage the user's authentication in a Django project, the module <code>django.contrib.auth</code> is used.</p>
+<p>By adding this line of code to the file <code>urls.py</code>, the ability to sign in, sign out and change the password is added to the site. All these capabilities are managed by the module <code>django.contrib.auth</code> and you do not need to define another path by hand.</p>
+<p><strong>Second step</strong>: in the templates folder of the weather app, create a new folder named registration, then inside it make a file named <code>login.html</code> as in Figure 59.</p>
+<p><img alt="Figure 59: Adding the file login.html" src="../images/p321-01.png" loading="lazy" />
+<em>Figure 59: Adding the file <code>login.html</code></em></p>
+<p><strong>Explanation of the code</strong>:</p>
+<p><strong>Line 10</strong>: a form with a post-type method is created.</p>
+<p><strong>Line 11</strong>: the field <code>csrf_token</code> is added to the form. <code>csrf_token</code> in Django is a security value placed inside forms to make sure the request sent really came from the same site and by an authorised user. This token prevents the Cross-Site Request Forgery attack.</p>
+<p><strong>Line 12</strong>: shows the fields of the form as <code>&lt;p&gt;</code> tags in HTML.</p>
+<p><strong>Line 13</strong>: a button of the submit type is added to send the information to the Django server.</p>
 <aside class="callout curiosity"><p class="callout-label">Curiosity</p>
-<p><bdi dir="rtl">در مورد</bdi> <code>csrf_token</code> <bdi dir="rtl">و حمله</bdi> Cross-Site Request Forgery <bdi dir="rtl">تحقیق و بررسی کنید</bdi>.</p>
+<p>Research and look into <code>csrf_token</code> and the Cross-Site Request Forgery attack.</p>
 </aside>
 <p class="page-mark">Page 316</p>
 
-<p><strong><bdi dir="rtl">مرحله سوم</bdi></strong>: <bdi dir="rtl">در فایل</bdi> <code>settings.py</code><bdi dir="rtl">، تنظیمات لازم را برای بعد از اتمام عملیات</bdi> login و logout <bdi dir="rtl">همانند شکل</bdi> 60 <bdi dir="rtl">انجام دهید</bdi>.</p>
-<p><img alt="Figure 60: تنظیمات login و logout در settings.py" src="../images/p322-01.png" loading="lazy" />
-<em>Figure 60: <bdi dir="rtl">تنظیمات</bdi> login و logout <bdi dir="rtl">در</bdi> <code>settings.py</code></em></p>
-<p><strong><bdi dir="rtl">توضیحات کدها</bdi></strong></p>
-<p><strong><bdi dir="rtl">خط</bdi> 125</strong>: <bdi dir="rtl">کاربر بعد از</bdi> login <bdi dir="rtl">موفق به صفحه</bdi> home <bdi dir="rtl">منتقل خواهد شد</bdi>. home <bdi dir="rtl">همان نامی‌است که برای آدرس صفحه اصلی در</bdi> <code>urls.py</code> <bdi dir="rtl">تعریف شده است</bdi>.</p>
-<p><strong><bdi dir="rtl">خط</bdi> 126</strong>: <bdi dir="rtl">کاربر بعد از</bdi> logout <bdi dir="rtl">موفق به صفحه</bdi> home <bdi dir="rtl">منتقل خواهد شد</bdi>.</p>
-<p><strong><bdi dir="rtl">مرحله چهارم</bdi></strong>: <bdi dir="rtl">در فایل</bdi> <code>show_temp.html</code><bdi dir="rtl">، دکمه‌های ورود و خروج را همانند شکل</bdi> 61 <bdi dir="rtl">اضافه کنید</bdi>.</p>
-<figure class="shot"><img alt="Figure 61: افزودن دکمه ورود و خروج به صفحه اصلی" src="../images/p322-02.png" loading="lazy" /><figcaption>Figure 61: <bdi dir="rtl">افزودن دکمه ورود و خروج به صفحه اصلی</bdi></figcaption></figure>
+<p><strong>Third step</strong>: in the file <code>settings.py</code>, make the needed settings for after the login and logout operations finish, as in Figure 60.</p>
+<p><img alt="Figure 60: The login and logout settings in settings.py" src="../images/p322-01.png" loading="lazy" />
+<em>Figure 60: The login and logout settings in <code>settings.py</code></em></p>
+<p><strong>Explanation of the code</strong></p>
+<p><strong>Line 125</strong>: after a successful login the user will be taken to the home page. home is the very name that was defined for the address of the main page in <code>urls.py</code>.</p>
+<p><strong>Line 126</strong>: after a successful logout the user will be taken to the home page.</p>
+<p><strong>Fourth step</strong>: in the file <code>show_temp.html</code>, add the sign-in and sign-out buttons as in Figure 61.</p>
+<figure class="shot"><img alt="Figure 61: Adding the sign-in and sign-out buttons to the main page" src="../images/p322-02.png" loading="lazy" /><figcaption>Figure 61: Adding the sign-in and sign-out buttons to the main page</figcaption></figure>
 <p class="page-mark">Page 317</p>
 
-<p><strong><bdi dir="rtl">توضیحات کدها</bdi></strong>:</p>
-<p><strong><bdi dir="rtl">خط</bdi> 9</strong>: <bdi dir="rtl">این دستور بررسی می‌کند که آیا کاربر وارد سیستم شده است یا خیر</bdi>. <bdi dir="rtl">اگر</bdi> <code>user.is_authenticated</code> <bdi dir="rtl">مقدار</bdi> True <bdi dir="rtl">داشته باشد؛ یعنی کاربر احراز هویت شده است و دستورات داخل این شرط اجرا خواهند شد</bdi>.</p>
-<p><strong><bdi dir="rtl">خط</bdi> 10</strong>: <bdi dir="rtl">در این خط یک فرم</bdi> HTML<bdi dir="rtl">، تعریف شده است که درخواست را با متد</bdi> POST <bdi dir="rtl">به آدرس خروج از حساب کاربری ارسال می‌کند</bdi>.</p>
-<p><strong><bdi dir="rtl">خط</bdi> 14</strong>: <bdi dir="rtl">از</bdi> else <bdi dir="rtl">استفاده شده است و به این معنی است، اگر کاربر</bdi> login <bdi dir="rtl">نباشد، چه چیزی به او نمایش داده شود</bdi>.</p>
-<p><strong><bdi dir="rtl">خط</bdi> 15</strong>: <bdi dir="rtl">در این خط یک فرم با متد</bdi> GET <bdi dir="rtl">تعریف شده است که کاربر را به صفحه ورود به سایت یعنی صفحه</bdi> login <bdi dir="rtl">هدایت می‌کند</bdi>.</p>
-<p><bdi dir="rtl">اکنون فایل‌ها را ذخیره کرده و سرور جنگو را متوقف و دوباره راه‌اندازی کنید</bdi>. <bdi dir="rtl">سپس صفحه اصلی سایت را</bdi> refresh <bdi dir="rtl">کنید</bdi>. <bdi dir="rtl">اگر کاربر</bdi> login <bdi dir="rtl">نکرده باشد، دکمه ورود به سایت را مشاهده می‌کند</bdi> (<bdi dir="rtl">شکل</bdi> 62).</p>
-<figure class="shot"><img alt="Figure 62: نمایش دکمه ورود برای کاربر مهمان" src="../images/p323-01.png" loading="lazy" /><figcaption>Figure 62: <bdi dir="rtl">نمایش دکمه ورود برای کاربر مهمان</bdi></figcaption></figure>
-<p><bdi dir="rtl">با کلیک روی دکمه ورود به سایت، کاربر به صفحه</bdi> login <bdi dir="rtl">منتقل می‌شود</bdi> (<bdi dir="rtl">شکل</bdi> 63).</p>
-<figure class="shot"><img alt="Figure 63: فرم ورود به سایت" src="../images/p323-02.png" loading="lazy" /><figcaption>Figure 63: <bdi dir="rtl">فرم ورود به سایت</bdi></figcaption></figure>
+<p><strong>Explanation of the code</strong>:</p>
+<p><strong>Line 9</strong>: this statement checks whether the user has signed in to the system or not. If <code>user.is_authenticated</code> has the value True, that is, the user is authenticated, the statements inside this condition will run.</p>
+<p><strong>Line 10</strong>: in this line an HTML form is defined that sends the request with the POST method to the address for signing out of the user account.</p>
+<p><strong>Line 14</strong>: else is used, and it means what should be shown to the user if they are not logged in.</p>
+<p><strong>Line 15</strong>: in this line a form with the GET method is defined that guides the user to the sign-in page of the site, that is, the login page.</p>
+<p>Now save the files, stop the Django server and start it again. Then refresh the main page of the site. If the user has not logged in, they see the sign-in button (Figure 62).</p>
+<figure class="shot"><img alt="Figure 62: Showing the sign-in button for a guest user" src="../images/p323-01.png" loading="lazy" /><figcaption>Figure 62: Showing the sign-in button for a guest user</figcaption></figure>
+<p>By clicking the sign-in button, the user is taken to the login page (Figure 63).</p>
+<figure class="shot"><img alt="Figure 63: The sign-in form of the site" src="../images/p323-02.png" loading="lazy" /><figcaption>Figure 63: The sign-in form of the site</figcaption></figure>
 <p class="page-mark">Page 318</p>
 
-<p><bdi dir="rtl">پس از ورود موفق به سایت، کاربر به صفحه اصلی سایت منتقل شده و این بار دکمه خروج از سایت برای کاربر نمایش داده می‌شود</bdi>.</p>
-<p><bdi dir="rtl">درصورتی‌که کاربر روی دکمه خروج از سایت کلیک کند، از سایت خارج شده و بلافاصله به صفحه اصلی منتقل خواهد شد</bdi>.</p>
-<h3><bdi dir="rtl">ثبت شهر جدید با کاربر عضو سایت</bdi></h3>
-<p><bdi dir="rtl">تاکنون فقط در پنل ادمین و با کاربر</bdi> admin <bdi dir="rtl">امکان ثبت شهرها را داشتید</bdi>. <bdi dir="rtl">اما این امکان وجود دارد که کاربرهای عضو سایت هم بتوانند بدون مراجعه به پنل ادمین، شهر جدید را ثبت کنند</bdi>.</p>
-<p><bdi dir="rtl">برای این کار می‌توانید با استفاده از فرم‌های جنگو و انجام چهار مرحلۀ زیر، این قابلیت را به سایت اضافه کنید</bdi>.</p>
+<p>After a successful sign-in to the site, the user is taken to the main page of the site and this time the sign-out button is shown to the user.</p>
+<p>If the user clicks the sign-out button, they are signed out of the site and taken immediately to the main page.</p>
+<h3>Registering a new city with a member user of the site</h3>
+<p>So far you could register cities only in the admin panel and with the admin user. But it is possible for member users of the site to also register a new city without going to the admin panel.</p>
+<p>For this you can add this feature to the site by using Django's forms and doing the following four steps.</p>
 <ol>
 <li>
-<p><bdi dir="rtl">ایجاد</bdi> <code>forms.py</code> <bdi dir="rtl">برای ساخت فرم ثبت شهر جدید</bdi></p>
+<p>Creating <code>forms.py</code> to build the form for registering a new city</p>
 </li>
 <li>
-<p><bdi dir="rtl">ساختن</bdi> template <bdi dir="rtl">ساده برای فرم</bdi></p>
+<p>Making a simple template for the form</p>
 </li>
 <li>
-<p><bdi dir="rtl">ساختن تابع</bdi> <code>add_city_view</code> <bdi dir="rtl">برای نمایش فرم</bdi></p>
+<p>Making the function <code>add_city_view</code> to show the form</p>
 </li>
 <li>
-<p><bdi dir="rtl">اضافه‌کردن</bdi> path <bdi dir="rtl">مخصوص فرم در فایل</bdi> <code>urls.py</code></p>
+<p>Adding the path for the form in the file <code>urls.py</code></p>
 </li>
 <li>
-<p><bdi dir="rtl">قراردادن لینک</bdi> «<bdi dir="rtl">افزودن شهر</bdi>» <bdi dir="rtl">در صفحه اصلی</bdi></p>
+<p>Putting the link "Add city" on the main page</p>
 </li>
 </ol>
-<p><strong><bdi dir="rtl">مرحله اول</bdi></strong>: <bdi dir="rtl">یک فایل جدید در پوشه</bdi> weather <bdi dir="rtl">با نام</bdi> <code>forms.py</code> <bdi dir="rtl">ایجاد کنید و همانند شکل</bdi> 64 <bdi dir="rtl">آن را تکمیل کنید</bdi>.</p>
-<figure class="shot"><img alt="Figure 64: ایجاد CityForm" src="../images/p324-01.png" loading="lazy" /><figcaption>Figure 64: <bdi dir="rtl">ایجاد</bdi> CityForm</figcaption></figure>
+<p><strong>First step</strong>: create a new file named <code>forms.py</code> in the weather folder and complete it as in Figure 64.</p>
+<figure class="shot"><img alt="Figure 64: Creating CityForm" src="../images/p324-01.png" loading="lazy" /><figcaption>Figure 64: Creating CityForm</figcaption></figure>
 <p class="page-mark">Page 319</p>
 
-<p><strong><bdi dir="rtl">توضیحات کدها</bdi></strong>:</p>
-<p><strong><bdi dir="rtl">خط</bdi> 1</strong>: <bdi dir="rtl">ماژول</bdi> forms <bdi dir="rtl">درون این فایل</bdi> import <bdi dir="rtl">شده است</bdi>. <bdi dir="rtl">این ماژول همه کارهای مربوط به فرم‌ها را پشتیبانی می‌کند</bdi>.</p>
-<p><strong><bdi dir="rtl">خط</bdi> 2</strong>: <bdi dir="rtl">کلاس</bdi> City <bdi dir="rtl">از فایل</bdi> model <bdi dir="rtl">درون این فایل</bdi> import <bdi dir="rtl">شده است</bdi>. City <bdi dir="rtl">همان مدل شهر‌ها است که قبلاً تعریف کرده‌ایم</bdi>.</p>
-<p><strong><bdi dir="rtl">خط</bdi> 4</strong>: <bdi dir="rtl">یک کلاس با نام</bdi> CityForm <bdi dir="rtl">ساخته شده است که از</bdi> ModelForm <bdi dir="rtl">ارث‌بری می‌کند</bdi>.</p>
-<p><strong><bdi dir="rtl">خط</bdi> 5</strong>: <bdi dir="rtl">برای تعیین مدل و فیلدهایی که می‌خواهید نمایش داده شود باید از یک کلاس</bdi> Meta <bdi dir="rtl">در کلاس اصلی استفاده شود و در آن مدل و فیلدها مشخص گردد</bdi>.</p>
-<p><strong><bdi dir="rtl">خط</bdi> 6</strong>: <bdi dir="rtl">کلاس</bdi> City <bdi dir="rtl">به‌عنوان</bdi> model <bdi dir="rtl">تعیین شده است</bdi>.</p>
-<p><strong><bdi dir="rtl">خط</bdi> 7</strong>: <bdi dir="rtl">لیست فیلدهایی که می‌خواهید نمایش داده شود، تعیین شده است</bdi>.</p>
-<p><strong><bdi dir="rtl">مرحله دوم</bdi></strong>: <bdi dir="rtl">فایل</bdi> <code>add_city.html</code> <bdi dir="rtl">را همانند شکل</bdi> 65 <bdi dir="rtl">ایجاد کنید</bdi>.</p>
-<p><img alt="Figure 65: افزودن add_city.html" src="../images/p325-01.png" loading="lazy" />
-<em>Figure 65: <bdi dir="rtl">افزودن</bdi> <code>add_city.html</code></em></p>
-<p><strong><bdi dir="rtl">توضیحات کدها</bdi></strong>:</p>
-<p><bdi dir="rtl">یک فرم با متد از نوع</bdi> post <bdi dir="rtl">ایجاد شده است</bdi>. <bdi dir="rtl">این فرم طول و عرض جغرافیایی و همچنین نام شهر را از کاربر گرفته و برای سرور جنگو ارسال می‌کند تا در دیتابیس ذخیره شود</bdi>.</p></article>
+<p><strong>Explanation of the code</strong>:</p>
+<p><strong>Line 1</strong>: the module forms is imported in this file. This module supports everything related to forms.</p>
+<p><strong>Line 2</strong>: the class City is imported from the model file in this file. City is the model of the cities that we defined earlier.</p>
+<p><strong>Line 4</strong>: a class named CityForm is made that inherits from ModelForm.</p>
+<p><strong>Line 5</strong>: to set the model and the fields you want to be shown, a Meta class must be used in the main class and the model and the fields are specified in it.</p>
+<p><strong>Line 6</strong>: the class City is set as the model.</p>
+<p><strong>Line 7</strong>: the list of fields you want to be shown is set.</p>
+<p><strong>Second step</strong>: create the file <code>add_city.html</code> as in Figure 65.</p>
+<p><img alt="Figure 65: Adding add_city.html" src="../images/p325-01.png" loading="lazy" />
+<em>Figure 65: Adding <code>add_city.html</code></em></p>
+<p><strong>Explanation of the code</strong>:</p>
+<p>A form with a post-type method is created. This form takes the longitude and latitude and also the name of the city from the user and sends them to the Django server to be saved in the database.</p></article>
       <aside class="card extra">
         <h2 data-fa="تمرین این بخش" data-en="Exercises for this section">تمرین این بخش</h2>
         <p class="extra-note" data-fa="این تمرین‌ها و پیوندها اضافه بر متن کتاب‌اند." data-en="These exercises and links are in addition to the book.">این تمرین‌ها و پیوندها اضافه بر متن کتاب‌اند.</p>

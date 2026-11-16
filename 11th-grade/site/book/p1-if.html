@@ -158,7 +158,7 @@ else:
 <aside class="callout note"><p class="callout-label">Note</p>
 <p>The statements that belong to a conditional structure must be written one tab (a few equivalent spaces) further in than the if line. This indentation shows which statements belong to the condition.</p>
 </aside>
-<h3><bdi dir="rtl">نوع اول ساختارشرطی</bdi> if</h3>
+<h3>The first type of the if conditional structure</h3>
 <div class="code-wrap" dir="ltr"><pre><code>if condition:
       statement
 </code></pre></div>
@@ -198,19 +198,19 @@ else:
 </tr>
 </tbody>
 </table></div>
-<p><strong><bdi dir="rtl">شرط</bdi> (condition)</strong>: <bdi dir="rtl">عبارتی منطقی است که نتیجۀ آن</bdi> True <bdi dir="rtl">یا</bdi> False <bdi dir="rtl">است</bdi>.</p>
-<p><strong><bdi dir="rtl">دستورات</bdi> (statements)</strong>: <bdi dir="rtl">دستوراتی هستند که فقط در صورت درست بودن شرط اجرا می‌شوند</bdi>.</p>
-<p><strong><bdi dir="rtl">تورفتگی</bdi> (Indentation)</strong>: <bdi dir="rtl">این دستورات باید با یک</bdi> tab <bdi dir="rtl">نسبت به دستور</bdi> if <bdi dir="rtl">جلوتر نوشته شوند</bdi>.</p>
+<p><strong>Condition</strong>: a logical expression whose result is True or False.</p>
+<p><strong>Statements</strong>: statements that run only if the condition is true.</p>
+<p><strong>Indentation</strong>: these statements must be written one tab further in than the if statement.</p>
 <p>Comparison operators (Comparison Operators): these operators are used to <strong>compare two values or two variables</strong>, and their result is <strong>always either True or False</strong> (Table 2).</p>
 <p><strong>The equality operator</strong> (<code>==</code>): used to compare two values or two variables to find out whether they are equal.</p>
-<p><strong><bdi dir="rtl">مثال</bdi></strong>: <bdi dir="rtl">برنامه‌ای بنویسید که</bdi> <strong><bdi dir="rtl">نام کاربر</bdi></strong> <bdi dir="rtl">را دریافت کند</bdi>. <bdi dir="rtl">اگر نام واردشده برابر با مقدار</bdi> admin <bdi dir="rtl">باشد، پیام</bdi> "welcome admin!" <bdi dir="rtl">را نمایش دهد</bdi> (<bdi dir="rtl">شکل</bdi> 51).</p>
+<p><strong>Example</strong>: write a program that receives the <strong>user's name</strong>. If the entered name equals the value admin, it displays the message "welcome admin!" (Figure 51).</p>
 <figure class="shot"><img alt="Figure 51" src="../images/p028-01.png" loading="lazy" /><figcaption>Figure 51</figcaption></figure>
 <p class="page-mark">Page 23</p>
 
 <p>The (<code>!=</code>) operator: checks whether two values are not equal.</p>
 <p>In the program below, <code>price = 120</code> at first, and the condition «its value is <strong>not equal</strong> to 100» holds, so it prints the message "price is not true" (Figure 52).</p>
 <figure class="shot"><img alt="Figure 52" src="../images/p029-01.png" loading="lazy" /><figcaption>Figure 52</figcaption></figure>
-<h3><bdi dir="rtl">عملگرهای منطقی</bdi> (Logical Operators)</h3>
+<h3>Logical operators</h3>
 <p class="table-cap">Table 2</p>
 <p><strong>Logical operators</strong></p>
 <div class="table-wrap"><table>
@@ -235,7 +235,7 @@ else:
 </tr>
 </tbody>
 </table></div>
-<p><bdi dir="rtl">در برنامه‌نویسی، برای بررسی هم‌زمان چند شرط و تصمیم‌گیری دقیق‌تر از</bdi> <strong><bdi dir="rtl">عملگرهای منطقی</bdi></strong> <bdi dir="rtl">استفاده می‌شود</bdi>. <bdi dir="rtl">این عملگرها امکان ترکیب چند عبارت شرطی را فراهم می‌کنند و نتیجۀ آنها معمولاً یکی از دو مقدار</bdi> <strong><bdi dir="rtl">درست</bdi> (True)</strong> <bdi dir="rtl">یا</bdi> <strong><bdi dir="rtl">نادرست</bdi> (False)</strong> <bdi dir="rtl">است</bdi> (<bdi dir="rtl">جدول</bdi>3).</p>
+<p>In programming, <strong>logical operators</strong> are used to check several conditions at the same time and to make more exact decisions. These operators make it possible to combine several conditional expressions, and their result is usually one of two values: <strong>true (True)</strong> or <strong>false (False)</strong> (Table 3).</p>
 <p>Logical operators are usually used together with <strong>conditional statements</strong> such as if, and help the programmer check more complex conditions.</p>
 <ol>
 <li><strong>The and operator</strong>: gives a true (<strong>True</strong>) result when <strong>all the conditions are true</strong>.</li>
@@ -283,7 +283,7 @@ else:
 <p><strong>Example</strong>: write a program in which the user enters the internet connection status and the internet speed. If the status is "<strong>yes</strong>" and the speed is " greater than or equal to 3 ", print " Internet is connected "; otherwise print "Internet is disconnect" (Figure 57).</p>
 <figure class="shot"><img alt="Figure 57" src="../images/p032-01.png" loading="lazy" /><figcaption>Figure 57</figcaption></figure>
 <figure class="shot"><img alt="Book image" src="../images/p032-02.png" loading="lazy" /></figure>
-<p><strong><bdi dir="rtl">مثال</bdi></strong>: <bdi dir="rtl">برنامه‌ای بنویسید که اگر کاربر مهمان</bdi> "guest" <bdi dir="rtl">نبود، پیام</bdi> "Welcome!" <bdi dir="rtl">نمایش داده شود و در این صورت پیام</bdi> "Access denied" <bdi dir="rtl">نمایش داده شود</bdi>.</p>
+<p><strong>Example</strong>: write a program that, if the user is not the guest "guest", displays the message "Welcome!", and otherwise displays the message "Access denied".</p>
 <p><strong>not</strong> reverses the Boolean value of the condition (Figure 58).</p>
 <figure class="shot"><img alt="Figure 58" src="../images/p032-03.png" loading="lazy" /><figcaption>Figure 58</figcaption></figure>
 <p><strong>Combining the and and or operators</strong>: in programming you sometimes need to check more than one condition together. For this you can <strong>combine the logical operators and and or</strong>.</p>

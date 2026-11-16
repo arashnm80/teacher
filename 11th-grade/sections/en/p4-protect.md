@@ -1,40 +1,40 @@
 <!-- page 250 -->
 
-این دستورات از نظر پایتون بدون خطا اجرا می‌شوند؛ اما از نظر منطقی مقادیر نامعتبری هستند. شارژ باتری یک تلفن همراه نمی‌تواند بیشتر از 100 درصد یا مقدار منفی داشته باشد.
+These statements run without error as far as Python is concerned; but logically they are invalid values. The battery charge of a mobile phone cannot be more than 100 percent or have a negative value.
 
-مشکل اینجاست که ویژگی‌های کلاس به‌صورت آزاد در دسترس هستند و هیچ کنترلی بر نحوۀ تغییر آنها وجود ندارد. این موضوع می‌تواند باعث بروز خطاهای منطقی در برنامه شود و در برنامه‌های بزرگ، نگهداری و توسعۀ آن را دشوار کند.
+The problem is that the properties of the class are freely available and there is no control over how they are changed. This can cause logical errors in the program and make its maintenance and development difficult in big programs.
 
-برای حل این مشکل، می‌توان برخی ویژگی‌ها را به‌گونه‌ای تعریف کرد که دسترسی مستقیم به آنها از بیرون کلاس محدود شود و تغییر آنها فقط از طریق متدهای مشخص انجام گیرد. به این نوع ویژگی‌ها، ویژگی خصوصی (Private) گفته می‌شود.
+To solve this problem, some properties can be defined in a way that direct access to them from outside the class is limited and changing them is done only through specific methods. This kind of property is called a private property.
 
-### ویژگی‌های خصوصی (Private)
+### Private properties
 
-در پایتون، ویژگی‌های خصوصی با استفاده از دو زیرخط (\_ \_) در ابتدای نام آنها تعریف می‌شوند.
+In Python, private properties are defined with two underscores (\_ \_) at the start of their name.
 
-برای مثال، در کلاس Mobile می‌توان ویژگی باتری را به‌صورت زیر تعریف کرد:
+For example, in the class Mobile the battery property can be defined as follows:
 
 ```
 self._ _battery = 100
 ```
 
-با این کار:
+By doing this:
 
-- دسترسی مستقیم به ویژگی از بیرون کلاس محدود می‌شود.
+- Direct access to the property from outside the class is limited.
 
-- تغییر مقدار آن فقط از طریق متدهای کلاس امکان‌پذیر است.
+- Changing its value is possible only through the methods of the class.
 
-- کنترل منطقی روی داده‌ها برقرار می‌شود.
+- Logical control over the data is established.
 
-### ویژگی‌های محافظت‌شده (Protected)
+### Protected properties
 
-در بخش‌های قبل دیدید که ویژگی‌های یک کلاس می‌توانند عمومی (Public) یا خصوصی (Private) باشند.
+In the earlier sections you saw that the properties of a class can be public or private.
 
-اما گاهی شرایطی وجود دارد که:
+But sometimes there are conditions where:
 
-- نمی‌خواهید یک ویژگی از بیرون کلاس مستقیماً استفاده یا تغییر داده شود.
+- you do not want a property to be used or changed directly from outside the class.
 
-- ولی می‌خواهید کلاس‌های فرزند بتوانند به آن ویژگی دسترسی داشته باشند.
+- but you want the child classes to be able to reach that property.
 
-برای چنین حالتی از ویژگی‌های محافظت‌شده (Protected) استفاده می‌شود. در زبان پایتون، اگر نام یک ویژگی با یک زیرخط (\_) شروع شود، آن ویژگی به‌عنوان Protected در نظر گرفته می‌شود.
+For such a case protected properties are used. In Python, if the name of a property starts with one underscore (\_), that property is considered Protected.
 
 ```
 self._status = "on"
@@ -42,22 +42,22 @@ self._status = "on"
 
 *Table 3*
 
-| سطح دسترسی | نحوه نوشتن | Description |
+| Access level | How to write it | Description |
 | --- | --- | --- |
-| عمومی (Public) | battery | دسترسی آزاد از همه‌جا |
-| خصوصی (Private) | `_ _battery` | دسترسی فقط داخل همان کلاس |
-| محافظت‌شده (Protected) | `_status` | دسترسی از درون کلاس و کلاس‌های فرزند |
+| Public | battery | Free access from everywhere |
+| Private | `_ _battery` | Access only inside the same class |
+| Protected | `_status` | Access from inside the class and the child classes |
 
 <!-- page 251 -->
 
-این نوع نام‌گذاری نشان می‌دهد که ویژگی برای استفادۀ داخلی کلاس و کلاس‌های فرزند طراحی شده است و نباید مستقیماً از بیرون کلاس تغییر داده شود.
+This kind of naming shows that the property is designed for the internal use of the class and the child classes and must not be changed directly from outside the class.
 
 > **Note**
 >
-> Protected در پایتون یک قرارداد برنامه‌نویسی است، نه یک محدودیت اجباری. یعنی پایتون جلوی دسترسی مستقیم را نمی‌گیرد، اما به برنامه‌نویس هشدار می‌دهد که این ویژگی نباید مستقیماً از بیرون کلاس تغییر داده شود.
+> Protected in Python is a programming convention, not a compulsory restriction. That is, Python does not stop direct access, but it warns the programmer that this property should not be changed directly from outside the class.
 
-تا اینجا با سه سطح دسترسی به ویژگی‌های یک کلاس آشنا شدید:
+So far you have got to know three access levels for the properties of a class:
 
-سطوح دسترسی مختلف شامل ویژگی‌های عمومی، خصوصی و محافظت‌شده، به شما کمک می‌کنند تا دسترسی به داده‌های یک کلاس را کنترل کنید. به همین دلیل لازم است جزئیات داخلی کلاس‌ها پنهان شوند و دسترسی به داده‌ها به‌صورت کنترل‌شده انجام گیرد. این مفهوم در برنامه‌نویسی شیءگرا با عنوان کپسوله‌سازی (Encapsulation) شناخته می‌شود. کپسوله‌سازی به معنای:
+The different access levels, including public, private and protected properties, help you control access to the data of a class. For this reason the internal details of classes need to be hidden and access to the data done in a controlled way. This concept is known in object-oriented programming as encapsulation. Encapsulation means:
 
-**پنهان‌سازی جزئیات داخلی یک کلاس و کنترل نحوۀ دسترسی به داده‌ها و رفتارهای آن** می‌باشد و یکی از مفاهیم اصلی برنامه‌نویسی شیءگرا محسوب می‌شود.
+**hiding the internal details of a class and controlling how its data and behaviours are accessed**, and it counts as one of the main concepts of object-oriented programming.

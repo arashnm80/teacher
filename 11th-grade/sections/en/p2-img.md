@@ -26,7 +26,7 @@
 
 > **Learn more**
 >
-> **طراحی جدول (table)**
+> **Designing a table**
 >
 > Tables are one of the tools for presenting data, because they show information in an orderly, understandable way. Today tables are used to show many kinds of data, such as product lists, prices, or any information that needs organizing.
 >
@@ -48,7 +48,7 @@
 >
 > **colspan**: merges cells horizontally.
 >
-> **thead، tbody، tfoot**: برای ساختاردهی معنایی.
+> **thead, tbody, tfoot**: for semantic structure.
 
 > **Curiosity**
 >

@@ -75,7 +75,7 @@ The Selector selects elements of the page. For example, to style paragraph eleme
 
 There are three ways to create custom styles and apply them to page elements:
 
-1. **CSS درون خطی(Inline)**: استایل عناصر درون تگ‌های HTML نوشته می‌شود.
+1. **Inline CSS**: the style of the elements is written inside the HTML tags.
 
 > **Example**
 >
@@ -87,7 +87,7 @@ There are three ways to create custom styles and apply them to page elements:
 > <h1 style=”color:blue; background-color:orange”> سلام دنیا! </h1>
 > ```
 
-2. **CSS داخلی (Internal)**:
+2. **Internal CSS**:
 
 - The styles are written inside the `<style>` tag in the `<head>` part.
 
@@ -108,7 +108,7 @@ There are three ways to create custom styles and apply them to page elements:
 > </head>
 > ```
 
-3. **CSS خارجی (External)**:
+3. **External CSS**:
 
 - With external CSS, the styles are put in a file with the CSS extension. This file needs no `<style>` tag; it only sets the styles of elements. The CSS file must be linked to the web page with the `<link>` tag so that its rules apply to the page's elements. The CSS file is linked to the HTML file in the `<head>` part:
 
@@ -188,7 +188,7 @@ text-shadow: offset-x offset-y blur-radius color;
 
 Its values are, in order, the horizontal and vertical offset of the shadow, the amount of blur, and the color of the shadow.
 
-**text-transform**: تغییر شکل حروف به صورت بزرگ، کوچک و... شامل مقادیر uppercase، lowercase، capitalize، none و …
+**text-transform**: changing the form of the letters to capital, small and so on, with the values uppercase, lowercase, capitalize, none and …
 
 **direction**: sets the direction of the text, with the values ltr and rtl for left-to-right and right-to-left
 

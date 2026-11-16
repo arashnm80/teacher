@@ -41,30 +41,30 @@
 <h2>ارزشیابی شایستگی توسعه وب اپلیکیشن</h2>
 <p><strong>استاندارد عملکرد کار</strong>: هنرجو بتواند با ساخت <bdi dir="ltr">Model</bdi> در جنگو و استفاده از فرم‌های <bdi dir="ltr">HTML</bdi> ارتباط با پایگاه داده را پیاده‌سازی کند و اطلاعاتی که کاربران وارد می‌کنند را در جداول ذخیره و بازیابی نماید.</p></article><article class="card lesson no-copy" lang="en" dir="ltr" data-lang-block="en" hidden><p class="page-mark">Page 326</p>
 
-<h3><bdi dir="rtl">باگ کدنویسی دوم</bdi></h3>
-<p><bdi dir="rtl">اگر کاربر</bdi> id <bdi dir="rtl">شهر را در نوار آدرس مرورگر، دستی تغییر دهد و</bdi> id <bdi dir="rtl">وارد شده در پایگاه‌داده وجود نداشته باشد، در صفحه اصلی سایت خطایی همانند شکل</bdi> 76 <bdi dir="rtl">نمایش داده می‌شود</bdi>.</p>
-<figure class="shot"><img alt="Figure 76: خطا در صورت اشتباه بودن آیدی شهر" src="../images/p332-01.png" loading="lazy" /><figcaption>Figure 76: <bdi dir="rtl">خطا در صورت اشتباه بودن آیدی شهر</bdi></figcaption></figure>
-<p><strong><bdi dir="rtl">راه‌حل باگ اول و دوم</bdi></strong>: <bdi dir="rtl">برای رفع این ایراد، کد</bdi> <code>show_temp_view</code> <bdi dir="rtl">را همانند شکل</bdi> 77 <bdi dir="rtl">تغییر دهید</bdi>.</p>
-<figure class="shot"><img alt="Figure 77: رفع ایراد کد" src="../images/p332-02.png" loading="lazy" /><figcaption>Figure 77: <bdi dir="rtl">رفع ایراد کد</bdi></figcaption></figure>
+<h3>Coding bug two</h3>
+<p>If the user changes the id of the city by hand in the browser's address bar and the id entered does not exist in the database, an error as in Figure 76 is shown on the main page of the site.</p>
+<figure class="shot"><img alt="Figure 76: The error when the city id is wrong" src="../images/p332-01.png" loading="lazy" /><figcaption>Figure 76: The error when the city id is wrong</figcaption></figure>
+<p><strong>The solution to the first and second bug</strong>: to fix this flaw, change the code of <code>show_temp_view</code> as in Figure 77.</p>
+<figure class="shot"><img alt="Figure 77: Fixing the flaw in the code" src="../images/p332-02.png" loading="lazy" /><figcaption>Figure 77: Fixing the flaw in the code</figcaption></figure>
 <p class="page-mark">Page 327</p>
 
-<p><strong><bdi dir="rtl">توضیحات کدها</bdi></strong>:</p>
-<p><strong><bdi dir="rtl">خط</bdi> 14</strong>: <bdi dir="rtl">به‌جای استفاده از تابع</bdi> get <bdi dir="rtl">از تابع</bdi> filter و first <bdi dir="rtl">استفاده شده است</bdi>. <bdi dir="rtl">تابع</bdi> get <bdi dir="rtl">در صورتی خطا می‌دهد که مقدار موردنظر در دیتابیس وجود نداشته باشد</bdi>. <bdi dir="rtl">اما تابع</bdi> filter <bdi dir="rtl">این رفتار را ندارد و باعث بروز خطا نخواهد شد</bdi>. <bdi dir="rtl">پس</bdi> <strong><bdi dir="rtl">باگ دوم</bdi></strong> <bdi dir="rtl">را پوشش می‌دهد</bdi>.</p>
-<p><strong><bdi dir="rtl">خط</bdi> 17</strong>: <bdi dir="rtl">درصورتی‌که</bdi> city <bdi dir="rtl">مقدار نداشته باشد، درخواست به</bdi> API <bdi dir="rtl">آب‌وهوا ارسال نمی‌شود و مستقیماً</bdi> <code>show_temp.html</code> <bdi dir="rtl">نمایش داده می‌شود</bdi>. <bdi dir="rtl">این خط نیز باگ اول را پوشش می‌دهد، قبل از اصلاح کدها اگر هیچ شهری در دیتابیس وجود نداشت، مقدار</bdi> city <bdi dir="rtl">برابر</bdi> None <bdi dir="rtl">می‌شد</bdi>. <bdi dir="rtl">پس هنگام دریافت</bdi> lat <bdi dir="rtl">کد به خطا می‌خورد</bdi>. <bdi dir="rtl">با تغییراتی که اعمال شد، این باگ برطرف شده است</bdi>.</p>
-<h3><bdi dir="rtl">باگ امنیتی</bdi></h3>
-<p><bdi dir="rtl">اگر کاربر عضو سایت نباشد، اما آدرس صفحه افزودن شهر و حذف شهرها را داشته باشد، بدون</bdi> login <bdi dir="rtl">در سایت می‌تواند، شهر اضافه کرده و یا شهر حذف نماید</bdi>.</p>
-<p><strong><bdi dir="rtl">راه‌حل باگ امنیتی</bdi></strong>: <bdi dir="rtl">برای رفع این ایراد، کد</bdi> <code>add_city_view</code> <bdi dir="rtl">را همانند شکل</bdi> 78 <bdi dir="rtl">تغییر دهید</bdi>.</p>
-<figure class="shot"><img alt="Figure 78: رفع باگ امنیتی کد" src="../images/p333-01.png" loading="lazy" /><figcaption>Figure 78: <bdi dir="rtl">رفع باگ امنیتی کد</bdi></figcaption></figure>
-<p><strong><bdi dir="rtl">توضیحات کدها</bdi></strong>:</p>
-<p><strong><bdi dir="rtl">خط</bdi> 36</strong>: <bdi dir="rtl">درصورتی‌که کاربر</bdi> login <bdi dir="rtl">نکرده باشد، در خط بعدی به صفحه</bdi> login <bdi dir="rtl">منتقل خواهد شد</bdi>. <bdi dir="rtl">همین کد را می‌توانید برای</bdi> <code>delete_city_view</code> <bdi dir="rtl">هم استفاده کنید</bdi>.</p>
-<p><bdi dir="rtl">با این تغییرات، اگر کاربر</bdi> login <bdi dir="rtl">نباشد؛ ولی آدرس افزودن شهر و حذف شهر را در مرورگر وارد کند، به صفحه</bdi> login <bdi dir="rtl">منتقل خواهد شد</bdi>.</p>
+<p><strong>Explanation of the code</strong>:</p>
+<p><strong>Line 14</strong>: instead of the function get, the functions filter and first are used. The function get gives an error if the wanted value does not exist in the database. But the function filter does not have this behaviour and will not cause an error. So it covers the <strong>second bug</strong>.</p>
+<p><strong>Line 17</strong>: if city has no value, the request is not sent to the weather API and <code>show_temp.html</code> is shown directly. This line also covers the first bug; before fixing the code, if there was no city in the database, the value of city would become None. So when getting lat the code would fail. With the changes made, this bug is fixed.</p>
+<h3>A security bug</h3>
+<p>If the user is not a member of the site but has the address of the page for adding and deleting cities, they can add a city or delete a city without logging in to the site.</p>
+<p><strong>The solution to the security bug</strong>: to fix this flaw, change the code of <code>add_city_view</code> as in Figure 78.</p>
+<figure class="shot"><img alt="Figure 78: Fixing the security bug of the code" src="../images/p333-01.png" loading="lazy" /><figcaption>Figure 78: Fixing the security bug of the code</figcaption></figure>
+<p><strong>Explanation of the code</strong>:</p>
+<p><strong>Line 36</strong>: if the user has not logged in, in the next line they will be taken to the login page. You can use the same code for <code>delete_city_view</code> too.</p>
+<p>With these changes, if the user is not logged in but enters the address of adding a city and deleting a city in the browser, they will be taken to the login page.</p>
 <aside class="callout curiosity"><p class="callout-label">Curiosity</p>
-<p><bdi dir="rtl">بررسی کنید چه موارد دیگری می‌تواند این پروژه را بهبود دهد</bdi>.</p>
+<p>Check what other things could improve this project.</p>
 </aside>
 <p class="page-mark">Page 328</p>
 
-<h2><bdi dir="rtl">ارزشیابی شایستگی توسعه وب اپلیکیشن</bdi></h2>
-<p><strong><bdi dir="rtl">استاندارد عملکرد کار</bdi></strong>: <bdi dir="rtl">هنرجو بتواند با ساخت</bdi> Model <bdi dir="rtl">در جنگو و استفاده از فرم‌های</bdi> HTML <bdi dir="rtl">ارتباط با پایگاه داده را پیاده‌سازی کند و اطلاعاتی که کاربران وارد می‌کنند را در جداول ذخیره و بازیابی نماید</bdi>.</p></article>
+<h2>Competency assessment: developing a web application</h2>
+<p><strong>Work performance standard</strong>: the student can, by making a Model in Django and using HTML forms, implement the connection with the database and store and retrieve the information users enter in tables.</p></article>
       <aside class="card extra">
         <h2 data-fa="تمرین این بخش" data-en="Exercises for this section">تمرین این بخش</h2>
         <p class="extra-note" data-fa="این تمرین‌ها و پیوندها اضافه بر متن کتاب‌اند." data-en="These exercises and links are in addition to the book.">این تمرین‌ها و پیوندها اضافه بر متن کتاب‌اند.</p>

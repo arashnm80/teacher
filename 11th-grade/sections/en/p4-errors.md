@@ -1,130 +1,130 @@
 <!-- page 260 -->
 
-**پیمایش خطوط فایل با حلقه** for
+**Going over the lines of the file with a for loop**
 
 ![Figure 27](../images/p266-01.png)
 *Figure 27*
 
 > **Activity**
 >
-> کد‌های برنامه را به نحوی تغییردهید که بعد از نام هر برند یک جداکننده قرار گیرد.
+> Change the code of the program so that a separator is put after the name of each brand.
 
-### نوشتن در فایل: نوشتن یک خط
+### Writing to a file: writing one line
 
-پس از تعیین مسیر، می‌توانید با استفاده از متد `write_text()` در یک فایل متنی بنویسید. برای دیدن نحوۀ کار این تابع، یک پیام ساده نوشته و آن را به جای چاپ روی صفحه، در فایل متنی ذخیره کنید (شکل ۲۷):
+After specifying the path, you can write in a text file with the method `write_text()`. To see how this function works, write a simple message and, instead of printing it on the screen, save it in the text file (Figure 27):
 
-- پس از نوشتن برنامه و اجرای آن، خروجی در ترمینال مشاهده نمی‌کنید. حالا فایل `mobile_brands.txt` را باز کنید. مشاهده می‌کنید متن شما در فایل نوشته و محتویات قبلی آن پاک شده است.
+- After writing the program and running it, you do not see the output in the terminal. Now open the file `mobile_brands.txt`. You see that your text has been written in the file and its earlier content has been erased.
 
-- اگر فایل از قبل وجود داشته باشد، `write_text()` محتوای فعلی فایل را پاک کرده و محتوای جدید را در فایل می‌نویسد.
+- If the file already exists, `write_text()` erases the current content of the file and writes the new content in the file.
 
-- متد `write_text()` چند کار را در پشت صحنه انجام می‌دهد. اگر فایلی که مسیر به آن اشاره می‌کند وجود نداشته باشد، آن فایل را ایجاد می‌کند.
+- The method `write_text()` does several jobs behind the scenes. If the file that the path points to does not exist, it creates that file.
 
-- همچنین، پس از نوشتن رشته در فایل، مطمئن می‌شود که فایل به درستی بسته شده است. فایل‌هایی که به درستی بسته نشده‌اند می‌توانند منجر به از دست رفتن یا خراب شدن داده‌ها شوند.
+- Also, after writing the string to the file, it makes sure the file is closed correctly. Files that are not closed correctly can lead to loss or damage of data.
 
 ![Figure 28](../images/p266-02.png)
 *Figure 28*
 
 > **Note**
 >
-> دو متد `read_text` و `write_text` به‌طور داخلی مدیریت بستن فایل را انجام می‌دهند. در این حالت‌ها، pathlib خودش تضمین می‌کند که فایل به‌طور ایمن باز و سپس بسته شود.
+> The two methods `read_text` and `write_text` handle closing the file internally. In these cases, pathlib itself guarantees that the file is opened and then closed safely.
 
 <!-- page 261 -->
 
-### اضافه کردن برند جدید
+### Adding a new brand
 
-برای نوشتن بیش از یک خط در یک فایل، باید رشته‌ای بسازید که شامل کل محتوای فایل باشد و سپس `write_text()` را با آن رشته فراخوانی کنید.
+To write more than one line in a file, you must build a string that includes the whole content of the file and then call `write_text()` with that string.
 
 ![Figure 29](../images/p267-01.png)
 *Figure 29*
 
 > **Activity**
 >
-> دو برند دیگر"LG" و"Motorola" را به فایل "`mobile_brands.txt`" اضافه کنید.
+> Add two more brands, "LG" and "Motorola", to the file "`mobile_brands.txt`".
 
 > **Activity**
 >
-> برنامه‌ای بنویسیدکه در یک حلقه مدل تلفن‌های همراه را از کاربر بپرسد. وقتی پاسخ می‌دهد، آنها را در فایلی به نام "`mobile_model.txt`" بنویسد. هر مدل در یک خط از فایل ظاهر شود.
+> Write a program that in a loop asks the user for mobile phone models. When they answer, it writes them in a file named "`mobile_model.txt`". Each model must appear on one line of the file.
 
-### مدیریت استثناها (Exceptions)
+### Managing exceptions
 
 ![Figure 30](../images/p267-02.png)
 *Figure 30*
 
-در هنگام اجرای برنامه، ممکن است خطاهایی رخ دهند که باعث توقف برنامه شوند. پایتون برای برخورد با این خطاها از سازوکاری به نام استثنا (Exception) استفاده می‌کند.
+While a program runs, errors may happen that cause the program to stop. To deal with these errors, Python uses a mechanism called an exception.
 
-هر وقت پایتون در اجرای برنامه با مشکلی روبه‌رو شود و نداند چه باید بکند، یک «شیء استثنا» ایجاد می‌کند. اگر برنامه‌نویس کدی برای مدیریت آن استثنا نوشته باشد، برنامه بدون توقف به کار خود ادامه می‌دهد. اما اگر استثنا مدیریت نشده باشد، اجرای برنامه متوقف و پیغامی شامل نوع خطا و محل آن نمایش داده می‌شود که به آن ردیابی (Traceback) می‌گویند.
+Whenever Python meets a problem while running the program and does not know what to do, it creates an "exception object". If the programmer has written code to manage that exception, the program goes on without stopping. But if the exception is not managed, the running of the program stops and a message including the type of the error and its place is shown, which is called a Traceback.
 
 <!-- page 262 -->
 
-**مدیریت خطای اشتباه درنوع داده**: گاهی برنامه‌نویس اشتباهاً داده‌ای از نوع نادرست وارد می‌کند. مثلاً وقتی می‌خواهد رشته‌ای (متن) را به عدد تبدیل کند اما مقدارش
+**Handling the error of a wrong data type**: sometimes a programmer mistakenly enters data of the wrong type. For example when they want to convert a string (text) to a number but its value
 
 ![Figure 31](../images/p268-01.png)
 *Figure 31*
 
-فقط متن باشد، خطای ValueError پیش می‌آید:
+is only text, a ValueError happens:
 
 ![Figure 32](../images/p268-02.png)
 *Figure 32*
 
-**مدیریت خطای تقسیم بر صفر**: یکی از خطاهای رایج در برنامه‌نویسی، تقسیم عدد بر صفر است. این کار از نظر ریاضی ممکن نیست و پایتون سعی می‌کند برنامه را ادامه دهد ولی این کار ممکن نیست، پس برنامه متوقف و پایتون چیزی به اسم ردیابی برگشتی یا همان Traceback نشان می‌دهد.
+**Handling the divide-by-zero error**: one of the common errors in programming is dividing a number by zero. This is not possible mathematically and Python tries to continue the program but this is not possible, so the program stops and Python shows something called a traceback.
 
-یعنی وقتی پایتون با چنین دستوری روبه‌رو می‌شود، استثنایی به نام ZeroDivisionError ایجاد می‌کند. یعنی: خطا دقیقاً در کدام خط پیش آمده است. چه نوع خطایی بوده است (مثلاً ZeroDivisionError یا ValueError). و تابع یا بخشی از کد که باعث خطا شده است را نشان می‌دهد.
+That is, when Python meets such a statement, it creates an exception called ZeroDivisionError. That is: it shows exactly in which line the error happened, what kind of error it was (for example ZeroDivisionError or ValueError), and the function or part of the code that caused the error.
 
 ![Figure 33](../images/p268-03.png)
 *Figure 33*
 
-از این اطلاعات می‌توانید برای اصلاح برنامه استفاده کنید. به پایتون بگویید که هنگام وقوع این نوع استثنا چه کاری انجام دهد. به این ترتیب، اگر دوباره اتفاق بیفتد، آماده خواهید بود.
+You can use this information to fix the program. Tell Python what to do when this kind of exception happens. In this way, if it happens again, you will be ready.
 
-**مدیریت خطا با بلوک‌های try-except**: برای مدیریت استثناها در پایتون از بلوک‌های try و except استفاده می‌شود.
+**Handling errors with try-except blocks**: to manage exceptions in Python, try and except blocks are used.
 
-- بخش try شامل دستوری است که ممکن است خطا ایجاد کند.
+- The try part contains the statement that may cause an error.
 
-- بخش except مشخص می‌کند اگر خطایی رخ داد، برنامه چه واکنشی نشان دهد.
+- The except part specifies how the program should react if an error happens.
 
-با استفاده از این روش، می‌توانید برنامه‌هایی بنویسید که به جای نمایش پیام‌های پیچیده و گیج‌کننده، پیام‌های قابل فهم به کاربر نشان دهد.
+Using this method, you can write programs that, instead of showing complex and confusing messages, show understandable messages to the user.
 
 <!-- page 263 -->
 
-**مدیریت خطای اشتباه درنوع داده**: در این‌جا پایتون نمی‌تواند کلمه "Hello" را به عدد تبدیل کند، پس استثنا تولید می‌شود، اما برنامه با استفاده از بلوک try-except کنترل خطا را در دست می‌گیرد.
+**Handling the error of a wrong data type**: here Python cannot convert the word "Hello" to a number, so an exception is produced, but the program takes control of the error with a try-except block.
 
 ![Figure 34](../images/p269-01.png)
 *Figure 34*
 
-در اینجا پایتون نمی‌تواند عدد 5 را بر عدد 0 تقسیم کند، پس استثنا تولید می‌شود، اما برنامه با استفاده از بلوک try-except کنترل خطا را در دست می‌گیرد.
+Here Python cannot divide the number 5 by the number 0, so an exception is produced, but the program takes control of the error with a try-except block.
 
 ![Figure 35](../images/p269-02.png)
 *Figure 35*
 
-**استفاده از استثنائات برای جلوگیری از خطا**: مدیریت صحیح استثناها (خطاها) زمانی اهمیت حیاتی پیدا می‌کند که برنامه پس از وقوع خطا، همچنان کارهای دیگری برای انجام دادن داشته باشد. این موقعیت به‌ویژه در برنامه‌هایی که به طور مداوم از کاربر ورودی دریافت می‌کنند، رایج است. اگر برنامه بتواند به ورودی نامعتبر به شیوه‌ای مناسب پاسخ دهد، به‌جای متوقف شدن و از کار افتادن، می‌تواند به‌طور هوشمندانه ورودی‌های معتبرتری را از کاربر درخواست کند و به اجرای خود ادامه دهد.
+**Using exceptions to prevent errors**: correct management of exceptions (errors) becomes vitally important when the program still has other things to do after an error happens. This situation is especially common in programs that continuously take input from the user. If the program can respond to invalid input in a suitable way, instead of stopping and crashing, it can intelligently ask the user for more valid inputs and carry on running.
 
-برای یادگیری این موضوع توضیحاتی که در ادامه آمده است را با دقت بخوانید و انجام دهید.
+To learn this topic, read and do the explanations that follow carefully.
 
-- این برنامه از کاربر می‌خواهد که عدد اول را وارد کند و اگر کاربر برای خروج q را وارد نکند، عدد دوم را وارد می‌کند.
+- This program asks the user to enter the first number and, if the user does not enter q to quit, they enter the second number.
 
 ![Figure 36](../images/p269-03.png)
 *Figure 36*
 
 <!-- page 264 -->
 
-- سپس این دو عدد را بر هم تقسیم می‌کند تا به جواب برسد.
+- Then it divides these two numbers by each other to get the answer.
 
-- این برنامه هیچ کاری برای مدیریت خطاها انجام نمی‌دهد، اگر کاربر عدد دوم را صفر واردکند، درخواست تقسیم بر صفر باعث از کار افتادن آن می‌شود:
+- This program does nothing to manage errors; if the user enters zero as the second number, the request to divide by zero makes it crash:
 
 ![Figure 37](../images/p270-01.png)
 *Figure 37*
 
 > **Note**
 >
-> اگرچه توقف ناگهانی برنامه (crash) قطعاً بد است، اما نمایش جزئیات فنی خطا (Traceback) نیز ایده خوبی نیست. این جزئیات برای کاربران معمولی سردرگم‌کننده است و در محیط‌های مخرب، اطلاعات ارزشمندی را در اختیار مهاجمان قرار می‌دهد. مهاجم با دیدن Traceback، نه تنها نام برنامه شما را می‌فهمد، بلکه می‌تواند بخشی از منطق کد را که دچار نقص شده‌است، مشاهده‌کند. یک مهاجم حرفه‌ای می‌تواند از این اطلاعات برای فهمیدن اینکه دقیقاً چه نوع حملاتی را باید علیه کد شما به کار ببرد، استفاده کند.
+> Although a sudden stop of the program (crash) is certainly bad, showing the technical details of the error (Traceback) is not a good idea either. These details are confusing for ordinary users and, in malicious environments, give valuable information to attackers. By seeing a Traceback, an attacker not only learns the name of your program, but can see the part of the code's logic that has a flaw. A professional attacker can use this information to understand exactly what kind of attacks should be used against your code.
 
-**کاربرد The else Block**: وقتی در پایتون از دستورات try و except استفاده کنید، در واقع به مفسر (رایانه) می‌گویید: "یک کار را امتحان کن، و اگر خراب شد، این کار جایگزین را انجام بده." حالا، بلوک else دقیقاً به چه دردی می‌خورد؟ else یعنی: "فقط و فقط در صورتی این کار را انجام بده که بلوک try کاملا، ً بدون هیچ خطایی، موفقیت‌آمیز بود."
+**The use of the else block**: when you use the try and except statements in Python, you are in fact telling the interpreter (the computer): "try one job, and if it breaks, do this alternative job." Now, what exactly is the else block good for? else means: "do this only and only if the try block was completely successful, without any error."
 
 ![Figure 38](../images/p270-02.png)
 *Figure 38*
 
 <!-- page 265 -->
 
-اگر خطایی در بلوک try (مثلاً تقسیم عدد بر صفر) رخ دهد، پایتون مستقیم به بلوک except می‌رود و بلوک else کاملاً نادیده گرفته می‌شود. این قابلیت کمک می‌کند، کدی را که فقط پس از موفقیت کامل اجرا شود (مثلاً نمایش نتیجه نهایی یا ذخیره در فایل)، از کدی که فقط برای تست خطا نوشته شده جدا کنید. این کار برنامه را هم تمیزتر و هم منطقی‌تر می‌کند.
+If an error happens in the try block (for example dividing a number by zero), Python goes directly to the except block and the else block is completely ignored. This feature helps you separate the code that must run only after complete success (for example showing the final result or saving to a file) from the code written only to test for errors. This makes the program both cleaner and more logical.
 
 ![Figure 39](../images/p271-01.png)
 *Figure 39*
@@ -132,32 +132,32 @@
 ![Figure 40](../images/p271-02.png)
 *Figure 40*
 
-**مدیریت خطای File Not Found Error**: این خطا یکی از رایج‌ترین استثناهایی است که برنامه‌نویسان هنگام کار با فایل‌ها با آن روبه‌رو می‌شوند. دلایل متعددی برای این خطا وجود دارد: مسیر اشتباه، نام فایل غلط، یا حذف شدن فایل.
+**Handling the File Not Found Error**: this error is one of the most common exceptions that programmers meet when working with files. There are several reasons for this error: a wrong path, a wrong file name, or the file being deleted.
 
-بلوک try-except اجازه می‌دهد که کد را اجرا کنید و در صورت بروز این مشکل خاص، به جای متوقف شدن برنامه، یک واکنش مناسب نشان دهید.
+The try-except block lets you run the code and, if this specific problem happens, show a suitable reaction instead of the program stopping.
 
 ![Figure 41](../images/p271-03.png)
 *Figure 41*
 
-در مثال برنامه تلاش می‌کند فایلی را که اصلاً وجود ندارد بخواند.
+In the example, the program tries to read a file that does not exist at all.
 
 <!-- page 266 -->
 
 ![Figure 42](../images/p272-01.png)
 *Figure 42*
 
-توجه داشته باشید که از متد `read_text()` کمی متفاوت از آنچه قبلاً دیدید استفاده شده است. آرگومان encoding زمانی ضروری است که کدگذاری پیش‌فرض سیستم شما با کدگذاری فایلی که در حال خواندن آن هستید مطابقت نداشته باشد. این وضعیت به احتمال زیاد هنگام خواندن فایلی رخ می‌دهد که روی سیستم شما ایجاد نشده باشد.
+Note that the method `read_text()` is used a bit differently from what you saw before. The encoding argument is necessary when the default encoding of your system does not match the encoding of the file you are reading. This situation most probably happens when reading a file that was not created on your system.
 
-پایتون نمی‌تواند از یک فایلی که وجود ندارد بخواند، بنابراین یک استثنا (Exception) ایجاد می‌کند (به عبارتی، خطا صادر می‌کند).
+Python cannot read from a file that does not exist, so it creates an exception (in other words, it raises an error).
 
-بنابراین برای مدیریت خطایی که ایجاد می‌شود، بلوک try با خطی که در traceback به عنوان مشکل‌ساز شناسایی شده است، آغاز می‌شود.
+So to manage the error that is created, the try block starts with the line that is identified in the traceback as the troublemaker.
 
 ![Figure 43](../images/p272-02.png)
 *Figure 43*
 
-در مثال کد خط ۴ که شامل `read_text()` است باعث بروز خطا شده است.
+In the code example, line 4, which contains `read_text()`, has caused the error.
 
-در این مثال، کد موجود در بلوک try خطای FileNotFoundError تولید می‌کند، بنابراین یک بلوک except که با خطا مطابقت دارد، باید نوشته شود. سپس پایتون کد موجود در آن بلوک را زمانی که فایل پیدا نمی‌شود اجرا می‌کند و نتیجه به جای یک traceback، یک پیام خطای کاربرپسند است:
+In this example, the code in the try block produces the error FileNotFoundError, so an except block that matches the error must be written. Then Python runs the code in that block when the file is not found, and the result, instead of a traceback, is a user-friendly error message:
 
 ![Figure 44](../images/p272-03.png)
 *Figure 44*

@@ -1,41 +1,41 @@
 <!-- page 213 -->
 
-### دستورات حلقه
+### Loop statements
 
-در زبان‌های برنامه‌نویسی برای تکرار اجرای یک بخش از برنامه از دستورات حلقه استفاده می‌شود. حلقه‌های تکرار باعث کاهش حجم برنامه، خوانایی کد، بهینه‌سازی الگوریتم برنامه و افزایش کارایی برنامه می‌شوند. حلقه‌های تکرار انواع مختلفی دارند. در زبان جاوا‌اسکریپت این حلقه‌ها شامل for، while، do while، for…of و for…in است.
+In programming languages, loop statements are used to repeat the running of a part of the program. Loops reduce the size of the program, improve the readability of the code, optimise the algorithm of the program and increase the efficiency of the program. Loops have different types. In JavaScript these loops include for, while, do while, for…of and for…in.
 
 ### The for loop
 
-زمانی که تعداد دفعات تکرار یک کار مشخص باشد، از حلقۀ for استفاده می‌شود. شکل کلی حلقۀ for به‌صورت زیر است:
+When the number of repeats of a job is known, the for loop is used. The general form of the for loop is as follows:
 
 ```
 for (Initialization; Condition; Increment/Decrement) {
 ```
 
-کدی که باید تکرار شود
+The code that must be repeated
 
 ```
 }
 ```
 
-حلقۀ for نیازمند یک شمارنده برای شمارش تعداد دفعات اجرای حلقه است. شمارنده حلقه یک متغیر است که دارای مقدار اولیه و پایانی است. عبارت Initiliazation به مقداردهی اولیه شمارنده حلقه اشاره دارد. در قسمت Condition شرط تکرار حلقه بررسی می‌شود. برای خروج از حلقه، شرط حلقه باید نقض شود. بدین منظور شمارنده حلقه باید در هر بار تکرار حلقه افزوده یا کاسته شود تا مقدار شمارنده از مقدار پایانی گذر کند. عبارات Increment و Decrement به‌معنای افزایش و کاهش مقدار شمارنده است. در صورت عدم استفاده از آکولاد برای تعیین محدوده بلوک حلقه، فقط اولین دستور جزء حلقه به شمار می‌آید.
+The for loop needs a counter to count the number of times the loop runs. The loop counter is a variable that has a starting and an ending value. The phrase Initialization points to giving the loop counter its initial value. In the Condition part, the repeat condition of the loop is checked. To leave the loop, the loop condition must be violated. For this purpose the loop counter must be increased or decreased on every repeat of the loop so that the value of the counter passes the ending value. The phrases Increment and Decrement mean increasing and decreasing the value of the counter. If curly braces are not used to mark the range of the loop block, only the first statement counts as part of the loop.
 
 ![Figure 11](../images/p219-01.png)
 *Figure 11*
 
 > **Workshop**
 >
-> **به‌کارگیری حلقه for**
+> **Using the for loop**
 >
 > ![Book image](../images/p219-02.png)
 >
-> یک فایل جدید با نام `workshop7.html` ایجاد کنید و اسکریپت روبه‌رو را برای چاپ اعداد 0 تا 4 بنویسید.
+> Create a new file named `workshop7.html` and write the script opposite to print the numbers 0 to 4.
 >
 > > **Note**
 > >
-> > چنانچه شمارنده حلقه توسط کلمه کلیدی let تعریف شود، دسترسی به مقدار متغیر شمارنده فقط در داخل بلوک for امکان پذیر خواهد بود.
+> > If the loop counter is defined with the keyword let, the value of the counter variable can be reached only inside the for block.
 >
-> با توجه به این توضیحات درصورتی که بعد از علامت آکولاد بسته، دستور `console.log(i)` نوشته شود، پیغام خطا صادر می‌شود.
+> Considering these explanations, if the statement `console.log(i)` is written after the closing brace, an error message is given.
 
 <!-- page 214 -->
 
@@ -45,27 +45,27 @@ for (Initialization; Condition; Increment/Decrement) {
 >
 > | do while | `while` |
 > | --- | --- |
-> | `do {`<br>`} while (condition);` | `while (condition){`<br>کدی که باید تکرار شود<br>`}` |
+> | `do {`<br>`} while (condition);` | `while (condition){`<br>The code that must be repeated<br>`}` |
 >
-> **حلقه while و do while** این حلقه‌ها مجموعه‌ای از دستورات را تا زمان نقض شدن یک شرط، تکرار می‌کنند. شکل کلی این حلقه‌ها کدی که باید تکرار اجرا شود به‌صورت مقابل است:
+> **The while and do while loops** These loops repeat a set of statements until a condition is violated. The general form of these loops, with the code that must be repeated, is as opposite:
 >
-> در حلقه while، ابتدا شرط داخل پرانتز بررسی می‌شود، اگر شرط برقرار باشد دستورات داخل حلقه اجرا می‌شود، اگر شرط حلقه از ابتدا غلط باشد بنابراین محتوای حلقه اصلاً اجرا نمی‌شود.
+> In the while loop, first the condition inside the parentheses is checked; if the condition holds, the statements inside the loop run; if the loop condition is false from the start, the content of the loop does not run at all.
 >
-> محتوای حلقه do while یک بار اجرا می‌شود، سپس شرط حلقه بررسی می‌شود. در صورت برقرار نبودن شرط، خروج از حلقه صورت می‌پذیرد.
+> The content of the do while loop runs once, then the loop condition is checked. If the condition does not hold, the loop is left.
 >
-> در صورتی‌که شرط حلقه نقض نشود، دستورات حلقه به‌طور مداوم تکرار می‌شوند. این وضعیت با عنوان حلقه بی‌نهایت (Infinite loop) شناخته می‌شود. حلقه بی‌نهایت می‌تواند منابع سیستم (مانند CPU و RAM) را به‌صورت بی‌رویه مصرف کند که همین مسئله موجب اختلال در عملکرد مرورگر خواهد شد.
+> If the loop condition is never violated, the statements of the loop are repeated continuously. This state is known as an infinite loop. An infinite loop can use up the system's resources (such as CPU and RAM) without limit, which disturbs the browser's performance.
 >
-> **به‌کارگیری حلقه while و do while**
+> **Using the while and do while loops**
 >
-> در فایل `workshop7.html` اسکریپت زیر را برای چاپ عناصر آرایه colors با استفاده از حلقه while بنویسید.
+> In the file `workshop7.html` write the following script to print the elements of the array colors using the while loop.
 >
 > ![Book image](../images/p220-01.png)
 >
 > ![Book image](../images/p220-02.png)
 >
-> فایل را ذخیره کنید و خروجی آن را در مرورگر به نمایش بگذارید.
+> Save the file and show its output in the browser.
 >
-> حاصل جمع عناصر آرایه numbers را به کمک یک حلقه do while محاسبه کنید و نتیجه را در کنسول نمایش دهید.
+> Calculate the sum of the elements of the array numbers with a do while loop and show the result in the console.
 >
 > ![Book image](../images/p220-03.png)
 >
@@ -73,9 +73,9 @@ for (Initialization; Condition; Increment/Decrement) {
 
 <!-- page 215 -->
 
-**حلقه for…of**: این حلقه برای پیمایش عناصر یک مجموعه قابل تکرار مانند آرایه، رشته، مجموعه و ... استفاده می‌شود. حلقه for…of امکان دسترسی به مقادیر عناصر آرایه را فراهم می‌کند.
+**The for…of loop**: this loop is used to go over the elements of an iterable collection such as an array, a string, a set and so on. The for…of loop makes it possible to reach the values of the elements of an array.
 
-**حلقه for … in**: این حلقه برای پیمایش کلیدهای اشیا (Objects) و اندیس آرایه‌ها استفاده می‌شود. شکل کلی ساختار for … of و for … in به‌صورت زیر است:
+**The for … in loop**: this loop is used to go over the keys of objects and the indexes of arrays. The general form of the for … of and for … in structures is as follows:
 
 *Table 22*
 
@@ -83,25 +83,25 @@ for (Initialization; Condition; Increment/Decrement) {
 | --- | --- |
 | `for (const key in object) {`<br>…...<br>`}` | `for (const element of iterable) {`<br>…..<br>`}` |
 
-متغیر element به عناصر آرایه، مجموعه یا کاراکترهای یک رشته و iterable به شیء قابل تکرار اشاره دارد. متغیر key به کلید عناصر شیء و اندیس عناصر آرایه اشاره دارد.
+The variable element points to the elements of the array, the set or the characters of a string, and iterable points to the iterable object. The variable key points to the key of the elements of the object and the index of the elements of the array.
 
 > **Workshop**
 >
-> **کار با ساختار حلقه for … of و for … in**
+> **Working with the for … of and for … in loop structures**
 >
-> 1. در فایل `workshop7.html` اسکریپت زیر را بنویسید و نتیجه را در کنسول مرورگر مشاهده کنید.
+> 1. In the file `workshop7.html` write the following script and see the result in the browser console.
 >
 > ![Book image](../images/p221-01.png)
 >
 > ![Book image](../images/p221-02.png)
 >
-> متغیر name به عناصر آرایه firstName اشاره دارد؛ در هر بار اجرای حلقه، متغیر name به عنصر جدیدی از آرایه اشاره می‌کند.
+> The variable name points to the elements of the array firstName; each time the loop runs, the variable name points to a new element of the array.
 >
 > > **Curiosity**
 > >
-> > در عبارت `for (const name of firstNames)` چرا از کلمه کلیدی const استفاده شده است؟
+> > In the expression `for (const name of firstNames)`, why is the keyword const used?
 >
-> 2. برای بررسی عملکرد حلقه for … in در پیمایش عناصر اشیا، اسکریپت زیر را بنویسید و نتیجه را در کنسول مرورگر بررسی کنید.
+> 2. To check how the for … in loop works in going over the elements of objects, write the following script and check the result in the browser console.
 >
 > ![Book image](../images/p221-03.png)
 >
@@ -111,53 +111,53 @@ for (Initialization; Condition; Increment/Decrement) {
 
 > **Workshop (continued)**
 >
-> در کد فوق متغیر languages یک شیء حاوی اسامی زبان‌هاست. در این شیء واژه‌های مخفف (مانند en، fa و ...) به عنوان کلید عنصر و عبارت فارسی متناظر آن (مانند انگلیسی، فارسی و ...) به عنوان مقدار عنصر مشخص شده است.
+> In the code above, the variable languages is an object containing the names of languages. In this object the abbreviations (such as en, fa and so on) are given as the keys of the elements and the matching phrases (such as English, Persian and so on) as the values of the elements.
 >
-> در این کد، حلقه for…in عناصر شیء languages را یک‌به‌یک پیمایش می‌کند و کلید هر عنصر را درون متغیر lang قرار می‌دهد. سپس دستور `console.log()` نام کلید و مقدار متناظر با آن را در کنسول نمایش می‌دهد.
+> In this code, the for…in loop goes over the elements of the object languages one by one and puts the key of each element in the variable lang. Then the statement `console.log()` shows the name of the key and its matching value in the console.
 
-### دستور break
+### The break statement
 
-این دستور برای خروج از حلقه یا ساختار Switch به‌کار می‌رود. اگر دستور break درون حلقه استفاده شود، اجرای تمام دستورات بعد از آن متوقف شده و خروج از حلقه صورت می‌گیرد.
+This statement is used to leave a loop or a Switch structure. If the break statement is used inside a loop, the running of all the statements after it stops and the loop is left.
 
 > **Note**
 >
-> اگر این دستور درون ساختار switch استفاده شود، Caseهای بعدی بررسی نخواهند شد و کنترل برنامه به بعد از آکولاد بسته منتقل می‌شود.
+> If this statement is used inside a switch structure, the next cases will not be checked and the control of the program moves to after the closing brace.
 
 > **Workshop**
 >
-> **به‌کارگیری دستور Break**
+> **Using the Break statement**
 >
-> اسکریپتی بنویسید که اعداد دو رقمی آرایه زیر را در کنسول مرورگر نمایش دهد.
+> Write a script that shows the two-digit numbers of the following array in the browser console.
 >
 > ```
 > let data = [10,21,37,43,76,83,98,356,200,353,444,1000];
 > ```
 >
-> برای این‌کار در انتهای فایل `workshop7.html`، اسکریپت زیر را وارد کنید. سپس فایل را ذخیره کرده و خروجی آن را در کنسول به نمایش بگذارید.
+> For this, at the end of the file `workshop7.html`, enter the following script. Then save the file and show its output in the console.
 >
 > ![Book image](../images/p222-02.png)
 >
 > ![Book image](../images/p222-01.png)
 
-### دستور continue
+### The continue statement
 
-به‌کارگیری دستور continue در یک حلقه باعث می‌شود که اجرای فعلی حلقه متوقف و دور بعدی حلقه اجرا شود. به این معنی که بعد از اجرای دستور continue کنترل برنامه به ابتدای حلقه منتقل می‌شود و دور بعدی حلقه (در صورت امکان) اجرا می‌شود.
+Using the continue statement in a loop makes the current run of the loop stop and the next round of the loop run. This means that after the continue statement runs, the control of the program moves to the start of the loop and the next round of the loop is run (if possible).
 
 <!-- page 217 -->
 
 > **Workshop**
 >
-> **به‌کارگیری دستور Continue**
+> **Using the Continue statement**
 >
-> اعداد زوج بین 20 تا 35 را در کنار هم با جداکنندۀ خط فاصله (-) نمایش دهید.
+> Show the even numbers between 20 and 35 side by side with the dash (-) as the separator.
 >
-> در انتهای اسکریپت فایل `workshop7.html`، اسکریپت زیر را بنویسید و نتیجه را در کنسول بررسی کنید.
+> At the end of the script of the file `workshop7.html`, write the following script and check the result in the console.
 >
 > ![Book image](../images/p223-01.png)
 >
 > ![Book image](../images/p223-02.png)
 >
-> برای حذف خط فاصلۀ آخر (-)، دستور زیر را قبل از دستور `console.log` بنویسید:
+> To remove the last dash (-), write the following statement before the `console.log` statement:
 >
 > ```
 > evenNumbers = evenNumbers.slice(0, -3);
@@ -165,43 +165,43 @@ for (Initialization; Condition; Increment/Decrement) {
 
 > **Learn more**
 >
-> **حلقه‌های تو در تو**
+> **Nested loops**
 >
-> حلقه‌هایی که تاکنون معرفی شد، امکان پیمایش عناصر تک‌بعدی را فراهم می‌کنند. برای پیمایش عناصری همچون آرایه دوبعدی نیاز به استفاده از حلقه‌های تودرتو است. این نوع حلقه زمانی ایجاد می‌شود که درون یک حلقه، حلقه دیگری قرار گیرد. در یک حلقۀ تودرتو، حلقۀ داخلی به تعداد دفعات اجرای حلقه خارجی تکرار می‌شود.
+> The loops introduced so far make it possible to go over one-dimensional elements. To go over elements such as a two-dimensional array, nested loops must be used. This kind of loop is created when another loop is placed inside a loop. In a nested loop, the inner loop is repeated as many times as the outer loop runs.
 
 > **Learn more**
 >
-> **به‌کارگیری حلقۀ تودرتو**
+> **Using a nested loop**
 >
-> ۱ـ جدول ضرب 5\*5 را با استفاده از یک حلقه تودرتو نمایش دهید.
+> 1- Show the 5\*5 multiplication table using a nested loop.
 >
-> ۲ـ اسکریپت زیر را در انتهای اسکریپت فایل `workshop7.html` بنویسید و نتیجه را کنسول بررسی کنید.
+> 2- Write the following script at the end of the script of the file `workshop7.html` and check the result in the console.
 >
 > ![Book image](../images/p223-03.png)
 >
 > ![Book image](../images/p223-04.png)
 >
-> علامت t\\ به معنای tab است و برای تنظیم فاصله بین مقادیر استفاده شده است.
+> The sign \\t means tab and is used to adjust the space between the values used.
 
 <!-- page 218 -->
 
 > **Activity**
 >
-> به‌جای دستور `console.log` از دستور `document.write` برای نمایش مقادیر در صفحه مرورگر استفاده کنید.
+> Instead of the `console.log` statement, use the `document.write` statement to show the values in the browser page.
 
 > **Workshop**
 >
-> **پیمایش آرایه دوبعدی با استفاده از حلقه for**
+> **Going over a two-dimensional array with the for loop**
 >
-> فایل `product.html` را باز کنید و کدهای جاوا‌اسکریپت زیر را به آن اضافه کنید.
+> Open the file `product.html` and add the following JavaScript code to it.
 >
 > ![Book image](../images/p224-02.png)
 >
 > ![Book image](../images/p224-01.png)
 
-**توابع(Functions)** در زبان‌های برنامه‌نویسی به بلوک‌های کدی که یک کار مشخص را انجام می‌دهند، تابع گفته می‌شود. برنامه‌نویس می‌تواند مجموعه‌ای از دستورالعمل‌ها را در قالب یک تابع گروه‌بندی کند و سپس آن را به عنوان یک واحد مجزا مورد استفاده قرار دهد. این واحدهای مجزا می‌توانند بارها مورد استفاده قرار گیرند. استفاده از توابع در برنامه‌نویسی نه‌تنها سرعت توسعه را افزایش می‌دهد، بلکه خوانایی و قابلیت نگهداری کد را نیز افزایش می‌دهد. مجموعه دستورات نوشته‌شده برای ایجاد یک تابع، تحت یک نام مشخص قابل فراخوانی هستند. یک تابع می‌تواند مقادیری را به‌عنوان ورودی دریافت کند و بعد از اجرای دستورات داخل تابع، مقداری را به‌عنوان خروجی برگرداند.
+**Functions**: in programming languages, blocks of code that do one specific job are called functions. The programmer can group a set of instructions in the form of a function and then use it as a separate unit. These separate units can be used many times. Using functions in programming not only increases the speed of development, but also increases the readability and maintainability of the code. The set of statements written to create a function can be called under a specific name. A function can receive values as input and, after the statements inside the function run, return a value as output.
 
-در جاوااسکریپت برای ایجاد یک تابع از شکل کلی زیر استفاده می‌شود:
+In JavaScript the following general form is used to create a function:
 
 ![Figure 12](../images/p224-03.png)
 *Figure 12*

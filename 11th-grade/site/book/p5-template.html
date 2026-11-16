@@ -98,86 +98,86 @@
 <p>با استفاده از سایت <code>open-meteo.com</code> دمای هوای شهر خود را در صفحه اول سایت نمایش دهید.</p>
 </aside></article><article class="card lesson no-copy" lang="en" dir="ltr" data-lang-block="en" hidden><p class="page-mark">Page 287</p>
 
-<p><strong><bdi dir="rtl">توضیحات کدها</bdi></strong>:</p>
-<p><strong><bdi dir="rtl">خط</bdi> 1</strong>: <bdi dir="rtl">تابع</bdi> path <bdi dir="rtl">وارد</bdi> (import) <bdi dir="rtl">شده است</bdi>.</p>
-<p><strong><bdi dir="rtl">خط</bdi> 2</strong>: <bdi dir="rtl">تابع</bdi> <code>show_temp_view</code> <bdi dir="rtl">از</bdi> <code>views.py</code> <bdi dir="rtl">وارد</bdi> (import) <bdi dir="rtl">شده است</bdi>.</p>
-<p><strong><bdi dir="rtl">خط</bdi> 5</strong>: <bdi dir="rtl">یک</bdi> path <bdi dir="rtl">اضافه شده است</bdi>. <bdi dir="rtl">این</bdi> path <bdi dir="rtl">به این معنی است که اگر کاربر صفحه اصلی سایت را باز کرد،</bdi> <code>show_temp_view</code> <bdi dir="rtl">از درون فایل</bdi> <code>views.py</code> <bdi dir="rtl">اجرا شود</bdi>. <bdi dir="rtl">به این</bdi> path <bdi dir="rtl">پارامتر</bdi> name <bdi dir="rtl">اضافه شده است</bdi>.</p>
-<p><bdi dir="rtl">در جنگو هر آدرس</bdi> (URL) <bdi dir="rtl">می‌تواند یک نام داشته باشد تا در هر جایی دیگر، راحت‌تر به آن ارجاع داده شود</bdi>. <bdi dir="rtl">این اسم هیچ تأثیری روی خود آدرس</bdi> URL <bdi dir="rtl">ندارد و فقط برای ارجاع‌دادن استفاده می‌شود</bdi>.</p>
-<p><bdi dir="rtl">پارامتر</bdi> name <bdi dir="rtl">در مسیرهای جنگو مانند یک اسم مستعار برای آن آدرس است که به آن</bdi> URL name <bdi dir="rtl">هم می‌گویند</bdi>.</p>
-<figure class="shot"><img alt="Figure 16: خروجی اولین view جنگو" src="../images/p293-01.png" loading="lazy" /><figcaption>Figure 16: <bdi dir="rtl">خروجی اولین</bdi> view <bdi dir="rtl">جنگو</bdi></figcaption></figure>
-<p><bdi dir="rtl">فایل را ذخیره نمایید و با</bdi> runserver <bdi dir="rtl">سرور جنگو را راه‌اندازی کنید</bdi>.</p>
-<p><bdi dir="rtl">صفحه اصلی سایت را در مرورگر باز کنید</bdi>.</p>
-<p><bdi dir="rtl">تبریک، شما اولین</bdi> view <bdi dir="rtl">جنگو خود را با موفقیت ایجاد کردید</bdi> (<bdi dir="rtl">شکل</bdi> 16).</p>
+<p><strong>Explanation of the code</strong>:</p>
+<p><strong>Line 1</strong>: the function path is imported.</p>
+<p><strong>Line 2</strong>: the function <code>show_temp_view</code> is imported from <code>views.py</code>.</p>
+<p><strong>Line 5</strong>: a path is added. This path means that if the user opens the main page of the site, <code>show_temp_view</code> from inside the file <code>views.py</code> should run. The parameter name has been added to this path.</p>
+<p>In Django each address (URL) can have a name so that it can be referred to more easily anywhere else. This name has no effect on the URL address itself and is only used for referring.</p>
+<p>The parameter name in Django's paths is like a nickname for that address, which is also called the URL name.</p>
+<figure class="shot"><img alt="Figure 16: The output of the first Django view" src="../images/p293-01.png" loading="lazy" /><figcaption>Figure 16: The output of the first Django view</figcaption></figure>
+<p>Save the file and start the Django server with runserver.</p>
+<p>Open the main page of the site in the browser.</p>
+<p>Congratulations, you have successfully created your first Django view (Figure 16).</p>
 <aside class="callout activity"><p class="callout-label">Activity</p>
-<p><bdi dir="rtl">با تکمیل</bdi> view <bdi dir="rtl">و فایل</bdi> <code>urls.py</code> <bdi dir="rtl">اطلاعات دمای تهران را نمایش دهید</bdi>.</p>
+<p>By completing the view and the file <code>urls.py</code>, show the temperature information of Tehran.</p>
 </aside>
-<h2><bdi dir="rtl">آشنایی با تابع</bdi> render</h2>
-<p><bdi dir="rtl">در جنگو برای نمایش بهتر</bdi> view <bdi dir="rtl">از فایل‌های</bdi> html <bdi dir="rtl">استفاده می‌شود</bdi>. <bdi dir="rtl">هر</bdi> app <bdi dir="rtl">در جنگو، می‌تواند فایل‌های</bdi> html <bdi dir="rtl">مخصوص به خود را به‌صورت جداگانه داشته باشد، برای انجام این کار یک‌پوشه به اسم</bdi> templates <bdi dir="rtl">در</bdi> app <bdi dir="rtl">ایجاد کنید و فایل‌های</bdi> html <bdi dir="rtl">را در آن ذخیره کنید</bdi>. <bdi dir="rtl">به این فایل‌های</bdi> html <bdi dir="rtl">در جنگو</bdi> template <bdi dir="rtl">گفته می‌شود</bdi>.</p>
-<p><bdi dir="rtl">شکل</bdi> 17 <bdi dir="rtl">را مشاهده کنید، مسیر طی شدۀ</bdi> request (<bdi dir="rtl">درخواست وب</bdi>) <bdi dir="rtl">در جنگو قابل‌مشاهده است</bdi>.</p>
-<p><bdi dir="rtl">طبق تصویر، درخواست ارسالی کاربر، ابتدا به سرور جنگو منتقل شده، سپس با استفاده از</bdi> url <bdi dir="rtl">به</bdi> view <bdi dir="rtl">مناسب ارسال می‌شود، هر</bdi> view <bdi dir="rtl">با کمک فایل</bdi> html <bdi dir="rtl">یا همان</bdi> template <bdi dir="rtl">اطلاعات قابل نمایش را آماده کرده و برای کاربر ارسال می‌کند</bdi>.</p>
-<figure class="shot"><img alt="Figure 17: مسیر طی شده یک request در جنگو" src="../images/p293-02.png" loading="lazy" /><figcaption>Figure 17: <bdi dir="rtl">مسیر طی شده یک</bdi> request <bdi dir="rtl">در جنگو</bdi></figcaption></figure>
+<h2>Getting to know the render function</h2>
+<p>In Django, html files are used to show a view better. Each app in Django can have its own html files separately; to do this, create a folder named templates in the app and save the html files in it. These html files are called templates in Django.</p>
+<p>Look at Figure 17; the path a request (a web request) goes through in Django can be seen.</p>
+<p>According to the picture, the request sent by the user is first passed to the Django server, then, using the url, it is sent to the suitable view; each view, with the help of an html file, that is the template, prepares the displayable information and sends it to the user.</p>
+<figure class="shot"><img alt="Figure 17: The path a request takes in Django" src="../images/p293-02.png" loading="lazy" /><figcaption>Figure 17: The path a request takes in Django</figcaption></figure>
 <p class="page-mark">Page 288</p>
 
-<p><bdi dir="rtl">همان‌طور‌که در شکل</bdi> 17 <bdi dir="rtl">اشاره شده است، تابع</bdi> render <bdi dir="rtl">در</bdi> view <bdi dir="rtl">می‌تواند اطلاعات را به فایل</bdi> html <bdi dir="rtl">ارسال کند تا به کمک قابلیت‌های جنگو، اطلاعات ارسالی به فایلِ</bdi> html <bdi dir="rtl">با آن ترکیب شده و به کاربر نمایش داده شود</bdi>.</p>
-<p><bdi dir="rtl">در ادامه، در دو مرحله می‌توانید یک عدد تصادفی را به‌عنوان دمای هوای شهر همدان، با کمک تابع</bdi> render <bdi dir="rtl">به یک فایل</bdi> html <bdi dir="rtl">ارسال کرده و به کاربر نمایش دهید</bdi>.</p>
-<p><strong><bdi dir="rtl">مرحله اول</bdi></strong>: <bdi dir="rtl">فایل</bdi> <code>views.py</code> <bdi dir="rtl">را باز کنید و</bdi> <code>show_temp_view</code> <bdi dir="rtl">را همانند شکل</bdi> 18 <bdi dir="rtl">تغییر دهید</bdi>.</p>
-<figure class="shot"><img alt="Figure 18: استفاده از تابع render" src="../images/p294-01.png" loading="lazy" /><figcaption>Figure 18: <bdi dir="rtl">استفاده از تابع</bdi> render</figcaption></figure>
-<p><strong><bdi dir="rtl">توضیحات کدها</bdi></strong>:</p>
-<p><strong><bdi dir="rtl">خط</bdi> 1</strong>: <bdi dir="rtl">تابع</bdi> render <bdi dir="rtl">از ماژول</bdi> shortcuts <bdi dir="rtl">وارد</bdi> (import) <bdi dir="rtl">شده است</bdi>.</p>
-<p><strong><bdi dir="rtl">خط</bdi> 2</strong>: <bdi dir="rtl">ماژول</bdi> random <bdi dir="rtl">وارد</bdi> (import) <bdi dir="rtl">شده است</bdi>.</p>
-<p><strong><bdi dir="rtl">خط</bdi> 5</strong>: <bdi dir="rtl">یک عدد تصادفی به‌عنوان دمای هوا برای شهر همدان انتخاب می‌شود، این اطلاعات در صفحه اصلی سایت نمایش داده خواهد شد</bdi>.</p>
-<p><strong><bdi dir="rtl">خط</bdi> 6</strong>: <bdi dir="rtl">یک دیکشنری شامل نام شهر</bdi> (city) <bdi dir="rtl">و دمای شهر</bdi> (temp) <bdi dir="rtl">ایجاد شده و در متغیری با نام</bdi> context <bdi dir="rtl">ذخیره شده است</bdi>.</p>
-<p><strong><bdi dir="rtl">خط</bdi> 7</strong>: <bdi dir="rtl">از تابع</bdi> render <bdi dir="rtl">استفاده شده است</bdi>. <bdi dir="rtl">برای این تابع سه آرگومان ارسال شده است</bdi>. <bdi dir="rtl">آرگومان اول</bdi> request <bdi dir="rtl">است که از ورودی</bdi> view <bdi dir="rtl">دریافت شده است</bdi>. <bdi dir="rtl">آرگومان دوم نام فایل</bdi> html <bdi dir="rtl">موجود در پوشه</bdi> templates <bdi dir="rtl">و آرگومان سوم یک دیکشنری است که برای</bdi> html <bdi dir="rtl">ارسال شده است</bdi>.</p>
-<p><strong><bdi dir="rtl">مرحله دوم</bdi></strong>: <bdi dir="rtl">یک‌پوشه با نام</bdi> templates <bdi dir="rtl">در</bdi> weather app <bdi dir="rtl">بسازید و یک فایل</bdi> html <bdi dir="rtl">با نام</bdi> <code>show_temp.html</code> <bdi dir="rtl">درون آن ایجاد کنید</bdi>.</p>
-<p><bdi dir="rtl">فایل</bdi> <code>show_temp.html</code> <bdi dir="rtl">و هر فایل</bdi> html <bdi dir="rtl">دیگری که در این پوشه قرار بگیرد، به‌اصطلاح یک</bdi> template <bdi dir="rtl">است</bdi>.</p>
+<p>As Figure 17 shows, the function render in the view can send information to the html file so that, with the help of Django's capabilities, the information sent to the html file is combined with it and shown to the user.</p>
+<p>Next, in two steps you can send a random number as the air temperature of the city of Hamedan to an html file with the help of the function render and show it to the user.</p>
+<p><strong>First step</strong>: open the file <code>views.py</code> and change <code>show_temp_view</code> as in Figure 18.</p>
+<figure class="shot"><img alt="Figure 18: Using the function render" src="../images/p294-01.png" loading="lazy" /><figcaption>Figure 18: Using the function render</figcaption></figure>
+<p><strong>Explanation of the code</strong>:</p>
+<p><strong>Line 1</strong>: the function render is imported from the module shortcuts.</p>
+<p><strong>Line 2</strong>: the module random is imported.</p>
+<p><strong>Line 5</strong>: a random number is chosen as the air temperature for the city of Hamedan; this information will be shown on the main page of the site.</p>
+<p><strong>Line 6</strong>: a dictionary including the name of the city (city) and the temperature of the city (temp) is created and stored in a variable named context.</p>
+<p><strong>Line 7</strong>: the function render is used. Three arguments are sent to this function. The first argument is request, which was received from the input of the view. The second argument is the name of the html file in the templates folder and the third argument is a dictionary that is sent to the html.</p>
+<p><strong>Second step</strong>: make a folder named templates in the weather app and create an html file named <code>show_temp.html</code> inside it.</p>
+<p>The file <code>show_temp.html</code> and any other html file placed in this folder is, as the term goes, a template.</p>
 <p class="page-mark">Page 289</p>
 
-<p><bdi dir="rtl">فایل</bdi> <code>show_temp.html</code> <bdi dir="rtl">و محتوای آن را همانند شکل</bdi> 19 <bdi dir="rtl">ایجاد کنید</bdi>.</p>
-<p><img alt="Figure 19: محتویات show_temp.html" src="../images/p295-01.png" loading="lazy" />
-<em>Figure 19: <bdi dir="rtl">محتویات</bdi> <code>show_temp.html</code></em></p>
-<p><strong><bdi dir="rtl">توضیحات کدها</bdi></strong>:</p>
-<p><strong><bdi dir="rtl">خط</bdi> 10</strong>: <bdi dir="rtl">از</bdi> {{city}} و {{temp}} <bdi dir="rtl">جهت‌نمایش نام شهر و دمای شهر استفاده شده است</bdi>. <bdi dir="rtl">علامت</bdi> {{}} <bdi dir="rtl">جهت‌نمایش متغیرها در</bdi> template <bdi dir="rtl">به‌کار می‌رود</bdi>.</p>
-<p><bdi dir="rtl">این متغیرها، کلیدهای دیکشنری</bdi> context <bdi dir="rtl">هستند که تابع</bdi> render <bdi dir="rtl">آن را برای</bdi> <code>show_temp.html</code> <bdi dir="rtl">ارسال کرده است</bdi>.</p>
-<p><bdi dir="rtl">همان‌طور‌که مشخص است، می‌توانید در</bdi> template <bdi dir="rtl">از این متغیرها، درون تگ‌های</bdi> html <bdi dir="rtl">استفاده کنید</bdi>. <bdi dir="rtl">فایل‌ها را ذخیره کنید</bdi>. <bdi dir="rtl">سپس وارد</bdi> terminal <bdi dir="rtl">شده و با کلیدهای ترکیبی</bdi> ctrl + c <bdi dir="rtl">وب سرور جنگو را متوقف کنید و دوباره با دستور</bdi> runserver <bdi dir="rtl">آن را راه‌اندازی کنید</bdi>. <bdi dir="rtl">اکنون صفحه اصلی سایت را</bdi> refresh <bdi dir="rtl">کنید</bdi>. <bdi dir="rtl">تغییرات جدید را مشاهده خواهید کرد</bdi> (<bdi dir="rtl">شکل</bdi> 20).</p>
-<figure class="shot"><img alt="Figure 20: مشاهده تغییرات جدید" src="../images/p295-02.png" loading="lazy" /><figcaption>Figure 20: <bdi dir="rtl">مشاهده تغییرات جدید</bdi></figcaption></figure>
-<figure class="shot"><img alt="Figure 21: روند نمایش دمای هوا" src="../images/p295-03.png" loading="lazy" /><figcaption>Figure 21: <bdi dir="rtl">روند نمایش دمای هوا</bdi></figcaption></figure>
-<p><bdi dir="rtl">روند طی شده نمایش دمای هوا، از لحظه ورود درخواست کاربر به سرور جنگو تا نمایش اطلاعات با</bdi> template<bdi dir="rtl">، در شکل</bdi> 21 <bdi dir="rtl">شبیه‌سازی شده است</bdi>.</p>
+<p>Create the file <code>show_temp.html</code> and its content as in Figure 19.</p>
+<p><img alt="Figure 19: The content of show_temp.html" src="../images/p295-01.png" loading="lazy" />
+<em>Figure 19: The content of <code>show_temp.html</code></em></p>
+<p><strong>Explanation of the code</strong>:</p>
+<p><strong>Line 10</strong>: {{city}} and {{temp}} are used to show the name of the city and the temperature of the city. The sign {{}} is used to show variables in a template.</p>
+<p>These variables are the keys of the dictionary context, which the function render sent for <code>show_temp.html</code>.</p>
+<p>As is clear, you can use these variables in the template inside html tags. Save the files. Then enter the terminal and stop the Django web server with the key combination ctrl + c and start it again with the command runserver. Now refresh the main page of the site. You will see the new changes (Figure 20).</p>
+<figure class="shot"><img alt="Figure 20: Seeing the new changes" src="../images/p295-02.png" loading="lazy" /><figcaption>Figure 20: Seeing the new changes</figcaption></figure>
+<figure class="shot"><img alt="Figure 21: The process of showing the air temperature" src="../images/p295-03.png" loading="lazy" /><figcaption>Figure 21: The process of showing the air temperature</figcaption></figure>
+<p>The process followed to show the air temperature, from the moment the user's request enters the Django server to showing the information with the template, is simulated in Figure 21.</p>
 <p class="page-mark">Page 290</p>
 
 <aside class="callout activity"><p class="callout-label">Activity</p>
-<p><bdi dir="rtl">با استفاده از تابع</bdi> render <bdi dir="rtl">و ایجاد یک</bdi> template <bdi dir="rtl">مناسب برای</bdi> view<bdi dir="rtl">، دمای هوای شهر خودتان را با اعداد تصادفی نمایش دهید</bdi>.</p>
+<p>Using the function render and creating a suitable template for the view, show the air temperature of your own city with random numbers.</p>
 </aside>
-<h2><bdi dir="rtl">نمایش دمای هوای واقعی</bdi></h2>
-<p><bdi dir="rtl">جهت‌نمایش دمای هوای لحظه‌ای شهرها می‌توانید از سایت‌هایی مثل</bdi> https://open-meteo.com <bdi dir="rtl">استفاده کنید</bdi>. <bdi dir="rtl">این سایت ابزاری در اختیار برنامه‌نویس قرار می‌دهد تا بتواند دمای هوای شهرهای مختلف را نمایش دهد</bdi>. <bdi dir="rtl">سایت</bdi> open-meteo <bdi dir="rtl">یک</bdi> API <bdi dir="rtl">رایگان دارد که با دریافت طول و عرض جغرافیایی، اطلاعات آب‌وهوای منطقه موردنظر را در قالب</bdi> JSON <bdi dir="rtl">ارائه می‌دهد</bdi>.</p>
-<p><bdi dir="rtl">به‌عنوان‌مثال، اگر آدرس زیر را برای دریافت وضعیت آب‌وهوای شهر همدان در مرورگر باز کنید، نتیجه با قالب</bdi> JSON <bdi dir="rtl">نمایش داده خواهد شد</bdi> (<bdi dir="rtl">شکل</bdi> 22).</p>
-<figure class="shot"><img alt="Figure 22: دریافت دمای شهر همدان از API آنلاین" src="../images/p296-01.png" loading="lazy" /><figcaption>Figure 22: <bdi dir="rtl">دریافت دمای شهر همدان از</bdi> API <bdi dir="rtl">آنلاین</bdi></figcaption></figure>
-<p>-<code>meteo.com/v1/forecast?latitude=34.7981&amp;longitude=48.5146&amp;current</code>ـ https://api.open <code>weather=true</code> API <bdi dir="rtl">مانند یک پل بین دو برنامه است</bdi>. <bdi dir="rtl">یعنی زمانی که یک برنامه</bdi> (<bdi dir="rtl">مثلاً پروژه جنگو</bdi>) <bdi dir="rtl">به اینترنت وصل می‌شود، از طریق</bdi> API <bdi dir="rtl">می‌تواند از یک سایت دیگر داده بگیرد</bdi>.</p>
-<p><bdi dir="rtl">در این پروژه، با استفاده از</bdi> API <bdi dir="rtl">سرویس</bdi> open-meteo <bdi dir="rtl">اطلاعات آب و هوایی دریافت می‌شود</bdi>. open-meteo <bdi dir="rtl">این اطلاعات را به‌صورت داده‌های منظم در قالب</bdi> (Json) <bdi dir="rtl">برمی‌گرداند، سپس پروژه جنگو آنها را نمایش می‌دهد</bdi>.</p>
+<h2>Showing the real air temperature</h2>
+<p>To show the instantaneous air temperature of cities you can use sites such as https://open-meteo.com. This site gives the programmer a tool to show the air temperature of different cities. The site open-meteo has a free API that, by receiving the longitude and latitude, gives the weather information of the wanted region in JSON format.</p>
+<p>For example, if you open the following address in the browser to get the weather of the city of Hamedan, the result will be shown in JSON format (Figure 22).</p>
+<figure class="shot"><img alt="Figure 22: Getting the temperature of the city of Hamedan from an online API" src="../images/p296-01.png" loading="lazy" /><figcaption>Figure 22: Getting the temperature of the city of Hamedan from an online API</figcaption></figure>
+<p>-<code>meteo.com/v1/forecast?latitude=34.7981&amp;longitude=48.5146&amp;current</code> https://api.open <code>weather=true</code> An API is like a bridge between two programs. That is, when a program (for example the Django project) connects to the internet, it can get data from another site through the API.</p>
+<p>In this project, weather information is received using the API of the service open-meteo. open-meteo returns this information as organised data in the (Json) format, and then the Django project shows it.</p>
 <p class="page-mark">Page 291</p>
 
-<p><bdi dir="rtl">ارسال مقدار</bdi> latitude و longitude <bdi dir="rtl">برای دریافت اطلاعات آب‌وهوا اجباری است</bdi>.</p>
-<p><bdi dir="rtl">اکنون جهت‌نمایش دمای فعلی شهر همدان تابع</bdi> <code>show_temp_view</code> <bdi dir="rtl">را از داخل فایل</bdi> <code>views.py</code> <bdi dir="rtl">همانند شکل</bdi> 23 <bdi dir="rtl">تغییر دهید</bdi>.</p>
-<figure class="shot"><img alt="Figure 23: تغییر در view جهت دریافت اطلاعات از API" src="../images/p297-01.png" loading="lazy" /><figcaption>Figure 23: <bdi dir="rtl">تغییر در</bdi> view <bdi dir="rtl">جهت دریافت اطلاعات از</bdi> API</figcaption></figure>
-<p><strong><bdi dir="rtl">توضیحات کدها</bdi></strong>:</p>
-<p><strong><bdi dir="rtl">خط</bdi> 2</strong>: <bdi dir="rtl">کتابخانه</bdi> requests <bdi dir="rtl">وارد</bdi> (import) <bdi dir="rtl">شده است</bdi>. <bdi dir="rtl">این کتابخانه باید از قبل نصب شده باشد</bdi>. <bdi dir="rtl">با دستور</bdi> (<code>pip install requests</code>)</p>
-<p><strong><bdi dir="rtl">خط</bdi> 5</strong>: <bdi dir="rtl">مقادیر</bdi> latitude و longitude <bdi dir="rtl">همان طول و عرض جغرافیایی هستند که برای شهر همدان مشخص شده و در متغیرهای</bdi> lat و lon <bdi dir="rtl">ذخیره شده‌اند</bdi>.</p>
-<p><strong><bdi dir="rtl">خط</bdi> 6 و 7</strong>: <bdi dir="rtl">متن درخواست به‌صورت</bdi> get <bdi dir="rtl">و با استفاده از</bdi> lat و lon <bdi dir="rtl">آماده شده است</bdi>.</p>
-<p><strong><bdi dir="rtl">خط</bdi> 8</strong>: <bdi dir="rtl">با استفاده از</bdi> try <bdi dir="rtl">خطای احتمالی مدیریت شده است، به‌عنوان‌مثال اگر اینترنت وصل نباشد،</bdi> except <bdi dir="rtl">در خط</bdi> 11 <bdi dir="rtl">مقدار</bdi> temp <bdi dir="rtl">را برابر</bdi> None <bdi dir="rtl">خواهد کرد و سایت با مشکل مواجه نمی‌شود</bdi>.</p>
-<p><strong><bdi dir="rtl">خط</bdi> 9</strong>: <bdi dir="rtl">درخواست به سرور</bdi> <code>open-meteo.com</code> <bdi dir="rtl">ارسال شده و نتیجه با قالب</bdi> json <bdi dir="rtl">در دیکشنری</bdi> data <bdi dir="rtl">ذخیره شده است</bdi>.</p>
-<p><strong><bdi dir="rtl">خط</bdi> 10</strong>: <bdi dir="rtl">مقدار</bdi> temperature <bdi dir="rtl">از دیکشنری</bdi> data <bdi dir="rtl">استخراج شده و در متغیر</bdi> temp <bdi dir="rtl">ذخیره شده است</bdi>.</p>
-<p><bdi dir="rtl">در فایل</bdi> <code>show_temp.html</code> <bdi dir="rtl">تغییراتی برای مدیریت خطا همانند شکل</bdi> 24 <bdi dir="rtl">اعمال کنید</bdi>.</p>
-<figure class="shot"><img alt="Figure 24: تغییرات در template جهت مدیریت خطای احتمالی" src="../images/p297-02.png" loading="lazy" /><figcaption>Figure 24: <bdi dir="rtl">تغییرات در</bdi> template <bdi dir="rtl">جهت مدیریت خطای احتمالی</bdi></figcaption></figure>
+<p>Sending the values of latitude and longitude to receive the weather information is compulsory.</p>
+<p>Now, to show the current temperature of the city of Hamedan, change the function <code>show_temp_view</code> inside the file <code>views.py</code> as in Figure 23.</p>
+<figure class="shot"><img alt="Figure 23: Change in the view to receive information from the API" src="../images/p297-01.png" loading="lazy" /><figcaption>Figure 23: Change in the view to receive information from the API</figcaption></figure>
+<p><strong>Explanation of the code</strong>:</p>
+<p><strong>Line 2</strong>: the library requests is imported. This library must be installed beforehand. With the command (<code>pip install requests</code>)</p>
+<p><strong>Line 5</strong>: the values latitude and longitude are the geographic latitude and longitude specified for the city of Hamedan and stored in the variables lat and lon.</p>
+<p><strong>Lines 6 and 7</strong>: the request text is prepared as a get request using lat and lon.</p>
+<p><strong>Line 8</strong>: a possible error is managed using try; for example if the internet is not connected, the except in line 11 will make the value of temp None and the site does not run into trouble.</p>
+<p><strong>Line 9</strong>: the request is sent to the server <code>open-meteo.com</code> and the result in json format is stored in the dictionary data.</p>
+<p><strong>Line 10</strong>: the value of temperature is extracted from the dictionary data and stored in the variable temp.</p>
+<p>In the file <code>show_temp.html</code> make changes to manage errors as in Figure 24.</p>
+<figure class="shot"><img alt="Figure 24: Changes in the template to manage a possible error" src="../images/p297-02.png" loading="lazy" /><figcaption>Figure 24: Changes in the template to manage a possible error</figcaption></figure>
 <p class="page-mark">Page 292</p>
 
-<p><strong><bdi dir="rtl">توضیحات کدها</bdi></strong>:</p>
-<p><strong><bdi dir="rtl">خط</bdi> 10</strong>: <bdi dir="rtl">در</bdi> template <bdi dir="rtl">از دستور شرطی</bdi> if <bdi dir="rtl">استفاده شده است</bdi>. <bdi dir="rtl">درصورتی‌که</bdi> temp <bdi dir="rtl">مقدار داشته باشد و</bdi> None <bdi dir="rtl">نباشد، دمای شهر نمایش داده می‌شود</bdi>.</p>
-<p><strong><bdi dir="rtl">خط</bdi> 13</strong>: <bdi dir="rtl">در صورت بروز خطا، پیغامی مناسب به کاربر نمایش داده می‌شود</bdi>.</p>
-<p><bdi dir="rtl">اکنون فایل‌ها را ذخیره کرده و پس از اطمینان از اتصال به اینترنت، صفحه اصلی سایت را</bdi> refresh <bdi dir="rtl">کنید</bdi>. <bdi dir="rtl">خروجی صفحه اصلی سایت، همانند شکل</bdi> 25 <bdi dir="rtl">خواهد بود</bdi> (<bdi dir="rtl">واضح است که دمای هوا برای شما ممکن است متفاوت نمایش داده شود و البته سرعت باز شدن صفحه اصلی سایت، به‌سرعت اینترنت شما ارتباط دارد، چون در کدها به</bdi> <code>open-meteo.com</code> <bdi dir="rtl">متصل شده‌اید</bdi>.)</p>
-<figure class="shot"><img alt="Figure 25: نمایش دمای همدان به‌صورت آنلاین" src="../images/p298-01.png" loading="lazy" /><figcaption>Figure 25: <bdi dir="rtl">نمایش دمای همدان به‌صورت آنلاین</bdi></figcaption></figure>
-<figure class="shot"><img alt="Figure 26: نمایش خطای مناسب به کاربر" src="../images/p298-02.png" loading="lazy" /><figcaption>Figure 26: <bdi dir="rtl">نمایش خطای مناسب به کاربر</bdi></figcaption></figure>
-<p><bdi dir="rtl">درصورتی‌که ارتباط با سایت برقرار نشود، خروجی همانند شکل</bdi> 26 <bdi dir="rtl">خواهد بود</bdi>.</p>
+<p><strong>Explanation of the code</strong>:</p>
+<p><strong>Line 10</strong>: in the template the conditional statement if is used. If temp has a value and is not None, the temperature of the city is shown.</p>
+<p><strong>Line 13</strong>: if an error happens, a suitable message is shown to the user.</p>
+<p>Now save the files and, after making sure of the internet connection, refresh the main page of the site. The output of the main page of the site will be as in Figure 25 (clearly, the air temperature may be shown differently for you, and of course the speed of opening the main page of the site depends on your internet speed, because in the code you have connected to <code>open-meteo.com</code>.)</p>
+<figure class="shot"><img alt="Figure 25: Showing the temperature of Hamedan online" src="../images/p298-01.png" loading="lazy" /><figcaption>Figure 25: Showing the temperature of Hamedan online</figcaption></figure>
+<figure class="shot"><img alt="Figure 26: Showing a suitable error to the user" src="../images/p298-02.png" loading="lazy" /><figcaption>Figure 26: Showing a suitable error to the user</figcaption></figure>
+<p>If the connection with the site is not made, the output will be as in Figure 26.</p>
 <aside class="callout activity"><p class="callout-label">Activity</p>
-<p><bdi dir="rtl">با استفاده از سایت</bdi> <code>open-meteo.com</code> <bdi dir="rtl">دمای هوای شهر خود را در صفحه اول سایت نمایش دهید</bdi>.</p>
+<p>Using the site <code>open-meteo.com</code>, show the air temperature of your own city on the first page of the site.</p>
 </aside></article>
       <aside class="card extra">
         <h2 data-fa="تمرین این بخش" data-en="Exercises for this section">تمرین این بخش</h2>

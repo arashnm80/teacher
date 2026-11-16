@@ -1,5 +1,5 @@
 <!-- page 293 -->
 
-## ارزشیابی شایستگی ایجاد وب اپلیکیشن
+## Competency assessment: creating a web application
 
-**استاندارد عملکرد کار**: هنرجو باید با درک صحیحی که از ساختار جنگو کسب کرده است، بتواند یک وب اپلیکیشن ساده را در رایانه خود پیاده‌سازی کند.
+**Work performance standard**: with the correct understanding the student has gained of the structure of Django, they must be able to implement a simple web application on their own computer.

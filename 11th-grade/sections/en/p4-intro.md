@@ -2,10 +2,10 @@
 
 ![Book image](../images/p239-01.png)
 
-در پودمان «توسعه وب پایتون»، شما با مفاهیم کلیدی برنامه‌نویسی پیشرفته در پایتون آشنا می‌شوید تا بتوانید از این زبان قدرتمند در طراحی و توسعه پروژه‌های واقعی وب استفاده کنید.
+In the module "Python web development", you get to know the key concepts of advanced programming in Python so that you can use this powerful language in designing and developing real web projects.
 
-این پودمان شامل دو واحد اصلی است:
+This module includes two main units:
 
-شیء‌گرایی در پایتون: هنرجو در این بخش ساختار کدنویسی حرفه‌ای را با استفاده از کلاس‌ها، اشیا، وراثت و چندریختی می‌آموزد تا برنامه‌های مقیاس‌پذیر و قابل نگهداری بنویسد.
+Object-orientation in Python: in this part the student learns professional coding structure using classes, objects, inheritance and polymorphism, in order to write scalable and maintainable programs.
 
-توسعه شیء‌گرایی: تمرکز این بخش بر درک عمیق‌تر اصول شی‌گرایی و یادگیری نحوه کار با فایل‌ها برای ذخیره، خواندن و پردازش داده‌ها در محیط وب است.
+Developing object-orientation: the focus of this part is a deeper understanding of the principles of object-orientation and learning how to work with files to store, read and process data in the web environment.

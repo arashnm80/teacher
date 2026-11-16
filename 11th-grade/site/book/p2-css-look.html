@@ -150,8 +150,8 @@ background-color: rgb(0,0,255);
 <aside class="callout activity"><p class="callout-label">Activity</p>
 <p>Apply the text formatting properties to the elements of the file <code>test.html</code> and see the result in the browser.</p>
 </aside>
-<h2><bdi dir="rtl">طراحی ظاهر عناصر</bdi> (<bdi dir="rtl">رنگ‌ها، پس زمینه‌ها، شفافیت و خط دور</bdi>)</h2>
-<p>CSS <bdi dir="rtl">دارای ویژگی‌های مختلفی در زمینه تنظیم ظاهر عناصر است</bdi>. <bdi dir="rtl">این ویژگی‌ها برای تعیین رنگ متن، رنگ زمینه، تصویر پس‌زمینه، کنترل تصویر پس‌زمینه، شفافیت و خط دور عناصر به‌کار می‌روند</bdi>. <bdi dir="rtl">در ادامه به برخی از این ویژگی‌ها اشاره می‌شود</bdi>.</p>
+<h2>Designing the look of elements (colours, backgrounds, transparency and borders)</h2>
+<p>CSS has various properties for adjusting the look of elements. These properties are used to set the text colour, the background colour, the background image, control of the background image, the transparency and the border of elements. Some of these properties are mentioned below.</p>
 <p><strong>color and background-color</strong>: set the text color and background color of elements. For both you can use a color name, a hexadecimal color code, or an RGB code.</p>
 <aside class="callout example"><p class="callout-label">Example</p>
 <p>The example opposite uses all three ways of giving a color.</p>
@@ -180,7 +180,7 @@ background-color: rgb(0,0,255);
 <div class="code-wrap" dir="ltr"><pre><code>border-radius:10px;
 </code></pre></div>
 <aside class="callout workshop"><p class="callout-label">Workshop</p>
-<p><strong><bdi dir="rtl">طراحی ظاهر عناصر</bdi> (<bdi dir="rtl">رنگ‌ها، پس‌زمینه‌ها، شفافیت و خط دور</bdi>)</strong></p>
+<p><strong>Designing the look of elements (colours, backgrounds, transparency and borders)</strong></p>
 <p>Write the HTML code below in the file <code>test.html</code> and see the result in the browser. Then add the styles step by step to understand the effect of each one on the page's elements.</p>
 <figure class="shot"><img alt="Book image" src="../images/p128-01.png" loading="lazy" /></figure>
 </aside>
@@ -193,7 +193,7 @@ background-color: rgb(0,0,255);
 </aside>
 <h3>CSS selectors</h3>
 <p>The element or set of elements a CSS style is written for is called a selector. CSS has several kinds of selectors, including simple, combinator, pseudo-class, pseudo-element, and attribute selectors, which this part covers.</p>
-<h3><bdi dir="rtl">انتخاب‌گرهای ساده</bdi> (Simple)</h3>
+<h3>Simple selectors</h3>
 <p>These selectors use tag names, IDs, classes, and the * sign to select elements. The kinds of simple selectors are listed in Table 8:</p>
 <p class="table-cap">Table 8: Kinds of simple selectors</p>
 <div class="table-wrap"><table>
@@ -242,7 +242,7 @@ background-color: rgb(0,0,255);
 <figure class="shot"><img alt="Book image" src="../images/p131-01.png" loading="lazy" /></figure>
 <figure class="shot"><img alt="Book image" src="../images/p131-02.png" loading="lazy" /></figure>
 <figure class="shot"><img alt="Book image" src="../images/p131-03.png" loading="lazy" /></figure>
-<h3><bdi dir="rtl">انتخاب‌گر ترکیبی</bdi>(Combinator)</h3>
+<h3>Combinator selectors</h3>
 <p>Combinator selectors in CSS define a structural and positional relationship between two or more selectors, such as the child selector with the <code>&gt;</code> sign and the descendant selector with a space. Elements written nested inside each other have a parent–child relationship. For example, li is a child of ul, so to select the li elements you write ul li or <code>ul &gt; li</code>. Using the <code>&gt;</code> sign limits the effect to the direct children of an element.</p>
 <p class="page-mark">Page 126</p>
 
@@ -250,7 +250,7 @@ background-color: rgb(0,0,255);
 <p>The image below shows an example of using a combinator selector.</p>
 <figure class="shot"><img alt="Book image" src="../images/p132-01.png" loading="lazy" /></figure>
 </aside>
-<h3><bdi dir="rtl">انتخاب‌گرهای شبه‌کلاس</bdi> (Pseudo-class Selectors)</h3>
+<h3>Pseudo-class selectors</h3>
 <p>Pseudo-class selectors let you style elements based on their state, position, or dynamic properties. Some of them become active depending on what the user does. Pseudo-classes are written with a : sign after the element name. The pseudo-class selectors are:</p>
 <p><strong>hover</strong>: active when the user moves the mouse pointer over an element.</p>
 <p><strong>focus</strong>: happens when an element (usually a form element) becomes active and the user can interact with it.</p>
@@ -260,10 +260,10 @@ background-color: rgb(0,0,255);
 <p><strong><code>last-child</code></strong>: selects the last child of an element.</p>
 <p class="page-mark">Page 127</p>
 
-<h3><bdi dir="rtl">انتخاب‌گر ویژگی</bdi> (Attribute selector)</h3>
+<h3>Attribute selector</h3>
 <p>An attribute selector selects elements by their attributes. For example, to select the text elements of a form the selector <code>input[type="text"]</code> is used, and to select elements that have an href attribute the selector [href] is used.</p>
 <aside class="callout workshop"><p class="callout-label">Workshop</p>
-<p><strong><bdi dir="rtl">کار با انواع انتخاب‌گرهای</bdi> CSS (<bdi dir="rtl">طراحی منو</bdi>)</strong></p>
+<p><strong>Working with the types of CSS selectors (designing a menu)</strong></p>
 <p>Create a file named <code>index.html</code> and write the HTML code below in it. Save the file and see the result in the browser. Then add the element styles to the head part step by step and check the result of each style.</p>
 <figure class="shot"><img alt="Book image" src="../images/p133-01.png" loading="lazy" /></figure>
 <figure class="shot"><img alt="Book image" src="../images/p133-02.png" loading="lazy" /></figure>

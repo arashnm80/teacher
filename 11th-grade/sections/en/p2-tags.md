@@ -25,7 +25,7 @@ The first step in designing these pages is to create their basic structure and p
 ![Figure 5](../images/p099-03.png)
 *Figure 5*
 
-**معرفی تگ (Tag)**: یک صفحۀ وب شامل عناصر مختلفی مانند تیترها، پاراگراف‌ها، پیوندها، تصاویر، لیست و غیره است. هر یک از عناصر موجود در صفحات وب توسط تگ‌ها یا تگ‌های تعریف‌شده در زبان نشانه‌گذاری HTML ایجاد می‌شود. تگ‌های HTML در موضوعات مختلف قابل استفاده هستند.
+**Introducing the tag**: a web page includes different elements such as headings, paragraphs, links, images, lists and so on. Each of the elements in web pages is created by the tags defined in the HTML markup language. HTML tags can be used in different topics.
 
 <!-- page 94 -->
 

@@ -54,7 +54,7 @@ display: flex;
 
 <!-- page 134 -->
 
-**align-items**: ویژگی align-items در Flexbox برای تراز‌کردن عناصر در راستای محور متقاطع (عمود بر محور اصلی) استفاده می‌شود. به کمک این ویژگی می‌توان عناصر را در بالا، پایین و وسط یک سطر قرار داد (شکل 26).
+**align-items**: the align-items property in Flexbox is used to align elements along the cross axis (perpendicular to the main axis). With this property you can place the elements at the top, the bottom or the middle of a row (Figure 26).
 
 ![Figure 26](../images/p140-01.png)
 *Figure 26*
@@ -105,7 +105,7 @@ display: flex;
 >
 > - display:flex is used to arrange the elements inside the `<ul>` tag horizontally, and justify-content shares out the space between the elements properly.
 >
-> - ویژگی margin-left:25px فاصله هر عنصر منو را از عنصر سمت چپ مشخص می‌نماید.
+> - The property margin-left:25px sets the distance of each menu element from the element on its left.
 >
 > ![Book image](../images/p142-01.png)
 >

@@ -200,184 +200,184 @@
 </tbody>
 </table></div></article><article class="card lesson no-copy" lang="en" dir="ltr" data-lang-block="en" hidden><p class="page-mark">Page 295</p>
 
-<h2><bdi dir="rtl">واحد یادگیری ۲</bdi></h2>
+<h2>Learning unit 2</h2>
 <h2>Have you ever thought about this</h2>
 <ul>
 <li>
-<p><bdi dir="rtl">یک سایت چطور با پایگاه داده ارتباط برقرار می‌کند؟</bdi></p>
+<p>How does a site communicate with the database?</p>
 </li>
 <li>
-<p><bdi dir="rtl">یک وب اپلیکیشن چطور کاربر مهمان را تشخیص می‌دهد؟</bdi></p>
+<p>How does a web application recognise a guest user?</p>
 </li>
 <li>
-<p><bdi dir="rtl">اطلاعاتی که کاربران در فرم‌ها وارد می‌کنند، چطور در پایگاه داده ذخیره می‌شود؟</bdi></p>
+<p>How is the information that users enter in forms stored in the database?</p>
 </li>
 <li>
-<p><bdi dir="rtl">برنامه‌نویس چگونه می‌تواند از بروز خطاها در سایت جلوگیری کند؟</bdi></p>
+<p>How can a programmer prevent errors from happening in a site?</p>
 </li>
 </ul>
 <h2>By the end, the student is expected to</h2>
 <ol>
 <li>
-<p><bdi dir="rtl">بتواند با استفاده از جنگو در پایگاه داده تغییرات اعمال کند</bdi>.</p>
+<p>Be able to make changes in the database using Django.</p>
 </li>
 <li>
-<p><bdi dir="rtl">مفهوم فیلد و جدول در جنگو را درک کرده و درباره آن استدلال نماید</bdi>.</p>
+<p>Understand and reason about the concepts of field and table in Django.</p>
 </li>
 <li>
-<p><bdi dir="rtl">با استفاده از جنگو، بتواند اطلاعات فرم‌ها را در پایگاه داده ذخیره نمایند</bdi>.</p>
+<p>Be able to save the information of forms in the database using Django.</p>
 </li>
 <li>
-<p><bdi dir="rtl">با مفهوم</bdi> ORM <bdi dir="rtl">در جنگو آشنا شود و بتواند پرس‌وجوهای ساده بنویسد</bdi>.</p>
+<p>Get to know the concept of ORM in Django and be able to write simple queries.</p>
 </li>
 <li>
-<p><bdi dir="rtl">مشکلات و باگ‌های مرسوم در وب اپلیکیشن‌ها را بشناسد و بتواند به‌صورت عملی مشکلات را برطرف نماید</bdi>.</p>
+<p>Know the common problems and bugs in web applications and be able to fix the problems practically.</p>
 </li>
 </ol>
 <h2>Performance standard</h2>
-<p><bdi dir="rtl">هنرجو بتواند با ساخت</bdi> Model <bdi dir="rtl">در جنگو و استفاده از فرم‌های</bdi> HTML <bdi dir="rtl">ارتباط با پایگاه داده را پیاده‌سازی کند و اطلاعاتی که کاربران وارد می‌کنند را در جداول ذخیره و بازیابی نماید</bdi>.</p>
+<p>The student can, by making a Model in Django and using HTML forms, implement the connection with the database and store and retrieve the information users enter in tables.</p>
 <p class="page-mark">Page 296</p>
 
-<h2><bdi dir="rtl">ساخت جدول شهر در پایگاه داده</bdi></h2>
-<p><bdi dir="rtl">تا این مرحله سایت شما فقط دمای شهرهایی را نمایش می‌دهد که در</bdi> view <bdi dir="rtl">مشخص کرده‌اید، یعنی در</bdi> <code>show_temp_view</code> <bdi dir="rtl">اسم شهر ثابت است و همیشه دمای یک شهر، نمایش داده خواهد شد</bdi>. <bdi dir="rtl">روش بهتر این است که کاربر مهمان، قابلیت انتخاب شهر موردنظرش را داشته باشد</bdi>.</p>
-<p><bdi dir="rtl">جهت پیاده‌سازی این قابلیت، نیاز است، اطلاعات شهرها را به همراه طول و عرض جغرافیایی هر شهر، در پایگاه داده ذخیره کنید، سپس وقتی کاربر وارد سایت شد، لیستی از شهرها را مشاهده کرده و با کلیک روی نام شهر، دمای شهر موردنظر خود را ببیند</bdi>.</p>
-<p><bdi dir="rtl">برای پیاده‌سازی این قابلیت باید یک جدول</bdi> (table) <bdi dir="rtl">در پایگاه‌داده ایجاد کنید</bdi>.</p>
-<p><bdi dir="rtl">هر</bdi> app <bdi dir="rtl">یک فایل با نام</bdi> <code>models.py</code> <bdi dir="rtl">دارد</bdi>. <bdi dir="rtl">جنگو برای ساخت جداول از مدل‌ها</bdi> (model) <bdi dir="rtl">استفاده می‌کند</bdi>. <bdi dir="rtl">هر مدل در جنگو معادل یک جدول، با همان نام، در پایگاه‌داده است</bdi>. <bdi dir="rtl">در اولین قدم باید درون فایل</bdi> <code>models.py</code> <bdi dir="rtl">کلاس لازم برای تعریف جدول و ستون‌های جدول ایجاد شود</bdi>.</p>
-<p><bdi dir="rtl">فایل</bdi> <code>models.py</code> <bdi dir="rtl">در</bdi> weather app <bdi dir="rtl">را باز کنید</bdi>. <bdi dir="rtl">سپس محتوای این فایل را همانند شکل</bdi> 27 <bdi dir="rtl">تغییر دهید</bdi>.</p>
-<figure class="shot"><img alt="Figure 27: ساخت مدل City" src="../images/p302-01.png" loading="lazy" /><figcaption>Figure 27: <bdi dir="rtl">ساخت مدل</bdi> City</figcaption></figure>
-<p><strong><bdi dir="rtl">توضیحات کدها</bdi></strong>:</p>
-<p><strong><bdi dir="rtl">خط</bdi> 1</strong>: <bdi dir="rtl">ماژول</bdi> models <bdi dir="rtl">از ماژول</bdi> <code>django.db</code><bdi dir="rtl">، وارد</bdi> (import) <bdi dir="rtl">شده است</bdi>. <bdi dir="rtl">در واقع با این خط، ابزارها و کلاس‌های لازم برای تعریف مدل‌های پایگاه‌داده</bdi> (Database Models) <bdi dir="rtl">وارد</bdi> (import) <bdi dir="rtl">می‌شوند</bdi>.</p>
-<p><strong><bdi dir="rtl">خط</bdi> 3</strong>: <bdi dir="rtl">کلاس</bdi> City <bdi dir="rtl">جهت ساخت جدول شهرها با ارث‌بری از</bdi> Model <bdi dir="rtl">ایجاد شده است</bdi>. Model <bdi dir="rtl">کلاس پایه جنگو برای ساخت مدل‌ها</bdi> (<bdi dir="rtl">جدول‌های پایگاه‌داده</bdi>) <bdi dir="rtl">است و امکانات لازم برای ارتباط با پایگاه‌داده را فراهم می‌کند</bdi>.</p>
-<p><strong><bdi dir="rtl">خط</bdi> 4</strong>: <bdi dir="rtl">این دستور یک فیلد برای نگهداری نام شهر به‌صورت متن، در جدول می‌سازد که حداکثر</bdi> 50 <bdi dir="rtl">کاراکتر طول دارد</bdi>. <bdi dir="rtl">برای</bdi> CharField <bdi dir="rtl">تعیین‌کردن</bdi> <code>max_length</code> <bdi dir="rtl">اجباری است</bdi>.</p>
-<p><strong><bdi dir="rtl">خط</bdi> 5</strong>: <bdi dir="rtl">از</bdi> FloatField <bdi dir="rtl">جهت نگهداری اعداد اعشاری استفاده شده است</bdi>. <bdi dir="rtl">عرض جغرافیایی</bdi> (Latitude) <bdi dir="rtl">و طول جغرافیایی</bdi> (Longitude) <bdi dir="rtl">هر دو عدد اعشاری هستند</bdi>.</p>
+<h2>Making the city table in the database</h2>
+<p>Up to this step your site shows only the temperature of the cities you specified in the view; that is, in <code>show_temp_view</code> the city name is fixed and the temperature of one city is always shown. A better way is for the guest user to be able to choose the city they want.</p>
+<p>To implement this feature, you need to store the information of the cities, together with the latitude and longitude of each city, in the database; then when the user enters the site, they see a list of cities and, by clicking on the name of a city, see the temperature of the city they want.</p>
+<p>To implement this feature you must create a table in the database.</p>
+<p>Each app has a file named <code>models.py</code>. Django uses models to make tables. Each model in Django is equal to a table, with the same name, in the database. In the first step, the class needed to define the table and the columns of the table must be created inside the file <code>models.py</code>.</p>
+<p>Open the file <code>models.py</code> in the weather app. Then change the content of this file as in Figure 27.</p>
+<figure class="shot"><img alt="Figure 27: Making the City model" src="../images/p302-01.png" loading="lazy" /><figcaption>Figure 27: Making the City model</figcaption></figure>
+<p><strong>Explanation of the code</strong>:</p>
+<p><strong>Line 1</strong>: the module models is imported from the module <code>django.db</code>. In fact with this line the tools and classes needed to define database models are imported.</p>
+<p><strong>Line 3</strong>: the class City is created, inheriting from Model, to make the table of cities. Model is Django's base class for making models (database tables) and provides the facilities needed to communicate with the database.</p>
+<p><strong>Line 4</strong>: this statement makes a field in the table to hold the city name as text, with a maximum length of 50 characters. For CharField, setting <code>max_length</code> is compulsory.</p>
+<p><strong>Line 5</strong>: FloatField is used to hold decimal numbers. The latitude and the longitude are both decimal numbers.</p>
 <p class="page-mark">Page 297</p>
 
-<p><bdi dir="rtl">برای استفاده از مدل</bdi> City<bdi dir="rtl">، نیاز است که جدول معادلش در پایگاه‌داده ساخته شود</bdi>.</p>
-<p><bdi dir="rtl">در ترمینال دستور</bdi> makemigrations <bdi dir="rtl">را همانند شکل</bdi> 28 <bdi dir="rtl">اجرا کنید</bdi>.</p>
-<figure class="shot"><img alt="Figure 28: اجرای دستور makemigrations" src="../images/p303-01.png" loading="lazy" /><figcaption>Figure 28: <bdi dir="rtl">اجرای دستور</bdi> makemigrations</figcaption></figure>
-<p><bdi dir="rtl">وقتی</bdi> makemigrations <bdi dir="rtl">را اجرا می‌کنید، درون</bdi> weather app<bdi dir="rtl">، فایلی با نام</bdi> <code>0001_initial.py</code> <bdi dir="rtl">در پوشه</bdi> migrations <bdi dir="rtl">ایجاد می‌شود</bdi>. <bdi dir="rtl">این فایل کدهای لازم جهت تبدیل مدل به جدول واقعی را آماده‌سازی می‌کند</bdi>. <bdi dir="rtl">در مرحله بعد دستور</bdi> migrate <bdi dir="rtl">را همانند شکل</bdi> 29 <bdi dir="rtl">در ترمینال اجرا کنید</bdi>.</p>
-<figure class="shot"><img alt="Figure 29: اجرای دستور migrate" src="../images/p303-02.png" loading="lazy" /><figcaption>Figure 29: <bdi dir="rtl">اجرای دستور</bdi> migrate</figcaption></figure>
+<p>To use the model City, the matching table must be made in the database.</p>
+<p>In the terminal run the command makemigrations as in Figure 28.</p>
+<figure class="shot"><img alt="Figure 28: Running the command makemigrations" src="../images/p303-01.png" loading="lazy" /><figcaption>Figure 28: Running the command makemigrations</figcaption></figure>
+<p>When you run makemigrations, a file named <code>0001_initial.py</code> is created inside the weather app in the migrations folder. This file prepares the code needed to turn the model into a real table. In the next step run the command migrate in the terminal as in Figure 29.</p>
+<figure class="shot"><img alt="Figure 29: Running the command migrate" src="../images/p303-02.png" loading="lazy" /><figcaption>Figure 29: Running the command migrate</figcaption></figure>
 <p class="page-mark">Page 298</p>
 
-<p><bdi dir="rtl">پس از اجرای</bdi> migrate<bdi dir="rtl">، جدول‌های پیش‌فرض جنگو و جدول</bdi> city <bdi dir="rtl">در پایگاه‌داده</bdi> <code>db.sqlite3</code> <bdi dir="rtl">ساخته می‌شوند</bdi>.</p>
-<h3><bdi dir="rtl">مشاهده جداول پایگاه‌داده</bdi></h3>
-<p><bdi dir="rtl">برای مشاهده ساختار و محتوای جداول درون پایگاه‌داده، می‌توانید افزونه</bdi> SQLite Viewer <bdi dir="rtl">را به‌عنوان یک ابزار کمکی نصب کنید</bdi>. <bdi dir="rtl">برای نصب این افزونه مطمئن شوید که اینترنت متصل باشد</bdi> (<bdi dir="rtl">شکل</bdi> 30).</p>
-<figure class="shot"><img alt="Figure 30: جست‌وجوی افزونه SQLite Viewer" src="../images/p304-01.png" loading="lazy" /><figcaption>Figure 30: <bdi dir="rtl">جست‌وجوی افزونه</bdi> SQLite Viewer</figcaption></figure>
-<p><bdi dir="rtl">پس از نصب افزونه ذکر شده، با کلیک بر روی فایل</bdi> <code>db.sqlite3</code> <bdi dir="rtl">جدول‌های پیش‌فرض جنگو و جدول</bdi> city <bdi dir="rtl">را مشاهده خواهید کرد</bdi> (<bdi dir="rtl">شکل</bdi> 31).</p>
-<figure class="shot"><img alt="Figure 31: جداول پایگاه‌داده" src="../images/p304-02.png" loading="lazy" /><figcaption>Figure 31: <bdi dir="rtl">جداول پایگاه‌داده</bdi></figcaption></figure>
+<p>After running migrate, Django's default tables and the table city are made in the database <code>db.sqlite3</code>.</p>
+<h3>Viewing the database tables</h3>
+<p>To see the structure and content of the tables inside the database, you can install the SQLite Viewer extension as a helper tool. To install this extension make sure the internet is connected (Figure 30).</p>
+<figure class="shot"><img alt="Figure 30: Searching for the SQLite Viewer extension" src="../images/p304-01.png" loading="lazy" /><figcaption>Figure 30: Searching for the SQLite Viewer extension</figcaption></figure>
+<p>After installing the mentioned extension, by clicking on the file <code>db.sqlite3</code> you will see Django's default tables and the table city (Figure 31).</p>
+<figure class="shot"><img alt="Figure 31: The database tables" src="../images/p304-02.png" loading="lazy" /><figcaption>Figure 31: The database tables</figcaption></figure>
 <p class="page-mark">Page 299</p>
 
-<p><bdi dir="rtl">همان‌طور‌که در‌شکل</bdi> 31 <bdi dir="rtl">مشخص است، جدول</bdi> city <bdi dir="rtl">با پیشوند</bdi> weather <bdi dir="rtl">ساخته شده است</bdi>. <bdi dir="rtl">با کلیک روی جدول</bdi> <code>weather_city</code><bdi dir="rtl">، لیست فیلدها در سمت راست نمایش داده می‌شود</bdi>. <bdi dir="rtl">در حال حاضر هیچ رکوردی در جدول</bdi> city <bdi dir="rtl">وجود ندارد</bdi>.</p>
-<p><bdi dir="rtl">با افزونه</bdi> SQLite Viewer <bdi dir="rtl">فقط می‌توانید محتوا و ساختار جداول را مشاهده کنید و امکان ذخیره اطلاعات وجود ندارد</bdi>.</p>
-<p><bdi dir="rtl">برای تغییر محتوای جدول</bdi> city <bdi dir="rtl">و یا افزودن نام شهرهایی جدید به جدول لازم است وارد پنل ادمین جنگو شوید</bdi>. <bdi dir="rtl">البته هنوز نمی‌توانید از طریق پنل</bdi> admin <bdi dir="rtl">داده‌های مربوط به شهر‌ها را وارد دیتابیس کنید، چرا که هنوز کاربر</bdi> admin <bdi dir="rtl">تعریف نشده است؛ بنابراین در مرحله بعد نوبت تعریف کاربر</bdi> admin <bdi dir="rtl">است</bdi>.</p>
-<h3><bdi dir="rtl">پنل مدیریت جنگو</bdi></h3>
-<p><bdi dir="rtl">برای ورود به پنل ادمین، نیاز به نام کاربری و رمز عبور است</bdi>. <bdi dir="rtl">دستور زیر را در ترمینال وارد کنید</bdi>:</p>
-<p><code>python manage.py createsuperuser</code> <bdi dir="rtl">جنگو از شما نام کاربری درخواست می‌کند</bdi> (<bdi dir="rtl">شکل</bdi> 32).</p>
-<figure class="shot"><img alt="Figure 32: اجرای دستور createsuperuser" src="../images/p305-01.png" loading="lazy" /><figcaption>Figure 32: <bdi dir="rtl">اجرای دستور</bdi> createsuperuser</figcaption></figure>
-<p><bdi dir="rtl">همان‌گونه که مشخص است، نام کاربر جاری ویندوز را به‌عنوان نام کاربری پیشنهاد داده است</bdi>.</p>
-<p><bdi dir="rtl">می‌توانید نام کاربری</bdi> admin <bdi dir="rtl">و یا هر نام کاربری دیگری را به‌دلخواه وارد کنید، سپس به‌ترتیب، ایمیل، کلمه عبور و تکرار کلمه عبور را وارد کنید</bdi> (<bdi dir="rtl">شکل</bdi> 33).</p>
-<figure class="shot"><img alt="Figure 33: ایجاد موفق کاربر ادمین" src="../images/p305-02.png" loading="lazy" /><figcaption>Figure 33: <bdi dir="rtl">ایجاد موفق کاربر ادمین</bdi></figcaption></figure>
+<p>As is shown in Figure 31, the table city was made with the prefix weather. By clicking on the table <code>weather_city</code>, the list of fields is shown on the right. At the moment there is no record in the table city.</p>
+<p>With the SQLite Viewer extension you can only see the content and structure of the tables and there is no ability to save information.</p>
+<p>To change the content of the table city or to add the names of new cities to the table, you need to enter Django's admin panel. Of course, you still cannot enter the data of the cities into the database through the admin panel, because the admin user has not been defined yet; so in the next step it is the turn of defining the admin user.</p>
+<h3>Django's admin panel</h3>
+<p>To enter the admin panel, a username and password are needed. Enter the following command in the terminal:</p>
+<p><code>python manage.py createsuperuser</code> Django asks you for a username (Figure 32).</p>
+<figure class="shot"><img alt="Figure 32: Running the command createsuperuser" src="../images/p305-01.png" loading="lazy" /><figcaption>Figure 32: Running the command createsuperuser</figcaption></figure>
+<p>As is clear, it has suggested the current Windows user name as the username.</p>
+<p>You can enter the username admin or any other username you like, then enter in order the email, the password and the repeat of the password (Figure 33).</p>
+<figure class="shot"><img alt="Figure 33: Successful creation of the admin user" src="../images/p305-02.png" loading="lazy" /><figcaption>Figure 33: Successful creation of the admin user</figcaption></figure>
 <p class="page-mark">Page 300</p>
 
 <aside class="callout note"><p class="callout-label">Note</p>
-<p><bdi dir="rtl">می‌توانید ایمیل را خالی وارد کنید، همچنین اگر رمز عبور ساده‌ای وارد کنید، همانند شکل</bdi> 34 <bdi dir="rtl">به شما اخطار خواهد داد</bdi>.</p>
+<p>You can leave the email empty, and also if you enter a simple password, it will warn you as in Figure 34.</p>
 </aside>
-<figure class="shot"><img alt="Figure 34: اخطار ساده‌بودن رمز ادمین" src="../images/p306-01.png" loading="lazy" /><figcaption>Figure 34: <bdi dir="rtl">اخطار ساده‌بودن رمز ادمین</bdi></figcaption></figure>
-<p><bdi dir="rtl">پس از ایجاد کاربر ادمین، با افزونه</bdi> SQLite Viewer <bdi dir="rtl">می‌توانید، کاربر ایجاد شده را در جدول</bdi> <code>auth_user</code> <bdi dir="rtl">همانند شکل</bdi> 35 <bdi dir="rtl">مشاهده کنید</bdi>.</p>
-<figure class="shot"><img alt="Figure 35: نمایش کاربر admin ایجاد شده در دیتابیس" src="../images/p306-02.png" loading="lazy" /><figcaption>Figure 35: <bdi dir="rtl">نمایش کاربر</bdi> admin <bdi dir="rtl">ایجاد شده در دیتابیس</bdi></figcaption></figure>
+<figure class="shot"><img alt="Figure 34: The warning about a simple admin password" src="../images/p306-01.png" loading="lazy" /><figcaption>Figure 34: The warning about a simple admin password</figcaption></figure>
+<p>After creating the admin user, with the SQLite Viewer extension you can see the created user in the table <code>auth_user</code> as in Figure 35.</p>
+<figure class="shot"><img alt="Figure 35: Showing the created admin user in the database" src="../images/p306-02.png" loading="lazy" /><figcaption>Figure 35: Showing the created admin user in the database</figcaption></figure>
 <p class="page-mark">Page 301</p>
 
-<p><bdi dir="rtl">اکنون جهت ورود به پنل مدیریت ادمین جنگو، سرور جنگو را روشن کرده و صفحه ادمین را با تایپ آدرس زیر در نوار آدرس مرورگر، باز کنید</bdi>:</p>
-<p>http://127.0.0.1:8000/admin/ <bdi dir="rtl">سپس با نام کاربری و رمز عبوری که ساخته‌اید، وارد شوید</bdi>.</p>
-<p><bdi dir="rtl">پنل ادمین همانند شکل</bdi> 36 <bdi dir="rtl">نمایش داده خواهد شد</bdi>.</p>
-<figure class="shot"><img alt="Figure 36: ورود موفق به پنل ادمین جنگو" src="../images/p307-01.png" loading="lazy" /><figcaption>Figure 36: <bdi dir="rtl">ورود موفق به پنل ادمین جنگو</bdi></figcaption></figure>
-<p><bdi dir="rtl">در قسمت</bdi> Authentication and Authorization¹ <bdi dir="rtl">با استفاده از</bdi> Users <bdi dir="rtl">می‌توان کاربران سایت را مشاهده و مدیریت کرد</bdi>.</p>
-<p><bdi dir="rtl">با استفاده از دکمه</bdi> add <bdi dir="rtl">می‌توان کاربر جدید ایجاد کرد</bdi>. <bdi dir="rtl">برای ایجاد کاربر جدید، لازم است فیلدهای نام کاربری، رمز عبور و تکرار رمز عبور را وارد کرده و دکمه</bdi> save <bdi dir="rtl">را بزنید</bdi> (<bdi dir="rtl">شکل</bdi> 37).</p>
-<figure class="shot"><img alt="Figure 37: فرم ساخت کاربر جدید" src="../images/p307-02.png" loading="lazy" /><figcaption>Figure 37: <bdi dir="rtl">فرم ساخت کاربر جدید</bdi></figcaption></figure>
+<p>Now, to enter Django's admin management panel, turn on the Django server and open the admin page by typing the following address in the browser's address bar:</p>
+<p>http://127.0.0.1:8000/admin/ then sign in with the username and password you made.</p>
+<p>The admin panel will be shown as in Figure 36.</p>
+<figure class="shot"><img alt="Figure 36: Successful sign-in to Django's admin panel" src="../images/p307-01.png" loading="lazy" /><figcaption>Figure 36: Successful sign-in to Django's admin panel</figcaption></figure>
+<p>In the Authentication and Authorization¹ section, using Users you can see and manage the users of the site.</p>
+<p>With the add button a new user can be created. To create a new user, you must enter the fields username, password and repeat of the password and press the save button (Figure 37).</p>
+<figure class="shot"><img alt="Figure 37: The form for creating a new user" src="../images/p307-02.png" loading="lazy" /><figcaption>Figure 37: The form for creating a new user</figcaption></figure>
 <aside class="callout footnote"><p class="callout-label">Footnotes</p>
-<p>1- <bdi dir="rtl">احراز هویت و مجوز</bdi></p>
+<p>1- Authentication and authorization</p>
 </aside>
 <p class="page-mark">Page 302</p>
 
-<p><bdi dir="rtl">پیغام ذخیره موفقیت‌آمیز همانند شکل</bdi> 38 <bdi dir="rtl">مشاهده خواهید کرد</bdi>. <bdi dir="rtl">در این مرحله می‌توانید اطلاعات تکمیلی، مثل نام، نام خانوادگی، ایمیل و</bdi>… <bdi dir="rtl">را برای کاربر ایجاد شده ثبت کنید</bdi>.</p>
-<figure class="shot"><img alt="Figure 38: ذخیره موفق کاربر" src="../images/p308-01.png" loading="lazy" /><figcaption>Figure 38: <bdi dir="rtl">ذخیره موفق کاربر</bdi></figcaption></figure>
-<p><bdi dir="rtl">برای مشاهده لیست کاربران ایجاد شده، روی</bdi> Users <bdi dir="rtl">کلیک کنید</bdi> (<bdi dir="rtl">شکل</bdi> 39).</p>
-<figure class="shot"><img alt="Figure 39: مشاهده لیست کاربران" src="../images/p308-02.png" loading="lazy" /><figcaption>Figure 39: <bdi dir="rtl">مشاهده لیست کاربران</bdi></figcaption></figure>
+<p>You will see a successful save message as in Figure 38. At this step you can record additional information, such as the first name, last name, email and so on, for the created user.</p>
+<figure class="shot"><img alt="Figure 38: Successful saving of the user" src="../images/p308-01.png" loading="lazy" /><figcaption>Figure 38: Successful saving of the user</figcaption></figure>
+<p>To see the list of created users, click on Users (Figure 39).</p>
+<figure class="shot"><img alt="Figure 39: Viewing the list of users" src="../images/p308-02.png" loading="lazy" /><figcaption>Figure 39: Viewing the list of users</figcaption></figure>
 <aside class="callout activity"><p class="callout-label">Activity</p>
-<p><bdi dir="rtl">با کمک هنرآموز خود، کاربر دیگری ایجاد کنید</bdi>. <bdi dir="rtl">سپس با کاربرهای مختلف در پنل ادمین</bdi> login <bdi dir="rtl">کرده و تفاوت کاربرهای مختلف را بررسی کنید</bdi>.</p>
+<p>With the help of your teacher, create another user. Then sign in to the admin panel with different users and check the difference between the different users.</p>
 </aside>
-<h3><bdi dir="rtl">افزودن جدول شهر به پنل ادمین</bdi></h3>
-<p><bdi dir="rtl">اگر دقت کرده باشد در شکل</bdi> 36<bdi dir="rtl">، در پنل ادمین جدول شهرها مشاهده نشد، با انجام مراحلی که در ادامه آمده است، می‌توانید جدول</bdi> City <bdi dir="rtl">را به پنل ادمین اضافه کنید</bdi>.</p>
+<h3>Adding the city table to the admin panel</h3>
+<p>If you noticed, in Figure 36 the table of cities was not seen in the admin panel; by doing the steps that follow, you can add the table City to the admin panel.</p>
 <p class="page-mark">Page 303</p>
 
-<p><bdi dir="rtl">هر</bdi> app <bdi dir="rtl">در جنگو یک فایل</bdi> <code>admin.py</code> <bdi dir="rtl">دارد</bdi>. <bdi dir="rtl">فایل</bdi> <code>admin.py</code> <bdi dir="rtl">در</bdi> weather app <bdi dir="rtl">را باز کنید و همانند شکل</bdi> 40<bdi dir="rtl">، مدل</bdi> City <bdi dir="rtl">را به ادمین جنگو معرفی کنید</bdi>.</p>
-<figure class="shot"><img alt="Figure 40: معرفی مدل City به پنل ادمین جنگو" src="../images/p309-01.png" loading="lazy" /><figcaption>Figure 40: <bdi dir="rtl">معرفی مدل</bdi> City <bdi dir="rtl">به پنل ادمین جنگو</bdi></figcaption></figure>
-<p><strong><bdi dir="rtl">توضیحات کدها</bdi></strong>:</p>
-<p><strong><bdi dir="rtl">خط</bdi> 1</strong>: <bdi dir="rtl">ماژول</bdi> admin <bdi dir="rtl">جهت مدیریت پنل ادمین از</bdi> contrib <bdi dir="rtl">وارد</bdi> (import) <bdi dir="rtl">شده است</bdi>.</p>
-<p><strong><bdi dir="rtl">خط</bdi> 2</strong>: <bdi dir="rtl">مدل</bdi> City <bdi dir="rtl">از فایل</bdi> <code>models.py</code> <bdi dir="rtl">وارد</bdi> (import) <bdi dir="rtl">شده است</bdi>.</p>
-<p><strong><bdi dir="rtl">خط</bdi> 4</strong>: <bdi dir="rtl">مدل</bdi> City <bdi dir="rtl">با دستور</bdi> register <bdi dir="rtl">به پنل ادمین معرفی شده است</bdi>.</p>
-<p><bdi dir="rtl">اکنون فایل را ذخیره کنید، سپس مرورگر را</bdi> refresh <bdi dir="rtl">کنید، جدول</bdi> city <bdi dir="rtl">به ادمین جنگو اضافه شده است و حرف</bdi> s <bdi dir="rtl">به انتهای نام مدل اضافه شده است</bdi> (<bdi dir="rtl">شکل</bdi> 41).</p>
-<figure class="shot"><img alt="Figure 41: اضافه شدن City به پنل ادمین" src="../images/p309-02.png" loading="lazy" /><figcaption>Figure 41: <bdi dir="rtl">اضافه شدن</bdi> City <bdi dir="rtl">به پنل ادمین</bdi></figcaption></figure>
+<p>Each app in Django has a file <code>admin.py</code>. Open the file <code>admin.py</code> in the weather app and introduce the model City to Django's admin as in Figure 40.</p>
+<figure class="shot"><img alt="Figure 40: Introducing the model City to Django's admin panel" src="../images/p309-01.png" loading="lazy" /><figcaption>Figure 40: Introducing the model City to Django's admin panel</figcaption></figure>
+<p><strong>Explanation of the code</strong>:</p>
+<p><strong>Line 1</strong>: the module admin for managing the admin panel is imported from contrib.</p>
+<p><strong>Line 2</strong>: the model City is imported from the file <code>models.py</code>.</p>
+<p><strong>Line 4</strong>: the model City is introduced to the admin panel with the statement register.</p>
+<p>Now save the file, then refresh the browser; the table city has been added to Django's admin and the letter s has been added to the end of the model's name (Figure 41).</p>
+<figure class="shot"><img alt="Figure 41: City added to the admin panel" src="../images/p309-02.png" loading="lazy" /><figcaption>Figure 41: City added to the admin panel</figcaption></figure>
 <p class="page-mark">Page 304</p>
 
-<h3><bdi dir="rtl">وارد کردن اطلاعات شهرها</bdi></h3>
-<p><bdi dir="rtl">در پنل ادمین، روی دکمه</bdi> Add (<bdi dir="rtl">مقابل</bdi> Citys) <bdi dir="rtl">کلیک کنید، فرم ثبت شهر</bdi> (Add city) <bdi dir="rtl">را مشاهده خواهید کرد</bdi> (<bdi dir="rtl">شکل</bdi> 42) .</p>
-<figure class="shot"><img alt="Figure 42: فرم Add city" src="../images/p310-01.png" loading="lazy" /><figcaption>Figure 42: <bdi dir="rtl">فرم</bdi> Add city</figcaption></figure>
+<h3>Entering the information of cities</h3>
+<p>In the admin panel, click the Add button (opposite Citys); you will see the city registration form (Add city) (Figure 42).</p>
+<figure class="shot"><img alt="Figure 42: The Add city form" src="../images/p310-01.png" loading="lazy" /><figcaption>Figure 42: The Add city form</figcaption></figure>
 <aside class="callout activity"><p class="callout-label">Activity</p>
-<p><bdi dir="rtl">با استفاده از اطلاعات جدول</bdi> 2<bdi dir="rtl">، چند شهر را با فرم</bdi> Add city <bdi dir="rtl">در پایگاه داده ذخیره کنید</bdi>.</p>
+<p>Using the information in Table 2, save a few cities in the database with the Add city form.</p>
 </aside>
-<p class="table-cap">Table 2: <bdi dir="rtl">طول و عرض جغرافیایی چند شهر</bdi></p>
+<p class="table-cap">Table 2: The longitude and latitude of some cities</p>
 <div class="table-wrap"><table>
 <thead>
 <tr>
-<th><bdi dir="rtl">نام شهر</bdi></th>
-<th><bdi dir="rtl">عرض جغرافیایی</bdi> (lat)</th>
-<th><bdi dir="rtl">طول جغرافیایی</bdi> (lon)</th>
+<th>City name</th>
+<th>Latitude (lat)</th>
+<th>Longitude (lon)</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td><bdi dir="rtl">میناب</bdi></td>
+<td>Minab</td>
 <td>27.1478</td>
 <td>57.0738</td>
 </tr>
 <tr>
-<td><bdi dir="rtl">همدان</bdi></td>
+<td>Hamedan</td>
 <td>37 .7981</td>
 <td>48 .5146</td>
 </tr>
 <tr>
-<td><bdi dir="rtl">تهران</bdi></td>
+<td>Tehran</td>
 <td>35 .7219</td>
 <td>51 .3347</td>
 </tr>
 <tr>
-<td><bdi dir="rtl">الشتر</bdi></td>
+<td>Aleshtar</td>
 <td>33.8632</td>
 <td>48 .2617</td>
 </tr>
 <tr>
-<td><bdi dir="rtl">تفرش</bdi></td>
+<td>Tafresh</td>
 <td>34 .6936</td>
 <td>50 .0154</td>
 </tr>
 <tr>
-<td><bdi dir="rtl">بابل</bdi></td>
+<td>Babol</td>
 <td>36.5387</td>
 <td>52.6765</td>
 </tr>
 <tr>
-<td><bdi dir="rtl">جهرم</bdi></td>
+<td>Jahrom</td>
 <td>28 .5177</td>
 <td>53 .5744</td>
 </tr>
 <tr>
-<td><bdi dir="rtl">تبریز</bdi></td>
+<td>Tabriz</td>
 <td>38 .0792</td>
 <td>46.2887</td>
 </tr>
 <tr>
-<td><bdi dir="rtl">سبزوار</bdi></td>
+<td>Sabzevar</td>
 <td>36.2152</td>
 <td>57 .6678</td>
 </tr>

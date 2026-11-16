@@ -1,15 +1,15 @@
 <!-- page 16 -->
 
-### لیست (list)
+### List (list)
 
 ![Figure 34](../images/p022-01.png)
 *Figure 34*
 
-لیست‌ها یکی از ۴ نوع داده در پایتون هستند که برای ذخیرۀ مجموعه‌ای از داده‌ها در یک متغیر واحد استفاده می‌شوند، ۳ نوع دیگر Set، Tuple و Dictionary هستند که هر کدام کاربردهای متفاوتی دارند.
+Lists are one of the 4 data types in Python that are used to store a collection of data in one single variable; the other 3 types are Set, Tuple and Dictionary, each with different uses.
 
 **Creating a list**: lists are created with square brackets (Square brackets) "\[\]".
 
-در کد مقابل یک لیست شامل رشته‌ای از نام میوه‌ها ایجاد شده است `fruits = ["apple", "banana", "cherry"] .` دستور مقابل یک لیست شامل اعداد 1 و 2 و 3 و 4 و 5 را ذخیره می‌کند. `numbers = [1, 2, 3, 4, 5]`
+In the code opposite, a list consisting of a string of fruit names is created: `fruits = ["apple", "banana", "cherry"] .` The statement opposite stores a list containing the numbers 1, 2, 3, 4 and 5. `numbers = [1, 2, 3, 4, 5]`
 
 **Features of lists**: Mixed data: a list can hold different kinds of data. The code below creates a list that stores different data types: numbers, strings, booleans, decimals, and even another list (Figure 35).
 
@@ -61,7 +61,7 @@ You can reach the elements of a list by their index (Figure 37).
 
 > **Activity**
 >
-> 1. لیستی با ۵ عنصر " headset، book، mouse، phone، book " ایجاد کنید و آن را نمایش دهید. سپس به‌جای عنصر شماره 4 یک عنصر به نام " External HDD " را جایگزین کنید و نتیجه را نمایش دهید.
+> 1. Create a list with 5 elements " headset, book, mouse, phone, book " and display it. Then, in place of element number 4, put an element named " External HDD " and display the result.
 >
 > 2. Create a list of 4 numbers of your choice and then show its first element.
 >
@@ -124,7 +124,7 @@ list_name.remove(value)
 ![Figure 47](../images/p026-02.png)
 *Figure 47*
 
-2. **حذف عنصر با ایندکس (index)**: متد `pop()` برای حذف عنصر با ایندکس مشخص شده استفاده می‌شود.
+2. **Removing an element by index**: the method `pop()` is used to remove the element with the given index.
 
 ```
 list_name.pop(index)

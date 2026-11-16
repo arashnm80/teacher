@@ -1,12 +1,12 @@
 <!-- page 160 -->
 
-### شبکه‌بندی صفحه (Grid Systems)
+### Grid Systems
 
 Bootstrap has a grid system named Grid, built with Flexbox, that divides the page width into 12 columns. Each cell of this grid can hold the content of part of the page. The Grid system lets you group columns into wider columns, so there is enough room for content in one column. The Grid system is responsive and rearranges the columns automatically depending on the page size.
 
 ![Book image](../images/p166-01.png)
 
-### استفاده از کلاس‌های شبکه‌بندی (rows و columns)
+### Using the grid classes (rows and columns)
 
 The row and col classes are used to create the rows and columns of the grid. The row class puts the grid cells on one horizontal line with suitable spacing between them. The width of the columns is set by the size parameter in the col class name. The general form of the col class is `col-breakpoint-size`, where breakpoint is the device size (sm, md, lg, xl, xxl) and size is the column size. For example, col-sm-3 means taking three of the 12 columns on all devices 576 pixels or wider.
 
@@ -152,11 +152,11 @@ Bootstrap's responsive classes cover several topics, shown in Table 9:
 | Layout | d-flex, d-\*-flex, d-\*-inline, d-\*-block, for example: d-sm-none, d-md-block, flex-md-row, justify-content-sm-center, align-items-md-start, and so on |
 | Margin | m-\*-size, such as mb-sm-3 and mx-sm-1 |
 | Padding | p-\*-size, such as py-sm-3, px-lg-3 |
-| Display Classes | d-none، d-block، d-\*-none، d-\*-block |
+| Display Classes | d-none, d-block, d-\*-none, d-\*-block |
 | Image | `img-fluid` |
 | Components | button, form, navbar, cards, carousel, and so on |
 
-در کلاس‌های جدول 10 علامت \* معادل sm، lg و ... است.
+In the classes of Table 10 the sign \* is equal to sm, lg and so on.
 
 *Table 10: Breakpoints*
 

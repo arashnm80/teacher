@@ -160,7 +160,7 @@
 <figure class="shot"><img alt="Figure 152" src="../images/p080-01.png" loading="lazy" /><figcaption>Figure 152</figcaption></figure>
 <aside class="callout activity"><p class="callout-label">Activity</p>
 <p>Write a program that:</p>
-<p><bdi dir="rtl">یک عدد تصادفی بین ۱ تا</bdi> 10 <bdi dir="rtl">تولید کند</bdi>. <bdi dir="rtl">از کاربر بخواهد عدد را حدس بزند</bdi>. <bdi dir="rtl">اگر حدس درست بود، پیام شما موفق شدید چاپ کند؛ در غیر این صورت دوباره از کاربر ورودی بگیرد</bdi>. <bdi dir="rtl">ضمناً تعداد دفعات تلاش کاربر را هم چاپ کند</bdi>.</p>
+<p>It should generate a random number between 1 and 10. It should ask the user to guess the number. If the guess is right, it should print the message you succeeded; otherwise it should take input from the user again. It should also print the number of the user's attempts.</p>
 <p><strong>Activity</strong></p>
 <p>Write a program with the following features:</p>
 <ul>
@@ -181,7 +181,7 @@
 </li>
 </ul>
 </aside>
-<h3><bdi dir="rtl">روش دوم</bdi>: <bdi dir="rtl">وارد کردن بخش‌های خاص</bdi> (from ... import)</h3>
+<h3>The second way: importing specific parts (from ... import)</h3>
 <p><strong>from</strong> module name <strong>import</strong> function name. In this method only the functions or variables needed are imported from a module. The code is shorter and simpler to write.</p>
 <p><strong>Example</strong>: only the sqrt and pow functions are imported from the math module (Figure 153).</p>
 <figure class="shot"><img alt="Figure 153" src="../images/p080-02.png" loading="lazy" /><figcaption>Figure 153</figcaption></figure>
@@ -244,7 +244,7 @@
 </li>
 </ul>
 </aside>
-<h3><bdi dir="rtl">ماژول محلی</bdi> (local)</h3>
+<h3>The local module</h3>
 <p>Modules written by the programmer and imported into the program.</p>
 <p>First create a Python file with the py extension. Then put functions and variables in it. Then you can use them in the main program with import.</p>
 <p><strong>Example</strong>: create the file <code>my_module.py</code> and write the code below in it (Figure 156).</p>
@@ -267,18 +267,18 @@
 <li>Run the program and explain the lines of code.</li>
 </ul>
 </aside>
-<p><strong><bdi dir="rtl">ماژول‌های شخص ثالث</bdi> (3rd party)</strong>: <bdi dir="rtl">ماژول‌هایی که توسط دستور</bdi> pip install <bdi dir="rtl">نصب می‌شوند و در برنامه</bdi> import <bdi dir="rtl">می‌شوند</bdi>. <bdi dir="rtl">مثل</bdi> Django، Flask, PyGame و...</p>
+<p><strong>Third-party modules</strong>: modules that are installed with the command pip install and imported in the program. Like Django, Flask, PyGame and so on.</p>
 <h2>The difference between a function and a method</h2>
-<p><bdi dir="rtl">در مطالب قبل، از دستوراتی مانند،</bdi> <code>split()</code>، <code>append()</code> و <code>len()</code> <bdi dir="rtl">استفاده کرده‌اید، بدون آنکه تعریف رسمی آنها بیان شود</bdi>. <bdi dir="rtl">این موضوع کاملاً طبیعی است و در برنامه‌نویسی بسیار رایج است؛ زیرا بسیاری از مفاهیم ابتدا با استفاده عملی و سپس با تعریف دقیق معرفی می‌شوند</bdi>.</p>
+<p>In the earlier material you used statements such as <code>split()</code>, <code>append()</code> and <code>len()</code> without their formal definition being given. This is completely natural and very common in programming, because many concepts are first introduced through practical use and then with an exact definition.</p>
 <figure class="shot"><img alt="Figure 160" src="../images/p083-04.png" loading="lazy" /><figcaption>Figure 160</figcaption></figure>
 <p class="page-mark">Page 78</p>
 
-<p><strong><bdi dir="rtl">تابع</bdi>:(function)</strong> <bdi dir="rtl">دستوری مستقل است که برای انجام یک کار مشخص به کار می‌رود و به نوع داده خاصی وابسته نیست</bdi>.</p>
+<p><strong>Function:</strong> an independent statement that is used to do one specific job and does not depend on a specific data type.</p>
 <p><strong>Example</strong>: counting users: the <code>len()</code> function returns the number of characters in a string (Figure 161).</p>
 <figure class="shot"><img alt="Figure 161" src="../images/p084-01.png" loading="lazy" /><figcaption>Figure 161</figcaption></figure>
 <p><strong>Example</strong>: showing the number of users as a string (Figure 162):</p>
 <figure class="shot"><img alt="Figure 162" src="../images/p084-02.png" loading="lazy" /><figcaption>Figure 162</figcaption></figure>
-<p><strong><bdi dir="rtl">متد</bdi> (Method)</strong>: <bdi dir="rtl">نوعی تابع است که به یک کلاس یا شیء مشخص تعلق دارد و برای انجام عملیات روی داده‌های همان شیء استفاده می‌شود</bdi>.</p>
+<p><strong>Method</strong>: a kind of function that belongs to a specific class or object and is used to do operations on the data of that same object.</p>
 <p><strong>The main difference</strong> between a function and a method is how they are <strong>used</strong> and what they <strong>depend on</strong>: functions are <strong>called independently</strong>, but methods run through <strong>an object</strong> or <strong>a data type</strong> <strong>using a dot</strong> (.), and usually <strong>have access to that object's internal data</strong>.</p>
 <p>The lower and upper methods: with lower and upper you can turn all the text into lowercase or uppercase English letters.</p>
 <aside class="callout activity"><p class="callout-label">Activity</p>

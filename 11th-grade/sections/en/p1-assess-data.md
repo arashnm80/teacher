@@ -2,4 +2,4 @@
 
 ## Competency assessment: data modeling
 
-**استاندارد عملکرد**: هنرجو بتواند داده‌ها را در پایتون تعریف و مدیریت کند، عملیات پایه را روی داده‌ها انجام دهد، ازساختارهای شرطی و حلقه‌ها استفاده کند و داده‌ها را به صورت سازمان یافته پردازش کند.
+**Performance standard**: the student can define and manage data in Python, do basic operations on the data, use conditional structures and loops, and process the data in an organised way.

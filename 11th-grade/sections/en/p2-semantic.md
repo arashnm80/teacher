@@ -52,7 +52,7 @@ Non-semantic elements in HTML are elements used only to group and hold content; 
 >
 > \* **All rights to this site belong to My Shop**
 >
-> ### توضیحات (Comments)
+> ### Comments
 >
 > Comments in HTML are a useful tool for documenting code and taking notes in it. They let the developer add explanations, notes, or extra information. The browser does not interpret comments, so users do not see them.
 >

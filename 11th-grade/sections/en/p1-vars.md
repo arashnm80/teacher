@@ -19,18 +19,18 @@ Python works out the type of a variable from the value assigned to it.
 ![Figure 16](../images/p014-01.png)
 *Figure 16*
 
-**نوع داده رشته‌ای (str)**: هر چیزی که **متن باشد**، مثل اسم، پیام، ایمیل، رمز عبور، شماره تلفن، توضیح، نوع داده رشته‌ای (**str**) است.
+**The string data type (str)**: anything that is **text**, such as a name, a message, an email, a password, a phone number or a description, is of the string data type (**str**).
 
 The **str** type, short for **string**, can be defined with single, double, or triple quotation marks (Figure 16).
 
-- **نوع داده عدد صحیح (int)**: عددهایی که با آنها محاسبه انجام می‌دهید و اعشار ندارند همان عددهای صحیح (**int**) یا همان **integer**، هستند (شکل17).
+- **The integer data type (int)**: numbers that you calculate with and that have no decimal part are integers (**int**), or **integer** (Figure 17).
 
 ![Figure 17](../images/p014-02.png)
 *Figure 17*
 
 <!-- page 9 -->
 
-- **نوع داده عدد اعشاری (float)**: این داده‌ها عددی هستند و در محاسبات ریاضی به کار گرفته می‌شوند و دارای مقدار اعشاری هستند. مثل:
+- **The decimal number data type (float)**: these data are numbers, are used in mathematical calculations and have a decimal part. For example:
 
 ```
   height = 1.75
@@ -41,7 +41,7 @@ The **str** type, short for **string**, can be defined with single, double, or t
 ![Figure 18](../images/p015-01.png)
 *Figure 18*
 
-از این مرحله به بعد کدها را در محیط VS Code بنویسید. برای انجام این کار برنامه VS Code را اجرا کرده و سپس از منوی فایل دستور new folder یک‌پوشه جدید به نام PyProg ایجاد کنید و سپس در آن پوشه از منو فایل با انتخاب گزینه New File، کادر EXPLORER انتخاب دکمه New File و یا کلید‌های ترکیبی Ctrl+ N فایل جدیدی به نام `prog01.py` در این پوشه ایجاد کنید (شکل 19). حالا صفحه ویرایشگر کد باز شده و می‌توانید دستورات خود را در آن بنویسید.
+From this step on, write the code in the VS Code environment. To do this, run the VS Code program, then from the File menu use the new folder command to create a new folder named PyProg, and then in that folder, from the File menu choose New File, or in the EXPLORER box press the New File button, or use the key combination Ctrl+N to create a new file named `prog01.py` in this folder (Figure 19). Now the code editor page opens and you can write your statements in it.
 
 ![Figure 19](../images/p015-02.png)
 *Figure 19*
@@ -53,7 +53,7 @@ To run the statements, use the button at the top right of the program window or 
 
 **Python style guide** (PEP)
 
-نحوه نگارش کدهای پایتون و قراردادهای کدنویسی را ارائه می‌دهد و باعث خوانایی بیشتر و تمیز (clean) شدن کدها می‌شود. برای مشاهده می‌توانید به `pep8.ir` مراجعه کنید.
+It gives the way of writing Python code and the coding conventions, and makes the code more readable and clean. To see it, you can visit `pep8.ir`.
 
 <!-- page 10 -->
 
@@ -67,17 +67,17 @@ To run the statements, use the button at the top right of the program window or 
 >
 > 3. Can a line start with a space character?
 
-در VSCode پس از کدنویسی با فشار کلیدهای Alt+Shift+F به طور خودکار بیشتر مشکلات فرمت کد را بر اساس pep8 اصلاح می‌کند. به‌شرط آنکه یکی از افزونه‌های autopep8، Black formatter، Ruff یا yapf نصب شده باشد.
+In VSCode, after coding, pressing the keys Alt+Shift+F automatically fixes most of the code formatting problems according to pep8, provided that one of the extensions autopep8, Black formatter, Ruff or yapf is installed.
 
 ### Rules for naming variables in Python
 
 - A variable name cannot contain a space. For example, you cannot define a variable named is valid.
 
-- نام‌گذاری متغیرها در پایتون باید با یک حرف یا زیر خط آغاز شود. مثل (`num`، `_personal`)
+- The name of a variable in Python must begin with a letter or an underscore. For example (`num`, `_personal`)
 
 - A variable name can contain letters, digits, and underscores.
 
-- نام متغیرها به حروف کوچک و بزرگ حساس است Age، age و AGE سه متغیر متفاوت هستند.
+- Variable names are case-sensitive: Age, age and AGE are three different variables.
 
 - A variable name must not be one of Python's keywords. The names var, import, const, if, and for are wrong as variable names, because these words are Python keywords.
 
@@ -89,9 +89,9 @@ To run the statements, use the button at the top right of the program window or 
 >
 > Python has several ways to name variables made of more than one word. Research them and present them in class.
 
-**عملگر (operator)**: نمادهای ویژه‌ای هستند که عملیات خاصی را روی مقادیر یا متغیرها انجام می‌دهند. در این عبارات a + b یا c \* d یا 4/2 به +، \* و / عملگر (operator) گفته می‌شود.
+**Operator**: special symbols that do a certain operation on values or variables. In the expressions a + b or c \* d or 4/2, the symbols +, \* and / are called operators.
 
-**عملوند (operand)**: مقدار یا مقدارهایی هستند که عملگرها روی آن کار می‌کنند. مثلاً در عبارت a + b علامت "+" عملگر و a, b عملوند هستند.
+**Operand**: the value or values the operators work on. For example, in the expression a + b the sign "+" is the operator and a, b are the operands.
 
 <!-- page 11 -->
 
@@ -158,7 +158,7 @@ The **`len()`** function: sometimes you need to know how many characters a text 
 ![Figure 23](../images/p018-02.png)
 *Figure 23*
 
-- **دستور `input()`** : برای دریافت داده از کاربر و ذخیره در متغیر از دستور input استفاده می‌شود (شکل24).
+- **The `input()` statement**: to receive data from the user and store it in a variable, the input statement is used (Figure 24).
 
 ![Figure 24](../images/p018-03.png)
 *Figure 24*

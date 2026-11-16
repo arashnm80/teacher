@@ -2,7 +2,7 @@
 
 ### The margin and padding classes
 
-بوت‌استرپ دارای دو مجموعه کلاس `m{side}-size` و `p{side}-size` برای تعیین فاصلۀ اطراف و فضای اضافی داخل عناصر است که در CSS توسط ویژگی‌های margin و padding تعیین می‌شوند. پارامتر side تعیین‌کنندۀ جهت درج حاشیه یا فضای خالی است و پارامتر size اندازه حاشیه یا فضای خالی را تعیین می‌کند. مجموعه کلاس‌های m و p و مفهوم آنها در جدول زیر آمده است:
+Bootstrap has two sets of classes, `m{side}-size` and `p{side}-size`, for setting the space around and the extra space inside elements, which in CSS are set by the properties margin and padding. The side parameter sets the direction of the margin or the empty space and the size parameter sets the size of the margin or the empty space. The sets of classes m and p and their meaning are given in the table below:
 
 *Table 2: The margin and padding classes in Bootstrap*
 
@@ -80,7 +80,7 @@ Among the rounded classes, rounded-circle makes an element completely round; for
 >
 > ![Book image](../images/p159-02.png)
 
-### کلاس‌های typography
+### Typography classes
 
 Bootstrap's text classes are used to set the font size and weight, alignment, list styles, and more. Table 6 shows some of the text classes.
 

@@ -95,84 +95,84 @@
 <p><img alt="شکل ۱۵: ایجاد فایل urls.py برای app" src="../images/p292-02.png" loading="lazy" />
 <em>شکل ۱۵: ایجاد فایل <code>urls.py</code> برای <bdi dir="ltr">app</bdi></em></p></article><article class="card lesson no-copy" lang="en" dir="ltr" data-lang-block="en" hidden><p class="page-mark">Page 280</p>
 
-<h2><bdi dir="rtl">ایجاد پروژه آب‌وهوا</bdi></h2>
-<p><bdi dir="rtl">در</bdi> Vscode <bdi dir="rtl">از منو</bdi> File <bdi dir="rtl">گزینه</bdi> Open Folder <bdi dir="rtl">را کلیک کنید</bdi>. <bdi dir="rtl">سپس یک‌پوشه جدید با نام</bdi> meteo <bdi dir="rtl">در مسیر دلخواه ایجاد کرده و پوشه</bdi> meteo <bdi dir="rtl">ساخته شده را باز کنید</bdi> (<bdi dir="rtl">شکل</bdi> 5):</p>
-<figure class="shot"><img alt="Figure 5: باز کردن پوشه meteo" src="../images/p286-01.png" loading="lazy" /><figcaption>Figure 5: <bdi dir="rtl">باز کردن پوشه</bdi> meteo</figcaption></figure>
-<p><bdi dir="rtl">دوباره ترمینال را باز و دستور زیر را اجرا کنید</bdi> (<bdi dir="rtl">شکل</bdi> 6):</p>
+<h2>Creating the weather project</h2>
+<p>In VSCode, click the Open Folder option from the File menu. Then create a new folder named meteo at a path of your choice and open the meteo folder you made (Figure 5):</p>
+<figure class="shot"><img alt="Figure 5: Opening the meteo folder" src="../images/p286-01.png" loading="lazy" /><figcaption>Figure 5: Opening the meteo folder</figcaption></figure>
+<p>Open the terminal again and run the following command (Figure 6):</p>
 <p>django-admin startproject config .</p>
-<figure class="shot"><img alt="Figure 6: ایجاد پروژه" src="../images/p286-02.png" loading="lazy" /><figcaption>Figure 6: <bdi dir="rtl">ایجاد پروژه</bdi></figcaption></figure>
+<figure class="shot"><img alt="Figure 6: Creating the project" src="../images/p286-02.png" loading="lazy" /><figcaption>Figure 6: Creating the project</figcaption></figure>
 <p class="page-mark">Page 281</p>
 
-<p><bdi dir="rtl">دستور قبل، پوشه پروژه را با نام</bdi> Config <bdi dir="rtl">در مسیر جاری ایجاد می‌کند که حاوی فایل تنظیمات</bdi> <code>settings.py</code> <bdi dir="rtl">و فایل‌های اصلی پروژه است</bdi>. <bdi dir="rtl">حرف نقطه در انتهای دستور فوق به معنی مسیر جاری است</bdi>.</p>
-<h3><bdi dir="rtl">آشنایی با برخی فایل‌های اصلی پروژه</bdi></h3>
-<p><strong><bdi dir="rtl">فایل</bdi><code>settings.py</code></strong>: <bdi dir="rtl">تنظیمات اصلی پروژه در این فایل قرار می‌گیرند</bdi>.</p>
-<p><strong><bdi dir="rtl">فایل</bdi><code>urls.py</code></strong>: <bdi dir="rtl">هرگاه کاربر وارد یک آدرس</bdi> (URL) <bdi dir="rtl">شود، این فایل تعیین می‌کند که سایت کدام صفحه یا بخش را نمایش دهد</bdi>.</p>
+<p>The previous command creates the project folder named Config in the current path, which contains the settings file <code>settings.py</code> and the main files of the project. The dot at the end of the command above means the current path.</p>
+<h3>Getting to know some of the project's main files</h3>
+<p><strong>The file <code>settings.py</code></strong>: the main settings of the project are in this file.</p>
+<p><strong>The file <code>urls.py</code></strong>: whenever the user enters an address (URL), this file decides which page or part the site shows.</p>
 <aside class="callout curiosity"><p class="callout-label">Curiosity</p>
-<p><bdi dir="rtl">در مورد کاربرد فایل‌های دیگر موجود در پروژه تحقیق کنید</bdi>.</p>
+<p>Research the use of the other files in the project.</p>
 </aside>
-<h3><bdi dir="rtl">اجرای پروژه جنگو</bdi></h3>
-<p><bdi dir="rtl">دستور زیر را در ترمینال اجرا نمایید</bdi>.</p>
-<p><code>python manage.py runserver</code> <bdi dir="rtl">دستور</bdi> runserver <bdi dir="rtl">یک وب سرور</bdi> (web server) <bdi dir="rtl">مجازی کوچک برای پروژه جنگو راه‌اندازی می‌کند، این وب سرور فقط مخصوص برنامه‌نویس جنگو است تا بتواند پروژه جنگو را در رایانه خودش اجرا کند</bdi> (<bdi dir="rtl">شکل</bdi> 7).</p>
-<figure class="shot"><img alt="Figure 7: راه‌اندازی موفق وب سرور جنگو" src="../images/p287-01.png" loading="lazy" /><figcaption>Figure 7: <bdi dir="rtl">راه‌اندازی موفق وب سرور جنگو</bdi></figcaption></figure>
+<h3>Running the Django project</h3>
+<p>Run the following command in the terminal.</p>
+<p><code>python manage.py runserver</code> The command runserver sets up a small virtual web server for the Django project; this web server is only for the Django programmer so that they can run the Django project on their own computer (Figure 7).</p>
+<figure class="shot"><img alt="Figure 7: Successful start of the Django web server" src="../images/p287-01.png" loading="lazy" /><figcaption>Figure 7: Successful start of the Django web server</figcaption></figure>
 <p class="page-mark">Page 282</p>
 
-<p><bdi dir="rtl">بعد از اجرای دستور، یک فایل با نام</bdi> <code>db.sqlite3</code> <bdi dir="rtl">کنار فایل</bdi> <code>manage.py</code> <bdi dir="rtl">ساخته می‌شود</bdi>. <bdi dir="rtl">این فایل، پایگاه‌داده پیش‌فرض جنگو است</bdi>. <bdi dir="rtl">جنگو از این فایل برای مدیریت پایگاه‌داده و جداول استفاده می‌کند</bdi>.</p>
-<p><bdi dir="rtl">همان‌طوری که در شکل</bdi> 7 <bdi dir="rtl">مشخص شده است، می‌توانید سایت خود را در آدرس</bdi> http://127.0.0.1:8000 <bdi dir="rtl">مشاهده کنید</bdi>.</p>
-<p><bdi dir="rtl">با تایپ آدرس فوق درون نوار آدرس مرورگر، صفحه اصلی سایت را مشابه شکل</bdi> 8 <bdi dir="rtl">مشاهده می‌کنید</bdi>. <bdi dir="rtl">ممکن است به‌دلیل نسخه‌های متفاوت جنگو تصویر متفاوتی مشاهده کنید</bdi>.</p>
-<figure class="shot"><img alt="Figure 8: اجرای موفقیت‌آمیز سایت" src="../images/p288-01.png" loading="lazy" /><figcaption>Figure 8: <bdi dir="rtl">اجرای موفقیت‌آمیز سایت</bdi></figcaption></figure>
-<p><bdi dir="rtl">آدرس</bdi> ip <bdi dir="rtl">که جنگو روی آن اجرا می‌شود،</bdi> 127.0.0.1 <bdi dir="rtl">است</bdi>. <bdi dir="rtl">این آدرس به آدرس</bdi> local <bdi dir="rtl">معروف است</bdi>. <bdi dir="rtl">این</bdi> ip <bdi dir="rtl">به رایانه جاری اشاره می‌کند، یعنی همین رایانه‌ای که سرور جنگو را روی آن اجرا کرده‌اید</bdi>. <bdi dir="rtl">اگر رایانه شما در یک شبکه قرار داشته باشد، رایانه‌های دیگر نمی‌توانند با این آدرس، به رایانه شما متصل شوند</bdi>.</p>
+<p>After running the command, a file named <code>db.sqlite3</code> is made next to the file <code>manage.py</code>. This file is Django's default database. Django uses this file to manage the database and tables.</p>
+<p>As is shown in Figure 7, you can see your site at the address http://127.0.0.1:8000.</p>
+<p>By typing the address above in the browser's address bar, you see the main page of the site similar to Figure 8. You may see a different picture because of different versions of Django.</p>
+<figure class="shot"><img alt="Figure 8: Successful run of the site" src="../images/p288-01.png" loading="lazy" /><figcaption>Figure 8: Successful run of the site</figcaption></figure>
+<p>The IP address on which Django runs is 127.0.0.1. This address is known as the local address. This IP points to the current computer, that is, the very computer on which you ran the Django server. If your computer is on a network, other computers cannot connect to your computer with this address.</p>
 <aside class="callout curiosity"><p class="callout-label">Curiosity</p>
-<p><bdi dir="rtl">بررسی کنید، برای پروژه‌هایی که در بستر اینترنت در حال استفاده هستند، از چه وب‌سرورها و چه پایگاه داده‌هایی استفاده می‌شود؟</bdi></p>
+<p>Check what web servers and databases are used for the projects that are in use on the internet.</p>
 </aside>
-<h3><bdi dir="rtl">ساخت اولین</bdi> app <bdi dir="rtl">در جنگو</bdi></h3>
-<p><bdi dir="rtl">یک پروژه جنگو می‌تواند شامل یک یا چندین</bdi> app (<bdi dir="rtl">اپلیکیشن</bdi>) <bdi dir="rtl">باشد</bdi>. <bdi dir="rtl">پروژه‌ای که با دستور</bdi> startproject <bdi dir="rtl">ایجاد کردید، هنوز</bdi> app <bdi dir="rtl">ندارد</bdi>. <bdi dir="rtl">در جنگو می‌توانید برای وظایف مستقل یک</bdi> app <bdi dir="rtl">ایجاد کنید</bdi>.</p>
-<p><bdi dir="rtl">فرض کنید پروژه شما یک کارخانه در دنیای واقعی است، واحدهای تولید کارخانه هر‌کدام می‌توانند مانند یک</bdi> app <bdi dir="rtl">باشند</bdi>. <bdi dir="rtl">به‌عنوان‌مثال، واحدی که وظیفه رنگ‌کردن خودرو را بر‌عهده دارد، مستقل از واحدهای دیگر می‌تواند عمل کند</bdi>. <bdi dir="rtl">کافی است یک خودرو به این واحد تحویل شود و رنگ درخواستی مشخص شود</bdi>. <bdi dir="rtl">این واحد کار خود را انجام داده و خودرو را رنگ شده تحویل می‌دهد</bdi>.</p>
-<p><bdi dir="rtl">هر</bdi> app <bdi dir="rtl">وظیفه خاصی انجام می‌دهد و باید به‌صورتی ایجاد گردد که قابلیت استفاده مجدد داشته باشد، یعنی یک</bdi> app <bdi dir="rtl">را بتوان در پروژه دیگری استفاده کرد و همان وظیفه را به‌خوبی انجام دهد</bdi>.</p>
+<h3>Making the first app in Django</h3>
+<p>A Django project can include one or several apps (applications). The project you created with the startproject command has no app yet. In Django you can create an app for independent tasks.</p>
+<p>Suppose your project is a factory in the real world; each of the factory's production units can be like an app. For example, the unit responsible for painting cars can work independently of the other units. It is enough that a car is delivered to this unit and the requested colour is specified. This unit does its job and delivers the car painted.</p>
+<p>Each app does a specific job and must be created in a way that can be reused, that is, an app can be used in another project and do the same job well.</p>
 <p class="page-mark">Page 283</p>
 
-<p><bdi dir="rtl">برای ساخت</bdi> app <bdi dir="rtl">از دستور</bdi> startapp <bdi dir="rtl">استفاده می‌شود، ابتدا سرور جنگو را متوقف کرده</bdi> (<bdi dir="rtl">با</bdi> ctrl + c) <bdi dir="rtl">و سپس دستور زیر را اجرا کنید</bdi>.</p>
-<p><code>python manage.py startapp weather</code> <bdi dir="rtl">یک‌پوشه با نام</bdi> weather <bdi dir="rtl">ساخته می‌شود</bdi>. <bdi dir="rtl">پوشه</bdi> weather <bdi dir="rtl">در حقیقت یک</bdi> app <bdi dir="rtl">جنگویی است که وظیفه نمایش وضعیت آب‌وهوای شهر موردنظر را برعهده دارد</bdi>.</p>
-<p><bdi dir="rtl">پس از ساخت</bdi> weather app <bdi dir="rtl">ساختار پروژه همانند شکل</bdi> 9 <bdi dir="rtl">خواهد بود</bdi>.</p>
-<figure class="shot"><img alt="Figure 9: محتوای weather app" src="../images/p289-01.png" loading="lazy" /><figcaption>Figure 9: <bdi dir="rtl">محتوای</bdi> weather app</figcaption></figure>
-<p><strong><bdi dir="rtl">معرفی</bdi> app <bdi dir="rtl">ایجاد شده به جنگو در</bdi> <code>settings.py</code></strong></p>
-<p><bdi dir="rtl">در این مرحله، لازم است</bdi> app <bdi dir="rtl">ساخته شده به جنگو معرفی شود</bdi>. <bdi dir="rtl">برای این کار فایل</bdi> <code>settings.py</code> <bdi dir="rtl">را باز کنید و</bdi> weather <bdi dir="rtl">را مطابق شکل</bdi> 10 <bdi dir="rtl">به انتهای لیست</bdi> <code>INSTALLED_APPS</code> <bdi dir="rtl">اضافه کنید</bdi>.</p>
-<p><img alt="Figure 10: اضافه‌کردن weather به installed_apps" src="../images/p289-02.png" loading="lazy" />
-<em>Figure 10: <bdi dir="rtl">اضافه‌کردن</bdi> weather <bdi dir="rtl">به</bdi> <code>installed_apps</code></em></p>
+<p>To make an app, the startapp command is used; first stop the Django server (with ctrl + c) and then run the following command.</p>
+<p><code>python manage.py startapp weather</code> A folder named weather is made. The weather folder is in fact a Django app that is responsible for showing the weather of the wanted city.</p>
+<p>After making the weather app the structure of the project will be like Figure 9.</p>
+<figure class="shot"><img alt="Figure 9: The content of the weather app" src="../images/p289-01.png" loading="lazy" /><figcaption>Figure 9: The content of the weather app</figcaption></figure>
+<p><strong>Introducing the created app to Django in <code>settings.py</code></strong></p>
+<p>At this step, the app that was made must be introduced to Django. For this open the file <code>settings.py</code> and add weather to the end of the list <code>INSTALLED_APPS</code> as in Figure 10.</p>
+<p><img alt="Figure 10: Adding weather to installed_apps" src="../images/p289-02.png" loading="lazy" />
+<em>Figure 10: Adding weather to <code>installed_apps</code></em></p>
 <p class="page-mark">Page 284</p>
 
-<h3><bdi dir="rtl">ساخت اولین</bdi> view</h3>
-<p><bdi dir="rtl">هر</bdi> view <bdi dir="rtl">که در فایل</bdi> <code>views.py</code> <bdi dir="rtl">است، برحسب وظیفه‌اش، با کاربر تعامل می‌کند، پس برای نمایش دمای یک شهر، یک</bdi> view <bdi dir="rtl">باید ساخته شود</bdi>.</p>
-<p><bdi dir="rtl">فایل‌های</bdi> View <bdi dir="rtl">در جنگو مسئول پاسخ‌گویی به درخواست کاربران هستند، یعنی</bdi> Request <bdi dir="rtl">کاربر را بعد از مسیریابی می‌گیرند و به آن درخواست یک پاسخ درست می‌دهند</bdi>.</p>
-<p><strong><bdi dir="rtl">مرحله اول</bdi></strong>: <bdi dir="rtl">فایل</bdi> <code>views.py</code> <bdi dir="rtl">را باز کنید</bdi>. <bdi dir="rtl">یک تابع با نام</bdi> <code>show_temp_view</code> <bdi dir="rtl">همانند شکل</bdi> 11 <bdi dir="rtl">اضافه کنید</bdi>:</p>
-<p><img alt="Figure 11: ایجاد view با نام show_temp_view" src="../images/p290-01.png" loading="lazy" />
-<em>Figure 11: <bdi dir="rtl">ایجاد</bdi> view <bdi dir="rtl">با نام</bdi> <code>show_temp_view</code></em></p>
-<p><strong><bdi dir="rtl">توضیحات کدها</bdi></strong>:</p>
-<p><strong><bdi dir="rtl">خط</bdi> 1</strong>: <bdi dir="rtl">کلاس</bdi> HttpResponse <bdi dir="rtl">از ماژول</bdi> http <bdi dir="rtl">وارد</bdi> (import) <bdi dir="rtl">شده است</bdi>.</p>
-<p><strong><bdi dir="rtl">خط</bdi> 3</strong>: <bdi dir="rtl">یک تابع با نام</bdi> <code>show_temp_view</code> <bdi dir="rtl">ایجاد شده است</bdi>. <bdi dir="rtl">هر</bdi> view <bdi dir="rtl">در جنگو، تابعی است که باید پارامتر</bdi> request <bdi dir="rtl">را داشته باشد</bdi>.</p>
-<p><strong><bdi dir="rtl">خط</bdi> 4</strong>: <bdi dir="rtl">یک</bdi> object <bdi dir="rtl">از نوع</bdi> HttpResponse <bdi dir="rtl">ایجاد شده است</bdi>. HttpResponse <bdi dir="rtl">محتوای نهاییِ ارسال‌شده به مرورگر را در خود نگهداری می‌کند و مشخص می‌کند کاربر چه چیزی از سرور دریافت کند</bdi>.</p>
-<p><bdi dir="rtl">تابع</bdi> <code>show_temp_view</code> <bdi dir="rtl">در فایل</bdi> <code>views.py</code> <bdi dir="rtl">فقط یک متن ساده، نمایش خواهد داد</bdi>.</p>
-<p><bdi dir="rtl">فایل را ذخیره نمایید و سرور جنگو را با</bdi> <code>python manage.py runserver</code> <bdi dir="rtl">راه‌اندازی کنید</bdi>.</p>
-<p><bdi dir="rtl">آدرس صفحه اصلی را وارد کنید، باز هم صفحه خوشامدگویی را می‌بینید</bdi>. <bdi dir="rtl">پس لازم است تغییراتی اعمال کنید تا در صفحه اصلی سایت، به‌جای خوشامدگویی متن</bdi> «<bdi dir="rtl">همدان</bdi> 27 <bdi dir="rtl">درجه سانتی‌گراد</bdi>» <bdi dir="rtl">نمایش داده شود</bdi>. <bdi dir="rtl">فایل</bdi> <code>urls.py</code> <bdi dir="rtl">در پوشه</bdi> config <bdi dir="rtl">را باز کنید</bdi> (<bdi dir="rtl">شکل</bdi> 12).</p>
+<h3>Making the first view</h3>
+<p>Each view that is in the file <code>views.py</code> interacts with the user according to its job, so to show the temperature of a city, a view must be made.</p>
+<p>View files in Django are responsible for answering the users' requests, that is, they take the user's Request after routing and give that request a correct response.</p>
+<p><strong>First step</strong>: open the file <code>views.py</code>. Add a function named <code>show_temp_view</code> as in Figure 11:</p>
+<p><img alt="Figure 11: Creating a view named show_temp_view" src="../images/p290-01.png" loading="lazy" />
+<em>Figure 11: Creating a view named <code>show_temp_view</code></em></p>
+<p><strong>Explanation of the code</strong>:</p>
+<p><strong>Line 1</strong>: the class HttpResponse is imported from the http module.</p>
+<p><strong>Line 3</strong>: a function named <code>show_temp_view</code> is created. Every view in Django is a function that must have the parameter request.</p>
+<p><strong>Line 4</strong>: an object of the type HttpResponse is created. HttpResponse holds the final content sent to the browser and specifies what the user gets from the server.</p>
+<p>The function <code>show_temp_view</code> in the file <code>views.py</code> will only show a simple text.</p>
+<p>Save the file and start the Django server with <code>python manage.py runserver</code>.</p>
+<p>Enter the address of the main page; you still see the welcome page. So you need to make changes so that, on the main page of the site, instead of the welcome the text "Hamedan 27 degrees Celsius" is shown. Open the file <code>urls.py</code> in the config folder (Figure 12).</p>
 <p class="page-mark">Page 285</p>
 
-<p><img alt="Figure 12: فایل urls.py" src="../images/p291-01.png" loading="lazy" />
-<em>Figure 12: <bdi dir="rtl">فایل</bdi> <code>urls.py</code></em></p>
-<p><bdi dir="rtl">بعد از ایجاد پروژه، فایل</bdi> <code>urls.py</code> <bdi dir="rtl">نیز کنار</bdi> <code>settings.py</code> <bdi dir="rtl">ایجاد می‌شود</bdi>. <bdi dir="rtl">هرگاه کاربر وارد یک آدرس</bdi> (URL) <bdi dir="rtl">شود، این فایل تعیین می‌کند که سایت کدام صفحه یا بخش را نمایش دهد</bdi>.</p>
-<p><strong><bdi dir="rtl">توضیحات کدها</bdi></strong>:</p>
-<p><strong><bdi dir="rtl">خط</bdi> 4</strong>: <bdi dir="rtl">جنگو از یک لیست با نام</bdi> urlpatterns <bdi dir="rtl">برای مدیریت آدرس صفحات سایت استفاده می‌کند</bdi>.</p>
-<p><strong><bdi dir="rtl">خط</bdi> 5</strong>: <bdi dir="rtl">هر عضو از</bdi> urlpattrns <bdi dir="rtl">یک</bdi> path <bdi dir="rtl">است که معادل آدرس یک صفحه در سایت است</bdi>. <bdi dir="rtl">به‌صورت پیش‌فرض یک</bdi> path <bdi dir="rtl">برای صفحه پنل ادمین جنگو با مقدار</bdi> /admin <bdi dir="rtl">وجود دارد که معادل آدرس</bdi> http://127.0.0.1:8000/admin <bdi dir="rtl">در مرورگر است</bdi>.</p>
-<p><bdi dir="rtl">آدرس</bdi> http://127.0.0.1:8000/admin <bdi dir="rtl">را در مرورگر باز کنید</bdi>. <bdi dir="rtl">صفحه ورود به پنل ادمین همانند شکل</bdi> 13 <bdi dir="rtl">از شما نام کاربری و رمز عبور را درخواست می‌کند</bdi>. <bdi dir="rtl">در ادامه روش ساخت نام کاربری و رمز عبور را خواهید آموخت</bdi>.</p>
-<figure class="shot"><img alt="Figure 13: صفحه ورود به پنل ادمین" src="../images/p291-02.png" loading="lazy" /><figcaption>Figure 13: <bdi dir="rtl">صفحه ورود به پنل ادمین</bdi></figcaption></figure>
+<p><img alt="Figure 12: The file urls.py" src="../images/p291-01.png" loading="lazy" />
+<em>Figure 12: The file <code>urls.py</code></em></p>
+<p>After the project is created, the file <code>urls.py</code> is also created next to <code>settings.py</code>. Whenever the user enters an address (URL), this file decides which page or part the site shows.</p>
+<p><strong>Explanation of the code</strong>:</p>
+<p><strong>Line 4</strong>: Django uses a list named urlpatterns to manage the addresses of the pages of the site.</p>
+<p><strong>Line 5</strong>: each member of urlpatterns is a path that is equal to the address of a page in the site. By default there is a path for the page of Django's admin panel with the value /admin, which is equal to the address http://127.0.0.1:8000/admin in the browser.</p>
+<p>Open the address http://127.0.0.1:8000/admin in the browser. The admin panel sign-in page, as in Figure 13, asks you for a username and password. Next you will learn how to create a username and password.</p>
+<figure class="shot"><img alt="Figure 13: The admin panel sign-in page" src="../images/p291-02.png" loading="lazy" /><figcaption>Figure 13: The admin panel sign-in page</figcaption></figure>
 <p class="page-mark">Page 286</p>
 
-<p><strong><bdi dir="rtl">مرحله دوم</bdi></strong>: <bdi dir="rtl">دوباره وارد فایل</bdi> <code>urls.py</code> <bdi dir="rtl">شده و تغییراتی همانند شکل</bdi> 14 <bdi dir="rtl">در فایل اعمال کنید</bdi>.</p>
-<figure class="shot"><img alt="Figure 14: اضافه‌کردن path جدید" src="../images/p292-01.png" loading="lazy" /><figcaption>Figure 14: <bdi dir="rtl">اضافه‌کردن</bdi> path <bdi dir="rtl">جدید</bdi></figcaption></figure>
-<p><strong><bdi dir="rtl">توضیحات کدها</bdi></strong>:</p>
-<p><strong><bdi dir="rtl">خط</bdi> 2</strong>: <bdi dir="rtl">ماژول</bdi> include <bdi dir="rtl">وارد</bdi> (import) <bdi dir="rtl">شده است</bdi>.</p>
-<p><strong><bdi dir="rtl">خط</bdi> 6</strong>: <bdi dir="rtl">یک</bdi> path <bdi dir="rtl">جدید اضافه شده است</bdi>. <bdi dir="rtl">اولین آرگومان تابع</bdi> path <bdi dir="rtl">در این دستور فقط یک‌رشته خالی است و به این معناست که اگر در آدرس</bdi> (URL) <bdi dir="rtl">رسیده به سرور جنگو، جلوی آدرس سایت هیچ عبارتی درج نشده بود، با استفاده از ماژول</bdi> include <bdi dir="rtl">به سراغ فایل</bdi> <code>urls.py</code> <bdi dir="rtl">در</bdi> weather app <bdi dir="rtl">بروید و کار را از آنجا ادامه دهید</bdi>. <bdi dir="rtl">در واقع این خط، درخواست‌های صفحۀ اصلی را به</bdi> weather app <bdi dir="rtl">ارسال می‌کند</bdi>.</p>
-<p><strong><bdi dir="rtl">مرحله سوم</bdi></strong>: <bdi dir="rtl">وارد پوشه</bdi> weather <bdi dir="rtl">شده و برای</bdi> weather app <bdi dir="rtl">یک</bdi> <code>urls.py</code> <bdi dir="rtl">همانند شکل</bdi> 15 <bdi dir="rtl">ایجاد کنید</bdi>. <bdi dir="rtl">هر</bdi> app <bdi dir="rtl">می‌تواند یک</bdi> <code>urls.py</code> <bdi dir="rtl">اختصاصی داشته باشد</bdi>.</p>
-<p><img alt="Figure 15: ایجاد فایل urls.py برای app" src="../images/p292-02.png" loading="lazy" />
-<em>Figure 15: <bdi dir="rtl">ایجاد فایل</bdi> <code>urls.py</code> <bdi dir="rtl">برای</bdi> app</em></p></article>
+<p><strong>Second step</strong>: enter the file <code>urls.py</code> again and make changes as in Figure 14 in the file.</p>
+<figure class="shot"><img alt="Figure 14: Adding a new path" src="../images/p292-01.png" loading="lazy" /><figcaption>Figure 14: Adding a new path</figcaption></figure>
+<p><strong>Explanation of the code</strong>:</p>
+<p><strong>Line 2</strong>: the module include is imported.</p>
+<p><strong>Line 6</strong>: a new path is added. The first argument of the function path in this statement is only an empty string, which means that if in the address (URL) that reached the Django server nothing was written after the address of the site, then, using the module include, go to the file <code>urls.py</code> in the weather app and continue the work from there. In fact this line sends the requests of the main page to the weather app.</p>
+<p><strong>Third step</strong>: enter the weather folder and create a <code>urls.py</code> for the weather app as in Figure 15. Each app can have its own <code>urls.py</code>.</p>
+<p><img alt="Figure 15: Creating the file urls.py for the app" src="../images/p292-02.png" loading="lazy" />
+<em>Figure 15: Creating the file <code>urls.py</code> for the app</em></p></article>
       <aside class="card extra">
         <h2 data-fa="تمرین این بخش" data-en="Exercises for this section">تمرین این بخش</h2>
         <p class="extra-note" data-fa="این تمرین‌ها و پیوندها اضافه بر متن کتاب‌اند." data-en="These exercises and links are in addition to the book.">این تمرین‌ها و پیوندها اضافه بر متن کتاب‌اند.</p>

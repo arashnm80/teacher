@@ -1,5 +1,5 @@
 <!-- page 252 -->
 
-## ارزشیابی شایستگی تولید برنامه شیء گرا
+## Competency assessment: producing an object-oriented program
 
-**استاندارد عملکرد کار**: هنرجو بتواند با به‌کارگیری مفاهیم شیء‌گرایی در پایتون، کلاس و شیء تعریف کند، وراثت و بازنویسی متدها را پیاده‌سازی نماید، سطوح دسترسی را مدیریت کند و رفتار کلاس‌ها را تا سطح مقدماتی متاکلاس تحلیل و اجرا کند به‌گونه‌ای که برنامه بدون خطا و با ساختار صحیح اجرا شود.
+**Work performance standard**: the student can, by using object-orientation concepts in Python, define classes and objects, implement inheritance and method overriding, manage access levels and analyse and run the behaviour of classes up to the basic level of metaclasses, so that the program runs without errors and with a correct structure.

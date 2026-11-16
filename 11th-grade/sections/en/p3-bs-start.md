@@ -40,13 +40,13 @@ A framework (Framework) is a predesigned software structure used to speed up des
 
 **What is Bootstrap?**
 
-بوت‌استرپ یک فریم‌ورک متن باز برای طراحی ظاهر سایت است که شامل مجموعه‌ای از کدهای آماده نوشته‌شده با زبان‌های Css، Html و Java Script است. توسعه‌دهندگان به‌جای اینکه از صفر همه چیز را بنویسند از این کدهای آماده استفاده می‌کنند.
+Bootstrap is an open-source framework for designing the look of a site, consisting of a set of ready-made code written in CSS, HTML and JavaScript. Instead of writing everything from zero, developers use this ready-made code.
 
 **Features of Bootstrap**: Bootstrap has many features for designing web pages that have made it popular among web developers and designers. They are:
 
-**طراحی واکنش‌گرا (Responsive Design)**: بوت‌استرپ دارای یک سیستم گرید 12 ستونی است که امکان طراحی واکنش‌گرا را برای دستگاه‌های مختلف فراهم می‌کند.
+**Responsive Design**: Bootstrap has a 12-column grid system that makes responsive design possible for different devices.
 
-**اجزای از پیش طراحی‌شده (Components)**: بوت‌استرپ شامل اجزای مختلفی مانند دکمه‌ها، فرم‌ها، منوی ناوبری، کاردها، مدال‌ها و نوار جست‌وجو است که به‌صورت آماده قابل استفاده هستند.
+**Pre-designed Components**: Bootstrap includes various components such as buttons, forms, the navigation menu, cards, modals and the search bar that can be used ready-made.
 
 **JavaScript support**: Bootstrap includes JavaScript libraries for creating interactions and animations in different parts of the page.
 
@@ -137,9 +137,9 @@ Bootstrap components are predesigned elements that make it quick and easy to des
 >
 > Add the word subtle to the end of the color class (bg-primary-subtle) and see the result in the browser.
 
-### کلاس‌های تعیین اندازه (Sizing)
+### Sizing classes
 
-بوت‌استرپ دارای دو مجموعه کلاس \*-w و \*-h برای تعیین پهنا و ارتفاع عناصر است. پارامتر \* می‌تواند جایگزین اعداد 25، 50، 75 و 100 و عبارت auto شود. اختصاص کلاس w-75 برای یک عنصر باعث می‌شود که پهنای عنصر برابر 75% پهنای عنصر والد باشد. کلاس‌های w-auto و h-auto پهنا و ارتفاع یک عنصر را به اندازۀ محتوای آن تنظیم می‌نمایند.
+Bootstrap has two sets of classes, \*-w and \*-h, for setting the width and height of elements. The \* parameter can be replaced by the numbers 25, 50, 75 and 100 and the word auto. Giving the class w-75 to an element makes the width of the element 75% of the width of the parent element. The classes w-auto and h-auto set the width and height of an element to the size of its content.
 
 > **Workshop**
 >

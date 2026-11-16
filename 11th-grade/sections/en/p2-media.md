@@ -18,11 +18,11 @@ Media queries are written in CSS with the @media rule and have the structure bel
 >
 > Add the styles below to the end of the styles in the file `index.html`. Save the file and check the result in the browser.
 >
-> | تغییر چیدمان عناصر منو از حالت افقی به حالت عمودی<br>اشغال پهنای کامل برای هر عنصر لیست<br>وسط چین کردن متن گزینه‌ها |  |
+> | Changing the layout of the menu elements from horizontal to vertical<br>Taking the full width for each list element<br>Centring the text of the options |  |
 > | --- | --- |
 > | Set the vertical space between the menu options |  |
 > | Hide the user-action area |  |
-> | ایجاد یک ستون واحد<br>افزایش فاصله عمودی بین گزینه‌ها |  |
+> | Creating a single column<br>Increasing the vertical space between the options |  |
 > | Put the service items in the middle of the row |  |
 > | Hide the chat widget logo |  |
 >

@@ -102,89 +102,89 @@
 <figure class="shot"><img alt="تصویر کتاب" src="../images/p278-01.png" loading="lazy" /></figure>
 </aside></article><article class="card lesson no-copy" lang="en" dir="ltr" data-lang-block="en" hidden><p class="page-mark">Page 267</p>
 
-<p><bdi dir="rtl">حالا اگر فایل</bdi> <code>alice.txt</code> <bdi dir="rtl">را ایجاد کنید و آن را در پوشه مناسب قرار دهید این بار بلوک</bdi> try <bdi dir="rtl">اجرا خواهد شد</bdi>.</p>
+<p>Now if you create the file <code>alice.txt</code> and put it in the suitable folder, this time the try block will run.</p>
 <ul>
 <li>
-<p><bdi dir="rtl">برنامه فایل را پیدا می‌کند و وارد بلوک</bdi> else <bdi dir="rtl">می‌شود</bdi>.</p>
+<p>The program finds the file and enters the else block.</p>
 </li>
 <li>
-<p><bdi dir="rtl">متن آلیس در سرزمین عجایب را واردکنید، پایتون متن فایل را به‌عنوان یک رشته طولانی درنظر می‌گیرد</bdi>.</p>
+<p>Import the text of Alice in Wonderland; Python treats the text of the file as one long string.</p>
 </li>
 <li>
-<p><bdi dir="rtl">برای تولید لیستی از تمام کلمات موجود در کتاب، از متد رشته‌ای استفاده کنیدکه به طور پیش‌فرض یک رشته را در هر جایی که فضای خالی پیدا کند، تقسیم می‌کند</bdi>.</p>
+<p>To produce a list of all the words in the book, use the string method that by default splits a string wherever it finds white space.</p>
 </li>
 <li>
-<p><bdi dir="rtl">برای شمارش تعداد این کلمات از</bdi> <code>len()</code> <bdi dir="rtl">استفاده کنید</bdi>.</p>
+<p>To count the number of these words use <code>len()</code>.</p>
 </li>
 </ul>
 <figure class="shot"><img alt="Book image" src="../images/p273-01.png" loading="lazy" /></figure>
 <figure class="shot"><img alt="Figure 45" src="../images/p273-02.png" loading="lazy" /><figcaption>Figure 45</figcaption></figure>
 <p class="page-mark">Page 268</p>
 
-<h3><bdi dir="rtl">کار با چند فایل</bdi></h3>
-<p><bdi dir="rtl">کار با چند فایل یکی از مهارت‌های مهم است، چون تقریباً هیچ برنامه واقعی فقط با یک فایل کار نمی‌کند</bdi>. <bdi dir="rtl">کار با چند فایل یعنی برنامه بتواند بدون تکرار کد</bdi>:</p>
-<p><bdi dir="rtl">چندین فایل را پشت هم بخواند و روی همه آنها یک عملیات مشابه انجام دهد</bdi>. <bdi dir="rtl">پس لازم است یک تابع تعریف کنید و همچنین خطاها هم مدیریت و سپس نتایج ذخیره شوند</bdi>.</p>
-<p><bdi dir="rtl">برای انجام این کارکتاب‌های بیشتری را برای تحلیل اضافه کنید</bdi>.</p>
-<p><bdi dir="rtl">برای اینکه اجرای تحلیل روی چندین کتاب مختلف ساده‌تر و منظم‌تر شود بهتر است، بخش اصلی برنامه را به یک تابع به نام</bdi> <code>count_word</code> <bdi dir="rtl">منتقل کنید</bdi>. <bdi dir="rtl">اگر کدها را با برنامه قبل مقایسه کنید، متوجه می‌شوید تغییرات شامل اصلاح تو رفتگی و انتقال به بدنه تابع است</bdi>.</p>
-<p><strong><bdi dir="rtl">خط</bdi> 2</strong>: <bdi dir="rtl">تابع</bdi> <code>def count_words(path)</code> <bdi dir="rtl">یک ورودی به نام</bdi> path <bdi dir="rtl">می‌گیرد که مسیر یک فایل متنی است</bdi>.</p>
-<p><strong><bdi dir="rtl">خط</bdi> 11</strong>: <bdi dir="rtl">این خط از کد نام فایل‌ها به‌صورت رشته‌های متنی</bdi> (String) <bdi dir="rtl">در یک لیست به نام</bdi> filenames <bdi dir="rtl">ذخیره می‌کند</bdi>.</p>
+<h3>Working with several files</h3>
+<p>Working with several files is an important skill, because almost no real program works with only one file. Working with several files means the program can, without repeating code:</p>
+<p>read several files one after another and do a similar operation on all of them. So you need to define a function, and also the errors must be managed and then the results saved.</p>
+<p>To do this, add more books for analysis.</p>
+<p>To make running the analysis on several different books simpler and more orderly, it is better to move the main part of the program to a function named <code>count_word</code>. If you compare the code with the previous program, you notice that the changes consist of fixing the indentation and moving to the body of the function.</p>
+<p><strong>Line 2</strong>: the function <code>def count_words(path)</code> takes one input named path, which is the path of a text file.</p>
+<p><strong>Line 11</strong>: this line of code stores the names of the files as strings in a list named filenames.</p>
 <div class="code-wrap" dir="ltr"><pre><code>filenames = ['alice.txt','moby_dick.txt','little_women.txt']
 </code></pre></div>
-<p><strong><bdi dir="rtl">خط</bdi> 12</strong>: <bdi dir="rtl">در این خط ازیک حلقه</bdi> for <bdi dir="rtl">برای بررسی تک‌تک فایل‌های داخل لیست و به دست آوردن تعداد کلمات متن فایل استفاده شده است</bdi>.</p>
-<p><strong><bdi dir="rtl">خط</bdi> 13</strong>: <bdi dir="rtl">نام فایل به یک شیء از نوع</bdi> Path <bdi dir="rtl">تبدیل می‌شود</bdi>.</p>
-<p><strong><bdi dir="rtl">خط</bdi> 14</strong>: <bdi dir="rtl">تابع</bdi> <code>count_words</code> <bdi dir="rtl">برای آن فایل اجرا می‌شود</bdi>.</p>
-<p><bdi dir="rtl">و اگر فایلی وجود نداشته باشد، برنامه خطا نمی‌دهد و پیام مناسب نمایش می‌دهد</bdi>.</p>
+<p><strong>Line 12</strong>: in this line a for loop is used to check each file in the list one by one and get the number of words of the text of the file.</p>
+<p><strong>Line 13</strong>: the file name is turned into an object of the Path type.</p>
+<p><strong>Line 14</strong>: the function <code>count_words</code> runs for that file.</p>
+<p>And if a file does not exist, the program gives no error and shows a suitable message.</p>
 <figure class="shot"><img alt="Figure 46" src="../images/p274-01.png" loading="lazy" /><figcaption>Figure 46</figcaption></figure>
 <p class="page-mark">Page 269</p>
 
-<h3><bdi dir="rtl">نادیده گرفتن خطا</bdi> (Failing Silently)</h3>
+<h3>Ignoring errors (Failing Silently)</h3>
 <figure class="shot"><img alt="Figure 47" src="../images/p275-01.png" loading="lazy" /><figcaption>Figure 47</figcaption></figure>
-<p><bdi dir="rtl">در مثال قبلی، به کاربر اطلاع داده می‌شد که یکی از فایل‌ها در دسترس نیست</bdi>. <bdi dir="rtl">با این وجود، در همه برنامه‌ها نیازی نیست تمام خطاهای رخ‌داده به کاربر نمایش داده شود</bdi>.</p>
-<p><bdi dir="rtl">در این حالت، خطا رخ می‌دهد، اما هیچ‌گونه پیامی به کاربر نمایش داده نمی‌شود و روند اجرای برنامه بدون وقفه ادامه می‌یابد</bdi>. <bdi dir="rtl">برای پیاده‌سازی این حالت، از ساختار</bdi> try-except <bdi dir="rtl">استفاده می‌شود</bdi>. <bdi dir="rtl">با این تفاوت که در بخش</bdi> except <bdi dir="rtl">به‌صورت صریح به مفسر پایتون دستور داده می‌شود هیچ عملی انجام ندهد</bdi>. <bdi dir="rtl">پس دستور</bdi> print <bdi dir="rtl">بعد از</bdi> except <bdi dir="rtl">را حذف کنید تاپیام خطا نمایش داده نشود و به جای آن دستور</bdi> pass <bdi dir="rtl">را اضافه کنید</bdi>.</p>
-<p><bdi dir="rtl">در زبان برنامه‌نویسی پایتون، دستور</bdi> pass <bdi dir="rtl">برای خالی نگه‌داشتن یک بلوک کد و انجام ندادن هیچ‌گونه عملی به کار می‌رود</bdi>. <bdi dir="rtl">اگر فایل وجود نداشته باشد، خطا رخ می‌دهد، اما هیچ پیامی نمایش داده نمی‌شود، برنامه متوقف نمی‌شود و اجرای برنامه ادامه پیدا می‌کند</bdi>.</p>
+<p>In the previous example, the user was told that one of the files was not available. However, in all programs there is no need to show every error that happened to the user.</p>
+<p>In this case the error happens, but no message is shown to the user and the running of the program continues without a pause. To implement this, the try-except structure is used. The difference is that in the except part the Python interpreter is explicitly told to do nothing. So remove the print statement after except so that the error message is not shown, and add the statement pass in its place.</p>
+<p>In the Python programming language, the statement pass is used to keep a block of code empty and do nothing. If the file does not exist, the error happens, but no message is shown, the program does not stop and its running continues.</p>
 <figure class="shot"><img alt="Figure 48" src="../images/p275-02.png" loading="lazy" /><figcaption>Figure 48</figcaption></figure>
 <aside class="callout activity"><p class="callout-label">Activity</p>
-<p><bdi dir="rtl">همان‌طور که در برنامه تقسیم عدد بر صفر دیدید با یک پیام خطا کاربر از خطای تقسیم بر صفر آگاه می‌شد</bdi>. <bdi dir="rtl">این برنامه را به نحوی تغییر دهید که هرگاه مخرج یک تقسیم صفر بود بدون توقف برنامه، پیامی هم نمایش داده نشود</bdi>.</p>
+<p>As you saw in the program dividing a number by zero, the user was informed of the divide-by-zero error with an error message. Change this program so that whenever the denominator of a division is zero, the program does not stop and no message is shown either.</p>
 </aside>
-<h3><bdi dir="rtl">ذخیره‌سازی داده‌ها</bdi></h3>
-<p><bdi dir="rtl">در بیشتربرنامه‌ها، مثل تنظیمات دلخواه کاربری برای یک بازی یا داده‌هایی برای نمایش نمودار، اطلاعاتی از کاربران دریافت می‌شود</bdi>. <bdi dir="rtl">صرف نظر از نوع آنها، اطلاعات وارد شده در ساختارهای داده‌ای مانند لیست‌ها و دیکشنری‌ها ذخیره می‌شوند</bdi>. <bdi dir="rtl">اما وقتی برنامه بسته می‌شود، این داده‌ها از بین می‌روند</bdi>. <bdi dir="rtl">برای حفظ اطلاعات برای دفعات بعد اجرای برنامه‌ها می‌توانید آنها را در فایل ذخیره کنید</bdi>. <bdi dir="rtl">یکی از ساده‌ترین روش‌ها برای این‌کار، استفاده از فایل‌های</bdi> JSON <bdi dir="rtl">است که کمک می‌کنند داده‌های پایتون به‌صورت متنی ذخیره و در اجرای بعدی برنامه دوباره خوانده‌شوند</bdi>. <bdi dir="rtl">این قالب مخصوص پایتون نیست و در زبان‌های برنامه‌نویسی دیگر نیز کاربرد دارد</bdi>. <bdi dir="rtl">در پایتون برای کار با</bdi> JSON <bdi dir="rtl">از ماژول</bdi> json <bdi dir="rtl">استفاده می‌شود</bdi>.</p>
+<h3>Storing data</h3>
+<p>In most programs, such as the user's chosen settings for a game or data for showing a chart, information is received from users. Whatever its type, the entered information is stored in data structures such as lists and dictionaries. But when the program is closed, this data is lost. To keep the information for the next runs of the programs, you can save it in a file. One of the simplest ways to do this is to use JSON files, which help Python data be stored as text and read again in the next run of the program. This format is not specific to Python and is used in other programming languages too. In Python the module json is used to work with JSON.</p>
 <figure class="shot"><img alt="Figure 49" src="../images/p275-03.png" loading="lazy" /><figcaption>Figure 49</figcaption></figure>
 <p class="page-mark">Page 270</p>
 
-<p><code>json.dump()</code> <bdi dir="rtl">داده‌ها را به قالب</bdi> JSON <bdi dir="rtl">تبدیل می‌کند و</bdi> <code>json.loads()</code> <bdi dir="rtl">داده‌های ذخیره شده را دوباره به ساختارهای پایتون برمی‌گرداند</bdi>.</p>
-<p><bdi dir="rtl">فایل‌های</bdi> JSON <bdi dir="rtl">به دلیل سادگی، خوانایی و کاربردگسترده یکی از روش‌های مهم ذخیره‌سازی داده‌ها در برنامه‌نویسی هستند</bdi>.</p>
-<h3><bdi dir="rtl">ذخیره یک لیست در فایل</bdi> JSON</h3>
-<p><strong><bdi dir="rtl">توضیح کد</bdi></strong>:</p>
-<p><strong><bdi dir="rtl">خط</bdi> 2ـ</strong> <bdi dir="rtl">ماژول</bdi> json <bdi dir="rtl">وارد برنامه شده‌است</bdi>.</p>
-<p><strong><bdi dir="rtl">خط</bdi> 3ـ</strong> <bdi dir="rtl">لیستی از برندهای تلفن همراه برای ذخیره‌سازی ایجاد شده است</bdi>.</p>
-<p><strong><bdi dir="rtl">خط</bdi> 5ـ</strong> <bdi dir="rtl">با استفاده از تابع</bdi> dump<bdi dir="rtl">، داده‌های مورد نظر به قالب</bdi> JSON <bdi dir="rtl">تبدیل شده‌است</bdi>. <bdi dir="rtl">خروجی این تابع یک رشته متنی است که نمایانگر داده‌ها به‌صورت</bdi> json <bdi dir="rtl">است</bdi></p>
+<p><code>json.dump()</code> turns the data into JSON format and <code>json.loads()</code> turns the stored data back into Python structures.</p>
+<p>Because of their simplicity, readability and wide use, JSON files are one of the important ways of storing data in programming.</p>
+<h3>Saving a list in a JSON file</h3>
+<p><strong>Explanation of the code</strong>:</p>
+<p><strong>Line 2</strong> - the json module is imported into the program.</p>
+<p><strong>Line 3</strong> - a list of mobile phone brands is created for storing.</p>
+<p><strong>Line 5</strong> - using the function dump, the wanted data is turned into JSON format. The output of this function is a text string that represents the data as json</p>
 <figure class="shot"><img alt="Figure 50" src="../images/p276-01.png" loading="lazy" /><figcaption>Figure 50</figcaption></figure>
-<p><strong><bdi dir="rtl">خط</bdi> 6ـ</strong> <bdi dir="rtl">این رشته متنی با استفاده از متد</bdi> write-text <bdi dir="rtl">داخل فایل ذخیره می‌شود</bdi>.</p>
-<p><bdi dir="rtl">این برنامه خروجی در صفحه نمایش ندارد، اما اگر فایل</bdi> <code>mobiles_brand.json</code> <bdi dir="rtl">را باز کنید خواهید دید که داده‌ها به شکلی ذخیره شده‌اند که بسیار شبیه به ساختار داده‌ها در پایتون است</bdi>.</p>
+<p><strong>Line 6</strong> - this text string is saved inside the file using the method write-text.</p>
+<p>This program has no output on the screen, but if you open the file <code>mobiles_brand.json</code> you will see that the data is stored in a form very similar to the structure of data in Python.</p>
 <figure class="shot"><img alt="Figure 51" src="../images/p276-02.png" loading="lazy" /><figcaption>Figure 51</figcaption></figure>
-<p><strong><bdi dir="rtl">خواندن داده‌ها از فایل</bdi> JSON</strong></p>
-<p><bdi dir="rtl">برای برگرداندن اطلاعات ذخیره شده در فایل</bdi> JSON <bdi dir="rtl">به حافظه، لازم است برنامه‌ای دیگر نوشت</bdi>.</p>
+<p><strong>Reading data from a JSON file</strong></p>
+<p>To bring the information stored in the JSON file back into memory, another program must be written.</p>
 <figure class="shot"><img alt="Figure 52" src="../images/p276-03.png" loading="lazy" /><figcaption>Figure 52</figcaption></figure>
 <p class="page-mark">Page 271</p>
 
-<p><strong><bdi dir="rtl">توضیح کد</bdi></strong>:</p>
-<p><strong><bdi dir="rtl">خط</bdi> 2ـ</strong> <bdi dir="rtl">ابتدا ماژول</bdi> json <bdi dir="rtl">وارد برنامه شده است</bdi>.</p>
-<p><strong><bdi dir="rtl">خط</bdi>3ـ</strong> <bdi dir="rtl">سپس محتوای فایل</bdi> JSON <bdi dir="rtl">را خوانده و به‌صورت یک رشته متنی ذخیره شده است</bdi>.</p>
-<p><strong><bdi dir="rtl">خط</bdi> 4ـ</strong> <bdi dir="rtl">از آنجا که فایل</bdi> JSON <bdi dir="rtl">در اصل یک فایل متنی با قالب مشخص است، با استفاده از متد</bdi> <code>read_text()</code> <bdi dir="rtl">خوانده شده است</bdi>.</p>
-<p><strong><bdi dir="rtl">خط</bdi> 5ـ</strong> <bdi dir="rtl">در مرحله بعد با استفاده از تابع</bdi> loads<bdi dir="rtl">، این رشته متنی به ساختار داده‌ای مناسب در پایتون تبدیل شده است</bdi>. <bdi dir="rtl">در این برنامه، داده‌ها دوباره به‌صورت یک لیست از اعداد در حافظه ذخیره می‌شوند</bdi>.</p>
-<p><bdi dir="rtl">پس از این مرحله، می‌توانید از داده‌ها مانند سایر لیست‌های پایتون استفاده کنید</bdi>. <bdi dir="rtl">به این ترتیب اطلاعاتی که قبلاً در فایل</bdi> JSON <bdi dir="rtl">ذخیره شده بودند، در اجرای بعدی برنامه دوباره قابل استفاده خواهند بود</bdi>.</p>
-<p><strong><bdi dir="rtl">مثال</bdi></strong>: <bdi dir="rtl">برنامه‌ای بنویسید که مشخصات فنی یک گوشی هوشمند</bdi> (<bdi dir="rtl">شامل برند، مدل، مقدار رم و وضعیت گارانتی</bdi>) <bdi dir="rtl">را در قالب یک دیکشنری تعریف کند</bdi>. <bdi dir="rtl">سپس این برنامه باید</bdi>:</p>
-<p><bdi dir="rtl">با استفاده از کتابخانه</bdi> json <bdi dir="rtl">و کلاس</bdi> Path <bdi dir="rtl">از کتابخانه</bdi> pathlib <bdi dir="rtl">این دیکشنری را در فایلی به‌نام</bdi> <code>mobile_specs.json</code> <bdi dir="rtl">ذخیره کند</bdi>.</p>
-<p><bdi dir="rtl">در مرحله بعد، فایل را باز کرده، محتوا را خوانده و فقط</bdi> «<bdi dir="rtl">مدل</bdi>» و «<bdi dir="rtl">مقدار رم</bdi>» <bdi dir="rtl">گوشی را در خروجی چاپ کند</bdi>.</p>
+<p><strong>Explanation of the code</strong>:</p>
+<p><strong>Line 2</strong> - first the json module is imported into the program.</p>
+<p><strong>Line 3</strong> - then the content of the JSON file is read and stored as a text string.</p>
+<p><strong>Line 4</strong> - since a JSON file is in essence a text file with a specific format, it is read using the method <code>read_text()</code>.</p>
+<p><strong>Line 5</strong> - in the next step, using the function loads, this text string is turned into a suitable data structure in Python. In this program, the data is stored again in memory as a list of numbers.</p>
+<p>After this step, you can use the data like other Python lists. In this way, the information that was stored earlier in the JSON file can be used again in the next run of the program.</p>
+<p><strong>Example</strong>: write a program that defines the technical specifications of a smartphone (including the brand, model, amount of RAM and warranty status) in the form of a dictionary. Then this program must:</p>
+<p>Using the json library and the class Path from the pathlib library, save this dictionary in a file named <code>mobile_specs.json</code>.</p>
+<p>In the next step, open the file, read the content and print only the "model" and the "amount of RAM" of the phone in the output.</p>
 <aside class="callout activity"><p class="callout-label">Activity</p>
-<p><bdi dir="rtl">خطوط کد برنامه را با کمک هنرآموز محترم خود توضیح دهید</bdi>.</p>
+<p>Explain the lines of the program's code with the help of your respected teacher.</p>
 <figure class="shot"><img alt="Book image" src="../images/p277-01.png" loading="lazy" /></figure>
 <figure class="shot"><img alt="Book image" src="../images/p277-02.png" loading="lazy" /></figure>
 </aside>
 <p class="page-mark">Page 272</p>
 
 <aside class="callout activity"><p class="callout-label">Activity</p>
-<p><bdi dir="rtl">در کد نوشته شده قرار است اطلاعات آب‌وهوای یک شهر را در فایل ذخیره و سپس آن را بازخوانی کند</bdi>. <bdi dir="rtl">بخش‌هایی از کد که با علامت</bdi> _________ <bdi dir="rtl">مشخص شده است را با دستورات صحیح پر کنید</bdi>.</p>
+<p>In the written code, the weather information of a city is to be saved in a file and then read back. Fill in the parts of the code marked with the sign _________ with the correct statements.</p>
 <figure class="shot"><img alt="Book image" src="../images/p278-01.png" loading="lazy" /></figure>
 </aside></article>
       <aside class="card extra">

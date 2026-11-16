@@ -1,10 +1,10 @@
 <!-- page 198 -->
 
-تعریف متغیرها می‌تواند به‌صورت خودکار نیز انجام شود. تعریف خودکار متغیر زمانی انجام می‌شود که یک متغیر مقداردهی شود.
+Defining variables can also be done automatically. Automatic variable definition happens when a variable is given a value.
 
 > **Example**
 >
-> در مثال زیر دو متغیر x و z به‌صورت خودکار تعریف شده‌اند:
+> In the following example the two variables x and z are defined automatically:
 >
 > ```
 > x = 10;
@@ -13,11 +13,11 @@
 
 > **Learn more**
 >
-> **ثابت‌ها (constants)**: ثابت‌ها (const) دارای مقدار ثابتی در طول اجرای برنامه هستند. ثابت‌ها یک‌بار تعریف و مقداردهی می‌شوند و بعد از آن امکان مقداردهی مجدد ندارند.
+> **Constants**: constants (const) have a fixed value during the running of the program. Constants are defined and given a value once and cannot be given a value again after that.
 
 > **Example**
 >
-> در مثال زیر، ثابت PI با مقدار 3.141592 تعریف شده است. تغییر مقدار PI در خط دوم و سوم باعث رخداد خطا می‌گردد.
+> In the following example the constant PI is defined with the value 3.141592. Changing the value of PI in the second and third lines causes an error.
 >
 > ```
 > const PI = 3.141592;
@@ -25,25 +25,25 @@
 > PI = PI + 10;
 > ```
 
-### اصول نام‌گذاری متغیرها
+### Principles of naming variables
 
-- نام متغیر می‌تواند حاوی حروف الفبای انگلیسی، اعداد، علامت $ و زیرخط (\_) باشد، اما در ابتدای نام متغیر نباید از اعداد استفاده شود.
+- The name of a variable can contain English letters, numbers, the $ sign and the underscore (\_), but numbers must not be used at the start of the variable name.
 
-- جاوا‌اسکریپت نسبت به کوچکی و بزرگی حروف حساس است، بنابراین اسامی price و Price و PRICE سه متغیر متفاوت هستند.
+- JavaScript is case-sensitive, so the names price, Price and PRICE are three different variables.
 
-- کلمات رزرو شدۀ جاوا‌اسکریپت (که معنای خاصی دارند)، نباید به‌عنوان نام متغیر استفاده شوند، مانند let و var، if، for و ...
+- JavaScript's reserved words (which have a special meaning) must not be used as variable names, such as let and var, if, for and so on.
 
-جاوا‌اسکریپت امکان تعریف متغیرها را در یک خط نیز فراهم می‌کند، اما در پایان هر تعریف متغیر، باید از علامت کاما برای جداسازی استفاده شود.
+JavaScript also makes it possible to define variables in one line, but at the end of each variable definition a comma must be used to separate them.
 
 ```
 let firstName = "Sara", lastName = "Jones", studentId = "1234567";
 ```
 
-مقداردهی به متغیرها توسط عملگر انتساب (`=`) انجام می‌شود. در صورتی‌که مقداردهی متغیر انجام نشود، مقدار آن تعریف نشده یا (Undefined) خواهد بود.
+Giving values to variables is done with the assignment operator (`=`). If a variable is not given a value, its value will be undefined (Undefined).
 
 > **Activity**
 >
-> مشخص کنید که تعریف متغیرهای زیر به‌درستی صورت گرفته است یا خیر.
+> Specify whether the definitions of the following variables are correct or not.
 >
 > ```
 > myVar = 2 ;           …...……..
@@ -54,58 +54,58 @@ let firstName = "Sara", lastName = "Jones", studentId = "1234567";
 
 <!-- page 199 -->
 
-### نمایش مقدار متغیرها و رشته‌ها
+### Showing the value of variables and strings
 
-برای نمایش مقدار یک متغیر در کنسول مرورگر از دستور console به شکل ۵ استفاده می‌شود:
+To show the value of a variable in the browser console, the console statement is used as in form 5:
 
 ![Figure 5](../images/p205-01.png)
 *Figure 5*
 
-با توجه به حساسیت جاوا‌اسکریپت نسبت به کوچکی و بزرگی حروف، نوشتن دستور `console.log(X)` باعث نمایش پیغام خطای زیر می‌شود:
+Considering that JavaScript is case-sensitive, writing the statement `console.log(X)` causes the following error message to be shown:
 
 ![Figure 6](../images/p205-02.png)
 *Figure 6*
 
-برای نمایش یک رشته متنی در کنسول یا صفحه وب، از علائم نقل قول در اطراف متن استفاده می‌شود، اما متغیرها نیازی به این علائم ندارند. در مثال زیر یک عبارت متنی به‌همراه مقدار متغیر x درون کنسول نمایش داده شده است.
+To show a text string in the console or on the web page, quotation marks are used around the text, but variables do not need these marks. In the following example a text phrase together with the value of the variable x is shown in the console.
 
 ![Figure 7](../images/p205-03.png)
 *Figure 7*
 
-در اینجا عملگر + برای چسباندن دو عبارت به یکدیگر استفاده شده است. بسته به نوع داده‌ها، این عملگر می‌تواند به عنوان عملگر محاسباتی جمع یا الحاق رشته‌ها عمل کند.
+Here the + operator is used to stick two phrases to each other. Depending on the type of the data, this operator can act as the arithmetic addition operator or as string concatenation.
 
 > **Workshop**
 >
-> **تعریف متغیر و نمایش آن در جاوا‌اسکریپت**
+> **Defining a variable and showing it in JavaScript**
 >
-> در ادامه اسکریپت فایل `workshop1.html` متغیرهای x و y را با مقادیر 5 و 10 تعریف کنید و سپس مقدار آنها را در کنسول مرورگر نمایش دهید:
+> In the rest of the script of the file `workshop1.html`, define the variables x and y with the values 5 and 10 and then show their values in the browser console:
 >
 > ![Book image](../images/p205-04.png)
 >
 > ![Book image](../images/p205-05.png)
 >
-> یک متغیر به‌صورت زیر ایجاد کنید و سپس مقدار آن را در کنسول نمایش دهید.
+> Create a variable as follows and then show its value in the console.
 >
 > ```
 > let test;
 > ```
 >
-> با توجه به اینکه متغیر test مقدار دهی نشده است، درصورتی که از دستور `console.log(test)` استفاده شود، پیغام ……………… ظاهر می‌شود.
+> Considering that the variable test has not been given a value, if the statement `console.log(test)` is used, the message ……………… appears.
 
 <!-- page 200 -->
 
-### انواع داده
+### Data types
 
-در یک زبان برنامه‌نویسی، متغیرها می‌توانند انواع داده‌های مختلفی را درون خود ذخیره کنند. برای ذخیره هر نوع داده میزان حافظه متفاوتی مورد نیاز است؛ انواع داده‌ها به زبان‌های برنامه‌نویسی امکان می‌دهند که از حافظه به‌صورت مؤثرتری استفاده کنند. همچنین برنامه‌نویسان می‌توانند داده‌ها را به شکلی منطقی‌تر و منسجم‌تر سازماندهی کنند. جدول ۱۵ انواع داده‌های قابل استفاده در جاوا‌اسکریپت را نمایش می‌دهد.
+In a programming language, variables can store different data types inside them. Storing each data type needs a different amount of memory; data types let programming languages use memory more effectively. Programmers can also organise data in a more logical and coherent way. Table 15 shows the data types that can be used in JavaScript.
 
-*Table 15: انواع داده در جاوا‌اسکریپت*
+*Table 15: Data types in JavaScript*
 
-![Table 15: انواع داده در جاوا‌اسکریپت](../images/p206-01.png)
+![Table 15: Data types in JavaScript](../images/p206-01.png)
 
 > **Workshop**
 >
-> **کار با انواع داده‌ها**
+> **Working with data types**
 >
-> 1. یک سند HTML با نام `workshop2.html` ایجاد کنید و در بخش `<body>` برچسب `<script>` را بنویسید. متغیرهای x، Family، d و names را مطابق مثال‌های جدول فوق درون تگ `<script>` تعریف کنید و سپس مقادیر آنها را مانند دستور زیر در کنسول نمایش دهید:
+> 1. Create an HTML document named `workshop2.html` and in the `<body>` section write the tag `<script>`. Define the variables x, Family, d and names inside the `<script>` tag according to the examples of the table above and then show their values in the console like the following statement:
 >
 > ```
 > console.log("The value of x is: "+ x);
@@ -115,21 +115,21 @@ let firstName = "Sara", lastName = "Jones", studentId = "1234567";
 
 > **Workshop (continued)**
 >
-> 2. عملگر **typeof** در جاوا‌اسکریپت نوع داده یک متغیر را مشخص می‌کند. این عملگر می‌تواند همراه با پرانتز یا بدون آن استفاده شود. در انتهای اسکریپت فایل `workshop2.html` این عملگر را مطابق مثال زیر برای بررسی نوع داده متغیرهای x، Family، d و names به‌کار ببرید و نتایج را در جای خالی بنویسید.
+> 2. The **typeof** operator in JavaScript specifies the data type of a variable. This operator can be used with or without parentheses. At the end of the script of the file `workshop2.html` use this operator, as in the following example, to check the data type of the variables x, Family, d and names, and write the results in the blank.
 >
 > ```
 > console.log("x: "+ typeof(x));         x: number   Family: …….   d: …….    names: ……
 > ```
 >
-> 3. رفتار مرورگر را در تفسیر کدهای زیر بررسی کنید و جای خالی را بر اساس نتیجه‌گیری خود تکمیل کنید. `let a = 10 + 20 + "Blue";`
+> 3. Check the behaviour of the browser in interpreting the following code and complete the blank based on your conclusion. `let a = 10 + 20 + "Blue";`
 >
 > ```
 > let b = "Blue" + 10 + 20;
 > ```
 >
-> در خط اول، عملوندهای 10 و 20 در ابتدای عبارت محاسباتی قرار گرفته‌اند، پس جاوا‌اسکریپت اعداد 10 و 20 را نوع داده number تلقی می‌کند، در نتیجه مقدار ........................ درون متغیر a ذخیره می‌شود. در خط دوم به علت قرار گرفتن رشته Blue در ابتدای عبارت محاسباتی، عملوندهای بعدی، از نوع داده .......................... تلقی می‌شوند و بنابراین مقدار .......................... درون متغیر b ذخیره می‌گردد.
+> In the first line, the operands 10 and 20 are at the start of the arithmetic expression, so JavaScript regards the numbers 10 and 20 as the data type number, and as a result the value ........................ is stored in the variable a. In the second line, because the string Blue is at the start of the arithmetic expression, the next operands are regarded as the data type .......................... and so the value .......................... is stored in the variable b.
 >
-> 4. نوع داده متغیر می‌تواند در طول برنامه تغییر نماید. در اسکریپت زیر متغیر x ابتدا به‌صورت تعریف‌نشده (Undefined) ایجاد شده است. نوع داده متغیر x در خط 2 با دریافت مقدار 10 به نوع ............................ و در خط 3 با دریافت مقدار sara1980 به نوع ....................... تغییر می‌کند.
+> 4. The data type of a variable can change during the program. In the following script, the variable x is first created as undefined (Undefined). The data type of the variable x changes in line 2 to the type ............................ when it receives the value 10, and in line 3 to the type ....................... when it receives the value sara1980.
 >
 > ```
 > 1  let x;
@@ -137,29 +137,29 @@ let firstName = "Sara", lastName = "Jones", studentId = "1234567";
 > 3  x = "sara1980";
 > ```
 
-### تبدیل نوع داده‌ها
+### Converting data types
 
-جاوا‌اسکریپت امکان تبدیل نوع داده متغیرها را به دو روش امکان‌پذیر می‌سازد: تبدیل ضمنی (Implicit) و صریح (Explicit). وقتی تبدیل نوع داده متغیر به‌صورت خودکار انجام شود، تبدیل ضمنی صورت گرفته است.
+JavaScript makes converting the data type of variables possible in two ways: implicit and explicit conversion. When the data type of a variable is converted automatically, an implicit conversion has happened.
 
 > **Example**
 >
-> مثال زیر نمونه‌ای از تبدیل نوع ضمنی را نمایش می‌دهد:
+> The following example shows a case of implicit type conversion:
 >
 > ![Book image](../images/p207-02.png)
 >
 > ![Book image](../images/p207-01.png)
 >
-> در خط اول، متغیر s از نوع عددی تعریف شده است. در خط چهارم نتیجه جمع متغیر w و رشته 100، عبارت 10100 است که درون متغیر s قرار می‌گیرد. در نتیجۀ نوع داده متغیر s به رشته تبدیل می‌شود. به‌کارگیری عملگر `typeof()` در خط 2 و 6 باعث نمایش نوع داده متغیر s می‌شود.
+> In the first line, the variable s is defined as numeric. In the fourth line, the result of adding the variable w and the string 100 is the phrase 10100, which is put in the variable s. As a result the data type of the variable s becomes string. Using the operator `typeof()` in lines 2 and 6 shows the data type of the variable s.
 
 <!-- page 202 -->
 
-تبدیل صریح نوع داده توسط توابع داخلی جاوا‌اسکریپت انجام می‌پذیرد. توابع مربوط به تبدیل داده شامل `parseInt()`، `parseFloat()`، `Number()`، `String()` و `Boolean()` است که نوع داده آرگومان ورودی را به نوع داده صحیح، اعشاری، عددی، رشته‌ای و منطقی تبدیل می‌کنند.
+Explicit conversion of the data type is done by JavaScript's built-in functions. The conversion functions include `parseInt()`, `parseFloat()`, `Number()`, `String()` and `Boolean()`, which convert the data type of the input argument to integer, decimal, numeric, string and logical types.
 
 > **Workshop**
 >
-> **کار با توابع تبدیل نوع**
+> **Working with the type conversion functions**
 >
-> متغیرهای زیر را در انتهای اسکریپت فایل `workshop2.html` ایجاد کنید.
+> Create the following variables at the end of the script of the file `workshop2.html`.
 >
 > ```
 > x = "15.25" , y = 123 , z = 1;
@@ -171,7 +171,7 @@ let firstName = "Sara", lastName = "Jones", studentId = "1234567";
 > 6 let bool = Boolean(z);               ……...     …………...
 > ```
 >
-> سپس مقدار و نوع داده متغیرهای ایجاد شده در خطوط 2 تا 7 را توسط تابع`typeof()` بررسی کنید و نتیجه را مانند مثال در جای خالی بنویسید. برای بررسی مقادیر و نوع متغیرها مانند الگوی زیر عمل کنید:
+> Then check the value and data type of the variables created in lines 2 to 7 with the function `typeof()` and write the result in the blank as in the example. To check the values and types of the variables, act as in the following pattern:
 >
 > ```
 > console.log(num1 +": "+ typeof(num1));
@@ -179,11 +179,11 @@ let firstName = "Sara", lastName = "Jones", studentId = "1234567";
 
 > **Note**
 >
-> علت عدم استفاده از کلمه کلیدی let در متغیرهای x، y، z و str این است که این متغیرها در کارگاه‌های قبلی ایجاد شده‌اند. بنابراین استفاده مجدد از کلمه let باعث ایجاد خطا می‌شود.
+> The reason for not using the keyword let for the variables x, y, z and str is that these variables were created in the earlier workshops. So using the keyword let again causes an error.
 
-### عملگرها (Operators)
+### Operators
 
 ![Figure 8](../images/p208-01.png)
 *Figure 8*
 
-در زبان‌های برنامه‌نویسی عملگرها برای انجام عملیات روی متغیرها و مقادیر به‌کار می‌روند مقادیری که یک عملگر روی آنها عمل می‌کند، **عملوند** (Operand) نامیده می‌شوند. در عبارت `z = x + y` علائم + و `=` **عملگر** هستند و حروف x، y و z عملوند محسوب می‌شوند. در این بخش به شرح عملگرهای جاوا‌اسکریپت پرداخته می‌شود.
+In programming languages, operators are used to do operations on variables and values; the values an operator works on are called **operands**. In the expression `z = x + y` the signs + and `=` are **operators** and the letters x, y and z are operands. In this section the JavaScript operators are described.

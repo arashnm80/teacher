@@ -1,6 +1,6 @@
 <!-- page 52 -->
 
-**دیکشنری (dictionary)** نوع داده dictionary شبیه دفترچه تلفن است که هر نام با یک شماره‌تلفن مرتبط است.
+**Dictionary**: the data type dictionary is like a phone book in which each name is linked to a phone number.
 
 ![Figure 104](../images/p058-01.png)
 *Figure 104*
@@ -75,7 +75,7 @@ To add a new member to a dictionary in Python, just give a value to a **new key*
 
 > **Activity**
 >
-> یک dictionary به نام product با کلیدهای name price، بسازید. قیمت محصول درون dictionary را تغییر دهید و سپس dictionary را چاپ کنید.
+> Create a dictionary named product with the keys name and price. Change the price of the product inside the dictionary and then print the dictionary.
 
 **Example**: build an empty dictionary named student. Then add name and grade to it from the input, and finally print the dictionary (Figure 111).
 

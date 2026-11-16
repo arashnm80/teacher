@@ -14,13 +14,13 @@ Last updated: 2026-11-16 (Monday).
    - The offline copy knows the latest online version. When the teacher updates the website, the offline copy shows an update notice and can update itself.
    - Deadlines stay decided by the server's clock (a result counts when it reaches the server before the deadline); the student is told this clearly.
    - Notes for the owner: students who already have the old zip must download the new one once; after that updates come from inside (the update notice, through شروع.bat). The offline files no longer contain the tutorials or hidden expected outputs: the tutorials arrive after the first sign-in (with internet) and stay on the device. A result counts for the score when it reaches the server before the deadline.
-2. [ ] **Lowest priority, do last: the whole website bilingual, Persian by default. (Owner, 2026-11-16: "do that".)** The lesson site is already bilingual. Worked in stages:
+2. [x] **Lowest priority, do last: the whole website bilingual, Persian by default. (Owner, 2026-11-16: "do that".)** The lesson site is already bilingual. Worked in stages:
    - [x] Stage 1: the playground interface (every button, message, result card, sign-in window with its own language switch, the progress window, the assistant panel, the countdown, the sync marks, the update notice, the series texts with English dates, the tutorials of the 13 topics). Checked with a browser test that no Persian is left in the interface in English (18 checks), plus the earlier suites.
    - [x] Stage 2: English texts for all 100 questions (title, topic, statement, hints) and their tutorials (steps, explanations, mistakes and the code comments; the code itself is checked to be the same as the Persian one). Files: `playground-authoring/en/`. Browser check: no Persian anywhere on a problem page, hint and tutorial in English (23 checks).
    - Note for the owner: in Persian, problem 95 is titled "کف و سقف با math" but asks for the square root, and problem 96 is titled "مساحت دایره" but asks for the distance of two points. The English titles say what is asked ("Square root with math", "Distance between two points"). The Persian titles are unchanged; say if you want them fixed too (a title change does not reset progress).
    - [x] Stage 3 (code and tests done, relay redeploy waits for the deploy step): the assistant answers in English when the page is English (English prompts, English errors; 21 relay tests).
    - [x] Stage 4: the teacher's panel (admin): its own language switch, every text in English and left-to-right (33 browser checks with the panel).
-   - [ ] Stage 5: book sections E1 to E5 (1174 paragraphs to translate).
+   - [x] Stage 5: the whole book in English: 1307 pieces translated (none left in Persian; four literal Persian examples inside code quotes stay as they are). Checked on pages of modules 3 and 4.
 
 ## Done
 

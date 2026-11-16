@@ -46,34 +46,34 @@
 <p>در <bdi dir="ltr">case A</bdi> دستور <bdi dir="ltr">break</bdi> را حذف کنید و خروجی برنامه را در مرورگر بررسی کنید. سپس دستور <bdi dir="ltr">break</bdi> را از مقابل <bdi dir="ltr">case</bdi>های بعدی حذف کنید و نتیجۀ آن را تحلیل نمایید.</p>
 </aside></article><article class="card lesson no-copy" lang="en" dir="ltr" data-lang-block="en" hidden><p class="page-mark">Page 211</p>
 
-<p><bdi dir="rtl">کلمه</bdi> Condition <bdi dir="rtl">به‌معنای شرط و کلمه</bdi> statement <bdi dir="rtl">به دستور یا دستوراتی اشاره دارد که به‌ازای برقرار شدن شرط اجرا می‌شوند</bdi>. <bdi dir="rtl">منظور از برقرار بودن شرط این است که مقدار عبارت</bdi> Condition <bdi dir="rtl">برابر</bdi> True <bdi dir="rtl">باشد</bdi>. <bdi dir="rtl">کلمه</bdi> else <bdi dir="rtl">به‌معنای</bdi> «<bdi dir="rtl">درغیراین‌صورت</bdi>» <bdi dir="rtl">است</bdi>. <bdi dir="rtl">محتوای</bdi> else <bdi dir="rtl">زمانی اجرا می‌شود که شرط</bdi> if <bdi dir="rtl">برقرار نباشد</bdi>. <bdi dir="rtl">یعنی مقدار عبارت</bdi> condition <bdi dir="rtl">برابر</bdi> False <bdi dir="rtl">باشد</bdi>.</p>
+<p>The word Condition means the condition and the word statement points to the statement or statements that run when the condition holds. The condition holding means that the value of the Condition expression is True. The word else means "otherwise". The content of else runs when the condition of the if does not hold, that is, the value of the condition expression is False.</p>
 <aside class="callout workshop"><p class="callout-label">Workshop</p>
-<p><strong><bdi dir="rtl">کار با ساختارهای شرطی</bdi> if</strong></p>
-<p><bdi dir="rtl">توسط ساختار شرطی</bdi> <strong>if</strong><bdi dir="rtl">، زوج یا فرد بودن عدد</bdi> n <bdi dir="rtl">را بررسی کنید</bdi>.</p>
-<p><bdi dir="rtl">بدین منظور یک فایل جدید با نام</bdi> <code>workshop6.html</code> <bdi dir="rtl">ایجاد کنید و اسکریپت زیر را درون آن بنویسید</bdi>: <bdi dir="rtl">فایل را ذخیره کنید و نتیجه را در کنسول مرور‌گر مشاهده نمایید</bdi>. <bdi dir="rtl">در این اسکریپت، باقی‌ماندۀ تقسیم عدد</bdi> n <bdi dir="rtl">بر</bdi> 2 <bdi dir="rtl">درون متغیر</bdi> r <bdi dir="rtl">ذخیره می‌شود</bdi>. <bdi dir="rtl">چنانچه مقدار باقی‌مانده صفر باشد</bdi> (<bdi dir="rtl">یعنی</bdi> n <bdi dir="rtl">بر</bdi> 2 <bdi dir="rtl">بخش‌پذیر است</bdi>)<bdi dir="rtl">، عبارت</bdi> "Even number" <bdi dir="rtl">و در غیراین‌صورت عبارت</bdi> "Odd number" <bdi dir="rtl">روی صفحه ظاهر می‌شود</bdi>. <bdi dir="rtl">کلمه</bdi> Even <bdi dir="rtl">به‌معنای زوج و کلمه</bdi> Odd <bdi dir="rtl">به معنای فرد است</bdi>.</p>
+<p><strong>Working with the if conditional structures</strong></p>
+<p>With the <strong>if</strong> conditional structure, check whether the number n is even or odd.</p>
+<p>For this purpose create a new file named <code>workshop6.html</code> and write the following script in it: save the file and see the result in the browser console. In this script, the remainder of dividing the number n by 2 is stored in the variable r. If the value of the remainder is zero (that is, n is divisible by 2), the phrase "Even number" appears on the page, and otherwise the phrase "Odd number". The word Even means even (zugh) and the word Odd means odd.</p>
 <figure class="shot"><img alt="Book image" src="../images/p217-03.png" loading="lazy" /></figure>
-<p><bdi dir="rtl">اسکریپت تشخیص زوج یا فرد بودن یک عدد می‌تواند توسط ساختار</bdi> <strong>if-else</strong> <bdi dir="rtl">نیز نوشته شود</bdi>. <bdi dir="rtl">اسکریپت قبل را طبق شکل زیر تغییر دهید و نتیجه را در کنسول مرور‌گر بررسی کنید</bdi>.</p>
+<p>The script for finding out whether a number is even or odd can also be written with the <strong>if-else</strong> structure. Change the previous script as in the following figure and check the result in the browser console.</p>
 <figure class="shot"><img alt="Book image" src="../images/p217-01.png" loading="lazy" /></figure>
 <figure class="shot"><img alt="Book image" src="../images/p217-02.png" loading="lazy" /></figure>
 </aside>
 <figure class="shot"><img alt="Figure 10" src="../images/p217-04.png" loading="lazy" /><figcaption>Figure 10</figcaption></figure>
-<p><strong><bdi dir="rtl">ساختار</bdi> else-if</strong>: <bdi dir="rtl">امکان بررسی چند شرط را به‌صورت پی‌در‌پی فراهم می‌کند</bdi>. <bdi dir="rtl">در این مرحله رتبه یک دانش‌آموز بر اساس نمره کسب‌شده مشخص می‌شود</bdi>. <bdi dir="rtl">در انتهای اسکریپت قبل، کد روبه‌رو را بنویسید</bdi>.</p>
-<p><bdi dir="rtl">در این اسکریپت، متغیر</bdi> score <bdi dir="rtl">با مقدار</bdi> 70 <bdi dir="rtl">برای نگهداری نمره دانش‌آموز تعریف شده است</bdi>. <bdi dir="rtl">ابتدا شرط</bdi> <code>score&gt;=90</code> <bdi dir="rtl">و سپس شرط</bdi> <code>score&gt;=80</code> <bdi dir="rtl">بررسی می‌شود</bdi>. <bdi dir="rtl">با توجه به اینکه مقدار هر دو شرط نادرست است، بنابراین دستور</bdi> <code>console.log()</code> <bdi dir="rtl">در خطوط</bdi> 3 و 5 <bdi dir="rtl">اجرا نمی‌شود</bdi>. <bdi dir="rtl">سپس شرط</bdi> <code>score&gt;=70</code> <bdi dir="rtl">بررسی می‌شود</bdi>. <bdi dir="rtl">با توجه به برقرار بودن شرط، دستور شماره</bdi> 7 <bdi dir="rtl">اجرا شده و عبارت</bdi> Grade: C <bdi dir="rtl">روی صفحه چاپ می‌شود</bdi>. <bdi dir="rtl">بعد از اجرای دستور</bdi> 7 <bdi dir="rtl">شرط‌های بعدی بررسی نمی‌شود و کنترل برنامه به خط</bdi> 13 <bdi dir="rtl">منتقل می‌شود</bdi>.</p>
+<p><strong>The else-if structure</strong>: makes it possible to check several conditions one after another. In this step the grade of a student is decided based on the score obtained. At the end of the previous script, write the code opposite.</p>
+<p>In this script, the variable score is defined with the value 70 to hold the student's score. First the condition <code>score&gt;=90</code> and then the condition <code>score&gt;=80</code> are checked. Since both conditions are false, the <code>console.log()</code> statements in lines 3 and 5 do not run. Then the condition <code>score&gt;=70</code> is checked. Since this condition holds, statement number 7 runs and the phrase Grade: C is printed on the page. After statement 7 runs, the next conditions are not checked and the control of the program moves to line 13.</p>
 <p class="page-mark">Page 212</p>
 
 <aside class="callout more"><p class="callout-label">Learn more</p>
-<p><strong><bdi dir="rtl">ساختار</bdi> Switch</strong></p>
-<p><bdi dir="rtl">ساختار</bdi> switch <bdi dir="rtl">برای انتخاب از بین چندین بلوک کد، بر اساس مقدار یک متغیر به‌کار می‌رود</bdi>. <bdi dir="rtl">درصورتی‌که شرایط مسئله فقط به مقایسه یک متغیر با مقادیر مشخص محدود شود، می‌توان از ساختار</bdi> switch <bdi dir="rtl">به‌جای</bdi> else-if<bdi dir="rtl">های متعدد استفاده نمود</bdi>.</p>
+<p><strong>The Switch structure</strong></p>
+<p>The switch structure is used to choose among several blocks of code, based on the value of one variable. If the conditions of the problem are limited only to comparing one variable with certain values, the switch structure can be used instead of several else-ifs.</p>
 <p><strong>Workshop</strong></p>
-<p><strong><bdi dir="rtl">استفاده از ساختار شرطی</bdi> switch</strong></p>
+<p><strong>Using the switch conditional structure</strong></p>
 <figure class="shot"><img alt="Book image" src="../images/p218-01.png" loading="lazy" /></figure>
-<p><bdi dir="rtl">اسکریپتی بنویسید که رتبۀ یک دانش‌آموز را از متغیر</bdi> grade <bdi dir="rtl">دریافت کند و بر اساس مقدار رتبه، پیغام مناسبی را برای کاربر نمایش دهد</bdi>.</p>
-<p><bdi dir="rtl">بدین منظور اسکریپت موجود در فایل</bdi> <code>workshop6.html</code> <bdi dir="rtl">را درون علائم کامنت قرار دهید و در ادامه، کد روبه‌رو را برای بررسی رتبه بنویسید</bdi>.</p>
-<p><bdi dir="rtl">در این مثال ساختار شرطی</bdi> switch <bdi dir="rtl">مقدار متغیر</bdi> grade <bdi dir="rtl">را توسط</bdi> case<bdi dir="rtl">های مختلف بررسی می‌کند، به محض اینکه مقدار مقابل</bdi> case <bdi dir="rtl">با مقدار متغیر</bdi> grade <bdi dir="rtl">یکسان شود، دستور بعد از علامت</bdi>: <bdi dir="rtl">اجرا شده و سپس خروج از ساختار</bdi> switch <bdi dir="rtl">توسط دستور</bdi> break <bdi dir="rtl">انجام می‌شود</bdi>. <bdi dir="rtl">اگر مقدار متغیر</bdi> grade <bdi dir="rtl">با هیچ یک از مقادیر نوشته شده در مقابل</bdi> case<bdi dir="rtl">ها یکسان نباشد، دستور مربوط به حالت</bdi> default <bdi dir="rtl">اجرا می‌گردد</bdi>.</p>
+<p>Write a script that receives the grade of a student from the variable grade and, based on the value of the grade, shows a suitable message to the user.</p>
+<p>For this purpose, put the script in the file <code>workshop6.html</code> inside comment signs and then write the code opposite to check the grade.</p>
+<p>In this example the switch conditional structure checks the value of the variable grade with different cases; as soon as the value opposite a case is the same as the value of the variable grade, the statement after the : sign runs and then the exit from the switch structure is done by the break statement. If the value of the variable grade is not the same as any of the values written opposite the cases, the statement for the default case runs.</p>
 <p><strong>Note</strong></p>
-<p><bdi dir="rtl">اگر شرط یک</bdi> case <bdi dir="rtl">برقرار شود ولی دستور</bdi> break <bdi dir="rtl">در آن موجود نباشد،</bdi> case <bdi dir="rtl">بعدی هم توسط برنامه بررسی می‌شود</bdi>.</p>
+<p>If the condition of a case holds but the break statement is not in it, the next case is checked by the program too.</p>
 <p><strong>Activity</strong></p>
-<p><bdi dir="rtl">در</bdi> case A <bdi dir="rtl">دستور</bdi> break <bdi dir="rtl">را حذف کنید و خروجی برنامه را در مرورگر بررسی کنید</bdi>. <bdi dir="rtl">سپس دستور</bdi> break <bdi dir="rtl">را از مقابل</bdi> case<bdi dir="rtl">های بعدی حذف کنید و نتیجۀ آن را تحلیل نمایید</bdi>.</p>
+<p>Remove the break statement in case A and check the output of the program in the browser. Then remove the break statement from opposite the next cases and analyse the result.</p>
 </aside></article>
       <aside class="card extra">
         <h2 data-fa="تمرین این بخش" data-en="Exercises for this section">تمرین این بخش</h2>

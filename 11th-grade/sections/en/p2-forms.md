@@ -29,7 +29,7 @@ The attributes of the form element are:
 
 **action**: sets the address (URL) on the server to which the form's data is sent for processing.
 
-**method**: روش ارسال داده‌های فرم را به سرور مشخص می‌کند. این ویژگی دارای دو مقدار get و post است. در روش get داده‌های فرم به عنوان پارامترهای URL به سرور ارسال می‌شوند. این روش برای ارسال داده‌های حساس کاربر مناسب نیست. در روش post اطلاعات فرم به‌صورت پنهانی به سرور ارسال می‌شوند، این روش برای ارسال داده‌های حساس مناسب است. درجدول صفحۀ بعد مقایسه دو روش ارسال اطلاعات به در فرم‌ها را مشاهده کنید (جدول 5).
+**method**: specifies the way the form data is sent to the server. This attribute has two values, get and post. In the get method the form data is sent to the server as URL parameters. This method is not suitable for sending sensitive user data. In the post method the form information is sent to the server in a hidden way; this method is suitable for sending sensitive data. In the table on the next page, see a comparison of the two ways of sending information in forms (Table 5).
 
 <!-- page 107 -->
 
@@ -64,7 +64,7 @@ The attributes of the form element are:
 
 A form holds a set of elements for getting different information from users, shown in Table 6:
 
-*Table 6: عناصر فرم (تگ‌هایی که در عنصر فرم مورد استفاده قرار می‌گیرند) و کاربرد آنها*
+*Table 6: Form elements (the tags used in the form element) and their uses*
 
 | Form element | Use and general form of the element |
 | --- | --- |

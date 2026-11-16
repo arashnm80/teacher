@@ -2,14 +2,14 @@
 
 ![Book image](../images/p281-01.png)
 
-تا حالا فکر کرده‌اید سایت‌هایی مثل اینستاگرام، دیوار یا کافه‌بازار چطور ساخته شده‌اند؟
+Have you ever thought about how sites like Instagram, Divar or Cafe Bazaar are built?
 
-وقتی وارد یک سایت می‌شوید و اطلاعاتی مثل وضعیت آب‌وهوا، پست‌ها، پیام‌ها یا قیمت‌ها را می‌بینید، پشت‌صحنۀ این سایت‌ها چه اتفاقی می‌افتد؟
+When you enter a site and see information such as the weather, posts, messages or prices, what happens behind the scenes of these sites?
 
-در پودمان‌های قبل، شما با مفهوم برنامه‌نویسی آشنا شده‌اید و کدهایی نوشته‌اید که روی رایانه خودتان اجرا می‌شوند.
+In the earlier modules, you got to know the concept of programming and wrote code that runs on your own computer.
 
-اما در دنیای واقعی، برنامه‌نویسی فقط به اجرای برنامه روی یک سیستم محدود نمی‌شود.
+But in the real world, programming is not limited to running a program on one system.
 
-وب‌سایت‌ها، فروشگاه‌های اینترنتی، شبکه‌های اجتماعی، سامانه‌های آموزشی و حتی بسیاری از اپلیکیشن‌های تلفن همراه، همگی به یک بخش بسیار مهم به‌نام backend متصل هستند. منظور از backend برنامه‌نویسی سمت سرور است جایی که منطق اصلی برنامه، پردازش داده‌ها، ارتباط با پایگاه‌داده و مدیریت کاربران انجام می‌شود.
+Websites, online shops, social networks, educational systems and even many mobile applications are all connected to a very important part called the backend. By backend we mean server-side programming, where the main logic of the program, the processing of data, the connection with the database and the management of users are done.
 
-در این پودمان با ابزاری قدرتمند با نام جنگو (Django) آشنا می‌شوید.
+In this module you get to know a powerful tool named Django.

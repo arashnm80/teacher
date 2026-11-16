@@ -4,9 +4,9 @@
 >
 > Apply the text formatting properties to the elements of the file `test.html` and see the result in the browser.
 
-## طراحی ظاهر عناصر (رنگ‌ها، پس زمینه‌ها، شفافیت و خط دور)
+## Designing the look of elements (colours, backgrounds, transparency and borders)
 
-CSS دارای ویژگی‌های مختلفی در زمینه تنظیم ظاهر عناصر است. این ویژگی‌ها برای تعیین رنگ متن، رنگ زمینه، تصویر پس‌زمینه، کنترل تصویر پس‌زمینه، شفافیت و خط دور عناصر به‌کار می‌روند. در ادامه به برخی از این ویژگی‌ها اشاره می‌شود.
+CSS has various properties for adjusting the look of elements. These properties are used to set the text colour, the background colour, the background image, control of the background image, the transparency and the border of elements. Some of these properties are mentioned below.
 
 **color and background-color**: set the text color and background color of elements. For both you can use a color name, a hexadecimal color code, or an RGB code.
 
@@ -56,7 +56,7 @@ border-radius:10px;
 
 > **Workshop**
 >
-> **طراحی ظاهر عناصر (رنگ‌ها، پس‌زمینه‌ها، شفافیت و خط دور)**
+> **Designing the look of elements (colours, backgrounds, transparency and borders)**
 >
 > Write the HTML code below in the file `test.html` and see the result in the browser. Then add the styles step by step to understand the effect of each one on the page's elements.
 >
@@ -76,7 +76,7 @@ border-radius:10px;
 
 The element or set of elements a CSS style is written for is called a selector. CSS has several kinds of selectors, including simple, combinator, pseudo-class, pseudo-element, and attribute selectors, which this part covers.
 
-### انتخاب‌گرهای ساده (Simple)
+### Simple selectors
 
 These selectors use tag names, IDs, classes, and the \* sign to select elements. The kinds of simple selectors are listed in Table 8:
 
@@ -115,7 +115,7 @@ These selectors use tag names, IDs, classes, and the \* sign to select elements.
 
 ![Book image](../images/p131-03.png)
 
-### انتخاب‌گر ترکیبی(Combinator)
+### Combinator selectors
 
 Combinator selectors in CSS define a structural and positional relationship between two or more selectors, such as the child selector with the `>` sign and the descendant selector with a space. Elements written nested inside each other have a parent–child relationship. For example, li is a child of ul, so to select the li elements you write ul li or `ul > li`. Using the `>` sign limits the effect to the direct children of an element.
 
@@ -127,7 +127,7 @@ Combinator selectors in CSS define a structural and positional relationship betw
 >
 > ![Book image](../images/p132-01.png)
 
-### انتخاب‌گرهای شبه‌کلاس (Pseudo-class Selectors)
+### Pseudo-class selectors
 
 Pseudo-class selectors let you style elements based on their state, position, or dynamic properties. Some of them become active depending on what the user does. Pseudo-classes are written with a : sign after the element name. The pseudo-class selectors are:
 
@@ -145,13 +145,13 @@ Pseudo-class selectors let you style elements based on their state, position, or
 
 <!-- page 127 -->
 
-### انتخاب‌گر ویژگی (Attribute selector)
+### Attribute selector
 
 An attribute selector selects elements by their attributes. For example, to select the text elements of a form the selector `input[type="text"]` is used, and to select elements that have an href attribute the selector \[href\] is used.
 
 > **Workshop**
 >
-> **کار با انواع انتخاب‌گرهای CSS (طراحی منو)**
+> **Working with the types of CSS selectors (designing a menu)**
 >
 > Create a file named `index.html` and write the HTML code below in it. Save the file and see the result in the browser. Then add the element styles to the head part step by step and check the result of each style.
 >

@@ -76,65 +76,65 @@
 <p>اگر هیچ شهری در جدول <bdi dir="ltr">City</bdi> وجود نداشته باشد یا همه شهرها حذف شده باشند، در صفحه اصلی سایت خطایی همانند شکل 75 مشاهده خواهد شد.</p>
 <figure class="shot"><img alt="شکل ۷۵: خطا در صورت خالی بودن جدول شهرها" src="../images/p331-01.png" loading="lazy" /><figcaption>شکل ۷۵: خطا در صورت خالی بودن جدول شهرها</figcaption></figure></article><article class="card lesson no-copy" lang="en" dir="ltr" data-lang-block="en" hidden><p class="page-mark">Page 320</p>
 
-<p><strong><bdi dir="rtl">مرحله سوم</bdi></strong>: <bdi dir="rtl">در فایل</bdi> <code>views.py</code> <bdi dir="rtl">تابع</bdi> <code>add_city_view</code> <bdi dir="rtl">را همانند شکل</bdi> 66 <bdi dir="rtl">اضافه کنید</bdi>.</p>
-<figure class="shot"><img alt="Figure 66: ایجاد view جهت افزودن شهر" src="../images/p326-01.png" loading="lazy" /><figcaption>Figure 66: <bdi dir="rtl">ایجاد</bdi> view <bdi dir="rtl">جهت افزودن شهر</bdi></figcaption></figure>
-<p><strong><bdi dir="rtl">توضیحات کدها</bdi></strong>:</p>
-<p><strong><bdi dir="rtl">خط</bdi> 1</strong>: <bdi dir="rtl">متد</bdi> redirect <bdi dir="rtl">درون این فایل</bdi> import <bdi dir="rtl">شده است</bdi>.</p>
-<p><strong><bdi dir="rtl">خط</bdi> 4</strong>: <bdi dir="rtl">کلاس</bdi> CityForm <bdi dir="rtl">از فایل</bdi> <code>forms.py</code> <bdi dir="rtl">درون این فایل</bdi> import <bdi dir="rtl">شده است</bdi>.</p>
-<p><strong><bdi dir="rtl">خط</bdi> 33</strong>: <bdi dir="rtl">اگر کاربر در صفحه</bdi> «<bdi dir="rtl">اضافه‌کردن شهر</bdi>»<bdi dir="rtl">، اطلاعات فرم را وارد کرده و دکمه</bdi> «<bdi dir="rtl">ذخیره شهر جدید</bdi>» <bdi dir="rtl">را کلیک کند، یک</bdi> request <bdi dir="rtl">از نوع</bdi> post <bdi dir="rtl">برای</bdi> <code>add_city_view</code> <bdi dir="rtl">ارسال می‌شود، در این خط نوع</bdi> request <bdi dir="rtl">با</bdi> if <bdi dir="rtl">بررسی شده است</bdi>.</p>
-<p><strong><bdi dir="rtl">خط</bdi> 34</strong>: <bdi dir="rtl">یک فرم از</bdi> CityForm <bdi dir="rtl">براساس نوع درخواست ارسال‌شدۀ کاربر ایجاد و در متغیر</bdi> form <bdi dir="rtl">ذخیره شده است تا به کمک آن اطلاعاتی که کاربر به‌وسیله آن فرم ارسال کرده است، ذخیره شود</bdi>.</p>
-<p><strong><bdi dir="rtl">خط</bdi> 35</strong>: <bdi dir="rtl">تابع</bdi> <code>is_valid</code> <bdi dir="rtl">فیلدهای وارد شده کاربر را بررسی می‌کند</bdi>. <bdi dir="rtl">در</bdi> request <bdi dir="rtl">ارسال کاربر، باید فیلدهای اجباری مقدار گرفته باشند و همچنین نوع فیلدها صحیح باشد</bdi>.</p>
-<p><strong><bdi dir="rtl">خط</bdi> 36</strong>: <bdi dir="rtl">در صورت معتبر بودن درخواست، اطلاعات در جدول</bdi> city <bdi dir="rtl">ذخیره خواهد شد</bdi>.</p>
-<p><strong><bdi dir="rtl">خط</bdi> 37</strong>: <bdi dir="rtl">پس از ذخیره موفق اطلاعات شهر، کاربر به صفحه لیست شهرها منتقل خواهد شد</bdi>.</p>
-<p><strong><bdi dir="rtl">خط</bdi> 39</strong>: <bdi dir="rtl">وقتی کاربر آدرس این صفحه را در مرورگر وارد می‌کند، یک درخواست از نوع</bdi> GET <bdi dir="rtl">اتفاق افتاده است، در این حالت، نوع</bdi> request <bdi dir="rtl">چیزی غیر از</bdi> POST <bdi dir="rtl">است، پس یک فرم جدید از</bdi> CityForm <bdi dir="rtl">ایجاد و در متغیر</bdi> form <bdi dir="rtl">ذخیره شده است تا فرم افزودن شهر به کاربر نمایش داده شود</bdi>.</p>
+<p><strong>Third step</strong>: in the file <code>views.py</code> add the function <code>add_city_view</code> as in Figure 66.</p>
+<figure class="shot"><img alt="Figure 66: Creating a view to add a city" src="../images/p326-01.png" loading="lazy" /><figcaption>Figure 66: Creating a view to add a city</figcaption></figure>
+<p><strong>Explanation of the code</strong>:</p>
+<p><strong>Line 1</strong>: the method redirect is imported in this file.</p>
+<p><strong>Line 4</strong>: the class CityForm is imported from the file <code>forms.py</code> in this file.</p>
+<p><strong>Line 33</strong>: if the user, on the "Add city" page, enters the form's information and clicks the "Save new city" button, a request of the post type is sent to <code>add_city_view</code>; in this line the type of the request is checked with if.</p>
+<p><strong>Line 34</strong>: a form is created from CityForm based on the type of the user's sent request and stored in the variable form so that, with its help, the information the user has sent with that form is saved.</p>
+<p><strong>Line 35</strong>: the function <code>is_valid</code> checks the fields entered by the user. In the user's sent request, the compulsory fields must have received values and the types of the fields must be correct.</p>
+<p><strong>Line 36</strong>: if the request is valid, the information will be saved in the table city.</p>
+<p><strong>Line 37</strong>: after the city's information is saved successfully, the user will be taken to the page of the list of cities.</p>
+<p><strong>Line 39</strong>: when the user enters the address of this page in the browser, a request of the GET type has happened; in this case the type of the request is something other than POST, so a new form is created from CityForm and stored in the variable form so that the form for adding a city is shown to the user.</p>
 <p class="page-mark">Page 321</p>
 
-<p><strong><bdi dir="rtl">خط</bdi> 41</strong>: <bdi dir="rtl">فرم ساخته شده، در دیکشنری</bdi> context <bdi dir="rtl">قرار گرفته و در خط بعد به</bdi> <code>add_city.html</code> <bdi dir="rtl">ارسال شده است</bdi>.</p>
-<p><strong><bdi dir="rtl">مرحله چهارم</bdi></strong>: <bdi dir="rtl">در فایل</bdi> <code>urls.py</code> <bdi dir="rtl">مربوط به</bdi> weather app <bdi dir="rtl">یک</bdi> path <bdi dir="rtl">جدید همانند شکل</bdi> 67 <bdi dir="rtl">اضافه کنید</bdi>.</p>
-<figure class="shot"><img alt="Figure 67: اضافه‌کردن path جدید برای افزودن شهر" src="../images/p327-01.png" loading="lazy" /><figcaption>Figure 67: <bdi dir="rtl">اضافه‌کردن</bdi> path <bdi dir="rtl">جدید برای افزودن شهر</bdi></figcaption></figure>
-<p><strong><bdi dir="rtl">توضیحات کدها</bdi></strong>:</p>
-<p><bdi dir="rtl">یک</bdi> path <bdi dir="rtl">جدید جهت افزودن شهر اضافه شده است</bdi>.</p>
-<p><strong><bdi dir="rtl">مرحله پنجم</bdi></strong>: <bdi dir="rtl">در فایل</bdi> <code>show_temp.html</code> <bdi dir="rtl">یک لینک برای افزودن شهر، در خط</bdi> 10 <bdi dir="rtl">همانند شکل</bdi> 68 <bdi dir="rtl">اضافه کنید</bdi>.</p>
-<figure class="shot"><img alt="Figure 68: ایجاد لینک به صفحه افزودن شهر" src="../images/p327-02.png" loading="lazy" /><figcaption>Figure 68: <bdi dir="rtl">ایجاد لینک به صفحه افزودن شهر</bdi></figcaption></figure>
+<p><strong>Line 41</strong>: the form that was made is put in the dictionary context and in the next line is sent to <code>add_city.html</code>.</p>
+<p><strong>Fourth step</strong>: in the file <code>urls.py</code> of the weather app add a new path as in Figure 67.</p>
+<figure class="shot"><img alt="Figure 67: Adding a new path for adding a city" src="../images/p327-01.png" loading="lazy" /><figcaption>Figure 67: Adding a new path for adding a city</figcaption></figure>
+<p><strong>Explanation of the code</strong>:</p>
+<p>A new path for adding a city is added.</p>
+<p><strong>Fifth step</strong>: in the file <code>show_temp.html</code> add a link for adding a city, in line 10 as in Figure 68.</p>
+<figure class="shot"><img alt="Figure 68: Creating a link to the add city page" src="../images/p327-02.png" loading="lazy" /><figcaption>Figure 68: Creating a link to the add city page</figcaption></figure>
 <p class="page-mark">Page 322</p>
 
-<p><bdi dir="rtl">اکنون همه فایل‌ها را ذخیره و صفحه اصلی سایت را</bdi> refresh <bdi dir="rtl">کنید</bdi>.</p>
-<p><bdi dir="rtl">با دکمه</bdi> [<bdi dir="rtl">ورود به سایت</bdi>] login <bdi dir="rtl">کنید</bdi>. <bdi dir="rtl">لینک افزودن شهر برای شما نمایش داده خواهد شد</bdi> (<bdi dir="rtl">شکل</bdi> 69).</p>
-<figure class="shot"><img alt="Figure 69: نمایش لینک پس از login کاربر" src="../images/p328-01.png" loading="lazy" /><figcaption>Figure 69: <bdi dir="rtl">نمایش لینک پس از</bdi> login <bdi dir="rtl">کاربر</bdi></figcaption></figure>
-<p><bdi dir="rtl">بر روی لینک</bdi> «<bdi dir="rtl">افزودن شهر</bdi>» <bdi dir="rtl">کلیک کنید، سپس همانند شکل</bdi> 70<bdi dir="rtl">، اطلاعات شهر موردنظر خود را وارد و دکمه ذخیره شهر جدید را کلیک کنید</bdi>. <bdi dir="rtl">در صورت ذخیره موفق اِین فرم، کاربر به صفحه لیست شهر‌ها منتقل و شهر اضافه شده به انتهای لیست افزوده خواهد شد</bdi>.</p>
-<figure class="shot"><img alt="Figure 70: فرم اضافه‌کردن شهر جدید" src="../images/p328-02.png" loading="lazy" /><figcaption>Figure 70: <bdi dir="rtl">فرم اضافه‌کردن شهر جدید</bdi></figcaption></figure>
-<h3><bdi dir="rtl">حذف شهر با کاربر عضو سایت</bdi></h3>
-<p><bdi dir="rtl">در این پروژه می‌توانید امکان حذف شهرها را به کاربر عضو سایت بدهید، این کار را در سه مرحله می‌توانید انجام دهید</bdi>.</p>
+<p>Now save all the files and refresh the main page of the site.</p>
+<p>Log in with the [Sign in] button. The link for adding a city will be shown to you (Figure 69).</p>
+<figure class="shot"><img alt="Figure 69: Showing the link after the user's login" src="../images/p328-01.png" loading="lazy" /><figcaption>Figure 69: Showing the link after the user's login</figcaption></figure>
+<p>Click on the link "Add city", then, as in Figure 70, enter the information of the city you want and click the button Save new city. If this form is saved successfully, the user is taken to the page of the list of cities and the added city is added to the end of the list.</p>
+<figure class="shot"><img alt="Figure 70: The form for adding a new city" src="../images/p328-02.png" loading="lazy" /><figcaption>Figure 70: The form for adding a new city</figcaption></figure>
+<h3>Deleting a city with a member user of the site</h3>
+<p>In this project you can give the member user of the site the ability to delete cities; you can do this in three steps.</p>
 <p class="page-mark">Page 323</p>
 
-<p><strong><bdi dir="rtl">مرحله اول</bdi></strong>: <bdi dir="rtl">یک</bdi> view <bdi dir="rtl">جدید با نام</bdi> <code>delete_city_view</code> <bdi dir="rtl">در</bdi> <code>views.py</code> <bdi dir="rtl">همانند شکل</bdi> 71 <bdi dir="rtl">ایجاد کنید</bdi>.</p>
-<figure class="shot"><img alt="Figure 71: ساخت view جهت حذف شهرها" src="../images/p329-01.png" loading="lazy" /><figcaption>Figure 71: <bdi dir="rtl">ساخت</bdi> view <bdi dir="rtl">جهت حذف شهرها</bdi></figcaption></figure>
-<p><strong><bdi dir="rtl">توضیحات کدها</bdi></strong>:</p>
-<p><strong><bdi dir="rtl">خط</bdi> 49</strong>: <bdi dir="rtl">دستور</bdi> delete <bdi dir="rtl">از</bdi> ORM <bdi dir="rtl">جنگو استفاده می‌کند و شهر انتخاب شده را از پایگاه‌داده حذف می‌کند</bdi>.</p>
-<p><strong><bdi dir="rtl">خط</bdi> 50</strong>: <bdi dir="rtl">بعد از حذف‌کردن شهر، کاربر را به لیست شهرها منتقل می‌کند</bdi>.</p>
-<p><strong><bdi dir="rtl">مرحله دوم</bdi></strong>: <bdi dir="rtl">یک</bdi> path <bdi dir="rtl">جدید برای</bdi> <code>delete_city_view</code> <bdi dir="rtl">در</bdi> <code>urls.py</code> <bdi dir="rtl">همانند شکل</bdi> 72 <bdi dir="rtl">اضافه کنید</bdi>.</p>
-<figure class="shot"><img alt="Figure 72: افزودن path جدید برای حذف شهرها" src="../images/p329-02.png" loading="lazy" /><figcaption>Figure 72: <bdi dir="rtl">افزودن</bdi> path <bdi dir="rtl">جدید برای حذف شهرها</bdi></figcaption></figure>
+<p><strong>First step</strong>: create a new view named <code>delete_city_view</code> in <code>views.py</code> as in Figure 71.</p>
+<figure class="shot"><img alt="Figure 71: Making a view to delete cities" src="../images/p329-01.png" loading="lazy" /><figcaption>Figure 71: Making a view to delete cities</figcaption></figure>
+<p><strong>Explanation of the code</strong>:</p>
+<p><strong>Line 49</strong>: the statement delete uses Django's ORM and deletes the chosen city from the database.</p>
+<p><strong>Line 50</strong>: after deleting the city, it takes the user to the list of cities.</p>
+<p><strong>Second step</strong>: add a new path for <code>delete_city_view</code> in <code>urls.py</code> as in Figure 72.</p>
+<figure class="shot"><img alt="Figure 72: Adding a new path to delete cities" src="../images/p329-02.png" loading="lazy" /><figcaption>Figure 72: Adding a new path to delete cities</figcaption></figure>
 <p class="page-mark">Page 324</p>
 
-<p><strong><bdi dir="rtl">مرحله سوم</bdi></strong>: <bdi dir="rtl">فایل</bdi> <code>city_list.html</code> <bdi dir="rtl">را همانند شکل</bdi> 73 <bdi dir="rtl">تغییر دهید</bdi>.</p>
-<p><img alt="Figure 73: اضافه‌کردن دکمه حذف به city_list.html" src="../images/p330-01.png" loading="lazy" />
-<em>Figure 73: <bdi dir="rtl">اضافه‌کردن دکمه حذف به</bdi> <code>city_list.html</code></em></p>
-<figure class="shot"><img alt="Figure 74: دکمه حذف در لیست شهرها" src="../images/p330-02.png" loading="lazy" /><figcaption>Figure 74: <bdi dir="rtl">دکمه حذف در لیست شهرها</bdi></figcaption></figure>
-<p><strong><bdi dir="rtl">توضیحات کدها</bdi></strong>:</p>
-<p><strong><bdi dir="rtl">خط</bdi> 13</strong>: <bdi dir="rtl">این دستور باعث می‌شود دکمه حذف شهر فقط برای کاربر</bdi> login <bdi dir="rtl">شده نمایش داده شود</bdi>.</p>
-<p><strong><bdi dir="rtl">خط</bdi> 14</strong>: <bdi dir="rtl">یک فرم با متد از نوع</bdi> POST <bdi dir="rtl">ایجاد شده است</bdi>. <bdi dir="rtl">در</bdi> action <bdi dir="rtl">این فرم، به</bdi> <code>delete_city</code> <bdi dir="rtl">اشاره شده است، یعنی درخواست حذف به</bdi> view <bdi dir="rtl">حذف شهر ارسال خواهد شد</bdi>.</p>
-<p><strong><bdi dir="rtl">خط</bdi> 17</strong>: <bdi dir="rtl">آیدی شهر به‌صورت یک فیلد مخفی</bdi> (hidden) <bdi dir="rtl">اضافه شده است</bdi>. <bdi dir="rtl">آیدی شهر در خروجی نمایش داده نخواهد شد</bdi>. <bdi dir="rtl">فایل‌ها را ذخیره کنید، صفحه لیست شهرها را باز کنید</bdi>. <bdi dir="rtl">خروجی همانند شکل</bdi> 74 <bdi dir="rtl">خواهد بود</bdi>.</p>
+<p><strong>Third step</strong>: change the file <code>city_list.html</code> as in Figure 73.</p>
+<p><img alt="Figure 73: Adding a delete button to city_list.html" src="../images/p330-01.png" loading="lazy" />
+<em>Figure 73: Adding a delete button to <code>city_list.html</code></em></p>
+<figure class="shot"><img alt="Figure 74: The delete button in the list of cities" src="../images/p330-02.png" loading="lazy" /><figcaption>Figure 74: The delete button in the list of cities</figcaption></figure>
+<p><strong>Explanation of the code</strong>:</p>
+<p><strong>Line 13</strong>: this statement makes the delete-city button shown only to a logged-in user.</p>
+<p><strong>Line 14</strong>: a form with a POST-type method is created. In the action of this form, <code>delete_city</code> is pointed to, that is, the delete request will be sent to the delete-city view.</p>
+<p><strong>Line 17</strong>: the id of the city is added as a hidden field. The id of the city will not be shown in the output. Save the files and open the page of the list of cities. The output will be as in Figure 74.</p>
 <p class="page-mark">Page 325</p>
 
-<p><bdi dir="rtl">با کلیک روی لینک حذف مقابل هر شهر، شهر موردنظر حذف شده و لیست شهرها به‌روزرسانی می‌شود</bdi>. <bdi dir="rtl">درصورتی‌که کاربر مهمان باشد، لینک حذف را مشاهده نخواهد کرد</bdi>.</p>
+<p>By clicking the delete link opposite each city, the wanted city is deleted and the list of cities is updated. If the user is a guest, they will not see the delete link.</p>
 <aside class="callout activity"><p class="callout-label">Activity</p>
-<p><bdi dir="rtl">با دانشی که از پودمان‌های قبل کسب کرده‌اید، ظاهر سایت را با</bdi> html و css و bootstrap <bdi dir="rtl">زیبا کنید</bdi>.</p>
+<p>With the knowledge you have gained from the earlier modules, make the look of the site beautiful with html, css and bootstrap.</p>
 </aside>
-<h2><bdi dir="rtl">بهینه‌سازی و امن کردن پروژه</bdi></h2>
-<p><bdi dir="rtl">در این مرحله، برای بهینه‌سازی پروژه، ایرادها و باگ‌های امنیتی پروژه بررسی می‌شوند</bdi>.</p>
-<p><strong><bdi dir="rtl">باگ کدنویسی شماره یک</bdi></strong>:</p>
-<p><bdi dir="rtl">اگر هیچ شهری در جدول</bdi> City <bdi dir="rtl">وجود نداشته باشد یا همه شهرها حذف شده باشند، در صفحه اصلی سایت خطایی همانند شکل</bdi> 75 <bdi dir="rtl">مشاهده خواهد شد</bdi>.</p>
-<figure class="shot"><img alt="Figure 75: خطا در صورت خالی بودن جدول شهرها" src="../images/p331-01.png" loading="lazy" /><figcaption>Figure 75: <bdi dir="rtl">خطا در صورت خالی بودن جدول شهرها</bdi></figcaption></figure></article>
+<h2>Optimising and securing the project</h2>
+<p>At this step, to optimise the project, the flaws and security bugs of the project are checked.</p>
+<p><strong>Coding bug number one</strong>:</p>
+<p>If there is no city in the table City or all the cities have been deleted, an error as in Figure 75 will be seen on the main page of the site.</p>
+<figure class="shot"><img alt="Figure 75: The error when the table of cities is empty" src="../images/p331-01.png" loading="lazy" /><figcaption>Figure 75: The error when the table of cities is empty</figcaption></figure></article>
       <aside class="card extra">
         <h2 data-fa="تمرین این بخش" data-en="Exercises for this section">تمرین این بخش</h2>
         <p class="extra-note" data-fa="این تمرین‌ها و پیوندها اضافه بر متن کتاب‌اند." data-en="These exercises and links are in addition to the book.">این تمرین‌ها و پیوندها اضافه بر متن کتاب‌اند.</p>

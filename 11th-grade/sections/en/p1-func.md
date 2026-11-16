@@ -1,6 +1,6 @@
 <!-- page 62 -->
 
-**تابع (Function)**
+**Function**
 
 A function is a block or piece of code that is defined once and can be called many times from many places in a program.
 
@@ -58,7 +58,7 @@ Output
 
 <!-- page 64 -->
 
-### پارامتر و آرگومان (Parameters & Arguments)
+### Parameters and arguments
 
 What is a parameter? A function can receive inputs. The inputs of a function, as named when the function is defined, are called parameters (parameter).
 
@@ -110,7 +110,7 @@ The solution is to use **keyword arguments** (keyword arguments), that is, named
 
 > **Note**
 >
-> وقتی آرگومان‌ها **بدون نام پارامتر** به تابع داده شود، ترتیب ارسال آنها مهم است، چون هر آرگومان **به‌ترتیب به پارامترهای تابع نسبت داده می‌شود**. به این آرگومان‌ها **آرگومان‌های موقعیتی (positional arguments)** گفته می‌شود.
+> When arguments are given to a function **without the parameter name**, the order of sending them matters, because each argument is **assigned to the parameters of the function in order**. These arguments are called **positional arguments**.
 
 > **Activity**
 >
@@ -147,7 +147,7 @@ The solution is to use **keyword arguments** (keyword arguments), that is, named
 ![Figure 141](../images/p073-01.png)
 *Figure 141*
 
-### مقدار بازگشتی تابع (Return Value)
+### The return value of a function
 
 A function can **calculate a value and give it back to the program** to be used later; this is called the return value (**Return Value**). Without return the function does its job (for example, it prints) but gives no value back, and if you store the function's result in a variable, its value is None (Figure 142).
 

@@ -1,12 +1,12 @@
 <!-- page 206 -->
 
-### آرایه‌ها (Arrays)
+### Arrays
 
-متغیرهای آرایه امکان نگهداری چند عنصر با انواع داده‌های مختلف را دارند. در هنگام تعریف یک متغیر از نوع آرایه، مقادیر آرایه درون علامت کروشه نوشته می‌شوند. یک آرایه می‌تواند دارای عناصری با نوع داده یکسان یا متفاوت باشد.
+Array variables can hold several elements with different data types. When defining a variable of the array type, the values of the array are written inside square brackets. An array can have elements of the same or different data types.
 
 > **Example**
 >
-> در مثال زیر سه آرایه با مقادیر رشته‌ای، عددی و ترکیبی تعریف شده است:
+> In the following example three arrays with string, numeric and mixed values are defined:
 >
 > ```
 > let cars = ["Opel", "Saab", "Volvo", "BMW", "Hyundai"];
@@ -14,62 +14,62 @@
 > let data = [123, "Opel", false , 12 , 35];
 > ```
 
-هر یک از عناصر آرایه دارای اندیس هستند. اندیس عناصر آرایه از صفر شروع می‌شود، بنابراین اگر یک آرایه دارای 5 عنصر باشد، اندیس عنصر اول صفر و اندیس عنصر آخر 4 خواهد بود. برای دسترسی به عناصر آرایه از اندیس عناصر استفاده می‌شود. شکل زیر نمایی از عناصر آرایه cars و مقادیر آنها را نمایش می‌دهد:
+Each element of an array has an index. The index of the array elements starts from zero, so if an array has 5 elements, the index of the first element is zero and the index of the last element is 4. To reach the elements of the array, the index of the elements is used. The following figure shows the elements of the array cars and their values:
 
-| Hyundai | BMW | Volvo | Saab | Opel | مقدار عناصر |
+| Hyundai | BMW | Volvo | Saab | Opel | The value of the elements |
 | --- | --- | --- | --- | --- | --- |
-| 4 | 3 | 2 | 1 | 0 | **اندیس عناصر** |
+| 4 | 3 | 2 | 1 | 0 | **The index of the elements** |
 
-برای دسترسی به عنصر اول آرایه از عبارت `cars[0]` و برای دسترسی به عنصر چهارم از عبارت `cars[4]` استفاده می‌شود.
+To reach the first element of the array the expression `cars[0]` is used, and to reach the fourth element the expression `cars[4]` is used.
 
 > **Example**
 >
-> در خط دوم مثال زیر مقدار عنصر سوم آرایه cars و در خط سوم کل آرایه درون کنسول نمایش داده می‌شود.
+> In the second line of the following example the value of the third element of the array cars, and in the third line the whole array, is shown in the console.
 >
 > ![Figure 9](../images/p212-01.png)
 > *Figure 9*
 >
-> چنانچه اندیس عنصر آرایه مشخص نشود، کل عناصر آرایه روی صفحه چاپ می‌شود.
+> If the index of an array element is not specified, all the elements of the array are printed on the page.
 
 > **Note**
 >
-> با تعریف آرایه توسط کلمه کلیدی const امکان تغییر عناصر آرایه موجود است؛ اما متغیر آرایه نمی‌تواند به آرایه دیگری نسبت داده شود. به‌عنوان مثال نوشتن عبارت زیر با خطا مواجه می‌شود: `cars = ["Tara", "Shahin", "Dena"," Lamari Eama"]`
+> When an array is defined with the keyword const, it is possible to change the elements of the array, but the array variable cannot be assigned to another array. For example, writing the following expression gives an error: `cars = ["Tara", "Shahin", "Dena"," Lamari Eama"]`
 
 <!-- page 207 -->
 
 > **Workshop**
 >
-> **ایجاد آرایه و چاپ مقادیر**
+> **Creating an array and printing the values**
 >
-> 1. فایل جدیدی با نام `workshop4.html` ایجاد کنید و درون آن آرایه‌ای با نام colors با مقادیر yellow، blue، red، green و orange تعریف کنید. بعد از بررسی صحت برنامه، دستورات را در جاهای خالی بنویسید.
+> 1. Create a new file named `workshop4.html` and in it define an array named colors with the values yellow, blue, red, green and orange. After checking the program is correct, write the statements in the blanks.
 >
-> 2. دستوری بنویسید که عنصر blue را در کنسول مرورگر نمایش دهد.
+> 2. Write a statement that shows the element blue in the browser console.
 >
 > ……………………………
 >
-> 3. دستوری بنویسید که تمام عناصر آرایه colors را به یک باره چاپ نماید.
+> 3. Write a statement that prints all the elements of the array colors at once.
 >
 > ……………………………
 
 > **Learn more**
 >
-> **آرایه‌های چندبعدی**
+> **Multi-dimensional arrays**
 >
-> در بخش قبل نحوۀ ایجاد یک آرایۀ تک‌بعدی و دسترسی به عناصر آن معرفی شد. جاوا‌اسکریپت امکان تعریف آرایه چند‌بعدی را نیز فراهم می‌کند. آرایه چند بعدی زمانی ایجاد می‌شود که هر یک عناصر آرایه محتوای آرایه دیگری باشند. رایج‌ترین نوع آرایه چندبعدی، آرایه دو بعدی است که می‌تواند به عنوان ماتریس استفاده شود.
+> In the previous section, how to create a one-dimensional array and reach its elements was introduced. JavaScript also makes it possible to define a multi-dimensional array. A multi-dimensional array is created when each of the elements of the array holds another array. The most common type of multi-dimensional array is the two-dimensional array, which can be used as a matrix.
 >
-> در مثال زیر یک آرایۀ دو بعدی با نام users تعریف شده است:
+> In the following example a two-dimensional array named users is defined:
 >
 > ![Book image](../images/p213-02.png)
 >
 > ![Book image](../images/p213-01.png)
 >
-> برای دسترسی به عنصر اول آرایۀ اول (Arash) باید از عبارت `users[0][0]` استفاده شود و برای دسترسی به عنصر چهارم آرایۀ دوم (Doctor) از عبارت `users[1][3]`. تصویر سمت راست، اندیس عناصر آرایۀ دوبعدی users را نمایش می‌دهد.
+> To reach the first element of the first array (Arash) the expression `users[0][0]` must be used, and to reach the fourth element of the second array (Doctor) the expression `users[1][3]`. The picture on the right shows the indexes of the elements of the two-dimensional array users.
 >
-> **کار با آرایه‌های دو بعدی**
+> **Working with two-dimensional arrays**
 >
-> در فایل `workshop4.html` محتوای آرایۀ users (مثال قبل) را بنویسید.
+> In the file `workshop4.html` write the content of the array users (from the previous example).
 >
-> 1. دستورات زیر را بعد از معرفی آرایه وارد کنید و خروجی هر‌یک از دستورات را در کنسول مرورگر بررسی کنید. نتیجه را مقابل هر دستور یادداشت کنید.
+> 1. Enter the following statements after introducing the array and check the output of each statement in the browser console. Note the result opposite each statement.
 >
 > ```
 > console.log(users);               ………………………………………
@@ -77,53 +77,53 @@
 > console.log(users[2][3]);           ………………………………………
 > ```
 >
-> 2. دستوری بنویسید که باعث نمایش عنصر Rose شود.
+> 2. Write a statement that makes the element Rose be shown.
 >
 > .…………………………………
 
 <!-- page 208 -->
 
-### اشیا در جاوا‌اسکریپت
+### Objects in JavaScript
 
-شیء (Object) یک ساختار داده است که برای ذخیرۀ مجموعه‌ای از داده‌های مرتبط، به‌صورت جفت‌های کلید: مقدار استفاده می‌شود، در ساختار داده شیء، مجموعه‌ای از کلیدها (keys) به مقادیر (values) متناظر خود اشاره می‌کنند. اشیا برای ذخیره و سازماندهی داده‌ها و رفتارهای یک موجودیت استفاده می‌شوند. که ساختاری شبیه به دیکشنری در پاتیون دارد.
+An object is a data structure used to store a set of related data in the form of key: value pairs; in the object data structure, a set of keys point to their matching values. Objects are used to store and organise the data and behaviours of an entity. It has a structure similar to the dictionary in Python.
 
 > **Example**
 >
-> در مثال زیر شیء person دارای چهار ویژگی نام، نام خانوادگی، سن و رنگ چشم است که هر یک دارای مقدار مشخصی هستند:
+> In the following example the object person has four properties, first name, last name, age and eye colour, each of which has a specific value:
 >
 > ![Book image](../images/p214-01.png)
 >
-> در هنگام تعریف یک شیء استفاده از فواصل و ایجاد سطر جدید اهمیتی ندارد؛ بنابراین شیء person می‌تواند به‌صورت زیر نیز تعریف شود:
+> When defining an object, spaces and new lines do not matter; so the object person can also be defined as follows:
 >
 > ![Book image](../images/p214-02.png)
 >
-> دسترسی به مقدار ویژگی‌های یک شیء از طریق علامت نقطه یا کروشه امکان‌پذیر است. هر دو دستور زیر مقدار ویژگی firstName در شیء person را نمایش می‌دهد:
+> Reaching the value of the properties of an object is possible with the dot or with square brackets. Both of the following statements show the value of the property firstName in the object person:
 >
 > ![Book image](../images/p214-03.png)
 
 > **Learn more**
 >
-> یک شیء علاوه بر ویژگی‌ها دارای رفتارهایی است که با عنوان متد تعریف می‌شوند. تعریف متدها معمولاً در انتهای جفت‌های کلید-مقدار شیء انجام می‌شود.
+> Besides properties, an object has behaviours that are defined as methods. Defining methods is usually done at the end of the key-value pairs of the object.
 >
-> روش جدید
+> The new way
 >
-> روش قدیم
+> The old way
 >
 > ```
 > methodName:function(){
 >                                  methodName(){
 > ```
 >
-> دستوراتی که متد انجام می‌دهد //
+> // the statements the method does
 >
-> دستوراتی که متد انجام می‌دهد //
+> // the statements the method does
 >
 > ```
 >                                }
 > }
 > ```
 >
-> در خطوط 13 تا 15 کد صفحه بعد متد `displayInfo()` برای شیء person تعریف شده و در خط 17 فراخوانی آن انجام شده است.
+> In lines 13 to 15 of the code on the next page the method `displayInfo()` is defined for the object person, and in line 17 it is called.
 
 <!-- page 209 -->
 
@@ -131,33 +131,33 @@
 >
 > ![Book image](../images/p215-03.png)
 
-در تعریف فوق، کلمه کلیدی **this** به شیء جاری (person) اشاره می‌کند و برای دسترسی به ویژگی‌های شیء جاری به‌کار می‌رود. این متد اطلاعات شیء person را به محل فراخوانی برمی‌گرداند.
+In the definition above, the keyword **this** points to the current object (person) and is used to reach the properties of the current object. This method returns the information of the object person to the place of the call.
 
-برای فراخوانی متد شیء، ابتدا نام شیء (Person) و سپس نام متد(displayInfo) به همراه علائم () نوشته می‌شود.
+To call the method of an object, first the name of the object (Person) and then the name of the method (displayInfo) are written with the () signs.
 
-رشته‌ای که توسط متد `displayInfo()` به محل فراخوانی برگردانده (return) می‌شود، باید درون علامت backtick قرار گیرد. این علامت در گوشه بالای صفحه کلید، زیر دکمه esc واقع شده است.
+The string that is returned by the method `displayInfo()` to the place of the call must be put inside the backtick sign. This sign is located at the top corner of the keyboard, under the esc key.
 
 > **Workshop**
 >
-> **ایجاد شیء در جاوا‌اسکریپت**
+> **Creating an object in JavaScript**
 >
-> 1. فایل جدیدی با نام `workshop5.html` ایجاد کنید.
+> 1. Create a new file named `workshop5.html`.
 >
-> 2. یک شیء با نام book با ویژگی‌های title، author و year و مقادیر "JavaScript"، "Douglas Crockford" و 2008 ایجاد کنید.
+> 2. Create an object named book with the properties title, author and year and the values "JavaScript", "Douglas Crockford" and 2008.
 >
 > ……………………………………………………………
 >
-> 3. دستوری بنویسید که مقدار ویژگی author در شیء book را چاپ نماید. ..………………....
+> 3. Write a statement that prints the value of the property author in the object book. ..………………....
 
 > **Learn more**
 >
-> **ترکیب اشیا و آرایه‌ها**
+> **Combining objects and arrays**
 >
-> جاوا‌اسکریپت امکان ترکیب اشیا و آرایه‌ها را با هم فراهم می‌کند. برنامه‌نویس جاوا‌اسکریپت می‌تواند آرایه‌ای از اشیا یا یک شیء شامل آرایه را ایجاد نماید.
+> JavaScript makes it possible to combine objects and arrays. A JavaScript programmer can create an array of objects or an object that contains an array.
 
 > **Example**
 >
-> مثال زیر آرایه‌ای از اشیا را ایجاد می‌کند:
+> The following example creates an array of objects:
 >
 > ![Book image](../images/p215-02.png)
 >
@@ -167,7 +167,7 @@
 
 > **Example**
 >
-> در مثال زیر شیء school حاوی آرایه students است:
+> In the following example the object school contains the array students:
 >
 > ![Book image](../images/p216-01.png)
 >
@@ -175,24 +175,24 @@
 
 > **Activity**
 >
-> **کار با اشیا و آرایه‌ها**
+> **Working with objects and arrays**
 >
-> در فایل `workshop5.html` آرایه students و school را مطابق مثال فوق تعریف کنید و نتایج را در کنسول مرورگر بررسی کنید
+> In the file `workshop5.html` define the arrays students and school as in the example above and check the results in the browser console
 >
-> دستوری بنویسید که نام و سن خانم mona را در کنسول نمایش دهد.
+> Write a statement that shows the name and age of Ms. mona in the console.
 >
 > …………………………………………………
 
-### ساختارهای شرطی و حلقه در جاوا‌اسکریپت
+### Conditional structures and loops in JavaScript
 
-ساختارهای شرطی و حلقه از اجزای اساسی زبان‌های برنامه‌نویسی، از جمله جاوا‌اسکریپت هستند. ساختارهای شرطی منطق برنامه را بر اساس شرایط خاص کنترل می‌کنند و ساختارهای حلقه عملیات خاصی را به‌صورت تکراری انجام می‌دهند. این بخش به معرفی این ساختارها می‌پردازد.
+Conditional structures and loops are basic parts of programming languages, including JavaScript. Conditional structures control the logic of the program based on certain conditions, and loop structures do certain operations repeatedly. This section introduces these structures.
 
-### دستورات شرطی If
+### The If conditional statements
 
-یک دستور شرطی امکان اجرای مجموعه‌ای از دستورات را به ازای برقراری یک شرط خاص فراهم می‌کند. بسته به نیاز برنامه، دستور if می‌تواند به سه صورت نوشته شود. جدول 20 شکل کلی ساختار شرطی if را در سه حالت مختلف نمایش می‌دهد.
+A conditional statement makes it possible to run a set of statements when a certain condition holds. Depending on the needs of the program, the if statement can be written in three forms. Table 20 shows the general form of the if conditional structure in three different cases.
 
-*Table 20: انواع ساختارهای شرطی if*
+*Table 20: Types of if conditional structures*
 
-| `else-if` | `if-else` | if ساده |
+| `else-if` | `if-else` | A simple if |
 | --- | --- | --- |
 | `if (condition1) {`<br>statement1<br>`} else if (condition2) {`<br>statement2<br>`} else {`<br>statement3<br>`}` | `if (condition){`<br>Statement1<br>`}else{`<br>Statement2<br>`}` | `if (condition){`<br>statements<br>`}` |

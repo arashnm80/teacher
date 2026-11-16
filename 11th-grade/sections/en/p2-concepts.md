@@ -4,34 +4,34 @@
 
 The web has several key concepts that every web developer (Web developer) needs to know. They are described below:
 
-**طراح وب (Web designer)**: فرد یا تیمی که مسئول طراحی ظاهر نمایشی وب سایت است. این حرفه ترکیبی از طراحی گرافیکی، طراحی تجربه کاربری (UX) و طراحی رابط کاربری (UI)، ایجاد wire frame و نمونه اولیه است.
+**Web designer**: a person or team responsible for designing the visual look of the website. This profession is a combination of graphic design, user experience (UX) design and user interface (UI) design, and creating wireframes and prototypes.
 
-**تجربه کاربری (UX)**: تجربه‌ای که کاربر بعد از بازدید از وب‌سایت برای دسترسی به اطلاعات، محصولات و خدمات کسب می‌کند.
+**User experience (UX)**: the experience a user gets after visiting a website in accessing information, products and services.
 
-**رابط کاربری (UI)**: عناصر تعاملی صفحه مانند دکمه‌ها، فرم‌ها و منوها که کاربران به‌وسیله آنها با وب‌سایت تعامل دارند.
+**User interface (UI)**: the interactive elements of a page, such as buttons, forms and menus, with which users interact with the website.
 
 **Front-end**: the part of a website that deals directly with the user. Front-end topics include the look of the web page, the user interface (UI), and the user experience (UX).
 
 **Back-end**: the behind-the-scenes part of a website or app, which includes the main program logic, data processing, and the connection to the database; the user does not interact with it directly.
 
-**توسعه‌دهندۀ وب (Web developer)**: فرد یا تیمی که طرح اولیۀ وب‌سایت را با استفاده از زبان‌های برنامه‌نویسی، به صفحات وب قابل استفاده تبدیل می‌کند. توسعه‌دهندۀ وب می‌تواند نقش طراح وب را نیز داشته باشد. وظایف اصلی توسعه دهندۀ وب شامل موارد زیرمی‌باشد:
+**Web developer**: a person or team that turns the initial design of a website into usable web pages using programming languages. A web developer can also play the role of the web designer. The main duties of a web developer include the following:
 
-1. **توسعه‌دهندۀ سمت کاربر (Front-end-developer)**: روی ظاهر سایت و عناصری تمرکز دارد که کاربر مستقیماً با آنها سروکار دارد.
+1. **Front-end developer**: focuses on the look of the site and the elements the user deals with directly.
 
-2. **توسعه‌دهندۀ سمت سرور (Back-end-developer)**: روی مباحث سمت سرور مانند مدیریت پایگاه داده و پردازش داده‌های کاربران تمرکز دارد.
+2. **Back-end developer**: focuses on server-side matters such as managing the database and processing the users' data.
 
-**دامنه (Domain)**: نامی منحصر‌به‌فرد که برای دسترسی به یک وب‌سایت استفاده می‌شود، مانند `google.com`. کاربران با استفاده از نام دامنه وارد یک سایت می‌شوند. نام دامنه، جایگزینی قابل فهم برای آدرس‌های عددی IP است که به‌خاطر سپردن آدرس سایت را برای کاربران سهولت می‌بخشد.
+**Domain**: a unique name used to reach a website, such as `google.com`. Users enter a site by using the domain name. The domain name is an understandable substitute for numeric IP addresses, which makes remembering the address of a site easy for users.
 
 **URL**: a unique address used to find and identify a particular resource (such as a web page, image, video, or file) on the internet. URL stands for Uniform Resource Locator (Figure 2).
 
 <!-- page 87 -->
 
-**Host**: فضایی برای ذخیره‌سازی اسناد وب‌سایت است، به‌طوری‌که امکان دسترسی به منابع سایت از طریق اینترنت فراهم گردد. تمام فایل‌های یک سایت (شامل فایل‌های HTML، CSS، اسکریپت‌ها، تصاویر و ...) باید روی یک رایانه وب‌سرور ذخیره گردند تا کاربران بتوانند با وارد کردن آدرس سایت به محتوای آن دسترسی پیدا کنند.
+**Host**: a place for storing the documents of a website so that the site's resources can be reached over the internet. All the files of a site (including HTML files, CSS files, scripts, images and so on) must be stored on one web-server computer so that users can reach its content by entering the site's address.
 
 ![Figure 2](../images/p093-01.png)
 *Figure 2*
 
-**Localhost (هاست محلی)**: یک سیستم رایانه‌ای مجهز به نرم‌افزار وب‌سرور است که برای اجرای کدهای سمت سرور (Back-End)، ایجاد و مدیریت پایگاه داده‌ها استفاده می‌شود. هاست محلی صرفاً برای تمرین، آزمایش و رفع اشکال صفحات وب‌سایت کاربرد دارد. نرم‌افزارهای وب‌سرور مختلفی وجود دارند که می‌توانند یک سیستم خانگی را به وب‌سرور تبدیل کنند، اما نکته مهم این است که تمام وب‌سرورهایی که در سطح اینترنت پاسخگوی کاربران هستند، دارای IP اینترنتی هستند؛ بنابراین سیستم‌های خانگی و کلاس درس که فاقد IP اینترنت هستند، امکان پاسخ‌دهی به کاربران راه دور را ندارند.
+**Localhost**: a computer system equipped with web-server software that is used for running server-side (Back-End) code and for creating and managing databases. A localhost is only useful for practising, testing and debugging the pages of a website. There are various web-server programs that can turn a home system into a web server, but the important point is that all the web servers that answer users on the internet have an internet IP; therefore home and classroom systems that have no internet IP cannot answer remote users.
 
 > **Note**
 >
@@ -43,11 +43,11 @@ Hosting companies offer different plans, each (Plan) with different hardware and
 
 <!-- page 88 -->
 
-**طراحی واکنش‌گرا (Responsive Design)**: یک روش طراحی صفحه که امکان تطبیق‌پذیری خودکار صفحه را بر اساس اندازه صفحه نمایش (دستگاه‌های مختلف مانند موبایل، تبلت و دسکتاپ) فراهم می‌کند.
+**Responsive Design**: a method of page design that lets the page adapt automatically to the size of the screen (different devices such as mobile, tablet and desktop).
 
-**سئو (SEO)**: مجموعه‌ای از تکنیک‌ها برای بهبود رتبه وب‌سایت در نتایج موتورهای جست‌وجو است. سئو شامل بهینه‌سازی محتوا، ساختار URL و استفاده از متاتگ‌ها و ... است.
+**SEO**: a set of techniques to improve a website's rank in the results of search engines. SEO includes optimising the content, the URL structure, the use of meta tags and so on.
 
-**دسترس‌پذیری (Accessibility)**: طراحی وب‌سایت به گونه‌ای که برای همه کاربران (از جمله افراد دارای ناتوانی‌های جسمی یا بینایی) قابل دسترسی باشد.
+**Accessibility**: designing a website so that it can be reached by all users (including people with physical or visual disabilities).
 
 **Database**: many websites use databases (Database) to store and manage information. Databases can hold information about users, products, articles, and other content.
 
@@ -113,7 +113,7 @@ In short, the site design process includes these steps:
 
 **Analyzing the requirements**: in this step the site's needs are examined from two sides:
 
-**الف) نیازمندی‌های کاربر (User Requirements)**: این نیازمندی‌ها شامل ویژگی‌ها و امکاناتی است که کاربران در هنگام استفاده از سایت به آنها نیاز دارند (جدول1).
+**a) User Requirements**: these requirements include the features and facilities users need when using the site (Table 1).
 
 *Table 1*
 
@@ -127,7 +127,7 @@ In short, the site design process includes these steps:
 
 <!-- page 90 -->
 
-**ب) نیازمندی‌های فنی (Technical Requirements)**: این نیازمندی‌ها شامل زبان‌های نشانه‌گذاری و برنامه‌نویسی، سیستم مدیریت پایگاه‌ها و توجه به امنیت و گسترش‌پذیری وب‌سایت است (جدول 2).
+**b) Technical Requirements**: these requirements include the markup and programming languages, the database management system, and attention to the security and extensibility of the website (Table 2).
 
 *Table 2*
 
@@ -139,7 +139,7 @@ In short, the site design process includes these steps:
 | Encrypting users' passwords | Security |
 | The ability to add new products and features in the future | Extensibility |
 
-**طراحی نقشۀ سایت (Site Map)**: پس از مشخص شدن هدف و نیازهای وب‌سایت، طراحی نقشۀ سایت امری ضروری است. نقشۀ سایت ساختار صفحات، ارتباطات میان آنها و مسیر حرکت کاربر را درون سایت مشخص می‌کند. طراحی صحیح نقشۀ سایت موجب درک بهتر ساختار سایت و ساده شدن فرایند طراحی و پیاده‌سازی آن می‌گردد.
+**Designing the site map**: after the goal and needs of the website are clear, designing the site map is essential. The site map shows the structure of the pages, the connections between them and the user's path inside the site. A correct site map gives a better understanding of the structure of the site and simplifies the process of designing and implementing it.
 
 > **Workshop**
 >
@@ -202,7 +202,7 @@ In short, the site design process includes these steps:
 | Use | Language |
 | --- | --- |
 | The structure and elements of the page (such as text, images, tables, buttons) | HTML |
-| زیباسازی وکنترل ظاهر عناصر شامل تنظیم رنگ‌ها، فونت‌ها، اندازه‌ها، چیدمان و ... | CSS |
+| Beautifying and controlling the look of the elements, including adjusting colours, fonts, sizes, layout and so on. | CSS |
 
 Once the goal and requirements are clear, it is time to design **the look of the website's pages**. The more attractive and orderly a site looks, the more users it attracts. In a shopping site, a beautiful site can bring in more customers and more sales.
 
@@ -214,17 +214,17 @@ The HTML markup language is used to create the elements of web pages, and the CS
 
 **The main roles in a site design team**
 
-1. **طراح تجربه کاربری (UX Designer)**: تحلیل نیاز کاربران و بهینه‌سازی تجربه استفاده از سایت
+1. **UX Designer**: analysing the users' needs and optimising the experience of using the site
 
-2. **طراح رابط کاربری (UI Designer)**: طراحی عناصر بصری مانند رنگ‌ها، فونت‌ها، دکمه‌ها و فرم‌ها
+2. **UI Designer**: designing visual elements such as colours, fonts, buttons and forms
 
-3. **توسعه‌دهندۀ فرانت‌اند (Front-End Developer)**: پیاده‌سازی بخش ظاهری و تعاملی سایت
+3. **Front-End Developer**: implementing the visual and interactive part of the site
 
-4. **توسعه‌دهندۀ بک‌اند (Back-End Developer)**: برنامه‌نویسی سمت سرور، مدیریت پایگاه داده و امنیت
+4. **Back-End Developer**: server-side programming, database management and security
 
-5. **متخصص محتوا (Content Specialist)**: تحقیق کلمات کلیدی و تولید محتوای متنی جذاب
+5. **Content Specialist**: researching keywords and producing attractive text content
 
-6. **متخصص سئو (SEO Specialist)**: بهینه‌سازی سایت برای موتورهای جست‌وجو
+6. **SEO Specialist**: optimising the site for search engines
 
 Depending on the size of the project, the budget, and the number of people in the design and development team, each role can be given to one or more people. In small projects one person may take on several roles. Table 4 lists the tools commonly used by each role in a site design team. These tools help improve the quality of the project and make teamwork easier.
 
@@ -232,12 +232,12 @@ Depending on the size of the project, the budget, and the number of people in th
 
 | Role | Tools |
 | --- | --- |
-| UX and UI designer | Photoshop، InVision، Sketch، Adobe XD، Figma |
-| Front-end developer | Bootstrap، JavaScript، CSS، HTML |
-| Back-end developer | <span dir="ltr">JavaScript (Node.js)، (Flask، Python، Django)</span> |
-| Code editor | Atom، Sublime Text، Visual Studio Code |
-| Browser and developer tools | Microsoft Edge، Mozilla Firefox، Google Chrome |
-| Content management and web content platforms | Grammarly، Google Docs، WordPress |
-| SEO specialist | Yoast SEO، Moz، SEMrush، Google Analytics |
-| Other tools the design team uses | Cyberduck، FileZilla |
-| Version control | GitHub، Git |
+| UX and UI designer | Photoshop, InVision, Sketch, Adobe XD, Figma |
+| Front-end developer | Bootstrap, JavaScript, CSS, HTML |
+| Back-end developer | <span dir="ltr">JavaScript (Node.js), (Flask, Python, Django)</span> |
+| Code editor | Atom, Sublime Text, Visual Studio Code |
+| Browser and developer tools | Microsoft Edge, Mozilla Firefox, Google Chrome |
+| Content management and web content platforms | Grammarly, Google Docs, WordPress |
+| SEO specialist | Yoast SEO, Moz, SEMrush, Google Analytics |
+| Other tools the design team uses | Cyberduck, FileZilla |
+| Version control | GitHub, Git |
