@@ -3,13 +3,20 @@
  * only after a pass. The answers are still checked in this browser, where Python runs; the
  * server keeps what the browser reports and checks what it can.
  *
- * In the offline copy (meta pg-mode="offline") nothing here runs and progress stays in the
- * browser, as it always did.
+ * The offline copy (meta pg-mode="offline") uses the same dialog and the same questions about the
+ * student, but talks to the teacher's server with a token instead of a cookie (pages on the
+ * student's own computer cannot share the website's cookies). Signing in there is optional: without
+ * it, progress stays on the device. See sync.js for what is sent.
  */
 
-export const ONLINE = document.querySelector('meta[name="pg-mode"]')?.content === "online";
+const MODE = document.querySelector('meta[name="pg-mode"]')?.content;
+export const ONLINE = MODE === "online";
+export const OFFLINE = MODE === "offline";
 
 const API = "/api/student";
+// The offline copy reaches the teacher's server at this address (a test can point it elsewhere).
+const SYNC_BASE = window.__teacherSyncBase || "https://teacher.arashnm80.ir/api/offline";
+const SESSION_KEY = "teacher-sync-session-v1";
 const DRAFT_DELAY_MS = 2500;
 const MESSAGES = {
   network: "اتصال به سرور برقرار نشد. اینترنت را بررسی کن و دوباره امتحان کن.",
@@ -28,14 +35,76 @@ function $(id) {
   return document.getElementById(id);
 }
 
+// ---- the offline copy's session: a token kept on the device ---------------------------------
+
+const sessionListeners = new Set();
+
+/** { token, student } of the signed-in student of the offline copy, or null. */
+export function getSession() {
+  try {
+    return JSON.parse(localStorage.getItem(SESSION_KEY) || "null");
+  } catch {
+    return null;
+  }
+}
+
+function saveSession(session) {
+  try {
+    if (session) localStorage.setItem(SESSION_KEY, JSON.stringify(session));
+    else localStorage.removeItem(SESSION_KEY);
+  } catch {
+    /* without storage the sign-in lasts for this visit only */
+  }
+}
+
+/** Called when the student signs in or out (not on every start). */
+export function onSessionChange(fn) {
+  sessionListeners.add(fn);
+}
+
+function announceSession() {
+  paintStudentBar();
+  for (const fn of sessionListeners) {
+    try {
+      fn(student);
+    } catch {
+      /* a listener must not break the sign-in */
+    }
+  }
+}
+
+export function clearSession() {
+  saveSession(null);
+  student = null;
+  announceSession();
+}
+
+/** The server's latest view of the student (for example a new class) after a sync. */
+export function updateStudent(fresh) {
+  const session = getSession();
+  if (!session || !fresh) return;
+  saveSession({ ...session, student: fresh });
+  student = fresh;
+  paintStudentBar();
+}
+
+export async function apiRequest(path, options) {
+  return request(path, options);
+}
+
 async function request(path, { method = "GET", body } = {}) {
   let res;
+  const headers = body !== undefined ? { "Content-Type": "application/json" } : {};
+  if (OFFLINE) {
+    const token = getSession()?.token;
+    if (token) headers.Authorization = `Bearer ${token}`;
+  }
   try {
-    res = await fetch(API + path, {
+    res = await fetch((OFFLINE ? SYNC_BASE : API) + path, {
       method,
-      credentials: "same-origin",
+      credentials: OFFLINE ? "omit" : "same-origin",
       cache: "no-store",
-      headers: body !== undefined ? { "Content-Type": "application/json" } : {},
+      headers,
       body: body !== undefined ? JSON.stringify(body) : undefined,
     });
   } catch {
@@ -53,6 +122,10 @@ async function request(path, { method = "GET", body } = {}) {
 /** Repeats a request after a sign-in when the session has ended. */
 export async function authed(path, options) {
   let result = await request(path, options);
+  if (result.status === 401 && OFFLINE) {
+    clearSession(); // the offline copy goes on working; the student signs in again when they want to
+    return result;
+  }
   if (result.status === 401) {
     // The server ended this session (signed out elsewhere, reset, or expired): ask again.
     student = null;
@@ -115,6 +188,7 @@ function value(id) {
 
 function finishSignIn(data) {
   student = data.student;
+  if (OFFLINE && data.token) saveSession({ token: data.token, student });
   $("auth-password").value = "";
   $("auth-password2").value = "";
   $("auth-dialog").close();
@@ -122,14 +196,14 @@ function finishSignIn(data) {
   pendingSignIn = null;
   resolveSignIn = null;
   if (resolve) resolve(student);
-  paintStudentBar();
+  announceSession();
 }
 
 let resolveSignIn = null;
 
 /** Opens the sign-in dialog (once) and resolves with the student when they are signed in. */
 export function requireSignIn() {
-  if (!ONLINE) return Promise.resolve(null);
+  if (!ONLINE && !OFFLINE) return Promise.resolve(null);
   if (student) return Promise.resolve(student);
   if (!pendingSignIn) {
     pendingSignIn = new Promise((resolve) => {
@@ -192,13 +266,29 @@ async function submitAuth(event) {
 
 function paintStudentBar() {
   const bar = $("student-bar");
-  if (!bar || !student) return;
-  $("student-name").textContent = student.fullName;
-  $("student-class").textContent = student.classCode || "—";
+  if (!bar) return;
+  if (OFFLINE) {
+    // The bar is always there offline: a sign-in button, or the name with the sync state.
+    bar.hidden = false;
+    $("student-who").hidden = !student;
+    $("student-logout").hidden = !student;
+    $("student-signin").hidden = Boolean(student);
+  } else if (!student) {
+    return;
+  }
+  if (student) {
+    $("student-name").textContent = student.fullName;
+    $("student-class").textContent = student.classCode || "—";
+  }
   bar.hidden = false;
 }
 
 export async function logout() {
+  if (OFFLINE) {
+    await request("/logout", { method: "POST", body: {} }); // best effort: it may be offline
+    clearSession();
+    return;
+  }
   flushDraft();
   await request("/logout", { method: "POST", body: {} });
   location.reload();
@@ -206,13 +296,30 @@ export async function logout() {
 
 /** Wires the dialog and the sign-in bar. Call once at start-up. */
 export function initAccountUi() {
-  if (!ONLINE) return;
+  if (!ONLINE && !OFFLINE) return;
   const dialog = $("auth-dialog");
   $("auth-form").addEventListener("submit", submitAuth);
   $("auth-tab-login").addEventListener("click", () => setMode("login"));
   $("auth-tab-register").addEventListener("click", () => setMode("register"));
-  dialog.addEventListener("cancel", (event) => event.preventDefault()); // the sign-in cannot be skipped
   $("student-logout").addEventListener("click", logout);
+  if (OFFLINE) {
+    // Optional offline: the student can close the dialog and keep working on this device.
+    $("auth-later").hidden = false;
+    $("auth-later").addEventListener("click", () => dialog.close());
+    $("student-signin").addEventListener("click", () => requireSignIn());
+    dialog.addEventListener("close", () => {
+      if (pendingSignIn && !student) {
+        const resolve = resolveSignIn;
+        pendingSignIn = null;
+        resolveSignIn = null;
+        if (resolve) resolve(null);
+      }
+    });
+    student = getSession()?.student || null;
+    paintStudentBar();
+    return;
+  }
+  dialog.addEventListener("cancel", (event) => event.preventDefault()); // the sign-in cannot be skipped
   // Offline-only controls: the server keeps the progress, so these do not apply.
   document.querySelector(".backup")?.setAttribute("hidden", "");
   $("btn-clear-progress")?.setAttribute("hidden", "");
@@ -220,6 +327,7 @@ export function initAccountUi() {
 
 /** Resolves the signed-in student for the first time. Opens the dialog when there is none. */
 export async function ensureStudent() {
+  if (OFFLINE) return student; // from the stored session: no network needed
   if (!ONLINE) return null;
   const res = await request("/me");
   if (res.status === 200) {

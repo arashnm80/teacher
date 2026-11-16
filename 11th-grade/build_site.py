@@ -1024,7 +1024,23 @@ The online playground (`/playground/`) and separate lab zips (`teacher-playgroun
     if trust_zip.is_file():
         shutil.copy2(trust_zip, SITE / "evolution-of-trust-offline.zip")
     shutil.copy2(ROOT / "offline" / "شروع.bat", SITE / "شروع.bat")
-    (SITE / "README.md").write_text('# طراح سایت — نسخه\u200cی کامل آفلاین\n\nاین فایل فشرده کل سایت است: درس\u200cها و زمین بازی. یک بار دانلود کنید؛ دیگر لازم نیست چیزی را دوباره بگیرید.\n\n- درس\u200cها: فایل `index.html` را با دوبار کلیک باز کنید.\n- زمین بازی: فایل `شروع.bat` را با دوبار کلیک اجرا کنید (Python 3 با tkinter لازم است). پیشرفت شما در همین نشانی محلی ذخیره می\u200cماند؛ همیشه با همین فایل باز کنید.\n\n# Site Design — full offline copy\n\nOne zip holds the whole site: lessons and playground. Download once.\n\n- Lessons: double-click `index.html`.\n- Playground: double-click `شروع.bat` (needs Python 3 with tkinter). Progress is kept at the same local address, so always start it the same way.\n', encoding="utf-8")
+    (SITE / "README.md").write_text(
+        "# طراح سایت — نسخه\u200cی کامل آفلاین\n\n"
+        "این فایل فشرده کل سایت است: درس\u200cها و زمین بازی. یک بار دانلود کنید؛ بعد از آن اینترنت لازم نیست.\n\n"
+        "- درس\u200cها: فایل `index.html` را با دوبار کلیک باز کنید.\n"
+        "- زمین بازی: فایل `شروع.bat` را با دوبار کلیک اجرا کنید (Python 3 با tkinter لازم است). پیشرفت شما در همین نشانی محلی ذخیره می\u200cماند؛ همیشه با همین فایل باز کنید.\n"
+        "- ورود و ثبت\u200cنام: داخل زمین بازی می\u200cتوانید مثل سایت وارد شوید. هر وقت اینترنت دارید، نتیجه\u200cهای شما به معلم ارسال می\u200cشود. کنار هر مسئله\u200cی حل\u200cشده می\u200cبینید که به معلم رسیده (✓) یا هنوز منتظر ارسال است (●). آموزش مسئله\u200cها بعد از اولین ورود (با اینترنت) روی همین دستگاه ذخیره می\u200cشود.\n"
+        "- مهلت\u200cها: یک نتیجه وقتی برای نمره حساب می\u200cشود که قبل از مهلت به معلم برسد؛ پس مسئله\u200cی حل\u200cشده را قبل از مهلت ارسال کنید.\n"
+        "- به\u200cروزرسانی: وقتی سایت تغییر کند، در بالای زمین بازی اعلانی می\u200cبینید و با یک کلیک همین نسخه به\u200cروز می\u200cشود (فقط فایل\u200cهای تغییرکرده دانلود می\u200cشوند و پیشرفت شما دست نمی\u200cخورد).\n\n"
+        "# Site Design — full offline copy\n\n"
+        "One zip holds the whole site: lessons and playground. Download once; after that no internet is needed.\n\n"
+        "- Lessons: double-click `index.html`.\n"
+        "- Playground: double-click `شروع.bat` (needs Python 3 with tkinter). Progress is kept at the same local address, so always start it the same way.\n"
+        "- Sign in and sign up inside the playground, as on the website. Whenever you have internet, your results are sent to the teacher. Next to each solved problem you see whether it has reached the teacher (✓) or is still waiting to be sent (●). The tutorials are saved on this device after the first sign-in (with internet).\n"
+        "- Deadlines: a result counts for the score when it reaches the teacher before the deadline, so send solved problems before it.\n"
+        "- Updates: when the website changes, a notice appears at the top of the playground; one click updates this copy (only changed files are downloaded, and your progress is not touched).\n",
+        encoding="utf-8",
+    )
     publish_playground()
     write_zip()
     print(f"pages {len(pages) + 1} images {images}")

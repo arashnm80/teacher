@@ -121,3 +121,20 @@ Flags do not block anything. They are for the teacher to look at.
 * The copy blocking on the site is a deterrent, not a lock. Screenshots and developer tools
   still work.
 * The offline copy contains everything, as before, by design.
+
+
+## The offline copy (/api/offline/*)
+
+The offline copy is a page on the student's own computer, so it cannot share the website's cookies. It signs in with a bearer token (`Authorization: Bearer ...`), kept apart from the website's sessions (`sessions.kind`). The routes answer cross-site requests (CORS) and are rate limited like the student routes (nginx, `^~ /api/offline/`).
+
+| Route | What it does |
+| --- | --- |
+| `POST register`, `login`, `complete-reset` | Same as the website's, but the answer carries `token` and no cookie is set. |
+| `POST logout` | Ends the token. |
+| `GET me` | The student, progress, class schedule, the current revision of every question, `guidesVersion`, `serverTime`. |
+| `POST sync` | Up to 100 results (`problemId`, `revision`, `code`, `passed`, `total`, `blocked`, `typed`, `inserted`, `clientAt`). Each goes through the same attempt code as the website; a bad one is refused alone. Answers like `me`. |
+| `GET guides` | Every tutorial, for a signed-in student. The offline copy keeps them on the device. |
+
+The deadline is decided by this server's clock when a result arrives, never by the device's clock; the device's reported time is kept in `attempts.client_at` for the teacher to see.
+
+Updating the offline copy does not use this service: the launcher compares `offline-manifest.json` with the website's (see `playground/app/updater.py`).

@@ -87,6 +87,12 @@ class QuietHandler(SimpleHTTPRequestHandler):
         self.wfile.write(body)
         return True
 
+    def end_headers(self) -> None:
+        # Always revalidate (a cheap 304 when nothing changed), so files replaced by an update
+        # are used at once instead of a copy the browser kept.
+        self.send_header("Cache-Control", "no-cache")
+        super().end_headers()
+
     def do_GET(self) -> None:
         if not self._answer_update("GET"):
             super().do_GET()

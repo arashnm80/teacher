@@ -1,7 +1,11 @@
 // Cache-bust query on every import: Cloudflare was caching /playground/*.js for
 // 24h, so a fixed bootlog.js SyntaxError kept failing after the source was fixed.
 import { bidiMixHtml, codeHtml, indexLabelHtml, isolateLatin, ltrHtml, ltrIsolate, mdLite, renderMarkdown } from "./bidi.js?v=18";
-import { ONLINE, initAccountUi, ensureStudent, fetchProblems, fetchProgress, fetchGuide, fetchSchedule, noteTyping, scheduleDraft, flushDraft, sendAttempt } from "./account.js?v=2";
+import { ONLINE, OFFLINE, initAccountUi, ensureStudent, fetchProblems, fetchProgress, fetchGuide, fetchSchedule, noteTyping, scheduleDraft, flushDraft, sendAttempt, getSession, onSessionChange, requireSignIn } from "./account.js?v=3";
+import { backfill, guideFor, noteSyncTyping, onSyncChange, queueResult, queueLength, serverState, solvedStatus, startAutoSync,
+  statusText, statusTip, summarize, syncNow, typingFor } from "./sync.js?v=1";
+import { initUpdateNotice } from "./update.js?v=1";
+import { define, t as tr } from "./i18n.js?v=1";
 import { fa, level, longText, remainingMs, setServerTime, shortText } from "./countdown.js?v=1";
 import { aiFailureChanged, aiProblemChanged, failureFromOutcome, initAi } from "./ai.js?v=3";
 import {
@@ -39,6 +43,20 @@ setScriptLoadObserver(recordScriptLoad);
 bootNote("module app.js evaluating");
 // Signal the classic index.html watchdog that the ES module graph parsed.
 window.__pgModuleLoaded = true;
+
+/** Online and offline both: hidden tests show no expected output, tutorials come from the account. */
+const MANAGED = ONLINE || OFFLINE;
+
+define({
+  "bar.signin": { fa: "ورود / ثبت‌نام", en: "Sign in / sign up" },
+  "bar.guide": { fa: "آموزش این مسئله بعد از ورود (یک بار، با اینترنت) روی این دستگاه ذخیره می‌شود و بعد از آن بدون اینترنت هم کار می‌کند.", en: "The tutorial for this problem is saved on this device after you sign in once (with internet), and then works without internet." },
+  "progress.sync": { fa: "روی این دستگاه حل شده: {solved} · به معلم ارسال شده: {synced} · منتظر ارسال: {pending}", en: "Solved on this device: {solved} · sent to the teacher: {synced} · waiting to send: {pending}" },
+  "progress.last": { fa: "آخرین همگام‌سازی: {time}", en: "Last sync: {time}" },
+  "progress.never": { fa: "هنوز همگام‌سازی نشده است.", en: "Not synced yet." },
+  "progress.rule": { fa: "یک نتیجه وقتی برای نمره حساب می‌شود که قبل از مهلت به معلم برسد؛ پس نتیجه‌ی حل‌شده را قبل از مهلت ارسال کن.", en: "A result counts for the score when it reaches the teacher before the deadline, so send solved problems before it." },
+  "progress.syncnow": { fa: "ارسال و همگام‌سازی حالا", en: "Send and sync now" },
+  "deadline.unsent": { fa: "حل شده، اما هنوز به معلم نرسیده است؛ قبل از مهلت ارسال کن.", en: "Solved, but it has not reached the teacher yet; send it before the deadline." },
+});
 
 const STORAGE_KEY = "teacher-playground-progress-v1";
 const HINT_KEY = "teacher-playground-hints-v1";
@@ -144,7 +162,7 @@ async function init() {
   }
   setBoot(12, "خواندن مسئله‌ها…");
   const [problems, concepts] = await Promise.all([
-    ONLINE ? fetchProblems() : fetchJson("data/problems.json?v=28"),
+    ONLINE ? fetchProblems() : fetchJson("data/problems.json?v=29"),
     fetchJson("data/concepts.json?v=28"),
   ]);
   // Stable `id` keeps progress across inserts; `number` is display order only.
@@ -157,6 +175,13 @@ async function init() {
   if (ONLINE) {
     state.schedule = await fetchSchedule();
     if (state.schedule?.serverTime) setServerTime(state.schedule.serverTime);
+  }
+  if (OFFLINE) {
+    // From the last sync: the class's deadlines and the tutorials kept on this device.
+    await ensureStudent();
+    const known = serverState();
+    state.schedule = known.packs?.length ? { classCode: known.classCode, packs: known.packs } : null;
+    applyCachedGuides();
   }
   syncProgressWithCatalog();
   bootNote(`loaded problems=${state.problems.length} concepts=${concepts.length}`);
@@ -190,6 +215,8 @@ async function init() {
         noteTyping(state.currentId, change);
         scheduleDraft({ problemId: state.currentId, code, revision: problemRevision(currentProblem()),
                         hintLevel: state.hintLevel[state.currentId] || 0 });
+      } else if (OFFLINE) {
+        noteSyncTyping(state.currentId, change);
       }
     },
   });
@@ -212,6 +239,7 @@ async function init() {
 
   const first = state.problems[0];
   if (first) selectProblem(first.id);
+  if (OFFLINE) startOfflineSync();
   bootNote("init done");
   window.__pgReady = true;
 }
@@ -381,9 +409,10 @@ function bindUi() {
   el.btnHint.addEventListener("click", onHint);
   el.btnProgress.addEventListener("click", showProgress);
   el.btnClearProgress.addEventListener("click", clearProgress);
-  document.querySelectorAll(".tab").forEach((tab) => {
+  // Only the problem's own tabs (the sign-in dialog has tabs of its own, with no panels here).
+  document.querySelectorAll(".tab[data-tab]").forEach((tab) => {
     tab.addEventListener("click", () => {
-      document.querySelectorAll(".tab").forEach((t) => t.classList.remove("active"));
+      document.querySelectorAll(".tab[data-tab]").forEach((t) => t.classList.remove("active"));
       document.querySelectorAll(".tab-panel").forEach((p) => p.classList.remove("active"));
       tab.classList.add("active");
       document.getElementById(`tab-${tab.dataset.tab}`).classList.add("active");
@@ -480,10 +509,14 @@ function renderList() {
       btn.className = "problem-link";
       if (p.id === state.currentId) btn.classList.add("active");
       if (state.progress[p.id]?.solved) btn.classList.add("done");
+      const sync = OFFLINE ? solvedStatus(p.id, state.progress[p.id], problemRevision(p)) : null;
+      const mark = sync
+        ? ` <span class="sync-mark ${sync}" title="${statusTip(sync)}">${sync === "synced" ? "✓" : sync === "outdated" ? "⚠" : "●"}</span>`
+        : "";
       btn.innerHTML = `
         <span class="num ltr" dir="ltr">${String(p.number).padStart(2, "0")}</span>
         <span>
-          <div class="title">${bidiMixHtml(p.title)}</div>
+          <div class="title">${bidiMixHtml(p.title)}${mark}</div>
           <div class="meta">${bidiMixHtml(p.topic)} · ${difficultyLabel(p.difficulty)} <span class="remain" data-pid="${p.id}"></span></div>
         </span>
       `;
@@ -634,7 +667,7 @@ function renderConcept(problem) {
   // Prefer per-problem guide so siblings that share a topic (e.g. p01/p02)
   // do not show the same آموزش text.
   // Online, the guide is fetched when the question opens; until it arrives the lesson text shows.
-  const lockedGuide = ONLINE && problem.guide === undefined;
+  const lockedGuide = MANAGED && problem.guide === undefined;
   const title = (!lockedGuide && problem.guideTitle) || state.concepts[problem.conceptId]?.title;
   const body = (!lockedGuide && problem.guide) || state.concepts[problem.conceptId]?.body;
   if (!title || !body) {
@@ -646,9 +679,90 @@ function renderConcept(problem) {
   const key = !lockedGuide && problem.guide
     ? `<p class="diff-legend-intro">وقتی آزمونی رد می‌شود، در بخش «نتایج» این رنگ‌ها را می‌بینید:</p>${colourLegendHtml()}`
     : "";
-  el.concept.innerHTML = `<h3 style="margin-top:0">${bidiMixHtml(title)}</h3>${key}${mdLite(
+  const note = OFFLINE && lockedGuide ? `<p class="muted">${tr("bar.guide")}</p>` : "";
+  el.concept.innerHTML = `<h3 style="margin-top:0">${bidiMixHtml(title)}</h3>${note}${key}${mdLite(
     body
   )}`;
+}
+
+/** Offline: puts the tutorials kept on this device into the problems. */
+function applyCachedGuides() {
+  for (const problem of state.problems) {
+    const guide = guideFor(problem.id);
+    if (guide) Object.assign(problem, guide);
+  }
+}
+
+/** Offline: adds what the server knows (for example work done on another computer) to this device. */
+function mergeServerProgress() {
+  const known = serverState();
+  const changedCode = new Set();
+  let progressChanged = false;
+  let codesChanged = false;
+  for (const problem of state.problems) {
+    const entry = known.progress?.[problem.id];
+    if (!entry || entry.revision !== problemRevision(problem)) continue;
+    if (entry.solved && !state.progress[problem.id]?.solved) {
+      state.progress[problem.id] = { solved: true, at: entry.at, revision: entry.revision };
+      progressChanged = true;
+    }
+    // The code of another computer comes along unless this device has code of its own (the starter does not count).
+    const mine = state.codes[problem.id];
+    if (entry.lastCode && (mine == null || mine === (problem.starter || defaultStarter(problem)))) {
+      if (mine !== entry.lastCode) {
+        state.codes[problem.id] = entry.lastCode;
+        codesChanged = true;
+        changedCode.add(problem.id);
+      }
+    }
+    if (entry.hintLevel > (state.hintLevel[problem.id] || 0)) state.hintLevel[problem.id] = entry.hintLevel;
+  }
+  if (progressChanged) saveJson(STORAGE_KEY, state.progress);
+  if (codesChanged) saveJson(CODE_KEY, state.codes);
+  saveJson(HINT_KEY, state.hintLevel);
+  return changedCode;
+}
+
+/** Offline: the chip in the bar says whether everything has reached the teacher. */
+function paintSyncBar() {
+  const chip = document.getElementById("sync-chip");
+  if (!chip || !OFFLINE) return;
+  const view = summarize(state.problems, state.progress, problemRevision);
+  chip.className = `sync-chip ${view.state}`;
+  chip.textContent = view.text;
+  chip.title = view.lastSyncAt ? tr("progress.last", { time: new Date(view.lastSyncAt).toLocaleString() }) : tr("progress.never");
+}
+
+function startOfflineSync() {
+  const refresh = () => {
+    const newCode = mergeServerProgress();
+    if (state.currentId && newCode.has(state.currentId)) setEditorCode(state.codes[state.currentId]);
+    applyCachedGuides();
+    const known = serverState();
+    state.schedule = known.packs?.length ? { classCode: known.classCode, packs: known.packs } : null;
+    renderList();
+    paintSyncBar();
+    const problem = currentProblem();
+    if (problem) {
+      renderConcept(problem);
+      renderDeadline(problem);
+    }
+  };
+  onSyncChange(refresh);
+  onSessionChange((who) => {
+    if (who) {
+      backfill(state.problems, state.progress, state.codes);
+      syncNow();
+    } else {
+      refresh();
+    }
+  });
+  document.getElementById("sync-chip")?.addEventListener("click", () => (getSession() ? syncNow() : requireSignIn()));
+  document.getElementById("btn-sync-now")?.addEventListener("click", () => (getSession() ? syncNow() : requireSignIn()));
+  if (getSession()) backfill(state.problems, state.progress, state.codes);
+  startAutoSync();
+  initUpdateNotice();
+  refresh();
 }
 
 function onHint() {
@@ -688,18 +802,12 @@ async function onRun() {
   try {
     const outcome = await runProblem(state.pyodide, problem, editorCode());
     renderResults(problem, outcome);
-    state.lastFailure = failureFromOutcome(problem, outcome, ONLINE ? visibleTests(problem) : Infinity);
+    state.lastFailure = failureFromOutcome(problem, outcome, MANAGED ? visibleTests(problem) : Infinity);
     aiFailureChanged();
     if (ONLINE) {
       await recordRun(problem, outcome);
-    } else if (!outcome.blocked && outcome.results.every((r) => r.ok)) {
-      state.progress[problem.id] = {
-        solved: true,
-        at: new Date().toISOString(),
-        revision: problemRevision(problem),
-      };
-      saveJson(STORAGE_KEY, state.progress);
-      renderList();
+    } else {
+      recordOfflineRun(problem, outcome);
     }
   } catch (err) {
     el.results.innerHTML = `<div class="test-card bad"><strong>خطای اجرا</strong><p>${isolateLatin(
@@ -711,16 +819,39 @@ async function onRun() {
   }
 }
 
+/** Offline: the run is kept on this device and queued to be sent to the teacher (see sync.js). */
+function recordOfflineRun(problem, outcome) {
+  const total = problem.tests.length;
+  const passed = outcome.blocked ? 0 : outcome.results.filter((r) => r.ok).length;
+  const solvedNow = !outcome.blocked && total > 0 && passed === total;
+  if (solvedNow && !state.progress[problem.id]?.solved) {
+    state.progress[problem.id] = { solved: true, at: new Date().toISOString(), revision: problemRevision(problem) };
+    saveJson(STORAGE_KEY, state.progress);
+  }
+  const count = typingFor(problem.id);
+  queueResult({
+    problemId: problem.id, revision: problemRevision(problem), code: editorCode(), passed, total,
+    blocked: Boolean(outcome.blocked), typed: count.typed, inserted: count.inserted,
+  });
+  renderList();
+  renderDeadline(problem);
+  paintSyncBar();
+}
+
 /** Online: the pack (a day's group of questions) that holds this question for the student's class. */
 function packOf(problemId) {
   return (state.schedule?.packs || []).find((pack) => pack.questions.some((q) => q.id === problemId)) || null;
 }
 
 /** Online: the deadline of this question, with the time left, or a note that it is practice only. */
+function hasSchedule() {
+  return Boolean(state.schedule?.packs?.length);
+}
+
 function renderDeadline(problem) {
   const note = document.getElementById("problem-deadline");
   if (!note) return;
-  if (!ONLINE) {
+  if (!ONLINE && !hasSchedule()) {
     note.hidden = true;
     return;
   }
@@ -733,7 +864,12 @@ function renderDeadline(problem) {
     note.classList.add("late");
     note.textContent = `مهلت نمره‌ی این مسئله گذشته است (${pack.untilText}). اکنون فقط برای تمرین است.`;
   } else if (state.progress[problem.id]?.solved) {
-    note.textContent = `حل شده است. مهلت نمره‌ی این مسئله (${pack.title}): ${pack.untilText}`;
+    const status = OFFLINE ? solvedStatus(problem.id, state.progress[problem.id], problemRevision(problem)) : "synced";
+    if (status === "synced") note.textContent = `حل شده است. مهلت نمره‌ی این مسئله (${pack.title}): ${pack.untilText}`;
+    else {
+      note.classList.add("soon");
+      note.textContent = `${tr("deadline.unsent")} (${pack.untilText})`;
+    }
   } else {
     note.innerHTML = `مهلت نمره‌ی این مسئله (${bidiMixHtml(pack.title)}): ${bidiMixHtml(pack.untilText)} · زمان باقی‌مانده: <strong class="countdown" id="problem-countdown" dir="ltr"></strong>`;
     tickDeadline();
@@ -743,7 +879,7 @@ function renderDeadline(problem) {
 /** Once a second: the countdown of the open question. When its deadline passes, the note changes. */
 function tickDeadline() {
   const problem = currentProblem();
-  const pack = problem && ONLINE ? packOf(problem.id) : null;
+  const pack = problem && (ONLINE || hasSchedule()) ? packOf(problem.id) : null;
   const out = document.getElementById("problem-countdown");
   if (!pack || !out) return;
   const ms = remainingMs(pack.until);
@@ -756,7 +892,7 @@ function tickDeadline() {
 
 /** The remaining time next to each question in the list (solved questions show none). */
 function updateRemaining() {
-  if (!ONLINE) return;
+  if (!ONLINE && !hasSchedule()) return;
   for (const chip of el.problemList.querySelectorAll(".remain")) {
     const pack = state.progress[chip.dataset.pid]?.solved ? null : packOf(chip.dataset.pid);
     chip.classList.remove("ok", "soon", "urgent", "late");
@@ -893,7 +1029,7 @@ function renderTestCard(problem, result) {
       </div>`;
   }
 
-  if (ONLINE && result.index > visibleTests(problem)) {
+  if (MANAGED && result.index > visibleTests(problem)) {
     // Online, the hidden tests show no expected output, so a student cannot copy it.
     return `
       <div class="test-card bad">
@@ -993,22 +1129,41 @@ function inputPromptTip(expected, actual) {
 }
 
 function showProgress() {
-  if (ONLINE) renderPacks();
+  if (ONLINE || hasSchedule()) renderPacks();
   const solved = state.problems.filter((p) => state.progress[p.id]?.solved).length;
   el.progressSummary.innerHTML = `${ltrHtml(String(solved))} از ${ltrHtml(
     String(state.problems.length)
-  )} مسئله حل شده (فقط روی همین مرورگر ذخیره می‌شود).`;
+  )} مسئله حل شده${OFFLINE ? "." : " (فقط روی همین مرورگر ذخیره می‌شود)."}`;
+  paintSyncSummary();
   el.progressList.innerHTML = state.problems
     .map((p) => {
       const ok = state.progress[p.id]?.solved;
+      const sync = OFFLINE ? solvedStatus(p.id, state.progress[p.id], problemRevision(p)) : null;
+      const label = ok ? `حل‌شده${sync ? ` · ${statusText(sync)}` : ""}` : "—";
       return `<li><span class="progress-item-text">${indexLabelHtml(p.number)} ${bidiMixHtml(
         p.title
-      )}</span><strong class="progress-item-state" style="color:${
+      )}</span><strong class="progress-item-state ${sync || ""}" style="color:${
         ok ? "var(--ok)" : "var(--muted)"
-      }">${ok ? "حل‌شده" : "—"}</strong></li>`;
+      }">${label}</strong></li>`;
     })
     .join("");
   el.progressDialog.showModal();
+}
+
+/** Offline: the lines at the top of the progress window about what reached the teacher. */
+function paintSyncSummary() {
+  const box = document.getElementById("sync-summary");
+  if (!box) return;
+  box.hidden = !OFFLINE;
+  if (!OFFLINE) return;
+  const view = summarize(state.problems, state.progress, problemRevision);
+  document.getElementById("sync-summary-text").textContent = `${tr("progress.sync", view)}`;
+  document.getElementById("sync-summary-last").textContent = view.lastSyncAt
+    ? tr("progress.last", { time: new Date(view.lastSyncAt).toLocaleString() })
+    : tr("progress.never");
+  const bar = document.getElementById("sync-summary-state");
+  bar.textContent = view.text;
+  bar.className = `sync-chip ${view.state}`;
 }
 
 function clearProgress() {

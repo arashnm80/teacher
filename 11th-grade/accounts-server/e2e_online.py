@@ -223,13 +223,13 @@ with sync_playwright() as p:
     wait_ready(page_f)
     check("the offline copy keeps its progress in the browser", page_f.locator(".problem-link.done").count() >= 1)
     pick(page_f, multi["title"])
-    check("the offline copy shows the guide at once", "قدم ۱" in page_f.inner_text("#concept"))
+    check("the offline copy has no tutorial until a sign-in (like the website)", "قدم ۱" not in page_f.inner_text("#concept"))
     set_code(page_f, "print('wrong')")
     run_code(page_f)
     offline_cards = page_f.locator("#results .test-card")
-    check("the offline copy shows the expected output of every test",
-          offline_cards.count() >= 2 and ("باید باشد" in offline_cards.nth(1).inner_text()
-                                           or "مورد انتظار" in offline_cards.nth(1).inner_text()))
+    check("the offline copy hides the expected output of hidden tests, like the website",
+          offline_cards.count() >= 2 and "این آزمون پنهان است" in offline_cards.nth(1).inner_text()
+          and "باید باشد" not in offline_cards.nth(1).inner_text())
     ctx_f.close()
 
     check("no page errors", not errors, "; ".join(errors[:3]))

@@ -10,9 +10,14 @@
   <link rel="stylesheet" href="../assets/shared.css?v=23">
   <link rel="stylesheet" href="vendor/codemirror/codemirror.min.css">
   <link rel="stylesheet" href="vendor/codemirror/theme/material-darker.min.css">
-  <link rel="stylesheet" href="css/style.css?v=25">
+  <link rel="stylesheet" href="css/style.css?v=26">
 </head>
 <body data-root="../">
+  <div id="update-banner" class="update-banner" role="status" hidden>
+    <span id="update-text"></span>
+    <button type="button" id="update-apply" class="btn primary sm">به‌روزرسانی</button>
+    <button type="button" id="update-later" class="btn ghost sm">بعداً</button>
+  </div>
   <!--SITE-HEADER-->
 
   <div id="file-note" class="file-note" hidden>این زمین بازی را نمی‌شود مستقیم از فایل index.html باز کرد. فایل فشرده‌ی کل سایت را باز کنید و <b>شروع.bat</b> را اجرا کنید.</div>
@@ -42,7 +47,9 @@
         <button type="button" id="btn-progress" class="btn ghost sm">پیشرفت من</button>
       </div>
       <div id="student-bar" class="student-bar" hidden>
-        <span>ورود به نام <strong id="student-name"></strong> · کلاس <strong id="student-class"></strong></span>
+        <span id="student-who">ورود به نام <strong id="student-name"></strong> · کلاس <strong id="student-class"></strong></span>
+        <button type="button" id="student-signin" class="btn primary sm" hidden>ورود / ثبت‌نام</button>
+        <button type="button" id="sync-chip" class="sync-chip" aria-live="polite"></button>
         <button type="button" id="student-logout" class="btn ghost sm">خروج</button>
       </div>
       <label class="filter">
@@ -186,6 +193,12 @@
     <form method="dialog" class="progress-card">
       <h2>پیشرفت شما</h2>
       <p id="progress-summary"></p>
+      <div id="sync-summary" class="sync-summary" hidden>
+        <p id="sync-summary-text"></p>
+        <p><span id="sync-summary-state" class="sync-chip"></span> <span id="sync-summary-last" class="muted"></span></p>
+        <p class="muted">یک نتیجه وقتی برای نمره حساب می‌شود که قبل از مهلت به معلم برسد؛ پس نتیجه‌ی حل‌شده را قبل از مهلت ارسال کن.</p>
+        <button type="button" id="btn-sync-now" class="btn secondary sm">ارسال و همگام‌سازی حالا</button>
+      </div>
       <ul id="progress-list"></ul>
       <div id="pack-list" class="pack-list"></div>
       <div class="btn-row progress-actions">
@@ -217,6 +230,7 @@
         <input id="auth-password2" type="password" autocomplete="new-password" dir="ltr"></label>
       <p class="auth-error" id="auth-error" role="alert" hidden></p>
       <button type="submit" id="auth-submit" class="btn primary block">ورود</button>
+      <button type="button" id="auth-later" class="btn ghost block" hidden>فعلاً بدون ورود ادامه می‌دهم</button>
       <p class="auth-help">رمزت را فراموش کرده‌ای؟ از معلم بخواه آن را بازنشانی کند. بعد با همین شماره و کد ملی، رمز تازه‌ات را انتخاب می‌کنی.</p>
     </form>
   </dialog>
@@ -242,7 +256,7 @@
   <script data-cfasync="false">
   (function () {
     var early = [];
-    var APP_JS = "js/app.js?v=33";
+    var APP_JS = "js/app.js?v=34";
     var MODULES = [
       APP_JS,
       "js/bootlog.js?v=11",
@@ -253,6 +267,10 @@
       "js/diff.js?v=11",
       "js/bidi.js?v=18",
       "js/countdown.js?v=1",
+      "js/i18n.js?v=1",
+      "js/account.js?v=3",
+      "js/sync.js?v=1",
+      "js/update.js?v=1",
       "js/ai.js?v=3"
     ];
     function showBootFailure(title, tech) {
