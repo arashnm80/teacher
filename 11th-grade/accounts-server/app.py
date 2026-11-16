@@ -74,6 +74,7 @@ ADMIN_MAX_FAILURES = 5
 LOCK_FOR = timedelta(minutes=15)
 PASSWORD_MIN, PASSWORD_MAX = 8, 128
 MAX_BODY = 64 * 1024
+OFFLINE_MAX_BODY = 1024 * 1024  # a batch of results from the offline copy, with their code
 MAX_CODE = 30_000
 ADMIN_PASSWORD_MIN = 12
 QUICK_PASS_SECONDS = 60  # a first pass this soon after the first look is flagged (long code only)
@@ -1362,7 +1363,7 @@ class Handler(SimpleHTTPRequestHandler):
             raise ApiError(400, "bad_length", "درخواست نامعتبر است.")
         if length == 0:
             return {}
-        if length > MAX_BODY:
+        if length > (OFFLINE_MAX_BODY if self.cors else MAX_BODY):
             raise ApiError(413, "too_large", "درخواست خیلی بزرگ است.")
         ctype = (self.headers.get("Content-Type") or "").split(";")[0].strip().lower()
         if ctype != "application/json":
