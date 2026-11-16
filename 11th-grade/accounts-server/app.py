@@ -103,7 +103,8 @@ PASSWORD_DIGIT = re.compile(r"[0-9]")
 PROBLEMS_BYTES = b""  # the full file: admin only
 PROBLEMS_PUBLIC_BYTES = b""  # what a signed-in student receives: no solution material
 PROBLEM_META: dict[str, dict] = {}  # id -> total tests, current revision, title, number, samples
-GUIDES: dict[str, dict] = {}  # id -> the solution material, released after a pass
+GUIDES: dict[str, dict] = {}  # id -> the tutorial (آموزش): guide, solutions, common mistakes
+GUIDES_VERSION = ""  # changes whenever any tutorial changes: the offline copy downloads them again
 SCHEDULE: Schedule | None = None  # class packs and deadlines (teacher_schedule.py)
 _DUMMY_HASH: str | None = None
 _counter_lock = threading.Lock()
@@ -440,7 +441,7 @@ def maintenance() -> None:
 # --- problems -----------------------------------------------------------------------------
 
 def load_problems() -> None:
-    global PROBLEMS_BYTES, PROBLEMS_PUBLIC_BYTES
+    global PROBLEMS_BYTES, PROBLEMS_PUBLIC_BYTES, GUIDES_VERSION
     raw = CONFIG["problems"].read_bytes()
     data = json.loads(raw.decode("utf-8"))
     PROBLEMS_BYTES = raw
@@ -459,6 +460,8 @@ def load_problems() -> None:
             "samples": len(p.get("samples") or []),
         }
         GUIDES[p["id"]] = {k: p[k] for k in GUIDE_FIELDS if k in p}
+    GUIDES_VERSION = hashlib.sha256(
+        json.dumps(GUIDES, ensure_ascii=False, sort_keys=True).encode("utf-8")).hexdigest()[:16]
 
 
 def clean_problem(value: object) -> str:
@@ -938,12 +941,19 @@ def offline_state(req: "Request", student: sqlite3.Row) -> dict:
         "progress": {r["problem_id"]: progress_view(r, cls) for r in rows},
         "packs": SCHEDULE.public_packs(cls, PROBLEM_META) if SCHEDULE else [],
         "revisions": {pid: meta["revision"] for pid, meta in PROBLEM_META.items()},
+        "guidesVersion": GUIDES_VERSION,
         "serverTime": stamp(now()),
     }
 
 
 def offline_me(req: "Request"):
     return 200, offline_state(req, req.require_student()), []
+
+
+def offline_guides(req: "Request"):
+    """Every tutorial in one answer: the offline copy keeps them on the device after the first sign-in."""
+    req.require_student()
+    return 200, {"version": GUIDES_VERSION, "guides": GUIDES}, []
 
 
 def offline_sync(req: "Request"):
@@ -1270,6 +1280,7 @@ route("POST", "/api/offline/complete-reset", complete_reset)
 route("POST", "/api/offline/logout", logout)
 route("GET", "/api/offline/me", offline_me)
 route("POST", "/api/offline/sync", offline_sync)
+route("GET", "/api/offline/guides", offline_guides)
 route("GET", "/api/admin/schedule", admin_schedule)
 route("GET", "/api/admin/submissions", admin_submissions)
 route("GET", "/api/admin/submissions.csv", admin_submissions_csv)

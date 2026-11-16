@@ -851,6 +851,22 @@ class OfflineApiTests(Base):
         self.assertEqual(self.offline("POST", "sync", {"results": [self.result("p01", 0, 2)] * 101}, token=token)[0], 400)
         self.assertEqual(self.offline("POST", "sync", {"results": []}, token=token)[0], 200)
 
+    def test_the_tutorials_come_in_one_answer_with_a_version_that_follows_their_content(self):
+        token = self.sign_up()
+        self.assertEqual(self.offline("GET", "guides")[0], 401)
+        status, body, _, _ = self.offline("GET", "guides", token=token)
+        self.assertEqual(status, 200)
+        self.assertEqual(body["guides"]["p01"]["guide"], "SECRET-GUIDE-TEXT")
+        self.assertEqual(body["guides"]["p02"]["guide"], "SECRET-GUIDE-2")
+        state = self.offline("GET", "me", token=token)[1]
+        self.assertEqual(state["guidesVersion"], body["version"])
+        problems = base_fixture()
+        problems[0]["guide"] = "متن تازه"
+        use_problems(problems)
+        self.assertNotEqual(self.offline("GET", "me", token=token)[1]["guidesVersion"], body["version"])
+        use_problems(base_fixture())
+        self.assertEqual(self.offline("GET", "me", token=token)[1]["guidesVersion"], body["version"])
+
     def test_logout_ends_the_token(self):
         token = self.sign_up()
         self.assertEqual(self.offline("POST", "logout", {}, token=token)[0], 200)
