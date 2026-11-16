@@ -1,0 +1,11 @@
+[Unit]
+Description=Web ports only from Cloudflare; real visitor address for nginx
+After=network-online.target nginx.service
+Wants=network-online.target
+
+[Service]
+Type=oneshot
+ExecStart=/usr/local/sbin/cloudflare-web-guard.sh
+
+[Install]
+WantedBy=multi-user.target

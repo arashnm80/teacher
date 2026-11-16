@@ -1,0 +1,10 @@
+[Unit]
+Description=Refresh the Cloudflare address lists daily
+
+[Timer]
+OnCalendar=daily
+Persistent=true
+Unit=cloudflare-web-guard.service
+
+[Install]
+WantedBy=timers.target

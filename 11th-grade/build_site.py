@@ -9,6 +9,8 @@ REQUIREMENTS.md.
 
 from __future__ import annotations
 
+import gzip
+import hashlib
 import html
 import json
 import os
@@ -20,7 +22,6 @@ from pathlib import Path
 import markdown
 
 from outline import MODULES, SECTIONS
-from repair_markdown import repair_markdown
 
 ROOT = Path(__file__).resolve().parent
 BOOK = ROOT / "converted-markdown-book"
@@ -29,22 +30,18 @@ WEB = ROOT / "web"
 EN_DIR = ROOT / "sections" / "en"
 FA_DIR = ROOT / "sections" / "fa"
 
-PAGE_RE = re.compile(r"^\*\*صفحه\s*([۰-۹0-9]+)\*\*\s*$", re.M)
+PAGE_RE = re.compile(r"^<!-- page (\d+) -->\s*$", re.M)
 TAG_RE = re.compile(r"(<[^>]+>)")
+# An English run inside Persian text: from a Latin letter to the last Latin
+# letter, digit, or closing mark before the next Persian word.
 LATIN_RE = re.compile(
-    r"(?<![\w/])(?:\([A-Za-z0-9][^()\n]{0,80}\)|[A-Za-z][A-Za-z0-9_+#./:\\-]*)"
+    r"[\"“]?[A-Za-z][A-Za-z0-9_.\-+#/:\\'\"“”’()\[\]{}=;,!?@$%*\s]*[A-Za-z0-9)\]}\"”’!?%]|[\"“]?[A-Za-z]"
 )
 ARABIC_RE = re.compile(
-    r"[\u0600-\u06FF](?:[\u0600-\u06FF\u200c\u064b-\u0652]|[ \t])+[\u0600-\u06FF]|[\u0600-\u06FF]{2,}"
+    r"[؀-ۿ](?:[؀-ۿ‌ً-ْ]|[ \t])+[؀-ۿ]|[؀-ۿ]{2,}"
 )
 ENTITY_RE = re.compile(r"(&[A-Za-z]+;|&#\d+;|&#x[0-9A-Fa-f]+;)")
-PAGE_MARK_RE = re.compile(
-    r"<p><strong>((?:صفحه|Page)\s+[^<]+)</strong></p>"
-)
-FIGURE_RE = re.compile(
-    r"<p>(<img\b[^>]*>)\s*</p>\s*<p><strong>((?:شکل|Figure|تصویر)[^<]*)</strong></p>",
-    re.I,
-)
+FA_DIGITS = str.maketrans("0123456789", "۰۱۲۳۴۵۶۷۸۹")
 
 
 def esc(text: str) -> str:
@@ -55,24 +52,36 @@ def rel(from_path: Path, to_path: Path) -> str:
     return os.path.relpath(to_path, start=from_path.parent).replace(os.sep, "/")
 
 
-def page_number(raw: str) -> int:
-    return int(raw.translate(str.maketrans("۰۱۲۳۴۵۶۷۸۹", "0123456789")))
-
-
 def pages_in(text: str) -> dict[int, str]:
+    """Split a converted chapter at its «<!-- page N -->» markers."""
     matches = list(PAGE_RE.finditer(text))
     if not matches:
-        raise SystemExit("a lesson file has no صفحه markers")
+        raise SystemExit("a chapter file has no page markers")
     found: dict[int, str] = {}
-    preamble = text[: matches[0].start()].strip()
     for index, match in enumerate(matches):
-        number = page_number(match.group(1))
+        number = int(match.group(1))
         end = matches[index + 1].start() if index + 1 < len(matches) else len(text)
-        chunk = text[match.start() : end].strip()
-        if index == 0 and preamble:
-            chunk = preamble + "\n\n" + chunk
-        found[number] = chunk
+        found[number] = text[match.start() : end].strip()
     return found
+
+
+RUBRIC_RE = re.compile(r"^## ارزشیابی شایستگی", re.M)
+
+
+def drop_rubric(text: str) -> str:
+    """Keep the «ارزشیابی شایستگی» heading and its standard; drop the
+    scoring rubric that follows (REQUIREMENTS: not part of the site)."""
+    match = RUBRIC_RE.search(text)
+    if not match:
+        return text
+    head, rest = text[: match.start()], text[match.start() :]
+    kept = []
+    for block in re.split(r"\n\s*\n", rest):
+        stripped = block.strip()
+        if stripped.startswith(("![", "|", "> **پانویس")) or (kept and stripped.startswith("<!-- page")):
+            break
+        kept.append(block)
+    return head + "\n\n".join(kept).rstrip() + "\n"
 
 
 def section_markdown(section: dict) -> str:
@@ -83,136 +92,130 @@ def section_markdown(section: dict) -> str:
         if number not in found:
             raise SystemExit(f"{section['id']} is missing book page {number}")
         parts.append(found[number])
-    return "\n\n".join(parts).strip() + "\n"
+    return drop_rubric("\n\n".join(parts).strip() + "\n")
 
 
 def export_fa() -> None:
     FA_DIR.mkdir(parents=True, exist_ok=True)
     for section in SECTIONS:
-        if section.get("custom"):
+        if section.get("custom") or section["id"] == "toc":
             continue
         (FA_DIR / f"{section['id']}.md").write_text(
             section_markdown(section), encoding="utf-8"
         )
 
 
-def render_markdown(text: str, image_prefix: str) -> str:
+CALLOUT_KINDS = {
+    "نکته": "note", "توجه": "note", "note": "note",
+    "فعالیت": "activity", "activity": "activity",
+    "کنجکاوی": "curiosity", "curiosity": "curiosity", "try this": "curiosity",
+    "کار کارگاهی": "workshop", "workshop": "workshop",
+    "مثال": "example", "example": "example",
+    "بیشتر بدانید": "more", "learn more": "more",
+    "پروژه": "project", "project": "project",
+    "پانویس": "footnote", "footnote": "footnote", "footnotes": "footnote",
+}
+CALLOUT_OPEN_RE = re.compile(r"<blockquote>\s*<p><strong>([^<]{1,40})</strong></p>", re.S)
+
+
+def callout_kind(label: str) -> str:
+    key = label.strip().lower()
+    key = re.sub(r"\s*\((ادامه|continued)\)$", "", key)
+    return CALLOUT_KINDS.get(key, "note")
+
+
+def box_callouts(body: str) -> str:
+    """«> **نکته**» blockquotes become tinted boxes like the book's."""
+    out: list[str] = []
+    stack: list[bool] = []
+    pos = 0
+    for match in re.finditer(r"<blockquote>|</blockquote>", body):
+        out.append(body[pos : match.start()])
+        pos = match.end()
+        if match.group(0) == "<blockquote>":
+            labelled = CALLOUT_OPEN_RE.match(body, match.start())
+            if labelled:
+                label = labelled.group(1).strip()
+                kind = callout_kind(label)
+                cont = " continued" if re.search(r"\((ادامه|continued)\)$", label) else ""
+                out.append(f'<aside class="callout {kind}{cont}"><p class="callout-label">{label}</p>')
+                pos = labelled.end()
+                stack.append(True)
+            else:
+                out.append("<blockquote>")
+                stack.append(False)
+        else:
+            out.append("</aside>" if (stack.pop() if stack else False) else "</blockquote>")
+    out.append(body[pos:])
+    return "".join(out)
+
+
+FIGURE_RE = re.compile(
+    r"<p>(<img\b[^>]*>)\s*(?:<br\s*/?>\s*)?<em>((?:شکل|Figure)[^<]*)</em>([^<]*)</p>"
+)
+TABLE_CAP_RE = re.compile(r"<p><em>((?:جدول|Table|شکل|Figure)\s[^<]*)</em></p>")
+
+
+QUOTED_FENCE_RE = re.compile(r"^((?:> ?)+)```[^\n]*\n(.*?)^\1```[ \t]*$", re.M | re.S)
+
+
+def quoted_fences(text: str) -> str:
+    """Python-Markdown cannot see a ``` fence inside «> » quotes; turn it
+    into an indented code block, which it does read there."""
+
+    def repl(match: re.Match[str]) -> str:
+        prefix = match.group(1).rstrip() + " "
+        body = []
+        for line in match.group(2).rstrip("\n").split("\n"):
+            stripped = line[len(match.group(1)):] if line.startswith(match.group(1)) else line.lstrip("> ")
+            body.append(prefix + "    " + stripped)
+        return prefix.rstrip() + "\n" + "\n".join(body) + "\n" + prefix.rstrip()
+
+    return QUOTED_FENCE_RE.sub(repl, text)
+
+
+def render_markdown(text: str, image_prefix: str, lang: str) -> str:
+    def page_mark(match: re.Match[str]) -> str:
+        number = match.group(1)
+        label = f"صفحه {number.translate(FA_DIGITS)}" if lang == "fa" else f"Page {number}"
+        return f'\n<p class="page-mark">{label}</p>\n'
+
+    text = PAGE_RE.sub(page_mark, text)
     text = re.sub(r"<!--.*?-->", "", text, flags=re.S)
-    converter = markdown.Markdown(extensions=["fenced_code", "tables", "sane_lists", "toc"])
+    text = quoted_fences(text)
+    converter = markdown.Markdown(extensions=["fenced_code", "tables", "sane_lists"])
     body = converter.convert(text)
 
     def image(match: re.Match[str]) -> str:
         name = match.group(1).split("/")[-1]
-        return f'src="{image_prefix}/{name}"'
+        return f'src="{image_prefix}/{name}" loading="lazy"'
 
     body = re.sub(r'src="(?:\.\./)*images/([^"]+)"', image, body)
-    body = PAGE_MARK_RE.sub(r'<p class="page-mark">\1</p>', body)
     body = FIGURE_RE.sub(
-        r'<figure class="shot">\1<figcaption>\2</figcaption></figure>',
+        lambda m: f'<figure class="shot">{m.group(1)}<figcaption>{m.group(2)}{m.group(3)}</figcaption></figure>',
         body,
     )
+    body = re.sub(r"<p>(<img\b[^>]*>)</p>", r'<figure class="shot">\1</figure>', body)
+    body = TABLE_CAP_RE.sub(r'<p class="table-cap">\1</p>', body)
+    body = body.replace("<table>", '<div class="table-wrap"><table>').replace("</table>", "</table></div>")
     body = body.replace("<pre>", '<div class="code-wrap" dir="ltr"><pre>').replace(
         "</pre>", "</pre></div>"
     )
     return box_callouts(body)
 
 
-# The book prints کنجکاوی / پروژه / نکته / فعالیت as tinted side boxes.
-# Their markdown is an h3 followed by the box content, so wrap that range
-# in an aside with its own background color.
-CALLOUT_KINDS = (
-    ("curiosity", ("کنجکاوی", "try this")),
-    ("project", ("پروژه", "project")),
-    ("note", ("نکته", "note")),
-    ("activity", ("فعالیت", "activity")),
-)
-# "Quiz game project" is a book callout even though the keyword comes last.
-CALLOUT_TAIL = {"quiz game project"}
-CALLOUT_END_RE = re.compile(
-    r"<(?:h[123][ >]|hr[ >]|p class=\"page-mark\")",
-    re.I,
-)
-# Book callouts are short side boxes. Without a following heading they used to
-# swallow the rest of the lesson until the next page break.
-CALLOUT_MAX_CHARS = 1400
-
-
-def box_callouts(body: str) -> str:
-    out: list[str] = []
-    pos = 0
-    for match in re.finditer(r"<h3\b[^>]*>(.*?)</h3>", body, re.S):
-        title = re.sub(r"<[^>]+>", "", match.group(1)).strip().lower()
-        kind = ""
-        for name, keys in CALLOUT_KINDS:
-            if title.startswith(keys) or (name == "project" and title in CALLOUT_TAIL):
-                kind = name
-                break
-        if not kind:
-            continue
-        end = CALLOUT_END_RE.search(body, match.end())
-        stop = end.start() if end else len(body)
-        chunk = body[match.end() : stop]
-        if len(chunk) > CALLOUT_MAX_CHARS:
-            # Prefer cutting after a block close near the budget.
-            cut_at = None
-            for closer in ("</p>", "</figure>", "</div>", "</pre>"):
-                idx = chunk.rfind(closer, 0, CALLOUT_MAX_CHARS)
-                if idx != -1:
-                    candidate = idx + len(closer)
-                    if cut_at is None or candidate > cut_at:
-                        cut_at = candidate
-            if cut_at is not None:
-                stop = match.end() + cut_at
-        out.append(body[pos : match.start()])
-        out.append(
-            f'<aside class="callout {kind}">{body[match.start() : stop]}</aside>'
-        )
-        pos = stop
-    out.append(body[pos:])
-    return "".join(out)
-
-
-# Adjacent LTR <code> islands reverse in RTL. Glue a run of codes and the
-# punctuation between them into one isolate so show_product(name, price) and
-# name, price stay in source order.
-CODE_RUN_RE = re.compile(
-    r"(?:<code\b[^>]*>[^<]*</code>)(?:(?:&nbsp;|&#160;|\s)*[,.()\[\]{}:;=+\-*/%]+(?:&nbsp;|&#160;|\s)*(?:<code\b[^>]*>[^<]*</code>))+(?:(?:&nbsp;|&#160;|\s)*[)\]]+)?",
-    re.I,
-)
-
-
-def group_code_runs(fragment: str, lang: str) -> str:
-    if lang != "fa":
-        return fragment
-
-    def wrap(match: re.Match[str]) -> str:
-        chunk = match.group(0)
-        if chunk.startswith("<bdi"):
-            return chunk
-        return f'<bdi dir="ltr">{chunk}</bdi>'
-
-    parts = re.split(r"(<pre\b.*?</pre>|<script\b.*?</script>)", fragment, flags=re.I | re.S)
-    out: list[str] = []
-    for part in parts:
-        if part.lower().startswith(("<pre", "<script")):
-            out.append(part)
-        else:
-            out.append(CODE_RUN_RE.sub(wrap, part))
-    return "".join(out)
-
-
 def isolate_bidi(fragment: str, lang: str) -> str:
-    """Keep mixed Persian/English lines in reading order."""
-    fragment = group_code_runs(fragment, lang)
+    """Keep mixed Persian/English lines in reading order: every English run
+    in Persian text (and every Persian run in English text) is isolated."""
     parts = TAG_RE.split(fragment)
     out: list[str] = []
     skip = 0
     for part in parts:
         if part.startswith("<"):
             low = part.lower()
-            if low.startswith(("<pre", "<code", "<script", "<bdi")):
+            if low.startswith(("<pre", "<code", "<script", "<bdi", "<style")):
                 skip += 1
-            elif low.startswith(("</pre", "</code", "</script", "</bdi")):
+            elif low.startswith(("</pre", "</code", "</script", "</bdi", "</style")):
                 skip = max(0, skip - 1)
             out.append(part)
             continue
@@ -223,11 +226,23 @@ def isolate_bidi(fragment: str, lang: str) -> str:
         direction = "ltr" if lang == "fa" else "rtl"
 
         def wrap(piece: str, pattern: re.Pattern[str] = pattern, direction: str = direction) -> str:
-            return pattern.sub(
-                lambda match: f'<bdi dir="{direction}">{match.group(0)}</bdi>',
-                piece,
-            )
+            def one(match: re.Match[str]) -> str:
+                run = match.group(0)
+                body = run.rstrip()
+                tail = run[len(body):]
+                # A closing bracket whose opener is outside the run stays
+                # outside, so «(syntax)» keeps both brackets together.
+                pairs = {")": "(", "]": "[", "}": "{"}
+                while body and body[-1] in pairs and body.count(body[-1]) > body.count(pairs[body[-1]]):
+                    tail = body[-1] + tail
+                    body = body[:-1].rstrip()
+                if not body:
+                    return run
+                return f'<bdi dir="{direction}">{body}</bdi>{tail}'
 
+            return pattern.sub(one, piece)
+
+        # Entities (&lt; &amp; ...) must not be split by the English pattern.
         pieces = ENTITY_RE.split(part)
         out.append("".join(wrap(piece) if index % 2 == 0 else piece for index, piece in enumerate(pieces)))
     return "".join(out)
@@ -258,22 +273,97 @@ def flatten() -> list[dict]:
     return pages
 
 
-def chrome(page_path: Path, title_fa: str, title_en: str, pages: list[dict], body: str) -> str:
-    assets = rel(page_path, SITE / "assets" / "style.css") + "?v=19"
-    script = rel(page_path, SITE / "assets" / "app.js") + "?v=19"
-    search = rel(page_path, SITE / "assets" / "search-index.js") + "?v=19"
-    home = rel(page_path, SITE / "index.html")
-    favicon = rel(page_path, SITE / "assets" / "favicon.svg")
-    package = rel(page_path, SITE / "grade11-offline.zip") + "?v=4"
-    to_home = rel(page_path, SITE / "index.html")
-    root = "" if to_home == "index.html" else to_home[: -len("index.html")]
 
+# Sections of the «مطالب مفید» page: the sidebar lists them (its own contents).
+LINK_SECTIONS = [
+    ("software", "نرم‌افزارهای لازم", "Get the software"),
+    ("videos", "ویدیوهای جالب درباره پایتون", "Fun Python videos"),
+    ("last-period", "برای زنگ چهارم", "For the last period"),
+]
+
+
+def materials_nav() -> list[str]:
+    rows = "".join(
+        f'<a href="#{anchor}" data-fa="{esc(fa)}" data-en="{esc(en)}">{esc(fa)}</a>'
+        for anchor, fa, en in LINK_SECTIONS
+    )
+    return [
+        '<details class="toc" open><summary class="nav-toggle" aria-label="فهرست">'
+        '<span class="burger" aria-hidden="true"></span>'
+        '<span class="label" data-fa="فهرست این بخش" data-en="In this section">فهرست این بخش</span>'
+        '</summary><nav id="lesson-nav" class="side" aria-label="contents">',
+        f'<p class="mod" data-fa="فراتر از کتاب" data-en="Beyond the book">فراتر از کتاب</p>',
+        f"{rows}</nav></details>",
+    ]
+
+ASSET_V = "24"
+
+
+def is_book_page(page_path: Path) -> bool:
+    """Textbook pages (lessons, contents, materials) get the language switch."""
+    return page_path.relative_to(SITE).parts[:1] == ("book",)
+
+
+def site_header(root: str, active: str, lang: bool) -> str:
+    """The one header every page uses. root: prefix to the site root; active: current section."""
+
+    def tab(key: str, href: str, fa: str, en: str) -> str:
+        current = ' aria-current="page"' if key == active else ""
+        return f'<a href="{root}{href}"{current} data-fa="{fa}" data-en="{en}">{fa}</a>'
+
+    tabs = (
+        tab("lessons", "book/toc.html", "درس‌ها", "Lessons")
+        + tab("playground", "playground/index.html", "زمین بازی", "Playground")
+        + tab("materials", "book/links.html", "مطالب مفید", "Useful materials")
+    )
+    toggle = (
+        '<button type="button" id="lang-toggle" class="lang-toggle" dir="ltr" data-lang="fa" aria-label="تغییر زبان">'
+        '<span data-opt="fa">فا</span><span data-opt="en">EN</span></button>'
+        if lang
+        else ""
+    )
+    return (
+        '<header class="top">'
+        f'<a class="brand" href="{root}index.html"><span data-fa="طراح سایت" data-en="Site Design">طراح سایت</span>'
+        '<small data-fa="پایه یازدهم" data-en="Grade 11">پایه یازدهم</small></a>'
+        f'<nav class="sections" aria-label="بخش‌های سایت">{tabs}</nav>'
+        '<div class="search-wrap" role="search"><input id="q" type="search" autocomplete="off" data-lpignore="true" data-1p-ignore data-bwignore="true" data-form-type="other" '
+        'data-fa-placeholder="جستجو در درس‌ها" data-en-placeholder="Search lessons" '
+        'placeholder="جستجو در درس‌ها" aria-label="جستجو در درس‌ها">'
+        '<div id="search-results" class="search-results" hidden></div></div>'
+        '<div class="top-actions">'
+        f'<a class="btn primary sm download-link" href="{root}grade11-offline.zip?v=5" '
+        'data-fa="دانلود کل سایت" data-en="Download the whole site">دانلود کل سایت</a>'
+        f"{toggle}</div></header>"
+    )
+
+
+def site_footer(root: str) -> str:
+    """The one footer every page uses."""
+    return (
+        '<footer class="site-foot">'
+        '<p><strong data-fa="طراح سایت" data-en="Site Design">طراح سایت</strong> · '
+        '<span data-fa="پایه یازدهم" data-en="Grade 11">پایه یازدهم</span></p>'
+        '<nav aria-label="پیوندهای سایت">'
+        f'<a href="{root}index.html" data-fa="صفحه اصلی" data-en="Home">صفحه اصلی</a>'
+        f'<a href="{root}book/toc.html" data-fa="درس‌ها" data-en="Lessons">درس‌ها</a>'
+        f'<a href="{root}playground/index.html" data-fa="زمین بازی" data-en="Playground">زمین بازی</a>'
+        f'<a href="{root}book/links.html" data-fa="مطالب مفید" data-en="Useful materials">مطالب مفید</a>'
+        "</nav>"
+        f'<a class="btn ghost sm download-link" href="{root}grade11-offline.zip?v=5" '
+        'data-fa="دانلود برای آفلاین" data-en="Download for offline use">دانلود برای آفلاین</a>'
+        "</footer>"
+    )
+
+
+def lesson_nav(page_path: Path, pages: list[dict]) -> list[str]:
+    """The sidebar of a textbook page: every lesson, grouped by module and unit."""
     nav = [
         '<details class="toc" open>',
         '<summary class="nav-toggle" aria-label="فهرست درس‌ها">'
         '<span class="burger" aria-hidden="true"></span>'
         '<span class="label" data-fa="فهرست درس‌ها" data-en="Lessons">فهرست درس‌ها</span>'
-        '</summary>',
+        "</summary>",
         '<nav id="lesson-nav" class="side" aria-label="lessons">',
     ]
     last_module = None
@@ -300,7 +390,31 @@ def chrome(page_path: Path, title_fa: str, title_en: str, pages: list[dict], bod
             f"{esc(item['fa'])}</a>"
         )
     nav.append("</nav></details>")
+    return nav
 
+
+def chrome(page_path: Path, title_fa: str, title_en: str, pages: list[dict], body: str,
+           show_nav: bool = True, side_items: bool = False) -> str:
+    def asset(name: str) -> str:
+        return rel(page_path, SITE / "assets" / name) + f"?v={ASSET_V}"
+
+    home = rel(page_path, SITE / "index.html")
+    root = "" if home == "index.html" else home[: -len("index.html")]
+    if page_path == SITE / "book" / "links.html":
+        active = "materials"
+    elif is_book_page(page_path):
+        active = "lessons"
+    else:
+        active = ""
+    if side_items:
+        nav = materials_nav()
+    elif show_nav:
+        nav = lesson_nav(page_path, pages)
+    else:
+        nav = []
+    layout_class = "layout has-side" if nav else "layout"
+    lang = is_book_page(page_path)
+    favicon = rel(page_path, SITE / "assets" / "favicon.svg")
     return f"""<!DOCTYPE html>
 <html lang="fa" dir="rtl">
 <head>
@@ -308,89 +422,113 @@ def chrome(page_path: Path, title_fa: str, title_en: str, pages: list[dict], bod
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title data-fa="{esc(title_fa)}" data-en="{esc(title_en)}">{esc(title_fa)}</title>
   <link rel="icon" href="{favicon}">
-  <link rel="stylesheet" href="{assets}">
+  <script>if (location.protocol === "file:") document.documentElement.classList.add("is-offline");</script>
+  <link rel="stylesheet" href="{asset('shared.css')}">
+  <link rel="stylesheet" href="{asset('style.css')}">
 </head>
 <body data-root="{root}">
-  <header class="top">
-    <a class="brand" href="{home}">
-      <span data-fa="طراح سایت" data-en="Site Design">طراح سایت</span>
-      <small data-fa="پایه یازدهم" data-en="Grade 11">پایه یازدهم</small>
-    </a>
-    <div class="search-wrap">
-      <input id="q" type="search" autocomplete="off"
-        data-fa-placeholder="جستجو در درس‌ها" data-en-placeholder="Search lessons"
-        placeholder="جستجو در درس‌ها">
-      <div id="results" class="results" hidden></div>
-    </div>
-    <a class="download" href="{package}" data-fa="دانلود کل سایت" data-en="Download the whole site">دانلود کل سایت</a>
-    <button type="button" id="lang-toggle" class="lang-toggle" dir="ltr" data-lang="fa"
-      aria-label="تغییر زبان">
-      <span data-opt="fa">فا</span>
-      <span data-opt="en">EN</span>
-    </button>
-  </header>
-  <div id="nav-backdrop" class="nav-backdrop" hidden></div>
-  <div class="layout">
+  {site_header(root, active, lang)}
+  <div class="{layout_class}">
     {''.join(nav)}
     <div class="main">
       {body}
     </div>
   </div>
-  <script src="{search}"></script>
-  <script src="{script}"></script>
+  {site_footer(root)}
+  <script src="{asset('search-index.js')}"></script>
+  <script src="{asset('search.js')}"></script>
+  <script src="{asset('guard.js')}"></script>
+  <script src="{asset('app.js')}"></script>
 </body>
 </html>
 """
 
 
 def home_body(pages: list[dict], here: Path) -> str:
-    package = rel(here, SITE / "grade11-offline.zip") + "?v=4"
-    cards = []
-    seen = set()
-    number = 0
-    for item in pages:
-        if not item["home"] or item["module"] in seen:
-            continue
-        seen.add(item["module"])
-        number += 1
-        href = rel(here, item["out"])
-        cards.append(
-            f'''<a class="card" href="{href}">
-              <span class="num">{number}</span>
-              <h2 data-fa="{esc(item["module_fa"])}" data-en="{esc(item["module_en"])}">{esc(item["module_fa"])}</h2>
-              <p data-fa="{esc(item["blurb_fa"])}" data-en="{esc(item["blurb_en"])}">{esc(item["blurb_fa"])}</p>
-            </a>'''
-        )
-    fa = """
-      <p class="kicker">کتاب درسی هنرستان</p>
-      <h1>طراح سایت</h1>
-      <p class="lede">پایه یازدهم، رشته شبکه و نرم‌افزار رایانه. متن کتاب به فارسی و انگلیسی در همین پوشه است. اینترنت لازم نیست.</p>
-      <div class="steps">
-        <div><strong>۱. کپی یا دانلود</strong>پوشه را کپی کنید، یا از دکمه بالای صفحه فایل فشرده را بگیرید و باز کنید.</div>
-        <div><strong>۲. باز کردن</strong>فایل index.html را با دوبار کلیک باز کنید.</div>
-        <div><strong>۳. زبان</strong>دکمه فا / EN را از هر جای آن بزنید تا همه متن عوض شود.</div>
-      </div>
-    """
-    en = """
-      <p class="kicker">Vocational textbook</p>
-      <h1>Site Design</h1>
-      <p class="lede">Grade 11, computer networking and software. The book is here in Persian and English. No internet is required to read it.</p>
-      <div class="steps">
-        <div><strong>1. Copy or download</strong>Copy the folder, or use the button above to download the zip and unpack it.</div>
-        <div><strong>2. Open</strong>Double-click index.html.</div>
-        <div><strong>3. Language</strong>Click the فا / EN control anywhere on it. The whole page switches.</div>
-      </div>
-    """
+    """Landing page: the book, then how to use it offline. No module list here."""
+    package = rel(here, SITE / "grade11-offline.zip") + "?v=5"
+    hub = rel(here, SITE / "book" / "index.html")
     return f"""
-      <section class="hero">
-        <div data-lang-block="fa">{fa}</div>
-        <div data-lang-block="en" hidden>{en}</div>
-        <a class="download-banner" href="{package}">
-          <strong data-fa="دانلود کل سایت برای استفاده آفلاین" data-en="Download the whole site for offline use">دانلود کل سایت برای استفاده آفلاین</strong>
-          <span data-fa="فایل فشرده را باز کنید و index.html را اجرا کنید. بعد از آن اینترنت و فیلترشکن لازم نیست." data-en="Unzip the file and open index.html. After that, the pages work with no internet and no VPN.">فایل فشرده را باز کنید و index.html را اجرا کنید. بعد از آن اینترنت و فیلترشکن لازم نیست.</span>
+      <header class="page-head">
+        <p class="kicker" data-fa="کتاب درسی هنرستان · پایه یازدهم" data-en="Vocational textbook · Grade 11">کتاب درسی هنرستان · پایه یازدهم</p>
+        <h1 data-fa="درس‌های پایه یازدهم" data-en="Grade 11 lessons">درس‌های پایه یازدهم</h1>
+        <p class="lede" data-fa="درس‌ها، تمرین‌ها و مطالب مفید هنرستان در یک جا هستند. آنلاین بخوانید، یا فایل آفلاین را برای کلاس بدون اینترنت دانلود کنید." data-en="Lessons, practice, and useful materials in one place. Read online, or download the offline copy for a class with no internet.">درس‌ها، تمرین‌ها و مطالب مفید هنرستان در یک جا هستند. آنلاین بخوانید، یا فایل آفلاین را برای کلاس بدون اینترنت دانلود کنید.</p>
+      </header>
+
+      <h2 class="section-h" data-fa="کتاب" data-en="Book">کتاب</h2>
+      <a class="card is-link course" href="{hub}">
+        <span class="chip" data-fa="کتاب درسی" data-en="Textbook">کتاب درسی</span>
+        <h3 class="card-title" data-fa="طراح سایت" data-en="Site Design">طراح سایت</h3>
+        <p class="card-text" data-fa="پایه یازدهم، رشته شبکه و نرم‌افزار رایانه. پنج پودمان، هر کدام با درس، تمرین و مطالب مفید." data-en="Grade 11, networking and software. Five modules, each with lessons, practice, and useful materials.">پایه یازدهم، رشته شبکه و نرم‌افزار رایانه. پنج پودمان، هر کدام با درس، تمرین و مطالب مفید.</p>
+        <span class="card-cta" data-fa="ورود به کتاب" data-en="Enter the book">ورود به کتاب</span>
+      </a>
+
+      <h2 class="section-h" data-fa="استفاده بدون اینترنت" data-en="Offline use">استفاده بدون اینترنت</h2>
+      <div class="step-grid">
+        <div class="card step">
+          <span class="num">۱</span>
+          <h3 class="card-title" data-fa="کپی یا دانلود" data-en="Copy or download">کپی یا دانلود</h3>
+          <p class="card-text" data-fa="پوشه را کپی کنید، یا از دکمه بالای صفحه فایل فشرده را بگیرید و باز کنید." data-en="Copy the folder, or download the zip with the button above and unpack it.">پوشه را کپی کنید، یا از دکمه بالای صفحه فایل فشرده را بگیرید و باز کنید.</p>
+        </div>
+        <div class="card step">
+          <span class="num">۲</span>
+          <h3 class="card-title" data-fa="باز کردن درس‌ها" data-en="Open the lessons">باز کردن درس‌ها</h3>
+          <p class="card-text" data-fa="فایل index.html را با دوبار کلیک باز کنید." data-en="Double-click index.html.">فایل index.html را با دوبار کلیک باز کنید.</p>
+        </div>
+        <div class="card step">
+          <span class="num">۳</span>
+          <h3 class="card-title" data-fa="باز کردن زمین بازی" data-en="Open the playground">باز کردن زمین بازی</h3>
+          <p class="card-text" data-fa="فایل شروع.bat را با دوبار کلیک اجرا کنید. به اینترنت نیاز ندارد." data-en="Double-click شروع.bat. It needs no internet.">فایل شروع.bat را با دوبار کلیک اجرا کنید. به اینترنت نیاز ندارد.</p>
+        </div>
+      </div>
+
+      <div class="card banner">
+        <div>
+          <p class="card-title" data-fa="دانلود کل سایت برای استفاده آفلاین" data-en="Download the whole site for offline use">دانلود کل سایت برای استفاده آفلاین</p>
+          <p class="card-text" data-fa="فایل فشرده را یک بار دانلود کنید؛ درس‌ها و زمین بازی هر دو داخل آن است." data-en="Download the zip once; the lessons and the playground are both inside.">فایل فشرده را یک بار دانلود کنید؛ درس‌ها و زمین بازی هر دو داخل آن است.</p>
+        </div>
+        <a class="btn primary download-link" href="{package}" data-fa="دانلود" data-en="Download">دانلود</a>
+      </div>
+    """
+
+
+def hub_body(here: Path) -> str:
+    """Book entry: lessons, playground, and useful materials."""
+    toc = rel(here, SITE / "book" / "toc.html")
+    links = rel(here, SITE / "book" / "links.html")
+    playground = rel(here, SITE / "playground" / "index.html")
+    zip_href = playground_zip_href(rel(here, SITE / "images"))
+    return f"""
+      <header class="page-head">
+        <p class="kicker" data-fa="کتاب درسی · پایه یازدهم" data-en="Textbook · Grade 11">کتاب درسی · پایه یازدهم</p>
+        <h1 data-fa="طراح سایت" data-en="Site Design">طراح سایت</h1>
+        <p class="lede" data-fa="از اینجا به درس‌ها، زمین بازی پایتون یا مطالب مفید بروید." data-en="From here, go to the lessons, the Python playground, or the useful materials.">از اینجا به درس‌ها، زمین بازی پایتون یا مطالب مفید بروید.</p>
+      </header>
+
+      <div class="option-grid">
+        <a class="card is-link option" href="{toc}">
+          <span class="num">۱</span>
+          <h2 class="card-title" data-fa="درس‌ها" data-en="Lessons">درس‌ها</h2>
+          <p class="card-text" data-fa="فهرست کتاب: همه درس‌های پنج پودمان." data-en="Contents: every lesson in the five modules.">فهرست کتاب: همه درس‌های پنج پودمان.</p>
+          <span class="card-cta" data-fa="باز کردن فهرست" data-en="Open the contents">باز کردن فهرست</span>
         </a>
-        <div class="grid">{''.join(cards)}</div>
-      </section>
+        <article class="card option">
+          <span class="num">۲</span>
+          <h2 class="card-title" data-fa="زمین بازی پایتون" data-en="Python playground">زمین بازی پایتون</h2>
+          <p class="card-text" data-fa="تمرین با تست، راهنما و مقایسه خروجی." data-en="Practice with tests, hints, and output comparison.">تمرین با تست، راهنما و مقایسه خروجی.</p>
+          <div class="btn-row">
+            <a class="btn primary sm" href="{playground}" data-fa="باز کردن آنلاین" data-en="Open online">باز کردن آنلاین</a>
+            <a class="btn secondary sm download-link" href="{zip_href}" data-fa="دانلود کل سایت" data-en="Download the whole site">دانلود کل سایت</a>
+          </div>
+          <p class="card-text note" data-fa="زمین بازی در همین فایل فشرده‌ی کل سایت است. برای کلاس بدون اینترنت، یک بار دانلود کنید و شروع.bat را اجرا کنید." data-en="The playground is in the same whole-site zip. For a class with no internet, download the zip once and run شروع.bat.">زمین بازی در همین فایل فشرده‌ی کل سایت است. برای کلاس بدون اینترنت، یک بار دانلود کنید و شروع.bat را اجرا کنید.</p>
+        </article>
+        <a class="card is-link option" href="{links}">
+          <span class="num">۳</span>
+          <h2 class="card-title" data-fa="مطالب مفید" data-en="Useful materials">مطالب مفید</h2>
+          <p class="card-text" data-fa="نرم‌افزار لازم، ویدیوهای جالب و بازی «تکامل اعتماد»." data-en="Software you need, fun videos, and the Evolution of Trust game.">نرم‌افزار لازم، ویدیوهای جالب و بازی «تکامل اعتماد».</p>
+          <span class="card-cta" data-fa="باز کردن" data-en="Open">باز کردن</span>
+        </a>
+      </div>
     """
 
 
@@ -507,12 +645,12 @@ def links_html(prefix: str) -> str:
             "</div></div>"
         )
     return (
-        '<h2 data-fa="نرم‌افزارهای لازم" data-en="Get the software">نرم‌افزارهای لازم</h2>'
+        '<h2 class="section-h" id="software" data-fa="نرم‌افزارهای لازم" data-en="Get the software">نرم‌افزارهای لازم</h2>'
         f'<div class="link-grid">{"".join(cards)}</div>'
-        '<h2 data-fa="ویدیوهای جالب درباره پایتون" data-en="Fun Python videos">ویدیوهای جالب درباره پایتون</h2>'
+        '<h2 class="section-h" id="videos" data-fa="ویدیوهای جالب درباره پایتون" data-en="Fun Python videos">ویدیوهای جالب درباره پایتون</h2>'
         f'<p class="link-note" data-fa="تماشای ویدیوها اینترنت می‌خواهد؛ خود صفحه بدون اینترنت هم باز می‌شود." data-en="Watching the videos needs internet; the page itself opens offline too.">تماشای ویدیوها اینترنت می‌خواهد؛ خود صفحه بدون اینترنت هم باز می‌شود.</p>'
         f'<div class="link-grid">{"".join(videos)}</div>'
-        '<h2 data-fa="برای زنگ چهارم" data-en="For the last period">برای زنگ چهارم</h2>'
+        '<h2 class="section-h" id="last-period" data-fa="برای زنگ چهارم" data-en="For the last period">برای زنگ چهارم</h2>'
         '<div class="link-grid">'
         '<div class="link-card"><span class="badge">تمرین</span><div>'
         '<h3 data-fa="زمین بازی پایتون" data-en="Python playground">زمین بازی پایتون</h3>'
@@ -545,7 +683,7 @@ def playground_online_href(prefix: str) -> str:
 
 def playground_zip_href(prefix: str) -> str:
     root = prefix[: -len("images")] if prefix.endswith("images") else ""
-    return root + "teacher-playground-offline.zip?v=4"
+    return root + "grade11-offline.zip?v=5"
 
 
 def links_text(lang: str) -> str:
@@ -576,7 +714,7 @@ def extra_block(section: dict) -> str:
             f'<ul><li><a href="{esc(href)}" data-fa="{esc(label_fa)}" data-en="{esc(label_en)}">{esc(label_fa)}</a></li></ul>'
         )
     return f"""
-      <aside class="extra">
+      <aside class="card extra">
         <h2 data-fa="تمرین این بخش" data-en="Exercises for this section">تمرین این بخش</h2>
         <p class="extra-note" data-fa="این تمرین‌ها و پیوندها اضافه بر متن کتاب‌اند." data-en="These exercises and links are in addition to the book.">این تمرین‌ها و پیوندها اضافه بر متن کتاب‌اند.</p>
         <ol>{''.join(items)}</ol>
@@ -640,11 +778,23 @@ def write_zip() -> None:
             if not path.is_file() or path.suffix == ".zip":
                 continue
             rel = path.relative_to(SITE)
-            # Keep the textbook zip small; playground ships as its own zip /online path.
-            if rel.parts and rel.parts[0] == "playground":
+            if rel.parts[0] == "admin":  # the teacher's panel exists only online
                 continue
             arcname = Path("grade11-site") / rel
+            if rel.as_posix() == "playground/index.html":
+                # The offline copy keeps progress in the browser: no sign-in.
+                page = path.read_text(encoding="utf-8").replace(
+                    '<meta name="pg-mode" content="online">',
+                    '<meta name="pg-mode" content="offline">',
+                )
+                archive.writestr(arcname.as_posix(), page)
+                continue
             archive.write(path, arcname.as_posix())
+        # The offline copy needs the questions file; the online site keeps it on the server.
+        archive.write(
+            ROOT / "playground" / "app" / "data" / "problems.json",
+            (Path("grade11-site") / "playground" / "data" / "problems.json").as_posix(),
+        )
     shutil.move(temporary, target)
 
 
@@ -656,6 +806,48 @@ def publish_playground() -> None:
     if dst.exists():
         shutil.rmtree(dst)
     shutil.copytree(src, dst)
+    # The online site does not publish the questions file: it holds the solutions, and the
+    # server releases each solution only to a student who has passed the question.
+    (dst / "data" / "problems.json").unlink(missing_ok=True)
+    split_engine_parts(dst / "vendor" / "pyodide")
+    index = dst / "index.html"
+    page = index.read_text(encoding="utf-8")
+    if "<!--SITE-HEADER-->" not in page or "<!--SITE-FOOTER-->" not in page:
+        raise SystemExit("playground/app/index.html needs the SITE-HEADER and SITE-FOOTER placeholders")
+    page = page.replace("<!--SITE-HEADER-->", site_header("../", "playground", lang=False))
+    page = page.replace("<!--SITE-FOOTER-->", site_footer("../"))
+    index.write_text(page, encoding="utf-8")
+
+
+ENGINE_PART_FILES = {
+    "pyodide.asm.wasm": "application/wasm",
+    "pyodide.asm.js": "text/javascript",
+    "python_stdlib.zip": "application/zip",
+    "pyodide-lock.json": "application/json",
+}
+ENGINE_PART_SIZE = 256 * 1024
+
+
+def split_engine_parts(engine_dir: Path) -> None:
+    """Gzip + split big engine files so the online playground can resume
+    downloads over flaky links (see playground/app/js/enginefetch.js)."""
+    if not engine_dir.is_dir():
+        return
+    out = engine_dir / "chunks"
+    out.mkdir(exist_ok=True)
+    files = []
+    for name, mime in ENGINE_PART_FILES.items():
+        raw = (engine_dir / name).read_bytes()
+        packed = gzip.compress(raw, compresslevel=9, mtime=0)
+        tag = hashlib.sha256(raw).hexdigest()[:12]
+        parts = []
+        for i in range(0, len(packed), ENGINE_PART_SIZE):
+            blob = packed[i : i + ENGINE_PART_SIZE]
+            part = f"{name}.{tag}.{i // ENGINE_PART_SIZE:03d}.bin"
+            (out / part).write_bytes(blob)
+            parts.append({"name": part, "size": len(blob), "sha256": hashlib.sha256(blob).hexdigest()})
+        files.append({"name": name, "type": mime, "size": len(raw), "parts": parts})
+    (out / "manifest.json").write_text(json.dumps({"files": files}, indent=1), encoding="utf-8")
 
 
 def english_markdown(section: dict) -> str:
@@ -672,7 +864,11 @@ def main() -> None:
         shutil.rmtree(SITE)
     (SITE / "assets").mkdir(parents=True)
     shutil.copy2(WEB / "style.css", SITE / "assets" / "style.css")
+    shutil.copy2(WEB / "shared.css", SITE / "assets" / "shared.css")
+    shutil.copy2(WEB / "search.js", SITE / "assets" / "search.js")
+    shutil.copy2(WEB / "guard.js", SITE / "assets" / "guard.js")
     shutil.copy2(WEB / "app.js", SITE / "assets" / "app.js")
+    shutil.copytree(WEB / "admin", SITE / "admin")
     fonts_src = WEB / "fonts"
     if fonts_src.is_dir():
         shutil.copytree(fonts_src, SITE / "assets" / "fonts")
@@ -695,22 +891,26 @@ def main() -> None:
         elif item.get("custom") == "links":
             fa_html = en_html = links_html(prefix)
         else:
-            fa_html = isolate_bidi(render_markdown(repair_markdown(section_markdown(item), "fa"), prefix), "fa")
-            en_html = isolate_bidi(render_markdown(repair_markdown(english_markdown(item), "en"), prefix), "en")
+            fa_html = isolate_bidi(render_markdown(section_markdown(item), prefix, "fa"), "fa")
+            en_html = isolate_bidi(render_markdown(english_markdown(item), prefix, "en"), "en")
         title = (
-            f'<h1 class="section-title" data-fa="{esc(item["fa"])}" data-en="{esc(item["en"])}">'
-            f"{esc(item['fa'])}</h1>"
+            '<header class="page-head">'
+            f'<p class="kicker" data-fa="{esc(item["module_fa"])}" data-en="{esc(item["module_en"])}">{esc(item["module_fa"])}</p>'
+            f'<h1 data-fa="{esc(item["fa"])}" data-en="{esc(item["en"])}">{esc(item["fa"])}</h1>'
+            "</header>"
         )
+        # The materials page is a set of cards already; it does not sit in one more card.
+        article_class = "lesson no-copy" if item.get("custom") == "links" else "card lesson no-copy"
         body = (
             title
-            + f'<article class="lesson" lang="fa" dir="rtl" data-lang-block="fa">{fa_html}</article>'
-            + f'<article class="lesson" lang="en" dir="ltr" data-lang-block="en" hidden>{en_html}</article>'
+            + f'<article class="{article_class}" lang="fa" dir="rtl" data-lang-block="fa">{fa_html}</article>'
+            + f'<article class="{article_class}" lang="en" dir="ltr" data-lang-block="en" hidden>{en_html}</article>'
             + extra_block(item)
             + pager(item["out"], pages, index)
         )
         item["out"].parent.mkdir(parents=True, exist_ok=True)
         item["out"].write_text(
-            chrome(item["out"], item["fa"], item["en"], pages, body),
+            chrome(item["out"], item["fa"], item["en"], pages, body, side_items=item.get("custom") == "links"),
             encoding="utf-8",
         )
         search.append(
@@ -726,10 +926,27 @@ def main() -> None:
 
     index_path = SITE / "index.html"
     index_path.write_text(
-        chrome(index_path, "طراح سایت", "Site Design", pages, home_body(pages, index_path)),
+        chrome(index_path, "طراح سایت", "Site Design", pages, home_body(pages, index_path), show_nav=False),
         encoding="utf-8",
     )
     guard(index_path)
+
+    hub_path = SITE / "book" / "index.html"
+    hub_path.parent.mkdir(parents=True, exist_ok=True)
+    hub_path.write_text(
+        chrome(hub_path, "طراح سایت", "Site Design", pages, hub_body(hub_path), show_nav=False),
+        encoding="utf-8",
+    )
+    guard(hub_path)
+    search.append(
+        {
+            "href": rel(index_path, hub_path),
+            "titleFa": "طراح سایت",
+            "titleEn": "Site Design",
+            "textFa": "درس‌ها فهرست کتاب زمین بازی پایتون مطالب مفید",
+            "textEn": "Lessons contents Python playground useful materials",
+        }
+    )
 
     payload = json.dumps(search, ensure_ascii=False).replace("<", "\\u003c")
     (SITE / "assets" / "search-index.js").write_text(
@@ -758,9 +975,8 @@ The online playground (`/playground/`) and separate lab zips (`teacher-playgroun
     trust_zip = ROOT / "extras" / "evolution-of-trust-offline.zip"
     if trust_zip.is_file():
         shutil.copy2(trust_zip, SITE / "evolution-of-trust-offline.zip")
-    playground_zip = ROOT / "extras" / "teacher-playground-offline.zip"
-    if playground_zip.is_file():
-        shutil.copy2(playground_zip, SITE / "teacher-playground-offline.zip")
+    shutil.copy2(ROOT / "offline" / "شروع.bat", SITE / "شروع.bat")
+    (SITE / "README.md").write_text('# طراح سایت — نسخه\u200cی کامل آفلاین\n\nاین فایل فشرده کل سایت است: درس\u200cها و زمین بازی. یک بار دانلود کنید؛ دیگر لازم نیست چیزی را دوباره بگیرید.\n\n- درس\u200cها: فایل `index.html` را با دوبار کلیک باز کنید.\n- زمین بازی: فایل `شروع.bat` را با دوبار کلیک اجرا کنید (Python 3 با tkinter لازم است). پیشرفت شما در همین نشانی محلی ذخیره می\u200cماند؛ همیشه با همین فایل باز کنید.\n\n# Site Design — full offline copy\n\nOne zip holds the whole site: lessons and playground. Download once.\n\n- Lessons: double-click `index.html`.\n- Playground: double-click `شروع.bat` (needs Python 3 with tkinter). Progress is kept at the same local address, so always start it the same way.\n', encoding="utf-8")
     publish_playground()
     write_zip()
     print(f"pages {len(pages) + 1} images {images}")
