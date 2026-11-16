@@ -1,0 +1,62 @@
+/* The teacher's panel: plain, readable, RTL. Colours come from shared.css. */
+.admin { background: var(--paper); color: var(--ink); min-height: 100vh; }
+.admin-top {
+  display: flex; justify-content: space-between; align-items: center; gap: 0.6rem;
+  padding: 0.7rem 1rem; background: var(--card); border-bottom: 1px solid var(--line-soft);
+}
+.admin-brand { margin: 0; font-weight: 700; color: var(--deep); }
+.admin-main { max-width: 1120px; margin: 0 auto; padding: 1rem; display: grid; gap: 1rem; }
+.admin-card { padding: 1rem; }
+.admin-card h1, .admin-card h2 { margin: 0 0 0.6rem; font-size: 1.1rem; color: var(--deep); }
+.admin-card h3 { margin: 1rem 0 0.5rem; font-size: 1rem; color: var(--deep); }
+.admin-toolbar { display: flex; flex-wrap: wrap; gap: 0.5rem; align-items: center; }
+.admin-toolbar input[type="search"] {
+  flex: 1 1 280px; padding: 0.55rem 0.7rem; border: 1px solid var(--line);
+  border-radius: var(--radius-sm); font: inherit; background: var(--card); color: var(--ink);
+}
+.admin-status { margin: 0.4rem 0; color: var(--muted); font-size: 0.9rem; }
+.admin-error { margin: 0; color: var(--bad); font-size: 0.9rem; }
+.admin-form { display: grid; gap: 0.7rem; }
+.admin-field { display: grid; gap: 0.3rem; color: var(--muted); font-size: 0.9rem; }
+.admin-field input {
+  padding: 0.55rem 0.7rem; border: 1px solid var(--line); border-radius: var(--radius-sm);
+  font: inherit; background: var(--card); color: var(--ink);
+}
+.table-wrap { overflow-x: auto; }
+.admin-table { width: 100%; border-collapse: collapse; font-size: 0.9rem; }
+.admin-table th, .admin-table td {
+  padding: 0.5rem 0.55rem; border-bottom: 1px solid var(--line-soft); text-align: right; vertical-align: top;
+}
+.admin-table th { background: var(--accent-soft); color: var(--deep); white-space: nowrap; }
+.link-button {
+  padding: 0; border: 0; background: none; color: var(--accent); font: inherit;
+  font-weight: 700; text-decoration: underline; cursor: pointer;
+}
+.ltr { direction: ltr; unicode-bidi: isolate; text-align: left; }
+.detail-head { display: flex; justify-content: space-between; align-items: center; gap: 0.5rem; }
+.admin-facts { display: grid; grid-template-columns: max-content 1fr; gap: 0.3rem 0.9rem; margin: 0.6rem 0; }
+.admin-facts dt { color: var(--muted); }
+.admin-facts dd { margin: 0; font-weight: 600; }
+.detail-actions { display: flex; flex-wrap: wrap; gap: 0.5rem; margin: 0.6rem 0; }
+.admin-code {
+  direction: ltr; text-align: left; white-space: pre-wrap; margin: 0.4rem 0 0;
+  padding: 0.6rem 0.7rem; border-radius: var(--radius-sm); background: var(--code-bg); color: var(--code-ink);
+  font-family: var(--mono); font-size: 0.85rem; overflow: auto; max-height: 260px;
+}
+.attempt { padding: 0.6rem 0; border-top: 1px solid var(--line-soft); }
+.attempt-head { margin: 0 0 0.3rem; font-weight: 600; font-size: 0.9rem; }
+.flag-line {
+  display: inline-block; margin: 0 0 0.3rem; padding: 0.1rem 0.5rem; border-radius: 999px;
+  background: var(--warn-soft); color: var(--warn); font-size: 0.82rem;
+}
+@media (max-width: 699px) {
+  .admin-main { padding: 0.7rem; }
+  .admin-toolbar input[type="search"] { flex-basis: 100%; }
+}
+.admin .btn.block { justify-content: center; text-align: center; }
+
+.admin-tabs { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-bottom: 0.7rem; }
+.admin-tab { padding: 0.45rem 0.8rem; border: 1px solid var(--line); border-radius: 999px; background: var(--card); color: var(--ink-soft); font: inherit; cursor: pointer; }
+.admin-tab.active { background: var(--accent); color: #fff; border-color: var(--accent); }
+.admin-inline { display: flex; align-items: center; gap: 0.4rem; }
+.admin-inline select { padding: 0.45rem 0.6rem; border: 1px solid var(--line); border-radius: var(--radius-sm); font: inherit; background: var(--card); }
