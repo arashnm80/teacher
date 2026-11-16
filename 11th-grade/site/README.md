@@ -1,15 +1,13 @@
-# طراح سایت — نسخه آفلاین کلاس
+# طراح سایت — نسخه‌ی کامل آفلاین
 
-کل همین پوشه را به رایانه کلاس کپی کنید و `index.html` را با دوبار کلیک باز کنید. اینترنت لازم نیست.
+این فایل فشرده کل سایت است: درس‌ها و زمین بازی. یک بار دانلود کنید؛ دیگر لازم نیست چیزی را دوباره بگیرید.
 
-فایل `grade11-offline.zip` برای دانلود از سایت است. داخل خودِ فایل فشرده نیست، تا دانش‌آموز بعد از باز کردن، یک پوشه ساده داشته باشد.
+- درس‌ها: فایل `index.html` را با دوبار کلیک باز کنید.
+- زمین بازی: فایل `شروع.bat` را با دوبار کلیک اجرا کنید (Python 3 با tkinter لازم است). پیشرفت شما در همین نشانی محلی ذخیره می‌ماند؛ همیشه با همین فایل باز کنید.
 
-تمرین‌ها و بازی‌های جدا (`/playground/` آنلاین، `teacher-playground-offline.zip`، `evolution-of-trust-offline.zip`) هم روی سایت عمومی در صفحه «پیوندهای مفید» هستند؛ داخل این zip کتاب نیستند.
+# Site Design — full offline copy
 
-# Site Design — offline classroom copy
+One zip holds the whole site: lessons and playground. Download once.
 
-Copy this whole folder onto a lab PC and double-click `index.html`. No internet is required.
-
-`grade11-offline.zip` is the download offered on the public site. It is not packed inside itself.
-
-The online playground (`/playground/`) and separate lab zips (`teacher-playground-offline.zip`, `evolution-of-trust-offline.zip`) are on the public Useful-links page; they are not inside this textbook zip.
+- Lessons: double-click `index.html`.
+- Playground: double-click `شروع.bat` (needs Python 3 with tkinter). Progress is kept at the same local address, so always start it the same way.

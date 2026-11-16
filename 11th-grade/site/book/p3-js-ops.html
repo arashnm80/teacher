@@ -5,271 +5,373 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title data-fa="عملگرها" data-en="Operators">عملگرها</title>
   <link rel="icon" href="../assets/favicon.svg">
-  <link rel="stylesheet" href="../assets/style.css?v=19">
+  <script>if (location.protocol === "file:") document.documentElement.classList.add("is-offline");</script>
+  <link rel="stylesheet" href="../assets/shared.css?v=24">
+  <link rel="stylesheet" href="../assets/style.css?v=24">
 </head>
 <body data-root="../">
-  <header class="top">
-    <a class="brand" href="../index.html">
-      <span data-fa="طراح سایت" data-en="Site Design">طراح سایت</span>
-      <small data-fa="پایه یازدهم" data-en="Grade 11">پایه یازدهم</small>
-    </a>
-    <div class="search-wrap">
-      <input id="q" type="search" autocomplete="off"
-        data-fa-placeholder="جستجو در درس‌ها" data-en-placeholder="Search lessons"
-        placeholder="جستجو در درس‌ها">
-      <div id="results" class="results" hidden></div>
-    </div>
-    <a class="download" href="../grade11-offline.zip?v=4" data-fa="دانلود کل سایت" data-en="Download the whole site">دانلود کل سایت</a>
-    <button type="button" id="lang-toggle" class="lang-toggle" dir="ltr" data-lang="fa"
-      aria-label="تغییر زبان">
-      <span data-opt="fa">فا</span>
-      <span data-opt="en">EN</span>
-    </button>
-  </header>
-  <div id="nav-backdrop" class="nav-backdrop" hidden></div>
-  <div class="layout">
+  <header class="top"><a class="brand" href="../index.html"><span data-fa="طراح سایت" data-en="Site Design">طراح سایت</span><small data-fa="پایه یازدهم" data-en="Grade 11">پایه یازدهم</small></a><nav class="sections" aria-label="بخش‌های سایت"><a href="../book/toc.html" aria-current="page" data-fa="درس‌ها" data-en="Lessons">درس‌ها</a><a href="../playground/index.html" data-fa="زمین بازی" data-en="Playground">زمین بازی</a><a href="../book/links.html" data-fa="مطالب مفید" data-en="Useful materials">مطالب مفید</a></nav><div class="search-wrap" role="search"><input id="q" type="search" autocomplete="off" data-lpignore="true" data-1p-ignore data-bwignore="true" data-form-type="other" data-fa-placeholder="جستجو در درس‌ها" data-en-placeholder="Search lessons" placeholder="جستجو در درس‌ها" aria-label="جستجو در درس‌ها"><div id="search-results" class="search-results" hidden></div></div><div class="top-actions"><a class="btn primary sm download-link" href="../grade11-offline.zip?v=5" data-fa="دانلود کل سایت" data-en="Download the whole site">دانلود کل سایت</a><button type="button" id="lang-toggle" class="lang-toggle" dir="ltr" data-lang="fa" aria-label="تغییر زبان"><span data-opt="fa">فا</span><span data-opt="en">EN</span></button></div></header>
+  <div class="layout has-side">
     <details class="toc" open><summary class="nav-toggle" aria-label="فهرست درس‌ها"><span class="burger" aria-hidden="true"></span><span class="label" data-fa="فهرست درس‌ها" data-en="Lessons">فهرست درس‌ها</span></summary><nav id="lesson-nav" class="side" aria-label="lessons"><p class="mod" data-fa="شروع کتاب" data-en="Opening">شروع کتاب</p><p class="unit" data-fa="فهرست" data-en="Contents">فهرست</p><a class="" href="toc.html" data-fa="فهرست" data-en="Contents">فهرست</a><p class="mod" data-fa="پودمان ۱: برنامه‌نویسی پایتون" data-en="Module 1: Python programming">پودمان ۱: برنامه‌نویسی پایتون</p><p class="unit" data-fa="معرفی پودمان" data-en="Module introduction">معرفی پودمان</p><a class="" href="p1-intro.html" data-fa="معرفی پودمان پایتون" data-en="Introducing the Python module">معرفی پودمان پایتون</a><p class="unit" data-fa="مدل‌سازی داده" data-en="Data modeling">مدل‌سازی داده</p><a class="" href="p1-python.html" data-fa="پایتون و محیط برنامه‌نویسی" data-en="Python and the programming environment">پایتون و محیط برنامه‌نویسی</a><a class="" href="p1-vars.html" data-fa="متغیرها، نوع داده و عملگرها" data-en="Variables, types, and operators">متغیرها، نوع داده و عملگرها</a><a class="" href="p1-cast.html" data-fa="ورودی و تبدیل نوع" data-en="Input and type casting">ورودی و تبدیل نوع</a><a class="" href="p1-lists.html" data-fa="لیست‌ها" data-en="Lists">لیست‌ها</a><a class="" href="p1-if.html" data-fa="شرط‌های ساده" data-en="Simple conditions">شرط‌های ساده</a><a class="" href="p1-elif.html" data-fa="if، elif و else" data-en="if, elif, and else">if، elif و else</a><a class="" href="p1-for.html" data-fa="حلقه for و range" data-en="The for loop and range">حلقه for و range</a><a class="" href="p1-while.html" data-fa="حلقه while و کنترل حلقه" data-en="The while loop and loop control">حلقه while و کنترل حلقه</a><a class="" href="p1-assess-data.html" data-fa="ارزشیابی مدل‌سازی داده" data-en="Data-modeling assessment">ارزشیابی مدل‌سازی داده</a><p class="unit" data-fa="توابع و ماژول‌ها" data-en="Functions and modules">توابع و ماژول‌ها</p><a class="" href="p1-sets.html" data-fa="مجموعه (set)" data-en="Sets">مجموعه (set)</a><a class="" href="p1-dict.html" data-fa="دیکشنری" data-en="Dictionaries">دیکشنری</a><a class="" href="p1-quiz.html" data-fa="پروژه بازی Quiz" data-en="Quiz game project">پروژه بازی Quiz</a><a class="" href="p1-tuple.html" data-fa="تاپل" data-en="Tuples">تاپل</a><a class="" href="p1-func.html" data-fa="تعریف تابع، پارامتر و return" data-en="Defining functions, parameters, and return">تعریف تابع، پارامتر و return</a><a class="" href="p1-func-more.html" data-fa="تمرین تابع و مرتب‌سازی" data-en="Function practice and sorting">تمرین تابع و مرتب‌سازی</a><a class="" href="p1-modules.html" data-fa="ماژول‌ها و تفاوت تابع و متد" data-en="Modules, and functions versus methods">ماژول‌ها و تفاوت تابع و متد</a><a class="" href="p1-assess-func.html" data-fa="ارزشیابی توابع و ماژول‌ها" data-en="Functions and modules assessment">ارزشیابی توابع و ماژول‌ها</a><p class="mod" data-fa="پودمان ۲: صفحات وب ایستا" data-en="Module 2: Static web pages">پودمان ۲: صفحات وب ایستا</p><p class="unit" data-fa="معرفی پودمان" data-en="Module introduction">معرفی پودمان</p><a class="" href="p2-intro.html" data-fa="معرفی پودمان صفحات ایستا" data-en="Introducing static web pages">معرفی پودمان صفحات ایستا</a><p class="unit" data-fa="ساختار با HTML" data-en="Structure with HTML">ساختار با HTML</p><a class="" href="p2-web.html" data-fa="وب چگونه کار می‌کند" data-en="How the web works">وب چگونه کار می‌کند</a><a class="" href="p2-concepts.html" data-fa="مفاهیم طراحی وب و نقشه سایت" data-en="Web-design concepts and the site map">مفاهیم طراحی وب و نقشه سایت</a><a class="" href="p2-tags.html" data-fa="اولین صفحه HTML" data-en="A first HTML page">اولین صفحه HTML</a><a class="" href="p2-text.html" data-fa="متن، لیست و پیوند" data-en="Text, lists, and links">متن، لیست و پیوند</a><a class="" href="p2-img.html" data-fa="تصویر در صفحه" data-en="Images on the page">تصویر در صفحه</a><a class="" href="p2-forms.html" data-fa="فرم‌ها" data-en="Forms">فرم‌ها</a><a class="" href="p2-semantic.html" data-fa="عناصر معنایی" data-en="Semantic elements">عناصر معنایی</a><a class="" href="p2-assess-html.html" data-fa="ارزشیابی HTML" data-en="HTML assessment">ارزشیابی HTML</a><p class="unit" data-fa="ظاهر با CSS" data-en="Appearance with CSS">ظاهر با CSS</p><a class="" href="p2-css-start.html" data-fa="نوشتن CSS" data-en="Writing CSS">نوشتن CSS</a><a class="" href="p2-css-look.html" data-fa="رنگ، پس‌زمینه و انتخاب‌گر" data-en="Color, background, and selectors">رنگ، پس‌زمینه و انتخاب‌گر</a><a class="" href="p2-box.html" data-fa="مدل جعبه‌ای و display" data-en="The box model and display">مدل جعبه‌ای و display</a><a class="" href="p2-flex.html" data-fa="چیدمان با Flexbox" data-en="Layout with Flexbox">چیدمان با Flexbox</a><a class="" href="p2-flex-work.html" data-fa="کارگاه چیدمان صفحه" data-en="Page-layout workshop">کارگاه چیدمان صفحه</a><a class="" href="p2-media.html" data-fa="مدیا کوئری و ارزشیابی CSS" data-en="Media queries and the CSS assessment">مدیا کوئری و ارزشیابی CSS</a><p class="mod" data-fa="پودمان ۳: صفحات وب تعاملی" data-en="Module 3: Interactive web pages">پودمان ۳: صفحات وب تعاملی</p><p class="unit" data-fa="معرفی پودمان" data-en="Module introduction">معرفی پودمان</p><a class="" href="p3-intro.html" data-fa="معرفی پودمان تعاملی" data-en="Introducing the interactive module">معرفی پودمان تعاملی</a><p class="unit" data-fa="بوت‌استرپ" data-en="Bootstrap">بوت‌استرپ</p><a class="" href="p3-bs-start.html" data-fa="فریم‌ورک و شروع بوت‌استرپ" data-en="Frameworks and starting Bootstrap">فریم‌ورک و شروع بوت‌استرپ</a><a class="" href="p3-bs-util.html" data-fa="فاصله، گردی و لیست" data-en="Spacing, rounding, and lists">فاصله، گردی و لیست</a><a class="" href="p3-bs-header.html" data-fa="سرصفحه فروشگاه" data-en="The shop header">سرصفحه فروشگاه</a><a class="" href="p3-bs-grid.html" data-fa="شبکه Grid" data-en="The grid">شبکه Grid</a><a class="" href="p3-bs-rwd.html" data-fa="کلاس‌های واکنش‌گرا" data-en="Responsive classes">کلاس‌های واکنش‌گرا</a><a class="" href="p3-bs-nav.html" data-fa="نوار ناوبری و جزئیات محصول" data-en="Navbar and product details">نوار ناوبری و جزئیات محصول</a><a class="" href="p3-bs-form.html" data-fa="فرم و پنجره Modal" data-en="Forms and modals">فرم و پنجره Modal</a><a class="" href="p3-bs-show.html" data-fa="کاروسل و آکاردئون" data-en="Carousel and accordion">کاروسل و آکاردئون</a><a class="" href="p3-bs-assess.html" data-fa="ارزشیابی بوت‌استرپ" data-en="Bootstrap assessment">ارزشیابی بوت‌استرپ</a><p class="unit" data-fa="جاوااسکریپت" data-en="JavaScript">جاوااسکریپت</p><a class="" href="p3-js-start.html" data-fa="جاوااسکریپت در صفحه وب" data-en="JavaScript on the page">جاوااسکریپت در صفحه وب</a><a class="" href="p3-js-vars.html" data-fa="متغیر و نوع داده" data-en="Variables and data types">متغیر و نوع داده</a><a class="current" href="p3-js-ops.html" data-fa="عملگرها" data-en="Operators">عملگرها</a><a class="" href="p3-js-data.html" data-fa="آرایه و شیء" data-en="Arrays and objects">آرایه و شیء</a><a class="" href="p3-js-if.html" data-fa="شرط در جاوااسکریپت" data-en="Conditions in JavaScript">شرط در جاوااسکریپت</a><a class="" href="p3-js-loops.html" data-fa="حلقه‌ها" data-en="Loops">حلقه‌ها</a><a class="" href="p3-js-func.html" data-fa="تابع‌ها" data-en="Functions">تابع‌ها</a><a class="" href="p3-js-dom.html" data-fa="صفحه، رویداد و اعتبار فرم" data-en="The page, events, and form validation">صفحه، رویداد و اعتبار فرم</a><a class="" href="p3-js-assess.html" data-fa="ارزشیابی جاوااسکریپت" data-en="JavaScript assessment">ارزشیابی جاوااسکریپت</a><p class="mod" data-fa="پودمان ۴: توسعه وب پایتون" data-en="Module 4: Python for the web">پودمان ۴: توسعه وب پایتون</p><p class="unit" data-fa="معرفی پودمان" data-en="Module introduction">معرفی پودمان</p><a class="" href="p4-intro.html" data-fa="معرفی پودمان شیءگرایی" data-en="Introducing the object-oriented module">معرفی پودمان شیءگرایی</a><p class="unit" data-fa="شیءگرایی" data-en="Object-oriented programming">شیءگرایی</p><a class="" href="p4-idea.html" data-fa="ایده شیء و کلاس" data-en="The idea of objects and classes">ایده شیء و کلاس</a><a class="" href="p4-class.html" data-fa="ساخت کلاس و متد" data-en="Writing a class and methods">ساخت کلاس و متد</a><a class="" href="p4-inherit.html" data-fa="وراثت" data-en="Inheritance">وراثت</a><a class="" href="p4-protect.html" data-fa="داده معتبر و استفاده داخلی" data-en="Valid data and internal use">داده معتبر و استفاده داخلی</a><a class="" href="p4-assess-oop.html" data-fa="ارزشیابی برنامه شیءگرا" data-en="Object-oriented assessment">ارزشیابی برنامه شیءگرا</a><p class="unit" data-fa="فایل و توسعه" data-en="Files and development">فایل و توسعه</p><a class="" href="p4-files.html" data-fa="خواندن و نوشتن فایل متنی" data-en="Reading and writing text files">خواندن و نوشتن فایل متنی</a><a class="" href="p4-errors.html" data-fa="پیمایش فایل و مدیریت خطا" data-en="Walking a file and handling errors">پیمایش فایل و مدیریت خطا</a><a class="" href="p4-json.html" data-fa="چند فایل و JSON" data-en="Several files and JSON">چند فایل و JSON</a><a class="" href="p4-assess-files.html" data-fa="ارزشیابی کار با فایل" data-en="Files assessment">ارزشیابی کار با فایل</a><p class="mod" data-fa="پودمان ۵: برنامه‌نویسی جنگو" data-en="Module 5: Django">پودمان ۵: برنامه‌نویسی جنگو</p><p class="unit" data-fa="معرفی پودمان" data-en="Module introduction">معرفی پودمان</p><a class="" href="p5-intro.html" data-fa="معرفی پودمان جنگو" data-en="Introducing the Django module">معرفی پودمان جنگو</a><p class="unit" data-fa="ایجاد وب‌اپلیکیشن" data-en="Creating the web app">ایجاد وب‌اپلیکیشن</p><a class="" href="p5-what.html" data-fa="جنگو چیست و نصب" data-en="What Django is, and installing it">جنگو چیست و نصب</a><a class="" href="p5-project.html" data-fa="پروژه، اپ و اولین view" data-en="Project, app, and the first view">پروژه، اپ و اولین view</a><a class="" href="p5-template.html" data-fa="قالب و دمای واقعی" data-en="Templates and a real temperature">قالب و دمای واقعی</a><a class="" href="p5-assess-create.html" data-fa="ارزشیابی ایجاد وب‌اپلیکیشن" data-en="Creating-the-app assessment">ارزشیابی ایجاد وب‌اپلیکیشن</a><p class="unit" data-fa="توسعه وب‌اپلیکیشن" data-en="Developing the web app">توسعه وب‌اپلیکیشن</p><a class="" href="p5-model.html" data-fa="مدل شهر و پنل ادمین" data-en="The city model and the admin">مدل شهر و پنل ادمین</a><a class="" href="p5-list.html" data-fa="خواندن شهرها و نمایش فهرست" data-en="Reading cities and showing the list">خواندن شهرها و نمایش فهرست</a><a class="" href="p5-auth.html" data-fa="ورود و خروج" data-en="Sign-in and sign-out">ورود و خروج</a><a class="" href="p5-crud.html" data-fa="افزودن و حذف شهر" data-en="Adding and deleting a city">افزودن و حذف شهر</a><a class="" href="p5-bugs.html" data-fa="باگ و امنیت" data-en="Bugs and security">باگ و امنیت</a><p class="mod" data-fa="پایان کتاب" data-en="Back of the book">پایان کتاب</p><p class="unit" data-fa="منابع" data-en="References">منابع</p><a class="" href="refs.html" data-fa="منابع کتاب" data-en="Book references">منابع کتاب</a><p class="mod" data-fa="فراتر از کتاب" data-en="Beyond the book">فراتر از کتاب</p><p class="unit" data-fa="پیوندهای مفید" data-en="Useful links">پیوندهای مفید</p><a class="" href="links.html" data-fa="پیوندهای مفید" data-en="Useful links">پیوندهای مفید</a></nav></details>
     <div class="main">
-      <h1 class="section-title" data-fa="عملگرها" data-en="Operators">عملگرها</h1><article class="lesson" lang="fa" dir="rtl" data-lang-block="fa"><p class="page-mark">صفحه ۲۰۳</p>
-<p>عملگرهای ریاضی (<code>Arithmetic</code>) : این عملگرها برای انجام انواع عملیات محاسباتی ریاضی مورد استفاده قرار می‌گیرند. شرح این عملگرها در جدول ٦١ آمده است:</p>
-<p>جدول٦١ عملگرهای ریاضی جاوا‌اسکریپت</p>
-<p>عملگر</p>
-<h3 id="_1">توضیحات</h3>
-<h3 id="_2">مثال</h3>
-<p>جمع، تفریق، ضرب و تقسیم و باق‌یمانده <bdi dir="ltr"><code>x</code> = <code>y+z</code> , <code>a</code> = <code>a*2</code>, <code>n</code> = <code>n/10</code></bdi></p>
-<p>% , / , * , - , + --,++افزایش و کاهش به میزان یک واحد<bdi dir="ltr"><code>x++</code>, <code>y--</code>, <code>++z</code>, <code>--w</code></bdi> **توان<bdi dir="ltr"><code>x</code> = <code>y**2</code></bdi></p>
-<p>عملگرهای انتساب (<code>Assignment</code>): برای اختصاص یک مقدار به یک متغیر از این عملگرها استفاده می‌شود. برخی از این عملگرها ساده و برخی ترکیبی هستند؛ یعنی علاوه بر انتساب، عمل دیگری را نیز روی عملوندها انجام می‌دهند. جدول ٧١ مجموعه این عملگرها را نمایش می‌دهد.</p>
-<p>جدول17 عملگرهای انتساب در جاوا‌اسکریپت</p>
-<p>عملگر</p>
-<h3 id="_3">توضیحات</h3>
-<h3 id="_4">مثال</h3>
-<p>عبارت معادل</p>
-<p>مقدار عملوند سمت راست (<code>y</code>)، درون عملوند سمت چپ (<code>x</code>) قرار</p>
-<div class="code-wrap" dir="ltr"><pre><code>x = `y`
-</code></pre></div>
-<div class="code-wrap" dir="ltr"><pre><code>x = `y`
-</code></pre></div>
-<p>=</p>
-<p>می‌گیرد.</p>
-<p>حاصل جمع عملوندهای <code>x</code> و <code>y</code> درون عملوند سمت چپ (<code>x</code>) قرار</p>
-<p><bdi dir="ltr"><code>x</code> += <code>y</code></bdi></p>
-<div class="code-wrap" dir="ltr"><pre><code>x = `x` + `y`
-</code></pre></div>
-<p>=+</p>
-<p>می‌گیرد.</p>
-<p>حاصل تفریق عملوندهای <code>x</code> و <code>y</code> درون عملوند سمت چپ (<code>x</code>) قرار</p>
-<p><bdi dir="ltr"><code>x</code> -= <code>y</code></bdi></p>
-<div class="code-wrap" dir="ltr"><pre><code>x = `x` – `y`
-</code></pre></div>
-<p>=-</p>
-<p>می‌گیرد.</p>
-<p>حاصل ضرب عملوندهای <code>x</code> و <code>y</code> درون عملوند سمت چپ (<code>x</code>) قرار</p>
-<p><bdi dir="ltr"><code>x</code> *= <code>y</code></bdi></p>
-<div class="code-wrap" dir="ltr"><pre><code>x = `x` * `y`
-</code></pre></div>
-<p>=*</p>
-<p>می‌گیرد.</p>
-<p>خارج قسمت تقسیم عملوند <code>x</code> بر عملوند <code>y</code> درون متغیر سمت چپ</p>
-<p><bdi dir="ltr"><code>x</code> /= <code>y</code></bdi></p>
-<div class="code-wrap" dir="ltr"><pre><code>x = `x` / `y`
-</code></pre></div>
-<p>=/</p>
-<p>(<code>x</code>) قرار می‌گیرد.</p>
-<p>باقیمانده تقسیم عملوند <code>x</code> بر عملوند <code>y</code> درون متغیر سمت چپ (<code>x</code>)</p>
-<p><bdi dir="ltr"><code>x</code> %= <code>y</code></bdi></p>
-<div class="code-wrap" dir="ltr"><pre><code>x = `x` % `y`
-</code></pre></div>
-<p>=%</p>
-<p>قرار می‌گیرد.</p>
-<p>عملوند <code>x</code> را به توان عملوند <code>y</code> می‌رساند و نتیجه را درون متغیر <code>x</code></p>
-<p><bdi dir="ltr"><code>x</code> **= <code>y</code></bdi></p>
-<div class="code-wrap" dir="ltr"><pre><code>x = `x` ** `y`
-</code></pre></div>
-<p>=**</p>
-<p>قرار می‌دهد.</p>
-<hr />
+      <header class="page-head"><p class="kicker" data-fa="پودمان ۳: صفحات وب تعاملی" data-en="Module 3: Interactive web pages">پودمان ۳: صفحات وب تعاملی</p><h1 data-fa="عملگرها" data-en="Operators">عملگرها</h1></header><article class="card lesson no-copy" lang="fa" dir="rtl" data-lang-block="fa"><p class="page-mark">صفحه ۲۰۳</p>
+
+<p><strong>عملگرهای ریاضی (<bdi dir="ltr">Arithmetic</bdi>)</strong> : این عملگرها برای انجام انواع عملیات محاسباتی ریاضی مورد استفاده قرار می‌گیرند. شرح این عملگرها در جدول ۱۶ آمده است:</p>
+<p class="table-cap">جدول ۱۶: عملگرهای ریاضی جاوا‌اسکریپت</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>عملگر</th>
+<th>توضیحات</th>
+<th>مثال</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>+ , - , * , / , %</td>
+<td>جمع، تفریق، ضرب و تقسیم و باقی‌مانده</td>
+<td><code>x = y+z , a = a*2, n = n/10</code></td>
+</tr>
+<tr>
+<td>++,--</td>
+<td>افزایش و کاهش به میزان یک واحد</td>
+<td><code>x++, y--, ++z, --w</code></td>
+</tr>
+<tr>
+<td>**</td>
+<td>توان</td>
+<td><code>x = y**2</code></td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>عملگرهای انتساب (<bdi dir="ltr">Assignment</bdi>)</strong>: برای اختصاص یک مقدار به یک متغیر از این عملگرها استفاده می‌شود. برخی از این عملگرها ساده و برخی ترکیبی هستند؛ یعنی علاوه بر انتساب، عمل دیگری را نیز روی عملوندها انجام می‌دهند. جدول ۱۷ مجموعه این عملگرها را نمایش می‌دهد.</p>
+<p class="table-cap">جدول ۱۷: عملگرهای انتساب در جاوا‌اسکریپت</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>عملگر</th>
+<th>توضیحات</th>
+<th>مثال</th>
+<th>عبارت معادل</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>=</code></td>
+<td>مقدار عملوند سمت راست (<bdi dir="ltr">y</bdi>)، درون عملوند سمت چپ (<bdi dir="ltr">x</bdi>) قرار می‌گیرد.</td>
+<td><code>x = y</code></td>
+<td><code>x = y</code></td>
+</tr>
+<tr>
+<td><code>+=</code></td>
+<td>حاصل جمع عملوندهای <bdi dir="ltr">x</bdi> و <bdi dir="ltr">y</bdi> درون عملوند سمت چپ (<bdi dir="ltr">x</bdi>) قرار می‌گیرد.</td>
+<td><code>x += y</code></td>
+<td><code>x = x + y</code></td>
+</tr>
+<tr>
+<td><code>-=</code></td>
+<td>حاصل تفریق عملوندهای <bdi dir="ltr">x</bdi> و <bdi dir="ltr">y</bdi> درون عملوند سمت چپ (<bdi dir="ltr">x</bdi>) قرار می‌گیرد.</td>
+<td><code>x -= y</code></td>
+<td><code>x = x – y</code></td>
+</tr>
+<tr>
+<td><code>*=</code></td>
+<td>حاصل ضرب عملوندهای <bdi dir="ltr">x</bdi> و <bdi dir="ltr">y</bdi> درون عملوند سمت چپ (<bdi dir="ltr">x</bdi>) قرار می‌گیرد.</td>
+<td><code>x *= y</code></td>
+<td><code>x = x * y</code></td>
+</tr>
+<tr>
+<td><code>/=</code></td>
+<td>خارج قسمت تقسیم عملوند <bdi dir="ltr">x</bdi> بر عملوند <bdi dir="ltr">y</bdi> درون متغیر سمت چپ (<bdi dir="ltr">x</bdi>) قرار می‌گیرد.</td>
+<td><code>x /= y</code></td>
+<td><code>x = x / y</code></td>
+</tr>
+<tr>
+<td><code>% =</code></td>
+<td>باقیمانده تقسیم عملوند <bdi dir="ltr">x</bdi> بر عملوند <bdi dir="ltr">y</bdi> درون متغیر سمت چپ (<bdi dir="ltr">x</bdi>) قرار می‌گیرد.</td>
+<td><code>x %= y</code></td>
+<td><code>x = x % y</code></td>
+</tr>
+<tr>
+<td><code>**=</code></td>
+<td>عملوند <bdi dir="ltr">x</bdi> را به توان عملوند <bdi dir="ltr">y</bdi> می‌رساند و نتیجه را درون متغیر <bdi dir="ltr">x</bdi> قرار می‌دهد.</td>
+<td><code>x **= y</code></td>
+<td><code>x = x ** y</code></td>
+</tr>
+</tbody>
+</table></div>
 <p class="page-mark">صفحه ۲۰۴</p>
-<p>عملگرهای مقایسه‌ای (<code>Comparison</code>): این عملگرها برای مقایسه دو عملوند به‌کار می‌روند.</p>
-<p>مجموعه این عملگرها در جدول ٨١ آمده است:</p>
-<p>جدول ٨١ عملگرهای مقایسه‌ای</p>
-<p>عملگر</p>
-<h3 id="_5">توضیحات</h3>
-<p>== برای بررسی تساوی دو عملوند از لحاظ مقدار و === برای تساوی دو عملوند از لحاظ</p>
-<p>== و ===</p>
-<p>مقدار و نوع =! برای بررسی عدم تساوی مقدار دو عملوند و ==! برای بررسی عدم تساوی مقدار و نوع</p>
-<p>=! و ==!</p>
-<p>دو عملوند</p>
-<blockquote>
-<p>, &lt;</p>
-</blockquote>
-<p>کوچک‌تر یا بزرگ‌تر بودن عملوند اول نسبت به عملوند دوم</p>
-<p>=&lt; , =&gt;کوچک‌تر یا مساوی، بزرگ‌تر یا مساوی ?</p>
-<p>عملگر شرطی سه‌تایی که برای انتخاب بین دو مقدار بر اساس یک شرط استفاده می‌شود.</p>
-<p>عملگرهای منطقی (<code>Boolean</code>): از عملگرهای منطقی برای ترکیب یا معکوس کردن شرایط استفاده می‌شود. این عملگرها امکان ترکیب عبارات منطقی را در شرایط مختلف فراهم می‌کنند. جدول ٩١ عملگرهای منطقی جاوا‌اسکریپت را معرفی می‌کند:</p>
-<p>جدول ٩١ عملگرهای منطقی</p>
-<p>عملگر</p>
-<h3 id="_6">توضیحات</h3>
-<p>&amp;&amp;</p>
-<p>عملگر <code>AND</code> بررسی می‌کند که آیا هر دو عملوند صحیح هستند یا خیر.</p>
-<p>||</p>
-<p>عملگر <code>OR</code> بررسی می‌کند که آیا حداقل یکی از شرط‌ها درست است یا خیر.</p>
-<p>!</p>
-<p>عملگر <code>NOT</code> وضعیت درست یا غلط بودن یک شرط را معکوس می‌کند.</p>
-<hr />
+
+<p><strong>عملگرهای مقایسه‌ای (<bdi dir="ltr">Comparison</bdi>)</strong>: این عملگرها برای مقایسه دو عملوند به‌کار می‌روند.</p>
+<p>مجموعه این عملگرها در جدول ۱۸ آمده است:</p>
+<p class="table-cap">جدول ۱۸: عملگرهای مقایسه‌ای</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>عملگر</th>
+<th>توضیحات</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>==</code> و <code>===</code></td>
+<td><code>==</code> برای بررسی تساوی دو عملوند از لحاظ مقدار و <code>===</code> برای تساوی دو عملوند از لحاظ مقدار و نوع</td>
+</tr>
+<tr>
+<td><code>!=</code> و <code>!==</code></td>
+<td><code>!=</code> برای بررسی عدم تساوی مقدار دو عملوند و <code>!==</code> برای بررسی عدم تساوی مقدار و نوع دو عملوند</td>
+</tr>
+<tr>
+<td><code>&lt; , &gt;</code></td>
+<td>کوچک‌تر یا بزرگ‌تر بودن عملوند اول نسبت به عملوند دوم</td>
+</tr>
+<tr>
+<td><code>&gt;= , &lt;=</code></td>
+<td>کوچک‌تر یا مساوی، بزرگ‌تر یا مساوی</td>
+</tr>
+<tr>
+<td>?</td>
+<td>عملگر شرطی سه‌تایی که برای انتخاب بین دو مقدار بر اساس یک شرط استفاده می‌شود.</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>عملگرهای منطقی (<bdi dir="ltr">Boolean</bdi>)</strong>: از عملگرهای منطقی برای ترکیب یا معکوس کردن شرایط استفاده می‌شود. این عملگرها امکان ترکیب عبارات منطقی را در شرایط مختلف فراهم می‌کنند. جدول ۱۹ عملگرهای منطقی جاوا‌اسکریپت را معرفی می‌کند:</p>
+<p class="table-cap">جدول ۱۹: عملگرهای منطقی</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>عملگر</th>
+<th>توضیحات</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>&amp;&amp;</td>
+<td>عملگر <bdi dir="ltr">AND</bdi> بررسی می‌کند که آیا هر دو عملوند صحیح هستند یا خیر.</td>
+</tr>
+<tr>
+<td>||</td>
+<td>عملگر <bdi dir="ltr">OR</bdi> بررسی می‌کند که آیا حداقل یکی از شرط‌ها درست است یا خیر.</td>
+</tr>
+<tr>
+<td><code>!</code></td>
+<td>عملگر <bdi dir="ltr">NOT</bdi> وضعیت درست یا غلط بودن یک شرط را معکوس می‌کند.</td>
+</tr>
+</tbody>
+</table></div>
 <p class="page-mark">صفحه ۲۰۵</p>
-<p>کار با انواع عملگرهای جاوا‌اسکریپت</p>
-<h3 id="_7">کار کارگاهی</h3>
-<p>فایل جدیدی با نام <code>workshop3.html</code> ایجاد کنید و تگ <code>&lt;script&gt;</code> را در بخش <code>body</code> بنویسید. سپس اسکریپت زیر را درون آن وارد کنید و نتایج به‌دست آمده را در جاهای خالی بنویسید.</p>
-<div class="code-wrap" dir="ltr"><pre><code>;&quot;1 let x = 10, y = 2, z= 3, w=20, s=&quot;10&quot;, n = &quot;sara&quot;, m=&quot;sina;
+
+<aside class="callout workshop"><p class="callout-label">کار کارگاهی</p>
+<p><strong>کار با انواع عملگرهای جاوا‌اسکریپت</strong></p>
+<p>فایل جدیدی با نام <code>workshop3.html</code> ایجاد کنید و تگ <code>&lt;script&gt;</code> را در بخش <bdi dir="ltr">body</bdi> بنویسید. سپس اسکریپت زیر را درون آن وارد کنید و نتایج به‌دست آمده را در جاهای خالی بنویسید.</p>
+<div class="code-wrap" dir="ltr"><pre><code>1 let x = 10, y = 2, z= 3, w=20, s="10", n = "sara", m="sina";
+2 x++;
+                                 ……………….
+3 y += x;
+                                                    ……………….
+4 --z;
+                                   ……………….
+5 z *= y;
+                                   ……………….
+6 x /= 2;
+                                   ……………….
+7 w %= z;
+                                   ……………….
+8 console.log("x: "+x + " , y:" + y + " , z:" + z , " , w:" + w);  ………………………………
+9 let a = (x &lt; y);                           ……………….
+10 Let b = (x &gt; y) &amp;&amp; (y == z);     ……………….
+11 Let c = (x === s);                      ……………….
+12 Let d = c || (y != z);                   ……………….
+13 Let e = (n &lt; m);                       ……………….
+14 console.log("a: "+a + " , b:" + b + " , c:" + c , " , d:" + d + " , e: "+e);
+15 result = (x === s)? "x is equal to s": "x is not equal to s";          ……………….
+16 console.log(result);
+                             ……………….
 </code></pre></div>
-<p>;++2 <code>x</code></p>
-<p>.………………</p>
-<p>;3 <bdi dir="ltr"><code>y</code> += <code>x</code></bdi></p>
-<p>.………………</p>
-<p>;4 <code>--z</code></p>
-<p>.………………</p>
-<p>;5 <bdi dir="ltr"><code>z</code> *= <code>y</code></bdi></p>
-<p>.………………</p>
-<p>;6 <code>x</code> /= 2</p>
-<p>.………………</p>
-<p>;7 <bdi dir="ltr"><code>w</code> %= <code>z</code></bdi></p>
-<p>.………………</p>
-<div class="code-wrap" dir="ltr"><pre><code>……………………………… ;)x: &quot;+x + &quot; , y:&quot; + y + &quot; , z:&quot; + z , &quot; , w:&quot; + w&quot;(8 console.log
-</code></pre></div>
-<p>.……………… ;)<code>x</code> &lt; <code>y</code>( = 9 <code>let a</code></p>
-<div class="code-wrap" dir="ltr"><pre><code>.……………… ;)y == z( &amp;&amp; )x &gt; y( = 10 Let b
-.……………… ;)x === s( = 11 Let c
-</code></pre></div>
-<p>.……………… ;)<code>y</code> != <code>z</code>( || 12 <bdi dir="ltr"><code>Let d</code> = <code>c</code></bdi> .……………… ;)<code>n</code> &lt; <code>m</code>( = 13 <code>Let e</code></p>
-<div class="code-wrap" dir="ltr"><pre><code>;)a: &quot;+a + &quot; , b:&quot; + b + &quot; , c:&quot; + c , &quot; , d:&quot; + d + &quot; , e: &quot;+e&quot;(14 console.log;
-.……………… ;&quot;x is equal to s&quot;: &quot;x is not equal to s&quot; ?)x === s( = 15 result
-;(result)16 console.log;
-</code></pre></div>
-<p>.………………</p>
-<aside class="callout note"><h3 id="_8">نکته</h3>
-<p>در هنگام مقایسه دو عملوند توسط عملگرهای == و =! نوع داده عملوندها اهمیتی ندارد و فقط مقادیر آنها بررسی می‌شود؛ درحال‌یکه عملگر === و ==! نوع داده عملوندها را نیز مد نظر دارد.</p>
-</aside><aside class="callout note"><h3 id="_9">نکته</h3>
-<p>عبارت ?(<code>x===s</code>) تساوی دو متغیر <code>x</code> و <code>s</code> را بررسی می‌کند. اگر نتیجه مقایسه <code>true</code> (درست) باشد، عبارت قبل از علامت ? و اگر نتیجه <code>false</code> (غلط) باشد، عبارت بعد از علامت : در متغیر <code>result</code> ذخیره می‌گردد.</p>
-</aside><hr /></article><article class="lesson" lang="en" dir="ltr" data-lang-block="en" hidden><p class="page-mark">Page 203</p>
-<p>Arithmetic operators (<code>Arithmetic</code>): These operators are used to perform various mathematical calculations. These operators are described in Table 16:</p>
-<p>Table 16 JavaScript arithmetic operators Operator</p>
-<h3 id="explanation">Explanation</h3>
-<h3 id="example">Example</h3>
-<p>Addition, subtraction, multiplication, division, and remainder <code>x</code> = <code>y+z</code> , <code>a</code> = <code>a*2</code>, <code>n</code> = <code>n/10</code></p>
-<p>% , / , * , - , + --,++Increment and decrement by one unit<code>x++</code>, <code>y--</code>, <code>++z</code>, <code>--w</code> **Exponentiation<code>x</code> = <code>y**2</code></p>
-<p>Assignment operators (<code>Assignment</code>): These operators are used to assign a value to a variable. Some of these operators are simple and some are compound; that is, in addition to assignment, they also perform another operation on the operands. Table 17 shows this set of operators.</p>
-<p>Table 17 Assignment operators in JavaScript Operator</p>
-<h3 id="explanation_1">Explanation</h3>
-<h3 id="example_1">Example</h3>
-<p>Equivalent expression</p>
-<p>The value of the right-hand operand (<code>y</code>) is placed in the left-hand</p>
-<div class="code-wrap" dir="ltr"><pre><code>x = `y`
-</code></pre></div>
-<div class="code-wrap" dir="ltr"><pre><code>x = `y`
-</code></pre></div>
-<p>=</p>
-<p>operand (<code>x</code>).</p>
-<p>The sum of the operands <code>x</code> and <code>y</code> is placed in the left-hand</p>
-<p><code>x</code> += <code>y</code></p>
-<div class="code-wrap" dir="ltr"><pre><code>x = `x` + `y`
-</code></pre></div>
-<p>+=</p>
-<p>operand (<code>x</code>).</p>
-<p>The difference of the operands <code>x</code> and <code>y</code> is placed in the left-hand</p>
-<p><code>x</code> -= <code>y</code></p>
-<div class="code-wrap" dir="ltr"><pre><code>x = `x` – `y`
-</code></pre></div>
-<p>-=</p>
-<p>operand (<code>x</code>).</p>
-<p>The product of the operands <code>x</code> and <code>y</code> is placed in the left-hand</p>
-<p><code>x</code> *= <code>y</code></p>
-<div class="code-wrap" dir="ltr"><pre><code>x = `x` * `y`
-</code></pre></div>
-<p>*=</p>
-<p>operand (<code>x</code>).</p>
-<p>The quotient of dividing operand <code>x</code> by operand <code>y</code> is placed in the</p>
-<p><code>x</code> /= <code>y</code></p>
-<div class="code-wrap" dir="ltr"><pre><code>x = `x` / `y`
-</code></pre></div>
-<p>/=</p>
-<p>left-hand variable (<code>x</code>).</p>
-<p>The remainder of dividing operand <code>x</code> by operand <code>y</code> is placed in</p>
-<p><code>x</code> %= <code>y</code></p>
-<div class="code-wrap" dir="ltr"><pre><code>x = `x` % `y`
-</code></pre></div>
-<p>%=</p>
-<p>the left-hand variable (<code>x</code>).</p>
-<p>Raises operand <code>x</code> to the power of operand <code>y</code> and places the result</p>
-<p><code>x</code> **= <code>y</code></p>
-<div class="code-wrap" dir="ltr"><pre><code>x = `x` ** `y`
-</code></pre></div>
-<p>**=</p>
-<p>in the variable <code>x</code>.</p>
-<hr />
+<p><strong>نکته</strong></p>
+<p>در هنگام مقایسه دو عملوند توسط عملگرهای <code>==</code> و <code>!=</code> نوع داده عملوندها اهمیتی ندارد و فقط مقادیر آنها بررسی می‌شود؛ درحالی‌که عملگر <code>===</code> و <code>!==</code> نوع داده عملوندها را نیز مد نظر دارد.</p>
+<p><strong>نکته</strong></p>
+<p>عبارت (<code>x===s</code>)? تساوی دو متغیر <bdi dir="ltr">x</bdi> و <bdi dir="ltr">s</bdi> را بررسی می‌کند. اگر نتیجه مقایسه <bdi dir="ltr">true</bdi> (درست) باشد، عبارت قبل از علامت ? و اگر نتیجه <bdi dir="ltr">false</bdi> (غلط) باشد، عبارت بعد از علامت : در متغیر <bdi dir="ltr">result</bdi> ذخیره می‌گردد.</p>
+</aside></article><article class="card lesson no-copy" lang="en" dir="ltr" data-lang-block="en" hidden><p class="page-mark">Page 203</p>
+
+<p><strong><bdi dir="rtl">عملگرهای ریاضی</bdi> (Arithmetic)</strong> : <bdi dir="rtl">این عملگرها برای انجام انواع عملیات محاسباتی ریاضی مورد استفاده قرار می‌گیرند</bdi>. <bdi dir="rtl">شرح این عملگرها در جدول ۱۶ آمده است</bdi>:</p>
+<p class="table-cap">Table 16: <bdi dir="rtl">عملگرهای ریاضی جاوا‌اسکریپت</bdi></p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Operator</th>
+<th>Description</th>
+<th>Example</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>+ , - , * , / , %</td>
+<td><bdi dir="rtl">جمع، تفریق، ضرب و تقسیم و باقی‌مانده</bdi></td>
+<td><code>x = y+z , a = a*2, n = n/10</code></td>
+</tr>
+<tr>
+<td>++,--</td>
+<td><bdi dir="rtl">افزایش و کاهش به میزان یک واحد</bdi></td>
+<td><code>x++, y--, ++z, --w</code></td>
+</tr>
+<tr>
+<td>**</td>
+<td><bdi dir="rtl">توان</bdi></td>
+<td><code>x = y**2</code></td>
+</tr>
+</tbody>
+</table></div>
+<p><strong><bdi dir="rtl">عملگرهای انتساب</bdi> (Assignment)</strong>: <bdi dir="rtl">برای اختصاص یک مقدار به یک متغیر از این عملگرها استفاده می‌شود</bdi>. <bdi dir="rtl">برخی از این عملگرها ساده و برخی ترکیبی هستند؛ یعنی علاوه بر انتساب، عمل دیگری را نیز روی عملوندها انجام می‌دهند</bdi>. <bdi dir="rtl">جدول ۱۷ مجموعه این عملگرها را نمایش می‌دهد</bdi>.</p>
+<p class="table-cap">Table 17: <bdi dir="rtl">عملگرهای انتساب در جاوا‌اسکریپت</bdi></p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Operator</th>
+<th>Description</th>
+<th>Example</th>
+<th><bdi dir="rtl">عبارت معادل</bdi></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>=</code></td>
+<td><bdi dir="rtl">مقدار عملوند سمت راست</bdi> (y)<bdi dir="rtl">، درون عملوند سمت چپ</bdi> (x) <bdi dir="rtl">قرار می‌گیرد</bdi>.</td>
+<td><code>x = y</code></td>
+<td><code>x = y</code></td>
+</tr>
+<tr>
+<td><code>+=</code></td>
+<td><bdi dir="rtl">حاصل جمع عملوندهای</bdi> x و y <bdi dir="rtl">درون عملوند سمت چپ</bdi> (x) <bdi dir="rtl">قرار می‌گیرد</bdi>.</td>
+<td><code>x += y</code></td>
+<td><code>x = x + y</code></td>
+</tr>
+<tr>
+<td><code>-=</code></td>
+<td><bdi dir="rtl">حاصل تفریق عملوندهای</bdi> x و y <bdi dir="rtl">درون عملوند سمت چپ</bdi> (x) <bdi dir="rtl">قرار می‌گیرد</bdi>.</td>
+<td><code>x -= y</code></td>
+<td><code>x = x – y</code></td>
+</tr>
+<tr>
+<td><code>*=</code></td>
+<td><bdi dir="rtl">حاصل ضرب عملوندهای</bdi> x و y <bdi dir="rtl">درون عملوند سمت چپ</bdi> (x) <bdi dir="rtl">قرار می‌گیرد</bdi>.</td>
+<td><code>x *= y</code></td>
+<td><code>x = x * y</code></td>
+</tr>
+<tr>
+<td><code>/=</code></td>
+<td><bdi dir="rtl">خارج قسمت تقسیم عملوند</bdi> x <bdi dir="rtl">بر عملوند</bdi> y <bdi dir="rtl">درون متغیر سمت چپ</bdi> (x) <bdi dir="rtl">قرار می‌گیرد</bdi>.</td>
+<td><code>x /= y</code></td>
+<td><code>x = x / y</code></td>
+</tr>
+<tr>
+<td><code>% =</code></td>
+<td><bdi dir="rtl">باقیمانده تقسیم عملوند</bdi> x <bdi dir="rtl">بر عملوند</bdi> y <bdi dir="rtl">درون متغیر سمت چپ</bdi> (x) <bdi dir="rtl">قرار می‌گیرد</bdi>.</td>
+<td><code>x %= y</code></td>
+<td><code>x = x % y</code></td>
+</tr>
+<tr>
+<td><code>**=</code></td>
+<td><bdi dir="rtl">عملوند</bdi> x <bdi dir="rtl">را به توان عملوند</bdi> y <bdi dir="rtl">می‌رساند و نتیجه را درون متغیر</bdi> x <bdi dir="rtl">قرار می‌دهد</bdi>.</td>
+<td><code>x **= y</code></td>
+<td><code>x = x ** y</code></td>
+</tr>
+</tbody>
+</table></div>
 <p class="page-mark">Page 204</p>
-<p>Comparison operators (<code>Comparison</code>): These operators are used to compare two operands.</p>
-<p>This set of operators is shown in Table 18:</p>
-<p>Table 18 Comparison operators</p>
-<p>Operator</p>
-<h3 id="explanation_2">Explanation</h3>
-<p>== to check equality of two operands by value, and === for equality of two operands by</p>
-<p>== and ===</p>
-<p>value and type != to check inequality of the values of two operands, and !== to check inequality of value and type</p>
-<p>!= and !==</p>
-<p>of the two operands</p>
-<blockquote>
-<p>, &lt;</p>
-</blockquote>
-<p>Whether the first operand is less than or greater than the second operand</p>
-<p>&lt;= , &gt;=Less than or equal to, greater than or equal to ?</p>
-<p>The ternary conditional operator, used to choose between two values based on a condition.</p>
-<p>Boolean operators (<code>Boolean</code>): Logical operators are used to combine or reverse conditions. These operators make it possible to combine logical expressions in different situations. Table 19 introduces JavaScript’s logical operators:</p>
-<p>Table 19 Logical operators</p>
-<p>Operator</p>
-<h3 id="explanation_3">Explanation</h3>
-<p>&amp;&amp;</p>
-<p>The <code>AND</code> operator checks whether both operands are true.</p>
-<p>||</p>
-<p>The <code>OR</code> operator checks whether at least one of the conditions is true.</p>
-<p>!</p>
-<p>The <code>NOT</code> operator reverses whether a condition is true or false.</p>
-<hr />
+
+<p><strong><bdi dir="rtl">عملگرهای مقایسه‌ای</bdi> (Comparison)</strong>: <bdi dir="rtl">این عملگرها برای مقایسه دو عملوند به‌کار می‌روند</bdi>.</p>
+<p><bdi dir="rtl">مجموعه این عملگرها در جدول ۱۸ آمده است</bdi>:</p>
+<p class="table-cap">Table 18: <bdi dir="rtl">عملگرهای مقایسه‌ای</bdi></p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Operator</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>==</code> و <code>===</code></td>
+<td><code>==</code> <bdi dir="rtl">برای بررسی تساوی دو عملوند از لحاظ مقدار و</bdi> <code>===</code> <bdi dir="rtl">برای تساوی دو عملوند از لحاظ مقدار و نوع</bdi></td>
+</tr>
+<tr>
+<td><code>!=</code> و <code>!==</code></td>
+<td><code>!=</code> <bdi dir="rtl">برای بررسی عدم تساوی مقدار دو عملوند و</bdi> <code>!==</code> <bdi dir="rtl">برای بررسی عدم تساوی مقدار و نوع دو عملوند</bdi></td>
+</tr>
+<tr>
+<td><code>&lt; , &gt;</code></td>
+<td><bdi dir="rtl">کوچک‌تر یا بزرگ‌تر بودن عملوند اول نسبت به عملوند دوم</bdi></td>
+</tr>
+<tr>
+<td><code>&gt;= , &lt;=</code></td>
+<td><bdi dir="rtl">کوچک‌تر یا مساوی، بزرگ‌تر یا مساوی</bdi></td>
+</tr>
+<tr>
+<td>?</td>
+<td><bdi dir="rtl">عملگر شرطی سه‌تایی که برای انتخاب بین دو مقدار بر اساس یک شرط استفاده می‌شود</bdi>.</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong><bdi dir="rtl">عملگرهای منطقی</bdi> (Boolean)</strong>: <bdi dir="rtl">از عملگرهای منطقی برای ترکیب یا معکوس کردن شرایط استفاده می‌شود</bdi>. <bdi dir="rtl">این عملگرها امکان ترکیب عبارات منطقی را در شرایط مختلف فراهم می‌کنند</bdi>. <bdi dir="rtl">جدول ۱۹ عملگرهای منطقی جاوا‌اسکریپت را معرفی می‌کند</bdi>:</p>
+<p class="table-cap">Table 19: <bdi dir="rtl">عملگرهای منطقی</bdi></p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Operator</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>&amp;&amp;</td>
+<td><bdi dir="rtl">عملگر</bdi> AND <bdi dir="rtl">بررسی می‌کند که آیا هر دو عملوند صحیح هستند یا خیر</bdi>.</td>
+</tr>
+<tr>
+<td>||</td>
+<td><bdi dir="rtl">عملگر</bdi> OR <bdi dir="rtl">بررسی می‌کند که آیا حداقل یکی از شرط‌ها درست است یا خیر</bdi>.</td>
+</tr>
+<tr>
+<td><code>!</code></td>
+<td><bdi dir="rtl">عملگر</bdi> NOT <bdi dir="rtl">وضعیت درست یا غلط بودن یک شرط را معکوس می‌کند</bdi>.</td>
+</tr>
+</tbody>
+</table></div>
 <p class="page-mark">Page 205</p>
-<p>Working with JavaScript’s different kinds of operators</p>
-<h3 id="workshop">Workshop</h3>
-<p>Create a new file named <code>workshop3.html</code> and write the <code>&lt;script&gt;</code> tag in the <code>body</code> section. Then enter the following script in it and write the results you get in the blanks.</p>
-<div class="code-wrap" dir="ltr"><pre><code>;&quot;1 let x = 10, y = 2, z= 3, w=20, s=&quot;10&quot;, n = &quot;sara&quot;, m=&quot;sina;
+
+<aside class="callout workshop"><p class="callout-label">Workshop</p>
+<p><strong><bdi dir="rtl">کار با انواع عملگرهای جاوا‌اسکریپت</bdi></strong></p>
+<p><bdi dir="rtl">فایل جدیدی با نام</bdi> <code>workshop3.html</code> <bdi dir="rtl">ایجاد کنید و تگ</bdi> <code>&lt;script&gt;</code> <bdi dir="rtl">را در بخش</bdi> body <bdi dir="rtl">بنویسید</bdi>. <bdi dir="rtl">سپس اسکریپت زیر را درون آن وارد کنید و نتایج به‌دست آمده را در جاهای خالی بنویسید</bdi>.</p>
+<div class="code-wrap" dir="ltr"><pre><code>1 let x = 10, y = 2, z= 3, w=20, s="10", n = "sara", m="sina";
+2 x++;
+                                 ……………….
+3 y += x;
+                                                    ……………….
+4 --z;
+                                   ……………….
+5 z *= y;
+                                   ……………….
+6 x /= 2;
+                                   ……………….
+7 w %= z;
+                                   ……………….
+8 console.log("x: "+x + " , y:" + y + " , z:" + z , " , w:" + w);  ………………………………
+9 let a = (x &lt; y);                           ……………….
+10 Let b = (x &gt; y) &amp;&amp; (y == z);     ……………….
+11 Let c = (x === s);                      ……………….
+12 Let d = c || (y != z);                   ……………….
+13 Let e = (n &lt; m);                       ……………….
+14 console.log("a: "+a + " , b:" + b + " , c:" + c , " , d:" + d + " , e: "+e);
+15 result = (x === s)? "x is equal to s": "x is not equal to s";          ……………….
+16 console.log(result);
+                             ……………….
 </code></pre></div>
-<p>;++2 <code>x</code></p>
-<p>.………………</p>
-<p>;3 <code>y</code> += <code>x</code></p>
-<p>.………………</p>
-<p>;4 <code>--z</code></p>
-<p>.………………</p>
-<p>;5 <code>z</code> *= <code>y</code></p>
-<p>.………………</p>
-<p>;6 <code>x</code> /= 2</p>
-<p>.………………</p>
-<p>;7 <code>w</code> %= <code>z</code></p>
-<p>.………………</p>
-<div class="code-wrap" dir="ltr"><pre><code>……………………………… ;)x: &quot;+x + &quot; , y:&quot; + y + &quot; , z:&quot; + z , &quot; , w:&quot; + w&quot;(8 console.log
-</code></pre></div>
-<p>.……………… ;)<code>x</code> &lt; <code>y</code>( = 9 <code>let a</code></p>
-<div class="code-wrap" dir="ltr"><pre><code>.……………… ;)y == z( &amp;&amp; )x &gt; y( = 10 Let b
-.……………… ;)x === s( = 11 Let c
-</code></pre></div>
-<p>.……………… ;)<code>y</code> != <code>z</code>( || 12 <code>Let d</code> = <code>c</code> .……………… ;)<code>n</code> &lt; <code>m</code>( = 13 <code>Let e</code></p>
-<div class="code-wrap" dir="ltr"><pre><code>;)a: &quot;+a + &quot; , b:&quot; + b + &quot; , c:&quot; + c , &quot; , d:&quot; + d + &quot; , e: &quot;+e&quot;(14 console.log;
-.……………… ;&quot;x is equal to s&quot;: &quot;x is not equal to s&quot; ?)x === s( = 15 result
-;(result)16 console.log;
-</code></pre></div>
-<p>.………………</p>
-<aside class="callout note"><h3 id="note">Note</h3>
-<p>When comparing two operands with the == and != operators, the data type of the operands does not matter and only their values are checked; whereas the === and !== operators also take the data type of the operands into account.</p>
-</aside><aside class="callout note"><h3 id="note_1">Note</h3>
-<p>The expression ?(<code>x===s</code>) checks whether the two variables <code>x</code> and <code>s</code> are equal. If the result of the comparison is <code>true</code>, the phrase before the ? mark is stored in the variable <code>result</code>, and if the result is <code>false</code>, the phrase after the : mark is stored.</p>
-</aside><hr /></article>
-      <aside class="extra">
+<p><strong>Note</strong></p>
+<p><bdi dir="rtl">در هنگام مقایسه دو عملوند توسط عملگرهای</bdi> <code>==</code> و <code>!=</code> <bdi dir="rtl">نوع داده عملوندها اهمیتی ندارد و فقط مقادیر آنها بررسی می‌شود؛ درحالی‌که عملگر</bdi> <code>===</code> و <code>!==</code> <bdi dir="rtl">نوع داده عملوندها را نیز مد نظر دارد</bdi>.</p>
+<p><strong>Note</strong></p>
+<p><bdi dir="rtl">عبارت</bdi> (<code>x===s</code>)? <bdi dir="rtl">تساوی دو متغیر</bdi> x و s <bdi dir="rtl">را بررسی می‌کند</bdi>. <bdi dir="rtl">اگر نتیجه مقایسه</bdi> true (<bdi dir="rtl">درست</bdi>) <bdi dir="rtl">باشد، عبارت قبل از علامت</bdi> ? <bdi dir="rtl">و اگر نتیجه</bdi> false (<bdi dir="rtl">غلط</bdi>) <bdi dir="rtl">باشد، عبارت بعد از علامت</bdi> : <bdi dir="rtl">در متغیر</bdi> result <bdi dir="rtl">ذخیره می‌گردد</bdi>.</p>
+</aside></article>
+      <aside class="card extra">
         <h2 data-fa="تمرین این بخش" data-en="Exercises for this section">تمرین این بخش</h2>
         <p class="extra-note" data-fa="این تمرین‌ها و پیوندها اضافه بر متن کتاب‌اند." data-en="These exercises and links are in addition to the book.">این تمرین‌ها و پیوندها اضافه بر متن کتاب‌اند.</p>
         <ol><li data-fa="ماشین‌حساب کوچک قیمت بساز: قیمت، تعداد و درصد تخفیف را بگیر و مبلغ نهایی را نشان بده." data-en="Build a small price calculator: read price, quantity, and discount percent, and show the final amount.">ماشین‌حساب کوچک قیمت بساز: قیمت، تعداد و درصد تخفیف را بگیر و مبلغ نهایی را نشان بده.</li><li data-fa="به آن یک مقایسه اضافه کن که اگر مبلغ نهایی از ۱۰۰ کمتر بود پیام جدا نشان بدهد." data-en="Add a comparison that shows a separate message when the final amount is under 100.">به آن یک مقایسه اضافه کن که اگر مبلغ نهایی از ۱۰۰ کمتر بود پیام جدا نشان بدهد.</li></ol>
@@ -278,7 +380,10 @@
     <nav class="pager"><a rel="prev" class="prev" href="p3-js-vars.html"><span class="pager-word" data-fa="قبلی" data-en="Previous">قبلی</span><span class="pager-name" data-fa="متغیر و نوع داده" data-en="Variables and data types">متغیر و نوع داده</span></a><a rel="next" class="next" href="p3-js-data.html"><span class="pager-word" data-fa="بعدی" data-en="Next">بعدی</span><span class="pager-name" data-fa="آرایه و شیء" data-en="Arrays and objects">آرایه و شیء</span></a></nav>
     </div>
   </div>
-  <script src="../assets/search-index.js?v=19"></script>
-  <script src="../assets/app.js?v=19"></script>
+  <footer class="site-foot"><p><strong data-fa="طراح سایت" data-en="Site Design">طراح سایت</strong> · <span data-fa="پایه یازدهم" data-en="Grade 11">پایه یازدهم</span></p><nav aria-label="پیوندهای سایت"><a href="../index.html" data-fa="صفحه اصلی" data-en="Home">صفحه اصلی</a><a href="../book/toc.html" data-fa="درس‌ها" data-en="Lessons">درس‌ها</a><a href="../playground/index.html" data-fa="زمین بازی" data-en="Playground">زمین بازی</a><a href="../book/links.html" data-fa="مطالب مفید" data-en="Useful materials">مطالب مفید</a></nav><a class="btn ghost sm download-link" href="../grade11-offline.zip?v=5" data-fa="دانلود برای آفلاین" data-en="Download for offline use">دانلود برای آفلاین</a></footer>
+  <script src="../assets/search-index.js?v=24"></script>
+  <script src="../assets/search.js?v=24"></script>
+  <script src="../assets/guard.js?v=24"></script>
+  <script src="../assets/app.js?v=24"></script>
 </body>
 </html>

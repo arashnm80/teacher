@@ -5,290 +5,307 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title data-fa="حلقه‌ها" data-en="Loops">حلقه‌ها</title>
   <link rel="icon" href="../assets/favicon.svg">
-  <link rel="stylesheet" href="../assets/style.css?v=19">
+  <script>if (location.protocol === "file:") document.documentElement.classList.add("is-offline");</script>
+  <link rel="stylesheet" href="../assets/shared.css?v=24">
+  <link rel="stylesheet" href="../assets/style.css?v=24">
 </head>
 <body data-root="../">
-  <header class="top">
-    <a class="brand" href="../index.html">
-      <span data-fa="طراح سایت" data-en="Site Design">طراح سایت</span>
-      <small data-fa="پایه یازدهم" data-en="Grade 11">پایه یازدهم</small>
-    </a>
-    <div class="search-wrap">
-      <input id="q" type="search" autocomplete="off"
-        data-fa-placeholder="جستجو در درس‌ها" data-en-placeholder="Search lessons"
-        placeholder="جستجو در درس‌ها">
-      <div id="results" class="results" hidden></div>
-    </div>
-    <a class="download" href="../grade11-offline.zip?v=4" data-fa="دانلود کل سایت" data-en="Download the whole site">دانلود کل سایت</a>
-    <button type="button" id="lang-toggle" class="lang-toggle" dir="ltr" data-lang="fa"
-      aria-label="تغییر زبان">
-      <span data-opt="fa">فا</span>
-      <span data-opt="en">EN</span>
-    </button>
-  </header>
-  <div id="nav-backdrop" class="nav-backdrop" hidden></div>
-  <div class="layout">
+  <header class="top"><a class="brand" href="../index.html"><span data-fa="طراح سایت" data-en="Site Design">طراح سایت</span><small data-fa="پایه یازدهم" data-en="Grade 11">پایه یازدهم</small></a><nav class="sections" aria-label="بخش‌های سایت"><a href="../book/toc.html" aria-current="page" data-fa="درس‌ها" data-en="Lessons">درس‌ها</a><a href="../playground/index.html" data-fa="زمین بازی" data-en="Playground">زمین بازی</a><a href="../book/links.html" data-fa="مطالب مفید" data-en="Useful materials">مطالب مفید</a></nav><div class="search-wrap" role="search"><input id="q" type="search" autocomplete="off" data-lpignore="true" data-1p-ignore data-bwignore="true" data-form-type="other" data-fa-placeholder="جستجو در درس‌ها" data-en-placeholder="Search lessons" placeholder="جستجو در درس‌ها" aria-label="جستجو در درس‌ها"><div id="search-results" class="search-results" hidden></div></div><div class="top-actions"><a class="btn primary sm download-link" href="../grade11-offline.zip?v=5" data-fa="دانلود کل سایت" data-en="Download the whole site">دانلود کل سایت</a><button type="button" id="lang-toggle" class="lang-toggle" dir="ltr" data-lang="fa" aria-label="تغییر زبان"><span data-opt="fa">فا</span><span data-opt="en">EN</span></button></div></header>
+  <div class="layout has-side">
     <details class="toc" open><summary class="nav-toggle" aria-label="فهرست درس‌ها"><span class="burger" aria-hidden="true"></span><span class="label" data-fa="فهرست درس‌ها" data-en="Lessons">فهرست درس‌ها</span></summary><nav id="lesson-nav" class="side" aria-label="lessons"><p class="mod" data-fa="شروع کتاب" data-en="Opening">شروع کتاب</p><p class="unit" data-fa="فهرست" data-en="Contents">فهرست</p><a class="" href="toc.html" data-fa="فهرست" data-en="Contents">فهرست</a><p class="mod" data-fa="پودمان ۱: برنامه‌نویسی پایتون" data-en="Module 1: Python programming">پودمان ۱: برنامه‌نویسی پایتون</p><p class="unit" data-fa="معرفی پودمان" data-en="Module introduction">معرفی پودمان</p><a class="" href="p1-intro.html" data-fa="معرفی پودمان پایتون" data-en="Introducing the Python module">معرفی پودمان پایتون</a><p class="unit" data-fa="مدل‌سازی داده" data-en="Data modeling">مدل‌سازی داده</p><a class="" href="p1-python.html" data-fa="پایتون و محیط برنامه‌نویسی" data-en="Python and the programming environment">پایتون و محیط برنامه‌نویسی</a><a class="" href="p1-vars.html" data-fa="متغیرها، نوع داده و عملگرها" data-en="Variables, types, and operators">متغیرها، نوع داده و عملگرها</a><a class="" href="p1-cast.html" data-fa="ورودی و تبدیل نوع" data-en="Input and type casting">ورودی و تبدیل نوع</a><a class="" href="p1-lists.html" data-fa="لیست‌ها" data-en="Lists">لیست‌ها</a><a class="" href="p1-if.html" data-fa="شرط‌های ساده" data-en="Simple conditions">شرط‌های ساده</a><a class="" href="p1-elif.html" data-fa="if، elif و else" data-en="if, elif, and else">if، elif و else</a><a class="" href="p1-for.html" data-fa="حلقه for و range" data-en="The for loop and range">حلقه for و range</a><a class="" href="p1-while.html" data-fa="حلقه while و کنترل حلقه" data-en="The while loop and loop control">حلقه while و کنترل حلقه</a><a class="" href="p1-assess-data.html" data-fa="ارزشیابی مدل‌سازی داده" data-en="Data-modeling assessment">ارزشیابی مدل‌سازی داده</a><p class="unit" data-fa="توابع و ماژول‌ها" data-en="Functions and modules">توابع و ماژول‌ها</p><a class="" href="p1-sets.html" data-fa="مجموعه (set)" data-en="Sets">مجموعه (set)</a><a class="" href="p1-dict.html" data-fa="دیکشنری" data-en="Dictionaries">دیکشنری</a><a class="" href="p1-quiz.html" data-fa="پروژه بازی Quiz" data-en="Quiz game project">پروژه بازی Quiz</a><a class="" href="p1-tuple.html" data-fa="تاپل" data-en="Tuples">تاپل</a><a class="" href="p1-func.html" data-fa="تعریف تابع، پارامتر و return" data-en="Defining functions, parameters, and return">تعریف تابع، پارامتر و return</a><a class="" href="p1-func-more.html" data-fa="تمرین تابع و مرتب‌سازی" data-en="Function practice and sorting">تمرین تابع و مرتب‌سازی</a><a class="" href="p1-modules.html" data-fa="ماژول‌ها و تفاوت تابع و متد" data-en="Modules, and functions versus methods">ماژول‌ها و تفاوت تابع و متد</a><a class="" href="p1-assess-func.html" data-fa="ارزشیابی توابع و ماژول‌ها" data-en="Functions and modules assessment">ارزشیابی توابع و ماژول‌ها</a><p class="mod" data-fa="پودمان ۲: صفحات وب ایستا" data-en="Module 2: Static web pages">پودمان ۲: صفحات وب ایستا</p><p class="unit" data-fa="معرفی پودمان" data-en="Module introduction">معرفی پودمان</p><a class="" href="p2-intro.html" data-fa="معرفی پودمان صفحات ایستا" data-en="Introducing static web pages">معرفی پودمان صفحات ایستا</a><p class="unit" data-fa="ساختار با HTML" data-en="Structure with HTML">ساختار با HTML</p><a class="" href="p2-web.html" data-fa="وب چگونه کار می‌کند" data-en="How the web works">وب چگونه کار می‌کند</a><a class="" href="p2-concepts.html" data-fa="مفاهیم طراحی وب و نقشه سایت" data-en="Web-design concepts and the site map">مفاهیم طراحی وب و نقشه سایت</a><a class="" href="p2-tags.html" data-fa="اولین صفحه HTML" data-en="A first HTML page">اولین صفحه HTML</a><a class="" href="p2-text.html" data-fa="متن، لیست و پیوند" data-en="Text, lists, and links">متن، لیست و پیوند</a><a class="" href="p2-img.html" data-fa="تصویر در صفحه" data-en="Images on the page">تصویر در صفحه</a><a class="" href="p2-forms.html" data-fa="فرم‌ها" data-en="Forms">فرم‌ها</a><a class="" href="p2-semantic.html" data-fa="عناصر معنایی" data-en="Semantic elements">عناصر معنایی</a><a class="" href="p2-assess-html.html" data-fa="ارزشیابی HTML" data-en="HTML assessment">ارزشیابی HTML</a><p class="unit" data-fa="ظاهر با CSS" data-en="Appearance with CSS">ظاهر با CSS</p><a class="" href="p2-css-start.html" data-fa="نوشتن CSS" data-en="Writing CSS">نوشتن CSS</a><a class="" href="p2-css-look.html" data-fa="رنگ، پس‌زمینه و انتخاب‌گر" data-en="Color, background, and selectors">رنگ، پس‌زمینه و انتخاب‌گر</a><a class="" href="p2-box.html" data-fa="مدل جعبه‌ای و display" data-en="The box model and display">مدل جعبه‌ای و display</a><a class="" href="p2-flex.html" data-fa="چیدمان با Flexbox" data-en="Layout with Flexbox">چیدمان با Flexbox</a><a class="" href="p2-flex-work.html" data-fa="کارگاه چیدمان صفحه" data-en="Page-layout workshop">کارگاه چیدمان صفحه</a><a class="" href="p2-media.html" data-fa="مدیا کوئری و ارزشیابی CSS" data-en="Media queries and the CSS assessment">مدیا کوئری و ارزشیابی CSS</a><p class="mod" data-fa="پودمان ۳: صفحات وب تعاملی" data-en="Module 3: Interactive web pages">پودمان ۳: صفحات وب تعاملی</p><p class="unit" data-fa="معرفی پودمان" data-en="Module introduction">معرفی پودمان</p><a class="" href="p3-intro.html" data-fa="معرفی پودمان تعاملی" data-en="Introducing the interactive module">معرفی پودمان تعاملی</a><p class="unit" data-fa="بوت‌استرپ" data-en="Bootstrap">بوت‌استرپ</p><a class="" href="p3-bs-start.html" data-fa="فریم‌ورک و شروع بوت‌استرپ" data-en="Frameworks and starting Bootstrap">فریم‌ورک و شروع بوت‌استرپ</a><a class="" href="p3-bs-util.html" data-fa="فاصله، گردی و لیست" data-en="Spacing, rounding, and lists">فاصله، گردی و لیست</a><a class="" href="p3-bs-header.html" data-fa="سرصفحه فروشگاه" data-en="The shop header">سرصفحه فروشگاه</a><a class="" href="p3-bs-grid.html" data-fa="شبکه Grid" data-en="The grid">شبکه Grid</a><a class="" href="p3-bs-rwd.html" data-fa="کلاس‌های واکنش‌گرا" data-en="Responsive classes">کلاس‌های واکنش‌گرا</a><a class="" href="p3-bs-nav.html" data-fa="نوار ناوبری و جزئیات محصول" data-en="Navbar and product details">نوار ناوبری و جزئیات محصول</a><a class="" href="p3-bs-form.html" data-fa="فرم و پنجره Modal" data-en="Forms and modals">فرم و پنجره Modal</a><a class="" href="p3-bs-show.html" data-fa="کاروسل و آکاردئون" data-en="Carousel and accordion">کاروسل و آکاردئون</a><a class="" href="p3-bs-assess.html" data-fa="ارزشیابی بوت‌استرپ" data-en="Bootstrap assessment">ارزشیابی بوت‌استرپ</a><p class="unit" data-fa="جاوااسکریپت" data-en="JavaScript">جاوااسکریپت</p><a class="" href="p3-js-start.html" data-fa="جاوااسکریپت در صفحه وب" data-en="JavaScript on the page">جاوااسکریپت در صفحه وب</a><a class="" href="p3-js-vars.html" data-fa="متغیر و نوع داده" data-en="Variables and data types">متغیر و نوع داده</a><a class="" href="p3-js-ops.html" data-fa="عملگرها" data-en="Operators">عملگرها</a><a class="" href="p3-js-data.html" data-fa="آرایه و شیء" data-en="Arrays and objects">آرایه و شیء</a><a class="" href="p3-js-if.html" data-fa="شرط در جاوااسکریپت" data-en="Conditions in JavaScript">شرط در جاوااسکریپت</a><a class="current" href="p3-js-loops.html" data-fa="حلقه‌ها" data-en="Loops">حلقه‌ها</a><a class="" href="p3-js-func.html" data-fa="تابع‌ها" data-en="Functions">تابع‌ها</a><a class="" href="p3-js-dom.html" data-fa="صفحه، رویداد و اعتبار فرم" data-en="The page, events, and form validation">صفحه، رویداد و اعتبار فرم</a><a class="" href="p3-js-assess.html" data-fa="ارزشیابی جاوااسکریپت" data-en="JavaScript assessment">ارزشیابی جاوااسکریپت</a><p class="mod" data-fa="پودمان ۴: توسعه وب پایتون" data-en="Module 4: Python for the web">پودمان ۴: توسعه وب پایتون</p><p class="unit" data-fa="معرفی پودمان" data-en="Module introduction">معرفی پودمان</p><a class="" href="p4-intro.html" data-fa="معرفی پودمان شیءگرایی" data-en="Introducing the object-oriented module">معرفی پودمان شیءگرایی</a><p class="unit" data-fa="شیءگرایی" data-en="Object-oriented programming">شیءگرایی</p><a class="" href="p4-idea.html" data-fa="ایده شیء و کلاس" data-en="The idea of objects and classes">ایده شیء و کلاس</a><a class="" href="p4-class.html" data-fa="ساخت کلاس و متد" data-en="Writing a class and methods">ساخت کلاس و متد</a><a class="" href="p4-inherit.html" data-fa="وراثت" data-en="Inheritance">وراثت</a><a class="" href="p4-protect.html" data-fa="داده معتبر و استفاده داخلی" data-en="Valid data and internal use">داده معتبر و استفاده داخلی</a><a class="" href="p4-assess-oop.html" data-fa="ارزشیابی برنامه شیءگرا" data-en="Object-oriented assessment">ارزشیابی برنامه شیءگرا</a><p class="unit" data-fa="فایل و توسعه" data-en="Files and development">فایل و توسعه</p><a class="" href="p4-files.html" data-fa="خواندن و نوشتن فایل متنی" data-en="Reading and writing text files">خواندن و نوشتن فایل متنی</a><a class="" href="p4-errors.html" data-fa="پیمایش فایل و مدیریت خطا" data-en="Walking a file and handling errors">پیمایش فایل و مدیریت خطا</a><a class="" href="p4-json.html" data-fa="چند فایل و JSON" data-en="Several files and JSON">چند فایل و JSON</a><a class="" href="p4-assess-files.html" data-fa="ارزشیابی کار با فایل" data-en="Files assessment">ارزشیابی کار با فایل</a><p class="mod" data-fa="پودمان ۵: برنامه‌نویسی جنگو" data-en="Module 5: Django">پودمان ۵: برنامه‌نویسی جنگو</p><p class="unit" data-fa="معرفی پودمان" data-en="Module introduction">معرفی پودمان</p><a class="" href="p5-intro.html" data-fa="معرفی پودمان جنگو" data-en="Introducing the Django module">معرفی پودمان جنگو</a><p class="unit" data-fa="ایجاد وب‌اپلیکیشن" data-en="Creating the web app">ایجاد وب‌اپلیکیشن</p><a class="" href="p5-what.html" data-fa="جنگو چیست و نصب" data-en="What Django is, and installing it">جنگو چیست و نصب</a><a class="" href="p5-project.html" data-fa="پروژه، اپ و اولین view" data-en="Project, app, and the first view">پروژه، اپ و اولین view</a><a class="" href="p5-template.html" data-fa="قالب و دمای واقعی" data-en="Templates and a real temperature">قالب و دمای واقعی</a><a class="" href="p5-assess-create.html" data-fa="ارزشیابی ایجاد وب‌اپلیکیشن" data-en="Creating-the-app assessment">ارزشیابی ایجاد وب‌اپلیکیشن</a><p class="unit" data-fa="توسعه وب‌اپلیکیشن" data-en="Developing the web app">توسعه وب‌اپلیکیشن</p><a class="" href="p5-model.html" data-fa="مدل شهر و پنل ادمین" data-en="The city model and the admin">مدل شهر و پنل ادمین</a><a class="" href="p5-list.html" data-fa="خواندن شهرها و نمایش فهرست" data-en="Reading cities and showing the list">خواندن شهرها و نمایش فهرست</a><a class="" href="p5-auth.html" data-fa="ورود و خروج" data-en="Sign-in and sign-out">ورود و خروج</a><a class="" href="p5-crud.html" data-fa="افزودن و حذف شهر" data-en="Adding and deleting a city">افزودن و حذف شهر</a><a class="" href="p5-bugs.html" data-fa="باگ و امنیت" data-en="Bugs and security">باگ و امنیت</a><p class="mod" data-fa="پایان کتاب" data-en="Back of the book">پایان کتاب</p><p class="unit" data-fa="منابع" data-en="References">منابع</p><a class="" href="refs.html" data-fa="منابع کتاب" data-en="Book references">منابع کتاب</a><p class="mod" data-fa="فراتر از کتاب" data-en="Beyond the book">فراتر از کتاب</p><p class="unit" data-fa="پیوندهای مفید" data-en="Useful links">پیوندهای مفید</p><a class="" href="links.html" data-fa="پیوندهای مفید" data-en="Useful links">پیوندهای مفید</a></nav></details>
     <div class="main">
-      <h1 class="section-title" data-fa="حلقه‌ها" data-en="Loops">حلقه‌ها</h1><article class="lesson" lang="fa" dir="rtl" data-lang-block="fa"><p class="page-mark">صفحه ۲۱۳</p>
-<p>دستورات حلقه در زبان‌های برنام‌هنویسی برای تکرار اجرای یک بخش از برنامه از دستورات حلقه استفاده می‌شود. حلقه‌های تکرار باعث کاهش حجم برنامه، خوانایی کد، بهینه‌سازی الگوریتم برنامه و افزایش کارایی برنامه می‌شوند.</p>
-<p>حلقه‌های تکرار انواع مختلفی دارند. در زبان جاوا‌اسکریپت این حلقه‌ها شامل <code>for</code>، <code>while</code>، <code>do while</code>، <code>for</code>…<code>of</code> و <code>for</code>…<code>in</code> است.</p>
-<p>حلقۀ <code>for</code> زمانی که تعداد دفعات تکرار یک کار مشخص باشد، از حلقۀ <code>for</code> استفاده می‌شود. شکل کلی حلقۀ <code>for</code> به‌صورت زیر است:</p>
-<div class="code-wrap" dir="ltr"><pre><code>{ )Initialization; Condition; Increment/Decrement( for
+      <header class="page-head"><p class="kicker" data-fa="پودمان ۳: صفحات وب تعاملی" data-en="Module 3: Interactive web pages">پودمان ۳: صفحات وب تعاملی</p><h1 data-fa="حلقه‌ها" data-en="Loops">حلقه‌ها</h1></header><article class="card lesson no-copy" lang="fa" dir="rtl" data-lang-block="fa"><p class="page-mark">صفحه ۲۱۳</p>
+
+<h3>دستورات حلقه</h3>
+<p>در زبان‌های برنامه‌نویسی برای تکرار اجرای یک بخش از برنامه از دستورات حلقه استفاده می‌شود. حلقه‌های تکرار باعث کاهش حجم برنامه، خوانایی کد، بهینه‌سازی الگوریتم برنامه و افزایش کارایی برنامه می‌شوند. حلقه‌های تکرار انواع مختلفی دارند. در زبان جاوا‌اسکریپت این حلقه‌ها شامل <bdi dir="ltr">for</bdi>، <bdi dir="ltr">while</bdi>، <bdi dir="ltr">do while</bdi>، <bdi dir="ltr">for</bdi>…<bdi dir="ltr">of</bdi> و <bdi dir="ltr">for</bdi>…<bdi dir="ltr">in</bdi> است.</p>
+<h3>حلقۀ <bdi dir="ltr">for</bdi></h3>
+<p>زمانی که تعداد دفعات تکرار یک کار مشخص باشد، از حلقۀ <bdi dir="ltr">for</bdi> استفاده می‌شود. شکل کلی حلقۀ <bdi dir="ltr">for</bdi> به‌صورت زیر است:</p>
+<div class="code-wrap" dir="ltr"><pre><code>for (Initialization; Condition; Increment/Decrement) {
 </code></pre></div>
 <p>کدی که باید تکرار شود</p>
-<p>}</p>
-<p>حلقۀ <code>for</code> نیازمند یک شمارنده برای شمارش تعداد دفعات اجرای حلقه است. شمارنده حلقه یک متغیر است که دارای مقدار اولیه و پایانی است. عبارت <code>Initiliazation</code> به مقداردهی اولیه شمارنده حلقه اشاره دارد. در قسمت <code>Condition</code> شرط تکرار حلقه بررسی می‌شود. برای خروج از حلقه، شرط حلقه باید نقض شود.</p>
-<p><img alt="تصویر کتاب" src="../images/p219-01.png" /></p>
-<p>بدین منظور شمارنده حلقه باید در هر بار تکرار حلقه افزوده یا کاسته شود تا مقدار شمارنده از مقدار پایانی گذر کند. عبارات <code>Increment</code> و <code>Decrement</code> به‌معنای افزایش و کاهش مقدار شمارنده است. در صورت عدم استفاده از آکولاد برای تعیین محدوده بلوک حلقه، فقط اولین دستور جزء حلقه به شمار می‌آید.</p>
-<p><strong>شکل 11</strong></p>
-<p>به‌کارگیری حلقه <code>for</code></p>
-<h3 id="_1">کار کارگاهی</h3>
-<p><img alt="تصویر کتاب" src="../images/p219-02.png" /></p>
+<div class="code-wrap" dir="ltr"><pre><code>}
+</code></pre></div>
+<p>حلقۀ <bdi dir="ltr">for</bdi> نیازمند یک شمارنده برای شمارش تعداد دفعات اجرای حلقه است. شمارنده حلقه یک متغیر است که دارای مقدار اولیه و پایانی است. عبارت <bdi dir="ltr">Initiliazation</bdi> به مقداردهی اولیه شمارنده حلقه اشاره دارد. در قسمت <bdi dir="ltr">Condition</bdi> شرط تکرار حلقه بررسی می‌شود. برای خروج از حلقه، شرط حلقه باید نقض شود. بدین منظور شمارنده حلقه باید در هر بار تکرار حلقه افزوده یا کاسته شود تا مقدار شمارنده از مقدار پایانی گذر کند. عبارات <bdi dir="ltr">Increment</bdi> و <bdi dir="ltr">Decrement</bdi> به‌معنای افزایش و کاهش مقدار شمارنده است. در صورت عدم استفاده از آکولاد برای تعیین محدوده بلوک حلقه، فقط اولین دستور جزء حلقه به شمار می‌آید.</p>
+<figure class="shot"><img alt="شکل ۱۱" src="../images/p219-01.png" loading="lazy" /><figcaption>شکل ۱۱</figcaption></figure>
+<aside class="callout workshop"><p class="callout-label">کار کارگاهی</p>
+<p><strong>به‌کارگیری حلقه <bdi dir="ltr">for</bdi></strong></p>
+<figure class="shot"><img alt="تصویر کتاب" src="../images/p219-02.png" loading="lazy" /></figure>
 <p>یک فایل جدید با نام <code>workshop7.html</code> ایجاد کنید و اسکریپت روبه‌رو را برای چاپ اعداد 0 تا 4 بنویسید.</p>
-<aside class="callout note"><h3 id="_2">نکته</h3>
-<p>چنانچه شمارنده حلقه توسط کلمه کلیدی <code>let</code> تعریف شود، دسترسی به مقدار متغیر شمارنده فقط در داخل بلوک <code>for</code> امکان پذیر خواهد بود.</p>
-<p>با توجه به این توضیحات درصورتی که بعد از علامت آکولاد بسته، دستور <bdi dir="ltr"><code>console.log</code>(<code>i</code>)</bdi> نوشته شود، پیغام خطا صادر می‌شود.</p>
-</aside><hr />
+<aside class="callout note"><p class="callout-label">نکته</p>
+<p>چنانچه شمارنده حلقه توسط کلمه کلیدی <bdi dir="ltr">let</bdi> تعریف شود، دسترسی به مقدار متغیر شمارنده فقط در داخل بلوک <bdi dir="ltr">for</bdi> امکان پذیر خواهد بود.</p>
+</aside>
+<p>با توجه به این توضیحات درصورتی که بعد از علامت آکولاد بسته، دستور <code>console.log(i)</code> نوشته شود، پیغام خطا صادر می‌شود.</p>
+</aside>
 <p class="page-mark">صفحه ۲۱۴</p>
-<h3 id="_3">بیشتر بدانید</h3>
-<p><strong>جدول 21</strong></p>
-<p>حلقه <bdi dir="ltr">while</bdi> و <bdi dir="ltr">do</bdi> <bdi dir="ltr">while</bdi></p>
-<p><code>while</code>
-این حلقه‌ها مجموعه‌ای از دستورات را</p>
-<p><bdi dir="ltr">do</bdi> <bdi dir="ltr">while</bdi></p>
-<p>تا زمان نقض شدن یک شرط، تکرار</p>
-<p>{ <code>do</code></p>
-<div class="code-wrap" dir="ltr"><pre><code>{(condition) while
-</code></pre></div>
-<p>می‌کنند. شکل کلی این حلقه‌ها</p>
-<p>کدی که باید تکرار اجرا شود</p>
-<p>کدی که باید تکرار شود</p>
-<div class="code-wrap" dir="ltr"><pre><code>;(condition) while };
-</code></pre></div>
-<p>}</p>
-<p>به‌صورت مقابل است:</p>
-<p>در حلقه <code>while</code>، ابتدا شرط داخل پرانتز بررسی می‌شود، اگر شرط برقرار باشد دستورات داخل حلقه اجرا می‌شود، اگر شرط حلقه از ابتدا غلط باشد بنابراین محتوای حلقه اصلاً اجرا نمی‌شود.</p>
-<p>محتوای حلقه <code>do while</code> یک بار اجرا می‌شود، سپس شرط حلقه بررسی می‌شود. در صورت برقرار نبودن شرط، خروج از حلقه صورت می‌پذیرد.</p>
-<p>در صورتی‌که شرط حلقه نقض نشود، دستورات حلقه به‌طور مداوم تکرار می‌شوند. این وضعیت با عنوان حلقه بی‌نهایت (<code>Infinite loop</code>) شناخته می‌شود. حلقه بی‌نهایت می‌تواند منابع سیستم (مانند <code>CPU</code> و <code>RAM</code>) را به‌صورت بی‌رویه مصرف کند که همین مسئله موجب اختلال در عملکرد مرورگر خواهد شد.</p>
-<p>به‌کارگیری حلقه <code>while</code> و <code>do while</code> در فایل <code>workshop7.html</code> اسکریپت زیر را برای چاپ عناصر آرایه <code>colors</code> با استفاده از حلقه <code>while</code> بنویسید.</p>
-<p><img alt="تصویر کتاب" src="../images/p220-02.png" /></p>
-<p><img alt="تصویر کتاب" src="../images/p220-01.png" /></p>
+
+<aside class="callout more"><p class="callout-label">بیشتر بدانید</p>
+<p class="table-cap">جدول ۲۱</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th><bdi dir="ltr">do while</bdi></th>
+<th><code>while</code></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>do {</code><br><code>} while (condition);</code></td>
+<td><code>while (condition){</code><br>کدی که باید تکرار شود<br><code>}</code></td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>حلقه <bdi dir="ltr">while</bdi> و <bdi dir="ltr">do while</bdi></strong> این حلقه‌ها مجموعه‌ای از دستورات را تا زمان نقض شدن یک شرط، تکرار می‌کنند. شکل کلی این حلقه‌ها کدی که باید تکرار اجرا شود به‌صورت مقابل است:</p>
+<p>در حلقه <bdi dir="ltr">while</bdi>، ابتدا شرط داخل پرانتز بررسی می‌شود، اگر شرط برقرار باشد دستورات داخل حلقه اجرا می‌شود، اگر شرط حلقه از ابتدا غلط باشد بنابراین محتوای حلقه اصلاً اجرا نمی‌شود.</p>
+<p>محتوای حلقه <bdi dir="ltr">do while</bdi> یک بار اجرا می‌شود، سپس شرط حلقه بررسی می‌شود. در صورت برقرار نبودن شرط، خروج از حلقه صورت می‌پذیرد.</p>
+<p>در صورتی‌که شرط حلقه نقض نشود، دستورات حلقه به‌طور مداوم تکرار می‌شوند. این وضعیت با عنوان حلقه بی‌نهایت (<bdi dir="ltr">Infinite loop</bdi>) شناخته می‌شود. حلقه بی‌نهایت می‌تواند منابع سیستم (مانند <bdi dir="ltr">CPU</bdi> و <bdi dir="ltr">RAM</bdi>) را به‌صورت بی‌رویه مصرف کند که همین مسئله موجب اختلال در عملکرد مرورگر خواهد شد.</p>
+<p><strong>به‌کارگیری حلقه <bdi dir="ltr">while</bdi> و <bdi dir="ltr">do while</bdi></strong></p>
+<p>در فایل <code>workshop7.html</code> اسکریپت زیر را برای چاپ عناصر آرایه <bdi dir="ltr">colors</bdi> با استفاده از حلقه <bdi dir="ltr">while</bdi> بنویسید.</p>
+<figure class="shot"><img alt="تصویر کتاب" src="../images/p220-01.png" loading="lazy" /></figure>
+<figure class="shot"><img alt="تصویر کتاب" src="../images/p220-02.png" loading="lazy" /></figure>
 <p>فایل را ذخیره کنید و خروجی آن را در مرورگر به نمایش بگذارید.</p>
-<p>حاصل جمع عناصر آرایه <code>numbers</code> را به کمک یک حلقه <code>do while</code> محاسبه کنید و نتیجه را در کنسول نمایش دهید.</p>
-<p><img alt="تصویر کتاب" src="../images/p220-03.png" /></p>
-<p><img alt="تصویر کتاب" src="../images/p220-04.png" /></p>
-<hr />
+<p>حاصل جمع عناصر آرایه <bdi dir="ltr">numbers</bdi> را به کمک یک حلقه <bdi dir="ltr">do while</bdi> محاسبه کنید و نتیجه را در کنسول نمایش دهید.</p>
+<figure class="shot"><img alt="تصویر کتاب" src="../images/p220-03.png" loading="lazy" /></figure>
+<figure class="shot"><img alt="تصویر کتاب" src="../images/p220-04.png" loading="lazy" /></figure>
+</aside>
 <p class="page-mark">صفحه ۲۱۵</p>
-<p>حلقه <code>for</code>…<code>of:</code> این حلقه برای پیمایش عناصر یک مجموعه قابل تکرار مانند آرایه، رشته، مجموعه و...</p>
-<p>استفاده می‌شود. حلقه <code>for</code>…<code>of</code> امکان دسترسی به مقادیر عناصر آرایه را فراهم می‌کند.</p>
-<p>حلقه <code>for</code> … <code>in:</code> این حلقه برای پیمایش کلیدهای اشیا (<code>Objects</code>) و اندیس آرایه‌ها استفاده می‌شود.</p>
-<p>شکل کلی ساختار <code>for</code> … <code>of</code> و <code>for</code> … <code>in</code> به‌صورت زیر است:</p>
-<p><strong>جدول 22</strong></p>
-<div class="code-wrap" dir="ltr"><pre><code>for … in
-for … of
-{ (const key in object) for
-{ (const element of iterable) for
-</code></pre></div>
-<p>...…</p>
-<p>..…</p>
-<p>}</p>
-<p>}</p>
-<p>متغیر <code>element</code> به عناصر آرایه، مجموعه یا کاراکترهای یک رشته و <code>iterable</code> به شیء قابل تکرار اشاره دارد.</p>
-<p>متغیر <code>key</code> به کلید عناصر شیء و اندیس عناصر آرایه اشاره دارد.</p>
-<p>کار با ساختار حلقه <code>for</code> … <code>of</code> و <code>for</code> … <code>in</code></p>
-<h3 id="_4">کار کارگاهی</h3>
-<p>1 در فایل <code>workshop7.html</code> اسکریپت زیر را بنویسید و نتیجه را در کنسول مرورگر مشاهده کنید.</p>
-<p><img alt="تصویر کتاب" src="../images/p221-02.png" /></p>
-<p><img alt="تصویر کتاب" src="../images/p221-01.png" /></p>
-<p>متغیر <code>name</code> به عناصر آرایه <code>firstName</code> اشاره دارد؛ در هر بار اجرای حلقه، متغیر <code>name</code> به عنصر جدیدی از آرایه اشاره می‌کند.</p>
-<aside class="callout curiosity"><h3 id="_5">کنجکاوی</h3>
-<p>در عبارت ( <bdi dir="ltr"><code>const name of firstNames</code>( <code>for</code></bdi> چرا از کلمه کلیدی <code>const</code> استفاده شده است؟</p>
-<p>2 برای بررسی عملکرد حلقه <code>for</code> … <code>in</code> در پیمایش عناصر اشیا، اسکریپت زیر را بنویسید و نتیجه را در کنسول مرورگر بررسی کنید.</p>
-<p><img alt="تصویر کتاب" src="../images/p221-03.png" /></p>
-</aside><hr />
+
+<p><strong>حلقه <bdi dir="ltr">for</bdi>…<bdi dir="ltr">of</bdi></strong>: این حلقه برای پیمایش عناصر یک مجموعه قابل تکرار مانند آرایه، رشته، مجموعه و ... استفاده می‌شود. حلقه <bdi dir="ltr">for</bdi>…<bdi dir="ltr">of</bdi> امکان دسترسی به مقادیر عناصر آرایه را فراهم می‌کند.</p>
+<p><strong>حلقه <bdi dir="ltr">for</bdi> … <bdi dir="ltr">in</bdi></strong>: این حلقه برای پیمایش کلیدهای اشیا (<bdi dir="ltr">Objects</bdi>) و اندیس آرایه‌ها استفاده می‌شود. شکل کلی ساختار <bdi dir="ltr">for</bdi> … <bdi dir="ltr">of</bdi> و <bdi dir="ltr">for</bdi> … <bdi dir="ltr">in</bdi> به‌صورت زیر است:</p>
+<p class="table-cap">جدول ۲۲</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th><code>for … in</code></th>
+<th><code>for … of</code></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>for (const key in object) {</code><br>…...<br><code>}</code></td>
+<td><code>for (const element of iterable) {</code><br>…..<br><code>}</code></td>
+</tr>
+</tbody>
+</table></div>
+<p>متغیر <bdi dir="ltr">element</bdi> به عناصر آرایه، مجموعه یا کاراکترهای یک رشته و <bdi dir="ltr">iterable</bdi> به شیء قابل تکرار اشاره دارد. متغیر <bdi dir="ltr">key</bdi> به کلید عناصر شیء و اندیس عناصر آرایه اشاره دارد.</p>
+<aside class="callout workshop"><p class="callout-label">کار کارگاهی</p>
+<p><strong>کار با ساختار حلقه <bdi dir="ltr">for</bdi> … <bdi dir="ltr">of</bdi> و <bdi dir="ltr">for</bdi> … <bdi dir="ltr">in</bdi></strong></p>
+<ol>
+<li>در فایل <code>workshop7.html</code> اسکریپت زیر را بنویسید و نتیجه را در کنسول مرورگر مشاهده کنید.</li>
+</ol>
+<figure class="shot"><img alt="تصویر کتاب" src="../images/p221-01.png" loading="lazy" /></figure>
+<figure class="shot"><img alt="تصویر کتاب" src="../images/p221-02.png" loading="lazy" /></figure>
+<p>متغیر <bdi dir="ltr">name</bdi> به عناصر آرایه <bdi dir="ltr">firstName</bdi> اشاره دارد؛ در هر بار اجرای حلقه، متغیر <bdi dir="ltr">name</bdi> به عنصر جدیدی از آرایه اشاره می‌کند.</p>
+<aside class="callout curiosity"><p class="callout-label">کنجکاوی</p>
+<p>در عبارت <code>for (const name of firstNames)</code> چرا از کلمه کلیدی <bdi dir="ltr">const</bdi> استفاده شده است؟</p>
+</aside>
+<ol start="2">
+<li>برای بررسی عملکرد حلقه <bdi dir="ltr">for</bdi> … <bdi dir="ltr">in</bdi> در پیمایش عناصر اشیا، اسکریپت زیر را بنویسید و نتیجه را در کنسول مرورگر بررسی کنید.</li>
+</ol>
+<figure class="shot"><img alt="تصویر کتاب" src="../images/p221-03.png" loading="lazy" /></figure>
+<figure class="shot"><img alt="تصویر کتاب" src="../images/p221-04.png" loading="lazy" /></figure>
+</aside>
 <p class="page-mark">صفحه ۲۱۶</p>
-<p>در کد فوق متغیر <code>languages</code> یک شیء حاوی اسامی زبان‌هاست. در این شیء واژه‌های مخفف (مانند <code>en</code>، <code>fa</code> و...) به عنوان کلید عنصر و عبارت فارسی متناظر آن (مانند انگلیسی، فارسی و...) به عنوان مقدار عنصر مشخص شده است.</p>
-<p>در این کد، حلقه <code>for</code>…<code>in</code> عناصر شیء <code>languages</code> را یک‌به‌یک پیمایش می‌کند و کلید هر عنصر را درون متغیر <code>lang</code> قرار می‌دهد. سپس دستور <code>console.log()</code> نام کلید و مقدار متناظر با آن را در کنسول نمایش می‌دهد.</p>
-<p>دستور <code>break</code> این دستور برای خروج از حلقه یا ساختار <code>Switch</code> به‌کار می‌رود. اگر دستور <code>break</code> درون حلقه استفاده شود، اجرای تمام دستورات بعد از آن متوقف شده و خروج از حلقه صورت می‌گیرد.</p>
-<aside class="callout note"><h3 id="_6">نکته</h3>
-<p>اگر این دستور درون ساختار <code>switch</code> استفاده شود، <code>Case</code>های بعدی بررسی نخواهند شد و کنترل برنامه به بعد از آکولاد بسته منتقل می‌شود.</p>
-<p>به‌کارگیری دستور <code>Break</code></p>
-</aside><h3 id="_7">کار کارگاهی</h3>
+
+<aside class="callout workshop continued"><p class="callout-label">کار کارگاهی (ادامه)</p>
+<p>در کد فوق متغیر <bdi dir="ltr">languages</bdi> یک شیء حاوی اسامی زبان‌هاست. در این شیء واژه‌های مخفف (مانند <bdi dir="ltr">en</bdi>، <bdi dir="ltr">fa</bdi> و ...) به عنوان کلید عنصر و عبارت فارسی متناظر آن (مانند انگلیسی، فارسی و ...) به عنوان مقدار عنصر مشخص شده است.</p>
+<p>در این کد، حلقه <bdi dir="ltr">for</bdi>…<bdi dir="ltr">in</bdi> عناصر شیء <bdi dir="ltr">languages</bdi> را یک‌به‌یک پیمایش می‌کند و کلید هر عنصر را درون متغیر <bdi dir="ltr">lang</bdi> قرار می‌دهد. سپس دستور <code>console.log()</code> نام کلید و مقدار متناظر با آن را در کنسول نمایش می‌دهد.</p>
+</aside>
+<h3>دستور <bdi dir="ltr">break</bdi></h3>
+<p>این دستور برای خروج از حلقه یا ساختار <bdi dir="ltr">Switch</bdi> به‌کار می‌رود. اگر دستور <bdi dir="ltr">break</bdi> درون حلقه استفاده شود، اجرای تمام دستورات بعد از آن متوقف شده و خروج از حلقه صورت می‌گیرد.</p>
+<aside class="callout note"><p class="callout-label">نکته</p>
+<p>اگر این دستور درون ساختار <bdi dir="ltr">switch</bdi> استفاده شود، <bdi dir="ltr">Case</bdi>های بعدی بررسی نخواهند شد و کنترل برنامه به بعد از آکولاد بسته منتقل می‌شود.</p>
+<p><strong>کار کارگاهی</strong></p>
+<p><strong>به‌کارگیری دستور <bdi dir="ltr">Break</bdi></strong></p>
 <p>اسکریپتی بنویسید که اعداد دو رقمی آرایه زیر را در کنسول مرورگر نمایش دهد.</p>
-<div class="code-wrap" dir="ltr"><pre><code>;]let data = [10,21,37,43,76,83,98,356,200,353,444,1000;
+<div class="code-wrap" dir="ltr"><pre><code>let data = [10,21,37,43,76,83,98,356,200,353,444,1000];
 </code></pre></div>
 <p>برای این‌کار در انتهای فایل <code>workshop7.html</code>، اسکریپت زیر را وارد کنید. سپس فایل را ذخیره کرده و خروجی آن را در کنسول به نمایش بگذارید.</p>
-<p><img alt="تصویر کتاب" src="../images/p222-02.png" /></p>
-<p><img alt="تصویر کتاب" src="../images/p222-01.png" /></p>
-<p>دستور <bdi dir="ltr">continue</bdi></p>
-<p>به‌کارگیری دستور <code>continue</code> در یک حلقه باعث می‌شود که اجرای فعلی حلقه متوقف و دور بعدی حلقه اجرا شود. به این معنی که بعد از اجرای دستور <code>continue</code> کنترل برنامه به ابتدای حلقه منتقل می‌شود و دور بعدی حلقه (در صورت امکان) اجرا می‌شود.</p>
-<hr />
+<figure class="shot"><img alt="تصویر کتاب" src="../images/p222-02.png" loading="lazy" /></figure>
+<figure class="shot"><img alt="تصویر کتاب" src="../images/p222-01.png" loading="lazy" /></figure>
+</aside>
+<h3>دستور <bdi dir="ltr">continue</bdi></h3>
+<p>به‌کارگیری دستور <bdi dir="ltr">continue</bdi> در یک حلقه باعث می‌شود که اجرای فعلی حلقه متوقف و دور بعدی حلقه اجرا شود. به این معنی که بعد از اجرای دستور <bdi dir="ltr">continue</bdi> کنترل برنامه به ابتدای حلقه منتقل می‌شود و دور بعدی حلقه (در صورت امکان) اجرا می‌شود.</p>
 <p class="page-mark">صفحه ۲۱۷</p>
-<p>به‌کارگیری دستور <code>Continue</code></p>
-<h3 id="_8">کار کارگاهی</h3>
+
+<aside class="callout workshop"><p class="callout-label">کار کارگاهی</p>
+<p><strong>به‌کارگیری دستور <bdi dir="ltr">Continue</bdi></strong></p>
 <p>اعداد زوج بین 20 تا 35 را در کنار هم با جداکنندۀ خط فاصله (-) نمایش دهید.</p>
 <p>در انتهای اسکریپت فایل <code>workshop7.html</code>، اسکریپت زیر را بنویسید و نتیجه را در کنسول بررسی کنید.</p>
-<p><img alt="تصویر کتاب" src="../images/p223-01.png" /></p>
-<p><img alt="تصویر کتاب" src="../images/p223-02.png" /></p>
+<figure class="shot"><img alt="تصویر کتاب" src="../images/p223-01.png" loading="lazy" /></figure>
+<figure class="shot"><img alt="تصویر کتاب" src="../images/p223-02.png" loading="lazy" /></figure>
 <p>برای حذف خط فاصلۀ آخر (-)، دستور زیر را قبل از دستور <code>console.log</code> بنویسید:</p>
-<div class="code-wrap" dir="ltr"><pre><code>;)0, -3(evenNumbers = evenNumbers.slice;
+<div class="code-wrap" dir="ltr"><pre><code>evenNumbers = evenNumbers.slice(0, -3);
 </code></pre></div>
-<h3 id="_9">بیشتر بدانید</h3>
-<p>حلقه‌های تو در تو حلقه‌هایی که تاکنون معرفی شد، امکان پیمایش عناصر تک‌بعدی را فراهم می‌کنند. برای پیمایش عناصری همچون آرایه دوبعدی نیاز به استفاده از حلقه‌های تودرتو است. این نوع حلقه زمانی ایجاد می‌شود که درون یک حلقه، حلقه دیگری قرار گیرد. در یک حلقۀ تودرتو، حلقۀ داخلی به تعداد دفعات اجرای حلقه خارجی تکرار می‌شود.</p>
-<h3 id="_10">بیشتر بدانید</h3>
-<p>به‌کارگیری حلقۀ تودرتو</p>
-<p>١ جدول ضرب 5*5 را با استفاده از یک حلقه تودرتو نمایش دهید.</p>
-<p>٢ اسکریپت زیر را در انتهای اسکریپت فایل <code>workshop7.html</code> بنویسید و نتیجه را کنسول بررسی کنید.</p>
-<p><img alt="تصویر کتاب" src="../images/p223-03.png" /></p>
-<p><img alt="تصویر کتاب" src="../images/p223-04.png" /></p>
-<p>علامت <code>t\</code> به معنای <code>tab</code> است و برای تنظیم فاصله بین مقادیر استفاده شده است.</p>
-<hr />
+<p><strong>بیشتر بدانید</strong></p>
+<p><strong>حلقه‌های تو در تو</strong></p>
+<p>حلقه‌هایی که تاکنون معرفی شد، امکان پیمایش عناصر تک‌بعدی را فراهم می‌کنند. برای پیمایش عناصری همچون آرایه دوبعدی نیاز به استفاده از حلقه‌های تودرتو است. این نوع حلقه زمانی ایجاد می‌شود که درون یک حلقه، حلقه دیگری قرار گیرد. در یک حلقۀ تودرتو، حلقۀ داخلی به تعداد دفعات اجرای حلقه خارجی تکرار می‌شود.</p>
+<p><strong>بیشتر بدانید</strong></p>
+<p><strong>به‌کارگیری حلقۀ تودرتو</strong></p>
+<p>۱ـ جدول ضرب 5*5 را با استفاده از یک حلقه تودرتو نمایش دهید.</p>
+<p>۲ـ اسکریپت زیر را در انتهای اسکریپت فایل <code>workshop7.html</code> بنویسید و نتیجه را کنسول بررسی کنید.</p>
+<figure class="shot"><img alt="تصویر کتاب" src="../images/p223-03.png" loading="lazy" /></figure>
+<figure class="shot"><img alt="تصویر کتاب" src="../images/p223-04.png" loading="lazy" /></figure>
+<p>علامت <bdi dir="ltr">t</bdi>\ به معنای <bdi dir="ltr">tab</bdi> است و برای تنظیم فاصله بین مقادیر استفاده شده است.</p>
+</aside>
 <p class="page-mark">صفحه ۲۱۸</p>
-<aside class="callout activity"><h3 id="_11">فعالیت</h3>
-<p>ب‌هجای دستور <code>console.log</code> از دستور <code>document.write</code> برای نمایش مقادیر در صفحه مرورگر استفاده کنید.</p>
-<p>پیمایش آرایه دوبعدی با استفاده از حلقه <code>for</code></p>
-</aside><h3 id="_12">کار کارگاهی</h3>
+
+<aside class="callout activity"><p class="callout-label">فعالیت</p>
+<p>به‌جای دستور <code>console.log</code> از دستور <code>document.write</code> برای نمایش مقادیر در صفحه مرورگر استفاده کنید.</p>
+<p><strong>کار کارگاهی</strong></p>
+<p><strong>پیمایش آرایه دوبعدی با استفاده از حلقه <bdi dir="ltr">for</bdi></strong></p>
 <p>فایل <code>product.html</code> را باز کنید و کدهای جاوا‌اسکریپت زیر را به آن اضافه کنید.</p>
-<p><img alt="تصویر کتاب" src="../images/p224-02.png" /></p>
-<p><img alt="تصویر کتاب" src="../images/p224-01.png" /></p>
-<p>توابع(<bdi dir="ltr">Functions</bdi>)</p>
-<p>در زبان‌های برنامه‌نویسی به بلوک‌های کدی که یک کار مشخص را انجام می‌دهند، تابع گفته می‌شود.</p>
-<p>برنامه‌نویس می‌تواند مجموعه‌ای از دستورالعمل‌ها را در قالب یک تابع گروه‌بندی کند و سپس آن را به عنوان یک واحد مجزا مورد استفاده قرار دهد. این واحدهای مجزا می‌توانند بارها مورد استفاده قرار گیرند.</p>
-<p>استفاده از توابع در برنامه‌نویسی ن‌هتنها سرعت توسعه را افزایش می‌دهد، بلکه خوانایی و قابلیت نگهداری کد را نیز افزایش می‌دهد. مجموعه دستورات نوشته‌شده برای ایجاد یک تابع، تحت یک نام مشخص قابل فراخوانی هستند. یک تابع می‌تواند مقادیری را ب‌هعنوان ورودی دریافت کند و بعد از اجرای دستورات داخل تابع، مقداری را ب‌هعنوان خروجی برگرداند.</p>
+<figure class="shot"><img alt="تصویر کتاب" src="../images/p224-02.png" loading="lazy" /></figure>
+<figure class="shot"><img alt="تصویر کتاب" src="../images/p224-01.png" loading="lazy" /></figure>
+</aside>
+<p><strong>توابع(<bdi dir="ltr">Functions</bdi>)</strong> در زبان‌های برنامه‌نویسی به بلوک‌های کدی که یک کار مشخص را انجام می‌دهند، تابع گفته می‌شود. برنامه‌نویس می‌تواند مجموعه‌ای از دستورالعمل‌ها را در قالب یک تابع گروه‌بندی کند و سپس آن را به عنوان یک واحد مجزا مورد استفاده قرار دهد. این واحدهای مجزا می‌توانند بارها مورد استفاده قرار گیرند. استفاده از توابع در برنامه‌نویسی نه‌تنها سرعت توسعه را افزایش می‌دهد، بلکه خوانایی و قابلیت نگهداری کد را نیز افزایش می‌دهد. مجموعه دستورات نوشته‌شده برای ایجاد یک تابع، تحت یک نام مشخص قابل فراخوانی هستند. یک تابع می‌تواند مقادیری را به‌عنوان ورودی دریافت کند و بعد از اجرای دستورات داخل تابع، مقداری را به‌عنوان خروجی برگرداند.</p>
 <p>در جاوااسکریپت برای ایجاد یک تابع از شکل کلی زیر استفاده می‌شود:</p>
-<p><img alt="تصویر کتاب" src="../images/p224-03.png" /></p>
-<figure class="shot"><img alt="شکل 12" src="../images/p224-04.png" /><figcaption>شکل 12</figcaption></figure>
-<hr /></article><article class="lesson" lang="en" dir="ltr" data-lang-block="en" hidden><p class="page-mark">Page 213</p>
-<p>Loop statements in programming languages are used to repeat the execution of a section of a program. Repetition loops reduce program size, improve code readability, optimize the program algorithm, and increase program efficiency.</p>
-<p>There are different types of repetition loops. In JavaScript, these loops include <code>for</code>, <code>while</code>, <code>do while</code>, <code>for</code>…<code>of</code>, and <code>for</code>…<code>in</code>.</p>
-<p>The <code>for</code> loop is used when the number of times a task should be repeated is known. The general form of the <code>for</code> loop is as follows:</p>
-<div class="code-wrap" dir="ltr"><pre><code>    10|{ )Initialization; Condition; Increment/Decrement( for
+<figure class="shot"><img alt="شکل ۱۲" src="../images/p224-03.png" loading="lazy" /><figcaption>شکل ۱۲</figcaption></figure></article><article class="card lesson no-copy" lang="en" dir="ltr" data-lang-block="en" hidden><p class="page-mark">Page 213</p>
+
+<h3><bdi dir="rtl">دستورات حلقه</bdi></h3>
+<p><bdi dir="rtl">در زبان‌های برنامه‌نویسی برای تکرار اجرای یک بخش از برنامه از دستورات حلقه استفاده می‌شود</bdi>. <bdi dir="rtl">حلقه‌های تکرار باعث کاهش حجم برنامه، خوانایی کد، بهینه‌سازی الگوریتم برنامه و افزایش کارایی برنامه می‌شوند</bdi>. <bdi dir="rtl">حلقه‌های تکرار انواع مختلفی دارند</bdi>. <bdi dir="rtl">در زبان جاوا‌اسکریپت این حلقه‌ها شامل</bdi> for، while، do while، for…of و for…in <bdi dir="rtl">است</bdi>.</p>
+<h3>The for loop</h3>
+<p><bdi dir="rtl">زمانی که تعداد دفعات تکرار یک کار مشخص باشد، از حلقۀ</bdi> for <bdi dir="rtl">استفاده می‌شود</bdi>. <bdi dir="rtl">شکل کلی حلقۀ</bdi> for <bdi dir="rtl">به‌صورت زیر است</bdi>:</p>
+<div class="code-wrap" dir="ltr"><pre><code>for (Initialization; Condition; Increment/Decrement) {
 </code></pre></div>
-<p>The code that should be repeated</p>
-<p>}</p>
-<p>The <code>for</code> loop needs a counter to count how many times the loop runs. The loop counter is a variable that has an initial value and a final value. The expression <code>Initiliazation</code> refers to initializing the loop counter. In the <code>Condition</code> part, the loop’s repetition condition is checked. To exit the loop, the loop condition must be violated.</p>
-<p><img alt="Book image" src="../images/p219-01.png" /></p>
-<p>For this purpose, the loop counter must be increased or decreased on each repetition of the loop so that the counter’s value passes the final value. The expressions <code>Increment</code> and <code>Decrement</code> mean increasing and decreasing the counter’s value. If braces are not used to define the loop block’s scope, only the first statement is considered part of the loop.</p>
-<p><strong>Figure 11</strong></p>
-<p>Using the <code>for</code> loop</p>
-<h3 id="workshop">Workshop</h3>
-<p><img alt="Book image" src="../images/p219-02.png" /></p>
-<p>Create a new file named <code>workshop7.html</code> and write the script shown opposite to print the numbers 0 through 4.</p>
-<aside class="callout note"><h3 id="note">Note</h3>
-<p>If the loop counter is defined with the keyword <code>let</code>, access to the counter variable’s value will be possible only inside the <code>for</code> block.</p>
-<p>Based on these explanations, if after the closing brace the statement <code>console.log</code>(<code>i</code>) is written, an error message is issued.</p>
-</aside><hr />
+<p><bdi dir="rtl">کدی که باید تکرار شود</bdi></p>
+<div class="code-wrap" dir="ltr"><pre><code>}
+</code></pre></div>
+<p><bdi dir="rtl">حلقۀ</bdi> for <bdi dir="rtl">نیازمند یک شمارنده برای شمارش تعداد دفعات اجرای حلقه است</bdi>. <bdi dir="rtl">شمارنده حلقه یک متغیر است که دارای مقدار اولیه و پایانی است</bdi>. <bdi dir="rtl">عبارت</bdi> Initiliazation <bdi dir="rtl">به مقداردهی اولیه شمارنده حلقه اشاره دارد</bdi>. <bdi dir="rtl">در قسمت</bdi> Condition <bdi dir="rtl">شرط تکرار حلقه بررسی می‌شود</bdi>. <bdi dir="rtl">برای خروج از حلقه، شرط حلقه باید نقض شود</bdi>. <bdi dir="rtl">بدین منظور شمارنده حلقه باید در هر بار تکرار حلقه افزوده یا کاسته شود تا مقدار شمارنده از مقدار پایانی گذر کند</bdi>. <bdi dir="rtl">عبارات</bdi> Increment و Decrement <bdi dir="rtl">به‌معنای افزایش و کاهش مقدار شمارنده است</bdi>. <bdi dir="rtl">در صورت عدم استفاده از آکولاد برای تعیین محدوده بلوک حلقه، فقط اولین دستور جزء حلقه به شمار می‌آید</bdi>.</p>
+<figure class="shot"><img alt="Figure 11" src="../images/p219-01.png" loading="lazy" /><figcaption>Figure 11</figcaption></figure>
+<aside class="callout workshop"><p class="callout-label">Workshop</p>
+<p><strong><bdi dir="rtl">به‌کارگیری حلقه</bdi> for</strong></p>
+<figure class="shot"><img alt="Book image" src="../images/p219-02.png" loading="lazy" /></figure>
+<p><bdi dir="rtl">یک فایل جدید با نام</bdi> <code>workshop7.html</code> <bdi dir="rtl">ایجاد کنید و اسکریپت روبه‌رو را برای چاپ اعداد</bdi> 0 <bdi dir="rtl">تا</bdi> 4 <bdi dir="rtl">بنویسید</bdi>.</p>
+<aside class="callout note"><p class="callout-label">Note</p>
+<p><bdi dir="rtl">چنانچه شمارنده حلقه توسط کلمه کلیدی</bdi> let <bdi dir="rtl">تعریف شود، دسترسی به مقدار متغیر شمارنده فقط در داخل بلوک</bdi> for <bdi dir="rtl">امکان پذیر خواهد بود</bdi>.</p>
+</aside>
+<p><bdi dir="rtl">با توجه به این توضیحات درصورتی که بعد از علامت آکولاد بسته، دستور</bdi> <code>console.log(i)</code> <bdi dir="rtl">نوشته شود، پیغام خطا صادر می‌شود</bdi>.</p>
+</aside>
 <p class="page-mark">Page 214</p>
-<h3 id="learn-more">Learn more</h3>
-<p><strong>Table 21</strong></p>
-<p>while do while</p>
-<p><code>while</code>
-These loops repeat a set of statements</p>
-<p>do while</p>
-<p>until a condition is violated.</p>
-<p>{ <code>do</code></p>
-<div class="code-wrap" dir="ltr"><pre><code>{(condition) while
-</code></pre></div>
-<p>Their general form</p>
-<p>The code that should be executed repeatedly</p>
-<p>The code that should be repeated</p>
-<div class="code-wrap" dir="ltr"><pre><code>;(condition) while };
-</code></pre></div>
-<p>}</p>
-<p>is as shown opposite:</p>
-<p>In the <code>while</code> loop, first the condition inside the parentheses is checked; if the condition is true, the statements inside the loop are executed. If the loop condition is false from the start, the loop body is not executed at all.</p>
-<p>The body of the <code>do while</code> loop is executed once, then the loop condition is checked. If the condition is not true, the loop is exited.</p>
-<p>If the loop condition is never violated, the loop statements repeat continuously. This situation is known as an infinite loop (<code>Infinite loop</code>). An infinite loop can consume system resources (such as <code>CPU</code> and <code>RAM</code>) excessively, which will disrupt the browser’s performance.</p>
-<p>Using the <code>while</code> and <code>do while</code> loops: In the file <code>workshop7.html</code>, write the script below to print the elements of the <code>colors</code> array using a <code>while</code> loop.</p>
-<p><img alt="Book image" src="../images/p220-02.png" /></p>
-<p><img alt="Book image" src="../images/p220-01.png" /></p>
-<p>Save the file and display its output in the browser.</p>
-<p>Calculate the sum of the elements of the <code>numbers</code> array using a <code>do while</code> loop and display the result in the console.</p>
-<p><img alt="Book image" src="../images/p220-03.png" /></p>
-<p><img alt="Book image" src="../images/p220-04.png" /></p>
-<hr />
+
+<aside class="callout more"><p class="callout-label">Learn more</p>
+<p class="table-cap">Table 21</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>do while</th>
+<th><code>while</code></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>do {</code><br><code>} while (condition);</code></td>
+<td><code>while (condition){</code><br><bdi dir="rtl">کدی که باید تکرار شود</bdi><br><code>}</code></td>
+</tr>
+</tbody>
+</table></div>
+<p><strong><bdi dir="rtl">حلقه</bdi> while و do while</strong> <bdi dir="rtl">این حلقه‌ها مجموعه‌ای از دستورات را تا زمان نقض شدن یک شرط، تکرار می‌کنند</bdi>. <bdi dir="rtl">شکل کلی این حلقه‌ها کدی که باید تکرار اجرا شود به‌صورت مقابل است</bdi>:</p>
+<p><bdi dir="rtl">در حلقه</bdi> while<bdi dir="rtl">، ابتدا شرط داخل پرانتز بررسی می‌شود، اگر شرط برقرار باشد دستورات داخل حلقه اجرا می‌شود، اگر شرط حلقه از ابتدا غلط باشد بنابراین محتوای حلقه اصلاً اجرا نمی‌شود</bdi>.</p>
+<p><bdi dir="rtl">محتوای حلقه</bdi> do while <bdi dir="rtl">یک بار اجرا می‌شود، سپس شرط حلقه بررسی می‌شود</bdi>. <bdi dir="rtl">در صورت برقرار نبودن شرط، خروج از حلقه صورت می‌پذیرد</bdi>.</p>
+<p><bdi dir="rtl">در صورتی‌که شرط حلقه نقض نشود، دستورات حلقه به‌طور مداوم تکرار می‌شوند</bdi>. <bdi dir="rtl">این وضعیت با عنوان حلقه بی‌نهایت</bdi> (Infinite loop) <bdi dir="rtl">شناخته می‌شود</bdi>. <bdi dir="rtl">حلقه بی‌نهایت می‌تواند منابع سیستم</bdi> (<bdi dir="rtl">مانند</bdi> CPU و RAM) <bdi dir="rtl">را به‌صورت بی‌رویه مصرف کند که همین مسئله موجب اختلال در عملکرد مرورگر خواهد شد</bdi>.</p>
+<p><strong><bdi dir="rtl">به‌کارگیری حلقه</bdi> while و do while</strong></p>
+<p><bdi dir="rtl">در فایل</bdi> <code>workshop7.html</code> <bdi dir="rtl">اسکریپت زیر را برای چاپ عناصر آرایه</bdi> colors <bdi dir="rtl">با استفاده از حلقه</bdi> while <bdi dir="rtl">بنویسید</bdi>.</p>
+<figure class="shot"><img alt="Book image" src="../images/p220-01.png" loading="lazy" /></figure>
+<figure class="shot"><img alt="Book image" src="../images/p220-02.png" loading="lazy" /></figure>
+<p><bdi dir="rtl">فایل را ذخیره کنید و خروجی آن را در مرورگر به نمایش بگذارید</bdi>.</p>
+<p><bdi dir="rtl">حاصل جمع عناصر آرایه</bdi> numbers <bdi dir="rtl">را به کمک یک حلقه</bdi> do while <bdi dir="rtl">محاسبه کنید و نتیجه را در کنسول نمایش دهید</bdi>.</p>
+<figure class="shot"><img alt="Book image" src="../images/p220-03.png" loading="lazy" /></figure>
+<figure class="shot"><img alt="Book image" src="../images/p220-04.png" loading="lazy" /></figure>
+</aside>
 <p class="page-mark">Page 215</p>
-<p>The <code>for</code>…<code>of</code> loop: This loop is used to iterate over the elements of an iterable collection such as an array, a string, a set, and so on.</p>
-<p>The <code>for</code>…<code>of</code> loop provides access to the values of array elements.</p>
-<p>The <code>for</code> … <code>in</code> loop: This loop is used to iterate over the keys of objects (<code>Objects</code>) and the indices of arrays.</p>
-<p>The general form of the <code>for</code> … <code>of</code> and <code>for</code> … <code>in</code> structures is as follows:</p>
-<p><strong>Table 22</strong></p>
-<div class="code-wrap" dir="ltr"><pre><code>for … in
-for … of
-{ (const key in object) for
-{ (const element of iterable) for
-</code></pre></div>
-<p>...…</p>
-<p>..…</p>
-<p>}</p>
-<p>}</p>
-<p>The variable <code>element</code> refers to the elements of an array, a set, or the characters of a string, and <code>iterable</code> refers to an iterable object.</p>
-<p>The variable <code>key</code> refers to the keys of object elements and the indices of array elements.</p>
-<p>Working with the <code>for</code> … <code>of</code> and <code>for</code> … <code>in</code> loop structures</p>
-<h3 id="workshop_1">Workshop</h3>
-<p>1 In the file <code>workshop7.html</code>, write the script below and observe the result in the browser console.</p>
-<p><img alt="Book image" src="../images/p221-02.png" /></p>
-<p><img alt="Book image" src="../images/p221-01.png" /></p>
-<p>The variable <code>name</code> refers to the elements of the <code>firstName</code> array; on each execution of the loop, the variable <code>name</code> refers to a new element of the array.</p>
-<aside class="callout curiosity"><h3 id="try-this">Try this</h3>
-<p>In the expression ( <code>const name of firstNames</code>( <code>for</code>, why is the keyword <code>const</code> used?</p>
-<p>2 To examine how the <code>for</code> … <code>in</code> loop works when iterating over object elements, write the script below and check the result in the browser console.</p>
-<p><img alt="Book image" src="../images/p221-03.png" /></p>
-</aside><hr />
+
+<p><strong><bdi dir="rtl">حلقه</bdi> for…of</strong>: <bdi dir="rtl">این حلقه برای پیمایش عناصر یک مجموعه قابل تکرار مانند آرایه، رشته، مجموعه و</bdi> ... <bdi dir="rtl">استفاده می‌شود</bdi>. <bdi dir="rtl">حلقه</bdi> for…of <bdi dir="rtl">امکان دسترسی به مقادیر عناصر آرایه را فراهم می‌کند</bdi>.</p>
+<p><strong><bdi dir="rtl">حلقه</bdi> for … in</strong>: <bdi dir="rtl">این حلقه برای پیمایش کلیدهای اشیا</bdi> (Objects) <bdi dir="rtl">و اندیس آرایه‌ها استفاده می‌شود</bdi>. <bdi dir="rtl">شکل کلی ساختار</bdi> for … of و for … in <bdi dir="rtl">به‌صورت زیر است</bdi>:</p>
+<p class="table-cap">Table 22</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th><code>for … in</code></th>
+<th><code>for … of</code></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>for (const key in object) {</code><br>…...<br><code>}</code></td>
+<td><code>for (const element of iterable) {</code><br>…..<br><code>}</code></td>
+</tr>
+</tbody>
+</table></div>
+<p><bdi dir="rtl">متغیر</bdi> element <bdi dir="rtl">به عناصر آرایه، مجموعه یا کاراکترهای یک رشته و</bdi> iterable <bdi dir="rtl">به شیء قابل تکرار اشاره دارد</bdi>. <bdi dir="rtl">متغیر</bdi> key <bdi dir="rtl">به کلید عناصر شیء و اندیس عناصر آرایه اشاره دارد</bdi>.</p>
+<aside class="callout workshop"><p class="callout-label">Workshop</p>
+<p><strong><bdi dir="rtl">کار با ساختار حلقه</bdi> for … of و for … in</strong></p>
+<ol>
+<li><bdi dir="rtl">در فایل</bdi> <code>workshop7.html</code> <bdi dir="rtl">اسکریپت زیر را بنویسید و نتیجه را در کنسول مرورگر مشاهده کنید</bdi>.</li>
+</ol>
+<figure class="shot"><img alt="Book image" src="../images/p221-01.png" loading="lazy" /></figure>
+<figure class="shot"><img alt="Book image" src="../images/p221-02.png" loading="lazy" /></figure>
+<p><bdi dir="rtl">متغیر</bdi> name <bdi dir="rtl">به عناصر آرایه</bdi> firstName <bdi dir="rtl">اشاره دارد؛ در هر بار اجرای حلقه، متغیر</bdi> name <bdi dir="rtl">به عنصر جدیدی از آرایه اشاره می‌کند</bdi>.</p>
+<aside class="callout curiosity"><p class="callout-label">Curiosity</p>
+<p><bdi dir="rtl">در عبارت</bdi> <code>for (const name of firstNames)</code> <bdi dir="rtl">چرا از کلمه کلیدی</bdi> const <bdi dir="rtl">استفاده شده است؟</bdi></p>
+</aside>
+<ol start="2">
+<li><bdi dir="rtl">برای بررسی عملکرد حلقه</bdi> for … in <bdi dir="rtl">در پیمایش عناصر اشیا، اسکریپت زیر را بنویسید و نتیجه را در کنسول مرورگر بررسی کنید</bdi>.</li>
+</ol>
+<figure class="shot"><img alt="Book image" src="../images/p221-03.png" loading="lazy" /></figure>
+<figure class="shot"><img alt="Book image" src="../images/p221-04.png" loading="lazy" /></figure>
+</aside>
 <p class="page-mark">Page 216</p>
-<p>In the code above, the variable <code>languages</code> is an object containing the names of languages. In this object, abbreviations (such as <code>en</code>, <code>fa</code>, and so on) are specified as element keys, and the corresponding Persian phrase (such as English, Persian, and so on) is specified as the element value.</p>
-<p>In this code, the <code>for</code>…<code>in</code> loop iterates over the elements of the <code>languages</code> object one by one and places the key of each element in the variable <code>lang</code>. Then the <code>console.log()</code> statement displays the key name and its corresponding value in the console.</p>
-<p>The <code>break</code> statement: This statement is used to exit a loop or a <code>Switch</code> structure. If the <code>break</code> statement is used inside a loop, execution of all statements after it stops and the loop is exited.</p>
-<aside class="callout note"><h3 id="note_1">Note</h3>
-<p>If this statement is used inside a <code>switch</code> structure, the later <code>Case</code>s will not be checked and program control moves to after the closing brace.</p>
-<p>Using the <code>Break</code> statement</p>
-</aside><h3 id="workshop_2">Workshop</h3>
-<p>Write a script that displays the two-digit numbers of the array below in the browser console.</p>
-<div class="code-wrap" dir="ltr"><pre><code>;]let data = [10,21,37,43,76,83,98,356,200,353,444,1000;
+
+<aside class="callout workshop continued"><p class="callout-label">Workshop (continued)</p>
+<p><bdi dir="rtl">در کد فوق متغیر</bdi> languages <bdi dir="rtl">یک شیء حاوی اسامی زبان‌هاست</bdi>. <bdi dir="rtl">در این شیء واژه‌های مخفف</bdi> (<bdi dir="rtl">مانند</bdi> en، fa و ...) <bdi dir="rtl">به عنوان کلید عنصر و عبارت فارسی متناظر آن</bdi> (<bdi dir="rtl">مانند انگلیسی، فارسی و</bdi> ...) <bdi dir="rtl">به عنوان مقدار عنصر مشخص شده است</bdi>.</p>
+<p><bdi dir="rtl">در این کد، حلقه</bdi> for…in <bdi dir="rtl">عناصر شیء</bdi> languages <bdi dir="rtl">را یک‌به‌یک پیمایش می‌کند و کلید هر عنصر را درون متغیر</bdi> lang <bdi dir="rtl">قرار می‌دهد</bdi>. <bdi dir="rtl">سپس دستور</bdi> <code>console.log()</code> <bdi dir="rtl">نام کلید و مقدار متناظر با آن را در کنسول نمایش می‌دهد</bdi>.</p>
+</aside>
+<h3><bdi dir="rtl">دستور</bdi> break</h3>
+<p><bdi dir="rtl">این دستور برای خروج از حلقه یا ساختار</bdi> Switch <bdi dir="rtl">به‌کار می‌رود</bdi>. <bdi dir="rtl">اگر دستور</bdi> break <bdi dir="rtl">درون حلقه استفاده شود، اجرای تمام دستورات بعد از آن متوقف شده و خروج از حلقه صورت می‌گیرد</bdi>.</p>
+<aside class="callout note"><p class="callout-label">Note</p>
+<p><bdi dir="rtl">اگر این دستور درون ساختار</bdi> switch <bdi dir="rtl">استفاده شود،</bdi> Case<bdi dir="rtl">های بعدی بررسی نخواهند شد و کنترل برنامه به بعد از آکولاد بسته منتقل می‌شود</bdi>.</p>
+<p><strong>Workshop</strong></p>
+<p><strong><bdi dir="rtl">به‌کارگیری دستور</bdi> Break</strong></p>
+<p><bdi dir="rtl">اسکریپتی بنویسید که اعداد دو رقمی آرایه زیر را در کنسول مرورگر نمایش دهد</bdi>.</p>
+<div class="code-wrap" dir="ltr"><pre><code>let data = [10,21,37,43,76,83,98,356,200,353,444,1000];
 </code></pre></div>
-<p>To do this, at the end of the file <code>workshop7.html</code>, enter the script below. Then save the file and display its output in the console.</p>
-<p><img alt="Book image" src="../images/p222-02.png" /></p>
-<p><img alt="Book image" src="../images/p222-01.png" /></p>
-<p>continue</p>
-<p>Using the <code>continue</code> statement in a loop causes the current execution of the loop to stop and the next iteration of the loop to run. That means after the <code>continue</code> statement runs, program control moves to the beginning of the loop and the next iteration of the loop (if possible) is executed.</p>
-<hr />
+<p><bdi dir="rtl">برای این‌کار در انتهای فایل</bdi> <code>workshop7.html</code><bdi dir="rtl">، اسکریپت زیر را وارد کنید</bdi>. <bdi dir="rtl">سپس فایل را ذخیره کرده و خروجی آن را در کنسول به نمایش بگذارید</bdi>.</p>
+<figure class="shot"><img alt="Book image" src="../images/p222-02.png" loading="lazy" /></figure>
+<figure class="shot"><img alt="Book image" src="../images/p222-01.png" loading="lazy" /></figure>
+</aside>
+<h3><bdi dir="rtl">دستور</bdi> continue</h3>
+<p><bdi dir="rtl">به‌کارگیری دستور</bdi> continue <bdi dir="rtl">در یک حلقه باعث می‌شود که اجرای فعلی حلقه متوقف و دور بعدی حلقه اجرا شود</bdi>. <bdi dir="rtl">به این معنی که بعد از اجرای دستور</bdi> continue <bdi dir="rtl">کنترل برنامه به ابتدای حلقه منتقل می‌شود و دور بعدی حلقه</bdi> (<bdi dir="rtl">در صورت امکان</bdi>) <bdi dir="rtl">اجرا می‌شود</bdi>.</p>
 <p class="page-mark">Page 217</p>
-<p>Using the <code>Continue</code> statement</p>
-<h3 id="workshop_3">Workshop</h3>
-<p>Display the even numbers between 20 and 35 next to each other with a hyphen (-) as the separator.</p>
-<p>At the end of the script in the file <code>workshop7.html</code>, write the script below and check the result in the console.</p>
-<p><img alt="Book image" src="../images/p223-01.png" /></p>
-<p><img alt="Book image" src="../images/p223-02.png" /></p>
-<p>To remove the final hyphen (-), write the statement below before the <code>console.log</code> statement:</p>
-<div class="code-wrap" dir="ltr"><pre><code>;)0, -3(evenNumbers = evenNumbers.slice;
+
+<aside class="callout workshop"><p class="callout-label">Workshop</p>
+<p><strong><bdi dir="rtl">به‌کارگیری دستور</bdi> Continue</strong></p>
+<p><bdi dir="rtl">اعداد زوج بین</bdi> 20 <bdi dir="rtl">تا</bdi> 35 <bdi dir="rtl">را در کنار هم با جداکنندۀ خط فاصله</bdi> (-) <bdi dir="rtl">نمایش دهید</bdi>.</p>
+<p><bdi dir="rtl">در انتهای اسکریپت فایل</bdi> <code>workshop7.html</code><bdi dir="rtl">، اسکریپت زیر را بنویسید و نتیجه را در کنسول بررسی کنید</bdi>.</p>
+<figure class="shot"><img alt="Book image" src="../images/p223-01.png" loading="lazy" /></figure>
+<figure class="shot"><img alt="Book image" src="../images/p223-02.png" loading="lazy" /></figure>
+<p><bdi dir="rtl">برای حذف خط فاصلۀ آخر</bdi> (-)<bdi dir="rtl">، دستور زیر را قبل از دستور</bdi> <code>console.log</code> <bdi dir="rtl">بنویسید</bdi>:</p>
+<div class="code-wrap" dir="ltr"><pre><code>evenNumbers = evenNumbers.slice(0, -3);
 </code></pre></div>
-<h3 id="learn-more_1">Learn more</h3>
-<p>Nested loops: The loops introduced so far make it possible to iterate over one-dimensional elements. To iterate over elements such as a two-dimensional array, you need to use nested loops. This type of loop is created when another loop is placed inside a loop. In a nested loop, the inner loop repeats as many times as the outer loop runs.</p>
-<h3 id="learn-more_2">Learn more</h3>
-<p>Using a nested loop</p>
-<p>1 Display a 5×5 multiplication table using a nested loop.</p>
-<p>2 Write the script below at the end of the script in the file <code>workshop7.html</code> and check the result in the console.</p>
-<p><img alt="Book image" src="../images/p223-03.png" /></p>
-<p><img alt="Book image" src="../images/p223-04.png" /></p>
-<p>The <code>\t</code> symbol means <code>tab</code> and is used to set the spacing between values.</p>
-<hr />
+<p><strong>Learn more</strong></p>
+<p><strong><bdi dir="rtl">حلقه‌های تو در تو</bdi></strong></p>
+<p><bdi dir="rtl">حلقه‌هایی که تاکنون معرفی شد، امکان پیمایش عناصر تک‌بعدی را فراهم می‌کنند</bdi>. <bdi dir="rtl">برای پیمایش عناصری همچون آرایه دوبعدی نیاز به استفاده از حلقه‌های تودرتو است</bdi>. <bdi dir="rtl">این نوع حلقه زمانی ایجاد می‌شود که درون یک حلقه، حلقه دیگری قرار گیرد</bdi>. <bdi dir="rtl">در یک حلقۀ تودرتو، حلقۀ داخلی به تعداد دفعات اجرای حلقه خارجی تکرار می‌شود</bdi>.</p>
+<p><strong>Learn more</strong></p>
+<p><strong><bdi dir="rtl">به‌کارگیری حلقۀ تودرتو</bdi></strong></p>
+<p><bdi dir="rtl">۱ـ جدول ضرب</bdi> 5*5 <bdi dir="rtl">را با استفاده از یک حلقه تودرتو نمایش دهید</bdi>.</p>
+<p><bdi dir="rtl">۲ـ اسکریپت زیر را در انتهای اسکریپت فایل</bdi> <code>workshop7.html</code> <bdi dir="rtl">بنویسید و نتیجه را کنسول بررسی کنید</bdi>.</p>
+<figure class="shot"><img alt="Book image" src="../images/p223-03.png" loading="lazy" /></figure>
+<figure class="shot"><img alt="Book image" src="../images/p223-04.png" loading="lazy" /></figure>
+<p><bdi dir="rtl">علامت</bdi> t\ <bdi dir="rtl">به معنای</bdi> tab <bdi dir="rtl">است و برای تنظیم فاصله بین مقادیر استفاده شده است</bdi>.</p>
+</aside>
 <p class="page-mark">Page 218</p>
-<aside class="callout activity"><h3 id="activity">Activity</h3>
-<p>Instead of the <code>console.log</code> statement, use the <code>document.write</code> statement to display the values on the browser page.</p>
-<p>Iterating over a two-dimensional array using a <code>for</code> loop</p>
-</aside><h3 id="workshop_4">Workshop</h3>
-<p>Open the file <code>product.html</code> and add the JavaScript code below to it.</p>
-<p><img alt="Book image" src="../images/p224-02.png" /></p>
-<p><img alt="Book image" src="../images/p224-01.png" /></p>
-<p>(Functions)</p>
-<p>In programming languages, blocks of code that perform a specific task are called functions.</p>
-<p>A programmer can group a set of instructions in the form of a function and then use it as a separate unit. These separate units can be used many times.</p>
-<p>Using functions in programming not only increases development speed but also increases the readability and maintainability of the code. The set of statements written to create a function can be called under a specific name. A function can receive values as input and, after executing the statements inside the function, return a value as output.</p>
-<p>In JavaScript, the following general form is used to create a function:</p>
-<p><img alt="Book image" src="../images/p224-03.png" /></p>
-<figure class="shot"><img alt="Figure 12" src="../images/p224-04.png" /><figcaption>Figure 12</figcaption></figure></article>
-      <aside class="extra">
+
+<aside class="callout activity"><p class="callout-label">Activity</p>
+<p><bdi dir="rtl">به‌جای دستور</bdi> <code>console.log</code> <bdi dir="rtl">از دستور</bdi> <code>document.write</code> <bdi dir="rtl">برای نمایش مقادیر در صفحه مرورگر استفاده کنید</bdi>.</p>
+<p><strong>Workshop</strong></p>
+<p><strong><bdi dir="rtl">پیمایش آرایه دوبعدی با استفاده از حلقه</bdi> for</strong></p>
+<p><bdi dir="rtl">فایل</bdi> <code>product.html</code> <bdi dir="rtl">را باز کنید و کدهای جاوا‌اسکریپت زیر را به آن اضافه کنید</bdi>.</p>
+<figure class="shot"><img alt="Book image" src="../images/p224-02.png" loading="lazy" /></figure>
+<figure class="shot"><img alt="Book image" src="../images/p224-01.png" loading="lazy" /></figure>
+</aside>
+<p><strong><bdi dir="rtl">توابع</bdi>(Functions)</strong> <bdi dir="rtl">در زبان‌های برنامه‌نویسی به بلوک‌های کدی که یک کار مشخص را انجام می‌دهند، تابع گفته می‌شود</bdi>. <bdi dir="rtl">برنامه‌نویس می‌تواند مجموعه‌ای از دستورالعمل‌ها را در قالب یک تابع گروه‌بندی کند و سپس آن را به عنوان یک واحد مجزا مورد استفاده قرار دهد</bdi>. <bdi dir="rtl">این واحدهای مجزا می‌توانند بارها مورد استفاده قرار گیرند</bdi>. <bdi dir="rtl">استفاده از توابع در برنامه‌نویسی نه‌تنها سرعت توسعه را افزایش می‌دهد، بلکه خوانایی و قابلیت نگهداری کد را نیز افزایش می‌دهد</bdi>. <bdi dir="rtl">مجموعه دستورات نوشته‌شده برای ایجاد یک تابع، تحت یک نام مشخص قابل فراخوانی هستند</bdi>. <bdi dir="rtl">یک تابع می‌تواند مقادیری را به‌عنوان ورودی دریافت کند و بعد از اجرای دستورات داخل تابع، مقداری را به‌عنوان خروجی برگرداند</bdi>.</p>
+<p><bdi dir="rtl">در جاوااسکریپت برای ایجاد یک تابع از شکل کلی زیر استفاده می‌شود</bdi>:</p>
+<figure class="shot"><img alt="Figure 12" src="../images/p224-03.png" loading="lazy" /><figcaption>Figure 12</figcaption></figure></article>
+      <aside class="card extra">
         <h2 data-fa="تمرین این بخش" data-en="Exercises for this section">تمرین این بخش</h2>
         <p class="extra-note" data-fa="این تمرین‌ها و پیوندها اضافه بر متن کتاب‌اند." data-en="These exercises and links are in addition to the book.">این تمرین‌ها و پیوندها اضافه بر متن کتاب‌اند.</p>
         <ol><li data-fa="جمع قیمت‌های یک آرایه را با حلقه حساب کن و جمع را در صفحه بنویس. قیمت ۰ را در جمع نیاور." data-en="Add the prices in an array with a loop and write the total on the page. Leave a price of 0 out of the total.">جمع قیمت‌های یک آرایه را با حلقه حساب کن و جمع را در صفحه بنویس. قیمت ۰ را در جمع نیاور.</li><li data-fa="فهرست همان محصول‌ها را با حلقه به صورت آیتم‌های یک ul در صفحه بساز." data-en="Use a loop to build those same products as items in a ul on the page.">فهرست همان محصول‌ها را با حلقه به صورت آیتم‌های یک ul در صفحه بساز.</li></ol>
@@ -297,7 +314,10 @@ for … of
     <nav class="pager"><a rel="prev" class="prev" href="p3-js-if.html"><span class="pager-word" data-fa="قبلی" data-en="Previous">قبلی</span><span class="pager-name" data-fa="شرط در جاوااسکریپت" data-en="Conditions in JavaScript">شرط در جاوااسکریپت</span></a><a rel="next" class="next" href="p3-js-func.html"><span class="pager-word" data-fa="بعدی" data-en="Next">بعدی</span><span class="pager-name" data-fa="تابع‌ها" data-en="Functions">تابع‌ها</span></a></nav>
     </div>
   </div>
-  <script src="../assets/search-index.js?v=19"></script>
-  <script src="../assets/app.js?v=19"></script>
+  <footer class="site-foot"><p><strong data-fa="طراح سایت" data-en="Site Design">طراح سایت</strong> · <span data-fa="پایه یازدهم" data-en="Grade 11">پایه یازدهم</span></p><nav aria-label="پیوندهای سایت"><a href="../index.html" data-fa="صفحه اصلی" data-en="Home">صفحه اصلی</a><a href="../book/toc.html" data-fa="درس‌ها" data-en="Lessons">درس‌ها</a><a href="../playground/index.html" data-fa="زمین بازی" data-en="Playground">زمین بازی</a><a href="../book/links.html" data-fa="مطالب مفید" data-en="Useful materials">مطالب مفید</a></nav><a class="btn ghost sm download-link" href="../grade11-offline.zip?v=5" data-fa="دانلود برای آفلاین" data-en="Download for offline use">دانلود برای آفلاین</a></footer>
+  <script src="../assets/search-index.js?v=24"></script>
+  <script src="../assets/search.js?v=24"></script>
+  <script src="../assets/guard.js?v=24"></script>
+  <script src="../assets/app.js?v=24"></script>
 </body>
 </html>

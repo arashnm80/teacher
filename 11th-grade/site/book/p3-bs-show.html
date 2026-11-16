@@ -5,225 +5,317 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title data-fa="کاروسل و آکاردئون" data-en="Carousel and accordion">کاروسل و آکاردئون</title>
   <link rel="icon" href="../assets/favicon.svg">
-  <link rel="stylesheet" href="../assets/style.css?v=19">
+  <script>if (location.protocol === "file:") document.documentElement.classList.add("is-offline");</script>
+  <link rel="stylesheet" href="../assets/shared.css?v=24">
+  <link rel="stylesheet" href="../assets/style.css?v=24">
 </head>
 <body data-root="../">
-  <header class="top">
-    <a class="brand" href="../index.html">
-      <span data-fa="طراح سایت" data-en="Site Design">طراح سایت</span>
-      <small data-fa="پایه یازدهم" data-en="Grade 11">پایه یازدهم</small>
-    </a>
-    <div class="search-wrap">
-      <input id="q" type="search" autocomplete="off"
-        data-fa-placeholder="جستجو در درس‌ها" data-en-placeholder="Search lessons"
-        placeholder="جستجو در درس‌ها">
-      <div id="results" class="results" hidden></div>
-    </div>
-    <a class="download" href="../grade11-offline.zip?v=4" data-fa="دانلود کل سایت" data-en="Download the whole site">دانلود کل سایت</a>
-    <button type="button" id="lang-toggle" class="lang-toggle" dir="ltr" data-lang="fa"
-      aria-label="تغییر زبان">
-      <span data-opt="fa">فا</span>
-      <span data-opt="en">EN</span>
-    </button>
-  </header>
-  <div id="nav-backdrop" class="nav-backdrop" hidden></div>
-  <div class="layout">
+  <header class="top"><a class="brand" href="../index.html"><span data-fa="طراح سایت" data-en="Site Design">طراح سایت</span><small data-fa="پایه یازدهم" data-en="Grade 11">پایه یازدهم</small></a><nav class="sections" aria-label="بخش‌های سایت"><a href="../book/toc.html" aria-current="page" data-fa="درس‌ها" data-en="Lessons">درس‌ها</a><a href="../playground/index.html" data-fa="زمین بازی" data-en="Playground">زمین بازی</a><a href="../book/links.html" data-fa="مطالب مفید" data-en="Useful materials">مطالب مفید</a></nav><div class="search-wrap" role="search"><input id="q" type="search" autocomplete="off" data-lpignore="true" data-1p-ignore data-bwignore="true" data-form-type="other" data-fa-placeholder="جستجو در درس‌ها" data-en-placeholder="Search lessons" placeholder="جستجو در درس‌ها" aria-label="جستجو در درس‌ها"><div id="search-results" class="search-results" hidden></div></div><div class="top-actions"><a class="btn primary sm download-link" href="../grade11-offline.zip?v=5" data-fa="دانلود کل سایت" data-en="Download the whole site">دانلود کل سایت</a><button type="button" id="lang-toggle" class="lang-toggle" dir="ltr" data-lang="fa" aria-label="تغییر زبان"><span data-opt="fa">فا</span><span data-opt="en">EN</span></button></div></header>
+  <div class="layout has-side">
     <details class="toc" open><summary class="nav-toggle" aria-label="فهرست درس‌ها"><span class="burger" aria-hidden="true"></span><span class="label" data-fa="فهرست درس‌ها" data-en="Lessons">فهرست درس‌ها</span></summary><nav id="lesson-nav" class="side" aria-label="lessons"><p class="mod" data-fa="شروع کتاب" data-en="Opening">شروع کتاب</p><p class="unit" data-fa="فهرست" data-en="Contents">فهرست</p><a class="" href="toc.html" data-fa="فهرست" data-en="Contents">فهرست</a><p class="mod" data-fa="پودمان ۱: برنامه‌نویسی پایتون" data-en="Module 1: Python programming">پودمان ۱: برنامه‌نویسی پایتون</p><p class="unit" data-fa="معرفی پودمان" data-en="Module introduction">معرفی پودمان</p><a class="" href="p1-intro.html" data-fa="معرفی پودمان پایتون" data-en="Introducing the Python module">معرفی پودمان پایتون</a><p class="unit" data-fa="مدل‌سازی داده" data-en="Data modeling">مدل‌سازی داده</p><a class="" href="p1-python.html" data-fa="پایتون و محیط برنامه‌نویسی" data-en="Python and the programming environment">پایتون و محیط برنامه‌نویسی</a><a class="" href="p1-vars.html" data-fa="متغیرها، نوع داده و عملگرها" data-en="Variables, types, and operators">متغیرها، نوع داده و عملگرها</a><a class="" href="p1-cast.html" data-fa="ورودی و تبدیل نوع" data-en="Input and type casting">ورودی و تبدیل نوع</a><a class="" href="p1-lists.html" data-fa="لیست‌ها" data-en="Lists">لیست‌ها</a><a class="" href="p1-if.html" data-fa="شرط‌های ساده" data-en="Simple conditions">شرط‌های ساده</a><a class="" href="p1-elif.html" data-fa="if، elif و else" data-en="if, elif, and else">if، elif و else</a><a class="" href="p1-for.html" data-fa="حلقه for و range" data-en="The for loop and range">حلقه for و range</a><a class="" href="p1-while.html" data-fa="حلقه while و کنترل حلقه" data-en="The while loop and loop control">حلقه while و کنترل حلقه</a><a class="" href="p1-assess-data.html" data-fa="ارزشیابی مدل‌سازی داده" data-en="Data-modeling assessment">ارزشیابی مدل‌سازی داده</a><p class="unit" data-fa="توابع و ماژول‌ها" data-en="Functions and modules">توابع و ماژول‌ها</p><a class="" href="p1-sets.html" data-fa="مجموعه (set)" data-en="Sets">مجموعه (set)</a><a class="" href="p1-dict.html" data-fa="دیکشنری" data-en="Dictionaries">دیکشنری</a><a class="" href="p1-quiz.html" data-fa="پروژه بازی Quiz" data-en="Quiz game project">پروژه بازی Quiz</a><a class="" href="p1-tuple.html" data-fa="تاپل" data-en="Tuples">تاپل</a><a class="" href="p1-func.html" data-fa="تعریف تابع، پارامتر و return" data-en="Defining functions, parameters, and return">تعریف تابع، پارامتر و return</a><a class="" href="p1-func-more.html" data-fa="تمرین تابع و مرتب‌سازی" data-en="Function practice and sorting">تمرین تابع و مرتب‌سازی</a><a class="" href="p1-modules.html" data-fa="ماژول‌ها و تفاوت تابع و متد" data-en="Modules, and functions versus methods">ماژول‌ها و تفاوت تابع و متد</a><a class="" href="p1-assess-func.html" data-fa="ارزشیابی توابع و ماژول‌ها" data-en="Functions and modules assessment">ارزشیابی توابع و ماژول‌ها</a><p class="mod" data-fa="پودمان ۲: صفحات وب ایستا" data-en="Module 2: Static web pages">پودمان ۲: صفحات وب ایستا</p><p class="unit" data-fa="معرفی پودمان" data-en="Module introduction">معرفی پودمان</p><a class="" href="p2-intro.html" data-fa="معرفی پودمان صفحات ایستا" data-en="Introducing static web pages">معرفی پودمان صفحات ایستا</a><p class="unit" data-fa="ساختار با HTML" data-en="Structure with HTML">ساختار با HTML</p><a class="" href="p2-web.html" data-fa="وب چگونه کار می‌کند" data-en="How the web works">وب چگونه کار می‌کند</a><a class="" href="p2-concepts.html" data-fa="مفاهیم طراحی وب و نقشه سایت" data-en="Web-design concepts and the site map">مفاهیم طراحی وب و نقشه سایت</a><a class="" href="p2-tags.html" data-fa="اولین صفحه HTML" data-en="A first HTML page">اولین صفحه HTML</a><a class="" href="p2-text.html" data-fa="متن، لیست و پیوند" data-en="Text, lists, and links">متن، لیست و پیوند</a><a class="" href="p2-img.html" data-fa="تصویر در صفحه" data-en="Images on the page">تصویر در صفحه</a><a class="" href="p2-forms.html" data-fa="فرم‌ها" data-en="Forms">فرم‌ها</a><a class="" href="p2-semantic.html" data-fa="عناصر معنایی" data-en="Semantic elements">عناصر معنایی</a><a class="" href="p2-assess-html.html" data-fa="ارزشیابی HTML" data-en="HTML assessment">ارزشیابی HTML</a><p class="unit" data-fa="ظاهر با CSS" data-en="Appearance with CSS">ظاهر با CSS</p><a class="" href="p2-css-start.html" data-fa="نوشتن CSS" data-en="Writing CSS">نوشتن CSS</a><a class="" href="p2-css-look.html" data-fa="رنگ، پس‌زمینه و انتخاب‌گر" data-en="Color, background, and selectors">رنگ، پس‌زمینه و انتخاب‌گر</a><a class="" href="p2-box.html" data-fa="مدل جعبه‌ای و display" data-en="The box model and display">مدل جعبه‌ای و display</a><a class="" href="p2-flex.html" data-fa="چیدمان با Flexbox" data-en="Layout with Flexbox">چیدمان با Flexbox</a><a class="" href="p2-flex-work.html" data-fa="کارگاه چیدمان صفحه" data-en="Page-layout workshop">کارگاه چیدمان صفحه</a><a class="" href="p2-media.html" data-fa="مدیا کوئری و ارزشیابی CSS" data-en="Media queries and the CSS assessment">مدیا کوئری و ارزشیابی CSS</a><p class="mod" data-fa="پودمان ۳: صفحات وب تعاملی" data-en="Module 3: Interactive web pages">پودمان ۳: صفحات وب تعاملی</p><p class="unit" data-fa="معرفی پودمان" data-en="Module introduction">معرفی پودمان</p><a class="" href="p3-intro.html" data-fa="معرفی پودمان تعاملی" data-en="Introducing the interactive module">معرفی پودمان تعاملی</a><p class="unit" data-fa="بوت‌استرپ" data-en="Bootstrap">بوت‌استرپ</p><a class="" href="p3-bs-start.html" data-fa="فریم‌ورک و شروع بوت‌استرپ" data-en="Frameworks and starting Bootstrap">فریم‌ورک و شروع بوت‌استرپ</a><a class="" href="p3-bs-util.html" data-fa="فاصله، گردی و لیست" data-en="Spacing, rounding, and lists">فاصله، گردی و لیست</a><a class="" href="p3-bs-header.html" data-fa="سرصفحه فروشگاه" data-en="The shop header">سرصفحه فروشگاه</a><a class="" href="p3-bs-grid.html" data-fa="شبکه Grid" data-en="The grid">شبکه Grid</a><a class="" href="p3-bs-rwd.html" data-fa="کلاس‌های واکنش‌گرا" data-en="Responsive classes">کلاس‌های واکنش‌گرا</a><a class="" href="p3-bs-nav.html" data-fa="نوار ناوبری و جزئیات محصول" data-en="Navbar and product details">نوار ناوبری و جزئیات محصول</a><a class="" href="p3-bs-form.html" data-fa="فرم و پنجره Modal" data-en="Forms and modals">فرم و پنجره Modal</a><a class="current" href="p3-bs-show.html" data-fa="کاروسل و آکاردئون" data-en="Carousel and accordion">کاروسل و آکاردئون</a><a class="" href="p3-bs-assess.html" data-fa="ارزشیابی بوت‌استرپ" data-en="Bootstrap assessment">ارزشیابی بوت‌استرپ</a><p class="unit" data-fa="جاوااسکریپت" data-en="JavaScript">جاوااسکریپت</p><a class="" href="p3-js-start.html" data-fa="جاوااسکریپت در صفحه وب" data-en="JavaScript on the page">جاوااسکریپت در صفحه وب</a><a class="" href="p3-js-vars.html" data-fa="متغیر و نوع داده" data-en="Variables and data types">متغیر و نوع داده</a><a class="" href="p3-js-ops.html" data-fa="عملگرها" data-en="Operators">عملگرها</a><a class="" href="p3-js-data.html" data-fa="آرایه و شیء" data-en="Arrays and objects">آرایه و شیء</a><a class="" href="p3-js-if.html" data-fa="شرط در جاوااسکریپت" data-en="Conditions in JavaScript">شرط در جاوااسکریپت</a><a class="" href="p3-js-loops.html" data-fa="حلقه‌ها" data-en="Loops">حلقه‌ها</a><a class="" href="p3-js-func.html" data-fa="تابع‌ها" data-en="Functions">تابع‌ها</a><a class="" href="p3-js-dom.html" data-fa="صفحه، رویداد و اعتبار فرم" data-en="The page, events, and form validation">صفحه، رویداد و اعتبار فرم</a><a class="" href="p3-js-assess.html" data-fa="ارزشیابی جاوااسکریپت" data-en="JavaScript assessment">ارزشیابی جاوااسکریپت</a><p class="mod" data-fa="پودمان ۴: توسعه وب پایتون" data-en="Module 4: Python for the web">پودمان ۴: توسعه وب پایتون</p><p class="unit" data-fa="معرفی پودمان" data-en="Module introduction">معرفی پودمان</p><a class="" href="p4-intro.html" data-fa="معرفی پودمان شیءگرایی" data-en="Introducing the object-oriented module">معرفی پودمان شیءگرایی</a><p class="unit" data-fa="شیءگرایی" data-en="Object-oriented programming">شیءگرایی</p><a class="" href="p4-idea.html" data-fa="ایده شیء و کلاس" data-en="The idea of objects and classes">ایده شیء و کلاس</a><a class="" href="p4-class.html" data-fa="ساخت کلاس و متد" data-en="Writing a class and methods">ساخت کلاس و متد</a><a class="" href="p4-inherit.html" data-fa="وراثت" data-en="Inheritance">وراثت</a><a class="" href="p4-protect.html" data-fa="داده معتبر و استفاده داخلی" data-en="Valid data and internal use">داده معتبر و استفاده داخلی</a><a class="" href="p4-assess-oop.html" data-fa="ارزشیابی برنامه شیءگرا" data-en="Object-oriented assessment">ارزشیابی برنامه شیءگرا</a><p class="unit" data-fa="فایل و توسعه" data-en="Files and development">فایل و توسعه</p><a class="" href="p4-files.html" data-fa="خواندن و نوشتن فایل متنی" data-en="Reading and writing text files">خواندن و نوشتن فایل متنی</a><a class="" href="p4-errors.html" data-fa="پیمایش فایل و مدیریت خطا" data-en="Walking a file and handling errors">پیمایش فایل و مدیریت خطا</a><a class="" href="p4-json.html" data-fa="چند فایل و JSON" data-en="Several files and JSON">چند فایل و JSON</a><a class="" href="p4-assess-files.html" data-fa="ارزشیابی کار با فایل" data-en="Files assessment">ارزشیابی کار با فایل</a><p class="mod" data-fa="پودمان ۵: برنامه‌نویسی جنگو" data-en="Module 5: Django">پودمان ۵: برنامه‌نویسی جنگو</p><p class="unit" data-fa="معرفی پودمان" data-en="Module introduction">معرفی پودمان</p><a class="" href="p5-intro.html" data-fa="معرفی پودمان جنگو" data-en="Introducing the Django module">معرفی پودمان جنگو</a><p class="unit" data-fa="ایجاد وب‌اپلیکیشن" data-en="Creating the web app">ایجاد وب‌اپلیکیشن</p><a class="" href="p5-what.html" data-fa="جنگو چیست و نصب" data-en="What Django is, and installing it">جنگو چیست و نصب</a><a class="" href="p5-project.html" data-fa="پروژه، اپ و اولین view" data-en="Project, app, and the first view">پروژه، اپ و اولین view</a><a class="" href="p5-template.html" data-fa="قالب و دمای واقعی" data-en="Templates and a real temperature">قالب و دمای واقعی</a><a class="" href="p5-assess-create.html" data-fa="ارزشیابی ایجاد وب‌اپلیکیشن" data-en="Creating-the-app assessment">ارزشیابی ایجاد وب‌اپلیکیشن</a><p class="unit" data-fa="توسعه وب‌اپلیکیشن" data-en="Developing the web app">توسعه وب‌اپلیکیشن</p><a class="" href="p5-model.html" data-fa="مدل شهر و پنل ادمین" data-en="The city model and the admin">مدل شهر و پنل ادمین</a><a class="" href="p5-list.html" data-fa="خواندن شهرها و نمایش فهرست" data-en="Reading cities and showing the list">خواندن شهرها و نمایش فهرست</a><a class="" href="p5-auth.html" data-fa="ورود و خروج" data-en="Sign-in and sign-out">ورود و خروج</a><a class="" href="p5-crud.html" data-fa="افزودن و حذف شهر" data-en="Adding and deleting a city">افزودن و حذف شهر</a><a class="" href="p5-bugs.html" data-fa="باگ و امنیت" data-en="Bugs and security">باگ و امنیت</a><p class="mod" data-fa="پایان کتاب" data-en="Back of the book">پایان کتاب</p><p class="unit" data-fa="منابع" data-en="References">منابع</p><a class="" href="refs.html" data-fa="منابع کتاب" data-en="Book references">منابع کتاب</a><p class="mod" data-fa="فراتر از کتاب" data-en="Beyond the book">فراتر از کتاب</p><p class="unit" data-fa="پیوندهای مفید" data-en="Useful links">پیوندهای مفید</p><a class="" href="links.html" data-fa="پیوندهای مفید" data-en="Useful links">پیوندهای مفید</a></nav></details>
     <div class="main">
-      <h1 class="section-title" data-fa="کاروسل و آکاردئون" data-en="Carousel and accordion">کاروسل و آکاردئون</h1><article class="lesson" lang="fa" dir="rtl" data-lang-block="fa"><p class="page-mark">صفحه ۱۸۵</p>
-<p>جدول ٣١ کلاس‌های کروسل</p>
-<p>نام کلاس</p>
-<h3 id="_1">کاربرد</h3>
-<p>برای نگهدارنده اصلی کروسل استفاده می‌شود. نگهدارندۀ اصلی، تمام اجزای کروسل</p>
-<p><code>Carousel</code>
-را دربرمی‌گیرد.</p>
-<p><code>Slide</code>
-انیمیشن اسلاید را در هنگام تغییر اسلایدها فعال می‌کند.</p>
-<p><code>carousel-inner</code>
-برای نگهدارندۀ عناصر اسلاید به‌کار می‌رود.</p>
-<p>برای هر اسلاید در کروسل استفاده می‌شود. عنصری که دارای کلاس <code>-carousel</code></p>
-<p><code>carousel-item</code>
-<code>item</code> است، محتوای اسلاید (تصاویر، متن و...) را در برمی‌گیرد.</p>
-<p><code>active</code>
-مشخص می‌کند کدام اسلاید در حال حاضر نمایش داده می‌شود.</p>
-<p><code>carousel-control-prev</code>
-برای دکمۀ انتقال به اسلاید قبلی استفاده می‌شود.</p>
-<p><code>carousel-control-next</code>
-برای دکمۀ انتقال به اسلاید بعدی استفاده می‌شود.</p>
-<p>برای ایجاد نشانگرهای روی اسلاید استفاده می‌شود؛ دایره‌های کوچکی که نشان</p>
-<p><code>carousel-indicators</code>
-می‌دهند چند اسلاید وجود دارد و در حال حاضر کدام اسلاید نمایش داده می‌شود.</p>
-<p><code>carousel-caption</code>
-برای افزودن متن یا توضیحات به اسلایدهای کروسل استفاده می‌شود.</p>
-<p>طراحی کروسل بالای صفحه فروشگاه</p>
-<h3 id="_2">کار کارگاهی</h3>
+      <header class="page-head"><p class="kicker" data-fa="پودمان ۳: صفحات وب تعاملی" data-en="Module 3: Interactive web pages">پودمان ۳: صفحات وب تعاملی</p><h1 data-fa="کاروسل و آکاردئون" data-en="Carousel and accordion">کاروسل و آکاردئون</h1></header><article class="card lesson no-copy" lang="fa" dir="rtl" data-lang-block="fa"><p class="page-mark">صفحه ۱۸۵</p>
+
+<p class="table-cap">جدول ۱۳: کلاس‌های کروسل</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>نام کلاس</th>
+<th>کاربرد</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><bdi dir="ltr">Carousel</bdi></td>
+<td>برای نگهدارنده اصلی کروسل استفاده می‌شود. نگهدارندۀ اصلی، تمام اجزای کروسل را دربرمی‌گیرد.</td>
+</tr>
+<tr>
+<td><bdi dir="ltr">Slide</bdi></td>
+<td>انیمیشن اسلاید را در هنگام تغییر اسلایدها فعال می‌کند.</td>
+</tr>
+<tr>
+<td><code>carousel-inner</code></td>
+<td>برای نگهدارندۀ عناصر اسلاید به‌کار می‌رود.</td>
+</tr>
+<tr>
+<td><code>carousel-item</code></td>
+<td>برای هر اسلاید در کروسل استفاده می‌شود. عنصری که دارای کلاس <code>carousel-item</code> است، محتوای اسلاید (تصاویر، متن و...) را در برمی‌گیرد.</td>
+</tr>
+<tr>
+<td><bdi dir="ltr">active</bdi></td>
+<td>مشخص می‌کند کدام اسلاید در حال حاضر نمایش داده می‌شود.</td>
+</tr>
+<tr>
+<td><code>carousel-control-prev</code></td>
+<td>برای دکمۀ انتقال به اسلاید قبلی استفاده می‌شود.</td>
+</tr>
+<tr>
+<td><code>carousel-control-next</code></td>
+<td>برای دکمۀ انتقال به اسلاید بعدی استفاده می‌شود.</td>
+</tr>
+<tr>
+<td><code>carousel-indicators</code></td>
+<td>برای ایجاد نشانگرهای روی اسلاید استفاده می‌شود؛ دایره‌های کوچکی که نشان می‌دهند چند اسلاید وجود دارد و در حال حاضر کدام اسلاید نمایش داده می‌شود.</td>
+</tr>
+<tr>
+<td><code>carousel-caption</code></td>
+<td>برای افزودن متن یا توضیحات به اسلایدهای کروسل استفاده می‌شود.</td>
+</tr>
+</tbody>
+</table></div>
+<aside class="callout workshop"><p class="callout-label">کار کارگاهی</p>
+<p><strong>طراحی کروسل بالای صفحه فروشگاه</strong></p>
 <p>در این کارگاه چند تصویر بنر تبلیغاتی را درون کروسل به نمایش خواهید گذاشت.</p>
-<p>تصاویر بنرهای تبلیغاتی را با اسامی <code>slide1</code>، <code>slide2</code> و <code>slide3</code> درون پوشه تصاویر پروژه ذخیره نمایید.</p>
-<p>کد‌های شکل زیر را در فایل <code>index.html</code> در ابتدای برچسب <code>&lt;main&gt;</code> وارد کنید:</p>
-<p><img alt="تصویر کتاب" src="../images/p191-01.png" /></p>
-<hr />
+<p>تصاویر بنرهای تبلیغاتی را با اسامی <bdi dir="ltr">slide1</bdi>، <bdi dir="ltr">slide2</bdi> و <bdi dir="ltr">slide3</bdi> درون پوشه تصاویر پروژه ذخیره نمایید. کد‌های شکل زیر را در فایل <code>index.html</code> در ابتدای برچسب <code>&lt;main&gt;</code> وارد کنید:</p>
+<figure class="shot"><img alt="تصویر کتاب" src="../images/p191-01.png" loading="lazy" /></figure>
+</aside>
 <p class="page-mark">صفحه ۱۸۶</p>
+
+<aside class="callout workshop continued"><p class="callout-label">کار کارگاهی (ادامه)</p>
 <p>فایل را ذخیره کنید و نتیجه را در مرورگر بررسی کنید.</p>
-<p>در حال حاضر دکمه‌های کنترلی به کروسل اضافه نشده است، بنابراین برای مشاهده اسلاید بعدی 5ثانیه صبر کنید.</p>
-<p>ویژگی <code>"data-bs-ride="carousel</code> برای فعال‌سازی حرکت خودکار کروسل استفاده می‌شود. این ویژگی به عنصر کروسل اعلام می‌کند که اسلایدها را پس از یک مدت زمان مشخص تغییر دهد.</p>
-<p>مدت زمان نمایش هر اسلاید در اسلایدر با ویژگی <code>data-bs-interval</code> قابل تنظیم است. برای این منظور، <code>-data "bs-interval="2000</code> را به تگ مربوطه اضافه کنید.</p>
-<p><img alt="تصویر کتاب" src="../images/p192-01.png" /></p>
+<p>در حال حاضر دکمه‌های کنترلی به کروسل اضافه نشده است، بنابراین برای مشاهده اسلاید بعدی 5 ثانیه صبر کنید.</p>
+<p>ویژگی <code>data-bs-ride="carousel"</code> برای فعال‌سازی حرکت خودکار کروسل استفاده می‌شود. این ویژگی به عنصر کروسل اعلام می‌کند که اسلایدها را پس از یک مدت زمان مشخص تغییر دهد. مدت زمان نمایش هر اسلاید در اسلایدر با ویژگی <bdi dir="ltr">data-bs-interval</bdi> قابل تنظیم است. برای این منظور، <code>data-bs-interval=\"2000\"</code> را به تگ مربوطه اضافه کنید.</p>
+<figure class="shot"><img alt="تصویر کتاب" src="../images/p192-01.png" loading="lazy" /></figure>
 <p>کد دکمه‌های «بعدی» و «قبلی» را در محل مشخص‌شده در کد کروسل اضافه کنید:</p>
-<p><img alt="تصویر کتاب" src="../images/p192-02.png" /></p>
-<p><code>"data-bs-target="#banners:</code> مشخص می‌کند این دکمه کدام <code>Carousel</code> را کنترل می‌کند.</p>
-<p><code>"data-bs-slide="prev:</code> انتقال به اسلاید قبلی به کمک این ویژگی انجام می‌شود.</p>
-<p>کلاس <code>carousel-control-prev-icon:</code> این کلاس، آیکن فلش چپ () را برای دکمۀ «اسلاید قبلی» نمایش می‌دهد.</p>
-<p>کلاس <code>visually-hidden</code> برای مخفی کردن عبارات <code>Previous</code> و <code>Next</code> از دید کاربران عادی استفاده شده است، اما ابزارهای صفح‌هخوان محتوای عنصر <code>&lt;span&gt;</code> را برای کاربران نابینا می‌خوانند. در واقع عنصر <code>&lt;span&gt;</code> با ویژگی <code>visually-hidden</code> برای کاربران نابینا نوشته می‌شود.</p>
-<p>ویژگی<code>"aria-hidden="true</code> در دکمه‌های کنترلی به صفحه‌خوان‌ها اعلام می‌کند که این عنصر باید نادیده گرفته شود و برای کاربران نابینا در دسترس نیست.</p>
-<p>آکاردئون آکاردئون یکی از اجزای کاربردی بوت‌استرت است که به توسعه‌دهنده امکان می‌دهد محتوا را در بخش‌های قابل باز و بسته شدن نمایش دهد. آکاردئون به‌صورت پیش‌فرض بسته است. با کلیک روی عنوان هر بخش، محتوای مربوط به آن ظاهر می‌شود و با کلیک بعدی مخفی می‌گردد. این ویژگی برای سازمان‌دهی محتوای طولانی و نمایش اطلاعات به صورت فشرده بسیار مفید است.</p>
+<figure class="shot"><img alt="تصویر کتاب" src="../images/p192-02.png" loading="lazy" /></figure>
+<p><code>data-bs-target="#banners"</code>: مشخص می‌کند این دکمه کدام <bdi dir="ltr">Carousel</bdi> را کنترل می‌کند.</p>
+<p><code>data-bs-slide="prev"</code>: انتقال به اسلاید قبلی به کمک این ویژگی انجام می‌شود.</p>
+<p>کلاس <bdi dir="ltr">carousel-control-prev-icon</bdi>: این کلاس، آیکن فلش چپ () را برای دکمۀ «اسلاید قبلی» نمایش می‌دهد.</p>
+<p>کلاس <bdi dir="ltr">visually-hidden</bdi> برای مخفی کردن عبارات <bdi dir="ltr">Previous</bdi> و <bdi dir="ltr">Next</bdi> از دید کاربران عادی استفاده شده است، اما ابزارهای صفحه‌خوان محتوای عنصر <code>&lt;span&gt;</code> را برای کاربران نابینا می‌خوانند. در واقع عنصر <code>&lt;span&gt;</code> با ویژگی <bdi dir="ltr">visually-hidden</bdi> برای کاربران نابینا نوشته می‌شود.</p>
+<p>ویژگی<code>aria-hidden="true"</code> در دکمه‌های کنترلی به صفحه‌خوان‌ها اعلام می‌کند که این عنصر باید نادیده گرفته شود و برای کاربران نابینا در دسترس نیست.</p>
+</aside>
+<h3>آکاردئون</h3>
+<p>آکاردئون یکی از اجزای کاربردی بوت‌استرت است که به توسعه‌دهنده امکان می‌دهد محتوا را در بخش‌های قابل باز و بسته شدن نمایش دهد. آکاردئون به‌صورت پیش‌فرض بسته است. با کلیک روی عنوان هر بخش، محتوای مربوط به آن ظاهر می‌شود و با کلیک بعدی مخفی می‌گردد. این ویژگی برای سازمان‌دهی محتوای طولانی و نمایش اطلاعات به صورت فشرده بسیار مفید است.</p>
 <p>آکاردئون می‌تواند در طراحی بخش‌های مختلفی کاربرد داشته باشد؛ مانند منوی ناوبری و کشویی، نمایش اطلاعات تکمیلی یک بخش، ایجاد بخش سوالات متداول و غیره.</p>
-<hr />
 <p class="page-mark">صفحه ۱۸۷</p>
-<p>در طراحی یک آکاردئون کلاس‌های مختلفی استفاده می‌شود. جدول ٤١ اسامی کلاس‌ها و کاربرد هر یک را نشان می‌دهد.</p>
-<p>جدول 14 کلاس‌های آکاردئون</p>
-<p>نام کلاس</p>
-<h3 id="_3">کاربرد</h3>
-<p>این کلاس برای ایجاد نگهدارنده اصلی آکاردئون استفاده می‌شود و تمام عناصر آکاردئون</p>
-<p><code>Accordion</code>
-را در بر می‌گیرد.</p>
-<p>یک آکاردئون دارای چند بخش (<code>Item</code>) است که هر بخش مجزا از این کلاس استفاده</p>
-<p><code>Accordion-item</code>
-می‌کند. هر بخش شامل یک <code>header</code> و یک محتوای قابل جمع شدن است.</p>
-<p>این کلاس برای ایجاد <code>header</code> در هر بخش استفاده می‌شود و معمولاً شامل یک دکمه یا</p>
-<p><code>Accordion-header</code>
-پیوند است که با کلیک بر روی آن، محتوای مربوط به آن بخش آشکار یا مخفی می‌شود.</p>
-<p><code>Accordion-button</code>
-استایل دکمه‌ای که روی آن کلیک می‌شود را تعیین می‌کند.</p>
-<p><code>Accordion-collapse</code>
-این کلاس برای تعیین استایل عنصری که محتوای قابل جمع شدن دارد به‌کار می‌رود.</p>
-<p><code>Accordion-body</code>
-این کلاس برای ایجاد محتوای قابل نمایش در هر بخش (<code>Item</code>) استفاده می‌شود.</p>
-<p><code>Collapse</code>
-برای باز و بسته شدن محتوا به‌کار می‌رود.</p>
-<p><code>show</code>
-این کلاس باعث می‌شود که محتوای یک عنصر به‌صورت باز نمایش داده شود.</p>
-<p>عنصر <code>&lt;div&gt;</code> با کلاس <code>accordion-item</code> باید به تعداد بخش‌های آکاردئون استفاده شود.</p>
-<hr />
+
+<p>در طراحی یک آکاردئون کلاس‌های مختلفی استفاده می‌شود. جدول ۱۴ اسامی کلاس‌ها و کاربرد هر یک را نشان می‌دهد.</p>
+<p class="table-cap">جدول ۱۴: کلاس‌های آکاردئون</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>نام کلاس</th>
+<th>کاربرد</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><bdi dir="ltr">Accordion</bdi></td>
+<td>این کلاس برای ایجاد نگهدارنده اصلی آکاردئون استفاده می‌شود و تمام عناصر آکاردئون را در بر می‌گیرد.</td>
+</tr>
+<tr>
+<td><code>Accordion-item</code></td>
+<td>یک آکاردئون دارای چند بخش (<bdi dir="ltr">Item</bdi>) است که هر بخش مجزا از این کلاس استفاده می‌کند. هر بخش شامل یک <bdi dir="ltr">header</bdi> و یک محتوای قابل جمع شدن است.</td>
+</tr>
+<tr>
+<td><code>Accordion-header</code></td>
+<td>این کلاس برای ایجاد <bdi dir="ltr">header</bdi> در هر بخش استفاده می‌شود و معمولاً شامل یک دکمه یا پیوند است که با کلیک بر روی آن، محتوای مربوط به آن بخش آشکار یا مخفی می‌شود.</td>
+</tr>
+<tr>
+<td><code>Accordion-button</code></td>
+<td>استایل دکمه‌ای که روی آن کلیک می‌شود را تعیین می‌کند.</td>
+</tr>
+<tr>
+<td><code>Accordion-collapse</code></td>
+<td>این کلاس برای تعیین استایل عنصری که محتوای قابل جمع شدن دارد به‌کار می‌رود.</td>
+</tr>
+<tr>
+<td><code>Accordion-body</code></td>
+<td>این کلاس برای ایجاد محتوای قابل نمایش در هر بخش (<bdi dir="ltr">Item</bdi>) استفاده می‌شود.</td>
+</tr>
+<tr>
+<td><bdi dir="ltr">Collapse</bdi></td>
+<td>برای باز و بسته شدن محتوا به‌کار می‌رود.</td>
+</tr>
+<tr>
+<td><bdi dir="ltr">show</bdi></td>
+<td>این کلاس باعث می‌شود که محتوای یک عنصر به‌صورت باز نمایش داده شود.</td>
+</tr>
+</tbody>
+</table></div>
+<p>عنصر <code>&lt;div&gt;</code> با کلاس <bdi dir="ltr">accordion-item</bdi> باید به تعداد بخش‌های آکاردئون استفاده شود.</p>
 <p class="page-mark">صفحه ۱۸۸</p>
-<p>طراحی بخش پاسخ به پرسش‌های متداول</p>
-<h3 id="_4">کار کارگاهی</h3>
+
+<aside class="callout workshop"><p class="callout-label">کار کارگاهی</p>
+<p><strong>طراحی بخش پاسخ به پرسش‌های متداول</strong></p>
 <p>در کارگاه طراحی فوتر، گزینه پرسش‌های متداول درون ستون اول قرار گرفت. در این کارگاه صفحه مربوط به این گزینه را طراحی خواهید کرد.</p>
-<p>1 فایل <code>index.html</code> را باز کنید و از منوی <code>File</code> گزینه <code>Save As</code> را انتخاب کنید. نام فایل جدید را</p>
-<p><bdi dir="ltr">faq.html</bdi> قرار دهید. کلمه <bdi dir="ltr">faq</bdi> مخفف <bdi dir="ltr">Frequently</bdi> <bdi dir="ltr">Asked</bdi> <bdi dir="ltr">Questions</bdi> است.</p>
-<p>2 محتوای عنصر <code>main</code> را به‌طور کامل پاک کنید و کد آکاردئون را به طبق کدهای زیر درون آن بنویسید:</p>
-<p><img alt="تصویر کتاب" src="../images/p194-01.png" /></p>
-<p>این آکاردئون دارای دو بخش است. با توجه به اینکه کلاس<code>show</code> برای بخش اول استفاده شده است در نتیجه محتوای بخش اول در حال نمایش خواهد بود.</p>
-<p>3 در حالت پیش‌فرض فلش کنار هر دکمه به‌صورت رو به بالا و در کنار متن دکمه نمایش داده می‌شود.</p>
-<p>برای اصلاح این وضعیت از استایل زیر در فایل <code>styles.css</code> استفاده کنید:</p>
-<p><img alt="تصویر کتاب" src="../images/p194-02.png" /></p>
-<p>انتخاب‌گر <code>accordion-button::after</code> عنصر بعد از عنوان دکمه (آیکن فلش) را انتخاب می‌کند.</p>
-<hr />
+<ol>
+<li>
+<p>فایل <code>index.html</code> را باز کنید و از منوی <bdi dir="ltr">File</bdi> گزینه <bdi dir="ltr">Save As</bdi> را انتخاب کنید. نام فایل جدید را <code>faq.html</code> قرار دهید. کلمه <bdi dir="ltr">faq</bdi> مخفف <bdi dir="ltr">Frequently Asked Questions</bdi> است.</p>
+</li>
+<li>
+<p>محتوای عنصر <bdi dir="ltr">main</bdi> را به‌طور کامل پاک کنید و کد آکاردئون را به طبق کدهای زیر درون آن بنویسید:</p>
+</li>
+</ol>
+<figure class="shot"><img alt="تصویر کتاب" src="../images/p194-01.png" loading="lazy" /></figure>
+<p>این آکاردئون دارای دو بخش است. با توجه به اینکه کلاس <bdi dir="ltr">show</bdi> برای بخش اول استفاده شده است در نتیجه محتوای بخش اول در حال نمایش خواهد بود.</p>
+<ol start="3">
+<li>در حالت پیش‌فرض فلش کنار هر دکمه به‌صورت رو به بالا و در کنار متن دکمه نمایش داده می‌شود. برای اصلاح این وضعیت از استایل زیر در فایل <code>styles.css</code> استفاده کنید:</li>
+</ol>
+<figure class="shot"><img alt="تصویر کتاب" src="../images/p194-02.png" loading="lazy" /></figure>
+<p>انتخاب‌گر <bdi dir="ltr">accordion-button::after</bdi> عنصر بعد از عنوان دکمه (آیکن فلش) را انتخاب می‌کند.</p>
+</aside>
 <p class="page-mark">صفحه ۱۸۹</p>
-<aside class="callout activity"><h3 id="_5">فعالیت</h3>
+
+<aside class="callout activity"><p class="callout-label">فعالیت</p>
 <p>بخش سوم را با محتوای زیر به آکاردئون اضافه کنید:</p>
-<p>درصورت‌یکه کالا در فروش ویژه باشد، شامل محدودیت در تعداد خرید می‌شود. در غیر این صورت هیچ‌گونه محدودیتی وجود ندارد.</p>
+<p>درصورتی‌که کالا در فروش ویژه باشد، شامل محدودیت در تعداد خرید می‌شود. در غیر این صورت هیچ‌گونه محدودیتی وجود ندارد.</p>
 <p>انتظار می‌رود که در پایان خروجی زیر را به‌دست آورید:</p>
-<p><img alt="تصویر کتاب" src="../images/p195-01.png" /></p>
-</aside><aside class="callout activity"><h3 id="_6">فعالیت</h3>
+<figure class="shot"><img alt="تصویر کتاب" src="../images/p195-01.png" loading="lazy" /></figure>
+<p><strong>فعالیت</strong></p>
 <p>پرسش‌های متداول در بخش فوتر سایت را به فایل <code>faq.html</code> لینک کنید.</p>
-</aside><hr /></article><article class="lesson" lang="en" dir="ltr" data-lang-block="en" hidden><p class="page-mark">Page 185</p>
-<p>Table 13 Carousel classes</p>
-<p>Class name</p>
-<h3 id="use">Use</h3>
-<p>Used for the main carousel container. The main container holds all the carousel</p>
-<p><code>Carousel</code>
-components.</p>
-<p><code>Slide</code>
-Enables the slide animation when the slides change.</p>
-<p><code>carousel-inner</code>
-Used for the container of the slide elements.</p>
-<p>Used for each slide in the carousel. An element that has the <code>carousel-item</code></p>
-<p><code>carousel-item</code>
-class holds the slide content (images, text, and so on).</p>
-<p><code>active</code>
-Specifies which slide is currently being displayed.</p>
-<p><code>carousel-control-prev</code>
-Used for the button that moves to the previous slide.</p>
-<p><code>carousel-control-next</code>
-Used for the button that moves to the next slide.</p>
-<p>Used to create indicators on the slide; small circles that show</p>
-<p><code>carousel-indicators</code>
-how many slides there are and which slide is currently being displayed.</p>
-<p><code>carousel-caption</code>
-Used to add text or captions to the carousel slides.</p>
-<p>Designing the carousel at the top of the store page</p>
-<h3 id="workshop">Workshop</h3>
-<p>In this workshop you will display several advertising banner images inside a carousel.</p>
-<p>Save the advertising banner images with the names <code>slide1</code>, <code>slide2</code>, and <code>slide3</code> in the project images folder.</p>
-<p>Enter the code in the figure below in the <code>index.html</code> file at the beginning of the <code>&lt;main&gt;</code> tag:</p>
-<p><img alt="Book image" src="../images/p191-01.png" /></p>
-<hr />
+</aside></article><article class="card lesson no-copy" lang="en" dir="ltr" data-lang-block="en" hidden><p class="page-mark">Page 185</p>
+
+<p class="table-cap">Table 13: Carousel classes</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Class name</th>
+<th>Use</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Carousel</td>
+<td>Used for the main container of the carousel, which holds all its parts.</td>
+</tr>
+<tr>
+<td>Slide</td>
+<td>Turns on the slide animation when the slides change.</td>
+</tr>
+<tr>
+<td><code>carousel-inner</code></td>
+<td>Used for the container of the slide elements.</td>
+</tr>
+<tr>
+<td><code>carousel-item</code></td>
+<td>Used for each slide of the carousel. The element with the class <code>carousel-item</code> holds the slide's content (images, text, and so on).</td>
+</tr>
+<tr>
+<td>active</td>
+<td>Marks which slide is being shown now.</td>
+</tr>
+<tr>
+<td><code>carousel-control-prev</code></td>
+<td>Used for the button that goes to the previous slide.</td>
+</tr>
+<tr>
+<td><code>carousel-control-next</code></td>
+<td>Used for the button that goes to the next slide.</td>
+</tr>
+<tr>
+<td><code>carousel-indicators</code></td>
+<td>Used to create the indicators on the slide: small circles that show how many slides there are and which one is being shown.</td>
+</tr>
+<tr>
+<td><code>carousel-caption</code></td>
+<td>Used to add text or captions to the carousel slides.</td>
+</tr>
+</tbody>
+</table></div>
+<aside class="callout workshop"><p class="callout-label">Workshop</p>
+<p><strong>Designing a carousel at the top of the shop page</strong></p>
+<p>In this workshop you will show several promotional banner images in a carousel.</p>
+<p>Save the promotional banner images as slide1, slide2, and slide3 in the project's images folder. Enter the code in the figure below in the file <code>index.html</code> at the start of the <code>&lt;main&gt;</code> tag:</p>
+<figure class="shot"><img alt="Book image" src="../images/p191-01.png" loading="lazy" /></figure>
+</aside>
 <p class="page-mark">Page 186</p>
+
+<aside class="callout workshop continued"><p class="callout-label">Workshop (continued)</p>
 <p>Save the file and check the result in the browser.</p>
-<p>At present the control buttons have not been added to the carousel, so wait 5 seconds to see the next slide.</p>
-<p>The <code>"data-bs-ride="carousel</code> attribute is used to enable automatic movement of the carousel. This attribute tells the carousel element to change the slides after a set amount of time.</p>
-<p>The display duration of each slide in the slider can be set with the <code>data-bs-interval</code> attribute. For this purpose, add <code>data-bs-interval="2000"</code> to the related tag.</p>
-<p><img alt="Book image" src="../images/p192-01.png" /></p>
-<p>Add the code for the “next” and “previous” buttons in the place marked in the carousel code:</p>
-<p><img alt="Book image" src="../images/p192-02.png" /></p>
-<p><code>"data-bs-target="#banners:</code> Specifies which <code>Carousel</code> this button controls.</p>
-<p><code>"data-bs-slide="prev:</code> Moving to the previous slide is done with this attribute.</p>
-<p>The <code>carousel-control-prev-icon</code> class: This class displays a left-arrow icon () for the “previous slide” button.</p>
-<p>The <code>visually-hidden</code> class is used to hide the words <code>Previous</code> and <code>Next</code> from ordinary users, but screen readers read the content of the <code>&lt;span&gt;</code> element for blind users. In fact, the <code>&lt;span&gt;</code> element with the <code>visually-hidden</code> property is written for blind users.</p>
-<p>The <code>"aria-hidden="true</code> attribute on the control buttons tells screen readers that this element should be ignored and is not available to blind users.</p>
-<p>Accordion. The accordion is one of the useful Bootstrap components that lets the developer display content in sections that can open and close. By default the accordion is closed. When you click the title of each section, the related content appears, and with the next click it is hidden. This feature is very useful for organizing long content and showing information in a compact way.</p>
-<p>An accordion can be used in designing various sections, such as a navigation and drop-down menu, showing extra information for a section, creating a frequently asked questions section, and so on.</p>
-<hr />
+<p>The control buttons have not been added to the carousel yet, so wait 5 seconds to see the next slide.</p>
+<p>The attribute <code>data-bs-ride="carousel"</code> turns on the carousel's automatic movement. It tells the carousel element to change slides after a certain time. How long each slide is shown can be set with the data-bs-interval attribute: for this, add <code>data-bs-interval="2000"</code> to the relevant tag.</p>
+<figure class="shot"><img alt="Book image" src="../images/p192-01.png" loading="lazy" /></figure>
+<p>Add the code of the «Next» and «Previous» buttons at the marked place in the carousel code:</p>
+<figure class="shot"><img alt="Book image" src="../images/p192-02.png" loading="lazy" /></figure>
+<p><code>data-bs-target="#banners"</code>: says which Carousel this button controls.</p>
+<p><code>data-bs-slide="prev"</code>: this attribute moves to the previous slide.</p>
+<p>The carousel-control-prev-icon class shows the left arrow icon () for the «previous slide» button.</p>
+<p>The visually-hidden class is used to hide the words Previous and Next from sighted users, but screen readers read the content of the <code>&lt;span&gt;</code> element to blind users. In fact, the <code>&lt;span&gt;</code> element with visually-hidden is written for blind users.</p>
+<p>The attribute <code>aria-hidden="true"</code> on the control buttons tells screen readers to ignore this element; it is not available to blind users.</p>
+</aside>
+<h3>Accordion</h3>
+<p>The accordion is one of Bootstrap's useful components; it lets the developer show content in sections that open and close. The accordion is closed by default. Clicking the title of a section shows its content, and clicking again hides it. This is very useful for organizing long content and showing information compactly.</p>
+<p>Accordions can be used in many parts of a design, such as navigation and drop-down menus, showing extra information about a section, building a frequently asked questions section, and so on.</p>
 <p class="page-mark">Page 187</p>
-<p>Various classes are used in designing an accordion. Table 14 shows the class names and the use of each one.</p>
-<p>Table 14 Accordion classes</p>
-<p>Class name</p>
-<h3 id="use_1">Use</h3>
-<p>This class is used to create the main accordion container and holds all the accordion</p>
-<p><code>Accordion</code>
-elements.</p>
-<p>An accordion has several sections (<code>Item</code>), and each separate section uses this class.</p>
-<p><code>Accordion-item</code>
-Each section includes a <code>header</code> and collapsible content.</p>
-<p>This class is used to create the <code>header</code> in each section and usually includes a button or</p>
-<p><code>Accordion-header</code>
-link that, when clicked, shows or hides the content related to that section.</p>
-<p><code>Accordion-button</code>
-Sets the style of the button that is clicked.</p>
-<p><code>Accordion-collapse</code>
-This class is used to set the style of the element that has collapsible content.</p>
-<p><code>Accordion-body</code>
-This class is used to create the displayable content in each section (<code>Item</code>).</p>
-<p><code>Collapse</code>
-Used for opening and closing the content.</p>
-<p><code>show</code>
-This class makes the content of an element display in the open state.</p>
-<p>The <code>&lt;div&gt;</code> element with the <code>accordion-item</code> class must be used once for each accordion section.</p>
-<hr />
+
+<p>Several classes are used to design an accordion. Table 14 shows the class names and what each one does.</p>
+<p class="table-cap">Table 14: Accordion classes</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Class name</th>
+<th>Use</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Accordion</td>
+<td>Creates the main container of the accordion, which holds all its elements.</td>
+</tr>
+<tr>
+<td><code>Accordion-item</code></td>
+<td>An accordion has several sections (Item), each of which uses this class. Each section has a header and collapsible content.</td>
+</tr>
+<tr>
+<td><code>Accordion-header</code></td>
+<td>Creates the header of each section; it usually holds a button or link that shows or hides the content of that section when clicked.</td>
+</tr>
+<tr>
+<td><code>Accordion-button</code></td>
+<td>Sets the style of the button that is clicked.</td>
+</tr>
+<tr>
+<td><code>Accordion-collapse</code></td>
+<td>Used to style the element that holds the collapsible content.</td>
+</tr>
+<tr>
+<td><code>Accordion-body</code></td>
+<td>Creates the content shown in each section (Item).</td>
+</tr>
+<tr>
+<td>Collapse</td>
+<td>Used to open and close the content.</td>
+</tr>
+<tr>
+<td>show</td>
+<td>Shows the content of an element open.</td>
+</tr>
+</tbody>
+</table></div>
+<p>There must be one <code>&lt;div&gt;</code> element with the class accordion-item for each section of the accordion.</p>
 <p class="page-mark">Page 188</p>
-<p>Designing the frequently asked questions section</p>
-<h3 id="workshop_1">Workshop</h3>
-<p>In the footer design workshop, the frequently asked questions option was placed in the first column. In this workshop you will design the page for this option.</p>
-<p>1 Open the <code>index.html</code> file and from the <code>File</code> menu choose <code>Save As</code>. Set the name of the new file to</p>
-<p>faq.html . faq Frequently Asked Questions .</p>
-<p>2 Clear the content of the <code>main</code> element completely and write the accordion code inside it according to the code below:</p>
-<p><img alt="Book image" src="../images/p194-01.png" /></p>
-<p>This accordion has two sections. Because the <code>show</code> class is used for the first section, the content of the first section will be displayed.</p>
-<p>3 By default the arrow next to each button is shown pointing up and beside the button text.</p>
-<p>To fix this, use the style below in the <code>styles.css</code> file:</p>
-<p><img alt="Book image" src="../images/p194-02.png" /></p>
-<p>The <code>accordion-button::after</code> selector selects the element after the button title (the arrow icon).</p>
-<hr />
+
+<aside class="callout workshop"><p class="callout-label">Workshop</p>
+<p><strong>Designing a frequently asked questions section</strong></p>
+<p>In the footer workshop, a frequently asked questions option was put in the first column. In this workshop you will design the page for this option.</p>
+<ol>
+<li>
+<p>Open the file <code>index.html</code> and choose Save As from the File menu. Name the new file <code>faq.html</code>. faq stands for Frequently Asked Questions.</p>
+</li>
+<li>
+<p>Delete the whole content of the main element and write the accordion code inside it, following the code below:</p>
+</li>
+</ol>
+<figure class="shot"><img alt="Book image" src="../images/p194-01.png" loading="lazy" /></figure>
+<p><bdi dir="rtl">این آکاردئون دارای دو بخش است</bdi>. <bdi dir="rtl">با توجه به اینکه کلاس</bdi> show <bdi dir="rtl">برای بخش اول استفاده شده است در نتیجه محتوای بخش اول در حال نمایش خواهد بود</bdi>.</p>
+<ol start="3">
+<li><bdi dir="rtl">در حالت پیش‌فرض فلش کنار هر دکمه به‌صورت رو به بالا و در کنار متن دکمه نمایش داده می‌شود</bdi>. <bdi dir="rtl">برای اصلاح این وضعیت از استایل زیر در فایل</bdi> <code>styles.css</code> <bdi dir="rtl">استفاده کنید</bdi>:</li>
+</ol>
+<figure class="shot"><img alt="Book image" src="../images/p194-02.png" loading="lazy" /></figure>
+<p><bdi dir="rtl">انتخاب‌گر</bdi> accordion-button::after <bdi dir="rtl">عنصر بعد از عنوان دکمه</bdi> (<bdi dir="rtl">آیکن فلش</bdi>) <bdi dir="rtl">را انتخاب می‌کند</bdi>.</p>
+</aside>
 <p class="page-mark">Page 189</p>
-<aside class="callout activity"><h3 id="activity">Activity</h3>
-<p>Add a third section to the accordion with the content below:</p>
-<p>If the product is on special sale, there is a limit on the purchase quantity. Otherwise there is no limit.</p>
-<p>You are expected to get the output below at the end:</p>
-<p><img alt="Book image" src="../images/p195-01.png" /></p>
-</aside><aside class="callout activity"><h3 id="activity_1">Activity</h3>
-<p>Link the frequently asked questions in the site footer section to the <code>faq.html</code> file.</p>
-</aside><hr /></article>
-      <aside class="extra">
+
+<aside class="callout activity"><p class="callout-label">Activity</p>
+<p><bdi dir="rtl">بخش سوم را با محتوای زیر به آکاردئون اضافه کنید</bdi>:</p>
+<p><bdi dir="rtl">درصورتی‌که کالا در فروش ویژه باشد، شامل محدودیت در تعداد خرید می‌شود</bdi>. <bdi dir="rtl">در غیر این صورت هیچ‌گونه محدودیتی وجود ندارد</bdi>.</p>
+<p><bdi dir="rtl">انتظار می‌رود که در پایان خروجی زیر را به‌دست آورید</bdi>:</p>
+<figure class="shot"><img alt="Book image" src="../images/p195-01.png" loading="lazy" /></figure>
+<p><strong>Activity</strong></p>
+<p><bdi dir="rtl">پرسش‌های متداول در بخش فوتر سایت را به فایل</bdi> <code>faq.html</code> <bdi dir="rtl">لینک کنید</bdi>.</p>
+</aside></article>
+      <aside class="card extra">
         <h2 data-fa="تمرین این بخش" data-en="Exercises for this section">تمرین این بخش</h2>
         <p class="extra-note" data-fa="این تمرین‌ها و پیوندها اضافه بر متن کتاب‌اند." data-en="These exercises and links are in addition to the book.">این تمرین‌ها و پیوندها اضافه بر متن کتاب‌اند.</p>
         <ol><li data-fa="یک کاروسل با دو تصویر و دکمه بعدی و قبلی بساز." data-en="Build a carousel with two images and next and previous controls.">یک کاروسل با دو تصویر و دکمه بعدی و قبلی بساز.</li><li data-fa="پرسش‌های متداول را با آکاردئون سه موردی بساز که باز شدن یکی، بقیه را ببندد." data-en="Build a three-item FAQ accordion so opening one item closes the others.">پرسش‌های متداول را با آکاردئون سه موردی بساز که باز شدن یکی، بقیه را ببندد.</li></ol>
@@ -232,7 +324,10 @@ This class makes the content of an element display in the open state.</p>
     <nav class="pager"><a rel="prev" class="prev" href="p3-bs-form.html"><span class="pager-word" data-fa="قبلی" data-en="Previous">قبلی</span><span class="pager-name" data-fa="فرم و پنجره Modal" data-en="Forms and modals">فرم و پنجره Modal</span></a><a rel="next" class="next" href="p3-bs-assess.html"><span class="pager-word" data-fa="بعدی" data-en="Next">بعدی</span><span class="pager-name" data-fa="ارزشیابی بوت‌استرپ" data-en="Bootstrap assessment">ارزشیابی بوت‌استرپ</span></a></nav>
     </div>
   </div>
-  <script src="../assets/search-index.js?v=19"></script>
-  <script src="../assets/app.js?v=19"></script>
+  <footer class="site-foot"><p><strong data-fa="طراح سایت" data-en="Site Design">طراح سایت</strong> · <span data-fa="پایه یازدهم" data-en="Grade 11">پایه یازدهم</span></p><nav aria-label="پیوندهای سایت"><a href="../index.html" data-fa="صفحه اصلی" data-en="Home">صفحه اصلی</a><a href="../book/toc.html" data-fa="درس‌ها" data-en="Lessons">درس‌ها</a><a href="../playground/index.html" data-fa="زمین بازی" data-en="Playground">زمین بازی</a><a href="../book/links.html" data-fa="مطالب مفید" data-en="Useful materials">مطالب مفید</a></nav><a class="btn ghost sm download-link" href="../grade11-offline.zip?v=5" data-fa="دانلود برای آفلاین" data-en="Download for offline use">دانلود برای آفلاین</a></footer>
+  <script src="../assets/search-index.js?v=24"></script>
+  <script src="../assets/search.js?v=24"></script>
+  <script src="../assets/guard.js?v=24"></script>
+  <script src="../assets/app.js?v=24"></script>
 </body>
 </html>
