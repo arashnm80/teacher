@@ -270,7 +270,8 @@ CREATE TABLE IF NOT EXISTS sessions (
     token_hash TEXT PRIMARY KEY,
     student_id INTEGER NOT NULL REFERENCES students(id) ON DELETE CASCADE,
     created_at TEXT NOT NULL,
-    expires_at TEXT NOT NULL
+    expires_at TEXT NOT NULL,
+    kind TEXT NOT NULL DEFAULT 'web'
 );
 CREATE INDEX IF NOT EXISTS sessions_student ON sessions(student_id);
 CREATE TABLE IF NOT EXISTS progress (
@@ -304,7 +305,8 @@ CREATE TABLE IF NOT EXISTS attempts (
     solved INTEGER NOT NULL,
     typed INTEGER NOT NULL,
     inserted INTEGER NOT NULL,
-    flags TEXT NOT NULL DEFAULT '[]'
+    flags TEXT NOT NULL DEFAULT '[]',
+    client_at TEXT
 );
 CREATE INDEX IF NOT EXISTS attempts_student ON attempts(student_id, id);
 CREATE TABLE IF NOT EXISTS admin (
@@ -390,6 +392,12 @@ def init_db(db: sqlite3.Connection) -> None:
     columns = {row["name"] for row in db.execute("PRAGMA table_info(students)").fetchall()}
     if "class_code" not in columns:
         db.execute("ALTER TABLE students ADD COLUMN class_code TEXT")
+    # The offline copy signs in with a token: its sessions are kept apart from the website's.
+    if "kind" not in {row["name"] for row in db.execute("PRAGMA table_info(sessions)").fetchall()}:
+        db.execute("ALTER TABLE sessions ADD COLUMN kind TEXT NOT NULL DEFAULT 'web'")
+    # Results sent later from the offline copy keep the time the student's device reported.
+    if "client_at" not in {row["name"] for row in db.execute("PRAGMA table_info(attempts)").fetchall()}:
+        db.execute("ALTER TABLE attempts ADD COLUMN client_at TEXT")
 
 
 def audit(db: sqlite3.Connection, actor: str, action: str, target: object = "", ip: str = "") -> None:
@@ -530,14 +538,22 @@ def is_locked(row: sqlite3.Row) -> int:
     return 0
 
 
-def start_student_session(db: sqlite3.Connection, sid: int) -> str:
+def start_student_session(db: sqlite3.Connection, sid: int, kind: str = "web") -> str:
     token = secrets.token_urlsafe(32)
-    db.execute("DELETE FROM sessions WHERE student_id = ?", (sid,))  # one browser at a time
+    db.execute("DELETE FROM sessions WHERE student_id = ? AND kind = ?", (sid, kind))  # one at a time
     db.execute(
-        "INSERT INTO sessions (token_hash, student_id, created_at, expires_at) VALUES (?, ?, ?, ?)",
-        (token_digest(token), sid, stamp(now()), stamp(now() + STUDENT_SESSION)),
+        "INSERT INTO sessions (token_hash, student_id, created_at, expires_at, kind) VALUES (?, ?, ?, ?, ?)",
+        (token_digest(token), sid, stamp(now()), stamp(now() + STUDENT_SESSION), kind),
     )
-    return cookie_header(STUDENT_COOKIE, token, int(STUDENT_SESSION.total_seconds()), "/")
+    return token
+
+
+def open_session(req: "Request", sid: int) -> tuple[dict, list[str]]:
+    """The website gets a cookie; the offline copy gets a token in the answer (no cookies cross sites)."""
+    if req.offline:
+        return {"token": start_student_session(req.db, sid, "offline")}, []
+    token = start_student_session(req.db, sid, "web")
+    return {}, [cookie_header(STUDENT_COOKIE, token, int(STUDENT_SESSION.total_seconds()), "/")]
 
 
 def record_failure(db: sqlite3.Connection, sid: int) -> None:
@@ -584,10 +600,10 @@ def register(req: "Request"):
                 (phone, national, name, class_code, hash_password(password), stamp(now())),
             ).lastrowid
             audit(req.db, f"student:{sid}", "register", sid, req.ip)
-            cookie = start_student_session(req.db, sid)
+            extra, cookies = open_session(req, sid)
     except sqlite3.IntegrityError:
         raise ApiError(409, "exists", DUPLICATE_MESSAGE)
-    return 201, {"student": student_view(get_student(req.db, sid))}, [cookie]
+    return 201, {"student": student_view(get_student(req.db, sid)), **extra}, cookies
 
 
 def login(req: "Request"):
@@ -614,9 +630,9 @@ def login(req: "Request"):
             "UPDATE students SET failed_logins = 0, locked_until = NULL, last_login_at = ? WHERE id = ?",
             (stamp(now()), row["id"]),
         )
-        cookie = start_student_session(req.db, row["id"])
-        audit(req.db, f"student:{row['id']}", "login", row["id"], req.ip)
-    return 200, {"student": student_view(get_student(req.db, row["id"]))}, [cookie]
+        extra, cookies = open_session(req, row["id"])
+        audit(req.db, f"student:{row['id']}", "login-offline" if req.offline else "login", row["id"], req.ip)
+    return 200, {"student": student_view(get_student(req.db, row["id"])), **extra}, cookies
 
 
 def complete_reset(req: "Request"):
@@ -643,17 +659,17 @@ def complete_reset(req: "Request"):
             "locked_until = NULL, last_login_at = ? WHERE id = ?",
             (hash_password(password), stamp(now()), row["id"]),
         )
-        cookie = start_student_session(req.db, row["id"])
+        extra, cookies = open_session(req, row["id"])
         audit(req.db, f"student:{row['id']}", "password-set", row["id"], req.ip)
-    return 200, {"student": student_view(get_student(req.db, row["id"]))}, [cookie]
+    return 200, {"student": student_view(get_student(req.db, row["id"])), **extra}, cookies
 
 
 def logout(req: "Request"):
-    token = req.cookie(STUDENT_COOKIE)
+    token = req.token()
     if token:
         with transaction(req.db):
             req.db.execute("DELETE FROM sessions WHERE token_hash = ?", (token_digest(token),))
-    return 200, {"ok": True}, [cookie_header(STUDENT_COOKIE, "", 0, "/")]
+    return 200, {"ok": True}, ([] if req.offline else [cookie_header(STUDENT_COOKIE, "", 0, "/")])
 
 
 def me(req: "Request"):
@@ -816,14 +832,12 @@ def admin_submissions_csv(req: "Request"):
     return 200, Raw(body, "text/csv; charset=utf-8", "submissions.csv"), []
 
 
-def student_draft(req: "Request"):
-    student = req.require_student()
-    limited(req, f"draft:{student['id']}", 1500, 3600)
-    pid = clean_problem(req.body.get("problemId"))
-    code = clean_code(req.body.get("code"))
-    hint = as_int(req.body.get("hintLevel"), 0, 20, 0)
-    typed = as_int(req.body.get("typed"), 0, 10_000_000, 0)
-    inserted = as_int(req.body.get("inserted"), 0, 10_000_000, 0)
+def record_draft(req: "Request", student: sqlite3.Row, body: dict) -> dict:
+    pid = clean_problem(body.get("problemId"))
+    code = clean_code(body.get("code"))
+    hint = as_int(body.get("hintLevel"), 0, 20, 0)
+    typed = as_int(body.get("typed"), 0, 10_000_000, 0)
+    inserted = as_int(body.get("inserted"), 0, 10_000_000, 0)
     sid = student["id"]
     with transaction(req.db):
         sync_revisions(req.db, sid)
@@ -840,26 +854,30 @@ def student_draft(req: "Request"):
         ))
         req.db.execute("UPDATE progress SET hint_level = MAX(hint_level, ?) WHERE student_id = ? AND problem_id = ?",
                        (hint, sid, pid))
-    return 200, {"saved": True}, []
+    return {"saved": True}
 
 
-def student_attempt(req: "Request"):
+def student_draft(req: "Request"):
     student = req.require_student()
+    limited(req, f"draft:{student['id']}", 1500, 3600)
+    return 200, record_draft(req, student, req.body), []
+
+
+def record_attempt(req: "Request", student: sqlite3.Row, body: dict, client_at: str | None = None) -> dict:
     sid = student["id"]
-    limited(req, f"attempt:{sid}", 300, 3600)
-    pid = clean_problem(req.body.get("problemId"))
-    code = clean_code(req.body.get("code"))
+    pid = clean_problem(body.get("problemId"))
+    code = clean_code(body.get("code"))
     meta = PROBLEM_META[pid]
-    revision = as_int(req.body.get("revision"), 1, 10_000)
+    revision = as_int(body.get("revision"), 1, 10_000)
     if revision != meta["revision"]:
         raise ApiError(409, "problem_updated", STALE_MESSAGE)
-    total = as_int(req.body.get("total"), 0, 1000)
+    total = as_int(body.get("total"), 0, 1000)
     if total != meta["total"]:
         raise ApiError(400, "total_mismatch", "تعداد آزمون‌ها با نسخه‌ی این مسئله نمی‌خواند. صفحه را دوباره باز کن.")
-    blocked = req.body.get("blocked") is True
-    passed = 0 if blocked else as_int(req.body.get("passed"), 0, total)
-    typed = as_int(req.body.get("typed"), 0, 10_000_000, 0)
-    inserted = as_int(req.body.get("inserted"), 0, 10_000_000, 0)
+    blocked = body.get("blocked") is True
+    passed = 0 if blocked else as_int(body.get("passed"), 0, total)
+    typed = as_int(body.get("typed"), 0, 10_000_000, 0)
+    inserted = as_int(body.get("inserted"), 0, 10_000_000, 0)
     solved_now = (not blocked) and total > 0 and passed == total
     with transaction(req.db):
         sync_revisions(req.db, sid)
@@ -872,9 +890,9 @@ def student_attempt(req: "Request"):
                             solved_now and not was_solved, first_seen)
         req.db.execute(
             "INSERT INTO attempts (student_id, problem_id, revision, created_at, code, passed, total, solved, "
-            "typed, inserted, flags) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)",
+            "typed, inserted, flags, client_at) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)",
             (sid, pid, meta["revision"], stamp(now()), code, passed, total, int(solved_now), typed, inserted,
-             json.dumps(flags)),
+             json.dumps(flags), client_at),
         )
         req.db.execute(UPSERT_PROGRESS, (
             sid, pid, meta["revision"], int(solved_now), stamp(now()) if solved_now else None, passed, total, 1,
@@ -885,8 +903,65 @@ def student_attempt(req: "Request"):
     scored = scored_pass(student["class_code"], pid, bool(solved), prog["solved_at"] if prog and prog["solved"] else None)
     if solved_now and not was_solved:
         scored = scored_pass(student["class_code"], pid, True, stamp(now()))
-    return 200, {"solvedNow": solved_now, "solved": bool(solved), "passed": passed, "total": total,
-                 "flags": flags, "scored": scored}, []
+    return {"problemId": pid, "solvedNow": solved_now, "solved": bool(solved), "passed": passed, "total": total,
+            "flags": flags, "scored": scored}
+
+
+def student_attempt(req: "Request"):
+    student = req.require_student()
+    limited(req, f"attempt:{student['id']}", 300, 3600)
+    return 200, record_attempt(req, student, req.body), []
+
+
+# --- the offline copy ---------------------------------------------------------------------
+# The offline copy is a page on the student's own computer. It signs in with a token, keeps its
+# results in a queue, and sends them here whenever there is internet. The deadline is decided by
+# this server's clock at the moment a result arrives: a result counts when it reaches us in time.
+
+SYNC_MAX = 100
+CLIENT_TIME = re.compile(r"^\d{4}-\d\d-\d\dT\d\d:\d\d(:\d\d(\.\d{1,6})?)?Z?$")
+
+
+def clean_client_time(value: object) -> str | None:
+    return value if isinstance(value, str) and CLIENT_TIME.match(value) else None
+
+
+def offline_state(req: "Request", student: sqlite3.Row) -> dict:
+    cls = student["class_code"]
+    with transaction(req.db):
+        sync_revisions(req.db, student["id"])
+        rows = req.db.execute("SELECT * FROM progress WHERE student_id = ?", (student["id"],)).fetchall()
+    return {
+        "student": student_view(student),
+        "classCode": cls or "",
+        "progress": {r["problem_id"]: progress_view(r, cls) for r in rows},
+        "packs": SCHEDULE.public_packs(cls, PROBLEM_META) if SCHEDULE else [],
+        "revisions": {pid: meta["revision"] for pid, meta in PROBLEM_META.items()},
+        "serverTime": stamp(now()),
+    }
+
+
+def offline_me(req: "Request"):
+    return 200, offline_state(req, req.require_student()), []
+
+
+def offline_sync(req: "Request"):
+    student = req.require_student()
+    limited(req, f"sync:{student['id']}", 60, 3600)
+    items = req.body.get("results")
+    if not isinstance(items, list) or len(items) > SYNC_MAX:
+        raise ApiError(400, "bad_results", "فهرست نتیجه‌ها معتبر نیست.")
+    outcomes = []
+    for item in items:
+        pid_text = str(item.get("problemId"))[:20] if isinstance(item, dict) else ""
+        try:
+            if not isinstance(item, dict):
+                raise ApiError(400, "bad_results", "فهرست نتیجه‌ها معتبر نیست.")
+            outcomes.append({"ok": True, **record_attempt(req, student, item, clean_client_time(item.get("clientAt")))})
+        except ApiError as err:
+            outcomes.append({"ok": False, "problemId": pid_text, "error": err.code, "message": err.message})
+    return 200, {"results": outcomes, **offline_state(req, student)}, []
+
 
 
 # --- admin --------------------------------------------------------------------------------
@@ -1107,18 +1182,26 @@ class Request:
         self.db = db
         self.ip = client_ip(handler)
         self.cookies = parse_cookies(handler.headers.get("Cookie", ""))
+        self.offline = urlsplit(handler.path).path.startswith("/api/offline/")
 
     def cookie(self, name: str) -> str | None:
         return self.cookies.get(name)
 
+    def token(self) -> str | None:
+        """The website sends a cookie; the offline copy sends 'Authorization: Bearer <token>'."""
+        if self.offline:
+            header = self.handler.headers.get("Authorization", "")
+            return header[7:].strip() or None if header[:7].lower() == "bearer " else None
+        return self.cookie(STUDENT_COOKIE)
+
     def student(self) -> sqlite3.Row | None:
-        token = self.cookie(STUDENT_COOKIE)
+        token = self.token()
         if not token:
             return None
         row = self.db.execute(
             "SELECT s.* FROM sessions se JOIN students s ON s.id = se.student_id "
-            "WHERE se.token_hash = ? AND se.expires_at > ?",
-            (token_digest(token), stamp(now())),
+            "WHERE se.token_hash = ? AND se.kind = ? AND se.expires_at > ?",
+            (token_digest(token), "offline" if self.offline else "web", stamp(now())),
         ).fetchone()
         if row is None or row["disabled"]:
             return None
@@ -1180,6 +1263,12 @@ route("GET", "/api/admin/export.csv", admin_export)
 route("GET", "/api/admin/audit", admin_audit)
 route("GET", "/api/admin/problems", admin_problems)
 route("GET", "/api/student/schedule", student_schedule)
+route("POST", "/api/offline/register", register)
+route("POST", "/api/offline/login", login)
+route("POST", "/api/offline/complete-reset", complete_reset)
+route("POST", "/api/offline/logout", logout)
+route("GET", "/api/offline/me", offline_me)
+route("POST", "/api/offline/sync", offline_sync)
 route("GET", "/api/admin/schedule", admin_schedule)
 route("GET", "/api/admin/submissions", admin_submissions)
 route("GET", "/api/admin/submissions.csv", admin_submissions_csv)
@@ -1211,8 +1300,17 @@ class Handler(SimpleHTTPRequestHandler):
         status = args[1] if len(args) > 1 else ""
         log.info("%s %s %s", self.command, urlsplit(self.path).path, status)
 
+    cors = False  # the offline routes answer pages on the student's own computer
+
     def do_GET(self):
         self.dispatch("GET")
+
+    def do_OPTIONS(self):
+        path = unquote(urlsplit(self.path).path)
+        if path.startswith("/api/offline/"):
+            self.cors = True
+            return self.send_result(204, {}, [])
+        self.send_result(405, {"error": "method_not_allowed", "message": "این درخواست مجاز نیست."}, [])
 
     def do_POST(self):
         self.dispatch("POST")
@@ -1226,6 +1324,7 @@ class Handler(SimpleHTTPRequestHandler):
     def dispatch(self, method: str) -> None:
         parts = urlsplit(self.path)
         path = unquote(parts.path)
+        self.cors = path.startswith("/api/offline/")
         if not path.startswith("/api/"):
             if method == "GET" and CONFIG["static"]:
                 return SimpleHTTPRequestHandler.do_GET(self)
@@ -1237,7 +1336,7 @@ class Handler(SimpleHTTPRequestHandler):
         try:
             if method == "POST":
                 origin = self.headers.get("Origin")
-                if origin is not None and origin not in allowed_origins():
+                if not self.cors and origin is not None and origin not in allowed_origins():
                     raise ApiError(403, "bad_origin", "این درخواست از همین سایت نیامده است.")
                 body = self.read_body()
             else:
@@ -1296,8 +1395,14 @@ class Handler(SimpleHTTPRequestHandler):
             self.send_header(name, value)
         for cookie in cookies:
             self.send_header("Set-Cookie", cookie)
+        if self.cors:
+            self.send_header("Access-Control-Allow-Origin", "*")
+            self.send_header("Access-Control-Allow-Headers", "Authorization, Content-Type")
+            self.send_header("Access-Control-Allow-Methods", "GET, POST, OPTIONS")
+            self.send_header("Access-Control-Max-Age", "600")
         self.end_headers()
-        self.wfile.write(body)
+        if status != 204:
+            self.wfile.write(body)
 
 
 def serve() -> None:

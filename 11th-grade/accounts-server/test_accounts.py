@@ -62,9 +62,10 @@ def use_problems(problems):
     ta.load_problems()
 
 
-def call(port, method, path, body=None, cookie=None, origin=None, raw=None, content_type="application/json"):
+def call(port, method, path, body=None, cookie=None, origin=None, raw=None, content_type="application/json",
+         headers=None):
     conn = http.client.HTTPConnection("127.0.0.1", port, timeout=30)
-    headers = {}
+    headers = dict(headers or {})
     if cookie:
         headers["Cookie"] = cookie
     if origin:
@@ -739,6 +740,127 @@ class ClassChangeTests(Base):
         status, _, _, _ = call(self.port, "POST", f"/api/admin/students/{sid}/class",
                                {"classCode": "202"}, cookie=cookie)
         self.assertEqual(status, 401)
+
+
+class OfflineApiTests(Base):
+    """The offline copy signs in with a token (no cookies), sends its results in batches, and gets
+    the deadlines and progress back. Its sessions are kept apart from the website's."""
+
+    def setUp(self):
+        super().setUp()
+        schedule = {"classes": {"201": {"packs": [
+            {"id": "open", "title": "باز", "until": "2099-01-01T00:00", "problems": ["p01"], "markdown": "### باز"},
+            {"id": "closed", "title": "بسته‌شده", "until": "2000-01-01T00:00", "problems": ["p02"]},
+        ]}}}
+        path = Path(TMP) / "schedule.json"
+        path.write_text(json.dumps(schedule, ensure_ascii=False), encoding="utf-8")
+        ta.CONFIG["schedule"] = path
+        ta.load_schedule()
+
+    def offline(self, method, path, body=None, token=None, origin="http://127.0.0.1:8123"):
+        headers = {"Authorization": f"Bearer {token}"} if token else {}
+        return call(self.port, method, "/api/offline/" + path, body, origin=origin, headers=headers)
+
+    def sign_up(self, phone=PHONE, national=NATIONAL, name=NAME):
+        status, body, cookies, resp = self.offline("POST", "register", {
+            "phone": phone, "nationalCode": national, "classCode": "201", "fullName": name, "password": PASSWORD})
+        self.assertEqual(status, 201, body)
+        self.assertEqual(cookies, [], "the offline copy never gets cookies")
+        return body["token"]
+
+    def result(self, pid, passed, total, **extra):
+        return {"problemId": pid, "revision": 1, "code": "print('ok')", "passed": passed, "total": total, **extra}
+
+    def test_sign_up_and_sign_in_give_a_token_from_any_origin(self):
+        token = self.sign_up()
+        self.assertGreater(len(token), 20)
+        status, body, cookies, resp = self.offline("POST", "login", {"phone": PHONE, "password": PASSWORD},
+                                                    origin="null")
+        self.assertEqual(status, 200)
+        self.assertEqual(resp.getheader("Access-Control-Allow-Origin"), "*")
+        self.assertIn("token", body)
+        self.assertNotEqual(body["token"], token, "a new sign-in replaces the old offline session")
+        self.assertEqual(self.offline("GET", "me", token=token)[0], 401)
+        self.assertEqual(self.offline("GET", "me", token=body["token"])[0], 200)
+
+    def test_preflight_is_answered_for_offline_routes_only(self):
+        conn = http.client.HTTPConnection("127.0.0.1", self.port, timeout=30)
+        conn.request("OPTIONS", "/api/offline/sync", headers={
+            "Origin": "http://127.0.0.1:8123", "Access-Control-Request-Method": "POST",
+            "Access-Control-Request-Headers": "authorization,content-type"})
+        resp = conn.getresponse(); resp.read(); conn.close()
+        self.assertEqual(resp.status, 204)
+        self.assertIn("Authorization", resp.getheader("Access-Control-Allow-Headers"))
+        self.assertEqual(call(self.port, "GET", "/api/student/me")[3].getheader("Access-Control-Allow-Origin"), None)
+        conn = http.client.HTTPConnection("127.0.0.1", self.port, timeout=30)
+        conn.request("OPTIONS", "/api/student/login"); resp = conn.getresponse(); resp.read(); conn.close()
+        self.assertEqual(resp.status, 405)
+
+    def test_tokens_and_cookies_are_not_interchangeable(self):
+        token = self.sign_up()
+        cookie = self.register(OTHER_PHONE, OTHER_NATIONAL, OTHER_NAME)
+        self.assertEqual(call(self.port, "GET", "/api/student/me", cookie=f"{ta.STUDENT_COOKIE}={token}")[0], 401)
+        self.assertEqual(call(self.port, "GET", "/api/offline/me", cookie=cookie)[0], 401)
+        self.assertEqual(self.offline("GET", "me")[0], 401, "no token, no access")
+
+    def test_a_website_sign_in_does_not_end_the_offline_session(self):
+        token = self.sign_up()
+        self.assertEqual(self.login()[0], 200)
+        self.assertEqual(self.offline("GET", "me", token=token)[0], 200)
+
+    def test_sync_records_results_and_returns_progress_deadlines_and_revisions(self):
+        token = self.sign_up()
+        status, body, _, _ = self.offline("POST", "sync", {"results": [
+            self.result("p01", 1, 2, clientAt="2026-11-16T10:00:00.000Z"),
+            self.result("p01", 2, 2, clientAt="2026-11-16T10:05:00Z"),
+            self.result("p02", 3, 3)]}, token=token)
+        self.assertEqual(status, 200, body)
+        self.assertEqual([r["ok"] for r in body["results"]], [True, True, True])
+        self.assertTrue(body["results"][1]["solvedNow"] and body["results"][1]["scored"])
+        self.assertFalse(body["results"][2]["scored"], "p02 is past its deadline: practice only")
+        self.assertTrue(body["progress"]["p01"]["solved"])
+        self.assertEqual(body["progress"]["p01"]["attempts"], 2)
+        self.assertEqual(body["revisions"], {"p01": 1, "p02": 1})
+        self.assertEqual([p["id"] for p in body["packs"]], ["closed", "open"])  # sorted by deadline
+        self.assertEqual(body["student"]["classCode"], "201")
+        row = self.db().execute("SELECT client_at FROM attempts WHERE problem_id = 'p01' ORDER BY id").fetchall()
+        self.assertEqual([r[0] for r in row], ["2026-11-16T10:00:00.000Z", "2026-11-16T10:05:00Z"])
+
+    def test_sync_is_idempotent_for_a_solved_question(self):
+        token = self.sign_up()
+        self.offline("POST", "sync", {"results": [self.result("p01", 2, 2)]}, token=token)
+        body = self.offline("POST", "sync", {"results": [self.result("p01", 2, 2)]}, token=token)[1]
+        self.assertTrue(body["results"][0]["ok"])
+        self.assertTrue(body["progress"]["p01"]["solved"])
+
+    def test_a_bad_or_old_result_is_refused_without_stopping_the_rest(self):
+        token = self.sign_up()
+        body = self.offline("POST", "sync", {"results": [
+            self.result("p01", 2, 2, revision=7),
+            self.result("p99", 1, 1),
+            "not an object",
+            self.result("p01", 1, 5),
+            self.result("p02", 3, 3)]}, token=token)[1]
+        self.assertEqual([r.get("error") for r in body["results"]],
+                         ["problem_updated", "unknown_problem", "bad_results", "total_mismatch", None])
+        self.assertTrue(body["results"][4]["ok"])
+
+    def test_sync_needs_a_list_and_a_sane_size(self):
+        token = self.sign_up()
+        self.assertEqual(self.offline("POST", "sync", {"results": "x"}, token=token)[0], 400)
+        self.assertEqual(self.offline("POST", "sync", {"results": [self.result("p01", 0, 2)] * 101}, token=token)[0], 400)
+        self.assertEqual(self.offline("POST", "sync", {"results": []}, token=token)[0], 200)
+
+    def test_logout_ends_the_token(self):
+        token = self.sign_up()
+        self.assertEqual(self.offline("POST", "logout", {}, token=token)[0], 200)
+        self.assertEqual(self.offline("GET", "me", token=token)[0], 401)
+
+    def test_an_offline_sign_in_is_in_the_audit_log(self):
+        self.sign_up()
+        self.offline("POST", "login", {"phone": PHONE, "password": PASSWORD})
+        actions = [r[0] for r in self.db().execute("SELECT action FROM audit").fetchall()]
+        self.assertIn("login-offline", actions)
 
 
 if __name__ == "__main__":
