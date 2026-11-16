@@ -1,0 +1,34 @@
+# /etc/systemd/system/teacher-accounts.service
+[Unit]
+Description=Teacher playground accounts: students, progress and the admin API (loopback only)
+After=network.target
+
+[Service]
+Type=simple
+User=teacher-accounts
+Group=teacher-accounts
+WorkingDirectory=/opt/teacher-accounts
+Environment=TA_HOST=127.0.0.1
+Environment=TA_PORT=8790
+Environment=TA_DB=/var/lib/teacher-accounts/accounts.db
+Environment=TA_PROBLEMS=/opt/teacher-accounts/data/problems.json
+Environment=TA_ORIGIN=https://teacher.arashnm80.ir
+Environment=TA_COOKIE_SECURE=1
+ExecStart=/usr/bin/python3 /opt/teacher-accounts/app.py serve
+Restart=on-failure
+RestartSec=5
+# Loopback only: nginx talks to this service and nothing else may reach it.
+IPAddressDeny=any
+IPAddressAllow=localhost
+NoNewPrivileges=yes
+UMask=0077
+PrivateTmp=yes
+ProtectSystem=strict
+ProtectHome=yes
+ProtectKernelTunables=yes
+ProtectControlGroups=yes
+RestrictSUIDSGID=yes
+ReadWritePaths=/var/lib/teacher-accounts
+
+[Install]
+WantedBy=multi-user.target
