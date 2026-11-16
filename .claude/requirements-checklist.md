@@ -18,8 +18,8 @@ Last updated: 2026-11-16 (Monday).
    - [x] Stage 1: the playground interface (every button, message, result card, sign-in window with its own language switch, the progress window, the assistant panel, the countdown, the sync marks, the update notice, the series texts with English dates, the tutorials of the 13 topics). Checked with a browser test that no Persian is left in the interface in English (18 checks), plus the earlier suites.
    - [x] Stage 2: English texts for all 100 questions (title, topic, statement, hints) and their tutorials (steps, explanations, mistakes and the code comments; the code itself is checked to be the same as the Persian one). Files: `playground-authoring/en/`. Browser check: no Persian anywhere on a problem page, hint and tutorial in English (23 checks).
    - Note for the owner: in Persian, problem 95 is titled "کف و سقف با math" but asks for the square root, and problem 96 is titled "مساحت دایره" but asks for the distance of two points. The English titles say what is asked ("Square root with math", "Distance between two points"). The Persian titles are unchanged; say if you want them fixed too (a title change does not reset progress).
-   - [ ] Stage 3: the assistant relay answers in English when the page is English (needs the relay to be redeployed).
-   - [ ] Stage 4: the teacher's panel (admin) text.
+   - [x] Stage 3 (code and tests done, relay redeploy waits for the deploy step): the assistant answers in English when the page is English (English prompts, English errors; 21 relay tests).
+   - [x] Stage 4: the teacher's panel (admin): its own language switch, every text in English and left-to-right (33 browser checks with the panel).
    - [ ] Stage 5: book sections E1 to E5 (1174 paragraphs to translate).
 
 ## Done

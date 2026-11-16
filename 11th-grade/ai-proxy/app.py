@@ -77,6 +77,50 @@ ACTIONS = {
     ),
 }
 
+SYSTEM_EN = """You are a patient Python teacher. The student has just started learning Python.
+Always answer in simple English. Write Python names and code in English inside backticks, like `input()`.
+Keep the answer short and tidy; use a short heading or a list."""
+
+ACTIONS_EN = {
+    "explain_problem": (
+        "Explain the problem to the student: 1) say what the problem asks in simple words; "
+        "2) point out the input and the output; 3) if the idea of the solution is important, give it step by step. "
+        "Do not write the complete solution code."
+    ),
+    "sample_io": (
+        "Write three different input and output samples for this problem: a simple one, a usual one and a boundary case. "
+        "The output of each sample must be exactly right for what the problem asks. If the problem is a function, write "
+        "the samples as a function call and its returned value. Do not write the solution code."
+    ),
+    "review_answer": (
+        "Check the student's code against the problem statement. If a failed test is given, say where the student's "
+        "output differs from the expected one. Say which part of the code is wrong and why, and which part is right. "
+        "Point to the line number. Give one to three hints; do not write the complete correct program."
+    ),
+}
+
+# Fixed English texts for the errors the relay gives (the Persian text is the key).
+EN_ERRORS = {
+    WARP_DOWN: "The secure connection (WARP) is not up. Try again later.",
+    "این مدل خیلی دیر پاسخ داد.": "This model answered too slowly.",
+    "پاسخ این مدل خوانده نشد.": "This model's answer could not be read.",
+    "این مدل پاسخی نداد.": "This model gave no answer.",
+    "کلید وارد شده نامعتبر است یا دسترسی ندارد.": "The key you entered is invalid or has no access.",
+    "اعتبار حساب این کلید تمام شده است.": "The credit of this key's account has run out.",
+    "این مدل الان پر است.": "This model is busy right now.",
+    "این مدل در دسترس نیست.": "This model is not available.",
+    "سرویس این مدل خطا داد.": "This model's service gave an error.",
+    "هیچ‌کدام از مدل‌های این سرویس پاسخ ندادند. بعداً دوباره امتحان کنید.": "None of this service's models answered. Try again later.",
+    "همه مدل‌های رایگان این سرویس الان پر هستند. چند دقیقه بعد دوباره امتحان کنید.": "All the free models of this service are busy right now. Try again in a few minutes.",
+    "درخواست باید JSON باشد.": "The request must be JSON.",
+    "درخواست خالی است.": "The request is empty.",
+    "درخواست خیلی بزرگ است.": "The request is too big.",
+    "اطلاعات درخواست کامل نیست.": "The request data is incomplete.",
+    "این سرویس هوش مصنوعی پشتیبانی نمی‌شود.": "This AI service is not supported.",
+    "درخواست‌ها زیاد است. چند دقیقه بعد دوباره امتحان کنید.": "There are too many requests. Try again in a few minutes.",
+    "نوع درخواست پشتیبانی نمی‌شود.": "This kind of request is not supported.",
+}
+
 logging.basicConfig(level=logging.INFO, format="%(asctime)s %(levelname)s %(message)s")
 log = logging.getLogger("teacher-ai")
 
@@ -120,13 +164,19 @@ PER_KEY = Window(CONFIG["rate"]["per_key"], CONFIG["rate"]["seconds"])
 PER_IP = Window(CONFIG["rate"]["per_ip"], CONFIG["rate"]["seconds"])
 
 
-def clip(value: object, name: str) -> str:
+def language(payload: object) -> str:
+    """"en" when the page asked for English; anything else is Persian."""
+    return "en" if isinstance(payload, dict) and payload.get("lang") == "en" else "fa"
+
+
+def clip(value: object, name: str, lang: str = "fa") -> str:
     text = "" if value is None else str(value)
     limit = LIMITS[name]
-    return text if len(text) <= limit else text[:limit] + " …(کوتاه شد)"
+    return text if len(text) <= limit else text[:limit] + (" …(cut)" if lang == "en" else " …(کوتاه شد)")
 
 
-def samples_text(samples: object) -> str:
+def samples_text(samples: object, lang: str = "fa") -> str:
+    en = lang == "en"
     rows = []
     for i, sample in enumerate(samples if isinstance(samples, list) else [], 1):
         if not isinstance(sample, dict):
@@ -134,53 +184,78 @@ def samples_text(samples: object) -> str:
         call = sample.get("call")
         if call:
             args = ", ".join(json.dumps(a, ensure_ascii=False) for a in call.get("args") or [])
-            rows.append(f"{i}) فراخوانی: f({args}) → {json.dumps(call.get('expected'), ensure_ascii=False)}")
+            rows.append(f"{i}) {'call' if en else 'فراخوانی'}: f({args}) → {json.dumps(call.get('expected'), ensure_ascii=False)}")
         else:
-            rows.append(f"{i}) ورودی: {sample.get('stdin', '')!r} | خروجی: {sample.get('stdout', '')!r}")
+            rows.append(f"{i}) {'input' if en else 'ورودی'}: {sample.get('stdin', '')!r} | "
+                        f"{'output' if en else 'خروجی'}: {sample.get('stdout', '')!r}")
         if len(rows) >= 6:
             break
-    return clip("\n".join(rows) or "(نمونه‌ای ثبت نشده است)", "samples")
+    return clip("\n".join(rows) or ("(no sample recorded)" if en else "(نمونه‌ای ثبت نشده است)"), "samples", lang)
 
 
 def build_messages(payload: dict) -> list[dict]:
     action = payload.get("action")
     if action not in ACTIONS:
         raise ValueError("unknown action")
+    lang = language(payload)
+    en = lang == "en"
     problem = payload.get("problem") or {}
     is_function = problem.get("mode") == "function"
-    lines = [
-        f"مسئله: {clip(problem.get('title'), 'title')}",
-        f"موضوع: {clip(problem.get('topic'), 'topic')}",
-        f"نوع مسئله: {'تابع' if is_function else 'ورودی و خروجی'}",
-    ]
+    c = lambda value, name: clip(value, name, lang)  # noqa: E731
+    if en:
+        lines = [
+            f"Problem: {c(problem.get('title'), 'title')}",
+            f"Topic: {c(problem.get('topic'), 'topic')}",
+            f"Kind of problem: {'function' if is_function else 'input and output'}",
+        ]
+    else:
+        lines = [
+            f"مسئله: {c(problem.get('title'), 'title')}",
+            f"موضوع: {c(problem.get('topic'), 'topic')}",
+            f"نوع مسئله: {'تابع' if is_function else 'ورودی و خروجی'}",
+        ]
     if is_function and problem.get("functionName"):
-        lines.append(f"نام تابع: {clip(problem.get('functionName'), 'topic')}")
-    lines += ["صورت مسئله:", clip(problem.get("statement"), "statement")]
+        lines.append(f"{'Function name' if en else 'نام تابع'}: {c(problem.get('functionName'), 'topic')}")
+    lines += ["Problem statement:" if en else "صورت مسئله:", c(problem.get("statement"), "statement")]
     if action == "sample_io":
-        lines += ["", "نمونه‌های رسمی همین مسئله:", samples_text(problem.get("samples"))]
+        lines += ["", "The official samples of this problem:" if en else "نمونه‌های رسمی همین مسئله:",
+                  samples_text(problem.get("samples"), lang)]
     if action == "review_answer":
-        code = clip(payload.get("code"), "code")
+        code = c(payload.get("code"), "code")
         lines += [
             "",
-            "کد دانش‌آموز:",
+            "The student's code:" if en else "کد دانش‌آموز:",
             "```python",
-            code if code.strip() else "(هنوز کدی نوشته نشده است)",
+            code if code.strip() else ("(no code has been written yet)" if en else "(هنوز کدی نوشته نشده است)"),
             "```",
         ]
         failure = payload.get("failure")
         if isinstance(failure, dict) and failure:
-            lines += [
-                "",
-                "آزمونی که رد شده:",
-                f"نوع: {clip(failure.get('kind'), 'kind')}",
-                f"شماره آزمون: {int(failure.get('index') or 0)}",
-                f"ورودی: {clip(failure.get('stdin'), 'stdin')}",
-                f"انتظار: {clip(failure.get('expected'), 'expected')}",
-                f"خروجی دانش‌آموز: {clip(failure.get('actual'), 'actual')}",
-                f"پیام خطا: {clip(failure.get('message'), 'message')}",
-            ]
+            if en:
+                lines += [
+                    "",
+                    "The test that failed:",
+                    f"Kind: {c(failure.get('kind'), 'kind')}",
+                    f"Test number: {int(failure.get('index') or 0)}",
+                    f"Input: {c(failure.get('stdin'), 'stdin')}",
+                    f"Expected: {c(failure.get('expected'), 'expected')}",
+                    f"The student's output: {c(failure.get('actual'), 'actual')}",
+                    f"Error message: {c(failure.get('message'), 'message')}",
+                ]
+            else:
+                lines += [
+                    "",
+                    "آزمونی که رد شده:",
+                    f"نوع: {c(failure.get('kind'), 'kind')}",
+                    f"شماره آزمون: {int(failure.get('index') or 0)}",
+                    f"ورودی: {c(failure.get('stdin'), 'stdin')}",
+                    f"انتظار: {c(failure.get('expected'), 'expected')}",
+                    f"خروجی دانش‌آموز: {c(failure.get('actual'), 'actual')}",
+                    f"پیام خطا: {c(failure.get('message'), 'message')}",
+                ]
+    system = (SYSTEM_EN + "\n\n" + ACTIONS_EN[action]) if en else (SYSTEM + "\n\n" + ACTIONS[action])
     return [
-        {"role": "system", "content": SYSTEM + "\n\n" + ACTIONS[action]},
+        {"role": "system", "content": system},
         {"role": "user", "content": "\n".join(lines)},
     ]
 
@@ -281,7 +356,11 @@ class Handler(BaseHTTPRequestHandler):
     def log_message(self, fmt: str, *args: object) -> None:  # no bodies, no headers
         log.info("%s %s", self.command, self.path.split("?")[0])
 
+    lang = "fa"  # set per request from the payload; errors follow it
+
     def send_json(self, status: int, data: dict) -> None:
+        if self.lang == "en" and isinstance(data.get("error"), str):
+            data = {**data, "error": EN_ERRORS.get(data["error"], data["error"])}
         body = json.dumps(data, ensure_ascii=False).encode("utf-8")
         self.send_response(status)
         self.send_header("Content-Type", "application/json; charset=utf-8")
@@ -311,12 +390,15 @@ class Handler(BaseHTTPRequestHandler):
             return self.send_json(400, {"error": "اطلاعات درخواست کامل نیست."})
         if not isinstance(payload, dict):
             return self.send_json(400, {"error": "اطلاعات درخواست کامل نیست."})
+        self.lang = language(payload)
         provider = payload.get("provider")
         if provider not in CONFIG["providers"]:
             return self.send_json(400, {"error": "این سرویس هوش مصنوعی پشتیبانی نمی‌شود."})
         cfg = CONFIG["providers"][provider]
         key = (self.headers.get("X-AI-Key") or "").strip()
         if not cfg["key_re"].match(key):
+            if self.lang == "en":
+                return self.send_json(400, {"error": f"The {cfg['label']} key is not valid. Check the key again."})
             return self.send_json(400, {"error": f"کلید {cfg['label']} معتبر نیست. کلید را دوباره بررسی کنید."})
         ip = self.headers.get("X-Real-IP") or self.client_address[0]
         key_id = hashlib.sha256(key.encode("utf-8")).hexdigest()[:16]

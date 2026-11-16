@@ -30,7 +30,8 @@ NATIONAL = national_code()
 PERSIAN = re.compile(r"[؀-ۿ]")
 # Parts that hold the student's own data or code (not texts of the site).
 CONTENT = ("#student-name, #auth-name, .CodeMirror, .lang-toggle, #results pre, #results .diff-block, #ai-answer, "
-           "#ai-dialog-body")
+           "#ai-dialog-body, .link-button, .admin-code, #detail-name, #sub-rows td:nth-child(3), #sub-rows td:nth-child(4), "
+           "#detail-progress td:first-child")
 
 def check(name, ok, detail=""):
     results.append(bool(ok))
@@ -192,6 +193,38 @@ with sync_playwright() as p:
     bad = persian_chrome(page) + attrs_persian(page)
     check("the offline copy has no Persian chrome", not bad, " | ".join(bad[:10]))
     page.screenshot(path=os.environ.get("E2E_SHOTS", "/tmp") + "/lang-en-offline.png")
+    ctx.close()
+
+    # ---- the teacher's panel -------------------------------------------------------------
+    ctx = browser.new_context(viewport={"width": 1280, "height": 900}, bypass_csp=True)
+    page = ctx.new_page()
+    page.on("pageerror", lambda e: errors.append(str(e)[:200]))
+    page.goto(BASE + "/admin/index.html", wait_until="domcontentloaded")
+    page.wait_for_selector("#login-view:not([hidden])", timeout=60000)
+    check("the panel starts in Persian", lang_state(page) == ["fa", "rtl"])
+    page.click("#lang-toggle")
+    check("the panel switches to English", lang_state(page) == ["en", "ltr"], str(lang_state(page)))
+    bad = persian_chrome(page) + attrs_persian(page)
+    check("the panel's sign-in has no Persian left", not bad, " | ".join(bad[:6]))
+    page.fill("#admin-password", "admin-e2e-pass-123")
+    page.click("#login-form button[type=submit]")
+    page.wait_for_selector("#app-view:not([hidden])", timeout=60000)
+    page.wait_for_selector("#students button.link-button", timeout=60000)
+    bad = persian_chrome(page) + attrs_persian(page)
+    check("the student list has no Persian chrome", not bad, " | ".join(bad[:8]))
+    check("the count is in English", "students" in page.inner_text("#status"), page.inner_text("#status"))
+    page.click("#students button.link-button")
+    page.wait_for_selector("#detail:not([hidden])", timeout=60000)
+    bad = persian_chrome(page)
+    check("a student's page has no Persian chrome", not bad, " | ".join(bad[:8]))
+    for tab in ("submissions", "schedule", "audit"):
+        page.click(f"#tab-{tab}")
+        page.wait_for_timeout(600)
+        bad = persian_chrome(page) + attrs_persian(page)
+        check(f"the {tab} part has no Persian chrome", not bad, " | ".join(bad[:6]))
+    page.screenshot(path=os.environ.get("E2E_SHOTS", "/tmp") + "/lang-en-admin.png")
+    page.click("#lang-toggle")
+    check("the panel goes back to Persian", lang_state(page) == ["fa", "rtl"])
     ctx.close()
 
     check("no page errors", not errors, "; ".join(errors[:3]))

@@ -191,5 +191,45 @@ class PromptTests(unittest.TestCase):
         self.assertIn("کوتاه شد", user)
 
 
+class EnglishTests(unittest.TestCase):
+    PROBLEM = {"title": "Sum", "topic": "Data types", "statement": "Read two numbers.", "mode": "stdio",
+               "samples": [{"stdin": "1\n2\n", "stdout": "3\n"}]}
+
+    def messages(self, action, **extra):
+        return app.build_messages({"action": action, "problem": self.PROBLEM, "lang": "en", **extra})
+
+    def test_the_prompt_asks_for_english(self):
+        for action in app.ACTIONS:
+            system = self.messages(action)[0]["content"]
+            self.assertIn("English", system)
+            self.assertNotRegex(system, r"[\u0600-\u06FF]")
+
+    def test_the_user_text_is_english(self):
+        user = self.messages("sample_io")[1]["content"]
+        self.assertIn("Problem statement:", user)
+        self.assertIn("The official samples", user)
+        self.assertNotRegex(user, r"[\u0600-\u06FF]")
+
+    def test_review_in_english(self):
+        user = self.messages("review_answer", code="print(1)", failure={"kind": "stdio", "index": 2, "stdin": "5",
+                                                                        "expected": "6", "actual": "51", "message": ""})[1]["content"]
+        self.assertIn("The student's code:", user)
+        self.assertIn("Test number: 2", user)
+        self.assertNotRegex(user, r"[\u0600-\u06FF]")
+        empty = self.messages("review_answer", code=" ")[1]["content"]
+        self.assertIn("no code has been written yet", empty)
+
+    def test_without_a_language_it_is_persian(self):
+        system = app.build_messages({"action": "explain_problem", "problem": self.PROBLEM})[0]["content"]
+        self.assertIn("فارسی", system)
+        self.assertEqual(app.language({"lang": "de"}), "fa")
+        self.assertEqual(app.language({"lang": "en"}), "en")
+
+    def test_every_persian_error_has_an_english_text(self):
+        for fa, en in app.EN_ERRORS.items():
+            self.assertRegex(fa, r"[\u0600-\u06FF]")
+            self.assertNotRegex(en, r"[\u0600-\u06FF]")
+
+
 if __name__ == "__main__":
     unittest.main(verbosity=1)

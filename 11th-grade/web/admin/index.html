@@ -5,50 +5,51 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="robots" content="noindex, nofollow">
   <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; connect-src 'self'; base-uri 'none'; form-action 'self'; object-src 'none'">
-  <title>پنل مدیر — زمین بازی پایتون</title>
+  <title data-fa="پنل مدیر — زمین بازی پایتون" data-en="Admin panel — Python Playground">پنل مدیر — زمین بازی پایتون</title>
   <link rel="stylesheet" href="../assets/shared.css?v=23">
-  <link rel="stylesheet" href="admin.css?v=3">
+  <link rel="stylesheet" href="admin.css?v=5">
 </head>
 <body class="admin">
   <header class="admin-top">
-    <p class="admin-brand">پنل مدیر · زمین بازی پایتون</p>
-    <button type="button" id="logout" class="btn ghost sm" hidden>خروج</button>
+    <p class="admin-brand" data-fa="پنل مدیر · زمین بازی پایتون" data-en="Admin panel · Python Playground">پنل مدیر · زمین بازی پایتون</p>
+    <button type="button" id="lang-toggle" class="lang-toggle" dir="ltr" data-lang="fa" data-fa-aria="تغییر زبان" data-en-aria="Change language" aria-label="تغییر زبان"><span data-opt="fa">فا</span><span data-opt="en">EN</span></button>
+    <button type="button" id="logout" class="btn ghost sm" hidden data-fa="خروج" data-en="Sign out">خروج</button>
   </header>
 
   <main class="admin-main">
     <section id="login-view" class="card admin-card" hidden>
-      <h1>ورود مدیر</h1>
+      <h1 data-fa="ورود مدیر" data-en="Admin sign-in">ورود مدیر</h1>
       <form id="login-form" class="admin-form" novalidate>
-        <label class="admin-field"><span>رمز مدیر</span>
+        <label class="admin-field"><span data-fa="رمز مدیر" data-en="Admin password">رمز مدیر</span>
           <input id="admin-password" type="password" autocomplete="current-password" dir="ltr" required></label>
         <p class="admin-error" id="login-error" role="alert" hidden></p>
-        <button type="submit" class="btn primary block">ورود</button>
+        <button type="submit" class="btn primary block" data-fa="ورود" data-en="Sign in">ورود</button>
       </form>
     </section>
 
     <section id="app-view" hidden>
-      <nav class="admin-tabs" aria-label="بخش‌های پنل">
-        <button type="button" id="tab-students" class="admin-tab active" data-view="students">دانش‌آموزان</button>
-        <button type="button" id="tab-submissions" class="admin-tab" data-view="submissions">ثبت‌ها</button>
-        <button type="button" id="tab-schedule" class="admin-tab" data-view="schedule">برنامه‌ی کلاس‌ها</button>
-        <button type="button" id="tab-audit" class="admin-tab" data-view="audit">گزارش کارها</button>
+      <nav class="admin-tabs" aria-label="بخش‌های پنل" data-fa-aria="بخش‌های پنل" data-en-aria="Panel sections">
+        <button type="button" id="tab-students" class="admin-tab active" data-view="students" data-fa="دانش‌آموزان" data-en="Students">دانش‌آموزان</button>
+        <button type="button" id="tab-submissions" class="admin-tab" data-view="submissions" data-fa="ثبت‌ها" data-en="Submissions">ثبت‌ها</button>
+        <button type="button" id="tab-schedule" class="admin-tab" data-view="schedule" data-fa="برنامه‌ی کلاس‌ها" data-en="Class schedules">برنامه‌ی کلاس‌ها</button>
+        <button type="button" id="tab-audit" class="admin-tab" data-view="audit" data-fa="گزارش کارها" data-en="Report of actions">گزارش کارها</button>
       </nav>
       <p class="admin-status" id="status" role="status" aria-live="polite"></p>
 
       <!-- students -->
       <div id="view-students">
         <div class="admin-toolbar">
-          <input id="search" type="search" placeholder="جستجو: نام، شماره موبایل یا کد ملی" autocomplete="off">
-          <button type="button" id="refresh" class="btn secondary sm">به‌روزرسانی</button>
-          <a id="csv" class="btn ghost sm" href="/api/admin/export.csv">خروجی CSV</a>
+          <input id="search" type="search" placeholder="جستجو: نام، شماره موبایل یا کد ملی" data-fa-placeholder="جستجو: نام، شماره موبایل یا کد ملی" data-en-placeholder="Search: name, mobile number or national code" autocomplete="off">
+          <button type="button" id="refresh" class="btn secondary sm" data-fa="به‌روزرسانی" data-en="Refresh">به‌روزرسانی</button>
+          <a id="csv" class="btn ghost sm" href="/api/admin/export.csv" data-fa="خروجی CSV" data-en="Export CSV">خروجی CSV</a>
         </div>
         <section class="card admin-card">
           <div class="table-wrap">
             <table class="admin-table">
               <thead>
                 <tr>
-                  <th>نام و نام خانوادگی</th><th>کلاس</th><th>موبایل</th><th>کد ملی</th><th>مسئله‌های قبول‌شده</th>
-                  <th>نمره (در مهلت)</th><th>تعداد ثبت‌ها</th><th>نیازمند بررسی</th><th>وضعیت</th><th>آخرین ورود</th>
+                  <th data-fa="نام و نام خانوادگی" data-en="Full name">نام و نام خانوادگی</th><th data-fa="کلاس" data-en="Class">کلاس</th><th data-fa="موبایل" data-en="Mobile">موبایل</th><th data-fa="کد ملی" data-en="National code">کد ملی</th><th data-fa="مسئله‌های قبول‌شده" data-en="Problems passed">مسئله‌های قبول‌شده</th>
+                  <th data-fa="نمره (در مهلت)" data-en="Score (on time)">نمره (در مهلت)</th><th data-fa="تعداد ثبت‌ها" data-en="Number of submissions">تعداد ثبت‌ها</th><th data-fa="نیازمند بررسی" data-en="Needs a look">نیازمند بررسی</th><th data-fa="وضعیت" data-en="Status">وضعیت</th><th data-fa="آخرین ورود" data-en="Last sign-in">آخرین ورود</th>
                 </tr>
               </thead>
               <tbody id="students"></tbody>
@@ -59,29 +60,29 @@
         <section id="detail" class="card admin-card" hidden>
           <div class="detail-head">
             <h2 id="detail-name"></h2>
-            <button type="button" id="detail-close" class="btn ghost sm">بستن</button>
+            <button type="button" id="detail-close" class="btn ghost sm" data-fa="بستن" data-en="Close">بستن</button>
           </div>
           <dl class="admin-facts" id="detail-facts"></dl>
           <div class="detail-actions">
-            <button type="button" id="detail-reset" class="btn secondary sm">بازنشانی رمز</button>
-            <button type="button" id="detail-toggle" class="btn ghost sm">غیرفعال کردن حساب</button>
+            <button type="button" id="detail-reset" class="btn secondary sm" data-fa="بازنشانی رمز" data-en="Reset password">بازنشانی رمز</button>
+            <button type="button" id="detail-toggle" class="btn ghost sm" data-fa="غیرفعال کردن حساب" data-en="Disable the account">غیرفعال کردن حساب</button>
           </div>
           <div class="detail-actions">
-            <label class="admin-field admin-inline"><span>کلاس</span>
+            <label class="admin-field admin-inline"><span data-fa="کلاس" data-en="Class">کلاس</span>
               <select id="detail-class">
-                <option value="201">۲۰۱</option>
-                <option value="202">۲۰۲</option>
+                <option value="201" data-fa="۲۰۱" data-en="201">۲۰۱</option>
+                <option value="202" data-fa="۲۰۲" data-en="202">۲۰۲</option>
               </select></label>
-            <button type="button" id="detail-class-save" class="btn secondary sm">تغییر کلاس</button>
+            <button type="button" id="detail-class-save" class="btn secondary sm" data-fa="تغییر کلاس" data-en="Change class">تغییر کلاس</button>
           </div>
-          <h3>مسئله‌ها</h3>
+          <h3 data-fa="مسئله‌ها" data-en="Problems">مسئله‌ها</h3>
           <div class="table-wrap">
             <table class="admin-table">
-              <thead><tr><th>مسئله</th><th>وضعیت</th><th>نمره</th><th>ثبت‌ها</th><th>نسخه</th><th>علامت‌ها</th><th>کد آخر</th></tr></thead>
+              <thead><tr><th data-fa="مسئله" data-en="Problem">مسئله</th><th data-fa="وضعیت" data-en="Status">وضعیت</th><th data-fa="نمره" data-en="Score">نمره</th><th data-fa="ثبت‌ها" data-en="Submissions">ثبت‌ها</th><th data-fa="نسخه" data-en="Revision">نسخه</th><th data-fa="علامت‌ها" data-en="Flags">علامت‌ها</th><th data-fa="کد آخر" data-en="Last code">کد آخر</th></tr></thead>
               <tbody id="detail-progress"></tbody>
             </table>
           </div>
-          <h3>ثبت‌های اخیر (تا ۶۰ مورد)</h3>
+          <h3 data-fa="ثبت‌های اخیر (تا ۶۰ مورد)" data-en="Recent submissions (up to 60)">ثبت‌های اخیر (تا ۶۰ مورد)</h3>
           <div id="detail-attempts"></div>
         </section>
       </div>
@@ -89,21 +90,21 @@
       <!-- submissions -->
       <div id="view-submissions" hidden>
         <div class="admin-toolbar">
-          <label class="admin-field admin-inline"><span>کلاس</span>
+          <label class="admin-field admin-inline"><span data-fa="کلاس" data-en="Class">کلاس</span>
             <select id="sub-class">
-              <option value="">همه</option>
-              <option value="201">۲۰۱</option>
-              <option value="202">۲۰۲</option>
+              <option value="" data-fa="همه" data-en="All">همه</option>
+              <option value="201" data-fa="۲۰۱" data-en="201">۲۰۱</option>
+              <option value="202" data-fa="۲۰۲" data-en="202">۲۰۲</option>
             </select></label>
-          <input id="sub-search" type="search" placeholder="جستجوی نام دانش‌آموز" autocomplete="off">
-          <button type="button" id="sub-refresh" class="btn secondary sm">به‌روزرسانی</button>
-          <a id="sub-csv" class="btn ghost sm" href="/api/admin/submissions.csv">خروجی CSV ثبت‌ها</a>
+          <input id="sub-search" type="search" placeholder="جستجوی نام دانش‌آموز" data-fa-placeholder="جستجوی نام دانش‌آموز" data-en-placeholder="Search a student's name" autocomplete="off">
+          <button type="button" id="sub-refresh" class="btn secondary sm" data-fa="به‌روزرسانی" data-en="Refresh">به‌روزرسانی</button>
+          <a id="sub-csv" class="btn ghost sm" href="/api/admin/submissions.csv" data-fa="خروجی CSV ثبت‌ها" data-en="Export submissions CSV">خروجی CSV ثبت‌ها</a>
         </div>
         <section class="card admin-card">
-          <p class="admin-status">هر بار که دانش‌آموز برنامه‌اش را اجرا می‌کند، ثبت می‌شود. درصد، همه‌ی آزمون‌ها را حساب می‌کند.</p>
+          <p class="admin-status" data-fa="هر بار که دانش‌آموز برنامه‌اش را اجرا می‌کند، ثبت می‌شود. درصد، همه‌ی آزمون‌ها را حساب می‌کند." data-en="Every time a student runs their program, it is recorded. The percentage counts all the tests.">هر بار که دانش‌آموز برنامه‌اش را اجرا می‌کند، ثبت می‌شود. درصد، همه‌ی آزمون‌ها را حساب می‌کند.</p>
           <div class="table-wrap">
             <table class="admin-table">
-              <thead><tr><th>زمان ثبت (تهران، جلالی)</th><th>کلاس</th><th>دانش‌آموز</th><th>مسئله</th><th>درصد درست</th><th>نمره</th><th>کد ارسال‌شده</th></tr></thead>
+              <thead><tr><th data-fa="زمان ثبت (تهران، جلالی)" data-en="Time (Tehran)">زمان ثبت (تهران، جلالی)</th><th data-fa="کلاس" data-en="Class">کلاس</th><th data-fa="دانش‌آموز" data-en="Student">دانش‌آموز</th><th data-fa="مسئله" data-en="Problem">مسئله</th><th data-fa="درصد درست" data-en="Percent correct">درصد درست</th><th data-fa="نمره" data-en="Score">نمره</th><th data-fa="کد ارسال‌شده" data-en="Submitted code">کد ارسال‌شده</th></tr></thead>
               <tbody id="sub-rows"></tbody>
             </table>
           </div>
@@ -113,8 +114,8 @@
       <!-- schedule -->
       <div id="view-schedule" hidden>
         <section class="card admin-card">
-          <h2>سری‌ها و مهلت‌های هر کلاس</h2>
-          <p class="admin-status">زمان‌ها به وقت تهران و تقویم جلالی‌اند. متن هر سری همان است که دانش‌آموز در پنجره‌ی «پیشرفت من» می‌بیند.</p>
+          <h2 data-fa="سری‌ها و مهلت‌های هر کلاس" data-en="The series and deadlines of each class">سری‌ها و مهلت‌های هر کلاس</h2>
+          <p class="admin-status" data-fa="زمان‌ها به وقت تهران و تقویم جلالی‌اند. متن هر سری همان است که دانش‌آموز در پنجره‌ی «پیشرفت من» می‌بیند." data-en="Times are in Tehran time. The text of each series is what the student sees in the “My progress” window.">زمان‌ها به وقت تهران و تقویم جلالی‌اند. متن هر سری همان است که دانش‌آموز در پنجره‌ی «پیشرفت من» می‌بیند.</p>
           <div id="schedule-box"></div>
         </section>
       </div>
@@ -122,10 +123,10 @@
       <!-- audit -->
       <div id="view-audit" hidden>
         <section class="card admin-card">
-          <h2>گزارش کارها</h2>
+          <h2 data-fa="گزارش کارها" data-en="Report of actions">گزارش کارها</h2>
           <div class="table-wrap">
             <table class="admin-table">
-              <thead><tr><th>زمان</th><th>کنشگر</th><th>کار</th><th>هدف</th></tr></thead>
+              <thead><tr><th data-fa="زمان" data-en="Time">زمان</th><th data-fa="کنشگر" data-en="Actor">کنشگر</th><th data-fa="کار" data-en="Action">کار</th><th data-fa="هدف" data-en="Target">هدف</th></tr></thead>
               <tbody id="audit-rows"></tbody>
             </table>
           </div>
@@ -134,6 +135,6 @@
     </section>
   </main>
 
-  <script type="module" src="admin.js?v=4"></script>
+  <script type="module" src="admin.js?v=6"></script>
 </body>
 </html>
