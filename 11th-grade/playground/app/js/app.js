@@ -2,6 +2,7 @@
 // 24h, so a fixed bootlog.js SyntaxError kept failing after the source was fixed.
 import { bidiMixHtml, codeHtml, indexLabelHtml, isolateLatin, ltrHtml, ltrIsolate, mdLite, renderMarkdown } from "./bidi.js?v=18";
 import { ONLINE, initAccountUi, ensureStudent, fetchProblems, fetchProgress, fetchGuide, fetchSchedule, noteTyping, scheduleDraft, flushDraft, sendAttempt } from "./account.js?v=2";
+import { fa, level, longText, remainingMs, setServerTime, shortText } from "./countdown.js?v=1";
 import { aiFailureChanged, aiProblemChanged, failureFromOutcome, initAi } from "./ai.js?v=3";
 import {
   charDiff,
@@ -153,7 +154,10 @@ async function init() {
   state.concepts = Object.fromEntries(concepts.map((c) => [c.id, c]));
   state.hintLevel = ONLINE ? {} : loadJson(HINT_KEY, {});
   if (ONLINE) adoptServerProgress(await fetchProgress());
-  if (ONLINE) state.schedule = await fetchSchedule();
+  if (ONLINE) {
+    state.schedule = await fetchSchedule();
+    if (state.schedule?.serverTime) setServerTime(state.schedule.serverTime);
+  }
   syncProgressWithCatalog();
   bootNote(`loaded problems=${state.problems.length} concepts=${concepts.length}`);
 
@@ -480,12 +484,13 @@ function renderList() {
         <span class="num ltr" dir="ltr">${String(p.number).padStart(2, "0")}</span>
         <span>
           <div class="title">${bidiMixHtml(p.title)}</div>
-          <div class="meta">${bidiMixHtml(p.topic)} · ${difficultyLabel(p.difficulty)}</div>
+          <div class="meta">${bidiMixHtml(p.topic)} · ${difficultyLabel(p.difficulty)} <span class="remain" data-pid="${p.id}"></span></div>
         </span>
       `;
       btn.addEventListener("click", () => selectProblem(p.id));
       el.problemList.appendChild(btn);
     });
+  updateRemaining();
 }
 
 function selectProblem(id) {
@@ -711,7 +716,7 @@ function packOf(problemId) {
   return (state.schedule?.packs || []).find((pack) => pack.questions.some((q) => q.id === problemId)) || null;
 }
 
-/** Online: the deadline of this question, or a note that it is practice only. */
+/** Online: the deadline of this question, with the time left, or a note that it is practice only. */
 function renderDeadline(problem) {
   const note = document.getElementById("problem-deadline");
   if (!note) return;
@@ -721,14 +726,55 @@ function renderDeadline(problem) {
   }
   const pack = packOf(problem.id);
   note.hidden = false;
+  note.classList.remove("ok", "soon", "urgent", "late");
   if (!pack) {
     note.textContent = "این مسئله برای کلاس شما نمره ندارد؛ برای تمرین است.";
-  } else if (Date.parse(pack.until) < Date.now()) {
+  } else if (remainingMs(pack.until) <= 0) {
+    note.classList.add("late");
     note.textContent = `مهلت نمره‌ی این مسئله گذشته است (${pack.untilText}). اکنون فقط برای تمرین است.`;
+  } else if (state.progress[problem.id]?.solved) {
+    note.textContent = `حل شده است. مهلت نمره‌ی این مسئله (${pack.title}): ${pack.untilText}`;
   } else {
-    note.textContent = `مهلت نمره‌ی این مسئله (${pack.title}): ${pack.untilText}`;
+    note.innerHTML = `مهلت نمره‌ی این مسئله (${bidiMixHtml(pack.title)}): ${bidiMixHtml(pack.untilText)} · زمان باقی‌مانده: <strong class="countdown" id="problem-countdown" dir="ltr"></strong>`;
+    tickDeadline();
   }
 }
+
+/** Once a second: the countdown of the open question. When its deadline passes, the note changes. */
+function tickDeadline() {
+  const problem = currentProblem();
+  const pack = problem && ONLINE ? packOf(problem.id) : null;
+  const out = document.getElementById("problem-countdown");
+  if (!pack || !out) return;
+  const ms = remainingMs(pack.until);
+  if (ms <= 0) return renderDeadline(problem);
+  out.textContent = longText(ms);
+  const note = document.getElementById("problem-deadline");
+  note.classList.remove("ok", "soon", "urgent", "late");
+  note.classList.add(level(ms));
+}
+
+/** The remaining time next to each question in the list (solved questions show none). */
+function updateRemaining() {
+  if (!ONLINE) return;
+  for (const chip of el.problemList.querySelectorAll(".remain")) {
+    const pack = state.progress[chip.dataset.pid]?.solved ? null : packOf(chip.dataset.pid);
+    chip.classList.remove("ok", "soon", "urgent", "late");
+    if (!pack) {
+      chip.textContent = "";
+      continue;
+    }
+    const ms = remainingMs(pack.until);
+    chip.textContent = `⏳ ${shortText(ms)}`;
+    chip.classList.add(level(ms));
+    chip.title = `${pack.title}: ${pack.untilText}`;
+  }
+}
+
+setInterval(() => {
+  tickDeadline();
+  if (Math.floor(Date.now() / 1000) % 20 === 0) updateRemaining();
+}, 1000);
 
 /** Online: the packs of the class, each with its markdown and the state of its questions. */
 function renderPacks() {

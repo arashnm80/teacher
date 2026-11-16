@@ -657,6 +657,8 @@ class ScheduleTests(Base):
         self.assertFalse(progress["p02"]["scored"])
         self.assertTrue(progress["p02"]["solved"], "the question stays open for practice")
         self.assertIn("deadlineText", progress["p01"])
+        schedule = call(self.port, "GET", "/api/student/schedule", cookie=self.cookie)[1]
+        self.assertRegex(schedule["serverTime"], r"^\d{4}-\d\d-\d\dT\d\d:\d\d:\d\dZ$", "the page counts down by the server's clock")
 
     def test_submission_log_shows_percent_class_time_and_code(self):
         self.attempt(self.cookie, "p01", 1, 2, code="print('half')")

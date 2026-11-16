@@ -769,7 +769,7 @@ def student_schedule(req: "Request"):
     student = req.require_student()
     cls = student["class_code"]
     packs = SCHEDULE.public_packs(cls, PROBLEM_META) if SCHEDULE else []
-    return 200, {"classCode": cls or "", "packs": packs}, []
+    return 200, {"classCode": cls or "", "packs": packs, "serverTime": stamp(now())}, []
 
 
 def admin_schedule(req: "Request"):

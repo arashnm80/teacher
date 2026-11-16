@@ -8,7 +8,13 @@ if [[ ! -f site/index.html ]]; then
   exit 1
 fi
 mkdir -p /var/www/teacher.arashnm80.ir
-rsync -a --delete site/ /var/www/teacher.arashnm80.ir/
+# SKIP_OFFLINE=1 publishes the site without the offline zip and its update files, for the time
+# when the new offline copy is not ready; whatever is already live stays.
+EXCLUDES=()
+if [[ "${SKIP_OFFLINE:-}" == "1" ]]; then
+  EXCLUDES=(--exclude grade11-offline.zip --exclude offline-manifest.json --exclude 'offline-files/')
+fi
+rsync -a --delete "${EXCLUDES[@]}" site/ /var/www/teacher.arashnm80.ir/
 # The accounts service keeps the questions file (with the solutions) for the server, and
 # releases each solution only to a student who has passed the question.
 if systemctl cat teacher-accounts.service >/dev/null 2>&1; then

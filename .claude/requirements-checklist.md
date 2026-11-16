@@ -6,6 +6,7 @@ Last updated: 2026-11-16 (Monday).
 
 ## Open, in priority order
 
+0. [x] **HIGH PRIORITY, top of the list: show a countdown of the remaining time for each problem. (Owner, 2026-11-16.)** Shown on the problem itself (ticking) and as a compact remaining time next to each problem in the list. It uses the server's clock, not the computer's, and also works in the offline copy from its last synced schedule. Online: done and published on 2026-11-16 (browser check 7 of 7). Offline: comes with the offline sync work (item 1).
 1. [ ] **Offline copy = online copy, with sync and self-update. (Owner, 2026-11-16.)** The offline copy must work like the online version, but with all files downloaded and usable without internet.
    - Same features as online: sign-up and sign-in, progress, series and deadlines, the assistant, the tutorials.
    - Students can sign up and sign in inside the offline copy, and their progress is sent to the teacher whenever there is internet (the same teacher panel and reports).

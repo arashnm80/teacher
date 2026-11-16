@@ -469,6 +469,15 @@ details[open] > summary { margin-bottom: 0.5rem; }
   background: var(--warn-soft); color: var(--warn); font-size: 0.9rem; line-height: 1.7;
 }
 .deadline-note[hidden] { display: none; }
+.deadline-note.urgent { background: #fde2e0; color: #9b1c1c; }
+.deadline-note.late { background: var(--paper); color: var(--muted); }
+.countdown { font-variant-numeric: tabular-nums; unicode-bidi: isolate; white-space: nowrap; }
+.remain { display: inline-block; margin-inline-start: 0.3rem; padding: 0 0.4rem; border-radius: 999px; font-size: 0.72rem;
+  background: var(--accent-soft); color: var(--deep); }
+.remain:empty { display: none; }
+.remain.soon { background: var(--warn-soft); color: var(--warn); }
+.remain.urgent { background: #fde2e0; color: #9b1c1c; font-weight: 600; }
+.remain.late { background: var(--paper); color: var(--muted); }
 .pack-list { display: grid; gap: 0.8rem; margin: 0.6rem 0; }
 .pack { padding: 0.7rem 0.85rem; border: 1px solid var(--line-soft); border-radius: var(--radius-sm); background: var(--paper); }
 .pack h3 { margin: 0 0 0.4rem; font-size: 0.98rem; color: var(--deep); }
