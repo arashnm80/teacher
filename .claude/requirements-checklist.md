@@ -12,7 +12,8 @@ Last updated: 2026-11-16 (Monday).
    - Also done (batch 5): p64, p65, p66, p67, p68, p69, p70, p91. In total 69 of 100 are done.
    - Also done (batch 6): p24, p48, p83, p84, p85, p86, p88, p97. In total 77 of 100 are done.
    - Also done (batch 7): p18, p35, p62, p63, p82, p98, p99, p100. In total 85 of 100 are done.
-   - Left: 15 questions (the list is in the commit history; they include the ten whose statement changed since the earlier version). Each needs new commented answers and a fuller explanation, and the checker must accept them.
+   - Also done (batch 8): p15, p16, p17, p38, p40, p73, p74, p75. In total 93 of 100 are done.
+   - Left: 7 questions (p19, p21, p23, p28, p41, p42, p50). Each needs new commented answers and a fuller explanation, and the checker must accept them.
 2. [ ] **Not-cheating protocol: students must not break deadlines, and must not copy or paste answers from the AI assistant or the آموزش; they write the code by hand.** (Owner, 2026-11-16.)
    - Done: copy, cut and drag are blocked on the page, and paste into the editor is blocked (guard.js, loaded by the playground). The آموزش and the assistant open from the first question. Deadlines are decided by the server's clock.
    - Left: check the protection end to end in the browser, and write down its limits for the owner (a determined student can still use developer tools or take a screenshot; the offline copy still contains every solution).
