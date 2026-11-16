@@ -1,0 +1,441 @@
+{
+ "p34": {
+  "title": "Cinema ticket price",
+  "statement": "Read a person's age (an integer) and print the ticket price **in tomans**, by this rule:\n\n- under 6 years: `0`\n- from 6 to 17 years (both included): `50000`\n- from 18 to 64 years: `90000`\n- 65 years and above: `40000`\n\nPrint only the price number.",
+  "hints": [
+   "The prices: under 6 years `0`, 6 to 17 years `50000`, 18 to 64 years `90000` and from 65 years up `40000`.",
+   "The boundaries matter: ages 6 and 17 are in the 50000 range, 18 is in the 90000 range and 65 is in the 40000 range."
+  ],
+  "guideTitle": "Ticket price — if and elif",
+  "mistakes": [],
+  "solutions": [
+   {
+    "name": "Method 1: an elif chain",
+    "steps": [
+     "We read the age.",
+     "If it is less than 6, the price is zero.",
+     "With `elif` we check the next ranges; the last case is with `else`."
+    ],
+    "explain": [
+     "In an `elif` chain each range is checked only when the earlier ranges did not match. So `age < 18` means an age from 6 to 17 (because under 6 was already separated).",
+     "Each age has only one price, because only one of the blocks runs."
+    ]
+   },
+   {
+    "name": "Method 2: change the price little by little",
+    "steps": [
+     "We set the price to `0`.",
+     "If the age is at least 6, we make the price `50000`.",
+     "If it is at least 18, we make the price `90000`; and if it is at least 65, `40000`.",
+     "At the end we print the price."
+    ],
+    "explain": [
+     "This method writes the `if`s one after another. The order matters: each later `if` that is true changes the earlier price. For the age 70 all three conditions are true, but the last change is `40000`.",
+     "Both methods give the same answer. Method 1 is good for simpler boundaries and method 2 is good for understanding how a value changes."
+    ]
+   }
+  ]
+ },
+ "p35": {
+  "title": "Triangle type from three sides",
+  "statement": "Read three positive lengths `a`, `b` and `c`, each on its own line.\n\nIf all three are equal, print `equilateral`; if exactly two are equal, print `isosceles`; otherwise print `scalene`.",
+  "hints": [
+   "First check the case of all three being equal.",
+   "Then check with `or` whether two of the sides are equal."
+  ],
+  "guideTitle": "Triangle type from three sides — nested conditions and elif",
+  "mistakes": [
+   "Checking the two-equal case before the three-equal case: an equilateral triangle has two equal sides too."
+  ],
+  "solutions": [
+   {
+    "name": "Method 1: elif with checking equality",
+    "steps": [
+     "We read the three sides.",
+     "If all three are equal, it is `equilateral`.",
+     "If two are equal, it is `isosceles`.",
+     "Otherwise `scalene`."
+    ],
+    "explain": [
+     "The order of the conditions matters: first the case of all three sides equal is checked, because every equilateral triangle satisfies the two-equal condition too. If the order is changed, the answer becomes wrong.",
+     "`or` is true when at least one of the three pairs is equal. With `elif` we separate that two-equal case."
+    ]
+   },
+   {
+    "name": "Method 2: nested conditions",
+    "steps": [
+     "If `a` and `b` are equal, we check whether `c` is equal too.",
+     "If `a` and `b` are not equal, we check which pair is equal.",
+     "If no pair was equal, `scalene`."
+    ],
+    "explain": [
+     "This method starts with a nested condition to show that one problem can be solved with two structures. The result is what the first method gives.",
+     "In the branch `if a == b`, if `c` is equal too it is equilateral; otherwise exactly two sides are equal and it is isosceles."
+    ]
+   }
+  ]
+ },
+ "p82": {
+  "title": "Name of the weekday with elif",
+  "statement": "Read a number `n`. If `n` is from 1 to 7, print the name of the day in English:\n\n- 1 ← `Saturday`\n- 2 ← `Sunday`\n- 3 ← `Monday`\n- 4 ← `Tuesday`\n- 5 ← `Wednesday`\n- 6 ← `Thursday`\n- 7 ← `Friday`\n\nFor any other number print the word `invalid`. **elif** is needed for this.",
+  "hints": [
+   "Write each case as a separate `elif`; the order of the conditions does not matter, but each number satisfies only one condition.",
+   "Put the cases outside 1 to 7 in the `else`."
+  ],
+  "guideTitle": "Name of the weekday with elif",
+  "mistakes": [
+   "Writing `if` for all the cases: all the conditions are checked and more than one print may happen."
+  ],
+  "solutions": [
+   {
+    "name": "Method 1: an elif chain with print",
+    "steps": [
+     "We read the number.",
+     "For each number from 1 to 7 we have an `elif` that prints the name of the day.",
+     "If none matched, we print `invalid`."
+    ],
+    "explain": [
+     "The `if / elif / else` chain runs the branch of the first true condition and skips the rest. Each number falls into only one branch.",
+     "Zero and numbers greater than 7 have no branch and reach `else`; so `invalid` is printed."
+    ]
+   },
+   {
+    "name": "Method 2: choosing the name in a variable and one print",
+    "steps": [
+     "We take a variable `name` for the name of the day.",
+     "With the `elif` chain we decide the value of `name`.",
+     "At the end we print `name`."
+    ],
+    "explain": [
+     "This method only decides the value of `name` in the branches and writes `print` once at the end. The structure of the program becomes simpler and each case is defined in only one place.",
+     "Each number is compared with `elif` exactly once, so the tests for zero and for numbers greater than 7 also get the name `invalid`."
+    ]
+   }
+  ]
+ },
+ "p10": {
+  "title": "Sum with for",
+  "statement": "The input is in this form:\n\n- first line: the number `n` (how many numbers follow)\n- then exactly `n` integers; each on its own line\n\nPrint the sum of those `n` numbers.\n\n**Only with `for`** (no `while`). Do not use the call `sum(...)`; calculate the sum yourself in the loop. The name of the sum variable is free.",
+  "hints": [
+   "The first input is the count of the following numbers; read it separately and in the `for` loop take that many numbers.",
+   "Set the sum variable to zero before the loop and add each number to it inside the loop; `sum` is forbidden."
+  ],
+  "guideTitle": "Sum with for — accumulating in a variable",
+  "mistakes": [],
+  "solutions": [
+   {
+    "name": "Method 1: calculate the sum at the moment of reading",
+    "steps": [
+     "We read the count `n`.",
+     "We set the variable `total` to zero.",
+     "We read a number `n` times and add each one to `total`.",
+     "At the end we print `total`."
+    ],
+    "explain": [
+     "If we write `total = total + x`, it means take the previous value, add `x` to it and put it back into `total`. We repeat this `n` times.",
+     "Starting from zero matters, because if we do not create `total`, Python does not know the empty variable and gives an error."
+    ]
+   },
+   {
+    "name": "Method 2: first put all the numbers in a list",
+    "steps": [
+     "We read the count and make an empty list.",
+     "With `append` we add the numbers to the list.",
+     "With a loop over the list we calculate the sum and print it."
+    ],
+    "explain": [
+     "In this method we have two loops: the first collects the numbers and the second calculates the sum. For a simple problem like this, method 1 is shorter.",
+     "The second method is useful when we want to use the numbers again later, for example to find the largest or the average."
+    ]
+   }
+  ]
+ },
+ "p11": {
+  "title": "Multiplication table of a number",
+  "statement": "Read the number `k` (`1 ≤ k ≤ 9`) and print its multiplication table from 1 to 10; each row exactly in this form:\n\n`k x i = result`\n\nFormat notes:\n\n- the letter `x` is a lowercase English letter (not the Persian multiplication sign)\n- there is exactly one space between the parts\n- example for `k=2` and `i=3`: `2 x 3 = 6`\n\n**Only with `for`** (no `while`).",
+  "hints": [
+   "The loop runs over `i` from 1 to 10; `range(1, 11)` gives this range.",
+   "`print` with several arguments puts a space between them; the letter `x` must be English and lowercase."
+  ],
+  "guideTitle": "Multiplication table of a number — for and formatted printing",
+  "mistakes": [],
+  "solutions": [
+   {
+    "name": "Method 1: print with several arguments",
+    "steps": [
+     "We read the number `k`.",
+     "With `for i in range(1, 11)` we give `i` the values 1 to 10.",
+     "Each time, with `print` we print the form `k x i = result`."
+    ],
+    "explain": [
+     "`range(1, 11)` gives the numbers 1 to 10. On each run of the loop, `k * i` calculates the product.",
+     "We put the letter `x` inside quotes so that the English letter `x` is printed, not the multiplication sign. `print` puts the spaces itself."
+    ]
+   },
+   {
+    "name": "Method 2: building each row with + and str",
+    "steps": [
+     "We read the number `k`.",
+     "On each run of the loop we build a complete string (with `+`).",
+     "We print the string."
+    ],
+    "explain": [
+     "`str` turns a number into text so that we can join it with `+` to other texts. If we put a number directly next to a text with `+`, Python gives an error.",
+     "The result of both methods is the same. Method 2 gives full control over the spaces, but it is longer."
+    ]
+   }
+  ]
+ },
+ "p12": {
+  "title": "Food countdown",
+  "statement": "Read a positive integer `m` (`m ≥ 1`). From `m` down to `1`, for each value `X` print this line:\n\n`Time remaining: X minutes`\n\nThen print exactly this line:\n\n`Your food is ready!`\n\nWrite the English text letter by letter as in the example. Even when `X` is 1, write the same word `minutes` (not `minute`).\n\n**Only with `for`.**",
+  "hints": [
+   "`range(m, 0, -1)` gives the numbers from `m` to `1` in decreasing order.",
+   "Even for `1` write the word `minutes`; print the text of the last line separately after the loop."
+  ],
+  "guideTitle": "Food countdown — for with a negative step",
+  "mistakes": [],
+  "solutions": [
+   {
+    "name": "Method 1: range with a negative step",
+    "steps": [
+     "We read the number `m`.",
+     "`range(m, 0, -1)` gives the numbers `m` down to `1` in descending order.",
+     "For each number we print the line `Time remaining`.",
+     "At the end we print the line `Your food is ready!`."
+    ],
+    "explain": [
+     "`range(m, 0, -1)` starts at `m`, subtracts one at a time and stops before `0`; so the last number is `1`.",
+     "Write the word `minutes` for all the numbers, even `1`, as it is asked."
+    ]
+   },
+   {
+    "name": "Method 2: counting up and calculating the remainder",
+    "steps": [
+     "`range(1, m + 1)` gives the numbers 1 to `m`.",
+     "We calculate the remainder with `m - i + 1`; when `i` is 1, the remainder is `m`.",
+     "We print the same text as before."
+    ],
+    "explain": [
+     "In this method the loop counter goes up, so we must calculate the remainder ourselves. The formula `m - i + 1` always gets us to the right number.",
+     "This method gets the mind used to calculating with a counter; the answer of both methods is the same."
+    ]
+   }
+  ]
+ },
+ "p18": {
+  "title": "Only the positive numbers",
+  "statement": "The first line is the number `n`, and then `n` integers (each on its own line) come.\n\nPrint only the **positive** numbers (greater than zero), **each on its own line**. Zero and negative numbers must not be printed.",
+  "hints": [
+   "For each number write an `if` that prints only the positive ones.",
+   "The number zero is not positive."
+  ],
+  "guideTitle": "Only the positive numbers — a loop over the input and if",
+  "mistakes": [
+   "Writing `x >= 0`: zero is printed too, when it must not be."
+  ],
+  "solutions": [
+   {
+    "name": "Method 1: for and the positive condition",
+    "steps": [
+     "We read the count of numbers `n`.",
+     "With `for` we read the next number `n` times.",
+     "If the number is greater than zero, we print it."
+    ],
+    "explain": [
+     "The first line of the input tells the count of numbers and then each number comes on its own line. So the `for` loop runs exactly `n` times and in each round we read one line.",
+     "Zero and negative numbers are rejected with the condition `x > 0`. We must read the input in that same round, not all of it before the loop."
+    ]
+   },
+   {
+    "name": "Method 2: while with a counter",
+    "steps": [
+     "We read the count of numbers and start the counter from zero.",
+     "As long as the counter is less than `n`, we read the next number.",
+     "If it is positive we print it, and we increase the counter by one."
+    ],
+    "explain": [
+     "This method does the same job with `while`. The counter `i` shows the number of numbers read, and the condition `i < n` makes the loop run exactly `n` times.",
+     "Increasing the counter at the end of the round matters; if we forget it, the loop stays true forever and the program becomes endless."
+    ]
+   }
+  ]
+ },
+ "p36": {
+  "title": "Sum of the even numbers",
+  "statement": "Read the natural number `n` (`n ≥ 1`).\n\nPrint the sum of all the **even** numbers between 1 and `n` (including `n` if it is even).\n\nExample: for `n = 10` the answer is `2 + 4 + 6 + 8 + 10 = 30`.",
+  "hints": [
+   "`range(2, n + 1, 2)` gives only the even numbers from 2 to `n`.",
+   "Start the sum from zero; if you take all the numbers, find the even ones with `%`."
+  ],
+  "guideTitle": "Sum of the evens — for with a step",
+  "mistakes": [],
+  "solutions": [
+   {
+    "name": "Method 1: range with step 2",
+    "steps": [
+     "We read the number `n` and set `total` to zero.",
+     "`range(2, n + 1, 2)` gives the numbers 2, 4, 6 ... up to `n`.",
+     "We add each one to `total`."
+    ],
+    "explain": [
+     "The third number of `range` is the step. With a step of 2 we start from 2 and take only the even numbers, so there is no need to check for evenness.",
+     "If `n` is `1`, the range `range(2, 2, 2)` is empty and the answer becomes zero, which is correct."
+    ]
+   },
+   {
+    "name": "Method 2: take all and separate the evens",
+    "steps": [
+     "We take all the numbers from 1 to `n`.",
+     "For each number we check the remainder of dividing by 2.",
+     "If it is zero, we add it to the sum."
+    ],
+    "explain": [
+     "This method looks harder, but it shows the idea of being even clearly: an even number means `% 2` is zero.",
+     "Both methods give the same answer; method 1 is faster because it does not see the odd numbers at all."
+    ]
+   }
+  ]
+ },
+ "p37": {
+  "title": "Product of the numbers",
+  "statement": "First read the count `n` (a natural number) and then `n` integers, each on its own line.\n\nPrint the product of all these numbers.\n\nExample: `2 3 4` → `24`",
+  "hints": [
+   "Start the product from `1`, because multiplying by `1` does not change the number.",
+   "If one of the numbers is `0`, the final result becomes `0`; there is no need for a special case, just multiply all of them."
+  ],
+  "guideTitle": "Product — for and accumulating in the result",
+  "mistakes": [],
+  "solutions": [
+   {
+    "name": "Method 1: do the multiplication at the moment of reading",
+    "steps": [
+     "We read the count `n`.",
+     "We set the result to `1`.",
+     "We read a number `n` times and multiply each one into the result.",
+     "We print the final result."
+    ],
+    "explain": [
+     "Starting from `1` matters: if we start from `0`, every multiplication stays zero. If we start from `1`, the first number becomes exactly that number.",
+     "`product = product * x` means multiply the previous value by `x` and put it back into `product`. This is repeated `n` times."
+    ]
+   },
+   {
+    "name": "Method 2: first put everything in a list",
+    "steps": [
+     "We save the numbers in a list.",
+     "With a `for` over the list we build the product."
+    ],
+    "explain": [
+     "This method has two steps: first collecting and then calculating. When we need to use the numbers again later, this method is more useful.",
+     "The output of both methods is the same."
+    ]
+   }
+  ]
+ },
+ "p38": {
+  "title": "Are all the numbers positive?",
+  "statement": "The first line is `n` (`n ≥ 1`), and then `n` integers (each on its own line) come.\n\nIf **all** the numbers are positive, print `all positive`, otherwise print `not all positive`.",
+  "hints": [
+   "Make a variable that is true at first; make it false when you see any non-positive number.",
+   "At the end check that same variable."
+  ],
+  "guideTitle": "Are all the numbers positive? — a flag and counting",
+  "mistakes": [
+   "Printing inside the loop: we must announce the result after all the numbers."
+  ],
+  "solutions": [
+   {
+    "name": "Method 1: a flag (a true/false variable)",
+    "steps": [
+     "We assume everything is positive; that is, we set the variable `all_pos` to `True`.",
+     "We read each number; if it is zero or negative, we make `all_pos` `False`.",
+     "At the end we print the answer based on `all_pos`."
+    ],
+    "explain": [
+     "A flag is a \"true/false\" variable that holds the state of the whole input. With one non-positive number, the flag becomes `False` forever, because nowhere do we make it `True` again.",
+     "Since we read all the numbers, the program reads the input completely and no mismatch with the input happens. This matters, because if we finished earlier, the remaining inputs would not be read."
+    ]
+   },
+   {
+    "name": "Method 2: counting the positive numbers",
+    "steps": [
+     "We set a counter for the positive numbers.",
+     "We count each positive number.",
+     "If the counter equals `n`, all are positive."
+    ],
+    "explain": [
+     "Instead of a flag, this method counts the number of positive numbers. If this count equals `n`, it means there was no non-positive number.",
+     "Both methods give the same answer; a flag is more common for questions of this kind."
+    ]
+   }
+  ]
+ },
+ "_comments": {
+  "سن را می‌خوانیم": "read the age",
+  "زیر ۶ سال رایگان است": "under 6 years it is free",
+  "از ۶ تا ۱۷ سال": "from 6 to 17 years",
+  "از ۱۸ تا ۶۴ سال": "from 18 to 64 years",
+  "۶۵ سال و بالاتر": "65 years and above",
+  "اول فرض می‌کنیم قیمت صفر است": "first we assume the price is zero",
+  "از ۶ سال به بالا قیمت ۵۰۰۰۰ است": "from 6 years up the price is 50000",
+  "از ۱۸ سال به بالا قیمت ۹۰۰۰۰ می‌شود": "from 18 years up the price becomes 90000",
+  "از ۶۵ سال به بالا قیمت ۴۰۰۰۰ می‌شود (جای قبلی را می‌گیرد)": "from 65 years up the price becomes 40000 (it replaces the previous one)",
+  "قیمت نهایی را چاپ می‌کنیم": "print the final price",
+  "خواندن سه ضلع": "read the three sides",
+  "اگر هر سه ضلع برابرند": "if all three sides are equal",
+  "اگر دقیقاً دو ضلع برابرند (حالت سه‌تایی قبلاً جدا شد)": "if exactly two sides are equal (the three-equal case was already separated)",
+  "در غیر این صورت هیچ دو ضلعی برابر نیستند": "otherwise no two sides are equal",
+  "اگر a و b برابرند": "if a and b are equal",
+  "و اگر c هم برابر آن‌ها بود، متساوی‌الاضلاع است": "and if c is equal to them too, it is equilateral",
+  "اگر a و b برابر نیستند، جفت دیگری را بررسی می‌کنیم": "if a and b are not equal, we check the other pairs",
+  "خواندن عدد روز": "read the day number",
+  "هر عدد با نام روز متناظرش": "each number with its matching day name",
+  "هر عدد دیگری معتبر نیست": "any other number is not valid",
+  "نام روز را در متغیر نگه می‌داریم": "keep the day name in a variable",
+  "چاپ نام روز یا invalid": "print the day name or invalid",
+  "تعداد عددهای بعدی را می‌خوانیم": "read the count of the following numbers",
+  "n بار عدد می‌خوانیم و به مجموع اضافه می‌کنیم": "read a number n times and add it to the sum",
+  "مجموع نهایی را چاپ می‌کنیم": "print the final sum",
+  "تعداد عددها را می‌خوانیم": "read the count of numbers",
+  "لیست خالی می‌سازیم": "make an empty list",
+  "همه‌ی عددها را یکی‌یکی در لیست می‌ریزیم": "put all the numbers into the list one by one",
+  "روی لیست می‌چرخیم و هر عدد را جمع می‌کنیم": "loop over the list and add each number",
+  "عدد k را می‌خوانیم": "read the number k",
+  "i از ۱ تا ۱۰ تغییر می‌کند": "i changes from 1 to 10",
+  "print قطعات را با یک فاصله کنار هم می‌گذارد": "print puts the pieces side by side with one space",
+  "برای i از ۱ تا ۱۰ یک سطر کامل می‌سازیم": "for i from 1 to 10 we build one complete row",
+  "عددها را با str به متن تبدیل و با + به هم می‌چسبانیم": "turn the numbers into text with str and join them with +",
+  "سطر ساخته‌شده را چاپ می‌کنیم": "print the row we built",
+  "مدت زمان اولیه را می‌خوانیم": "read the starting time",
+  "از m تا 1 با گام -1 می‌شماریم": "count from m to 1 with a step of -1",
+  "متن ثابت همراه با عدد باقی‌مانده": "the fixed text with the remaining number",
+  "بعد از شمارش معکوس، پیام پایانی را چاپ می‌کنیم": "after the countdown, we print the final message",
+  "i از ۱ تا m تغییر می‌کند": "i changes from 1 to m",
+  "باقی‌مانده را حساب می‌کنیم: اول i=1 است و باقی‌مانده m است": "calculate the remainder: at first i=1 and the remainder is m",
+  "پیام پایانی": "the final message",
+  "n بار یک عدد می‌خوانیم": "read a number n times",
+  "خواندن عدد فعلی": "read the current number",
+  "فقط عددهای مثبت چاپ می‌شوند": "only the positive numbers are printed",
+  "شمارنده‌ی عددهای خوانده‌شده": "the counter of the numbers read",
+  "تا وقتی همه‌ی عددها خوانده نشده‌اند": "as long as not all the numbers have been read",
+  "عدد n را می‌خوانیم": "read the number n",
+  "از 2 شروع و با گام 2 بالا می‌رویم: فقط عددهای زوج": "start from 2 and go up with a step of 2: only the even numbers",
+  "مجموع زوج‌ها را چاپ می‌کنیم": "print the sum of the evens",
+  "مجموع زوج‌ها را از صفر شروع می‌کنیم": "start the sum of the evens from zero",
+  "همه‌ی عددهای ۱ تا n را یکی‌یکی بررسی می‌کنیم": "check all the numbers from 1 to n one by one",
+  "اگر باقی‌مانده‌ی تقسیم بر ۲ صفر است، عدد زوج است": "if the remainder of dividing by 2 is zero, the number is even",
+  "حاصل ضرب را از ۱ شروع می‌کنیم": "start the product from 1",
+  "n بار عدد می‌خوانیم و در حاصل ضرب می‌کنیم": "read a number n times and multiply it into the product",
+  "حاصل ضرب نهایی را چاپ می‌کنیم": "print the final product",
+  "همه‌ی عددها را در لیست می‌ریزیم": "put all the numbers into the list",
+  "حاصل ضرب را از ۱ شروع می‌کنیم و روی لیست ضرب می‌کنیم": "start the product from 1 and multiply over the list",
+  "فرض اولیه: همه مثبت‌اند": "the first assumption: all are positive",
+  "همه‌ی n عدد را می‌خوانیم": "read all n numbers",
+  "اگر یک عدد مثبت نبود، پرچم را پایین می‌آوریم": "if a number was not positive, we lower the flag",
+  "چاپ جواب بر اساس پرچم": "print the answer based on the flag",
+  "شمارنده‌ی عددهای مثبت": "the counter of the positive numbers",
+  "هر عدد مثبت را می‌شماریم": "we count each positive number",
+  "اگر همه‌ی عددها مثبت بودند، شمارنده برابر n است": "if all the numbers were positive, the counter equals n"
+ }
+}

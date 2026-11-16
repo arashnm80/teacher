@@ -53,21 +53,95 @@ def renumber_solutions(solutions: list[dict]) -> list[dict]:
     return out
 
 
-def make_guide(spec: dict) -> str:
+def make_guide(spec: dict, lang: str = "fa") -> str:
     parts: list[str] = []
+    english = lang == "en"
     if spec.get("intro"):
         parts.append(spec["intro"])
     for sol in spec["solutions"]:
         parts.append(f"**{sol['name']}**")
-        steps = [f"- **قدم {str(i).translate(FA)}:** {s}" for i, s in enumerate(sol["steps"], 1)]
+        steps = [(f"- **Step {i}:** {s}" if english else f"- **قدم {str(i).translate(FA)}:** {s}")
+                 for i, s in enumerate(sol["steps"], 1)]
         parts.append("\n".join(steps))
         parts.append("```\n" + sol["code"].rstrip("\n") + "\n```")
         parts.extend(sol["explain"])
     if spec.get("mistakes"):
-        parts.append("**اشتباه‌های رایج:**")
+        parts.append("**Common mistakes:**" if english else "**اشتباه‌های رایج:**")
         parts.append("\n".join("- " + m for m in spec["mistakes"]))
     parts.extend(spec.get("notes", []))
     return "\n\n".join(parts) + "\n"
+
+
+EN_DIR = HERE / "en"
+# Questions whose answer is itself a Persian word: the English text must show that word.
+ENGLISH_KEEPS_PERSIAN = {"p64"}
+PERSIAN = __import__("re").compile(r"[\u0600-\u06FF]")
+
+
+def load_english() -> tuple[dict, dict, dict]:
+    """English texts: topics, per-question items (en/chunk-*.json) and the code comments (key `_comments`)."""
+    topics = json.loads((EN_DIR / "topics.json").read_text(encoding="utf-8")) if (EN_DIR / "topics.json").exists() else {}
+    items: dict[str, dict] = {}
+    comments: dict[str, str] = {}
+    for path in sorted(EN_DIR.glob("chunk-*.json")):
+        data = json.loads(path.read_text(encoding="utf-8"))
+        comments.update(data.pop("_comments", {}))
+        clash = set(items) & set(data)
+        if clash:
+            raise SystemExit(f"{path.name}: translated twice: {sorted(clash)}")
+        items.update(data)
+    return topics, items, comments
+
+
+def english_code(code: str, comments: dict, pid: str) -> str:
+    """The same code with the Persian comments in English (nothing else changes)."""
+    out = []
+    for line in code.split("\n"):
+        if PERSIAN.search(line) and "#" in line:
+            head, text = line.split("#", 1)
+            key = text.strip()
+            if key not in comments:
+                raise SystemExit(f"{pid}: comment not translated: {key}")
+            line = f"{head}# {comments[key]}"
+        out.append(line)
+    return "\n".join(out)
+
+
+def attach_english(problems: dict) -> list[str]:
+    """Adds `en` (public: title, topic, statement, hints) and `guideEn` (kept back with the tutorial) to each
+    translated question. Returns the ids still without English."""
+    topics, items, comments = load_english()
+    missing = []
+    for pid, problem in problems.items():
+        item = items.get(pid)
+        if not item:
+            missing.append(pid)
+            continue
+        problem["en"] = {"title": item["title"], "topic": topics[problem["topic"]],
+                         "statement": item["statement"], "hints": item["hints"]}
+        solutions = []
+        if len(item["solutions"]) != len(problem["solutions"]):
+            raise SystemExit(f"{pid}: {len(item['solutions'])} English solutions for {len(problem['solutions'])}")
+        for sol, en in zip(problem["solutions"], item["solutions"]):
+            if len(en["steps"]) != len(sol["steps"]) or len(en["explain"]) != len(sol["explain"]):
+                raise SystemExit(f"{pid}: the English steps or explanation count differs")
+            solutions.append({"name": en["name"], "steps": en["steps"], "explain": en["explain"],
+                              "code": english_code(sol["code"], comments, pid)})
+        if len(item["hints"]) != len(problem["hints"]):
+            raise SystemExit(f"{pid}: the English hint count differs")
+        mistakes = item.get("mistakes", [])
+        if len(mistakes) != len(problem.get("mistakes", [])):
+            raise SystemExit(f"{pid}: the English mistakes count differs")
+        with_mistakes = "اشتباه‌های رایج" in problem["guide"]
+        guide = make_guide({"solutions": solutions, "mistakes": mistakes if with_mistakes else None}, "en")
+        problem["guideEn"] = {"guide": guide, "guideTitle": item["guideTitle"], "solutions": solutions,
+                              "mistakes": mistakes}
+        for label, text in [("title", item["title"]), ("statement", item["statement"]), ("guide", guide),
+                            ("guideTitle", item["guideTitle"]), *[("hint", h) for h in item["hints"]],
+                            *[("mistake", m) for m in mistakes]]:
+            if PERSIAN.search(text) and pid not in ENGLISH_KEEPS_PERSIAN:
+                raise SystemExit(f"{pid}: Persian left in the English {label}: {PERSIAN.search(text).group(0)}...")
+    return missing
 
 
 def first_sample(problem: dict, mode: str) -> list:
@@ -242,6 +316,7 @@ def main() -> int:
     for concept in concepts:
         if concept["id"] in english:
             concept["en"] = english[concept["id"]]
+    untranslated = attach_english(problems)
     ordered = [problems[k] for k in sorted(problems, key=lambda k: problems[k]["number"])]
     OUT.write_text(json.dumps(ordered, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
     CONCEPTS_OUT.write_text(json.dumps(concepts, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
@@ -249,6 +324,7 @@ def main() -> int:
     for note in revision_notes:
         print("revision:", note)
     print(f"wrote {len(ordered)} problems, {len(concepts)} concepts; legacy guides left: {legacy or 'none'}")
+    print(f"English: {len(problems) - len(untranslated)} of {len(problems)} questions translated")
     return 0
 
 

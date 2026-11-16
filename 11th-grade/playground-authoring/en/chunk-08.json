@@ -1,0 +1,445 @@
+{
+ "p40": {
+  "title": "The first negative number",
+  "statement": "The first line is `n` (`n ≥ 1`) and then `n` integers (each on its own line) come.\n\nPrint the **first negative number**. If there was no negative number, print the word `none`.",
+  "hints": [
+   "When a negative number is found, save it and leave the loop with `break`.",
+   "If the loop finished and nothing was found, print `none`."
+  ],
+  "guideTitle": "The first negative number — a flag and going over",
+  "mistakes": [
+   "Continuing the loop after finding it: the last negative number is printed, not the first."
+  ],
+  "solutions": [
+   {
+    "name": "Method 1: going over with a flag",
+    "steps": [
+     "We read the count of numbers.",
+     "We set a flag `found` for a negative number being found and a variable `first` to keep it.",
+     "If a negative number is found and nothing was found before, we save it.",
+     "At the end, if one was found we print it, otherwise `none`."
+    ],
+    "explain": [
+     "With the flag `found` we mark whether the first negative number has already been found. After it is found, the later numbers must not change `first` any more; the condition `not found` does exactly this.",
+     "If there is no negative number, the flag stays `False` and the output is `none`, which is what the problem statement asked for."
+    ]
+   },
+   {
+    "name": "Method 2: reading into a list and searching with while",
+    "steps": [
+     "We put all the numbers in the list `nums`.",
+     "With a `while` loop and an index we find the first negative number.",
+     "If it was found we print it; otherwise `none`."
+    ],
+    "explain": [
+     "By setting `i = n` we end the search, because the condition `i < n` is no longer true. This takes the place of `break`; the first negative number is the one we want.",
+     "Since `answer` starts from `none`, if no negative number is found, that same `none` is printed."
+    ]
+   }
+  ]
+ },
+ "p72": {
+  "title": "First multiple with break",
+  "statement": "Read a natural number `n` (`1 ≤ n ≤ 100`).\n\nSearch from **1 to 100** and print the **first** number that is divisible by `n`, then end the loop with **break**. (No other number must be printed.)",
+  "hints": [
+   "A number is divisible by `n` if `i % n` is zero.",
+   "After printing the first answer, `break` ends the loop."
+  ],
+  "guideTitle": "First multiple with break",
+  "mistakes": [
+   "Having no `break`: all the multiples are printed, not only the first."
+  ],
+  "solutions": [
+   {
+    "name": "Method 1: print and break",
+    "steps": [
+     "We read the number `n`.",
+     "We search from 1 to 100 and if `i` is divisible by `n`, we print it and end the loop with `break`."
+    ],
+    "explain": [
+     "`i % n == 0` means the remainder of the division is zero and the number is divisible. `break` makes the first answer the last print."
+    ]
+   },
+   {
+    "name": "Method 2: saving the answer and printing after the loop",
+    "steps": [
+     "We start the answer from zero.",
+     "With `break` we reach the first multiple and save the answer.",
+     "After the loop, we print the answer."
+    ],
+    "explain": [
+     "This method keeps the answer and prints it after the loop. The result is the same, but the program becomes a little longer."
+    ]
+   }
+  ]
+ },
+ "p73": {
+  "title": "Counting with continue",
+  "statement": "Count the numbers **1 to 10** and print each one **on its own line**, **except** the numbers that are divisible by **3**.\n\nSkip printing them with **continue**. The output: 1, 2, 4, 5, 7, 8, 10.\n\nThis problem has no input.",
+  "hints": [
+   "If `i % 3` is zero, that number is divisible by 3.",
+   "With `continue` we go to the next repeat and the printing is not done."
+  ],
+  "guideTitle": "Counting with continue — skipping the multiples of three",
+  "mistakes": [
+   "Putting `continue` after `print`: the number was already printed before the skip."
+  ],
+  "solutions": [
+   {
+    "name": "Method 1: for with continue",
+    "steps": [
+     "We run the `for` loop from 1 to 10.",
+     "If the number is divisible by 3, we skip printing it with `continue`.",
+     "Otherwise we print the number."
+    ],
+    "explain": [
+     "`continue` ignores the rest of the loop body for that round and goes to the next round. For numbers divisible by 3, `print` does not run.",
+     "The numbers 3, 6 and 9 are skipped and the rest are printed; the output is 1, 2, 4, 5, 7, 8 and 10."
+    ]
+   },
+   {
+    "name": "Method 2: for with a positive condition",
+    "steps": [
+     "We run the `for` loop from 1 to 10.",
+     "If the number is not divisible by 3, we print it.",
+     "We put the `continue` somewhere else with an `if` so that it gives the same result."
+    ],
+    "explain": [
+     "This method writes the same structure with more separation. The problem statement wants `continue`, so we must have it in both methods.",
+     "By checking divisibility at the top of the loop, it is clear that every number divisible by 3 is not printed any more."
+    ]
+   }
+  ]
+ },
+ "p13": {
+  "title": "Counting with while",
+  "statement": "Read a natural number `n` (`n ≥ 1`) and print the numbers `1` to `n`; **each number on one line**.\n\n**You must use `while` and must not use `for`.**",
+  "hints": [
+   "Start a counter from 1 and print as long as it is less than or equal to `n`.",
+   "Increase the counter by one at the end of each round, otherwise the loop becomes endless; `for` is forbidden."
+  ],
+  "guideTitle": "Counting with while — we move the counter forward ourselves",
+  "mistakes": [],
+  "solutions": [
+   {
+    "name": "Method 1: the counter starts from 1",
+    "steps": [
+     "We read the number `n`.",
+     "We set the counter `i` equal to 1.",
+     "As long as `i` has not gone above `n`, we print `i` and increase `i` by one."
+    ],
+    "explain": [
+     "`while` repeats as long as the condition is true. The condition `i <= n` says until the number `n` is printed.",
+     "The line `i = i + 1` is very important. If we forget it, `i` stays 1 forever and the program prints endlessly."
+    ]
+   },
+   {
+    "name": "Method 2: the counter starts from 0",
+    "steps": [
+     "We set the counter `i` equal to zero.",
+     "As long as `i` is less than `n`, we first increase `i` by one and then print it."
+    ],
+    "explain": [
+     "Here the order of the two lines matters: first `i` is increased, then it is printed. If we change the order, the first output becomes `0`.",
+     "The condition `i < n` is different from `i <= n` in method 1, but both reach the output 1 to n."
+    ]
+   }
+  ]
+ },
+ "p14": {
+  "title": "Sum until zero",
+  "statement": "Read integers **one by one** from the input (one number per line) until the number `0` comes.\n\nPrint the sum of all the numbers **before the zero**. The `0` itself is not part of the sum.\n\nIf `0` came right at the start, the output is `0`.\n\n**Only with `while`** (no `for`). Do not use the call `sum(...)`.",
+  "hints": [
+   "The number `0` is not part of the sum; after reading each number, first check whether it is zero and then add.",
+   "Run the loop with `while` as long as the number read is not zero; if the first number is zero, the output is zero."
+  ],
+  "guideTitle": "Sum until zero — while and leaving with break",
+  "mistakes": [],
+  "solutions": [
+   {
+    "name": "Method 1: while True and break",
+    "steps": [
+     "We start the sum from zero.",
+     "In an endless loop we read a number.",
+     "If the number is zero, `break` ends the loop.",
+     "Otherwise we add the number to the sum."
+    ],
+    "explain": [
+     "`while True` means the loop continues as long as there is no `break`. `break` runs only when the number zero has come.",
+     "If the first number is zero, `break` runs right at the start and the sum zero is printed; this special case works correctly too."
+    ]
+   },
+   {
+    "name": "Method 2: reading the first number ahead",
+    "steps": [
+     "We set the sum to zero and read the first number.",
+     "As long as the number has not become zero, we add it to the sum and read the next number.",
+     "At the end we print the sum."
+    ],
+    "explain": [
+     "This method has no `break`. The condition of the loop is exactly what we want: continue as long as zero has not come. Pay good attention to these two methods; both are correct.",
+     "Important point: the line that reads the next number is inside the loop, otherwise the loop never sees a new number."
+    ]
+   }
+  ]
+ },
+ "p15": {
+  "title": "Number of digits of a number",
+  "statement": "Read a non-negative integer `n` and print its **number of digits**. For `0` the answer is `1`.\n\nWork with **while**. Hint: each time divide `n` by 10 with `//` until it becomes less than 10; each division removes one digit. Do not use `str`.",
+  "hints": [
+   "Start the counter from 1.",
+   "As long as `m` is greater than or equal to 10, do `m = m // 10` and increase the counter by one."
+  ],
+  "guideTitle": "Number of digits of a number — dividing by 10 with while",
+  "mistakes": [
+   "Working on the original `n`: it is better to make a copy of it."
+  ],
+  "solutions": [
+   {
+    "name": "Method 1: successive division by 10",
+    "steps": [
+     "If the number is zero, the answer is 1.",
+     "Otherwise we divide the number by 10 with `//` and one digit is counted.",
+     "As long as the number has not become zero, we repeat this."
+    ],
+    "explain": [
+     "Integer division by 10 (with `//`) removes the last digit; for example 123 // 10 = 12. Each time we do this, one digit is counted until the number becomes zero.",
+     "The number zero has a separate case, because the loop `while n > 0` does not run for zero and the answer must be 1."
+    ]
+   },
+   {
+    "name": "Method 2: comparing with powers of ten",
+    "steps": [
+     "We start the digit counter from 1.",
+     "We start the variable `limit` from 10 and, as long as the number is greater than or equal to it, we increase the digit count.",
+     "In each round we multiply `limit` by ten."
+    ],
+    "explain": [
+     "A number with `k` digits is not less than 10^(k-1) and is less than 10^k. Instead of removing digits, this method counts the digits with these boundaries.",
+     "For 0 and 7 the condition `n >= 10` is false, so `digits` stays 1; the zero case is automatically correct."
+    ]
+   }
+  ]
+ },
+ "p16": {
+  "title": "Counting the guesses until correct",
+  "statement": "The first line is the secret number `secret`. After it the guesses come, each on its own line.\n\nRead the guesses until a guess equals the secret number. Then print the **number of guesses** (including the correct guess).\n\nUse **while**.",
+  "hints": [
+   "Keep a counter for the number of guesses.",
+   "With `while True` and `break` end the loop after seeing the correct guess."
+  ],
+  "guideTitle": "Counting the guesses until correct — while",
+  "mistakes": [
+   "Not counting the correct guess: the answer becomes one less than the real one."
+  ],
+  "solutions": [
+   {
+    "name": "Method 1: the first guess outside the loop",
+    "steps": [
+     "We read the secret number.",
+     "We read the first guess and set the counter to one.",
+     "As long as the guess has not become equal to the secret number, we read the next guess and increase the counter."
+    ],
+    "explain": [
+     "Since the first guess is always read, the counter starts from one. In the loop each new guess is read and counted, and the correct guess is counted too because we counted it before the condition.",
+     "The condition `guess != secret` is true as long as the guess has not become equal to the secret number. When the correct guess is reached, the loop ends."
+    ]
+   },
+   {
+    "name": "Method 2: an end flag",
+    "steps": [
+     "We set the counter to zero and the flag `done` to `False`.",
+     "As long as `done` is false, we read a guess and increase the counter.",
+     "If the guess equals the secret number, we make `done` `True`."
+    ],
+    "explain": [
+     "This method marks the end with the flag `done`. We first count each guess and then check whether it is correct, so the correct guess is in the count too.",
+     "The result is the same as the first method; the difference is that the loop condition is based on a flag and not on the comparison of the guess."
+    ]
+   }
+  ]
+ },
+ "p74": {
+  "title": "Counting words until stop",
+  "statement": "Read words **one by one** (each word on its own line) until the line **stop** comes.\n\nEnd the loop with **while** and **break** and print the number of words you read before `stop`. `stop` itself is not counted.",
+  "hints": [
+   "`while True` is an endless loop; we leave it with `break`.",
+   "Each time read the new word; if it is `stop`, `break`, otherwise increase the counter."
+  ],
+  "guideTitle": "Counting words until stop — while and break",
+  "mistakes": [
+   "Counting `stop` too: the answer becomes one more."
+  ],
+  "solutions": [
+   {
+    "name": "Method 1: an endless loop with break",
+    "steps": [
+     "We set the counter to zero.",
+     "In a `while True` loop we read the next word.",
+     "If the word is `stop`, we end the loop with `break`; otherwise we increase the counter."
+    ],
+    "explain": [
+     "`while True` is a loop that continues until `break` runs. This pattern is suitable when the end condition is inside the body.",
+     "The word `stop` is not counted, because `break` runs before the counter is increased."
+    ]
+   },
+   {
+    "name": "Method 2: reading at the start of the loop with a check",
+    "steps": [
+     "We set the counter to zero.",
+     "In `while True` we first read the word; if it is `stop`, we `break`.",
+     "After that we increase the counter, and we print it at the end."
+    ],
+    "explain": [
+     "This method does the same job more tidily: the word is read, if it is the end the loop ends, and otherwise it is counted.",
+     "`stop` is never counted, and if the first word is `stop` the answer is zero, as the test asked."
+    ]
+   }
+  ]
+ },
+ "p75": {
+  "title": "Only the even numbers with continue in while",
+  "statement": "With a **while** loop count the numbers **1 to 14** and print only the **even ones**, **each on its own line**.\n\nUse **continue** for the odd numbers. The output: 2, 4, 6, 8, 10, 12, 14.\n\nThis problem has no input.",
+  "hints": [
+   "Increase the counter **before** checking for evenness; otherwise the loop becomes endless.",
+   "Recognise an odd number with `i % 2 == 1`."
+  ],
+  "guideTitle": "Only the even numbers with continue in while",
+  "mistakes": [
+   "Running `continue` before increasing the counter: the loop sees the same number again and never ends."
+  ],
+  "solutions": [
+   {
+    "name": "Method 1: a counter and continue",
+    "steps": [
+     "We start the counter from zero.",
+     "As long as the counter is less than 14, we move one step forward.",
+     "If the number is odd, we skip it with `continue`; otherwise we print it."
+    ],
+    "explain": [
+     "We increase the counter before checking for evenness, so the number 14 is checked too. If we put this after `continue`, the loop would become endless.",
+     "`continue` runs for the odd numbers and skips `print`; the output is only the evens from 2 to 14."
+    ]
+   },
+   {
+    "name": "Method 2: an odd counter and increasing in each case",
+    "steps": [
+     "We start the counter from one.",
+     "If the number is odd, we move it two steps forward and go to the next round with `continue`.",
+     "Otherwise we print the even number and move one step forward."
+    ],
+    "explain": [
+     "This method moves the counter forward before `continue` so that the loop does not become endless. This is an important point: wherever we have `continue`, we must guarantee the progress of the loop before it.",
+     "The result is the same as the first method and the output becomes 2, 4 … 14."
+    ]
+   }
+  ]
+ },
+ "p17": {
+  "title": "Reverse of a list, each number on its own line",
+  "statement": "The first line is the number `n` (`n ≥ 1`). Then `n` integers come, each on its own line.\n\nPrint the same numbers **from the last to the first**; each number on its own line.",
+  "hints": [
+   "Save the numbers in a list.",
+   "With `range(n - 1, -1, -1)` go from the end of the list to the start."
+  ],
+  "guideTitle": "Reverse of a list, each number on a line — counting the index backwards",
+  "mistakes": [
+   "Starting the index from `n` instead of `n - 1`: it gives an index error."
+  ],
+  "solutions": [
+   {
+    "name": "Method 1: reading into a list and printing from the end",
+    "steps": [
+     "We read the count of numbers.",
+     "We put all the numbers into a list.",
+     "With `for`, from the last index to the first index, we print each number."
+    ],
+    "explain": [
+     "We save the numbers first, because to print from the end we must have all of them. The last index is `n - 1` and the first is zero.",
+     "`range(n - 1, -1, -1)` starts from n-1 and goes down to zero with a negative step. The end is `-1` so that zero is printed too."
+    ]
+   },
+   {
+    "name": "Method 2: a while loop with a descending index",
+    "steps": [
+     "We put the numbers into the list.",
+     "We start the index from n-1.",
+     "As long as the index is non-negative, we print the number at that place and decrease the index."
+    ],
+    "explain": [
+     "This method does the same reverse reading with `while`. The condition `i >= 0` continues to the first member and the index decreases by one in each round.",
+     "Both methods have the same output; `for` with a reverse range is shorter."
+    ]
+   }
+  ]
+ },
+ "_comments": {
+  "پرچم پیدا شدن و نگه‌داری اولین عدد منفی": "a flag for being found and keeping the first negative number",
+  "همه‌ی عددها را به ترتیب می‌خوانیم": "we read all the numbers in order",
+  "اگر منفی بود و هنوز چیزی پیدا نکرده‌ایم، آن را ذخیره می‌کنیم": "if it is negative and we have not found anything yet, we save it",
+  "چاپ جواب": "print the answer",
+  "خواندن همه‌ی عددها در یک فهرست": "read all the numbers into a list",
+  "جست‌وجوی اولین عدد منفی با اندیس": "search for the first negative number with an index",
+  "اولین عدد منفی را پیدا کردیم": "we found the first negative number",
+  "با یافتن آن، ادامه‌ی جست‌وجو لازم نیست": "once it is found, there is no need to continue searching",
+  "از ۱ تا ۱۰۰ می‌گردیم": "we search from 1 to 100",
+  "اگر i بر n بخش‌پذیر بود": "if i was divisible by n",
+  "آن را چاپ می‌کنیم": "print it",
+  "و حلقه را همان‌جا تمام می‌کنیم": "and end the loop right there",
+  "جواب را از صفر شروع می‌کنیم": "start the answer from zero",
+  "جواب را ذخیره می‌کنیم و حلقه را تمام می‌کنیم": "save the answer and end the loop",
+  "جواب را چاپ می‌کنیم": "print the answer",
+  "عددهای ۱ تا ۱۰": "the numbers 1 to 10",
+  "اگر بر ۳ بخش‌پذیر بود، این دور را رد می‌کنیم": "if it is divisible by 3, we skip this round",
+  "در غیر این صورت عدد را چاپ می‌کنیم": "otherwise we print the number",
+  "ابتدا بررسی می‌کنیم آیا بخش‌پذیر بر ۳ است": "first we check whether it is divisible by 3",
+  "بخش‌پذیر است: از چاپ آن می‌گذریم": "it is divisible: we skip printing it",
+  "بخش‌پذیر نیست: چاپ می‌کنیم": "it is not divisible: we print it",
+  "شمارنده را از ۱ شروع می‌کنیم": "start the counter from 1",
+  "تا وقتی شمارنده به n نرسیده، ادامه می‌دهیم": "we continue as long as the counter has not passed n",
+  "شمارنده را یکی زیاد می‌کنیم؛ اگر این کار را نکنیم، حلقه تمام نمی‌شود": "increase the counter by one; if we do not, the loop never ends",
+  "شمارنده را از صفر شروع می‌کنیم": "start the counter from zero",
+  "تا وقتی i کوچک‌تر از n است ادامه می‌دهیم": "we continue as long as i is smaller than n",
+  "اول شمارنده را جلو می‌بریم": "first we move the counter forward",
+  "بعد عدد جدید را چاپ می‌کنیم؛ پس اولین چاپ عدد ۱ است": "then we print the new number; so the first print is the number 1",
+  "حلقه تا رسیدن به صفر ادامه دارد": "the loop continues until zero is reached",
+  "یک عدد از ورودی می‌خوانیم": "read a number from the input",
+  "اگر صفر آمد، از حلقه خارج می‌شویم (صفر جزو جمع نیست)": "if zero came, we leave the loop (zero is not part of the sum)",
+  "عدد غیرصفر را به مجموع اضافه می‌کنیم": "add the non-zero number to the sum",
+  "اولین عدد را پیش از حلقه می‌خوانیم": "read the first number before the loop",
+  "تا وقتی عدد صفر نیامده، آن را جمع می‌کنیم": "as long as zero has not come, we add the number",
+  "عدد بعدی را می‌خوانیم": "read the next number",
+  "مجموع را چاپ می‌کنیم": "print the sum",
+  "خواندن عدد نامنفی": "read the non-negative number",
+  "عدد صفر یک رقم دارد": "the number zero has one digit",
+  "شمارنده‌ی رقم‌ها": "the digit counter",
+  "هر بار یک رقم را با تقسیم بر ۱۰ حذف می‌کنیم": "each time we remove one digit by dividing by 10",
+  "هر عدد حداقل یک رقم دارد": "every number has at least one digit",
+  "مرز: اولین توان ده که از n بزرگ‌تر است": "the boundary: the first power of ten that is greater than n",
+  "تا وقتی n به این مرز نرسیده، یک رقم بیشتر داریم": "as long as n has not reached this boundary, we have one more digit",
+  "چاپ تعداد رقم‌ها": "print the number of digits",
+  "خواندن عدد مخفی": "read the secret number",
+  "خواندن حدس اول و شمارش آن": "read the first guess and count it",
+  "تا وقتی حدس درست نیست، حدس بعدی را می‌خوانیم": "as long as the guess is not correct, we read the next guess",
+  "چاپ تعداد حدس‌ها (شامل حدس درست)": "print the number of guesses (including the correct one)",
+  "شمارنده و پرچم پایان": "the counter and the end flag",
+  "تا وقتی حدس درست پیدا نشده": "as long as the correct guess has not been found",
+  "اگر حدس درست بود، پرچم را بالا می‌بریم": "if the guess was correct, we raise the flag",
+  "چاپ تعداد حدس‌ها": "print the number of guesses",
+  "حلقه‌ی بی‌پایان تا رسیدن به stop": "an endless loop until stop is reached",
+  "اگر به stop رسیدیم، حلقه را تمام می‌کنیم": "if we reached stop, we end the loop",
+  "کلمه‌ی معمولی: شمارنده را زیاد می‌کنیم": "an ordinary word: we increase the counter",
+  "چاپ تعداد کلمه‌های قبل از stop": "print the number of words before stop",
+  "خواندن کلمه‌ها تا وقتی stop نیامده": "read words as long as stop has not come",
+  "چاپ شمارنده": "print the counter",
+  "تا وقتی به ۱۴ نرسیده‌ایم": "as long as we have not reached 14",
+  "عدد فعلی را یکی جلو می‌بریم": "move the current number forward by one",
+  "اگر فرد بود، از چاپ آن می‌گذریم": "if it is odd, we skip printing it",
+  "عدد زوج را چاپ می‌کنیم": "print the even number",
+  "تا وقتی از ۱۴ بیشتر نشده‌ایم": "as long as we have not passed 14",
+  "اگر فرد است، این دور را رد می‌کنیم": "if it is odd, we skip this round",
+  "چاپ از آخر به اول: اندیس n-1 تا 0": "print from the end to the start: index n-1 down to 0",
+  "اندیس از آخرین عضو شروع می‌شود": "the index starts from the last member",
+  "تا وقتی به اول فهرست نرسیده‌ایم": "as long as we have not reached the start of the list"
+ }
+}

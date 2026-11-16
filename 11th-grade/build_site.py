@@ -769,7 +769,7 @@ def guard(html_path: Path) -> None:
 
 # The tutorials (آموزش) are not shipped in the offline copy: like the website, it gets them after a
 # sign-in (the accounts service sends them) and keeps them on the device.
-OFFLINE_GUIDE_FIELDS = ("guide", "guideTitle", "solutions", "mistakes")
+OFFLINE_GUIDE_FIELDS = ("guide", "guideTitle", "solutions", "mistakes", "guideEn")
 OFFLINE_ROOT = "grade11-site"
 
 

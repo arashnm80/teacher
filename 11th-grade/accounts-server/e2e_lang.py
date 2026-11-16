@@ -2,14 +2,17 @@
 Persian brings it back, the choice is remembered, and a result on the screen stays through the switch.
 
 Needs the online test server (E2E_BASE) and the offline copy (E2E_OFFLINE)."""
+import json
 import os
 import re
+from pathlib import Path
 
 from playwright.sync_api import sync_playwright
 
 BASE = os.environ.get("E2E_BASE", "http://127.0.0.1:8800")
 OFFLINE = os.environ.get("E2E_OFFLINE", "http://127.0.0.1:8791")
 results = []
+PROBLEMS = json.loads(Path("/root/Storage/teacher/11th-grade/playground/app/data/problems.json").read_text(encoding="utf-8"))
 import random
 
 
@@ -25,11 +28,9 @@ def national_code():
 PHONE = "0912" + str(random.randint(1000000, 9999999))
 NATIONAL = national_code()
 PERSIAN = re.compile(r"[؀-ۿ]")
-# Parts that hold the problems' own texts (Persian until the English content is added) or the student's own data.
-CONTENT = ("#topic-filter, #problem-list, #problem-title, #problem-topic, #statement, #concept, #hint-list, .CodeMirror, "
-           "#pack-list, #student-name, #progress-list, #results .diff-block, #results pre, #lesson-link a, "
-           "#auth-name, .lang-toggle, #problem-deadline, .remain, #sync-summary-last, #ai-answer, #ai-dialog-body")
-
+# Parts that hold the student's own data or code (not texts of the site).
+CONTENT = ("#student-name, #auth-name, .CodeMirror, .lang-toggle, #results pre, #results .diff-block, #ai-answer, "
+           "#ai-dialog-body")
 
 def check(name, ok, detail=""):
     results.append(bool(ok))
@@ -47,6 +48,7 @@ def persian_chrome(page):
             const node = walker.currentNode;
             const text = node.textContent.trim();
             if (!text || !/[\\u0600-\\u06FF]/.test(text)) continue;
+            if (text.includes('سلام')) continue; // question 64 asks for the Persian word itself
             const el = node.parentElement;
             if (!el || skip.has(el.tagName) || el.closest(content)) continue;
             let hidden = false;
@@ -138,6 +140,25 @@ with sync_playwright() as p:
     check("the page after a run has no Persian chrome", not bad, " | ".join(bad[:10]))
     page.screenshot(path=os.environ.get("E2E_SHOTS", "/tmp") + "/lang-en-results.png")
 
+    first = PROBLEMS[0]
+    check("the problem is in English", page.inner_text("#problem-title").strip().endswith(first["en"]["title"]),
+          page.inner_text("#problem-title"))
+    bad = persian_chrome(page)
+    check("the problem page has no Persian at all", not bad, " | ".join(bad[:8]))
+    page.click('.tab[data-tab="hints"]')
+    page.click("#btn-hint")
+    check("the hint is English", first["en"]["hints"][0][:20] in page.inner_text("#hint-list"), page.inner_text("#hint-list")[:80])
+    set_code(page, first["solutions"][0]["code"])
+    run_code(page)
+    page.wait_for_selector(".problem-link.done", timeout=60000)
+    page.click('.tab[data-tab="concept"]')
+    page.wait_for_function("document.getElementById('concept').innerText.includes('Step 1')", timeout=60000)
+    tutorial = page.inner_text("#concept")
+    check("after a pass the tutorial is in English", "Method 1" in tutorial and "Step 1" in tutorial, tutorial[:80])
+    bad = persian_chrome(page)
+    check("the tutorial has no Persian", not bad, " | ".join(bad[:5]))
+    page.click('.tab[data-tab="results"]')
+    page.screenshot(path=os.environ.get("E2E_SHOTS", "/tmp") + "/lang-en-tutorial.png")
     page.click("#lang-toggle")
     page.wait_for_timeout(500)
     check("back to Persian and right-to-left", lang_state(page) == ["fa", "rtl"], str(lang_state(page)))

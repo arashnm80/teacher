@@ -1,0 +1,424 @@
+{
+ "p54": {
+  "title": "Countdown from 30 to 25",
+  "statement": "Count from **30** down to **25** and print each number **on its own line**; that is 30, 29, 28, 27, 26, 25.\n\nThis problem has no input.",
+  "hints": [
+   "To count backwards, you need the step `-1`.",
+   "The end of the range must be 24 so that 25 is inside it."
+  ],
+  "guideTitle": "Countdown from 30 to 25 — range with a negative step",
+  "mistakes": [
+   "Writing `range(30, 25, -1)`: the number 25 is not printed."
+  ],
+  "solutions": [
+   {
+    "name": "Method 1: for with range and step -1",
+    "steps": [
+     "We decide the counting range from 30 to 25.",
+     "With `range(30, 24, -1)` we take the numbers going down from 30.",
+     "We print each number on one line."
+    ],
+    "explain": [
+     "`range` with three inputs works as `range(start, stop, step)`. A step of -1 means we subtract one each time. We set the end to 24, because `range` does not include its end and 25 must be printed.",
+     "If we had set the end to 25, the number 25 would not be printed. Always check this boundary in a countdown."
+    ]
+   },
+   {
+    "name": "Method 2: while with subtracting one",
+    "steps": [
+     "We start the counter from 30.",
+     "As long as the counter is greater than or equal to 25, we print it.",
+     "In each round we subtract one from the counter."
+    ],
+    "explain": [
+     "In a countdown the counter decreases in each round. The condition `i >= 25` is true while we are still at 25 or above; as soon as it becomes smaller than 25, the loop ends.",
+     "Both methods have exactly the same output, so the choice between them depends on your taste."
+    ]
+   }
+  ]
+ },
+ "p55": {
+  "title": "Countdown from 10 to 1",
+  "statement": "Count backwards from **10** to **1**; each number is printed **on its own line**.\n\nThis problem has no input.",
+  "hints": [
+   "Set the step to `-1` and the end of the range to `0` (the number zero is not part of the range).",
+   "`range(10, 0, -1)` gives exactly this range."
+  ],
+  "guideTitle": "Countdown from 10 to 1 — range with a negative step",
+  "mistakes": [
+   "Forgetting the step `-1`: the loop prints nothing, because going up from 10 to 1 is empty."
+  ],
+  "solutions": [
+   {
+    "name": "Method 1: for with range(10, 0, -1)",
+    "steps": [
+     "The counting starts at 10 and continues to 1.",
+     "With `range(10, 0, -1)` we take these numbers in reverse order.",
+     "We print each number on one line."
+    ],
+    "explain": [
+     "The end of the range is zero, because `range` does not include zero, and so 1 is the last number printed.",
+     "The step -1 makes `range` come down instead of going up; this method makes the countdown short and readable."
+    ]
+   },
+   {
+    "name": "Method 2: while as long as it is greater than or equal to one",
+    "steps": [
+     "We start the counter from 10.",
+     "As long as the counter has not become smaller than 1, we print it.",
+     "We subtract one from the counter in each round."
+    ],
+    "explain": [
+     "The condition `i >= 1` includes the number 1, so the last output is 1. If the condition were `i > 1`, 1 would not be printed.",
+     "Subtracting from the counter in each round takes the loop towards its end; if we forget it, the loop becomes endless."
+    ]
+   }
+  ]
+ },
+ "p56": {
+  "title": "Even numbers from 0 to 20",
+  "statement": "Print the even numbers **0, 2, 4, …, 20**, **each on its own line**.\n\nThis problem has no input.",
+  "hints": [
+   "Set the step to 2: `range(0, 21, 2)`.",
+   "If you do not write the step, all the numbers are printed, not only the even ones."
+  ],
+  "guideTitle": "Even numbers from 0 to 20 — step 2",
+  "mistakes": [
+   "Writing `range(0, 21)` without the step 2: the odd numbers are printed too."
+  ],
+  "solutions": [
+   {
+    "name": "Method 1: for with step 2",
+    "steps": [
+     "We start at zero and go to 20.",
+     "With a step of 2 we take only the even numbers.",
+     "We print each number on one line."
+    ],
+    "explain": [
+     "`range(0, 21, 2)` means start at zero, go forward 2 at a time and stay before 21. The result: 0, 2, 4 … 20, all of which are even.",
+     "We set the end to 21 so that 20 is included. This pattern is useful for any other regular distance too."
+    ]
+   },
+   {
+    "name": "Method 2: while with increasing by two",
+    "steps": [
+     "We start the counter at zero.",
+     "As long as the counter has not become greater than 20, we print it.",
+     "In each round we increase the counter by 2."
+    ],
+    "explain": [
+     "By increasing by two in each round, the counter always stays even, because we started from zero. The condition `i <= 20` includes the upper boundary.",
+     "If we had increased the counter by one, the odd numbers would have been printed too; choosing the right step builds the right answer."
+    ]
+   }
+  ]
+ },
+ "p57": {
+  "title": "Odd numbers from 1 to 9",
+  "statement": "Print the odd numbers **1, 3, 5, 7, 9**, **each on its own line**.\n\nThis problem has no input.",
+  "hints": [
+   "Set the start to 1 and the step to 2.",
+   "The end of the range is 10; since 10 is not part of the range, the last number is 9."
+  ],
+  "guideTitle": "Odd numbers from 1 to 9 — step 2",
+  "mistakes": [
+   "Starting from zero: zero is even and must not be printed."
+  ],
+  "solutions": [
+   {
+    "name": "Method 1: for with step 2",
+    "steps": [
+     "We start from one and go to 9.",
+     "With a step of 2 we take only the odd numbers.",
+     "We print each number on one line."
+    ],
+    "explain": [
+     "`range(1, 10, 2)` starts at 1 and with a step of 2 reaches 3, 5, 7 and 9. The end is 10 so that 9 is included, and the number 11 is no longer in the range.",
+     "Since the start is odd, with a step of 2 all the numbers stay odd."
+    ]
+   },
+   {
+    "name": "Method 2: while with increasing by two",
+    "steps": [
+     "We start the counter from 1.",
+     "As long as it has not become greater than 9, we print it.",
+     "In each round we add two."
+    ],
+    "explain": [
+     "Starting from 1 and adding 2 always gives odd numbers. The condition `i <= 9` includes the last odd number.",
+     "This method shows that the pattern \"start + step\" gives the same result in a `while` loop as in `range`."
+    ]
+   }
+  ]
+ },
+ "p58": {
+  "title": "Countdown to the input number",
+  "statement": "Read a natural number `n` (`n ≥ 1`).\n\nCount backwards from `n` to `1` and print each number **on its own line**.",
+  "hints": [
+   "Read `n` with `int(input())`.",
+   "Put the step `-1` in `range` and the end `0` (zero is not part of the range)."
+  ],
+  "guideTitle": "Countdown to the input number — input and range",
+  "mistakes": [
+   "Forgetting `int`: `input()` gives text and `range` needs a number."
+  ],
+  "solutions": [
+   {
+    "name": "Method 1: for with range(n, 0, -1)",
+    "steps": [
+     "We read the number `n` from the input.",
+     "With `range(n, 0, -1)` we count backwards from `n` to 1.",
+     "We print each number on one line."
+    ],
+    "explain": [
+     "We set the start of `range` equal to `n`, so the counting starts from the very number the user entered. The end is zero so that 1 is the last number.",
+     "Since `n` comes from the user, the program works for any `n`; that means we put the input number in place of a fixed number."
+    ]
+   },
+   {
+    "name": "Method 2: while with the input counter",
+    "steps": [
+     "We read the number `n` and make it the counter.",
+     "As long as the counter is greater than or equal to 1, we print it.",
+     "In each round we subtract one from the counter."
+    ],
+    "explain": [
+     "The number the user enters becomes the counter directly. From then on the counter decreases by one in each round until it reaches 1.",
+     "The problem statement gives only natural numbers; so `n` is never less than 1 and the loop runs at least once."
+    ]
+   }
+  ]
+ },
+ "p59": {
+  "title": "Counting from a to b",
+  "statement": "Read two integers `a` and `b` (each on its own line); `a ≤ b`.\n\nPrint all the numbers from `a` to `b` (including `a` and `b` themselves), **each on its own line**.",
+  "hints": [
+   "The end of `range` must be `b + 1` so that `b` is printed too.",
+   "Read `a` and `b` separately with `input()`."
+  ],
+  "guideTitle": "Counting from a to b — two input numbers and range",
+  "mistakes": [
+   "Writing `range(a, b)`: the number `b` is not printed."
+  ],
+  "solutions": [
+   {
+    "name": "Method 1: for with range(a, b + 1)",
+    "steps": [
+     "We read the two numbers `a` and `b`, each on its own line.",
+     "With `range(a, b + 1)` we make an interval that includes both ends.",
+     "We print each number on one line."
+    ],
+    "explain": [
+     "Since `range` does not include its end, to get `b` we must write `b + 1`. This is the only change needed to make the closed interval \"from a to b\".",
+     "The case `a = b` works correctly too: the interval has only one number and that number is printed."
+    ]
+   },
+   {
+    "name": "Method 2: while with a counter from a",
+    "steps": [
+     "We read the two numbers and start the counter from `a`.",
+     "As long as the counter has not become greater than `b`, we print it.",
+     "We increase the counter by one in each round."
+    ],
+    "explain": [
+     "The condition `i <= b` includes both `a` and `b`, because the counter starts from `a` and continues as long as it has not gone above `b`.",
+     "This method builds the same interval with a manual counter. The two methods behave the same at the upper boundary, and this boundary is one of the main points of this problem."
+    ]
+   }
+  ]
+ },
+ "p60": {
+  "title": "Multiplication table of 3",
+  "statement": "Print the multiplication table of **3** from `3 x 1` to `3 x 10`. Each row must be exactly in this form:\n\n`3 x 1 = 3`\n\nThis problem has no input.",
+  "hints": [
+   "Take a counter from 1 to 10 and in each row print `3` and the counter.",
+   "Remember that the product is `3 * i`."
+  ],
+  "guideTitle": "Multiplication table of 3 — formatted printing",
+  "mistakes": [
+   "Writing `3 * i` without the text `x` and `=`: the output format is not correct."
+  ],
+  "solutions": [
+   {
+    "name": "Method 1: print with several arguments",
+    "steps": [
+     "We make a loop for the factors from 1 to 10.",
+     "In each round with `print` we give the parts of the row separately: `3 x`, the factor, `=` and the result.",
+     "`print` puts one space between the arguments and the row comes out exactly in the requested form."
+    ],
+    "explain": [
+     "When `print` gets several arguments, it puts them side by side with one space. So `print(\"3 x\", i, \"=\", 3 * i)` prints exactly `3 x 1 = 3`.",
+     "`3 * i` calculates the product. We put the letters `x` and `=` inside quotes so that they are printed as text."
+    ]
+   },
+   {
+    "name": "Method 2: building the row with + and str",
+    "steps": [
+     "We run the loop from 1 to 10.",
+     "With `str` we turn the numbers into text and join them with `+`.",
+     "We print the complete row we built once."
+    ],
+    "explain": [
+     "`str` turns a number into text, because `+` does not work between a text and a number. If we forget `str`, Python gives a type error.",
+     "Building the row in the variable `line` lets us see the format before printing. This method is useful for more complicated formats too."
+    ]
+   }
+  ]
+ },
+ "p61": {
+  "title": "Each letter of a word on one line",
+  "statement": "Read one English word (without spaces).\n\nPrint each of its letters **on its own line**, from the start of the word to the end.",
+  "hints": [
+   "A string can be read letter by letter with `for`.",
+   "The loop variable is itself a letter of the word; print that."
+  ],
+  "guideTitle": "Each letter of the word on a line — going over the letters",
+  "mistakes": [
+   "Printing the whole word in each repeat: each line must be one letter."
+  ],
+  "solutions": [
+   {
+    "name": "Method 1: for over the word itself",
+    "steps": [
+     "We read the word.",
+     "With `for ch in word` we take the word letter by letter.",
+     "We print each letter on one line with `print`."
+    ],
+    "explain": [
+     "A string in Python can be iterated; `for ch in word` gives each letter in order from the start to the end. We do not need to manage the indexes ourselves.",
+     "Since the input word has no spaces, each letter is printed exactly once and the order is kept."
+    ]
+   },
+   {
+    "name": "Method 2: while with an index",
+    "steps": [
+     "We start the index `i` from zero.",
+     "As long as `i` is smaller than the length of the word, we print the letter at place `i`.",
+     "In each round we move `i` forward by one."
+    ],
+    "explain": [
+     "`word[i]` gives the letter at place `i`. `len(word)` is the length of the word, so the condition `i < len(word)` continues exactly to the last letter.",
+     "This method builds the `for` iteration with an index. If we forget to increase the index, the loop becomes endless."
+    ]
+   }
+  ]
+ },
+ "p62": {
+  "title": "Each word of a line on its own line",
+  "statement": "Read a line of text; the words are separated by spaces.\n\nPrint each word **on its own line**.",
+  "hints": [
+   "`split()` puts the words of a line in a list.",
+   "Loop over the list of words with `for`."
+  ],
+  "guideTitle": "Each word of a line on its own line — split and going over",
+  "mistakes": [
+   "Printing the whole line instead of each word: the output must show the words separately."
+  ],
+  "solutions": [
+   {
+    "name": "Method 1: split and for",
+    "steps": [
+     "We read the input line with `input()`.",
+     "With `split()` we turn it into a list of words.",
+     "We print each word on its own line with `print`."
+    ],
+    "explain": [
+     "`split()` without an argument breaks the text at spaces; so `a b c` becomes the list `['a', 'b', 'c']`. `for` takes each word in order and `print` writes it on its own line.",
+     "If the line has only one word, `split` gives a list with that one word and the output is correct."
+    ]
+   },
+   {
+    "name": "Method 2: the list of words and an index",
+    "steps": [
+     "We read the line and put the list of words in `words`.",
+     "With `range(len(words))` we get the indexes.",
+     "We print the word at each index."
+    ],
+    "explain": [
+     "We build the list `words` once and then go over it with the indexes. `len(words)` gives the number of words and `range` gives the indexes.",
+     "This method gives the same output; the only difference is that we reach the words by index, which is more useful in later problems."
+    ]
+   }
+  ]
+ },
+ "p63": {
+  "title": "Counting with step 10 from 0 to 100",
+  "statement": "Print the numbers **0, 10, 20, …, 100**, **each on its own line**.\n\nThis problem has no input.",
+  "hints": [
+   "Set the step to 10 and the end of the range to 101 (because 101 is not part of the range).",
+   "If you set the end to 100, the number 100 is not printed."
+  ],
+  "guideTitle": "Counting with step 10 from 0 to 100",
+  "mistakes": [
+   "Writing the end of `range` as 100: the number 100 is not printed."
+  ],
+  "solutions": [
+   {
+    "name": "Method 1: for with range and step 10",
+    "steps": [
+     "We consider the range 0 to 100 with a step of 10.",
+     "With `range(0, 101, 10)` we take the numbers.",
+     "We print each number on one line."
+    ],
+    "explain": [
+     "The end of the range is 101 so that 100 is included. A step of 10 means we go forward ten units each time: 0, 10, 20 … 100.",
+     "This method is the same for any other regular step; we only change the step and the boundaries."
+    ]
+   },
+   {
+    "name": "Method 2: while with increasing by ten",
+    "steps": [
+     "We start the counter at zero.",
+     "As long as it has not gone above 100, we print it.",
+     "In each round we add ten."
+    ],
+    "explain": [
+     "The condition `i <= 100` includes 100 itself. By adding 10 in each round, the counter always stays a multiple of 10.",
+     "Both methods have the same output; `for` with a known range is shorter and `while` is more flexible."
+    ]
+   }
+  ]
+ },
+ "_comments": {
+  "حلقه‌ی شمارش معکوس از ۳۰ تا ۲۵": "countdown loop from 30 to 25",
+  "چاپ هر عدد در یک خط جدا": "print each number on its own line",
+  "شمارنده از ۳۰ شروع می‌شود": "the counter starts from 30",
+  "تا وقتی هنوز به ۲۵ نرسیده‌ایم": "as long as we have not yet reached 25",
+  "شمارنده را یکی کم می‌کنیم": "subtract one from the counter",
+  "شمارش معکوس از ۱۰ تا ۱": "countdown from 10 to 1",
+  "شمارنده از ۱۰ شروع می‌شود": "the counter starts from 10",
+  "تا وقتی به ۱ نرسیده‌ایم، ادامه می‌دهیم": "we continue until we have reached 1",
+  "عددهای زوج از ۰ تا ۲۰": "the even numbers from 0 to 20",
+  "تا وقتی از ۲۰ بیشتر نشده‌ایم": "as long as we have not passed 20",
+  "عدد زوج فعلی را چاپ می‌کنیم": "print the current even number",
+  "به عدد زوج بعدی می‌رویم": "move to the next even number",
+  "عددهای فرد از ۱ تا ۹": "the odd numbers from 1 to 9",
+  "تا وقتی از ۹ بیشتر نشده‌ایم": "as long as we have not passed 9",
+  "عدد فرد فعلی را چاپ می‌کنیم": "print the current odd number",
+  "به عدد فرد بعدی می‌رویم": "move to the next odd number",
+  "خواندن عدد شروع (n)": "read the starting number (n)",
+  "شمارش معکوس از n تا ۱": "countdown from n to 1",
+  "خواندن عدد شروع و قرار دادن آن در شمارنده": "read the starting number and put it in the counter",
+  "تا وقتی به ۱ نرسیده‌ایم": "as long as we have not reached 1",
+  "خواندن ابتدای بازه (a) و انتهای بازه (b)": "read the start of the range (a) and the end of the range (b)",
+  "حلقه روی همه‌ی عددهای از a تا b": "a loop over all the numbers from a to b",
+  "شمارنده از a شروع می‌شود": "the counter starts from a",
+  "تا وقتی از b بیشتر نشده‌ایم": "as long as we have not passed b",
+  "ضریب i از ۱ تا ۱۰": "the factor i from 1 to 10",
+  "هر سطر: 3 x i = حاصل‌ضرب": "each row: 3 x i = product",
+  "ساختن سطر به صورت یک متن": "build the row as one text",
+  "چاپ سطر": "print the row",
+  "پیمایش حرف به حرف کلمه از اول تا آخر": "go over the word letter by letter from the start to the end",
+  "چاپ هر حرف در یک خط جدا": "print each letter on its own line",
+  "اندیس از صفر شروع می‌شود": "the index starts from zero",
+  "چاپ حرف جای i در یک خط": "print the letter at place i on one line",
+  "خواندن خط جمله": "read the sentence line",
+  "جدا کردن کلمه‌ها با فاصله و چاپ هر کلمه در یک خط": "split the words at spaces and print each word on its own line",
+  "فهرست کلمه‌ها": "the list of words",
+  "پیمایش با اندیس و چاپ هر کلمه در یک خط": "go over with an index and print each word on its own line",
+  "عددهای ۰ تا ۱۰۰ با گام ۱۰": "the numbers 0 to 100 with a step of 10",
+  "تا وقتی از ۱۰۰ بیشتر نشده‌ایم": "as long as we have not passed 100",
+  "چاپ عدد فعلی": "print the current number",
+  "به عدد بعدی با گام ۱۰ می‌رویم": "move to the next number with a step of 10"
+ }
+}

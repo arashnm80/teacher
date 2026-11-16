@@ -1,0 +1,442 @@
+{
+ "p01": {
+  "title": "Simple hello",
+  "statement": "Read a name from the input (one line of text) and print it exactly in this form:\n\n`Hello, NAME`\n\n`NAME` is replaced by the name from the input. There must be exactly **one space** between the comma and the name.\n\nDo not put a message inside `input(...)`; write only `input()`.",
+  "hints": [
+   "The output is one line made of two parts: the fixed text `Hello,` and the name the user typed.",
+   "The comma after `Hello` must be inside the text. When `print` gets two arguments, it puts one space between them by itself."
+  ],
+  "guideTitle": "Simple hello — print and input",
+  "mistakes": [
+   "Writing a message inside `input`, like `input(\"Name?\")`: that text is printed too and adds extra output.",
+   "Converting the name to a number with `int(name)`: for a name, `int` gives an error, and the output must be the same text."
+  ],
+  "solutions": [
+   {
+    "name": "Method 1: print with two arguments",
+    "steps": [
+     "We read one line of text (the name) from the input with `input()`.",
+     "We store the name in a variable called `name`.",
+     "With `print` we give two parts: the text `\"Hello,\"` and the name itself."
+    ],
+    "explain": [
+     "This method uses a feature of `print`: if we give it several things separated by commas, it prints them side by side with one space. The comma after `Hello` is inside the quotes, so it is part of the text.",
+     "The important point is not to write the space after the comma yourself. If you write `\"Hello, \"` with a space and `print` adds a space as well, the output has two spaces and the test fails."
+    ]
+   },
+   {
+    "name": "Method 2: building one text with +",
+    "steps": [
+     "We read the name from the input and put it in `name`.",
+     "With `+` we join the text `\"Hello, \"` (with one space at the end) to the name.",
+     "We put the result in the variable `message` and print it with one `print`."
+    ],
+    "explain": [
+     "In this method we build the whole text ourselves. The `+` sign joins two strings and adds nothing to them. That is why the space must be inside the first string.",
+     "Since we already have one complete text, a single `print` is enough, and `print` itself adds no space."
+    ]
+   }
+  ]
+ },
+ "p02": {
+  "title": "Three lines in a row",
+  "statement": "Read three lines of text from the input and print the same three lines **in exactly the same order** (each input line → one output line).\n\nDo not add or remove anything; do not put a message inside `input`.",
+  "hints": [
+   "You do not need to store all the lines; read each line and print it right away with `print`.",
+   "Call `input` without a message; whatever text you write inside it appears in the output and the test fails."
+  ],
+  "guideTitle": "Three lines in a row — input and print",
+  "mistakes": [],
+  "solutions": [
+   {
+    "name": "Method 1: three inputs and three prints",
+    "steps": [
+     "We write `input()` three times and put each line in its own variable.",
+     "We write `print` three times and print each variable in order."
+    ],
+    "explain": [
+     "Each `input()` reads one line of the input and returns it as text. Since we have three lines, we write `input()` three times and keep each one in a separate variable.",
+     "Each `print` gives one line of output. So three `print`s produce three separate lines. The `print`s must be in the same order as the input."
+    ]
+   },
+   {
+    "name": "Method 2: a for loop that repeats three times",
+    "steps": [
+     "`range(3)` means the loop runs three times.",
+     "On each run of the loop we read one line of input.",
+     "We print that same line immediately."
+    ],
+    "explain": [
+     "When we do not use the loop counter inside the loop body, we can name it `_`. `range(3)` gives three repeats, and on each repeat one line is read and printed.",
+     "This method is much easier for more lines, because we only change the number inside `range`."
+    ]
+   }
+  ]
+ },
+ "p31": {
+  "title": "Name and age",
+  "statement": "Read two input lines: the first is the **name** (one English word) and the second is the **age** (an integer).\n\nThe output must be exactly this form:\n\n`Ali is 20 years old`\n\nThat is: the name, then the word `is`, then the age, and at the end `years old`; **one space** between all the parts.",
+  "hints": [
+   "The first input is the name and the second is the age; read both with `input()` and print the age as it is.",
+   "The output must be exactly `Ali is 20 years old`; `print` with several arguments puts a space between them, so do not write an extra space."
+  ],
+  "guideTitle": "Name and age — print with several parts, and str",
+  "mistakes": [
+   "`Ali is` without enough space: if we stick `\"is\"` on without a space on both sides, the output becomes `Aliis`."
+  ],
+  "solutions": [
+   {
+    "name": "Method 1: print with commas",
+    "steps": [
+     "We read the name with `input()`.",
+     "We read the age with `input()` too (the same text is enough).",
+     "With `print` we give the four parts separated by commas; `print` itself puts the spaces."
+    ],
+    "explain": [
+     "`input()` always returns text. To print the age we do not need to turn it into a number; we print the same text.",
+     "Each `print` argument separated by a comma is printed with one space. The texts `\"is\"` and `\"years old\"` are inside quotes so that they are part of the output."
+    ]
+   },
+   {
+    "name": "Method 2: building a text with + and str",
+    "steps": [
+     "We read the name.",
+     "We turn the age into a number with `int` and then back into text with `str` so that it can be joined with `+`.",
+     "We build the whole text with `+` and print it once."
+    ],
+    "explain": [
+     "Because `+` only joins text to text, we turned the numeric age into text with `str`. If we did not, Python would give an error.",
+     "Here the spaces are inside the strings (`\" is \"`). So we must write them exactly; one space too few or too many fails the test."
+    ]
+   }
+  ]
+ },
+ "p03": {
+  "title": "Sum of two numbers",
+  "statement": "Read two integers:\n\n- first line: the first number\n- second line: the second number\n\nPrint their sum on one line.",
+  "hints": [
+   "`input()` always returns a string; convert the numbers with `int` before adding them.",
+   "If you put two strings next to each other with `+`, the result is stuck together; the numbers must be added."
+  ],
+  "guideTitle": "Sum of two numbers — reading numbers and the + operator",
+  "mistakes": [],
+  "solutions": [
+   {
+    "name": "Method 1: read two numbers and add with +",
+    "steps": [
+     "We read the first number with `input()` and turn it into a number with `int(...)`.",
+     "We repeat the same for the second number.",
+     "With `print(a + b)` we print the sum on one line."
+    ],
+    "explain": [
+     "`input()` always returns text, even if the user typed a number. If we put the text `3` and the text `5` together with +, we get `35`, not 8. That is why we turn each input into a number with `int` and then add.",
+     "The reading order matters: the first input line goes into the variable `a` and the second into `b`. Addition of two numbers is commutative, so the order of adding does not change the result, but we must read the inputs in the order the user enters them."
+    ]
+   },
+   {
+    "name": "Method 2: read two numbers into a list",
+    "steps": [
+     "We make an empty list to hold the numbers.",
+     "With a for loop we read a number twice and add each one to the list.",
+     "We add the first and the second element of the list and print the result."
+    ],
+    "explain": [
+     "A list is an ordered collection of values. With `append` a new value is added at its end. When we keep the numbers in a list, we can reach them with the indexes 0 and 1.",
+     "The loop `for _ in range(2)` repeats exactly twice. The variable `_` means the repeat number does not matter to us. This method is overkill for a problem as simple as this one, but the same pattern is useful in problems with more numbers."
+    ]
+   }
+  ]
+ },
+ "p04": {
+  "title": "Remainder of a division",
+  "statement": "Read two **positive** integers:\n\n- first line: `a`\n- second line: `b`\n\nPrint the remainder of dividing `a` by `b` (the same as `a % b`).",
+  "hints": [
+   "`a % b` is the remainder of `a` divided by `b`; do not swap `a` and `b`.",
+   "Read the two numbers on two separate lines and convert each one with `int` right away."
+  ],
+  "guideTitle": "Remainder of a division — the % operator",
+  "mistakes": [],
+  "solutions": [
+   {
+    "name": "Method 1: the % operator (remainder)",
+    "steps": [
+     "We read the two positive numbers `a` and `b` from the input.",
+     "With the `%` operator we calculate the remainder of dividing `a` by `b`.",
+     "We print the result with `print`."
+    ],
+    "explain": [
+     "The `%` operator returns the remainder, that is, what is left after dividing `a` by `b` completely. For example 17 % 5 is 2, because 17 = 3 × 5 + 2.",
+     "Since `a` and `b` are positive, the behaviour of `%` in this problem is exactly what we need. If the numbers were negative, Python gives the remainder the sign of the divisor; this problem does not ask for that case."
+    ]
+   },
+   {
+    "name": "Method 2: with the integer quotient and subtraction",
+    "steps": [
+     "With the `//` operator we calculate the integer quotient of `a` divided by `b`.",
+     "We multiply the quotient by `b` and subtract it from `a`.",
+     "The result is the remainder."
+    ],
+    "explain": [
+     "Every number can be written as \"dividend = quotient × divisor + remainder\". If we take the quotient with `//`, the remainder is `a - q × b`. This method shows what the `%` operator does.",
+     "This method is good for learning the idea, but in practice `%` is simpler and more readable. If `b` is zero, both methods give an error, and this problem does not ask for `b` being zero."
+    ]
+   }
+  ]
+ },
+ "p47": {
+  "title": "Counting the words of a sentence",
+  "statement": "Read one line, an English sentence. The words are separated by **one space**.\n\nPrint the number of words in the sentence.",
+  "hints": [
+   "Break the text into words with `split()`; the number of words is the `len` of the list.",
+   "`split()` without an argument works with any number of spaces; so do not worry about extra spaces."
+  ],
+  "guideTitle": "Counting the words of a sentence — split and a loop",
+  "mistakes": [
+   "Counting characters instead of words: `len(text)` gives the number of letters and spaces, not words."
+  ],
+  "solutions": [
+   {
+    "name": "Method 1: separating the words with split",
+    "steps": [
+     "We read the whole sentence line with `input()`.",
+     "With `split()` we turn the sentence into a list of words; `split` without an argument separates at spaces.",
+     "With `len` we count the words and print the count."
+    ],
+    "explain": [
+     "`split()` without an argument breaks the text at spaces and builds a list of words. For example `hello world` becomes `['hello', 'world']`. `len` gives the number of members of this list.",
+     "Since the problem says the words are separated by one space, this method is exact. If there were several spaces in a row, `split()` without an argument would count them as one; that feature works in our favour."
+    ]
+   },
+   {
+    "name": "Method 2: counting the starts of words with a loop",
+    "steps": [
+     "We start a counter at zero.",
+     "We read the sentence letter by letter. Wherever a letter is not a space and the previous letter was a space, a word has started.",
+     "In that case we add one to the counter."
+    ],
+    "explain": [
+     "This method is written without `split` to show how a word is recognised in a text: a word starts where a non-space letter comes after a space. The variable `previous` keeps the previous letter.",
+     "In the loop `for ch in line` every character of the sentence is seen once. The important point is to update `previous` at the end of each round; otherwise we keep comparing with the very first letter."
+    ]
+   }
+  ]
+ },
+ "p87": {
+  "title": "String length function",
+  "statement": "Write a function named `word_length(text)` that returns the **number of letters** of the string `text` (spaces are counted too).\n\nThis problem is a **function test**.",
+  "hints": [
+   "The function `len` gives the length of a string.",
+   "If you want to calculate it without `len`, loop over the string with `for` and count."
+  ],
+  "guideTitle": "String length function — return and len",
+  "mistakes": [
+   "Ignoring the spaces when counting: the length of `a b` is three, not two."
+  ],
+  "solutions": [
+   {
+    "name": "Method 1: a function with len",
+    "steps": [
+     "We define a function named `word_length` with one parameter `text`.",
+     "With `len(text)` we get the number of characters in the string.",
+     "With `return` we give that number back."
+    ],
+    "explain": [
+     "A function is defined with `def` and gives a value back to whoever called it with `return`. In this problem the function prints nothing; it only returns the number so that the test can check it.",
+     "For a string, `len` gives the number of characters. The empty string has length zero, and spaces count as one character each. These two points are checked in the tests."
+    ]
+   },
+   {
+    "name": "Method 2: a function that counts in a loop",
+    "steps": [
+     "In the function we start a counter at zero.",
+     "For each character of the string we add one to the counter.",
+     "At the end we return the counter."
+    ],
+    "explain": [
+     "This method does what `len` does inside: it sees each character once and counts it. Seeing it helps us understand that `len` is not magic; it is just a count.",
+     "The loop `for ch in text` does not run even once for an empty string, so `count` stays zero and the function returns zero; that is exactly the correct result the test expects."
+    ]
+   }
+  ]
+ },
+ "p95": {
+  "title": "Length and uppercase of a word",
+  "statement": "Read one English word (without spaces).\n\nOn the **first line** print the number of letters of the word, and on the **second line** print the same word in capital letters.",
+  "hints": [
+   "The function `len` gives the number of letters of a string.",
+   "`upper()` turns a string into capital letters."
+  ],
+  "guideTitle": "Length and uppercase of a word — len and upper",
+  "mistakes": [
+   "Swapping the order of the lines: first the length, then the capital letters."
+  ],
+  "solutions": [
+   {
+    "name": "Method 1: len and upper",
+    "steps": [
+     "We read the word with `input()`.",
+     "With `len` we print the length of the word; this is the first print.",
+     "With `upper()` we make the same word in capital letters and print it; this is the second print."
+    ],
+    "explain": [
+     "Each `print` prints a new line. So with two `print`s we have two output lines: first the length, then the capitalised word. The order of printing must be exactly this.",
+     "`upper()` works on a string and returns a new string; `word` itself does not change. That is why we print the result directly."
+    ]
+   },
+   {
+    "name": "Method 2: counting letters with a loop and capitalising by hand",
+    "steps": [
+     "We read the word and set a counter for the letters.",
+     "With a loop we count each letter.",
+     "To build the capital version, we capitalise the lowercase English letters one by one with `upper()` and put them side by side."
+    ],
+    "explain": [
+     "In this method each letter is capitalised separately and added to the string `big`. This shows that `upper` works on a single letter too, and the final string is the sum of the capital letters.",
+     "If the input string is empty, `big` stays empty and the loop does not run. This method is slower than `upper()`, but it is good for learning loops and building strings."
+    ]
+   }
+  ]
+ },
+ "p96": {
+  "title": "Counting the letter a in a word",
+  "statement": "Read one English word (without spaces).\n\nPrint the number of **a** letters (lowercase) inside the word.",
+  "hints": [
+   "Loop over the word with `for` and compare each letter with `\"a\"`.",
+   "If the word has no `a`, the answer is `0`."
+  ],
+  "guideTitle": "Counting the letter a in a word — a loop and an index",
+  "mistakes": [
+   "Comparing with `=` instead of `==`: you cannot compare it with `=`; that is an assignment."
+  ],
+  "solutions": [
+   {
+    "name": "Method 1: a while loop with an index",
+    "steps": [
+     "We read the word with `input()` and set a counter to zero.",
+     "We start an index `i` at zero and continue as long as `i` is smaller than the length of the word.",
+     "If the letter at place `i` is `a`, we add one to the counter; then we move `i` forward by one."
+    ],
+    "explain": [
+     "In Python every string is like a list of letters that starts at place zero. `word[i]` gives the letter at place `i`. With a `while` loop we visit all the places one by one until we reach `len(word)`.",
+     "The important point is to move `i` forward by one at the end of each round; if we forget, the loop never ends. We distinguish lowercase `a` from capital `A`, as the problem asks."
+    ]
+   },
+   {
+    "name": "Method 2: a for loop and if",
+    "steps": [
+     "We set a counter to zero.",
+     "We read the word letter by letter.",
+     "If the letter equals `a`, we add one to the counter."
+    ],
+    "explain": [
+     "This method shows the same logic with `for`: each letter is compared with `a` and, if equal, the counter grows. The `==` comparison is done between two one-letter strings.",
+     "Since the comparison is case-sensitive, `A` is not equal to `a` and is not counted, which is exactly what is asked."
+    ]
+   }
+  ]
+ },
+ "p06": {
+  "title": "Even or odd",
+  "statement": "Read an integer.\n\n- if it is even, print exactly `even`\n- if it is odd, print exactly `odd`\n\nThe output is only that one English word in lowercase (no extra space).\nNote: the number `0` is even.",
+  "hints": [
+   "Being even means the remainder of dividing by `2` is zero; the number `0` is even too.",
+   "The output is only `even` or `odd` in lowercase; do not print any extra text or space."
+  ],
+  "guideTitle": "Even or odd — if and %",
+  "mistakes": [
+   "Writing `=` instead of `==` in the condition: `=` means assignment, and `==` means comparison.",
+   "Forgetting the colon after `if` and `else`."
+  ],
+  "solutions": [
+   {
+    "name": "Method 1: if and else",
+    "steps": [
+     "We read the number and convert it to an integer.",
+     "We calculate the remainder of dividing by 2 with `%`.",
+     "If the remainder is zero we print `even`, otherwise we print `odd`."
+    ],
+    "explain": [
+     "Being even means being divisible by 2, that is, the remainder of dividing by 2 is zero. The number `0` is even too, because `0 % 2` is zero.",
+     "`if` checks the condition and, if it is true, the block inside it runs. `else` is for the false case."
+    ]
+   },
+   {
+    "name": "Method 2: we check the odd case first",
+    "steps": [
+     "We read the number.",
+     "If the remainder of dividing by 2 is 1, the number is odd and we print `odd`.",
+     "Otherwise the number is even and we print `even`."
+    ],
+    "explain": [
+     "We tried the same logic from the other side. Both methods are correct; what matters is writing the condition correctly.",
+     "This method works for negative numbers too, because `-3 % 2` is `1`."
+    ]
+   }
+  ]
+ },
+ "_comments": {
+  "خواندن نام از ورودی (یک خط متن)": "read the name from the input (one line of text)",
+  "print دو آرگومان را با یک فاصله کنار هم چاپ می‌کند": "print puts its two arguments side by side with one space",
+  "خواندن نام": "read the name",
+  "دو رشته را با + به هم می‌چسبانیم؛ فاصله‌ی آخر \"Hello, \" مهم است": "we join two strings with +; the last space in \"Hello, \" matters",
+  "کل متن ساخته‌شده را چاپ می‌کنیم": "print the whole text we built",
+  "خط اول ورودی را می‌خوانیم": "read the first input line",
+  "خط دوم ورودی را می‌خوانیم": "read the second input line",
+  "خط سوم ورودی را می‌خوانیم": "read the third input line",
+  "به همان ترتیب هر سه خط را در یک خط خروجی جدا چاپ می‌کنیم": "print the three lines in the same order, each on its own output line",
+  "حلقه سه بار اجرا می‌شود؛ شمارنده را استفاده نمی‌کنیم پس _ می‌گذاریم": "the loop runs three times; we do not use the counter, so we name it _",
+  "یک خط از ورودی را می‌خوانیم": "read one line of the input",
+  "همان خط را چاپ می‌کنیم": "print that same line",
+  "نام را می‌خوانیم": "read the name",
+  "سن را می‌خوانیم؛ چاپ آن لازم است، پس همان متن کافی است": "read the age; we only need to print it, so the text is enough",
+  "print بخش‌ها را با یک فاصله کنار هم می‌گذارد": "print puts the parts side by side with one space",
+  "سن را عدد می‌کنیم و بعد دوباره به متن تبدیل می‌کنیم": "turn the age into a number and then back into text",
+  "متن کامل را با + و فاصله‌های داخل متن می‌سازیم": "build the whole text with + and the spaces inside the strings",
+  "خواندن عدد اول و تبدیل آن به عدد صحیح": "read the first number and convert it to an integer",
+  "خواندن عدد دوم و تبدیل آن به عدد صحیح": "read the second number and convert it to an integer",
+  "چاپ حاصل‌جمع دو عدد": "print the sum of the two numbers",
+  "فهرستی خالی برای نگه‌داری عددها": "an empty list to hold the numbers",
+  "دو بار یک عدد می‌خوانیم و به فهرست اضافه می‌کنیم": "read a number twice and add each one to the list",
+  "جمع عنصر اول و دوم فهرست": "sum of the first and second elements of the list",
+  "خواندن مقسوم (a) و مقسوم‌علیه (b)": "read the dividend (a) and the divisor (b)",
+  "باقی‌مانده‌ی تقسیم a بر b با عملگر %": "remainder of a divided by b with the % operator",
+  "خواندن عددها": "read the numbers",
+  "خارج‌قسمت صحیح تقسیم a بر b": "integer quotient of a divided by b",
+  "باقی‌مانده = a - خارج‌قسمت × b": "remainder = a - quotient × b",
+  "خواندن کل جمله": "read the whole sentence",
+  "جدا کردن کلمه‌ها با فاصله و شمردن تعدادشان": "split the words at spaces and count them",
+  "خواندن جمله": "read the sentence",
+  "شمارنده‌ی کلمه‌ها": "the word counter",
+  "حرف قبلی را فاصله فرض می‌کنیم": "we assume the previous letter was a space",
+  "هر حرف را بررسی می‌کنیم": "check each letter",
+  "اگر حرف فعلی غیر فاصله است و حرف قبلی فاصله بوده، کلمه‌ی تازه‌ای شروع شده": "if this letter is not a space and the previous one was a space, a new word has started",
+  "چاپ تعداد کلمه‌ها": "print the number of words",
+  "تابعی که طول رشته را برمی‌گرداند": "a function that returns the length of the string",
+  "len تعداد کاراکترهای رشته را می‌شمارد؛ فاصله‌ها هم شمرده می‌شوند": "len counts the characters of the string; spaces are counted too",
+  "تابعی که طول رشته را با شمردن حرف‌ها پیدا می‌کند": "a function that finds the length of the string by counting the letters",
+  "شمارنده‌ی حرف‌ها": "the letter counter",
+  "به ازای هر کاراکتر یکی به شمارنده اضافه می‌کنیم": "add one to the counter for every character",
+  "تعداد کل کاراکترها را برمی‌گردانیم": "return the total number of characters",
+  "خواندن کلمه‌ی انگلیسی": "read the English word",
+  "خط اول خروجی: تعداد حرف‌های کلمه": "first output line: the number of letters of the word",
+  "خط دوم خروجی: کلمه با حروف بزرگ": "second output line: the word in capital letters",
+  "خواندن کلمه": "read the word",
+  "شمارش حرف‌ها با حلقه": "count the letters with a loop",
+  "خط اول: طول کلمه": "first line: the length of the word",
+  "ساختن نسخه‌ی بزرگ حرف به حرف": "build the capital version letter by letter",
+  "خط دوم: کلمه با حروف بزرگ": "second line: the word in capital letters",
+  "شمارنده‌ی حرف a": "the counter of the letter a",
+  "اندیس: شماره‌ی جای حرف، از صفر شروع می‌شود": "index: the place number of a letter, starting from zero",
+  "تا وقتی به آخر کلمه نرسیده‌ایم": "as long as we have not reached the end of the word",
+  "اگر حرف این جا a بود، شمارنده را زیاد می‌کنیم": "if the letter here is a, we increase the counter",
+  "به جای بعدی می‌رویم": "move to the next place",
+  "چاپ تعداد حرف‌های a": "print the number of a letters",
+  "هر حرف کلمه را بررسی می‌کنیم": "check each letter of the word",
+  "فقط حرف کوچک a را می‌شماریم": "we count only the lowercase letter a",
+  "عدد را می‌خوانیم": "read the number",
+  "اگر باقی‌مانده‌ی تقسیم بر ۲ صفر باشد، عدد زوج است": "if the remainder of dividing by 2 is zero, the number is even",
+  "در غیر این صورت عدد فرد است": "otherwise the number is odd",
+  "اول بررسی می‌کنیم آیا فرد است (باقی‌مانده ۱ باشد)": "first we check whether it is odd (the remainder is 1)",
+  "اگر فرد نبود، حتماً زوج است": "if it is not odd, it must be even"
+ }
+}

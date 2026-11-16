@@ -1,0 +1,15 @@
+{
+  "ورودی و خروجی": "Input and output",
+  "نوع داده و عملگر": "Data types and operators",
+  "رشته‌ها": "Strings",
+  "شرط‌ها": "Conditions",
+  "حلقه for": "The for loop",
+  "حلقه while": "The while loop",
+  "لیست‌ها": "Lists",
+  "مجموعه‌ها": "Sets",
+  "دیکشنری": "Dictionaries",
+  "تاپل": "Tuples",
+  "توابع": "Functions",
+  "توابع داخلی": "Built-in functions",
+  "ماژول‌ها": "Modules"
+}

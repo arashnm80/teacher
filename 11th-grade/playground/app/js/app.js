@@ -263,7 +263,7 @@ async function init() {
   }
   setBoot(12, tr("boot.read"));
   const [problems, concepts] = await Promise.all([
-    ONLINE ? fetchProblems() : fetchJson("data/problems.json?v=29"),
+    ONLINE ? fetchProblems() : fetchJson("data/problems.json?v=30"),
     fetchJson("data/concepts.json?v=29"),
   ]);
   // Stable `id` keeps progress across inserts; `number` is display order only.
@@ -791,8 +791,10 @@ function renderConcept(problem) {
   // Online, the guide is fetched when the question opens; until it arrives the lesson text shows.
   const lockedGuide = MANAGED && problem.guide === undefined;
   const concept = state.concepts[problem.conceptId];
-  const title = (!lockedGuide && loc(problem, "guideTitle")) || loc(concept, "title");
-  const body = (!lockedGuide && loc(problem, "guide")) || loc(concept, "body");
+  // The tutorial's English text is kept back with it, in `guideEn`.
+  const own = (field) => (isEnglish() && problem.guideEn?.[field]) || problem[field];
+  const title = (!lockedGuide && own("guideTitle")) || loc(concept, "title");
+  const body = (!lockedGuide && own("guide")) || loc(concept, "body");
   if (!title || !body) {
     el.concept.className = "prose muted";
     el.concept.textContent = tr("concept.none");

@@ -1,0 +1,438 @@
+{
+ "p64": {
+  "title": "Print “سلام” five times",
+  "statement": "Print the word **سلام** (the Persian word for “hello”) **five times**; each time on its own line.\n\nThis problem has no input.",
+  "hints": [
+   "`range(5)` gives five repeats.",
+   "If you do not use the counter, you can name it `_`."
+  ],
+  "guideTitle": "Print “سلام” five times — repeating with for and while",
+  "mistakes": [
+   "Writing `print` five times separately: it works, but a loop is made for repeating the same job."
+  ],
+  "solutions": [
+   {
+    "name": "Method 1: for with range(5)",
+    "steps": [
+     "This problem has no input; only a repeating loop is needed.",
+     "With `range(5)` we run the loop five times.",
+     "In each round we print the word `سلام`."
+    ],
+    "explain": [
+     "`range(5)` gives the five numbers zero to four, so the body of the loop runs five times. The variable `i` is not used in this problem, but `for` needs a variable.",
+     "Each `print` writes a new line; so `سلام` appears five times, each time on its own line."
+    ]
+   },
+   {
+    "name": "Method 2: while with a counter",
+    "steps": [
+     "We start the counter from zero.",
+     "As long as the counter is less than five, we print `سلام`.",
+     "In each round we increase the counter by one."
+    ],
+    "explain": [
+     "The condition `i < 5` becomes false after five rounds. If we do not increase the counter, the loop becomes endless and the program never ends.",
+     "Both methods have the same output. `for` is shorter when we know the number of repeats in advance, and `while` is more suitable when we control the condition ourselves."
+    ]
+   }
+  ]
+ },
+ "p65": {
+  "title": "Squares of the numbers 1 to n",
+  "statement": "Read a natural number `n` (`n ≥ 1`).\n\nPrint the squares of the numbers `1` to `n`, **each on its own line**. For example, for `n = 4` the output is 1, 4, 9 and 16.",
+  "hints": [
+   "The square of a number is the number times itself.",
+   "Run the loop from 1 to `n`; so set the end of `range` to `n + 1`."
+  ],
+  "guideTitle": "Squares of the numbers 1 to n — input and calculating in a loop",
+  "mistakes": [
+   "Starting from zero: the square of zero is printed and the number 1 is not the first output."
+  ],
+  "solutions": [
+   {
+    "name": "Method 1: for with range(1, n + 1)",
+    "steps": [
+     "We read the number `n` from the input.",
+     "With `range(1, n + 1)` we go over the numbers 1 to n.",
+     "We calculate and print the square of each number with `i * i`."
+    ],
+    "explain": [
+     "The square of a number means multiplying it by itself, so `i * i`. For `n = 4` we have 1, 4, 9 and 16, which are the squares of 1, 2, 3 and 4.",
+     "The end of the range is `n + 1` so that `n` itself is included. This is the same point that must be checked in all ranges."
+    ]
+   },
+   {
+    "name": "Method 2: while with a counter",
+    "steps": [
+     "We read the number `n`.",
+     "We start the counter from one and continue as long as it has not gone above `n`.",
+     "In each round we print the square of the counter and then increase the counter by one."
+    ],
+    "explain": [
+     "This method builds the same squares with a `while` loop. The condition `i <= n` includes `n` itself, so the last square, `n × n`, is printed.",
+     "If `n` is read from the user, the program works for every natural value of `n`."
+    ]
+   }
+  ]
+ },
+ "p66": {
+  "title": "Countdown with while from 5 to 1",
+  "statement": "Using a **while** loop (and no for), count backwards from **5** to **1** and print each number **on its own line**.\n\nThis problem has no input.",
+  "hints": [
+   "Start a variable with 5 and continue as long as it is greater than or equal to 1.",
+   "After each print, subtract one from the variable."
+  ],
+  "guideTitle": "Countdown with while from 5 to 1",
+  "mistakes": [
+   "Forgetting to subtract from the counter: the loop becomes endless."
+  ],
+  "solutions": [
+   {
+    "name": "Method 1: a decreasing counter i",
+    "steps": [
+     "We start the counter from 5.",
+     "As long as the counter is greater than or equal to one, we print it.",
+     "In each round we subtract one from the counter."
+    ],
+    "explain": [
+     "In a countdown the counter decreases in each round. The condition `i >= 1` keeps the number 1, so the last output is 1.",
+     "This problem accepts only `while`; so we must write a loop with a condition that controls the counter ourselves."
+    ]
+   },
+   {
+    "name": "Method 2: a variable n and decreasing it",
+    "steps": [
+     "We set a variable named `n` equal to 5.",
+     "As long as `n` is positive, we print it.",
+     "After each print, we subtract one from `n`."
+    ],
+    "explain": [
+     "This method does the same counting with another variable name. The condition `n > 0` is equivalent to `n >= 1`, because all the values are integers.",
+     "Choosing the variable name matters: `n` is expressive for a number that goes from top to bottom."
+    ]
+   }
+  ]
+ },
+ "p67": {
+  "title": "Counting up with while from 20 to 25",
+  "statement": "Using a **while** loop (and no for), print the numbers **20 to 25**, **each on its own line**.\n\nThis problem has no input.",
+  "hints": [
+   "Start the counter with 20 and continue as long as it is less than or equal to 25.",
+   "After each print, increase the counter by one."
+  ],
+  "guideTitle": "Counting up with while from 20 to 25",
+  "mistakes": [
+   "The condition `i < 25` instead of `i <= 25`: the number 25 is not printed."
+  ],
+  "solutions": [
+   {
+    "name": "Method 1: an increasing counter i",
+    "steps": [
+     "We start the counter from 20.",
+     "As long as the counter has not gone above 25, we print it.",
+     "In each round we increase the counter by one."
+    ],
+    "explain": [
+     "The condition `i <= 25` includes the number 25. The two boundaries of this problem are 20 and 25, and both are seen in the output.",
+     "This problem accepts only `while`, so we must increase the counter ourselves in the loop."
+    ]
+   },
+   {
+    "name": "Method 2: a variable n from 20 to 25",
+    "steps": [
+     "We set the variable `n` equal to 20.",
+     "As long as `n` is less than or equal to 25, we print it.",
+     "After each print, we increase `n` by one."
+    ],
+    "explain": [
+     "This method writes the same counting with another name. The structure of the loop is fixed: start, condition, print and update.",
+     "Both methods have exactly the same output; the difference is in the variable name, and this difference is not important for the rest of the course."
+    ]
+   }
+  ]
+ },
+ "p68": {
+  "title": "Even numbers from 0 to 10 with while",
+  "statement": "Using a **while** loop (and no for), print the even numbers **0, 2, 4, …, 10**, **each on its own line**.\n\nThis problem has no input.",
+  "hints": [
+   "Start the counter from 0 and increase it by two each time.",
+   "Write the continuing condition so that 10 is printed too."
+  ],
+  "guideTitle": "Even numbers from 0 to 10 with while",
+  "mistakes": [
+   "Increasing the counter by 1: the odd numbers are printed too."
+  ],
+  "solutions": [
+   {
+    "name": "Method 1: a step of two",
+    "steps": [
+     "We start the counter from zero.",
+     "As long as it has not gone above 10, we print it.",
+     "In each round we add two."
+    ],
+    "explain": [
+     "Starting from zero and adding 2 always gives even numbers. The condition `i <= 10` includes 10 itself.",
+     "This problem accepts only `while`; the step of two in this loop takes the place of `range` with a step."
+    ]
+   },
+   {
+    "name": "Method 2: halving a counter",
+    "steps": [
+     "We start the variable `k` from zero; it is half of the even number.",
+     "As long as twice `k` has not gone above 10, we print the number twice `k`.",
+     "In each round we increase `k` by one."
+    ],
+    "explain": [
+     "This method builds the even numbers from their halves: 0, 1, 2 … 5, and doubles each one. It is a different method that shows any arithmetic pattern can be built with a counter.",
+     "The condition `k * 2 <= 10` keeps the boundary 10 as it should be."
+    ]
+   }
+  ]
+ },
+ "p69": {
+  "title": "Countdown with step 5 to zero",
+  "statement": "Using a **while** loop (and no for), count backwards from **50** to **0** with a step of **5**. Print each number **on its own line**: 50, 45, 40, …, 5, 0.\n\nThis problem has no input.",
+  "hints": [
+   "Start the counter with 50 and subtract five each time.",
+   "The continuing condition must include the number zero too."
+  ],
+  "guideTitle": "Countdown with step 5 to zero",
+  "mistakes": [
+   "The condition `i > 0`: the number zero is not printed."
+  ],
+  "solutions": [
+   {
+    "name": "Method 1: subtracting five",
+    "steps": [
+     "We start the counter from 50.",
+     "As long as the counter is greater than or equal to zero, we print it.",
+     "In each round we subtract five."
+    ],
+    "explain": [
+     "By subtracting 5 in each round, the counter goes from 50 to 45, 40 and so on down to 0. The condition `i >= 0` prints zero too.",
+     "The important point is that the step 5 must be exactly in the body of the loop; if we forget it, the loop becomes endless."
+    ]
+   },
+   {
+    "name": "Method 2: a variable n with step 5",
+    "steps": [
+     "We set the variable `n` equal to 50.",
+     "As long as `n` is non-negative, we print it.",
+     "After each print, we subtract five from `n`."
+    ],
+    "explain": [
+     "This method shows the same pattern with another name. \"Non-negative\" means zero or positive, and this is exactly the condition that includes the number zero.",
+     "If we had set the condition to `n > 0`, zero would not be printed and the test would reject it."
+    ]
+   }
+  ]
+ },
+ "p70": {
+  "title": "Powers of 2 up to 64",
+  "statement": "Using a **while** loop (and no for), print the numbers **1, 2, 4, 8, 16, 32, 64**, **each on its own line**. Each number is double the previous one.\n\nThis problem has no input.",
+  "hints": [
+   "Start from 1 and multiply the number by 2 each time.",
+   "When the number becomes greater than 64, the loop must end."
+  ],
+  "guideTitle": "Powers of 2 up to 64 — multiplying by two with while",
+  "mistakes": [
+   "Using addition `x + 2` instead of multiplication: the numbers do not become powers of 2."
+  ],
+  "solutions": [
+   {
+    "name": "Method 1: doubling the number",
+    "steps": [
+     "We start the number from 1.",
+     "As long as it has not gone above 64, we print it.",
+     "In each round we double the number."
+    ],
+    "explain": [
+     "Each power is double the previous one: 1, 2, 4, 8, 16, 32 and 64. Multiplying by 2 builds this pattern, and the condition `i <= 64` keeps the last number.",
+     "This problem is solved with `while`, because the number of rounds is not known in advance; the loop continues until the number passes the limit."
+    ]
+   },
+   {
+    "name": "Method 2: a power variable and multiplying by two",
+    "steps": [
+     "We set the variable `power` equal to 1.",
+     "As long as `power` has not become greater than 64, we print it.",
+     "In each round we replace `power` with `power * 2`."
+    ],
+    "explain": [
+     "This method writes the same pattern with the variable name `power`. A meaningful name makes the program easy to understand.",
+     "If we want to print larger numbers, we only change the boundary 64; the logic of the program stays the same."
+    ]
+   }
+  ]
+ },
+ "p71": {
+  "title": "Sum of 1 to n with while",
+  "statement": "Read a natural number `n` (`n ≥ 1`).\n\nUsing a **while** loop (no for and no sum), print the total of the numbers `1` to `n`. For example, for `n = 4` the answer is 10.",
+  "hints": [
+   "Make a variable for the total (from zero) and a counter (from 1).",
+   "In each repeat, add the counter to the total and then increase the counter by one."
+  ],
+  "guideTitle": "Total of 1 to n with while",
+  "mistakes": [
+   "Forgetting to increase the counter: the loop does not end."
+  ],
+  "solutions": [
+   {
+    "name": "Method 1: a counter from 1 towards n",
+    "steps": [
+     "We read the number `n` and start the total from zero and the counter from 1.",
+     "As long as the counter has not gone above `n`, we add it to the total and increase the counter by one.",
+     "At the end we print the total."
+    ],
+    "explain": [
+     "This method builds the sum `1 + 2 + … + n` step by step. In each repeat one number is added to the total."
+    ]
+   },
+   {
+    "name": "Method 2: a counter from n towards 1",
+    "steps": [
+     "We read the number `n` and start the counter with `n`.",
+     "As long as the counter is positive, we add it to the total and subtract one from it."
+    ],
+    "explain": [
+     "Adding the numbers in reverse order gives the same result. This method only starts from the other side."
+    ]
+   }
+  ]
+ },
+ "p91": {
+  "title": "Sum of the numbers in a list",
+  "statement": "Write a function named `list_sum(nums)` that returns the sum of all the numbers in the list `nums`. If the list is empty, the answer is `0`.\n\nThis problem is a **function test**.",
+  "hints": [
+   "Make a variable from zero and add the numbers to it in a loop.",
+   "If the list is empty, the loop does not run and the sum is that zero."
+  ],
+  "guideTitle": "Sum of the numbers in a list — a function and going over",
+  "mistakes": [
+   "Starting the sum from the first number with `total = nums[0]`: an empty list gives an error."
+  ],
+  "solutions": [
+   {
+    "name": "Method 1: adding in a variable with for",
+    "steps": [
+     "We set a variable `total` equal to zero.",
+     "With `for` we take each number of the list and add it to `total`.",
+     "At the end we return `total`; if the list is empty, zero is returned."
+    ],
+    "explain": [
+     "This function takes a list as input and returns the sum. The variable `total` starts from zero, so for an empty list zero is returned, and that is the correct result.",
+     "`return` takes the place of `print`: the function gives the value back to the program that called it so that the test can check it."
+    ]
+   },
+   {
+    "name": "Method 2: going over with an index and while",
+    "steps": [
+     "We start the sum from zero and the index from zero too.",
+     "As long as the index is smaller than the length of the list, we add the number at that place to the sum.",
+     "We move the index forward by one in each round and at the end we return the sum."
+    ],
+    "explain": [
+     "`nums[i]` is the number at place `i` in the list. `len(nums)` gives the length of the list, so the loop goes over exactly all the members. If the list is empty, the loop does not run and `total` stays zero.",
+     "This method builds the same sum with an indexed pass; `for` and this method are both correct, but here we practise the indexing too."
+    ]
+   }
+  ]
+ },
+ "p92": {
+  "title": "List of squares",
+  "statement": "Read the natural number `n` (`n ≥ 1`).\n\nPrint the list of the squares of the numbers `1` to `n` **in the form of a Python list**, with `print` on the list itself. For example, for `n = 3` the output is `[1, 4, 9]`.",
+  "hints": [
+   "Make an empty list and in a loop add the squares to it with `append`.",
+   "At the end print the list itself with `print`, not its members."
+  ],
+  "guideTitle": "Building a list with append",
+  "mistakes": [
+   "Printing each square separately: the output must be a list."
+  ],
+  "solutions": [
+   {
+    "name": "Method 1: append in a loop",
+    "steps": [
+     "We read the number `n` and make an empty list.",
+     "With `for` we go from 1 to `n` and `append` the square of each number.",
+     "We print the list."
+    ],
+    "explain": [
+     "`append` adds the new member to the end of the list. After the loop, the list has all the squares and `print` shows it in the form of a list."
+    ]
+   },
+   {
+    "name": "Method 2: a counter from zero to n-1",
+    "steps": [
+     "We make the empty list.",
+     "We run the loop `n` times and in each one add the square of `i + 1`."
+    ],
+    "explain": [
+     "The counter starts from zero, so for the numbers 1 to `n` we must take `i + 1`. The result is the same list."
+    ]
+   }
+  ]
+ },
+ "_comments": {
+  "حلقه‌ای که پنج بار اجرا می‌شود": "a loop that runs five times",
+  "چاپ کلمه‌ی سلام در یک خط جدا": "print the word سلام on its own line",
+  "تا وقتی به پنج نرسیده‌ایم": "as long as we have not reached five",
+  "چاپ کلمه‌ی سلام": "print the word سلام",
+  "حلقه روی عددهای ۱ تا n": "a loop over the numbers 1 to n",
+  "چاپ مربع هر عدد در یک خط جدا": "print the square of each number on its own line",
+  "شمارنده از یک شروع می‌شود": "the counter starts from one",
+  "تا وقتی از n بیشتر نشده‌ایم": "as long as we have not passed n",
+  "چاپ مربع عدد فعلی": "print the square of the current number",
+  "شمارنده از ۵ شروع می‌شود": "the counter starts from 5",
+  "متغیر n از ۵ شروع می‌شود": "the variable n starts from 5",
+  "تا وقتی n مثبت است": "as long as n is positive",
+  "چاپ مقدار n": "print the value of n",
+  "n را یکی کم می‌کنیم": "subtract one from n",
+  "متغیر n از ۲۰ شروع می‌شود": "the variable n starts from 20",
+  "تا وقتی به ۲۵ نرسیده‌ایم (شامل ۲۵)": "as long as we have not passed 25 (25 included)",
+  "n را یکی جلو می‌بریم": "move n forward by one",
+  "به زوج بعدی می‌رویم": "move to the next even number",
+  "k نصف شماره‌ی عدد زوج است": "k is half of the even number",
+  "تا وقتی دو برابر k از ۱۰ بیشتر نشده": "as long as twice k has not gone above 10",
+  "چاپ عدد زوج: دو برابر k": "print the even number: twice k",
+  "k را یکی جلو می‌بریم": "move k forward by one",
+  "شمارنده از ۵۰ شروع می‌شود": "the counter starts from 50",
+  "تا وقتی به صفر نرسیده‌ایم (شامل صفر)": "as long as we have not gone below zero (zero included)",
+  "پنج واحد کم می‌کنیم": "subtract five",
+  "متغیر n از ۵۰ شروع می‌شود": "the variable n starts from 50",
+  "تا وقتی n نامنفی است": "as long as n is non-negative",
+  "عدد از ۱ شروع می‌شود": "the number starts from 1",
+  "تا وقتی از ۶۴ بیشتر نشده‌ایم": "as long as we have not passed 64",
+  "چاپ توان فعلی دو": "print the current power of two",
+  "عدد بعدی دو برابر عدد قبلی است": "the next number is double the previous one",
+  "توان از ۱ شروع می‌شود": "the power starts from 1",
+  "تا وقتی از ۶۴ بیشتر نشده": "as long as it has not passed 64",
+  "چاپ توان فعلی": "print the current power",
+  "توان بعدی: دو برابر توان فعلی": "the next power: double the current one",
+  "عدد n را از ورودی می‌خوانیم": "read the number n from the input",
+  "جمع را از صفر شروع می‌کنیم": "start the total from zero",
+  "تا وقتی i از n بزرگ‌تر نشده ادامه می‌دهیم": "we continue as long as i has not become greater than n",
+  "i را به جمع اضافه می‌کنیم": "add i to the total",
+  "شمارنده را یکی زیاد می‌کنیم": "increase the counter by one",
+  "جمع نهایی را چاپ می‌کنیم": "print the final total",
+  "شمارنده از n شروع می‌شود": "the counter starts from n",
+  "تا وقتی i مثبت است ادامه می‌دهیم": "we continue as long as i is positive",
+  "تابعی که مجموع عددهای فهرست را برمی‌گرداند": "a function that returns the sum of the numbers in the list",
+  "مجموع را از صفر شروع می‌کنیم": "start the sum from zero",
+  "هر عدد فهرست را به مجموع اضافه می‌کنیم": "add each number of the list to the sum",
+  "مجموع نهایی را برمی‌گردانیم": "return the final sum",
+  "تابعی که مجموع عددهای فهرست را با اندیس حساب می‌کند": "a function that calculates the sum of the numbers in the list with an index",
+  "مجموع و اندیس از صفر شروع می‌شوند": "the sum and the index start from zero",
+  "تا وقتی به آخر فهرست نرسیده‌ایم": "as long as we have not reached the end of the list",
+  "عدد جای i را به مجموع اضافه می‌کنیم": "add the number at place i to the sum",
+  "فهرست مربع‌ها را خالی می‌سازیم": "make the list of squares empty",
+  "از ۱ تا n می‌رویم": "go from 1 to n",
+  "مربع i را به فهرست اضافه می‌کنیم": "add the square of i to the list",
+  "کل فهرست را چاپ می‌کنیم": "print the whole list",
+  "فهرست خالی را می‌سازیم": "make the empty list",
+  "n بار تکرار می‌کنیم": "repeat n times",
+  "عدد واقعی این تکرار i + 1 است": "the real number of this repeat is i + 1",
+  "مربع x را به فهرست اضافه می‌کنیم": "add the square of x to the list",
+  "فهرست را چاپ می‌کنیم": "print the list"
+ }
+}

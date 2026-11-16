@@ -1,0 +1,442 @@
+{
+ "p99": {
+  "title": "Smallest and largest of three numbers",
+  "statement": "Read three integers, each on its own line.\n\nOn the **first line** print the smallest of them and on the **second line** the largest.",
+  "hints": [
+   "The function `min` gives the smallest and `max` the largest number.",
+   "You can call both of them with several arguments."
+  ],
+  "guideTitle": "Smallest and largest of three numbers",
+  "mistakes": [
+   "Swapping `min` and `max`: the first line is the smallest."
+  ],
+  "solutions": [
+   {
+    "name": "Method 1: finding them with if comparisons",
+    "steps": [
+     "We read the three numbers.",
+     "We first set the smallest equal to `a` and compare it with `b` and `c`.",
+     "We find the largest in the same way and print both."
+    ],
+    "explain": [
+     "The method \"assume the first is the best and compare with the others\" works for finding the minimum and the maximum. Each time a number is better, we update the variable.",
+     "If all three numbers are equal, no comparison changes the answer and the same number is printed twice, which is correct."
+    ]
+   },
+   {
+    "name": "Method 2: the min and max functions",
+    "steps": [
+     "We read the three numbers.",
+     "With `min` we find the smallest and with `max` the largest.",
+     "We print each one on its own line."
+    ],
+    "explain": [
+     "`min` and `max` can take several numbers and return the smallest or the largest of them. This method does the work of the first method in two lines.",
+     "Using them is allowed for this problem; the purpose of the first method was to let you see the logic of the comparison."
+    ]
+   }
+  ]
+ },
+ "p100": {
+  "title": "Rounding with round",
+  "statement": "Read a decimal number `x`.\n\nRound it to **two decimal places** with the function `round` and print it.\n\nNote: if the input is `10`, because it becomes a decimal number, the output is `10.0`.",
+  "hints": [
+   "`float(input())` turns the input text into a decimal number.",
+   "`round(x, 2)` rounds the number to two decimal places."
+  ],
+  "guideTitle": "Rounding with round — decimal numbers",
+  "mistakes": [
+   "Using `int` for the input: the decimal digits are lost."
+  ],
+  "solutions": [
+   {
+    "name": "Method 1: round directly",
+    "steps": [
+     "We turn the number into a decimal number with `float`.",
+     "With `round(x, 2)` we round it to two decimal places.",
+     "We print the result."
+    ],
+    "explain": [
+     "`float` turns the text into a decimal number; for the input `3.14159` the number 3.14159 is obtained. If we use `int`, a decimal input gives an error.",
+     "`round(x, 2)` brings the number to two decimal places. If the input is `10`, `float` makes it `10.0` and the output is that same `10.0`, as the problem statement explains."
+    ]
+   },
+   {
+    "name": "Method 2: keeping the result in a variable",
+    "steps": [
+     "We read the decimal number.",
+     "We put the result of rounding in the variable `y`.",
+     "We print `y`."
+    ],
+    "explain": [
+     "This method keeps the same rounding in a variable. If we want to use the result again later, this pattern helps.",
+     "The output is the same as the first method; the difference is only in the number of lines."
+    ]
+   }
+  ]
+ },
+ "p05": {
+  "title": "Area and perimeter of a rectangle",
+  "statement": "Read the length and width of a rectangle as two positive integers:\n\n- first line: length\n- second line: width\n\nThen:\n\n- first output line: area = `length * width`\n- second output line: perimeter = `2 * (length + width)`",
+  "hints": [
+   "The area is `length × width` and the perimeter is `2 × (length + width)`; do not forget the parentheses of the perimeter.",
+   "You have two output lines and their order matters: first the area, then the perimeter."
+  ],
+  "guideTitle": "Area and perimeter of a rectangle — multiplication and addition",
+  "mistakes": [],
+  "solutions": [
+   {
+    "name": "Method 1: directly in print",
+    "steps": [
+     "We read the length and width as integers.",
+     "We calculate the area with `length * width` and the perimeter with `2 * (length + width)`.",
+     "We write two `print`s; first the area and then the perimeter."
+    ],
+    "explain": [
+     "The area of a rectangle comes from multiplying the length by the width. The perimeter is the sum of the four sides, and since we have two lengths and two widths, the formula is `2 * (length + width)`.",
+     "The parentheses in the perimeter formula matter: if we do not write them, `2 * length + width` is calculated and the answer is wrong."
+    ]
+   },
+   {
+    "name": "Method 2: with middle variables",
+    "steps": [
+     "We read the length and width.",
+     "We first put the sum of the length and width in `total_side`.",
+     "We build the perimeter as twice `total_side` and print both answers."
+    ],
+    "explain": [
+     "In this method each step of the calculation is in its own variable. This helps us understand which number came from where, especially when formulas become longer.",
+     "The result of both methods is the same; this one is only more readable."
+    ]
+   }
+  ]
+ },
+ "p32": {
+  "title": "Average of three numbers with round",
+  "statement": "Read three integers, each on its own line.\n\nCalculate their average; round the result to **two decimal places** with the function `round` and print it.\n\nNote: calculate the average with the normal division `/`.",
+  "hints": [
+   "Divide the sum of the three numbers by `3`; for decimals you must use `/`, not `//`.",
+   "Keep two decimal places of the result with `round(…, 2)` and convert the inputs with `int`."
+  ],
+  "guideTitle": "Average of three numbers — division / and round",
+  "mistakes": [],
+  "solutions": [
+   {
+    "name": "Method 1: the sum, then dividing by 3",
+    "steps": [
+     "We read the three numbers and convert them to integers.",
+     "We put the sum in `total`.",
+     "We calculate the average with `total / 3` and round it with `round`."
+    ],
+    "explain": [
+     "The `/` operator gives a decimal answer, even if the result is exact; for example `12 / 3` is `4.0`. If we use `//`, the decimals are removed and the answer becomes `1` instead of `1.67`.",
+     "`round(average, 2)` rounds the number to two decimal places. For example `5 / 3` is `1.6666…` and rounded it becomes `1.67`."
+    ]
+   },
+   {
+    "name": "Method 2: one line for the whole calculation",
+    "steps": [
+     "We read the three numbers.",
+     "In one expression we calculate `(a + b + c) / 3` and round it with `round`."
+    ],
+    "explain": [
+     "The parentheses around `a + b + c` are very important; without them only `c` would be divided by 3.",
+     "This method has the same answer and is shorter. For beginners, method 1 shows the steps better."
+    ]
+   }
+  ]
+ },
+ "p33": {
+  "title": "Seconds to minutes and seconds",
+  "statement": "Read an integer `n` (the number of seconds).\n\nThe output is two lines:\n\n- first line: the number of **whole minutes**\n- second line: the number of **remaining seconds**\n\nExample: 150 seconds is `2` minutes and `30` seconds.",
+  "hints": [
+   "Every 60 seconds is one minute; `n // 60` gives the number of whole minutes.",
+   "The remaining seconds are the remainder of dividing `n` by `60`; print both numbers on two separate lines."
+  ],
+  "guideTitle": "Seconds to minutes and seconds — // and %",
+  "mistakes": [],
+  "solutions": [
+   {
+    "name": "Method 1: with // and %",
+    "steps": [
+     "We read the number `n`.",
+     "We calculate the minutes with `n // 60`.",
+     "We calculate the remaining seconds with `n % 60`.",
+     "We print both, each on its own line."
+    ],
+    "explain": [
+     "`//` is the integer division and gives only the whole part: `150 // 60` is `2`. `%` gives the remainder: `150 % 60` is `30`.",
+     "These two operators together split one number into two separate parts; like a clock that has minutes and seconds."
+    ]
+   },
+   {
+    "name": "Method 2: subtracting 60 with while",
+    "steps": [
+     "We set the minute counter to zero.",
+     "As long as `n` is at least 60, we subtract 60 from it and increase the counter by one.",
+     "At the end we print the counter and the remaining `n`."
+    ],
+    "explain": [
+     "This method does the work of `//` step by step: each time it separates a minute of 60 seconds until there is nothing left to separate.",
+     "For a big number it is slower, but it shows that the integer division means counting how many times 60 fits in the number."
+    ]
+   }
+  ]
+ },
+ "p22": {
+  "title": "Counting long words",
+  "statement": "The first line is the number `n`, and then `n` English words come (each word on its own line).\n\nPrint the number of words that have **more than 3 letters**.",
+  "hints": [
+   "Get the length of each word with `len`.",
+   "Count only the words whose length is more than 3."
+  ],
+  "guideTitle": "Counting long words with len",
+  "mistakes": [
+   "Writing `>= 3`: the three-letter words are counted too."
+  ],
+  "solutions": [
+   {
+    "name": "Method 1: for and len",
+    "steps": [
+     "We read `n` and start the counter from zero.",
+     "In each repeat we read one word; if its length is more than 3, we increase the counter.",
+     "We print the counter."
+    ],
+    "explain": [
+     "`len(word)` is the number of letters of each word. Only the words that are longer than 3 are counted."
+    ]
+   },
+   {
+    "name": "Method 2: while",
+    "steps": [
+     "We set the counter of the words read and the counter of the long ones to zero.",
+     "We continue until we have read `n` words."
+    ],
+    "explain": [
+     "The same job with `while`. We have two counters: one for the number of words read and one for the long ones."
+    ]
+   }
+  ]
+ },
+ "p45": {
+  "title": "Reverse of a word",
+  "statement": "Read an English word (without spaces) and print it **from the end to the start**.\n\nExample: `python` → `nohtyp`",
+  "hints": [
+   "Make an empty text and each time stick the new letter to the front of it so that the word is built backwards.",
+   "You can use the slice `[::-1]`; or the indexes from the last to the first with `range(len(word) - 1, -1, -1)`."
+  ],
+  "guideTitle": "Reversing a word — strings and for",
+  "mistakes": [],
+  "solutions": [
+   {
+    "name": "Method 1: add the letters to the front of a new text",
+    "steps": [
+     "We read the word.",
+     "We leave the new text `result` empty.",
+     "We stick each letter of the word to the **front** of `result`.",
+     "We print `result`."
+    ],
+    "explain": [
+     "For `python`: `p` → `\"p\"`, then `y` in front of it → `\"yp\"`, and so on to the end. Since each letter comes in front of the rest, the order is reversed.",
+     "`ch + result` means first the new letter and then the previous text. If we wrote `result + ch`, the word would keep the first order."
+    ]
+   },
+   {
+    "name": "Method 2: read the indexes from the end",
+    "steps": [
+     "We read the word.",
+     "With `range(len(word) - 1, -1, -1)` we take the indexes from the last to the first.",
+     "We stick each letter `word[i]` to the end of `result`."
+    ],
+    "explain": [
+     "`word[i]` gives the letter number `i`. With a step of `-1` the indexes come from the end to the start, so the letters are added in reverse order.",
+     "Both methods have the same output; method 1 is simpler and method 2 shows the use of the index."
+    ]
+   }
+  ]
+ },
+ "p46": {
+  "title": "Palindrome",
+  "statement": "Read an English word (without spaces).\n\nIf the word is a **palindrome** (it reads the same from both sides), the output is `yes`, otherwise `no`.\n\nCapital and small letters are different; that is, `Aba` is not a palindrome.",
+  "hints": [
+   "Compare the word with its reverse; reversing is possible with the slice `[::-1]`.",
+   "Capital and small letters are different; so `Aba` is not a palindrome and there is no need for `lower`."
+  ],
+  "guideTitle": "Palindrome — comparing a word with its reverse",
+  "mistakes": [],
+  "solutions": [
+   {
+    "name": "Method 1: reverse and compare",
+    "steps": [
+     "We read the word.",
+     "With a loop we build the reverse of the word in `reverse_word`.",
+     "If `reverse_word` is equal to the word, we print `yes`, otherwise `no`."
+    ],
+    "explain": [
+     "A palindrome means the word is equal to its reverse. We first build the reverse and then compare with `==`.",
+     "Capital and small letters are different, so `Aba` is not the same as `abA`; `==` applies this rule automatically."
+    ]
+   },
+   {
+    "name": "Method 2: compare the letters of both sides with each other",
+    "steps": [
+     "We halve the length of the word; only this many pairs need to be checked.",
+     "We compare letter `i` from the start with letter `i` from the end.",
+     "If one pair is not the same, the word is not a palindrome."
+    ],
+    "explain": [
+     "`len(word) // 2` is half of the word. For the word `abba` the pairs are `a and a` and `b and b`. We do not need to check more than half.",
+     "`word[len(word) - 1 - i]` is letter number `i` from the end: for `i = 0` it is the last letter."
+    ]
+   }
+  ]
+ },
+ "p07": {
+  "title": "Maximum of three numbers",
+  "statement": "Read three integers on **three separate lines** and print the largest.\n\nDo **not use** the calls `max(...)` and `sorted(...)`; compare only with `if`. The variable name is free (you can even name the variable `max`); the call `max(...)` itself is forbidden.",
+  "hints": [
+   "Keep the largest in a variable; with each new number compare only once with it.",
+   "In this problem `max` and `sorted` are forbidden; so you must compare yourself with `if` and `>`."
+  ],
+  "guideTitle": "Maximum of three numbers — comparing with if",
+  "mistakes": [],
+  "solutions": [
+   {
+    "name": "Method 1: we keep the largest and compare one by one",
+    "steps": [
+     "We read the three numbers separately.",
+     "We assume `a` is the largest and put it in `best`.",
+     "If `b` is larger than `best`, we make `best` equal to `b`.",
+     "We do the same with `c` and at the end we print `best`."
+    ],
+    "explain": [
+     "This method is like a person who keeps one of the three numbers as the largest and compares it with the next number each time. If the new number is larger, they change the one they keep.",
+     "The `>` comparison always takes two numbers; so for three numbers two comparisons are needed: one with `b` and one with `c`."
+    ]
+   },
+   {
+    "name": "Method 2: comparing each number with the two others",
+    "steps": [
+     "We read the three numbers.",
+     "If `a` is greater than or equal to both `b` and `c`, the answer is `a`.",
+     "Otherwise, if `b` is greater than or equal to both `a` and `c`, the answer is `b`.",
+     "Otherwise the answer is `c`."
+    ],
+    "explain": [
+     "In this method, instead of keeping a variable, for each number we ask whether it is not smaller than the two other numbers. `and` means both conditions must be true.",
+     "The order of the conditions does not matter, because one of the three numbers is certainly the largest. If two numbers are equal, the answer is correct too."
+    ]
+   }
+  ]
+ },
+ "p08": {
+  "title": "Score to letter",
+  "statement": "Read an integer score from 0 to 20 and print only the equivalent **capital English letter**:\n\n- 17 to 20 → `A`\n- 14 to 16 → `B`\n- 10 to 13 → `C`\n- less than 10 → `F`\n\nThe boundaries include both ends of the range (for example 14 gives `B` and 17 gives `A`).",
+  "hints": [
+   "Since the ranges follow each other, start from the top: first check whether the score is 17 or more, then 14.",
+   "The boundaries are exact: a score of 10 belongs to `C` and a score of 9 belongs to `F`."
+  ],
+  "guideTitle": "Score to letter — if and elif",
+  "mistakes": [],
+  "solutions": [
+   {
+    "name": "Method 1: an elif chain from top to bottom",
+    "steps": [
+     "We read the score and convert it to an integer.",
+     "We first check the highest range (17 to 20).",
+     "Then we bring the lower ranges in order with `elif`.",
+     "If none was true, `else` prints the letter `F`."
+    ],
+    "explain": [
+     "When one `if` is true, the other `elif`s are not checked any more. That is why we must start from the highest range; if we write `score >= 10` first, a score of 18 would become `C` too.",
+     "The boundaries include both ends of the range, so `>= 14` means 14 is counted too and gets `B`."
+    ]
+   },
+   {
+    "name": "Method 2: changing the letter variable little by little",
+    "steps": [
+     "We set the first letter to `F`.",
+     "If the score is greater than or equal to 10, we make the letter `C`.",
+     "If it is greater than or equal to 14, we make the letter `B`.",
+     "If it is greater than or equal to 17, we make the letter `A`; at the end we print the letter."
+    ],
+    "explain": [
+     "In this method the `if`s are written one after another and each one, if true, changes the letter. Since the ranges are checked from bottom to top, the last change is the correct letter.",
+     "This method is a bit longer, but it shows what role the order of checking plays. Method 1 is shorter and usually better."
+    ]
+   }
+  ]
+ },
+ "_comments": {
+  "خواندن سه عدد": "read the three numbers",
+  "کوچک‌ترین را پیدا می‌کنیم: اول فرض می‌کنیم a کوچک‌ترین است": "find the smallest: first we assume a is the smallest",
+  "بزرگ‌ترین را پیدا می‌کنیم: اول فرض می‌کنیم a بزرگ‌ترین است": "find the largest: first we assume a is the largest",
+  "خط اول: کوچک‌ترین، خط دوم: بزرگ‌ترین": "first line: the smallest, second line: the largest",
+  "خط اول: کوچک‌ترین عدد": "first line: the smallest number",
+  "خط دوم: بزرگ‌ترین عدد": "second line: the largest number",
+  "خواندن عدد اعشاری": "read the decimal number",
+  "گرد کردن به دو رقم اعشار و چاپ": "round to two decimal places and print",
+  "گرد کردن به دو رقم اعشار": "round to two decimal places",
+  "طول مستطیل": "the length of the rectangle",
+  "عرض مستطیل": "the width of the rectangle",
+  "مساحت = طول × عرض": "area = length × width",
+  "محیط = ۲ × (طول + عرض)": "perimeter = 2 × (length + width)",
+  "دو ضلع را می‌خوانیم": "read the two sides",
+  "مجموع دو ضلع مجاور را یک بار حساب می‌کنیم": "calculate the sum of two adjacent sides once",
+  "مساحت و محیط را جدا حساب و چاپ می‌کنیم": "calculate and print the area and the perimeter separately",
+  "سه عدد را می‌خوانیم و به عدد صحیح تبدیل می‌کنیم": "read the three numbers and convert them to integers",
+  "مجموع سه عدد": "the sum of the three numbers",
+  "میانگین = مجموع ÷ ۳؛ با / تقسیم اعشاری انجام می‌شود": "average = sum ÷ 3; the / operator does decimal division",
+  "دو رقم اعشار نگه می‌داریم و چاپ می‌کنیم": "keep two decimal places and print",
+  "سه عدد را می‌خوانیم": "read the three numbers",
+  "پرانتز مجموع را اول حساب می‌کند؛ سپس بر ۳ تقسیم و گرد می‌شود": "the parentheses calculate the sum first; then it is divided by 3 and rounded",
+  "تعداد کل ثانیه‌ها را می‌خوانیم": "read the total number of seconds",
+  "// تعداد دقیقه‌های کامل را می‌دهد": "// gives the number of whole minutes",
+  "% ثانیه‌های باقی‌مانده را می‌دهد": "% gives the remaining seconds",
+  "دقیقه‌ها و ثانیه‌ها را در دو خط چاپ می‌کنیم": "print the minutes and the seconds on two lines",
+  "شمارنده‌ی دقیقه‌ها را از صفر شروع می‌کنیم": "start the minute counter from zero",
+  "تا وقتی یک دقیقه‌ی کامل در n هست، آن را برمی‌داریم": "as long as there is a whole minute in n, we take it out",
+  "دقیقه‌ها و ثانیه‌های باقی‌مانده را چاپ می‌کنیم": "print the minutes and the remaining seconds",
+  "تعداد کلمه‌ها را از ورودی می‌خوانیم": "read the number of words from the input",
+  "شمارنده‌ی کلمه‌های بلند از صفر شروع می‌شود": "the counter of long words starts from zero",
+  "n کلمه می‌خوانیم": "we read n words",
+  "اگر کلمه بیشتر از ۳ حرف داشت، شمرده می‌شود": "if the word has more than 3 letters, it is counted",
+  "تعداد را چاپ می‌کنیم": "print the count",
+  "شمارنده‌ی بلندها و شمارنده‌ی خوانده‌شده‌ها": "the counter of the long ones and the counter of the ones read",
+  "تا وقتی همه‌ی کلمه‌ها خوانده نشده‌اند": "as long as not all the words have been read",
+  "اگر کلمه بلند بود، می‌شماریم": "if the word was long, we count it",
+  "تعداد بلندها را چاپ می‌کنیم": "print the number of long ones",
+  "کلمه را می‌خوانیم": "read the word",
+  "متن جدید که در آن معکوس کلمه ساخته می‌شود": "the new text in which the reverse of the word is built",
+  "هر حرف را یکی‌یکی می‌خوانیم": "read each letter one by one",
+  "حرف جدید را جلوی متن قبلی می‌گذاریم": "put the new letter in front of the previous text",
+  "معکوس کلمه را چاپ می‌کنیم": "print the reverse of the word",
+  "متن جدید برای ساختن معکوس": "the new text for building the reverse",
+  "اندیس‌ها از آخرین حرف (len - 1) تا اولین حرف (0) با گام -1": "the indexes from the last letter (len - 1) to the first letter (0) with a step of -1",
+  "حرف با اندیس i را به انتهای متن جدید اضافه می‌کنیم": "add the letter with index i to the end of the new text",
+  "معکوس کلمه را می‌سازیم (مثل مسئله‌ی معکوس کردن)": "build the reverse of the word (like the reversing problem)",
+  "اگر کلمه و معکوسش یکی باشند، پالیندروم است": "if the word and its reverse are the same, it is a palindrome",
+  "فرض می‌کنیم پالیندروم است": "we assume it is a palindrome",
+  "فقط نیمه‌ی اول را بررسی می‌کنیم؛ هر جفت حرف دو طرف را با هم مقایسه می‌کنیم": "we check only the first half; we compare each pair of letters from both sides",
+  "حرف i از اول و حرف i از آخر": "letter i from the start and letter i from the end",
+  "نتیجه را بر اساس پرچم چاپ می‌کنیم": "print the result based on the flag",
+  "سه عدد را هر کدام در یک خط می‌خوانیم": "read the three numbers, each on its own line",
+  "فرض می‌کنیم اولین عدد بزرگ‌ترین است": "we assume the first number is the largest",
+  "اگر b از بزرگ‌ترین فعلی بزرگ‌تر بود، جایش را عوض می‌کنیم": "if b is larger than the current largest, we replace it",
+  "همین کار را برای c انجام می‌دهیم": "we do the same for c",
+  "بزرگ‌ترین عدد پیدا شده را چاپ می‌کنیم": "print the largest number found",
+  "اگر a از هر دو عدد دیگر بزرگ‌تر یا مساوی باشد، جواب a است": "if a is greater than or equal to both other numbers, the answer is a",
+  "وگرنه اگر b از هر دو عدد دیگر بزرگ‌تر یا مساوی باشد، جواب b است": "otherwise, if b is greater than or equal to both other numbers, the answer is b",
+  "در غیر این صورت c بزرگ‌ترین است": "otherwise c is the largest",
+  "نمره را می‌خوانیم": "read the score",
+  "بالاترین بازه اول بررسی می‌شود": "the highest range is checked first",
+  "بازه‌ی ۱۴ تا ۱۶": "the range 14 to 16",
+  "بازه‌ی ۱۰ تا ۱۳": "the range 10 to 13",
+  "همه‌ی حالت‌های دیگر (کمتر از ۱۰)": "all the other cases (less than 10)",
+  "اول فرض می‌کنیم حرف F است": "first we assume the letter is F",
+  "اگر نمره حداقل ۱۰ باشد، حرف C می‌شود": "if the score is at least 10, the letter becomes C",
+  "اگر حداقل ۱۴ باشد، حرف B می‌شود (این بررسی بعد از قبلی است، پس جای قبلی را می‌گیرد)": "if it is at least 14, the letter becomes B (this check comes after the previous one, so it replaces it)",
+  "اگر حداقل ۱۷ باشد، حرف A می‌شود": "if it is at least 17, the letter becomes A",
+  "حرف نهایی را چاپ می‌کنیم": "print the final letter"
+ }
+}

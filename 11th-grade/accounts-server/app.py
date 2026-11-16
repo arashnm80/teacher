@@ -79,7 +79,7 @@ MAX_CODE = 30_000
 ADMIN_PASSWORD_MIN = 12
 QUICK_PASS_SECONDS = 60  # a first pass this soon after the first look is flagged (long code only)
 QUICK_PASS_CODE = 120
-GUIDE_FIELDS = ("guide", "guideTitle", "solutions", "mistakes")
+GUIDE_FIELDS = ("guide", "guideTitle", "solutions", "mistakes", "guideEn")
 
 INVALID_MESSAGE = "شماره موبایل یا رمز درست نیست."
 LOCKED_MESSAGE = "چند بار رمز اشتباه وارد شده است. ۱۵ دقیقه صبر کن و دوباره امتحان کن."

@@ -1,0 +1,439 @@
+{
+ "p21": {
+  "title": "Do two groups of numbers share a number?",
+  "statement": "First group: the first line is `n`, then `n` numbers (each on its own line).\nSecond group: the next line is `m`, then `m` numbers (each on its own line).\n\nIf at least one number appears in **both** groups, print `yes`, otherwise print `no`.",
+  "hints": [
+   "Save the first group in a list.",
+   "Find each number of the second group in the first list with `in`."
+  ],
+  "guideTitle": "Do two groups of numbers share a number? — comparing two lists",
+  "mistakes": [
+   "Checking only the first number of the second group: all the numbers must be checked."
+  ],
+  "solutions": [
+   {
+    "name": "Method 1: comparing each number of the first group with the second group",
+    "steps": [
+     "We read the first group into the list `first` and the second group into `second`.",
+     "With two nested loops we compare each first number with each second number.",
+     "If one is equal, we make the flag `common` `True`."
+    ],
+    "explain": [
+     "Two nested loops mean each number of the first group is compared with each number of the second group. If even one pair is equal, the flag becomes `True` and we keep that flag to the end.",
+     "The problem statement says the shared number must be in \"both\" groups; comparing between the two groups covers exactly this condition."
+    ]
+   },
+   {
+    "name": "Method 2: while loops with an index",
+    "steps": [
+     "We make the two lists as in the first method.",
+     "With two nested `while` loops we go over the indexes of both lists.",
+     "If two numbers are equal, we raise the flag."
+    ],
+    "explain": [
+     "This method does the same comparison with `while`. The outer index `i` goes over the first group and the inner index `j` over the second group.",
+     "Both methods give the same answer; `for` is more readable and `while` gives more exact control over the indexes."
+    ]
+   }
+  ]
+ },
+ "p39": {
+  "title": "Is the number in the list?",
+  "statement": "First read the count `n` and then `n` integers (each on its own line).\n\nThen read the number `x`.\n\nIf `x` was in the list, print `yes`, otherwise `no`.",
+  "hints": [
+   "Save the numbers in a list and then read `x`.",
+   "To check whether a number is in the list, use `in`; if `n` was zero, the list is empty and the answer is `no`."
+  ],
+  "guideTitle": "Number in a list — in and a flag",
+  "mistakes": [],
+  "solutions": [
+   {
+    "name": "Method 1: with in",
+    "steps": [
+     "We put the numbers in the list `nums`.",
+     "We read `x`.",
+     "If `x in nums` is true, we print `yes`, otherwise `no`."
+    ],
+    "explain": [
+     "`x in nums` is a simple check: it is true if `x` is in the list. We do not need to search ourselves.",
+     "For an empty list, `in` is always false and the output is `no`."
+    ]
+   },
+   {
+    "name": "Method 2: with a flag (a variable holding true/false)",
+    "steps": [
+     "We set `found` to `False`.",
+     "We loop over the list; wherever a number equals `x`, we make `found` `True`.",
+     "At the end we print the answer based on `found`."
+    ],
+    "explain": [
+     "A flag is a variable that holds a state. With `found = True` we say the number has been found. This pattern is very useful in bigger programs.",
+     "This method does what `in` does behind the scenes; it is good for learning."
+    ]
+   }
+  ]
+ },
+ "p42": {
+  "title": "Sum of the numbers of two lists",
+  "statement": "First list: a line `n`, then `n` numbers (each on its own line).\nSecond list: a line `m`, then `m` numbers (each on its own line).\n\nPrint the **sum of all the numbers of both lists**.",
+  "hints": [
+   "Make a variable for the sum and add both lists separately with a loop.",
+   "You do not need to keep the lists; add each number as you read it."
+  ],
+  "guideTitle": "Sum of the numbers of two lists — adding twice with for",
+  "mistakes": [
+   "Not adding the second list: the output must include both lists."
+  ],
+  "solutions": [
+   {
+    "name": "Method 1: adding each list with for",
+    "steps": [
+     "We start the total sum from zero.",
+     "We read the count and the numbers of the first list and add each one to the sum.",
+     "We do the same for the second list and print the total sum."
+    ],
+    "explain": [
+     "Since we add each number to `total` right away, we do not need to save the lists. Both lists build one total sum.",
+     "Example: the first list has 1 and 2 and the second list has 3 and 4; the sum is 10."
+    ]
+   },
+   {
+    "name": "Method 2: saving in a list and adding with while",
+    "steps": [
+     "We put both lists side by side in one bigger list.",
+     "With `while` we calculate the sum of all the members.",
+     "We print the sum."
+    ],
+    "explain": [
+     "This method makes all the numbers one list and then adds them. With one single list, adding with `while` and an index becomes simple.",
+     "The result is the same as the first method; the difference is that all the numbers stay in memory once."
+    ]
+   }
+  ]
+ },
+ "p90": {
+  "title": "Largest number of a list",
+  "statement": "Write a function named `biggest(nums)` that takes a list of numbers (at least one number) and returns its **largest** number.\n\nGo over the list with a **loop**; do not use `max`.\n\nThis problem is a **function test**.",
+  "hints": [
+   "Assume the first number of the list is the largest.",
+   "In the loop, replace it with each larger number."
+  ],
+  "guideTitle": "Largest number with a loop",
+  "mistakes": [
+   "An initial value of `0`: if all the numbers are negative, the answer is not correct."
+  ],
+  "solutions": [
+   {
+    "name": "Method 1: comparing with the current largest",
+    "steps": [
+     "We take the first number as the current largest.",
+     "We loop over all the numbers and each time replace it with the larger number.",
+     "We return the largest."
+    ],
+    "explain": [
+     "With a helper variable `best` we keep the largest value seen up to this moment. When we see a larger number, we replace it."
+    ]
+   },
+   {
+    "name": "Method 2: with an index counter",
+    "steps": [
+     "We take the first number as the largest.",
+     "We go from index 1 to the end of the list and compare the numbers.",
+     "We return the largest."
+    ],
+    "explain": [
+     "This method works with the indexes. Since we already took the first number, the loop starts from index 1."
+    ]
+   }
+  ]
+ },
+ "p94": {
+  "title": "Counting the repeats of a number",
+  "statement": "Read the number `n` (`n ≥ 1`), then `n` integers (each on its own line), and then the number `x`.\n\nHow many times did `x` appear among the numbers? Print that count. (Without using `count`.)",
+  "hints": [
+   "Save the numbers in a list; then read the number `x`.",
+   "Loop over the list and each time a number equals `x`, increase the counter."
+  ],
+  "guideTitle": "Counting repeats in a list",
+  "mistakes": [
+   "Reading `x` before the numbers: the order of the input is that `x` comes last."
+  ],
+  "solutions": [
+   {
+    "name": "Method 1: for over the list",
+    "steps": [
+     "We save the numbers in the list `nums` and then read `x`.",
+     "With `for` we loop over the list and each time a number equals `x`, we increase the counter.",
+     "We print the counter."
+    ],
+    "explain": [
+     "We compare each number of the list with `x`. Only when they are equal does the counter go up."
+    ]
+   },
+   {
+    "name": "Method 2: while over the indexes",
+    "steps": [
+     "We read the numbers and `x`.",
+     "With `while` we go from index zero to the end of the list and count."
+    ],
+    "explain": [
+     "The same counting is done with `while` and an index. The condition `i < n` makes sure we do not go past the end of the list."
+    ]
+   }
+  ]
+ },
+ "p23": {
+  "title": "Recording a score in a book",
+  "statement": "Write a function named `update_score(book, name, score)`. `book` is a dictionary that connects names to scores.\n\nMake the score of `name` equal to `score` (if this name was not in the book, add it) and return **the same dictionary**.\n\nThis problem is a **function test**.",
+  "hints": [
+   "Record the value with `book[name] = score`.",
+   "At the end return the dictionary with `return`."
+  ],
+  "guideTitle": "Recording a score in a book — a dictionary and a key",
+  "mistakes": [
+   "Making a new dictionary and returning it without recording the earlier scores."
+  ],
+  "solutions": [
+   {
+    "name": "Method 1: changing the dictionary directly",
+    "steps": [
+     "We record or update the score with `book[name] = score`.",
+     "If the name is new, the same statement adds it.",
+     "We return the dictionary."
+    ],
+    "explain": [
+     "A dictionary connects keys to values; here the names are the keys and the scores are the values. Writing `book[name] = score` updates the key if it exists and adds it if it does not.",
+     "The output of the function is the same dictionary, so the test checks the full value of the book."
+    ]
+   },
+   {
+    "name": "Method 2: making a new book and copying",
+    "steps": [
+     "We make an empty dictionary named `result`.",
+     "We copy all the names of the previous book with their scores into it.",
+     "We put the score of `name` in `result` and return it."
+    ],
+    "explain": [
+     "This method does not change the original book and makes a new copy. This pattern is important when we do not want the input data to change.",
+     "The result is the same as the first method; the difference is that the input book stays untouched after the function."
+    ]
+   }
+  ]
+ },
+ "p19": {
+  "title": "Average of a list",
+  "statement": "Write a function named `average(nums)` that returns the **average** of the numbers of the list `nums` (the sum divided by the count). The list has at least one number.\n\nThis problem is a **function test**.",
+  "hints": [
+   "First calculate the sum of all the numbers with a loop.",
+   "Get the count of numbers with `len(nums)` and divide the sum by it."
+  ],
+  "guideTitle": "Average of a list — the sum divided by the count",
+  "mistakes": [
+   "Dividing by `2` instead of `len(nums)`: the average of other lists is not correct."
+  ],
+  "solutions": [
+   {
+    "name": "Method 1: adding in a for loop and dividing by the count",
+    "steps": [
+     "We start the sum from zero.",
+     "With `for` we add each number of the list to the sum.",
+     "We divide the sum by `len(nums)` and return it."
+    ],
+    "explain": [
+     "The average means the sum of the numbers divided by their count. The `/` operator in Python always gives a decimal result; for [1, 2, 3] the result is 2.0 and for [5] it is 5.0.",
+     "The problem statement says the list has at least one number, so `len(nums)` is not zero and division by zero does not happen."
+    ]
+   },
+   {
+    "name": "Method 2: going over with an index and while",
+    "steps": [
+     "We start the sum and the index from zero.",
+     "With `while` we add the number at each index up to the end of the list.",
+     "At the end we divide the sum by the count."
+    ],
+    "explain": [
+     "This method builds the same sum with an index. For a one-member list, the loop runs once and the average is that member.",
+     "The result is the same as the first method; `total / len(nums)` is the same final division in both methods."
+    ]
+   }
+  ]
+ },
+ "p25": {
+  "title": "Leap year",
+  "statement": "Write a function named `is_leap(year)` that takes a Gregorian year and returns `True` if it is a leap year, otherwise `False`.\n\nThe leap-year rule:\n\n- if the year is divisible by `400` → it is a leap year\n- otherwise if it is divisible by `100` → it is not a leap year\n- otherwise if it is divisible by `4` → it is a leap year\n- otherwise → it is not a leap year\n\nExample: `2000` → `True`, `1900` → `False`, `2024` → `True`.\n\nThis problem is a **function test**: write only the requested function and return the answer with `return`. There is no need for `input` or `print` outside the function.",
+  "hints": [
+   "The order of checking matters: first divisibility by `400`, then by `100`, then by `4`.",
+   "The output must be the boolean `True` or `False`, not text; for example the year `1900` gives `False`."
+  ],
+  "guideTitle": "Leap year — the order of the conditions",
+  "mistakes": [],
+  "solutions": [
+   {
+    "name": "Method 1: checking one after another with return",
+    "steps": [
+     "First we check whether the year is divisible by 400.",
+     "If not, we check whether it is divisible by 100; if it is, it is not a leap year.",
+     "If not, we check whether it is divisible by 4; if it is, it is a leap year.",
+     "Otherwise it is not a leap year."
+    ],
+    "explain": [
+     "The order of the rules matters. `return` makes the function end immediately, so if the year is divisible by 400, the check for 100 is not done any more.",
+     "`year % 400 == 0` means the remainder of dividing by 400 is zero. The output is `True` or `False`, not text."
+    ]
+   },
+   {
+    "name": "Method 2: one condition with and and or",
+    "steps": [
+     "We write the leap-year condition as one sentence: either it is divisible by 400, or (it is divisible by 4 and it is not divisible by 100).",
+     "If the condition is true, we return `True`, otherwise `False`."
+    ],
+    "explain": [
+     "`or` means one of the two sides is true; `and` means both sides are true. The parentheses around the second part make it be calculated first.",
+     "`!=` means not equal. `year % 100 != 0` means it is not divisible by 100. Both methods have the same answer."
+    ]
+   }
+  ]
+ },
+ "p26": {
+  "title": "Factorial",
+  "statement": "Write a function named `factorial(n)` that returns the value of `n!` for `n ≥ 0`.\n\nReminder: `0! = 1` and for example `5! = 5*4*3*2*1 = 120`.\n\n**Write it with a `for` loop and do not use `while`.**\n\nThis problem is a **function test**: write only the requested function and return the answer with `return`. There is no need for `input` or `print` outside the function.",
+  "hints": [
+   "Start the result from `1` and in the `for` loop from `1` to `n` multiply it.",
+   "For `n = 0` the loop does not run and the answer is that `1`; `while` is forbidden."
+  ],
+  "guideTitle": "Factorial — the for loop and multiplication",
+  "mistakes": [
+   "Starting the result from `0` instead of `1`: since any number multiplied by zero becomes zero, the answer is always zero."
+  ],
+  "solutions": [
+   {
+    "name": "Method 1: multiplying from 1 to n",
+    "steps": [
+     "We start the result from `1` (because `0! = 1` and multiplying by 1 changes nothing).",
+     "With `range(1, n + 1)` we take the numbers 1 to `n` and multiply each into the result."
+    ],
+    "explain": [
+     "`n!` means all the numbers 1 to `n` multiplied together. `5! = 1 × 2 × 3 × 4 × 5 = 120`.",
+     "If `n` is zero, `range(1, 1)` is empty and the loop does not run; so the output is `1`, which is exactly `0! = 1`."
+    ]
+   },
+   {
+    "name": "Method 2: multiplying from n to 2",
+    "steps": [
+     "We set the result to `1`.",
+     "With `range(n, 1, -1)` we count downward from `n` to `2`.",
+     "We multiply each number into the result."
+    ],
+    "explain": [
+     "Multiplying in descending order gives the same answer; multiplication of numbers is commutative. The step `-1` makes the counting go downward from `n`.",
+     "For `n` equal to `0` or `1`, the range `range(n, 1, -1)` is empty and the answer is `1`."
+    ]
+   }
+  ]
+ },
+ "p27": {
+  "title": "Counting vowels",
+  "statement": "Write a function named `count_vowels(text)` that takes a string and returns the number of **English vowel letters** in it.\n\nThe vowels are only these: `a e i o u` (the capital versions `A E I O U` are counted too).\n\nThe letter `y` is not a vowel. The other characters (spaces, digits, …) are not counted.\n\nThis problem is a **function test**: write only the requested function and return the answer with `return`. There is no need for `input` or `print` outside the function.",
+  "hints": [
+   "Only `a e i o u` are counted (both capital and small); `y` is not counted and neither are spaces and digits.",
+   "Loop over the text once and for each letter check whether it is in the set of vowels; `lower()` helps."
+  ],
+  "guideTitle": "Counting vowels — in on a string",
+  "mistakes": [],
+  "solutions": [
+   {
+    "name": "Method 1: checking capital and small vowels together",
+    "steps": [
+     "We make the string `vowels` with all the vowels (small and capital).",
+     "With `for ch in text` we check each letter.",
+     "If the letter was in `vowels`, we increase the counter by one."
+    ],
+    "explain": [
+     "`for ch in text` goes over the letters of the string one by one. `ch in vowels` checks whether that letter is in the string of vowels.",
+     "Spaces, digits and `y` are not in the string of vowels, so they are not counted."
+    ]
+   },
+   {
+    "name": "Method 2: first make everything small",
+    "steps": [
+     "With `lower()` we make all the letters of the text small.",
+     "We check only the small vowels `aeiou`."
+    ],
+    "explain": [
+     "`lower()` makes all the English letters small; so `A` and `a` both become `a`. This makes the list of vowels shorter.",
+     "Both methods give the same answer; the choice between them is a matter of taste."
+    ]
+   }
+  ]
+ },
+ "_comments": {
+  "خواندن گروه اول": "read the first group",
+  "خواندن گروه دوم": "read the second group",
+  "پرچم مشترک بودن": "the flag for having a common number",
+  "هر عدد گروه اول را با همه‌ی عددهای گروه دوم مقایسه می‌کنیم": "we compare each number of the first group with all the numbers of the second group",
+  "پرچم و اندیس بیرونی": "the flag and the outer index",
+  "اندیس عددهای گروه اول": "the index of the numbers of the first group",
+  "اندیس عددهای گروه دوم": "the index of the numbers of the second group",
+  "اگر دو عدد برابر بودند": "if the two numbers were equal",
+  "عددها را در لیست می‌ریزیم": "put the numbers into the list",
+  "عددی که باید پیدا کنیم": "the number we must find",
+  "in بررسی می‌کند x در لیست هست یا نه": "in checks whether x is in the list",
+  "عددی که دنبالش هستیم": "the number we are looking for",
+  "پرچم: در ابتدا فرض می‌کنیم عدد پیدا نشده": "the flag: at first we assume the number has not been found",
+  "روی لیست می‌چرخیم و اگر عدد برابر x بود، پرچم را بالا می‌بریم": "we loop over the list and if a number equals x, we raise the flag",
+  "بر اساس پرچم جواب را چاپ می‌کنیم": "we print the answer based on the flag",
+  "مجموع کل از صفر شروع می‌شود": "the total sum starts from zero",
+  "فهرست اول: تعداد و عددها": "the first list: the count and the numbers",
+  "فهرست دوم: تعداد و عددها": "the second list: the count and the numbers",
+  "چاپ مجموع همه‌ی عددهای دو فهرست": "print the sum of all the numbers of both lists",
+  "فهرست همه‌ی عددهای دو گروه": "the list of all the numbers of both groups",
+  "فهرست اول": "the first list",
+  "فهرست دوم": "the second list",
+  "جمع همه‌ی عضوها با اندیس و while": "add all the members with an index and while",
+  "چاپ مجموع": "print the sum",
+  "بزرگ‌ترین عدد فهرست را برمی‌گرداند": "returns the largest number of the list",
+  "فرض اولیه: اولین عدد بزرگ‌ترین است": "the first assumption: the first number is the largest",
+  "روی همه‌ی عددها می‌چرخیم": "we loop over all the numbers",
+  "اگر x از بزرگ‌ترین فعلی بزرگ‌تر بود، آن را عوض می‌کنیم": "if x is larger than the current largest, we replace it",
+  "بزرگ‌ترین را برمی‌گردانیم": "return the largest",
+  "بزرگ‌ترین عدد فهرست را با اندیس پیدا می‌کند": "finds the largest number of the list with an index",
+  "از اندیس ۱ تا آخر فهرست می‌رویم": "we go from index 1 to the end of the list",
+  "اگر عدد این جای فهرست از بزرگ‌ترین بزرگ‌تر بود": "if the number at this place of the list was larger than the largest",
+  "آن را بزرگ‌ترین می‌کنیم": "we make it the largest",
+  "عددها را در فهرست می‌ریزیم": "put the numbers into the list",
+  "عدد x را می‌خوانیم": "read the number x",
+  "شمارنده‌ی تکرار از صفر شروع می‌شود": "the repeat counter starts from zero",
+  "اگر عدد برابر x بود، یکی به شمارنده اضافه می‌کنیم": "if the number equals x, we add one to the counter",
+  "تعداد تکرار x را چاپ می‌کنیم": "print how many times x was repeated",
+  "شمارنده و اندیس را از صفر شروع می‌کنیم": "start the counter and the index from zero",
+  "تا آخر فهرست ادامه می‌دهیم": "we continue to the end of the list",
+  "اگر عدد این جای فهرست برابر x بود": "if the number at this place of the list equals x",
+  "تابعی که نمره‌ی یک نام را در دفتر ثبت می‌کند": "a function that records the score of a name in the book",
+  "نمره‌ی name را برابر score می‌گذاریم؛ اگر نام تازه باشد، اضافه می‌شود": "we set the score of name to score; if the name is new, it is added",
+  "دفتر به‌روزشده را برمی‌گردانیم": "return the updated book",
+  "تابعی که نسخه‌ی تازه‌ای از دفتر را با نمره‌ی جدید برمی‌گرداند": "a function that returns a new version of the book with the new score",
+  "دفتر تازه‌ی خالی": "a new empty book",
+  "کپی کردن همه‌ی نام‌های دفتر قبلی": "copy all the names of the previous book",
+  "ثبت نمره‌ی جدید در دفتر تازه": "record the new score in the new book",
+  "برگرداندن دفتر تازه": "return the new book",
+  "تابعی که میانگین عددهای فهرست را برمی‌گرداند": "a function that returns the average of the numbers of the list",
+  "مجموع عددها را از صفر شروع می‌کنیم": "start the sum of the numbers from zero",
+  "میانگین: مجموع تقسیم بر تعداد عددها": "the average: the sum divided by the count of numbers",
+  "تابعی که میانگین عددهای فهرست را با اندیس حساب می‌کند": "a function that calculates the average of the numbers of the list with an index",
+  "میانگین: مجموع تقسیم بر تعداد": "the average: the sum divided by the count",
+  "قاعده ۱: بر ۴۰۰ بخش‌پذیر است → کبیسه": "rule 1: divisible by 400 → leap year",
+  "قاعده ۲: بر ۱۰۰ بخش‌پذیر است (و قاعده ۱ نبود) → کبیسه نیست": "rule 2: divisible by 100 (and rule 1 did not apply) → not a leap year",
+  "قاعده ۳: بر ۴ بخش‌پذیر است → کبیسه": "rule 3: divisible by 4 → leap year",
+  "در غیر این صورت کبیسه نیست": "otherwise it is not a leap year",
+  "یا بر ۴۰۰ بخش‌پذیر است، یا بر ۴ بخش‌پذیر است و بر ۱۰۰ نه": "either divisible by 400, or divisible by 4 and not by 100",
+  "عددهای ۱ تا n را یکی‌یکی در حاصل ضرب می‌کنیم": "we multiply the numbers 1 to n into the product one by one",
+  "حاصل نهایی را برمی‌گردانیم": "return the final result",
+  "از n تا ۲ به ترتیب نزولی ضرب می‌کنیم (۱ را لازم نیست ضرب کنیم)": "we multiply from n down to 2 (we do not need to multiply by 1)",
+  "همه‌ی مصوت‌های کوچک و بزرگ": "all the small and capital vowels",
+  "هر حرف رشته را یکی‌یکی بررسی می‌کنیم": "we check each letter of the string one by one",
+  "اگر حرف مصوت بود، یکی به شمارش اضافه می‌کنیم": "if the letter was a vowel, we add one to the count",
+  "تعداد مصوت‌ها را برمی‌گردانیم": "return the number of vowels",
+  "همه‌ی حروف را کوچک می‌کنیم تا فقط یک بار مصوت‌ها را بررسی کنیم": "we make all the letters small so that we check the vowels only once",
+  "اگر حرف جزو مصوت‌های کوچک بود، شمارش را زیاد کن": "if the letter is one of the small vowels, increase the count"
+ }
+}

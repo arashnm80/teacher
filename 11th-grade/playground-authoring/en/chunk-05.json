@@ -1,0 +1,417 @@
+{
+ "p93": {
+  "title": "Print the numbers with their index",
+  "statement": "Read the number `n` (`n ≥ 1`) and then `n` integers (each on its own line).\n\nPrint each number **with its index** on one line in this form: `index: value`. The index starts from **0**. For example, for `10`, `20`, `30` the output is `0: 10`, `1: 20`, `2: 30`.",
+  "hints": [
+   "The place number of a number is the loop counter, which starts from zero.",
+   "To build the text, use `str` and `+`."
+  ],
+  "guideTitle": "The index in a for loop",
+  "mistakes": [
+   "Starting the index from 1: the output must start from `0`."
+  ],
+  "solutions": [
+   {
+    "name": "Method 1: reading and printing in one loop",
+    "steps": [
+     "We read `n`.",
+     "We run the loop `n` times; each time we read one number.",
+     "We print the index and the number in the form of text."
+    ],
+    "explain": [
+     "The loop counter is the index. With `str` we turned the number and the index into text and joined them with `+` so that the output format is exact."
+    ]
+   },
+   {
+    "name": "Method 2: saving in a list and then printing",
+    "steps": [
+     "We save the numbers in a list.",
+     "With a loop over the indexes, we print each place of the list with its value."
+    ],
+    "explain": [
+     "This method first saves all the numbers and then prints them with the indexes. The result is the same, but we have two loops."
+    ]
+   }
+  ]
+ },
+ "p24": {
+  "title": "Swapping a tuple",
+  "statement": "Write a function named `swap_pair(pair)` that takes a **tuple of two members** and returns the swapped tuple.\n\nExample: `(1, 2)` → `(2, 1)`\n\nThe output must be a **tuple**, not a list.\n\nThis problem is a **function test**: write only the requested function and return the answer with `return`. There is no need for `input` or `print` outside the function.",
+  "hints": [
+   "Return the two members of the tuple in swapped places; you can use the indexes `1` and `0`.",
+   "The output must be a tuple; if you build it as a list or with `[...]`, the test fails."
+  ],
+  "guideTitle": "Swapping a tuple — indexes and returning a tuple",
+  "mistakes": [],
+  "solutions": [
+   {
+    "name": "Method 1: building a new tuple with the indexes",
+    "steps": [
+     "The function `swap_pair` takes the tuple `pair`.",
+     "We put the second member and the first member in that order into a new tuple.",
+     "We return the new tuple."
+    ],
+    "explain": [
+     "A tuple is like a list, but it cannot be changed after it is made. To swap, we must make a new tuple; that is what we do with `return` in this method.",
+     "The parentheses in `(pair[1], pair[0])` show that the output is a tuple and not a list. The problem statement explicitly asks for a tuple, so this is the main point."
+    ]
+   },
+   {
+    "name": "Method 2: naming the members and building the tuple",
+    "steps": [
+     "We put the first member of the tuple in the variable `a` and the second in `b`.",
+     "We build the new tuple in the order `b, a`.",
+     "We return the tuple."
+    ],
+    "explain": [
+     "This method separates the members first so that writing the tuple is more readable. In bigger programs this naming helps us understand what each member means.",
+     "The output of both methods is the same; the difference is only in readability and the number of lines."
+    ]
+   }
+  ]
+ },
+ "p48": {
+  "title": "Fahrenheit to Celsius",
+  "statement": "Write a function named `fahrenheit_to_celsius(f)` that converts a temperature in Fahrenheit to Celsius.\n\nThe formula: `(f - 32) * 5 / 9`\n\nRound the result to **two decimal places** with `round` and return it with `return`.\n\nThis problem is a **function test**: write only the function. There is no need for `input` or `print` outside the function.",
+  "hints": [
+   "The formula is `(f - 32) * 5 / 9`; first subtract `32` and then multiply and divide.",
+   "In `return`, round the result with `round(…, 2)`; this problem wants only the function and there is no need for `input` or `print` outside it."
+  ],
+  "guideTitle": "Fahrenheit to Celsius — the formula and round",
+  "mistakes": [],
+  "solutions": [
+   {
+    "name": "Method 1: the formula in one return",
+    "steps": [
+     "We write the formula: (f − 32) × 5 ÷ 9.",
+     "With `round` we round the result to two decimal places.",
+     "We return the result with `return`."
+    ],
+    "explain": [
+     "The formula for converting Fahrenheit to Celsius is `(f - 32) × 5 ÷ 9`. The first parenthesis matters: first 32 is subtracted from the temperature, then it is multiplied by 5 and divided by 9.",
+     "`round(x, 2)` rounds the number to two decimal places. The tests want exact values like 0.0 and 100.0; `round` gives this value as a decimal number."
+    ]
+   },
+   {
+    "name": "Method 2: calculating in a variable and then rounding",
+    "steps": [
+     "We calculate the temperature in the variable `c`.",
+     "We round `c` to two decimal places with `round`.",
+     "We return the result."
+    ],
+    "explain": [
+     "This method separates the calculation and the rounding. If we want to use the middle temperature later, the variable `c` helps.",
+     "The result is the same as the first method; rounding is always the last step so that the error of the middle calculation does not affect the result."
+    ]
+   }
+  ]
+ },
+ "p83": {
+  "title": "Square function",
+  "statement": "Write a function named `square(x)` that returns the **square** of the number `x` with `return`.\n\nThis problem is a **function test**: write only the function; there is no need for `input` or `print`.",
+  "hints": [
+   "The square of a number is the number times itself.",
+   "Return the value with `return`; `print` does not give the answer of the function."
+  ],
+  "guideTitle": "Square function — return and multiplication",
+  "mistakes": [
+   "Using `print` instead of `return`: the function does not return a value."
+  ],
+  "solutions": [
+   {
+    "name": "Method 1: return x * x",
+    "steps": [
+     "We make a function named `square` with the parameter `x`.",
+     "We calculate the square of `x` with `x * x`.",
+     "We return the result with `return`."
+    ],
+    "explain": [
+     "The square of any number is the number times itself: the square of 3 is 9 and the square of zero is zero. `return` gives the value back to whoever called the function.",
+     "This problem wants only the function; it wants no printing or input. The tests check the returned value."
+    ]
+   },
+   {
+    "name": "Method 2: keeping the result in a variable",
+    "steps": [
+     "We put the product of `x` by itself in the variable `result`.",
+     "We return `result`."
+    ],
+    "explain": [
+     "This method writes the same calculation with a middle variable. It is not needed for this simple problem, but we practise the pattern \"calculate, keep, return\".",
+     "The result of both methods is the same; the choice between them comes down to readability."
+    ]
+   }
+  ]
+ },
+ "p84": {
+  "title": "Function adding two numbers",
+  "statement": "Write a function named `add(a, b)` that returns the **sum** of two numbers with `return`.\n\nThis problem is a **function test**.",
+  "hints": [
+   "Add the two parameters with `+`.",
+   "Give the result with `return`."
+  ],
+  "guideTitle": "Function adding two numbers — return and +",
+  "mistakes": [
+   "Writing `return a - b` instead of addition."
+  ],
+  "solutions": [
+   {
+    "name": "Method 1: return a + b",
+    "steps": [
+     "We make a function named `add` with two parameters `a` and `b`.",
+     "We calculate the sum with `a + b`.",
+     "We return the result."
+    ],
+    "explain": [
+     "This function is the shortest form: the input is two numbers and the output is their sum. Negative numbers cause no problem; for example the sum of -1 and 1 is zero.",
+     "The function prints nothing; it returns the value with `return` so that the test can check it."
+    ]
+   },
+   {
+    "name": "Method 2: keeping the sum in a variable",
+    "steps": [
+     "We put the sum in the variable `total`.",
+     "We return `total`."
+    ],
+    "explain": [
+     "This method writes the same sum with a middle variable. The name `total` means the sum, and it is expressive for reading the code.",
+     "Both methods give the same result; they differ only in writing style."
+    ]
+   }
+  ]
+ },
+ "p85": {
+  "title": "Even-number function",
+  "statement": "Write a function named `is_even(n)` that returns `True` if `n` is even and `False` otherwise.\n\nThis problem is a **function test**.",
+  "hints": [
+   "A number is even if the remainder `n % 2` is zero.",
+   "The result of the `==` comparison is itself `True` or `False`."
+  ],
+  "guideTitle": "Even-number function — remainder and True/False",
+  "mistakes": [
+   "Returning `\"True\"` as text instead of `True`."
+  ],
+  "solutions": [
+   {
+    "name": "Method 1: return with a comparison",
+    "steps": [
+     "We calculate the remainder of `n` divided by 2 with `%`.",
+     "With `== 0` we check whether it is zero.",
+     "We return the result of this comparison (True or False)."
+    ],
+    "explain": [
+     "A number is even when its remainder by 2 is zero. The expression `n % 2 == 0` is itself a `True` or `False` value, and we return exactly that.",
+     "Zero is even too, because the remainder of 0 % 2 is zero. This case is in the tests as well."
+    ]
+   },
+   {
+    "name": "Method 2: if and returning True or False",
+    "steps": [
+     "With `if` we check whether the remainder of `n` by 2 is zero or not.",
+     "If it is, we return `True`; otherwise we return `False`."
+    ],
+    "explain": [
+     "This method writes the same condition with `if` and has one `return` for each case. The result is the same as the first method.",
+     "Writing `return True` and `return False` separately shows the decision path more clearly."
+    ]
+   }
+  ]
+ },
+ "p86": {
+  "title": "Sign-of-number function",
+  "statement": "Write a function named `sign(n)` that returns `\"positive\"` if `n` is positive, `\"negative\"` if it is negative and `\"zero\"` if it is zero.\n\nThis problem is a **function test**.",
+  "hints": [
+   "Separate the three cases with `if`, `elif` and `else`.",
+   "Each case must return the suitable text with `return`."
+  ],
+  "guideTitle": "Sign-of-number function — if, elif and returning text",
+  "mistakes": [
+   "Using `print` instead of `return`: the function does not return a value."
+  ],
+  "solutions": [
+   {
+    "name": "Method 1: if, elif and else with return",
+    "steps": [
+     "If `n` is greater than zero, we return `positive`.",
+     "If it is less than zero, we return `negative`.",
+     "Otherwise we return `zero`."
+    ],
+    "explain": [
+     "With `return` in each branch, the function ends at that moment and returns the value. So there is no need for a variable or `print`.",
+     "The order of the conditions does not matter, because the conditions are mutually exclusive. `else` covers the zero case."
+    ]
+   },
+   {
+    "name": "Method 2: zero first, then the sign",
+    "steps": [
+     "First we check whether `n` is zero or not.",
+     "If it is not, we decide its sign with an inner `if`."
+    ],
+    "explain": [
+     "This method starts with the zero case. The important point is that after the `return` in the first condition, the code below runs only for non-zero numbers.",
+     "The answer of both methods is the same; this method shows that `return` can flatten the structure of a function."
+    ]
+   }
+  ]
+ },
+ "p88": {
+  "title": "Larger-of-two-numbers function",
+  "statement": "Write a function named `larger(a, b)` that returns the **larger number**. If they are equal, return that number.\n\nThis problem is a **function test**.",
+  "hints": [
+   "Check which is larger with `if a > b`.",
+   "Return the answer with `return`."
+  ],
+  "guideTitle": "Larger-of-two-numbers function — comparison and return",
+  "mistakes": [
+   "Forgetting `return` in one of the branches: the function returns `None`."
+  ],
+  "solutions": [
+   {
+    "name": "Method 1: comparing with if",
+    "steps": [
+     "If `a` is greater than or equal to `b`, we return `a`.",
+     "Otherwise we return `b`."
+    ],
+    "explain": [
+     "The condition `a >= b` takes the equal case too; in that case returning either one is the same number. That is what the problem statement asked for.",
+     "Since `return` ends the function, there is no need for an `else` after the `if`."
+    ]
+   },
+   {
+    "name": "Method 2: the max function",
+    "steps": [
+     "We use the built-in function `max`.",
+     "We return the result."
+    ],
+    "explain": [
+     "`max` is the same comparison we wrote in the first method. Using it is allowed for this problem, because it has no restriction.",
+     "If the two numbers are equal, `max` returns that same number; so the equal case is correct too."
+    ]
+   }
+  ]
+ },
+ "p97": {
+  "title": "Unsigned difference of two numbers",
+  "statement": "Read two integers `a` and `b`, each on its own line.\n\nPrint the **absolute value of their difference** (that is, the distance between them). The order of the numbers does not matter.",
+  "hints": [
+   "First calculate `a - b`; it may become negative.",
+   "The built-in function `abs` gives the absolute value."
+  ],
+  "guideTitle": "Unsigned difference of two numbers — the distance between two numbers",
+  "mistakes": [
+   "Printing `a - b` without the absolute value: when `a` is smaller, the answer becomes negative."
+  ],
+  "solutions": [
+   {
+    "name": "Method 1: comparing and subtracting the smaller from the larger",
+    "steps": [
+     "We read the two numbers.",
+     "If `a` is greater than or equal to `b`, we print `a - b`; otherwise `b - a`."
+    ],
+    "explain": [
+     "The distance between two numbers is always positive or zero, and the order of the numbers does not change it. By subtracting the smaller number from the larger one, the result is always non-negative.",
+     "Example: for 3 and 10 the difference is 7, and for 10 and 3 it is 7 too; the tests check both orders."
+    ]
+   },
+   {
+    "name": "Method 2: subtracting and taking the opposite if it is negative",
+    "steps": [
+     "We read the two numbers and put `a - b` in the variable `d`.",
+     "If `d` is negative, we take its opposite.",
+     "We print `d`."
+    ],
+    "explain": [
+     "This method builds the same distance by taking the opposite. When `a - b` is negative, its opposite is positive and is the distance between the two numbers.",
+     "This pattern is the same absolute value that was written with `if` in problem p78; this time in a full program."
+    ]
+   }
+  ]
+ },
+ "p98": {
+  "title": "Power with pow",
+  "statement": "Read two integers `a` and `b` (each on its own line) with `b ≥ 0`.\n\nPrint the result of **a to the power b**.",
+  "hints": [
+   "The built-in function `pow(a, b)` gives the power.",
+   "Any number to the power zero is one."
+  ],
+  "guideTitle": "Power with a loop — repeated multiplication",
+  "mistakes": [
+   "Writing `a * b` instead of the power: 2 * 3 is 6, but 2 to the power 3 is 8."
+  ],
+  "solutions": [
+   {
+    "name": "Method 1: for with repeated multiplication",
+    "steps": [
+     "We read the two numbers `a` and `b`.",
+     "We start the result from 1 and multiply it by `a` `b` times.",
+     "We print the result."
+    ],
+    "explain": [
+     "A power means repeated multiplication: \"a to the power b\" means multiplying `a` by itself `b` times. If `b` is zero, the loop does not run and the result is that 1, which is correct.",
+     "The result starts from 1, because 1 is the neutral element of multiplication and multiplying by it changes nothing."
+    ]
+   },
+   {
+    "name": "Method 2: while with a counter",
+    "steps": [
+     "We read the base and the power and set the result equal to 1.",
+     "We start the counter `k` from zero and, as long as we have not reached `b`, multiply the result by `a`.",
+     "In each round we increase `k` by one."
+    ],
+    "explain": [
+     "This method builds the same repeated multiplication with `while`. The counter `k` counts the multiplications done, and the loop ends when it reaches `b`.",
+     "With `b = 0` the condition `k < b` is false from the very start, so the result 1 is printed; the boundary case is covered correctly."
+    ]
+   }
+  ]
+ },
+ "_comments": {
+  "تعداد عددها را از ورودی می‌خوانیم": "read the count of numbers from the input",
+  "n بار تکرار می‌کنیم؛ i اندیس است و از صفر شروع می‌شود": "repeat n times; i is the index and starts from zero",
+  "عدد این جای فهرست را می‌خوانیم": "read the number for this place in the list",
+  "اندیس و عدد را با : کنار هم چاپ می‌کنیم": "print the index and the number side by side with a colon",
+  "فهرست عددها را خالی می‌سازیم و پر می‌کنیم": "make the list of numbers empty and fill it",
+  "روی اندیس‌های فهرست می‌چرخیم": "loop over the indexes of the list",
+  "اندیس و مقدار همان جای فهرست را چاپ می‌کنیم": "print the index and the value at that place of the list",
+  "تابعی که جای دو عضو تاپل را عوض می‌کند": "a function that swaps the two members of a tuple",
+  "عضو دوم را اول و عضو اول را دوم می‌گذاریم": "put the second member first and the first member second",
+  "اعضای تاپل را در دو متغیر نگه می‌داریم": "keep the members of the tuple in two variables",
+  "تاپل جابه‌جاشده را می‌سازیم و برمی‌گردانیم": "build the swapped tuple and return it",
+  "تابعی که دمای فارنهایت را به سلسیوس تبدیل می‌کند": "a function that converts a temperature from Fahrenheit to Celsius",
+  "فرمول تبدیل و گرد کردن به دو رقم اعشار": "the conversion formula and rounding to two decimal places",
+  "محاسبه‌ی دمای سلسیوس با فرمول": "calculate the Celsius temperature with the formula",
+  "گرد کردن به دو رقم اعشار و برگرداندن": "round to two decimal places and return",
+  "تابعی که مربع عدد را برمی‌گرداند": "a function that returns the square of the number",
+  "مربع یعنی ضرب عدد در خودش": "the square means multiplying the number by itself",
+  "محاسبه‌ی مربع و نگه‌داری آن": "calculate the square and keep it",
+  "برگرداندن نتیجه": "return the result",
+  "تابعی که حاصل جمع دو عدد را برمی‌گرداند": "a function that returns the sum of two numbers",
+  "جمع دو عدد": "the sum of the two numbers",
+  "محاسبه‌ی جمع و نگه‌داری آن": "calculate the sum and keep it",
+  "برگرداندن جمع": "return the sum",
+  "تابعی که مشخص می‌کند عدد زوج است یا نه": "a function that decides whether the number is even",
+  "اگر باقی‌مانده‌ی تقسیم بر ۲ صفر باشد، زوج است": "if the remainder of dividing by 2 is zero, it is even",
+  "اگر باقی‌مانده‌ی تقسیم بر ۲ صفر بود": "if the remainder of dividing by 2 was zero",
+  "تابعی که علامت عدد را به صورت متن برمی‌گرداند": "a function that returns the sign of the number as text",
+  "عدد مثبت است": "the number is positive",
+  "عدد منفی است": "the number is negative",
+  "عدد صفر است": "the number is zero",
+  "عدد صفر نیست؛ علامتش را بررسی می‌کنیم": "the number is not zero; we check its sign",
+  "تابعی که عدد بزرگ‌تر را برمی‌گرداند": "a function that returns the larger number",
+  "اگر a بزرگ‌تر یا برابر b بود": "if a was greater than or equal to b",
+  "در غیر این صورت b بزرگ‌تر است": "otherwise b is larger",
+  "max بزرگ‌ترین عدد بین دو ورودی را برمی‌گرداند": "max returns the largest number between its two inputs",
+  "اگر a بزرگ‌تر یا برابر b بود، اختلاف را a منهای b حساب می‌کنیم": "if a is greater than or equal to b, we calculate the difference as a minus b",
+  "تفاضل a منهای b": "the difference a minus b",
+  "اگر تفاضل منفی شد، قرینه‌اش را می‌گیریم": "if the difference became negative, we take its opposite",
+  "چاپ اختلاف بدون علامت": "print the unsigned difference",
+  "خواندن پایه (a) و توان (b)": "read the base (a) and the power (b)",
+  "نتیجه از ۱ شروع می‌شود": "the result starts from 1",
+  "b بار نتیجه را در a ضرب می‌کنیم": "multiply the result by a, b times",
+  "چاپ حاصل a به توان b": "print the result of a to the power b",
+  "شمارنده‌ی تعداد ضرب‌ها": "the counter of the multiplications",
+  "تا وقتی به توان نرسیده‌ایم": "as long as we have not reached the power",
+  "یک بار دیگر در a ضرب می‌کنیم": "multiply by a once more",
+  "چاپ حاصل": "print the result"
+ }
+}

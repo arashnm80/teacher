@@ -1,0 +1,442 @@
+{
+ "p50": {
+  "title": "Sum of the two digits of a number",
+  "statement": "Write a function named `two_digit_sum(n)` that returns the sum of the digits of a **two-digit** number (`10 ≤ n ≤ 99`).\n\nHint: the ones digit is obtained with `n % 10` and the tens digit with `n // 10`.\n\nThis problem is a **function test**.",
+  "hints": [
+   "`n // 10` gives the tens digit.",
+   "`n % 10` gives the ones digit."
+  ],
+  "guideTitle": "Sum of the digits of a two-digit number — remainder and integer division",
+  "mistakes": [
+   "Adding `n` to `n // 10` without `n % 10`: the ones digit is left out."
+  ],
+  "solutions": [
+   {
+    "name": "Method 1: the ones digit with % and the tens digit with //",
+    "steps": [
+     "We get the ones digit with `n % 10`.",
+     "We get the tens digit with `n // 10`.",
+     "We add the two digits and return the sum."
+    ],
+    "explain": [
+     "For the number 47, `47 // 10` is 4 and `47 % 10` is 7; their sum is 11. This division and remainder separate the digits of a two-digit number.",
+     "The precedence of the operators matters: `//` and `%` run before `+`, so the expression is exactly the sum of the two digits."
+    ]
+   },
+   {
+    "name": "Method 2: separating the digits in variables",
+    "steps": [
+     "We put the tens digit in the variable `tens` and the ones digit in `ones`.",
+     "We add the two variables and return the sum."
+    ],
+    "explain": [
+     "This method keeps each digit in a separate variable to make the program easy to read. The result is the same as the first method.",
+     "For the number 10 the tens digit is 1 and the ones digit is 0 and the sum becomes 1, which the test expects."
+    ]
+   }
+  ]
+ },
+ "p89": {
+  "title": "Function summing 1 to n with a loop",
+  "statement": "Write a function named `sum_to(n)` that calculates the sum of the numbers `1` to `n` **with a loop** and returns it. For `n = 0` the answer is `0`.\n\nThis problem is a **function test**.",
+  "hints": [
+   "Make a variable `total` from zero and add the numbers to it in a loop.",
+   "`range(1, n + 1)` gives the numbers 1 to `n`."
+  ],
+  "guideTitle": "Sum of 1 to n in a function",
+  "mistakes": [
+   "Starting the loop from zero or ending at `range(1, n)`: the number `n` is not added."
+  ],
+  "solutions": [
+   {
+    "name": "Method 1: for and range",
+    "steps": [
+     "We start the sum from zero.",
+     "With `for` we loop over the numbers 1 to `n` and add each one to the sum.",
+     "We return the sum."
+    ],
+    "explain": [
+     "In each repeat the counter `i` is added to the sum. After all the repeats, `total` is the sum of 1 to `n`."
+    ]
+   },
+   {
+    "name": "Method 2: while",
+    "steps": [
+     "We prepare the sum and the counter.",
+     "As long as the counter has not gone above `n`, we add it to the sum.",
+     "We return the sum."
+    ],
+    "explain": [
+     "The same calculation with `while`. It is important that the counter increases in each repeat so that the loop ends."
+    ]
+   }
+  ]
+ },
+ "p43": {
+  "title": "Smallest and largest",
+  "statement": "First read the count `n` (`n ≥ 1`) and then `n` integers (each on its own line).\n\nPrint two lines:\n\n- first line: the **smallest** number\n- second line: the **largest** number",
+  "hints": [
+   "Put the numbers in a list; `min` gives the smallest and `max` the largest number of the list.",
+   "The first line is the smallest and the second line is the largest; the order of printing matters."
+  ],
+  "guideTitle": "Smallest and largest — min and max",
+  "mistakes": [],
+  "solutions": [
+   {
+    "name": "Method 1: with the min and max functions",
+    "steps": [
+     "We read the count and the numbers and put them in the list `nums`.",
+     "With `min(nums)` we get the smallest and with `max(nums)` the largest.",
+     "We print each one on its own line."
+    ],
+    "explain": [
+     "`min` and `max` are built-in functions and need no `import`. Each takes a list and returns one number.",
+     "This is short, but if we have only memorised `min` and `max` and do not know what happens behind the scenes, we cannot find the error in similar problems. The second method does the same job by hand."
+    ]
+   },
+   {
+    "name": "Method 2: with a loop of our own",
+    "steps": [
+     "We assume the first number is both the smallest and the largest.",
+     "We loop over the other numbers and wherever a number is smaller or larger, we change the values.",
+     "At the end we print both."
+    ],
+    "explain": [
+     "This method does by hand the job of `min` and `max`: we have a temporary answer and each new number changes it with a condition.",
+     "Since we set the first number as the initial value, it works correctly for `n = 1` too."
+    ]
+   }
+  ]
+ },
+ "p44": {
+  "title": "Sum and average",
+  "statement": "First read the count `n` (`n ≥ 1`) and then `n` integers (each on its own line).\n\nPrint two lines:\n\n- first line: the **sum** of all the numbers\n- second line: their **average**, rounded to two decimal places with `round`",
+  "hints": [
+   "Calculate the sum with `sum` or a loop; the average is the sum divided by the count, with `/`.",
+   "The first line is the sum and the second line is the average with two decimal places; round the average with `round(…, 2)`."
+  ],
+  "guideTitle": "Sum and average — sum and round",
+  "mistakes": [],
+  "solutions": [
+   {
+    "name": "Method 1: with sum",
+    "steps": [
+     "We put the numbers in the list `nums`.",
+     "We get the sum with `sum(nums)`.",
+     "We calculate the average as `sum / n` and round it with `round`."
+    ],
+    "explain": [
+     "`sum` does what we did with an adding loop. Its result is an integer, so the first line is printed without decimals.",
+     "The average with `/` is a decimal. `round(1.333…, 2)` is `1.33` and `round(2.0, 2)` stays `2.0`."
+    ]
+   },
+   {
+    "name": "Method 2: calculate the sum by hand",
+    "steps": [
+     "We put the numbers in the list.",
+     "With a loop we build the sum.",
+     "We print the sum and the average, both outputs."
+    ],
+    "explain": [
+     "This method with an adding loop gives the same answer as `sum`. Seeing these two methods side by side shows that `sum` is only a shortcut.",
+     "The output of both methods is the same."
+    ]
+   }
+  ]
+ },
+ "p29": {
+  "title": "Square root with math",
+  "statement": "Read a non-negative integer `n`.\n\nCalculate the square root of `n` with the function `math.sqrt`, round the result to **two decimal places** with `round` and print it.\n\n**You must use the `math` module** (`import math`).",
+  "hints": [
+   "First write `import math` and then call `math.sqrt(n)`.",
+   "Bring the result to two decimal places with `round(number, 2)`; `n` must be an integer and non-negative."
+  ],
+  "guideTitle": "Square root with math — import and round",
+  "mistakes": [
+   "Writing `sqrt` without `import`: Python does not know the function and gives an error.",
+   "Not rounding: the square root of `2` is `1.4142135623730951`; the output must have two decimal places."
+  ],
+  "solutions": [
+   {
+    "name": "Method 1: import math and math.sqrt",
+    "steps": [
+     "We bring in the `math` module with `import math`.",
+     "We read the number and calculate its square root with `math.sqrt`.",
+     "With `round(…, 2)` we keep two decimal places and print."
+    ],
+    "explain": [
+     "`math.sqrt` returns the square root; the result is always a decimal number, even if the square root is exact. That is why `sqrt(16)` is `4.0`.",
+     "`round(x, 2)` rounds the number to two decimal places. The square root of 2 is `1.4142…` and rounded it becomes `1.41`."
+    ]
+   },
+   {
+    "name": "Method 2: from math import sqrt",
+    "steps": [
+     "We bring in only the function `sqrt` from the `math` module.",
+     "After that we call `sqrt(n)` directly without writing `math.`."
+    ],
+    "explain": [
+     "In the `from ... import` method only the needed function is brought in and the code is shorter. This method is what the book says about `sqrt`.",
+     "The output of both methods is the same; the difference is only in how the function name is written."
+    ]
+   }
+  ]
+ },
+ "p30": {
+  "title": "Distance between two points",
+  "statement": "Write a function named `distance(x1, y1, x2, y2)` that returns the distance between the two points `(x1, y1)` and `(x2, y2)`.\n\nThe formula: the square root of the sum of the squares of the differences; that is `√((x2 - x1)² + (y2 - y1)²)`.\n\nRound the result to **two decimal places** with `round` and return it with `return`. **You must use the `math` module.**\n\nThis problem is a **function test**: write only the function. There is no need for `input` or `print` outside the function.",
+  "hints": [
+   "Calculate the differences of the coordinates separately; `dx = x2 - x1` and `dy = y2 - y1`.",
+   "The distance is the square root of the sum of the squares; use `math.sqrt` and at the end round with `round(…, 2)`."
+  ],
+  "guideTitle": "Distance between two points — math.sqrt and a function",
+  "mistakes": [
+   "Missing a parenthesis or the order: `x2 - x1` must be calculated first; do not swap the two coordinates."
+  ],
+  "solutions": [
+   {
+    "name": "Method 1: with ** and math.sqrt in one line",
+    "steps": [
+     "We calculate the difference of the x and y coordinates.",
+     "We make the squares with `**` and add them.",
+     "We take the square root with `math.sqrt` and round it with `round`."
+    ],
+    "explain": [
+     "`dx ** 2` means the square of `dx`. The formula for the distance of two points comes from the Pythagorean theorem: the square of the distance equals the sum of the squares of the differences of the two coordinates.",
+     "With `dx` and `dy` the code has become more readable. `math.sqrt` takes the square root and `round` makes it two decimal places."
+    ]
+   },
+   {
+    "name": "Method 2: by multiplying the differences by themselves",
+    "steps": [
+     "We put the differences in `dx` and `dy`.",
+     "Instead of `**` we multiply each difference by itself.",
+     "We take the square root with `sqrt` from the `math` module and round it."
+    ],
+    "explain": [
+     "Multiplying a number by itself is the same as the square. This method does not need `**` and shows the step-by-step nature of the calculation better.",
+     "The output of both methods is the same; method 2 puts the sum of the squares separately in `squared` so that we can see the steps separately."
+    ]
+   }
+  ]
+ },
+ "p41": {
+  "title": "Removing repeats with the order kept",
+  "statement": "First read the count `n` and then `n` integers (each on its own line).\n\nPrint the numbers **without repeats** and in the same order of their first appearance, on one line separated by spaces.\n\nIf `n` was zero, print an empty line.",
+  "hints": [
+   "Make an empty list and add only the numbers that are not already in it; the order of first appearance is kept.",
+   "To avoid repeats use `in`; print the output with spaces. If `n` was zero, print only an empty line."
+  ],
+  "guideTitle": "Removing repeats while keeping the order",
+  "mistakes": [],
+  "solutions": [
+   {
+    "name": "Method 1: in and a list of unique numbers",
+    "steps": [
+     "We read the count `n` and then `n` numbers.",
+     "We add each number only when it is not in the list `unique`.",
+     "We print the unique list on one line with one space between the numbers."
+    ],
+    "explain": [
+     "`x not in unique` checks whether the number has already come. By adding only the new numbers, the order of first appearance is kept.",
+     "If `n` is zero, the list is empty and `line` stays empty; `print` prints an empty line, which is what the problem statement asked for."
+    ]
+   },
+   {
+    "name": "Method 2: checking for a repeat with a flag",
+    "steps": [
+     "For each number, with a small loop we check whether it is in the unique list or not.",
+     "If it was not, we add it to the list.",
+     "At the end we print the list with spaces."
+    ],
+    "explain": [
+     "This method, without `in`, checks with an inner loop whether the number has already come. The result is the same as the first method.",
+     "Building the line with spaces, for easy reading, uses `line` and the empty condition so that there is no extra space at the start."
+    ]
+   }
+  ]
+ },
+ "p20": {
+  "title": "Number of unique values",
+  "statement": "The input:\n\n- first line: the number `n`\n- then `n` integers; **each number on its own line**\n\nPrint the number of **unique** values (without repeats).\n\nExample: the numbers `1 2 2 3 1 4` have four unique values → the output is `4`.",
+  "hints": [
+   "`set` keeps each value only once; put the numbers into a set.",
+   "The output is the number of members of the set; `len` gives that number."
+  ],
+  "guideTitle": "Number of unique values — checking whether a number is in a list",
+  "mistakes": [],
+  "solutions": [
+   {
+    "name": "Method 1: add only the new numbers to a list",
+    "steps": [
+     "We make an empty list `unique`.",
+     "We read each input number; if it was not in `unique`, we add it.",
+     "At the end we print the length of the list."
+    ],
+    "explain": [
+     "`x in unique` checks whether the number is in the list. `not` reverses it; that is, only the new numbers are added.",
+     "Example: `1 2 2 3 1 4` → the unique list is `[1, 2, 3, 4]` and its length becomes `4`."
+    ]
+   },
+   {
+    "name": "Method 2: sorting and counting the changes",
+    "steps": [
+     "We put all the numbers in a list and sort it with `sorted`; the repeated numbers fall side by side.",
+     "From the second number on, wherever the number differs from the previous one, we add one to the count."
+    ],
+    "explain": [
+     "After sorting, equal numbers are one after another. So it is enough to count the places where the number changes, and add one for the first number. If the input is empty (`n` is zero), the answer is zero and there is no first number.",
+     "This method needs a bit more thinking, but it shows how sorting makes a problem simpler."
+    ]
+   }
+  ]
+ },
+ "p49": {
+  "title": "Prime number",
+  "statement": "Write a function named `is_prime(n)` that returns `True` if `n` is a **prime number** and `False` otherwise.\n\nReminder: a prime number is divisible only by `1` and **itself**. Numbers less than 2 are not prime.\n\nThis problem is a **function test**: write only the function and give the answer with `return`.",
+  "hints": [
+   "Numbers less than `2` are not prime; first separate this case with `if n < 2`.",
+   "For the rest, from `2` to `n - 1` check whether `n` is divisible by one of them; `n % d == 0` means divisible."
+  ],
+  "guideTitle": "Prime number — for and return",
+  "mistakes": [],
+  "solutions": [
+   {
+    "name": "Method 1: return at the moment of finding a divisor",
+    "steps": [
+     "If `n` is less than 2, we return `False`.",
+     "With `for d in range(2, n)` we try the numbers 2 to `n - 1`.",
+     "If `n % d` is zero, we return `False`; that is, `n` has a divisor.",
+     "If the loop ended, we return `True`."
+    ],
+    "explain": [
+     "`return` ends the function at that moment. So as soon as one divisor is found, the answer is `False` and the other numbers are not checked.",
+     "If the loop ends without a `return`, it means there was no divisor and the number is prime."
+    ]
+   },
+   {
+    "name": "Method 2: with a status variable and break",
+    "steps": [
+     "If `n` is less than 2 we return `False`.",
+     "We set the variable `prime` to `True`.",
+     "If a divisor is found, we make `prime` `False` and end the loop with `break`.",
+     "At the end we return `prime`."
+    ],
+    "explain": [
+     "In this method we have only one `return` at the end. `break` ends the loop earlier and `prime` holds the state.",
+     "Both methods are correct; method 1 is shorter and method 2 shows the flag pattern (a status variable)."
+    ]
+   }
+  ]
+ },
+ "p28": {
+  "title": "A small calculator",
+  "statement": "Write a simple calculator.\n\nEach operation comes in **three lines**:\n\n1. the first number\n2. the operator: one of `+` or `-` or `*` or `/`\n3. the second number\n\nPrint the result and go on to the next operation. When the word `exit` comes in the place of the first number, the program must end (do not read anything more).\n\nDo all the calculations with `float` and print that (for example `3 + 4` must print `7.0`, not `7`). For a division like `10 / 4` the output is `2.5`.\n\n**You must write at least one `def` function to do the operation and the main loop must be a `while` (no `for`).**",
+  "hints": [
+   "Write a function `calc(a, op, b)` that returns the result based on `op`, and make the main loop a `while`.",
+   "Read all the numbers with `float` so that `3 + 4` gives `7.0`; `exit` in the place of the first number means the end of the program."
+  ],
+  "guideTitle": "A small calculator — a def function and the while loop",
+  "mistakes": [
+   "Using `for`: this problem wants the main loop with `while` and `for` is forbidden.",
+   "Forgetting `float`: `10 / 4` is `2.5` in Python even with `int`, but `3 + 4` without `float` becomes `7`, not `7.0`."
+  ],
+  "solutions": [
+   {
+    "name": "Method 1: a calculate function and an end flag",
+    "steps": [
+     "The function `calculate` does one operation with the given operator.",
+     "In the `while` loop we read the first number; if it is `exit`, we take down the end flag.",
+     "Otherwise we read the operator and the second number and print the result as a `float`."
+    ],
+    "explain": [
+     "Converting with `float` makes the result always a decimal; for `3 + 4` the output is 7.0 and for `10 / 4` it is 2.5.",
+     "The flag `running` ends the loop without using `break`. When `exit` comes, the flag becomes `False` and the loop ends after that round."
+    ]
+   },
+   {
+    "name": "Method 2: a result function with a result variable",
+    "steps": [
+     "The function `compute` puts the result in the variable `result` and returns it.",
+     "The `while` loop has the same structure as method 1."
+    ],
+    "explain": [
+     "This method keeps the result in `result` and has only one `return`. The result is the same, and we see the \"result variable\" pattern again.",
+     "`result = 0.0` is the starting point; each `if` branch rewrites it, so this value is never left unused."
+    ]
+   }
+  ]
+ },
+ "_comments": {
+  "تابعی که مجموع رقم‌های عدد دو رقمی را برمی‌گرداند": "a function that returns the sum of the digits of a two-digit number",
+  "رقم یکان: باقی‌مانده‌ی تقسیم بر ۱۰": "the ones digit: the remainder of dividing by 10",
+  "رقم دهگان: خارج‌قسمت صحیح تقسیم بر ۱۰": "the tens digit: the integer quotient of dividing by 10",
+  "رقم دهگان": "the tens digit",
+  "رقم یکان": "the ones digit",
+  "جمع دو رقم": "the sum of the two digits",
+  "مجموع ۱ تا n را با حلقه حساب می‌کند": "calculates the sum of 1 to n with a loop",
+  "روی عددهای ۱ تا n می‌چرخیم": "we loop over the numbers 1 to n",
+  "هر عدد را به جمع اضافه می‌کنیم": "we add each number to the sum",
+  "جمع نهایی را برمی‌گردانیم": "return the final sum",
+  "مجموع ۱ تا n را با while حساب می‌کند": "calculates the sum of 1 to n with while",
+  "min کوچک‌ترین عدد لیست را می‌دهد": "min gives the smallest number of the list",
+  "max بزرگ‌ترین عدد لیست را می‌دهد": "max gives the largest number of the list",
+  "فرض اولیه: اولین عدد هم کوچک‌ترین و هم بزرگ‌ترین است": "the first assumption: the first number is both the smallest and the largest",
+  "روی همه‌ی عددها می‌چرخیم و جواب‌ها را به‌روز می‌کنیم": "we loop over all the numbers and update the answers",
+  "کوچک‌ترین و بزرگ‌ترین را چاپ می‌کنیم": "print the smallest and the largest",
+  "sum مجموع همه‌ی عددهای لیست را می‌دهد": "sum gives the sum of all the numbers of the list",
+  "میانگین = مجموع ÷ تعداد (با / اعشاری می‌شود)": "average = sum ÷ count (with / it becomes a decimal)",
+  "میانگین را به دو رقم اعشار گرد می‌کنیم": "round the average to two decimal places",
+  "جمع را با حلقه حساب می‌کنیم": "calculate the sum with a loop",
+  "میانگین": "the average",
+  "مجموع و میانگین را چاپ می‌کنیم": "print the sum and the average",
+  "ماژول math را وارد می‌کنیم تا تابع sqrt را داشته باشیم": "import the math module so that we have the sqrt function",
+  "عدد نامنفی را می‌خوانیم": "read the non-negative number",
+  "جذر عدد را حساب می‌کنیم و به دو رقم اعشار گرد می‌کنیم": "calculate the square root of the number and round it to two decimal places",
+  "فقط تابع sqrt را از ماژول math وارد می‌کنیم": "import only the sqrt function from the math module",
+  "چون sqrt را وارد کرده‌ایم، مستقیم صدایش می‌زنیم": "since we imported sqrt, we call it directly",
+  "ماژول math را برای تابع sqrt وارد می‌کنیم": "import the math module for the sqrt function",
+  "اختلاف مختصات x و y": "the difference of the x and y coordinates",
+  "جذر مجموع مربع‌ها، گردشده به دو رقم اعشار": "the square root of the sum of the squares, rounded to two decimal places",
+  "اختلاف مختصات": "the difference of the coordinates",
+  "مجموع مربع‌ها: هر اختلاف در خودش ضرب می‌شود": "the sum of the squares: each difference is multiplied by itself",
+  "جذر مجموع مربع‌ها را گرد شده برمی‌گردانیم": "return the square root of the sum of the squares, rounded",
+  "فهرست عددهای یکتا به ترتیب اولین دیده‌شدن": "the list of unique numbers in the order of first appearance",
+  "فقط عددهای تازه را اضافه می‌کنیم": "we add only the new numbers",
+  "ساختن یک خط با فاصله بین عددها": "build one line with a space between the numbers",
+  "چاپ خط (اگر n صفر باشد، خط خالی چاپ می‌شود)": "print the line (if n is zero, an empty line is printed)",
+  "فهرست عددهای یکتا": "the list of unique numbers",
+  "خواندن هر عدد و بررسی تکراری بودن آن": "read each number and check whether it is a repeat",
+  "پرچم: آیا x قبلاً دیده شده؟": "the flag: has x been seen before?",
+  "اگر تازه بود، اضافه‌اش می‌کنیم": "if it was new, we add it",
+  "چاپ عددهای یکتا با فاصله": "print the unique numbers with spaces",
+  "لیست عددهای یکتا (هر عدد فقط یک بار)": "the list of unique numbers (each number only once)",
+  "اگر x هنوز در لیست نیست، آن را اضافه می‌کنیم": "if x is not in the list yet, we add it",
+  "تعداد عددهای یکتا = طول لیست": "the number of unique numbers = the length of the list",
+  "مرتب می‌کنیم تا عددهای برابر کنار هم بیفتند": "we sort so that equal numbers fall side by side",
+  "اگر هیچ عددی نیست، جواب صفر است؛ وگرنه عدد اول یک مقدار یکتا است": "if there is no number, the answer is zero; otherwise the first number is one unique value",
+  "از اندیس ۱ به بعد، هر جا با عدد قبلی فرق داشت، یک مقدار تازه پیدا کرده‌ایم": "from index 1 on, wherever a number differs from the previous one, we have found a new value",
+  "تعداد مقادیر یکتا": "the number of unique values",
+  "عددهای کمتر از ۲ اول نیستند": "numbers less than 2 are not prime",
+  "اگر n بر یکی از عددهای ۲ تا n-1 بخش‌پذیر باشد، اول نیست": "if n is divisible by one of the numbers 2 to n-1, it is not prime",
+  "هیچ مقسوم‌علیهی پیدا نشد، پس اول است": "no divisor was found, so it is prime",
+  "در ابتدا فرض می‌کنیم عدد اول است": "at first we assume the number is prime",
+  "اگر مقسوم‌علیه پیدا شد، عدد اول نیست": "if a divisor was found, the number is not prime",
+  "دیگر لازم نیست ادامه دهیم": "there is no need to continue",
+  "وضعیت نهایی عدد را برمی‌گردانیم": "return the final state of the number",
+  "تابعی که یک عملیات ساده را با دو عدد اعشاری انجام می‌دهد": "a function that does one simple operation with two decimal numbers",
+  "جمع": "addition",
+  "تفریق": "subtraction",
+  "ضرب": "multiplication",
+  "تقسیم": "division",
+  "پرچم ادامه‌ی برنامه": "the flag for the program to continue",
+  "تا وقتی exit نیامده، عملیات‌ها را می‌خوانیم": "as long as exit has not come, we read the operations",
+  "اگر exit آمد، برنامه تمام می‌شود": "if exit came, the program ends",
+  "عملگر و عدد دوم": "the operator and the second number",
+  "انجام محاسبه با عددهای اعشاری و چاپ نتیجه": "do the calculation with decimal numbers and print the result",
+  "تابعی که یک عملیات ساده را انجام می‌دهد و نتیجه را در متغیر نگه می‌دارد": "a function that does one simple operation and keeps the result in a variable",
+  "نتیجه را از صفر شروع می‌کنیم": "we start the result from zero",
+  "انتخاب عملیات بر اساس عملگر": "choose the operation based on the operator",
+  "خواندن و محاسبه تا رسیدن به exit": "read and calculate until exit is reached"
+ }
+}

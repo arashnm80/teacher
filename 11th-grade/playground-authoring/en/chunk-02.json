@@ -1,0 +1,426 @@
+{
+ "p76": {
+  "title": "Positive, negative or zero",
+  "statement": "Read an integer `n`.\n\nIf `n` is positive print the word `positive`, if it is negative print `negative`, and if it is zero print `zero`.",
+  "hints": [
+   "First check whether `n` is greater than zero.",
+   "With `elif` you can write the negative case after the positive one."
+  ],
+  "guideTitle": "Positive, negative or zero — if and elif",
+  "mistakes": [
+   "Forgetting the zero case: the number zero prints nothing."
+  ],
+  "solutions": [
+   {
+    "name": "Method 1: if, elif and else",
+    "steps": [
+     "We read the number and convert it to an integer.",
+     "If the number is greater than zero, we print `positive`.",
+     "If it is less than zero, `negative`; otherwise `zero`."
+    ],
+    "explain": [
+     "The `if / elif / else` structure is checked from top to bottom, and the first true condition runs its part while the rest are ignored. The order of the conditions matters: first positive, then negative, and finally the remaining case.",
+     "`else` means all the cases that did not satisfy the earlier conditions. In this problem only one case remains, and it is zero."
+    ]
+   },
+   {
+    "name": "Method 2: zero first, then the sign",
+    "steps": [
+     "First we check whether the number is equal to zero.",
+     "If it is not, we decide its sign with an inner `if`.",
+     "We print the result in every case."
+    ],
+    "explain": [
+     "This method starts with the zero case and then deals with the sign. The result is the same, but the structure between the conditions is different. Seeing two structures for one problem helps understanding.",
+     "Writing an `if` inside the `else` means that after reaching the `else` we make a new check. It can be merged into an `elif`, but writing it separately is correct too."
+    ]
+   }
+  ]
+ },
+ "p77": {
+  "title": "The larger of two numbers",
+  "statement": "Read two integers `a` and `b`, each on its own line.\n\nPrint the **larger number**. If the two numbers are equal, print that number.",
+  "hints": [
+   "Write the comparison `a > b` with `if`.",
+   "For the equal case, either of the two numbers is the answer."
+  ],
+  "guideTitle": "The larger of two numbers — comparison and max",
+  "mistakes": [
+   "Using `>=` when it is not needed: the output in the equal case does not differ, but it makes the logic harder."
+  ],
+  "solutions": [
+   {
+    "name": "Method 1: comparing with if and else",
+    "steps": [
+     "We read the two numbers `a` and `b` from the input.",
+     "If `a` is greater than or equal to `b`, we print `a`.",
+     "Otherwise we print `b`."
+    ],
+    "explain": [
+     "The condition `a >= b` is true for the equal case too; in that case printing either one gives the same number, so the problem is answered correctly for equality as well.",
+     "This method practises making a decision with `if`: one condition, two possible branches, and an output that fits each branch."
+    ]
+   },
+   {
+    "name": "Method 2: the max function",
+    "steps": [
+     "We read the two numbers from the input.",
+     "With the built-in function `max` we find the largest.",
+     "We print the result."
+    ],
+    "explain": [
+     "`max` is a built-in function that returns the largest value among its inputs. This is the same comparison we wrote with `if` in the first method, but in one line.",
+     "In this problem using `max` is allowed. In problems where it is forbidden, you must use the `if` method; this problem has no such restriction."
+    ]
+   }
+  ]
+ },
+ "p78": {
+  "title": "Absolute value without abs",
+  "statement": "Read an integer `n` and print its **absolute value**.\n\nYou must not use the function `abs`; calculate it with `if`.",
+  "hints": [
+   "If the number is negative, its absolute value is the number times minus one.",
+   "If the number is positive or zero, the number itself is the answer."
+  ],
+  "guideTitle": "Absolute value without abs — comparing with zero",
+  "mistakes": [
+   "Writing `abs(n)`: this problem forbids it."
+  ],
+  "solutions": [
+   {
+    "name": "Method 1: if it is negative, change the sign",
+    "steps": [
+     "We read the number from the input.",
+     "If the number is less than zero, we change its sign with `-n`.",
+     "Otherwise the number itself is the absolute value."
+    ],
+    "explain": [
+     "The absolute value is the distance of the number from zero, so it is always zero or positive. If the number is negative, its opposite is positive; for example the opposite of -7 is 7. If the number is positive or zero, the number itself is the answer.",
+     "This problem does not allow `abs`. With `if` and taking the opposite with the minus sign we do the same job."
+    ]
+   },
+   {
+    "name": "Method 2: building the result in a variable",
+    "steps": [
+     "We read the number and put it in the variable `result`.",
+     "If the number is negative, we replace the value of `result` with its opposite.",
+     "At the end we print `result`."
+    ],
+    "explain": [
+     "This method shows the same logic with a variable: we keep the value and change it only when needed. This pattern is useful in later problems too.",
+     "If the number is positive or zero, the condition is false and `result` stays the input; so both cases are covered correctly."
+    ]
+   }
+  ]
+ },
+ "p79": {
+  "title": "Pass or fail",
+  "statement": "Read an integer score between 0 and 20.\n\nIf the score is **10 or more** print the word `pass`, otherwise print `fail`.",
+  "hints": [
+   "The condition for passing is that the score is greater than or equal to 10.",
+   "If the score is less than 10, the `else` part is the fail answer."
+  ],
+  "guideTitle": "Pass or fail — a condition with the number 10",
+  "mistakes": [
+   "Writing `score > 10`: a score of 10 passes and must give `pass`."
+  ],
+  "solutions": [
+   {
+    "name": "Method 1: if and else",
+    "steps": [
+     "We read the score.",
+     "If the score is greater than or equal to 10, we print `pass`.",
+     "Otherwise we print `fail`."
+    ],
+    "explain": [
+     "The boundary of the problem is the number 10, and 10 itself passes. So the condition must be `>=`, not `>`. If we write `>`, a score of 10 fails and the test rejects it.",
+     "The `if / else` structure makes two complete cases: either the condition is true or it is false. In this problem there is no third case."
+    ]
+   },
+   {
+    "name": "Method 2: a result variable and one condition",
+    "steps": [
+     "We read the score.",
+     "First we assume the result is `fail`.",
+     "If the score has reached 10, we make the result `pass`, and at the end we print it."
+    ],
+    "explain": [
+     "This method starts with an assumption and changes it only if needed. The result is the same, but we practise the \"result variable\" pattern, which is very useful in bigger programs.",
+     "In this method `print` runs only once, at the end, which makes the program easier to read."
+    ]
+   }
+  ]
+ },
+ "p80": {
+  "title": "Divisible by 3?",
+  "statement": "Read an integer `n`.\n\nIf `n` is divisible by 3 print `yes`, otherwise print `no`. (Zero is divisible by 3.)",
+  "hints": [
+   "A number is divisible by 3 if the remainder `n % 3` is zero.",
+   "Test the condition with `==`."
+  ],
+  "guideTitle": "Divisible by 3 — the remainder with %",
+  "mistakes": [
+   "Writing `n / 3 == 0`: dividing decimal numbers gives another result; we must test the remainder."
+  ],
+  "solutions": [
+   {
+    "name": "Method 1: directly with a zero remainder",
+    "steps": [
+     "We read the number.",
+     "If the remainder of dividing it by 3 is zero, it is divisible; we print `yes`.",
+     "Otherwise we print `no`."
+    ],
+    "explain": [
+     "A number is divisible by 3 when the remainder of dividing it by 3 is zero. The `%` operator gives this remainder, so `n % 3 == 0` is exactly the condition.",
+     "Zero is divisible by 3 too, because the remainder of 0 % 3 is zero. This case is checked in the tests and this method answers it correctly."
+    ]
+   },
+   {
+    "name": "Method 2: keeping the remainder in a variable",
+    "steps": [
+     "We read the number.",
+     "We put its remainder by 3 in the variable `r`.",
+     "With an `if` we check whether `r` is zero or not."
+    ],
+    "explain": [
+     "This method stores the remainder separately in a variable so that the condition is easier to read. The name `r` is short for remainder, and a meaningful name helps keep the program readable.",
+     "Both methods give the same result; choosing between them is mostly a matter of taste, but understanding both shows how conditions are built from one expression."
+    ]
+   }
+  ]
+ },
+ "p81": {
+  "title": "Between 10 and 20 (both included)",
+  "statement": "Read an integer `n`.\n\nIf `n` is **between 10 and 20**, including 10 and 20 themselves, print the word `yes`, otherwise print `no`. Use **and** for this.",
+  "hints": [
+   "Put two conditions together with `and`: `n` must be greater than or equal to 10 and less than or equal to 20.",
+   "The boundaries 10 and 20 are accepted too."
+  ],
+  "guideTitle": "Between 10 and 20 — a combined condition with and",
+  "mistakes": [
+   "Using `or`: no number is both less than 10 and greater than 20 at the same time; the condition must be `and`."
+  ],
+  "solutions": [
+   {
+    "name": "Method 1: two conditions with and",
+    "steps": [
+     "We read the number.",
+     "With `and` we check that it is both greater than or equal to 10 and less than or equal to 20.",
+     "If both are true, `yes`; otherwise `no`."
+    ],
+    "explain": [
+     "`and` is true when both sides are true. For the closed range \"between 10 and 20\", both `n >= 10` and `n <= 20` must hold. `>=` and `<=` include the boundaries.",
+     "Since the problem says 10 and 20 themselves give `yes`, we must not use `>` and `<`."
+    ]
+   },
+   {
+    "name": "Method 2: keeping the result of the condition in a variable",
+    "steps": [
+     "We read the number.",
+     "We put the result of the combined condition in the variable `inside`.",
+     "If `inside` is true we print `yes`, otherwise `no`."
+    ],
+    "explain": [
+     "In this method the result of the combined condition is calculated once in the variable `inside` and then used. The value of `inside` is `True` or `False`, and we can write `if` with it directly.",
+     "This pattern improves readability when the condition is long; in this problem both methods give the same result."
+    ]
+   }
+  ]
+ },
+ "p09": {
+  "title": "Counting with for",
+  "statement": "Read a natural number `n` (`n ≥ 1`) and print the numbers `1` to `n`; **each number on its own line**.\n\n**You must use a `for` loop and must not use `while`.**",
+  "hints": [
+   "`range(1, n + 1)` gives exactly the numbers 1 to `n`; why `+ 1`? Because `range` does not include the last number.",
+   "This exercise must use `for` and `while` is forbidden; the body of the loop is just one `print`."
+  ],
+  "guideTitle": "Counting with for — range and printing each number on a line",
+  "mistakes": [],
+  "solutions": [
+   {
+    "name": "Method 1: for with range from 1 to n",
+    "steps": [
+     "We read the number `n` from the input.",
+     "With `range(1, n + 1)` we go over the numbers 1 to n.",
+     "In each round we print the number."
+    ],
+    "explain": [
+     "`range(1, n + 1)` gives the numbers from 1 to `n`; the second number is `n + 1` because `range` does not include the top of the interval. If we had written `n` instead, the number `n` would not be printed.",
+     "`print` writes a new line each time, so each number appears on its own line. That is what the problem asked for."
+    ]
+   },
+   {
+    "name": "Method 2: for with range from zero and adding one",
+    "steps": [
+     "We read the number `n`.",
+     "With `range(n)` we go over the numbers zero to n - 1.",
+     "In each round we print `i + 1` so that the numbers 1 to n are seen."
+    ],
+    "explain": [
+     "`range(n)` alone starts from zero and does not give `n`. To get the numbers 1 to n we must increase each one by one; that is why we print `i + 1`.",
+     "Both methods have the same output. Understanding where `range` starts and where it ends helps in many loop problems."
+    ]
+   }
+  ]
+ },
+ "p51": {
+  "title": "Counting from 0 to 9",
+  "statement": "Print the numbers **0 to 9**; **each number on its own line**.\n\nThis problem has no input.",
+  "hints": [
+   "`range(10)` gives the numbers 0 to 9; the number 10 is not part of it.",
+   "In the loop, print the loop variable itself with `print`."
+  ],
+  "guideTitle": "Counting from 0 to 9 — the for and while loops",
+  "mistakes": [
+   "`range(1, 10)` starts from 1 and 0 is not printed."
+  ],
+  "solutions": [
+   {
+    "name": "Method 1: for with range",
+    "steps": [
+     "This problem has no input; so we only write a loop.",
+     "With `range(10)` we get the numbers 0 to 9.",
+     "We print each number on one line."
+    ],
+    "explain": [
+     "`range(10)` gives the numbers 0 to 9, that is ten numbers; the number 10 is not included. We must remember this point with other numbers too.",
+     "Since the problem has no input, the program does not start with `input`. One simple loop is enough."
+    ]
+   },
+   {
+    "name": "Method 2: while with a counter",
+    "steps": [
+     "We start the counter `i` from zero.",
+     "As long as `i` is smaller than 10, we print it.",
+     "In each round we increase `i` by one so that the loop ends."
+    ],
+    "explain": [
+     "The `while` loop continues as long as the condition is true. The counter must increase inside the loop body; if that does not happen, the loop becomes endless.",
+     "This method does the same counting with `while`. In the next problem we see that `for` and `while` are the same thing for counting, but `for` suits a known range better."
+    ]
+   }
+  ]
+ },
+ "p52": {
+  "title": "Counting from 1 to 10",
+  "statement": "Print the numbers **1 to 10**, **each on its own line**.\n\nThis problem has no input. The number 10 must be printed too.",
+  "hints": [
+   "The end of `range` must be 11 so that 10 is inside it.",
+   "If you write `range(10)`, it prints from 0 to 9 and 10 is missed."
+  ],
+  "guideTitle": "Counting from 1 to 10 — for and while",
+  "mistakes": [
+   "Writing `range(10)` instead of `range(1, 11)`: the number 10 is not printed and 0 is extra."
+  ],
+  "solutions": [
+   {
+    "name": "Method 1: for with range(1, 11)",
+    "steps": [
+     "We make the interval 1 to 10 with `range(1, 11)`.",
+     "In each round we print the number on one line."
+    ],
+    "explain": [
+     "For 10 to be printed too, the top of the interval must be 11, because `range` does not include its top. This is exactly the mistake to avoid.",
+     "This loop works without input, because its values come from the program itself."
+    ]
+   },
+   {
+    "name": "Method 2: while with a counter",
+    "steps": [
+     "We start the counter from 1.",
+     "As long as the counter has not gone above 10, we print.",
+     "We increase the counter by one in each round."
+    ],
+    "explain": [
+     "In `while`, the condition `i <= 10` includes 10. If the condition were `i < 10`, 10 would not be printed; always check this boundary.",
+     "The counter increases in the loop body so that the loop ends one day; we must repeat this pattern in every `while` loop."
+    ]
+   }
+  ]
+ },
+ "p53": {
+  "title": "Counting from 20 to 25",
+  "statement": "Print the numbers **20 to 25**, **each on its own line**.\n\nThis problem has no input.",
+  "hints": [
+   "Set the start to 20 and the end to 26 (because 26 is not part of the interval).",
+   "You can use `range(20, 26)`."
+  ],
+  "guideTitle": "Counting from 20 to 25 — for and while",
+  "mistakes": [
+   "Setting the end to 25: the number 25 is not printed."
+  ],
+  "solutions": [
+   {
+    "name": "Method 1: for with range(20, 26)",
+    "steps": [
+     "We make the interval 20 to 25 with `range(20, 26)`.",
+     "We print each number on one line."
+    ],
+    "explain": [
+     "The top of the interval is 26 so that 25 is included. `range(start, stop)` starts at `start` and goes up to just before `stop`.",
+     "This method works for any interval; it is enough to change the start and the end of the interval."
+    ]
+   },
+   {
+    "name": "Method 2: while with a counter",
+    "steps": [
+     "We start the counter from 20.",
+     "As long as we have not passed 25, we print the number.",
+     "We increase the counter by one in each round."
+    ],
+    "explain": [
+     "The condition `i <= 25` includes the number 25. This condition and the start of the counter are the two points that decide the interval, and they must match the problem statement.",
+     "Both methods have the same output; `for` is shorter and `while` gives more control over the counter."
+    ]
+   }
+  ]
+ },
+ "_comments": {
+  "خواندن عدد": "read the number",
+  "اگر بزرگ‌تر از صفر بود": "if it is greater than zero",
+  "اگر کوچک‌تر از صفر بود": "if it is less than zero",
+  "در غیر این صورت عدد صفر است": "otherwise the number is zero",
+  "اول حالت صفر را جدا می‌کنیم": "first we separate the zero case",
+  "عدد صفر نیست؛ حالا علامتش را بررسی می‌کنیم": "the number is not zero; now we check its sign",
+  "خواندن دو عدد": "read the two numbers",
+  "اگر a بزرگ‌تر یا برابر b بود، a بزرگ‌ترین است": "if a is greater than or equal to b, a is the largest",
+  "در غیر این صورت b بزرگ‌ترین است": "otherwise b is the largest",
+  "تابع max بزرگ‌ترین عدد را از بین دو عدد برمی‌گرداند": "the max function returns the larger of the two numbers",
+  "اگر عدد منفی است، قرینه‌ی آن (مثبتش) قدرمطلق است": "if the number is negative, its opposite (the positive one) is the absolute value",
+  "در غیر این صورت خود عدد قدرمطلق است": "otherwise the number itself is the absolute value",
+  "خواندن عدد و نگه‌داری آن": "read the number and keep it",
+  "اگر منفی بود، قرینه‌ی آن را جایگزین می‌کنیم": "if it is negative, we replace it with its opposite",
+  "چاپ قدرمطلق": "print the absolute value",
+  "خواندن نمره": "read the score",
+  "نمره‌ی ۱۰ یا بیشتر یعنی قبول": "a score of 10 or more means pass",
+  "در غیر این صورت مردود است": "otherwise it is a fail",
+  "ابتدا فرض می‌کنیم قبول نشده است": "first we assume it has not passed",
+  "اگر نمره به ۱۰ یا بیشتر رسیده بود، قبول است": "if the score has reached 10 or more, it is a pass",
+  "چاپ نتیجه": "print the result",
+  "اگر باقی‌مانده‌ی تقسیم بر ۳ صفر بود، بخش‌پذیر است": "if the remainder of dividing by 3 is zero, it is divisible",
+  "در غیر این صورت بخش‌پذیر نیست": "otherwise it is not divisible",
+  "باقی‌مانده‌ی تقسیم بر ۳": "the remainder of dividing by 3",
+  "اگر باقی‌مانده صفر بود، بخش‌پذیر است": "if the remainder is zero, it is divisible",
+  "هم باید از ۱۰ کمتر نباشد و هم از ۲۰ بیشتر نباشد": "it must be neither less than 10 nor greater than 20",
+  "در غیر این صورت بیرون بازه است": "otherwise it is outside the range",
+  "آیا عدد در بازه‌ی ۱۰ تا ۲۰ است؟ (هر دو شرط با and)": "is the number in the range 10 to 20? (both conditions with and)",
+  "چاپ جواب بر اساس نتیجه‌ی شرط": "print the answer based on the result of the condition",
+  "خواندن تعداد عددها (n)": "read the count of numbers (n)",
+  "حلقه‌ی for روی عددهای ۱ تا n": "a for loop over the numbers 1 to n",
+  "هر عدد در یک خط جدا چاپ می‌شود": "each number is printed on its own line",
+  "range(n) از صفر تا n-1 را می‌دهد": "range(n) gives zero to n-1",
+  "با افزودن یک، شماره‌ها از ۱ شروع می‌شوند": "by adding one, the numbers start from 1",
+  "حلقه روی عددهای ۰ تا ۹": "a loop over the numbers 0 to 9",
+  "شمارنده از صفر شروع می‌شود": "the counter starts from zero",
+  "تا وقتی به ۱۰ نرسیده‌ایم": "as long as we have not reached 10",
+  "عدد فعلی را چاپ می‌کنیم": "print the current number",
+  "شمارنده را یکی جلو می‌بریم": "move the counter forward by one",
+  "حلقه روی عددهای ۱ تا ۱۰": "a loop over the numbers 1 to 10",
+  "چاپ هر عدد در یک خط": "print each number on one line",
+  "شمارنده از ۱ شروع می‌شود": "the counter starts from 1",
+  "تا وقتی از ۱۰ بیشتر نشده‌ایم": "as long as we have not passed 10",
+  "حلقه روی عددهای ۲۰ تا ۲۵": "a loop over the numbers 20 to 25",
+  "شمارنده از ۲۰ شروع می‌شود": "the counter starts from 20",
+  "تا وقتی از ۲۵ بیشتر نشده‌ایم": "as long as we have not passed 25"
+ }
+}
