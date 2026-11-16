@@ -6,6 +6,8 @@ Last updated: 2026-11-16 (Monday).
 
 ## Open, in priority order
 
+0. [ ] **Deadlines (owner, 2026-11-16, two changes): both classes share one schedule. The first deadline is Thursday at 23:00. The first 8 deadlines carry 10 questions each and the last 4 carry 5 each, so all 100 are done by the final Saturday at 23:00.** (Owner decision: on which days the deadlines fall.) A draft is built (Thursday and Saturday every week, last one Saturday 26 Dec 23:00). It is committed but not published. Other options: Thursday, Friday and Saturday every week (last one Saturday 12 Dec); every day from Thursday (the 12th deadline then falls on Monday 30 Nov, not Saturday).
+
 1. [x] **Comprehensive tutorial (آموزش) for every question, like the earlier version: descriptive comment lines and several answers each.** (Owner, 2026-11-16.)
    - Done: 37 questions restored from the earlier teacher-playground version. Their statements and tests are unchanged, and the checker accepts every solution. Every defined solution is now shown (no hidden picks).
    - Done since: 24 more questions now have two commented answers each (batches 2 to 4: p03, p04, p09, p47, p51, p52, p53, p54, p55, p56, p57, p58, p59, p60, p61, p76, p77, p78, p79, p80, p81, p87, p95, p96). In total 61 of 100 are done.
