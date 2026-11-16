@@ -32,7 +32,7 @@ Last updated: 2026-11-16 (Monday).
 
 9. [ ] **Owner check: the Aban dates in your message are one day behind the calendar.** You wrote Tuesday 25 Aban and Wednesday 26 Aban. Tuesday 17 Nov is 26 Aban and Wednesday 18 Nov is 27 Aban. The Azar dates you wrote match. The site uses the weekdays, so Tuesday 17 Nov shows as 26 Aban. Confirm, or tell me which day you meant.
 10. [ ] **Owner check: both classes use the same deadlines.** This follows your earlier instruction "for both classes". Confirm, or give class 202 a different schedule.
-11. [ ] **My follow-up: run the browser end-to-end checks again.** They were last run before the tutorial batches were added.
+11. [x] **My follow-up: run the browser end-to-end checks again.** Run on 2026-11-16 after the tutorial batches and the new deadlines: 33 of 33 passed.
 
 ## Done
 
