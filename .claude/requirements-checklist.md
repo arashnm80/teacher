@@ -6,7 +6,9 @@ Last updated: 2026-11-16 (Monday).
 
 ## Open, in priority order
 
-0. [ ] **Deadlines (owner, 2026-11-16, two changes): both classes share one schedule. The first deadline is Thursday at 23:00. The first 8 deadlines carry 10 questions each and the last 4 carry 5 each, so all 100 are done by the final Saturday at 23:00.** (Owner decision: on which days the deadlines fall.) A draft is built (Thursday and Saturday every week, last one Saturday 26 Dec 23:00). It is committed but not published. Other options: Thursday, Friday and Saturday every week (last one Saturday 12 Dec); every day from Thursday (the 12th deadline then falls on Monday 30 Nov, not Saturday).
+0. [x] **Deadlines (owner, 2026-11-16, two changes): both classes share one schedule. The first deadline is Thursday at 23:00. The first 8 deadlines carry 10 questions each and the last 4 carry 5 each, so all 100 are done by the final Saturday at 23:00.** (Owner decision: on which days the deadlines fall.) A draft is built (Thursday and Saturday every week, last one Saturday 26 Dec 23:00). It is committed but not published. Other options: Thursday, Friday and Saturday every week (last one Saturday 12 Dec); every day from Thursday (the 12th deadline then falls on Monday 30 Nov, not Saturday).
+
+   - Owner decision (2026-11-16): cancelled. The old deadlines stay: class 201 has six series, Monday 16 to Saturday 21 Nov, due 22:00; class 202 has six series, Thursday 19 to Tuesday 24 Nov, due 22:00. The draft was reverted; nothing was published.
 
 1. [x] **Comprehensive tutorial (آموزش) for every question, like the earlier version: descriptive comment lines and several answers each.** (Owner, 2026-11-16.)
    - Done: 37 questions restored from the earlier teacher-playground version. Their statements and tests are unchanged, and the checker accepts every solution. Every defined solution is now shown (no hidden picks).
