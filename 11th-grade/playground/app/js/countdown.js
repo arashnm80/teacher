@@ -7,10 +7,22 @@
  * decides what counts; this is only for showing the time left.
  */
 
+import { define, isEnglish, t } from "./i18n.js?v=5";
+
+define({
+  "cd.late": { fa: "مهلت گذشته", en: "Deadline passed" },
+  "cd.short.late": { fa: "گذشته", en: "passed" },
+  "cd.days_clock": { fa: "{d} روز و {clock}", en: "{d} d {clock}" },
+  "cd.day": { fa: "{n} روز", en: "{n} d" },
+  "cd.hour": { fa: "{n} ساعت", en: "{n} h" },
+  "cd.minute": { fa: "{n} دقیقه", en: "{n} min" },
+});
+
 const FA_DIGITS = "۰۱۲۳۴۵۶۷۸۹";
 const OFFSET_KEY = "teacher-clock-offset-v1";
 
-export const fa = (value) => String(value).replace(/\d/g, (d) => FA_DIGITS[d]);
+/** Digits in the chosen language: Persian digits in Persian, plain digits in English. */
+export const fa = (value) => (isEnglish() ? String(value) : String(value).replace(/\d/g, (d) => FA_DIGITS[d]));
 
 let offset = 0;
 try {
@@ -40,20 +52,20 @@ const pad = (n) => String(n).padStart(2, "0");
 
 /** Exact: "۱ روز و ۰۳:۲۴:۱۰", or "۰۳:۲۴:۱۰" under a day; "مهلت گذشته" after the deadline. */
 export function longText(ms) {
-  if (ms <= 0) return "مهلت گذشته";
+  if (ms <= 0) return t("cd.late");
   const total = Math.floor(ms / 1000);
   const days = Math.floor(total / 86400);
   const clock = `${pad(Math.floor((total % 86400) / 3600))}:${pad(Math.floor((total % 3600) / 60))}:${pad(total % 60)}`;
-  return fa(days ? `${days} روز و ${clock}` : clock);
+  return fa(days ? t("cd.days_clock", { d: days, clock }) : clock);
 }
 
 /** Compact, for the list: "۲ روز", "۵ ساعت", "۱۲ دقیقه"; "گذشته" after the deadline. */
 export function shortText(ms) {
-  if (ms <= 0) return "گذشته";
+  if (ms <= 0) return t("cd.short.late");
   const minutes = Math.floor(ms / 60000);
-  if (minutes >= 1440) return `${fa(Math.floor(minutes / 1440))} روز`;
-  if (minutes >= 60) return `${fa(Math.floor(minutes / 60))} ساعت`;
-  return `${fa(Math.max(1, minutes))} دقیقه`;
+  if (minutes >= 1440) return t("cd.day", { n: fa(Math.floor(minutes / 1440)) });
+  if (minutes >= 60) return t("cd.hour", { n: fa(Math.floor(minutes / 60)) });
+  return t("cd.minute", { n: fa(Math.max(1, minutes)) });
 }
 
 /** How urgent: late (passed), urgent (under 3 hours), soon (under a day), ok. */

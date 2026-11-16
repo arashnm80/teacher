@@ -17,6 +17,9 @@ TEHRAN = ZoneInfo("Asia/Tehran")
 JALALI_MONTHS = ["فروردین", "اردیبهشت", "خرداد", "تیر", "مرداد", "شهریور",
                  "مهر", "آبان", "آذر", "دی", "بهمن", "اسفند"]
 WEEKDAYS = ["دوشنبه", "سه‌شنبه", "چهارشنبه", "پنج‌شنبه", "جمعه", "شنبه", "یکشنبه"]  # Monday = 0
+EN_WEEKDAYS = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"]
+EN_MONTHS = ["January", "February", "March", "April", "May", "June", "July", "August", "September",
+             "October", "November", "December"]
 GREGORIAN_MONTH_DAYS = [0, 31, 59, 90, 120, 151, 181, 212, 243, 273, 304, 334]
 
 
@@ -56,6 +59,15 @@ def jalali_text(moment: datetime | None) -> str:
     return text.translate(str.maketrans("0123456789", "۰۱۲۳۴۵۶۷۸۹"))
 
 
+def english_text(moment: datetime | None) -> str:
+    """English text such as 'Saturday 21 November 2026, 22:00 (Tehran time)'."""
+    if moment is None:
+        return "—"
+    local = to_tehran(moment)
+    return (f"{EN_WEEKDAYS[local.weekday()]} {local.day} {EN_MONTHS[local.month - 1]} {local.year}, "
+            f"{local:%H:%M} (Tehran time)")
+
+
 def jalali_plain(moment: datetime | None) -> str:
     """ASCII form for spreadsheets: 1405/08/30 22:00 (Tehran time)."""
     if moment is None:
@@ -83,6 +95,7 @@ class Pack:
     until: datetime  # UTC
     markdown: str
     problems: list[str] = field(default_factory=list)
+    en: dict = field(default_factory=dict)  # optional English title and markdown
 
 
 class Schedule:
@@ -94,7 +107,7 @@ class Schedule:
             for item in body.get("packs", []):
                 pack = Pack(cls=cls, id=item["id"], title=item["title"],
                             until=parse_tehran(item["until"]), markdown=item.get("markdown", ""),
-                            problems=list(item["problems"]))
+                            problems=list(item["problems"]), en=dict(item.get("en") or {}))
                 for pid in pack.problems:
                     if pid not in known_problems:
                         raise ValueError(f"schedule: unknown question {pid}")
@@ -130,6 +143,8 @@ class Schedule:
                 "until": stamp_utc(pack.until),
                 "untilText": jalali_text(pack.until),
                 "markdown": pack.markdown,
+                "en": {"title": pack.en.get("title", pack.title), "markdown": pack.en.get("markdown", pack.markdown),
+                       "untilText": english_text(pack.until)},
                 "questions": [
                     {"id": pid, "number": number_of.get(pid, {}).get("number", 0),
                      "title": number_of.get(pid, {}).get("title", "")}

@@ -14,7 +14,12 @@ Last updated: 2026-11-16 (Monday).
    - The offline copy knows the latest online version. When the teacher updates the website, the offline copy shows an update notice and can update itself.
    - Deadlines stay decided by the server's clock (a result counts when it reaches the server before the deadline); the student is told this clearly.
    - Notes for the owner: students who already have the old zip must download the new one once; after that updates come from inside (the update notice, through شروع.bat). The offline files no longer contain the tutorials or hidden expected outputs: the tutorials arrive after the first sign-in (with internet) and stay on the device. A result counts for the score when it reaches the server before the deadline.
-2. [ ] **Lowest priority, do last: the whole website bilingual, Persian by default. (Owner, 2026-11-16: "do that".)** The lesson site is already bilingual. Still open: the playground and admin text, English content for the 100 questions and their tutorials, and book sections E1 to E5.
+2. [ ] **Lowest priority, do last: the whole website bilingual, Persian by default. (Owner, 2026-11-16: "do that".)** The lesson site is already bilingual. Worked in stages:
+   - [x] Stage 1: the playground interface (every button, message, result card, sign-in window with its own language switch, the progress window, the assistant panel, the countdown, the sync marks, the update notice, the series texts with English dates, the tutorials of the 13 topics). Checked with a browser test that no Persian is left in the interface in English (18 checks), plus the earlier suites.
+   - [ ] Stage 2: English texts for the 100 questions (title, topic, statement, hints) and their tutorials (`en` object in the questions file; the interface already reads it).
+   - [ ] Stage 3: the assistant relay answers in English when the page is English (needs the relay to be redeployed).
+   - [ ] Stage 4: the teacher's panel (admin) text.
+   - [ ] Stage 5: book sections E1 to E5 (1174 paragraphs to translate).
 
 ## Done
 

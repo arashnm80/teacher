@@ -238,6 +238,10 @@ def main() -> int:
                 raise SystemExit(f"hints.json: {pid} needs 1-3 plain tips without code fences")
             problems[pid]["hints"] = [t.strip() for t in tips]
     attach_lessons(concepts)
+    english = json.loads((HERE / "base" / "concepts-en.json").read_text(encoding="utf-8"))
+    for concept in concepts:
+        if concept["id"] in english:
+            concept["en"] = english[concept["id"]]
     ordered = [problems[k] for k in sorted(problems, key=lambda k: problems[k]["number"])]
     OUT.write_text(json.dumps(ordered, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
     CONCEPTS_OUT.write_text(json.dumps(concepts, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")

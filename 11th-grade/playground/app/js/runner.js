@@ -1,5 +1,17 @@
-import { ltrIsolate } from "./bidi.js?v=11";
-import { normalizeNewlines } from "./diff.js?v=11";
+import { ltrIsolate } from "./bidi.js?v=19";
+import { normalizeNewlines } from "./diff.js?v=12";
+import { define, t } from "./i18n.js?v=5";
+
+define({
+  "run.require": { fa: "در این مسئله باید از «{what}» استفاده کنید.", en: "In this problem you must use “{what}”." },
+  "run.forbid": { fa: "در این مسئله نباید از «{what}» استفاده کنید.", en: "In this problem you must not use “{what}”." },
+  "run.for": { fa: "حلقه {code}", en: "a {code} loop" },
+  "run.while": { fa: "حلقه {code}", en: "a {code} loop" },
+  "run.if": { fa: "دستور {code}", en: "the {code} statement" },
+  "run.def": { fa: "تابع ({code})", en: "a function ({code})" },
+  "run.timeout": { fa: "زمان اجرا بیش از حد مجاز بود.", en: "The run took longer than allowed." },
+  "run.nofunction": { fa: "تابع «{name}» پیدا نشد. آن را با def تعریف کنید.", en: "Function “{name}” was not found. Define it with def." },
+});
 
 const TIMEOUT_MS = 2500;
 
@@ -74,7 +86,7 @@ export function checkConstraints(source, constraints = {}) {
       issues.push({
         type: "require",
         token,
-        message: `در این مسئله باید از «${labelFor(token)}» استفاده کنید.`,
+        message: t("run.require", { what: labelFor(token) }),
       });
     }
   }
@@ -84,7 +96,7 @@ export function checkConstraints(source, constraints = {}) {
       issues.push({
         type: "forbid",
         token,
-        message: `در این مسئله نباید از «${labelFor(token)}» استفاده کنید.`,
+        message: t("run.forbid", { what: labelFor(token) }),
       });
     }
   }
@@ -112,10 +124,10 @@ function callRe(token) {
 
 function labelFor(token) {
   const map = {
-    for: `حلقه ${ltrIsolate("for")}`,
-    while: `حلقه ${ltrIsolate("while")}`,
-    if: `دستور ${ltrIsolate("if")}`,
-    def: `تابع (${ltrIsolate("def")})`,
+    for: t("run.for", { code: ltrIsolate("for") }),
+    while: t("run.while", { code: ltrIsolate("while") }),
+    if: t("run.if", { code: ltrIsolate("if") }),
+    def: t("run.def", { code: ltrIsolate("def") }),
     import: `${ltrIsolate("import")} / ${ltrIsolate("from")}`,
     max: `${ltrIsolate("max(...)")}`,
     min: `${ltrIsolate("min(...)")}`,
@@ -164,6 +176,7 @@ async function runOneTest(pyodide, problem, source, test, index) {
     stdin: test.stdin ?? "",
     expected: test.stdout ?? "",
     call: test.call || null,
+    noFunction: t("run.nofunction", { name: problem.functionName || "" }),
   };
 
   try {
@@ -245,7 +258,7 @@ function deepEqual(a, b) {
 
 function withTimeout(promise, ms) {
   return new Promise((resolve, reject) => {
-    const timer = setTimeout(() => reject(new Error("زمان اجرا بیش از حد مجاز بود.")), ms);
+    const timer = setTimeout(() => reject(new Error(t("run.timeout"))), ms);
     promise
       .then((v) => {
         clearTimeout(timer);
@@ -282,7 +295,7 @@ try:
         exec(compile(source, "<student>", "exec"), ns, ns)
         name = payload.get("functionName") or ""
         if name not in ns or not callable(ns[name]):
-            raise NameError(f"تابع «{name}» پیدا نشد. آن را با def تعریف کنید.")  # name is Latin; traceback shown in LTR pre
+            raise NameError(payload.get("noFunction") or f"Function {name} was not found.")  # name is Latin; traceback shown in LTR pre
         call = payload.get("call") or {}
         args = call.get("args") or []
         kwargs = call.get("kwargs") or {}

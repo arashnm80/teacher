@@ -5,6 +5,14 @@
  * becomes the outer (rightmost) glyph and reads as ".1". Split number + dot.
  */
 
+import { define, t } from "./i18n.js?v=5";
+
+define({
+  "md.done": { fa: "انجام شده", en: "Done" },
+  "md.todo": { fa: "انجام نشده", en: "Not done" },
+  "md.image": { fa: "تصویر", en: "Image" },
+});
+
 /** Wrap plain text so Latin/code/digits stay LTR inside an RTL sentence (textContent-safe). */
 export function ltrIsolate(text) {
   return `⁦${String(text ?? "")}⁩`;
@@ -446,7 +454,7 @@ function mdList(items) {
       const task = item.text.match(/^\[([ xX])\]\s*(.*)$/);
       if (!task) return `<li>${mdInline(item.text)}${blocks}</li>`;
       const done = task[1] !== " ";
-      const box = `<span class="task-box" title="${done ? "انجام شده" : "انجام نشده"}">${done ? "☑" : "☐"}</span>`;
+      const box = `<span class="task-box" title="${done ? t("md.done") : t("md.todo")}">${done ? "☑" : "☐"}</span>`;
       return `<li class="task">${box}${mdInline(task[2])}${blocks}</li>`;
     })
     .join("");
@@ -535,7 +543,7 @@ function linkOpen(href) {
 }
 
 function imageLabel(label) {
-  return label.trim() ? `تصویر: ${label}` : "تصویر";
+  return label.trim() ? `${t("md.image")}: ${label}` : t("md.image");
 }
 
 const NAMED_ENTITIES = new Map([

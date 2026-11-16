@@ -1,3 +1,4 @@
+export const END_MARK = "⟨پایان⟩"; // shown where the output ends; the page shows it in the chosen language
 /** Line and character diffs for expected vs actual output. */
 
 export function normalizeNewlines(text) {
@@ -99,8 +100,8 @@ export function explainFirstDifference(expected, actual) {
   if (e.length !== a.length) {
     return {
       index: len,
-      expected: e.length > a.length ? e[len] ?? "⟨پایان⟩" : "⟨پایان⟩",
-      actual: a.length > e.length ? a[len] ?? "⟨پایان⟩" : "⟨پایان⟩",
+      expected: e.length > a.length ? e[len] ?? END_MARK : END_MARK,
+      actual: a.length > e.length ? a[len] ?? END_MARK : END_MARK,
       contextExpected: e.slice(Math.max(0, len - 8), len + 8),
       contextActual: a.slice(Math.max(0, len - 8), len + 8),
     };

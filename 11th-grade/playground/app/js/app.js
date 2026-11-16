@@ -1,21 +1,22 @@
 // Cache-bust query on every import: Cloudflare was caching /playground/*.js for
 // 24h, so a fixed bootlog.js SyntaxError kept failing after the source was fixed.
-import { bidiMixHtml, codeHtml, indexLabelHtml, isolateLatin, ltrHtml, ltrIsolate, mdLite, renderMarkdown } from "./bidi.js?v=18";
-import { ONLINE, OFFLINE, initAccountUi, ensureStudent, fetchProblems, fetchProgress, fetchGuide, fetchSchedule, noteTyping, scheduleDraft, flushDraft, sendAttempt, getSession, onSessionChange, requireSignIn } from "./account.js?v=3";
+import { bidiMixHtml, codeHtml, indexLabelHtml, isolateLatin, ltrHtml, ltrIsolate, mdLite, renderMarkdown } from "./bidi.js?v=19";
+import { ONLINE, OFFLINE, initAccountUi, ensureStudent, fetchProblems, fetchProgress, fetchGuide, fetchSchedule, noteTyping, scheduleDraft, flushDraft, sendAttempt, getSession, onSessionChange, requireSignIn } from "./account.js?v=4";
 import { backfill, guideFor, noteSyncTyping, onSyncChange, queueResult, queueLength, serverState, solvedStatus, startAutoSync,
-  statusText, statusTip, summarize, syncNow, typingFor } from "./sync.js?v=1";
-import { initUpdateNotice } from "./update.js?v=1";
-import { define, t as tr } from "./i18n.js?v=1";
-import { fa, level, longText, remainingMs, setServerTime, shortText } from "./countdown.js?v=1";
-import { aiFailureChanged, aiProblemChanged, failureFromOutcome, initAi } from "./ai.js?v=3";
+  statusText, statusTip, summarize, syncNow, typingFor } from "./sync.js?v=2";
+import { initUpdateNotice } from "./update.js?v=2";
+import { define, initLang, isEnglish, onLangChange, t as tr } from "./i18n.js?v=5";
+import { fa, level, longText, remainingMs, setServerTime, shortText } from "./countdown.js?v=2";
+import { aiFailureChanged, aiProblemChanged, failureFromOutcome, initAi } from "./ai.js?v=4";
 import {
+  END_MARK,
   charDiff,
   explainFirstDifference,
   lineDiff,
   normalizeNewlines,
   visibleChar,
-} from "./diff.js?v=11";
-import { CODEMIRROR_SCRIPTS, createPythonEditor, ensureCodeMirror } from "./editor.js?v=12";
+} from "./diff.js?v=12";
+import { CODEMIRROR_SCRIPTS, createPythonEditor, ensureCodeMirror } from "./editor.js?v=13";
 import {
   LEGACY,
   PRIMARY,
@@ -23,20 +24,20 @@ import {
   loadScript,
   needsLegacyEngine,
   setScriptLoadObserver,
-} from "./compat.js?v=11";
+} from "./compat.js?v=12";
 import {
   bootNote,
   buildTeacherBootLog,
   recordScriptLoad,
   startPageErrorCapture,
-} from "./bootlog.js?v=11";
+} from "./bootlog.js?v=12";
 import {
   installEngineFetch,
   loadEngineManifest,
   preloadAsmScript,
   prefetchEngine,
-} from "./enginefetch.js?v=13";
-import { runProblem } from "./runner.js?v=11";
+} from "./enginefetch.js?v=14";
+import { runProblem } from "./runner.js?v=12";
 
 startPageErrorCapture();
 setScriptLoadObserver(recordScriptLoad);
@@ -57,6 +58,105 @@ define({
   "progress.syncnow": { fa: "ارسال و همگام‌سازی حالا", en: "Send and sync now" },
   "deadline.unsent": { fa: "حل شده، اما هنوز به معلم نرسیده است؛ قبل از مهلت ارسال کن.", en: "Solved, but it has not reached the teacher yet; send it before the deadline." },
 });
+
+define({
+  "boot.failed": { fa: "بارگذاری ناموفق: {detail}", en: "Loading failed: {detail}" },
+  "boot.failed.generic": { fa: "بارگذاری موتور پایتون ناموفق بود. با start.bat از همین پوشه سرو کنید و صفحه را تازه کنید.", en: "The Python engine could not be loaded. Serve this folder with start.bat and refresh the page." },
+  "boot.collect": { fa: "در حال جمع‌آوری جزئیات فنی…", en: "Collecting technical details…" },
+  "boot.login": { fa: "ورود به حساب…", en: "Signing in…" },
+  "boot.read": { fa: "خواندن مسئله‌ها…", en: "Reading the problems…" },
+  "boot.check": { fa: "بررسی فایل‌های آفلاین…", en: "Checking the offline files…" },
+  "boot.editor": { fa: "آماده‌سازی ویرایشگر کد…", en: "Preparing the code editor…" },
+  "boot.smoke": { fa: "آزمون کوتاه موتور پایتون…", en: "Short test of the Python engine…" },
+  "boot.ready": { fa: "آماده است", en: "Ready" },
+  "boot.legacy": { fa: "مرورگر این رایانه قدیمی است؛ در حال بارگذاری موتور سازگار…", en: "This computer's browser is old; loading the compatible engine…" },
+  "boot.pyodide": { fa: "بارگذاری Pyodide (آفلاین)…", en: "Loading Pyodide (offline)…" },
+  "boot.download": { fa: "دانلود موتور پایتون: {done} از {total} مگابایت (اگر قطع شود، از همان‌جا ادامه می‌یابد)…", en: "Downloading the Python engine: {done} of {total} MB (if it is cut, it continues from there)…" },
+  "boot.preparing.first": { fa: "در حال آماده‌سازی موتور پایتون (اولین بار روی این رایانه ممکن است تا یک دقیقه طول بکشد)…", en: "Preparing the Python engine (the first time on this computer it can take up to a minute)…" },
+  "boot.timeout.modern": { fa: "بارگذاری Pyodide بیش از ۲ دقیقه طول کشید. مرورگر را تازه کنید؛ اگر باز هم ماند، Chrome/Edge را به‌روز کنید یا از کپی روی دیسک محلی (نه USB کند) اجرا کنید.", en: "Loading Pyodide took more than 2 minutes. Refresh the browser; if it stays stuck, update Chrome/Edge or run the copy from a local disk (not a slow USB stick)." },
+  "boot.unsupported": { fa: "این مرورگر نسخه جدید موتور را پشتیبانی نمی‌کند؛ در حال بارگذاری موتور سازگار…", en: "This browser does not support the new engine; loading the compatible engine…" },
+  "boot.noengine": { fa: "موتور پایتون بارگذاری نشد. پوشه موتور را کامل کپی کنید.", en: "The Python engine did not load. Copy the whole engine folder." },
+  "boot.preparing.legacy": { fa: "در حال آماده‌سازی موتور سازگار (ممکن است تا یک دقیقه طول بکشد)…", en: "Preparing the compatible engine (it can take up to a minute)…" },
+  "boot.preparing.modern": { fa: "در حال آماده‌سازی موتور پایتون (ممکن است تا یک دقیقه طول بکشد)…", en: "Preparing the Python engine (it can take up to a minute)…" },
+  "boot.timeout.plain": { fa: "بارگذاری موتور پایتون بیش از ۲ دقیقه طول کشید. مرورگر را تازه کنید؛ اگر باز هم ماند، از کپی روی دیسک محلی (نه USB کند) اجرا کنید.", en: "Loading the Python engine took more than 2 minutes. Refresh the browser; if it stays stuck, run the copy from a local disk (not a slow USB stick)." },
+  "boot.missing": { fa: "فایل آفلاین پیدا نشد: {path}. پوشه موتور را کامل کپی کنید.", en: "An offline file was not found: {path}. Copy the whole engine folder." },
+  "boot.math": { fa: "موتور پایتون آفلاین به‌درستی math را بارگذاری نکرد.", en: "The offline Python engine did not load math correctly." },
+  "boot.cantread": { fa: "نتوانستم {path} را بخوانم", en: "Could not read {path}" },
+  "mode.function": { fa: "آزمون تابع", en: "Function test" },
+  "mode.io": { fa: "ورودی / خروجی", en: "Input / output" },
+  "results.empty": { fa: "هنوز آزمونی اجرا نشده است.", en: "No test has been run yet." },
+  "lesson.related": { fa: "درس مرتبط در کتاب:", en: "Related lesson in the book:" },
+  "constraint.require": { fa: "باید استفاده شود:", en: "Must be used:" },
+  "constraint.forbid": { fa: "نباید استفاده شود:", en: "Must not be used:" },
+  "constraint.comma": { fa: "، ", en: ", " },
+  "sample.in": { fa: "نمونه ورودی", en: "Sample input" },
+  "sample.out": { fa: "نمونه خروجی", en: "Sample output" },
+  "sample.call": { fa: "نمونه فراخوانی", en: "Sample call" },
+  "hint.title": { fa: "راهنما {n}", en: "Hint {n}" },
+  "hint.all": { fa: "همه راهنماها باز شده‌اند", en: "All hints are open" },
+  "hint.show": { fa: "نمایش راهنمای {n}", en: "Show hint {n}" },
+  "hint.none": { fa: "راهنمایی برای این مسئله نیست", en: "This problem has no hints" },
+  "concept.none": { fa: "آموزش مرتبطی تعریف نشده است.", en: "No related tutorial is defined." },
+  "concept.legend": { fa: "وقتی آزمونی رد می‌شود، در بخش «نتایج» این رنگ‌ها را می‌بینید:", en: "When a test fails, you see these colours in the “Results” tab:" },
+  "confirm.reset": { fa: "کد فعلی پاک شود و به کد اولیه برگردد؟", en: "Erase the current code and go back to the starting code?" },
+  "run.testing": { fa: "در حال تست…", en: "Testing…" },
+  "run.running": { fa: "آزمون‌ها در حال اجرا هستند…", en: "The tests are running…" },
+  "run.error": { fa: "خطای اجرا", en: "Run error" },
+  "run.button": { fa: "بررسی و تست", en: "Check and test" },
+  "deadline.none": { fa: "این مسئله برای کلاس شما نمره ندارد؛ برای تمرین است.", en: "This problem has no score for your class; it is for practice." },
+  "deadline.late": { fa: "مهلت نمره‌ی این مسئله گذشته است ({until}). اکنون فقط برای تمرین است.", en: "The deadline for this problem's score has passed ({until}). It is now for practice only." },
+  "deadline.solved": { fa: "حل شده است. مهلت نمره‌ی این مسئله ({title}): {until}", en: "Solved. Deadline for this problem's score ({title}): {until}" },
+  "deadline.open": { fa: "مهلت نمره‌ی این مسئله ({title}): {until} · زمان باقی‌مانده:", en: "Deadline for this problem's score ({title}): {until} · time left:" },
+  "pack.passed": { fa: "قبول شد", en: "passed" },
+  "pack.notyet": { fa: "هنوز قبول نشده", en: "not passed yet" },
+  "pack.empty": { fa: "برای کلاس شما هنوز سری‌ای تعریف نشده است.", en: "No series has been defined for your class yet." },
+  "stale": { fa: "این مسئله به‌روز شده است. صفحه دوباره بارگذاری می‌شود.", en: "This problem has been updated. The page will reload." },
+  "passed.late": { fa: "قبول شدی، اما مهلت نمره‌ی این مسئله گذشته است. این مسئله فقط برای تمرین است.", en: "You passed, but the deadline for this problem's score has passed. It is for practice only." },
+  "card.constraint": { fa: "محدودیت مسئله", en: "Problem rule" },
+  "badge.blocked": { fa: "رد شده", en: "Rejected" },
+  "results.count": { fa: "{passed} از {total} آزمون قبول شد.", en: "{passed} of {total} tests passed." },
+  "card.test": { fa: "آزمون {n}", en: "Test {n}" },
+  "badge.error": { fa: "خطا", en: "Error" },
+  "badge.ok": { fa: "قبول", en: "Passed" },
+  "badge.bad": { fa: "رد", en: "Failed" },
+  "card.hidden": { fa: "این آزمون پنهان است؛ ورودی و خروجی آن در حالت آنلاین نشان داده نمی‌شود. خروجی برنامه‌ات را با نمونه‌ی بالای صفحه مقایسه کن.", en: "This test is hidden; its input and output are not shown. Compare your program's output with the sample above." },
+  "fn.differs": { fa: "خروجی تابع با مقدار مورد انتظار فرق دارد.", en: "The function's result differs from the expected value." },
+  "fn.expected": { fa: "باید باشد: ", en: "Expected: " },
+  "fn.actual": { fa: "خروجی شما: ", en: "Your result: " },
+  "diff.first": { fa: "اولین تفاوت در موقعیت {pos}: انتظار «{want}»، خروجی شما «{got}». فاصله‌ها با {dot} نشان داده می‌شوند.", en: "First difference at position {pos}: expected “{want}”, your output “{got}”. Spaces are shown as {dot}." },
+  "diff.full": { fa: "متن کامل مورد انتظار / خروجی شما", en: "Full expected text / your output" },
+  "diff.expected": { fa: "مورد انتظار", en: "Expected" },
+  "diff.yours": { fa: "خروجی شما", en: "Your output" },
+  "legend.red": { fa: "قرمز", en: "red" },
+  "legend.green": { fa: "سبز", en: "green" },
+  "legend.text": { fa: "{red} = باید باشد ولی نیست · {green} = اضافه‌ی خروجی شما", en: "{red} = should be there but is missing · {green} = extra in your output" },
+  "char.end": { fa: "⟨پایان⟩", en: "⟨end⟩" },
+  "char.space": { fa: "فاصله", en: "space" },
+  "char.newline": { fa: "خط جدید", en: "new line" },
+  "char.tab": { fa: "تب", en: "tab" },
+  "prompt.tip": { fa: "احتمالاً داخل {call} پیام گذاشته‌اید؛ همان پیام هم چاپ می‌شود و آزمون را خراب می‌کند. فقط بنویسید: {call}", en: "You probably put a message inside {call}; that message is printed too and breaks the test. Write only: {call}" },
+  "progress.summary": { fa: "{solved} از {total} مسئله حل شده.", en: "{solved} of {total} problems solved." },
+  "progress.summary.local": { fa: "{solved} از {total} مسئله حل شده (فقط روی همین مرورگر ذخیره می‌شود).", en: "{solved} of {total} problems solved (saved only in this browser)." },
+  "progress.solved": { fa: "حل‌شده", en: "Solved" },
+  "confirm.clear": { fa: "پیشرفت و کدهای ذخیره‌شده این مرورگر پاک شوند؟", en: "Erase the progress and saved code of this browser?" },
+  "diff.level1": { fa: "خیلی آسان", en: "Very easy" },
+  "diff.level2": { fa: "آسان", en: "Easy" },
+  "diff.level3": { fa: "متوسط", en: "Medium" },
+  "diff.level4": { fa: "سخت", en: "Hard" },
+  "diff.level5": { fa: "چالشی", en: "Challenging" },
+  "backup.saved": { fa: "پشتیبان ذخیره شد.", en: "Backup saved." },
+  "backup.invalid": { fa: "این فایل پشتیبان پیشرفت نیست.", en: "This is not a progress backup file." },
+  "backup.restored": { fa: "پیشرفت از پشتیبان بازیابی شد.", en: "Progress restored from the backup." },
+});
+
+/** A field of a problem or tutorial in the chosen language: the English text sits in `en`, Persian is the fallback. */
+function loc(obj, field) {
+  if (isEnglish()) {
+    const value = obj?.en?.[field];
+    if (value != null && value !== "") return value;
+  }
+  return obj?.[field];
+}
 
 const STORAGE_KEY = "teacher-playground-progress-v1";
 const HINT_KEY = "teacher-playground-hints-v1";
@@ -119,20 +219,20 @@ init().catch(async (err) => {
   console.error(err);
   const detail = String(err?.message || err || "").trim();
   el.bootMsg.textContent = detail
-    ? `بارگذاری ناموفق: ${detail}`
-    : "بارگذاری موتور پایتون ناموفق بود. با start.bat از همین پوشه سرو کنید و صفحه را تازه کنید.";
+    ? tr("boot.failed", { detail })
+    : tr("boot.failed.generic");
   if (el.bootTech) {
-    el.bootTech.textContent = "در حال جمع‌آوری جزئیات فنی…";
+    el.bootTech.textContent = tr("boot.collect");
     try {
       const probes = [
         ...CODEMIRROR_SCRIPTS,
         "vendor/pyodide/pyodide.js",
         "vendor/pyodide/chunks/manifest.json",
         "data/problems.json?v=28",
-        "js/app.js?v=14",
-        "js/enginefetch.js?v=13",
-        "js/editor.js?v=12",
-        "js/bootlog.js?v=11",
+        "js/app.js?v=15",
+        "js/enginefetch.js?v=14",
+        "js/editor.js?v=13",
+        "js/bootlog.js?v=12",
       ];
       el.bootTech.textContent = await buildTeacherBootLog(err, { extraProbes: probes });
     } catch (logErr) {
@@ -155,15 +255,16 @@ init().catch(async (err) => {
 
 async function init() {
   bootNote("init start");
+  initLang();
   initAccountUi();
   if (ONLINE) {
-    setBoot(8, "ورود به حساب…");
+    setBoot(8, tr("boot.login"));
     await ensureStudent();
   }
-  setBoot(12, "خواندن مسئله‌ها…");
+  setBoot(12, tr("boot.read"));
   const [problems, concepts] = await Promise.all([
     ONLINE ? fetchProblems() : fetchJson("data/problems.json?v=29"),
-    fetchJson("data/concepts.json?v=28"),
+    fetchJson("data/concepts.json?v=29"),
   ]);
   // Stable `id` keeps progress across inserts; `number` is display order only.
   state.problems = [...problems].sort(
@@ -196,13 +297,13 @@ async function init() {
     render: renderMarkdown,
   });
 
-  setBoot(35, "بررسی فایل‌های آفلاین…");
+  setBoot(35, tr("boot.check"));
   state.engineManifest = await loadEngineManifest(bootNote);
   bootNote(`engine manifest ${state.engineManifest ? "found" : "absent"}`);
   const hasLegacy = await assertOfflineAssets(Boolean(state.engineManifest));
   bootNote(`assertOfflineAssets hasLegacy=${hasLegacy}`);
 
-  setBoot(45, "آماده‌سازی ویرایشگر کد…");
+  setBoot(45, tr("boot.editor"));
   // Do not rely only on <script> tags in index.html — some school proxies /
   // Cloudflare optimizers skip classic scripts while HEAD still returns 200.
   await ensureCodeMirror();
@@ -227,11 +328,11 @@ async function init() {
   bootNote(`bootPyodide forceEngine=${forceEngine || "auto"}`);
   state.pyodide = await bootPyodide(hasLegacy, forceEngine);
 
-  setBoot(90, "آزمون کوتاه موتور پایتون…");
+  setBoot(90, tr("boot.smoke"));
   await smokeTestPyodide(state.pyodide);
   bootNote("smokeTest ok");
 
-  setBoot(100, "آماده است");
+  setBoot(100, tr("boot.ready"));
   await sleep(250);
   el.boot.hidden = true;
   el.btnRun.disabled = false;
@@ -239,6 +340,22 @@ async function init() {
 
   const first = state.problems[0];
   if (first) selectProblem(first.id);
+  // From here the results panel holds real results: the static two-language text must not overwrite them.
+  el.results.removeAttribute("data-fa");
+  el.results.removeAttribute("data-en");
+  // Switching the language draws the parts built by scripts again (the results panel stays as it was).
+  onLangChange(() => {
+    fillTopics();
+    renderList();
+    if (state.currentId) {
+      const keep = el.results.innerHTML;
+      const keepClass = el.results.className;
+      selectProblem(state.currentId);
+      el.results.innerHTML = keep;
+      el.results.className = keepClass;
+    }
+    if (OFFLINE) paintSyncBar();
+  });
   if (OFFLINE) startOfflineSync();
   bootNote("init done");
   window.__pgReady = true;
@@ -247,16 +364,16 @@ async function init() {
 /** Boot the Python engine: modern Pyodide, with a legacy fallback for old lab browsers. */
 async function bootPyodide(hasLegacy, forceEngine = null) {
   if (forceEngine === "legacy" && hasLegacy) {
-    setBoot(55, "مرورگر این رایانه قدیمی است؛ در حال بارگذاری موتور سازگار…");
+    setBoot(55, tr("boot.legacy"));
     return bootOneEngine(LEGACY);
   }
   const ua = typeof navigator !== "undefined" ? navigator.userAgent || "" : "";
   if (hasLegacy && needsLegacyEngine(ua)) {
-    setBoot(55, "مرورگر این رایانه قدیمی است؛ در حال بارگذاری موتور سازگار…");
+    setBoot(55, tr("boot.legacy"));
     return bootOneEngine(LEGACY);
   }
 
-  setBoot(55, "بارگذاری Pyodide (آفلاین)…");
+  setBoot(55, tr("boot.pyodide"));
   let uninstallEngineFetch = null;
   if (state.engineManifest) {
     const files = await prefetchEngine(state.engineManifest, {
@@ -265,7 +382,7 @@ async function bootPyodide(hasLegacy, forceEngine = null) {
         const mb = (n) => (n / 1048576).toFixed(1);
         setBoot(
           55 + Math.round((25 * done) / Math.max(total, 1)),
-          `دانلود موتور پایتون: ${mb(done)} از ${mb(total)} مگابایت (اگر قطع شود، از همان‌جا ادامه می‌یابد)…`
+          tr("boot.download", { done: mb(done), total: mb(total) })
         );
       },
     });
@@ -277,19 +394,19 @@ async function bootPyodide(hasLegacy, forceEngine = null) {
   const tick = startBootTicker(
     state.engineManifest ? 80 : 55,
     88,
-    "در حال آماده‌سازی موتور پایتون (اولین بار روی این رایانه ممکن است تا یک دقیقه طول بکشد)…"
+    tr("boot.preparing.first")
   );
   try {
     await loadScript(PRIMARY.js);
     return await withTimeout(
       callLoader(PRIMARY.indexURL),
       120000,
-      "بارگذاری Pyodide بیش از ۲ دقیقه طول کشید. مرورگر را تازه کنید؛ اگر باز هم ماند، Chrome/Edge را به‌روز کنید یا از کپی روی دیسک محلی (نه USB کند) اجرا کنید."
+      tr("boot.timeout.modern")
     );
   } catch (err) {
     if (forceEngine !== "modern" && hasLegacy && isWasmCompatError(err)) {
       tick.stop();
-      setBoot(60, "این مرورگر نسخه جدید موتور را پشتیبانی نمی‌کند؛ در حال بارگذاری موتور سازگار…");
+      setBoot(60, tr("boot.unsupported"));
       return bootOneEngine(LEGACY);
     }
     throw err;
@@ -304,7 +421,7 @@ function callLoader(indexURL) {
   const ns = globalThis.loadPyodide;
   const fn = typeof ns === "function" ? ns : ns?.loadPyodide;
   if (typeof fn !== "function") {
-    throw new Error("موتور پایتون بارگذاری نشد. پوشه موتور را کامل کپی کنید.");
+    throw new Error(tr("boot.noengine"));
   }
   return fn({ indexURL });
 }
@@ -314,15 +431,15 @@ async function bootOneEngine(engine) {
     60,
     88,
     engine === LEGACY
-      ? "در حال آماده‌سازی موتور سازگار (ممکن است تا یک دقیقه طول بکشد)…"
-      : "در حال آماده‌سازی موتور پایتون (ممکن است تا یک دقیقه طول بکشد)…"
+      ? tr("boot.preparing.legacy")
+      : tr("boot.preparing.modern")
   );
   try {
     await loadScript(engine.js);
     return await withTimeout(
       callLoader(engine.indexURL),
       120000,
-      "بارگذاری موتور پایتون بیش از ۲ دقیقه طول کشید. مرورگر را تازه کنید؛ اگر باز هم ماند، از کپی روی دیسک محلی (نه USB کند) اجرا کنید."
+      tr("boot.timeout.plain")
     );
   } finally {
     tick.stop();
@@ -354,7 +471,7 @@ async function assertOfflineAssets(engineFromParts = false) {
   for (const path of required) {
     if (!(await assetOk(path))) {
       throw new Error(
-        `فایل آفلاین پیدا نشد: ${ltrIsolate(path)}. پوشه موتور را کامل کپی کنید.`
+        tr("boot.missing", { path: ltrIsolate(path) })
       );
     }
   }
@@ -387,7 +504,7 @@ async function smokeTestPyodide(pyodide) {
     "import math\nfloat(math.sqrt(16)) + float(math.pi > 3)"
   );
   if (Number(out) !== 5) {
-    throw new Error("موتور پایتون آفلاین به‌درستی math را بارگذاری نکرد.");
+    throw new Error(tr("boot.math"));
   }
 }
 
@@ -488,14 +605,20 @@ function syncProgressWithCatalog() {
   if (codesChanged) saveJson(CODE_KEY, state.codes);
 }
 
+/** The topic filter. The value stays the Persian topic (it identifies the group); the label follows the language. */
 function fillTopics() {
-  const topics = [...new Set(state.problems.map((p) => p.topic))];
-  for (const topic of topics) {
+  const keep = el.topicFilter.value;
+  const all = el.topicFilter.options[0];
+  el.topicFilter.replaceChildren(...(all ? [all] : []));
+  const firstOfTopic = new Map();
+  for (const p of state.problems) if (!firstOfTopic.has(p.topic)) firstOfTopic.set(p.topic, p);
+  for (const [topic, p] of firstOfTopic) {
     const opt = document.createElement("option");
     opt.value = topic;
-    opt.textContent = topic;
+    opt.textContent = loc(p, "topic");
     el.topicFilter.appendChild(opt);
   }
+  el.topicFilter.value = keep;
 }
 
 function renderList() {
@@ -516,8 +639,8 @@ function renderList() {
       btn.innerHTML = `
         <span class="num ltr" dir="ltr">${String(p.number).padStart(2, "0")}</span>
         <span>
-          <div class="title">${bidiMixHtml(p.title)}${mark}</div>
-          <div class="meta">${bidiMixHtml(p.topic)} · ${difficultyLabel(p.difficulty)} <span class="remain" data-pid="${p.id}"></span></div>
+          <div class="title">${bidiMixHtml(loc(p, "title"))}${mark}</div>
+          <div class="meta">${bidiMixHtml(loc(p, "topic"))} · ${difficultyLabel(p.difficulty)} <span class="remain" data-pid="${p.id}"></span></div>
         </span>
       `;
       btn.addEventListener("click", () => selectProblem(p.id));
@@ -532,10 +655,9 @@ function selectProblem(id) {
   flushDraft();
   state.currentId = id;
 
-  el.problemTopic.innerHTML = bidiMixHtml(problem.topic);
-  el.problemTitle.innerHTML = `${indexLabelHtml(problem.number)} ${bidiMixHtml(problem.title)}`;
-  el.problemMode.textContent =
-    problem.mode === "function" ? "آزمون تابع" : "ورودی / خروجی";
+  el.problemTopic.innerHTML = bidiMixHtml(loc(problem, "topic"));
+  el.problemTitle.innerHTML = `${indexLabelHtml(problem.number)} ${bidiMixHtml(loc(problem, "title"))}`;
+  el.problemMode.textContent = problem.mode === "function" ? tr("mode.function") : tr("mode.io");
   el.statement.innerHTML = renderStatement(problem);
   renderLessonLink(problem);
   aiProblemChanged();
@@ -548,7 +670,7 @@ function selectProblem(id) {
   requestAnimationFrame(() => state.editor?.refresh());
   el.btnHint.disabled = false;
   el.results.className = "results empty";
-  el.results.textContent = "هنوز آزمونی اجرا نشده است.";
+  el.results.textContent = tr("results.empty");
 
   renderHints(problem);
   renderConcept(problem);
@@ -571,7 +693,7 @@ function renderLessonLink(problem) {
   }
   el.lessonLink.hidden = false;
   el.lessonLink.innerHTML =
-    `درس مرتبط در کتاب: <a href="${LESSON_BASE}${lesson.page}.html">${isolateLatin(lesson.fa)}</a>`;
+    `${tr("lesson.related")} <a href="${LESSON_BASE}${lesson.page}.html">${isolateLatin(isEnglish() && lesson.en ? lesson.en : lesson.fa)}</a>`;
 }
 
 function defaultStarter(problem) {
@@ -591,12 +713,12 @@ function constraintHtml(problem) {
   const parts = [];
   if (c.require?.length) {
     parts.push(
-      "باید استفاده شود: " + c.require.map((t) => ltrHtml(constraintLabel(t))).join("، ")
+      tr("constraint.require") + " " + c.require.map((t) => ltrHtml(constraintLabel(t))).join(tr("constraint.comma"))
     );
   }
   if (c.forbid?.length) {
     parts.push(
-      "نباید استفاده شود: " + c.forbid.map((t) => ltrHtml(constraintLabel(t))).join("، ")
+      tr("constraint.forbid") + " " + c.forbid.map((t) => ltrHtml(constraintLabel(t))).join(tr("constraint.comma"))
     );
   }
   return parts.join(" · ");
@@ -621,17 +743,17 @@ function constraintLabel(token) {
 }
 
 function renderStatement(problem) {
-  let html = mdLite(problem.statement || "");
+  let html = mdLite(loc(problem, "statement") || "");
   if (problem.samples?.length) {
     for (const sample of problem.samples) {
       if (sample.stdin != null) {
-        html += `<p class="sample-label">نمونه ورودی</p><pre class="sample ltr" dir="ltr">${codeHtml(sample.stdin, { comments: false })}</pre>`;
+        html += `<p class="sample-label">${tr("sample.in")}</p><pre class="sample ltr" dir="ltr">${codeHtml(sample.stdin, { comments: false })}</pre>`;
       }
       if (sample.stdout != null) {
-        html += `<p class="sample-label">نمونه خروجی</p><pre class="sample ltr" dir="ltr">${codeHtml(sample.stdout, { comments: false })}</pre>`;
+        html += `<p class="sample-label">${tr("sample.out")}</p><pre class="sample ltr" dir="ltr">${codeHtml(sample.stdout, { comments: false })}</pre>`;
       }
       if (sample.call) {
-        html += `<p class="sample-label">نمونه فراخوانی</p><pre class="sample ltr" dir="ltr">${codeHtml(
+        html += `<p class="sample-label">${tr("sample.call")}</p><pre class="sample ltr" dir="ltr">${codeHtml(
           `${problem.functionName}(${(sample.call.args || [])
             .map((x) => JSON.stringify(x))
             .join(", ")})  →  ${JSON.stringify(sample.call.expected)}`
@@ -645,21 +767,21 @@ function renderStatement(problem) {
 function renderHints(problem) {
   const level = state.hintLevel[problem.id] || 0;
   el.hintList.innerHTML = "";
-  const hints = problem.hints || [];
+  const hints = loc(problem, "hints") || [];
   for (let i = 0; i < level; i++) {
     const item = document.createElement("div");
     item.className = "hint-item";
-    item.innerHTML = `<h3>راهنما ${ltrHtml(String(i + 1))}</h3><div>${mdLite(hints[i] || "")}</div>`;
+    item.innerHTML = `<h3>${tr("hint.title", { n: ltrHtml(String(i + 1)) })}</h3><div>${mdLite(hints[i] || "")}</div>`;
     el.hintList.appendChild(item);
   }
   el.btnHint.disabled = level >= hints.length;
   el.btnHint.textContent =
     level >= hints.length
-      ? "همه راهنماها باز شده‌اند"
-      : `نمایش راهنمای ${ltrIsolate(String(level + 1))}`;
+      ? tr("hint.all")
+      : tr("hint.show", { n: ltrIsolate(String(level + 1)) });
   if (!hints.length) {
     el.btnHint.disabled = true;
-    el.btnHint.textContent = "راهنمایی برای این مسئله نیست";
+    el.btnHint.textContent = tr("hint.none");
   }
 }
 
@@ -668,16 +790,17 @@ function renderConcept(problem) {
   // do not show the same آموزش text.
   // Online, the guide is fetched when the question opens; until it arrives the lesson text shows.
   const lockedGuide = MANAGED && problem.guide === undefined;
-  const title = (!lockedGuide && problem.guideTitle) || state.concepts[problem.conceptId]?.title;
-  const body = (!lockedGuide && problem.guide) || state.concepts[problem.conceptId]?.body;
+  const concept = state.concepts[problem.conceptId];
+  const title = (!lockedGuide && loc(problem, "guideTitle")) || loc(concept, "title");
+  const body = (!lockedGuide && loc(problem, "guide")) || loc(concept, "body");
   if (!title || !body) {
     el.concept.className = "prose muted";
-    el.concept.textContent = "آموزش مرتبطی تعریف نشده است.";
+    el.concept.textContent = tr("concept.none");
     return;
   }
   el.concept.className = "prose";
   const key = !lockedGuide && problem.guide
-    ? `<p class="diff-legend-intro">وقتی آزمونی رد می‌شود، در بخش «نتایج» این رنگ‌ها را می‌بینید:</p>${colourLegendHtml()}`
+    ? `<p class="diff-legend-intro">${tr("concept.legend")}</p>${colourLegendHtml()}`
     : "";
   const note = OFFLINE && lockedGuide ? `<p class="muted">${tr("bar.guide")}</p>` : "";
   el.concept.innerHTML = `<h3 style="margin-top:0">${bidiMixHtml(title)}</h3>${note}${key}${mdLite(
@@ -781,7 +904,7 @@ function onHint() {
 function onReset() {
   const problem = currentProblem();
   if (!problem) return;
-  if (!confirm("کد فعلی پاک شود و به کد اولیه برگردد؟")) return;
+  if (!confirm(tr("confirm.reset"))) return;
   const starter = problem.starter || defaultStarter(problem);
   setEditorCode(starter);
   state.codes[problem.id] = starter;
@@ -794,10 +917,10 @@ async function onRun() {
   const problem = currentProblem();
   if (!problem || !state.pyodide) return;
   el.btnRun.disabled = true;
-  el.btnRun.textContent = "در حال تست…";
+  el.btnRun.textContent = tr("run.testing");
   document.querySelector('.tab[data-tab="results"]').click();
   el.results.className = "results";
-  el.results.textContent = "آزمون‌ها در حال اجرا هستند…";
+  el.results.textContent = tr("run.running");
 
   try {
     const outcome = await runProblem(state.pyodide, problem, editorCode());
@@ -810,12 +933,12 @@ async function onRun() {
       recordOfflineRun(problem, outcome);
     }
   } catch (err) {
-    el.results.innerHTML = `<div class="test-card bad"><strong>خطای اجرا</strong><p>${isolateLatin(
+    el.results.innerHTML = `<div class="test-card bad"><strong>${tr("run.error")}</strong><p>${isolateLatin(
       String(err?.message || err)
     )}</p></div>`;
   } finally {
     el.btnRun.disabled = false;
-    el.btnRun.textContent = "بررسی و تست";
+    el.btnRun.textContent = tr("run.button");
   }
 }
 
@@ -838,6 +961,9 @@ function recordOfflineRun(problem, outcome) {
   paintSyncBar();
 }
 
+/** A text of a pack (title, untilText, markdown) in the chosen language; the server sends the English one in `en`. */
+const packText = (pack, field) => (isEnglish() && pack.en?.[field]) || pack[field];
+
 /** Online: the pack (a day's group of questions) that holds this question for the student's class. */
 function packOf(problemId) {
   return (state.schedule?.packs || []).find((pack) => pack.questions.some((q) => q.id === problemId)) || null;
@@ -859,19 +985,19 @@ function renderDeadline(problem) {
   note.hidden = false;
   note.classList.remove("ok", "soon", "urgent", "late");
   if (!pack) {
-    note.textContent = "این مسئله برای کلاس شما نمره ندارد؛ برای تمرین است.";
+    note.textContent = tr("deadline.none");
   } else if (remainingMs(pack.until) <= 0) {
     note.classList.add("late");
-    note.textContent = `مهلت نمره‌ی این مسئله گذشته است (${pack.untilText}). اکنون فقط برای تمرین است.`;
+    note.textContent = tr("deadline.late", { until: packText(pack, "untilText") });
   } else if (state.progress[problem.id]?.solved) {
     const status = OFFLINE ? solvedStatus(problem.id, state.progress[problem.id], problemRevision(problem)) : "synced";
-    if (status === "synced") note.textContent = `حل شده است. مهلت نمره‌ی این مسئله (${pack.title}): ${pack.untilText}`;
+    if (status === "synced") note.textContent = tr("deadline.solved", { title: packText(pack, "title"), until: packText(pack, "untilText") });
     else {
       note.classList.add("soon");
-      note.textContent = `${tr("deadline.unsent")} (${pack.untilText})`;
+      note.textContent = `${tr("deadline.unsent")} (${packText(pack, "untilText")})`;
     }
   } else {
-    note.innerHTML = `مهلت نمره‌ی این مسئله (${bidiMixHtml(pack.title)}): ${bidiMixHtml(pack.untilText)} · زمان باقی‌مانده: <strong class="countdown" id="problem-countdown" dir="ltr"></strong>`;
+    note.innerHTML = `${tr("deadline.open", { title: bidiMixHtml(packText(pack, "title")), until: bidiMixHtml(packText(pack, "untilText")) })} <strong class="countdown" id="problem-countdown" dir="ltr"></strong>`;
     tickDeadline();
   }
 }
@@ -903,7 +1029,7 @@ function updateRemaining() {
     const ms = remainingMs(pack.until);
     chip.textContent = `⏳ ${shortText(ms)}`;
     chip.classList.add(level(ms));
-    chip.title = `${pack.title}: ${pack.untilText}`;
+    chip.title = `${packText(pack, "title")}: ${packText(pack, "untilText")}`;
   }
 }
 
@@ -920,19 +1046,19 @@ function renderPacks() {
   for (const pack of state.schedule?.packs || []) {
     const section = document.createElement("section");
     section.className = "pack";
-    section.innerHTML = `<h3>${bidiMixHtml(pack.title)} · ${bidiMixHtml(pack.untilText)}</h3>${renderMarkdown(pack.markdown || "")}`;
+    section.innerHTML = `<h3>${bidiMixHtml(packText(pack, "title"))} · ${bidiMixHtml(packText(pack, "untilText"))}</h3>${renderMarkdown(packText(pack, "markdown") || "")}`;
     const list = document.createElement("ul");
     list.className = "pack-questions";
     for (const q of pack.questions) {
       const item = document.createElement("li");
       const done = state.progress[q.id]?.solved;
-      item.textContent = `${q.number}. ${q.title} — ${done ? "قبول شد" : "هنوز قبول نشده"}`;
+      item.textContent = `${q.number}. ${loc(state.problems.find((p) => p.id === q.id), "title") || q.title} — ${done ? tr("pack.passed") : tr("pack.notyet")}`;
       list.append(item);
     }
     section.append(list);
     box.append(section);
   }
-  if (!box.children.length) box.textContent = "برای کلاس شما هنوز سری‌ای تعریف نشده است.";
+  if (!box.children.length) box.textContent = tr("pack.empty");
 }
 
 /** Online, the tests after the samples are hidden: the student sees only their result. */
@@ -954,7 +1080,7 @@ async function recordRun(problem, outcome) {
   if (!result) return;
   if (result.stale) {
     el.results.className = "results";
-    el.results.innerHTML = `<div class="test-card warn"><p>این مسئله به‌روز شده است. صفحه دوباره بارگذاری می‌شود.</p></div>`;
+    el.results.innerHTML = `<div class="test-card warn"><p>${tr("stale")}</p></div>`;
     setTimeout(() => window.location.reload(), 2000);
     return;
   }
@@ -965,7 +1091,7 @@ async function recordRun(problem, outcome) {
   }
   if (result.solvedNow && !result.scored) {
     el.results.insertAdjacentHTML("afterbegin",
-      `<p class="deadline-note">قبول شدی، اما مهلت نمره‌ی این مسئله گذشته است. این مسئله فقط برای تمرین است.</p>`);
+      `<p class="deadline-note">${tr("passed.late")}</p>`);
   }
 }
 
@@ -985,8 +1111,8 @@ function renderResults(problem, outcome) {
         (issue) => `
       <div class="test-card warn">
         <div class="test-head">
-          <strong>محدودیت مسئله</strong>
-          <span class="badge warn">رد شده</span>
+          <strong>${tr("card.constraint")}</strong>
+          <span class="badge warn">${tr("badge.blocked")}</span>
         </div>
         <p>${isolateLatin(issue.message)}</p>
       </div>`
@@ -997,9 +1123,7 @@ function renderResults(problem, outcome) {
 
   const passed = outcome.results.filter((r) => r.ok).length;
   const total = outcome.results.length;
-  let html = `<p class="muted" style="margin-top:0">${ltrHtml(String(passed))} از ${ltrHtml(
-    String(total)
-  )} آزمون قبول شد.</p>`;
+  let html = `<p class="muted" style="margin-top:0">${tr("results.count", { passed: ltrHtml(String(passed)), total: ltrHtml(String(total)) })}</p>`;
 
   for (const result of outcome.results) {
     html += renderTestCard(problem, result);
@@ -1012,8 +1136,8 @@ function renderTestCard(problem, result) {
     return `
       <div class="test-card bad">
         <div class="test-head">
-          <strong>آزمون ${ltrHtml(String(result.index))}</strong>
-          <span class="badge bad">خطا</span>
+          <strong>${tr("card.test", { n: ltrHtml(String(result.index)) })}</strong>
+          <span class="badge bad">${tr("badge.error")}</span>
         </div>
         <pre class="diff-block" dir="ltr">${codeHtml(result.message || "", { comments: false })}</pre>
       </div>`;
@@ -1023,8 +1147,8 @@ function renderTestCard(problem, result) {
     return `
       <div class="test-card ok">
         <div class="test-head">
-          <strong>آزمون ${ltrHtml(String(result.index))}</strong>
-          <span class="badge ok">قبول</span>
+          <strong>${tr("card.test", { n: ltrHtml(String(result.index)) })}</strong>
+          <span class="badge ok">${tr("badge.ok")}</span>
         </div>
       </div>`;
   }
@@ -1034,19 +1158,19 @@ function renderTestCard(problem, result) {
     return `
       <div class="test-card bad">
         <div class="test-head">
-          <strong>آزمون ${ltrHtml(String(result.index))}</strong>
-          <span class="badge bad">رد</span>
+          <strong>${tr("card.test", { n: ltrHtml(String(result.index)) })}</strong>
+          <span class="badge bad">${tr("badge.bad")}</span>
         </div>
-        <p class="diff-meta">این آزمون پنهان است؛ ورودی و خروجی آن در حالت آنلاین نشان داده نمی‌شود. خروجی برنامه‌ات را با نمونه‌ی بالای صفحه مقایسه کن.</p>
+        <p class="diff-meta">${tr("card.hidden")}</p>
       </div>`;
   }
 
   let body = "";
   if (result.kind === "function") {
-    body += `<p class="diff-meta">خروجی تابع با مقدار مورد انتظار فرق دارد.</p>`;
+    body += `<p class="diff-meta">${tr("fn.differs")}</p>`;
     body += `<div class="diff-block"><span class="del">${codeHtml(
-      "باید باشد: " + result.expected, { comments: false }
-    )}</span>\n<span class="add">${codeHtml("خروجی شما: " + result.actual, { comments: false })}</span></div>`;
+      tr("fn.expected") + result.expected, { comments: false }
+    )}</span>\n<span class="add">${codeHtml(tr("fn.actual") + result.actual, { comments: false })}</span></div>`;
     body += colourLegendHtml();
   } else {
     body += renderStdioDiff(result.expected, result.actual);
@@ -1055,8 +1179,8 @@ function renderTestCard(problem, result) {
   return `
     <div class="test-card bad">
       <div class="test-head">
-        <strong>آزمون ${ltrHtml(String(result.index))}</strong>
-        <span class="badge bad">رد</span>
+        <strong>${tr("card.test", { n: ltrHtml(String(result.index)) })}</strong>
+        <span class="badge bad">${tr("badge.bad")}</span>
       </div>
       ${body}
     </div>`;
@@ -1071,9 +1195,12 @@ function renderStdioDiff(expected, actual) {
     html += `<p class="diff-meta">${isolateLatin(promptTip)}</p>`;
   }
   if (first) {
-    html += `<p class="diff-meta">اولین تفاوت در موقعیت ${ltrHtml(String(first.index + 1))}: انتظار «${ltrHtml(
-      showChar(first.expected)
-    )}»، خروجی شما «${ltrHtml(showChar(first.actual))}». فاصله‌ها با ${ltrHtml("·")} نشان داده می‌شوند.</p>`;
+    html += `<p class="diff-meta">${tr("diff.first", {
+      pos: ltrHtml(String(first.index + 1)),
+      want: ltrHtml(showChar(first.expected)),
+      got: ltrHtml(showChar(first.actual)),
+      dot: ltrHtml("·"),
+    })}</p>`;
   }
 
   html += `<div class="diff-block">`;
@@ -1097,23 +1224,26 @@ function renderStdioDiff(expected, actual) {
   html += `</div>`;
 
   html += colourLegendHtml();
-  html += `<details style="margin-top:0.5rem"><summary>متن کامل مورد انتظار / خروجی شما</summary>
-    <p class="sample-label">مورد انتظار</p><pre class="sample" dir="ltr">${codeHtml(normalizeNewlines(expected), { comments: false })}</pre>
-    <p class="sample-label">خروجی شما</p><pre class="sample" dir="ltr">${codeHtml(normalizeNewlines(actual), { comments: false })}</pre>
+  html += `<details style="margin-top:0.5rem"><summary>${tr("diff.full")}</summary>
+    <p class="sample-label">${tr("diff.expected")}</p><pre class="sample" dir="ltr">${codeHtml(normalizeNewlines(expected), { comments: false })}</pre>
+    <p class="sample-label">${tr("diff.yours")}</p><pre class="sample" dir="ltr">${codeHtml(normalizeNewlines(actual), { comments: false })}</pre>
   </details>`;
   return html;
 }
 
 /** The colour key: shown under every failed test and at the top of each guide. */
 function colourLegendHtml() {
-  return `<p class="diff-legend"><span class="chip-del">قرمز</span> = باید باشد ولی نیست · <span class="chip-add">سبز</span> = اضافه‌ی خروجی شما</p>`;
+  return `<p class="diff-legend">${tr("legend.text", {
+    red: `<span class="chip-del">${tr("legend.red")}</span>`,
+    green: `<span class="chip-add">${tr("legend.green")}</span>`,
+  })}</p>`;
 }
 
 function showChar(ch) {
-  if (ch === "⟨پایان⟩") return ch;
-  if (ch === " ") return "فاصله";
-  if (ch === "\n") return "خط جدید";
-  if (ch === "\t") return "تب";
+  if (ch === END_MARK) return tr("char.end");
+  if (ch === " ") return tr("char.space");
+  if (ch === "\n") return tr("char.newline");
+  if (ch === "\t") return tr("char.tab");
   return String(ch);
 }
 
@@ -1123,7 +1253,7 @@ function inputPromptTip(expected, actual) {
   const a = normalizeNewlines(actual);
   if (!e || !a || a === e) return "";
   if (a.endsWith(e) && a.length > e.length) {
-    return `احتمالاً داخل ${ltrIsolate("input()")} پیام گذاشته‌اید؛ همان پیام هم چاپ می‌شود و آزمون را خراب می‌کند. فقط بنویسید: ${ltrIsolate("input()")}`;
+    return tr("prompt.tip", { call: ltrIsolate("input()") });
   }
   return "";
 }
@@ -1131,17 +1261,18 @@ function inputPromptTip(expected, actual) {
 function showProgress() {
   if (ONLINE || hasSchedule()) renderPacks();
   const solved = state.problems.filter((p) => state.progress[p.id]?.solved).length;
-  el.progressSummary.innerHTML = `${ltrHtml(String(solved))} از ${ltrHtml(
-    String(state.problems.length)
-  )} مسئله حل شده${OFFLINE ? "." : " (فقط روی همین مرورگر ذخیره می‌شود)."}`;
+  el.progressSummary.innerHTML = tr(MANAGED ? "progress.summary" : "progress.summary.local", {
+    solved: ltrHtml(String(solved)),
+    total: ltrHtml(String(state.problems.length)),
+  });
   paintSyncSummary();
   el.progressList.innerHTML = state.problems
     .map((p) => {
       const ok = state.progress[p.id]?.solved;
       const sync = OFFLINE ? solvedStatus(p.id, state.progress[p.id], problemRevision(p)) : null;
-      const label = ok ? `حل‌شده${sync ? ` · ${statusText(sync)}` : ""}` : "—";
+      const label = ok ? `${tr("progress.solved")}${sync ? ` · ${statusText(sync)}` : ""}` : "—";
       return `<li><span class="progress-item-text">${indexLabelHtml(p.number)} ${bidiMixHtml(
-        p.title
+        loc(p, "title")
       )}</span><strong class="progress-item-state ${sync || ""}" style="color:${
         ok ? "var(--ok)" : "var(--muted)"
       }">${label}</strong></li>`;
@@ -1167,7 +1298,7 @@ function paintSyncSummary() {
 }
 
 function clearProgress() {
-  if (!confirm("پیشرفت و کدهای ذخیره‌شده این مرورگر پاک شوند؟")) return;
+  if (!confirm(tr("confirm.clear"))) return;
   state.progress = {};
   state.hintLevel = {};
   state.codes = {};
@@ -1184,7 +1315,7 @@ function currentProblem() {
 }
 
 function difficultyLabel(n) {
-  return ["", "خیلی آسان", "آسان", "متوسط", "سخت", "چالشی"][n] || "—";
+  return n >= 1 && n <= 5 ? tr(`diff.level${n}`) : "—";
 }
 
 function setBoot(pct, msg) {
@@ -1226,7 +1357,7 @@ function withTimeout(promise, ms, message) {
 
 async function fetchJson(path) {
   const res = await fetch(path);
-  if (!res.ok) throw new Error(`نتوانستم ${ltrIsolate(path)} را بخوانم`);
+  if (!res.ok) throw new Error(tr("boot.cantread", { path: ltrIsolate(path) }));
   return res.json();
 }
 
@@ -1265,14 +1396,14 @@ function exportProgress() {
   link.click();
   link.remove();
   setTimeout(() => URL.revokeObjectURL(url), 1000);
-  showBackupStatus("پشتیبان ذخیره شد.");
+  showBackupStatus(tr("backup.saved"));
 }
 
 /** Merge a backup into this browser. Nothing local is lost: solved stays solved,
  *  hints keep the higher level, and a local code draft is never overwritten. */
 async function importProgress(file) {
   const data = JSON.parse(await file.text());
-  if (!data || data.format !== "teacher-playground-backup") throw new Error("این فایل پشتیبان پیشرفت نیست.");
+  if (!data || data.format !== "teacher-playground-backup") throw new Error(tr("backup.invalid"));
   for (const [id, entry] of Object.entries(data.progress || {})) {
     const mine = state.progress[id];
     if (!mine) state.progress[id] = entry;
@@ -1288,7 +1419,7 @@ async function importProgress(file) {
   saveJson(HINT_KEY, state.hintLevel);
   saveJson(CODE_KEY, state.codes);
   renderList();
-  showBackupStatus("پیشرفت از پشتیبان بازیابی شد.");
+  showBackupStatus(tr("backup.restored"));
 }
 
 function showBackupStatus(message) {

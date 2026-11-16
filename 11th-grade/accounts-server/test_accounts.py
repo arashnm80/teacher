@@ -646,6 +646,14 @@ class ScheduleTests(Base):
             "problemId": pid, "code": code, "passed": passed, "total": total, "revision": revision},
             cookie=cookie)
 
+    def test_the_schedule_carries_english_texts(self):
+        packs = call(self.port, "GET", "/api/student/schedule", cookie=self.cookie)[1]["packs"]
+        by_id = {pack["id"]: pack for pack in packs}
+        self.assertEqual(by_id["open"]["en"]["untilText"], "Thursday 1 January 2099, 00:00 (Tehran time)")
+        self.assertEqual(by_id["open"]["en"]["title"], "باز", "without an English text the Persian one is used")
+        from teacher_schedule import english_text, parse_tehran
+        self.assertEqual(english_text(parse_tehran("2026-11-21T23:00")), "Saturday 21 November 2026, 23:00 (Tehran time)")
+
     def test_pass_before_deadline_is_scored_and_after_is_not(self):
         status, body, _, _ = self.attempt(self.cookie, "p01", 2, 2)
         self.assertTrue(body["scored"])

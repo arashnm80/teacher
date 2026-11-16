@@ -289,7 +289,7 @@ def materials_nav() -> list[str]:
         for anchor, fa, en in LINK_SECTIONS
     )
     return [
-        '<details class="toc" open><summary class="nav-toggle" aria-label="فهرست">'
+        '<details class="toc" open><summary class="nav-toggle" aria-label="فهرست" data-fa-aria="فهرست" data-en-aria="Contents">'
         '<span class="burger" aria-hidden="true"></span>'
         '<span class="label" data-fa="فهرست این بخش" data-en="In this section">فهرست این بخش</span>'
         '</summary><nav id="lesson-nav" class="side" aria-label="contents">',
@@ -318,7 +318,7 @@ def site_header(root: str, active: str, lang: bool) -> str:
         + tab("materials", "book/links.html", "مطالب مفید", "Useful materials")
     )
     toggle = (
-        '<button type="button" id="lang-toggle" class="lang-toggle" dir="ltr" data-lang="fa" aria-label="تغییر زبان">'
+        '<button type="button" id="lang-toggle" class="lang-toggle" dir="ltr" data-lang="fa" aria-label="تغییر زبان" data-fa-aria="تغییر زبان" data-en-aria="Change language">'
         '<span data-opt="fa">فا</span><span data-opt="en">EN</span></button>'
         if lang
         else ""
@@ -327,10 +327,10 @@ def site_header(root: str, active: str, lang: bool) -> str:
         '<header class="top">'
         f'<a class="brand" href="{root}index.html"><span data-fa="طراح سایت" data-en="Site Design">طراح سایت</span>'
         '<small data-fa="پایه یازدهم" data-en="Grade 11">پایه یازدهم</small></a>'
-        f'<nav class="sections" aria-label="بخش‌های سایت">{tabs}</nav>'
+        f'<nav class="sections" aria-label="بخش‌های سایت" data-fa-aria="بخش‌های سایت" data-en-aria="Site sections">{tabs}</nav>'
         '<div class="search-wrap" role="search"><input id="q" type="search" autocomplete="off" data-lpignore="true" data-1p-ignore data-bwignore="true" data-form-type="other" '
         'data-fa-placeholder="جستجو در درس‌ها" data-en-placeholder="Search lessons" '
-        'placeholder="جستجو در درس‌ها" aria-label="جستجو در درس‌ها">'
+        'placeholder="جستجو در درس‌ها" aria-label="جستجو در درس‌ها" data-fa-aria="جستجو در درس‌ها" data-en-aria="Search lessons">'
         '<div id="search-results" class="search-results" hidden></div></div>'
         '<div class="top-actions">'
         f'<a class="btn primary sm download-link" href="{root}grade11-offline.zip?v=6" '
@@ -345,7 +345,7 @@ def site_footer(root: str) -> str:
         '<footer class="site-foot">'
         '<p><strong data-fa="طراح سایت" data-en="Site Design">طراح سایت</strong> · '
         '<span data-fa="پایه یازدهم" data-en="Grade 11">پایه یازدهم</span></p>'
-        '<nav aria-label="پیوندهای سایت">'
+        '<nav aria-label="پیوندهای سایت" data-fa-aria="پیوندهای سایت" data-en-aria="Site links">'
         f'<a href="{root}index.html" data-fa="صفحه اصلی" data-en="Home">صفحه اصلی</a>'
         f'<a href="{root}book/toc.html" data-fa="درس‌ها" data-en="Lessons">درس‌ها</a>'
         f'<a href="{root}playground/index.html" data-fa="زمین بازی" data-en="Playground">زمین بازی</a>'
@@ -361,7 +361,7 @@ def lesson_nav(page_path: Path, pages: list[dict]) -> list[str]:
     """The sidebar of a textbook page: every lesson, grouped by module and unit."""
     nav = [
         '<details class="toc" open>',
-        '<summary class="nav-toggle" aria-label="فهرست درس‌ها">'
+        '<summary class="nav-toggle" aria-label="فهرست درس‌ها" data-fa-aria="فهرست درس‌ها" data-en-aria="Lesson list">'
         '<span class="burger" aria-hidden="true"></span>'
         '<span class="label" data-fa="فهرست درس‌ها" data-en="Lessons">فهرست درس‌ها</span>'
         "</summary>",
@@ -862,7 +862,7 @@ def publish_playground() -> None:
     page = index.read_text(encoding="utf-8")
     if "<!--SITE-HEADER-->" not in page or "<!--SITE-FOOTER-->" not in page:
         raise SystemExit("playground/app/index.html needs the SITE-HEADER and SITE-FOOTER placeholders")
-    page = page.replace("<!--SITE-HEADER-->", site_header("../", "playground", lang=False))
+    page = page.replace("<!--SITE-HEADER-->", site_header("../", "playground", lang=True))
     page = page.replace("<!--SITE-FOOTER-->", site_footer("../"))
     index.write_text(page, encoding="utf-8")
 

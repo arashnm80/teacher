@@ -7,9 +7,9 @@
  * The service decides what counts: a result counts when it reaches the server before the deadline.
  * So the student always sees, for each solved problem, whether it has reached the teacher yet.
  */
-import { apiRequest, getSession, clearSession, updateStudent } from "./account.js?v=3";
-import { setServerTime } from "./countdown.js?v=1";
-import { define, t } from "./i18n.js?v=1";
+import { apiRequest, getSession, clearSession, updateStudent } from "./account.js?v=4";
+import { setServerTime } from "./countdown.js?v=2";
+import { define, t } from "./i18n.js?v=5";
 
 define({
   "sync.synced": { fa: "ارسال‌شده", en: "Sent" },

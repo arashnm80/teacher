@@ -3,7 +3,7 @@
  * Safe on missing DOM; nothing throws from collectors.
  */
 
-import { browserKind } from "./compat.js?v=11";
+import { browserKind } from "./compat.js?v=12";
 
 const startedAt = Date.now();
 const notes = [];

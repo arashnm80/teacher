@@ -19,7 +19,11 @@
             "p96",
             "p06"
           ],
-          "markdown": "### سری ۱ · سه‌شنبه\n\n- شماره‌ی مسئله‌ها: ۱ تا ۱۰ (۱۰ مسئله).\n- مهلت: سه‌شنبه ساعت **۲۳:۰۰**."
+          "markdown": "### سری ۱ · سه‌شنبه\n\n- شماره‌ی مسئله‌ها: ۱ تا ۱۰ (۱۰ مسئله).\n- مهلت: سه‌شنبه ساعت **۲۳:۰۰**.",
+          "en": {
+            "title": "Series 1 · Tuesday",
+            "markdown": "### Series 1 · Tuesday\n\n- Problem numbers: 1 to 10 (10 problems).\n- Deadline: Tuesday at **23:00**."
+          }
         },
         {
           "id": "201-02",
@@ -37,7 +41,11 @@
             "p52",
             "p53"
           ],
-          "markdown": "### سری ۲ · چهارشنبه\n\n- شماره‌ی مسئله‌ها: ۱۱ تا ۲۰ (۱۰ مسئله).\n- مهلت: چهارشنبه ساعت **۲۳:۰۰**."
+          "markdown": "### سری ۲ · چهارشنبه\n\n- شماره‌ی مسئله‌ها: ۱۱ تا ۲۰ (۱۰ مسئله).\n- مهلت: چهارشنبه ساعت **۲۳:۰۰**.",
+          "en": {
+            "title": "Series 2 · Wednesday",
+            "markdown": "### Series 2 · Wednesday\n\n- Problem numbers: 11 to 20 (10 problems).\n- Deadline: Wednesday at **23:00**."
+          }
         },
         {
           "id": "201-03",
@@ -55,7 +63,11 @@
             "p62",
             "p63"
           ],
-          "markdown": "### سری ۳ · پنج‌شنبه\n\n- شماره‌ی مسئله‌ها: ۲۱ تا ۳۰ (۱۰ مسئله).\n- مهلت: پنج‌شنبه ساعت **۲۳:۰۰**."
+          "markdown": "### سری ۳ · پنج‌شنبه\n\n- شماره‌ی مسئله‌ها: ۲۱ تا ۳۰ (۱۰ مسئله).\n- مهلت: پنج‌شنبه ساعت **۲۳:۰۰**.",
+          "en": {
+            "title": "Series 3 · Thursday",
+            "markdown": "### Series 3 · Thursday\n\n- Problem numbers: 21 to 30 (10 problems).\n- Deadline: Thursday at **23:00**."
+          }
         },
         {
           "id": "201-04",
@@ -73,7 +85,11 @@
             "p91",
             "p92"
           ],
-          "markdown": "### سری ۴ · جمعه\n\n- شماره‌ی مسئله‌ها: ۳۱ تا ۴۰ (۱۰ مسئله).\n- مهلت: جمعه ساعت **۲۳:۰۰**."
+          "markdown": "### سری ۴ · جمعه\n\n- شماره‌ی مسئله‌ها: ۳۱ تا ۴۰ (۱۰ مسئله).\n- مهلت: جمعه ساعت **۲۳:۰۰**.",
+          "en": {
+            "title": "Series 4 · Friday",
+            "markdown": "### Series 4 · Friday\n\n- Problem numbers: 31 to 40 (10 problems).\n- Deadline: Friday at **23:00**."
+          }
         },
         {
           "id": "201-05",
@@ -91,7 +107,11 @@
             "p97",
             "p98"
           ],
-          "markdown": "### سری ۵ · شنبه\n\n- شماره‌ی مسئله‌ها: ۴۱ تا ۵۰ (۱۰ مسئله).\n- مهلت: شنبه ساعت **۲۳:۰۰**."
+          "markdown": "### سری ۵ · شنبه\n\n- شماره‌ی مسئله‌ها: ۴۱ تا ۵۰ (۱۰ مسئله).\n- مهلت: شنبه ساعت **۲۳:۰۰**.",
+          "en": {
+            "title": "Series 5 · Saturday",
+            "markdown": "### Series 5 · Saturday\n\n- Problem numbers: 41 to 50 (10 problems).\n- Deadline: Saturday at **23:00**."
+          }
         },
         {
           "id": "201-06",
@@ -109,7 +129,11 @@
             "p07",
             "p08"
           ],
-          "markdown": "### سری ۶ · یکشنبه\n\n- شماره‌ی مسئله‌ها: ۵۱ تا ۶۰ (۱۰ مسئله).\n- مهلت: یکشنبه ساعت **۲۳:۰۰**."
+          "markdown": "### سری ۶ · یکشنبه\n\n- شماره‌ی مسئله‌ها: ۵۱ تا ۶۰ (۱۰ مسئله).\n- مهلت: یکشنبه ساعت **۲۳:۰۰**.",
+          "en": {
+            "title": "Series 6 · Sunday",
+            "markdown": "### Series 6 · Sunday\n\n- Problem numbers: 51 to 60 (10 problems).\n- Deadline: Sunday at **23:00**."
+          }
         },
         {
           "id": "201-07",
@@ -127,7 +151,11 @@
             "p37",
             "p38"
           ],
-          "markdown": "### سری ۷ · دوشنبه\n\n- شماره‌ی مسئله‌ها: ۶۱ تا ۷۰ (۱۰ مسئله).\n- مهلت: دوشنبه ساعت **۲۳:۰۰**."
+          "markdown": "### سری ۷ · دوشنبه\n\n- شماره‌ی مسئله‌ها: ۶۱ تا ۷۰ (۱۰ مسئله).\n- مهلت: دوشنبه ساعت **۲۳:۰۰**.",
+          "en": {
+            "title": "Series 7 · Monday",
+            "markdown": "### Series 7 · Monday\n\n- Problem numbers: 61 to 70 (10 problems).\n- Deadline: Monday at **23:00**."
+          }
         },
         {
           "id": "201-08",
@@ -145,7 +173,11 @@
             "p75",
             "p17"
           ],
-          "markdown": "### سری ۸ · سه‌شنبه\n\n- شماره‌ی مسئله‌ها: ۷۱ تا ۸۰ (۱۰ مسئله).\n- مهلت: سه‌شنبه ساعت **۲۳:۰۰**."
+          "markdown": "### سری ۸ · سه‌شنبه\n\n- شماره‌ی مسئله‌ها: ۷۱ تا ۸۰ (۱۰ مسئله).\n- مهلت: سه‌شنبه ساعت **۲۳:۰۰**.",
+          "en": {
+            "title": "Series 8 · Tuesday",
+            "markdown": "### Series 8 · Tuesday\n\n- Problem numbers: 71 to 80 (10 problems).\n- Deadline: Tuesday at **23:00**."
+          }
         },
         {
           "id": "201-09",
@@ -158,7 +190,11 @@
             "p90",
             "p94"
           ],
-          "markdown": "### سری ۹ · چهارشنبه\n\n- شماره‌ی مسئله‌ها: ۸۱ تا ۸۵ (۵ مسئله).\n- مهلت: چهارشنبه ساعت **۲۳:۰۰**."
+          "markdown": "### سری ۹ · چهارشنبه\n\n- شماره‌ی مسئله‌ها: ۸۱ تا ۸۵ (۵ مسئله).\n- مهلت: چهارشنبه ساعت **۲۳:۰۰**.",
+          "en": {
+            "title": "Series 9 · Wednesday",
+            "markdown": "### Series 9 · Wednesday\n\n- Problem numbers: 81 to 85 (5 problems).\n- Deadline: Wednesday at **23:00**."
+          }
         },
         {
           "id": "201-10",
@@ -171,7 +207,11 @@
             "p26",
             "p27"
           ],
-          "markdown": "### سری ۱۰ · پنج‌شنبه\n\n- شماره‌ی مسئله‌ها: ۸۶ تا ۹۰ (۵ مسئله).\n- مهلت: پنج‌شنبه ساعت **۲۳:۰۰**."
+          "markdown": "### سری ۱۰ · پنج‌شنبه\n\n- شماره‌ی مسئله‌ها: ۸۶ تا ۹۰ (۵ مسئله).\n- مهلت: پنج‌شنبه ساعت **۲۳:۰۰**.",
+          "en": {
+            "title": "Series 10 · Thursday",
+            "markdown": "### Series 10 · Thursday\n\n- Problem numbers: 86 to 90 (5 problems).\n- Deadline: Thursday at **23:00**."
+          }
         },
         {
           "id": "201-11",
@@ -184,7 +224,11 @@
             "p44",
             "p29"
           ],
-          "markdown": "### سری ۱۱ · جمعه\n\n- شماره‌ی مسئله‌ها: ۹۱ تا ۹۵ (۵ مسئله).\n- مهلت: جمعه ساعت **۲۳:۰۰**."
+          "markdown": "### سری ۱۱ · جمعه\n\n- شماره‌ی مسئله‌ها: ۹۱ تا ۹۵ (۵ مسئله).\n- مهلت: جمعه ساعت **۲۳:۰۰**.",
+          "en": {
+            "title": "Series 11 · Friday",
+            "markdown": "### Series 11 · Friday\n\n- Problem numbers: 91 to 95 (5 problems).\n- Deadline: Friday at **23:00**."
+          }
         },
         {
           "id": "201-12",
@@ -197,7 +241,11 @@
             "p49",
             "p28"
           ],
-          "markdown": "### سری ۱۲ · شنبه (پایانی)\n\n- شماره‌ی مسئله‌ها: ۹۶ تا ۱۰۰ (۵ مسئله).\n- مهلت پایان دوره: شنبه ساعت **۲۳:۰۰**."
+          "markdown": "### سری ۱۲ · شنبه (پایانی)\n\n- شماره‌ی مسئله‌ها: ۹۶ تا ۱۰۰ (۵ مسئله).\n- مهلت پایان دوره: شنبه ساعت **۲۳:۰۰**.",
+          "en": {
+            "title": "Series 12 · Saturday (final)",
+            "markdown": "### Series 12 · Saturday (final)\n\n- Problem numbers: 96 to 100 (5 problems).\n- End-of-course deadline: Saturday at **23:00**."
+          }
         }
       ]
     },
@@ -219,7 +267,11 @@
             "p96",
             "p06"
           ],
-          "markdown": "### سری ۱ · سه‌شنبه\n\n- شماره‌ی مسئله‌ها: ۱ تا ۱۰ (۱۰ مسئله).\n- مهلت: سه‌شنبه ساعت **۲۳:۰۰**."
+          "markdown": "### سری ۱ · سه‌شنبه\n\n- شماره‌ی مسئله‌ها: ۱ تا ۱۰ (۱۰ مسئله).\n- مهلت: سه‌شنبه ساعت **۲۳:۰۰**.",
+          "en": {
+            "title": "Series 1 · Tuesday",
+            "markdown": "### Series 1 · Tuesday\n\n- Problem numbers: 1 to 10 (10 problems).\n- Deadline: Tuesday at **23:00**."
+          }
         },
         {
           "id": "202-02",
@@ -237,7 +289,11 @@
             "p52",
             "p53"
           ],
-          "markdown": "### سری ۲ · چهارشنبه\n\n- شماره‌ی مسئله‌ها: ۱۱ تا ۲۰ (۱۰ مسئله).\n- مهلت: چهارشنبه ساعت **۲۳:۰۰**."
+          "markdown": "### سری ۲ · چهارشنبه\n\n- شماره‌ی مسئله‌ها: ۱۱ تا ۲۰ (۱۰ مسئله).\n- مهلت: چهارشنبه ساعت **۲۳:۰۰**.",
+          "en": {
+            "title": "Series 2 · Wednesday",
+            "markdown": "### Series 2 · Wednesday\n\n- Problem numbers: 11 to 20 (10 problems).\n- Deadline: Wednesday at **23:00**."
+          }
         },
         {
           "id": "202-03",
@@ -255,7 +311,11 @@
             "p62",
             "p63"
           ],
-          "markdown": "### سری ۳ · پنج‌شنبه\n\n- شماره‌ی مسئله‌ها: ۲۱ تا ۳۰ (۱۰ مسئله).\n- مهلت: پنج‌شنبه ساعت **۲۳:۰۰**."
+          "markdown": "### سری ۳ · پنج‌شنبه\n\n- شماره‌ی مسئله‌ها: ۲۱ تا ۳۰ (۱۰ مسئله).\n- مهلت: پنج‌شنبه ساعت **۲۳:۰۰**.",
+          "en": {
+            "title": "Series 3 · Thursday",
+            "markdown": "### Series 3 · Thursday\n\n- Problem numbers: 21 to 30 (10 problems).\n- Deadline: Thursday at **23:00**."
+          }
         },
         {
           "id": "202-04",
@@ -273,7 +333,11 @@
             "p91",
             "p92"
           ],
-          "markdown": "### سری ۴ · جمعه\n\n- شماره‌ی مسئله‌ها: ۳۱ تا ۴۰ (۱۰ مسئله).\n- مهلت: جمعه ساعت **۲۳:۰۰**."
+          "markdown": "### سری ۴ · جمعه\n\n- شماره‌ی مسئله‌ها: ۳۱ تا ۴۰ (۱۰ مسئله).\n- مهلت: جمعه ساعت **۲۳:۰۰**.",
+          "en": {
+            "title": "Series 4 · Friday",
+            "markdown": "### Series 4 · Friday\n\n- Problem numbers: 31 to 40 (10 problems).\n- Deadline: Friday at **23:00**."
+          }
         },
         {
           "id": "202-05",
@@ -291,7 +355,11 @@
             "p97",
             "p98"
           ],
-          "markdown": "### سری ۵ · شنبه\n\n- شماره‌ی مسئله‌ها: ۴۱ تا ۵۰ (۱۰ مسئله).\n- مهلت: شنبه ساعت **۲۳:۰۰**."
+          "markdown": "### سری ۵ · شنبه\n\n- شماره‌ی مسئله‌ها: ۴۱ تا ۵۰ (۱۰ مسئله).\n- مهلت: شنبه ساعت **۲۳:۰۰**.",
+          "en": {
+            "title": "Series 5 · Saturday",
+            "markdown": "### Series 5 · Saturday\n\n- Problem numbers: 41 to 50 (10 problems).\n- Deadline: Saturday at **23:00**."
+          }
         },
         {
           "id": "202-06",
@@ -309,7 +377,11 @@
             "p07",
             "p08"
           ],
-          "markdown": "### سری ۶ · یکشنبه\n\n- شماره‌ی مسئله‌ها: ۵۱ تا ۶۰ (۱۰ مسئله).\n- مهلت: یکشنبه ساعت **۲۳:۰۰**."
+          "markdown": "### سری ۶ · یکشنبه\n\n- شماره‌ی مسئله‌ها: ۵۱ تا ۶۰ (۱۰ مسئله).\n- مهلت: یکشنبه ساعت **۲۳:۰۰**.",
+          "en": {
+            "title": "Series 6 · Sunday",
+            "markdown": "### Series 6 · Sunday\n\n- Problem numbers: 51 to 60 (10 problems).\n- Deadline: Sunday at **23:00**."
+          }
         },
         {
           "id": "202-07",
@@ -327,7 +399,11 @@
             "p37",
             "p38"
           ],
-          "markdown": "### سری ۷ · دوشنبه\n\n- شماره‌ی مسئله‌ها: ۶۱ تا ۷۰ (۱۰ مسئله).\n- مهلت: دوشنبه ساعت **۲۳:۰۰**."
+          "markdown": "### سری ۷ · دوشنبه\n\n- شماره‌ی مسئله‌ها: ۶۱ تا ۷۰ (۱۰ مسئله).\n- مهلت: دوشنبه ساعت **۲۳:۰۰**.",
+          "en": {
+            "title": "Series 7 · Monday",
+            "markdown": "### Series 7 · Monday\n\n- Problem numbers: 61 to 70 (10 problems).\n- Deadline: Monday at **23:00**."
+          }
         },
         {
           "id": "202-08",
@@ -345,7 +421,11 @@
             "p75",
             "p17"
           ],
-          "markdown": "### سری ۸ · سه‌شنبه\n\n- شماره‌ی مسئله‌ها: ۷۱ تا ۸۰ (۱۰ مسئله).\n- مهلت: سه‌شنبه ساعت **۲۳:۰۰**."
+          "markdown": "### سری ۸ · سه‌شنبه\n\n- شماره‌ی مسئله‌ها: ۷۱ تا ۸۰ (۱۰ مسئله).\n- مهلت: سه‌شنبه ساعت **۲۳:۰۰**.",
+          "en": {
+            "title": "Series 8 · Tuesday",
+            "markdown": "### Series 8 · Tuesday\n\n- Problem numbers: 71 to 80 (10 problems).\n- Deadline: Tuesday at **23:00**."
+          }
         },
         {
           "id": "202-09",
@@ -358,7 +438,11 @@
             "p90",
             "p94"
           ],
-          "markdown": "### سری ۹ · چهارشنبه\n\n- شماره‌ی مسئله‌ها: ۸۱ تا ۸۵ (۵ مسئله).\n- مهلت: چهارشنبه ساعت **۲۳:۰۰**."
+          "markdown": "### سری ۹ · چهارشنبه\n\n- شماره‌ی مسئله‌ها: ۸۱ تا ۸۵ (۵ مسئله).\n- مهلت: چهارشنبه ساعت **۲۳:۰۰**.",
+          "en": {
+            "title": "Series 9 · Wednesday",
+            "markdown": "### Series 9 · Wednesday\n\n- Problem numbers: 81 to 85 (5 problems).\n- Deadline: Wednesday at **23:00**."
+          }
         },
         {
           "id": "202-10",
@@ -371,7 +455,11 @@
             "p26",
             "p27"
           ],
-          "markdown": "### سری ۱۰ · پنج‌شنبه\n\n- شماره‌ی مسئله‌ها: ۸۶ تا ۹۰ (۵ مسئله).\n- مهلت: پنج‌شنبه ساعت **۲۳:۰۰**."
+          "markdown": "### سری ۱۰ · پنج‌شنبه\n\n- شماره‌ی مسئله‌ها: ۸۶ تا ۹۰ (۵ مسئله).\n- مهلت: پنج‌شنبه ساعت **۲۳:۰۰**.",
+          "en": {
+            "title": "Series 10 · Thursday",
+            "markdown": "### Series 10 · Thursday\n\n- Problem numbers: 86 to 90 (5 problems).\n- Deadline: Thursday at **23:00**."
+          }
         },
         {
           "id": "202-11",
@@ -384,7 +472,11 @@
             "p44",
             "p29"
           ],
-          "markdown": "### سری ۱۱ · جمعه\n\n- شماره‌ی مسئله‌ها: ۹۱ تا ۹۵ (۵ مسئله).\n- مهلت: جمعه ساعت **۲۳:۰۰**."
+          "markdown": "### سری ۱۱ · جمعه\n\n- شماره‌ی مسئله‌ها: ۹۱ تا ۹۵ (۵ مسئله).\n- مهلت: جمعه ساعت **۲۳:۰۰**.",
+          "en": {
+            "title": "Series 11 · Friday",
+            "markdown": "### Series 11 · Friday\n\n- Problem numbers: 91 to 95 (5 problems).\n- Deadline: Friday at **23:00**."
+          }
         },
         {
           "id": "202-12",
@@ -397,7 +489,11 @@
             "p49",
             "p28"
           ],
-          "markdown": "### سری ۱۲ · شنبه (پایانی)\n\n- شماره‌ی مسئله‌ها: ۹۶ تا ۱۰۰ (۵ مسئله).\n- مهلت پایان دوره: شنبه ساعت **۲۳:۰۰**."
+          "markdown": "### سری ۱۲ · شنبه (پایانی)\n\n- شماره‌ی مسئله‌ها: ۹۶ تا ۱۰۰ (۵ مسئله).\n- مهلت پایان دوره: شنبه ساعت **۲۳:۰۰**.",
+          "en": {
+            "title": "Series 12 · Saturday (final)",
+            "markdown": "### Series 12 · Saturday (final)\n\n- Problem numbers: 96 to 100 (5 problems).\n- End-of-course deadline: Saturday at **23:00**."
+          }
         }
       ]
     }

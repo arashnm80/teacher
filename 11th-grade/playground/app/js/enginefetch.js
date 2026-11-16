@@ -8,6 +8,13 @@
  * last time is remembered in localStorage and adjusted after every run.
  */
 
+import { define, t } from "./i18n.js?v=5";
+
+define({
+  "eng.interrupted": { fa: "دانلود موتور پایتون چند بار قطع شد ({why}). صفحه را تازه کنید؛ بخش‌های دانلودشده ذخیره شده‌اند و دانلود از همان‌جا ادامه می‌یابد.", en: "Downloading the Python engine was interrupted several times ({why}). Reload the page; the parts already downloaded are saved and the download continues from there." },
+  "eng.corrupt": { fa: "فایل موتور خراب بود ({name}). صفحه را تازه کنید.", en: "An engine file was corrupt ({name}). Reload the page." },
+});
+
 const CACHE_NAME = "pg-engine-parts-v1";
 const POLICY_KEY = "pg-engine-dl-policy-v1";
 const MANIFEST = "vendor/pyodide/chunks/manifest.json";
@@ -126,8 +133,7 @@ export async function prefetchEngine(manifest, { onProgress = () => {}, note = (
   savePolicy(policy, limit, failures);
   if (fatal) {
     throw new Error(
-      `دانلود موتور پایتون چند بار قطع شد (${String(fatal?.message || fatal)}). ` +
-        "صفحه را تازه کنید؛ بخش‌های دانلودشده ذخیره شده‌اند و دانلود از همان‌جا ادامه می‌یابد."
+      t("eng.interrupted", { why: String(fatal?.message || fatal) })
     );
   }
 
@@ -139,7 +145,7 @@ export async function prefetchEngine(manifest, { onProgress = () => {}, note = (
     );
     if (raw.byteLength !== file.size) {
       await caches.delete(CACHE_NAME);
-      throw new Error(`فایل موتور خراب بود (${file.name}). صفحه را تازه کنید.`);
+      throw new Error(t("eng.corrupt", { name: file.name }));
     }
     files.set(new URL(file.name, new URL("../", base)).href, { bytes: raw, type: file.type });
   }

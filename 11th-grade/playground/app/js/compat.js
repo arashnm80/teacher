@@ -5,6 +5,10 @@
  * plain node, so nothing here may touch the DOM at import time.
  */
 
+import { define, t } from "./i18n.js?v=5";
+
+define({ "compat.script": { fa: "اسکریپت بارگذاری نشد: {src}", en: "A script did not load: {src}" } });
+
 export const PRIMARY = {
   js: "vendor/pyodide/pyodide.js",
   indexURL: "vendor/pyodide/",
@@ -55,7 +59,7 @@ export function loadScript(src) {
         error: "script.onerror",
         afterGlobal: typeof globalThis.CodeMirror,
       });
-      reject(new Error(`اسکریپت بارگذاری نشد: ${src}`));
+      reject(new Error(t("compat.script", { src })));
     };
     document.head.appendChild(tag);
   });

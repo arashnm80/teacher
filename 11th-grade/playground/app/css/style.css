@@ -7,7 +7,7 @@
 
 html, body {
   unicode-bidi: isolate;
-  text-align: right;
+  text-align: start;
 }
 
 /* LTR islands: Python/code, URLs, Latin keywords, digit runs inside Persian copy */
@@ -364,7 +364,7 @@ code.ltr,
   margin: 0.35rem 0 0;
   color: var(--muted);
   font-size: 0.82rem;
-  text-align: right;
+  text-align: start;
   unicode-bidi: isolate;
 }
 .diff-meta .ltr {
@@ -405,7 +405,7 @@ details > summary::after {
   flex: none;
   width: 0.5em;
   height: 0.5em;
-  border-left: 2px solid currentColor;
+  border-inline-start: 2px solid currentColor;
   border-bottom: 2px solid currentColor;
   transform: rotate(-45deg);
   transition: transform var(--ease);
@@ -436,6 +436,7 @@ details[open] > summary { margin-bottom: 0.5rem; }
 }
 .auth-dialog::backdrop { background: rgba(12, 47, 44, 0.45); }
 .auth-card { display: grid; gap: 0.6rem; padding: 1.3rem 1.25rem 1.25rem; }
+.auth-card .auth-lang { justify-self: end; margin-block-end: -0.2rem; }
 .auth-card h2 { margin: 0; font-size: 1.15rem; color: var(--deep); }
 .auth-tabs { display: flex; gap: 0.4rem; border-bottom: 1px solid var(--line); }
 .auth-tabs[hidden] { display: none; }
@@ -549,7 +550,7 @@ details[open] > summary { margin-bottom: 0.5rem; }
   font-size: 0.92rem;
   line-height: 1.6;
 }
-.boot-details { margin-top: 0.8rem; text-align: right; font-size: 0.85rem; color: var(--muted); }
+.boot-details { margin-top: 0.8rem; text-align: start; font-size: 0.85rem; color: var(--muted); }
 .boot-details pre {
   max-height: min(50vh, 420px);
   overflow: auto;
@@ -585,8 +586,7 @@ details[open] > summary { margin-bottom: 0.5rem; }
   box-shadow: var(--shadow-lg);
   width: min(520px, 92vw);
   background: var(--card);
-  direction: rtl;
-  text-align: right;
+  text-align: start;
 }
 #progress-dialog::backdrop { background: rgba(12, 47, 44, 0.35); }
 .progress-card { padding: 1.2rem 1.3rem 0; max-height: 88vh; overflow-y: auto; }
@@ -616,7 +616,7 @@ details[open] > summary { margin-bottom: 0.5rem; }
   border-bottom: 1px solid var(--line-soft);
   font-size: 0.9rem;
 }
-.progress-item-text { min-width: 0; flex: 1; text-align: right; }
+.progress-item-text { min-width: 0; flex: 1; text-align: start; }
 .progress-item-state { flex: 0 0 auto; padding-inline-start: 0.35rem; white-space: nowrap; }
 .progress-actions { justify-content: space-between; }
 

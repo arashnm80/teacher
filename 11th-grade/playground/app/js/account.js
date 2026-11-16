@@ -13,15 +13,51 @@ const MODE = document.querySelector('meta[name="pg-mode"]')?.content;
 export const ONLINE = MODE === "online";
 export const OFFLINE = MODE === "offline";
 
+import { define, has, onLangChange, t } from "./i18n.js?v=5";
+
+define({
+  "acct.network": { fa: "اتصال به سرور برقرار نشد. اینترنت را بررسی کن و دوباره امتحان کن.", en: "Could not reach the server. Check your internet and try again." },
+  "acct.mismatch": { fa: "رمزها یکی نیستند. هر دو را یکسان بنویس.", en: "The passwords do not match. Type the same one in both." },
+  "acct.generic": { fa: "این کار انجام نشد. دوباره امتحان کن.", en: "That did not work. Try again." },
+  "acct.login.title": { fa: "ورود به زمین بازی", en: "Sign in to the playground" },
+  "acct.login.submit": { fa: "ورود", en: "Sign in" },
+  "acct.register.title": { fa: "ثبت‌نام", en: "Sign up" },
+  "acct.register.submit": { fa: "ثبت‌نام و شروع", en: "Sign up and start" },
+  "acct.reset.title": { fa: "انتخاب رمز تازه", en: "Choose a new password" },
+  "acct.reset.submit": { fa: "ذخیره رمز تازه", en: "Save the new password" },
+  "err.phone_invalid": { fa: "شماره موبایل معتبر نیست. مثل 09123456789 بنویس.", en: "The mobile number is not valid. Write it like 09123456789." },
+  "err.national_code_invalid": { fa: "کد ملی معتبر نیست. ده رقم را دوباره بررسی کن.", en: "The national code is not valid. Check the ten digits again." },
+  "err.name_invalid": { fa: "نام و نام خانوادگی را با حروف فارسی و حداقل دو کلمه بنویس.", en: "Write your full name in Persian letters, at least two words." },
+  "err.class_invalid": { fa: "کلاس را انتخاب کن: ۲۰۱ یا ۲۰۲.", en: "Choose your class: 201 or 202." },
+  "err.password_length": { fa: "رمز باید بین ۸ تا ۱۲۸ نویسه باشد.", en: "The password must be 8 to 128 characters." },
+  "err.password_mix": { fa: "رمز باید هم حرف و هم عدد داشته باشد.", en: "The password must have both a letter and a number." },
+  "err.password_weak": { fa: "رمز نباید همان شماره موبایل یا کد ملی باشد.", en: "The password must not be your mobile number or national code." },
+  "err.invalid": { fa: "شماره موبایل یا رمز درست نیست.", en: "The mobile number or the password is not right." },
+  "err.locked": { fa: "چند بار رمز اشتباه وارد شده است. ۱۵ دقیقه صبر کن و دوباره امتحان کن.", en: "The password was wrong several times. Wait 15 minutes and try again." },
+  "err.exists": { fa: "این شماره موبایل یا کد ملی قبلاً ثبت شده است. اگر حساب خودت است، با همان رمز وارد شو. اگر رمزت را گم کرده‌ای، از معلم بخواه آن را بازنشانی کند.", en: "This mobile number or national code is already registered. If it is your account, sign in with your password. If you lost it, ask the teacher to reset it." },
+  "err.disabled": { fa: "این حساب غیرفعال شده است. با معلم صحبت کن.", en: "This account has been disabled. Talk to the teacher." },
+  "err.reset_required": { fa: "رمزت را معلم بازنشانی کرده است. با همین شماره و کد ملی، رمز جدید انتخاب کن.", en: "The teacher reset your password. Choose a new one with the same number and national code." },
+  "err.rate_limited": { fa: "تعداد تلاش‌ها زیاد است. کمی بعد دوباره امتحان کن.", en: "Too many attempts. Try again in a little while." },
+  "err.login_required": { fa: "برای ادامه وارد شو.", en: "Sign in to continue." },
+  "err.problem_updated": { fa: "این مسئله به‌روز شده است. صفحه را دوباره باز کن تا نسخه‌ی تازه را ببینی.", en: "This problem was updated. Reload the page to see the new version." },
+  "err.total_mismatch": { fa: "تعداد آزمون‌ها با نسخه‌ی این مسئله نمی‌خواند. صفحه را دوباره باز کن.", en: "The number of tests does not match this version of the problem. Reload the page." },
+});
+
+/** The text of a server error in the chosen language (the server answers in Persian). */
+export function errorText(data) {
+  const key = `err.${data?.error}`;
+  return has(key) ? t(key) : data?.message || t("acct.generic");
+}
+
 const API = "/api/student";
 // The offline copy reaches the teacher's server at this address (a test can point it elsewhere).
 const SYNC_BASE = window.__teacherSyncBase || "https://teacher.arashnm80.ir/api/offline";
 const SESSION_KEY = "teacher-sync-session-v1";
 const DRAFT_DELAY_MS = 2500;
 const MESSAGES = {
-  network: "اتصال به سرور برقرار نشد. اینترنت را بررسی کن و دوباره امتحان کن.",
-  mismatch: "رمزها یکی نیستند. هر دو را یکسان بنویس.",
-  generic: "این کار انجام نشد. دوباره امتحان کن.",
+  get network() { return t("acct.network"); },
+  get mismatch() { return t("acct.mismatch"); },
+  get generic() { return t("acct.generic"); },
 };
 
 let student = null;
@@ -144,17 +180,17 @@ export function currentStudent() {
 // ---- the sign-in dialog -------------------------------------------------------------------
 
 const FIELDS = {
-  phone: { label: "شماره موبایل", modes: ["login", "register", "reset"] },
-  nationalCode: { label: "کد ملی", modes: ["register", "reset"] },
-  fullName: { label: "نام و نام خانوادگی (فارسی)", modes: ["register"] },
-  classCode: { label: "کلاس", modes: ["register"] },
-  password: { label: "رمز", modes: ["login", "register", "reset"] },
-  password2: { label: "تکرار رمز", modes: ["register", "reset"] },
+  phone: { modes: ["login", "register", "reset"] },
+  nationalCode: { modes: ["register", "reset"] },
+  fullName: { modes: ["register"] },
+  classCode: { modes: ["register"] },
+  password: { modes: ["login", "register", "reset"] },
+  password2: { modes: ["register", "reset"] },
 };
 const MODE_TEXT = {
-  login: { title: "ورود به زمین بازی", submit: "ورود" },
-  register: { title: "ثبت‌نام", submit: "ثبت‌نام و شروع" },
-  reset: { title: "انتخاب رمز تازه", submit: "ذخیره رمز تازه" },
+  get login() { return { title: t("acct.login.title"), submit: t("acct.login.submit") }; },
+  get register() { return { title: t("acct.register.title"), submit: t("acct.register.submit") }; },
+  get reset() { return { title: t("acct.reset.title"), submit: t("acct.reset.submit") }; },
 };
 
 function showError(text) {
@@ -228,10 +264,10 @@ async function submitAuth(event) {
       });
       if (res.status === 200) return finishSignIn(res.data);
       if (res.status === 403 && res.data.error === "reset_required") {
-        setMode("reset", res.data.message);
+        setMode("reset", errorText(res.data));
         return;
       }
-      return showError(res.data.message || MESSAGES.generic);
+      return showError(errorText(res.data));
     }
     if (formMode === "register") {
       if ($("auth-password").value !== $("auth-password2").value) return showError(MESSAGES.mismatch);
@@ -246,7 +282,7 @@ async function submitAuth(event) {
         },
       });
       if (res.status === 201) return finishSignIn(res.data);
-      return showError(res.data.message || MESSAGES.generic);
+      return showError(errorText(res.data));
     }
     if ($("auth-password").value !== $("auth-password2").value) return showError(MESSAGES.mismatch);
     const res = await request("/complete-reset", {
@@ -258,7 +294,7 @@ async function submitAuth(event) {
       },
     });
     if (res.status === 200) return finishSignIn(res.data);
-    return showError(res.data.message || MESSAGES.generic);
+    return showError(errorText(res.data));
   } finally {
     submit.disabled = false;
   }
@@ -298,6 +334,10 @@ export async function logout() {
 export function initAccountUi() {
   if (!ONLINE && !OFFLINE) return;
   const dialog = $("auth-dialog");
+  onLangChange(() => {
+    $("auth-title").textContent = MODE_TEXT[formMode].title;
+    $("auth-submit").textContent = MODE_TEXT[formMode].submit;
+  });
   $("auth-form").addEventListener("submit", submitAuth);
   $("auth-tab-login").addEventListener("click", () => setMode("login"));
   $("auth-tab-register").addEventListener("click", () => setMode("register"));

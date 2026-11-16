@@ -4,7 +4,7 @@
  * it, shows a notice when there is something new, and starts the update on a click.
  * Opened without the launcher, the addresses do not exist and nothing is shown.
  */
-import { define, t } from "./i18n.js?v=1";
+import { define, t } from "./i18n.js?v=5";
 
 define({
   "update.available": { fa: "نسخه‌ی تازه‌ی برنامه آماده است ({files} فایل، حدود {mb} مگابایت).", en: "A new version is ready ({files} files, about {mb} MB)." },

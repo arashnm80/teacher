@@ -7,6 +7,34 @@
  * browser (localStorage) and goes only to the site's relay, /api/ai/ask.
  */
 
+import { define, isEnglish, lang, onLangChange, t as tr } from "./i18n.js?v=5";
+
+define({
+  "ai.hidden": { fa: "این آزمون پنهان است و ورودی و خروجی آن به دانش‌آموز نشان داده نمی‌شود. فقط بگو کدام بخش برنامه را با صورت مسئله دوباره بررسی کند؛ ورودی یا خروجی این آزمون را حدس نزن.", en: "This test is hidden and its input and output are not shown to the student. Only say which part of the program the student should re-check against the problem statement; do not guess this test's input or output." },
+  "ai.err.server": { fa: "خطای سرور ({status}). دوباره امتحان کنید.", en: "Server error ({status}). Try again." },
+  "ai.err.unreadable": { fa: "پاسخ سرویس خوانده نشد. دوباره امتحان کنید.", en: "The service's answer could not be read. Try again." },
+  "ai.err.timeout": { fa: "پاسخ نرسید: بیش از {seconds} ثانیه طول کشید. دوباره امتحان کنید، یا سرویس دیگری را انتخاب کنید.", en: "No answer: it took more than {seconds} seconds. Try again, or choose another service." },
+  "ai.err.aborted": { fa: "درخواست لغو شد.", en: "The request was cancelled." },
+  "ai.err.network": { fa: "اتصال به سرور برقرار نشد. اینترنت را بررسی کنید و دوباره امتحان کنید.", en: "Could not connect to the server. Check your internet and try again." },
+  "ai.confirm.remove": { fa: "کلید این سرویس از این مرورگر پاک شود؟", en: "Remove this service's key from this browser?" },
+  "ai.key.label": { fa: "کلید {label}", en: "{label} key" },
+  "ai.key.get": { fa: "گرفتن کلید {label}", en: "Get a {label} key" },
+  "ai.key.saved": { fa: "کلید {label} در همین مرورگر ذخیره است.", en: "The {label} key is saved in this browser." },
+  "ai.key.missing": { fa: "کلید {label} هنوز وارد نشده است. بدون کلید، دستیار کار نمی‌کند.", en: "The {label} key has not been entered yet. Without a key the assistant does not work." },
+  "ai.hint.pick": { fa: "یک مسئله را از فهرست سمت راست انتخاب کن.", en: "Pick a problem from the list." },
+  "ai.hint.key": { fa: "برای استفاده از دستیار، کلید {label} را وارد و ذخیره کن.", en: "To use the assistant, enter and save the {label} key." },
+  "ai.hint.wrong": { fa: "پاسخ تو این بار رد شد. «بررسی پاسخ من» را بزن تا دستیار بگوید کدام قسمت اشتباه است.", en: "Your answer failed this time. Press “Check my answer” and the assistant will say which part is wrong." },
+  "ai.hint.choose": { fa: "یکی از کارهای زیر را انتخاب کن.", en: "Choose one of the actions below." },
+  "ai.key.other": { fa: "این کلید مال {other} است. سرویس را روی «{other}» بگذار.", en: "This key belongs to {other}. Set the service to “{other}”." },
+  "ai.key.invalid": { fa: "کلید {label} معتبر به نظر نمی‌رسد. کلید را کامل و بدون فاصله وارد کن.", en: "The {label} key does not look valid. Enter the whole key without spaces." },
+  "ai.err.storage": { fa: "این مرورگر اجازه ذخیره‌سازی نمی‌دهد. تنظیمات مرورگر را بررسی کن.", en: "This browser does not allow storage. Check the browser settings." },
+  "ai.phase.slow": { fa: "هنوز پاسخی نرسیده؛ مدل‌های رایگان گاهی کندند. {s} از {limit} ثانیه گذشته است.", en: "No answer yet; free models are sometimes slow. {s} of {limit} seconds have passed." },
+  "ai.phase.making": { fa: "{label} دارد پاسخ می‌سازد… {s} از {limit} ثانیه.", en: "{label} is writing the answer… {s} of {limit} seconds." },
+  "ai.phase.sent": { fa: "درخواست به {label} فرستاده شد… {s} از {limit} ثانیه.", en: "The request was sent to {label}… {s} of {limit} seconds." },
+  "ai.answer.meta": { fa: "پاسخ {label} · مدل {model}", en: "{label} answer · model {model}" },
+  "ai.cancelled": { fa: "درخواست لغو شد. هر وقت خواستی دوباره بپرس.", en: "The request was cancelled. Ask again whenever you like." },
+});
+
 const KEYS_STORE = "teacher-ai-keys-v1";
 const PROVIDER_STORE = "teacher-ai-provider-v1";
 const RELAY_HOST = "teacher.arashnm80.ir";
@@ -102,7 +130,7 @@ export function failureFromOutcome(problem, outcome, visibleCount = Infinity) {
       stdin: "",
       expected: "",
       actual: "",
-      message: "این آزمون پنهان است و ورودی و خروجی آن به دانش‌آموز نشان داده نمی‌شود. فقط بگو کدام بخش برنامه را با صورت مسئله دوباره بررسی کند؛ ورودی یا خروجی این آزمون را حدس نزن.",
+      message: tr("ai.hidden"),
     };
   }
   const test = bad.test || {};
@@ -119,10 +147,11 @@ export function failureFromOutcome(problem, outcome, visibleCount = Infinity) {
 }
 
 function problemPayload(problem) {
+  const en = isEnglish() ? problem.en || {} : {};
   return {
-    title: problem.title || "",
-    topic: problem.topic || "",
-    statement: problem.statement || "",
+    title: en.title || problem.title || "",
+    topic: en.topic || problem.topic || "",
+    statement: en.statement || problem.statement || "",
     mode: problem.mode || "stdio",
     functionName: problem.functionName || "",
     samples: problem.samples || [],
@@ -154,7 +183,7 @@ export async function askAi({ provider, key, payload, onTick, onController }) {
     const response = await fetch(aiEndpoint(), {
       method: "POST",
       headers: { "Content-Type": "application/json", "X-AI-Key": key },
-      body: JSON.stringify({ provider, ...payload }),
+      body: JSON.stringify({ provider, lang: lang(), ...payload }),
       signal: controller.signal,
       cache: "no-store",
     });
@@ -165,10 +194,10 @@ export async function askAi({ provider, key, payload, onTick, onController }) {
       data = null;
     }
     if (!response.ok) {
-      throw aiError("server", data?.error || `خطای سرور (${response.status}). دوباره امتحان کنید.`);
+      throw aiError("server", data?.error || tr("ai.err.server", { status: response.status }));
     }
     if (!data || typeof data.answer !== "string") {
-      throw aiError("server", "پاسخ سرویس خوانده نشد. دوباره امتحان کنید.");
+      throw aiError("server", tr("ai.err.unreadable"));
     }
     return data;
   } catch (err) {
@@ -176,11 +205,11 @@ export async function askAi({ provider, key, payload, onTick, onController }) {
     if (timedOut) {
       throw aiError(
         "timeout",
-        `پاسخ نرسید: بیش از ${Math.round(ASK_TIMEOUT_MS / 1000)} ثانیه طول کشید. دوباره امتحان کنید، یا سرویس دیگری را انتخاب کنید.`
+        tr("ai.err.timeout", { seconds: Math.round(ASK_TIMEOUT_MS / 1000) })
       );
     }
-    if (err.name === "AbortError") throw aiError("aborted", "درخواست لغو شد.");
-    throw aiError("network", "اتصال به سرور برقرار نشد. اینترنت را بررسی کنید و دوباره امتحان کنید.");
+    if (err.name === "AbortError") throw aiError("aborted", tr("ai.err.aborted"));
+    throw aiError("network", tr("ai.err.network"));
   } finally {
     clearTimeout(timeout);
     clearInterval(ticker);
@@ -240,7 +269,7 @@ export function initAi(context) {
     if (event.key === "Enter") saveTypedKey();
   });
   el.keyRemove.addEventListener("click", () => {
-    if (!confirm("کلید این سرویس از این مرورگر پاک شود؟")) return;
+    if (!confirm(tr("ai.confirm.remove"))) return;
     removeKey(el.provider.value);
     refresh();
   });
@@ -256,6 +285,8 @@ export function initAi(context) {
   });
   refresh();
 }
+
+onLangChange(() => refresh());
 
 export function aiProblemChanged() {
   lastAnswer = null;
@@ -281,24 +312,24 @@ function refresh() {
   const provider = selectedProvider();
   const meta = PROVIDERS[provider];
   el.key.placeholder = meta.placeholder;
-  el.keyLabel.textContent = `کلید ${meta.label}`;
+  el.keyLabel.textContent = tr("ai.key.label", { label: meta.label });
   el.keyLink.href = meta.keyUrl;
-  el.keyLink.textContent = `گرفتن کلید ${meta.label}`;
+  el.keyLink.textContent = tr("ai.key.get", { label: meta.label });
   const hasKey = Boolean(storedKeys()[provider]);
   el.keyStatus.textContent = hasKey
-    ? `کلید ${meta.label} در همین مرورگر ذخیره است.`
-    : `کلید ${meta.label} هنوز وارد نشده است. بدون کلید، دستیار کار نمی‌کند.`;
+    ? tr("ai.key.saved", { label: meta.label })
+    : tr("ai.key.missing", { label: meta.label });
   el.keyRemove.hidden = !hasKey;
   const problem = ctx?.getProblem();
   const failure = ctx?.getFailure?.();
   const wrong = Boolean(problem && failure && failure.problemId === problem.id);
   el.hint.textContent = !problem
-    ? "یک مسئله را از فهرست سمت راست انتخاب کن."
+    ? tr("ai.hint.pick")
     : !hasKey
-    ? `برای استفاده از دستیار، کلید ${meta.label} را وارد و ذخیره کن.`
+    ? tr("ai.hint.key", { label: meta.label })
     : wrong
-    ? "پاسخ تو این بار رد شد. «بررسی پاسخ من» را بزن تا دستیار بگوید کدام قسمت اشتباه است."
-    : "یکی از کارهای زیر را انتخاب کن.";
+    ? tr("ai.hint.wrong")
+    : tr("ai.hint.choose");
   const ready = Boolean(problem && hasKey && !busy);
   el.actions.forEach((button) => {
     button.disabled = !ready;
@@ -314,12 +345,12 @@ function saveTypedKey() {
   if (!meta.keyRe.test(typed)) {
     const other = Object.entries(PROVIDERS).find(([name, m]) => name !== provider && m.keyRe.test(typed));
     showError(other
-      ? `این کلید مال ${other[1].label} است. سرویس را روی «${other[1].label}» بگذار.`
-      : `کلید ${meta.label} معتبر به نظر نمی‌رسد. کلید را کامل و بدون فاصله وارد کن.`);
+      ? tr("ai.key.other", { other: other[1].label })
+      : tr("ai.key.invalid", { label: meta.label }));
     return;
   }
   if (!saveKey(provider, typed)) {
-    showError("این مرورگر اجازه ذخیره‌سازی نمی‌دهد. تنظیمات مرورگر را بررسی کن.");
+    showError(tr("ai.err.storage"));
     return;
   }
   el.key.value = "";
@@ -347,10 +378,10 @@ function showInfo(message) {
 function phaseText(label, seconds) {
   const limit = Math.round(ASK_TIMEOUT_MS / 1000);
   if (seconds >= SLOW_AFTER_S) {
-    return `هنوز پاسخی نرسیده؛ مدل‌های رایگان گاهی کندند. ${seconds} از ${limit} ثانیه گذشته است.`;
+    return tr("ai.phase.slow", { s: seconds, limit });
   }
-  if (seconds >= 6) return `${label} دارد پاسخ می‌سازد… ${seconds} از ${limit} ثانیه.`;
-  return `درخواست به ${label} فرستاده شد… ${seconds} از ${limit} ثانیه.`;
+  if (seconds >= 6) return tr("ai.phase.making", { label, s: seconds, limit });
+  return tr("ai.phase.sent", { label, s: seconds, limit });
 }
 
 function showStatus(label, seconds) {
@@ -368,7 +399,7 @@ function hideStatus() {
 
 function showAnswer(entry) {
   const meta = PROVIDERS[entry.provider];
-  lastAnswer = { ...entry, label: `پاسخ ${meta.label} · مدل ${entry.model}` };
+  lastAnswer = { ...entry, label: tr("ai.answer.meta", { label: meta.label, model: entry.model }) };
   el.meta.textContent = lastAnswer.label;
   el.answer.innerHTML = ctx.render(entry.text);
   el.answer.scrollTop = 0;
@@ -418,7 +449,7 @@ async function runAction(action) {
     }
   } catch (err) {
     if (err.kind === "aborted") {
-      showInfo("درخواست لغو شد. هر وقت خواستی دوباره بپرس.");
+      showInfo(tr("ai.cancelled"));
     } else {
       showError(err.message, { retry: true });
     }

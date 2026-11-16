@@ -9,7 +9,7 @@ from pathlib import Path
 from playwright.sync_api import sync_playwright
 
 import os
-BASE = os.environ.get("E2E_BASE", "http://127.0.0.1:8790")
+BASE = os.environ.get("E2E_BASE", "http://127.0.0.1:8800")
 OFFLINE = "http://127.0.0.1:8791"
 PROBLEMS = Path("/root/Storage/teacher/11th-grade/playground/app/data/problems.json")
 PHONE = "09123456789"

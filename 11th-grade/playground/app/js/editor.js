@@ -12,8 +12,15 @@
  * also handle the combo via a capturing keydown listener (not only extraKeys).
  */
 
-import { loadScript } from "./compat.js?v=11";
-import { bootNote } from "./bootlog.js?v=11";
+import { define, t } from "./i18n.js?v=5";
+
+define({
+  "edit.load": { fa: "ویرایشگر کد بارگذاری نشد (CodeMirror). فایل‌های vendor/codemirror را کامل کپی کنید یا صفحه را تازه کنید.", en: "The code editor (CodeMirror) did not load. Copy the whole vendor/codemirror folder, or reload the page." },
+  "edit.ready": { fa: "ویرایشگر کد آماده نیست (CodeMirror). صفحه را تازه کنید؛ اگر آفلاین هستید پوشه vendor/codemirror را کامل کپی کنید.", en: "The code editor (CodeMirror) is not ready. Reload the page; if you are offline, copy the whole vendor/codemirror folder." },
+});
+
+import { loadScript } from "./compat.js?v=12";
+import { bootNote } from "./bootlog.js?v=12";
 
 export const CODEMIRROR_SCRIPTS = [
   "vendor/codemirror/codemirror.min.js",
@@ -42,7 +49,7 @@ export async function ensureCodeMirror() {
       }
       if (typeof globalThis.CodeMirror !== "function") {
         throw new Error(
-          "ویرایشگر کد بارگذاری نشد (CodeMirror). فایل‌های vendor/codemirror را کامل کپی کنید یا صفحه را تازه کنید."
+          t("edit.load")
         );
       }
       bootNote("CodeMirror ready after dynamic load");
@@ -233,7 +240,7 @@ function attachLineShortcutCapture(cm) {
 export function createPythonEditor(textarea, { onChange } = {}) {
   if (typeof globalThis.CodeMirror !== "function") {
     throw new Error(
-      "ویرایشگر کد آماده نیست (CodeMirror). صفحه را تازه کنید؛ اگر آفلاین هستید پوشه vendor/codemirror را کامل کپی کنید."
+      t("edit.ready")
     );
   }
 

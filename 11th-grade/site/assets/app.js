@@ -21,6 +21,10 @@
     for (var j = 0; j < fields.length; j++) {
       fields[j].placeholder = fields[j].getAttribute("data-" + next + "-placeholder");
     }
+    var labelled = document.querySelectorAll("[data-fa-aria]");
+    for (var a = 0; a < labelled.length; a++) {
+      labelled[a].setAttribute("aria-label", labelled[a].getAttribute("data-" + next + "-aria"));
+    }
     var blocks = document.querySelectorAll("[data-lang-block]");
     for (var k = 0; k < blocks.length; k++) {
       blocks[k].hidden = blocks[k].getAttribute("data-lang-block") !== next;

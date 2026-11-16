@@ -7,6 +7,10 @@
       "page": "p1-cast",
       "fa": "ورودی و تبدیل نوع",
       "en": "Input and type casting"
+    },
+    "en": {
+      "title": "Input and output",
+      "body": "With `input()` you read one line of input (it always returns a string) and with `print` you write it out.\n\n```\nname = input()\nprint(\"Hello,\", name)\n```\n\nThe example above prints `Hello, Ali`. Python itself puts one space between the arguments of `print`; for the comma after Hello, put it inside the string (`\"Hello,\"`).\n\nFor several lines, call `input()` several times and `print` each value separately.\n\nDo not put a message inside `input(\"...\")`; that message is printed too and breaks the test. Write only `input()`."
     }
   },
   {
@@ -17,6 +21,10 @@
       "page": "p1-vars",
       "fa": "متغیرها، نوع داده و عملگرها",
       "en": "Variables, types, and operators"
+    },
+    "en": {
+      "title": "Data types and operators",
+      "body": "The result of `input()` is always a string. For an integer use `int(...)`, and for a decimal use `float(...)`.\n\n```\na = int(input())\nb = int(input())\nprint(a + b)\nprint(a % b)\n```\n\nThe important arithmetic operators:\n\n- `+` add, `-` subtract, `*` multiply\n- `/` decimal division, `//` integer division, `%` remainder\n\nComparisons (`==` `!=` `<` `>` …) are usually used inside `if`, not for plain arithmetic problems like these."
     }
   },
   {
@@ -27,6 +35,10 @@
       "page": "p1-elif",
       "fa": "if، elif و else",
       "en": "if, elif, and else"
+    },
+    "en": {
+      "title": "Conditions",
+      "body": "With `if` / `elif` / `else` you choose between several cases. Indentation is required.\n\n```\nn = int(input())\nif n % 2 == 0:\n    print(\"even\")\nelse:\n    print(\"odd\")\n```\n\nFor several ranges (such as a score to a letter grade) use a chain of `elif` and write the boundaries exactly.\n\nCombine conditions with `and` and `or`. The output must be exactly the requested text (no extra space)."
     }
   },
   {
@@ -37,6 +49,10 @@
       "page": "p1-for",
       "fa": "حلقه for و range",
       "en": "The for loop and range"
+    },
+    "en": {
+      "title": "The for loop and range",
+      "body": "`for` goes over a sequence. For counting you usually use `range`.\n\n```\nn = int(input())\nfor i in range(1, n + 1):\n    print(i)\n```\n\n- `range(n)` → `0` to `n-1`\n- `range(a, b)` → from `a` up to (not including) `b`\n- `range(a, b, step)` → with a step; to go backwards, for example `range(m, 0, -1)`\n\nIf you must read the next `n` numbers: after reading `n`, run the loop `n` times and call `int(input())` inside it."
     }
   },
   {
@@ -47,6 +63,10 @@
       "page": "p1-while",
       "fa": "حلقه while و کنترل حلقه",
       "en": "The while loop and loop control"
+    },
+    "en": {
+      "title": "The while loop",
+      "body": "`while` repeats as long as the condition is true. You move the counter forward yourself.\n\n```\nn = int(input())\ni = 1\nwhile i <= n:\n    print(i)\n    i += 1\n```\n\nCommon patterns in these problems:\n\n- read until a special value (for example `0`) and then stop\n- `break` once the answer is found\n- remove digits with `n //= 10` (without converting to a string)\n\nWatch out for an infinite loop. If the problem forbids `for`, do not use `for`."
     }
   },
   {
@@ -57,6 +77,10 @@
       "page": "p1-lists",
       "fa": "لیست‌ها",
       "en": "Lists"
+    },
+    "en": {
+      "title": "Lists",
+      "body": "A list is an ordered, changeable sequence. The index starts at zero.\n\n```\nnums = []\nn = int(input())\nfor _ in range(n):\n    nums.append(int(input()))\nprint(*nums[::-1])\n```\n\nNotes:\n\n- reverse slice: `nums[::-1]`\n- filter: keep only the wanted values in a new list\n- print with spaces on one line: `print(*lst)`, or `print()` if it is empty\n\nSome problems ask only for a function (such as `second_max(nums)`): give the answer with `return`; no `input`/`print` is needed outside the function."
     }
   },
   {
@@ -67,6 +91,10 @@
       "page": "p1-sets",
       "fa": "مجموعه (set)",
       "en": "Sets"
+    },
+    "en": {
+      "title": "Sets",
+      "body": "A set (`set`) keeps no repeated members and has no guaranteed order.\n\n```\ns = {1, 2, 2, 3}\nprint(len(s))  # 3\n```\n\nBuilding from input: read the numbers and put them in a `set`; `len(s)` is the number of unique ones.\n\nOperators:\n\n- intersection: `a & b`\n- union: `a | b`\n- membership: `x in s`\n\nIf the output must be sorted, call `sorted(...)` before printing. If there is no common member, print an empty line."
     }
   },
   {
@@ -77,6 +105,10 @@
       "page": "p1-dict",
       "fa": "دیکشنری",
       "en": "Dictionaries"
+    },
+    "en": {
+      "title": "Dictionaries",
+      "body": "A dictionary holds `key → value` pairs. Keys are unique.\n\n```\ncounts = {}\nword = input()\nif word in counts:\n    counts[word] += 1\nelse:\n    counts[word] = 1\n```\n\nLooping: `for key in d:` or `for k, v in d.items():`. In Python 3.7+ the insertion order of keys is kept.\n\nTo filter (for example score ≥ 10) build a new dictionary and put only the allowed pairs in it.\n\nIn function problems write only the function and `return` the dictionary."
     }
   },
   {
@@ -87,6 +119,10 @@
       "page": "p1-tuple",
       "fa": "تاپل",
       "en": "Tuples"
+    },
+    "en": {
+      "title": "Tuples",
+      "body": "A tuple is like a list but **unchangeable**. It is usually written with parentheses.\n\n```\npair = (10, 20)\na, b = pair\nprint(b, a)      # 20 10\nprint((b, a))    # (20, 10)  ← the tuple itself\n```\n\nTo swap two members: `return (pair[1], pair[0])` or use unpacking.\n\nThe function's result must be a **tuple**, not a list. In a function test, `input`/`print` outside the function is not needed."
     }
   },
   {
@@ -97,6 +133,10 @@
       "page": "p1-func",
       "fa": "تعریف تابع، پارامتر و return",
       "en": "Defining functions, parameters, and return"
+    },
+    "en": {
+      "title": "Functions",
+      "body": "You define a function with `def`; the inputs are parameters and the output is given back with `return`.\n\n```\ndef add(a, b):\n    return a + b\n```\n\nWithout `return`, the returned value is `None`.\n\nIn “function test” problems write only that function and `return` the answer; you usually should not put `input` or `print` outside the function. A boolean result must be `True`/`False`, not a string.\n\nSometimes the main loop of the program is a `while` and the calculation itself is done inside a `def` function."
     }
   },
   {
@@ -107,6 +147,10 @@
       "page": "p1-modules",
       "fa": "ماژول‌ها و تفاوت تابع و متد",
       "en": "Modules, and functions versus methods"
+    },
+    "en": {
+      "title": "Modules",
+      "body": "A module is a ready-made toolbox. For maths use `math`:\n\n```\nimport math\n\nx = float(input())\nprint(math.floor(x))\nprint(math.ceil(x))\n```\n\n- `math.floor` is the largest integer ≤ the number (for `-1.5` it gives `-2`)\n- `math.ceil` is the smallest integer ≥ the number (for `-1.5` it gives `-1`)\n- `math.pi` for the area of a circle: `math.pi * r * r`\n\n`import` only when the problem allows it. In a function test, put `import math` at the top of the file and return the value with `return`."
     }
   },
   {
@@ -117,6 +161,10 @@
       "page": "p1-vars",
       "fa": "متغیرها، نوع داده و عملگرها",
       "en": "Variables, types, and operators"
+    },
+    "en": {
+      "title": "Strings (text)",
+      "body": "A string (text) can be read one character at a time, joined together, and measured.\n\n```\nword = \"python\"\nfor ch in word:\n    print(ch)\nprint(len(word))   # 6\n```\n\n- `for ch in word` goes over the letters one by one\n- `word[0]` is the first letter; the index starts at zero\n- `+` joins two texts: `\"ab\" + \"cd\"` becomes `\"abcd\"`\n- `text.split()` breaks a text into words; `text.lower()` makes everything lowercase."
     }
   },
   {
@@ -127,6 +175,10 @@
       "page": "p1-func-more",
       "fa": "تمرین تابع و مرتب‌سازی",
       "en": "Function practice and sorting"
+    },
+    "en": {
+      "title": "Python's built-in functions",
+      "body": "Some functions are already in Python and need no `import`: `min`, `max`, `sum`, `abs`, `round`, `pow`, `len` and `sorted`.\n\n```\nnums = [3, 1, 2]\nprint(min(nums))      # 1\nprint(max(nums))      # 3\nprint(sum(nums))      # 6\nprint(round(2.567, 2))  # 2.57\n```\n\nEach one does one clear job; if you know what they do, you do not need to write the same job by hand."
     }
   }
 ]
