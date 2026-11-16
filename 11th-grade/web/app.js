@@ -1,5 +1,5 @@
 (function () {
-  var KEY = "grade11-lang";
+  var KEY = "grade11-lang-v2"; // Persian is the default; the key changed so earlier English choices do not override it
 
   function current() {
     try {
@@ -34,38 +34,19 @@
     try { localStorage.setItem(KEY, next); } catch (e) {}
   }
 
-  // Narrow window (any pointer): the sidebar collapses into the hamburger.
-  // Display scaling or zoom can make a PC's CSS width narrow; there the
-  // hamburger is the visible replacement, so the spot is never empty.
+  // Up to 980px wide, the lesson list is a bar above the lesson: it starts
+  // closed and the bar opens it. Wider, the list is always beside the lesson.
   var toc = document.querySelector("details.toc");
   var lessonNav = document.getElementById("lesson-nav");
-  var navBackdrop = document.getElementById("nav-backdrop");
-  var phone = window.matchMedia("(max-width: 699px)");
-
-  function placeNav() {
-    var header = document.querySelector(".top");
-    if (header) {
-      document.documentElement.style.setProperty("--header-h", header.offsetHeight + "px");
-    }
-  }
+  var narrow = window.matchMedia("(max-width: 980px)");
 
   function syncNav() {
-    if (toc && !phone.matches) toc.open = true;
-    var show = !!(toc && toc.open && phone.matches);
-    document.body.classList.toggle("nav-open", show);
-    if (navBackdrop) navBackdrop.hidden = !show;
-    if (show) placeNav();
+    if (toc && !narrow.matches) toc.open = true;
   }
 
-  if (toc && phone.matches) toc.open = false;
+  if (toc && narrow.matches) toc.open = false;
   syncNav();
-  if (toc) toc.addEventListener("toggle", syncNav);
-  if (phone.addEventListener) phone.addEventListener("change", syncNav);
-  if (navBackdrop) {
-    navBackdrop.addEventListener("click", function () {
-      if (toc) toc.open = false;
-    });
-  }
+  if (narrow.addEventListener) narrow.addEventListener("change", syncNav);
   // Keep the lesson list scrolled where the reader left it across full
   // page loads. Without this, every click jumps the sidebar back to top.
   var SIDE_SCROLL_KEY = "grade11-side-scroll";
@@ -104,13 +85,13 @@
     lessonNav.addEventListener("click", function (event) {
       var link = event.target.closest && event.target.closest("a");
       if (link) saveSideScroll();
-      if (phone.matches && link && toc) {
+      if (narrow.matches && link && toc) {
         toc.open = false;
       }
     });
   }
   window.addEventListener("keydown", function (event) {
-    if (event.key === "Escape" && toc && phone.matches) toc.open = false;
+    if (event.key === "Escape" && toc && narrow.matches) toc.open = false;
   });
 
   var lang = current();
@@ -120,63 +101,6 @@
       event.preventDefault();
       lang = lang === "fa" ? "en" : "fa";
       apply(lang);
-    });
-  }
-
-  document.addEventListener("click", function (event) {
-    var box = document.getElementById("results");
-    var input = document.getElementById("q");
-    if (box && input && !event.target.closest(".search-wrap")) box.hidden = true;
-  });
-
-  var input = document.getElementById("q");
-  var box = document.getElementById("results");
-  if (input && box) {
-    input.addEventListener("input", function () {
-      var q = input.value.trim();
-      box.innerHTML = "";
-      if (q.length < 2 || !window.BOOK_SEARCH) {
-        box.hidden = true;
-        return;
-      }
-      var lang = current();
-      var needle = q.toLowerCase();
-      var hits = [];
-      var rows = window.BOOK_SEARCH;
-      for (var i = 0; i < rows.length && hits.length < 8; i++) {
-        var row = rows[i];
-        var faAt = (row.titleFa + "\n" + row.textFa).toLowerCase().indexOf(needle);
-        var enAt = (row.titleEn + "\n" + row.textEn).toLowerCase().indexOf(needle);
-        if (faAt < 0 && enAt < 0) continue;
-        var useEn = lang === "en" ? enAt >= 0 : faAt < 0;
-        var source = useEn ? row.textEn : row.textFa;
-        var at = useEn ? enAt : faAt;
-        if (at < 0) at = 0;
-        var from = Math.max(0, at - 40);
-        var excerpt = source.slice(from, from + 110).replace(/\s+/g, " ");
-        hits.push({ row: row, excerpt: excerpt, useEn: useEn });
-      }
-      if (!hits.length) {
-        box.hidden = false;
-        var empty = document.createElement("div");
-        empty.style.padding = "0.5rem 0.7rem";
-        empty.textContent = lang === "en" ? "No matches" : "چیزی پیدا نشد";
-        box.appendChild(empty);
-        return;
-      }
-      var root = document.body.getAttribute("data-root") || "";
-      for (var h = 0; h < hits.length; h++) {
-        var a = document.createElement("a");
-        a.href = root + hits[h].row.href;
-        var title = document.createElement("strong");
-        title.textContent = lang === "en" ? hits[h].row.titleEn : hits[h].row.titleFa;
-        var snip = document.createElement("span");
-        snip.textContent = hits[h].excerpt;
-        a.appendChild(title);
-        a.appendChild(snip);
-        box.appendChild(a);
-      }
-      box.hidden = false;
     });
   }
 

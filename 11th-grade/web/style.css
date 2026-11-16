@@ -1,571 +1,65 @@
-/* Self-hosted Vazirmatn so offline classroom zips keep Persian UI readable. */
-@font-face {
-  font-family: "Vazirmatn";
-  src: url("fonts/Vazirmatn-Variable.woff2") format("woff2-variations"),
-       url("fonts/Vazirmatn-Variable.woff2") format("woff2 supports variations");
-  font-weight: 100 900;
-  font-style: normal;
-  font-display: swap;
-}
+/* Textbook pages: the lesson text, its boxes and the lesson list.
+   The header, cards, buttons, page heading and footer come from shared.css. */
 
-@font-face {
-  font-family: "Vazirmatn";
-  src: url("fonts/Vazirmatn-Regular.woff2") format("woff2");
-  font-weight: 400;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: "Vazirmatn";
-  src: url("fonts/Vazirmatn-Medium.woff2") format("woff2");
-  font-weight: 500;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: "Vazirmatn";
-  src: url("fonts/Vazirmatn-Bold.woff2") format("woff2");
-  font-weight: 700;
-  font-style: normal;
-  font-display: swap;
-}
-
-/*
-  Shared grade-11 theme (Refactoring UI habits):
-  - constrained spacing / type scales
-  - hierarchy via weight + tinted color, not only size
-  - soft two-part shadows; fewer hard borders
-  - readable measure for long lesson prose
-*/
-:root {
-  --paper: #eef3f1;
-  --paper-2: #e3ece8;
-  --card: #fffcf8;
-  --ink: #14201d;
-  --ink-soft: #3d4a45;
-  --muted: #6b756f;
-  --line: #d5e0da;
-  --line-soft: #e4ebe7;
-  --teal: #0f5c56;
-  --teal-2: #14756c;
-  --teal-soft: #d8f0ea;
-  --deep: #0c2f2c;
-  --clay: #b85c38;
-  --chip: #e4f0ec;
-  --extra: #e5f6ea;
-  --extra-line: #b7dcc3;
-  --extra-ink: #1d5c32;
-  --shadow-sm: 0 1px 2px rgba(12, 47, 44, 0.05);
-  --shadow: 0 1px 2px rgba(12, 47, 44, 0.04), 0 10px 28px rgba(12, 47, 44, 0.07);
-  --shadow-lg: 0 2px 4px rgba(12, 47, 44, 0.04), 0 18px 44px rgba(12, 47, 44, 0.1);
-  --radius: 14px;
-  --radius-sm: 10px;
-  --space-1: 0.25rem;
-  --space-2: 0.5rem;
-  --space-3: 0.75rem;
-  --space-4: 1rem;
-  --space-5: 1.5rem;
-  --space-6: 2.25rem;
-  --text-xs: 0.75rem;
-  --text-sm: 0.875rem;
-  --text-base: 1.0625rem;
-  --text-lg: 1.25rem;
-  --text-xl: 1.5rem;
-  --text-2xl: 1.9rem;
-  --measure: 42rem;
-  --font: "Vazirmatn", Tahoma, "Segoe UI", "Noto Naskh Arabic", sans-serif;
-  --mono: Consolas, "Courier New", monospace;
-  --focus: 0 0 0 3px color-mix(in srgb, var(--teal) 35%, white);
-  --ease: 160ms ease;
-}
-
-* { box-sizing: border-box; }
-
-[hidden] { display: none !important; }
-
-html { scroll-behavior: smooth; }
-
-body {
-  margin: 0;
-  background:
-    radial-gradient(900px 420px at 100% -8%, #d7efe8 0, transparent 55%),
-    linear-gradient(180deg, #e7f2ef 0, var(--paper) 220px);
-  color: var(--ink);
-  font-family: var(--font);
-  font-size: var(--text-base);
-  line-height: 1.7;
-  font-weight: 400;
-  -webkit-font-smoothing: antialiased;
-}
-
-a {
-  color: var(--teal);
-  text-underline-offset: 0.15em;
-}
-
-a:focus-visible,
-button:focus-visible,
-input:focus-visible,
-select:focus-visible,
-.card:focus-visible,
-.side a:focus-visible,
-.pager a:focus-visible,
-.download:focus-visible,
-.lang-toggle:focus-visible,
-.results a:focus-visible {
-  outline: none;
-  box-shadow: var(--focus);
-}
-
-.top {
-  position: sticky;
-  top: 0;
-  z-index: 20;
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  gap: 0.75rem;
-  padding: 0.7rem 1.1rem;
-  background: linear-gradient(180deg, #103833 0%, var(--deep) 100%);
-  color: #f4faf8;
-  border-bottom: 3px solid var(--teal-2);
-  box-shadow: var(--shadow-sm);
-}
-
-.brand {
-  color: inherit;
-  text-decoration: none;
-  font-weight: 700;
-  white-space: nowrap;
-  letter-spacing: -0.01em;
-}
-
-.brand small {
-  display: block;
-  font-weight: 500;
-  color: color-mix(in srgb, #f4faf8 72%, var(--teal-2));
-  font-size: var(--text-xs);
-  margin-top: 0.05rem;
-}
-
-.search-wrap {
-  position: relative;
-  flex: 1;
-  max-width: 28rem;
-  margin-inline-start: auto;
-}
-
-.search-wrap input {
-  width: 100%;
-  border: 0;
-  border-radius: 999px;
-  padding: 0.55rem 0.95rem;
-  font: inherit;
-  font-size: var(--text-sm);
-  background: #f4faf8;
-  color: var(--ink);
-  box-shadow: inset 0 0 0 1px transparent;
-  transition: box-shadow var(--ease);
-}
-
-.search-wrap input:focus {
-  outline: none;
-  box-shadow: var(--focus);
-}
-
-.results {
-  position: absolute;
-  inset-inline: 0;
-  top: calc(100% + 0.35rem);
-  background: var(--card);
-  color: var(--ink);
-  border: 1px solid var(--line-soft);
-  border-radius: var(--radius);
-  box-shadow: var(--shadow-lg);
-  max-height: 22rem;
-  overflow: auto;
-  padding: 0.35rem;
-}
-
-.results a {
-  display: block;
-  text-decoration: none;
-  color: inherit;
-  padding: 0.45rem 0.6rem;
-  border-radius: 8px;
-}
-
-.results a:hover,
-.results a:focus { background: var(--chip); }
-
-.results strong { display: block; }
-
-.results span {
-  display: block;
-  color: var(--muted);
-  font-size: 0.82rem;
-  line-height: 1.45;
-}
-
-.download {
-  color: inherit;
-  text-decoration: none;
-  border: 1px solid rgba(244, 250, 248, 0.45);
-  border-radius: 999px;
-  padding: 0.38rem 0.75rem;
-  font-size: 0.85rem;
-  white-space: nowrap;
-  background: var(--teal-2);
-}
-
-.download:hover { background: var(--teal); }
-
-.lang-toggle {
-  display: flex;
-  border: 1px solid rgba(244, 250, 248, 0.45);
-  border-radius: 999px;
-  overflow: hidden;
-  padding: 0;
-  background: transparent;
-  color: inherit;
-  font: inherit;
-  cursor: pointer;
-}
-
-.lang-toggle span {
-  pointer-events: none;
-  padding: 0.38rem 0.72rem;
-  font-size: 0.85rem;
-}
-
-.lang-toggle[data-lang="fa"] [data-opt="fa"],
-.lang-toggle[data-lang="en"] [data-opt="en"] {
-  background: #f4faf8;
-  color: var(--deep);
-}
-
-.layout {
-  display: flex;
-  align-items: flex-start;
-  gap: 1.1rem;
-  width: min(1180px, calc(100% - 1.5rem));
-  margin: 1rem auto 2.5rem;
-}
-
-.toc {
-  width: 280px;
-  flex: none;
-  position: sticky;
-  top: 4.5rem;
-  align-self: flex-start;
-}
-
-.toc > summary {
-  display: none;
-}
+/* ---- the lesson list ----
+   Wide window (981px and up): the list is always beside the lesson.
+   980px and below: the list is a bar above the lesson that opens and closes. */
+.toc { min-width: 0; }
+.toc > summary { display: none; }
 
 .nav-toggle {
+  display: flex;
   align-items: center;
-  gap: 0.45rem;
-  border: 0;
-  border-radius: 999px;
-  background: #f4faf8;
-  color: var(--deep);
-  font: inherit;
-  font-weight: 700;
-  padding: 0.45rem 0.8rem;
-  cursor: pointer;
+  gap: 0.6rem;
   list-style: none;
+  cursor: pointer;
+  color: var(--deep);
+  font-weight: 700;
 }
-
 .nav-toggle::-webkit-details-marker { display: none; }
 
-.burger {
-  position: relative;
-  width: 1rem;
-  height: 2px;
-  background: currentColor;
-}
-
+.burger { position: relative; display: inline-block; width: 1.05rem; height: 2px; background: currentColor; border-radius: 2px; }
 .burger::before,
 .burger::after {
   content: "";
   position: absolute;
-  left: 0;
-  width: 1rem;
+  inset-inline-start: 0;
+  width: 1.05rem;
   height: 2px;
   background: currentColor;
+  border-radius: 2px;
 }
-
 .burger::before { top: -5px; }
 .burger::after { top: 5px; }
 
-.nav-backdrop {
-  display: none;
-  position: fixed;
-  inset: 0;
-  z-index: 25;
-  background: rgba(12, 47, 44, 0.45);
+@media (min-width: 981px) {
+  /* Chrome hides a closed details list even when its inner nav is displayed.
+     On a wide window the list is always shown beside the lesson. */
+  .toc::details-content { display: block !important; }
+  .toc > .side { display: grid !important; }
 }
 
-body.nav-open .nav-backdrop { display: block; }
-
-body.nav-open .top { z-index: 45; }
-
-.side {
-  max-height: calc(100vh - 5.2rem);
-  overflow: auto;
-  background: var(--card);
-  border: 1px solid var(--line-soft);
-  border-radius: var(--radius);
-  padding: 0.55rem 0.4rem 0.9rem;
-  box-shadow: var(--shadow);
-  text-align: start;
+@media (max-width: 980px) {
+  .toc > summary {
+    display: flex;
+    align-items: center;
+    padding: 0.8rem 1rem;
+    background: var(--card);
+    border: 1px solid var(--line-soft);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+  }
+  .toc > .side { margin-top: 0.6rem; max-height: 64vh; overflow: auto; }
+  .toc:not([open]) > .side { display: none; }
 }
 
-.side .mod,
-.side .unit,
-.side a {
-  text-align: start;
-}
-
-.side .mod {
-  margin: 0.95rem 0.35rem 0.25rem;
-  padding: 0.15rem 0.55rem 0;
-  color: var(--clay);
-  font-size: var(--text-xs);
-  font-weight: 700;
-  letter-spacing: 0.02em;
-  line-height: 1.4;
-  text-transform: none;
-}
-
-.side .unit {
-  margin: 0.65rem 0.35rem 0.1rem;
-  padding: 0.4rem 0.55rem 0.1rem;
-  border-top: 1px solid var(--line-soft);
-  color: var(--muted);
-  font-size: var(--text-xs);
-  font-weight: 500;
-  line-height: 1.4;
-}
-
-.side a {
-  display: block;
-  text-decoration: none;
-  color: var(--ink-soft);
-  margin: 0.08rem 0.3rem;
-  padding: 0.38rem 0.65rem;
-  border-radius: var(--radius-sm);
-  font-size: var(--text-sm);
-  font-weight: 500;
-  line-height: 1.45;
-  border-inline-start: 3px solid transparent;
-  transition: background var(--ease), color var(--ease), border-color var(--ease);
-}
-
-.side a:hover {
-  background: var(--chip);
-  color: var(--ink);
-}
-
-.side a.current {
-  background: var(--teal-soft);
-  color: var(--deep);
-  font-weight: 700;
-  border-inline-start-color: var(--teal);
-}
-
-.main { flex: 1; min-width: 0; }
-
-.hero, .panel, .lesson, .pager, .extra {
-  background: var(--card);
-  border: 1px solid var(--line-soft);
-  border-radius: var(--radius);
-  box-shadow: var(--shadow);
-}
-
-.hero { padding: 1.5rem 1.55rem 1.3rem; }
-
-.kicker {
-  margin: 0;
-  color: var(--clay);
-  font-weight: 700;
-  font-size: var(--text-sm);
-}
-
-.hero h1 {
-  margin: 0.2rem 0 0.4rem;
-  font-size: var(--text-2xl);
-  line-height: 1.25;
-  letter-spacing: -0.02em;
-  color: var(--deep);
-}
-
-.lede {
-  margin: 0;
-  color: var(--ink-soft);
-  max-width: var(--measure);
-  font-size: 1.02rem;
-}
-
-.steps {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 0.7rem;
-  margin-top: 1rem;
-}
-
-.steps div {
-  background: var(--chip);
-  border-radius: 12px;
-  padding: 0.7rem 0.8rem;
-}
-
-.steps strong { display: block; margin-bottom: 0.15rem; color: var(--deep); }
-
-.grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
-  gap: 0.8rem;
-  margin-top: 0.9rem;
-}
-
-.card {
-  display: block;
-  text-decoration: none;
-  color: inherit;
-  background: var(--card);
-  border: 1px solid var(--line-soft);
-  border-inline-start: 4px solid var(--teal);
-  border-radius: var(--radius);
-  padding: 1rem 1.05rem 1.1rem;
-  box-shadow: var(--shadow-sm);
-  transition: box-shadow var(--ease), border-color var(--ease);
-}
-
-.card:hover {
-  border-color: color-mix(in srgb, var(--teal) 40%, var(--line));
-  box-shadow: var(--shadow);
-}
-
-.num {
-  display: inline-block;
-  min-width: 1.8rem;
-  text-align: center;
-  background: var(--teal);
-  color: #f4faf8;
-  border-radius: 999px;
-  font-size: 0.85rem;
-  padding: 0.05rem 0.4rem;
-}
-
-.card h2 { margin: 0.45rem 0 0.25rem; font-size: 1.05rem; line-height: 1.4; }
-
-.card p { margin: 0; color: var(--muted); font-size: 0.92rem; }
-
-.section-title {
-  margin: 0 0 0.85rem;
-  font-size: var(--text-xl);
-  line-height: 1.3;
-  letter-spacing: -0.015em;
-  color: var(--deep);
-}
-
-.lesson {
-  padding: 0.55rem 1.45rem 1.55rem;
-  border-inline-start: 4px solid var(--teal);
-}
-
-.lesson :is(h1, h2, h3, h4) {
-  line-height: 1.3;
-  margin: 1.35rem 0 0.45rem;
-  letter-spacing: -0.01em;
-}
-
-.lesson h1 { font-size: 1.4rem; color: var(--deep); }
-
-.lesson h2 {
-  font-size: var(--text-lg);
-  font-weight: 700;
-  color: var(--deep);
-  padding-bottom: 0.2rem;
-  border-bottom: 1px solid var(--line-soft);
-}
-
-.lesson h3 {
-  font-size: 1.05rem;
-  font-weight: 700;
-  color: var(--clay);
-}
-
-/* Do not put max-width on .lesson p/li — that squeezes callouts,
-   link cards, nested lists, and figures next to full-width media. */
-
-.lesson p,
-.lesson li,
-.lesson td,
-.lesson th,
-.lesson h1,
-.lesson h2,
-.lesson h3,
-.lesson h4 {
-  unicode-bidi: plaintext;
-}
-
-.lesson p { margin: 0.4rem 0; }
-
-.contents {
-  list-style: none;
-  margin: 0.2rem 0 0;
-  padding: 0;
-}
-
-.contents a {
-  display: flex;
-  align-items: baseline;
-  gap: 0.75rem;
-  padding: 0.55rem 0.15rem;
-  border-bottom: 1px solid var(--line);
-  text-decoration: none;
-  color: inherit;
-}
-
-.contents a:hover { background: var(--chip); }
-
-.contents .label {
-  flex: 1;
-  min-width: 0;
-  text-align: start;
-  line-height: 1.45;
-}
-
-.contents .page {
-  flex: none;
-  direction: ltr;
-  unicode-bidi: isolate;
-  color: var(--muted);
-  font-size: 0.92rem;
-  min-width: 2.4rem;
-  text-align: end;
-}
-
-.contents .module .label { font-weight: 700; color: var(--deep); }
-
-.contents .unit .label { padding-inline-start: 0.9rem; }
-
-.page-mark {
-  display: inline-block;
-  margin: 0.8rem 0 0.2rem;
-  padding: 0.05rem 0.55rem;
-  border-radius: 999px;
-  background: var(--chip);
-  color: var(--teal);
-  font-size: 0.78rem;
-  font-weight: 700;
-}
+/* ---- lesson text ---- */
+/* Paragraph direction comes from the article (rtl for Persian, ltr for English).
+   English runs inside Persian are isolated with <bdi>/<code>, so a Persian
+   sentence that starts with an English word stays right-to-left. */
+.lesson[dir="rtl"] { text-align: right; }
+.lesson[dir="ltr"] { text-align: left; }
+.lesson p { margin: 0.5rem 0; }
 
 .lesson img,
 .shot img {
@@ -645,6 +139,7 @@ body.nav-open .top { z-index: 45; }
   font-size: 0.9em;
 }
 
+
 .lesson table {
   width: 100%;
   border-collapse: collapse;
@@ -660,65 +155,137 @@ body.nav-open .top { z-index: 45; }
 
 .lesson th { background: var(--chip); }
 
+.contents {
+  list-style: none;
+  margin: 0.2rem 0 0;
+  padding: 0;
+}
+
+.contents a {
+  display: flex;
+  align-items: baseline;
+  gap: 0.75rem;
+  padding: 0.55rem 0.15rem;
+  border-bottom: 1px solid var(--line);
+  text-decoration: none;
+  color: inherit;
+}
+
+.contents a:hover { background: var(--chip); }
+
+.contents .label {
+  flex: 1;
+  min-width: 0;
+  text-align: start;
+  line-height: 1.45;
+}
+
+.contents .page {
+  flex: none;
+  direction: ltr;
+  unicode-bidi: isolate;
+  color: var(--muted);
+  font-size: 0.92rem;
+  min-width: 2.4rem;
+  text-align: end;
+}
+
+.contents .module .label { font-weight: 700; color: var(--deep); }
+
+.contents .unit .label { padding-inline-start: 0.9rem; }
+.page-mark {
+  display: inline-block;
+  margin: 0.8rem 0 0.2rem;
+  padding: 0.05rem 0.55rem;
+  border-radius: 999px;
+  background: var(--chip);
+  color: var(--teal);
+  font-size: 0.78rem;
+  font-weight: 700;
+}
+
+/* ---- boxes inside a lesson: one surface, the kind is shown by its edge and label ---- */
 .extra {
-  margin-top: 0.8rem;
-  padding: 0.95rem 1.15rem 1.1rem;
-  background: var(--extra);
-  border-color: var(--extra-line);
+  margin-top: 1rem;
 }
-
 .extra h2 {
-  margin: 0 0 0.2rem;
+  margin: 0 0 0.25rem;
   font-size: 1.05rem;
-  color: var(--extra-ink);
+  color: var(--deep);
 }
-
 .extra .extra-note {
   margin: 0 0 0.6rem;
-  color: var(--extra-ink);
-  font-size: 0.88rem;
+  color: var(--muted);
+  font-size: 0.9rem;
 }
-
-.extra ol, .extra ul { margin: 0.2rem 0 0.7rem; padding-inline-start: 1.2rem; }
-
+.extra ol, .extra ul { margin: 0.2rem 0 0.7rem; padding-inline-start: 1.3rem; }
 .extra li { margin: 0.35rem 0; }
-
 .extra a { font-weight: 700; }
 
 .callout {
-  margin: 0.9rem 0;
-  padding: 0.85rem 1.1rem 1rem;
-  border-radius: 14px;
-  border: 1px solid var(--line);
-  border-inline-start: 5px solid var(--teal);
-  box-shadow: var(--shadow);
+  margin: 1rem 0;
+  padding: 0.8rem 1.1rem 0.9rem;
+  background: var(--card);
+  border: 1px solid var(--line-soft);
+  border-inline-start: 4px solid var(--kind, var(--accent));
+  border-radius: var(--radius-sm);
 }
-
+.callout .callout-label {
+  display: inline-block;
+  margin: 0 0 0.45rem;
+  padding: 0.05rem 0.6rem;
+  border-radius: 999px;
+  background: var(--paper);
+  color: var(--kind, var(--accent));
+  font-size: 0.85rem;
+  font-weight: 700;
+}
+.callout.continued { border-top-style: dashed; }
+.callout .callout { margin: 0.7rem 0; }
 .callout h3 {
-  margin: 0 0 0.35rem;
+  margin: 0.6rem 0 0.35rem;
   padding: 0;
   border: 0;
   font-size: 1.02rem;
 }
-
-.callout.curiosity { background: #fdf3e0; border-color: #ecd3a3; border-inline-start-color: #d99a26; }
-.callout.curiosity h3 { color: #96690f; }
-
-.callout.project { background: #e9f1fc; border-color: #bcd4f0; border-inline-start-color: #2f6cb5; }
-.callout.project h3 { color: #1f4e8c; }
-
-.callout.note { background: #f0ebfa; border-color: #d3c8ee; border-inline-start-color: #6f5bb5; }
-.callout.note h3 { color: #4e3f96; }
-
-.callout.activity { background: #e3f4f0; border-color: #b5e0d6; border-inline-start-color: #1f8a76; }
-.callout.activity h3 { color: #0f5c56; }
-
+.callout.curiosity { --kind: #a86b12; }
+.callout.project { --kind: #2f6cb5; }
+.callout.note { --kind: #6f5bb5; }
+.callout.activity { --kind: #c0622a; }
+.callout.workshop { --kind: #138a9a; }
+.callout.example { --kind: #7d6a45; }
+.callout.more { --kind: #4f8f32; }
+.callout.footnote {
+  background: transparent;
+  border: 0;
+  border-top: 1px solid var(--line);
+  border-radius: 0;
+  padding: 0.5rem 0 0;
+  font-size: 0.88rem;
+  color: var(--muted);
+}
+.callout.footnote .callout-label { display: none; }
 .callout .code-wrap { margin: 0.6rem 0; }
-
 .callout figure:last-child,
 .callout p:last-child,
 .callout ol:last-child,
 .callout ul:last-child { margin-bottom: 0.1rem; }
+
+
+.table-wrap {
+  max-width: 100%;
+  overflow-x: auto;
+  margin: 0.4rem 0 0.9rem;
+}
+.table-wrap table { margin: 0; }
+.lesson .table-cap {
+  margin: 1rem 0 0.2rem;
+  text-align: center;
+  color: var(--muted);
+  font-size: var(--text-xs);
+  font-weight: 700;
+}
+.lesson td code { white-space: nowrap; }
 
 .link-grid {
   display: grid;
@@ -802,101 +369,69 @@ body.nav-open .top { z-index: 45; }
 
 .link-note { color: var(--muted); font-size: 0.9rem; }
 
+/* ---- previous and next: two cards side by side ---- */
 .pager {
-  display: flex;
-  justify-content: space-between;
-  gap: 0.7rem;
-  margin-top: 0.8rem;
-  padding: 0.75rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 0.8rem;
+  margin-top: 1.25rem;
 }
-
 .pager a {
-  display: flex;
-  align-items: center;
-  gap: 0.45rem;
+  display: grid;
+  gap: 0.25rem;
+  min-width: 0;
+  padding: 0.9rem 1.1rem;
+  background: var(--card);
+  border: 1px solid var(--line-soft);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  color: var(--ink);
   text-decoration: none;
-  background: var(--chip);
-  color: var(--deep);
-  border-radius: 10px;
-  padding: 0.55rem 0.75rem;
-  max-width: 48%;
 }
+.pager a:hover { border-color: color-mix(in srgb, var(--accent) 45%, var(--line)); }
+.pager-word { font-size: 0.8rem; font-weight: 700; color: var(--accent); }
+.pager-name { line-height: 1.4; font-weight: 700; color: var(--deep); }
 
-.pager-word {
-  flex: none;
-  font-size: 0.78rem;
+/* ---- landing and book entry: the cards come from shared.css; these only place them ---- */
+.course .chip { margin-bottom: 0.55rem; }
+.course .card-title { font-size: 1.3rem; }
+.card-cta {
+  display: inline-block;
+  margin-top: 0.8rem;
+  color: var(--accent);
   font-weight: 700;
-  color: var(--teal);
 }
-
-.pager .next { margin-inline-start: auto; text-align: end; }
-
-.pager-name { line-height: 1.35; }
-
-.pager a:hover { background: #d5ebe4; }
-
-.download-banner {
+.step-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 0.9rem;
+}
+.step { display: grid; gap: 0.3rem; align-content: start; }
+.step .num { justify-self: start; margin-bottom: 0.25rem; }
+.banner {
   display: flex;
-  flex-direction: column;
-  gap: 0.2rem;
-  margin-top: 1rem;
-  padding: 0.85rem 1rem;
-  border-radius: 14px;
-  text-decoration: none;
-  color: #f4faf8;
-  background: var(--teal);
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.9rem 1.2rem;
+  margin-top: 0.9rem;
 }
-
-.download-banner span { color: #e7f6f2; font-size: 0.92rem; }
-
-@media (min-width: 700px) {
-  /* New Chrome hides a closed details list even if the inner nav is
-     display:block. Force the list itself open on a normal window. */
-  .toc::details-content { display: block !important; }
-  .toc > .side { display: block !important; }
+.banner .card-title { margin-bottom: 0.2rem; }
+.option-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 0.9rem;
 }
+.option { display: flex; flex-direction: column; gap: 0.45rem; }
+.option .num { align-self: flex-start; margin-bottom: 0.2rem; }
+.option .card-title { margin: 0; font-size: 1.12rem; }
+.option .card-cta { margin-top: auto; padding-top: 0.5rem; }
+.option .btn-row { margin-top: 0.6rem; }
+.option-note { margin: 0.4rem 0 0; font-size: 0.88rem; color: var(--muted); }
+.lesson > .section-h:first-child { margin-top: 0; }
 
-/* Any narrow window gets the phone treatment: the sidebar collapses into
-   a hamburger. A PC whose display scaling or browser zoom makes the CSS
-   width narrow gets the hamburger too — it is a visible button in place
-   of the list, so the sidebar is never a silent empty column. */
+/* ---- phones ---- */
 @media (max-width: 699px) {
-  .top { align-items: stretch; padding-inline-start: 3.6rem; }
-  .brand { flex: 1; }
-  .search-wrap { flex: 1 1 100%; max-width: none; margin: 0; order: 3; }
-  .download, .lang-toggle { order: 2; }
-  .layout { flex-direction: column; width: min(100% - 1rem, 1180px); }
-  .toc { width: auto; position: static; }
-  .toc > summary {
-    display: inline-flex;
-    position: fixed;
-    z-index: 60;
-    top: 0.45rem;
-    inset-inline-start: 0.45rem;
-    width: 2.75rem;
-    height: 2.75rem;
-    padding: 0;
-    justify-content: center;
-    align-items: center;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
-  }
-  /* Icon-only toggle: the label text would cover the site title. */
-  .toc > summary .label { display: none; }
-  .toc:not([open]) > .side { display: none; }
-  .toc[open] > .side {
-    display: block;
-    position: fixed;
-    z-index: 50;
-    top: var(--header-h, 4.2rem);
-    inset-inline: 0.45rem;
-    width: auto;
-    max-height: 70vh;
-    overflow: auto;
-  }
-  .steps { grid-template-columns: 1fr; }
-  .brand small { display: none; }
-  .lesson { padding-inline: 0.85rem; }
-  .hero { padding: 1rem; }
-  .pager { flex-direction: column; }
-  .pager a, .pager .next { max-width: none; margin: 0; }
+  .lesson.card { padding: 1rem 0.95rem; }
+  .callout { padding: 0.7rem 0.9rem 0.8rem; }
 }
