@@ -1,0 +1,44 @@
+{
+  "port": 8787,
+  "max_tokens": 1500,
+  "attempt_timeout_seconds": 30,
+  "total_budget_seconds": 80,
+  "referer": "https://teacher.arashnm80.ir/",
+  "warp_proxies": [
+    "socks5://127.0.0.1:4290",
+    "socks5://127.0.0.1:4291"
+  ],
+  "rate": {
+    "seconds": 600,
+    "per_key": 40,
+    "per_ip": 300
+  },
+  "providers": {
+    "openrouter": {
+      "label": "OpenRouter",
+      "url": "https://openrouter.ai/api/v1/chat/completions",
+      "key_pattern": "^sk-or-[A-Za-z0-9_\\-]{8,250}$",
+      "headers": {
+        "X-Title": "teacher-playground",
+        "HTTP-Referer": "https://teacher.arashnm80.ir/"
+      },
+      "models": [
+        "google/gemma-4-31b-it:free",
+        "nvidia/nemotron-3-ultra-550b-a55b:free",
+        "particle-ai/particle-1:free",
+        "openrouter/free"
+      ]
+    },
+    "groq": {
+      "label": "Groq",
+      "url": "https://api.groq.com/openai/v1/chat/completions",
+      "key_pattern": "^gsk_[A-Za-z0-9_\\-]{8,250}$",
+      "headers": {},
+      "models": [
+        "qwen/qwen3.8-27b",
+        "openai/gpt-oss-120b",
+        "openai/gpt-oss-20b"
+      ]
+    }
+  }
+}

@@ -1,0 +1,28 @@
+[Unit]
+Description=Teacher AI relay: OpenRouter through the local WARP proxies
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+User=teacher-ai
+Group=teacher-ai
+WorkingDirectory=/opt/teacher-ai
+Environment=TEACHER_AI_CONFIG=/opt/teacher-ai/config.json
+ExecStart=/opt/teacher-ai/venv/bin/python /opt/teacher-ai/app.py
+Restart=on-failure
+RestartSec=5
+# Loopback only: the relay talks to nginx and to the WARP SOCKS proxies, and
+# nothing else. Any other destination is refused by the kernel.
+IPAddressDeny=any
+IPAddressAllow=localhost
+NoNewPrivileges=yes
+PrivateTmp=yes
+ProtectSystem=strict
+ProtectHome=yes
+ProtectKernelTunables=yes
+ProtectControlGroups=yes
+RestrictSUIDSGID=yes
+
+[Install]
+WantedBy=multi-user.target
