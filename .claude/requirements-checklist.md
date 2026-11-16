@@ -6,9 +6,9 @@ Last updated: 2026-11-16 (Monday).
 
 ## Open, in priority order
 
-0. [x] **Deadlines (owner, 2026-11-16, two changes): both classes share one schedule. The first deadline is Thursday at 23:00. The first 8 deadlines carry 10 questions each and the last 4 carry 5 each, so all 100 are done by the final Saturday at 23:00.** (Owner decision: on which days the deadlines fall.) A draft is built (Thursday and Saturday every week, last one Saturday 26 Dec 23:00). It is committed but not published. Other options: Thursday, Friday and Saturday every week (last one Saturday 12 Dec); every day from Thursday (the 12th deadline then falls on Monday 30 Nov, not Saturday).
-
-   - Owner decision (2026-11-16): cancelled. The old deadlines stay: class 201 has six series, Monday 16 to Saturday 21 Nov, due 22:00; class 202 has six series, Thursday 19 to Tuesday 24 Nov, due 22:00. The draft was reverted; nothing was published.
+0. [x] **Deadlines (owner, 2026-11-16, final version, both classes): deadlines are by problem number, all at 23:00 Tehran time.** Problems 1 to 10 are due Tuesday 17 Nov; 11 to 20 Wednesday 18 Nov; 21 to 30 Thursday 19 Nov; 31 to 40 Friday 20 Nov; 41 to 50 Saturday 21 Nov; 51 to 60 Sunday 22 Nov; 61 to 70 Monday 23 Nov; 71 to 80 Tuesday 24 Nov. Then 81 to 85 Wednesday 25 Nov; 86 to 90 Thursday 26 Nov; 91 to 95 Friday 27 Nov; 96 to 100 Saturday 28 Nov (the final deadline). All 100 are due before Sunday 29 Nov. Published on 2026-11-16.
+   - Problem numbers are the numbers shown on the site, not the internal ids.
+   - Earlier plans (Monday to Saturday for class 201, Thursday to Tuesday for class 202, the Thursday and Saturday draft, and 22:00 deadlines) are superseded. Their commits stay in the history.
 
 1. [x] **Comprehensive tutorial (آموزش) for every question, like the earlier version: descriptive comment lines and several answers each.** (Owner, 2026-11-16.)
    - Done: 37 questions restored from the earlier teacher-playground version. Their statements and tests are unchanged, and the checker accepts every solution. Every defined solution is now shown (no hidden picks).
@@ -30,6 +30,10 @@ Last updated: 2026-11-16 (Monday).
 7. [ ] **Owner action: the live test student is still in class 200. Set class 201 or 202 if you want to see that class's view.**
 8. [ ] **Lowest priority, do last: the whole website bilingual like the lessons, with Persian as the default.** The lesson site is already Persian by default. Still open: English for the playground and admin text, English content for the questions, and the book sections E1–E5. (Owner, earlier.)
 
+9. [ ] **Owner check: the Aban dates in your message are one day behind the calendar.** You wrote Tuesday 25 Aban and Wednesday 26 Aban. Tuesday 17 Nov is 26 Aban and Wednesday 18 Nov is 27 Aban. The Azar dates you wrote match. The site uses the weekdays, so Tuesday 17 Nov shows as 26 Aban. Confirm, or tell me which day you meant.
+10. [ ] **Owner check: both classes use the same deadlines.** This follows your earlier instruction "for both classes". Confirm, or give class 202 a different schedule.
+11. [ ] **My follow-up: run the browser end-to-end checks again.** They were last run before the tutorial batches were added.
+
 ## Done
 
 - [x] Progress is kept when questions are added. It resets only on a major edit or a manual --bump. (Owner, earlier.)
@@ -38,7 +42,7 @@ Last updated: 2026-11-16 (Monday).
 - [x] The offline version keeps working as before. (Owner, earlier.)
 - [x] The run button reads "بررسی و تست". (Owner, earlier.)
 - [x] Submission log: each submission with its code, time and percent of tests passed. A separate view in the teacher panel, with CSV export. (Owner, earlier.)
-- [x] Class deadlines: class 201 (Sunday class) has six series, Monday 16 to Saturday 21 Nov, due 22:00 Tehran time; class 202 (Wednesday class) has six series, Thursday 19 to Tuesday 24 Nov, due the night before class. After a deadline the questions stay open for practice without score. (Owner, 2026-11-15 and 2026-11-16.)
+- [x] Class deadlines: superseded by item 0 (problem-number batches, 23:00). After a deadline the questions stay open for practice without score. (Owner, 2026-11-15 and 2026-11-16.)
 - [x] Series per day, in the same pattern for both classes, with Friday included and no day holding 50 questions. Dates are Jalali and Tehran time. The word is "سری", not "بسته". (Owner, 2026-11-16.)
 - [x] Sign-up asks for class 201 or 202. (Owner, earlier.)
 - [x] Admin password set (given to the owner once).
@@ -52,7 +56,7 @@ Last updated: 2026-11-16 (Monday).
 - [x] AI keys accepted again; the earlier "key does not look valid" error fixed. Both keys verified through the relay on 2026-11-16.
 - [x] Search box no longer offers saved accounts. (Owner, earlier.)
 - [x] The progress window's close button stays visible at the bottom, so nobody has to scroll to it. (Owner, 2026-11-16.)
-- [x] Class 202 set to six series as in class 201, Thursday to Tuesday. (Owner, 2026-11-16.) Published on 2026-11-16.
+- [x] Class 202 six series, Thursday to Tuesday (superseded by item 0 on 2026-11-16).
 
 ## Working rules from the owner
 
