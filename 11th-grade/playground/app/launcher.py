@@ -22,6 +22,8 @@ from tkinter import messagebox, ttk
 from tk_bidi import ltr, rtl
 
 ROOT = Path(__file__).resolve().parent
+# The whole site (index.html, book/, playground/) is served from here.
+SITE_ROOT = ROOT.parent
 VENDOR_REQUIRED = (
     ROOT / "vendor" / "pyodide" / "pyodide.js",
     ROOT / "vendor" / "pyodide" / "pyodide.asm.js",
@@ -181,7 +183,7 @@ class LauncherApp:
         tip2.pack(anchor="e", padx=8, pady=(6, 0))
 
         tip_html = ttk.Label(
-            frame, text=ltr("app\\index.html"), font=FONT_LTR, foreground="#444444"
+            frame, text=ltr("index.html"), font=FONT_LTR, foreground="#444444"
         )
         tip_html.pack(anchor="w", padx=8, pady=(2, 0))
 
@@ -221,7 +223,7 @@ class LauncherApp:
             return
         try:
             port = self._find_port()
-            handler = partial(QuietHandler, directory=str(ROOT))
+            handler = partial(QuietHandler, directory=str(SITE_ROOT))
             server = ThreadingHTTPServer(("127.0.0.1", port), handler)
         except Exception as exc:  # noqa: BLE001
             messagebox.showerror(

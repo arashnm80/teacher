@@ -3,19 +3,31 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="icon" href="data:,">
-  <title>تمرین پایتون — پودمان ۱</title>
+  <meta name="pg-mode" content="online">
+  <title>زمین بازی پایتون</title>
+  <link rel="icon" href="../assets/favicon.svg">
+  <script>if (location.protocol === "file:") document.documentElement.classList.add("is-offline");</script>
+  <link rel="stylesheet" href="../assets/shared.css?v=23">
   <link rel="stylesheet" href="vendor/codemirror/codemirror.min.css">
   <link rel="stylesheet" href="vendor/codemirror/theme/material-darker.min.css">
-  <link rel="stylesheet" href="css/style.css?v=6">
+  <link rel="stylesheet" href="css/style.css?v=23">
 </head>
-<body>
+<body data-root="../">
+  <!--SITE-HEADER-->
+
+  <div id="file-note" class="file-note" hidden>این زمین بازی را نمی‌شود مستقیم از فایل index.html باز کرد. فایل فشرده‌ی کل سایت را باز کنید و <b>شروع.bat</b> را اجرا کنید.</div>
+  <script>if (location.protocol === "file:") document.getElementById("file-note").hidden = false;</script>
+
   <div id="boot" class="boot">
     <div class="boot-card">
       <p class="boot-brand">تمرین پایتون</p>
       <p class="boot-msg" id="boot-msg">در حال آماده‌سازی موتور پایتون…</p>
       <div class="boot-bar"><span id="boot-bar"></span></div>
-      <button type="button" id="boot-retry" class="secondary boot-retry" hidden>تلاش دوباره</button>
+      <button type="button" id="boot-retry" class="btn secondary sm boot-retry" hidden>تلاش دوباره</button>
+      <div id="boot-offline" class="boot-offline" hidden>
+        <p class="boot-offline-msg">اگر آنلاین گیر کرد یا باز نشد، نسخه آفلاین را بگیرید؛ فایل را باز کنید و <span class="ltr" dir="ltr">شروع.bat</span> را اجرا کنید.</p>
+        <a id="boot-offline-dl" class="btn primary sm boot-offline-dl" href="https://teacher.arashnm80.ir/grade11-offline.zip?v=5" download="grade11-offline.zip">دانلود نسخه آفلاین</a>
+      </div>
       <details id="boot-details" class="boot-details" hidden>
         <summary>جزئیات فنی (برای معلم)</summary>
         <pre id="boot-tech" class="ltr" dir="ltr"></pre>
@@ -23,18 +35,16 @@
     </div>
   </div>
 
-  <header class="top">
-    <div class="brand">
-      <strong>تمرین پایتون</strong>
-      <span>پودمان ۱ · آفلاین</span>
-    </div>
-    <div class="top-actions">
-      <button type="button" id="btn-progress" class="ghost">پیشرفت من</button>
-    </div>
-  </header>
-
-  <div class="layout">
-    <aside class="side" id="side">
+  <div class="pg">
+    <aside class="side pg-side" id="side" aria-label="مسئله‌ها">
+      <div class="pg-side-head">
+        <p class="side-title">مسئله‌ها</p>
+        <button type="button" id="btn-progress" class="btn ghost sm">پیشرفت من</button>
+      </div>
+      <div id="student-bar" class="student-bar" hidden>
+        <span>ورود به نام <strong id="student-name"></strong> · کلاس <strong id="student-class"></strong></span>
+        <button type="button" id="student-logout" class="btn ghost sm">خروج</button>
+      </div>
       <label class="filter">
         <span>موضوع</span>
         <select id="topic-filter">
@@ -42,80 +52,316 @@
         </select>
       </label>
       <nav id="problem-list" class="problem-list" aria-label="فهرست مسئله‌ها"></nav>
+      <div class="backup" aria-label="پشتیبان پیشرفت">
+        <p class="backup-title">پشتیبان پیشرفت</p>
+        <p class="backup-note">پیشرفت و کدهای ذخیره‌شده در همین نشانی ذخیره می‌شوند. برای انتقال به نسخه‌ی دیگر یا رایانه‌ی دیگر، پشتیبان بگیرید. کلید هوش مصنوعی در پشتیبان نیست.</p>
+        <div class="btn-row">
+          <button type="button" id="backup-export" class="btn ghost sm">ذخیره پشتیبان</button>
+          <label class="btn ghost sm backup-import">بازیابی پشتیبان<input id="backup-file" type="file" accept=".json,application/json" hidden></label>
+        </div>
+        <p class="backup-status" id="backup-status" hidden></p>
+      </div>
     </aside>
 
-    <main class="main" id="main">
-      <section class="panel statement-panel">
-        <div class="panel-head">
-          <div>
-            <p class="eyebrow" id="problem-topic"></p>
+    <main class="pg-main" id="main">
+      <section class="card statement-panel no-copy">
+        <header class="page-head">
+          <p class="kicker" id="problem-topic"></p>
+          <div class="page-head-row">
             <h1 id="problem-title">یک مسئله را انتخاب کنید</h1>
+            <span class="chip" id="problem-mode"></span>
           </div>
-          <span class="pill" id="problem-mode"></span>
-        </div>
+        </header>
+        <p class="deadline-note" id="problem-deadline" hidden></p>
+        <p class="lesson-link" id="lesson-link" hidden></p>
         <article id="statement" class="statement prose"></article>
         <div class="constraint-note" id="constraint-note" hidden></div>
       </section>
 
-      <section class="panel editor-panel">
-        <div class="panel-head">
+      <section class="card editor-panel">
+        <header class="panel-head">
           <h2>کد شما</h2>
-          <div class="row-actions">
-            <button type="button" id="btn-reset" class="ghost">بازنشانی</button>
-            <button type="button" id="btn-run" class="primary" disabled>اجرا و آزمون</button>
+          <div class="btn-row">
+            <button type="button" id="btn-reset" class="btn ghost sm">بازنشانی</button>
+            <button type="button" id="btn-run" class="btn primary" disabled>بررسی و تست</button>
           </div>
-        </div>
+        </header>
         <div class="editor-shell ltr" dir="ltr">
           <textarea id="editor" spellcheck="false" aria-label="ویرایشگر کد"></textarea>
         </div>
         <p class="hint-inline">نکته: داخل <code class="ltr" dir="ltr">input()</code> پیام نگذارید؛ فقط داده را بخوانید.</p>
       </section>
 
-      <section class="panel help-panel">
+      <section class="card help-panel">
         <div class="tabs" role="tablist">
           <button type="button" class="tab active" data-tab="results">نتایج</button>
           <button type="button" class="tab" data-tab="hints">راهنما</button>
           <button type="button" class="tab" data-tab="concept">آموزش</button>
         </div>
         <div class="tab-panels">
-          <div id="tab-results" class="tab-panel active">
+          <div id="tab-results" class="tab-panel active no-copy">
             <div id="results" class="results empty">هنوز آزمونی اجرا نشده است.</div>
           </div>
-          <div id="tab-hints" class="tab-panel">
+          <div id="tab-hints" class="tab-panel no-copy">
             <div id="hints" class="hints">
               <p class="muted">برای این مسئله هنوز راهنمایی باز نکرده‌اید.</p>
-              <button type="button" id="btn-hint" class="secondary" disabled>نمایش راهنمای بعدی</button>
+              <button type="button" id="btn-hint" class="btn secondary sm" disabled>نمایش راهنمای بعدی</button>
               <div id="hint-list"></div>
             </div>
           </div>
-          <div id="tab-concept" class="tab-panel">
+          <div id="tab-concept" class="tab-panel no-copy">
             <div id="concept" class="prose muted">پس از انتخاب مسئله، آموزش مرتبط اینجا می‌آید.</div>
           </div>
         </div>
       </section>
     </main>
+
+    <aside class="card ai-side" id="ai-side" aria-label="دستیار هوش مصنوعی">
+      <header class="ai-head">
+        <span class="ai-badge" aria-hidden="true">AI</span>
+        <div>
+          <h2>دستیار هوش مصنوعی</h2>
+          <p class="ai-sub">برای کمک گرفتن، یکی از کارهای زیر را انتخاب کن.</p>
+        </div>
+      </header>
+      <div class="ai-keys">
+        <label class="ai-field"><span>سرویس</span>
+          <select id="ai-provider">
+            <option value="openrouter">OpenRouter</option>
+            <option value="groq">Groq</option>
+          </select>
+        </label>
+        <label class="ai-field"><span id="ai-key-label">کلید</span>
+          <input id="ai-key" type="text" class="secret" dir="ltr" autocomplete="off" autocapitalize="off" autocorrect="off" spellcheck="false" data-lpignore="true" data-1p-ignore data-bwignore="true" data-form-type="other">
+        </label>
+        <div class="ai-row">
+          <button type="button" id="ai-key-save" class="btn primary sm">ذخیره کلید</button>
+          <button type="button" id="ai-key-remove" class="btn ghost sm" hidden>حذف کلید</button>
+        </div>
+        <p class="ai-note" id="ai-key-status"></p>
+        <p class="ai-note"><a id="ai-key-link" href="#" target="_blank" rel="noopener">گرفتن کلید</a></p>
+      </div>
+      <p class="ai-hint" id="ai-hint"></p>
+      <div class="ai-actions">
+        <button type="button" class="btn secondary block ai-action" data-action="explain_problem" disabled>توضیح مسئله</button>
+        <button type="button" class="btn secondary block ai-action" data-action="sample_io" disabled>نمونه ورودی و خروجی</button>
+        <button type="button" class="btn secondary block ai-action" data-action="review_answer" disabled>بررسی پاسخ من و پیدا کردن اشتباه</button>
+      </div>
+      <div class="ai-status" id="ai-status" role="status" aria-live="polite" hidden>
+        <span class="ai-spinner" aria-hidden="true"></span>
+        <div class="ai-status-text">
+          <p id="ai-status-line"></p>
+          <div class="ai-bar" aria-hidden="true"><span id="ai-bar"></span></div>
+          <button type="button" id="ai-cancel" class="btn ghost sm" hidden>لغو</button>
+        </div>
+      </div>
+      <div class="ai-error" id="ai-error" role="alert" hidden>
+        <p id="ai-error-text"></p>
+        <button type="button" id="ai-retry" class="btn secondary sm" hidden>دوباره امتحان کن</button>
+      </div>
+      <p class="ai-info" id="ai-info" hidden></p>
+      <section class="ai-result no-copy" id="ai-result" hidden>
+        <div class="ai-result-tools">
+          <span class="ai-meta" id="ai-meta"></span>
+          <button type="button" id="ai-expand" class="btn ghost sm">بزرگ‌تر ببین</button>
+        </div>
+        <div class="ai-answer" id="ai-answer"></div>
+      </section>
+      <p class="ai-disclaimer">هوش مصنوعی ممکن است اشتباه کند. پاسخ را با آزمون‌ها بسنج.</p>
+    </aside>
   </div>
+
+  <dialog id="ai-dialog" class="ai-dialog no-copy" aria-labelledby="ai-dialog-title">
+    <div class="ai-dialog-card">
+      <div class="ai-dialog-head">
+        <h2 id="ai-dialog-title">پاسخ دستیار</h2>
+        <button type="button" id="ai-dialog-close" class="btn ghost sm">بستن</button>
+      </div>
+      <p class="ai-dialog-meta" id="ai-dialog-meta"></p>
+      <div class="ai-answer ai-answer-large" id="ai-dialog-body"></div>
+    </div>
+  </dialog>
 
   <dialog id="progress-dialog" dir="rtl" lang="fa">
     <form method="dialog" class="progress-card">
       <h2>پیشرفت شما</h2>
       <p id="progress-summary"></p>
       <ul id="progress-list"></ul>
-      <div class="row-actions">
-        <button type="button" id="btn-clear-progress" class="ghost danger">پاک کردن پیشرفت این مرورگر</button>
-        <button value="close" class="primary">بستن</button>
+      <div id="pack-list" class="pack-list"></div>
+      <div class="btn-row progress-actions">
+        <button type="button" id="btn-clear-progress" class="btn danger sm">پاک کردن پیشرفت این مرورگر</button>
+        <button value="close" class="btn primary sm">بستن</button>
       </div>
     </form>
   </dialog>
 
-  <script src="vendor/codemirror/codemirror.min.js"></script>
-  <script src="vendor/codemirror/mode/python/python.min.js"></script>
-  <script src="vendor/codemirror/addon/edit/closebrackets.min.js"></script>
-  <script src="vendor/codemirror/addon/edit/matchbrackets.min.js"></script>
-  <script src="vendor/codemirror/addon/edit/trailingspace.min.js"></script>
-  <script src="vendor/codemirror/addon/selection/active-line.min.js"></script>
-  <script src="vendor/codemirror/addon/comment/comment.min.js"></script>
-  <!-- Pyodide loads dynamically (modern engine, legacy fallback) via js/compat.js -->
-  <script type="module" src="js/app.js?v=6"></script>
+  <dialog id="auth-dialog" class="auth-dialog" aria-labelledby="auth-title">
+    <form id="auth-form" class="auth-card" novalidate>
+      <h2 id="auth-title">ورود به زمین بازی</h2>
+      <div class="auth-tabs" id="auth-tabs">
+        <button type="button" id="auth-tab-login" class="tab active">ورود</button>
+        <button type="button" id="auth-tab-register" class="tab">ثبت‌نام</button>
+      </div>
+      <p class="auth-note" id="auth-note" hidden></p>
+      <label class="auth-field" data-field="phone"><span>شماره موبایل</span>
+        <input id="auth-phone" type="tel" inputmode="numeric" autocomplete="username" dir="ltr" placeholder="09123456789"></label>
+      <label class="auth-field" data-field="nationalCode"><span>کد ملی (ده رقم)</span>
+        <input id="auth-national" type="text" inputmode="numeric" autocomplete="off" dir="ltr" maxlength="12"></label>
+      <label class="auth-field" data-field="fullName"><span>نام و نام خانوادگی (فارسی)</span>
+        <input id="auth-name" type="text" autocomplete="name"></label>
+      <label class="auth-field" data-field="classCode"><span>کلاس</span>
+        <select id="auth-class"><option value="">انتخاب کن…</option><option value="201">۲۰۱</option><option value="202">۲۰۲</option></select></label>
+      <label class="auth-field" data-field="password"><span>رمز (حداقل ۸ نویسه، شامل حرف و عدد)</span>
+        <input id="auth-password" type="password" autocomplete="current-password" dir="ltr"></label>
+      <label class="auth-field" data-field="password2"><span>تکرار رمز</span>
+        <input id="auth-password2" type="password" autocomplete="new-password" dir="ltr"></label>
+      <p class="auth-error" id="auth-error" role="alert" hidden></p>
+      <button type="submit" id="auth-submit" class="btn primary block">ورود</button>
+      <p class="auth-help">رمزت را فراموش کرده‌ای؟ از معلم بخواه آن را بازنشانی کند. بعد با همین شماره و کد ملی، رمز تازه‌ات را انتخاب می‌کنی.</p>
+    </form>
+  </dialog>
+
+  <!--SITE-FOOTER-->
+
+  <script src="../assets/search-index.js?v=22"></script>
+  <script src="../assets/search.js?v=22"></script>
+  <script src="../assets/guard.js?v=23"></script>
+
+  <!-- data-cfasync=false: keep classic globals if Cloudflare Rocket Loader is on -->
+  <script data-cfasync="false" src="vendor/codemirror/codemirror.min.js"></script>
+  <script data-cfasync="false" src="vendor/codemirror/mode/python/python.min.js"></script>
+  <script data-cfasync="false" src="vendor/codemirror/addon/edit/closebrackets.min.js"></script>
+  <script data-cfasync="false" src="vendor/codemirror/addon/edit/matchbrackets.min.js"></script>
+  <script data-cfasync="false" src="vendor/codemirror/addon/edit/trailingspace.min.js"></script>
+  <script data-cfasync="false" src="vendor/codemirror/addon/selection/active-line.min.js"></script>
+  <script data-cfasync="false" src="vendor/codemirror/addon/comment/comment.min.js"></script>
+  <!--
+    Classic + module bootstrap: catch ES module parse/load failures on-screen.
+    Dynamic import() gives us .catch(); static <script type=module src> does not.
+  -->
+  <script data-cfasync="false">
+  (function () {
+    var early = [];
+    var APP_JS = "js/app.js?v=30";
+    var MODULES = [
+      APP_JS,
+      "js/bootlog.js?v=11",
+      "js/enginefetch.js?v=13",
+      "js/editor.js?v=12",
+      "js/compat.js?v=11",
+      "js/runner.js?v=11",
+      "js/diff.js?v=11",
+      "js/bidi.js?v=18",
+      "js/ai.js?v=3"
+    ];
+    function showBootFailure(title, tech) {
+      if (window.__pgReady || window.__pgFailed) return;
+      window.__pgFailed = true;
+      var msg = document.getElementById("boot-msg");
+      var details = document.getElementById("boot-details");
+      var techEl = document.getElementById("boot-tech");
+      var retry = document.getElementById("boot-retry");
+      var offline = document.getElementById("boot-offline");
+      var boot = document.getElementById("boot");
+      if (boot) boot.hidden = false;
+      if (msg) msg.textContent = title;
+      if (techEl) techEl.textContent = tech || "(no details)";
+      if (details) {
+        details.hidden = false;
+        try { details.open = true; } catch (e) {}
+      }
+      if (retry) {
+        retry.hidden = false;
+        retry.onclick = function () { location.reload(); };
+      }
+      if (offline) offline.hidden = false;
+    }
+    function pushEarly(kind, text, extra) {
+      early.push("[" + kind + "] " + text + (extra ? "\n" + extra : ""));
+    }
+    function probeModules() {
+      return Promise.all(MODULES.map(function (path) {
+        return fetch(path, { cache: "no-store" })
+          .then(function (res) {
+            return res.text().then(function (text) {
+              return {
+                path: path,
+                status: res.status,
+                type: res.headers.get("content-type") || "",
+                bytes: text.length,
+                head: text.slice(0, 80).replace(/\s+/g, " "),
+                looksHtml: /<!doctype html|<html/i.test(text)
+              };
+            });
+          })
+          .catch(function (err) {
+            return { path: path, error: String(err && err.message || err) };
+          });
+      })).then(function (rows) {
+        return rows.map(function (r) {
+          if (r.error) return "FAIL " + r.path + " err=" + r.error;
+          return (r.status === 200 && !r.looksHtml ? "OK" : "BAD") +
+            " " + r.path +
+            " status=" + r.status +
+            " type=" + r.type +
+            " bytes=" + r.bytes +
+            " html=" + r.looksHtml +
+            " head=" + JSON.stringify(r.head);
+        }).join("\n");
+      });
+    }
+    function failFromModule(err) {
+      var text = String((err && err.message) || err || "module import failed");
+      var stack = err && err.stack ? String(err.stack) : "";
+      pushEarly("module-import", text, stack);
+      probeModules().then(function (probeText) {
+        showBootFailure(
+          "بارگذاری ناموفق: " + text,
+          early.join("\n\n") +
+            "\n\n=== module probes ===\n" + probeText +
+            "\n\nhref: " + location.href +
+            "\nuserAgent: " + navigator.userAgent
+        );
+      });
+    }
+    window.addEventListener("error", function (ev) {
+      var text = String((ev && ev.message) || (ev && ev.error && ev.error.message) || "error");
+      var src = ev && ev.filename ? String(ev.filename) : "";
+      var stack = ev && ev.error && ev.error.stack ? String(ev.error.stack) : "";
+      var loc = src ? src + ":" + (ev.lineno || 0) + ":" + (ev.colno || 0) : "";
+      pushEarly("error", text + (loc ? " @ " + loc : ""), stack);
+    });
+    window.addEventListener("unhandledrejection", function (ev) {
+      var reason = ev && ev.reason;
+      var text = String((reason && reason.message) || reason || "rejection");
+      var stack = reason && reason.stack ? String(reason.stack) : "";
+      pushEarly("unhandledrejection", text, stack);
+    });
+    window.__pgStartModule = function () {
+      return import("./" + APP_JS)
+        .catch(failFromModule);
+    };
+    // Watchdog only if the module graph never marks loaded.
+    setTimeout(function () {
+      if (window.__pgReady || window.__pgFailed || window.__pgModuleLoaded) return;
+      var boot = document.getElementById("boot");
+      if (!boot || boot.hidden) return;
+      probeModules().then(function (probeText) {
+        if (window.__pgReady || window.__pgFailed || window.__pgModuleLoaded) return;
+        showBootFailure(
+          "بارگذاری جاوااسکریپت ناموفق بود (فایل اصلی اجرا نشد). جزئیات را برای معلم بفرستید.",
+          (early.length ? early.join("\n\n") + "\n\n" : "(no early page errors captured)\n\n") +
+            "=== module probes ===\n" + probeText +
+            "\n\nhref: " + location.href +
+            "\nuserAgent: " + navigator.userAgent +
+            "\nnote: app.js module did not set __pgModuleLoaded"
+        );
+      });
+    }, 10000);
+  })();
+  </script>
+  <script type="module">
+    window.__pgStartModule && window.__pgStartModule();
+  </script>
 </body>
 </html>

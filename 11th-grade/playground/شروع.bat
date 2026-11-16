@@ -10,11 +10,13 @@ if not exist "app\vendor\pyodide\python_stdlib.zip" goto :missing
 if not exist "app\vendor\pyodide-legacy\pyodide.js" goto :missing
 if not exist "app\vendor\pyodide-legacy\pyodide.asm.wasm" goto :missing
 if not exist "app\vendor\pyodide-legacy\python_stdlib.zip" goto :missing
+if not exist "app\vendor\codemirror\codemirror.min.js" goto :missing
+if not exist "app\vendor\codemirror\mode\python\python.min.js" goto :missing
 goto :run
 
 :missing
 echo.
-echo ERROR: app\vendor\pyodide is incomplete.
+echo ERROR: app\vendor is incomplete (Pyodide or CodeMirror).
 echo Copy the whole playground folder, or ask the teacher to restore the offline engine.
 echo.
 pause

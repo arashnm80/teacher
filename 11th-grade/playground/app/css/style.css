@@ -1,104 +1,13 @@
-/* Same self-hosted Vazirmatn stack as the main teacher site. */
-@font-face {
-  font-family: "Vazirmatn";
-  src: url("fonts/Vazirmatn-Variable.woff2") format("woff2-variations"),
-       url("fonts/Vazirmatn-Variable.woff2") format("woff2 supports variations");
-  font-weight: 100 900;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: "Vazirmatn";
-  src: url("fonts/Vazirmatn-Regular.woff2") format("woff2");
-  font-weight: 400;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: "Vazirmatn";
-  src: url("fonts/Vazirmatn-Medium.woff2") format("woff2");
-  font-weight: 500;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: "Vazirmatn";
-  src: url("fonts/Vazirmatn-Bold.woff2") format("woff2");
-  font-weight: 700;
-  font-style: normal;
-  font-display: swap;
-}
-
-/* Same teal system as the main teacher site (Refactoring UI spacing/hierarchy). */
-:root {
-  --bg: #eef3f1;
-  --bg-2: #e3ece8;
-  --card: #fffcf8;
-  --ink: #14201d;
-  --ink-soft: #3d4a45;
-  --muted: #6b756f;
-  --line: #d5e0da;
-  --line-soft: #e4ebe7;
-  --accent: #0f5c56;
-  --accent-2: #14756c;
-  --accent-soft: #d8f0ea;
-  --deep: #0c2f2c;
-  --warn: #9a5b12;
-  --warn-soft: #f7e6c8;
-  --bad: #9b2c2c;
-  --bad-soft: #f8e0e0;
-  --ok: #1f6b3a;
-  --ok-soft: #ddf3e5;
-  --code-bg: #0c2f2c;
-  --code-ink: #f4faf8;
-  --shadow-sm: 0 1px 2px rgba(12, 47, 44, 0.05);
-  --shadow: 0 1px 2px rgba(12, 47, 44, 0.04), 0 10px 28px rgba(12, 47, 44, 0.07);
-  --shadow-lg: 0 2px 4px rgba(12, 47, 44, 0.04), 0 18px 44px rgba(12, 47, 44, 0.1);
-  --radius: 14px;
-  --radius-sm: 10px;
-  --space-2: 0.5rem;
-  --space-3: 0.75rem;
-  --space-4: 1rem;
-  --space-5: 1.5rem;
-  --focus: 0 0 0 3px color-mix(in srgb, var(--accent) 35%, white);
-  --ease: 160ms ease;
-  --font: "Vazirmatn", Tahoma, "Segoe UI", "Noto Naskh Arabic", sans-serif;
-  --mono: Consolas, "Courier New", monospace;
-}
-
-* { box-sizing: border-box; }
-[hidden] { display: none !important; }
-
-html {
-  direction: rtl;
-}
+/*
+  Playground only. The header, footer, tokens, buttons, cards, page heading and
+  sidebar frame come from ../assets/shared.css, the same as the lessons. This file
+  holds what only the playground has: the three columns, the code editor, the
+  bidi islands for code and Persian text, tests and hints, progress, and the AI agent.
+*/
 
 html, body {
-  margin: 0;
-  min-height: 100%;
-  background:
-    radial-gradient(900px 420px at 100% -8%, #d7efe8 0, transparent 55%),
-    linear-gradient(180deg, #e7f2ef 0, var(--bg) 220px);
-  color: var(--ink);
-  font-family: var(--font);
-  font-size: 1.0625rem;
-  line-height: 1.7;
-  font-weight: 400;
-  text-align: right;
   unicode-bidi: isolate;
-  -webkit-font-smoothing: antialiased;
-}
-
-a:focus-visible,
-button:focus-visible,
-select:focus-visible,
-textarea:focus-visible,
-.problem-link:focus-visible {
-  outline: none;
-  box-shadow: var(--focus);
+  text-align: right;
 }
 
 /* LTR islands: Python/code, URLs, Latin keywords, digit runs inside Persian copy */
@@ -129,151 +38,93 @@ code, pre, textarea {
   font-family: var(--mono);
   font-size: 0.92rem;
 }
+.problem-link:focus-visible { outline: none; box-shadow: var(--focus); }
 
-.boot {
-  position: fixed;
-  inset: 0;
-  z-index: 50;
+/* ---- the three columns: problems (right), statement and code (middle), AI agent (left) ---- */
+.pg {
   display: grid;
-  place-items: center;
-  background: rgba(238, 243, 241, 0.92);
-  backdrop-filter: blur(6px);
+  grid-template-columns: minmax(0, 1fr);
+  gap: 1.25rem;
+  width: min(100% - 2rem, 1440px);
+  margin: 1.5rem auto 0;
+  align-items: start;
 }
-.boot-card {
-  width: min(420px, 92vw);
-  padding: 1.5rem 1.4rem;
-  border: 1px solid var(--line-soft);
-  border-radius: var(--radius);
-  background: var(--card);
-  box-shadow: var(--shadow-lg);
-  text-align: center;
-}
-.boot-brand {
-  margin: 0;
-  color: var(--accent);
-  font-weight: 700;
-  font-size: 1.15rem;
-}
-.boot-msg { margin: 0.6rem 0 1rem; color: var(--muted); }
-.boot-bar {
-  height: 8px;
-  border-radius: 999px;
-  background: var(--bg-2);
-  overflow: hidden;
-  /* Percent fill reads naturally left→right even on an RTL page */
-  direction: ltr;
-  unicode-bidi: isolate;
-}
-.boot-bar span {
-  display: block;
-  height: 100%;
-  width: 18%;
-  border-radius: inherit;
-  background: linear-gradient(90deg, var(--accent), var(--accent-2));
-  transition: width 0.25s ease;
-}
-.boot-retry { margin-top: 1rem; }
-.boot-details { margin-top: 0.8rem; text-align: right; font-size: 0.85rem; color: var(--muted); }
-.boot-details pre {
-  max-height: 160px;
+.pg-main { display: grid; gap: 1.1rem; min-width: 0; }
+
+/* Narrow and medium windows: one column. The problem list comes first and scrolls; the AI agent comes last. */
+.pg-side {
+  position: static;
+  max-height: 24rem;
   overflow: auto;
-  padding: 0.6rem;
-  border: 1px solid var(--line);
-  border-radius: 8px;
-  background: var(--code-bg);
-  color: var(--code-ink);
-  text-align: left;
-  white-space: pre-wrap;
-  word-break: break-word;
 }
-
-.top {
-  position: sticky;
-  top: 0;
-  z-index: 20;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 1rem;
-  padding: 0.85rem 1.25rem;
-  border-bottom: 3px solid var(--accent-2);
-  background: linear-gradient(180deg, #103833 0%, var(--deep) 100%);
-  color: #f4faf8;
-  box-shadow: var(--shadow-sm);
-}
-.brand { display: flex; flex-direction: column; gap: 0.1rem; }
-.brand strong { font-size: 1.05rem; letter-spacing: -0.01em; }
-.brand span {
-  color: color-mix(in srgb, #f4faf8 72%, var(--accent-2));
-  font-size: 0.75rem;
-  font-weight: 500;
-}
-
-.layout {
+.ai-side {
+  position: static;
   display: grid;
-  grid-template-columns: 280px minmax(0, 1fr);
-  gap: 1rem;
-  padding: 1rem 1.25rem 2rem;
-  max-width: 1400px;
-  margin: 0 auto;
+  align-content: start;
+  gap: 0.75rem;
+  padding: 1rem;
 }
 
-.side {
-  position: sticky;
-  top: 4.6rem;
-  align-self: start;
-  max-height: calc(100vh - 5.2rem);
-  overflow: auto;
-  padding: 0.9rem;
-  border: 1px solid var(--line-soft);
-  border-radius: var(--radius);
-  background: var(--card);
-  box-shadow: var(--shadow);
+@media (min-width: 1240px) {
+  /* RTL: the first track is on the right (problems), the last track on the left (AI agent). */
+  .pg { grid-template-columns: 17rem minmax(0, 1fr) 19rem; }
+  .pg-side,
+  .ai-side {
+    position: sticky;
+    top: 5.6rem;
+    max-height: calc(100vh - 6.6rem);
+    overflow: auto;
+  }
 }
-.filter { display: grid; gap: 0.35rem; margin-bottom: 0.8rem; }
+
+/* ---- problem list ---- */
+.pg-side { display: grid; align-content: start; gap: 0.7rem; }
+.pg-side-head { display: flex; align-items: center; justify-content: space-between; gap: 0.5rem; }
+.pg-side-head .side-title { margin: 0; }
+
+.filter { display: grid; gap: 0.3rem; }
 .filter span { color: var(--muted); font-size: 0.85rem; }
 .filter select {
   width: 100%;
-  padding: 0.55rem 0.7rem;
+  padding: 0.5rem 0.65rem;
   border: 1px solid var(--line);
-  border-radius: 10px;
-  background: #fff;
+  border-radius: var(--radius-sm);
+  background: var(--card);
+  color: var(--ink);
 }
 
-.problem-list { display: grid; gap: 0.35rem; }
+.problem-list { display: grid; gap: 0.15rem; }
 .problem-link {
   display: grid;
   grid-template-columns: auto 1fr auto;
   gap: 0.55rem;
   align-items: center;
   width: 100%;
-  padding: 0.55rem 0.65rem;
-  border: 1px solid transparent;
-  border-inline-start: 3px solid transparent;
+  padding: 0.5rem 0.6rem;
+  border: 0;
+  border-inline-start: 2px solid transparent;
   border-radius: var(--radius-sm);
   background: transparent;
   color: var(--ink-soft);
-  text-align: right;
-  transition: background var(--ease), color var(--ease), border-color var(--ease);
+  text-align: start;
+  transition: background var(--ease), color var(--ease);
 }
-.problem-link:hover {
-  background: var(--accent-soft);
-  color: var(--ink);
-}
+.problem-link:hover { background: var(--paper); color: var(--ink); }
 .problem-link.active {
-  border-color: transparent;
-  border-inline-start-color: var(--accent);
   background: var(--accent-soft);
-  color: var(--deep);
+  color: var(--accent);
+  border-inline-start-color: var(--accent);
   font-weight: 700;
 }
 .problem-link .num {
-  width: 1.7rem;
-  height: 1.7rem;
+  min-width: 1.9rem;
+  height: 1.6rem;
+  padding: 0 0.3rem;
   display: grid;
   place-items: center;
-  border-radius: 8px;
-  background: var(--bg-2);
+  border-radius: 999px;
+  background: var(--paper);
+  color: var(--muted);
   font-size: 0.78rem;
   font-weight: 600;
   direction: ltr;
@@ -281,56 +132,47 @@ code, pre, textarea {
   font-variant-numeric: tabular-nums;
 }
 .problem-link.done .num { background: var(--ok-soft); color: var(--ok); }
-.problem-link .title {
-  font-size: 0.92rem;
-  font-weight: 600;
-  line-height: 1.35;
-}
+.problem-link .title { font-size: 0.92rem; font-weight: 600; line-height: 1.35; }
 .problem-link .meta { color: var(--muted); font-size: 0.75rem; }
 
-.main { display: grid; gap: 1rem; min-width: 0; }
-.panel {
-  border: 1px solid var(--line-soft);
-  border-radius: var(--radius);
-  background: var(--card);
-  box-shadow: var(--shadow);
-  padding: 1.05rem 1.15rem 1.2rem;
+/* ---- backup of progress, under the list ---- */
+.backup {
+  margin-top: 0.4rem;
+  padding-top: 0.8rem;
+  border-top: 1px solid var(--line-soft);
+  display: grid;
+  gap: 0.45rem;
 }
+.backup-title { margin: 0; font-weight: 700; color: var(--deep); font-size: 0.92rem; }
+.backup-note, .backup-status { margin: 0; font-size: 0.82rem; color: var(--muted); line-height: 1.7; }
+.backup-status { color: var(--ok); }
+.backup-import { cursor: pointer; }
+
+/* ---- panels: the same card as the lessons; their head has the title and the actions ---- */
 .panel-head {
   display: flex;
   justify-content: space-between;
-  gap: 1rem;
-  align-items: start;
-  margin-bottom: 0.75rem;
-}
-.panel-head h1, .panel-head h2 { margin: 0; line-height: 1.35; }
-.panel-head h1 { font-size: 1.35rem; }
-.panel-head h2 { font-size: 1.05rem; }
-.eyebrow {
-  margin: 0 0 0.2rem;
-  color: var(--accent);
-  font-size: 0.82rem;
-  font-weight: 600;
-}
-
-.pill {
-  display: inline-flex;
   align-items: center;
-  padding: 0.25rem 0.65rem;
-  border-radius: 999px;
-  background: var(--accent-soft);
-  color: var(--accent);
-  font-size: 0.78rem;
-  font-weight: 600;
-  white-space: nowrap;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+  margin-bottom: 0.85rem;
 }
+.panel-head h2 { margin: 0; font-size: 1.05rem; color: var(--deep); }
+.page-head-row { display: flex; flex-wrap: wrap; align-items: center; gap: 0.5rem 0.75rem; }
+.page-head-row h1 { margin: 0; }
+.kicker:empty { display: none; }
 
+/* Link from a problem to its lesson page in the book. */
+.lesson-link { margin: 0 0 0.8rem; font-size: 0.92rem; color: var(--muted); }
+.lesson-link a { color: var(--accent); font-weight: 700; }
+
+/* ---- statement (the problem text) ---- */
 .prose p { margin: 0 0 0.75rem; }
 .prose ul, .prose ol { margin: 0 0 0.75rem; padding-inline-start: 1.2rem; }
 .prose pre, .sample, pre.sample {
   margin: 0.5rem 0 0.9rem;
   padding: 0.75rem 0.85rem;
-  border-radius: 12px;
+  border-radius: var(--radius-sm);
   background: var(--code-bg);
   color: var(--code-ink);
   overflow: auto;
@@ -373,33 +215,50 @@ code.ltr,
   top: auto;
   font-size: inherit;
 }
+/* Inline English inside code blocks is plain code text, not an inline chip. */
+.prose pre .ltr:not(pre):not(.CodeMirror) {
+  background: none;
+  padding: 0;
+  margin: 0;
+  border: 0;
+  border-radius: 0;
+  color: inherit;
+  font-family: inherit;
+  font-size: inherit;
+  vertical-align: baseline;
+}
+/* Persian text inside code blocks (Python comments, Persian strings): RTL island in Vazirmatn. */
+.cm-fa {
+  direction: rtl;
+  unicode-bidi: isolate;
+  font-family: var(--font);
+}
 .sample-label {
   margin: 0.9rem 0 0.25rem;
   color: var(--muted);
   font-size: 0.85rem;
   font-weight: 600;
 }
-
 .constraint-note {
-  margin-top: 0.75rem;
-  padding: 0.7rem 0.85rem;
-  border-radius: 12px;
+  margin-top: 0.8rem;
+  padding: 0.7rem 0.9rem;
+  border-radius: var(--radius-sm);
   background: var(--warn-soft);
   color: var(--warn);
   font-size: 0.92rem;
 }
 
+/* ---- code editor (CodeMirror runs inside this shell) ---- */
 .editor-shell {
   width: 100%;
   border: 1px solid var(--line);
-  border-radius: 12px;
+  border-radius: var(--radius-sm);
   overflow: hidden;
   background: #212121;
   direction: ltr;
   unicode-bidi: isolate;
   text-align: left;
 }
-
 .editor-shell .CodeMirror {
   height: 280px;
   font-family: var(--mono);
@@ -408,101 +267,48 @@ code.ltr,
   direction: ltr;
   text-align: left;
 }
-
-.editor-shell .CodeMirror-scroll {
-  min-height: 280px;
-}
-
-.editor-shell .CodeMirror-cursor {
-  border-left-color: #e8f0ec;
-}
-
-.editor-shell .cm-trailingspace {
-  background: rgba(248, 81, 73, 0.22);
-}
-
+.editor-shell .CodeMirror-scroll { min-height: 280px; }
+.editor-shell .CodeMirror-cursor { border-left-color: #e8f0ec; }
+.editor-shell .cm-trailingspace { background: rgba(248, 81, 73, 0.22); }
 /* Fallback before CodeMirror upgrades the textarea */
-#editor {
-  display: none;
-}
+#editor { display: none; }
 .hint-inline {
-  margin: 0.55rem 0 0;
+  margin: 0.6rem 0 0;
   color: var(--muted);
   font-size: 0.85rem;
 }
 
-.row-actions { display: flex; gap: 0.5rem; flex-wrap: wrap; }
-.primary, .secondary, .ghost {
-  border-radius: 11px;
-  padding: 0.55rem 0.9rem;
-  border: 1px solid transparent;
-  transition: 0.15s ease;
-}
-.primary {
-  background: var(--accent);
-  color: #fff;
-}
-.primary:hover { background: var(--accent-2); }
-.primary:disabled, .secondary:disabled {
-  opacity: 0.45;
-  cursor: not-allowed;
-}
-.secondary {
-  background: var(--accent-soft);
-  color: var(--accent);
-}
-.ghost {
-  background: transparent;
-  border-color: var(--line);
-  color: var(--ink);
-}
-.ghost:hover { background: var(--bg); }
-.ghost.danger { color: var(--bad); border-color: color-mix(in srgb, var(--bad) 35%, white); }
-.top .ghost {
-  border-color: rgba(244, 250, 248, 0.45);
-  color: #f4faf8;
-  background: transparent;
-}
-.top .ghost:hover {
-  background: rgba(244, 250, 248, 0.12);
-  color: #fff;
-}
-.top .ghost.danger {
-  color: #ffc9c9;
-  border-color: rgba(255, 201, 201, 0.55);
-}
-
+/* ---- tabs of the help panel: results, hints, lesson ---- */
 .tabs {
   display: flex;
-  gap: 0.35rem;
-  margin-bottom: 0.85rem;
+  gap: 0.2rem;
+  margin-bottom: 0.9rem;
   border-bottom: 1px solid var(--line);
 }
 .tab {
   border: 0;
   background: transparent;
   color: var(--muted);
-  padding: 0.55rem 0.8rem;
+  padding: 0.55rem 0.85rem;
   border-bottom: 2px solid transparent;
   margin-bottom: -1px;
-}
-.tab.active {
-  color: var(--accent);
-  border-bottom-color: var(--accent);
   font-weight: 600;
+  cursor: pointer;
 }
+.tab:hover { color: var(--ink); }
+.tab.active { color: var(--accent); border-bottom-color: var(--accent); }
 .tab-panel { display: none; }
 .tab-panel.active { display: block; }
 
 .results.empty, .muted { color: var(--muted); }
 .test-card {
-  border: 1px solid var(--line);
-  border-radius: 14px;
-  padding: 0.8rem 0.9rem;
+  border: 1px solid var(--line-soft);
+  border-radius: var(--radius-sm);
+  padding: 0.8rem 0.95rem;
   margin-bottom: 0.7rem;
-  background: #fff;
+  background: var(--card);
 }
-.test-card.ok { border-color: color-mix(in srgb, var(--ok) 40%, white); background: color-mix(in srgb, var(--ok-soft) 55%, white); }
+.test-card.ok { border-color: color-mix(in srgb, var(--ok) 35%, white); background: color-mix(in srgb, var(--ok-soft) 50%, white); }
 .test-card.bad { border-color: color-mix(in srgb, var(--bad) 35%, white); background: color-mix(in srgb, var(--bad-soft) 45%, white); }
 .test-card.warn { border-color: color-mix(in srgb, var(--warn) 40%, white); background: color-mix(in srgb, var(--warn-soft) 55%, white); }
 .test-head {
@@ -516,7 +322,7 @@ code.ltr,
 .badge {
   font-size: 0.75rem;
   font-weight: 700;
-  padding: 0.15rem 0.5rem;
+  padding: 0.15rem 0.55rem;
   border-radius: 999px;
 }
 .badge.ok { background: var(--ok-soft); color: var(--ok); }
@@ -526,7 +332,7 @@ code.ltr,
 .diff-block {
   margin-top: 0.55rem;
   padding: 0.65rem 0.75rem;
-  border-radius: 10px;
+  border-radius: var(--radius-sm);
   background: var(--code-bg);
   color: var(--code-ink);
   direction: ltr;
@@ -539,8 +345,21 @@ code.ltr,
   line-height: 1.45;
 }
 .diff-block .same { opacity: 0.72; }
-.diff-block .add { background: rgba(46, 160, 67, 0.28); }
-.diff-block .del { background: rgba(248, 81, 73, 0.28); text-decoration: line-through; }
+.diff-block .add { background: rgba(46, 160, 67, 0.28); border-radius: 3px; }
+.diff-block .del { background: rgba(248, 81, 73, 0.32); border-radius: 3px; }
+/* The colour key: red = should be there but is not; green = extra in your output. */
+.diff-legend { margin: 0.6rem 0 0; font-size: 0.92rem; color: var(--ink-soft); }
+.diff-legend .chip-del,
+.diff-legend .chip-add {
+  display: inline-block;
+  padding: 0 0.5rem;
+  border-radius: 6px;
+  color: #fff;
+  font-weight: 700;
+}
+.diff-legend .chip-del { background: #b3261e; }
+.diff-legend .chip-add { background: #1e7a3c; }
+.diff-legend-intro { margin: 0 0 0.35rem; font-weight: 700; color: var(--deep); font-size: 0.92rem; }
 .diff-meta {
   margin: 0.35rem 0 0;
   color: var(--muted);
@@ -561,12 +380,107 @@ code.ltr,
   line-height: inherit;
 }
 
+/* Clickable disclosure rows (the full expected/your-output text, the boot log): a pointer,
+   a hover tint and border, and a chevron that turns when the row is open. */
+details > summary {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.6rem;
+  padding: 0.5rem 0.75rem;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-sm);
+  background: var(--card);
+  color: var(--accent);
+  font-size: 0.92rem;
+  font-weight: 700;
+  cursor: pointer;
+  user-select: none;
+  list-style: none;
+  transition: background var(--ease), border-color var(--ease), color var(--ease);
+}
+details > summary::-webkit-details-marker { display: none; }
+details > summary::after {
+  content: "";
+  flex: none;
+  width: 0.5em;
+  height: 0.5em;
+  border-left: 2px solid currentColor;
+  border-bottom: 2px solid currentColor;
+  transform: rotate(-45deg);
+  transition: transform var(--ease);
+}
+details[open] > summary::after { transform: rotate(135deg); }
+details > summary:hover {
+  background: var(--accent-soft);
+  border-color: var(--accent);
+  color: var(--accent-hover);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+details > summary:focus-visible { outline: none; box-shadow: var(--focus); }
+details[open] > summary { margin-bottom: 0.5rem; }
+@media (prefers-reduced-motion: reduce) {
+  details > summary, details > summary::after { transition: none; }
+}
+
+/* ---- online sign-in and the student bar ---- */
+.auth-dialog {
+  width: min(440px, 92vw);
+  padding: 0;
+  border: 1px solid var(--line-soft);
+  border-radius: var(--radius);
+  background: var(--card);
+  color: var(--ink);
+  box-shadow: var(--shadow-lg);
+}
+.auth-dialog::backdrop { background: rgba(12, 47, 44, 0.45); }
+.auth-card { display: grid; gap: 0.6rem; padding: 1.3rem 1.25rem 1.25rem; }
+.auth-card h2 { margin: 0; font-size: 1.15rem; color: var(--deep); }
+.auth-tabs { display: flex; gap: 0.4rem; border-bottom: 1px solid var(--line); }
+.auth-tabs[hidden] { display: none; }
+.auth-tabs .tab { flex: 1; }
+.auth-note {
+  margin: 0; padding: 0.55rem 0.7rem; border-radius: var(--radius-sm);
+  background: var(--warn-soft); color: var(--warn); font-size: 0.9rem; line-height: 1.7;
+}
+.auth-note[hidden] { display: none; }
+.auth-field { display: grid; gap: 0.3rem; font-size: 0.9rem; color: var(--muted); }
+.auth-field[hidden] { display: none; }
+.auth-field input {
+  width: 100%; padding: 0.55rem 0.7rem; border: 1px solid var(--line); border-radius: var(--radius-sm);
+  font: inherit; color: var(--ink); background: var(--card);
+}
+.auth-field input:focus { outline: none; box-shadow: var(--focus); border-color: var(--accent); }
+.auth-error {
+  margin: 0; padding: 0.55rem 0.7rem; border-radius: var(--radius-sm);
+  background: var(--bad-soft); color: var(--bad); font-size: 0.9rem; line-height: 1.7;
+}
+.auth-error[hidden] { display: none; }
+.auth-help { margin: 0; font-size: 0.82rem; color: var(--muted); line-height: 1.8; }
+.student-bar {
+  display: flex; align-items: center; justify-content: space-between; gap: 0.5rem;
+  margin: 0 0 0.6rem; padding: 0.45rem 0.6rem; border-radius: var(--radius-sm);
+  background: var(--accent-soft); font-size: 0.86rem; color: var(--deep);
+}
+.student-bar[hidden] { display: none; }
+.deadline-note {
+  margin: 0.5rem 0 0; padding: 0.45rem 0.7rem; border-radius: var(--radius-sm);
+  background: var(--warn-soft); color: var(--warn); font-size: 0.9rem; line-height: 1.7;
+}
+.deadline-note[hidden] { display: none; }
+.pack-list { display: grid; gap: 0.8rem; margin: 0.6rem 0; }
+.pack { padding: 0.7rem 0.85rem; border: 1px solid var(--line-soft); border-radius: var(--radius-sm); background: var(--paper); }
+.pack h3 { margin: 0 0 0.4rem; font-size: 0.98rem; color: var(--deep); }
+.pack-questions { margin: 0.4rem 0 0; padding-inline-start: 1.2rem; font-size: 0.9rem; }
+.auth-card .btn.block { justify-content: center; text-align: center; }
+
 .hint-item {
   margin-top: 0.7rem;
-  padding: 0.75rem 0.85rem;
-  border-radius: 12px;
-  background: var(--bg);
-  border: 1px solid var(--line);
+  padding: 0.8rem 0.95rem;
+  border-radius: var(--radius-sm);
+  background: var(--paper);
+  border: 1px solid var(--line-soft);
 }
 .hint-item h3 {
   margin: 0 0 0.35rem;
@@ -574,19 +488,100 @@ code.ltr,
   color: var(--accent);
 }
 
+/* ---- boot overlay: shown while the Python engine loads ---- */
+.boot {
+  position: fixed;
+  inset: 0;
+  z-index: 50;
+  display: grid;
+  place-items: center;
+  padding: 1rem;
+  background: rgba(244, 246, 245, 0.92);
+  backdrop-filter: blur(6px);
+}
+.boot-card {
+  width: min(460px, 92vw);
+  padding: 1.5rem 1.4rem;
+  border: 1px solid var(--line-soft);
+  border-radius: var(--radius);
+  background: var(--card);
+  box-shadow: var(--shadow-lg);
+  text-align: center;
+}
+.boot-brand { margin: 0; color: var(--accent); font-weight: 700; font-size: 1.15rem; }
+.boot-msg { margin: 0.6rem 0 1rem; color: var(--muted); }
+.boot-bar {
+  height: 6px;
+  border-radius: 999px;
+  background: var(--accent-soft);
+  overflow: hidden;
+  /* Percent fill reads naturally left to right even on an RTL page */
+  direction: ltr;
+  unicode-bidi: isolate;
+}
+.boot-bar span {
+  display: block;
+  height: 100%;
+  width: 18%;
+  border-radius: inherit;
+  background: var(--accent);
+  transition: width 0.25s ease;
+}
+.boot-retry { margin-top: 1rem; }
+.boot-offline {
+  margin-top: 1rem;
+  padding-top: 0.9rem;
+  border-top: 1px solid var(--line-soft);
+  text-align: center;
+}
+.boot-offline-msg {
+  margin: 0 0 0.75rem;
+  color: var(--ink);
+  font-size: 0.92rem;
+  line-height: 1.6;
+}
+.boot-details { margin-top: 0.8rem; text-align: right; font-size: 0.85rem; color: var(--muted); }
+.boot-details pre {
+  max-height: min(50vh, 420px);
+  overflow: auto;
+  padding: 0.6rem;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--code-bg);
+  color: var(--code-ink);
+  text-align: left;
+  white-space: pre-wrap;
+  word-break: break-word;
+  font-size: 0.78rem;
+  line-height: 1.45;
+  user-select: text;
+}
+
+/* Shown only when the playground is opened from disk (file://). */
+.file-note {
+  margin: 1rem auto 0;
+  width: min(100% - 2rem, 1440px);
+  padding: 0.8rem 1rem;
+  border-radius: var(--radius-sm);
+  background: var(--warn-soft);
+  color: var(--warn);
+  line-height: 1.9;
+}
+
+/* ---- progress dialog ---- */
 #progress-dialog {
   border: 0;
   border-radius: var(--radius);
   padding: 0;
-  box-shadow: var(--shadow);
+  box-shadow: var(--shadow-lg);
   width: min(520px, 92vw);
   background: var(--card);
   direction: rtl;
   text-align: right;
 }
-#progress-dialog::backdrop { background: rgba(26, 31, 28, 0.35); }
-.progress-card { padding: 1.1rem 1.2rem 1.2rem; }
-.progress-card h2 { margin: 0 0 0.4rem; }
+#progress-dialog::backdrop { background: rgba(12, 47, 44, 0.35); }
+.progress-card { padding: 1.2rem 1.3rem 1.3rem; }
+.progress-card h2 { margin: 0 0 0.4rem; color: var(--deep); font-size: 1.1rem; }
 .progress-card ul {
   margin: 0.6rem 0 1rem;
   padding: 0;
@@ -600,24 +595,221 @@ code.ltr,
   align-items: center;
   gap: 0.75rem;
   padding: 0.45rem 0.15rem;
-  border-bottom: 1px solid var(--line);
+  border-bottom: 1px solid var(--line-soft);
   font-size: 0.9rem;
 }
-.progress-item-text {
-  min-width: 0;
-  flex: 1;
-  text-align: right;
-}
-.progress-item-state {
-  flex: 0 0 auto;
-  padding-inline-start: 0.35rem;
-  white-space: nowrap;
-}
+.progress-item-text { min-width: 0; flex: 1; text-align: right; }
+.progress-item-state { flex: 0 0 auto; padding-inline-start: 0.35rem; white-space: nowrap; }
+.progress-actions { justify-content: space-between; }
 
-@media (max-width: 980px) {
-  .layout { grid-template-columns: 1fr; }
-  .side {
-    position: static;
-    max-height: 280px;
-  }
+/* ---- AI agent: always visible; in the left column on a wide window ---- */
+.ai-head { display: flex; gap: 0.7rem; align-items: flex-start; }
+.ai-badge {
+  flex: none;
+  display: inline-grid;
+  place-items: center;
+  width: 2.4rem;
+  height: 2.4rem;
+  border-radius: var(--radius-sm);
+  background: var(--accent);
+  color: #f4faf8;
+  font-weight: 700;
+  font-size: 0.8rem;
+}
+.ai-head h2 { margin: 0; font-size: 1.02rem; color: var(--deep); }
+.ai-sub, .ai-note, .ai-hint, .ai-disclaimer, .ai-info {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.86rem;
+  line-height: 1.75;
+}
+.ai-keys { display: grid; gap: 0.5rem; padding-bottom: 0.7rem; border-bottom: 1px solid var(--line-soft); }
+.ai-field { display: grid; gap: 0.3rem; font-size: 0.86rem; color: var(--muted); }
+.ai-field select,
+.ai-field input {
+  width: 100%;
+  padding: 0.5rem 0.6rem;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-sm);
+  background: var(--card);
+  font: inherit;
+  color: var(--ink);
+}
+.ai-field input { font-family: var(--mono); }
+/* The API key is hidden like a password, but it stays a text field so that the browser's
+   password manager does not offer saved accounts for it (or in the search box next to it). */
+.ai-field input.secret { -webkit-text-security: disc; }
+.ai-row { display: flex; gap: 0.5rem; flex-wrap: wrap; }
+.ai-actions { display: grid; gap: 0.45rem; }
+.ai-action { justify-content: flex-start; text-align: start; }
+.ai-action.is-suggested { border-color: var(--warn); background: var(--warn-soft); color: var(--warn); }
+
+.ai-status {
+  display: flex;
+  gap: 0.6rem;
+  align-items: flex-start;
+  padding: 0.7rem 0.8rem;
+  border-radius: var(--radius-sm);
+  background: var(--accent-soft);
+  color: var(--deep);
+}
+.ai-spinner {
+  flex: none;
+  width: 1.15rem;
+  height: 1.15rem;
+  margin-top: 0.1rem;
+  border: 2px solid color-mix(in srgb, var(--accent) 25%, white);
+  border-top-color: var(--accent);
+  border-radius: 50%;
+  animation: ai-spin 0.9s linear infinite;
+}
+@keyframes ai-spin { to { transform: rotate(360deg); } }
+.ai-status-text { display: grid; gap: 0.4rem; flex: 1; min-width: 0; }
+.ai-status-text p { margin: 0; font-size: 0.88rem; line-height: 1.7; }
+.ai-bar {
+  height: 6px;
+  border-radius: 6px;
+  background: color-mix(in srgb, var(--accent) 18%, white);
+  overflow: hidden;
+}
+.ai-bar > span {
+  display: block;
+  height: 100%;
+  width: 0;
+  border-radius: 6px;
+  background: var(--accent);
+  transition: width 0.9s linear;
+}
+.ai-error {
+  display: grid;
+  gap: 0.45rem;
+  padding: 0.65rem 0.8rem;
+  border-radius: var(--radius-sm);
+  background: var(--bad-soft);
+  color: var(--bad);
+  font-size: 0.88rem;
+  line-height: 1.7;
+}
+.ai-error p { margin: 0; }
+.ai-info { padding: 0.5rem 0.65rem; border-radius: var(--radius-sm); background: var(--paper); }
+
+/* Answer card: rendered Markdown, the enlarged dialog, and the card above both */
+.ai-result {
+  display: grid;
+  gap: 0.5rem;
+  padding: 0.75rem;
+  border: 1px solid var(--line-soft);
+  border-radius: var(--radius-sm);
+  background: var(--card);
+}
+.ai-result-tools { display: flex; align-items: center; justify-content: space-between; gap: 0.5rem; flex-wrap: wrap; }
+.ai-result .ai-meta,
+.ai-meta { color: var(--muted); font-size: 0.8rem; }
+.ai-answer {
+  max-height: 52vh;
+  overflow: auto;
+  padding: 0.6rem 0.7rem;
+  border-radius: var(--radius-sm);
+  background: var(--paper);
+  font-size: 0.92rem;
+  line-height: 1.85;
+}
+.ai-answer h2, .ai-answer h3, .ai-answer h4 { margin: 0.8rem 0 0.3rem; color: var(--deep); line-height: 1.4; }
+.ai-answer h2 { font-size: 1.05rem; }
+.ai-answer h3 { font-size: 0.98rem; }
+.ai-answer h4 { font-size: 0.92rem; }
+.ai-answer :is(h2, h3, h4):first-child { margin-top: 0; }
+.ai-answer p { margin: 0.35rem 0; }
+/* Numbered lists in an answer use Persian digits, as the answer itself does. */
+@counter-style persian-digits {
+  system: numeric;
+  symbols: "۰" "۱" "۲" "۳" "۴" "۵" "۶" "۷" "۸" "۹";
+  suffix: ". ";
+}
+.ai-answer ol { list-style-type: persian-digits; }
+
+.ai-answer ul, .ai-answer ol { margin: 0.35rem 0; padding-inline-start: 1.3rem; }
+.ai-answer li { margin: 0.2rem 0; }
+.ai-answer li > :is(ul, ol) { margin: 0.15rem 0; }
+.ai-answer blockquote {
+  margin: 0.55rem 0;
+  padding: 0.4rem 0.7rem;
+  border-inline-start: 3px solid var(--accent);
+  border-radius: 8px;
+  background: var(--accent-soft);
+  color: var(--ink-soft);
+}
+.ai-answer blockquote p { margin: 0.2rem 0; }
+.ai-answer hr { border: 0; border-top: 1px dashed var(--line); margin: 0.7rem 0; }
+.ai-answer code {
+  font-family: var(--mono);
+  font-size: 0.86em;
+  padding: 0.05rem 0.3rem;
+  border-radius: 6px;
+  background: var(--accent-soft);
+  color: var(--deep);
+}
+.ai-answer pre {
+  margin: 0.5rem 0;
+  padding: 0.55rem 0.65rem;
+  border-radius: var(--radius-sm);
+  background: var(--code-bg);
+  color: var(--code-ink);
+  overflow: auto;
+  text-align: left;
+}
+.ai-answer pre code { padding: 0; background: none; color: inherit; font-size: 0.85em; }
+.ai-answer .table-wrap {
+  overflow-x: auto;
+  margin: 0.5rem 0;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-sm);
+  background: var(--card);
+}
+.ai-answer table { width: 100%; border-collapse: collapse; font-size: 0.86rem; }
+.ai-answer th, .ai-answer td {
+  padding: 0.35rem 0.5rem;
+  border-bottom: 1px solid var(--line-soft);
+  text-align: start;
+  vertical-align: top;
+}
+.ai-answer th { background: var(--accent-soft); color: var(--deep); font-weight: 700; }
+.ai-answer tr:last-child td { border-bottom: 0; }
+.ai-answer a { color: var(--accent); font-weight: 700; }
+.ai-answer strong { color: var(--ink); }
+.ai-answer del { color: var(--muted); }
+.ai-answer li.task { list-style: none; margin-inline-start: -1.3rem; }
+.ai-answer .task-box { display: inline-block; min-width: 1.2em; margin-inline-end: 0.35em; color: var(--accent); }
+.ai-answer .math-block {
+  margin: 0.5rem 0;
+  padding: 0.5rem 0.7rem;
+  border-radius: var(--radius-sm);
+  background: var(--paper);
+  text-align: center;
+  overflow-x: auto;
+}
+.ai-answer .math-block .ltr { font-size: 1.05em; }
+
+/* Enlarged answer: the same text in a wide dialog */
+.ai-dialog { width: min(980px, 94vw); max-height: 88vh; padding: 0; border: 0; background: transparent; }
+.ai-dialog::backdrop { background: rgba(12, 47, 44, 0.42); }
+.ai-dialog-card {
+  display: grid;
+  grid-template-rows: auto auto minmax(0, 1fr);
+  gap: 0.55rem;
+  max-height: 88vh;
+  padding: 1rem 1.2rem;
+  border: 1px solid var(--line-soft);
+  border-radius: var(--radius);
+  background: var(--card);
+  box-shadow: var(--shadow-lg);
+}
+.ai-dialog-head { display: flex; align-items: center; justify-content: space-between; gap: 0.6rem; }
+.ai-dialog-head h2 { margin: 0; font-size: 1.1rem; color: var(--deep); }
+.ai-dialog-meta { margin: 0; color: var(--muted); font-size: 0.82rem; }
+.ai-answer-large { max-height: none; min-height: 0; overflow: auto; font-size: 1rem; line-height: 1.95; }
+
+@media (prefers-reduced-motion: reduce) {
+  .ai-spinner { animation: none; }
+  .ai-bar > span { transition: none; }
 }

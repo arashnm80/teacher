@@ -1,6 +1,6 @@
 /**
  * Offline CodeMirror 5 Python editor (line numbers, highlight, indent, autoclose).
- * Expects global `CodeMirror` from vendor/codemirror/*.js (classic scripts, not ESM).
+ * Uses global `CodeMirror` from vendor/codemirror/*.js (classic scripts, not ESM).
  *
  * VS Code-like shortcuts:
  * - Alt+Shift+↓/↑ — duplicate line(s)  (also Ctrl+Shift+D / Ctrl+Shift+Alt+↑)
@@ -11,6 +11,49 @@
  * Note: On some Windows layouts Alt+Shift alone switches keyboard language, so we
  * also handle the combo via a capturing keydown listener (not only extraKeys).
  */
+
+import { loadScript } from "./compat.js?v=11";
+import { bootNote } from "./bootlog.js?v=11";
+
+export const CODEMIRROR_SCRIPTS = [
+  "vendor/codemirror/codemirror.min.js",
+  "vendor/codemirror/mode/python/python.min.js",
+  "vendor/codemirror/addon/edit/closebrackets.min.js",
+  "vendor/codemirror/addon/edit/matchbrackets.min.js",
+  "vendor/codemirror/addon/edit/trailingspace.min.js",
+  "vendor/codemirror/addon/selection/active-line.min.js",
+  "vendor/codemirror/addon/comment/comment.min.js",
+];
+
+let codemirrorReady = null;
+
+/** Load vendor scripts if the HTML tags did not define window.CodeMirror. */
+export async function ensureCodeMirror() {
+  if (typeof globalThis.CodeMirror === "function") {
+    bootNote("CodeMirror already present from HTML script tags");
+    return globalThis.CodeMirror;
+  }
+  bootNote("CodeMirror missing after HTML tags; loading vendor scripts dynamically");
+  if (!codemirrorReady) {
+    codemirrorReady = (async () => {
+      for (const src of CODEMIRROR_SCRIPTS) {
+        bootNote(`loading ${src}`);
+        await loadScript(src);
+      }
+      if (typeof globalThis.CodeMirror !== "function") {
+        throw new Error(
+          "ویرایشگر کد بارگذاری نشد (CodeMirror). فایل‌های vendor/codemirror را کامل کپی کنید یا صفحه را تازه کنید."
+        );
+      }
+      bootNote("CodeMirror ready after dynamic load");
+      return globalThis.CodeMirror;
+    })().catch((err) => {
+      codemirrorReady = null;
+      throw err;
+    });
+  }
+  return codemirrorReady;
+}
 
 function selectedLineRange(cm) {
   const from = cm.getCursor("from");
@@ -129,6 +172,31 @@ function isArrowUp(e) {
   return e.key === "ArrowUp" || e.key === "Up" || e.keyCode === 38;
 }
 
+/** Closing characters that Tab can step over (the ones closebrackets inserts). */
+const TAB_OUT_CLOSERS = ")]}'\"";
+
+/**
+ * Tab-out: when the cursor sits right before a closing bracket or quote, Tab moves
+ * the cursor past it instead of inserting spaces. A quote is stepped over only when
+ * an odd number of the same quote comes before the cursor on this line, so an
+ * opening quote is never skipped. At the start of a line Tab still indents.
+ * Returns true when the cursor moved.
+ */
+function tabOut(cm) {
+  const cur = cm.getCursor();
+  const line = cm.getLine(cur.line) || "";
+  const next = line.charAt(cur.ch);
+  if (!next || !TAB_OUT_CLOSERS.includes(next)) return false;
+  const before = line.slice(0, cur.ch);
+  if (!before.trim()) return false;
+  if (next === "'" || next === '"') {
+    const quotes = before.split(next).length - 1;
+    if (quotes % 2 === 0) return false;
+  }
+  cm.setCursor({ line: cur.line, ch: cur.ch + 1 });
+  return true;
+}
+
 /** Capture Alt/Shift combos before Windows layout-switch / CM default maps eat them. */
 function attachLineShortcutCapture(cm) {
   const onKeyDown = (e) => {
@@ -163,11 +231,13 @@ function attachLineShortcutCapture(cm) {
 }
 
 export function createPythonEditor(textarea, { onChange } = {}) {
-  if (typeof CodeMirror !== "function") {
-    throw new Error("CodeMirror offline bundle missing (vendor/codemirror).");
+  if (typeof globalThis.CodeMirror !== "function") {
+    throw new Error(
+      "ویرایشگر کد آماده نیست (CodeMirror). صفحه را تازه کنید؛ اگر آفلاین هستید پوشه vendor/codemirror را کامل کپی کنید."
+    );
   }
 
-  const cm = CodeMirror.fromTextArea(textarea, {
+  const cm = globalThis.CodeMirror.fromTextArea(textarea, {
     mode: { name: "python", version: 3, singleLineStringErrors: false },
     theme: "material-darker",
     lineNumbers: true,
@@ -189,7 +259,7 @@ export function createPythonEditor(textarea, { onChange } = {}) {
       Tab(cm) {
         if (cm.somethingSelected()) {
           cm.indentSelection("add");
-        } else {
+        } else if (!tabOut(cm)) {
           cm.replaceSelection("    ", "end", "+input");
         }
       },
@@ -253,7 +323,7 @@ export function createPythonEditor(textarea, { onChange } = {}) {
   attachLineShortcutCapture(cm);
 
   if (typeof onChange === "function") {
-    cm.on("change", () => onChange(cm.getValue()));
+    cm.on("change", (instance, change) => onChange(cm.getValue(), change));
   }
 
   requestAnimationFrame(() => cm.refresh());

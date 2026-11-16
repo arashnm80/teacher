@@ -121,3 +121,16 @@ Persian UI + English/Python fragments must stay readable. Follow **`docs/RTL-BID
 ## License / ownership
 
 Course material helper for Arash’s grade-11 Python module. Push target: [arashnm80/teacher-playground](https://github.com/arashnm80/teacher-playground).
+
+## Authoring problems (teachers)
+
+Progress is stored in the browser by stable `id` (e.g. `p01`), **not** by list index or display `number`.
+
+| Field | Role |
+|-------|------|
+| `id` | Permanent key. Never reuse. When inserting a new question between others, give it a **new** id (`p31`, …) and set `number` for display order. |
+| `number` | What students see as ۱، ۲، ۳… May be renumbered anytime; progress still follows `id`. |
+| `revision` | Integer. Bump it whenever statement / tests / constraints / starter meaningfully change. Students who solved an older revision lose progress (and saved code/hints) for **that id only**. |
+
+Removed problems: their progress entries are dropped on next load. Sibling problems keep their solved state.
+

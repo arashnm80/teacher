@@ -1,5 +1,5 @@
-import { ltrIsolate } from "./bidi.js";
-import { normalizeNewlines } from "./diff.js";
+import { ltrIsolate } from "./bidi.js?v=11";
+import { normalizeNewlines } from "./diff.js?v=11";
 
 const TIMEOUT_MS = 2500;
 
@@ -234,6 +234,12 @@ function formatValue(value) {
 }
 
 function deepEqual(a, b) {
+  if (Object.is(a, b)) return true;
+  // Float answers (e.g. math.pi * r * r) may differ by 1 ULP across engines.
+  if (typeof a === "number" && typeof b === "number") {
+    if (Number.isNaN(a) && Number.isNaN(b)) return true;
+    return Math.abs(a - b) <= 1e-9 * Math.max(1, Math.abs(a), Math.abs(b));
+  }
   return JSON.stringify(a) === JSON.stringify(b);
 }
 

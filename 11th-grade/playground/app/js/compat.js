@@ -21,6 +21,13 @@ export const LEGACY = {
   // Last release line before externref: Chrome 71+, Firefox 70+, Safari 14+.
 };
 
+/** Optional observer: (entry) => void — used by teacher boot diagnostics. */
+let scriptLoadObserver = null;
+
+export function setScriptLoadObserver(fn) {
+  scriptLoadObserver = typeof fn === "function" ? fn : null;
+}
+
 /** Load a classic (non-module) script and resolve when it executes. */
 export function loadScript(src) {
   return new Promise((resolve, reject) => {
@@ -31,9 +38,25 @@ export function loadScript(src) {
     const tag = document.createElement("script");
     tag.src = src;
     tag.async = false;
-    tag.onload = () => resolve();
-    tag.onerror = () =>
+    // Keep Cloudflare Rocket Loader from rewriting classic vendor scripts.
+    tag.setAttribute("data-cfasync", "false");
+    tag.onload = () => {
+      scriptLoadObserver?.({
+        src,
+        ok: true,
+        afterGlobal: typeof globalThis.CodeMirror,
+      });
+      resolve();
+    };
+    tag.onerror = () => {
+      scriptLoadObserver?.({
+        src,
+        ok: false,
+        error: "script.onerror",
+        afterGlobal: typeof globalThis.CodeMirror,
+      });
       reject(new Error(`اسکریپت بارگذاری نشد: ${src}`));
+    };
     document.head.appendChild(tag);
   });
 }
