@@ -8,7 +8,8 @@ Last updated: 2026-11-16 (Monday).
 
 1. [ ] **Comprehensive tutorial (آموزش) for every question, like the earlier version: descriptive comment lines and several answers each.** (Owner, 2026-11-16.)
    - Done: 37 questions restored from the earlier teacher-playground version. Their statements and tests are unchanged, and the checker accepts every solution. Every defined solution is now shown (no hidden picks).
-   - Left: about 30 questions still have thin tutorials or no earlier version (10 of them changed statement since the earlier version). Each needs new commented solutions and a fuller explanation.
+   - Done since: 24 more questions now have two commented answers each (batches 2 to 4: p03, p04, p09, p47, p51, p52, p53, p54, p55, p56, p57, p58, p59, p60, p61, p76, p77, p78, p79, p80, p81, p87, p95, p96). In total 61 of 100 are done.
+   - Left: 39 questions (the list is in the commit history; they include the ten whose statement changed since the earlier version). Each needs new commented answers and a fuller explanation, and the checker must accept them.
 2. [ ] **Not-cheating protocol: students must not break deadlines, and must not copy or paste answers from the AI assistant or the آموزش; they write the code by hand.** (Owner, 2026-11-16.)
    - Done: copy, cut and drag are blocked on the page, and paste into the editor is blocked (guard.js, loaded by the playground). The آموزش and the assistant open from the first question. Deadlines are decided by the server's clock.
    - Left: check the protection end to end in the browser, and write down its limits for the owner (a determined student can still use developer tools or take a screenshot; the offline copy still contains every solution).
