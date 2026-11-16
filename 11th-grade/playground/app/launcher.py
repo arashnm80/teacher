@@ -9,6 +9,7 @@ No pip packages required.
 from __future__ import annotations
 
 import atexit
+import json
 import os
 import socket
 import threading
@@ -20,6 +21,7 @@ import tkinter as tk
 from tkinter import messagebox, ttk
 
 from tk_bidi import ltr, rtl
+from updater import Updater, handle_request
 
 ROOT = Path(__file__).resolve().parent
 # The whole site (index.html, book/, playground/) is served from here.
@@ -62,8 +64,36 @@ class QuietHandler(SimpleHTTPRequestHandler):
         "": "application/octet-stream",
     }
 
+    # Set by the launcher: answers /__update/check, /__update/apply and /__update/status, so the
+    # page can offer to update this copy from the website (see updater.py).
+    updater: Updater | None = None
+
     def __init__(self, *args, directory: str | None = None, **kwargs):
         super().__init__(*args, directory=directory, **kwargs)
+
+    def _answer_update(self, method: str) -> bool:
+        if self.updater is None:
+            return False
+        result = handle_request(self.updater, method, self.path, self.headers, self.server.server_address[1])
+        if result is None:
+            return False
+        status, payload = result
+        body = json.dumps(payload, ensure_ascii=False).encode("utf-8")
+        self.send_response(status)
+        self.send_header("Content-Type", "application/json; charset=utf-8")
+        self.send_header("Content-Length", str(len(body)))
+        self.send_header("Cache-Control", "no-store")
+        self.end_headers()
+        self.wfile.write(body)
+        return True
+
+    def do_GET(self) -> None:
+        if not self._answer_update("GET"):
+            super().do_GET()
+
+    def do_POST(self) -> None:
+        if not self._answer_update("POST"):
+            self.send_error(405)
 
     def log_message(self, format: str, *args) -> None:  # noqa: A003
         return
@@ -223,6 +253,7 @@ class LauncherApp:
             return
         try:
             port = self._find_port()
+            QuietHandler.updater = Updater(SITE_ROOT)
             handler = partial(QuietHandler, directory=str(SITE_ROOT))
             server = ThreadingHTTPServer(("127.0.0.1", port), handler)
         except Exception as exc:  # noqa: BLE001

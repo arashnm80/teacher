@@ -10,6 +10,7 @@ REQUIREMENTS.md.
 from __future__ import annotations
 
 import gzip
+import datetime
 import hashlib
 import html
 import json
@@ -332,7 +333,7 @@ def site_header(root: str, active: str, lang: bool) -> str:
         'placeholder="جستجو در درس‌ها" aria-label="جستجو در درس‌ها">'
         '<div id="search-results" class="search-results" hidden></div></div>'
         '<div class="top-actions">'
-        f'<a class="btn primary sm download-link" href="{root}grade11-offline.zip?v=5" '
+        f'<a class="btn primary sm download-link" href="{root}grade11-offline.zip?v=6" '
         'data-fa="دانلود کل سایت" data-en="Download the whole site">دانلود کل سایت</a>'
         f"{toggle}</div></header>"
     )
@@ -350,7 +351,7 @@ def site_footer(root: str) -> str:
         f'<a href="{root}playground/index.html" data-fa="زمین بازی" data-en="Playground">زمین بازی</a>'
         f'<a href="{root}book/links.html" data-fa="مطالب مفید" data-en="Useful materials">مطالب مفید</a>'
         "</nav>"
-        f'<a class="btn ghost sm download-link" href="{root}grade11-offline.zip?v=5" '
+        f'<a class="btn ghost sm download-link" href="{root}grade11-offline.zip?v=6" '
         'data-fa="دانلود برای آفلاین" data-en="Download for offline use">دانلود برای آفلاین</a>'
         "</footer>"
     )
@@ -683,7 +684,7 @@ def playground_online_href(prefix: str) -> str:
 
 def playground_zip_href(prefix: str) -> str:
     root = prefix[: -len("images")] if prefix.endswith("images") else ""
-    return root + "grade11-offline.zip?v=5"
+    return root + "grade11-offline.zip?v=6"
 
 
 def links_text(lang: str) -> str:
@@ -766,11 +767,44 @@ def guard(html_path: Path) -> None:
             raise SystemExit(f"missing image {src} from {html_path}")
 
 
+# The tutorials (آموزش) are not shipped in the offline copy: like the website, it gets them after a
+# sign-in (the accounts service sends them) and keeps them on the device.
+OFFLINE_GUIDE_FIELDS = ("guide", "guideTitle", "solutions", "mistakes")
+OFFLINE_ROOT = "grade11-site"
+
+
+def file_digest(path: Path) -> str:
+    digest = hashlib.sha256()
+    with path.open("rb") as handle:
+        for block in iter(lambda: handle.read(1 << 20), b""):
+            digest.update(block)
+    return digest.hexdigest()
+
+
 def write_zip() -> None:
+    """The offline copy: a zip of the whole site, plus offline-manifest.json.
+
+    The manifest lists every file with its hash. The copy's launcher compares it with the one on the
+    website to find out what changed, and downloads only those files. Files that are the same as on
+    the website are fetched from their normal address; the few that differ in the offline copy (the
+    playground page and the questions file) are published under offline-files/.
+    """
     target = SITE / "grade11-offline.zip"
     temporary = ROOT / ".grade11-offline.zip"
     if temporary.exists():
         temporary.unlink()
+    published = SITE / "offline-files"
+    if published.exists():
+        shutil.rmtree(published)
+    files: dict[str, dict] = {}
+
+    def publish_variant(archive: zipfile.ZipFile, rel: str, data: bytes) -> None:
+        out = published / rel
+        out.parent.mkdir(parents=True, exist_ok=True)
+        out.write_bytes(data)
+        archive.writestr(f"{OFFLINE_ROOT}/{rel}", data)
+        files[rel] = {"sha256": hashlib.sha256(data).hexdigest(), "size": len(data), "url": f"offline-files/{rel}"}
+
     with zipfile.ZipFile(
         temporary, "w", compression=zipfile.ZIP_DEFLATED, compresslevel=6
     ) as archive:
@@ -778,23 +812,37 @@ def write_zip() -> None:
             if not path.is_file() or path.suffix == ".zip":
                 continue
             rel = path.relative_to(SITE)
-            if rel.parts[0] == "admin":  # the teacher's panel exists only online
-                continue
-            arcname = Path("grade11-site") / rel
+            if rel.parts[0] in ("admin", "offline-files") or rel.as_posix() == "offline-manifest.json":
+                continue  # the panel exists only online; the other two are made here
             if rel.as_posix() == "playground/index.html":
-                # The offline copy keeps progress in the browser: no sign-in.
+                # The offline copy checks answers on the device; it signs in to send them (sync).
                 page = path.read_text(encoding="utf-8").replace(
                     '<meta name="pg-mode" content="online">',
                     '<meta name="pg-mode" content="offline">',
                 )
-                archive.writestr(arcname.as_posix(), page)
+                publish_variant(archive, rel.as_posix(), page.encode("utf-8"))
                 continue
-            archive.write(path, arcname.as_posix())
-        # The offline copy needs the questions file; the online site keeps it on the server.
-        archive.write(
-            ROOT / "playground" / "app" / "data" / "problems.json",
-            (Path("grade11-site") / "playground" / "data" / "problems.json").as_posix(),
+            archive.write(path, f"{OFFLINE_ROOT}/{rel.as_posix()}")
+            files[rel.as_posix()] = {"sha256": file_digest(path), "size": path.stat().st_size, "url": rel.as_posix()}
+        # The questions without their tutorials: the same view of the questions as the website's.
+        problems = json.loads((ROOT / "playground" / "app" / "data" / "problems.json").read_text(encoding="utf-8"))
+        public = [{k: v for k, v in q.items() if k not in OFFLINE_GUIDE_FIELDS} for q in problems]
+        publish_variant(
+            archive, "playground/data/problems.json",
+            json.dumps(public, ensure_ascii=False, separators=(",", ":")).encode("utf-8"),
         )
+        ordered = dict(sorted(files.items()))
+        version = hashlib.sha256(
+            "\n".join(f"{name}\t{info['sha256']}" for name, info in ordered.items()).encode("utf-8")
+        ).hexdigest()[:12]
+        manifest = json.dumps(
+            {"format": 1, "version": version,
+             "built": datetime.datetime.now(datetime.timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ"),
+             "files": ordered},
+            ensure_ascii=False, indent=1,
+        ).encode("utf-8")
+        archive.writestr(f"{OFFLINE_ROOT}/offline-manifest.json", manifest)
+    (SITE / "offline-manifest.json").write_bytes(manifest)
     shutil.move(temporary, target)
 
 
