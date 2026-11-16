@@ -14,10 +14,11 @@ Last updated: 2026-11-16 (Monday).
    - Also done (batch 7): p18, p35, p62, p63, p82, p98, p99, p100. In total 85 of 100 are done.
    - Also done (batch 8): p15, p16, p17, p38, p40, p73, p74, p75. In total 93 of 100 are done.
    - Also done (batch 9): p19, p21, p23, p28, p41, p42, p50. All 100 questions now have commented answers (two or more each) that the checker accepts.
-   - Still to do: publish the new tutorials (build and deploy), and confirm in the owner's browser that they read well.
-2. [ ] **Not-cheating protocol: students must not break deadlines, and must not copy or paste answers from the AI assistant or the آموزش; they write the code by hand.** (Owner, 2026-11-16.)
+   - Published on 2026-11-16 (site and accounts service). Still for the owner: read a few tutorials in the browser and say if the wording or the level needs changing.
+2. [x] **Not-cheating protocol: students must not break deadlines, and must not copy or paste answers from the AI assistant or the آموزش; they write the code by hand.** (Owner, 2026-11-16.)
    - Done: copy, cut and drag are blocked on the page, and paste into the editor is blocked (guard.js, loaded by the playground). The آموزش and the assistant open from the first question. Deadlines are decided by the server's clock.
-   - Left: check the protection end to end in the browser, and write down its limits for the owner (a determined student can still use developer tools or take a screenshot; the offline copy still contains every solution).
+   - Checked in the browser on 2026-11-16 (6 of 6): copy and cut from the tutorial and the assistant are blocked; paste and drop into the editor are blocked. Deadlines are decided by the server's clock (covered by the server tests).
+   - Limits for the owner: a determined student can still read the page with developer tools, take a screenshot, or type from memory of the solutions; the offline copy still contains every solution in its questions file.
 3. [ ] **Owner decision: the text shown for each series on the website.** The series texts are placeholders now.
 4. [ ] **Owner decision: the offline zip still contains every solution.** Keep, or remove the solutions from the offline copy?
 5. [ ] **Owner check: the AI assistant works in the owner's browser now (keys verified through the relay).** Consider rotating the two keys that were pasted into the chat.
