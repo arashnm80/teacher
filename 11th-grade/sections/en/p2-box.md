@@ -1,120 +1,62 @@
-**Page 128**
+<!-- page 128 -->
 
-Box model (`Box Model`) The box model (`Box Model`) in `CSS` is used to design and lay out elements on web pages. Every `HTML` element is treated as a “box” that includes four parts: content (`content`), extra space inside the element (`padding`), border (`border`), and the distance of the element from neighboring elements (`margin`). In the example below these settings can be viewed and examined: (Figure 25).
+### مدل جعبه‌ای (Box Model)
 
-The `width` and `height` properties only specify the width and height of the content area (`content`). So assigning values to the `padding`, `margin`, and `border` properties increases the final dimensions of the box. These values must be included in box dimension calculations. To
+The box model (Box Model) in CSS is used to design and lay out elements in web pages. Each HTML element is treated as a «box» with four parts: the content (content), the extra space inside the element (padding), the border (border), and the distance from neighboring elements (margin). These settings can be seen and examined in the example below: (Figure 25).
 
-![Book image](../images/p134-01.png)
+The width and height properties set only the width and height of the content area (content). So giving values to padding, margin, and border makes the final box bigger, and these values must be included when working out the box's size. To stop border and padding from affecting an element's width and height, the box-sizing property is used with the value border-box. Then the content, padding, and border together equal the width and height values, horizontally and vertically.
 
-Distance to other elements
+![Figure 24](../images/p134-01.png)
+*Figure 24*
 
-prevent the `border` and `padding` properties from affecting
+> **Workshop**
+>
+> **Examining the box model**
+>
+> Create a file named `box-model.html` and put two elements, `<div>` and `<img>`, with their styles in it:
+>
+> ![Book image](../images/p134-02.png)
 
-Distance between content and border
+<!-- page 129 -->
 
-the width and height of the element, use the `box-sizing` property with Element content
+در فایل `index.html` (کارگاه قبل) ویژگی‌های مارجین و پدینگ عنصر ul را برابر صفر قرار دهید (`margin:0;padding:0(` و برای عنصر header مقداری پدینگ تنظیم کنید (`padding:10px 20px`) سپس تغییرات منو را در مرورگر بررسی کنید.
 
-the value `border-box`. When you do this, the total of content, `padding`, and `border` dimensions in Element border
+### مدل نمایش (Display Model)
 
-the horizontal and vertical directions will equal the `width` and `height` values.
+The display model in CSS is about how elements are shown and behave in a web page. It decides how elements sit next to each other and interact. The display model is set with the display property and its different values, described below:
 
-**Figure 24**
+**block**: elements with display: block are shown as blocks and take up the full width of the line. By default they start on a new line, and you can set their width and height.
 
-Examining how the box model works
+**Inline**: inline elements behave like words: they sit one after another and do not start a new line. They take up only as much space as their content, so setting width and height has no effect on them. Top and bottom margins do not take effect either.
 
-### Workshop
+**Inline-block**: a mix of block and inline. inline-block elements can behave like blocks but sit within the current line. They can have a width and height and take up as much space as their content.
 
-Create a file named `box-model.html` and put two `<div>` and `<img>` elements along with their styles into the file:
+*Table 9: Comparing Block and Inline elements in CSS*
 
-![Book image](../images/p134-02.png)
+| Inline elements | Block elements | Property |
+| --- | --- | --- |
+| Continue on the same line. | Always start on a new line. | Starting on a new line |
+| Only as wide as the element's content. | Take the whole line even when a width is set. | Width (width) |
+| Usually only as tall as the content. | Can be set. | Height (height) |
+| `<span>, <a>, <b>, <i>` | `<div>, <p>, <h1>, <section>` | Sample elements |
+| Several elements sit side by side. | Each sits on its own line. | Behavior next to each other |
 
----
+<!-- page 130 -->
 
-**Page 129**
+> **Workshop**
+>
+> به‌کارگیری ویژگی display با مقادیر block، Inline و Inline-block .
+>
+> ![Book image](../images/p136-01.png)
+>
+> ![Book image](../images/p136-02.png)
 
-In the `index.html` file (previous workshop), set the margin and padding properties of the `ul` element to zero (`margin:0`;`padding:0`) and set some padding for the `header` element (`padding:10px20.px`). Then check the menu changes in the browser.
+<!-- page 131 -->
 
-(Display Model)
-
-The display model in `CSS` refers to how elements are shown and behave on the web page. This model determines how elements are placed next to each other and how they interact. The display model is set by the `display` property with various values. The values of this property are described below:
-
-`block:` elements with `display: block` are shown as blocks and take the full width of the line. By default these elements start on a new line, and you can set `width` and `height` for them.
-
-`Inline: inline` elements behave like words—that is, elements sit one after another and do not create a new line. These elements only take as much space as their content; so setting `width` and `height` for them has no effect. Also, assigning `margin` properties for the top and bottom of the element will not have an effect.
-
-`Inline-block:` this mode is a mix of `block` and `inline`. `inline-block` elements can behave as blocks but sit in the current line. These elements can have width and height and take as much space as their content.
-
-Table 9 Comparing `Block` and `Inline` elements in `CSS`
-
-`Inline` elements`Block` elements
-
-Property
-
-Continue on the same row.
-
-Always start on a new row.
-
-Start on a new row
-
-Only as wide as the element content. Even when width is set, it takes the whole row.
-
-(width)
-
-Usually only as tall as the content.
-
-Can be set.
-
-Height (`height`)
-
-```
-<span>, <a>, <b>, <i>
-<div>, <p>, <h1>, <section>
-```
-
-Example elements
-
-Several elements sit side by side.
-
-Each sits on a separate line.
-
-Behavior next to each other
-
----
-
-**Page 130**
-
-Using the `display` property with the values `block`, `Inline`, and `Inline-block`.
-
-### Workshop
-
-![Book image](../images/p136-02.png)
-
-![Book image](../images/p136-01.png)
-
-![Book image](../images/p136-03.png)
-
-Box number 1 Box number 2 Each box sits on a separate row and the width of each equals the full width of the page.
-
-Item number 1 Item number 2 Sit next to each other like words; you cannot set width and height.
-
-Box `A`
-
-Box `B`
-
-The boxes sit next to each other; you can set width and height.
-
----
-
-**Page 131**
-
-Using the `display` property in designing a site login form
-
-### Workshop
-
-Create the `login.html` file in the `web` folder for user login to the site.
-
-![Book image](../images/p137-02.png)
-
-![Book image](../images/p137-01.png)
-
----
+> **Workshop**
+>
+> **Using the display property to design a site login form**
+>
+> Create the file `login.html` in the web folder for logging users in to the site.
+>
+> ![Book image](../images/p137-01.png)

@@ -1,149 +1,97 @@
-# Creating a web application
-
----
-
-**Page 276**
+<!-- page 276 -->
 
 ## Learning unit 1
 
-## Creating a web application
+## Have you ever thought about this
 
-### Have you ever thought
+- وب سایت با وب اپلیکیشن چه تفاوت‌هایی دارد؟
 
-What differences does a website have from a web application?
+- چگونه می‌توانید یک وب اپلیکیشن بسازید؟
 
-How can you build a web application?
+- یک وب اپلیکیشن چطور با کاربر تعامل می‌کند؟
 
-How does a web application interact with the user?
+## By the end, the student is expected to
 
-### By the end, the student is expected to
+1. با مزایای جنگو آشنا شود.
 
-1 Become familiar with the advantages of Django.
+2. ساختار یک پروژه جنگو را درک کند.
 
-2 Understand the structure of a Django project.
+3. روند کار جنگو، جهت تعامل با کاربر را درک کرده و درباره آن استدلال نماید.
 
-3 Understand Django’s process for interacting with the user and reason about it.
+4. مفهوم url، view و template در جنگو را درک کند.
 
-4 Understand the concepts of `url`, `view`, and `template` in Django.
+5. هنرجو بتواند به‌صورت عملی یک وب اپلیکیشن ساده را پیاده‌سازی کند.
 
-5 Be able to implement a simple web application in practice.
+## Performance standard
 
-### Performance standard
+هنرجو باید با درک صحیحی که از ساختار جنگو کسب کرده است، بتواند یک وب اپلیکیشن ساده را در رایانه خود پیاده‌سازی کند.
 
-The student, with a correct understanding of Django’s structure, should be able to implement a simple web application on their own computer.
+<!-- page 277 -->
 
----
+### جنگو چیست؟
 
-**Page 277**
+جنگو (Django) یک framework منبع‌باز (open source) است که با زبان برنامه‌نویسی Python نوشته و برای ساخت و پیاده‌سازی بخش backend وب‌سایت‌ها (Website) و وب اپلیکیشن‌ها (Web Application) استفاده می‌شود.
 
-What is Django?
+*Table 1: مقایسه وب‌سایت و وب اپلیکیشن*
 
-Django (`Django`) is an open-source (`open source`) `framework` written in the `Python` programming language and used to build and implement the `backend` of websites (`Website`) and web applications (`Web Application`).
+| معیار | وب‌سایت (Website) | وب اپلیکیشن (Web Application) |
+| --- | --- | --- |
+| هدف اصلی | اطلاع‌رسانی و نمایش محتوا | انجام عملیات و پردازش داده |
+| تعامل کاربر | کم یا تقریباً یک‌طرفه | زیاد و دوطرفه |
+| نیاز به لاگین | معمولاً ندارد | معمولاً دارد |
+| پردازش سمت سرور | کم | زیاد |
+| وابستگی به backend | کم یا متوسط | بسیار زیاد |
+| تغییر محتوا توسط کاربر | معمولاً ندارد | دارد |
+| مثال‌ها | سایت خبری، سایت شرکتی، بلاگ | پنل کاربری، فروشگاه آنلاین، سامانه آموزشی |
 
-Table 1 Comparison of a website and a web application Criterion
+### مزایای جنگو
 
-Website (`Website`)
+جنگو یک framework امن و سریع است که قابلیت‌های آمادۀ زیادی را در اختیار برنامه‌نویس قرار می‌دهد. به همین دلیل، سرعت توسعۀ نرم‌افزار در جنگو بسیار بالاست.
 
-(Web Application)
+در پروژه‌های جنگو، با افزایش تعداد کاربران نیز می‌توان تنها با اعمال تغییراتی اندک، همچنان یک وب‌سایت سریع و امن داشت.
 
-Main purpose
+یکی دیگر از مزایای جنگو، وجود مستندات (راهنمای) جامع و همچنین یک جامعۀ بزرگ و فعال از برنامه‌نویسان است. این یعنی اگر هنگام کار با جنگو با مشکلی مواجه شوید، با یک جست‌وجوی ساده در اینترنت می‌توانید راه‌حل‌ها و توضیحات زیادی از سوی برنامه‌نویسان دیگر پیدا کنید. از دیگر مزیت‌های مهم جنگو، وجود فرصت‌های شغلی فراوان در حوزۀ پایتون و framework جنگو است که آن را به گزینه‌ای مناسب برای یادگیری و ورود به بازار کار تبدیل می‌کند. شرکت‌های بزرگی در دنیا و ایران از جنگو استفاده کرده‌اند.
 
-Informing and displaying content
+![Figure 1: شرکت‌هایی که از جنگو استفاده کرده‌اند](../images/p283-01.png)
+*Figure 1: شرکت‌هایی که از جنگو استفاده کرده‌اند*
 
-Carrying out operations and processing data User interaction
+<!-- page 278 -->
 
-Little or almost one-way
+> **Curiosity**
+>
+> در مورد شرکت‌های ذکر شده تحقیق کنید.
 
-Much and two-way
+### پروژه نهایی این کتاب
 
-Need for login
+در پایان این کتاب، با استفاده از جنگو یک وب اپلیکیشن واقعی نمایش وضعیت آب‌وهوا طراحی خواهد شد (شکل 2).
 
-Usually does not have
+در این پروژه کاربر می‌تواند نام یک شهر را جهت نمایش وضعیت آب‌وهوا انتخاب و مشاهده نماید.
 
-Usually has
+این وب اپلیکیشن اطلاعات آب‌وهوا را به‌صورت آنلاین دریافت کرده و نتیجه را به‌صورت لحظه‌ای نمایش می‌دهد.
 
-Server-side processing
+پروژه به شما کمک می‌کند یاد بگیرید جنگو در عمل چگونه کار می‌کند و یک وب‌سایت چگونه ساخته می‌شود.
 
-Little
+![Figure 2: بخش‌هایی از پروژه نهایی](../images/p284-01.png)
+*Figure 2: بخش‌هایی از پروژه نهایی*
 
-Much
+### نصب جنگو
 
-Dependence on the `backend`
+ابتدا مطمئن شوید آخرین نسخه پایتون روی رایانه شما نصب باشد و رایانه به اینترنت متصل باشد. برای این کار وارد برنامه Vscode شده اگر از قبل فایل یا پوشه‌ای باز بود با دستور Close Folder از منوی File آن را ببندید سپس از منوی terminal، یک ترمینال جدید باز کنید.
 
-Little or medium
+در ادامه همانند شکل 3 درون قسمت ترمینال دستورات را به‌ترتیب اجرا نمایید.
 
-Very much
+<!-- page 279 -->
 
-Change of content by the user
+![Figure 3: نصب جنگو نسخه 5.2.9](../images/p285-01.png)
+*Figure 3: نصب جنگو نسخه 5.2.9*
 
-Usually does not have
+نمایش پیام Successfully installed Django-5.2.9 نشان‌دهنده نصب موفقیت‌آمیز جنگو است.
 
-Has
+درصورتی‌که پیغام نصب موفقیت‌آمیز جنگو را مشاهده نکردید، از هنرآموز خود راهنمایی بگیرید.
 
-Examples
+می‌توانید آخرین نسخه منتشر شده جنگو را هم نصب کنید، فقط باید در سایت `pypi.org` و صفحه جنگو، نسخه پایتون سازگار را به‌دست آورید.
 
-News site, company site, blog User panel, online store, educational system
+وارد آدرس https://pypi.org/project/Django شوید و در بخش Programming Language نسخه‌های پایتون پشتیبانی شده جنگو را مشاهده کنید (شکل 4).
 
-Advantages of Django Django is a secure and fast `framework` that puts many ready-made capabilities at the programmer’s disposal.
-
-For this reason, the speed of software development in Django is very high.
-
-In Django projects, as the number of users increases, you can still have a fast and secure website by making only a few changes.
-
-Another advantage of Django is the existence of comprehensive documentation (guides) as well as a large and active community of programmers. This means that if you face a problem while working with Django, with a simple search on the internet you can find many solutions and explanations from other programmers.
-
-![Book image](../images/p283-01.png)
-
-Another important advantage of Django is the many job opportunities in the field of Python and the Django `framework`, which makes it a suitable option for learning and entering the job market.
-
-Large companies in the world and in Iran have
-
-Figure 1 Companies that have used Django used Django.
-
----
-
-**Page 278**
-
-### Try this
-
-Research the companies mentioned.
-
-Final project of this book At the end of this book, using Django, a real web application for displaying weather status will be designed (Figure 2).
-
-In this project the user can select the name of a city to display the weather status and view it.
-
-This web application receives weather information online and displays the result in real time.
-
-The project helps you learn how Django works in practice and how a website is built.
-
-![Figure 2 Parts of the final project](../images/p284-01.png)
-
-Figure 2 Parts of the final project
-
-Installing Django First make sure the latest version of Python is installed on your computer and that the computer is connected to the internet. To do this, enter the `Vscode` program; if a file or folder was already open, close it with the `Close Folder` command from the `File` menu, then from the `terminal` menu open a new terminal.
-
-Then, as in Figure 3, run the commands in order in the terminal section.
-
----
-
-**Page 279**
-
-![Figure 3 Installing Django version 5.2.9](../images/p285-01.png)
-
-Figure 3 Installing Django version 5.2.9
-
-Displaying the message `Successfully installed Django-5.2.9` indicates that Django has been installed successfully.
-
-If you do not see the message that Django was installed successfully, get guidance from your teacher.
-
-You can also install the latest released version of Django; you only need to find the compatible Python version on the `pypi.org` site and the Django page.
-
-https://pypi.org/project/Django Programming Language ‌
-
-Observe the Python versions supported by Django (Figure 4).
-
-![Figure 4 Suitable Python versions for Django](../images/p285-02.png)
-
-Figure 4 Suitable Python versions for Django
-
----
+![Figure 4: نسخه‌های پایتون مناسب برای جنگو](../images/p285-02.png)
+*Figure 4: نسخه‌های پایتون مناسب برای جنگو*

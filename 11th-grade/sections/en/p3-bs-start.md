@@ -1,169 +1,154 @@
-# Developing interactive web pages with Bootstrap
-
----
-
-**Page 146**
+<!-- page 146 -->
 
 ## Learning unit 1
 
-## Developing interactive web pages with Bootstrap
+## Have you ever thought about this
 
-### Have you ever thought
+- How can you design responsive, mobile-friendly websites without writing complex CSS?
 
-How can you design responsive, mobile-friendly websites without writing complex `CSS` code?
+- Are there frameworks that give web developers ready-made CSS classes?
 
-Are there frameworks that provide ready-made `CSS` classes for web developers?
+- What ready-made classes and components does Bootstrap have for designing the parts of web pages?
 
-What ready-made classes and components does Bootstrap have for designing different parts of web pages?
+- How can you design data-entry forms quickly and in a modern style with Bootstrap?
 
-How can you use Bootstrap to design data-entry forms quickly and in a modern style?
+- How can you optimize web page design with Bootstrap so that pages look their best on all devices?
 
-How can you optimize web page design with Bootstrap so that pages display in the best way on all devices?
+## By the end, the student is expected to
 
-### At the end, the student is expected to
+1. Design the complete structure of a web page (header, body, and footer) with Bootstrap's grid system (Grid System), so that the layout responds correctly at different screen sizes (phone, tablet, desktop).
 
-1 Fully design the structure of a web page (including header, body, and footer) using Bootstrap’s grid system (`Grid System`), so that the layout responds correctly on different screen sizes (mobile, tablet, desktop).
+2. Choose and use utility classes (Utility Classes), such as color, spacing (`Margin/Padding`), shadow, and typography classes, to style elements quickly and in a standard way without writing CSS by hand for common cases.
 
-2 Select and use utility classes (`Utility Classes`) such as color, spacing (`Margin/Padding`), shadow, and typography classes for fast, standard styling of elements without writing manual `CSS` for common cases.
+3. Build a useful, attractive navigation bar (Navbar) with links, buttons, and responsive features, and design a structured footer.
 
-3 Build a practical and attractive navigation bar (`Navbar`) that includes links, buttons, and responsive features, and also design a structured footer.
+4. Be skilled at building user interface components such as carousels (slide images) and accordions to present information in an engaging, dynamic way.
 
-4 Gain skill in implementing user-interface components such as carousels (sliding images) and accordions to present information in an engaging and dynamic way.
+5. Build sign-up or contact forms fully styled with Bootstrap.
 
-5 Build registration or contact forms with complete Bootstrap styling.
+6. Change and override Bootstrap's default styles with customization techniques, to match the website's look to a brand or to the needs of the project.
 
-6 Change and override Bootstrap’s default styles using customization methods to match the website’s appearance with the brand or the specific needs of the project.
+## Performance standard
 
-### Performance standard
+Use Bootstrap's ready-made classes to style page elements such as buttons, forms, and menus, and be able to design pages responsively for different devices.
 
-Use Bootstrap’s ready-made classes to set the style of different page elements such as buttons, forms, menus, and so on, and be able to design a responsive page on different devices.
+<!-- page 147 -->
 
----
+## What a framework is
 
-**Page 147**
+A framework (Framework) is a predesigned software structure used to speed up designing and developing websites and web apps. By providing a set of tools, libraries, and ready-made patterns, a framework lets developers focus only on the specific features and functions of the project and avoid repetitive, basic work.
 
-### Definition of a framework
+**What is Bootstrap?**
 
-A framework (`Framework`) is a pre-designed software framework used to speed up the process of designing and developing websites and web applications. By providing a set of tools, libraries, and ready-made patterns, a framework lets developers focus only on the specific features and functions of the project and avoid repetitive, basic work.
+بوت‌استرپ یک فریم‌ورک متن باز برای طراحی ظاهر سایت است که شامل مجموعه‌ای از کدهای آماده نوشته‌شده با زبان‌های Css، Html و Java Script است. توسعه‌دهندگان به‌جای اینکه از صفر همه چیز را بنویسند از این کدهای آماده استفاده می‌کنند.
 
-Bootstrap
+**Features of Bootstrap**: Bootstrap has many features for designing web pages that have made it popular among web developers and designers. They are:
 
-Bootstrap is an open-source framework for designing a site’s appearance that includes a set of ready-made code written in the languages `Css`, `Html`, and `Java Script`. Instead of writing everything from scratch, developers use this ready-made code.
+**طراحی واکنش‌گرا (Responsive Design)**: بوت‌استرپ دارای یک سیستم گرید 12 ستونی است که امکان طراحی واکنش‌گرا را برای دستگاه‌های مختلف فراهم می‌کند.
 
-Features of `Bootstrap:` Bootstrap has many features for designing web pages that have made it popular among web developers and designers. These features are as follows:
+**اجزای از پیش طراحی‌شده (Components)**: بوت‌استرپ شامل اجزای مختلفی مانند دکمه‌ها، فرم‌ها، منوی ناوبری، کاردها، مدال‌ها و نوار جست‌وجو است که به‌صورت آماده قابل استفاده هستند.
 
-Responsive design (`Responsive Design`): Bootstrap has a 12-column grid system that makes responsive design possible for different devices.
+**JavaScript support**: Bootstrap includes JavaScript libraries for creating interactions and animations in different parts of the page.
 
-Pre-designed components (`Components`): Bootstrap includes various components such as buttons, forms, navigation menus, cards, modals, and search bars that are ready to use.
+**Browser support**: Bootstrap works with most modern browsers, such as Chrome, Firefox, Safari, and Edge.
 
-JavaScript support: Bootstrap contains JavaScript libraries for creating interactions and animations in different parts of the page.
+**Thorough documentation**: Bootstrap's official site (`getbootstrap.com`) has complete documentation on how to use its components and classes.
 
-Browser support: Bootstrap is compatible with most modern browsers such as `Chrome`, `Firefox`, `Safari`, and `Edge`.
+**Uses of Bootstrap**
 
-Comprehensive documentation: The official Bootstrap site (`getbootstrap.com`) has complete documentation for learning how to use Bootstrap’s components and classes.
+**Designing responsive websites**: designing and building company sites, shops, blogs, and so on.
 
-Uses of `Bootstrap` Designing responsive websites: Designing and developing corporate sites, stores, blogs, and so on.
+**Creating attractive user interfaces**: designing beautiful, modern user interfaces for websites and web apps.
 
-Creating attractive user interfaces: Designing beautiful, modern user interfaces for websites and web applications.
+**MVP projects (minimum viable product)**: building first versions of websites (MVP) and testing design ideas.
 
-`minimum viable product` (`MVP`) projects: Building website prototypes (`MVP`) and evaluating design ideas.
+**Designing forms**: designing beautiful, responsive forms with Bootstrap's ready-made classes.
 
-Designing forms: Designing beautiful, responsive forms using Bootstrap’s ready-made classes.
+<!-- page 148 -->
 
----
+### Using Bootstrap in a web page
 
-**Page 148**
+To use Bootstrap's features in a web page, first create a basic HTML file and then link Bootstrap's CSS and JavaScript files to it. The basic file contains the tags `<!DOCTYPE html>`, `<html>`, `<head>`, the viewport meta tag, `<title>`, and `<body>`.
 
-Using Bootstrap on a web page To use Bootstrap’s features on a web page, you must first create a basic `HTML` file and then attach Bootstrap’s `CSS` and JavaScript files to it. The basic file includes the `<DOCTYPE`!>,
+> **Workshop**
+>
+> **Using a CDN¹ in a web page**
+>
+> Create a web page named `test-bs.html` and write its basic tags. Then open `getbootstrap.com`. Scroll down to the Include via CDN section to see the ready-made `<Link>` and `<script>` code. Copy the `<link>` code into the `<head>` part and the `<script>` code just before `</body>`. These two pieces of code link Bootstrap's CSS and JavaScript files to the web page.
+>
+> Bootstrap's link and script code has an attribute named Integrity, used to keep the file received from the CDN secure. Bootstrap's classes can still be used without Integrity, so in the code above Integrity has been removed to make the code easier to read; but in real projects using it is essential.
+>
+> ![Book image](../images/p154-01.png)
 
-<html> <head> ‌ viewport <title> <body> .
+### Bootstrap classes and components
 
-Using `CDN1` on a web page
+Bootstrap classes are a set of predefined styles that make it quick and easy to design the user interface of web pages. Built with CSS, they help web developers add user-friendly, responsive elements to a web page while writing less CSS.
 
-### Workshop
+> **Footnotes**
+>
+> 1. CDN: Content Delivery Network
 
-Create a web page named `test-bs.html` and write its initial tags. Then open the site `getbootstrap.com`. Scroll the page to the `Include via CDN` section so you can see the ready-made `<Link>` and `<script>` codes. Copy the `<link>` code into the `<head>` section and the `<script>` code before `<body/>`. These two codes attach Bootstrap’s `CSS` and JavaScript files to the web page.
+<!-- page 149 -->
 
-The Bootstrap link and script code contains an attribute called `Integrity` that is used to keep the file received from the `CDN` secure. However, it is also possible to use Bootstrap classes without `Integrity`. For that reason, in the code above the `Integrity` attribute has been removed to make the code more readable, but using this attribute is essential in real projects.
+Bootstrap components are predesigned elements that make it quick and easy to design a website's user interface. With these ready-made elements, a web developer can add user-friendly, responsive elements to a web page without writing CSS and JavaScript. Bootstrap components include the button, the navigation bar¹, the carousel², the accordion³, and the modal⁴. This part introduces Bootstrap's classes and components.
 
-![Book image](../images/p154-01.png)
+**Utility classes**: Bootstrap's utility classes are used specifically to style page elements and work directly with HTML and CSS. Using these classes needs no JavaScript. Bootstrap's ready-made classes can set color, element size, spacing, borders, shadows, and so on.
 
-Bootstrap classes and components Bootstrap classes are a set of predefined styles that make it possible to design user-interface parts of web pages quickly and easily. These classes, which were created using `CSS`, help the web developer add user-friendly, responsive elements to the web page while writing less `CSS` code.
+**Color classes**: Bootstrap's color classes are of two kinds, background colors and text colors. Each color class has its own meaning and color. Background and text color classes start with bg and text. Some of them are listed in the table below:
 
-) ( CDN: Content Delivery Network
+*Table 1: Bootstrap color classes*
 
----
-
-**Page 149**
-
-Bootstrap components are pre-designed elements that make it possible to design website user interfaces quickly and easily. With these ready-made elements, the web developer can add user-friendly, responsive elements to the web page without writing `CSS` and `JavaScript` code. Among Bootstrap’s components are the button, navigation bar1, carousel2, accordion3, and modal4. This section introduces Bootstrap’s classes and components.
-
-`Utility` classes: `Utility` classes in Bootstrap are used especially for styling page elements and work directly with `HTML` and `CSS`. You do not need JavaScript to use these classes. Bootstrap’s ready-made classes can be used to set color, element size, spacing, border, shadow, and so on.
-
-Color classes: Bootstrap’s color classes are divided into two groups: background colors and text colors.
-
-Each color class has a specific meaning and color. Background and text color classes have the prefixes `bg` and `text`, respectively. Some of these classes are collected in the table below:
-
-Table 1 Bootstrap color classes
-
-Background color class
-
-Text color class
-
-Meaning
-
-bg-primary text-primary bg-secondary text-secondary bg-success
-
-`text-success` Success color
-
-bg-danger text-danger bg-warning text-warning bg-info
-
-`text-info` Information color
-
-bg-light text-light bg-dark
-
-`text-dark` Dark color
-
-1- Navigation bar (`Navbar`): The top bar of the page that usually includes the logo, links, and menus.
-
-2- Carousel (`Carousel`): An interactive element that displays a set of images or content one after another in a defined space, and the user can move between them.
-
-3- Accordion (`Accordion`): A section that can open and close to display content.
-
-4- Modal (`Modal`): A window or dialog box that appears over the page content.
-
----
-
-**Page 150**
-
-### Try this
-
-For more information about other color classes, search for the phrases `Bootstrap5.3 background` and `Bootstrap5.3 colors` on Google.
-
-Using Bootstrap color classes
-
-### Workshop
-
-Open the file `test-bs.html`, then insert a `<div>` element with the following settings after the `body` tag.
-
-![Book image](../images/p156-03.png)
-
-Save the file and check the result in the browser.
-
-Add the word `subtle` to the end of the color class (`bg-primary-subtle`) and view the result in the browser.
-
-Sizing classes (`Sizing`) Bootstrap has two sets of classes, `*-w` and `*-h`, for setting the width and height of elements. The * parameter can be replaced with the numbers 25, 50, 75, and 100 and the word `auto`. Assigning the class `w-75` to an element makes the element’s width equal to 75% of the parent element’s width. The classes `w-auto` and `h-auto` set an element’s width and height to the size of its content.
-
-Using `Sizing` classes
-
-### Workshop
-
-In the file `test-bs.html`, add another `div` element to the web page as shown below. This element contains a paragraph element whose width and height will be 75% of the width and height of the `div` element.
-
-![Book image](../images/p156-01.png)
-
-In the code above, the width and height of the paragraph element are set by the classes `w-75` and `h-75`. Save the file and check the result in the browser.
-
-![Book image](../images/p156-02.png)
-
----
+| Background color class | Text color class | Meaning |
+| --- | --- | --- |
+| `bg-primary` | `text-primary` | Primary color |
+| `bg-secondary` | `text-secondary` | Secondary color |
+| `bg-success` | `text-success` | Success color |
+| `bg-danger` | `text-danger` | Danger color |
+| `bg-warning` | `text-warning` | Warning color |
+| `bg-info` | `text-info` | Info color |
+| `bg-light` | `text-light` | Light color |
+| `bg-dark` | `text-dark` | Dark color |
+
+> **Footnotes**
+>
+> 1- Navigation bar (Navbar): the bar at the top of the page that usually holds the logo, links, and menus.
+>
+> 2- Carousel (Carousel): an interactive element that shows a series of images or content one after another in a given space, and the user can move between them.
+>
+> 3- Accordion (Accordion): a section that opens and closes to show content.
+>
+> 4- Modal (Modal): a window or dialog box that appears over the page content.
+
+<!-- page 150 -->
+
+> **Curiosity**
+>
+> For more information about the other color classes, search Google for Bootstrap5.3 background and Bootstrap5.3 colors.
+
+> **Workshop**
+>
+> **Using Bootstrap's color classes**
+>
+> Open the file `test-bs.html`, then insert a `<div>` element with the properties below after the body tag.
+>
+> ![Book image](../images/p156-03.png)
+>
+> Save the file and check the result in the browser.
+>
+> Add the word subtle to the end of the color class (bg-primary-subtle) and see the result in the browser.
+
+### کلاس‌های تعیین اندازه (Sizing)
+
+بوت‌استرپ دارای دو مجموعه کلاس \*-w و \*-h برای تعیین پهنا و ارتفاع عناصر است. پارامتر \* می‌تواند جایگزین اعداد 25، 50، 75 و 100 و عبارت auto شود. اختصاص کلاس w-75 برای یک عنصر باعث می‌شود که پهنای عنصر برابر 75% پهنای عنصر والد باشد. کلاس‌های w-auto و h-auto پهنا و ارتفاع یک عنصر را به اندازۀ محتوای آن تنظیم می‌نمایند.
+
+> **Workshop**
+>
+> **Using the Sizing classes**
+>
+> In the file `test-bs.html`, add another div element to the web page as below. It contains a paragraph element whose width and height will be 75% of the width and height of the div element.
+>
+> ![Book image](../images/p156-01.png)
+>
+> In the code above, the width and height of the paragraph are set with the classes w-75 and h-75. Save the file and check the result in the browser.
+>
+> ![Book image](../images/p156-02.png)

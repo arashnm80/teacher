@@ -1,199 +1,169 @@
-**Page 74**
+<!-- page 74 -->
 
-Example: Build a list of motivational messages and, using the `random` module, print one random message on each run (Figure 152).
+**Example**: build a list of motivational messages and use the random module to print a random message on each run (Figure 152).
 
 Run the program and check the result.
 
 ![Figure 152](../images/p080-01.png)
+*Figure 152*
 
-**Figure 152**
+> **Activity**
+>
+> Write a program that:
+>
+> یک عدد تصادفی بین ۱ تا 10 تولید کند. از کاربر بخواهد عدد را حدس بزند. اگر حدس درست بود، پیام شما موفق شدید چاپ کند؛ در غیر این صورت دوباره از کاربر ورودی بگیرد. ضمناً تعداد دفعات تلاش کاربر را هم چاپ کند.
 
-### Activity
+> **Activity**
+>
+> Write a program with the following features:
+>
+> - The program has a few predefined words.
+>
+> - Each time the program runs, one of the words is chosen at random.
+>
+> - The number of guesses allowed equals the number of letters in the chosen word.
+>
+> - If the user guesses the word correctly: show the word and a suitable congratulations message.
+>
+> - Otherwise: show a game-over message.
 
-Write a program that:
+### روش دوم: وارد کردن بخش‌های خاص (from ... import)
 
-Generates a random number between 1 and 10. Asks the user to guess the number. If the guess is correct, prints the message you succeeded; otherwise, asks the user for input again. Also print how many attempts the user made.
+**from** module name **import** function name. In this method only the functions or variables needed are imported from a module. The code is shorter and simpler to write.
 
-### Activity
-
-Write a program that meets the following conditions:
-
-Several predetermined words exist in the program.
-
-On each run of the program, one of the words is chosen at random.
-
-The allowed number of guesses equals the number of letters in the chosen word.
-
-If the user guesses the word correctly: the word is displayed and an appropriate congratulations message is shown.
-
-Otherwise: a game-over message is displayed.
-
-Second method: importing specific parts (`from` ... `import`):
-
-`from` module name `import` function name In this method, only the needed functions or variables from a module are imported. In this method the code is shorter and easier to write.
-
-Example: Only the `sqrt` and `pow` functions from the `math` module are imported into the program (Figure 153).
+**Example**: only the sqrt and pow functions are imported from the math module (Figure 153).
 
 ![Figure 153](../images/p080-02.png)
+*Figure 153*
 
-**Figure 153**
+<!-- page 75 -->
 
----
+After this statement there is no need to write `math.sqrt`; you write sqrt (25) directly.
 
-**Page 75**
+*Table 5: Widely used Python modules*
 
-After this statement, you do not need to write `math.sqrt`. You write `sqrt` (25) directly.
+| Module | Use |
+| --- | --- |
+| math | Math functions |
+| random | Random numbers |
+| turtle | Drawing and graphics |
+| datetime | Date and time |
+| os | Working with the operating system |
 
-Table 5- Commonly used Python modules
+**Example**: showing the current date and time: in this example only the `now()` function is used (Figure 154).
 
-Module
+![Figure 154](../images/p081-02.png)
+*Figure 154*
 
-### In practice
+**Example**: in this example only the hour of the current time is needed, so the second way of importing is used (Figure 155).
 
-`math` mathematical functions `random` generating random numbers `turtle` drawing shapes and graphics `datetime` date and time `os` working with the operating system
+![Figure 155](../images/p081-01.png)
+*Figure 155*
 
-Example: Displaying the current date and time: In this example only the `now()` function is used (Figure 154).
+<!-- page 76 -->
 
-![Figure 154](../images/p081-01.png)
+> **Activity**
+>
+> Using the datetime module, write a program that shows **the current year**.
 
-**Figure 154**
+> **Activity**
+>
+> (Word-guessing game) write a module that:
+>
+> - has a certain word. The number of guesses allowed equals the number of letters in the word.
+>
+> - If the user guesses the word correctly: print the word and show a congratulations message.
+>
+> - If the user does not succeed within the allowed tries: show a game-over message.
+>
+> - Use this module in the main program.
 
-![Book image](../images/p081-03.png)
+### ماژول محلی (local)
 
-Example: In this example, only displaying the hour of the current time is needed. Therefore the second method of importing a module is used (Figure 155).
+Modules written by the programmer and imported into the program.
 
-![Figure 155](../images/p081-02.png)
+First create a Python file with the py extension. Then put functions and variables in it. Then you can use them in the main program with import.
 
-**Figure 155**
-
----
-
-**Page 76**
-
-### Activity
-
-Using the `datetime` module, write a program that displays the current year.
-
-### Activity
-
-(Word-guessing game), write a module that:
-
-Has a specific word. The allowed number of guesses equals the number of letters in the word.
-
-If the user guesses the word correctly: the word is printed and a congratulations message is displayed.
-
-If the user does not succeed within the allowed number of attempts: a game-over message is displayed.
-
-Use this module in the main program.
-
-Local module (`local`):
-
-These are modules written by the programmer and `import`ed into the program.
-
-First create a Python file with the `py` extension. Then place functions and variables in it. Then you can `import` them in the main program.
-
-Example: Create the file `my_module.py` and write the following code in it (Figure 156).
+**Example**: create the file `my_module.py` and write the code below in it (Figure 156).
 
 ![Figure 156](../images/p082-01.png)
+*Figure 156*
 
-**Figure 156**
-
-Then in the main program `main.py` write this code (Figure 157).
+Then write this code in the main program `main.py` (Figure 157).
 
 ![Figure 157](../images/p082-02.png)
+*Figure 157*
 
-**Figure 157**
-
-Example: First create a file named `math_module.py` and write the following functions inside it (Figure 158).
+**Example**: first build a file named `math_module.py` and write the functions below in it (Figure 158).
 
 ![Figure 158](../images/p082-03.png)
+*Figure 158*
 
-**Figure 158**
-
----
-
-**Page 77**
+<!-- page 77 -->
 
 Then use it in the main program (Figure 159).
 
 ![Figure 159](../images/p083-01.png)
+*Figure 159*
 
-**Figure 159**
+> **Activity**
+>
+> Build a file named `random_module.py` and write the function below in it:
+>
+> ![Book image](../images/p083-02.png)
+>
+> **randint** is a ready-made function in Python's **random** module, used to produce a random integer in a given range.
+>
+> Then import the module you built into the main program and use it.
+>
+> ![Book image](../images/p083-03.png)
+>
+> - Run the program and explain the lines of code.
 
-### Activity
+**ماژول‌های شخص ثالث (3rd party)**: ماژول‌هایی که توسط دستور pip install نصب می‌شوند و در برنامه import می‌شوند. مثل Django، Flask, PyGame و...
 
-Create a file named `random_module.py` and write the following function inside it:
+## The difference between a function and a method
 
-![Book image](../images/p083-02.png)
+در مطالب قبل، از دستوراتی مانند، `split()`، `append()` و `len()` استفاده کرده‌اید، بدون آنکه تعریف رسمی آنها بیان شود. این موضوع کاملاً طبیعی است و در برنامه‌نویسی بسیار رایج است؛ زیرا بسیاری از مفاهیم ابتدا با استفاده عملی و سپس با تعریف دقیق معرفی می‌شوند.
 
-`randint` is a ready-made function in Python’s `random` module that is used to generate a random integer in a specific range.
+![Figure 160](../images/p083-04.png)
+*Figure 160*
 
-Then in the main program `import` the module you created and use it.
+<!-- page 78 -->
 
-![Book image](../images/p083-03.png)
+**تابع:(function)** دستوری مستقل است که برای انجام یک کار مشخص به کار می‌رود و به نوع داده خاصی وابسته نیست.
 
-![Book image](../images/p083-04.png)
-
-Run the program and explain the lines of code.
-
-Third-party modules (`3rd party`): Modules that are installed with the `pip install` command and are `import`ed into the program. For example `Django` ,`Flask`, `PyGame`, and so on.
-
-### Difference between a function and a method
-
-In earlier material, you used statements such as ,`split() append()` and `len()` without a formal definition of them being given.
-
-![Book image](../images/p083-05.png)
-
-This is completely natural and very common in programming; many concepts are first introduced through practical use and then with a precise definition.
-
-**Figure 160**
-
----
-
-**Page 78**
-
-Function:(`function`) An independent statement used to perform a specific task and not tied to a particular data type.
-
-Example: Counting the number of users: The `len()` function returns the number of characters in a string (Figure 161).
+**Example**: counting users: the `len()` function returns the number of characters in a string (Figure 161).
 
 ![Figure 161](../images/p084-01.png)
+*Figure 161*
 
-**Figure 161**
+**Example**: showing the number of users as a string (Figure 162):
 
-Example: Displaying the number of users as a string (Figure 162):
+![Figure 162](../images/p084-02.png)
+*Figure 162*
 
-![Book image](../images/p084-02.png)
+**متد (Method)**: نوعی تابع است که به یک کلاس یا شیء مشخص تعلق دارد و برای انجام عملیات روی داده‌های همان شیء استفاده می‌شود.
 
-![Figure 162](../images/p084-03.png)
+**The main difference** between a function and a method is how they are **used** and what they **depend on**: functions are **called independently**, but methods run through **an object** or **a data type** **using a dot** (.), and usually **have access to that object's internal data**.
 
-**Figure 162**
+The lower and upper methods: with lower and upper you can turn all the text into lowercase or uppercase English letters.
 
-Method (`Method`): A kind of function that belongs to a specific class or object and is used to perform operations on that object’s data.
+> **Activity**
+>
+> With your teacher's guidance, explain the lines of code opposite.
+>
+> ![Book image](../images/p084-03.png)
+>
+> ![Book image](../images/p084-04.png)
 
-The main difference between a function and a method is how they are used and what they depend on; functions are called independently, but methods are run through an object or data type using the dot (.) operator and usually have access to that object’s internal data.
+<!-- page 79 -->
 
-The `lower` ,`upper:` methods: Using the `lower` ,`upper` methods, you can convert all of the text to uppercase or lowercase English letters.
-
-### Activity
-
-With guidance from your instructor, explain the lines of code opposite.
-
-![Book image](../images/p084-04.png)
-
-![Book image](../images/p084-05.png)
-
----
-
-**Page 79**
-
-The `split` method breaks a string into a list of words (Figure 163).
+The split method breaks a string into a list of words (Figure 163).
 
 ![Figure 163](../images/p085-01.png)
+*Figure 163*
 
-**Figure 163**
-
-### Activity
-
-Write a function that receives a string from input and displays the count of its uppercase letters, lowercase letters, and digits.
-
----
+> **Activity**
+>
+> Write a function that gets a string from the input and shows how many uppercase letters, lowercase letters, and digits it has.

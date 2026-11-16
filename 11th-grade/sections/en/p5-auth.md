@@ -1,191 +1,165 @@
-**Page 313**
+<!-- page 313 -->
 
-### Code notes:
+**توضیحات کدها**:
 
-Line 10: So that city names can be clicked, an `a` tag has been created inside a `p` tag, and the variable {{ `item.title` }} is used to show the link title. The link address (`href`) points to the home page, and the variable {{ `item.id` }} has been assigned to the `id` parameter.
+**خط 10**: برای اینکه نام شهرها قابلیت کلیک شدن داشته باشند، یک تگ a درون تگ p ایجاد شده و جهت نمایش عنوان لینک، از متغیر {{ `item.title` }} استفاده شده است. آدرس لینک (href) به صفحه اصلی اشاره کرده و متغیر {{ `item.id` }} به پارامتر id مقدار داده است.
 
-This code adds `id` to the `GET` request and sends it to the home page. For example, if the selected city’s id is 11, the user is taken to the following address:
+این کد id را به درخواست GET اضافه و به صفحه اصلی ارسال می‌کند. به عنوان مثال اگر آیدی شهر انتخاب شده 11 باشد، کاربر به آدرس زیر منتقل می‌شود:
 
 ```
-    10|http://127.0.0.1:8000/?id=11
+http://127.0.0.1:8000/?id=11
 ```
 
-In the next step, open `views.py` and change `show_temp_view` as in Figure 56.
+در گام بعد، `views.py` را باز کنید و `show_temp_view` را همانند شکل 56 تغییر دهید.
 
-![Figure 56 using id to select a city](../images/p319-01.png)
+![Figure 56: استفاده از id جهت انتخاب شهر](../images/p319-01.png)
+*Figure 56: استفاده از id جهت انتخاب شهر*
 
-Figure 56 using `id` to select a city
+**توضیحات کدها**:
 
-### Code notes:
+**خط 11**: مقدار پارامتر id که از طریق متد GET در نوار آدرس ارسال شده است، در متغیر `city_id` ذخیره می‌شود.
 
-Line 11: The value of the `id` parameter that was sent through the `GET` method in the address bar is stored in the variable `city_id`.
+درصورتی‌که پارامتر id در نوار آدرس وجود نداشته باشد، تابع `get('id')` که بعد از GET استفاده شده است، مقدار `city_id` را برابر None ذخیره خواهد کرد.
 
-If the `id` parameter is not in the address bar, the `get`(`'id'`) function used after `GET` will store the value of `city_id` as `None`.
+**خط 13**: اگر `city_id` مقدار داشته باشد، با استفاده از ORM جنگو، شهر انتخاب شده توسط کاربر، به‌صورت یک شیء (object)، در متغیر city ذخیره می‌شود.
 
-Line 13: If `city_id` has a value, using Django’s `ORM`, the city selected by the user is stored as an object (`object`) in the variable `city`.
+**خط 15**: اگر `city_id` برابر None باشد (id در نوار آدرس وجود نداشته باشد)، اولین شهر از پایگاه داده واکشی می‌شود.
 
-Line 15: If `city_id` is equal to `None` (`id` is not in the address bar), the first city is fetched from the database.
+<!-- page 314 -->
 
----
+اکنون تمام فایل‌ها را ذخیره نموده، صفحه لیست شهرها را refresh کنید. همه شهرها لینک دارند.
 
-**Page 314**
+روی هر شهری که کلیک کنید، در صفحه جدید دمای هوای آن شهر مشاهده می‌شود (شکل 57).
 
-Now save all the files and `refresh` the city list page. All cities have links.
+![Figure 57: نمایش دمای یک شهر کلیک شده](../images/p320-01.png)
+*Figure 57: نمایش دمای یک شهر کلیک شده*
 
-Whichever city you click, you will see that city’s air temperature on the new page (Figure 57).
+### ورود به سایت (login)
 
-![Figure 57 showing the temperature of a clicked city](../images/p320-01.png)
+در حال حاضر، صفحه اصلی و صفحه لیست شهرها توسط کاربر مهمان و کاربر ادمین قابل مشاهده هستند. اما هر سایت می‌تواند صفحه‌هایی داشته باشد که برای دیده شدن نیاز به login (ورود به سایت) داشته باشند. به‌عنوان مثال برای دیدن پنل ادمین جنگو، باید با نام کاربری و رمز عبور ادمین login کنید. شما می‌توانید، امکان دسترسی به قسمت افزودن نام شهرها را فقط به کاربرانی اعطا کنید که با نام کاربری و رمز عبور خودشان وارد سایت می‌شوند.
 
-Figure 57 showing the temperature of a clicked city
+جنگو خودش به‌طور پیش‌فرض امکاناتی برای مدیریت کاربران دارد تا بتوانید عملیات login و logout را درون سایت اجرا نمایید. فقط کافیست فایل template لازم یعنی `login.html` را در پوشه مناسب ساخته و در فایل urls اصلی پروژه (موجود در پوشه config) یک path جدید اضافه کنید.
 
-Logging in to the site (`login`) At present, the home page and the city list page can be viewed by a guest user and by an admin user.
+**مرحله اول**: فایل `urls.py` اصلی پروژه را همانند شکل 58 تغییر دهید.
 
-But any site can have pages that need a `login` (signing in to the site) to be viewed. For example, to see the Django admin panel, you must `login` with the admin username and password.
+![Figure 58: افزودن path جدید جهت login و logout](../images/p320-02.png)
+*Figure 58: افزودن path جدید جهت login و logout*
 
-You can grant access to the part for adding city names only to users who sign in to the site with their own username and password.
+<!-- page 315 -->
 
-Django itself has built-in features for managing users so that you can run `login` and `logout` operations inside the site. You only need to create the required `template` file, namely `login.html`, in the appropriate folder and add a new `path` in the project’s main `urls` file (in the `config` folder).
+**توضیحات کدها**:
 
-Stage one: Change the project’s main `urls.py` file as in Figure 58.
+**خط 7**: یک path جدید اضافه شده است و در ادامه منجر به این خواهد شد که App مدیریت کاربران جنگو (auth) به کمک urls و views پیش‌فرض، فایل `login.html` را نمایش دهد. برای مدیریت احراز هویت کاربر در پروژه جنگو، از ماژول `django.contrib.auth` استفاده شده است.
 
-![Figure 58 adding a new path for login and logout](../images/p320-02.png)
+با اضافه‌کردن این خط کد به فایل `urls.py`، امکان ورود، خروج و تغییر رمز عبور به سایت اضافه می‌شود. همه این قابلیت‌ها توسط ماژول `django.contrib.auth` مدیریت می‌شوند و نیازی به تعریف دستی path دیگری ندارید.
 
-Figure 58 adding a new `path` for `login` and `logout`
+**مرحله دوم**: در پوشه templates از weather app، یک‌پوشه جدید با نام registration ایجاد کنید، سپس درون آن یک فایل با نام `login.html` همانند شکل 59 بسازید.
 
----
+![Figure 59: افزودن فایل `login.html`](../images/p321-01.png)
+*Figure 59: افزودن فایل `login.html`*
 
-**Page 315**
+**توضیحات کدها**:
 
-### Code notes:
+**خط 10**: یک فرم با متدی از نوع post ایجاد شده است.
 
-Line 7: A new `path` has been added, and as a result Django’s user-management `App` (`auth`) will display the `login.html` file with the help of the default `urls` and `views`. To manage user authentication in a Django project, the `django.contrib.auth` module is used.
+**خط 11**: فیلد `csrf_token` به فرم اضافه شده است. `csrf_token` در جنگو یک مقدار امنیتی است که داخل فرم‌ها قرار می‌گیرد تا مطمئن شود درخواست ارسال‌شده واقعاً از همان سایت و توسط کاربر مجاز آمده است. این توکن از حملۀ Cross-Site Request Forgery جلوگیری می‌کند.
 
-By adding this line of code to the `urls.py` file, the ability to log in, log out, and change the password on the site is added.
+**خط 12**: فیلدهای فرم را به‌صورت تگ‌های`<p>` در HTML نمایش می‌دهد.
 
-All of these features are managed by the `django.contrib.auth` module, and you do not need to define another `path` by hand.
+**خط 13**: یک دکمه از نوع submit برای ارسال اطلاعات به سرور جنگو اضافه شده است.
 
-Stage two: In the `templates` folder of the `weather app`, create a new folder named `registration`, then inside it create a file named `login.html` as in Figure 59.
+> **Curiosity**
+>
+> در مورد `csrf_token` و حمله Cross-Site Request Forgery تحقیق و بررسی کنید.
 
-![Figure 59 adding the login.html file](../images/p321-01.png)
+<!-- page 316 -->
 
-Figure 59 adding the `login.html` file
+**مرحله سوم**: در فایل `settings.py`، تنظیمات لازم را برای بعد از اتمام عملیات login و logout همانند شکل 60 انجام دهید.
 
-### Code notes:
+![Figure 60: تنظیمات login و logout در `settings.py`](../images/p322-01.png)
+*Figure 60: تنظیمات login و logout در `settings.py`*
 
-Line 10: A form with a method of type `post` has been created.
+**توضیحات کدها**
 
-Line 11: The `csrf_token` field has been added to the form. In Django, `csrf_token` is a security value that is placed inside forms so that it can be sure the submitted request really came from the same site and from an authorized user.
+**خط 125**: کاربر بعد از login موفق به صفحه home منتقل خواهد شد. home همان نامی‌است که برای آدرس صفحه اصلی در `urls.py` تعریف شده است.
 
-This token prevents a `Cross-Site Request Forgery` attack.
+**خط 126**: کاربر بعد از logout موفق به صفحه home منتقل خواهد شد.
 
-Line 12: It displays the form fields as `<p>` tags in `HTML`.
+**مرحله چهارم**: در فایل `show_temp.html`، دکمه‌های ورود و خروج را همانند شکل 61 اضافه کنید.
 
-Line 13: A button of type `submit` has been added to send the information to the Django server.
+![Figure 61: افزودن دکمه ورود و خروج به صفحه اصلی](../images/p322-02.png)
+*Figure 61: افزودن دکمه ورود و خروج به صفحه اصلی*
 
-### Try this
+<!-- page 317 -->
 
-Research and study `csrf_token` and the `Cross-Site Request Forgery` attack.
+**توضیحات کدها**:
 
----
+**خط 9**: این دستور بررسی می‌کند که آیا کاربر وارد سیستم شده است یا خیر. اگر `user.is_authenticated` مقدار True داشته باشد؛ یعنی کاربر احراز هویت شده است و دستورات داخل این شرط اجرا خواهند شد.
 
-**Page 316**
+**خط 10**: در این خط یک فرم HTML، تعریف شده است که درخواست را با متد POST به آدرس خروج از حساب کاربری ارسال می‌کند.
 
-Stage three: In the `settings.py` file, make the needed settings for after the `login` and `logout` operations finish, as in Figure 60.
+**خط 14**: از else استفاده شده است و به این معنی است، اگر کاربر login نباشد، چه چیزی به او نمایش داده شود.
 
-![Figure 60 login and logout settings in settings.py](../images/p322-01.png)
+**خط 15**: در این خط یک فرم با متد GET تعریف شده است که کاربر را به صفحه ورود به سایت یعنی صفحه login هدایت می‌کند.
 
-Figure 60 `login` and `logout` settings in `settings.py`
+اکنون فایل‌ها را ذخیره کرده و سرور جنگو را متوقف و دوباره راه‌اندازی کنید. سپس صفحه اصلی سایت را refresh کنید. اگر کاربر login نکرده باشد، دکمه ورود به سایت را مشاهده می‌کند (شکل 62).
 
-### Code notes
+![Figure 62: نمایش دکمه ورود برای کاربر مهمان](../images/p323-01.png)
+*Figure 62: نمایش دکمه ورود برای کاربر مهمان*
 
-Line 125: After a successful `login`, the user will be redirected to the `home` page. `home` is the same name that was defined for the home page address in `urls.py`.
+با کلیک روی دکمه ورود به سایت، کاربر به صفحه login منتقل می‌شود (شکل 63).
 
-Line 126: After a successful `logout`, the user will be redirected to the `home` page.
+![Figure 63: فرم ورود به سایت](../images/p323-02.png)
+*Figure 63: فرم ورود به سایت*
 
-Stage four: In the `show_temp.html` file, add the login and logout buttons as in Figure 61.
+<!-- page 318 -->
 
-![Figure 61 adding login and logout buttons to the home page](../images/p322-02.png)
+پس از ورود موفق به سایت، کاربر به صفحه اصلی سایت منتقل شده و این بار دکمه خروج از سایت برای کاربر نمایش داده می‌شود.
 
-Figure 61 adding login and logout buttons to the home page
+درصورتی‌که کاربر روی دکمه خروج از سایت کلیک کند، از سایت خارج شده و بلافاصله به صفحه اصلی منتقل خواهد شد.
 
----
+### ثبت شهر جدید با کاربر عضو سایت
 
-**Page 317**
+تاکنون فقط در پنل ادمین و با کاربر admin امکان ثبت شهرها را داشتید. اما این امکان وجود دارد که کاربرهای عضو سایت هم بتوانند بدون مراجعه به پنل ادمین، شهر جدید را ثبت کنند.
 
-### Code notes:
+برای این کار می‌توانید با استفاده از فرم‌های جنگو و انجام چهار مرحلۀ زیر، این قابلیت را به سایت اضافه کنید.
 
-Line 9: This statement checks whether the user is signed in to the system or not. If `user.is_authenticated` has the value `True`, it means the user has been authenticated and the statements inside this condition will run.
+1. ایجاد `forms.py` برای ساخت فرم ثبت شهر جدید
 
-Line 10: In this line an `HTML` form is defined that sends the request with the `POST` method to the account logout address.
+2. ساختن template ساده برای فرم
 
-Line 14: `else` has been used, and it means what should be shown to the user if the user is not `login`.
+3. ساختن تابع `add_city_view` برای نمایش فرم
 
-Line 15: In this line a form with the `GET` method is defined that directs the user to the site login page, namely the `login` page.
+4. اضافه‌کردن path مخصوص فرم در فایل `urls.py`
 
-Now save the files and stop and restart the Django server. Then `refresh` the site’s home page. If the user has not `login`, they will see the site login button (Figure 62).
+5. قراردادن لینک «افزودن شهر» در صفحه اصلی
 
-![Figure 62 showing the login button for a guest user](../images/p323-01.png)
+**مرحله اول**: یک فایل جدید در پوشه weather با نام `forms.py` ایجاد کنید و همانند شکل 64 آن را تکمیل کنید.
 
-Figure 62 showing the login button for a guest user
+![Figure 64: ایجاد CityForm](../images/p324-01.png)
+*Figure 64: ایجاد CityForm*
 
-By clicking the site login button, the user is taken to the `login` page (Figure 63).
+<!-- page 319 -->
 
-![Figure 63 site login form](../images/p323-02.png)
+**توضیحات کدها**:
 
-Figure 63 site login form
+**خط 1**: ماژول forms درون این فایل import شده است. این ماژول همه کارهای مربوط به فرم‌ها را پشتیبانی می‌کند.
 
----
+**خط 2**: کلاس City از فایل model درون این فایل import شده است. City همان مدل شهر‌ها است که قبلاً تعریف کرده‌ایم.
 
-**Page 318**
+**خط 4**: یک کلاس با نام CityForm ساخته شده است که از ModelForm ارث‌بری می‌کند.
 
-After a successful login to the site, the user is taken to the site’s home page, and this time the site logout button is shown to the user.
+**خط 5**: برای تعیین مدل و فیلدهایی که می‌خواهید نمایش داده شود باید از یک کلاس Meta در کلاس اصلی استفاده شود و در آن مدل و فیلدها مشخص گردد.
 
-If the user clicks the site logout button, they will leave the site and will immediately be taken to the home page.
+**خط 6**: کلاس City به‌عنوان model تعیین شده است.
 
-Registering a new city with a site member user Until now you could only register cities in the admin panel and with the `admin` user. But it is possible for member users of the site to register a new city without going to the admin panel.
+**خط 7**: لیست فیلدهایی که می‌خواهید نمایش داده شود، تعیین شده است.
 
-To do this, you can add this feature to the site by using Django forms and carrying out the four stages below.
+**مرحله دوم**: فایل `add_city.html` را همانند شکل 65 ایجاد کنید.
 
-1 Create `forms.py` to build the new-city registration form
+![Figure 65: افزودن `add_city.html`](../images/p325-01.png)
+*Figure 65: افزودن `add_city.html`*
 
-2 Build a simple `template` for the form
+**توضیحات کدها**:
 
-3 Build the `add_city_view` function to display the form
-
-4 Add a special `path` for the form in the `urls.py` file
-
-5 Place the “Add city” link on the home page Stage one: Create a new file in the `weather` folder named `forms.py` and complete it as in Figure 64.
-
-![Figure 64 creating CityForm](../images/p324-01.png)
-
-Figure 64 creating `CityForm`
-
----
-
-**Page 319**
-
-### Code notes:
-
-Line 1: The `forms` module has been `import`ed into this file. This module supports all work related to forms.
-
-Line 2: The `City` class from the `model` file has been `import`ed into this file. `City` is the same cities model that we defined previously.
-
-Line 4: A class named `CityForm` has been created that inherits from `ModelForm`.
-
-Line 5: To specify the model and the fields you want to display, you must use a `Meta` class inside the main class and specify the model and fields in it.
-
-Line 6: The `City` class has been set as the `model`.
-
-Line 7: The list of fields you want to display has been set.
-
-Stage two: Create the `add_city.html` file as in Figure 65.
-
-![Figure 65 adding add_city.html](../images/p325-01.png)
-
-65 add_city.html
-
-### Code notes:
-
-A form with a method of type `post` has been created. This form takes the latitude and longitude as well as the city name from the user and sends them to the Django server to be stored in the database.
-
----
+یک فرم با متد از نوع post ایجاد شده است. این فرم طول و عرض جغرافیایی و همچنین نام شهر را از کاربر گرفته و برای سرور جنگو ارسال می‌کند تا در دیتابیس ذخیره شود.

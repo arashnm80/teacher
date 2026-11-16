@@ -1,63 +1,54 @@
-**Page 211**
+<!-- page 211 -->
 
-The word `Condition` means the condition, and the word `statement` refers to the statement or statements that run when the condition is met. A condition being met means that the value of the `Condition` expression equals `True`. The word `else` means “otherwise.” The content of `else` runs when the `if` condition is not met—that is, when the value of the `condition` expression equals `False`.
+کلمه Condition به‌معنای شرط و کلمه statement به دستور یا دستوراتی اشاره دارد که به‌ازای برقرار شدن شرط اجرا می‌شوند. منظور از برقرار بودن شرط این است که مقدار عبارت Condition برابر True باشد. کلمه else به‌معنای «درغیراین‌صورت» است. محتوای else زمانی اجرا می‌شود که شرط if برقرار نباشد. یعنی مقدار عبارت condition برابر False باشد.
 
-Working with `if` conditional structures
+> **Workshop**
+>
+> **کار با ساختارهای شرطی if**
+>
+> توسط ساختار شرطی **if**، زوج یا فرد بودن عدد n را بررسی کنید.
+>
+> بدین منظور یک فایل جدید با نام `workshop6.html` ایجاد کنید و اسکریپت زیر را درون آن بنویسید: فایل را ذخیره کنید و نتیجه را در کنسول مرور‌گر مشاهده نمایید. در این اسکریپت، باقی‌ماندۀ تقسیم عدد n بر 2 درون متغیر r ذخیره می‌شود. چنانچه مقدار باقی‌مانده صفر باشد (یعنی n بر 2 بخش‌پذیر است)، عبارت "Even number" و در غیراین‌صورت عبارت "Odd number" روی صفحه ظاهر می‌شود. کلمه Even به‌معنای زوج و کلمه Odd به معنای فرد است.
+>
+> ![Book image](../images/p217-03.png)
+>
+> اسکریپت تشخیص زوج یا فرد بودن یک عدد می‌تواند توسط ساختار **if-else** نیز نوشته شود. اسکریپت قبل را طبق شکل زیر تغییر دهید و نتیجه را در کنسول مرور‌گر بررسی کنید.
+>
+> ![Book image](../images/p217-01.png)
+>
+> ![Book image](../images/p217-02.png)
 
-### Workshop
+![Figure 10](../images/p217-04.png)
+*Figure 10*
 
-Using an `if` conditional structure, check whether the number `n` is even or odd.
+**ساختار else-if**: امکان بررسی چند شرط را به‌صورت پی‌در‌پی فراهم می‌کند. در این مرحله رتبه یک دانش‌آموز بر اساس نمره کسب‌شده مشخص می‌شود. در انتهای اسکریپت قبل، کد روبه‌رو را بنویسید.
 
-For this purpose, create a new file named `workshop6.html` and write the following script in it:
+در این اسکریپت، متغیر score با مقدار 70 برای نگهداری نمره دانش‌آموز تعریف شده است. ابتدا شرط `score>=90` و سپس شرط `score>=80` بررسی می‌شود. با توجه به اینکه مقدار هر دو شرط نادرست است، بنابراین دستور `console.log()` در خطوط 3 و 5 اجرا نمی‌شود. سپس شرط `score>=70` بررسی می‌شود. با توجه به برقرار بودن شرط، دستور شماره 7 اجرا شده و عبارت Grade: C روی صفحه چاپ می‌شود. بعد از اجرای دستور 7 شرط‌های بعدی بررسی نمی‌شود و کنترل برنامه به خط 13 منتقل می‌شود.
 
-Save the file and view the result in the browser console. In this script, the remainder of dividing the number `n` by 2 is stored in the variable `r`. If the remainder is zero (that is, `n` is divisible by 2), the phrase `"Even number"` appears on the page; otherwise the phrase `"Odd number"` appears.
+<!-- page 212 -->
 
-![Book image](../images/p217-03.png)
+> **Learn more**
+>
+> **ساختار Switch**
+>
+> ساختار switch برای انتخاب از بین چندین بلوک کد، بر اساس مقدار یک متغیر به‌کار می‌رود. درصورتی‌که شرایط مسئله فقط به مقایسه یک متغیر با مقادیر مشخص محدود شود، می‌توان از ساختار switch به‌جای else-ifهای متعدد استفاده نمود.
 
-The word `Even` means even and the word `Odd` means odd.
+> **Workshop**
+>
+> **استفاده از ساختار شرطی switch**
+>
+> ![Book image](../images/p218-01.png)
+>
+> اسکریپتی بنویسید که رتبۀ یک دانش‌آموز را از متغیر grade دریافت کند و بر اساس مقدار رتبه، پیغام مناسبی را برای کاربر نمایش دهد.
+>
+> بدین منظور اسکریپت موجود در فایل `workshop6.html` را درون علائم کامنت قرار دهید و در ادامه، کد روبه‌رو را برای بررسی رتبه بنویسید.
+>
+> در این مثال ساختار شرطی switch مقدار متغیر grade را توسط caseهای مختلف بررسی می‌کند، به محض اینکه مقدار مقابل case با مقدار متغیر grade یکسان شود، دستور بعد از علامت: اجرا شده و سپس خروج از ساختار switch توسط دستور break انجام می‌شود. اگر مقدار متغیر grade با هیچ یک از مقادیر نوشته شده در مقابل caseها یکسان نباشد، دستور مربوط به حالت default اجرا می‌گردد.
 
-The script that detects whether a number is even or odd can also be written with an `if-else` structure. Change the previous script according to the figure below and check the result in the browser console.
+> **Note**
+>
+> اگر شرط یک case برقرار شود ولی دستور break در آن موجود نباشد، case بعدی هم توسط برنامه بررسی می‌شود.
 
-![Book image](../images/p217-02.png)
-
-![Book image](../images/p217-01.png)
-
-![Book image](../images/p217-04.png)
-
-The `else-if` structure: Makes it possible to check several conditions one after another. In this step, a student’s rank is determined based on the score earned. At the end of the previous script, write the code on the right.
-
-In this script, the variable `score` with the value 70 is defined to hold the student’s score. First the condition `score>=90` and then the condition `score>=80` are checked. Given that
-
-**Figure 10**
-
----
-
-**Page 212**
-
-the value of both conditions is false, the `console.log()` statement on lines 3 and 5 is not executed. Then the condition `score>=70` is checked. Because the condition is met, statement number 7 runs and the phrase `Grade: C` is printed on the page. After statement 7 runs, the later conditions are not checked and program control moves to line 13.
-
-### Learn more
-
-The `Switch` structure The `switch` structure is used to choose among several blocks of code based on the value of a variable. If the problem conditions are limited only to comparing one variable with specific values, you can use a `switch` structure instead of many `else-if`s.
-
-Using the `switch` conditional structure
-
-### Workshop
-
-![Book image](../images/p218-01.png)
-
-Write a script that receives a student’s rank from the variable `grade` and, based on the rank value, displays an appropriate message for the user.
-
-For this purpose, place the existing script in the `workshop6.html` file inside comment marks and then write the code on the right to check the rank.
-
-In this example, the `switch` conditional structure checks the value of the variable `grade` with different `case`s; as soon as the value next to a `case` matches the value of the variable `grade`, the statement after the : mark runs, and then exiting the `switch` structure is done with the `break` statement. If the value of the variable `grade` does not match any of the values written next to the `case`s, the statement for the `default` case runs.
-
-### Note
-
-If a `case` condition is met but there is no `break` statement in it, the next `case` is also checked by the program.
-
-### Activity
-
-In `case A`, remove the `break` statement and check the program output in the browser. Then remove the `break` statement from the later `case`s and analyze the result.
-
----
+> **Activity**
+>
+> در case A دستور break را حذف کنید و خروجی برنامه را در مرورگر بررسی کنید. سپس دستور break را از مقابل caseهای بعدی حذف کنید و نتیجۀ آن را تحلیل نمایید.

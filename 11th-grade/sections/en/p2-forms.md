@@ -1,258 +1,143 @@
-**Page 106**
+<!-- page 106 -->
 
-Using the table tag
+> **Workshop**
+>
+> **Using the table tag**
+>
+> Following the image, write the tags needed to create the table and see the result in the browser.
+>
+> ![Book image](../images/p112-01.png)
 
-### Workshop
+## Designing forms
 
-As in the image, write the tags needed to create the table and observe the result in the browser.
-
-![Book image](../images/p112-01.png)
-
-### Form design
-
-Data entry forms Forms are powerful tools for collecting information from users. A data entry form receives user information and then sends it to a web server for processing and storage. Processing and storage are
+### Data-entry forms
 
 ![Figure 16](../images/p112-02.png)
+*Figure 16*
 
-**Figure 16**
+Forms are powerful tools for collecting information from users. A data-entry form takes users' information and sends it to a web server to be processed and stored. Processing and storage happen on the server side. A form contains different tags for getting users' data. These tags are:
 
-done on the server side. An information form includes various tags for receiving user data.
+**`<form>`**: defines a form.
 
-These tags are as follows:
-
-`<form>:` Used to define a form.
-
-The general form of this tag is as follows:
+The general form of this tag is:
 
 ```
 <form action="URL" method="http_method" enctype="encoding_type">
 ```
 
-The attributes of the form element are as follows:
+The attributes of the form element are:
+
+**action**: sets the address (URL) on the server to which the form's data is sent for processing.
 
-`action:` This attribute specifies to which address (`URL`) on the server side the form data should be sent for processing.
+**method**: روش ارسال داده‌های فرم را به سرور مشخص می‌کند. این ویژگی دارای دو مقدار get و post است. در روش get داده‌های فرم به عنوان پارامترهای URL به سرور ارسال می‌شوند. این روش برای ارسال داده‌های حساس کاربر مناسب نیست. در روش post اطلاعات فرم به‌صورت پنهانی به سرور ارسال می‌شوند، این روش برای ارسال داده‌های حساس مناسب است. درجدول صفحۀ بعد مقایسه دو روش ارسال اطلاعات به در فرم‌ها را مشاهده کنید (جدول 5).
 
-`method:` Specifies the method of sending the form data to the server. This attribute has two values, `get` and `post`. In the `get` method, the form data are sent to the server as `URL` parameters. This method is not suitable for sending sensitive user data. In the `post` method, the form information is sent to the server in a hidden way; this method is suitable for sending sensitive data. In the table on the next page, see the comparison of the two methods of sending information in forms (Table 5).
+<!-- page 107 -->
 
----
+*Table 5: Comparing the two ways of sending form data*
 
-**Page 107**
+| Aspect | The GET method | The POST method |
+| --- | --- | --- |
+| How the data is sent | The data is sent through the browser's address bar, so the user can see it. | The data is sent in the body of the HTTP request and cannot be seen in the URL. |
+| Limit on data size | Browsers have limits when sending a request with GET. Depending on the browser and the server settings, the string sent through the address bar can be 2000 to 8000 characters long. | Has few limits and can be used to send files and long texts. |
+| Security | Low security: besides showing users' data in the address bar, the address may be stored (cached) in the browser's memory. | Safer than GET, but not fully secure unless the HTTPS protocol is used. |
+| Uses | Getting information from the server (such as searching and filtering), when the user does not intend to change data on the server. | Sending information to the server to be processed or stored (such as signing up, logging in, uploading a file) |
 
-Table 5 Comparison of the two methods of sending information in forms
+> **Example**
+>
+> An example of using the GET method
+>
+> ![Book image](../images/p113-02.png)
+>
+> ![Book image](../images/p113-03.png)
+>
+> ![Book image](../images/p113-04.png)
+>
+> Output
 
-Operation `GET` method `POST` method
+> **Example**
+>
+> An example of using the POST method
+>
+> ![Book image](../images/p113-01.png)
 
-How data are sent
+<!-- page 108 -->
 
-Data are sent through the browser address bar and
+A form holds a set of elements for getting different information from users, shown in Table 6:
 
-Data are sent in the body of the `HTTP` request and
+*Table 6: عناصر فرم (تگ‌هایی که در عنصر فرم مورد استفاده قرار می‌گیرند) و کاربرد آنها*
 
-are visible to the user as a result.
+| Form element | Use and general form of the element |
+| --- | --- |
+| `<label>` | Sets the label of form elements. |
+|  | `<label for=" ">  </label>` |
+| `<input>` | Gets different kinds of information from the user. The kind of input is set by the type attribute. |
+|  | `<input type="" name="" id="" value="" placeholder="" required >` |
+| `<fieldset>` | Groups form elements; this tag draws a box around a group of fields. |
+| `<legend>` | `<fieldset> <legend> </legend> </fieldset>`<br>The legend tag sets the title of the group. |
+| `<textarea>` | Gets long text from users; the size of the text box is set with the rows and cols attributes. |
+|  | `<textarea id="" name=" " rows="" cols="" required> </textarea>` |
+|  | Creates a drop-down list. The options of the list are set with the `<option>` tag. |
+| `<select>` | `<select id="" name="" required>`<br>`<option value=""> </option>`<br>`</select>` |
 
-are not visible in the `URL`.
+The type attribute of the `<input>` element sets the kind of data the user enters. Its values are described in Table 7:
 
-Data volume limit
+*Table 7: The values of the type attribute of the &lt;input&gt; element*
 
-Browsers have a limit when sending a request with the `GET`
+| Value of type | Use |
+| --- | --- |
+| text, password, email | Gets short text values such as a username, password, and email. |
+| tel, number | Gets phone numbers and numeric values. |
+| radio | Creates a list of options from which the user may choose only one. |
+| checkbox | Creates a list of options from which the user can choose zero, one, or several. |
+| file | Gets a file from the user (upload). |
+| submit | Creates a button that sends the information |
+| reset | Clears the content of the form. |
 
-method. Depending on the browser type and server
+<!-- page 109 -->
 
-settings, the length of the string that can be sent through the address bar is between
+To create a group of radio buttons, the name attribute must be the same for all the radio buttons in the group; otherwise several of them could be selected. Radio buttons are usually used when one option must be chosen from several.
 
-2000 and 8000 characters.
+> **Example**
+>
+> Example:
+>
+> ![Book image](../images/p115-01.png)
 
-Has little limit and can be used for sending files and long texts.
+> **Workshop**
+>
+> **Creating an order form**: create a new page named `order_form.html` and write the order form in it as in the figure below. Then check the result in the browser.
+>
+> ![Book image](../images/p115-02.png)
+>
+> Output
 
-Security
+<!-- page 110 -->
 
-Has low security; in addition to displaying user data
+**name**: sets the name of the element, which is used in server-side code.
 
-in the address bar, it is possible for the address content to be stored (cached)
+**id**: sets the identifier of the form element, which must be unique.
 
-in the browser memory.
+**value**: sets the default value of the form element.
 
-Is more secure than the `GET` method but does not have complete security,
+**required**: using this attribute in form elements shows an error message if a field is left empty.
 
-unless the `HTTPS` protocol is used.
+> **Activity**
+>
+> Create a product-return form with first and last name, order number, product name, reason for return, and a picture of the product.
 
-Uses
+## Structuring the page with semantic elements (Semantic Elements)
 
-For receiving information from the server (such as search and filtering).
+Semantic elements in HTML are elements that clearly describe the content inside them. Using them helps screen readers and search engines understand the structure and content of the page better. Semantic elements not only improve the page's SEO but also make the code easier to organize and maintain. They are:
 
-In this case the user does not intend to change the server data.
+**`<main>`**: holds the main content of the page. Each page must have only one `<main>` element.
 
-For sending information to the server for processing or
+**`<header>`**: defines the header of a document. Inside this tag you can use tags such as `<h1>`, `<p>`, `<nav>`, `<ul>`, `<img>`, and `<form>`.
 
-storage (such as registration, login, file upload)
-
-### Example
-
-An example of using the `GET` method
-
-![Book image](../images/p113-03.png)
-
-![Book image](../images/p113-04.png)
-
-![Book image](../images/p113-05.png)
-
-Output
-
-### Example
-
-An example of using the `POST` method
-
-![Book image](../images/p113-01.png)
-
-![Book image](../images/p113-02.png)
-
----
-
-**Page 108**
-
-A form contains a set of elements for receiving various information from users, which is shown in Table 6:
-
-Table 6 Form elements (tags used inside the form element) and their uses Form element
-
-Use and general form of the element
-
-Setting labels for form elements.
-
-```
-<label>
-<label for=" "> </label>
-```
-
-Receiving various information from the user. The input type is specified by the `type` attribute.
-
-```
-<input>
-<input type="" name="" id="" value="" placeholder="" required >
-<feildset>
-```
-
-Grouping form elements; this tag causes a box to be displayed around the group of fields.
-
-```
-<fieldset> <legend> </legend> </fieldset>
-<legend>
-```
-
-The `legend` label specifies the group title.
-
-Receiving long phrases from users; the size of the text box is specified with the `rows` and `cols` attributes.
-
-```
-<textarea>
-<textarea id="" name=" " rows="" cols="" required> </textarea>
-```
-
-Creating a list or drop-down list. The list options are specified with the `<option>` tag.
-
-```
-<select id="" name="" required>
-<select>
-<option value=""> </option>
-</select>
-```
-
-The `type` attribute on the `<input>` element determines the type of user input data. The value of this attribute is described in Table 7:
-
-Table 7 Values of the `type` attribute on the `<input>` element
-
-Value of the `type` attribute
-
-### Use
-
-text, password, email
-
-Receiving short text values such as username, password, and email.
-
-tel, number
-
-Receiving a phone number and numeric values.
-
-`radio`
-Creating a list of options where the user is allowed to select only one option.
-
-Used to create a list of options where the user can select zero, one, or more options
-
-`checkbox`
-.
-
-`file`
-Receiving a file from users (upload).
-
-`submit` Creating a button to send information
-
-`reset`
-Clears the form content.
-
----
-
-**Page 109**
-
-To create a group of radio buttons, the `name` attribute must be the same for all radio buttons in the group; otherwise it is possible to select more than one element. Radio buttons are usually used when choosing one option from among several options is involved.
-
-### Example
-
-### Example:
-
-![Book image](../images/p115-01.png)
-
-<input
-```
-type="radio" name="gender" value="male">
-```
-<input
-```
-type="radio" name="gender" value="female">
-```
-
-Creating an order form
-
-### Workshop
-
-Create a new page named `order_form.html` and write the order form inside it as in the figure below. Then check the result in the browser.
-
-![Book image](../images/p115-02.png)
-
-![Book image](../images/p115-03.png)
-
-Output
-
----
-
-**Page 110**
-
-`name:` Sets the name of the element, which is used in server-side coding.
-
-`id:` Sets the identifier of the form element, which must be a unique value.
-
-`value:` Sets the default value of the form element.
-
-`required:` Using this attribute on form elements causes an error message to appear if a field is left empty.
-
-### Activity
-
-Create a product return form containing first and last name, order number, product name, reason for return, and product image.
-
-### Structuring the page with semantic elements (Semantic Elements)
-
-Semantic elements in `HTML` are elements that clearly describe the content inside them.
-
-Using these elements helps screen readers and search engines better understand the structure and content of the page. Semantic elements not only improve the page’s SEO, but also make organizing and maintaining the code easier. These elements are as follows:
-
-`<main>:` Used to display the main content of the page. Each page should have only one `<main>` element.
-
-`<header>:` Used to define the header of a document. Inside this tag it is possible to use various tags such as `<h1>`, `<p>`, `<nav>`, `<ul>`, `<img>`, and `<form>`.
-
-`<nav>:` Used when creating navigation menus1 (Figure 17).
+**`<nav>`**: used when creating navigation menus¹ (Figure 17).
 
 ![Figure 17](../images/p116-01.png)
+*Figure 17*
 
-**Figure 17**
-
-1 A navigation menu (`Navigation Menu`) includes a set of links that allow users to move through different pages or sections inside a website. The site navigation menu is usually placed at the top or side of a web page.
-
----
+> **Footnotes**
+>
+> 1. A navigation menu (Navigation Menu) is a set of links that lets users move between the pages or sections of a website. A site's navigation menu is usually at the top or the side of a web page.

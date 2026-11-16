@@ -1,283 +1,227 @@
-**Page 33**
+<!-- page 33 -->
 
-In the Python programming language, there are two main structures for implementing repetition loops:
+In Python there are two main structures for loops:
 
-1 The `for` loop
+1. The for loop
 
-2 The `while` loop
+2. The while loop
 
-The `for` loop: is used to repeat the execution of statements over a sequence (such as a list, string, tuple, set, and dictionary) and is usually used when the number of repetitions is known or can be determined in advance.
+**The for loop**: used to run statements for each item of a sequence (such as a list, string, tuple, set, or dictionary), usually when the number of repetitions is known in advance or can be worked out.
 
-The overall structure of the `for` loop in Python is as follows:
+The general form of the for loop in Python is:
 
 ```
-:for variable in sequence
+for variable in sequence:
+      statements
 ```
-statements
 
 In this structure:
 
-`variable` is a variable that, in each repetition, receives the value of one of the elements of the sequence.
+- variable is a variable that receives one element of the sequence on each pass.
 
-The variable name can be chosen freely; for example (`i`, `count`, `num`, `student`…) `sequence` is a sequence such as a list, string, tuple, set, or dictionary.
+- The variable name can be anything; for example (i, count, num, student…)
 
-`statements` are the set of statements in the loop body that are executed on each repetition. These statements are called the loop block and must have one `tab` of indentation.
+- sequence is a sequence such as a list, string, tuple, set, or dictionary.
 
-Traversing lists Example 1: The code below prints the elements of a list that includes three colors (`red`, `blue`, `green`) (Figure 73).
+- statements are the statements in the body of the loop that run on each pass. They are called the loop block, and they must be indented by one tab.
+
+### Going through lists
+
+**Example 1**: the code below prints the elements of a list of three colors (red, blue, green) (Figure 73).
 
 ![Figure 73](../images/p039-01.png)
+*Figure 73*
 
-**Figure 73**
+**About the code**: on the first line, a list holding the names of three colors as strings is defined.
 
-Code explanation: In the first line, a list containing the names of three colors as strings is defined.
+On the second line, the for statement goes through the list elements in order and puts each element in the item variable.
 
-In the second line, the `for` statement traverses the list elements in order and places each element in the variable `item`.
+**Example 2**: showing a shopping cart. In this program a list named `shopping_cart` is created first and the purchased items are stored in it. Then the elements of the list are printed with a for loop. Run the program and see the result (Figure 74).
 
-Example 2: Displaying a shopping cart. In this program, first a list named `shopping_cart` is created and the purchased items are stored in it. Then the elements in the list are printed using a `for` loop.
+![Figure 74](../images/p039-02.png)
+*Figure 74*
 
-Run the program and observe the result (Figure 74).
+<!-- page 34 -->
 
-![Book image](../images/p039-02.png)
+**About the code**: on the first line, a list holding the names of the purchased items as strings is defined. The second line prints a suitable message before the loop starts.
 
-![Figure 74](../images/p039-03.png)
-
-**Figure 74**
-
----
-
-**Page 34**
-
-Code explanation: In the first line, a list containing the names of the purchased items as strings is defined.
-
-The second line prints an appropriate message before entering the loop.
-
-In the third line, the `for` statement traverses the list elements in order and places each element in the variable `item`.
-
-In the final line, a message containing the name of each list element is printed.
-
-![Book image](../images/p040-02.png)
-
-Traversing strings Example: printing the letters of the word `python` (Figure 75)
+On the third line, the for statement goes through the list elements in order and puts each element in the item variable. On the last line, a message with the name of each element of the list is printed.
 
 ![Figure 75](../images/p040-01.png)
+*Figure 75*
 
-**Figure 75**
+### Going through strings
 
-Code explanation: On each execution of the loop, one of the letters of the string `python` is placed in the variable `ch` and that same value is printed inside the loop.
+Example: printing the letters of the word python (Figure 75)
 
-Examples of using the `for` loop Example 1: The program below is written to count the number of elements in a list using a `for` loop (Figure 76).
+**About the code**: on each pass of the loop, one letter of the string python is put in the ch variable, and that value is printed inside the loop.
 
-![Figure 76](../images/p040-03.png)
+### Some uses of the for loop
 
-**Figure 76**
+**Example 1**: the program below counts the elements of a list with a for loop (Figure 76).
 
-Code explanation: In the first line, a list containing the names of several fruits as strings is defined.
+![Figure 76](../images/p040-02.png)
+*Figure 76*
 
-In the second line, the variable `count` is created with the initial value zero.
+**About the code**: on the first line, a list holding the names of some fruits as strings is defined.
 
-In the third line, the `for` loop traverses the list elements in order and places each element in the variable `fruit`.
+On the second line, the variable count is created with the starting value zero.
 
-In the fourth line, for each execution of the loop, one is added to the variable `count`. The two statements below are equivalent.
+On the third line, the for loop goes through the list elements in order and puts each element in the fruit variable. On the fourth line, one is added to count on each pass of the loop. The two statements below are equivalent.
 
 ```
 count + = 1
 count = count + 1
 ```
 
-In the final line, the final value of `count` is printed. Note that this line is outside the loop.
+On the last line, the final value of count is printed. Note that this line is outside the loop.
 
----
+<!-- page 35 -->
 
-**Page 35**
+> **Activity**
+>
+> Python has a ready-made function that does what the code on the previous page does; research it.
 
-### Activity
-
-In Python there is a built-in function for doing the code on the previous page; research it.
-
-Example 2: If the goal is to count the number of a specific element (for example, the number of `apple`) inside the loop, you can change the program as follows using the conditional statement `if` (Figure 77).
+**Example 2**: if the goal is to count one particular element inside the loop (for example, the number of apples), you can change the program with an if statement as below (Figure 77).
 
 ![Figure 77](../images/p041-01.png)
+*Figure 77*
 
-**Figure 77**
+**About the code**: on the fourth line, the if statement checks whether the value of fruit equals apple. If it does, one is added to count.
 
-Code explanation: In the fourth line, the `if` statement checks whether the value of `fruit` equals the value `apple` or not.
+> **Activity**
+>
+> Lists have a method that does what the code above does; research it.
 
-If the above condition is met, one is added to the variable `count`.
+**Using the `range()` function**: so far the for loop has been used to go through the elements of lists and strings.
 
-### Activity
+Sometimes a statement must be repeated a certain number of times without a ready list of values.
 
-Lists have a method for doing the code above; research it.
+In such cases the range function is used.
 
-Using the `range()` function: So far, the `for` loop has been used to traverse the elements in lists and strings.
+The `range()` function produces a sequence of numbers that starts at start and goes on, in steps of step, until just before stop.
 
-In some cases, a statement needs to be repeated a specific number of times, without a list of values being available in advance.
+Start: (optional, with a default)
 
-In such situations, the `range` function is used.
+![Figure 78](../images/p041-02.png)
+*Figure 78*
 
-The `range()` function produces a sequence of numbers that starts from the value `start` and, with steps specified in `step`, continues up to but not including the value `stop`.
+Stop: (required), and it is not itself included. Step: (optional), default one.
 
-`Start:` (optional and default)
+<!-- page 36 -->
 
-:)start, stop, step( for counter in range
+**اولین حالت**: در ساده‌ترین حالت، تابع `range()` تنها یک عدد دریافت می‌کند که به‌صورت `range(stop)` نوشته می‌شود. به مثال زیر توجه کنید:
 
-`Stop:` (required) and that value itself is not included.
+![Figure 79](../images/p042-02.png)
+*Figure 79*
 
-Loop body statements
+**Example**: a loop that prints the numbers 0 to 4 (Figure 79).
 
-`Step:` (optional) its default is one.
+**About the code**: the start value (start) is zero by default, and the step (step) is one by default. The end value (stop) is 5, and 5 itself is not produced. range(5) produces the numbers 0 to 4. The for loop runs 5 times. On each pass the variable i gets one of these numbers. On the second line, the value of i is printed on each pass.
 
-**Figure 78**
+**The second form: using the function as `range(start, stop)`**.
 
----
+Example: a loop that prints the numbers 1 to 6 (Figure 80).
 
-**Page 36**
+![Figure 80](../images/p042-03.png)
+*Figure 80*
 
-First form: In the simplest form, the `range()` function receives only one number, written as `range`(`stop`). Consider the example below:
+**About the code**: the start value (start) in the range statement is one.
 
-![Book image](../images/p042-04.png)
+The end value of the loop (stop) is 7, but 7 itself is not included. The range function produces the numbers 1 to 6.
 
-Example: A loop to print the numbers 0 through 4 (Figure 79).
+The step (step) is one by default.
 
-![Figure 79](../images/p042-03.png)
+**در حالت سوم، ** تابع range سه عدد دریافت می‌کند که به‌صورت `range(start, stop, step)` نوشته می‌شود. به مثال زیر توجه کنید:
 
-**Figure 79**
-
-Code explanation: The start value (`start`) is zero by default, and the step (`step`) also has the default value one. The end value (`stop`) is considered the number 5, and this number itself is not produced in the output.
-
-The function `range`(5) produces a sequence of numbers from 0 to 4. The `for` loop runs 5 times. The variable `i` receives the value of one of these numbers in each repetition. In the second line, on each run the value of the variable `i` is printed.
-
-Second form: Using the function as `range`(`start`, `stop`).
-
-Example: A loop to print the numbers from 1 to 6 (Figure 80).
-
-![Book image](../images/p042-06.png)
-
-![Figure 80](../images/p042-05.png)
-
-**Figure 80**
-
-Code explanation: The start value (`start`) inside the `range` statement is one.
-
-The loop end value (`stop`) is the number 7; but the number 7 itself will not be included. The `range` function produces the sequence of numbers from 1 to 6.
-
-The step (`step`) is also one by default.
-
-In the third form, the `range` function receives three numbers, written as `range`(`start`, `stop`, `step`). Consider the example below:
-
-Example: A loop to print even numbers less than 10 (Figure 81).
-
-![Book image](../images/p042-02.png)
+Example: a loop that prints the even numbers less than 10 (Figure 81).
 
 ![Figure 81](../images/p042-01.png)
+*Figure 81*
 
-**Figure 81**
+<!-- page 37 -->
 
----
+**About the code**: the start value (start) in the range statement is zero.
 
-**Page 37**
+The end value (stop) is 10, but 10 itself is not produced. The step (step) is 2.
 
-Code explanation: The start value (`start`) in the `range` statement is equal to zero.
+The range function produces the even numbers from 0 to 8.
 
-The end value (`stop`) is considered the number 10, but this number itself is not produced in the output. The step value (`step`) is equal to 2.
+> **Activity**
+>
+> Change the previous program so that it prints the even numbers from largest to smallest. For this, step must be negative, and start and stop must be changed to match.
 
-The `range` function produces a sequence of even numbers from 0 to 8.
+> **Activity**
+>
+> Write a program that gets from the user the waiting time for food (in minutes) as a number and shows a countdown.
+>
+> At each step, print the message below:
+>
+> Time remaining: X minutes, where X is replaced by the time left.
+>
+> When the count reaches zero, show the message below.
+>
+> Your food is ready!
 
-### Activity
+> **Activity**
+>
+> Write a program that gets the heights of 5 people from the input and calculates and shows their average height.
 
-Change the previous program so that it prints the sequence of even numbers from large to small. For this purpose, the value of `step` must become negative, and the start (`start`) and end (`stop`) values must also be changed accordingly.
+The underscore character (\_ ) is allowed in variable names, so it can also be used on its own as the name of a variable.
 
-### Activity
+![Figure 82](../images/p043-01.png)
+*Figure 82*
 
-Write a program that receives the waiting time to get food as a number (in minutes) from the user and displays a countdown.
+Look at the code in Figure 82.
 
-At each step, the message below is printed:
+In this example the loop counter variable is not used in the body of the loop, so the underscore character (\_) can be used instead. Using \_ shows that the value of that variable will not be used later in the program.
 
-Time remaining: X minutes
+> **Curiosity**
+>
+> Find out what the advantages are of using \_ instead of a variable name.
 
-in which, instead of `X`, the remaining time value is displayed.
+<!-- page 38 -->
 
-After the count reaches zero, the message below is displayed.
+### The control statements break and continue in loops
 
-!Your food is ready
+In Python, the control statements break and continue are used to control how loops run.
 
-### Activity
+**continue**: used to skip a certain part of the loop and go on to the next pass.
 
-Write a program that receives the heights of 5 people from input and calculates and displays their average height.
+**break**: stops the loop completely and **exits** it.
 
-Using the underscore character (_ ) in variable names is allowed; therefore you can also use it alone as a variable name.
-
-![Book image](../images/p043-01.png)
-
-Observe the code in Figure 82.
-
-**Figure 82**
-
-In this example, the loop counter variable is not used in the loop body; therefore you can use the underscore character (_) instead. Using _ shows that the value of the variable in question will not be used later in the program.
-
-### Try this
-
-Investigate what advantages using _ instead of using a variable name has.
-
----
-
-**Page 38**
-
-Introducing control statements (`break` and `continue`) in loops In Python, the control statements `break` and `continue` are used to control the flow of loop execution.
-
-`continue:` is used to skip a particular part of the loop and go to the next repetition.
-
-`break:` completely stops the loop's execution and exits it.
-
-Example: Write and run the program below. In this program, the names of all foods in a list are each printed on one line. (Figure 83)
-
-![Book image](../images/p044-03.png)
+**Example**: write and run the program below. In this program the names of all the foods in a list are printed, each on its own line. (Figure 83)
 
 ![Figure 83](../images/p044-02.png)
+*Figure 83*
 
-**Figure 83**
-
-Now if you want, when printing, the name of a particular food (for example, `soup`) not to be displayed, you can use the `continue` statement inside the loop. Write the code below carefully and run it, and when writing the program pay attention to indentation (`Indentation`) (Figure 84).
+Now, if you want a certain food (for example, soup) not to be shown when printing, you can use the continue statement inside the loop. Write and run the code below carefully, and pay attention to the indentation (Indentation) as you write it (Figure 84).
 
 ![Figure 84](../images/p044-01.png)
+*Figure 84*
 
-**Figure 84**
+**About the code**: the line `if item == " soup"` checks whether the value of the item variable equals soup.
 
-Code explanation: In the line `"soup"` == `if item`, it is checked whether the value of the variable `item` equals the value `soup` or not.
+If the if condition holds, the continue statement runs and makes the loop go straight to the next element, which is "ash". That is why soup is not printed in the output.
 
-If the `if` condition is met, the `continue` statement is executed and causes the loop to immediately go to the next element, which is `"ash"`. For that reason, the name `soup` is not printed in the program output.
+In general, with continue the loop skips part of the code inside it for certain passes and goes straight to the start of the next pass.
 
-In general, using the `continue` statement, the loop skips executing part of the code inside the loop for particular repetitions and goes directly to the beginning of the next repetition.
+<!-- page 39 -->
 
----
+Now, if you want a certain message to be printed and the loop to **end** when a certain food (for example, soup) is reached, you can use the break statement inside the loop. Write and run the code below. Pay attention to the indentation (Indentation) as you write it (Figure 85).
 
-**Page 39**
+![Figure 85](../images/p045-01.png)
+*Figure 85*
 
-Now if you want, when printing, upon reaching the name of a particular food (for example, `soup`), a specific message to be printed and the loop's execution to end, you can use the `break` statement inside the loop. Write the code below and run it. When writing the program pay attention to indentation (`Indentation`) (Figure 85).
+**About the code**: the third line checks whether the value of the item variable equals soup.
 
-![Book image](../images/p045-01.png)
-
-![Figure 85](../images/p045-02.png)
-
-**Figure 85**
-
-Code explanation: In the third line, it is checked whether the value of the variable `item` equals the value `soup` or not.
-
-If the `if` condition is met, first the message "Soup is not a food!" is printed and then the `break` statement is executed and control of the program's execution is moved to after the loop. In this case, the loop's execution is completely stopped and later repetitions will not be performed (Figure 86).
+If the if condition holds, the message "Soup is not a meal!" is printed first, then break runs and the program continues after the loop. In this case the loop stops completely and no more passes are made (Figure 86).
 
 Now write and run the two programs below.
 
-![Book image](../images/p045-04.png)
+![Figure 86](../images/p045-02.png)
+*Figure 86*
 
-![Book image](../images/p045-03.png)
-
-![Book image](../images/p045-05.png)
-
-![Figure 86](../images/p045-06.png)
-
-**Figure 86**
-
-### Try this
-
-Given the output of the programs above, state the use of the words `break` and `continue` for each of the programs.
-
----
+> **Curiosity**
+>
+> Based on the output of the programs above, explain what break and continue do in each program.

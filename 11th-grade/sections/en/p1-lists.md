@@ -1,226 +1,174 @@
-**Page 16**
+<!-- page 16 -->
 
-(list):
+### لیست (list)
 
-![Book image](../images/p022-01.png)
+![Figure 34](../images/p022-01.png)
+*Figure 34*
 
-Lists are one of the 4 data types in Python that are used to store a collection of data in a single variable; the other 3 types are `Set`, `Tuple`, and `Dictionary`, each of which has different uses.
+لیست‌ها یکی از ۴ نوع داده در پایتون هستند که برای ذخیرۀ مجموعه‌ای از داده‌ها در یک متغیر واحد استفاده می‌شوند، ۳ نوع دیگر Set، Tuple و Dictionary هستند که هر کدام کاربردهای متفاوتی دارند.
 
-Creating a list: Lists are created using
+**Creating a list**: lists are created with square brackets (Square brackets) "\[\]".
 
-‌ (Square brackets)"[]"
+در کد مقابل یک لیست شامل رشته‌ای از نام میوه‌ها ایجاد شده است `fruits = ["apple", "banana", "cherry"] .` دستور مقابل یک لیست شامل اعداد 1 و 2 و 3 و 4 و 5 را ذخیره می‌کند. `numbers = [1, 2, 3, 4, 5]`
 
-.
-
-**Figure 34**
-
-In the code opposite, a list containing a string of fruit names has been created. `fruits` = `["apple"`, `"banana"`, `"cherry"]` The opposite statement stores a list containing the numbers 1, 2, 3, 4, and 5. `numbers` = [1, 2, 3, 4, 5]
-
-List features: `Mixed data` A list can hold different kinds of data. In the code below, a list has been created that stores different data types—numeric, string, Boolean, and floating-point, and even another list (Figure 35).
+**Features of lists**: Mixed data: a list can hold different kinds of data. The code below creates a list that stores different data types: numbers, strings, booleans, decimals, and even another list (Figure 35).
 
 ![Figure 35](../images/p022-02.png)
+*Figure 35*
 
-**Figure 35**
-
-`Indexed:` List elements have an index (`Index`); that means each element has a number, and the first element of the list has index zero (Figure 36).
+**Indexed**: list elements have an index (Index); that is, each element has a number, and the first element of the list has index zero (Figure 36).
 
 ![Figure 36](../images/p022-03.png)
+*Figure 36*
 
-**Figure 36**
+<!-- page 17 -->
 
----
-
-**Page 17**
-
-With an index you can access the elements of a list (Figure 37).
+You can reach the elements of a list by their index (Figure 37).
 
 ![Figure 37](../images/p023-01.png)
+*Figure 37*
 
-**Figure 37**
-
-`Mutable:` A list can be changed; that means after creating a list, you can edit, delete, or add elements.
-
-In this example, the second element of the list, whose index is [1] and whose value is `"banana"`, has been changed to `"oranges"`.
+**Mutable**: a list can be changed; that is, after a list is created, its elements can be edited, removed, or added. In this example, the second element of the list, whose index is \[1\] and whose value is "banana", is changed to "oranges".
 
 ![Figure 38](../images/p023-02.png)
+*Figure 38*
 
-**Figure 38**
+**Ordered**: lists have a definite order: the elements are stored in the order they are added, and this order does not change unless the programmer changes it.
 
-`Ordered:` Lists have a definite order: list elements are stored in the same order they are entered, and this order does not change unless the programmer changes it.
+### What the Ordered feature means
 
-Factors that affect the `Ordered` feature:
+**A. The order of entry is kept**: as you can see in the example, the elements are shown in exactly the order they were entered (Figure 39).
 
-a Preserving the order of entry of elements: As you can see in the example, the elements are displayed exactly in the same order they were entered (Figure 39).
+![Figure 39](../images/p023-03.png)
+*Figure 39*
 
-![Book image](../images/p023-03.png)
+**B. Order affects how list elements are shown**: if the order changes, the indexes change too (Figure 40).
 
-![Figure 39](../images/p023-04.png)
+![Figure 40](../images/p023-04.png)
+*Figure 40*
 
-**Figure 39**
+<!-- page 18 -->
 
-b The effect of order on displaying list elements: If the order changes, the indexes change too (Figure 40).
+**C. Changing the order of elements**: in this example only the first element changed and the rest stayed in place ← so the order is fixed (Figure 41).
 
-![Book image](../images/p023-06.png)
+![Figure 41](../images/p024-01.png)
+*Figure 41*
 
-![Figure 40](../images/p023-05.png)
+**D. Comparing two lists with a different order**: in this example the elements are the same, but because the order is different, the two lists are not equal (Figure 42).
 
-**Figure 40**
+![Figure 42](../images/p024-02.png)
+*Figure 42*
 
----
+> **Activity**
+>
+> 1. لیستی با ۵ عنصر " headset، book، mouse، phone، book " ایجاد کنید و آن را نمایش دهید. سپس به‌جای عنصر شماره 4 یک عنصر به نام " External HDD " را جایگزین کنید و نتیجه را نمایش دهید.
+>
+> 2. Create a list of 4 numbers of your choice and then show its first element.
+>
+> 3. Create a list with 6 elements that stores the names of your favorite cars and the years they were made. Then show the list.
 
-**Page 18**
+**Adding a new element to a list**: with the **`append()`** method you can add a new element to the end of a list (Figure 43).
 
-c Changing the order of elements: In this example only the first element changed; the rest stayed in place ← that means the order is definite (Figure 41).
+![Figure 43](../images/p024-03.png)
+*Figure 43*
 
-![Book image](../images/p024-01.png)
+<!-- page 19 -->
 
-![Figure 41](../images/p024-02.png)
+In Python, to add an element after a given element of a list, use the **`insert()`** method. **`list_name. insert (index, value)`**
 
-**Figure 41**
+> **Note**
+>
+> To hear how this word is pronounced, visit the address below.
+>
+> ```
+> https://dictionary.cambridge.org/dictionary/english/insert
+> ```
 
-d Comparing two lists with different order: In this example, although the elements are the same, because the order is different, the two lists are not equal (Figure 42).
-
-![Figure 42](../images/p024-03.png)
-
-**Figure 42**
-
-### Activity
-
-1 Create a list with 5 elements "`headset`, `book`, `mouse`, `phone`, `book`" and display it.
-
-Then replace element number 4 with an element named "`External HDD`" and display the result.
-
-2 Create a list with 4 numeric elements of your choice and then display its first element.
-
-3 Create a list that has 6 elements that store the names of your favorite cars and their years of production. Then display this list.
-
-Adding a new element to a list: Using the ()`append` method you can add a new element to the end of the list (Figure 43).
-
-![Book image](../images/p024-05.png)
-
-![Book image](../images/p024-06.png)
-
-![Figure 43](../images/p024-04.png)
-
-**Figure 43**
-
----
-
-**Page 19**
-
-In Python, to add an element after a specific element in a list, use the ()`insert` method.
-
-list_name. insert (index, value)
-
-### Note
-
-To hear the correct pronunciation of this word, go to the address below.
-
-https://dictionary.cambridge.org/dictionary/english/insert
-
-Example: Consider the following list of tasks:
+**Example**: consider the following task list:
 
 ```
-]"tasks = ["Study", "Exercise", "Sleep
+tasks = ["Study", "Exercise", "Sleep"]
 ```
 
-Add the task `"Break"` between `"Exercise"` and `"Sleep"`. Display the list (Figure 44).
+Add the task "Break" between "Exercise" and "Sleep". Show the list (Figure 44).
 
-![Book image](../images/p025-02.png)
+![Figure 44](../images/p025-02.png)
+*Figure 44*
 
-![Figure 44](../images/p025-03.png)
+> **Activity**
+>
+> Write a program that, in the fruit list holding 2 kinds of fruit, adds the price of each fruit after its name and shows the list.
 
-**Figure 44**
+![Figure 45](../images/p025-01.png)
+*Figure 45*
 
-### Activity
+### Removing an element from a list
 
-Write a program that, in the `fruit` list which includes 2 kinds of fruit, adds the price of each fruit after its name and displays it.
+Python has several ways to remove elements from a list (list). Which one to use depends on whether you want to remove by value or by position (index).
 
-![Book image](../images/p025-01.png)
+<!-- page 20 -->
 
-Removing an element from a list:
+1. **Removing an element by value**: the `remove()` method removes a value from a list. The first element with that value is removed.
 
-In Python there are different methods for removing elements from a list (`list`). Choosing the suitable method depends on whether you want to remove based on value or based on position (index).
+```
+list_name.remove(value)
+```
 
-**Figure 45**
+**Example 1**: this program uses the `remove()` method to remove the value 12 from the scores list (Figure 46).
 
----
+![Figure 46](../images/p026-01.png)
+*Figure 46*
 
-**Page 20**
+**Example 2**: this program uses the `remove()` method to remove the first 20 from the numbers list (Figure 47).
 
-1 Removing an element by value: The ()`remove` method is for removing the value of an element from a list. The first element that has the same value is removed.
+![Figure 47](../images/p026-02.png)
+*Figure 47*
 
-`list_name.remove(value)`
-Example 1: This program has used the ()`remove` method to remove the value 12 from the `scores` list (Figure 46).
+2. **حذف عنصر با ایندکس (index)**: متد `pop()` برای حذف عنصر با ایندکس مشخص شده استفاده می‌شود.
 
-![Book image](../images/p026-01.png)
+```
+list_name.pop(index)
+```
 
-![Figure 46](../images/p026-02.png)
+Example: in this program the element at index one, that is, the second element of the list, is removed (Figure 48).
 
-**Figure 46**
+> **Note**
+>
+> Note that the first member of a list has index zero.
 
-Example 2: This program has used the ()`remove` method to remove the first value 20 from the `numbers` list (Figure 47).
+![Figure 48](../images/p026-03.png)
+*Figure 48*
 
-![Book image](../images/p026-03.png)
+<!-- page 21 -->
 
-![Figure 47](../images/p026-04.png)
+If nothing is written inside the `pop()` method, the last element of the list is removed. In the code below, the food list has three elements (Figure 49).
 
-**Figure 47**
+![Figure 49](../images/p027-02.png)
+*Figure 49*
 
-2 Removing an element by index (`index`): The ()`pop` method is used to remove an element with a specified index.
+On line 2 nothing is written inside the `pop()` method, so the last element of the list, "kabab", is removed. Running the program confirms this.
 
-`list_name.pop(index)`
-Example: In this program the index with number one, that is the second element of the list, has been removed (Figure 48).
+> **Activity**
+>
+> The task list is `tasks = ["Study", "Exercise", "Rest", "Sleep"]`. Write a program that removes the last task from the list.
 
-### Note
+> **Curiosity**
+>
+> Find out which element is removed if the number -1 is put inside the pop method. What about other negative numbers?
+>
+> For example:
+>
+> ```
+> food.pop)-1(
+> ```
 
-Note that the first member of the list has index zero.
+> **Curiosity**
+>
+> The `clear()` method and the del statement are also used to remove list elements. Research how they are used and present it in class.
 
-![Book image](../images/p026-05.png)
+### Conditional structures
 
-![Figure 48](../images/p026-06.png)
+![Figure 50](../images/p027-01.png)
+*Figure 50*
 
-**Figure 48**
-
----
-
-**Page 21**
-
-If nothing is written inside the ()`pop` method, the last element of the list is removed. In the code below the `food` list has three elements (Figure 49).
-
-![Book image](../images/p027-03.png)
-
-![Figure 49](../images/p027-01.png)
-
-**Figure 49**
-
-On line 2 nothing is written in the ()`pop` method; so the last element of the list, that is `"kabab"`, is removed.
-
-Running the program confirms this.
-
-### Activity
-
-The task list is `tasks` = `["Study"`, `"Exercise"`, `"Rest"`, `"Sleep"]`. Write a program that removes the last task from the list.
-
-### Try this
-
-Research what happens if the number -1 is placed inside the `pop` method—which element is removed? What about other negative numbers?
-
-For example:
-
-`(1-)food.pop`
-### Try this
-
-The ()`clear` method and the `del` statement are also used for removing list elements. Research how they are used and present them in class.
-
-Conditional structures:
-
-![Book image](../images/p027-02.png)
-
-A conditional structure lets the program make a decision based on whether a condition is true or not, and change the path of running statements.
-
-In this structure, first a condition is checked, and then, if it is true, a set of statements is executed.
-
-**Figure 50**
-
----
+A conditional structure lets a program make a decision based on whether a condition holds, and change which statements run. In this structure a condition is checked first, and then, if it is true, a set of statements runs.

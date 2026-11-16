@@ -1,139 +1,115 @@
-**Page 320**
+<!-- page 320 -->
 
-Stage three: In the `views.py` file, add the `add_city_view` function as in Figure 66.
+**مرحله سوم**: در فایل `views.py` تابع `add_city_view` را همانند شکل 66 اضافه کنید.
 
-![Figure 66 creating a view for adding a city](../images/p326-01.png)
+![Figure 66: ایجاد view جهت افزودن شهر](../images/p326-01.png)
+*Figure 66: ایجاد view جهت افزودن شهر*
 
-Figure 66 creating a `view` for adding a city
+**توضیحات کدها**:
 
-### Code notes:
+**خط 1**: متد redirect درون این فایل import شده است.
 
-Line 1: The `redirect` method has been `import`ed into this file.
+**خط 4**: کلاس CityForm از فایل `forms.py` درون این فایل import شده است.
 
-Line 4: The `CityForm` class from the `forms.py` file has been `import`ed into this file.
+**خط 33**: اگر کاربر در صفحه «اضافه‌کردن شهر»، اطلاعات فرم را وارد کرده و دکمه «ذخیره شهر جدید» را کلیک کند، یک request از نوع post برای `add_city_view` ارسال می‌شود، در این خط نوع request با if بررسی شده است.
 
-Line 33: If the user enters the form information on the “Add city” page and clicks the “Save new city” button, a `request` of type `post` is sent to `add_city_view`; in this line the type of `request` is checked with `if`.
+**خط 34**: یک فرم از CityForm براساس نوع درخواست ارسال‌شدۀ کاربر ایجاد و در متغیر form ذخیره شده است تا به کمک آن اطلاعاتی که کاربر به‌وسیله آن فرم ارسال کرده است، ذخیره شود.
 
-Line 34: A form from `CityForm` is created based on the type of request the user sent and is stored in the variable `form` so that, with its help, the information the user sent through that form can be saved.
+**خط 35**: تابع `is_valid` فیلدهای وارد شده کاربر را بررسی می‌کند. در request ارسال کاربر، باید فیلدهای اجباری مقدار گرفته باشند و همچنین نوع فیلدها صحیح باشد.
 
-Line 35: The `is_valid` function checks the fields the user entered. In the user’s submitted `request`, the required fields must have values and the field types must also be correct.
+**خط 36**: در صورت معتبر بودن درخواست، اطلاعات در جدول city ذخیره خواهد شد.
 
-Line 36: If the request is valid, the information will be stored in the `city` table.
+**خط 37**: پس از ذخیره موفق اطلاعات شهر، کاربر به صفحه لیست شهرها منتقل خواهد شد.
 
-Line 37: After the city information is saved successfully, the user will be taken to the city list page.
+**خط 39**: وقتی کاربر آدرس این صفحه را در مرورگر وارد می‌کند، یک درخواست از نوع GET اتفاق افتاده است، در این حالت، نوع request چیزی غیر از POST است، پس یک فرم جدید از CityForm ایجاد و در متغیر form ذخیره شده است تا فرم افزودن شهر به کاربر نمایش داده شود.
 
-Line 39: When the user enters this page’s address in the browser, a request of type `GET` has occurred; in this case, the type of `request` is something other than `POST`, so a new form from `CityForm` is created and stored in the variable `form` so that the add-city form can be shown to the user.
+<!-- page 321 -->
 
----
+**خط 41**: فرم ساخته شده، در دیکشنری context قرار گرفته و در خط بعد به `add_city.html` ارسال شده است.
 
-**Page 321**
+**مرحله چهارم**: در فایل `urls.py` مربوط به weather app یک path جدید همانند شکل 67 اضافه کنید.
 
-Line 41: The form that was built is placed in the `context` dictionary and on the next line is sent to `add_city.html`.
+![Figure 67: اضافه‌کردن path جدید برای افزودن شهر](../images/p327-01.png)
+*Figure 67: اضافه‌کردن path جدید برای افزودن شهر*
 
-Stage four: In the `urls.py` file for the `weather app`, add a new `path` as in Figure 67.
+**توضیحات کدها**:
 
-![Figure 67 adding a new path for adding a city](../images/p327-01.png)
+یک path جدید جهت افزودن شهر اضافه شده است.
 
-Figure 67 adding a new `path` for adding a city
+**مرحله پنجم**: در فایل `show_temp.html` یک لینک برای افزودن شهر، در خط 10 همانند شکل 68 اضافه کنید.
 
-### Code notes:
+![Figure 68: ایجاد لینک به صفحه افزودن شهر](../images/p327-02.png)
+*Figure 68: ایجاد لینک به صفحه افزودن شهر*
 
-A new `path` for adding a city has been added.
+<!-- page 322 -->
 
-Stage five: In the `show_temp.html` file, add a link for adding a city on line 10 as in Figure 68.
+اکنون همه فایل‌ها را ذخیره و صفحه اصلی سایت را refresh کنید.
 
-![Figure 68 creating a link to the add-city page](../images/p327-02.png)
+با دکمه \[ورود به سایت\] login کنید. لینک افزودن شهر برای شما نمایش داده خواهد شد (شکل 69).
 
-Figure 68 creating a link to the add-city page
+![Figure 69: نمایش لینک پس از login کاربر](../images/p328-01.png)
+*Figure 69: نمایش لینک پس از login کاربر*
 
----
+بر روی لینک «افزودن شهر» کلیک کنید، سپس همانند شکل 70، اطلاعات شهر موردنظر خود را وارد و دکمه ذخیره شهر جدید را کلیک کنید. در صورت ذخیره موفق اِین فرم، کاربر به صفحه لیست شهر‌ها منتقل و شهر اضافه شده به انتهای لیست افزوده خواهد شد.
 
-**Page 322**
+![Figure 70: فرم اضافه‌کردن شهر جدید](../images/p328-02.png)
+*Figure 70: فرم اضافه‌کردن شهر جدید*
 
-Now save all the files and `refresh` the site’s home page.
+### حذف شهر با کاربر عضو سایت
 
-With the [Log in to the site] button, `login`. The add-city link will be shown to you (Figure 69).
+در این پروژه می‌توانید امکان حذف شهرها را به کاربر عضو سایت بدهید، این کار را در سه مرحله می‌توانید انجام دهید.
 
-![Figure 69 showing the link after the user login](../images/p328-01.png)
+<!-- page 323 -->
 
-Figure 69 showing the link after the user `login`
+**مرحله اول**: یک view جدید با نام `delete_city_view` در `views.py` همانند شکل 71 ایجاد کنید.
 
-Click the “Add city” link, then as in Figure 70 enter the information for your chosen city and click the Save new city button. If this form is saved successfully, the user will be taken to the city list page and the added city will be appended to the end of the list.
+![Figure 71: ساخت view جهت حذف شهرها](../images/p329-01.png)
+*Figure 71: ساخت view جهت حذف شهرها*
 
-![Figure 70 form for adding a new city](../images/p328-02.png)
+**توضیحات کدها**:
 
-Figure 70 form for adding a new city
+**خط 49**: دستور delete از ORM جنگو استفاده می‌کند و شهر انتخاب شده را از پایگاه‌داده حذف می‌کند.
 
-Deleting a city with a site member user In this project you can give member users of the site the ability to delete cities; you can do this in three stages.
+**خط 50**: بعد از حذف‌کردن شهر، کاربر را به لیست شهرها منتقل می‌کند.
 
----
+**مرحله دوم**: یک path جدید برای `delete_city_view` در `urls.py` همانند شکل 72 اضافه کنید.
 
-**Page 323**
+![Figure 72: افزودن path جدید برای حذف شهرها](../images/p329-02.png)
+*Figure 72: افزودن path جدید برای حذف شهرها*
 
-Stage one: Create a new `view` named `delete_city_view` in `views.py` as in Figure 71.
+<!-- page 324 -->
 
-![Figure 71 building a view for deleting cities](../images/p329-01.png)
+**مرحله سوم**: فایل `city_list.html` را همانند شکل 73 تغییر دهید.
 
-Figure 71 building a `view` for deleting cities
+![Figure 73: اضافه‌کردن دکمه حذف به `city_list.html`](../images/p330-01.png)
+*Figure 73: اضافه‌کردن دکمه حذف به `city_list.html`*
 
-### Code notes:
+![Figure 74: دکمه حذف در لیست شهرها](../images/p330-02.png)
+*Figure 74: دکمه حذف در لیست شهرها*
 
-Line 49: The `delete` statement uses Django’s `ORM` and deletes the selected city from the database.
+**توضیحات کدها**:
 
-Line 50: After deleting the city, it takes the user to the city list.
+**خط 13**: این دستور باعث می‌شود دکمه حذف شهر فقط برای کاربر login شده نمایش داده شود.
 
-Stage two: Add a new `path` for `delete_city_view` in `urls.py` as in Figure 72.
+**خط 14**: یک فرم با متد از نوع POST ایجاد شده است. در action این فرم، به `delete_city` اشاره شده است، یعنی درخواست حذف به view حذف شهر ارسال خواهد شد.
 
-![Figure 72 adding a new path for deleting cities](../images/p329-02.png)
+**خط 17**: آیدی شهر به‌صورت یک فیلد مخفی (hidden) اضافه شده است. آیدی شهر در خروجی نمایش داده نخواهد شد. فایل‌ها را ذخیره کنید، صفحه لیست شهرها را باز کنید. خروجی همانند شکل 74 خواهد بود.
 
-Figure 72 adding a new `path` for deleting cities
+<!-- page 325 -->
 
----
+با کلیک روی لینک حذف مقابل هر شهر، شهر موردنظر حذف شده و لیست شهرها به‌روزرسانی می‌شود. درصورتی‌که کاربر مهمان باشد، لینک حذف را مشاهده نخواهد کرد.
 
-**Page 324**
+> **Activity**
+>
+> با دانشی که از پودمان‌های قبل کسب کرده‌اید، ظاهر سایت را با html و css و bootstrap زیبا کنید.
 
-Stage three: Change the `city_list.html` file as in Figure 73.
+## بهینه‌سازی و امن کردن پروژه
 
-![Figure 73 adding a delete button to city_list.html](../images/p330-01.png)
+در این مرحله، برای بهینه‌سازی پروژه، ایرادها و باگ‌های امنیتی پروژه بررسی می‌شوند.
 
-Figure 73 adding a delete button to `city_list.html`
+**باگ کدنویسی شماره یک**:
 
-![book image](../images/p330-02.png)
+اگر هیچ شهری در جدول City وجود نداشته باشد یا همه شهرها حذف شده باشند، در صفحه اصلی سایت خطایی همانند شکل 75 مشاهده خواهد شد.
 
-### Code notes:
-
-Line 13: This statement causes the city delete button to be shown only for a user who is `login`.
-
-Line 14: A form with a method of type `POST` has been created. In this form’s `action`, `city_delete` is referred to, meaning the delete request will be sent to the city-delete `view`.
-
-Line 17: The city’s id has been added as a hidden field (`hidden`). The city’s id will not be shown in the output.
-
-Save the files and open the city list page. The output will be as in Figure 74.
-
-Figure 74 delete button in the city list
-
----
-
-**Page 325**
-
-By clicking the delete link next to each city, the chosen city is deleted and the city list is updated.
-
-If the user is a guest, they will not see the delete link.
-
-### Activity
-
-With the knowledge you gained from the previous modules, make the site’s appearance attractive with `html` and `css` and `bootstrap`.
-
-### Optimizing and securing the project
-
-In this stage, to optimize the project, the project’s flaws and security bugs are reviewed.
-
-Coding bug number one:
-
-If no city exists in the `City` table or all cities have been deleted, an error like Figure 75 will be seen on the site’s home page.
-
-![Figure 75 error when the cities table is empty](../images/p331-01.png)
-
-Figure 75 error when the cities table is empty
-
----
+![Figure 75: خطا در صورت خالی بودن جدول شهرها](../images/p331-01.png)
+*Figure 75: خطا در صورت خالی بودن جدول شهرها*

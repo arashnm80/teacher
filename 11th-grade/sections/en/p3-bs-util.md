@@ -1,246 +1,155 @@
-**Page 151**
+<!-- page 151 -->
 
-Bootstrap’s `margin` and `padding` classes Bootstrap has two sets of classes, `m`{`side`}`-size` and `p`{`side`}`-size`, for setting the space around and the extra space inside elements, which in `CSS` are set by the `margin` and `padding` properties. The `side` parameter determines the direction in which the margin or empty space is applied, and the `size` parameter determines the size of the margin or empty space. The sets of `m` and `p` classes and their meanings are shown in the table below:
+### The margin and padding classes
 
-Table 2- `margin` and `padding` classes in Bootstrap
+بوت‌استرپ دارای دو مجموعه کلاس `m{side}-size` و `p{side}-size` برای تعیین فاصلۀ اطراف و فضای اضافی داخل عناصر است که در CSS توسط ویژگی‌های margin و padding تعیین می‌شوند. پارامتر side تعیین‌کنندۀ جهت درج حاشیه یا فضای خالی است و پارامتر size اندازه حاشیه یا فضای خالی را تعیین می‌کند. مجموعه کلاس‌های m و p و مفهوم آنها در جدول زیر آمده است:
 
-`margin` classes `padding` classes
+*Table 2: The margin and padding classes in Bootstrap*
 
-Meaning
+| margin classes | padding classes | Meaning |
+| --- | --- | --- |
+| `m-size` | `p-size` | On all sides |
+| `m{t}-size` | `p{t}-size` | Top (top) |
+| `m{e}-size` | `p{e}-size` | Right side in ltr (end) |
+| `m{b}-size` | `p{b}-size` | Bottom (bottom) |
+| `m{s}-size` | `p{s}-size` | Left side in ltr (start) |
+| `m{x}-size` | `p{x}-size` | Left and right (the x axis) |
+| `m{y}-size` | `p{y}-size` | Top and bottom (the y axis) |
 
-`m-size`
-`p-size` in all directions
+The size value is a number from zero to five. Each number in this range stands for a certain distance in px.
 
-```
-m{t}-size
-p{t}-size
-```
+*Table 3: The values of the size parameter in px*
 
-top (`top`)
+| Size in px | Size |
+| --- | --- |
+| 4px | 1 |
+| 8px | 2 |
+| 16px | 3 |
+| 24px | 4 |
+| 48px | 5 |
 
-```
-m{e}-size
-p{e}-size
-```
+The size parameter can also be auto, which means automatic. mx-auto gives the element equal left and right margins, so that it sits in the middle of its parent.
 
-right side in `ltr` (`end`)
+<!-- page 152 -->
 
-```
-m{b}-size
-p{b}-size
-```
-(bottom)
-```
-m{s}-size
-p{s}-size
-```
+> **Workshop**
+>
+> **Using the margin and padding classes**
+>
+> Continuing the previous workshop, add a div element with the properties below to the web page:
+>
+> ![Book image](../images/p158-01.png)
+>
+> In the code above, the distance of the `<div>` element from the element above it is 24px (mt-4), and its left and right margins are set automatically (mx-auto). The extra space inside the element is set to 16px (p-3) on all sides.
 
-left side in `ltr` (`start`)
+### The border, rounded, and shadow classes
 
-```
-m{x}-size
-p{x}-size
-```
+Bootstrap has a set of classes for borders, rounded corners, and shadows. The border classes create a border and set its color and thickness. The rounded classes round the corners, and the shadow classes create shadows. Table 4 introduces the kinds of border, rounded, and shadow classes.
 
-left and right (`x` axis)
+*Table 4: Kinds of border, rounded, and shadow classes*
 
-```
-m{y}-size
-p{y}-size
-```
+| Shadow and its size | Rounded corners | Border color | Border and its thickness |
+| --- | --- | --- | --- |
+| `shadow-none`<br>`shadow-sm`<br>`shadow`<br>`shadow-lg` | rounded<br>`rounded-circle`<br>`rounded-pill`<br>`rounded-top`<br>`rounded-bottom`<br>`rounded-start`<br>`rounded-end` | `border-primary`<br>`border-secondary`<br>`border-success`<br>`border-danger`<br>`border-info`<br>`border-warning`<br>`border-light`<br>`border-dark` | border<br>`border-1`<br>`border-2`<br>`border-3`<br>`border-4`<br>`border-5` |
 
-top and bottom (`y` axis)
+*Table 5: Bootstrap classes for the amount of corner rounding and the border thickness*
 
-The value of `size` is a number from zero to five. Each number in this range represents a specific distance in `px`.
+| Size | Amount of rounding | Border thickness | Border |
+| --- | --- | --- | --- |
+| `0px (no rounding)` | `rounded-1` | 1px | `border-1` |
+| 2px | `rounded-2` | 2px | `border-2` |
+| 4px | `rounded-3` | 3px | `border-3` |
+| 6px | `rounded-4` | 4px | `border-4` |
+|  | `rounded-5` | 5px | `border-5` |
 
-Table 3 Values of the `size` parameter in the measurement unit `px` Size in `Sizepx`
+<!-- page 153 -->
 
-`4px`
-1
+Among the rounded classes, rounded-circle makes an element completely round; for that, its width and height must be equal. rounded-pill rounds the corners like a pill or capsule. The words start and end refer to the left and right sides of an element.
 
-`8px`
-2
+> **Workshop**
+>
+> **Using the border, shadow, and rounded classes**
+>
+> Continuing the previous workshop, add two elements with the properties below to the page `test-bs.html`.
+>
+> To create the rectangular box in the image below, write this code:
+>
+> ![Book image](../images/p159-01.png)
+>
+> To create a round image, add a product image with equal width and height to the page and set it up as below:
+>
+> ![Book image](../images/p159-02.png)
 
-`16px`
-3
+### کلاس‌های typography
 
-`24px`
-4
+Bootstrap's text classes are used to set the font size and weight, alignment, list styles, and more. Table 6 shows some of the text classes.
 
-`48px`
-5
+*Table 6: Bootstrap text classes*
 
-The `size` parameter can also have the value `auto`. The word `auto` means automatic adjustment. Using `mx-auto` sets the left and right spacing of the element to equal values, so that the element is placed in the middle of its parent element.
+| Text size | Weight | Text alignment | List style | Text decoration |
+| --- | --- | --- | --- | --- |
+| `fs-1 … fs-6`<br>h1 … h6<br>`display-1 … display-4` | `fw-bold`<br>`fw-light`<br>`fw-lighter` | `text-start`<br>`text-center`<br>`text-end` | `list-unstyled`<br>`list-inline` | `text-decoration-none`<br>`text-capitalize`<br>`text-uppercase` |
 
----
+- The fs-\* classes set the font size of text elements, from small (fs-6) to large (fs-1).
 
-**Page 152**
+- The classes h1 to h6 set the size of heading tags.
 
-Using `margin` and `padding` classes
+- The display-\* classes create large headings to catch the user's attention; they carry no special meaning.
 
-### Workshop
+<!-- page 154 -->
 
-Continuing the previous workshop, add a `div` element with the following settings to the web page:
-
-![Book image](../images/p158-01.png)
-
-In the code above, the distance of the `<div>` element from the element above it is set to `24px` or (`mt-4`), and its left and right spacing is set automatically (`mx-auto`). Also, the extra space inside the element in all directions is set to `16px` (`p-3`).
-
-‌ border rounded shadow
-
-Bootstrap contains a set of classes about borders, corner rounding, and other elements. The `border` classes are used to create a border and set its color and thickness. The `rounded` classes are used to round corners, and the `shadow` classes are used to create shadows on elements. Table 4 introduces the types of `border`, `rounded`, and `shadow` classes.
-
-Table 4 Types of `border`, `rounded`, and `shadow` classes
-
-Shadow and its size
-
-Corner rounding
-
-Border color
-
-Border and its thickness
-
-border-primary rounded border-secondary border rounded-circle -shadow-none shadow border-success border-1 rounded-pill
-
-`sm`, `danger-danger`, `border-2`, `rounded-top`, `shadow`, `border-info`, `border-3`, `rounded-bottom`, `shadow-lg`, `border-warning`, `border-4`, `rounded-start`, `border-light`, `border-5`, `rounded-end`, `border-dark`
-Table 5 Bootstrap classes for setting corner rounding size and border thickness Size
-
-Corner rounding amount
-
-Border thickness
-
-Border
-
-`1px`
-0px (no rounding) 1 rounded 1 border
-
-`2px`, `2px`
-2 rounded 2 border
-
-`4px`, `3px`
-3 rounded 3 border
-
-`6px`, `4px`
-4 rounded 4 border
-
-`5px`
-5 rounded 5 border
-
----
-
-**Page 153**
-
-In the set of `rounded` classes, the class `rounded-circle` is used to make an element fully round.
-
-The condition for an element to become fully round is that its width and height are equal. The class `rounded-pill` is also used to round corners like a pill or capsule. The words `start` and `end` refer to the left and right sides of an element.
-
-Using `border`, `shadow`, and `rounded` classes
-
-### Workshop
-
-Continuing the previous workshop, add two elements with the following settings to the page `test-bs.html`.
-
-To create the rectangular box in the image below, write the following code:
-
-![Book image](../images/p159-01.png)
-
-To create a circular image, add a product image with equal dimensions to the page and set it as follows:
-
-![Book image](../images/p159-02.png)
-
-‌typography
-
-Bootstrap’s text classes are used to set font size and weight, alignment, list styles, and other items. Table 6 refers to some of the text classes.
-
-Table 6 Bootstrap text classes
-
-Text size
-
-Weight
-
-Text alignment
-
-List style
-
-Text decoration
-
-fs-1 … fs-6 fw-bold text-start list-unstyled text-decoration-none
-
-`h1` … `h6`
-
-fw-light text-center list-inline text-capitalize display-1 … display-4 fw-lighter text-end text-uppercase
-
-The `*-fs` classes are used to set the font size of text elements from small (`fs-6`) to large (`fs-1`).
-
-The classes `h1` through `h6` are used to set the size of heading tags.
-
-The `*-display` classes are used to create large headings and attract the user’s attention and do not convey a special meaning.
-
----
-
-**Page 154**
-
-The class `list-unstyled` removes the default list style; that means the markers or numbers next to the item disappear and the value of `padding-left` becomes zero.
-
-The class `list-inline` prepares list items for horizontal layout, provided that the list items have the class `-list inline-item`. This type of list is useful for simple menus and small navigations.
-
-`flex` classes Bootstrap has various classes for designing page elements with the `Flexbox` technique. The flex system has two base classes named `d-flex` and `d-inline-flex` that are used for container elements. For example, a product introduction section needs a container element in which the products are placed flexibly next to each other. The table below introduces some flex classes based on different topics.
-
-Table 7 `Flexbox` classes
-
-Horizontal alignment of elements
-
-Vertical alignment of elements
-
-Layout direction
-
-Wrapping to the next row
-
-`justify-content-start`, `align-items-start`, `flex-row`, `flex-wrap`, `justify-content-center`, `align-items-center`, `flex-row-reverse`, `flex-nowrap`, `justify-content-end`, `align-items-end`, `flex-column`, `flex-wrap-reverse`, `justify-content-between`, `align-items-baseline`, `flex-column-reverse`, `justify-content-around`, `justify-content-evenly`
-The `*-justify-content` classes are used to set the horizontal alignment of content in a container element. The first three classes align an element’s content to the left (`start`), center (`center`), and right (`end`). The next three classes determine how elements are distributed based on the space between them.
-
-The `*-align-items` classes are used to set the alignment of elements along the vertical axis.
-
-Using different classes in the product images layer
-
-### Workshop
-
-In this workshop you will change the code of the “Newest products” layer using Bootstrap classes as shown below.
-
-1 Open the `index.html` file from work unit 1. Add the Bootstrap 5 `CDN` link and script code in the appropriate place.
-
-2 In the `<main>` element, apply the following changes:
-
-![Book image](../images/p160-01.png)
-
----
-
-**Page 155**
-
-3 ‌ .products-section h2 .products margin .products-section
-
-Remove them from the file `styles.css`.
-
-![Book image](../images/p161-04.png)
-
-Designing the store introduction section
-
-### Workshop
-
-In this workshop you will create a section with text content at the end of the store page. Use different Bootstrap classes to design this part.
-
-In the file `index.html`, add the `<article>` tag as shown below before the `<main/>` tag:
-
-![Book image](../images/p161-01.png)
-
-Add the following headings and paragraphs inside the `<article>` tag:
-
-![Book image](../images/p161-02.png)
-
-Save the file and view the result in the browser.
-
-Bootstrap version 3 had a class named `text-justify` that was used for justified text alignment (`justify`). This class does not exist in Bootstrap version 5. Therefore, to create justified text alignment in paragraphs, you need to add the custom class `text-justify` to the file `styles.css` using the code below:
-
-![Book image](../images/p161-03.png)
-
----
+The list-unstyled class removes the list's default style; that is, the bullets or numbers next to the items disappear and padding-left becomes zero.
+
+The list-inline class prepares list items to be laid out horizontally, provided the items have the class `list-inline-item`. This kind of list is used for simple menus and small navigation bars.
+
+### The flex classes
+
+Bootstrap has many classes for designing page elements with the Flexbox technique. The flex system has two base classes, d-flex and d-inline-flex, used on container elements. For example, the product introduction section needs a container in which the products sit flexibly side by side. The table below introduces some flex classes by topic.
+
+*Table 7: Flexbox classes*
+
+| Horizontal alignment of elements | Vertical alignment of elements | Layout direction | Move to the next line |
+| --- | --- | --- | --- |
+| `justify-content-start`<br>`justify-content-center`<br>`justify-content-end`<br>`justify-content-between`<br>`justify-content-around`<br>`justify-content-evenly` | `align-items-start`<br>`align-items-center`<br>`align-items-end`<br>`align-items-baseline` | `flex-row`<br>`flex-row-reverse`<br>`flex-column`<br>`flex-column-reverse` | `flex-wrap`<br>`flex-nowrap`<br>`flex-wrap-reverse` |
+
+The justify-content-\* classes set the horizontal alignment of content in a container. The first three align the content of an element to the left (start), center (center), and right (end). The next three set how elements are spread out by the space between them.
+
+The align-items-\* classes set the vertical alignment of elements.
+
+> **Workshop**
+>
+> **Using different classes in the product images section**
+>
+> In this workshop you will change the code of the «Newest products» section with Bootstrap classes as below.
+>
+> 1. Open the `index.html` file from learning unit 1. Add the Bootstrap 5 CDN link and script code in the right places.
+>
+> 2. Make the following changes in the `<main>` element:
+>
+> ![Book image](../images/p160-01.png)
+
+<!-- page 155 -->
+
+> **Workshop (continued)**
+>
+> ![Book image](../images/p161-04.png)
+
+> **Workshop**
+>
+> **Designing the shop introduction section**
+>
+> In this workshop you will create a section with text content at the bottom of the shop page. Use different Bootstrap classes to design it.
+>
+> In the file `index.html`, add the `<article>` tag as below before the `</main>` tag:
+>
+> ![Book image](../images/p161-01.png)
+>
+> Add the headings and paragraphs below inside the `<article>` tag:
+>
+> ![Book image](../images/p161-02.png)
+>
+> Save the file and see the result in the browser.
+>
+> Bootstrap version 3 had a class named text-justify for justifying text on both sides (justify). This class does not exist in Bootstrap version 5. So, to justify the text in paragraphs, add a custom text-justify class to the file `styles.css` with the code below:
+>
+> ![Book image](../images/p161-03.png)

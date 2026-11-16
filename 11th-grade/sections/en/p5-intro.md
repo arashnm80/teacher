@@ -1,23 +1,15 @@
-# Poodman 5
-
----
-
-**Page 275**
-
-# Poodman 5
-
-## Django programming
+<!-- page 275 -->
 
 ![Book image](../images/p281-01.png)
 
-Have you ever thought about how sites like Instagram, Divar, or Café Bazaar are built?
+تا حالا فکر کرده‌اید سایت‌هایی مثل اینستاگرام، دیوار یا کافه‌بازار چطور ساخته شده‌اند؟
 
-When you enter a site and see information such as weather status, posts, messages, or prices, what happens behind the scenes of these sites?
+وقتی وارد یک سایت می‌شوید و اطلاعاتی مثل وضعیت آب‌وهوا، پست‌ها، پیام‌ها یا قیمت‌ها را می‌بینید، پشت‌صحنۀ این سایت‌ها چه اتفاقی می‌افتد؟
 
-In the previous poodmans, you have become familiar with the concept of programming and have written code that runs on your own computer.
+در پودمان‌های قبل، شما با مفهوم برنامه‌نویسی آشنا شده‌اید و کدهایی نوشته‌اید که روی رایانه خودتان اجرا می‌شوند.
 
-But in the real world, programming is not limited only to running a program on one system.
+اما در دنیای واقعی، برنامه‌نویسی فقط به اجرای برنامه روی یک سیستم محدود نمی‌شود.
 
-Websites, online stores, social networks, educational systems, and even many mobile applications are all connected to a very important part called the `backend`. By `backend` is meant server-side programming, where the main logic of the program, data processing, communication with the database, and management of users take place.
+وب‌سایت‌ها، فروشگاه‌های اینترنتی، شبکه‌های اجتماعی، سامانه‌های آموزشی و حتی بسیاری از اپلیکیشن‌های تلفن همراه، همگی به یک بخش بسیار مهم به‌نام backend متصل هستند. منظور از backend برنامه‌نویسی سمت سرور است جایی که منطق اصلی برنامه، پردازش داده‌ها، ارتباط با پایگاه‌داده و مدیریت کاربران انجام می‌شود.
 
-In this poodman you will get to know a powerful tool named Django (`Django`).
+در این پودمان با ابزاری قدرتمند با نام جنگو (Django) آشنا می‌شوید.

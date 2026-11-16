@@ -1,291 +1,227 @@
-**Page 62**
+<!-- page 62 -->
 
-### Function (Function)
+**تابع (Function)**
 
-A function is a block or piece of code that you define once and can call many times in several places in the program.
+A function is a block or piece of code that is defined once and can be called many times from many places in a program.
 
 ![Figure 129](../images/p068-01.png)
+*Figure 129*
 
-**Figure 129**
+### Advantages of using functions
 
-Advantages of using a function:
+- By defining a function, the programmer writes the code only once and can then call and use it anywhere in the program, or even in other projects.
 
-By defining a function, the programmer writes the desired code only once and then, at any point in the program or even in other projects where it is needed, calls and uses it.
+- Dividing code into small, clear functions makes it much easier to understand.
 
-Dividing code into small, specific functions greatly increases understanding of the code.
+- Finding and fixing bugs and making changes in the code become much simpler.
 
-Finding and fixing bugs and making changes in the code become much simpler.
+- Organizing the code logically and neatly, and the overall structure of the program, become easier.
 
-Organizing the code logically and neatly, and the overall structure of the program, becomes easier.
+**Defining a function**: a function is defined with the keyword def, followed by the function's name and parentheses.
 
-Defining a function: A function is defined using the keyword `def`, followed by the function name and parentheses.
+The general form of defining a function with input parameters is:
 
-The general form of defining a function with an input parameter is as follows:
+![Figure 130](../images/p068-02.png)
+*Figure 130*
 
-![Book image](../images/p068-02.png)
+```
+def پارامترهای تابع) نام تابع(:
+```
 
-`def` function name (function parameters):
+the statement or statements in the body of the function
 
-return value
+the value or values returned with return
 
-statement or statements of the function body function inputs
+<!-- page 63 -->
 
-`return` value or values
-
-**Figure 130**
-
----
-
-**Page 63**
-
-Example: In this program a function named `show_store_name` is defined and a `print` (`"Digital Online Store"`) statement is written in it (Figure 131).
+**Example**: this program defines a function named `show_store_name` with the statement `print ("Digital Online Store")` in it (Figure 131).
 
 ![Figure 131](../images/p069-01.png)
+*Figure 131*
 
-**Figure 131**
-
-Example: In this program also a function named `greet` is defined and the statement `print`(`"Hello`! ") is written in it (Figure 132).
+**Example**: this program also defines a function named greet with the statement `print("Hello! ")` in it (Figure 132).
 
 ![Figure 132](../images/p069-02.png)
+*Figure 132*
 
-**Figure 132**
+**Example**: in this program the function `greet()` is defined with no parameters, so no argument needs to be passed when it is called (Figure 133).
 
-Example: In this program the function `greet()` is defined without a parameter, so when calling it there is no need to send an argument (Figure 133).
-
-![Book image](../images/p069-03.png)
-
-Output
-
-**Figure 133**
-
-Example: In this program also the function is defined without a parameter. When calling it there is no need to send an argument (Figure 134).
-
-![Book image](../images/p069-04.png)
-
-![Figure 134](../images/p069-05.png)
-
-**Figure 134**
-
----
-
-**Page 64**
-
-Parameter and argument (`Parameters` & `Arguments`) What is a parameter? A function can receive inputs. The inputs of a function at the time the function is defined are called a parameter (`parameter`).
-
-What is an argument? The inputs of a function that are given to it when the function is called.
-
-After definition, the function must be called to run. If you only define the function but it is not called, nothing happens. It is as if it was never defined.
-
-To call a function, write its name and send it as many arguments as there are parameters (this is called passing). You can call a function many times.
-
-The way to call a function is as follows:
-
-function name (function arguments)
-
-Example: In the example in Figure 135, the function `show_product`(`name`, `price`) is defined with two parameters `name` , `price`. When calling it, two values must also be sent as arguments.
-
-![Book image](../images/p070-01.png)
+![Figure 133](../images/p069-03.png)
+*Figure 133*
 
 Output
 
-![Figure 135](../images/p070-02.png)
+**Example**: in this program too the function is defined with no parameters. No argument needs to be passed when it is called (Figure 134).
 
-**Figure 135**
+![Figure 134](../images/p069-04.png)
+*Figure 134*
 
-Example: In the example in Figure 136, the function `print_age`(`age`) has one parameter named `age`. When calling it, one argument should also be sent to it. As you can see, the function `print_age`(`age`) is called twice with two different arguments.
+<!-- page 64 -->
 
-![Book image](../images/p070-03.png)
+### پارامتر و آرگومان (Parameters & Arguments)
 
-Output
+What is a parameter? A function can receive inputs. The inputs of a function, as named when the function is defined, are called parameters (parameter).
 
-![Figure 136](../images/p070-04.png)
+What is an argument? The inputs given to a function when it is called.
 
-**Figure 136**
+- After it is defined, a function must be called in order to run. If you only define a function and never call it, nothing happens; it is as if it had never been defined.
 
----
+- To call a function, write its name and send it as many arguments as it has parameters (this is called passing). You can call a function many times.
 
-**Page 65**
+- A function is called like this:
 
-### Note
+function name : (function arguments)
 
-The order, number, and type of parameters (at the time the function is defined) must match the order, number, and type of arguments (at the time the function is called).
+**Example**: in the example in Figure 135, the function `show_product(name, price)`
 
-If the order and type of sending arguments are not observed, incorrect output is produced. It does not give an error at run time;
+is defined with the two parameters name and price. When it is called, two values must be passed as arguments.
 
-but the program logic is wrong.
-
-The solution is to use keyword arguments (`keyword arguments`), or named arguments; that is, when calling the function, you can write the parameter name together with the assignment operator.
-
-Example: Look carefully at the code in Figure 137. Check the outputs. Calling without observing the order of the arguments has caused the price to be printed first and then the product name, and this is incorrect logic.
-
-![Book image](../images/p071-01.png)
+![Figure 135](../images/p070-01.png)
+*Figure 135*
 
 Output
 
-Calling without observing order Calling with observing order
+**Example**: in the example in Figure 136, the function `print_age(age)` has one parameter named age. When it is called, one argument is passed to it. As you can see, `print_age(age)` is called twice, with two different arguments.
 
-![Figure 137](../images/p071-02.png)
+![Figure 136](../images/p070-02.png)
+*Figure 136*
 
-**Figure 137**
+Output
 
-Example: In the example in Figure 138, to prevent incorrect output when sending arguments out of order, keyword arguments are used. Write the program and compare the result with the previous example.
+<!-- page 65 -->
 
-![Figure 138](../images/p071-03.png)
+> **Note**
+>
+> The order, number, and type of the parameters (when the function is defined) must match the order, number, and type of the arguments (when the function is called).
 
-**Figure 138**
+If the order and type of the arguments passed are not respected, the output is wrong. There is no error when the program runs, but the program's logic is wrong.
 
-### Note
+The solution is to use **keyword arguments** (keyword arguments), that is, named arguments: when calling the function you can write the parameter name with the assignment operator.
 
-When arguments are given to the function without the parameter name, the order in which they are sent is important, because each argument is assigned in turn to the function’s parameters. These arguments are called positional arguments
+**Example**: look at the code in Figure 137 and check the outputs. Calling the function without respecting the order of the arguments makes it print the price first and then the item name, which is wrong logic.
 
-(positional arguments) ‌.
+![Figure 137](../images/p071-01.png)
+*Figure 137*
 
-### Activity
+**Example**: in the example in Figure 138, keyword arguments are used to avoid wrong output when the arguments are passed out of order. Write the program and compare the result with the previous example.
 
-Write a function named `square` that takes a number and prints its square.
+![Figure 138](../images/p071-02.png)
+*Figure 138*
 
----
+> **Note**
+>
+> وقتی آرگومان‌ها **بدون نام پارامتر** به تابع داده شود، ترتیب ارسال آنها مهم است، چون هر آرگومان **به‌ترتیب به پارامترهای تابع نسبت داده می‌شود**. به این آرگومان‌ها **آرگومان‌های موقعیتی (positional arguments)** گفته می‌شود.
 
-**Page 66**
+> **Activity**
+>
+> Write a function named square that takes a number and prints its square.
 
-### Note
+<!-- page 66 -->
 
-Write a function that receives two numbers as parameters and shows their sum.
+> **Note**
+>
+> Write a function that takes two numbers as parameters and shows their sum.
 
-### Note
+> **Note**
+>
+> Write a function that takes the names of 3 users from the input as parameters and prints them.
 
-Write a function that receives the names of 3 users from input as parameters and prints them.
+**Example**: the number of arguments passed to a function must equal the number of its parameters when it was defined. Otherwise an error message is shown when the program runs (Figure 139).
 
-Example: The number of arguments sent to a function must equal the number of its parameters at the time the function is defined. Otherwise, an error message is displayed at run time (Figure 139).
+![Figure 139: The error message shown after running the program](../images/p072-01.png)
+*Figure 139* — The error message shown after running the program
 
-![Book image](../images/p072-01.png)
+> **Note**
+>
+> A parameter can be given a default value. If no argument is given, the **default value** is used.
 
-The number of arguments sent is less than the number of function parameters
+**Example**: on the first line of the code in Figure 140, the function is defined with one parameter. On line 4 it is called without an argument, so its default value "Tehran" is used. On line 5 the function is called with an argument. Write the program and check the result. Change the default value and run the program again.
 
-![Book image](../images/p072-02.png)
+![Figure 140](../images/p072-02.png)
+*Figure 140*
 
-The error message displayed after running the program
+<!-- page 67 -->
 
-**Figure 139**
+**Example**: in this example the function is defined with two parameters that have default values. On each call the arguments are passed in a different way. Write the program and check the result. Change the default values and run the program again (Figure 141).
 
-### Note
+![Figure 141](../images/p073-01.png)
+*Figure 141*
 
-You can set a default value for a parameter. If an argument is not given, the default value is used.
+### مقدار بازگشتی تابع (Return Value)
 
-Example: In the first line of the code in Figure 140, the function is defined with one parameter. On line 4, when calling, its argument is not sent, so its default value `"Tehran"` is used. On line 5 the function is called with an argument. Write the program and check the result. Change the default value and run the program.
+A function can **calculate a value and give it back to the program** to be used later; this is called the return value (**Return Value**). Without return the function does its job (for example, it prints) but gives no value back, and if you store the function's result in a variable, its value is None (Figure 142).
 
-![Book image](../images/p072-03.png)
+![Figure 142](../images/p073-02.png)
+*Figure 142*
 
-![Figure 140](../images/p072-04.png)
+**Example**: running the program in Figure 143 shows the value 8. But the number 8 is **not stored**, and it cannot be used anywhere else. Now change the program to use return and see the result.
 
-**Figure 140**
+![Figure 143](../images/p073-03.png)
+*Figure 143*
 
----
+**This time**: the function **returns 8**, the return value is stored in the result variable, and it can be used again.
 
-**Page 67**
+**Example**: without return, (price \* count) is only calculated and no value is given back to the program; so calling `total_ price (2, 200000)` stores None in the variable x, and running the program prints None (Figure 144).
 
-Example: In this example the function is defined with two parameters that have default values. Each time it is called, the arguments are sent in different ways. Write the program, check the result. Change the default value and run the program again (Figure 141).
+![Figure 144](../images/p073-04.png)
+*Figure 144*
 
-![Book image](../images/p073-01.png)
+<!-- page 68 -->
 
-![Figure 141](../images/p073-02.png)
-
-**Figure 141**
-
-Function return value (`Return Value`) A function can calculate a value and return it to the program so that it can be used later; that is called a return value (`Return Value`). Without `return`, the function does its own work (for example, it prints) but returns no value outward, and if you want to store the function’s result in a variable, its value becomes `None` (Figure 142).
-
-![Figure 142](../images/p073-03.png)
-
-**Figure 142**
-
-Example: By running the program in Figure 143, the value 8 is displayed. But the number 8 is not stored and also cannot be used elsewhere.
-
-![Book image](../images/p073-04.png)
-
-Now change the program using `return` and observe the result.
-
-This time: the function returns the number 8 and the return value is stored in the variable `result` and can be used again.
-
-**Figure 143**
-
-Example: Without using `return`, only (`price` * `count`) is calculated and no value is returned to the program, so by calling the function `total_ price`(200000, 2) in the variable `x` the value `None` is stored and by running the program the value `None` is also printed (Figure 144).
-
-![Book image](../images/p073-05.png)
-
-**Figure 144**
-
----
-
-**Page 68**
-
-Example: Using `return`, the calculated value is returned to the program and you can store it in the variable `x`, and by printing the variable `x` the stored value is displayed (Figure 145).
+**Example**: with return, the calculated value is given back to the program and can be stored in the variable x; printing x shows the stored value (Figure 145).
 
 ![Figure 145](../images/p074-01.png)
+*Figure 145*
 
-**Figure 145**
+> **Activity**
+>
+> Build a function named `avg_numbers` that takes three numbers and returns their average.
 
-### Activity
+**Example**: write a function that calculates the total price of a purchase and gives a 10% discount if more than 5 items are bought. An if is used inside the function to check the condition.
 
-Build a function named `avg_numbers` that receives three numbers and returns their average.
+If the condition (`count > 5`) holds, the discounted value is returned.
 
-Example: Write a function that calculates the total purchase price and, if the purchase quantity is more than 5, gives a 10% discount.
+If the condition does not hold, the value without discount is returned.
 
-Inside the function, `if` is used so that a condition is checked.
-
-If the condition (`count` > 5) is true, the value with the discount is returned.
-
-If the condition is not true, the value without the discount is returned.
-
-`return` is used so that the calculated result returns outside the function and you can print or store it (Figure 146).
+return is used so that the calculated result comes back out of the function and can be printed or stored (Figure 146).
 
 ![Figure 146](../images/p074-02.png)
+*Figure 146*
 
-**Figure 146**
+### Using a loop inside a function
 
-Using a loop inside a function:
+A loop is used inside a function so that **certain statements** run several times **automatically**, **as long as a given condition holds** or **a set number of times**. This **reduces repeated code**, **makes the code more readable**, and **makes the function work better**. Example: in this example the function prints the natural numbers less than 6. Run the program and see the result (Figure 147).
 
-Using a loop inside a function is so that you can run specific statements several times automatically, for as long as the set condition is true or for a specific number of times. This reduces code repetition, increases readability, and optimizes the function’s performance.
+![Figure 147](../images/p074-03.png)
+*Figure 147*
 
-![Book image](../images/p074-03.png)
+<!-- page 69 -->
 
-Example: In this example, the defined function prints the natural numbers smaller than 6. Run the program and observe the result (Figure 147).
+**Example**: the function first defined has one parameter named names, whose argument is expected to be a list of names (Figure 148).
 
-**Figure 147**
+The for loop takes the elements of the list one by one and assigns each to the name variable.
 
----
+The print statement also runs inside the loop and prints the names separately.
 
-**Page 69**
-
-Example: First, the defined function has a parameter named `names`, which is expected to receive arguments that are a list of names (Figure 148).
-
-With a `for` loop it receives the list elements one by one and assigns them to the variable `name`.
-
-The `print` statement also runs inside the loop and prints the names separately.
-
-Before calling the function, on the first line of the program, the list `students` that includes the students’ names is created.
-
-Then the function is called with the argument `students`. The loop inside the function prints the names inside the list one by one.
+Before the function is called, on the first line of the program, the students list holding the students' names is created. Then the function is called with the argument students. The loop inside the function prints the names in the list one by one.
 
 ![Figure 148](../images/p075-01.png)
+*Figure 148*
 
-**Figure 148**
+> **Activity**
+>
+> ![Book image](../images/p075-04.png)
+>
+> The function written here calculates the sum of all the numbers in a list. Write and run the program. With your teacher's guidance, explain its lines of code. Change the function so that the user enters the list elements from the keyboard.
 
-### Activity
+> **Activity**
+>
+> ![Book image](../images/p075-02.png)
+>
+> The function written here calculates and shows the length of the string the user enters. Run and examine the program, and with your teacher's guidance explain the code opposite.
 
-![Book image](../images/p075-04.png)
-
-The written function calculates the sum of all numbers in a list. Write the program and run it. With guidance from your teacher, explain the lines of code written in it. Change the function so that the user enters the list elements from the keyboard.
-
-### Activity
-
-![Book image](../images/p075-02.png)
-
-The written function that calculates and displays the length of the user’s input string. Run the program and examine it, and also with guidance from your teacher explain the code of the program opposite.
-
-### Activity
-
-![Book image](../images/p075-03.png)
-
-The code opposite calculates and displays the largest value among the numbers in a list. Run the code and explain its lines.
-
----
+> **Activity**
+>
+> ![Book image](../images/p075-03.png)
+>
+> The code opposite finds and shows the largest number in a list. Run the code and explain its lines.

@@ -1,154 +1,89 @@
-**Page 70**
+<!-- page 70 -->
 
-### Activity
+> **Activity**
+>
+> ![Book image](../images/p076-01.png)
+>
+> Write a function that calculates and returns the difference between two students' grades. With your teacher's guidance, explain the code of the program opposite.
 
-![Book image](../images/p076-01.png)
+### Kinds of functions in Python
 
-Write a function that calculates the difference between two students’ scores and returns that value. With guidance from your teacher, explain the code of the program opposite.
+**User-Defined Function (توابعی که برنامه‌نویس تعریف می‌کند)**: توابعی که تاکنون تعریف کردید در این دسته قرار دارند.
 
-Types of functions in Python `User-Defined Function` (functions that the programmer defines): The functions you have defined so far belong in this category.
+**Built-in functions (یا توابع داخلی پایتون)**: توابعی که در پایتون از قبل تعریف شده‌اند و برنامه‌نویس آنها را در برنامه‌های خود استفاده می‌کند. کارهای رایج و تکراری را سریع، ساده و بدون نوشتن کد طولانی انجام می‌دهد. به کمک توابع داخلی، برنامه‌ها خواناتر، کوتاه‌تر و کم‌خطا می‌شوند.
 
-`Built-in functions` (or Python’s internal functions): Functions that are already defined in Python and that the programmer uses in their programs. They perform common and repeated tasks quickly, simply, and without writing long code. With built-in functions, programs become more readable, shorter, and less error-prone.
+You have met some of these functions in earlier sections, and you will learn others below. Math functions: these functions work only or mainly on numbers (Table 4).
 
-In earlier sections you became familiar with some of these functions; below you will also learn the use of some others.
+*Table 4*
 
-Math functions: These functions work only or mainly on numeric values (Table 4).
+| Function name | Use | Example | Output |
+| --- | --- | --- | --- |
+| `abs()` | Absolute value of a number | `print(abs(-12))` | 12 |
+| `round()` | Round a decimal number | `print(round(3.6))`<br>`print(round(3.1415, 2))` | 4<br>3.14 |
+| `pow()` | Power | `print(pow(2, 3))` | 8 |
+| `int()` | Convert to an integer | `print(int(4.8))` | 4 |
+| `float()` | Convert to a decimal number | `print(float(5))` | 5.0 |
+| `max()` | Largest number | `print(max(3, 9, 5))` | 9 |
+| `min()` | Smallest number | `print(min(3, 9, 5))` | 3 |
+| `sum()` | Sum of several numbers | `print(sum([2, 4, 6]))` | 12 |
 
-**Table 4**
+<!-- page 71 -->
 
-Function name
+> **Activity**
+>
+> Build a calculator with math functions. Parts of the code for this program are written. With your teacher's guidance, complete them and run the program.
+>
+> ![Book image](../images/p077-01.png)
+>
+> ![Book image](../images/p077-02.png)
 
-### Use
+<!-- page 72 -->
 
-### Example
+> **Activity (continued)**
+>
+> ![Book image](../images/p078-01.png)
 
-Output
+So far you have met functions such as print, len, type, input, and str. Next you will meet some of Python's built-in functions that are not about math.
 
-`abs()` — calculates the absolute value of a number
+**The sorted function**: used to sort strings, sets, tuples, and dictionaries; it returns the result as a new list.
 
-`print(abs(-12))`
-
-12
-
-```
-print(round(3.6))
-```
-
-4
-
-`round()` — rounds a decimal number
-```
-print(round(3.1415, 2))
-```
-
-3.14
-
-`pow()` — calculates a power
-```
-print(pow(2, 3))
-```
-
-8
-
-`int()` — converts to an integer
-
-`print(int(4.8))`
-
-4
-
-`float()` — converts to a floating-point number
-
-`print(float(5))`
-
-50
-
-`max()` — the largest number
-Print(max(3, 9, 5))
-
-9
-
-`min()` — the smallest number
-Print(min(3, 9, 5))
-
-3
-
-`sum()` — the sum of several numbers
-```
-Print(sum([2, 4, 6]))
-```
-
-12
-
----
-
-**Page 71**
-
-### Activity
-
-Create a calculator using math functions. Parts of the code related to this program have been written. With guidance from your teacher, complete them and run the program.
-
-![Book image](../images/p077-01.png)
-
-![Book image](../images/p077-02.png)
-
----
-
-**Page 72**
-
-![Book image](../images/p078-03.png)
-
-![Book image](../images/p078-01.png)
-
-![Book image](../images/p078-02.png)
-
-Up to this section you have become familiar with functions such as `print` ,`len` ,`type` , `input` ,`str`. Below you will become familiar with some of Python’s non-math built-in functions.
-
-The `sorted` function: This function is used to sort a string, set, tuple, and dictionary and returns the result as a new list.
-
-General structure of the function:
+### General form of the function
 
 ```
 sorted(iterable, reverse=false)
 ```
 
-`iterable:` the data you want to sort (list, string, tuple, set, dictionary, and so on) `reverse:` if `true`, the order becomes descending. Default (`false` ascending)
+**iterable**: the data you want to sort (list, string, tuple, set, dictionary, …)
 
----
+**reverse**: if true, the order is descending. Default: false (ascending)
 
-**Page 73**
+<!-- page 73 -->
 
-Example: In this example the `sorted` function sorts a string of characters stored in the variable `data` in ascending order based on the ASCII codes of the characters.
+**Example**: in this example sorted sorts the string of characters stored in the data variable in ascending order, by the characters' ASCII codes.
 
-![Book image](../images/p079-01.png)
+![Figure 149](../images/p079-01.png)
+*Figure 149*
 
-![Figure 149](../images/p079-02.png)
+> **Activity**
+>
+> Get city names from the user and store them in a list. Then sort the list in descending order.
 
-**Figure 149**
+## Modules (module)
 
-### Activity
+A module is a file that can contain several functions, variables, and classes, and it is used to organize large programs. With modules you can reuse ready-made code and keep your program shorter and tidier.
 
-Receive the names of cities from the user and store them in a list. Then sort this list in descending order.
+![Figure 150](../images/p079-02.png)
+*Figure 150*
 
-### Module (module)
+### انواع ماژول در پایتون: ماژول استاندارد (standard)
 
-A module is a file that can include several functions, variables, and classes and is used to organize large programs. Using a module, you can reuse ready-made code and make your program shorter and tidier.
+Python has modules that the programmer just brings into the program without defining them, such as time, date, random, math, and so on. Standard modules can be used in two ways.
 
-![Figure 150](../images/p079-03.png)
+### روش اول: وارد کردن کل ماژول (import module)
 
-**Figure 150**
+This is the safest way, because it prevents name clashes. In this method you must write the module name before the function.
 
-Types of modules in Python:
+![Figure 151](../images/p079-03.png)
+*Figure 151*
 
-Standard module (`standard`) There are modules in Python that the programmer only imports into their own program and does not need to define. Such as `time`, `date`, `random`, `math`, and so on. There are two ways to use standard modules.
-
-First method: importing the whole module (`import mojvle`):
-
-This is the safest way, because it prevents name conflicts. In this method you must put the module name before the function.
-
-![Book image](../images/p079-04.png)
-
-Example: `Sqrt` is a ready-made function in Python’s `math` module, which is used to calculate the square root of numbers (Figure 151).
-
-**Figure 151**
-
----
+Example: sqrt is a ready-made function in Python's math module, used to calculate the square root of numbers (Figure 151).

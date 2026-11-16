@@ -1,69 +1,59 @@
-**Page 104**
+<!-- page 104 -->
 
-`width` and `height:` These two attributes specify the width and height of page elements such as an image. The value of these attributes can be in pixels or percent. When the browser sees the expression `"width="100`, it sets the width of the element to 100 pixels. Therefore, to set the unit in percent, you must use an expression similar to `"width="100`. It is better to use `CSS` to set width and height in percent.
+**width and height**: these two attributes set the width and height of page elements such as images. Their values can be in pixels or in percent. When the browser sees `width="100"`, it makes the element 100 pixels wide. So to give the size in percent you must use something like `width="100%"`. It is better to use CSS to set width and height in percent.
 
-`title:` An explanatory text that appears when the mouse pointer is placed on the image.
+**title**: a descriptive text that appears when the mouse pointer is over the image.
 
-Using the `img` tag
+> **Workshop**
+>
+> **Using the img tag**
+>
+> In the file `products.html`, show an image for each of the books.
+>
+> - To do this, create a folder named images in the web folder and put the book images in it.
+>
+> - With the paint program, set the size of the images to 280×200. If needed, add empty space around the product.
+>
+> - Then show the images after the book titles.
+>
+> - Turn each image into a link. Since the destination pages do not exist yet, use the # sign as the destination. Then refresh the page by pressing (F5).
+>
+> ![Book image](../images/p110-01.png)
+>
+> ![Book image](../images/p110-02.png)
 
-### Workshop
+<!-- page 105 -->
 
-In the `products.html` file, display an image for each of the books.
+> **Learn more**
+>
+> **طراحی جدول (table)**
+>
+> Tables are one of the tools for presenting data, because they show information in an orderly, understandable way. Today tables are used to show many kinds of data, such as product lists, prices, or any information that needs organizing.
+>
+> To create a table in HTML, the `<table>` tag and its child tags are used as follows:
+>
+> **`<table>`**: marks the start and end of the table.
+>
+> **`<caption>`**: sets the title of the table. This tag tells users and search engines what the table is about.
+>
+> **`<tr>`**: defines a row (Row) of the table.
+>
+> **`<th>`**: creates a header cell (Header) in the header row. This tag improves the user experience.
+>
+> **`<td>`**: defines a data cell (Data Cell) in the table.
+>
+> The `<table>` tag has several attributes for setting the look of the table, described below.
+>
+> **rowspan**: merges cells vertically.
+>
+> **colspan**: merges cells horizontally.
+>
+> **thead، tbody، tfoot**: برای ساختاردهی معنایی.
 
-To do this, in the `web` folder create a folder named `images` and place the book images inside it.
+> **Curiosity**
+>
+> Research the rowspan and colspan attributes and how they are used in tables, and present your findings in class with a project.
 
-Using the `paint` software, set the image dimensions to 200×280. If necessary, increase the empty space around the product.
-
-Then display the images after the book headings.
-
-Turn each image into a link. Since the destination pages of the links do not exist, use the # symbol for the link destination. Then refresh the page by pressing the (`F5`) key.
-
-![Book image](../images/p110-01.png)
-
-![Book image](../images/p110-02.png)
-
-1 General courses
-
-2 Foundation courses
-
-3 Non-technical competency courses
-
-4 Technical competency courses
-
----
-
-**Page 105**
-
-### Learn more
-
-Designing a table (`table`) A table is one of the tools for displaying data, because it makes it possible to display information in an orderly and understandable way. Today, tables are used to display various data such as product lists, prices, or any kind of information that needs organization.
-
-To create a table in `HTML`, the `<table>` tag and its child tags are used as follows:
-
-`<table>:` This tag marks the start and end of the table.
-
-`<caption>:` Used to set the table title. This tag specifies the topic of the table for users and search engines.
-
-`<tr>:` Used to define a row (`Row`) in the table.
-
-`<th>:` Used to create a header cell (`Header`) in the header row. This tag improves the user experience.
-
-`<td>:` Used to define a data cell (`Data Cell`) in the table.
-
-The `<table>` tag has various attributes for setting the appearance of the table, which are mentioned below.
-
-`rowspan:` For merging cells vertically.
-
-`colspan:` For merging cells horizontally.
-
-`thead` ,`tbody` ,`tfoot:` For semantic structuring.
-
-### Try this
-
-Research the `rowspan` and `colspan` attributes and their use in a table, and present the result in class with a project.
-
-### Note
-
-In `HTML5`, using the `border` attribute on the `<table>` tag is not allowed, and setting the style of the table lines must be done with `CSS`. Since the `CSS` topic is covered in the second competency unit, the `border` attribute is used only for temporary display of the lines.
-
----
+> **Note**
+>
+> In HTML5 the border attribute of the `<table>` tag is not allowed, and the style of the table's lines must be set with CSS. Since CSS is covered in the second learning unit, the border attribute is used here only to show the lines for now.

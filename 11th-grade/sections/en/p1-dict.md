@@ -1,184 +1,137 @@
-**Page 52**
+<!-- page 52 -->
 
-### Dictionary (dictionary)
+**دیکشنری (dictionary)** نوع داده dictionary شبیه دفترچه تلفن است که هر نام با یک شماره‌تلفن مرتبط است.
 
-The `dictionary` data type is like a phone book in which each name is associated with a phone number.
+![Figure 104](../images/p058-01.png)
+*Figure 104*
 
-![Book image](../images/p058-01.png)
+- Dictionaries are made of **key: value** pairs (key:value), each of which is called an **item**. Each key points to a particular value.
 
-Dictionaries are made up of a number of key:
+- To create a dictionary, the items are put inside {} and separated by **commas**. Each key is separated from its value by a **colon**.
 
-value (`key:value`) pairs, each of which is called an `item`. Each key points to a specific value.
+In the example in Figure 105, a dictionary named cardic with three items (key and value) is defined:
 
-To create a `dictionary`, the items are placed inside {} and separated from each other by commas. Also, each key and its value are separated by a colon.
+![Figure 105](../images/p058-02.png)
+*Figure 105*
 
-**Figure 104**
+- To get a value from a dictionary, write the key in square brackets \[\] after the dictionary's name (Figure 106).
 
-In the example in Figure 105, a `dictionary` named `cardic` containing three items (key and value) is defined:
+**Example**: the code in Figure 106 defines a dictionary named person with 3 items (key, value). Square brackets \[\] are used to show each element of this dictionary.
 
-![Book image](../images/p058-02.png)
+![Figure 106](../images/p058-03.png)
+*Figure 106*
 
-![Figure 105](../images/p058-03.png)
+<!-- page 53 -->
 
-**Figure 105**
+> **Note**
+>
+> If each element has its own label (such as a student's name and grade), a dictionary is better than a list, because in a dictionary you can reach a value directly by its key, without knowing the element's index.
 
-To access a value in a `dictionary`, after the `dictionary` name, the key is placed inside brackets [] (Figure 106).
+> **Activity**
+>
+> Build a dictionary named book that holds the information of a book:
+>
+> ```
+> "title": "python Basic"
+>    author: "Fatemeh"
+>           pages: 250
+> ```
+>
+> Print the author's name (author) and the number of pages (pages).
 
-Example: In the code in Figure 106, a dictionary named `person` with 3 items (key, value) is defined. Brackets [] are used to display each of the elements inside this dictionary.
+- Different keys can have the same value.
 
-![Figure 106](../images/p058-04.png)
+**Example**: the dictionary status has two items (Figure 107).
 
-**Figure 106**
+First item: "`user1":"active`"
 
----
+Second item: "`user2":"active`". The values are the same, but the keys are different.
 
-**Page 53**
+- In a dictionary the same key cannot hold two values. A repeated key overwrites the previous value; it does not add a second one.
 
-### Note
+![Figure 107](../images/p059-01.png)
+*Figure 107*
 
-If each element has a clear label (such as a student’s name and score), using a dictionary is better than a list, because in a dictionary you can access the matching value directly by the key name and you do not need to know the element’s index.
+In the example in Figure 108, the dictionary `car_dic` has five items, two of which have the same key name. So the new value replaces the previous one.
 
-### Activity
+![Figure 108](../images/p059-02.png)
+*Figure 108*
 
-Build a dictionary named `book` that holds information about a book:
+<!-- page 54 -->
 
-"title": "python Basic" "author: "Fatemeh 250:pages
+![Figure 109](../images/p060-03.png)
+*Figure 109*
 
-Print the author’s name (`author`) and the number of pages (`pages`).
+- {} is used to create an empty dictionary (Figure 109).
 
-Different keys can have the same values.
+**Example**: an empty dictionary named user is defined.
 
-Example: The `status` dictionary has two items (Figure 107).
+### Adding a new item to a dictionary
 
-: "user1":"active"
+To add a new member to a dictionary in Python, just give a value to a **new key** (Figure 110).
 
-Second item: `"user2":"active"` The keys are the same, but the values of each of them are different.
+![Figure 110](../images/p060-01.png)
+*Figure 110*
 
-In a `dictionary`, identical keys cannot have identical values. Duplicate keys cause the previous value to be overwritten, not duplicate values.
+> **Activity**
+>
+> یک dictionary به نام product با کلیدهای name price، بسازید. قیمت محصول درون dictionary را تغییر دهید و سپس dictionary را چاپ کنید.
 
-![Book image](../images/p059-01.png)
+**Example**: build an empty dictionary named student. Then add name and grade to it from the input, and finally print the dictionary (Figure 111).
 
-![Figure 107](../images/p059-02.png)
+![Figure 111](../images/p060-02.png)
+*Figure 111*
 
-**Figure 107**
+> **Activity**
+>
+> Build an empty dictionary named user. Get values for the keys username, password, and Age from the input, store them in the dictionary, and finally print all the user's information.
 
-In the example in Figure 108, the `car_dic` dictionary has five items, two of which have keys with the same name. So the new value replaces the previous value.
+<!-- page 55 -->
 
-![Book image](../images/p059-03.png)
+**Removing an element from a dictionary**: there are several ways to remove an item from a dictionary, including:
 
-![Figure 108](../images/p059-04.png)
+![Figure 112](../images/p061-01.png)
+*Figure 112*
 
-**Figure 108**
+- In Python, the del statement is used to remove an item from a dictionary. It removes the key and its value completely.
 
----
+![Figure 113](../images/p061-02.png)
+*Figure 113*
 
-**Page 54**
-
-![Book image](../images/p060-07.png)
-
-To build an empty `dictionary`, {} is used (Figure 109).
-
-Example: An empty dictionary named `user` is defined.
-
-**Figure 109**
-
-Adding a new `item` to a `dictionary:`
-
-To add a new member to a `dictionary` in Python, it is enough to assign a value to a new key (Figure 110).
-
-![Book image](../images/p060-04.png)
-
-![Book image](../images/p060-01.png)
-
-![Book image](../images/p060-03.png)
-
-![Figure 110](../images/p060-02.png)
-
-**Figure 110**
-
-### Activity
-
-Build a `dictionary` named `product` with the keys `name price` . Change the product’s price inside the `dictionary` and then print the `dictionary`.
-
-Example: Build an empty `dictionary` named `student`. Then, using input, add `name` and `grade` to the `dictionary` and finally print the dictionary (Figure 111).
-
-![Book image](../images/p060-05.png)
-
-![Figure 111](../images/p060-06.png)
-
-**Figure 111**
-
-### Activity
-
-Build an empty `dictionary` named `user`. Take values for the keys `username` and `password` and `Age` from input, store them inside the `dictionary`, and finally print all of the user’s information.
-
----
-
-**Page 55**
-
-Removing an element from a `dictionary:`
-
-![Book image](../images/p061-01.png)
-
-There are various ways to remove an item from a `dictionary`, including:
-
-In Python, the `del` statement is used to remove an item from a `dictionary`. With this statement, the key and its related value are completely removed from the `dictionary`.
-
-**Figure 112**
-
-![Book image](../images/p061-02.png)
-
-Example: In the example, the key `age` and its value 20 have been removed from the `dictionary`. Write the program and observe the result (Figure 113).
-
-In the program opposite, the `del` statement is used to remove the item `age":` 20". You can see that with this statement the key and its value have been removed.
-
-![Figure 113](../images/p061-03.png)
-
-**Figure 113**
-
-![Book image](../images/p061-04.png)
-
-If you intend to remove a key that does not exist in the `dictionary`, the program encounters an error; therefore, before removing, the existence of the key must be checked. In the program opposite, to prevent an error, the existence of the element is checked before removing it from the list.
-
-Enter the program and observe the result (Figure 114).
-
-**Figure 114**
-
----
-
-**Page 56**
-
-To remove an element from a `dictionary`, you can also use the `pop()` method. The `pop()` method removes the element that has the specified key name. (`key`)`dictionary.pop` Example: In the code (Figure 115), the element `"price` " has been removed from the `product` dictionary using the statement `product.pop`(`"price"`).
-
-![Book image](../images/p062-03.png)
-
-![Figure 115](../images/p062-04.png)
-
-**Figure 115**
-
-In addition to removing the item, the ()`pop` method can also return the value of the removed item (Figure 116).
-
-![Book image](../images/p062-01.png)
-
-![Figure 116](../images/p062-02.png)
-
-**Figure 116**
-
-### Activity
-
-Build a dictionary named `inventory` that includes:
-
-```
-,inventory = {"Bag": 5, "Ball": 8, "Laptop": 3
-}Mouse": 10,  "Flash memory": 14"
-```
-
-Check whether an item named `"Bag"` exists and, if it does, print a suitable message indicating that the item exists, and then remove that item with the ()`pop` method.
-
-Print the removed value.
-
-If the item did not exist, display a message stating that it does not exist.
-
-Then print the new `dictionary`.
-
----
+**Example**: in this example the key age and its value 20 are removed from the dictionary. Write the program and see the result (Figure 113). The program opposite uses del to remove the item `age": 20"`. You can see that the key and its value are removed.
+
+![Figure 114](../images/p061-03.png)
+*Figure 114*
+
+- If you try to remove a key that is not in the dictionary, the program raises an error; so check that the key exists before removing it. The program opposite checks that the element exists before removing it, to avoid the error. Type in the program and see the result (Figure 114).
+
+<!-- page 56 -->
+
+- To **remove an element** from a dictionary you can also use the **`pop()` method**. `pop()` removes the element with the given key. `dictionary.pop(key)`
+
+**Example**: in the code (Figure 115) the element "price " is removed from the product dictionary with `product.pop("price")`.
+
+![Figure 115](../images/p062-02.png)
+*Figure 115*
+
+- Besides removing the item, `pop()` can return the value of the removed item (Figure 116).
+
+![Figure 116](../images/p062-01.png)
+*Figure 116*
+
+> **Activity**
+>
+> Build a dictionary named inventory that contains:
+>
+> ```
+>  inventory = {"Bag": 5, "Ball": 8, "Laptop": 3,
+>                    "Mouse": 10,  "Flash memory": 14}
+> ```
+>
+> Check whether there is an item named "Bag"; if there is, print a suitable message saying the item exists, then remove it with the `pop()` method.
+>
+> Print the removed value.
+>
+> If the item does not exist, show a message saying so.
+>
+> Then print the new dictionary.

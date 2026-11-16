@@ -1,13 +1,9 @@
-# References
+<!-- page 330 -->
 
----
+## منابع
 
-**Page 330**
-
-### References
-
-1 Official Python documentation site version `https://docs.python.org/3/` 3
-
-2 Django source: official Django documentation site `https://docs.djangoproject.com/`
-
-3 https://getbootstrap.com/ 4 https://developer.mozilla.org 5 https://www.w3schools.com/
+1. سایت مستندات رسمی پایتون نسخه ۳: https://docs.python.org/3/
+2. منبع جنگو: سایت مستندات رسمی جنگو: https://docs.djangoproject.com/
+3. https://getbootstrap.com/
+4. https://developer.mozilla.org
+5. https://www.w3schools.com/

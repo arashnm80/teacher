@@ -1,230 +1,93 @@
-**Page 203**
-
-Arithmetic operators (`Arithmetic`): These operators are used to perform various mathematical calculations. These operators are described in Table 16:
-
-Table 16 JavaScript arithmetic operators Operator
-
-### Explanation
-
-### Example
-
-Addition, subtraction, multiplication, division, and remainder `x` = `y+z` , `a` = `a*2`, `n` = `n/10`
-
-% , / , * , - , + --,++Increment and decrement by one unit`x++`, `y--`, `++z`, `--w` **Exponentiation`x` = `y**2`
-
-Assignment operators (`Assignment`): These operators are used to assign a value to a variable. Some of these operators are simple and some are compound; that is, in addition to assignment, they also perform another operation on the operands. Table 17 shows this set of operators.
-
-Table 17 Assignment operators in JavaScript Operator
-
-### Explanation
-
-### Example
-
-Equivalent expression
-
-The value of the right-hand operand (`y`) is placed in the left-hand
-
-```
-x = `y`
-```
-
-```
-x = `y`
-```
-
-=
-
-operand (`x`).
-
-The sum of the operands `x` and `y` is placed in the left-hand
-
-`x` += `y`
-
-```
-x = `x` + `y`
-```
-
-+=
-
-operand (`x`).
-
-The difference of the operands `x` and `y` is placed in the left-hand
-
-`x` -= `y`
-
-```
-x = `x` – `y`
-```
-
--=
-
-operand (`x`).
-
-The product of the operands `x` and `y` is placed in the left-hand
-
-`x` *= `y`
-
-```
-x = `x` * `y`
-```
-
-*=
-
-operand (`x`).
-
-The quotient of dividing operand `x` by operand `y` is placed in the
-
-`x` /= `y`
-
-```
-x = `x` / `y`
-```
-
-/=
-
-left-hand variable (`x`).
-
-The remainder of dividing operand `x` by operand `y` is placed in
-
-`x` %= `y`
-
-```
-x = `x` % `y`
-```
-
-%=
-
-the left-hand variable (`x`).
-
-Raises operand `x` to the power of operand `y` and places the result
-
-`x` **= `y`
-
-```
-x = `x` ** `y`
-```
-
-**=
-
-in the variable `x`.
-
----
-
-**Page 204**
-
-Comparison operators (`Comparison`): These operators are used to compare two operands.
-
-This set of operators is shown in Table 18:
-
-Table 18 Comparison operators
-
-Operator
-
-### Explanation
-
-== to check equality of two operands by value, and === for equality of two operands by
-
-== and ===
-
-value and type != to check inequality of the values of two operands, and !== to check inequality of value and type
-
-!= and !==
-
-of the two operands
-
-> , <
-
-Whether the first operand is less than or greater than the second operand
-
-<= , >=Less than or equal to, greater than or equal to ?
-
-The ternary conditional operator, used to choose between two values based on a condition.
-
-Boolean operators (`Boolean`): Logical operators are used to combine or reverse conditions. These operators make it possible to combine logical expressions in different situations. Table 19 introduces JavaScript’s logical operators:
-
-Table 19 Logical operators
-
-Operator
-
-### Explanation
-
-&&
-
-The `AND` operator checks whether both operands are true.
-
-||
-
-The `OR` operator checks whether at least one of the conditions is true.
-
-!
-
-The `NOT` operator reverses whether a condition is true or false.
-
----
-
-**Page 205**
-
-Working with JavaScript’s different kinds of operators
-
-### Workshop
-
-Create a new file named `workshop3.html` and write the `<script>` tag in the `body` section. Then enter the following script in it and write the results you get in the blanks.
-
-```
-;"1 let x = 10, y = 2, z= 3, w=20, s="10", n = "sara", m="sina;
-```
-
-;++2 `x`
-
-.………………
-
-;3 `y` += `x`
-
-.………………
-
-;4 `--z`
-
-.………………
-
-;5 `z` *= `y`
-
-.………………
-
-;6 `x` /= 2
-
-.………………
-
-;7 `w` %= `z`
-
-.………………
-
-```
-……………………………… ;)x: "+x + " , y:" + y + " , z:" + z , " , w:" + w"(8 console.log
-```
-
-.……………… ;)`x` < `y`( = 9 `let a`
-
-```
-.……………… ;)y == z( && )x > y( = 10 Let b
-.……………… ;)x === s( = 11 Let c
-```
-
-.……………… ;)`y` != `z`( || 12 `Let d` = `c` .……………… ;)`n` < `m`( = 13 `Let e`
-
-```
-;)a: "+a + " , b:" + b + " , c:" + c , " , d:" + d + " , e: "+e"(14 console.log;
-.……………… ;"x is equal to s": "x is not equal to s" ?)x === s( = 15 result
-;(result)16 console.log;
-```
-
-.………………
-
-### Note
-
-When comparing two operands with the == and != operators, the data type of the operands does not matter and only their values are checked; whereas the === and !== operators also take the data type of the operands into account.
-
-### Note
-
-The expression ?(`x===s`) checks whether the two variables `x` and `s` are equal. If the result of the comparison is `true`, the phrase before the ? mark is stored in the variable `result`, and if the result is `false`, the phrase after the : mark is stored.
-
----
+<!-- page 203 -->
+
+**عملگرهای ریاضی (Arithmetic)** : این عملگرها برای انجام انواع عملیات محاسباتی ریاضی مورد استفاده قرار می‌گیرند. شرح این عملگرها در جدول ۱۶ آمده است:
+
+*Table 16: عملگرهای ریاضی جاوا‌اسکریپت*
+
+| Operator | Description | Example |
+| --- | --- | --- |
+| + , - , \* , / , % | جمع، تفریق، ضرب و تقسیم و باقی‌مانده | `x = y+z , a = a*2, n = n/10` |
+| ++,-- | افزایش و کاهش به میزان یک واحد | `x++, y--, ++z, --w` |
+| \*\* | توان | `x = y**2` |
+
+**عملگرهای انتساب (Assignment)**: برای اختصاص یک مقدار به یک متغیر از این عملگرها استفاده می‌شود. برخی از این عملگرها ساده و برخی ترکیبی هستند؛ یعنی علاوه بر انتساب، عمل دیگری را نیز روی عملوندها انجام می‌دهند. جدول ۱۷ مجموعه این عملگرها را نمایش می‌دهد.
+
+*Table 17: عملگرهای انتساب در جاوا‌اسکریپت*
+
+| Operator | Description | Example | عبارت معادل |
+| --- | --- | --- | --- |
+| `=` | مقدار عملوند سمت راست (y)، درون عملوند سمت چپ (x) قرار می‌گیرد. | `x = y` | `x = y` |
+| `+=` | حاصل جمع عملوندهای x و y درون عملوند سمت چپ (x) قرار می‌گیرد. | `x += y` | `x = x + y` |
+| `-=` | حاصل تفریق عملوندهای x و y درون عملوند سمت چپ (x) قرار می‌گیرد. | `x -= y` | `x = x – y` |
+| `*=` | حاصل ضرب عملوندهای x و y درون عملوند سمت چپ (x) قرار می‌گیرد. | `x *= y` | `x = x * y` |
+| `/=` | خارج قسمت تقسیم عملوند x بر عملوند y درون متغیر سمت چپ (x) قرار می‌گیرد. | `x /= y` | `x = x / y` |
+| `% =` | باقیمانده تقسیم عملوند x بر عملوند y درون متغیر سمت چپ (x) قرار می‌گیرد. | `x %= y` | `x = x % y` |
+| `**=` | عملوند x را به توان عملوند y می‌رساند و نتیجه را درون متغیر x قرار می‌دهد. | `x **= y` | `x = x ** y` |
+
+<!-- page 204 -->
+
+**عملگرهای مقایسه‌ای (Comparison)**: این عملگرها برای مقایسه دو عملوند به‌کار می‌روند.
+
+مجموعه این عملگرها در جدول ۱۸ آمده است:
+
+*Table 18: عملگرهای مقایسه‌ای*
+
+| Operator | Description |
+| --- | --- |
+| `==` و `===` | `==` برای بررسی تساوی دو عملوند از لحاظ مقدار و `===` برای تساوی دو عملوند از لحاظ مقدار و نوع |
+| `!=` و `!==` | `!=` برای بررسی عدم تساوی مقدار دو عملوند و `!==` برای بررسی عدم تساوی مقدار و نوع دو عملوند |
+| `< , >` | کوچک‌تر یا بزرگ‌تر بودن عملوند اول نسبت به عملوند دوم |
+| `>= , <=` | کوچک‌تر یا مساوی، بزرگ‌تر یا مساوی |
+| ? | عملگر شرطی سه‌تایی که برای انتخاب بین دو مقدار بر اساس یک شرط استفاده می‌شود. |
+
+**عملگرهای منطقی (Boolean)**: از عملگرهای منطقی برای ترکیب یا معکوس کردن شرایط استفاده می‌شود. این عملگرها امکان ترکیب عبارات منطقی را در شرایط مختلف فراهم می‌کنند. جدول ۱۹ عملگرهای منطقی جاوا‌اسکریپت را معرفی می‌کند:
+
+*Table 19: عملگرهای منطقی*
+
+| Operator | Description |
+| --- | --- |
+| && | عملگر AND بررسی می‌کند که آیا هر دو عملوند صحیح هستند یا خیر. |
+| \|\| | عملگر OR بررسی می‌کند که آیا حداقل یکی از شرط‌ها درست است یا خیر. |
+| `!` | عملگر NOT وضعیت درست یا غلط بودن یک شرط را معکوس می‌کند. |
+
+<!-- page 205 -->
+
+> **Workshop**
+>
+> **کار با انواع عملگرهای جاوا‌اسکریپت**
+>
+> فایل جدیدی با نام `workshop3.html` ایجاد کنید و تگ `<script>` را در بخش body بنویسید. سپس اسکریپت زیر را درون آن وارد کنید و نتایج به‌دست آمده را در جاهای خالی بنویسید.
+>
+> ```
+> 1 let x = 10, y = 2, z= 3, w=20, s="10", n = "sara", m="sina";
+> 2 x++;
+>                                  ……………….
+> 3 y += x;
+>                                                     ……………….
+> 4 --z;
+>                                    ……………….
+> 5 z *= y;
+>                                    ……………….
+> 6 x /= 2;
+>                                    ……………….
+> 7 w %= z;
+>                                    ……………….
+> 8 console.log("x: "+x + " , y:" + y + " , z:" + z , " , w:" + w);  ………………………………
+> 9 let a = (x < y);                           ……………….
+> 10 Let b = (x > y) && (y == z);     ……………….
+> 11 Let c = (x === s);                      ……………….
+> 12 Let d = c || (y != z);                   ……………….
+> 13 Let e = (n < m);                       ……………….
+> 14 console.log("a: "+a + " , b:" + b + " , c:" + c , " , d:" + d + " , e: "+e);
+> 15 result = (x === s)? "x is equal to s": "x is not equal to s";          ……………….
+> 16 console.log(result);
+>                              ……………….
+> ```
+
+> **Note**
+>
+> در هنگام مقایسه دو عملوند توسط عملگرهای `==` و `!=` نوع داده عملوندها اهمیتی ندارد و فقط مقادیر آنها بررسی می‌شود؛ درحالی‌که عملگر `===` و `!==` نوع داده عملوندها را نیز مد نظر دارد.
+
+> **Note**
+>
+> عبارت (`x===s`)? تساوی دو متغیر x و s را بررسی می‌کند. اگر نتیجه مقایسه true (درست) باشد، عبارت قبل از علامت ? و اگر نتیجه false (غلط) باشد، عبارت بعد از علامت : در متغیر result ذخیره می‌گردد.

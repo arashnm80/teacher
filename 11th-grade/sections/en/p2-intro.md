@@ -1,15 +1,13 @@
-# Poodman 2
-
----
-
-**Page 83**
-
-# Poodman 2
-
-## Designing static web pages
+<!-- page 83 -->
 
 ![Book image](../images/p089-01.png)
 
-Today a large share of services, education, commerce, communication, and entertainment is accessible through the web. Although the web was at first only a tool for displaying simple text and images, with advances in technology it has become an interactive, intelligent, and practical platform. This transformation has doubled the importance of visual design and user experience, because today’s users seek a beautiful, simple, and efficient experience. In this regard, user interface (`UI`) design is recognized as one of the key pillars in developing standard and attractive websites. The evolution of the web can be grouped into three main generations:
+Today a large share of services, education, trade, communication, and entertainment is available on the web. Although the web was at first only a tool for showing text and simple images, as technology advanced it became an interactive, intelligent, and useful platform. This change has doubled the importance of visual design and user experience, because today's users look for a beautiful, simple, and efficient experience. So user interface (UI) design is recognized as one of the key parts of building standard, attractive websites. The evolution of the web can be divided into three main generations:
 
-Web 1.0: Read-only (`Read-Only`) and without interaction Web 2.0: User interaction and collaborative content production Web 3.0: Intelligent, personalized, and based on semantic data Along this evolutionary path, a deep understanding of the principles of user interface (`UI`) and user experience (`UX`) design is not possible without mastery of the technical foundations of the web; therefore in this poodman, two foundational pillars of web development, namely `HTML` and `CSS`, are examined. Here, how to implement the meaning of content with standard `HTML` tags and how to control their graphics and layout with `CSS` are analyzed in a technical and structured way so that, by precisely combining these two technologies, a stable, responsive structure and an appearance suited to modern web standards can be delivered.
+Web 1.0: read-only (Read-Only), with no interaction
+
+Web 2.0: users can interact and create content together
+
+Web 3.0: intelligent, personalized, and based on semantic data
+
+Continuing this evolution, a deep understanding of user interface (UI) and user experience (UX) design is not possible without command of the web's technical foundations; so this module looks at the two basic pillars of web development, HTML and CSS. It analyzes, in a technical and structured way, how to express the meaning of content with standard HTML tags and how to control their look and layout with CSS, so that by combining these two technologies precisely you can build a stable, responsive structure with an appearance that meets modern web standards.

@@ -1,85 +1,79 @@
-**Page 139**
+<!-- page 139 -->
 
-### Activity
+> **Activity**
+>
+> Set the background color of the cards to `rgb(251, 248, 249)` and check the result.
+>
+> Add a few more cards and see how they are arranged.
+>
+> Make the browser as narrow as possible and check how the cards are arranged. As the space shrinks, do the cards move to the next row? Remove flex-wrap:wrap and check again what happens when the page gets narrower.
+>
+> Replace the value of justify-content with space-around and space-evenly and check how the products are arranged.
 
-Set the background color of the cards to the value `rgb`(251, 248, 249) and check the result.
+> **Learn more**
+>
+> **طرح‌بندی صفحه با چیدمان شبکه‌ای (Grid)**
+>
+> Unlike flex, which works in only one dimension (a row or a column), Grid lets you create rows and columns of content at the same time. With the grid system you have precise control over spacing and sizes. It is flexible and very useful for building orderly, responsive grid structures. To create a grid layout, the display property is used with the value grid. The number of columns is set with grid-template-columns, and the space between columns with gap.
 
-Add a few more cards to the set of cards and observe how the cards are laid out.
+> **Workshop**
+>
+> **Designing the «Special services» section with the Grid model**
+>
+> Make the following changes to the file `index.html` step by step.
+>
+> 1. Download five logo images like the figure below and save them in the site's images folder (images).
+>
+> 2. Create a `<section>` element with the class services-area for the «Special services» section. It must contain an `<h2>` element and a `<div>` container with the class services-grid. The `<div>` holds the special service items.
+>
+> 3. Create each special service item with a `<div>` element with the class service-item. These items sit side by side in several columns using the grid model.
+>
+> ![Book image](../images/p145-01.png)
 
-Reduce the browser width as much as possible and check the layout of the cards. When space decreases, do the cards move to the next row? Remove the `flex-wrap:wrap` property and again check the result of reducing the page width.
+<!-- page 140 -->
 
-Replace the value of the `justify-content` property with `space-around` and `space-evenly` and check the result of arranging the products.
+> **Workshop (continued)**
+>
+> 4. Each special service item has a logo image (img) and its title (p). Complete the HTML for the special services section like the code in the figure below:
+>
+> ![Book image](../images/p146-01.png)
+>
+> ![Book image](../images/p146-02.png)
+>
+> 5. Add the element styles to the page step by step and see the result in the browser. display: grid turns the services-grid element into a grid container, so all its direct children (service-item) become grid items that can be arranged in rows and columns.
+>
+> grid-template-columns with five auto values creates five columns whose width depends on the content of each column. With it, the logo images appear in five columns.
+>
+> gap:20px sets the space between the columns to 20 pixels.
 
-### Learn more
+<!-- page 141 -->
 
-Page layout with grid layout (`Grid`) Unlike the `flex` model, which works in only one dimension (row or column), the `Grid` model lets you create rows and columns that hold content at the same time. Using the `grid` system, you can have precise control over spacing and sizes. This method is flexible and very useful for creating regular, responsive grid structures. To create a grid layout, use the `display` property with the value `grid`. The number of grid columns is set by the `grid-template-columns` property and the spacing between columns by the `gap` property.
+> **Workshop (continued)**
+>
+> ![Book image](../images/p147-01.png)
 
-Designing the “Special services” section using the `Grid` model
-
-### Workshop
-
-In the `index.html` file, apply the following changes gradually.
-
-1 Download five logo images as in the figure below and save them in the site images folder (`images`).
-
-2 Create a `<section>` element with the class `services-area` for the “Special services” section. This element should contain an `<h2>` element and a container `<div>` with the class `services-grid`. The `<div>` element holds the special service items inside it.
-
-3 Create each special service item with a `<div>` element that has the class `service-item`.
-
-These items are placed next to each other in several columns using the grid model.
-
-![Book image](../images/p145-01.png)
-
----
-
-**Page 140**
-
-4 Each special service item includes a logo image (`img`) and its title (`p`). Complete the `HTML` code of the special services section like the code in the figure below:
-
-![Book image](../images/p146-01.png)
-
-![Book image](../images/p146-02.png)
-
-5 Gradually add element styles to the page and view the result in the browser.
-
-display: grid services-grid
-
-turns it into a grid container. As a result, all of its direct children (`service-item`) become grid items and can be distributed in rows and columns.
-
-grid-template-columns
-
-`auto` values creates five columns whose width depends on the content of each column. With this property the logo images appear in five columns.
-
-The `gap:20px` property sets the spacing between columns to 20 pixels.
-
----
-
-**Page 141**
-
-![Book image](../images/p147-01.png)
-
-### Learn more
-
-Positioning page elements with the `position` property The `position` property is one of the most important properties for controlling how elements are placed on the page. This property is used to set the position of an element relative to parent elements or other elements. The `position` property has the values `static`, `relative`, `absolute`, `fixed`, and `sticky` as follows:
-
-`static:` all page elements have the default value `static`.
-
-`relative:` sets the position of an element relative to its initial position. To move the element relative to its initial position, use the `top`, `left`, `right`, and `bottom` properties.
-
-`absolute:` sets the position of the element relative to the parent element.
-
-`fxied:` keeps the position of an element fixed.
-
-Display the image of a `chat-widget` button fixed at position (30, 600). To do this, add the chat widget button image at 45×45 to the page. Use the `paint` program to set the image size. Place the image before the `<main/>` tag:
-
-![Book image](../images/p147-02.png)
-
-Set the image style like the code opposite.
-
-![Book image](../images/p147-03.png)
-
-This button image will be shown in the bottom-right corner of the page.
-
-![Book image](../images/p147-04.png)
-
----
+> **Learn more**
+>
+> **Positioning page elements with the position property**
+>
+> position is one of the most important properties for controlling where elements sit on the page. It is used to set an element's place relative to its parent or to other elements. It has the values static, relative, absolute, fixed, and sticky:
+>
+> **static**: all page elements have the default value static.
+>
+> **relative**: sets an element's place relative to its original position. To move the element from its original position, the top, left, right, and bottom properties are used.
+>
+> **absolute**: sets the element's position relative to its parent element.
+>
+> **fixed**: keeps an element in a fixed place.
+>
+> Show a chat-widget button image at a fixed position (30, 600). To do this, add the chat widget button image to the page at 45×45. Use paint to set the image size. Put the image before the `</main>` tag:
+>
+> ![Book image](../images/p147-02.png)
+>
+> Set the style of the image like the code opposite.
+>
+> ![Book image](../images/p147-03.png)
+>
+> The button image will be shown in the bottom right corner of the page.
+>
+> ![Book image](../images/p147-04.png)

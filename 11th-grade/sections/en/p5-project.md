@@ -1,167 +1,144 @@
-**Page 280**
+<!-- page 280 -->
 
-### Creating the weather project
+## ایجاد پروژه آب‌وهوا
 
-In `Vscode`, from the `File` menu, click `Open Folder`. Then create a new folder named `meteo` in a path of your choice and open the `meteo` folder you created (Figure 5):
+در Vscode از منو File گزینه Open Folder را کلیک کنید. سپس یک‌پوشه جدید با نام meteo در مسیر دلخواه ایجاد کرده و پوشه meteo ساخته شده را باز کنید (شکل 5):
 
-![Figure 5 opening the meteo folder](../images/p286-01.png)
+![Figure 5: باز کردن پوشه meteo](../images/p286-01.png)
+*Figure 5: باز کردن پوشه meteo*
 
-Figure 5 opening the `meteo` folder
+دوباره ترمینال را باز و دستور زیر را اجرا کنید (شکل 6):
 
-Open the terminal again and run the following command (Figure 6):
+django-admin startproject config .
 
-.django-admin startproject config
+![Figure 6: ایجاد پروژه](../images/p286-02.png)
+*Figure 6: ایجاد پروژه*
 
-![Figure 6 creating the project](../images/p286-02.png)
+<!-- page 281 -->
 
-Figure 6 creating the project
+دستور قبل، پوشه پروژه را با نام Config در مسیر جاری ایجاد می‌کند که حاوی فایل تنظیمات `settings.py` و فایل‌های اصلی پروژه است. حرف نقطه در انتهای دستور فوق به معنی مسیر جاری است.
 
----
+### آشنایی با برخی فایل‌های اصلی پروژه
 
-**Page 281**
+**فایل`settings.py`**: تنظیمات اصلی پروژه در این فایل قرار می‌گیرند.
 
-The previous command creates a project folder named `Config` in the current path, which contains the `settings.py` settings file and the project’s main files. The period at the end of the command above means the current path.
+**فایل`urls.py`**: هرگاه کاربر وارد یک آدرس (URL) شود، این فایل تعیین می‌کند که سایت کدام صفحه یا بخش را نمایش دهد.
 
-Getting to know some of the project’s main files: the `settings.py` file: the project’s main settings are placed in this file.
+> **Curiosity**
+>
+> در مورد کاربرد فایل‌های دیگر موجود در پروژه تحقیق کنید.
 
-The `urls.py` file: whenever the user goes to an address (`URL`), this file decides which page or section of the site to display.
+### اجرای پروژه جنگو
 
-### Try this
+دستور زیر را در ترمینال اجرا نمایید.
 
-Research the purpose of the other files in the project.
+`python manage.py runserver` دستور runserver یک وب سرور (web server) مجازی کوچک برای پروژه جنگو راه‌اندازی می‌کند، این وب سرور فقط مخصوص برنامه‌نویس جنگو است تا بتواند پروژه جنگو را در رایانه خودش اجرا کند (شکل 7).
 
-Running the Django project: run the following command in the terminal.
+![Figure 7: راه‌اندازی موفق وب سرور جنگو](../images/p287-01.png)
+*Figure 7: راه‌اندازی موفق وب سرور جنگو*
 
-python manage.py runserver
+<!-- page 282 -->
 
-The `runserver` command starts a small virtual web server (`web server`) for the Django project. This web server is only for the Django programmer so they can run the Django project on their own computer (Figure 7).
+بعد از اجرای دستور، یک فایل با نام `db.sqlite3` کنار فایل `manage.py` ساخته می‌شود. این فایل، پایگاه‌داده پیش‌فرض جنگو است. جنگو از این فایل برای مدیریت پایگاه‌داده و جداول استفاده می‌کند.
 
-![Figure 7 successfully starting the Django web server](../images/p287-01.png)
+همان‌طوری که در شکل 7 مشخص شده است، می‌توانید سایت خود را در آدرس http://127.0.0.1:8000 مشاهده کنید.
 
-Figure 7 successfully starting the Django web server
+با تایپ آدرس فوق درون نوار آدرس مرورگر، صفحه اصلی سایت را مشابه شکل 8 مشاهده می‌کنید. ممکن است به‌دلیل نسخه‌های متفاوت جنگو تصویر متفاوتی مشاهده کنید.
 
----
+![Figure 8: اجرای موفقیت‌آمیز سایت](../images/p288-01.png)
+*Figure 8: اجرای موفقیت‌آمیز سایت*
 
-**Page 282**
+آدرس ip که جنگو روی آن اجرا می‌شود، 127.0.0.1 است. این آدرس به آدرس local معروف است. این ip به رایانه جاری اشاره می‌کند، یعنی همین رایانه‌ای که سرور جنگو را روی آن اجرا کرده‌اید. اگر رایانه شما در یک شبکه قرار داشته باشد، رایانه‌های دیگر نمی‌توانند با این آدرس، به رایانه شما متصل شوند.
 
-After you run the command, a file named `db.sqlite3` is created next to the `manage.py` file. This file is Django’s default database. Django uses this file to manage the database and tables.
+> **Curiosity**
+>
+> بررسی کنید، برای پروژه‌هایی که در بستر اینترنت در حال استفاده هستند، از چه وب‌سرورها و چه پایگاه داده‌هایی استفاده می‌شود؟
 
-As shown in Figure 7, you can view your site at the address `http://127.0.0.1:8000`.
+### ساخت اولین app در جنگو
 
-By typing the address above in the browser’s address bar, you see the site’s home page similar to Figure 8. You may see a different image because of different Django versions.
+یک پروژه جنگو می‌تواند شامل یک یا چندین app (اپلیکیشن) باشد. پروژه‌ای که با دستور startproject ایجاد کردید، هنوز app ندارد. در جنگو می‌توانید برای وظایف مستقل یک app ایجاد کنید.
 
-![Figure 8 successfully running the site](../images/p288-01.png)
+فرض کنید پروژه شما یک کارخانه در دنیای واقعی است، واحدهای تولید کارخانه هر‌کدام می‌توانند مانند یک app باشند. به‌عنوان‌مثال، واحدی که وظیفه رنگ‌کردن خودرو را بر‌عهده دارد، مستقل از واحدهای دیگر می‌تواند عمل کند. کافی است یک خودرو به این واحد تحویل شود و رنگ درخواستی مشخص شود. این واحد کار خود را انجام داده و خودرو را رنگ شده تحویل می‌دهد.
 
-Figure 8 successfully running the site
+هر app وظیفه خاصی انجام می‌دهد و باید به‌صورتی ایجاد گردد که قابلیت استفاده مجدد داشته باشد، یعنی یک app را بتوان در پروژه دیگری استفاده کرد و همان وظیفه را به‌خوبی انجام دهد.
 
-The `ip` address that Django runs on is 127.0.0.1. This address is known as the `local` address. This `ip` points to the current computer, meaning the same computer on which you have run the Django server. If your computer is on a network, other computers cannot connect to your computer with this address.
+<!-- page 283 -->
 
-### Try this
+برای ساخت app از دستور startapp استفاده می‌شود، ابتدا سرور جنگو را متوقف کرده (با ctrl + c) و سپس دستور زیر را اجرا کنید.
 
-Investigate which web servers and which databases are used for projects that are in use on the internet.
+`python manage.py startapp weather` یک‌پوشه با نام weather ساخته می‌شود. پوشه weather در حقیقت یک app جنگویی است که وظیفه نمایش وضعیت آب‌وهوای شهر موردنظر را برعهده دارد.
 
-Creating the first `app` in Django: a Django project can include one or more `app`s (applications). The project you created with the `startproject` command still has no `app`. In Django you can create an `app` for independent tasks.
+پس از ساخت weather app ساختار پروژه همانند شکل 9 خواهد بود.
 
-Suppose your project is a factory in the real world. Each of the factory’s production units can be like an `app`. For example, the unit responsible for painting cars can operate independently of the other units. It is enough to deliver a car to this unit and specify the requested color. This unit does its work and delivers the painted car.
+![Figure 9: محتوای weather app](../images/p289-01.png)
+*Figure 9: محتوای weather app*
 
-Each `app` performs a specific task and should be created so that it is reusable, meaning you can use an `app` in another project and it performs the same task well.
+**معرفی app ایجاد شده به جنگو در `settings.py`**
 
----
+در این مرحله، لازم است app ساخته شده به جنگو معرفی شود. برای این کار فایل `settings.py` را باز کنید و weather را مطابق شکل 10 به انتهای لیست `INSTALLED_APPS` اضافه کنید.
 
-**Page 283**
+![Figure 10: اضافه‌کردن weather به `installed_apps`](../images/p289-02.png)
+*Figure 10: اضافه‌کردن weather به `installed_apps`*
 
-To create an `app`, the `startapp` command is used. First stop the Django server (with `ctrl` + `c`) and then run the following command.
+<!-- page 284 -->
 
-python manage.py startapp weather
+### ساخت اولین view
 
-A folder named `weather` is created. The `weather` folder is in fact a Django `app` whose task is to display the weather for the desired city.
+هر view که در فایل `views.py` است، برحسب وظیفه‌اش، با کاربر تعامل می‌کند، پس برای نمایش دمای یک شهر، یک view باید ساخته شود.
 
-After creating the `weather app`, the project structure will be like Figure 9.
+فایل‌های View در جنگو مسئول پاسخ‌گویی به درخواست کاربران هستند، یعنی Request کاربر را بعد از مسیریابی می‌گیرند و به آن درخواست یک پاسخ درست می‌دهند.
 
-![Figure 9 contents of the weather app](../images/p289-01.png)
+**مرحله اول**: فایل `views.py` را باز کنید. یک تابع با نام `show_temp_view` همانند شکل 11 اضافه کنید:
 
-Figure 9 contents of the `weather app`
+![Figure 11: ایجاد view با نام `show_temp_view`](../images/p290-01.png)
+*Figure 11: ایجاد view با نام `show_temp_view`*
 
-Introducing the created `app` to Django in `settings.py`: at this stage, you need to introduce the created `app` to Django. To do this, open the `settings.py` file and add `weather` to the end of the `INSTALLED_APPS` list as shown in Figure 10.
+**توضیحات کدها**:
 
-![Figure 10 adding weather to installed_apps](../images/p289-02.png)
+**خط 1**: کلاس HttpResponse از ماژول http وارد (import) شده است.
 
-Figure 10 adding `weather` to `installed_apps`
+**خط 3**: یک تابع با نام `show_temp_view` ایجاد شده است. هر view در جنگو، تابعی است که باید پارامتر request را داشته باشد.
 
----
+**خط 4**: یک object از نوع HttpResponse ایجاد شده است. HttpResponse محتوای نهاییِ ارسال‌شده به مرورگر را در خود نگهداری می‌کند و مشخص می‌کند کاربر چه چیزی از سرور دریافت کند.
 
-**Page 284**
+تابع `show_temp_view` در فایل `views.py` فقط یک متن ساده، نمایش خواهد داد.
 
-Creating the first `view`: each `view` in the `views.py` file interacts with the user according to its task, so to display a city’s temperature, a `view` must be created.
+فایل را ذخیره نمایید و سرور جنگو را با `python manage.py runserver` راه‌اندازی کنید.
 
-`View` files in Django are responsible for responding to user requests, meaning they receive the user’s `Request` after routing and give that request a correct response.
+آدرس صفحه اصلی را وارد کنید، باز هم صفحه خوشامدگویی را می‌بینید. پس لازم است تغییراتی اعمال کنید تا در صفحه اصلی سایت، به‌جای خوشامدگویی متن «همدان 27 درجه سانتی‌گراد» نمایش داده شود. فایل `urls.py` در پوشه config را باز کنید (شکل 12).
 
-Step one: open the `views.py` file. Add a function named `show_temp_view` as shown in Figure 11:
+<!-- page 285 -->
 
-![Figure 11 creating a view named show_temp_view](../images/p290-01.png)
+![Figure 12: فایل `urls.py`](../images/p291-01.png)
+*Figure 12: فایل `urls.py`*
 
-Figure 11 creating a `view` named `show_temp_view`
+بعد از ایجاد پروژه، فایل `urls.py` نیز کنار `settings.py` ایجاد می‌شود. هرگاه کاربر وارد یک آدرس (URL) شود، این فایل تعیین می‌کند که سایت کدام صفحه یا بخش را نمایش دهد.
 
-### Code notes:
+**توضیحات کدها**:
 
-Line 1: the `HttpResponse` class has been imported from the `http` module.
+**خط 4**: جنگو از یک لیست با نام urlpatterns برای مدیریت آدرس صفحات سایت استفاده می‌کند.
 
-Line 3: a function named `show_temp_view` has been created. Every `view` in Django is a function that must have the `request` parameter.
+**خط 5**: هر عضو از urlpattrns یک path است که معادل آدرس یک صفحه در سایت است. به‌صورت پیش‌فرض یک path برای صفحه پنل ادمین جنگو با مقدار /admin وجود دارد که معادل آدرس http://127.0.0.1:8000/admin در مرورگر است.
 
-Line 4: an `object` of type `HttpResponse` has been created. `HttpResponse` holds the final content sent to the browser and determines what the user receives from the server.
+آدرس http://127.0.0.1:8000/admin را در مرورگر باز کنید. صفحه ورود به پنل ادمین همانند شکل 13 از شما نام کاربری و رمز عبور را درخواست می‌کند. در ادامه روش ساخت نام کاربری و رمز عبور را خواهید آموخت.
 
-The `show_temp_view` function in the `views.py` file will display only a simple text.
+![Figure 13: صفحه ورود به پنل ادمین](../images/p291-02.png)
+*Figure 13: صفحه ورود به پنل ادمین*
 
-Save the file and start the Django server with `python manage.py runserver`.
+<!-- page 286 -->
 
-Enter the home page address; you still see the welcome page. So you need to make changes so that on the site’s home page, instead of the welcome message, the text “Hamedan 27 degrees Celsius” is displayed.
+**مرحله دوم**: دوباره وارد فایل `urls.py` شده و تغییراتی همانند شکل 14 در فایل اعمال کنید.
 
-Open the `urls.py` file in the `config` folder (Figure 12).
+![Figure 14: اضافه‌کردن path جدید](../images/p292-01.png)
+*Figure 14: اضافه‌کردن path جدید*
 
----
+**توضیحات کدها**:
 
-**Page 285**
+**خط 2**: ماژول include وارد (import) شده است.
 
-![Figure 12 the urls.py file](../images/p291-01.png)
+**خط 6**: یک path جدید اضافه شده است. اولین آرگومان تابع path در این دستور فقط یک‌رشته خالی است و به این معناست که اگر در آدرس (URL) رسیده به سرور جنگو، جلوی آدرس سایت هیچ عبارتی درج نشده بود، با استفاده از ماژول include به سراغ فایل `urls.py` در weather app بروید و کار را از آنجا ادامه دهید. در واقع این خط، درخواست‌های صفحۀ اصلی را به weather app ارسال می‌کند.
 
-Figure 12 the `urls.py` file
+**مرحله سوم**: وارد پوشه weather شده و برای weather app یک `urls.py` همانند شکل 15 ایجاد کنید. هر app می‌تواند یک `urls.py` اختصاصی داشته باشد.
 
-After creating the project, the `urls.py` file is also created next to `settings.py`. Whenever the user goes to an address (`URL`), this file decides which page or section of the site to display.
-
-### Code notes:
-
-Line 4: Django uses a list named `urlpatterns` to manage the site’s page addresses.
-
-Line 5: each member of `urlpattrns` is a `path` that corresponds to the address of a page on the site. By default there is a `path` for Django’s admin panel page with the value `/admin`, which corresponds to the address `http://127.0.0.1:8000/admin` in the browser.
-
-Open the address `http://127.0.0.1:8000/admin` in the browser. The admin panel login page, as in Figure 13, asks you for a username and password. Later you will learn how to create a username and password.
-
-![Figure 13 the admin panel login page](../images/p291-02.png)
-
-Figure 13 the admin panel login page
-
----
-
-**Page 286**
-
-Step two: go back into the `urls.py` file and apply changes as shown in Figure 14.
-
-![Figure 14 adding a new path](../images/p292-01.png)
-
-Figure 14 adding a new `path`
-
-### Code notes:
-
-Line 2: the `include` module has been imported.
-
-Line 6: a new `path` has been added. The first argument of the `path` function in this command is only an empty string, and it means that if in the address (`URL`) that reaches the Django server, no expression was entered after the site address, use the `include` module to go to the `urls.py` file in the `weather app` and continue from there. In fact this line sends home page requests to the `weather app`.
-
-Step three: go into the `weather` folder and create a `urls.py` for the `weather app` as shown in Figure 15.
-
-Each `app` can have its own `urls.py`.
-
-![Figure 15 creating the urls.py file for the app](../images/p292-02.png)
-
-Figure 15 creating the `urls.py` file for the `app`
-
----
+![Figure 15: ایجاد فایل `urls.py` برای app](../images/p292-02.png)
+*Figure 15: ایجاد فایل `urls.py` برای app*

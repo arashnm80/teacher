@@ -1,57 +1,42 @@
-**Page 60**
+<!-- page 60 -->
 
-Example: Create a `tuple` with three members to hold the usernames of the company’s senior managers and then print it (Figure 124).
+**Example**: create a tuple with three members to hold the usernames of the company's senior managers, and then print it (Figure 124).
 
-![Book image](../images/p066-01.png)
+![Figure 124](../images/p066-01.png)
+*Figure 124*
 
-![Figure 124](../images/p066-02.png)
+**Example**: the program in Figure 125 uses a tuple to hold the names of the days of the week; since the names of the days do not change, this data structure suits these values.
 
-**Figure 124**
+![Figure 125](../images/p066-02.png)
+*Figure 125*
 
-Example: In the program in Figure 125, a tuple is used to hold the names of the days of the week, because the names of the days of the week are not changeable, so this type of data structure is suitable for holding these values.
+### Accessing the elements of a tuple
 
-![Book image](../images/p066-03.png)
+- Like lists, tuple elements have an index, and an element is reached by its index number.
 
-![Figure 125](../images/p066-04.png)
+Example: this program first creates a tuple named `name_ port` to hold the names of a computer's input ports, and then shows its third element. Note that indexes start at zero (Figure 126).
 
-**Figure 125**
+![Figure 126](../images/p066-03.png)
+*Figure 126*
 
-Accessing `Tuple` elements:
+- The elements of a tuple are immutable (immutable). That is, if you try to change them after they are set, the program shows an error.
 
-Like lists, tuple elements also have an `index`, and access to an element is done with its index number.
+<!-- page 61 -->
 
-Example: In this program, first a tuple named `port_name` is created to hold the names of the input ports of a computer system, and then its third element is displayed. Note that the index of elements starts from zero (Figure 126).
+**Example**: in the example in Figure 127 the program tries to change the value of the tuple's second element, but running it causes an error.
 
-![Figure 126](../images/p066-05.png)
+![Figure 127](../images/p067-02.png)
+*Figure 127*
 
-**Figure 126**
+> **Curiosity**
+>
+> Find out whether you can change the number of elements in a tuple. Write a program that shows what you found.
+>
+> What do you think is the main advantage of tuples that would make a programmer use them?
 
-The elements of a tuple are unchangeable (`immutable`). That is, if you want to change them after the initial assignment, the program displays an error message.
+**Deleting a tuple**: in Python you cannot remove the elements of a tuple, but you can delete a whole tuple with the del statement.
 
----
+**Example**: in this program the tuple days is deleted with del. After that, a message says that the tuple days is not defined (Figure 128).
 
-**Page 61**
-
-Example: In the example in Figure 127, an attempt has been made to change the value of the second element of the tuple, but running the program encounters an error.
-
-![Figure 127](../images/p067-03.png)
-
-**Figure 127**
-
-### Try this
-
-Research whether you can change the number of elements of a tuple or not. Write a program that shows the result of your research.
-
-In your opinion, what is the main advantage of tuples that requires the programmer to use them?
-
-Deleting a `Tuple:` In Python it is not possible to delete the elements of a tuple. But you can delete an entire tuple using the `del` statement.
-
-Example: In this program, the `days` tuple is deleted with the `del` statement. After running it, a message is also displayed stating that the `days` tuple is not defined (Figure 128).
-
-![Book image](../images/p067-01.png)
-
-![Figure 128](../images/p067-02.png)
-
-**Figure 128**
-
----
+![Figure 128](../images/p067-01.png)
+*Figure 128*

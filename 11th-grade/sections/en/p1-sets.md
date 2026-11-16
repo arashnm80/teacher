@@ -1,145 +1,108 @@
-# Working with functions and modules
-
----
-
-**Page 48**
+<!-- page 48 -->
 
 ## Learning unit 2
 
-## Working with functions and modules
+## Have you ever thought about this
 
-### Have you ever thought
+- If you want to build a collection of numbers with no repeats, or keep the order of the data and make it unchangeable, which data type do you use?
 
-If you want to build a set of numbers without duplicates, or keep the order of data and make it unchangeable, what data type do you use?
+- Suppose you want to store a student's information, such as name, age, and grades, and get to each item quickly. Which data structure is suitable?
 
-Suppose you want to store a student’s information such as name, age, and scores and access each item quickly—what data structure is suitable?
+- If you want to use a certain operation several times in a program without repeating the code, what can you do?
 
-If you want to use a specific action several times in a program without repeating the code, what approach is there?
+- How can you process a lot of data or do repeated operations in a function without making the code long?
 
-How can you process a large amount of data in a function or perform repeated operations without making the code long?
+- How can you use code that others have already written? What is the difference between a function and a method?
 
-How can you use ready-made code written by others? What is the difference between a function and a method?
+## By the end, the student is expected to
 
-### By the end, the student is expected to
+1. Define sets and tuples, add or remove their elements, and know what each is used for.
 
-1 Define sets and tuples, add or remove their elements, and know the use of each.
+2. Build a dictionary, add keys and values, retrieve data by key, and know how dictionaries are used to store information.
 
-2 Build a dictionary, add keys and values, retrieve data by keys, and know the use of a dictionary for storing information.
+3. The student can write simple functions, use parameters and arguments, and receive and use a function's return value.
 
-3 Be able to write simple functions, use parameters and arguments, and receive and use a function’s return value.
+4. The student can write more complex functions, use loops in functions, and handle repeated operations in functions.
 
-4 Be able to write more complex functions, use loops inside functions, and manage repeated operations in functions.
+5. Import modules, use ready-made functions and classes in their program, and recognize Python's standard modules.
 
-5 Import modules, use ready-made functions and classes in their program, and identify Python’s standard modules.
+6. Create and use local modules.
 
-6 Create and use local modules.
+## Performance standard
 
-### Performance standard
+The student can create and use functions and modules, handle data and repeated operations with functions, make use of local modules, and tell the difference between a function and a method.
 
-The student can create and use functions and modules, manage data and repeated operations with functions, benefit from local modules, and recognize the difference between a function and a method.
+<!-- page 49 -->
 
----
+In programming, the bigger and more complex programs get, the more you need to organize and reuse code. Functions and modules are tools that help programmers keep their code tidy, understandable, and reusable. In this learning unit you will learn to build functions, use parameters and return values, write advanced functions with loops, and use ready-made and local modules. With these concepts you can build more organized and professional programs.
 
-**Page 49**
+## Sets (set)
 
-In programming, as programs grow larger and more complex, the need to organize and reuse code is felt more. Functions and modules are tools that help the programmer make code tidy, understandable, and reusable. In this learning unit, you become familiar with building functions, using parameters and return values, writing advanced functions with loops, and using ready-made modules and local modules. By learning these concepts, you can create more organized and professional programs.
+![Figure 97](../images/p055-01.png)
+*Figure 97*
 
-### Sets (set)
+Sets are used to store several values in one variable. A set is one of Python's four collection data types and is used to store data such as integers, decimal numbers, strings, booleans, and tuples (tuple) as a collection.
 
-![Book image](../images/p055-01.png)
+### Creating a set
 
-Sets are used to store several values in one variable. A set is one of Python’s four data types used to store data types such as integers, floating-point numbers, strings, booleans, and tuples (`tuple`) as a collection.
+**Using curly braces** {}:
 
-**Figure 97**
+This method is usually used to build a set of specific, predefined elements.
 
-Building a `set` :
+Each time you run the program you will see that the members of the set are shown in a different order (Figure 98). That is, a set does not guarantee the order of its elements; it is unordered (Unorder).
 
-Using braces {}:
+![Figure 98](../images/p055-02.png)
+*Figure 98*
 
-This method is usually used to build a set of specific, predetermined elements.
+<!-- page 50 -->
 
-After each run of the program, you will see that the display order of the set members changes (Figure 98).
+### Using the add method to add a new element to a set
 
-That is, a `set` does not guarantee the display order of elements and is `Unordered`.
+Run the program. You will see that duplicate elements are not added to the set (Figure 99).
 
-![Book image](../images/p055-02.png)
+![Figure 99](../images/p056-01.png)
+*Figure 99*
 
-1
+### Using the remove method to remove an element from a set
 
-2
+With the remove method you can remove elements of a set.
 
-3
+**Example**: the element "banana" is removed from the set with the remove method (Figure 100).
 
-**Figure 98**
+![Figure 100](../images/p056-02.png)
+*Figure 100*
 
----
+If the member does not exist, an error message is shown when the program runs (Figure 101).
 
-**Page 50**
+![Figure 101](../images/p056-03.png)
+*Figure 101*
 
-Using the (`add`) method to add a new element to a `set:`
+> **Curiosity**
+>
+> Research the other set methods on www.w3schools.com and present them in class.
 
-Run the program. You will see that duplicate elements were not added to the set (Figure 99).
+<!-- page 51 -->
 
-![Book image](../images/p056-01.png)
-
-![Figure 99](../images/p056-02.png)
-
-**Figure 99**
-
-Using the (`remove`) method to remove an element from a `set:`
-
-With the `remove` method, you can remove elements from a `set`.
-
-Example: Using the `remove` method, the element `"banana"` has been removed from the set (Figure 100).
-
-![Book image](../images/p056-03.png)
-
-![Figure 100](../images/p056-04.png)
-
-**Figure 100**
-
-If the member does not exist, an error message is shown at run time (Figure 101).
-
-![Book image](../images/p056-05.png)
-
-![Figure 101](../images/p056-06.png)
-
-**Figure 101**
-
-### Try this
-
-Research the other methods related to `set` on the site `www.w3schools.com` and present them in class.
-
----
-
-**Page 51**
-
-Using `in` to check whether an element exists in a `set:`
+### Using in to check whether an element is in a set
 
 ![Figure 102](../images/p057-01.png)
+*Figure 102*
 
-**Figure 102**
+**مثال**: در کد شکل 103 وجود عنصر"**grape**" در مجموعه **fruits** مورد بررسی قرار گرفته است. خروجی کد نشان می‌دهد این عنصر در مجموعه وجود ندارد.
 
-Example: In the code in Figure 103, the existence of the element `"grape"` in the `fruits` set is checked. The output of the code shows that this element does not exist in the set.
+![Figure 103](../images/p057-02.png)
+*Figure 103*
 
-![Book image](../images/p057-02.png)
+> **Activity**
+>
+> Write a program that has a **set** of numbers and checks whether the number 10 is in the **set**.
 
-![Figure 103](../images/p057-03.png)
-
-**Figure 103**
-
-### Activity
-
-Write a program that has a `set` of numbers and checks whether the number 10 exists in the `set` or not.
-
-### Activity
-
-There is a set of fruits:
-
-```
-}"fruits = {"apple", "banana", "orange", "grape
-```
-
-Write a program in which the user enters a fruit name and, if it is in the `set`, displays a message that the fruit exists in the set, and print the final `set`.
-
----
+> **Activity**
+>
+> There is a set of fruits:
+>
+> ```
+> fruits = {"apple", "banana", "orange", "grape"}
+> ```
+>
+> Write a program in which the user enters the name of a fruit; if it is in the **set**, show a message saying the fruit is in the set, and print the final **set**.

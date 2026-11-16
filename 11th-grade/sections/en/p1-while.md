@@ -1,203 +1,161 @@
-**Page 40**
-
-The `while` loop This loop executes a set of statements as long as the loop condition is `True`, and whenever the loop condition becomes `False`, the loop is no longer executed and the loop's execution ends. This type of loop is usually used when the number of loop repetitions is not known and determined in advance.
+<!-- page 40 -->
 
 ![Figure 87](../images/p046-01.png)
+*Figure 87*
 
-**Figure 87**
+### The while loop
 
-: while condition : while
+This loop runs a set of statements as long as the loop condition is True; as soon as the condition becomes False, the loop stops running and ends. This kind of loop is usually used when **the number of repetitions is not known in advance**.
 
-`statements` → loop body statements
+```
+while یا      : شرط حلقه     while condition :
+```
 
-Example: A person at the entrance of a dining hall welcomes the guests of a wedding ceremony. They have been told to stand there and, after asking their names, welcome each guest who enters, and no limit has been set for when their work ends. The program below does this with the help of a `while` loop (Figure 88).
+statements → the statements in the body of the loop
 
-![Book image](../images/p046-03.png)
+**Example**: a person at the entrance of a dining hall welcomes the guests of a wedding. They have been told to stand there, ask each guest's name as they come in, and welcome them, and no end has been set for the job. The program below does this with a while loop (Figure 88).
 
 ![Figure 88](../images/p046-02.png)
+*Figure 88*
 
-**Figure 88**
+**About the program's code**: in front of the while statement, instead of a particular condition, the logical value True is used for now. This makes the loop repeat endlessly, with no way to stop it, because the condition in front of while is always True and never becomes False.
 
-Explanation of the program code: In front of the `while` statement, instead of putting a particular condition, for now the logical expression `True` is used. With this, the loop repeats without stopping and no end has been defined for stopping it;
+On the next two lines the guest's name is asked and the welcome message is printed.
 
-because the condition in front of `while` is always `True` and never becomes `False`.
+Since there is no end to the program, to stop it you must either press the key combination Ctrl + C or close the window of the running program.
 
-In the next two lines the guest's name is asked and the welcome message will be printed.
+**Example**: can the program above be written so that the welcoming stops after the groom (damad) arrives?
 
-Given that there is no end for the program's execution, to stop the program you must either use the key combination `Ctrl` + `C` or close the window of the running program.
+<!-- page 41 -->
 
-Example: Can the program above be written so that after the groom enters, the welcoming task ends?
+**About the code**: as you can see in the output of the code in Figure 89, the program ends after the groom's name is entered.
 
----
+![Figure 89](../images/p047-02.png)
+*Figure 89*
 
-**Page 41**
+Inside the loop, after the guest's name is read, an if condition checks whether the name entered equals damad; if it does, break ends the loop and the program continues after the while loop.
 
-Code explanation: As you can see in the output of the code in Figure 89, after the groom's name is entered, the program ends.
+**Example**: besides the guests, staff (Employee) are also coming and going in this hall. If you do not want the staff to be welcomed, you can use a condition and the continue statement.
 
-![Figure 89](../images/p047-03.png)
-
-**Figure 89**
-
-Inside the loop, after receiving the guest's name, with the help of an `if` condition it is checked whether the entered name equals `damad` or not, and if it equals, with the help of the `break` statement the loop's execution ends and the program's execution is moved to after the `while` loop.
-
-Example: In this hall, besides guests, employees (`Employee`) are also coming and going; now if you do not want employees to be welcomed, you can use a conditional statement and the `continue` statement.
-
-Code explanation: As you can see in the output of the code in Figure 90, after the name `Employee` is entered, the program again receives another name from the user and the employee will not be welcomed. Look carefully at the program output.
-
-![Book image](../images/p047-02.png)
+**About the code**: as you can see in the output of the code in Figure 90, after the name Employee is entered the program asks the user for another name, and the staff member is not welcomed. Look at the program's output carefully.
 
 ![Figure 90](../images/p047-01.png)
+*Figure 90*
 
-**Figure 90**
+When the program reaches continue, it skips the rest of the statements in the loop and goes back to the start of the loop.
 
-When the program reaches the `continue` statement, it abandons executing the rest of the loop statements and moves the program's execution to the beginning of the loop.
+Although this program works well, this structure is not very good programming because of the True in front of while, and the loop can be changed as in the next example.
 
-Although this program works well, this structure, because of the presence of `True` in front of `while`, is not very suitable for programming, and the loop structure can be changed as in the next example.
+**Example**: the person welcoming the guests has been told to keep doing it as long as the groom has not arrived; the code changes as below.
 
-Example: The welcoming attendant has been told to continue this work until the groom has not arrived; the code changes as follows.
+Notice that in this example the condition for continuing the loop is written in front of the while statement, and there is no need to check anything inside the loop.
 
-Note that in this example the condition for continuing the loop is in front of the `while` statement and you do not need to control anything inside the loop.
+<!-- page 42 -->
 
----
+**About the code**: as you can see in the output of the code in Figure 91, the program ends after the groom's name is entered and he is welcomed.
 
-**Page 42**
+![Figure 91](../images/p048-01.png)
+*Figure 91*
 
-Code explanation: As you can see in the output of the code in Figure 91, after the groom's name is entered and he is welcomed, the program ends.
+On the first line a variable named name is created with an empty value, so that the loop condition holds at the start.
 
-![Book image](../images/p048-01.png)
+The second line means: as long as the name entered, that is, the value of the variable (name), is not the word damad, the statements in the loop body keep running.
 
-![Figure 91](../images/p048-02.png)
+When the user enters the word damad, after the message is printed the program goes back to the start of the loop; but this time the loop condition is False and the loop ends. Here the code is better and more logical than the previous program.
 
-**Figure 91**
+**Example**: the person welcoming the guests has been told to stand there, ask each guest's name as they come in, and welcome them, and to stop as soon as the groom arrives; but the groom himself does not need to be welcomed. The code above changes a little.
 
-In the first line a variable named `name` is created and its value is empty so that the loop condition is initially met.
+**About the code**: in Figure 92, on the first line, instead of putting an empty string in the name variable, a real name is read from the user with input. So if the name damad is entered on the first line, the loop condition is False, the loop body never runs, and the program ends.
 
-The meaning of the second line is that as long as the entered name, that is the value of the variable (`name`), is not equal to the word `damad`, the loop body statements continue.
+![Figure 92](../images/p048-02.png)
+*Figure 92*
 
-When the user enters the word `damad`, after printing the message, the program returns to the beginning of the loop; but this time the loop condition is `False` and the loop's execution ends. Here, compared with the previous program, the code has become better and more logical.
+Inside the loop the welcome is printed first, and on the next line another name is read, so that on the next pass this name is checked in the loop condition.
 
-Example: The welcoming attendant has been told to stand there and, after asking their names, welcome each guest who enters, and as soon as the groom enters the welcoming task ends; but there is no longer a need to welcome the groom. The code above will change a little.
+> **Note**
+>
+> All the examples above help the programmer learn how to use the while loop in different situations. By writing the code again and thinking through how each program works, the programmer learns it more thoroughly. For better learning, look at the examples on the next page.
 
-Code explanation: In Figure 92, in the first line, instead of placing an empty string in the variable `name`, with the help of the `input` statement a real name is taken from the user. In this way, if in the first line of the program the name `damad` is entered, the loop condition becomes `False` and the loop body statements will no longer be executed and the program ends.
+<!-- page 43 -->
 
-![Book image](../images/p048-03.png)
+**Example**: write a program that gets a whole number from the user and prints its square, and keeps doing this as long as the user enters a number greater than zero (Figure 93).
 
-![Figure 92](../images/p048-04.png)
+![Figure 93](../images/p049-01.png)
+*Figure 93*
 
-**Figure 92**
+**About the code**: on the first line a whole number is read from the user and put in the number variable.
 
-Inside the loop first the welcome is printed and in the next line another name will be received so that in the next round this name is checked in the loop condition.
+The meaning of the while condition: the loop statements repeat as long as the value of number is greater than zero.
 
-### Note
+Inside the loop, the number entered and its square (that is, its second power) are printed with a suitable message first, and then another number is read from the user.
 
-The examples above all help the programmer learn how to use the `while` loop in different situations. By rewriting the code and thinking about the process of each of the programs above, the programmer learns the material more precisely. For better learning, pay attention to the examples on the next page.
+If a value less than or equal to zero is entered on the first line, the loop condition is False, the loop body does not run, and the program ends. Note that in this example the square of zero or of a negative number is not printed.
 
----
+> **Activity**
+>
+> Change the program above so that it also prints the cube (Cube) of the number (that is, its third power) as well as its square.
 
-**Page 43**
+**Example**: write a program that gets the names of some foods from the user and adds (append) them to an empty list. This continues until the user enters the word exit. When the loop finishes, the contents of the list are printed all at once (Figure 94).
 
-Example: Write a program that receives an integer from the user and prints the square of that number; this continues as long as the user enters a number greater than zero (Figure 93).
+![Figure 94](../images/p049-02.png)
+*Figure 94*
 
-![Book image](../images/p049-01.png)
+<!-- page 44 -->
 
-![Figure 93](../images/p049-02.png)
+**About the code**: on the first line an empty list is created.
 
-**Figure 93**
+As in the previous examples, first get the name of a food and store it in the food variable.
 
-Code explanation: In the first line an integer is received from the user and placed in the variable `number`.
+The meaning of the while condition: the loop statements repeat as long as the value of food is not the string "exit".
 
-The meaning of the `while` condition: that is, as long as the value of the variable `number` is greater than zero, the loop statements will be repeated.
+Inside the loop, the food name that was read is added to the end of the list with the append method, and then the name of another food is read from the user.
 
-Inside the loop first, with an appropriate message, the number taken and its square (that is, to the power of two) will be printed, and then another number is taken from the user.
+On the last line, outside the loop body, the full contents of the food list are printed.
 
-If in the first line of the program a value less than or equal to zero is entered, the loop condition becomes `False` and the loop body statements will no longer be executed and the program ends. Note that in this example, the square of the number zero or a negative number is not printed.
+![Figure 95](../images/p050-01.png)
+*Figure 95*
 
-### Activity
+Note that the last line must not be indented by a tab; it must be written exactly in line with while.
 
-Change the program above so that in addition to the square of the number, the cube (`Cube`) of the number (that is, the number to the power of 3) is also printed.
+**Example**: look at the code below. It prints the numbers one to five, one under another, with a for loop (Figure 95).
 
-Example: Write a program that takes the names of several foods from the user and adds (`append`) them to an empty list.
+If you want to do the same thing with a while loop, the code can be like the code in Figure 96.
 
-This continues as long as the user enters the word `exit`. After the loop ends, the contents of the list will be printed all at once (Figure 94).
+**About the code**: on the first line the variable i is given the starting value one.
 
-![Book image](../images/p049-03.png)
+As in the previous examples, first get the name of a food and store it in the food variable.
 
-![Figure 94](../images/p049-04.png)
+![Figure 96](../images/p050-02.png)
+*Figure 96*
 
-**Figure 94**
+The meaning of the while condition: the loop statements repeat as long as the value of i is less than 6. Inside the loop, the value of i is printed first. On the last line inside the loop, one is added to the variable.
 
----
+As you can see, a while loop is more complicated for loops with a known number of repetitions and needs more care. So programmers are advised to think, before they start coding, about which kind of loop suits the problem better.
 
-**Page 44**
+### Important points about the while loop
 
-Code explanation: In the first line, an empty list is created.
+In this kind of loop you do not know in advance how many repetitions are needed; the loop goes on as long as the condition holds.
 
-As in the previous examples, first take the name of a food and store it in the variable `food`.
+The repetition depends on a condition, which can be a comparison, user input, or the state of the program.
 
-The meaning of the `while` condition: that is, as long as the value of the variable `food` is not equal to the string `"exit"`, the loop statements will be repeated.
+The end is decided by the user or by a certain event, so the loop goes on until the end condition is reached. To control the loop and prevent it from running forever, the loop variable must be given a starting value before the loop begins.
 
-Inside the loop first the name of the food taken is added to the end of the list with the help of the `append` method, and then the name of another food is taken from the user.
+<!-- page 45 -->
 
-In the last line and outside the loop body, the complete contents of the food list are printed.
+Inside the loop, break can be used to end the loop.
 
-![Book image](../images/p050-02.png)
+Inside the loop, continue can be used to go back to the start of the loop and run it again.
 
-Note that the last line must not be moved forward by one `tab` and must be written exactly under the `while` column.
+The break and continue statements must be used with an if condition inside loops.
 
-![Book image](../images/p050-01.png)
+while loops can also be used for loops with a known number of repetitions, but this is not recommended, because such programs are simpler and more logical with a for loop.
 
-Example: Pay attention to the code below. This code prints the numbers one through five one under another with the help of a `for` loop (Figure 95).
+> **Activity**
+>
+> In the previous example, at the end of the program above, print each food in the list on its own line using a for loop.
 
-**Figure 95**
-
-Now if you want to do the same thing with the help of a `while` loop, its code can be like the code in Figure 96.
-
-Code explanation: In the first line, the variable `i` is assigned the default value one.
-
-As in the previous examples, first take the name of a food and store it in the variable `food`.
-
-![Book image](../images/p050-04.png)
-
-![Book image](../images/p050-03.png)
-
-The meaning of the `while` condition: that is, as long as the value of the variable `i` is less than
-
-6, the loop statements will be repeated. Inside the loop first the value of the variable `i` has been printed. In the last line and inside the loop, one has been added to the variable.
-
-**Figure 96**
-
-As you can see, the `while` loop structure for loops with a known number of repetitions is more complex and requires more care. Therefore programmers are advised, before starting to code, to think about, according to the given problem, which type of loop is better to use.
-
-Important points you learn from the `while` loop:
-
-In this type of loop you do not know in advance how many repetitions are needed; that is, the loop continues as long as the condition is met.
-
-Repetition depends on a condition, and the condition can be a comparison, user input, or the state of the program.
-
-The end of the work is determined by the user or a specific event. So the loop continues until the end condition is reached.
-
-To control the loop and prevent infinite execution, before the loop starts, the loop variable must be initialized.
-
----
-
-**Page 45**
-
-Inside the loop you can use `break` to end the loop's execution.
-
-Inside the loop you can use `continue` to return to the beginning of the loop and run it again.
-
-The `break` and `continue` statements must be used together with an `if` condition inside loops.
-
-To implement loops with a known count you can also use `while` loops; but this is not recommended, because writing such programs with a `for` loop is simpler and more logical.
-
-### Activity
-
-In the previous example and at the end of the program above, with the help of a `for` loop print each of the foods in the list one under another.
-
-### Activity
-
-Write a program so that the user can repeatedly order food, until they enter `"done"`.
-
-Each time a new food is taken from the user, the message `".Your order for <food> has been added"` should be displayed and the new food should be added (`append`) to the food order list. When the user enters `"done"`, the program should display all the orders.
-
----
+> **Activity**
+>
+> Write a program that lets the user order food again and again until they enter "done".
+>
+> Each time a new food is entered, show the message "`Your order for <food> has been added`." and add (append) the new food to the order list. When the user enters "done", the program shows all the orders.
