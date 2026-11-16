@@ -30,7 +30,7 @@ Last updated: 2026-11-16 (Monday).
 7. [ ] **Owner action: the live test student is still in class 200. Set class 201 or 202 if you want to see that class's view.**
 8. [ ] **Lowest priority, do last: the whole website bilingual like the lessons, with Persian as the default.** The lesson site is already Persian by default. Still open: English for the playground and admin text, English content for the questions, and the book sections E1–E5. (Owner, earlier.)
 
-9. [ ] **Owner check: the Aban dates in your message are one day behind the calendar.** You wrote Tuesday 25 Aban and Wednesday 26 Aban. Tuesday 17 Nov is 26 Aban and Wednesday 18 Nov is 27 Aban. The Azar dates you wrote match. The site uses the weekdays, so Tuesday 17 Nov shows as 26 Aban. Confirm, or tell me which day you meant.
+9. [x] **Owner check (confirmed 2026-11-16: the Aban numbers were a slip; the weekdays are right): the Aban dates in the message were one day behind the calendar.** You wrote Tuesday 25 Aban and Wednesday 26 Aban. Tuesday 17 Nov is 26 Aban and Wednesday 18 Nov is 27 Aban. The Azar dates you wrote match. The site uses the weekdays, so Tuesday 17 Nov shows as 26 Aban. Confirm, or tell me which day you meant.
 10. [ ] **Owner check: both classes use the same deadlines.** This follows your earlier instruction "for both classes". Confirm, or give class 202 a different schedule.
 11. [x] **My follow-up: run the browser end-to-end checks again.** Run on 2026-11-16 after the tutorial batches and the new deadlines: 33 of 33 passed.
 
