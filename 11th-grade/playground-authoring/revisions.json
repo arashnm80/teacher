@@ -1,0 +1,402 @@
+{
+  "p01": {
+    "fingerprint": "82f600e8c5bdeabe",
+    "revision": 3
+  },
+  "p02": {
+    "fingerprint": "66c48a0ff2e6043c",
+    "revision": 3
+  },
+  "p03": {
+    "fingerprint": "dab11549f8eb9b25",
+    "revision": 3
+  },
+  "p04": {
+    "fingerprint": "cf8fc735e40b1732",
+    "revision": 3
+  },
+  "p05": {
+    "fingerprint": "91460fa305030e04",
+    "revision": 3
+  },
+  "p06": {
+    "fingerprint": "cdbf24a003dc970d",
+    "revision": 3
+  },
+  "p07": {
+    "fingerprint": "91f31589da134b70",
+    "revision": 3
+  },
+  "p08": {
+    "fingerprint": "898f7788e9acd21d",
+    "revision": 3
+  },
+  "p09": {
+    "fingerprint": "7114c88fcc8b65ad",
+    "revision": 3
+  },
+  "p10": {
+    "fingerprint": "b2b2d91a767c1ab3",
+    "revision": 3
+  },
+  "p100": {
+    "fingerprint": "d836d9db8f6ccd38",
+    "revision": 1
+  },
+  "p11": {
+    "fingerprint": "adec932391e4bd5d",
+    "revision": 3
+  },
+  "p12": {
+    "fingerprint": "c0408cd7beb88b07",
+    "revision": 3
+  },
+  "p13": {
+    "fingerprint": "1cb87a84615e0d15",
+    "revision": 3
+  },
+  "p14": {
+    "fingerprint": "8378fc6600f796e4",
+    "revision": 3
+  },
+  "p15": {
+    "fingerprint": "364ea2b4f646158b",
+    "revision": 4
+  },
+  "p16": {
+    "fingerprint": "d28e843570501842",
+    "revision": 4
+  },
+  "p17": {
+    "fingerprint": "81afa76abdf7f72d",
+    "revision": 4
+  },
+  "p18": {
+    "fingerprint": "aff08c155a6a4399",
+    "revision": 4
+  },
+  "p19": {
+    "fingerprint": "2149eb76622baf04",
+    "revision": 4
+  },
+  "p20": {
+    "fingerprint": "1039a4901ef9816e",
+    "revision": 3
+  },
+  "p21": {
+    "fingerprint": "f5f70eef93cc4ecd",
+    "revision": 4
+  },
+  "p22": {
+    "fingerprint": "bc6a9ce4dcd3a8ac",
+    "revision": 4
+  },
+  "p23": {
+    "fingerprint": "2541dec0291d1648",
+    "revision": 4
+  },
+  "p24": {
+    "fingerprint": "7a59f01a3f21aa9b",
+    "revision": 3
+  },
+  "p25": {
+    "fingerprint": "8ddd889d5fd215bc",
+    "revision": 3
+  },
+  "p26": {
+    "fingerprint": "de1ce05123c8319f",
+    "revision": 3
+  },
+  "p27": {
+    "fingerprint": "7919e114c92bae76",
+    "revision": 3
+  },
+  "p28": {
+    "fingerprint": "822ceb0ff48b55c1",
+    "revision": 3
+  },
+  "p29": {
+    "fingerprint": "821313ff7a1f9775",
+    "revision": 3
+  },
+  "p30": {
+    "fingerprint": "2e2b78aa38d9fda7",
+    "revision": 3
+  },
+  "p31": {
+    "fingerprint": "1ceed9d2c67d3726",
+    "revision": 1
+  },
+  "p32": {
+    "fingerprint": "43aaa2ceb88d4890",
+    "revision": 1
+  },
+  "p33": {
+    "fingerprint": "617eea2146a5e832",
+    "revision": 1
+  },
+  "p34": {
+    "fingerprint": "3e5317ce1231ae28",
+    "revision": 1
+  },
+  "p35": {
+    "fingerprint": "037108c166c15627",
+    "revision": 2
+  },
+  "p36": {
+    "fingerprint": "bf40df077a29c42b",
+    "revision": 1
+  },
+  "p37": {
+    "fingerprint": "77cedf640ebf43a8",
+    "revision": 1
+  },
+  "p38": {
+    "fingerprint": "d814837adbe41c75",
+    "revision": 2
+  },
+  "p39": {
+    "fingerprint": "6708fb939fab639b",
+    "revision": 1
+  },
+  "p40": {
+    "fingerprint": "570becf523bae386",
+    "revision": 2
+  },
+  "p41": {
+    "fingerprint": "2af405ec50f1e2ad",
+    "revision": 1
+  },
+  "p42": {
+    "fingerprint": "9414a6f84e95936c",
+    "revision": 2
+  },
+  "p43": {
+    "fingerprint": "a3c999237bfe309f",
+    "revision": 1
+  },
+  "p44": {
+    "fingerprint": "60caff8187ee6f75",
+    "revision": 1
+  },
+  "p45": {
+    "fingerprint": "10895e6331c955b4",
+    "revision": 1
+  },
+  "p46": {
+    "fingerprint": "e4687183b487356c",
+    "revision": 1
+  },
+  "p47": {
+    "fingerprint": "2b53a1a65444c843",
+    "revision": 1
+  },
+  "p48": {
+    "fingerprint": "0cd92408a514f383",
+    "revision": 1
+  },
+  "p49": {
+    "fingerprint": "dba5f16222c43fc7",
+    "revision": 1
+  },
+  "p50": {
+    "fingerprint": "3ac219087405d717",
+    "revision": 2
+  },
+  "p51": {
+    "fingerprint": "069a48dfbaf5ba14",
+    "revision": 1
+  },
+  "p52": {
+    "fingerprint": "b1c7a14b342b8cbc",
+    "revision": 1
+  },
+  "p53": {
+    "fingerprint": "612a1cc998a644fe",
+    "revision": 1
+  },
+  "p54": {
+    "fingerprint": "4e86dd07675909c4",
+    "revision": 1
+  },
+  "p55": {
+    "fingerprint": "fd5134faa08a4f7e",
+    "revision": 1
+  },
+  "p56": {
+    "fingerprint": "7329a453114c38c5",
+    "revision": 1
+  },
+  "p57": {
+    "fingerprint": "9343fe8128556ae1",
+    "revision": 1
+  },
+  "p58": {
+    "fingerprint": "143b2acb454cfc03",
+    "revision": 1
+  },
+  "p59": {
+    "fingerprint": "5dd0d50293dd0cc6",
+    "revision": 1
+  },
+  "p60": {
+    "fingerprint": "8e984fbc9470599b",
+    "revision": 1
+  },
+  "p61": {
+    "fingerprint": "c4265754eb583b66",
+    "revision": 1
+  },
+  "p62": {
+    "fingerprint": "8a47f3767ac57635",
+    "revision": 1
+  },
+  "p63": {
+    "fingerprint": "852fc4be381a949b",
+    "revision": 1
+  },
+  "p64": {
+    "fingerprint": "1874082424423507",
+    "revision": 1
+  },
+  "p65": {
+    "fingerprint": "07614be81744796a",
+    "revision": 1
+  },
+  "p66": {
+    "fingerprint": "83ea214c64b994e0",
+    "revision": 1
+  },
+  "p67": {
+    "fingerprint": "a65748467eaad3a8",
+    "revision": 1
+  },
+  "p68": {
+    "fingerprint": "818834fc1e80ce5d",
+    "revision": 1
+  },
+  "p69": {
+    "fingerprint": "b3e36c684bafb920",
+    "revision": 1
+  },
+  "p70": {
+    "fingerprint": "d625c49ffcf1f491",
+    "revision": 1
+  },
+  "p71": {
+    "fingerprint": "e7b5b7642708d8c6",
+    "revision": 1
+  },
+  "p72": {
+    "fingerprint": "3b5a00bf0db7647e",
+    "revision": 1
+  },
+  "p73": {
+    "fingerprint": "3ed9d44a2b4e5331",
+    "revision": 1
+  },
+  "p74": {
+    "fingerprint": "e22a5221343930b6",
+    "revision": 1
+  },
+  "p75": {
+    "fingerprint": "47040fd3c0b84785",
+    "revision": 1
+  },
+  "p76": {
+    "fingerprint": "3e0e618464cd1c27",
+    "revision": 1
+  },
+  "p77": {
+    "fingerprint": "692b5daca6aa4faf",
+    "revision": 1
+  },
+  "p78": {
+    "fingerprint": "ff0a3dd6fe3027ea",
+    "revision": 1
+  },
+  "p79": {
+    "fingerprint": "db720767a6bd4fdc",
+    "revision": 1
+  },
+  "p80": {
+    "fingerprint": "abcc4331b84df94d",
+    "revision": 1
+  },
+  "p81": {
+    "fingerprint": "80315c146607f145",
+    "revision": 1
+  },
+  "p82": {
+    "fingerprint": "f43ee1198a97b0be",
+    "revision": 1
+  },
+  "p83": {
+    "fingerprint": "796e2049c1fc1b79",
+    "revision": 1
+  },
+  "p84": {
+    "fingerprint": "1f0a0a5b258ceccd",
+    "revision": 1
+  },
+  "p85": {
+    "fingerprint": "a8c82fb55deb30a6",
+    "revision": 1
+  },
+  "p86": {
+    "fingerprint": "d9eb7e834088bac3",
+    "revision": 1
+  },
+  "p87": {
+    "fingerprint": "7284e28373d2355d",
+    "revision": 1
+  },
+  "p88": {
+    "fingerprint": "2a31dd2a50ba045b",
+    "revision": 1
+  },
+  "p89": {
+    "fingerprint": "fa27a6f64be27832",
+    "revision": 1
+  },
+  "p90": {
+    "fingerprint": "b1c107c8e48b2e3b",
+    "revision": 1
+  },
+  "p91": {
+    "fingerprint": "2ea95cc6c58b5351",
+    "revision": 1
+  },
+  "p92": {
+    "fingerprint": "250136bef6a4a7c5",
+    "revision": 1
+  },
+  "p93": {
+    "fingerprint": "ff72911397cab5e2",
+    "revision": 1
+  },
+  "p94": {
+    "fingerprint": "330c764789501c42",
+    "revision": 1
+  },
+  "p95": {
+    "fingerprint": "a4182c0d59a4db89",
+    "revision": 1
+  },
+  "p96": {
+    "fingerprint": "f0a30ca58de016a9",
+    "revision": 1
+  },
+  "p97": {
+    "fingerprint": "5fd643ea4c1bbf4b",
+    "revision": 1
+  },
+  "p98": {
+    "fingerprint": "427b86b41b6746c3",
+    "revision": 1
+  },
+  "p99": {
+    "fingerprint": "a3f54c5f6c22c49b",
+    "revision": 1
+  }
+}
