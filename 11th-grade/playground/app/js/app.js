@@ -16,7 +16,7 @@ import {
   normalizeNewlines,
   visibleChar,
 } from "./diff.js?v=12";
-import { CODEMIRROR_SCRIPTS, createPythonEditor, ensureCodeMirror } from "./editor.js?v=13";
+import { CODEMIRROR_SCRIPTS, createKeyBar, createPythonEditor, ensureCodeMirror } from "./editor.js?v=14";
 import {
   LEGACY,
   PRIMARY,
@@ -327,6 +327,7 @@ async function init() {
     },
   });
   state.editor.setReadOnly(true);
+  createKeyBar(state.editor, document.getElementById("keybar"));
   bootNote("editor ready");
 
   if (!ONLINE) {
@@ -650,10 +651,18 @@ function renderList() {
           <div class="meta">${bidiMixHtml(loc(p, "topic"))} · ${difficultyLabel(p.difficulty)} <span class="remain" data-pid="${p.id}"></span></div>
         </span>
       `;
-      btn.addEventListener("click", () => selectProblem(p.id));
+      btn.addEventListener("click", () => {
+        selectProblem(p.id);
+        if (isNarrow()) el.problemTitle.scrollIntoView({ behavior: "smooth", block: "start" });
+      });
       el.problemList.appendChild(btn);
     });
   updateRemaining();
+}
+
+/** One column (phone, tablet): the list is above the question, so the page scrolls to what was chosen. */
+function isNarrow() {
+  return window.matchMedia("(max-width: 1239px)").matches;
 }
 
 function selectProblem(id) {
@@ -949,6 +958,7 @@ async function onRun() {
   } finally {
     el.btnRun.disabled = false;
     el.btnRun.textContent = tr("run.button");
+    if (isNarrow()) el.results.scrollIntoView({ behavior: "smooth", block: "start" });
   }
 }
 

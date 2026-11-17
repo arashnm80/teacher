@@ -16,6 +16,11 @@ import { define, t } from "./i18n.js?v=5";
 
 define({
   "edit.load": { fa: "ویرایشگر کد بارگذاری نشد (CodeMirror). فایل‌های vendor/codemirror را کامل کپی کنید یا صفحه را تازه کنید.", en: "The code editor (CodeMirror) did not load. Copy the whole vendor/codemirror folder, or reload the page." },
+  "edit.tab": { fa: "تورفتگی (Tab)", en: "Indent (Tab)" },
+  "edit.left": { fa: "یک نویسه به چپ", en: "One character left" },
+  "edit.right": { fa: "یک نویسه به راست", en: "One character right" },
+  "edit.undo": { fa: "واگرد", en: "Undo" },
+  "edit.keys": { fa: "نویسه‌های کدنویسی", en: "Coding keys" },
   "edit.ready": { fa: "ویرایشگر کد آماده نیست (CodeMirror). صفحه را تازه کنید؛ اگر آفلاین هستید پوشه vendor/codemirror را کامل کپی کنید.", en: "The code editor (CodeMirror) is not ready. Reload the page; if you are offline, copy the whole vendor/codemirror folder." },
 });
 
@@ -328,6 +333,11 @@ export function createPythonEditor(textarea, { onChange } = {}) {
   });
 
   attachLineShortcutCapture(cm);
+  // Phone keyboards fix, capitalise and suggest words: none of that belongs in code.
+  const field = cm.getInputField();
+  for (const [name, value] of [["autocapitalize", "off"], ["autocorrect", "off"], ["autocomplete", "off"], ["spellcheck", "false"]]) {
+    field.setAttribute(name, value);
+  }
 
   if (typeof onChange === "function") {
     cm.on("change", (instance, change) => onChange(cm.getValue(), change));
@@ -356,4 +366,78 @@ export function createPythonEditor(textarea, { onChange } = {}) {
     },
     raw: cm,
   };
+}
+
+/**
+ * A row of the characters that are slow to find on a phone keyboard (brackets, colon, quotes, Tab, ...).
+ * It is shown only on touch screens (see .keybar in style.css). Pressing a key does not take the
+ * focus from the editor, so the keyboard stays open. What a key types counts as typing.
+ */
+const KEYS = [
+  { label: "Tab", tab: true },
+  { label: ":", text: ":" },
+  { label: "( )", pair: "()" },
+  { label: "[ ]", pair: "[]" },
+  { label: "{ }", pair: "{}" },
+  { label: "\" \"", pair: '""' },
+  { label: "' '", pair: "''" },
+  { label: "=", text: "=" },
+  { label: "#", text: "#" },
+  { label: "_", text: "_" },
+  { label: ",", text: "," },
+  { label: ".", text: "." },
+  { label: "+", text: "+" },
+  { label: "-", text: "-" },
+  { label: "*", text: "*" },
+  { label: "/", text: "/" },
+  { label: "%", text: "%" },
+  { label: "<", text: "<" },
+  { label: ">", text: ">" },
+  { label: "!", text: "!" },
+  { label: "\\", text: "\\" },
+  ..."0123456789".split("").map((d) => ({ label: d, text: d })),
+];
+
+export function createKeyBar(editor, container) {
+  const cm = editor.raw;
+  container.replaceChildren();
+  container.setAttribute("role", "toolbar");
+  container.setAttribute("aria-label", t("edit.keys"));
+  const add = (label, title, action, extra = "") => {
+    const button = document.createElement("button");
+    button.type = "button";
+    button.className = `key ${extra}`.trim();
+    button.textContent = label;
+    button.title = title;
+    button.setAttribute("aria-label", title);
+    // Keep the editor focused (and the keyboard open) when a key is pressed.
+    button.addEventListener("pointerdown", (event) => event.preventDefault());
+    button.addEventListener("mousedown", (event) => event.preventDefault());
+    button.addEventListener("click", () => {
+      if (cm.getOption("readOnly")) return;
+      action();
+      cm.focus();
+    });
+    container.append(button);
+  };
+  add("↶", t("edit.undo"), () => cm.undo(), "icon");
+  add("←", t("edit.left"), () => cm.execCommand("goCharLeft"), "icon");
+  add("→", t("edit.right"), () => cm.execCommand("goCharRight"), "icon");
+  for (const key of KEYS) {
+    if (key.tab) {
+      add("Tab", t("edit.tab"), () => {
+        if (cm.somethingSelected()) cm.indentSelection("add");
+        else cm.replaceSelection("    ", "end", "+input");
+      }, "wide");
+    } else if (key.pair) {
+      add(key.label, key.pair, () => {
+        const picked = cm.getSelection();
+        cm.replaceSelection(key.pair[0] + picked + key.pair[1], "end", "+input");
+        if (!picked) cm.execCommand("goCharLeft");
+      });
+    } else {
+      add(key.label, key.text, () => cm.replaceSelection(key.text, "end", "+input"));
+    }
+  }
+  return container;
 }

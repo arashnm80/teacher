@@ -13,6 +13,7 @@ install -d -m 0755 /opt/teacher-accounts /opt/teacher-accounts/data
 install -d -m 0750 -o teacher-accounts -g teacher-accounts /var/lib/teacher-accounts
 install -m 0644 "$ROOT/accounts-server/app.py" /opt/teacher-accounts/app.py
 install -m 0644 "$ROOT/accounts-server/teacher_schedule.py" /opt/teacher-accounts/teacher_schedule.py
+install -m 0644 "$ROOT/accounts-server/grading.py" /opt/teacher-accounts/grading.py
 install -m 0644 "$ROOT/accounts-server/schedule.json" /opt/teacher-accounts/schedule.json
 install -m 0640 -o root -g teacher-accounts "$ROOT/playground/app/data/problems.json" /opt/teacher-accounts/data/problems.json
 

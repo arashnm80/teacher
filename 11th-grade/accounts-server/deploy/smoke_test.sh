@@ -74,5 +74,19 @@ m = json.load(sys.stdin)
 print('yes' if m.get('format') == 1 and m.get('version') and len(m.get('files', {})) > 100 else 'no')" 2>/dev/null)
 check "the update manifest is published" yes "${manifest:-no}"
 
+# Code is checked on this server in a sealed container (only when this runs on the server itself).
+if systemctl cat teacher-judge.service >/dev/null 2>&1; then
+  check "the judge service is running" active "$(systemctl is-active teacher-judge)"
+  sandbox=$(python3 - <<'PY' 2>/dev/null
+import json, socket
+s = socket.socket(socket.AF_UNIX); s.settimeout(30); s.connect("/run/teacher-judge/judge.sock")
+s.sendall(json.dumps({"mode": "stdio", "source": "print(int(input()) * 2)", "tests": [{"stdin": "21\n"}]}).encode() + b"\n")
+out = json.loads(s.makefile().readline())
+print("yes" if out.get("ok") and out["results"][0]["stdout"] == "42\n" else "no")
+PY
+)
+  check "the sandbox runs a program and returns its output" yes "${sandbox:-no}"
+fi
+
 if [[ $fail -eq 0 ]]; then echo "all live checks passed"; else echo "some live checks failed"; fi
 exit $fail

@@ -1,0 +1,36 @@
+# /etc/systemd/system/teacher-judge.service
+[Unit]
+Description=Teacher judge: runs students' Python code for the accounts service in a sealed container (Unix socket only)
+After=docker.service
+Requires=docker.service
+
+[Service]
+Type=simple
+User=teacher-judge
+Group=teacher-accounts
+# Starting containers needs the docker socket; the code the judge runs never has it.
+SupplementaryGroups=docker
+Environment=HOME=/var/lib/teacher-judge
+Environment=DOCKER_CONFIG=/var/lib/teacher-judge/.docker
+Environment=TJ_SOCKET=/run/teacher-judge/judge.sock
+Environment=TJ_IMAGE=teacher-judge:current
+Environment=TJ_SLOTS=3
+# /run/teacher-judge: only the judge and the accounts service (group teacher-accounts) can reach the socket.
+RuntimeDirectory=teacher-judge
+RuntimeDirectoryMode=0750
+StateDirectory=teacher-judge
+ExecStart=/usr/bin/python3 /opt/teacher-judge/judge.py serve
+Restart=on-failure
+RestartSec=3
+IPAddressDeny=any
+NoNewPrivileges=yes
+UMask=0007
+PrivateTmp=yes
+ProtectSystem=strict
+ProtectHome=yes
+ProtectKernelTunables=yes
+ProtectControlGroups=yes
+RestrictSUIDSGID=yes
+
+[Install]
+WantedBy=multi-user.target
