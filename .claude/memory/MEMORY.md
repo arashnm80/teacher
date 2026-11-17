@@ -1,0 +1,10 @@
+- [Stay in Storage root](stay-in-storage-root.md) — never cd into sub-repos; use git -C / absolute paths
+- [Work layer by layer](work-layer-by-layer.md) — big jobs: task list + time estimates, one layer across the whole book at a time
+- [API calls via WARP only](api-calls-via-warp-only.md) — provider traffic from this server must go through WARP; never expose the real IP
+- [Students type code](students-type-code.md) — copy is blocked on the site, but the solutions are still public JSON; never claim full protection
+- [Progress follows question id](progress-follows-question-id.md) — adding questions keeps progress; only a major edit or --bump resets a question
+- [Website bilingual later](website-bilingual-later.md) — owner's low-priority task at the very end: whole site bilingual like the lessons
+- [Requirements checklist](requirements-checklist-workflow.md) — every owner note goes into .claude/requirements-checklist.md the same day; work by priority, check off when done
+- [Kill test servers by PID](kill-test-servers-by-pid.md) — pkill -f "app.py serve" also kills the production accounts service
+- [Server-side judge](server-side-judge.md) — student code runs in a Docker sandbox on the server; how to rebuild, test, deploy
+- [No hard refresh](no-hard-refresh.md) — build id stamps on every js/css address; never bump ?v= by hand; Cloudflare forces 4h browser cache

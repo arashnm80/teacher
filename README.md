@@ -10,6 +10,8 @@ Copy the whole `11th-grade/site` folder onto a classroom PC and double-click `in
 
 Public copy: [teacher.arashnm80.ir](https://teacher.arashnm80.ir).
 
+Where the project stands, how to build, test and deploy, and the owner's rules: [HANDOFF.md](HANDOFF.md) (read first on a new machine).
+
 Requirements for later changes: [11th-grade/REQUIREMENTS.md](11th-grade/REQUIREMENTS.md).
 
 ### Offline downloads on the site

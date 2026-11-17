@@ -8,3 +8,5 @@ __pycache__/
 11th-grade/site/evolution-of-trust-offline.zip
 11th-grade/site/playground/
 .claude/venv/
+11th-grade/site/offline-files/
+11th-grade/site/offline-manifest.json
