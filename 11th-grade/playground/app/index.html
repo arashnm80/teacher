@@ -26,7 +26,7 @@
   <div id="boot" class="boot">
     <div class="boot-card">
       <p class="boot-brand" data-fa="تمرین پایتون" data-en="Python Practice">تمرین پایتون</p>
-      <p class="boot-msg" id="boot-msg" data-fa="در حال آماده‌سازی موتور پایتون…" data-en="Preparing the Python engine…">در حال آماده‌سازی موتور پایتون…</p>
+      <p class="boot-msg" id="boot-msg" data-fa="در حال آماده‌سازی…" data-en="Getting ready…">در حال آماده‌سازی…</p>
       <div class="boot-bar"><span id="boot-bar"></span></div>
       <button type="button" id="boot-retry" class="btn secondary sm boot-retry" hidden data-fa="تلاش دوباره" data-en="Try again">تلاش دوباره</button>
       <div id="boot-offline" class="boot-offline" hidden>
@@ -35,7 +35,9 @@
       </div>
       <details id="boot-details" class="boot-details" hidden>
         <summary data-fa="جزئیات فنی (برای معلم)" data-en="Technical details (for the teacher)">جزئیات فنی (برای معلم)</summary>
-        <pre id="boot-tech" class="ltr" dir="ltr"></pre>
+        <button type="button" id="boot-copy" class="btn primary boot-copy" data-fa="کپی خطا برای معلم" data-en="Copy the error for the teacher">کپی خطا برای معلم</button>
+        <textarea id="boot-tech" class="ltr boot-tech" dir="ltr" readonly rows="10" spellcheck="false" aria-label="Technical details"></textarea>
+        <p id="boot-copy-note" class="boot-copy-note" role="status" hidden></p>
       </details>
     </div>
   </div>
@@ -258,23 +260,60 @@
   (function () {
     var early = [];
     function isEn() { try { return localStorage.getItem("grade11-lang-v2") === "en"; } catch (e) { return false; } }
-    var APP_JS = "js/app.js?v=39";
+    var APP_JS = "js/app.js?v=40";
     var MODULES = [
       APP_JS,
       "js/bootlog.js?v=12",
       "js/enginefetch.js?v=14",
       "js/editor.js?v=13",
       "js/compat.js?v=12",
-      "js/runner.js?v=12",
+      "js/runner.js?v=13",
       "js/diff.js?v=12",
       "js/bidi.js?v=19",
       "js/countdown.js?v=2",
       "js/i18n.js?v=5",
-      "js/account.js?v=4",
+      "js/account.js?v=5",
       "js/sync.js?v=2",
       "js/update.js?v=2",
       "js/ai.js?v=4"
     ];
+    // Copy the text of the technical details. Works on phones and computers; asks for nothing the
+    // page does not already have. The page's copy guard lets a text field through, so the fallback
+    // selects the field and copies from it.
+    function copyBootError() {
+      var field = document.getElementById("boot-tech");
+      var note = document.getElementById("boot-copy-note");
+      function say(ok) {
+        if (!note) return;
+        note.hidden = false;
+        note.className = "boot-copy-note " + (ok ? "ok" : "bad");
+        note.textContent = ok
+          ? (isEn() ? "Copied. Paste it into your message to the teacher." : "کپی شد. آن را در پیام خود برای معلم بچسبانید.")
+          : (isEn() ? "Could not copy by itself. The text is selected: press and hold, then choose Copy." : "کپی خودکار انجام نشد. متن انتخاب شده است؛ انگشت را روی آن نگه دارید و «کپی» را بزنید.");
+      }
+      function fallback() {
+        if (!field) return say(false);
+        field.focus();
+        field.select();
+        try { field.setSelectionRange(0, field.value.length); } catch (e) {}
+        var ok = false;
+        try { ok = document.execCommand("copy"); } catch (e) {}
+        say(ok);
+      }
+      var text = field ? field.value || field.textContent : "";
+      if (navigator.clipboard && navigator.clipboard.writeText && window.isSecureContext) {
+        navigator.clipboard.writeText(text).then(function () { say(true); }, fallback);
+      } else {
+        fallback();
+      }
+    }
+    var copyButton = document.getElementById("boot-copy");
+    if (copyButton) {
+      copyButton.addEventListener("click", copyBootError);
+      if (isEn()) copyButton.textContent = "Copy the error for the teacher";
+    }
+    var techBox = document.getElementById("boot-tech");
+    if (techBox) techBox.addEventListener("focus", function () { techBox.select(); });
     function showBootFailure(title, tech) {
       if (window.__pgReady || window.__pgFailed) return;
       window.__pgFailed = true;
@@ -286,7 +325,7 @@
       var boot = document.getElementById("boot");
       if (boot) boot.hidden = false;
       if (msg) msg.textContent = title;
-      if (techEl) techEl.textContent = tech || "(no details)";
+      if (techEl) techEl.value = tech || "(no details)";
       if (details) {
         details.hidden = false;
         try { details.open = true; } catch (e) {}

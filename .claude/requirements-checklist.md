@@ -2,10 +2,17 @@
 
 Every new note, task or prompt from the owner is written here the same day. Open items are worked in priority order, then by how early they were given. An item is checked off only when it is done and verified. Items marked **Owner decision** need an answer from the owner before work continues.
 
-Last updated: 2026-11-16 (Monday).
+Last updated: 2026-11-17 (Tuesday).
 
 ## Open, in priority order
 
+3. [ ] **The "copy the error for the teacher" part is not clickable; students must be able to copy the error easily. (Owner, 2026-11-17.)** Cause to check: guard.js blocks every copy that does not come from a form field, and the technical-details box has no copy button. Plan: a real "Copy the error" button that works on phones and computers, and the details shown in a field that can be selected.
+4. [ ] **Python must run on the Helsinki server, not in the student's browser. (Owner, 2026-11-17.)** Many students cannot load the Python packages (the Pyodide engine download) on their devices. Students only send their code; the server checks it and returns the result. Nothing to download.
+   - [ ] 4a: A safe sandbox for the student's code: no network, no access to the server's files or data, time limit (infinite loops), memory limit, limit on processes (fork bombs), limit on output size and files. Each test runs in a fresh process; the sandbox never sees the expected outputs. Adversarial tests prove it (infinite loop, memory, fork bomb, network, reading server files, huge output, killing the checker).
+   - [ ] 4b: The accounts service uses it: the server decides passed/failed itself (no more trusting the number the browser sends); the hidden tests and their expected outputs no longer reach the browser online; the rules "must use / must not use" are checked on the server.
+   - [ ] 4c: The online page no longer loads the Python engine at all (fast start); results and errors look the same as before; clear messages when the server is busy or unreachable.
+   - [ ] 4d: Deploy (sandbox image, judge service, accounts service) and a live check. The offline copy keeps running Python on the device (it must work without internet); say so in the final report.
+5. [ ] **The new way must work well on both Android phones and computers. (Owner, 2026-11-17.)** Layout, the editor, the buttons, the results and the keyboard on a phone screen; checked with phone-sized and desktop-sized browser runs.
 0. [x] **HIGH PRIORITY, top of the list: show a countdown of the remaining time for each problem. (Owner, 2026-11-16.)** Shown on the problem itself (ticking) and as a compact remaining time next to each problem in the list. It uses the server's clock, not the computer's, and also works in the offline copy from its last synced schedule. Online: done and published on 2026-11-16 (browser check 7 of 7). Offline: comes with the offline sync work (item 1).
 1. [x] **Offline copy = online copy, with sync and self-update. (Owner, 2026-11-16.)** Done and published on 2026-11-16 (29 browser checks, 12 updater checks, 61 server tests, a live update rehearsal and the live smoke test). The offline copy must work like the online version, but with all files downloaded and usable without internet.
    - Same features as online: sign-up and sign-in, progress, series and deadlines, the assistant, the tutorials.

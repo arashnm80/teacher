@@ -10,6 +10,9 @@ define({
   "run.if": { fa: "دستور {code}", en: "the {code} statement" },
   "run.def": { fa: "تابع ({code})", en: "a function ({code})" },
   "run.timeout": { fa: "زمان اجرا بیش از حد مجاز بود.", en: "The run took longer than allowed." },
+  "run.memory": { fa: "برنامه‌ی شما حافظه‌ی بیشتر از حد مجاز مصرف کرد.", en: "Your program used more memory than allowed." },
+  "run.output": { fa: "برنامه‌ی شما بیشتر از حد مجاز خروجی چاپ کرد (شاید حلقه‌ی بی‌پایان دارد).", en: "Your program printed more than allowed (maybe it has an endless loop)." },
+  "run.crash": { fa: "برنامه‌ی شما ناگهان متوقف شد.", en: "Your program stopped suddenly." },
   "run.nofunction": { fa: "تابع «{name}» پیدا نشد. آن را با def تعریف کنید.", en: "Function “{name}” was not found. Define it with def." },
 });
 
@@ -101,6 +104,16 @@ export function checkConstraints(source, constraints = {}) {
     }
   }
   return issues;
+}
+
+/** The message for one rule the server found broken: { type: "require" | "forbid", token }. */
+export function issueMessage(issue) {
+  return t(issue.type === "require" ? "run.require" : "run.forbid", { what: labelFor(issue.token) });
+}
+
+/** The message for a run the server had to stop: "timeout", "memory", "output" or "crash". */
+export function runCodeMessage(code) {
+  return t(`run.${["timeout", "memory", "output"].includes(code) ? code : "crash"}`);
 }
 
 /** Exported for local smoke tests. */

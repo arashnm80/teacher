@@ -551,8 +551,16 @@ details[open] > summary { margin-bottom: 0.5rem; }
   line-height: 1.6;
 }
 .boot-details { margin-top: 0.8rem; text-align: start; font-size: 0.85rem; color: var(--muted); }
-.boot-details pre {
+.boot-copy { width: 100%; margin: 0.6rem 0 0.5rem; justify-content: center; }
+.boot-copy-note { margin: 0.4rem 0 0; font-size: 0.85rem; line-height: 1.6; }
+.boot-copy-note.ok { color: var(--ok, #1b7f3b); }
+.boot-copy-note.bad { color: var(--bad, #b3261e); }
+.boot-details .boot-tech {
+  display: block;
+  width: 100%;
+  box-sizing: border-box;
   max-height: min(50vh, 420px);
+  resize: vertical;
   overflow: auto;
   padding: 0.6rem;
   border: 1px solid var(--line);

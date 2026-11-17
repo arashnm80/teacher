@@ -41,6 +41,32 @@ os.environ.update({
 })
 sys.path.insert(0, str(HERE))
 import app as ta  # noqa: E402
+import grading  # noqa: E402
+
+# A stand-in for the judge (the sandbox is tested in judge-server/test_judge.py). It answers as a
+# program would that gets the first `passed` tests right and the rest wrong; "all" is a perfect program.
+FAKE = {"passed": "all", "down": None, "calls": 0, "last": None}
+
+
+def fake_judge(request):
+    FAKE["calls"] += 1
+    FAKE["last"] = request
+    if FAKE["down"]:
+        raise grading.JudgeUnavailable(FAKE["down"])
+    function = request["mode"] == "function"
+    want = request["tests"]
+    problem = ta.PROBLEM_FULL[request["problem"]]
+    assert len(problem["tests"]) == len(want)
+    results = []
+    for i, test in enumerate(problem["tests"]):
+        right = FAKE["passed"] == "all" or i < FAKE["passed"]
+        if function:
+            value = test["call"]["expected"] if right else "WRONG"
+            results.append({"status": "ok", "stdout": "", "error": None, "value": value, "ms": 1, "truncated": False})
+        else:
+            out = test["stdout"] if right else "WRONG\n"
+            results.append({"status": "ok", "stdout": out, "error": None, "value": None, "ms": 1, "truncated": False})
+    return {"ok": True, "results": results}
 
 PHONE = "09123456789"
 NATIONAL = "0499370899"  # passes the national code check digit
@@ -114,6 +140,9 @@ class Base(unittest.TestCase):
         cls.httpd.shutdown()
 
     def setUp(self):
+        FAKE.update(passed="all", down=None, calls=0, last=None)
+        grading.ask_judge = fake_judge
+        ta.RUNNING.clear()
         use_problems(base_fixture())
         db = ta.connect()
         with ta.transaction(db):
@@ -322,7 +351,9 @@ class ProgressTests(Base):
         self.cookie = self.register()
 
     def attempt(self, problem, passed, total, code="print('x')", revision=1, **extra):
-        body = {"problemId": problem, "code": code, "passed": passed, "total": total, "revision": revision, **extra}
+        """`passed` tests are answered rightly by the fake judge; `total` is only for the reader."""
+        FAKE["passed"] = passed
+        body = {"problemId": problem, "code": code, "revision": revision, **extra}
         return call(self.port, "POST", "/api/student/attempt", body, cookie=self.cookie)
 
     def test_problems_and_progress_need_a_session(self):
@@ -341,15 +372,92 @@ class ProgressTests(Base):
         self.assertTrue(body["solved"])
         status, body, _, _ = self.attempt("p02", 2, 3)
         self.assertFalse(body["solved"])
-        status, body, _, _ = self.attempt("p02", 3, 3, blocked=True)
-        self.assertFalse(body["solvedNow"], "a blocked run cannot pass")
+        self.assertEqual((body["passed"], body["total"]), (2, 3))
+
+    def test_the_browser_cannot_claim_a_result(self):
+        FAKE["passed"] = 0
+        status, body, _, _ = call(self.port, "POST", "/api/student/attempt", {
+            "problemId": "p02", "code": "print(1)", "revision": 1, "passed": 3, "total": 3, "blocked": False},
+            cookie=self.cookie)
+        self.assertEqual(status, 200)
+        self.assertFalse(body["solved"])
+        self.assertEqual(body["passed"], 0)
+        self.assertEqual(body["total"], 3, "the number of tests comes from the server's own copy")
+
+    def test_the_outcome_hides_what_a_hidden_test_expects(self):
+        FAKE["passed"] = 0
+        body = self.attempt("p01", 0, 2)[1]
+        first, second = body["outcome"]["results"]
+        self.assertEqual((first["expected"], first["stdin"]), ("Hello, Ali\n", "Ali\n"))
+        self.assertEqual(first["actual"], "WRONG\n")
+        self.assertNotIn("expected", second)
+        self.assertNotIn("actual", second)
+        self.assertNotIn("stdin", second)
+        self.assertNotIn("Sara", json.dumps(body, ensure_ascii=False), "a hidden test's input is not sent")
+        function = self.attempt("p02", 0, 3)[1]["outcome"]["results"]
+        self.assertEqual(function[0]["args"], [2])
+        self.assertEqual((function[0]["expected"], function[0]["actual"]), ("4", '"WRONG"'))
+        self.assertNotIn("expected", function[1])
+        self.assertNotIn("args", function[2])
+
+    def test_the_questions_sent_to_the_browser_have_no_tests(self):
+        status, body, _, _ = call(self.port, "GET", "/api/student/problems", cookie=self.cookie)
+        text = json.dumps(body, ensure_ascii=False)
+        self.assertNotIn("Sara", text)
+        self.assertNotIn("9", text.replace("p02", ""), "no hidden test of the function question")
+        self.assertEqual([len(p["tests"]) for p in body], [2, 3], "the count stays, the contents do not")
+        self.assertEqual(body[0]["tests"], [{}, {}])
+        self.assertEqual(body[0]["samples"], [{"stdin": "Ali\n", "stdout": "Hello, Ali\n"}])
+
+    def test_the_rules_are_checked_on_the_server(self):
+        problems = base_fixture()
+        problems[0]["constraints"] = {"require": ["for"], "forbid": ["sum"]}
+        use_problems(problems)
+        status, body, _, _ = self.attempt("p01", 2, 2, code="print(sum([1]))")
+        outcome = body["outcome"]
+        self.assertTrue(outcome["blocked"])
+        self.assertEqual(outcome["constraintIssues"], [{"type": "require", "token": "for"},
+                                                       {"type": "forbid", "token": "sum"}])
+        self.assertFalse(body["solved"])
+        self.assertEqual(FAKE["calls"], 0, "a blocked run is never sent to the sandbox")
+        self.assertTrue(self.attempt("p01", 2, 2, code="for i in []:\n    pass")[1]["solved"])
+
+    def test_the_judge_being_busy_or_down_is_told_and_nothing_is_recorded(self):
+        for code, status_expected in (("busy", 503), ("down", 503)):
+            FAKE["down"] = code
+            status, body, _, _ = self.attempt("p01", 2, 2)
+            self.assertEqual(status, status_expected)
+            self.assertEqual(body["error"], "judge_" + code)
+        FAKE["down"] = None
+        progress = call(self.port, "GET", "/api/student/progress", cookie=self.cookie)[1]["progress"]
+        self.assertEqual(progress, {}, "a run that could not be checked leaves no trace")
+        self.assertEqual(self.db().execute("SELECT COUNT(*) FROM attempts").fetchone()[0], 0)
+
+    def test_one_run_at_a_time_for_each_student(self):
+        sid = self.db().execute("SELECT id FROM students").fetchone()[0]
+        ta.RUNNING.add(sid)
+        status, body, _, _ = self.attempt("p01", 2, 2)
+        self.assertEqual((status, body["error"]), (429, "run_in_progress"))
+        ta.RUNNING.discard(sid)
+        self.assertEqual(self.attempt("p01", 2, 2)[0], 200)
+        self.assertEqual(ta.RUNNING, set(), "the place is given back, also after an error")
+        FAKE["down"] = "down"
+        self.attempt("p01", 2, 2)
+        self.assertEqual(ta.RUNNING, set())
+
+    def test_the_rate_limit_stops_a_flood_of_runs(self):
+        statuses = [self.attempt("p01", 2, 2)[0] for _ in range(42)]
+        self.assertEqual(statuses[:40], [200] * 40)
+        self.assertEqual(statuses[40:], [429, 429])
+
+    def test_the_code_is_sent_to_the_judge_as_it_is_with_no_expected_text(self):
+        self.attempt("p01", 2, 2, code="print('Hello, Ali')")
+        sent = FAKE["last"]
+        self.assertEqual(sent["source"], "print('Hello, Ali')")
+        self.assertNotIn("Hello, Ali\n", json.dumps(sent["tests"], ensure_ascii=False), "expected outputs stay here")
+        self.assertEqual(sent["tests"], [{"stdin": "Ali\n"}, {"stdin": "Sara\n"}])
 
     def test_claims_that_do_not_fit_the_problem_are_refused(self):
-        status, body, _, _ = self.attempt("p02", 1, 1)
-        self.assertEqual(status, 400)
-        self.assertEqual(body["error"], "total_mismatch")
-        status, body, _, _ = self.attempt("p02", 5, 3)
-        self.assertEqual(status, 400)
         status, body, _, _ = call(self.port, "POST", "/api/student/attempt",
                                   {"problemId": "p99", "code": "x", "passed": 1, "total": 1, "revision": 1},
                                   cookie=self.cookie)
@@ -400,9 +508,9 @@ class RevisionTests(Base):
         self.cookie = self.register()
 
     def solve(self, pid, total, revision):
+        FAKE["passed"] = "all"
         status, body, _, _ = call(self.port, "POST", "/api/student/attempt", {
-            "problemId": pid, "code": "print(1)", "passed": total, "total": total, "revision": revision},
-            cookie=self.cookie)
+            "problemId": pid, "code": "print(1)", "revision": revision}, cookie=self.cookie)
         return status, body
 
     def progress(self):
@@ -564,8 +672,7 @@ class AdminTests(Base):
     def test_list_detail_and_export(self):
         cookie = self.register()
         call(self.port, "POST", "/api/student/attempt",
-             {"problemId": "p01", "code": "print('Hello, Ali')", "passed": 2, "total": 2, "revision": 1},
-             cookie=cookie)
+             {"problemId": "p01", "code": "print('Hello, Ali')", "revision": 1}, cookie=cookie)
         admin = self.admin_cookie()
         status, body, _, _ = call(self.port, "GET", "/api/admin/students", cookie=admin)
         self.assertEqual(status, 200)
@@ -642,9 +749,9 @@ class ScheduleTests(Base):
         self.cookie = self.register()
 
     def attempt(self, cookie, pid, passed, total, code="print('ok')", revision=1):
+        FAKE["passed"] = passed
         return call(self.port, "POST", "/api/student/attempt", {
-            "problemId": pid, "code": code, "passed": passed, "total": total, "revision": revision},
-            cookie=cookie)
+            "problemId": pid, "code": code, "revision": revision}, cookie=cookie)
 
     def test_the_schedule_carries_english_texts(self):
         packs = call(self.port, "GET", "/api/student/schedule", cookie=self.cookie)[1]["packs"]

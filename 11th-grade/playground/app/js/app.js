@@ -1,7 +1,7 @@
 // Cache-bust query on every import: Cloudflare was caching /playground/*.js for
 // 24h, so a fixed bootlog.js SyntaxError kept failing after the source was fixed.
 import { bidiMixHtml, codeHtml, indexLabelHtml, isolateLatin, ltrHtml, ltrIsolate, mdLite, renderMarkdown } from "./bidi.js?v=19";
-import { ONLINE, OFFLINE, initAccountUi, ensureStudent, fetchProblems, fetchProgress, fetchGuide, fetchSchedule, noteTyping, scheduleDraft, flushDraft, sendAttempt, getSession, onSessionChange, requireSignIn } from "./account.js?v=4";
+import { ONLINE, OFFLINE, initAccountUi, ensureStudent, fetchProblems, fetchProgress, fetchGuide, fetchSchedule, noteTyping, scheduleDraft, flushDraft, sendAttempt, getSession, onSessionChange, requireSignIn } from "./account.js?v=5";
 import { backfill, guideFor, noteSyncTyping, onSyncChange, queueResult, queueLength, serverState, solvedStatus, startAutoSync,
   statusText, statusTip, summarize, syncNow, typingFor } from "./sync.js?v=2";
 import { initUpdateNotice } from "./update.js?v=2";
@@ -37,7 +37,7 @@ import {
   preloadAsmScript,
   prefetchEngine,
 } from "./enginefetch.js?v=14";
-import { runProblem } from "./runner.js?v=12";
+import { issueMessage, runCodeMessage, runProblem } from "./runner.js?v=13";
 
 startPageErrorCapture();
 setScriptLoadObserver(recordScriptLoad);
@@ -68,6 +68,8 @@ define({
   "boot.check": { fa: "بررسی فایل‌های آفلاین…", en: "Checking the offline files…" },
   "boot.editor": { fa: "آماده‌سازی ویرایشگر کد…", en: "Preparing the code editor…" },
   "boot.smoke": { fa: "آزمون کوتاه موتور پایتون…", en: "Short test of the Python engine…" },
+  "run.server": { fa: "کد به سرور فرستاده شد؛ در حال بررسی…", en: "Your code was sent to the server; checking it…" },
+  "run.server.failed": { fa: "بررسی انجام نشد", en: "The check did not run" },
   "boot.ready": { fa: "آماده است", en: "Ready" },
   "boot.legacy": { fa: "مرورگر این رایانه قدیمی است؛ در حال بارگذاری موتور سازگار…", en: "This computer's browser is old; loading the compatible engine…" },
   "boot.pyodide": { fa: "بارگذاری Pyodide (آفلاین)…", en: "Loading Pyodide (offline)…" },
@@ -222,21 +224,19 @@ init().catch(async (err) => {
     ? tr("boot.failed", { detail })
     : tr("boot.failed.generic");
   if (el.bootTech) {
-    el.bootTech.textContent = tr("boot.collect");
+    el.bootTech.value = tr("boot.collect");
     try {
       const probes = [
         ...CODEMIRROR_SCRIPTS,
-        "vendor/pyodide/pyodide.js",
-        "vendor/pyodide/chunks/manifest.json",
-        "data/problems.json?v=28",
+        ...(ONLINE ? [] : ["vendor/pyodide/pyodide.js", "vendor/pyodide/chunks/manifest.json", "data/problems.json?v=28"]),
         "js/app.js?v=15",
         "js/enginefetch.js?v=14",
         "js/editor.js?v=13",
         "js/bootlog.js?v=12",
       ];
-      el.bootTech.textContent = await buildTeacherBootLog(err, { extraProbes: probes });
+      el.bootTech.value = await buildTeacherBootLog(err, { extraProbes: probes });
     } catch (logErr) {
-      el.bootTech.textContent = `${String(err?.name || "Error")}: ${detail}\n${String(
+      el.bootTech.value = `${String(err?.name || "Error")}: ${detail}\n${String(
         err?.stack || ""
       )}\n\n(boot log failed: ${String(logErr?.message || logErr)})`;
     }
@@ -297,11 +297,16 @@ async function init() {
     render: renderMarkdown,
   });
 
-  setBoot(35, tr("boot.check"));
-  state.engineManifest = await loadEngineManifest(bootNote);
-  bootNote(`engine manifest ${state.engineManifest ? "found" : "absent"}`);
-  const hasLegacy = await assertOfflineAssets(Boolean(state.engineManifest));
-  bootNote(`assertOfflineAssets hasLegacy=${hasLegacy}`);
+  // Online, the code is checked on the server: there is no Python engine to download or start here.
+  // The offline copy keeps its own engine, because it must work with no internet.
+  let hasLegacy = false;
+  if (!ONLINE) {
+    setBoot(35, tr("boot.check"));
+    state.engineManifest = await loadEngineManifest(bootNote);
+    bootNote(`engine manifest ${state.engineManifest ? "found" : "absent"}`);
+    hasLegacy = await assertOfflineAssets(Boolean(state.engineManifest));
+    bootNote(`assertOfflineAssets hasLegacy=${hasLegacy}`);
+  }
 
   setBoot(45, tr("boot.editor"));
   // Do not rely only on <script> tags in index.html — some school proxies /
@@ -324,13 +329,15 @@ async function init() {
   state.editor.setReadOnly(true);
   bootNote("editor ready");
 
-  const forceEngine = new URLSearchParams(location.search).get("engine");
-  bootNote(`bootPyodide forceEngine=${forceEngine || "auto"}`);
-  state.pyodide = await bootPyodide(hasLegacy, forceEngine);
+  if (!ONLINE) {
+    const forceEngine = new URLSearchParams(location.search).get("engine");
+    bootNote(`bootPyodide forceEngine=${forceEngine || "auto"}`);
+    state.pyodide = await bootPyodide(hasLegacy, forceEngine);
 
-  setBoot(90, tr("boot.smoke"));
-  await smokeTestPyodide(state.pyodide);
-  bootNote("smokeTest ok");
+    setBoot(90, tr("boot.smoke"));
+    await smokeTestPyodide(state.pyodide);
+    bootNote("smokeTest ok");
+  }
 
   setBoot(100, tr("boot.ready"));
   await sleep(250);
@@ -917,24 +924,25 @@ function onReset() {
 
 async function onRun() {
   const problem = currentProblem();
-  if (!problem || !state.pyodide) return;
+  if (!problem || (!ONLINE && !state.pyodide)) return;
   el.btnRun.disabled = true;
   el.btnRun.textContent = tr("run.testing");
   document.querySelector('.tab[data-tab="results"]').click();
   el.results.className = "results";
-  el.results.textContent = tr("run.running");
+  el.results.textContent = tr(ONLINE ? "run.server" : "run.running");
 
   try {
-    const outcome = await runProblem(state.pyodide, problem, editorCode());
-    renderResults(problem, outcome);
-    state.lastFailure = failureFromOutcome(problem, outcome, MANAGED ? visibleTests(problem) : Infinity);
-    aiFailureChanged();
     if (ONLINE) {
-      await recordRun(problem, outcome);
+      await runOnServer(problem);
     } else {
+      const outcome = await runProblem(state.pyodide, problem, editorCode());
+      renderResults(problem, outcome);
+      state.lastFailure = failureFromOutcome(problem, outcome, MANAGED ? visibleTests(problem) : Infinity);
+      aiFailureChanged();
       recordOfflineRun(problem, outcome);
     }
   } catch (err) {
+    el.results.className = "results";
     el.results.innerHTML = `<div class="test-card bad"><strong>${tr("run.error")}</strong><p>${isolateLatin(
       String(err?.message || err)
     )}</p></div>`;
@@ -1068,24 +1076,52 @@ function visibleTests(problem) {
   return problem.samples?.length || 1;
 }
 
-/** Online: the server decides whether the question is solved; the guide opens after a pass. */
-async function recordRun(problem, outcome) {
-  const passed = outcome.blocked ? 0 : outcome.results.filter((r) => r.ok).length;
+/** The outcome the server sent, shaped like a run in this browser, so the same cards show it. */
+function outcomeFromServer(outcome) {
+  if (outcome.blocked) {
+    return {
+      blocked: true,
+      constraintIssues: outcome.constraintIssues.map((issue) => ({ ...issue, message: issueMessage(issue) })),
+      results: [],
+    };
+  }
+  return {
+    blocked: false,
+    constraintIssues: [],
+    results: outcome.results.map((r) => ({
+      ...r,
+      message: r.code ? runCodeMessage(r.code) : r.message,
+      actual: r.actual ?? "",
+      expected: r.expected ?? "",
+      test: { stdin: r.stdin ?? "", call: { args: r.args ?? [] } },
+    })),
+  };
+}
+
+/** Online: the code goes to the server, which checks it in a sandbox and decides whether it is solved. */
+async function runOnServer(problem) {
   const result = await sendAttempt({
     problemId: problem.id,
     code: editorCode(),
     revision: problemRevision(problem),
-    total: problem.tests.length,
-    passed,
-    blocked: outcome.blocked,
   });
-  if (!result) return;
   if (result.stale) {
     el.results.className = "results";
     el.results.innerHTML = `<div class="test-card warn"><p>${tr("stale")}</p></div>`;
     setTimeout(() => window.location.reload(), 2000);
     return;
   }
+  if (result.failed) {
+    el.results.className = "results";
+    el.results.innerHTML = `<div class="test-card warn"><div class="test-head"><strong>${tr("run.server.failed")}</strong></div><p>${escapeHtml(
+      result.message
+    )}</p></div>`;
+    return;
+  }
+  const outcome = outcomeFromServer(result.outcome);
+  renderResults(problem, outcome);
+  state.lastFailure = failureFromOutcome(problem, outcome, visibleTests(problem));
+  aiFailureChanged();
   if (result.solved) {
     state.progress[problem.id] = { solved: true, at: new Date().toISOString(), revision: problemRevision(problem) };
     renderList();

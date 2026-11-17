@@ -49,6 +49,7 @@ from pathlib import Path
 from urllib.parse import parse_qs, unquote, urlsplit
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
+import grading  # noqa: E402
 from teacher_schedule import Schedule, jalali_plain, jalali_text, stamp_utc  # noqa: E402
 
 CONFIG = {
@@ -103,6 +104,7 @@ PASSWORD_DIGIT = re.compile(r"[0-9]")
 PROBLEMS_BYTES = b""  # the full file: admin only
 PROBLEMS_PUBLIC_BYTES = b""  # what a signed-in student receives: no solution material
 PROBLEM_META: dict[str, dict] = {}  # id -> total tests, current revision, title, number, samples
+PROBLEM_FULL: dict[str, dict] = {}  # id -> the whole question with every test: only the server's checker reads it
 GUIDES: dict[str, dict] = {}  # id -> the tutorial (آموزش): guide, solutions, common mistakes
 GUIDES_VERSION = ""  # changes whenever any tutorial changes: the offline copy downloads them again
 SCHEDULE: Schedule | None = None  # class packs and deadlines (teacher_schedule.py)
@@ -445,13 +447,17 @@ def load_problems() -> None:
     raw = CONFIG["problems"].read_bytes()
     data = json.loads(raw.decode("utf-8"))
     PROBLEMS_BYTES = raw
+    # The student's browser gets the question without its tests: the code is checked here, so the
+    # inputs and expected outputs (the samples show the first one) never leave the server.
     PROBLEMS_PUBLIC_BYTES = json.dumps(
-        [{k: v for k, v in p.items() if k not in GUIDE_FIELDS} for p in data],
+        [{**{k: v for k, v in p.items() if k not in GUIDE_FIELDS}, "tests": [{} for _ in p["tests"]]} for p in data],
         ensure_ascii=False,
     ).encode("utf-8")
     PROBLEM_META.clear()
+    PROBLEM_FULL.clear()
     GUIDES.clear()
     for p in data:
+        PROBLEM_FULL[p["id"]] = p
         PROBLEM_META[p["id"]] = {
             "total": len(p["tests"]),
             "revision": int(p.get("revision", 1)),
@@ -911,10 +917,44 @@ def record_attempt(req: "Request", student: sqlite3.Row, body: dict, client_at: 
             "flags": flags, "scored": scored}
 
 
+RUNNING: set[int] = set()  # students whose code is being checked right now: one run at a time each
+_running_lock = threading.Lock()
+JUDGE_MESSAGES = {
+    "busy": "سرور الان خیلی شلوغ است. چند ثانیه بعد دوباره «بررسی و تست» را بزن.",
+    "down": "بررسی کد روی سرور الان ممکن نیست. کمی بعد دوباره امتحان کن؛ اگر ادامه داشت به معلم بگو.",
+}
+
+
 def student_attempt(req: "Request"):
+    """Check the student's code on the server and record the result.
+
+    The browser sends only the code. The server runs it in the sandbox, decides how many tests passed,
+    and answers with the outcome to show (the hidden tests carry no expected output).
+    """
     student = req.require_student()
     limited(req, f"attempt:{student['id']}", 300, 3600)
-    return 200, record_attempt(req, student, req.body), []
+    limited(req, f"run:{student['id']}", 40, 300)
+    body = req.body
+    pid = clean_problem(body.get("problemId"))
+    code = clean_code(body.get("code"))
+    if as_int(body.get("revision"), 1, 10_000) != PROBLEM_META[pid]["revision"]:
+        raise ApiError(409, "problem_updated", STALE_MESSAGE)
+    sid = student["id"]
+    with _running_lock:
+        if sid in RUNNING:
+            raise ApiError(429, "run_in_progress", "اجرای قبلی هنوز تمام نشده است. چند ثانیه صبر کن.")
+        RUNNING.add(sid)
+    try:
+        outcome = grading.grade(PROBLEM_FULL[pid], code)
+    except grading.JudgeUnavailable as err:
+        raise ApiError(503, "judge_" + err.code, JUDGE_MESSAGES[err.code])
+    finally:
+        with _running_lock:
+            RUNNING.discard(sid)
+    recorded = record_attempt(req, student, {
+        **body, "total": outcome["total"], "passed": outcome["passed"], "blocked": outcome["blocked"],
+    })
+    return 200, {**recorded, "outcome": outcome}, []
 
 
 # --- the offline copy ---------------------------------------------------------------------

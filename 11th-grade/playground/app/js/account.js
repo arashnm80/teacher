@@ -40,6 +40,10 @@ define({
   "err.rate_limited": { fa: "تعداد تلاش‌ها زیاد است. کمی بعد دوباره امتحان کن.", en: "Too many attempts. Try again in a little while." },
   "err.login_required": { fa: "برای ادامه وارد شو.", en: "Sign in to continue." },
   "err.problem_updated": { fa: "این مسئله به‌روز شده است. صفحه را دوباره باز کن تا نسخه‌ی تازه را ببینی.", en: "This problem was updated. Reload the page to see the new version." },
+  "err.judge_busy": { fa: "سرور الان خیلی شلوغ است. چند ثانیه بعد دوباره «بررسی و تست» را بزن.", en: "The server is very busy right now. Press “Check and test” again in a few seconds." },
+  "err.judge_down": { fa: "بررسی کد روی سرور الان ممکن نیست. کمی بعد دوباره امتحان کن؛ اگر ادامه داشت به معلم بگو.", en: "Checking code on the server is not possible right now. Try again in a little while; if it keeps happening, tell the teacher." },
+  "err.run_in_progress": { fa: "اجرای قبلی هنوز تمام نشده است. چند ثانیه صبر کن.", en: "The previous run is not finished yet. Wait a few seconds." },
+  "err.code_too_long": { fa: "کد خیلی طولانی است.", en: "The code is too long." },
   "err.total_mismatch": { fa: "تعداد آزمون‌ها با نسخه‌ی این مسئله نمی‌خواند. صفحه را دوباره باز کن.", en: "The number of tests does not match this version of the problem. Reload the page." },
 });
 
@@ -450,26 +454,19 @@ export function flushDraft() {
 }
 
 /**
- * Sends one run to the server. Returns { solved, solvedNow, flags }, or { stale: true } when
- * the question changed since the page loaded, so the caller can reload the list.
+ * Sends the code to the server, which runs it in a sandbox and answers with the outcome:
+ * { solved, solvedNow, scored, passed, total, outcome }. Other answers:
+ * { stale: true } when the question changed since the page loaded, or
+ * { failed: true, message } when the run could not be checked (busy server, no connection, ...).
  */
-export async function sendAttempt({ problemId, code, revision, total, passed, blocked }) {
+export async function sendAttempt({ problemId, code, revision }) {
   flushDraft();
   const count = typing[problemId] || { typed: 0, inserted: 0 };
   const res = await authed("/attempt", {
     method: "POST",
-    body: {
-      problemId,
-      code,
-      revision,
-      total,
-      passed,
-      blocked: Boolean(blocked),
-      typed: count.typed,
-      inserted: count.inserted,
-    },
+    body: { problemId, code, revision, typed: count.typed, inserted: count.inserted },
   });
   if (res.status === 409) return { stale: true };
-  if (res.status !== 200) return null;
+  if (res.status !== 200) return { failed: true, message: errorText(res.data) };
   return res.data;
 }
