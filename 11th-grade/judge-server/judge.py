@@ -28,8 +28,8 @@ from pathlib import Path
 SOCKET = os.environ.get("TJ_SOCKET", "/run/teacher-judge/judge.sock")
 IMAGE = os.environ.get("TJ_IMAGE", "teacher-judge:current")
 DOCKER = os.environ.get("TJ_DOCKER", "docker")
-SLOTS = int(os.environ.get("TJ_SLOTS", "3"))          # containers running at the same time
-QUEUE_MAX = int(os.environ.get("TJ_QUEUE", "30"))     # requests allowed to wait for a slot
+SLOTS = int(os.environ.get("TJ_SLOTS", "8"))          # containers running at the same time
+QUEUE_MAX = int(os.environ.get("TJ_QUEUE", "60"))     # requests allowed to wait for a slot
 QUEUE_WAIT = float(os.environ.get("TJ_QUEUE_WAIT", "18"))
 HARD_LIMIT = float(os.environ.get("TJ_HARD_LIMIT", "20"))  # seconds for one container, then it is removed
 MAX_REQUEST = 1_000_000
@@ -56,7 +56,7 @@ def container_command(name: str) -> list[str]:
         "--network", "none", "--read-only", "--ipc", "none",
         "--cap-drop", "ALL", "--cap-add", "SETUID", "--cap-add", "SETGID", "--cap-add", "KILL",
         "--security-opt", "no-new-privileges",
-        "--pids-limit", "64", "--memory", "384m", "--memory-swap", "384m", "--cpus", "1",
+        "--pids-limit", "32", "--memory", "128m", "--memory-swap", "128m", "--cpus", "0.5",
         "--ulimit", "core=0", "--ulimit", "nofile=256:256",
         "--tmpfs", "/work:rw,nosuid,nodev,size=24m,mode=0755",
         "--tmpfs", "/tmp:rw,nosuid,nodev,noexec,size=8m",

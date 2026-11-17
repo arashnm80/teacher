@@ -250,10 +250,10 @@ class Service(unittest.TestCase):
         def go(i):
             answers.append(run("print(int(input()) + 1)", [{"stdin": f"{i}\n"}])[0]["stdout"])
 
-        threads = [threading.Thread(target=go, args=(i,)) for i in range(8)]
+        threads = [threading.Thread(target=go, args=(i,)) for i in range(16)]
         [t.start() for t in threads]
         [t.join() for t in threads]
-        self.assertEqual(sorted(answers), sorted(f"{i + 1}\n" for i in range(8)))
+        self.assertEqual(sorted(answers), sorted(f"{i + 1}\n" for i in range(16)))
 
     def test_no_container_is_left_behind(self):
         one("while True:\n    pass", limit=0.5)

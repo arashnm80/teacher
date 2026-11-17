@@ -773,6 +773,39 @@ OFFLINE_GUIDE_FIELDS = ("guide", "guideTitle", "solutions", "mistakes", "guideEn
 OFFLINE_ROOT = "grade11-site"
 
 
+# Every address of a script, a style sheet or a data file in the pages carries ?v=<number>. Browsers
+# (and the CDN in front of the site, which keeps such files for hours whatever the server says) reuse
+# a file while its address is the same, so the number must change whenever the file changes. It is
+# not kept by hand: after the site is built, every such address gets one build id made from the
+# contents of the files, so a student who opens the site always gets the latest files (the pages
+# themselves are never cached) and nobody needs a forced reload. Same files, same id.
+VERSIONED = re.compile(r"(\.(?:js|css|json|mjs))\?v=[0-9A-Za-z]+")
+STAMPED_TYPES = {".html", ".js", ".css", ".mjs"}
+
+
+def stamp_versions() -> str:
+    def stampable(path: Path) -> bool:
+        parts = path.relative_to(SITE).parts
+        return path.is_file() and parts[0] != "offline-files" and "vendor" not in parts
+
+    digest = hashlib.sha256()
+    for path in sorted(SITE.rglob("*")):
+        if stampable(path) and path.suffix in {".js", ".css", ".mjs", ".json"} and path.name != "problems.json":
+            digest.update(path.relative_to(SITE).as_posix().encode("utf-8"))
+            digest.update(VERSIONED.sub(r"\1", path.read_text(encoding="utf-8")).encode("utf-8"))
+    build = digest.hexdigest()[:10]
+    changed = 0
+    for path in SITE.rglob("*"):
+        if stampable(path) and path.suffix in STAMPED_TYPES:
+            text = path.read_text(encoding="utf-8")
+            stamped = VERSIONED.sub(lambda m: f"{m.group(1)}?v={build}", text)
+            if stamped != text:
+                path.write_text(stamped, encoding="utf-8")
+                changed += 1
+    print(f"build id {build}: {changed} files stamped")
+    return build
+
+
 def file_digest(path: Path) -> str:
     digest = hashlib.sha256()
     with path.open("rb") as handle:
@@ -1042,6 +1075,7 @@ The online playground (`/playground/`) and separate lab zips (`teacher-playgroun
         encoding="utf-8",
     )
     publish_playground()
+    stamp_versions()
     write_zip()
     print(f"pages {len(pages) + 1} images {images}")
 

@@ -14,7 +14,7 @@ Environment=HOME=/var/lib/teacher-judge
 Environment=DOCKER_CONFIG=/var/lib/teacher-judge/.docker
 Environment=TJ_SOCKET=/run/teacher-judge/judge.sock
 Environment=TJ_IMAGE=teacher-judge:current
-Environment=TJ_SLOTS=3
+Environment=TJ_SLOTS=8
 # /run/teacher-judge: only the judge and the accounts service (group teacher-accounts) can reach the socket.
 RuntimeDirectory=teacher-judge
 RuntimeDirectoryMode=0750

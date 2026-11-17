@@ -7,7 +7,7 @@ and answers with what to show.
 
 ```
 browser ──code──▶ accounts service ──Unix socket──▶ judge ──docker run──▶ sealed container
-                  (compares with the                (queue, 3 at a time)     runner.py ─▶ one new
+                  (compares with the                (queue, 8 at a time)     runner.py ─▶ one new
                    expected outputs)                                         process per test
 ```
 
@@ -22,7 +22,7 @@ and `child.py`). The container has:
   folder per test (24 MB in total, files up to 2 MB);
 - **no capabilities** except three for the checker itself (change user, stop its children); the student's
   program runs as user 65534 with none, and with no-new-privileges and Docker's default seccomp profile;
-- limits: 384 MB memory (256 MB per program), 64 processes (fork bombs), 1 CPU, 2 s per test (wall and CPU),
+- limits: 128 MB memory (96 MB per program: class programs are under 100 lines), 32 processes (fork bombs), half a CPU, 2 s per test (wall and CPU),
   10 s for all the tests of one run, 64 KB of output, 64 open files; a hard stop of 20 s from outside;
 - **a new process for every test**, so nothing carries over, and the checker kills everything the test started
   before the next one.
@@ -50,5 +50,5 @@ python3 judge-server/test_judge.py     # the attacks (needs Docker and the image
 ```
 
 After changing `runner.py` or `child.py`, run `install.sh` again (it rebuilds the image).
-Settings (environment of the unit): `TJ_SLOTS` (containers at once, 3), `TJ_QUEUE` (waiting requests, 30),
+Settings (environment of the unit): `TJ_SLOTS` (containers at once, 8), `TJ_QUEUE` (waiting requests, 60),
 `TJ_QUEUE_WAIT` (seconds a request may wait for a slot, 18).

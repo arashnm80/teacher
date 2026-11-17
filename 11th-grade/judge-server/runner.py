@@ -34,7 +34,7 @@ MAX_STDIN = 100_000
 OUTPUT_CAP = 64_000          # bytes of output kept per test
 CHANNEL_CAP = 64_000
 TOTAL_BUDGET = 10.0          # seconds for the whole request
-MEMORY = 256 * 1024 * 1024   # address space of one test
+MEMORY = 96 * 1024 * 1024    # address space of one test (class programs are under 100 lines)
 FILE_SIZE = 2 * 1024 * 1024  # largest file a test may write
 OPEN_FILES = 64
 
